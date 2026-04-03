@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
@@ -73,10 +73,12 @@ export default function BlogIndexPage() {
                 className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-xl overflow-hidden border border-parchment-2 hover:shadow-[0_16px_48px_rgba(22,16,8,0.1)] transition-all duration-300"
               >
                 <div className="relative h-64 lg:h-auto overflow-hidden">
-                  <PexelsImage
-                    query={featured.pexelsQuery}
-                    fallback={featured.image}
+                  <Image
+                    src={featured.image}
                     alt={featured.imageAlt}
+                    fill
+                    className="object-cover transition-all duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     priority
                   />
                 </div>
@@ -150,71 +152,19 @@ export default function BlogIndexPage() {
   );
 }
 
-// Fetches image from Pexels API via /api/image, falls back to Unsplash
-function PexelsImage({
-  query,
-  fallback,
-  alt,
-  priority = false,
-}: {
-  query: string;
-  fallback: string;
-  alt: string;
-  priority?: boolean;
-}) {
-  const [src, setSrc] = useState(fallback);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    fetch(`/api/image?q=${encodeURIComponent(query)}`)
-      .then((r) => r.json())
-      .then((d) => { if (d.url) setSrc(d.url); })
-      .catch(() => {});
-  }, [query]);
-
-  return (
-    <>
-      {!loaded && <div className="absolute inset-0 bg-parchment-2 animate-pulse" />}
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className={`object-cover transition-all duration-700 group-hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"}`}
-        sizes="(max-width: 1024px) 100vw, 50vw"
-        priority={priority}
-        onLoad={() => setLoaded(true)}
-        onError={() => { setSrc(fallback); setLoaded(true); }}
-      />
-    </>
-  );
-}
-
 function BlogCard({ post }: { post: BlogPost }) {
-  const [src, setSrc] = useState(post.image);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    fetch(`/api/image?q=${encodeURIComponent(post.pexelsQuery)}`)
-      .then((r) => r.json())
-      .then((d) => { if (d.url) setSrc(d.url); })
-      .catch(() => {});
-  }, [post.pexelsQuery]);
-
   return (
     <Link
       href={`/blog/${post.slug}`}
       className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block"
     >
       <div className="relative h-48 overflow-hidden bg-parchment-2">
-        {!loaded && <div className="absolute inset-0 bg-parchment-2 animate-pulse" />}
         <Image
-          src={src}
+          src={post.image}
           alt={post.imageAlt}
           fill
-          className={`object-cover transition-all duration-700 group-hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className="object-cover transition-all duration-700 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 33vw"
-          onLoad={() => setLoaded(true)}
-          onError={() => setLoaded(true)}
         />
       </div>
       <div className="p-6">
