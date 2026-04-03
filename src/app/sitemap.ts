@@ -33,5 +33,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/pondicherry-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
     { url: `${base}/blog/gujarat-7-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/blog/amritsar-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/dharamshala-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/udaipur-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/jaipur-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/ooty-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.86 },
+    { url: `${base}/blog/darjeeling-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
   ];
 }
