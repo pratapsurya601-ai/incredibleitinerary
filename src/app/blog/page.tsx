@@ -9,8 +9,21 @@ import { blogPosts, type BlogPost } from "@/data/blog";
 
 export default function BlogIndexPage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const featured = blogPosts.find((p) => p.featured);
-  const rest = blogPosts.filter((p) => !p.featured);
+  const [search, setSearch] = useState("");
+
+  const query = search.toLowerCase().trim();
+  const filtered = query
+    ? blogPosts.filter((p) =>
+        p.title.toLowerCase().includes(query) ||
+        p.destination.toLowerCase().includes(query) ||
+        p.tags.some((t) => t.toLowerCase().includes(query)) ||
+        p.category.toLowerCase().includes(query) ||
+        p.excerpt.toLowerCase().includes(query)
+      )
+    : blogPosts;
+
+  const featured = !query ? blogPosts.find((p) => p.featured) : null;
+  const rest = featured ? filtered.filter((p) => !p.featured) : filtered;
 
   return (
     <>
@@ -22,10 +35,32 @@ export default function BlogIndexPage() {
             <h1 className="serif-title text-[clamp(2.2rem,4vw,3.5rem)] text-ink mb-4">
               The IncredibleItinerary Blog
             </h1>
-            <p className="text-sm text-muted font-light max-w-[480px] mx-auto leading-relaxed">
+            <p className="text-sm text-muted font-light max-w-[480px] mx-auto leading-relaxed mb-8">
               No generic content. No filler. Just practical, decision-based
               travel guides with real timings, real budgets, and real routes.
             </p>
+
+            {/* Search */}
+            <div className="max-w-md mx-auto relative">
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search destinations, tags, or topics..."
+                className="w-full px-5 py-3.5 pl-12 border border-parchment-2 rounded-full bg-white text-ink text-sm font-light outline-none transition-colors duration-200 focus:border-gold placeholder:text-muted/50 shadow-sm"
+              />
+              <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-muted/40" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+              </svg>
+              {search && (
+                <button onClick={() => setSearch("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-muted/40 hover:text-ink transition-colors text-lg">&times;</button>
+              )}
+            </div>
+            {query && (
+              <p className="text-xs text-muted mt-3">
+                {filtered.length} {filtered.length === 1 ? "guide" : "guides"} found{query ? ` for "${search}"` : ""}
+              </p>
+            )}
           </div>
         </div>
 
@@ -76,16 +111,23 @@ export default function BlogIndexPage() {
             </div>
           )}
 
-          {rest.length > 0 && (
+          {rest.length > 0 ? (
             <div>
-              <p className="section-label mb-6">All Guides</p>
+              <p className="section-label mb-6">{query ? `Results for "${search}"` : "All Guides"}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {rest.map((post) => (
                   <BlogCard key={post.slug} post={post} />
                 ))}
               </div>
             </div>
-          )}
+          ) : query ? (
+            <div className="text-center py-16">
+              <p className="text-4xl mb-4">🔍</p>
+              <h3 className="font-serif text-xl text-ink mb-2">No guides found for &ldquo;{search}&rdquo;</h3>
+              <p className="text-sm text-muted font-light mb-6">Try a different destination, tag, or keyword.</p>
+              <button onClick={() => setSearch("")} className="btn-gold">Show All Guides</button>
+            </div>
+          ) : null}
 
           <div className="mt-20 text-center bg-parchment rounded-2xl p-12">
             <span className="section-label">Can&apos;t Find Your Destination?</span>
@@ -141,6 +183,7 @@ function PexelsImage({
         sizes="(max-width: 1024px) 100vw, 50vw"
         priority={priority}
         onLoad={() => setLoaded(true)}
+        onError={() => { setSrc(fallback); setLoaded(true); }}
       />
     </>
   );
@@ -171,6 +214,7 @@ function BlogCard({ post }: { post: BlogPost }) {
           className={`object-cover transition-all duration-700 group-hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"}`}
           sizes="(max-width: 768px) 100vw, 33vw"
           onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
         />
       </div>
       <div className="p-6">
