@@ -4,18 +4,18 @@ import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
 
 const BLOGS = [
-  { name: "Kashmir",        emoji: "🏔️", days: "6 Days", budget: "From ₹18k", href: "/blog/kashmir-6-days",        img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75", tag: "Heaven on Earth" },
+  { name: "Kashmir",        emoji: "🏔️", days: "6 Days", budget: "From ₹18k", href: "/blog/kashmir-6-days",        img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=75", tag: "Heaven on Earth" },
   { name: "Golden Triangle",emoji: "🕌", days: "7 Days", budget: "From ₹18k", href: "/blog/golden-triangle-7-days",img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&q=75", tag: "Most Popular" },
   { name: "Rajasthan",      emoji: "🏰", days: "7 Days", budget: "From ₹15k", href: "/blog/rajasthan-7-days",      img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=75", tag: "Heritage" },
   { name: "Kerala",         emoji: "🌿", days: "5 Days", budget: "From ₹15k", href: "/blog/kerala-5-days",         img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=75", tag: "Nature" },
-  { name: "Andaman",        emoji: "🤿", days: "5 Days", budget: "From ₹18k", href: "/blog/andaman-5-days",        img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=75", tag: "Trending" },
+  { name: "Andaman",        emoji: "🤿", days: "5 Days", budget: "From ₹18k", href: "/blog/andaman-5-days",        img: "https://images.unsplash.com/photo-1586359716568-3e1907e4cf9f?w=600&q=75", tag: "Trending" },
   { name: "Goa",            emoji: "🏖️", days: "3 Days", budget: "From ₹8k",  href: "/blog/goa-3-days",           img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=600&q=75", tag: "Beach" },
-  { name: "Varanasi",       emoji: "🕯️", days: "3 Days", budget: "From ₹6k",  href: "/blog/varanasi-3-days",      img: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=75", tag: "Spiritual" },
-  { name: "Meghalaya",      emoji: "🌿", days: "5 Days", budget: "From ₹12k", href: "/blog/meghalaya-5-days",     img: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=600&q=75", tag: "New" },
-  { name: "Sikkim",         emoji: "🏔️", days: "6 Days", budget: "From ₹18k", href: "/blog/sikkim-6-days",        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=75", tag: "Northeast" },
-  { name: "Pondicherry",    emoji: "🏖️", days: "3 Days", budget: "From ₹6k",  href: "/blog/pondicherry-3-days",   img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=75", tag: "Couples" },
-  { name: "Gujarat",        emoji: "🦁", days: "7 Days", budget: "From ₹15k", href: "/blog/gujarat-7-days",       img: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&q=75", tag: "Offbeat" },
-  { name: "Amritsar",       emoji: "🕌", days: "2 Days", budget: "From ₹4k",  href: "/blog/amritsar-2-days",      img: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&q=75", tag: "Must Visit" },
+  { name: "Varanasi",       emoji: "🕯️", days: "3 Days", budget: "From ₹6k",  href: "/blog/varanasi-3-days",      img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?w=600&q=75", tag: "Spiritual" },
+  { name: "Meghalaya",      emoji: "🌿", days: "5 Days", budget: "From ₹12k", href: "/blog/meghalaya-5-days",     img: "https://images.unsplash.com/photo-1698429358246-807d8972da9a?w=600&q=75", tag: "New" },
+  { name: "Sikkim",         emoji: "🏔️", days: "6 Days", budget: "From ₹18k", href: "/blog/sikkim-6-days",        img: "https://images.unsplash.com/photo-1627119703136-3964f14b7325?w=600&q=75", tag: "Northeast" },
+  { name: "Pondicherry",    emoji: "🏖️", days: "3 Days", budget: "From ₹6k",  href: "/blog/pondicherry-3-days",   img: "https://images.unsplash.com/photo-1662572594228-3aca8503b782?w=600&q=75", tag: "Couples" },
+  { name: "Gujarat",        emoji: "🦁", days: "7 Days", budget: "From ₹15k", href: "/blog/gujarat-7-days",       img: "https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?w=600&q=75", tag: "Offbeat" },
+  { name: "Amritsar",       emoji: "🕌", days: "2 Days", budget: "From ₹4k",  href: "/blog/amritsar-2-days",      img: "https://images.unsplash.com/photo-1561304381-70c65d96a3de?w=600&q=75", tag: "Must Visit" },
 ];
 
 export default function DestinationGridSection() {
