@@ -50,7 +50,7 @@ export default function Testimonials() {
               { icon: "⭐", val: "4.9/5", sub: "Average Rating" },
               { icon: "✅", val: "500+", sub: "Trips Planned" },
               { icon: "💰", val: "₹4,100", sub: "Avg. Saving" },
-              { icon: "🌍", val: "10", sub: "Destinations" },
+              { icon: "🌍", val: "19", sub: "Destinations" },
             ].map((s, i) => (
               <div key={s.sub} className="flex items-center gap-2.5">
                 {i > 0 && <div className="hidden md:block w-px h-7 bg-parchment-2" />}

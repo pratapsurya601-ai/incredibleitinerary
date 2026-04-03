@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn";
 export default function WhyDifferentSection({ onPlanTrip }: { onPlanTrip: () => void }) {
   const points = [
     { icon: "💰", title: "You overpay by ₹3,000–₹5,000. We fix that.", desc: "We tell you the exact spots where tourists get overcharged — and the cheaper local alternatives that are often better. Every. Single. Guide." },
-    { icon: "🚫", title: "Zero paid recommendations. Ever.", desc: "No sponsored hotel mentions. No affiliate pressure. No 'government approved shop' detours. If we recommend it, it's because it's genuinely worth it." },
+    { icon: "🤝", title: "We only recommend what we\u2019d book ourselves.", desc: "Yes, some links earn us a small commission \u2014 that\u2019s how we keep planning free. But we never recommend a hotel or experience just because it pays us. If it\u2019s in the guide, we\u2019d genuinely send our own family there." },
     { icon: "📍", title: "Plans that account for reality.", desc: "We know which roads flood in monsoon. What's actually open at 6am. Where the taxi touts wait. What 'family friendly' actually means on the ground." },
     { icon: "🇮🇳", title: "For Indians, by Indians.", desc: "Indian train routes, UPI-friendly spots, local bus costs, veg/non-veg options, and the places your Indian neighbour would tell you about — not TripAdvisor." },
   ];

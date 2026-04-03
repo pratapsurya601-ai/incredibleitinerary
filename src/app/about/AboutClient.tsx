@@ -36,7 +36,7 @@ export default function AboutClient() {
     {
       icon: "💰",
       title: "Honest about money",
-      desc: "We tell you the real prices. The rip-off spots. Where to eat for ₹150 and where spending ₹1,500 is actually worth it. We don't get commissions for recommending expensive options.",
+      desc: "We tell you the real prices. The rip-off spots. Where to eat for ₹150 and where spending ₹1,500 is actually worth it. Some links earn us a small commission — that keeps planning free — but we never recommend a place just because it pays us.",
     },
     {
       icon: "🔍",

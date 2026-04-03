@@ -82,37 +82,38 @@ function getResult(answers: Answers) {
   const scores: Record<string, number> = {
     goa: 0, rajasthan: 0, kashmir: 0, kerala: 0,
     golden_triangle: 0, varanasi: 0, andaman: 0,
+    meghalaya: 0, sikkim: 0, pondicherry: 0, gujarat: 0, amritsar: 0,
   };
 
   // VIBE scoring
-  if (vibe === "beach")    { scores.goa += 4; scores.andaman += 4; scores.kerala += 2; }
-  if (vibe === "culture")  { scores.rajasthan += 4; scores.golden_triangle += 4; scores.varanasi += 3; }
-  if (vibe === "nature")   { scores.kashmir += 4; scores.kerala += 3; scores.andaman += 2; }
-  if (vibe === "spiritual") { scores.varanasi += 5; scores.rajasthan += 2; scores.kashmir += 1; }
+  if (vibe === "beach")    { scores.goa += 4; scores.andaman += 4; scores.kerala += 2; scores.pondicherry += 3; }
+  if (vibe === "culture")  { scores.rajasthan += 4; scores.golden_triangle += 4; scores.varanasi += 3; scores.gujarat += 3; scores.amritsar += 3; }
+  if (vibe === "nature")   { scores.kashmir += 4; scores.kerala += 3; scores.andaman += 2; scores.meghalaya += 4; scores.sikkim += 4; }
+  if (vibe === "spiritual") { scores.varanasi += 5; scores.rajasthan += 2; scores.amritsar += 4; scores.sikkim += 2; }
 
   // BUDGET scoring
-  if (budget === "budget")  { scores.goa += 3; scores.varanasi += 3; scores.rajasthan += 1; }
-  if (budget === "mid")     { scores.kerala += 2; scores.goa += 2; scores.golden_triangle += 2; scores.rajasthan += 2; }
-  if (budget === "premium") { scores.kashmir += 3; scores.andaman += 3; scores.kerala += 2; }
+  if (budget === "budget")  { scores.goa += 3; scores.varanasi += 3; scores.amritsar += 3; scores.pondicherry += 2; }
+  if (budget === "mid")     { scores.kerala += 2; scores.goa += 2; scores.golden_triangle += 2; scores.rajasthan += 2; scores.meghalaya += 2; scores.gujarat += 2; }
+  if (budget === "premium") { scores.kashmir += 3; scores.andaman += 3; scores.kerala += 2; scores.sikkim += 2; }
   if (budget === "luxury")  { scores.kashmir += 3; scores.rajasthan += 3; scores.andaman += 2; }
 
   // GROUP scoring
-  if (group === "solo")    { scores.goa += 2; scores.varanasi += 2; scores.rajasthan += 1; }
-  if (group === "couple")  { scores.kashmir += 3; scores.kerala += 3; scores.andaman += 3; }
-  if (group === "friends") { scores.goa += 4; scores.andaman += 2; scores.rajasthan += 2; }
-  if (group === "family")  { scores.golden_triangle += 3; scores.rajasthan += 3; scores.kerala += 2; }
+  if (group === "solo")    { scores.goa += 2; scores.varanasi += 2; scores.meghalaya += 2; scores.pondicherry += 2; }
+  if (group === "couple")  { scores.kashmir += 3; scores.kerala += 3; scores.andaman += 3; scores.pondicherry += 3; scores.sikkim += 2; }
+  if (group === "friends") { scores.goa += 4; scores.andaman += 2; scores.rajasthan += 2; scores.meghalaya += 3; }
+  if (group === "family")  { scores.golden_triangle += 3; scores.rajasthan += 3; scores.kerala += 2; scores.gujarat += 3; scores.amritsar += 2; }
 
   // DURATION scoring
-  if (duration === "short") { scores.goa += 3; scores.varanasi += 3; scores.andaman += 1; }
-  if (duration === "week")  { scores.kashmir += 2; scores.kerala += 2; scores.andaman += 2; scores.rajasthan += 1; }
-  if (duration === "long")  { scores.rajasthan += 3; scores.golden_triangle += 2; scores.kashmir += 2; }
-  if (duration === "open")  { scores.rajasthan += 2; scores.golden_triangle += 2; scores.kashmir += 2; }
+  if (duration === "short") { scores.goa += 3; scores.varanasi += 3; scores.amritsar += 4; scores.pondicherry += 3; }
+  if (duration === "week")  { scores.kashmir += 2; scores.kerala += 2; scores.andaman += 2; scores.meghalaya += 3; scores.sikkim += 3; scores.gujarat += 2; }
+  if (duration === "long")  { scores.rajasthan += 3; scores.golden_triangle += 2; scores.kashmir += 2; scores.gujarat += 3; }
+  if (duration === "open")  { scores.rajasthan += 2; scores.golden_triangle += 2; scores.kashmir += 2; scores.meghalaya += 2; }
 
   // PRIORITY scoring
-  if (priority === "food")      { scores.varanasi += 3; scores.rajasthan += 2; scores.goa += 2; scores.kerala += 2; }
-  if (priority === "photo")     { scores.kashmir += 3; scores.rajasthan += 3; scores.andaman += 2; }
-  if (priority === "adventure") { scores.andaman += 4; scores.kashmir += 3; scores.kerala += 2; }
-  if (priority === "relax")     { scores.kerala += 4; scores.andaman += 3; scores.kashmir += 2; }
+  if (priority === "food")      { scores.varanasi += 3; scores.rajasthan += 2; scores.goa += 2; scores.amritsar += 4; scores.gujarat += 3; }
+  if (priority === "photo")     { scores.kashmir += 3; scores.rajasthan += 3; scores.meghalaya += 4; scores.sikkim += 3; }
+  if (priority === "adventure") { scores.andaman += 4; scores.kashmir += 3; scores.meghalaya += 3; scores.sikkim += 2; }
+  if (priority === "relax")     { scores.kerala += 4; scores.andaman += 3; scores.pondicherry += 3; scores.sikkim += 2; }
 
   // Find top 3
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
@@ -214,6 +215,66 @@ const DESTINATIONS: Record<string, {
     color: "from-teal-500 to-cyan-600",
     image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
     tips: ["Book Makruzz ferry before you arrive — sells out in peak season", "Radhanagar Beach at 5:30am — 2km of empty Asia's Best Beach", "Fly via Chennai — saves ₹5,000–₹8,000 vs Delhi"],
+  },
+  meghalaya: {
+    name: "Meghalaya",
+    emoji: "🌿",
+    tagline: "Northeast India's hidden paradise — waterfalls, root bridges, crystal rivers",
+    why: "Your love of nature and photography points to Meghalaya — living root bridges, the clearest river in India at Dawki, and Cherrapunji's dramatic waterfalls. This is what Kasol was 10 years ago.",
+    duration: "5–6 days ideal",
+    budget: "₹12,000–₹35,000/person",
+    href: "/blog/meghalaya-5-days",
+    color: "from-emerald-500 to-green-600",
+    image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&q=80",
+    tips: ["Dawki River clarity is real — not Photoshopped", "Skip Elephant Falls, go to Laitlum Canyons instead", "Oct-Nov is the sweet spot — post-monsoon, waterfalls still flowing"],
+  },
+  sikkim: {
+    name: "Sikkim",
+    emoji: "🏔️",
+    tagline: "Tibetan monasteries and Kangchenjunga — India's favourite state",
+    why: "Mountains, monasteries, and the best momos in India. Sikkim combines Himalayan drama with Tibetan culture in a way no other Indian state matches. Pelling with a clear Kangchenjunga view is a top-5 India moment.",
+    duration: "5–7 days ideal",
+    budget: "₹18,000–₹45,000/person",
+    href: "/blog/sikkim-6-days",
+    color: "from-blue-500 to-purple-600",
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80",
+    tips: ["Get the Inner Line Permit online before arrival", "The momos in Gangtok are genuinely life-changing", "Nathula Pass — walk slow, altitude sickness is real"],
+  },
+  pondicherry: {
+    name: "Pondicherry",
+    emoji: "🏖️",
+    tagline: "India's French Riviera — croissants, beach cafes and Auroville",
+    why: "Your couple/relaxation preferences are a perfect match for Pondicherry — French Quarter architecture, boulangeries at dawn, beach cafes, and Auroville. It's the most romantic weekend in South India.",
+    duration: "2–4 days ideal",
+    budget: "₹6,000–₹22,000/person",
+    href: "/blog/pondicherry-3-days",
+    color: "from-yellow-400 to-orange-500",
+    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80",
+    tips: ["Cycle the French Quarter at 6am before crowds", "Paradise Beach by boat — NOT by road", "Rue Suffren has better food than the Promenade at half the price"],
+  },
+  gujarat: {
+    name: "Gujarat",
+    emoji: "🦁",
+    tagline: "India's most underrated state — salt deserts, wild lions and legendary food",
+    why: "Gujarat is the answer nobody expects but everyone loves. Rann of Kutch under moonlight, the only wild Asiatic lions on Earth at Gir, and street food that makes Mumbai jealous. Pure culture, zero tourist crowds.",
+    duration: "7–10 days ideal",
+    budget: "₹15,000–₹50,000/person",
+    href: "/blog/gujarat-7-days",
+    color: "from-orange-400 to-red-500",
+    image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=800&q=80",
+    tips: ["Visit during Rann Utsav (Nov–Feb) for the full salt desert experience", "Gujarat is 100% vegetarian — and the food is extraordinary", "Book Gir safari permits 30 days ahead — they sell out"],
+  },
+  amritsar: {
+    name: "Amritsar",
+    emoji: "🕌",
+    tagline: "Golden Temple, Wagah Border and India's best street food",
+    why: "Two days that will change how you see India. The Golden Temple at dawn is the most powerful spiritual experience many travellers have. Add the best street food in the country and Wagah Border theatre — it's an essential India stop.",
+    duration: "2–3 days ideal",
+    budget: "₹4,000–₹15,000/person",
+    href: "/blog/amritsar-2-days",
+    color: "from-amber-400 to-yellow-500",
+    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80",
+    tips: ["Golden Temple at 4:30am — arrive before sunrise for the Palki Sahib", "Kulcha at Bharawan Da Dhaba is mandatory", "Add Amritsar to any Golden Triangle trip — 6hr train from Delhi"],
   },
 };
 
@@ -427,7 +488,7 @@ export default function QuizClient() {
               className="btn-gold text-base px-10 py-4 inline-block">
               Start the Quiz →
             </button>
-            <p className="text-xs text-muted mt-4 font-light">7 destinations · No signup required · Free forever</p>
+            <p className="text-xs text-muted mt-4 font-light">19 destinations · No signup required · Free forever</p>
           </div>
         )}
 

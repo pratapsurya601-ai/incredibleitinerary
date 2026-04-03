@@ -11,6 +11,11 @@ const BLOGS = [
   { name: "Andaman",        emoji: "🤿", days: "5 Days", budget: "From ₹18k", href: "/blog/andaman-5-days",        img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=75", tag: "Trending" },
   { name: "Goa",            emoji: "🏖️", days: "3 Days", budget: "From ₹8k",  href: "/blog/goa-3-days",           img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=600&q=75", tag: "Beach" },
   { name: "Varanasi",       emoji: "🕯️", days: "3 Days", budget: "From ₹6k",  href: "/blog/varanasi-3-days",      img: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=75", tag: "Spiritual" },
+  { name: "Meghalaya",      emoji: "🌿", days: "5 Days", budget: "From ₹12k", href: "/blog/meghalaya-5-days",     img: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=600&q=75", tag: "New" },
+  { name: "Sikkim",         emoji: "🏔️", days: "6 Days", budget: "From ₹18k", href: "/blog/sikkim-6-days",        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=75", tag: "Northeast" },
+  { name: "Pondicherry",    emoji: "🏖️", days: "3 Days", budget: "From ₹6k",  href: "/blog/pondicherry-3-days",   img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=75", tag: "Couples" },
+  { name: "Gujarat",        emoji: "🦁", days: "7 Days", budget: "From ₹15k", href: "/blog/gujarat-7-days",       img: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&q=75", tag: "Offbeat" },
+  { name: "Amritsar",       emoji: "🕌", days: "2 Days", budget: "From ₹4k",  href: "/blog/amritsar-2-days",      img: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&q=75", tag: "Must Visit" },
 ];
 
 export default function DestinationGridSection() {
@@ -21,7 +26,7 @@ export default function DestinationGridSection() {
           <div>
             <span className="section-label">Free itinerary guides</span>
             <h2 className="font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-light text-ink">
-              7 destinations.<br /><em className="italic text-teal">All free. All detailed.</em>
+              19 destinations.<br /><em className="italic text-teal">All free. All detailed.</em>
             </h2>
           </div>
           <Link href="/blog" className="text-[0.72rem] tracking-[0.12em] uppercase text-gold-dark border-b border-gold-dark pb-0.5 hover:text-ink transition-colors">

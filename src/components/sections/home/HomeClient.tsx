@@ -24,6 +24,9 @@ const HomepageFAQ = dynamic(() => import("@/components/sections/HomepageFAQ"), {
 const FinalCTASection = dynamic(() => import("./FinalCTASection"), {
   loading: () => <div className="bg-ink py-24 animate-pulse" style={{ minHeight: 300 }} />,
 });
+const NewsletterSection = dynamic(() => import("./NewsletterSection"), {
+  loading: () => <div className="bg-parchment py-16 animate-pulse" style={{ minHeight: 200 }} />,
+});
 const InquiryModal = dynamic(() => import("@/components/ui/InquiryModal"), { ssr: false });
 
 export default function HomeClient() {
@@ -42,6 +45,7 @@ export default function HomeClient() {
         <DestinationGridSection />
         <MonetizationSection onPlanTrip={open} />
         <HomepageFAQ />
+        <NewsletterSection />
         <FinalCTASection onPlanTrip={open} />
       </main>
       <Footer />

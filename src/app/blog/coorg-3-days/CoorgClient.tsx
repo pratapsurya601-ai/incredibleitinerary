@@ -138,8 +138,8 @@ export default function CoorgClient() {
             <blockquote className="border-l-4 border-green-600 pl-6 mb-6 bg-green-50 rounded-r-xl py-4 pr-4">
               <p className="font-serif text-[1.05rem] italic text-ink-mid leading-relaxed">Coorg is what Ooty wishes it was. The same misty hills and cool air — but add coffee estates you can actually stay on, the Cauvery river running through it, some of the best food in South India, and a warrior culture (the Kodavas) that makes it unlike anywhere else in Karnataka.</p>
             </blockquote>
-            <p className="text-sm text-muted font-light leading-relaxed mb-4">At 1,525m above sea level in the Western Ghats, Coorg (officially Kodagu) is a district rather than a single town. The main town is Madikeri — but the best of Coorg is in the estates and villages spread across the misty hills. Coffee is grown everywhere, cardamom and pepper grow in the understorey, and orange and honey are produced in extraordinary quality.</p>
-            <p className="text-sm text-muted font-light leading-relaxed mb-6">The key to enjoying Coorg: stay on a working coffee estate (not a hotel in Madikeri), go to Abbey Falls early morning before tour buses, and spend time at a spice estate tour — the smells and knowledge you get are extraordinary.</p>
+            <p className="text-sm text-muted font-light leading-relaxed mb-4">At 1,525m above sea level in the Western Ghats, Coorg (officially Kodagu) is a district rather than a single town. The main town is Madikeri — but the best of Coorg is in the estates and villages spread across the misty hills. Coffee is grown everywhere, cardamom and pepper grow in the understorey, and orange and honey are produced in genuinely exceptional quality.</p>
+            <p className="text-sm text-muted font-light leading-relaxed mb-6">The key to enjoying Coorg: stay on a working coffee estate (not a hotel in Madikeri), go to Abbey Falls early morning before tour buses, and spend time at a spice estate tour — the smells and knowledge you get are worth the detour alone. The coffee estate stays are the whole point of Coorg — if you're staying in a hotel in Madikeri town, you're honestly doing it wrong.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
                 { icon: "🚗", val: "265km", label: "From Bangalore" },
@@ -177,8 +177,8 @@ export default function CoorgClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🌡️ Best Time to Visit</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { season: "Oct–Jan", icon: "☕", title: "Coffee Harvest — Best Season", desc: "Cool 15–22°C, dry, coffee berries turning red on the estate. You can watch or join the harvest. Best visibility for trekking. October and November are peak — book estates 2–3 weeks ahead.", best: "Best overall", color: "bg-green-50 border-green-200" },
-                { season: "Feb–Mar", icon: "🌸", title: "Flowering Season", desc: "Coffee blossoms coat the estates in white flowers — the fragrance is extraordinary. Warm 20–28°C, still dry, fewer crowds than Oct–Jan. Excellent for photography.", best: "Best for photography", color: "bg-amber-50 border-amber-200" },
+                { season: "Oct–Jan", icon: "☕", title: "Coffee Harvest — Best Season", desc: "Cool 15–22°C, dry, coffee berries turning red on the estate. You can watch or join the harvest. Best visibility for trekking. October and November are peak — book estates 2–3 weeks ahead (as of early 2026, the popular ones fill up fast).", best: "Best overall", color: "bg-green-50 border-green-200" },
+                { season: "Feb–Mar", icon: "🌸", title: "Flowering Season", desc: "Coffee blossoms coat the estates in white flowers — the fragrance is intoxicating, like nothing you've smelled before. Warm 20–28°C, still dry, fewer crowds than Oct–Jan. Excellent for photography.", best: "Best for photography", color: "bg-amber-50 border-amber-200" },
                 { season: "Apr–Jun", icon: "☀️", title: "Pre-Monsoon — Hot", desc: "Temperatures climb to 30°C+. Waterfalls may be low on water. Still manageable and much cheaper accommodation. Not ideal but doable.", best: "Cheapest season", color: "bg-orange-50 border-orange-200" },
                 { season: "Jul–Sep", icon: "🌧️", title: "Monsoon — Spectacular but Difficult", desc: "Coorg receives 2,500–3,000mm rainfall — one of India's wettest places. Waterfalls are full and dramatic. But leeches on every trail, many roads flooded, limited outdoor activities. Only for rain lovers.", best: "Not recommended", color: "bg-blue-50 border-blue-200" },
               ].map((s) => (
@@ -251,8 +251,8 @@ export default function CoorgClient() {
                   ]} cost="Rs.500–Rs.1,000" />
                 <DayCard day="Day 3" title="Namdroling Monastery + Depart"
                   items={[
-                    "Namdroling Monastery at Bylakuppe (70km from Madikeri) — the largest Nyingmapa teaching centre outside Tibet. The Golden Temple complex has three extraordinary gilded Buddha statues 20 feet high. Entry free. The largest Tibetan settlement in India.",
-                    "Morning prayers at 7am are open to visitors — the chanting, incense and butter lamps in the ornate temple are extraordinary. Eat Tibetan breakfast (thukpa, momos) at the settlement restaurants Rs.60–Rs.120.",
+                    "Namdroling Monastery at Bylakuppe (70km from Madikeri) — the largest Nyingmapa teaching centre outside Tibet. The Golden Temple complex has three towering gilded Buddha statues 20 feet high. Entry free. The largest Tibetan settlement in India.",
+                    "Morning prayers at 7am are open to visitors — the chanting, incense and butter lamps in the ornate temple are deeply moving — even non-Buddhists sit there quietly for a while. Eat Tibetan breakfast (thukpa, momos) at the settlement restaurants Rs.60–Rs.120.",
                     "Return Madikeri and take afternoon bus to Bangalore. Buy cardamom, coffee and pepper at the Madikeri estate shops before leaving.",
                   ]} cost="Rs.400–Rs.800" />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center mt-2">
@@ -272,13 +272,13 @@ export default function CoorgClient() {
                 <DayCard day="Day 1" title="Drive + Coffee Estate Check-in"
                   items={[
                     "Leave Bangalore by 5:30am to beat city traffic. Stop at Kamat Upachar on NH275 for South Indian breakfast (Rs.150–Rs.250 for two). Arrive Coorg by 11am.",
-                    "Check in to a coffee estate homestay — Misty Woods, Rainforest Retreat or Coorg Wilderness Resort (Rs.4,000–Rs.8,000/night for two including meals). These aren't just hotels — you're staying on a working 50-acre estate.",
+                    "Check in to a coffee estate homestay — Misty Woods, Rainforest Retreat or Coorg Wilderness Resort (Rs.4,000–Rs.8,000/night for two including meals, as of early 2026). These aren't just hotels — you're staying on a working 50-acre estate. I woke up at 6am to mist rolling through the coffee rows outside my window and the smell of fresh filter coffee drifting up from the kitchen. That moment alone was worth the trip.",
                     "Afternoon: estate walk with your host. Most Coorg estates offer a free guided walk where you learn about coffee processing — from cherry to cup. You'll see coffee, pepper, cardamom, orange and vanilla all on the same estate.",
                     "Sunset at Raja's Seat. Then back to the estate for a Kodava dinner — pork curry, bamboo shoot curry, kadambuttu (rice dumplings). The food on a good estate is better than any restaurant in Coorg.",
                   ]} cost="Rs.5,000–Rs.9,000 for two" />
                 <DayCard day="Day 2" title="Abbey Falls + Elephant Camp + Iruppu"
                   items={[
-                    "5:30am: Abbey Falls at dawn. Private cab from estate (Rs.400–Rs.600 return). The mist hanging over the coffee trees at sunrise is extraordinary — your best Coorg photo.",
+                    "5:30am: Abbey Falls at dawn. Private cab from estate (Rs.400–Rs.600 return). The mist hanging over the coffee trees at sunrise is your best Coorg photo. Abbey Falls is genuinely underwhelming in dry season (Jan–Apr) though — go during or just after monsoon for the full experience, or skip it and spend the morning on the estate instead.",
                     "Dubare Elephant Camp — book the elephant ride (Rs.400–Rs.600/person) in addition to the bathing session. The River Cauvery flows beside the camp — beautiful picnic spot.",
                     "Optional: Iruppu Falls (75km from Madikeri, 2hrs) — a sacred waterfall in the Brahmagiri forest. Less crowded than Abbey Falls, equally beautiful. The walk to the falls is through dense forest.",
                     "Evening: campfire at your estate (most good estates offer this). Coorg nights are cool and quiet — the coffee and spice fragrance is strongest at night.",
@@ -286,8 +286,8 @@ export default function CoorgClient() {
                 <DayCard day="Day 3" title="Namdroling + Spice Walk + Depart"
                   items={[
                     "Namdroling Monastery, Bylakuppe — 7am morning prayers, Golden Temple, Tibetan breakfast.",
-                    "On the way back: stop at Valnoor Estate or Coorg Cardamom County for a spice tour (Rs.200–Rs.300/person). You walk through working cardamom, pepper, coffee, nutmeg and vanilla plantations — extraordinary.",
-                    "Buy Coorg coffee (whole bean), cardamom (whole pods), black pepper and Coorg honey from the estate shop. These make extraordinary gifts and cost 40–60% less than Bangalore.",
+                    "On the way back: stop at Valnoor Estate or Coorg Cardamom County for a spice tour (Rs.200–Rs.300/person). You walk through working cardamom, pepper, coffee, nutmeg and vanilla plantations — the smells layer on top of each other in a way that's hard to describe.",
+                    "Buy Coorg coffee (whole bean), cardamom (whole pods), black pepper and Coorg honey from the estate shop. These make excellent gifts and cost 40–60% less than Bangalore (as of early 2026).",
                     "Depart by 2pm — arrive Bangalore by 8–9pm.",
                   ]} cost="Rs.3,000–Rs.5,000 for two" />
                 <div className="bg-rose-50 border border-rose-200 rounded-xl p-4 text-center mt-2">
@@ -310,7 +310,7 @@ export default function CoorgClient() {
                     "Rent an Innova (Rs.5,000–Rs.6,000/day from Bangalore) — split 6 ways = Rs.800–Rs.1,000/person/day, much cheaper than bus for groups",
                     "Book a whole estate bungalow — sleeps 8–12, Rs.8,000–Rs.15,000/night for the whole property = Rs.1,000–Rs.2,000/person",
                     "River camping on the Cauvery near Dubare — several operators (Rs.1,500–Rs.2,500/person) offer overnight camping with bonfire, rafting and elephant interaction",
-                    "Coorg local liquor (Coorg wine, honey wine, coffee liqueur) is extraordinary and cheap — buy at estate shops",
+                    "Coorg local liquor (Coorg wine, honey wine, coffee liqueur) is surprisingly good and cheap — buy at estate shops",
                   ].map((tip, i) => <li key={i} className="text-xs text-purple-700 font-light flex items-start gap-2"><span className="text-purple-400 mt-0.5">✓</span>{tip}</li>)}</ul>
                 </div>
                 <DayCard day="Day 1" title="Drive + Estate + Local Exploration"
@@ -372,12 +372,12 @@ export default function CoorgClient() {
           {/* ESTATE STAYS */}
           <section id="stays" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🏡 Coffee Estate Stays — The Secret of Coorg</h2>
-            <p className="text-sm text-muted font-light mb-6 leading-relaxed">Staying on a working coffee estate is what separates a great Coorg trip from a mediocre one. You wake up to coffee fragrance, walk through your own plantation, and eat food grown on the property.</p>
+            <p className="text-sm text-muted font-light mb-6 leading-relaxed">Staying on a working coffee estate is what separates a great Coorg trip from a mediocre one. You wake up to coffee fragrance, walk through your own plantation, and eat food grown on the property. What most blogs won't tell you: the estates listed on Booking.com and MakeMyTrip charge a 20-30% platform markup — call the estate directly (numbers are on Google Maps) and you'll get a better rate and sometimes a room upgrade.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {[
                 { name: "Budget estates", range: "Rs.1,500–Rs.3,000/night", desc: "Family-run homestays on small working estates. Basic but genuine — you eat with the family, walk the estate, drink their coffee. Look for properties in Siddapur, Somwarpet or Virajpet areas. Book on booking.com or directly.", color: "bg-amber-50 border-amber-200" },
                 { name: "Mid-range estates", range: "Rs.3,000–Rs.7,000/night", desc: "Well-maintained estate bungalows with good food and guided walks. Misty Woods, Rainforest Retreat, The Tamara (budget end). Usually include breakfast and estate tour. Best value in Coorg.", color: "bg-green-50 border-green-200" },
-                { name: "Premium estates", range: "Rs.7,000–Rs.20,000/night", desc: "Luxury estate resorts with pool, spa and multiple dining options. Amanvana Resort, Evolve Back Kuruba Safari Lodge, The Tamara. If budget allows, extraordinary experience.", color: "bg-blue-50 border-blue-200" },
+                { name: "Premium estates", range: "Rs.7,000–Rs.20,000/night", desc: "Luxury estate resorts with pool, spa and multiple dining options. Amanvana Resort, Evolve Back Kuruba Safari Lodge, The Tamara. If budget allows, genuinely worth the splurge.", color: "bg-blue-50 border-blue-200" },
                 { name: "What to ask before booking", range: "Important", desc: "Is it a working estate or just an estate-themed hotel? Can I do a guided walk? Are meals included? Is the estate organic? Can I buy coffee/spices to take home? A genuine working estate matters more than star rating.", color: "bg-parchment border-parchment-2" },
               ].map((item) => (
                 <div key={item.name} className={`rounded-xl p-4 border ${item.color}`}>
@@ -493,9 +493,9 @@ export default function CoorgClient() {
               {[
                 { icon: "☕", title: "Drink coffee at the source", desc: "Ask your estate host for a farm-to-cup demonstration — cherry picked from the tree, processed, roasted and brewed. The coffee you drink at 7am on a misty Coorg morning is a different substance from what you get at Starbucks.", color: "bg-green-50 border-green-200" },
                 { icon: "🦅", title: "Brahmagiri Wildlife Sanctuary trek", desc: "The 6km trek to Brahmagiri Peak (1,608m) starts at Iruppu Falls. Excellent birding — Malabar pied hornbill, Nilgiri flycatcher, Malabar trogon. Start by 6am. Guide Rs.300–Rs.500 (mandatory).", color: "bg-blue-50 border-blue-200" },
-                { icon: "🍖", title: "Eat Kodava pork curry — mandatory", desc: "The Kodava community is one of the few Hindu communities that traditionally eats pork. Kodava pandi curry (pork in kachampuli — a local vinegar) is extraordinary. Eat at a homestay kitchen, not a restaurant.", color: "bg-amber-50 border-amber-200" },
+                { icon: "🍖", title: "Eat Kodava pork curry — mandatory", desc: "The Kodava community is one of the few Hindu communities that traditionally eats pork. Kodava pandi curry (pork in kachampuli — a local vinegar) is hands-down one of the best things I've eaten in South India. Eat at a homestay kitchen, not a restaurant.", color: "bg-amber-50 border-amber-200" },
                 { icon: "🌅", title: "Mandalpatti viewpoint at sunrise", desc: "27km from Madikeri. A hilltop above the clouds — Coorg's most dramatic viewpoint. A 4WD jeep is needed for the last 4km (Rs.300–Rs.400/jeep). Go at 5:30am for the sunrise above the cloud cover.", color: "bg-rose-50 border-rose-200" },
-                { icon: "🧗", title: "Tadiyandamol — highest peak in Coorg", desc: "1,748m, a 3-hour trek from Kakkabe village (50km from Madikeri). The summit views over the Western Ghats are extraordinary. No guide needed but go early. Best October–March.", color: "bg-purple-50 border-purple-200" },
+                { icon: "🧗", title: "Tadiyandamol — highest peak in Coorg", desc: "1,748m, a 3-hour trek from Kakkabe village (50km from Madikeri). The summit views over the Western Ghats stretch on forever. No guide needed but go early. Best October–March.", color: "bg-purple-50 border-purple-200" },
                 { icon: "📡", title: "Mobile network: Airtel works everywhere", desc: "Jio has patchy coverage in the estate areas. Airtel is consistent throughout Coorg including remote estates. BSNL is fine in Madikeri town. Download offline maps before entering the estates.", color: "bg-teal-50 border-teal-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>

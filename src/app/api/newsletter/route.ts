@@ -58,7 +58,7 @@ function welcomeEmail(email: string, name: string | undefined) {
     from: "IncredibleItinerary <hello@incredibleitinerary.com>",
     to: [email],
     reply_to: YOUR_EMAIL,
-    subject: "Your free India travel guides — all 10 destinations 🧭",
+    subject: "Your free India travel guides — all 19 destinations 🧭",
     html: `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IncredibleItinerary</title></head>
@@ -99,7 +99,7 @@ function welcomeEmail(email: string, name: string | undefined) {
     </div>
 
     <!-- Guides heading -->
-    <p style="margin:0 0 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7a6a;font-weight:600;">Your free guides — all 10 destinations</p>
+    <p style="margin:0 0 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7a6a;font-weight:600;">Your free guides — all 19 destinations</p>
 
     <!-- Blog links -->
     <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">

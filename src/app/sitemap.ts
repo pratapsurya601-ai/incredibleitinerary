@@ -28,7 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/jibhi-tirthan-valley-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
     { url: `${base}/blog/hampi-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
     { url: `${base}/blog/spiti-valley-7-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/meghalaya-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/sikkim-6-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/pondicherry-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/gujarat-7-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/amritsar-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
   ];
 }
-
-// New blogs appended
