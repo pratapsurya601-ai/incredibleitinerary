@@ -9,6 +9,8 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const KERALA_TOC = [
   { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
@@ -175,6 +177,7 @@ export default function KeralaClient() {
       <ReadingProgress />
       <TableOfContents items={KERALA_TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Kerala" />
 
       <main className="bg-cream min-h-screen">
 
@@ -760,6 +763,8 @@ export default function KeralaClient() {
               ))}
             </div>
           </section>
+
+          <RelatedGuides currentSlug="kerala-5-days" />
         </div>
       </main>
 

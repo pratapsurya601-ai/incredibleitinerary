@@ -9,6 +9,8 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 
 const GOA_TOC = [
@@ -184,6 +186,7 @@ export default function GoaBlogClient() {
       <ReadingProgress />
       <TableOfContents items={GOA_TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Goa" />
 
       <main className="bg-cream min-h-screen">
 
@@ -697,6 +700,8 @@ export default function GoaBlogClient() {
               ))}
             </div>
           </section>
+
+          <RelatedGuides currentSlug="goa-3-days" />
         </div>
       </main>
 

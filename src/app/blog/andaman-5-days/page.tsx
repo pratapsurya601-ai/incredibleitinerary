@@ -22,6 +22,12 @@ export const metadata: Metadata = {
     images: [{ url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80", width: 1200, height: 630, alt: "Radhanagar Beach Havelock Island Andaman" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Andaman Islands in 5 Days: Complete Guide (2026)",
+    description: "Havelock, Neil Island, Port Blair — 4 plans, real budgets, ferry guide.",
+    images: ["https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80"],
+  },
   alternates: { canonical: "https://incredibleitinerary.com/blog/andaman-5-days" },
 };
 

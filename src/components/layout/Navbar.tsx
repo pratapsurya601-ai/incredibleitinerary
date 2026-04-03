@@ -28,6 +28,10 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
 
   return (
     <>
+      {/* Skip to content */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[999] focus:bg-gold focus:text-ink focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-medium">
+        Skip to content
+      </a>
       {/* Dark gradient at top — ensures navbar text is readable over any hero image */}
       {!scrolled && (
         <div className="fixed top-0 left-0 right-0 z-[199] h-28 bg-gradient-to-b from-ink/60 to-transparent pointer-events-none" />
@@ -87,6 +91,7 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
         className="md:hidden flex flex-col gap-1.5 p-2"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
+        aria-expanded={menuOpen}
       >
         {[0, 1, 2].map((i) => (
           <span
@@ -101,8 +106,7 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
       </button>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="absolute top-[72px] left-0 right-0 bg-cream/98 backdrop-blur-md shadow-lg border-t border-parchment-2 md:hidden">
+      <div className={`absolute top-[72px] left-0 right-0 bg-cream/98 backdrop-blur-md shadow-lg border-t border-parchment-2 md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`}>
           <ul className="flex flex-col p-6 gap-4 list-none">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -124,8 +128,7 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
               </button>
             </li>
           </ul>
-        </div>
-      )}
+      </div>
     </nav>
     </>
   );

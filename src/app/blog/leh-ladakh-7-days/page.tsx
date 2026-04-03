@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     images: [{ url: "https://images.unsplash.com/photo-1574482620826-903a9948f5cb?w=1200&q=80", width: 1200, height: 630, alt: "Pangong Lake Ladakh blue water mountains" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leh Ladakh in 7 Days: Complete Guide (2026)",
+    description: "Pangong Lake, Nubra Valley, Khardung La — 4 plans, acclimatisation guide, real costs.",
+    images: ["https://images.unsplash.com/photo-1574482620826-903a9948f5cb?w=1200&q=80"],
+  },
   alternates: { canonical: "https://incredibleitinerary.com/blog/leh-ladakh-7-days" },
 };
 
@@ -71,6 +77,13 @@ const jsonLd = {
           "acceptedAnswer": { "@type": "Answer", "text": "Very serious if ignored. Leh is at 3,524m. Khardung La is 5,359m. Symptoms: headache, nausea, dizziness, breathlessness. Treatment: rest, hydration, descend if severe. Prevention: fly in, rest Day 1 and Day 2 completely, no alcohol first 48hrs, drink 3–4L water daily. Diamox (acetazolamide) helps but consult a doctor first." }
         },
       ],
+    },
+    {
+      "@type": "TouristDestination",
+      "name": "Leh Ladakh, India",
+      "description": "India's highest plateau region — a cold desert known for stunning high-altitude lakes, ancient Buddhist monasteries, the world's highest motorable passes and epic road trips.",
+      "url": "https://incredibleitinerary.com/blog/leh-ladakh-7-days",
+      "touristType": ["Adventure Tourism", "Cultural Tourism", "Road Trip Tourism"],
     },
   ],
 };

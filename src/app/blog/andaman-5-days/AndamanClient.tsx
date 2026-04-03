@@ -9,6 +9,8 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC = [
   { id: "plan",      emoji: "⚡", label: "Pick Your Plan" },
@@ -99,6 +101,7 @@ export default function AndamanClient() {
       <ReadingProgress />
       <TableOfContents items={TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Andaman" />
       <main className="bg-cream min-h-screen">
 
         {/* HERO */}
@@ -563,6 +566,8 @@ export default function AndamanClient() {
               ))}
             </div>
           </section>
+
+          <RelatedGuides currentSlug="andaman-5-days" />
         </div>
       </main>
       <Footer />

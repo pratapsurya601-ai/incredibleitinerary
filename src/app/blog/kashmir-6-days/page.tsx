@@ -16,6 +16,12 @@ export const metadata: Metadata = {
     images: [{ url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80", width: 1200, height: 630, alt: "Dal Lake Kashmir houseboat" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kashmir in 6 Days: Srinagar, Gulmarg & Pahalgam (2026)",
+    description: "Dal Lake houseboat, Gulmarg snow, Pahalgam valleys — 4 plans, real budgets.",
+    images: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"],
+  },
   alternates: { canonical: "https://incredibleitinerary.com/blog/kashmir-6-days" },
 };
 
@@ -31,6 +37,10 @@ const jsonLd = {
       "dateModified": "2026-03-21T00:00:00Z",
       "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
       "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "keywords": "kashmir, srinagar, dal lake, gulmarg, pahalgam, kashmir houseboat, kashmir honeymoon",
+      "wordCount": 6000,
+      "articleSection": "Travel Guides",
+      "inLanguage": "en-IN",
     },
     {
       "@type": "BreadcrumbList",
@@ -48,6 +58,13 @@ const jsonLd = {
         { "@type": "Question", "name": "How much does a Dal Lake houseboat cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget houseboats start at Rs.1,500-Rs.2,500/night including breakfast. Mid-range heritage houseboats cost Rs.3,500-Rs.6,000/night with all meals. Luxury category (5-star rated) run Rs.8,000-Rs.20,000/night. Always inspect the houseboat before paying — photos online are often misleading." } },
         { "@type": "Question", "name": "How do I get to Kashmir?", "acceptedAnswer": { "@type": "Answer", "text": "Fly to Sheikh ul-Alam International Airport, Srinagar (SXR). Direct flights from Delhi (1hr 15min), Mumbai (2hr 30min), Bangalore (3hrs). IndiGo, Air India and SpiceJet all fly there. Book 2-3 weeks ahead — flights fill up fast during peak season. There is no practical road or rail route for most visitors." } },
       ],
+    },
+    {
+      "@type": "TouristDestination",
+      "name": "Kashmir, India",
+      "description": "Paradise on Earth — India's northernmost region known for Dal Lake houseboats, snow-covered Gulmarg, the green valleys of Pahalgam and Sonamarg, and Mughal gardens.",
+      "url": "https://incredibleitinerary.com/blog/kashmir-6-days",
+      "touristType": ["Snow Tourism", "Honeymoon Tourism", "Adventure Tourism"],
     },
   ],
 };

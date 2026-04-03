@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ShopClient from "./ShopClient";
+import { SHOP_PRODUCTS } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "India Travel Itinerary PDFs — Shop | IncredibleItinerary",
@@ -13,24 +14,42 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": "IncredibleItinerary Shop",
-  "description": "Digital travel itinerary PDFs for India",
-  "url": "https://incredibleitinerary.com/shop",
-  "currenciesAccepted": "INR",
-  "paymentAccepted": "Credit Card, UPI, Net Banking",
-  "priceRange": "₹149 - ₹299",
-};
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    name: "IncredibleItinerary Shop",
+    description: "Digital travel itinerary PDFs for India",
+    url: "https://incredibleitinerary.com/shop",
+    currenciesAccepted: "INR",
+    paymentAccepted: "Credit Card, UPI, Net Banking",
+    priceRange: "₹149 - ₹299",
+  },
+  ...SHOP_PRODUCTS.map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.title,
+    description: p.subtitle,
+    url: `https://incredibleitinerary.com/shop#${p.id}`,
+    offers: {
+      "@type": "Offer",
+      price: p.price,
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+    },
+  })),
+];
 
 export default function ShopPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLd.map((item, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+        />
+      ))}
       <ShopClient />
     </>
   );

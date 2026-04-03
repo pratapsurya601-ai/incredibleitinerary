@@ -9,6 +9,8 @@ import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import SmartImage from "@/components/ui/SmartImage";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC = [
   { id: "honest",       emoji: "⚡", label: "The honest truth about Ladakh" },
@@ -101,6 +103,7 @@ export default function LehLadakhClient() {
       <ReadingProgress />
       <TableOfContents items={TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Leh Ladakh" />
       <main className="bg-cream min-h-screen">
 
         {/* HERO */}
@@ -614,6 +617,8 @@ export default function LehLadakhClient() {
               ))}
             </div>
           </section>
+
+          <RelatedGuides currentSlug="leh-ladakh-7-days" />
         </div>
       </main>
       <Footer />

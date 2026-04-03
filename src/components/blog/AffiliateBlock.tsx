@@ -1,5 +1,6 @@
 "use client";
 import { AFFILIATE, SHOP_PRODUCTS } from "@/lib/config";
+import { trackEvent } from "@/lib/analytics";
 
 interface AffiliateHotel {
   name: string;
@@ -53,6 +54,7 @@ export default function AffiliateBlock({
               target="_blank"
               rel="noopener noreferrer sponsored"
               className="text-[0.65rem] text-gold-dark font-medium hover:underline underline-offset-2"
+              onClick={() => trackEvent("affiliate_clicked", { destination, provider: "booking" })}
             >
               See all on Booking.com →
             </a>
@@ -112,6 +114,7 @@ export default function AffiliateBlock({
               target="_blank"
               rel="noopener noreferrer sponsored"
               className="text-[0.65rem] text-gold-dark font-medium hover:underline underline-offset-2"
+              onClick={() => trackEvent("affiliate_clicked", { destination, provider: "getyourguide" })}
             >
               All activities on GetYourGuide →
             </a>

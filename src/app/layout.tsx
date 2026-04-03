@@ -1,6 +1,28 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import Script from "next/script";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-jost",
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "IncredibleItinerary — Curated Private Journeys Across India",
@@ -53,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
       <head>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -68,8 +90,33 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "IncredibleItinerary",
+              url: "https://incredibleitinerary.com",
+              logo: "https://incredibleitinerary.com/logo.png",
+              description: "Bespoke, privately crafted travel itineraries across India's most iconic and hidden destinations.",
+              sameAs: [
+                "https://instagram.com/incredibleitinerary",
+                "https://facebook.com/incredibleitinerary",
+                "https://youtube.com/@incredibleitinerary",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "hello@incredibleitinerary.com",
+                contactType: "customer service",
+              },
+            }),
+          }}
+        />
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }
-

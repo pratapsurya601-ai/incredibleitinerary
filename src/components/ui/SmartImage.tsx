@@ -67,6 +67,7 @@ export default function SmartImage({
           priority={priority}
           sizes={sizes || "(max-width: 768px) 100vw, 50vw"}
           onLoad={() => setLoading(false)}
+          onError={() => { setSrc(fallback); setLoading(false); }}
         />
       ) : (
         <Image
@@ -77,6 +78,7 @@ export default function SmartImage({
           className={`${className} ${loading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}
           priority={priority}
           onLoad={() => setLoading(false)}
+          onError={() => { setSrc(fallback); setLoading(false); }}
         />
       )}
 

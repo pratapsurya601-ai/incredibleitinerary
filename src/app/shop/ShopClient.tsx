@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
 import { SHOP_PRODUCTS } from "@/lib/config";
+import { trackEvent } from "@/lib/analytics";
 
 // ── Product Card ──────────────────────────────────────────────────────────────
 function ProductCard({ product, featured = false }: {
@@ -15,7 +16,7 @@ function ProductCard({ product, featured = false }: {
 
   const handleBuy = () => {
     setBuying(true);
-    // Open Gumroad overlay
+    trackEvent("shop_product_clicked", { product: product.id, destination: product.destination });
     if (product.gumroadUrl && !product.gumroadUrl.includes("YOUR_")) {
       window.open(product.gumroadUrl, "_blank");
     } else {

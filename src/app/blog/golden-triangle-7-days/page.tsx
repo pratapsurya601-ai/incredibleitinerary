@@ -27,6 +27,12 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-03-21T00:00:00Z",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Golden Triangle in 7 Days: Delhi, Agra & Jaipur (2026)",
+    description: "Delhi, Agra, Jaipur — 4 plans, real budgets, Taj Mahal timing guide.",
+    images: ["https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80"],
+  },
   alternates: { canonical: "https://incredibleitinerary.com/blog/golden-triangle-7-days" },
 };
 

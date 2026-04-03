@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
+import { trackEvent } from "@/lib/analytics";
 
 // ── QUIZ DATA ──────────────────────────────────────────────────────────────────
 
@@ -373,8 +374,11 @@ export default function QuizClient() {
       const newAnswers = { ...answers, [currentQ.id]: optionId };
       setAnswers(newAnswers);
       setSelected(null);
+      if (step === 1) trackEvent("quiz_started");
       if (step === totalQuestions) {
-        setResult(getResult(newAnswers));
+        const r = getResult(newAnswers);
+        setResult(r);
+        trackEvent("quiz_completed", { destination: r.primary.name });
         setStep(totalQuestions + 1); // email capture
       } else {
         setStep(step + 1);

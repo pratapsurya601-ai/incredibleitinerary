@@ -37,14 +37,15 @@ const FAQS = [
   },
 ];
 
-function FaqItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boolean; onToggle: () => void }) {
+function FaqItem({ q, a, isOpen, onToggle, index }: { q: string; a: string; isOpen: boolean; onToggle: () => void; index: number }) {
+  const id = `faq-${index}`;
   return (
     <div className="border border-parchment-2 rounded-xl overflow-hidden bg-white">
-      <button onClick={onToggle} className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-parchment transition-colors duration-150">
+      <button onClick={onToggle} aria-expanded={isOpen} aria-controls={`${id}-panel`} id={`${id}-trigger`} className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-parchment transition-colors duration-150">
         <span className="font-medium text-sm text-ink pr-6 leading-snug">{q}</span>
-        <span className={`text-gold flex-shrink-0 text-xl leading-none transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}>+</span>
+        <span aria-hidden="true" className={`text-gold flex-shrink-0 text-xl leading-none transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}>+</span>
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}>
+      <div id={`${id}-panel`} role="region" aria-labelledby={`${id}-trigger`} className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}>
         <p className="px-6 pb-5 pt-1 text-sm text-muted font-light leading-relaxed border-t border-parchment-2">{a}</p>
       </div>
     </div>
@@ -67,7 +68,7 @@ export default function HomepageFAQ() {
         <AnimatedSection delay={100}>
           <div className="space-y-3">
             {FAQS.map((faq, i) => (
-              <FaqItem key={i} q={faq.q} a={faq.a} isOpen={open === i} onToggle={() => setOpen(open === i ? null : i)} />
+              <FaqItem key={i} q={faq.q} a={faq.a} isOpen={open === i} onToggle={() => setOpen(open === i ? null : i)} index={i} />
             ))}
           </div>
         </AnimatedSection>

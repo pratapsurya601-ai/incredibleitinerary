@@ -1,7 +1,8 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 interface InquiryModalProps {
   isOpen: boolean;
@@ -31,6 +32,7 @@ const budgets = ["Under ₹20,000/person","₹20,000–₹50,000/person","₹50,
 
 export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
   const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful, isSubmitting } } = useForm<FormData>();
+  const [apiError, setApiError] = useState<string | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -44,19 +46,25 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
   }, [onClose]);
 
   const onSubmit = async (data: FormData) => {
-    // Actually call the API — sends email to hello@incredibleitinerary.com
-    await fetch("/api/inquiry", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    setApiError(null);
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("API error");
+      trackEvent("inquiry_submitted", { destination: data.destination });
+    } catch {
+      setApiError("Something went wrong. Please try again or email us at hello@incredibleitinerary.com");
+    }
   };
 
   useEffect(() => {
-    if (isSubmitSuccessful) {
+    if (isSubmitSuccessful && !apiError) {
       setTimeout(() => { reset(); onClose(); }, 3000);
     }
-  }, [isSubmitSuccessful, reset, onClose]);
+  }, [isSubmitSuccessful, apiError, reset, onClose]);
 
   if (!isOpen) return null;
 
@@ -75,14 +83,14 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
         </div>
 
         <div className="p-7 pt-5">
-          {isSubmitSuccessful ? (
+          {isSubmitSuccessful && !apiError ? (
             <div className="text-center py-10">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <h3 className="font-serif text-xl mb-2 text-ink">Inquiry Received!</h3>
               <p className="text-sm text-muted font-light leading-relaxed max-w-[300px] mx-auto">
-                We'll send your personalised itinerary to your email within 24 hours. Check your inbox!
+                We&apos;ll send your personalised itinerary to your email within 24 hours. Check your inbox!
               </p>
             </div>
           ) : (
@@ -110,7 +118,8 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
               {/* WhatsApp */}
               <div className="mb-4">
                 <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">WhatsApp Number *</label>
-                <input {...register("whatsapp", { required: true })} type="tel" placeholder="+91 98765 43210" className={`form-field ${errors.whatsapp ? "border-red-400" : ""}`} />
+                <input {...register("whatsapp", { required: true, validate: (v) => v.replace(/\D/g, "").length >= 10 || "Must be at least 10 digits" })} type="tel" placeholder="+91 98765 43210" className={`form-field ${errors.whatsapp ? "border-red-400" : ""}`} />
+                {errors.whatsapp && <p className="text-xs text-red-500 mt-1">{typeof errors.whatsapp.message === "string" ? errors.whatsapp.message : "Please enter a valid WhatsApp number"}</p>}
               </div>
 
               {/* Destination + Duration */}
@@ -154,6 +163,10 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                 <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Anything else? (Optional)</label>
                 <textarea {...register("message")} rows={3} placeholder="Group size, travel style, special requests, things you want to avoid..." className="form-field resize-none" />
               </div>
+
+              {apiError && (
+                <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3 mb-4">{apiError}</p>
+              )}
 
               <button type="submit" disabled={isSubmitting}
                 className="w-full py-3.5 bg-gold text-ink text-sm font-medium tracking-[0.12em] uppercase rounded-[1px] transition-all duration-200 hover:bg-gold-dark hover:text-white disabled:opacity-60 disabled:cursor-not-allowed">

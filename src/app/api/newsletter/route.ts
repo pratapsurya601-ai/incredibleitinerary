@@ -4,6 +4,11 @@ const YOUR_EMAIL  = "hello@incredibleitinerary.com";
 const RESEND_KEY  = process.env.RESEND_API_KEY || "";
 const BASE        = "https://incredibleitinerary.com";
 
+// ── security helpers ────────────────────────────────────────────────────────
+function sanitize(str: string): string {
+  return str.replace(/<[^>]*>/g, "");
+}
+
 // ── helpers ─────────────────────────────────────────────────────────────────
 const send = (payload: object) =>
   fetch("https://api.resend.com/emails", {
@@ -173,7 +178,10 @@ function welcomeEmail(email: string, name: string | undefined) {
 // ── handler ──────────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
-    const { email, name, source } = await req.json();
+    const raw = await req.json();
+    const email  = typeof raw.email  === "string" ? sanitize(raw.email)  : "";
+    const name   = typeof raw.name   === "string" ? sanitize(raw.name)   : undefined;
+    const source = typeof raw.source === "string" ? sanitize(raw.source) : undefined;
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });

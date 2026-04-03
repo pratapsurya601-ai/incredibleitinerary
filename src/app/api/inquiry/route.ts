@@ -4,6 +4,18 @@ const YOUR_EMAIL = "hello@incredibleitinerary.com";
 const RESEND_KEY = process.env.RESEND_API_KEY || "";
 const BASE       = "https://incredibleitinerary.com";
 
+// ── security helpers ────────────────────────────────────────────────────────
+function sanitize(str: string): string {
+  return str.replace(/<[^>]*>/g, "");
+}
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Simple in-memory rate limiter: max 5 submissions per IP per hour
+const rateLimitMap = new Map<string, number[]>();
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in ms
+
 const send = (payload: object) =>
   fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -178,11 +190,33 @@ function confirmationEmail(data: Record<string, string>) {
 // ── handler ──────────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { firstName, email, whatsapp } = body;
+    // Rate limiting by IP
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const now = Date.now();
+    const timestamps = rateLimitMap.get(ip) || [];
+    const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW);
+    if (recent.length >= RATE_LIMIT_MAX) {
+      return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 });
+    }
+    recent.push(now);
+    rateLimitMap.set(ip, recent);
+
+    const raw = await req.json();
+
+    // Sanitize all string fields
+    const body: Record<string, string> = {};
+    for (const [key, value] of Object.entries(raw)) {
+      body[key] = typeof value === "string" ? sanitize(value) : String(value ?? "");
+    }
+
+    const { firstName, email } = body;
 
     if (!firstName || !email) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    if (!EMAIL_RE.test(email)) {
+      return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
     }
 
     if (RESEND_KEY) {

@@ -9,6 +9,8 @@ import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import SmartImage from "@/components/ui/SmartImage";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC=[{id:"honest",emoji:"⚡",label:"What Spiti Actually Is"},{id:"season",emoji:"🌡️",label:"When to Go"},{id:"howtoreach",emoji:"🚗",label:"Routes In"},{id:"itinerary",emoji:"📅",label:"7-Day Itinerary"},{id:"monasteries",emoji:"🕌",label:"Monastery Guide"},{id:"budget",emoji:"💰",label:"Budget"},{id:"tips",emoji:"💡",label:"Pro Tips"},{id:"faq",emoji:"❓",label:"FAQ"}];
 
@@ -20,6 +22,7 @@ export default function SpitiClient(){
   const[m,setM]=useState(false);
   return<>
     <RP/><TableOfContents items={TOC}/><Navbar onPlanTrip={()=>setM(true)}/>
+    <Breadcrumb destination="Spiti Valley" />
     <main className="bg-cream min-h-screen">
       <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <SmartImage imageKey="spitiHero" fallback="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85" alt="Spiti Valley Key Monastery Himachal Pradesh" fill className="object-cover" priority sizes="100vw" />
@@ -112,6 +115,7 @@ export default function SpitiClient(){
         <section className="mt-14"><h3 className="font-serif text-lg font-light text-ink mb-4">More Mountain Guides</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{[{label:"Manali 5 Days — Gateway to Spiti",href:"/blog/manali-5-days"},{label:"Leh Ladakh 7 Days — Bucket List",href:"/blog/leh-ladakh-7-days"},{label:"Jibhi & Tirthan Valley 3 Days",href:"/blog/jibhi-tirthan-valley-3-days"},{label:"Kashmir 6 Days — Heaven on Earth",href:"/blog/kashmir-6-days"}].map(link=><Link key={link.label} href={link.href} className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group"><span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span><span className="text-xs text-muted">Read →</span></Link>)}</div>
         </section>
+        <RelatedGuides currentSlug="spiti-valley-7-days" />
       </div>
     </main>
     <Footer/><InquiryModal isOpen={m} onClose={()=>setM(false)}/>

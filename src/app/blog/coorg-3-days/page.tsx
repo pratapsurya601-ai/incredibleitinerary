@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     images: [{ url: "https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=1200&q=80", width: 1200, height: 630, alt: "Coorg coffee plantation Karnataka misty hills" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Coorg in 3 Days: Coffee Estates & Waterfalls (2026)",
+    description: "Abbey Falls, coffee estates, Dubare Elephant Camp — 4 plans, real costs from Bangalore.",
+    images: ["https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=1200&q=80"],
+  },
   alternates: { canonical: "https://incredibleitinerary.com/blog/coorg-3-days" },
 };
 
@@ -59,6 +65,13 @@ const jsonLd = {
         { "@type": "Question", "name": "Is Coorg good for a 2-day trip from Bangalore?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — 2 days from Bangalore is the most common Coorg trip. Leave Friday night (overnight drive or early Saturday morning), arrive Saturday morning, do Abbey Falls + Raja's Seat + Dubare Elephant Camp, one night on a coffee estate, Sunday morning Namdroling Monastery + coffee estate tour, drive back Sunday evening. 3 days is better and adds Iruppu Falls and a trek." } },
         { "@type": "Question", "name": "What should I buy in Coorg?", "acceptedAnswer": { "@type": "Answer", "text": "Coorg coffee (whole beans or powder, Rs.200–Rs.500/250g), cardamom (Rs.300–Rs.600/100g), pepper (black and white, Rs.150–Rs.300/100g), Coorg honey (Rs.200–Rs.400/500g), Coorg wine made from local fruits. Buy directly from estate shops or the Madikeri market — significantly cheaper than Bangalore or supermarkets." } },
       ],
+    },
+    {
+      "@type": "TouristDestination",
+      "name": "Coorg (Kodagu), Karnataka, India",
+      "description": "The Scotland of India — a lush hill district in Karnataka known for coffee plantations, misty hills, Abbey Falls, Dubare Elephant Camp and Kodava culture.",
+      "url": "https://incredibleitinerary.com/blog/coorg-3-days",
+      "touristType": ["Eco Tourism", "Cultural Tourism", "Wellness Tourism"],
     },
   ],
 };

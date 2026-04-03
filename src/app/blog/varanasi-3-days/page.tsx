@@ -16,6 +16,12 @@ export const metadata: Metadata = {
     images: [{ url: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80", width: 1200, height: 630, alt: "Varanasi ghats Ganges river sunset" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Varanasi in 3 Days: Ghats, Ganga Aarti & More (2026)",
+    description: "Dashashwamedh Ghat, Manikarnika, Sarnath, morning Ganges boat ride.",
+    images: ["https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80"],
+  },
   alternates: { canonical: "https://incredibleitinerary.com/blog/varanasi-3-days" },
 };
 
@@ -31,13 +37,17 @@ const jsonLd = {
       "dateModified": "2026-03-21T00:00:00Z",
       "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
       "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "keywords": "varanasi, ganga aarti, kashi vishwanath, varanasi ghats, sarnath, ganges boat ride",
+      "wordCount": 5000,
+      "articleSection": "Travel Guides",
+      "inLanguage": "en-IN",
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Varanasi 3 Days", "item": "https://incredibleitinerary.com/blog/varanasi-3-days" },
+        { "@type": "ListItem", "position": 2, "name": "Travel Guides", "item": "https://incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Varanasi in 3 Days", "item": "https://incredibleitinerary.com/blog/varanasi-3-days" },
       ],
     },
     {
@@ -48,6 +58,13 @@ const jsonLd = {
         { "@type": "Question", "name": "How do I get to Varanasi?", "acceptedAnswer": { "@type": "Answer", "text": "By train: Varanasi Junction (BSB) has direct trains from Delhi (8–12hrs, Rs.500–Rs.1,500), Mumbai (22hrs) and Kolkata (12hrs). The Vande Bharat Express from Delhi is the fastest (8hrs). By air: Lal Bahadur Shastri International Airport (VNS) has flights from Delhi (1hr 20min), Mumbai (2hrs), Bangalore (2.5hrs)." } },
         { "@type": "Question", "name": "Should I see the burning ghats?", "acceptedAnswer": { "@type": "Answer", "text": "Manikarnika Ghat (the main burning ghat) is a significant part of Varanasi's identity — cremations have happened here continuously for over 3,000 years. You can observe respectfully from the steps or a boat on the river. Photography is strictly forbidden. Many visitors find it sobering but deeply moving rather than disturbing." } },
       ],
+    },
+    {
+      "@type": "TouristDestination",
+      "name": "Varanasi, Uttar Pradesh, India",
+      "description": "One of the oldest continuously inhabited cities in the world and the spiritual capital of India — known for the ghats along the Ganges, the evening Ganga Aarti, Kashi Vishwanath Temple and the nearby Buddhist pilgrimage site of Sarnath.",
+      "url": "https://incredibleitinerary.com/blog/varanasi-3-days",
+      "touristType": ["Spiritual Tourism", "Cultural Tourism", "Heritage Tourism"],
     },
   ],
 };

@@ -9,6 +9,8 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC = [
   { id: "plan",      emoji: "⚡", label: "Pick Your Plan" },
@@ -99,6 +101,7 @@ export default function KashmirClient() {
       <ReadingProgress />
       <TableOfContents items={TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Kashmir" />
       <main className="bg-cream min-h-screen">
 
         {/* HERO */}
@@ -546,6 +549,8 @@ export default function KashmirClient() {
               ))}
             </div>
           </section>
+
+          <RelatedGuides currentSlug="kashmir-6-days" />
         </div>
       </main>
       <Footer />

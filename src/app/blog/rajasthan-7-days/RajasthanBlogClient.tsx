@@ -9,6 +9,8 @@ import Comments from "@/components/blog/Comments";
 import TableOfContents from "@/components/blog/TableOfContents";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 
 const RAJASTHAN_TOC = [
@@ -173,6 +175,7 @@ export default function RajasthanBlogClient() {
       <ReadingProgress />
       <TableOfContents items={RAJASTHAN_TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Rajasthan" />
 
       <main className="bg-cream min-h-screen">
 
@@ -671,6 +674,8 @@ export default function RajasthanBlogClient() {
               ))}
             </div>
           </section>
+
+          <RelatedGuides currentSlug="rajasthan-7-days" />
         </div>
       </main>
 

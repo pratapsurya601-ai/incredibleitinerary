@@ -9,6 +9,8 @@ import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import SmartImage from "@/components/ui/SmartImage";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC=[{id:"honest",emoji:"⚡",label:"What Jibhi Actually Is"},{id:"season",emoji:"🌡️",label:"Best Time"},{id:"howtoreach",emoji:"🚌",label:"Getting There"},{id:"itinerary",emoji:"📅",label:"3-Day Itinerary"},{id:"places",emoji:"📍",label:"Key Places"},{id:"budget",emoji:"💰",label:"Budget"},{id:"tips",emoji:"💡",label:"Pro Tips"},{id:"faq",emoji:"❓",label:"FAQ"}];
 
@@ -20,6 +22,7 @@ export default function JibhiClient(){
   const[m,setM]=useState(false);
   return<>
     <RP/><TableOfContents items={TOC}/><Navbar onPlanTrip={()=>setM(true)}/>
+    <Breadcrumb destination="Jibhi & Tirthan Valley" />
     <main className="bg-cream min-h-screen">
       <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <SmartImage imageKey="jibhiHero" fallback="https://images.unsplash.com/photo-1585087905632-6e3af9e60baf?w=1600&q=85" alt="Jibhi Tirthan Valley Himachal Pradesh hidden village" fill className="object-cover" priority sizes="100vw" />
@@ -108,6 +111,7 @@ export default function JibhiClient(){
         <section className="mt-14"><h3 className="font-serif text-lg font-light text-ink mb-4">More Himachal Guides</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{[{label:"Manali 5 Days — Rohtang + Old Manali",href:"/blog/manali-5-days"},{label:"Spiti Valley 7 Days",href:"/blog/spiti-valley-7-days"},{label:"Leh Ladakh 7 Days",href:"/blog/leh-ladakh-7-days"},{label:"Kashmir 6 Days",href:"/blog/kashmir-6-days"}].map(link=><Link key={link.label} href={link.href} className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group"><span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span><span className="text-xs text-muted">Read →</span></Link>)}</div>
         </section>
+        <RelatedGuides currentSlug="jibhi-tirthan-valley-3-days" />
       </div>
     </main>
     <Footer/><InquiryModal isOpen={m} onClose={()=>setM(false)}/>

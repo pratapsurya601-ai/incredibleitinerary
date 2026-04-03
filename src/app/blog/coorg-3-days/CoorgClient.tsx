@@ -9,6 +9,8 @@ import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import SmartImage from "@/components/ui/SmartImage";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC = [
   { id: "honest",    emoji: "⚡", label: "What Coorg Actually Is" },
@@ -93,6 +95,7 @@ export default function CoorgClient() {
       <ReadingProgress />
       <TableOfContents items={TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Coorg" />
       <main className="bg-cream min-h-screen">
 
         {/* HERO */}
@@ -545,6 +548,8 @@ export default function CoorgClient() {
               ))}
             </div>
           </section>
+
+          <RelatedGuides currentSlug="coorg-3-days" />
         </div>
       </main>
       <Footer />

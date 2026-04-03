@@ -68,7 +68,7 @@ export default function Testimonials() {
 
         {/* Cards */}
         <AnimatedSection delay={150}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8" aria-live="polite" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
             {visible.map((r, i) => (
               <div key={`${active}-${i}`} className={`rounded-2xl border p-6 transition-all duration-500 ${r.color} ${i === 0 ? "shadow-md" : "opacity-80"}`}>
                 <div className="flex items-center justify-between mb-3"><Stars n={r.rating} /><span className="text-[0.6rem] text-muted font-light">{r.month}</span></div>
@@ -83,6 +83,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-center gap-2">
             {REVIEWS.map((_, i) => (
               <button key={i} onClick={() => { setActive(i); setPaused(true); }}
+                aria-label={`Show review ${i + 1} of ${REVIEWS.length}`}
                 className={`rounded-full transition-all duration-300 ${active === i ? "w-6 h-2 bg-gold" : "w-2 h-2 bg-parchment-2 hover:bg-gold/40"}`} />
             ))}
           </div>

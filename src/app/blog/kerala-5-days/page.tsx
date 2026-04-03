@@ -26,6 +26,12 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-03-21T00:00:00Z",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kerala in 5 Days: Backwaters, Hills & Beach (2026)",
+    description: "Kochi, Munnar, Alleppey backwaters, Varkala — 4 plans, real budgets.",
+    images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
+  },
   alternates: { canonical: "https://incredibleitinerary.com/blog/kerala-5-days" },
 };
 

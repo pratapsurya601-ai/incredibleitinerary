@@ -24,26 +24,36 @@ export const SITE_CONFIG = {
 
 // ── AFFILIATE LINKS ───────────────────────────────────────────────────────────
 export const AFFILIATE = {
-  // Booking.com affiliate — replace YOUR_AFFILIATE_ID when approved (3 days)
-  bookingCom: (destination: string) =>
-    `https://www.booking.com/search.html?ss=${encodeURIComponent(destination)}&aid=YOUR_AFFILIATE_ID&lang=en-us`,
+  // Booking.com affiliate — uses env var if set, otherwise clean URL
+  bookingCom: (destination: string) => {
+    const aid = process.env.NEXT_PUBLIC_BOOKING_AID;
+    const base = `https://www.booking.com/search.html?ss=${encodeURIComponent(destination)}&lang=en-us`;
+    return aid ? `${base}&aid=${aid}` : base;
+  },
 
   // GetYourGuide — partner code: PSZA5UI ✅ LIVE
   getYourGuide: (destination: string) =>
     `https://www.getyourguide.com/s/?q=${encodeURIComponent(destination)}&partner_id=PSZA5UI`,
 
-  // Viator — replace YOUR_VIATOR_ID when approved
-  viator: (destination: string) =>
-    `https://www.viator.com/search/${encodeURIComponent(destination)}?mcid=YOUR_VIATOR_ID`,
-
-  // Direct hotel links (update with real Booking.com affiliate links when approved)
-  hotels: {
-    zostelGoa:        "https://www.booking.com/hotel/in/zostel-goa.html?aid=YOUR_AFFILIATE_ID",
-    raasJodhpur:      "https://www.booking.com/hotel/in/raas-jodhpur.html?aid=YOUR_AFFILIATE_ID",
-    tajLakePalace:    "https://www.booking.com/hotel/in/taj-lake-palace-udaipur.html?aid=YOUR_AFFILIATE_ID",
-    rambaghPalace:    "https://www.booking.com/hotel/in/rambagh-palace-jaipur.html?aid=YOUR_AFFILIATE_ID",
-    ametHaveliUdaipur:"https://www.booking.com/hotel/in/amet-haveli-udaipur.html?aid=YOUR_AFFILIATE_ID",
+  // Viator — uses env var if set, otherwise clean URL
+  viator: (destination: string) => {
+    const vid = process.env.NEXT_PUBLIC_VIATOR_ID;
+    const base = `https://www.viator.com/search/${encodeURIComponent(destination)}`;
+    return vid ? `${base}?mcid=${vid}` : base;
   },
+
+  // Direct hotel links — uses env var if set
+  hotels: (() => {
+    const aid = process.env.NEXT_PUBLIC_BOOKING_AID;
+    const suffix = aid ? `?aid=${aid}` : "";
+    return {
+      zostelGoa:         `https://www.booking.com/hotel/in/zostel-goa.html${suffix}`,
+      raasJodhpur:       `https://www.booking.com/hotel/in/raas-jodhpur.html${suffix}`,
+      tajLakePalace:     `https://www.booking.com/hotel/in/taj-lake-palace-udaipur.html${suffix}`,
+      rambaghPalace:     `https://www.booking.com/hotel/in/rambagh-palace-jaipur.html${suffix}`,
+      ametHaveliUdaipur: `https://www.booking.com/hotel/in/amet-haveli-udaipur.html${suffix}`,
+    };
+  })(),
 
   // Activities — GetYourGuide with PSZA5UI ✅ LIVE
   activities: {

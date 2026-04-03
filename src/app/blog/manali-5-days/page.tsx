@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     images: [{ url: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80", width: 1200, height: 630, alt: "Manali mountains snow Himachal Pradesh" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manali in 5 Days: Complete Guide (2026)",
+    description: "Solang Valley, Rohtang Pass, Old Manali — 4 plans, real costs, permit guide.",
+    images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
+  },
   alternates: { canonical: "https://incredibleitinerary.com/blog/manali-5-days" },
 };
 
@@ -59,6 +65,13 @@ const jsonLd = {
         { "@type": "Question", "name": "Is Rohtang Pass permit required?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — all vehicles need an online permit to cross Rohtang Pass (3,978m). Book at rohtangpermit.com at least 1 day in advance. Only 1,200 vehicles allowed per day. Cost: Rs.550 for petrol vehicles, Rs.650 for diesel. The permit must match your vehicle's registration. Rohtang is closed during heavy snowfall and July–August monsoon." } },
         { "@type": "Question", "name": "What is Old Manali and why is it better?", "acceptedAnswer": { "@type": "Answer", "text": "Old Manali is the original village, 3km uphill from Mall Road. It has the best cafes (Cafe 1947, Dylan's Toasted and Roasted, The Lazy Dog), a relaxed hippie vibe, the ancient Manu Temple, and much cheaper accommodation than Mall Road. Most experienced travellers stay in Old Manali and use Mall Road only for transport." } },
       ],
+    },
+    {
+      "@type": "TouristDestination",
+      "name": "Manali, Himachal Pradesh, India",
+      "description": "A popular hill station in the Kullu Valley — known for snow-covered mountains, Solang Valley adventure sports, Rohtang Pass, Old Manali's backpacker culture and as the gateway to Ladakh and Spiti.",
+      "url": "https://incredibleitinerary.com/blog/manali-5-days",
+      "touristType": ["Adventure Tourism", "Snow Tourism", "Backpacker Tourism"],
     },
   ],
 };

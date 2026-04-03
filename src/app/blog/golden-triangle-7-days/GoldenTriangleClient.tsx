@@ -9,6 +9,8 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const GT_TOC = [
   { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
@@ -175,6 +177,7 @@ export default function GoldenTriangleClient() {
       <ReadingProgress />
       <TableOfContents items={GT_TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Golden Triangle" />
 
       <main className="bg-cream min-h-screen">
 
@@ -826,6 +829,8 @@ export default function GoldenTriangleClient() {
               ))}
             </div>
           </section>
+
+          <RelatedGuides currentSlug="golden-triangle-7-days" />
         </div>
       </main>
 
