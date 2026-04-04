@@ -18,7 +18,10 @@ const FILTERS = [
   { id: "northeast", label: "Northeast", emoji: "🌄", slugs: ["meghalaya-5-days","sikkim-6-days","shillong-3-days","kaziranga-3-days","tawang-4-days","majuli-3-days"] },
   { id: "wildlife", label: "Wildlife", emoji: "🐅", slugs: ["jim-corbett-3-days","ranthambore-3-days","kaziranga-3-days","sundarbans-3-days"] },
   { id: "weekend", label: "Weekend", emoji: "⚡", slugs: ["lonavala-2-days","mahabaleshwar-2-days","pushkar-2-days","pondicherry-3-days","coorg-3-days","jibhi-tirthan-valley-3-days","nainital-3-days","mount-abu-2-days","diu-2-days"] },
-  { id: "food", label: "Food Trail", emoji: "🍛", slugs: ["amritsar-2-days","hyderabad-3-days","madurai-2-days","varanasi-3-days","jaipur-3-days","goa-3-days"] },
+  { id: "food", label: "Food Trail", emoji: "🍛", slugs: ["amritsar-2-days","hyderabad-3-days","madurai-2-days","varanasi-3-days","jaipur-3-days","goa-3-days","bangkok-4-days","osaka-3-days"] },
+  { id: "thailand", label: "Thailand", emoji: "🇹🇭", slugs: ["bangkok-4-days","phuket-5-days","chiang-mai-4-days"] },
+  { id: "japan", label: "Japan", emoji: "🇯🇵", slugs: ["tokyo-5-days","kyoto-4-days","osaka-3-days"] },
+  { id: "italy", label: "Italy", emoji: "🇮🇹", slugs: ["rome-4-days","florence-3-days","amalfi-coast-4-days"] },
 ];
 
 export default function BlogIndexPage() {
@@ -66,7 +69,7 @@ export default function BlogIndexPage() {
           <div className="max-w-[1180px] mx-auto">
             <span className="section-label">Travel Guides & Itineraries</span>
             <h1 className="serif-title text-[clamp(2.2rem,4vw,3.5rem)] text-ink mb-2">
-              {blogPosts.length} Free India Travel Guides
+              {blogPosts.length} Free Travel Guides
             </h1>
             <p className="text-sm text-muted font-light max-w-[480px] mx-auto leading-relaxed mb-8">
               Real budgets. Real timings. Real routes. No filler. Pick a destination or browse by category.

@@ -58,7 +58,7 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
             scrolled ? "text-muted" : "text-white/70"
           }`}
         >
-          Curated Journeys Across India
+          Curated Travel Guides Worldwide
         </span>
       </Link>
 

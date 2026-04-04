@@ -78,5 +78,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/compare/kashmir-vs-ladakh`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/compare/jaipur-vs-udaipur`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/compare/ooty-vs-kodaikanal`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    // International
+    { url: `${base}/blog/bangkok-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/phuket-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/chiang-mai-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/tokyo-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/kyoto-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/osaka-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/rome-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/florence-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/amalfi-coast-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
   ];
 }

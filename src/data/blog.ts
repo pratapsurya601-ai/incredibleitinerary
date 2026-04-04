@@ -12,6 +12,7 @@ export interface BlogPost {
   destination: string;
   duration: string;
   pexelsQuery: string;
+  country?: string; // "India" | "Thailand" | "Japan" | "Italy" — defaults to "India"
 }
 
 export const blogPosts: BlogPost[] = [
@@ -671,6 +672,108 @@ export const blogPosts: BlogPost[] = [
     imageAlt: "Majuli island Assam Brahmaputra river", featured: false,
     destination: "Majuli", duration: "3 Days",
     pexelsQuery: "majuli island assam brahmaputra river boat india",
+  },
+  // ── International: Thailand ──
+  {
+    slug: "bangkok-4-days",
+    title: "Bangkok in 4 Days: Temples, Street Food & Floating Markets (2026)",
+    excerpt: "Grand Palace at dawn, Chatuchak's 15,000 stalls, rooftop bars over the Chao Phraya, and street food that ruins every Thai restaurant you'll visit at home.",
+    date: "April 2026", readTime: "14 min", category: "Southeast Asia",
+    tags: ["Bangkok", "4 Days", "Thailand", "Temples", "Street Food", "Floating Market"],
+    image: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&q=80",
+    imageAlt: "Bangkok Grand Palace golden spires Thailand", featured: false,
+    destination: "Bangkok", duration: "4 Days", country: "Thailand",
+    pexelsQuery: "bangkok grand palace temple golden thailand",
+  },
+  {
+    slug: "phuket-5-days",
+    title: "Phuket & Phi Phi Islands in 5 Days: Beaches, Diving & Thai Boxing (2026)",
+    excerpt: "Phi Phi by speedboat, Old Phuket Town's Sino-Portuguese charm, Big Buddha at sunset, and why Rawai beats Patong for anyone who wants actual sleep.",
+    date: "April 2026", readTime: "13 min", category: "Southeast Asia",
+    tags: ["Phuket", "5 Days", "Thailand", "Phi Phi", "Beach", "Diving"],
+    image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&q=80",
+    imageAlt: "Phuket Phi Phi Islands turquoise water Thailand", featured: false,
+    destination: "Phuket", duration: "5 Days", country: "Thailand",
+    pexelsQuery: "phuket phi phi islands beach turquoise thailand",
+  },
+  {
+    slug: "chiang-mai-4-days",
+    title: "Chiang Mai in 4 Days: Temples, Night Markets & Elephant Sanctuaries (2026)",
+    excerpt: "Doi Suthep at sunrise, Sunday Night Market's mile-long food crawl, ethical elephant encounters, and a khao soi that changes your definition of curry.",
+    date: "April 2026", readTime: "13 min", category: "Southeast Asia",
+    tags: ["Chiang Mai", "4 Days", "Thailand", "Temples", "Night Market", "Elephants"],
+    image: "https://images.unsplash.com/photo-1598935898639-81586f7d2129?w=800&q=80",
+    imageAlt: "Chiang Mai Doi Suthep temple golden Thailand", featured: false,
+    destination: "Chiang Mai", duration: "4 Days", country: "Thailand",
+    pexelsQuery: "chiang mai doi suthep temple golden thailand",
+  },
+  // ── International: Japan ──
+  {
+    slug: "tokyo-5-days",
+    title: "Tokyo in 5 Days: Shibuya, Akihabara, Tsukiji & Day Trips (2026)",
+    excerpt: "Shibuya Crossing at midnight, Tsukiji tuna auction, TeamLab borderless, konbini culture, and why a 7-Eleven onigiri at 2am is a peak Japan moment.",
+    date: "April 2026", readTime: "15 min", category: "East Asia",
+    tags: ["Tokyo", "5 Days", "Japan", "Shibuya", "Akihabara", "Tsukiji"],
+    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80",
+    imageAlt: "Tokyo Shibuya crossing neon lights Japan", featured: false,
+    destination: "Tokyo", duration: "5 Days", country: "Japan",
+    pexelsQuery: "tokyo shibuya crossing neon lights japan night",
+  },
+  {
+    slug: "kyoto-4-days",
+    title: "Kyoto in 4 Days: Temples, Bamboo Groves & Geisha District (2026)",
+    excerpt: "Fushimi Inari at 6am with nobody there, Arashiyama bamboo in morning mist, a Gion evening walk where time stops, and the tea ceremony that recalibrates your brain.",
+    date: "April 2026", readTime: "14 min", category: "East Asia",
+    tags: ["Kyoto", "4 Days", "Japan", "Temples", "Bamboo", "Geisha", "Fushimi Inari"],
+    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
+    imageAlt: "Kyoto Fushimi Inari shrine torii gates Japan", featured: false,
+    destination: "Kyoto", duration: "4 Days", country: "Japan",
+    pexelsQuery: "kyoto fushimi inari torii gates shrine japan",
+  },
+  {
+    slug: "osaka-3-days",
+    title: "Osaka in 3 Days: Street Food Capital, Osaka Castle & Dotonbori (2026)",
+    excerpt: "Japan's kitchen — takoyaki from the stall that invented it, Dotonbori neon at night, Osaka Castle in cherry blossom, and why Osakans are Japan's funniest people.",
+    date: "April 2026", readTime: "12 min", category: "East Asia",
+    tags: ["Osaka", "3 Days", "Japan", "Street Food", "Dotonbori", "Castle"],
+    image: "https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80",
+    imageAlt: "Osaka Dotonbori canal neon signs Japan", featured: false,
+    destination: "Osaka", duration: "3 Days", country: "Japan",
+    pexelsQuery: "osaka dotonbori canal neon signs japan night",
+  },
+  // ── International: Italy ──
+  {
+    slug: "rome-4-days",
+    title: "Rome in 4 Days: Colosseum, Vatican, Trastevere & Hidden Piazzas (2026)",
+    excerpt: "Colosseum at first entry, Sistine Chapel before the crowds, Trastevere food crawl at midnight, and why pizza al taglio from a hole-in-the-wall beats every restaurant.",
+    date: "April 2026", readTime: "14 min", category: "Europe",
+    tags: ["Rome", "4 Days", "Italy", "Colosseum", "Vatican", "Trastevere"],
+    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80",
+    imageAlt: "Rome Colosseum ancient architecture Italy", featured: false,
+    destination: "Rome", duration: "4 Days", country: "Italy",
+    pexelsQuery: "rome colosseum ancient architecture italy",
+  },
+  {
+    slug: "florence-3-days",
+    title: "Florence in 3 Days: Uffizi, Duomo, Tuscan Wine & Ponte Vecchio (2026)",
+    excerpt: "Brunelleschi's Dome from inside, David in person, Piazzale Michelangelo at sunset with a glass of Chianti, and a lampredotto sandwich that changes everything.",
+    date: "April 2026", readTime: "12 min", category: "Europe",
+    tags: ["Florence", "3 Days", "Italy", "Uffizi", "Duomo", "Tuscany", "Wine"],
+    image: "https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?w=800&q=80",
+    imageAlt: "Florence Duomo cathedral dome Tuscany Italy", featured: false,
+    destination: "Florence", duration: "3 Days", country: "Italy",
+    pexelsQuery: "florence duomo cathedral dome tuscany italy",
+  },
+  {
+    slug: "amalfi-coast-4-days",
+    title: "Amalfi Coast in 4 Days: Positano, Ravello, Capri & the Path of the Gods (2026)",
+    excerpt: "Positano tumbling into the sea, Path of the Gods trek above the clouds, Capri by ferry, Ravello's infinity gardens, and why the SITA bus is both terrifying and essential.",
+    date: "April 2026", readTime: "13 min", category: "Europe",
+    tags: ["Amalfi Coast", "4 Days", "Italy", "Positano", "Capri", "Ravello", "Hiking"],
+    image: "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&q=80",
+    imageAlt: "Amalfi Coast Positano colorful houses cliff Italy", featured: false,
+    destination: "Amalfi Coast", duration: "4 Days", country: "Italy",
+    pexelsQuery: "amalfi coast positano colorful houses cliff italy",
   },
 ];
 

@@ -52,6 +52,30 @@ const REGIONS = [
     href: "/blog?filter=spiritual",
     color: "from-orange-900/80",
   },
+  {
+    name: "🇹🇭 Thailand",
+    count: 3,
+    img: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=500&q=75",
+    destinations: ["Bangkok", "Phuket & Phi Phi", "Chiang Mai"],
+    href: "/blog?filter=thailand",
+    color: "from-yellow-900/80",
+  },
+  {
+    name: "🇯🇵 Japan",
+    count: 3,
+    img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500&q=75",
+    destinations: ["Tokyo", "Kyoto", "Osaka"],
+    href: "/blog?filter=japan",
+    color: "from-rose-900/80",
+  },
+  {
+    name: "🇮🇹 Italy",
+    count: 3,
+    img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=500&q=75",
+    destinations: ["Rome", "Florence", "Amalfi Coast"],
+    href: "/blog?filter=italy",
+    color: "from-red-900/80",
+  },
 ];
 
 export default function IndiaMapSection() {
@@ -63,10 +87,10 @@ export default function IndiaMapSection() {
             Explore by region
           </span>
           <h2 className="font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-light text-white mb-3">
-            59 destinations across <em className="italic text-gold-light">all of India</em>
+            68 destinations across <em className="italic text-gold-light">4 countries</em>
           </h2>
           <p className="text-sm text-white/40 font-light max-w-md mx-auto">
-            From Kashmir to Kanyakumari. Pick a region to start exploring.
+            India, Thailand, Japan &amp; Italy. Pick a region to start exploring.
           </p>
         </FadeIn>
 

@@ -4,14 +4,19 @@ import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
 
 const POPULAR = [
-  { name: "Kashmir", duration: "6 Days", budget: "From ₹18k", tag: "Most Popular", img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=75", href: "/blog/kashmir-6-days", color: "from-blue-600" },
-  { name: "Rajasthan", duration: "7 Days", budget: "From ₹15k", tag: "Heritage", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=75", href: "/blog/rajasthan-7-days", color: "from-amber-600" },
-  { name: "Goa", duration: "3 Days", budget: "From ₹8k", tag: "Beach", img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=600&q=75", href: "/blog/goa-3-days", color: "from-cyan-600" },
-  { name: "Kerala", duration: "5 Days", budget: "From ₹15k", tag: "Nature", img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=75", href: "/blog/kerala-5-days", color: "from-green-600" },
-  { name: "Meghalaya", duration: "5 Days", budget: "From ₹12k", tag: "Trending", img: "https://images.unsplash.com/photo-1698429358246-807d8972da9a?w=600&q=75", href: "/blog/meghalaya-5-days", color: "from-emerald-600" },
-  { name: "Amritsar", duration: "2 Days", budget: "From ₹4k", tag: "Must Visit", img: "https://images.unsplash.com/photo-1561304381-70c65d96a3de?w=600&q=75", href: "/blog/amritsar-2-days", color: "from-yellow-600" },
-  { name: "Ladakh", duration: "7 Days", budget: "From ₹18k", tag: "Bucket List", img: "https://images.unsplash.com/photo-1600438831035-48f5f196d3bf?w=600&q=75", href: "/blog/leh-ladakh-7-days", color: "from-indigo-600" },
-  { name: "Varanasi", duration: "3 Days", budget: "From ₹6k", tag: "Spiritual", img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?w=600&q=75", href: "/blog/varanasi-3-days", color: "from-orange-600" },
+  // India
+  { name: "Kashmir", duration: "6 Days", budget: "From ₹18k", tag: "🇮🇳 Most Popular", img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=75", href: "/blog/kashmir-6-days", color: "from-blue-600" },
+  { name: "Rajasthan", duration: "7 Days", budget: "From ₹15k", tag: "🇮🇳 Heritage", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=75", href: "/blog/rajasthan-7-days", color: "from-amber-600" },
+  { name: "Goa", duration: "3 Days", budget: "From ₹8k", tag: "🇮🇳 Beach", img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=600&q=75", href: "/blog/goa-3-days", color: "from-cyan-600" },
+  // Thailand
+  { name: "Bangkok", duration: "4 Days", budget: "From $22/day", tag: "🇹🇭 Thailand", img: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=600&q=75", href: "/blog/bangkok-4-days", color: "from-yellow-600" },
+  // Japan
+  { name: "Tokyo", duration: "5 Days", budget: "From $53/day", tag: "🇯🇵 Japan", img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=75", href: "/blog/tokyo-5-days", color: "from-rose-600" },
+  { name: "Kyoto", duration: "4 Days", budget: "From $47/day", tag: "🇯🇵 Japan", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=75", href: "/blog/kyoto-4-days", color: "from-pink-600" },
+  // Italy
+  { name: "Rome", duration: "4 Days", budget: "From $65/day", tag: "🇮🇹 Italy", img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=75", href: "/blog/rome-4-days", color: "from-red-600" },
+  // India
+  { name: "Kerala", duration: "5 Days", budget: "From ₹15k", tag: "🇮🇳 Nature", img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=75", href: "/blog/kerala-5-days", color: "from-green-600" },
 ];
 
 export default function PopularDestinations() {
@@ -26,7 +31,7 @@ export default function PopularDestinations() {
             </h2>
           </div>
           <Link href="/blog" className="text-[0.72rem] tracking-[0.12em] uppercase text-gold-dark border-b border-gold-dark pb-0.5 hover:text-ink transition-colors">
-            View All 59 &rarr;
+            View All 68 Guides &rarr;
           </Link>
         </FadeIn>
 

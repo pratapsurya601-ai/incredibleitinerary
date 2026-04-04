@@ -48,7 +48,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-center gap-5 md:gap-8 flex-wrap mb-12 py-4 px-6 bg-white rounded-2xl border border-parchment-2 shadow-sm">
             {[
               { icon: "✅", val: "500+", sub: "Trips Planned" },
-              { icon: "🌍", val: "59", sub: "Destinations" },
+              { icon: "🌍", val: "68", sub: "Destinations" },
               { icon: "📖", val: "Free", sub: "All Guides" },
               { icon: "⚡", val: "24hr", sub: "Response" },
             ].map((s, i) => (

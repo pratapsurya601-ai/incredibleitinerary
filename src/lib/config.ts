@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
 
   // ── Brand ──────────────────────────────────────────────────────────────────
   siteName: "IncredibleItinerary",
-  tagline: "Curated Journeys Across India",
+  tagline: "Curated Travel Guides Worldwide",
   siteUrl: "https://incredibleitinerary.com",
 
   // ── Social ─────────────────────────────────────────────────────────────────

@@ -7,12 +7,12 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
   const [search, setSearch] = useState("");
 
   const categories = [
+    { label: "India", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=75", href: "/blog?filter=heritage" },
+    { label: "Thailand", img: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=75", href: "/blog?filter=thailand" },
+    { label: "Japan", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=75", href: "/blog?filter=japan" },
+    { label: "Italy", img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75", href: "/blog?filter=italy" },
     { label: "Beaches", img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=400&q=75", href: "/blog?filter=beach" },
     { label: "Mountains", img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=400&q=75", href: "/blog?filter=mountains" },
-    { label: "Heritage", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&q=75", href: "/blog?filter=heritage" },
-    { label: "Wildlife", img: "https://images.unsplash.com/photo-1615474286632-e31ac3633d58?w=400&q=75", href: "/blog?filter=wildlife" },
-    { label: "Hill Stations", img: "https://images.unsplash.com/photo-1742107939655-4f8af7484dfa?w=400&q=75", href: "/blog?filter=hillstation" },
-    { label: "Spiritual", img: "https://images.unsplash.com/photo-1561304381-70c65d96a3de?w=400&q=75", href: "/blog?filter=spiritual" },
   ];
 
   return (
@@ -28,12 +28,12 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
         {/* Headline — large, cinematic */}
         <h1 className="font-serif text-[clamp(3rem,7vw,5.5rem)] font-light text-white leading-[1.05] mb-5" style={{ animation: "fadeUp .8s .15s both" }}>
-          Where in India<br />
-          <em className="italic text-gold-light">are you going?</em>
+          Travel Smarter.<br />
+          <em className="italic text-gold-light">Skip the Tourist Traps.</em>
         </h1>
 
         <p className="text-lg text-white/60 font-light max-w-lg mx-auto mb-10 leading-relaxed" style={{ animation: "fadeUp .8s .3s both" }}>
-          59 free itineraries with real prices and local tips
+          68 free travel guides across India, Thailand, Japan &amp; Italy. Real prices. Local tips.
         </p>
 
         {/* Search bar — large, prominent */}
@@ -43,7 +43,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search any Indian destination..."
+              placeholder="Search any destination — India, Thailand, Japan, Italy..."
               className="w-full px-7 py-5 pl-14 rounded-full bg-white text-ink text-base outline-none shadow-[0_12px_48px_rgba(0,0,0,0.35)] focus:ring-2 focus:ring-gold placeholder:text-muted/50 font-light"
               onKeyDown={(e) => {
                 if (e.key === "Enter" && search.trim()) {
@@ -85,7 +85,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
         {/* Minimal trust line */}
         <p className="text-[0.62rem] text-white/30 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
-          500+ TRIPS PLANNED &nbsp;&middot;&nbsp; 24HR REPLY &nbsp;&middot;&nbsp; COMPLETELY FREE
+          68 FREE GUIDES &nbsp;&middot;&nbsp; 4 COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
         </p>
       </div>
 

@@ -22,8 +22,17 @@ interface FormData {
 }
 
 const destinations = [
+  // India
   "Goa", "Rajasthan", "Kerala", "Kashmir", "Golden Triangle",
   "Leh Ladakh", "Manali", "Andaman", "Varanasi", "Coorg",
+  "Meghalaya", "Sikkim", "Rishikesh", "Jaipur", "Udaipur",
+  // Thailand
+  "Bangkok", "Phuket", "Chiang Mai",
+  // Japan
+  "Tokyo", "Kyoto", "Osaka",
+  // Italy
+  "Rome", "Florence", "Amalfi Coast",
+  // Other
   "Multiple / Custom",
 ];
 const durations = ["3–4 Days", "5–7 Days", "8–10 Days", "11–14 Days", "15+ Days"];
