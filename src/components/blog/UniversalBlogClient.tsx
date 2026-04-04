@@ -13,6 +13,7 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 import InlineCTA from "@/components/blog/InlineCTA";
+import InlineSignup from "@/components/email/InlineSignup";
 
 /* ── Types ─────────────────────────────────────────────────────────────── */
 export interface DayData {
@@ -408,6 +409,9 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
           </section>
 
           <InlineCTA destination={data.destination} />
+
+          {/* ── EMAIL SIGNUP ── */}
+          <InlineSignup />
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">

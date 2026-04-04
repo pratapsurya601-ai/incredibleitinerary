@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import Script from "next/script";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import EmailCaptureWrapper from "@/components/email/EmailCaptureWrapper";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -142,6 +143,7 @@ export default function RootLayout({
         />
         {children}
         <WhatsAppButton />
+        <EmailCaptureWrapper />
       </body>
     </html>
   );
