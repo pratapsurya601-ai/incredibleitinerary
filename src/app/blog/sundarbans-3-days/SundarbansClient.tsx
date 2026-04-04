@@ -204,12 +204,12 @@ export default function SundarbansClient() {
             <div className="max-w-[860px] mx-auto">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
                 <span className="bg-gold text-ink text-[0.62rem] tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">
-                  Wildlife & Safari
+                  Wildlife &amp; Safari
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/30">·</span>
+                <span className="text-white/30">&middot;</span>
                 <span className="text-white/60 text-xs">12 min read</span>
-                <span className="text-white/30">·</span>
+                <span className="text-white/30">&middot;</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -231,10 +231,10 @@ export default function SundarbansClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDEE\uD83C\uDDF3"} India</span>
-              <span>·</span>
+              <span>&middot;</span>
               <span>{"\uD83D\uDDD3"} 3 Days</span>
-              <span>·</span>
-              <span>{"\uD83D\uDCB0"} From ₹5,500</span>
+              <span>&middot;</span>
+              <span>{"\uD83D\uDCB0"} From {"\u20B9"}5,500</span>
             </div>
           </div>
 
@@ -256,7 +256,7 @@ export default function SundarbansClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">{"Plan " + p.id + " \u2192"}</p>
                 </button>
               ))}
             </div>
@@ -332,7 +332,7 @@ export default function SundarbansClient() {
                   <span className="text-2xl">{"\uD83D\uDCB0"}</span>
                   <div>
                     <p className="text-sm font-medium text-amber-800">Budget Plan — Shared Boat from Godkhali</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Basic lodge at Gosaba/Pakhiralay · ₹400–800/night · Shared motorboat</p>
+                    <p className="text-xs text-amber-600 font-light">{`Stay: Basic lodge at Gosaba/Pakhiralay \u00B7 \u20B9400\u2013800/night \u00B7 Shared motorboat`}</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Kolkata to Gosaba — Into the Delta"
@@ -344,7 +344,7 @@ export default function SundarbansClient() {
                     "4:30pm: Boat ride through narrow mangrove creeks near Sajnekhali \u2014 first taste of the forest.",
                     "Evening: Simple Bengali dinner at the lodge \u2014 fresh river fish, rice, dal. \u20B9150\u2013250 per meal.",
                   ]}
-                  cost="₹1,200–₹1,800 (transport + food + permit)" />
+                  cost={`\u20B91,200\u20131,800 (transport + food + permit)`} />
                 <DayCard day="Day 2" title="Sajnekhali + Sudhanyakhali — Core Safari Day"
                   items={[
                     "5:30am: Early boat departure \u2014 dawn is when wildlife is most active on the mudflats.",
@@ -355,7 +355,7 @@ export default function SundarbansClient() {
                     "3pm: Cruise the Matla River channels \u2014 monitor lizards, mudskippers, fishing eagles.",
                     "5:30pm: Return to Gosaba. Evening free \u2014 village walk or rest.",
                   ]}
-                  cost="₹1,500–2,200 (boat share + food)" />
+                  cost={`\u20B91,500\u20132,200 (boat share + food)`} />
                 <DayCard day="Day 3" title="Dobanki Canopy Walk + Return to Kolkata"
                   items={[
                     "6am: Final boat ride to Dobanki \u2014 the canopy walk suspended over crocodile habitat.",
@@ -364,10 +364,10 @@ export default function SundarbansClient() {
                     "11am: Back at Godkhali jetty. Shared auto/bus to Canning, then train or road to Kolkata.",
                     "3\u20134pm: Back in Kolkata. Stop at Canning for fresh river fish if you want to cook at home.",
                   ]}
-                  cost="₹1,000–1,500 (boat + transport back)" />
+                  cost={`\u20B91,000\u20131,500 (boat + transport back)`} />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 3-Day Cost (per person) · </span>
-                  <span className="font-serif text-base text-ink font-light">₹4,500–6,000 including accommodation</span>
+                  <span className="text-xs text-amber-700 uppercase tracking-wide">{`Total 3-Day Cost (per person) \u00B7 `}</span>
+                  <span className="font-serif text-base text-ink font-light">{`\u20B94,500\u20136,000 including accommodation`}</span>
                 </div>
               </div>
             )}
@@ -379,7 +379,7 @@ export default function SundarbansClient() {
                   <span className="text-2xl">{"\uD83D\uDC2F"}</span>
                   <div>
                     <p className="text-sm font-medium text-emerald-800">Safari Plan — Private Boat with Naturalist Guide</p>
-                    <p className="text-xs text-emerald-600 font-light">Stay: Eco-lodge at Bali Island/Pakhiralay · ₹1,500–3,000/night · Private motorboat</p>
+                    <p className="text-xs text-emerald-600 font-light">{`Stay: Eco-lodge at Bali Island/Pakhiralay \u00B7 \u20B91,500\u20133,000/night \u00B7 Private motorboat`}</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Kolkata to Sajnekhali — Deep Into the Reserve"
@@ -392,7 +392,7 @@ export default function SundarbansClient() {
                     "5:30pm: Return to lodge. Evening briefing from naturalist on next day\u2019s route and tiger behaviour.",
                     "Dinner at lodge \u2014 mud crab curry, prawn malai, seasonal vegetables.",
                   ]}
-                  cost="₹3,000–5,000 (transport + meals + permit)" />
+                  cost={`\u20B93,000\u20135,000 (transport + meals + permit)`} />
                 <DayCard day="Day 2" title="Sudhanyakhali + Dobanki — The Full Safari Circuit"
                   items={[
                     "5am: Pre-dawn departure. Hot tea on the boat. The silence at dawn \u2014 just water, mangroves, and bird calls.",
@@ -404,7 +404,7 @@ export default function SundarbansClient() {
                     "4pm: Cruise the wider Matla River channels. Irrawaddy dolphins occasionally surface here.",
                     "6pm: Back to lodge. Campfire storytelling about honey collectors and tiger legends.",
                   ]}
-                  cost="₹2,500–4,000 (boat + meals)" />
+                  cost={`\u20B92,500\u20134,000 (boat + meals)`} />
                 <DayCard day="Day 3" title="Gosaba + Pakhiralay Village + Return"
                   items={[
                     "6am: Final morning boat ride \u2014 different route through western channels for new birdlife.",
@@ -414,10 +414,10 @@ export default function SundarbansClient() {
                     "12:30pm: Arrive Godkhali, drive back to Kolkata.",
                     "4pm: Drop-off in Kolkata. Your guide shares a digital wildlife checklist of everything spotted.",
                   ]}
-                  cost="₹2,500–4,000 (boat + transport back)" />
+                  cost={`\u20B92,500\u20134,000 (boat + transport back)`} />
                 <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-emerald-700 uppercase tracking-wide">Total 3-Day Cost (per person) · </span>
-                  <span className="font-serif text-base text-ink font-light">₹8,000–18,000 including accommodation</span>
+                  <span className="text-xs text-emerald-700 uppercase tracking-wide">{`Total 3-Day Cost (per person) \u00B7 `}</span>
+                  <span className="font-serif text-base text-ink font-light">{`\u20B98,000\u201318,000 including accommodation`}</span>
                 </div>
               </div>
             )}
@@ -429,7 +429,7 @@ export default function SundarbansClient() {
                   <span className="text-2xl">{"\uD83D\uDEA2"}</span>
                   <div>
                     <p className="text-sm font-medium text-indigo-800">Premium Houseboat — Live on the Water</p>
-                    <p className="text-xs text-indigo-600 font-light">Stay: AC houseboat with private deck · ₹5,000–8,000/night · Chef + naturalist onboard</p>
+                    <p className="text-xs text-indigo-600 font-light">{`Stay: AC houseboat with private deck \u00B7 \u20B95,000\u20138,000/night \u00B7 Chef + naturalist onboard`}</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Kolkata to Houseboat — Floating Into Wilderness"
@@ -442,7 +442,7 @@ export default function SundarbansClient() {
                     "7pm: Houseboat anchors in a quiet creek for the night. Dinner under the stars on the deck.",
                     "Night: Fall asleep to the sound of water lapping against the hull. Occasional deer calls from the bank.",
                   ]}
-                  cost="₹6,000–10,000 (all-inclusive)" />
+                  cost={`\u20B96,000\u201310,000 (all-inclusive)`} />
                 <DayCard day="Day 2" title="Deep Reserve — Every Major Watchtower"
                   items={[
                     "5am: Wake up on the water. Coffee on the deck as the forest wakes up around you.",
@@ -455,7 +455,7 @@ export default function SundarbansClient() {
                     "5pm: Sunset cruise on the Matla River. Irrawaddy dolphin spotting.",
                     "8pm: Special dinner on the deck \u2014 mud crab, chingri malai curry, mishti doi. Campfire on the bank.",
                   ]}
-                  cost="₹6,000–10,000 (all-inclusive)" />
+                  cost={`\u20B96,000\u201310,000 (all-inclusive)`} />
                 <DayCard day="Day 3" title="Final Morning + Village + Return"
                   items={[
                     "5:30am: Optional dawn birdwatching from deck \u2014 brahminy kites, white-bellied sea eagles, kingfishers.",
@@ -465,10 +465,10 @@ export default function SundarbansClient() {
                     "12pm: Disembark at Godkhali. Final lunch at a local riverside stall \u2014 best fish fry in the delta.",
                     "1pm: Drive back to Kolkata. Arrive by 4\u20135pm.",
                   ]}
-                  cost="₹4,000–6,000 (boat + transport)" />
+                  cost={`\u20B94,000\u20136,000 (boat + transport)`} />
                 <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-indigo-700 uppercase tracking-wide">Total 3-Day Cost (per person) · </span>
-                  <span className="font-serif text-base text-ink font-light">₹18,000–30,000 all-inclusive</span>
+                  <span className="text-xs text-indigo-700 uppercase tracking-wide">{`Total 3-Day Cost (per person) \u00B7 `}</span>
+                  <span className="font-serif text-base text-ink font-light">{`\u20B918,000\u201330,000 all-inclusive`}</span>
                 </div>
               </div>
             )}
@@ -491,10 +491,10 @@ export default function SundarbansClient() {
                   {[
                     ["\uD83C\uDFE8 Accommodation (2N)", "\u20B9800\u20131,600", "\u20B93,000\u20136,000", "\u20B910,000\u201316,000"],
                     ["\uD83C\uDF5D Food & Drinks", "\u20B9600\u20131,000", "\u20B91,500\u20133,000", "\u20B94,000\u20136,000"],
-                    ["\uD83D\uDEA4 Boat & Transport", "\u20B91,800\u20132,500", "\u20B93,000\u20135,000", "\u20B9Included"],
-                    ["\uD83C\uDF3F Forest Permits", "\u20B9200\u2013400", "\u20B9200\u2013400", "\u20B9Included"],
-                    ["\uD83D\uDC68\u200D\uD83C\uDF93 Guide", "\u20B9Shared/basic", "\u20B91,000\u20132,000", "\u20B9Included"],
-                    ["\uD83D\uDE97 Kolkata Transfer", "\u20B9300\u2013500", "\u20B91,500\u20132,500", "\u20B9Included"],
+                    ["\uD83D\uDEA4 Boat & Transport", "\u20B91,800\u20132,500", "\u20B93,000\u20135,000", "Included"],
+                    ["\uD83C\uDF3F Forest Permits", "\u20B9200\u2013400", "\u20B9200\u2013400", "Included"],
+                    ["\uD83D\uDC68\u200D\uD83C\uDF93 Guide", "Shared/basic", "\u20B91,000\u20132,000", "Included"],
+                    ["\uD83D\uDE97 Kolkata Transfer", "\u20B9300\u2013500", "\u20B91,500\u20132,500", "Included"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -511,7 +511,7 @@ export default function SundarbansClient() {
               </table>
             </div>
             <p className="text-xs text-muted font-light mt-3 italic">
-              All prices INR 2026. Foreign nationals pay higher forest entry fees (₹400 vs ₹60 for Indians). Premium plan includes everything except personal shopping.
+              {`All prices INR 2026. Foreign nationals pay higher forest entry fees (\u20B9400 vs \u20B960 for Indians). Premium plan includes everything except personal shopping.`}
             </p>
           </section>
 
@@ -623,9 +623,9 @@ export default function SundarbansClient() {
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Sundarbans Trip {"\u2192"}
+                {"Plan My Sundarbans Trip \u2192"}
               </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">{"Plan My Trip \u2192"}</a>
             </div>
           </div>
 
