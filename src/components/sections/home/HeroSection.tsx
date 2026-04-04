@@ -7,55 +7,51 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
   const [search, setSearch] = useState("");
 
   const categories = [
-    { label: "Beaches", emoji: "🏖️", img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=400&q=75", href: "/blog?filter=beach" },
-    { label: "Mountains", emoji: "🏔️", img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=400&q=75", href: "/blog?filter=mountains" },
-    { label: "Heritage", emoji: "🏰", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&q=75", href: "/blog?filter=heritage" },
-    { label: "Wildlife", emoji: "🐅", img: "https://images.unsplash.com/photo-1615474286632-e31ac3633d58?w=400&q=75", href: "/blog?filter=wildlife" },
-    { label: "Hill Stations", emoji: "🌿", img: "https://images.unsplash.com/photo-1742107939655-4f8af7484dfa?w=400&q=75", href: "/blog?filter=hillstation" },
-    { label: "Spiritual", emoji: "🕯️", img: "https://images.unsplash.com/photo-1561304381-70c65d96a3de?w=400&q=75", href: "/blog?filter=spiritual" },
+    { label: "Beaches", img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=400&q=75", href: "/blog?filter=beach" },
+    { label: "Mountains", img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=400&q=75", href: "/blog?filter=mountains" },
+    { label: "Heritage", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&q=75", href: "/blog?filter=heritage" },
+    { label: "Wildlife", img: "https://images.unsplash.com/photo-1615474286632-e31ac3633d58?w=400&q=75", href: "/blog?filter=wildlife" },
+    { label: "Hill Stations", img: "https://images.unsplash.com/photo-1742107939655-4f8af7484dfa?w=400&q=75", href: "/blog?filter=hillstation" },
+    { label: "Spiritual", img: "https://images.unsplash.com/photo-1561304381-70c65d96a3de?w=400&q=75", href: "/blog?filter=spiritual" },
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-ink/55" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0 will-change-transform animate-zoom-bg -z-10">
-        <Image
-          src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1920&q=85"
-          alt="India landscape"
-          fill priority className="object-cover" sizes="100vw"
-        />
+        <Image src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1920&q=85" alt="India landscape" fill priority className="object-cover" sizes="100vw" />
       </div>
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,6,2,0.70) 0%, rgba(10,6,2,0.45) 40%, rgba(10,6,2,0.50) 60%, rgba(10,6,2,0.90) 100%)" }} />
+      {/* Overlay — lighter than before for more photo visibility */}
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,6,2,0.55) 0%, rgba(10,6,2,0.35) 35%, rgba(10,6,2,0.40) 60%, rgba(10,6,2,0.85) 100%)" }} />
 
-      <div className="relative z-10 max-w-[900px] px-6 pt-28 pb-16 mx-auto w-full">
+      <div className="relative z-10 max-w-[860px] px-6 pt-36 pb-20 mx-auto w-full">
 
-        {/* Headline */}
-        <h1 className="font-serif text-[clamp(2.4rem,6vw,4.5rem)] font-light text-white leading-[1.08] mb-4" style={{ animation: "fadeUp .8s .15s both" }}>
+        {/* Headline — large, cinematic */}
+        <h1 className="font-serif text-[clamp(3rem,7vw,5.5rem)] font-light text-white leading-[1.05] mb-5" style={{ animation: "fadeUp .8s .15s both" }}>
           Where in India<br />
           <em className="italic text-gold-light">are you going?</em>
         </h1>
 
-        <p className="text-base text-white/65 font-light max-w-md mx-auto mb-8" style={{ animation: "fadeUp .8s .3s both" }}>
-          59 free day-by-day itineraries. Real prices. Local tips.
+        <p className="text-lg text-white/60 font-light max-w-lg mx-auto mb-10 leading-relaxed" style={{ animation: "fadeUp .8s .3s both" }}>
+          59 free itineraries with real prices and local tips
         </p>
 
-        {/* Search bar — TripAdvisor style */}
-        <div className="max-w-lg mx-auto mb-10" style={{ animation: "fadeUp .8s .45s both" }}>
+        {/* Search bar — large, prominent */}
+        <div className="max-w-xl mx-auto mb-14" style={{ animation: "fadeUp .8s .45s both" }}>
           <div className="relative">
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search any Indian destination..."
-              className="w-full px-6 py-4.5 pl-14 rounded-full bg-white/95 backdrop-blur-md text-ink text-base font-light outline-none shadow-[0_8px_32px_rgba(0,0,0,0.3)] focus:ring-2 focus:ring-gold placeholder:text-muted/60"
+              className="w-full px-7 py-5 pl-14 rounded-full bg-white text-ink text-base outline-none shadow-[0_12px_48px_rgba(0,0,0,0.35)] focus:ring-2 focus:ring-gold placeholder:text-muted/50 font-light"
               onKeyDown={(e) => {
                 if (e.key === "Enter" && search.trim()) {
                   window.location.href = `/blog?q=${encodeURIComponent(search.trim())}`;
                 }
               }}
             />
-            <svg className="absolute left-5 top-1/2 -translate-y-1/2 text-muted/50" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <svg className="absolute left-5 top-1/2 -translate-y-1/2 text-muted/40" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
             </svg>
             <button
@@ -63,40 +59,39 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
                 if (search.trim()) window.location.href = `/blog?q=${encodeURIComponent(search.trim())}`;
                 else onPlanTrip();
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-gold text-ink px-6 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-gold-dark hover:text-white transition-all"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-gold text-ink px-7 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-gold-dark hover:text-white transition-all shadow-sm"
             >
               {search.trim() ? "Search" : "Plan Trip"}
             </button>
           </div>
         </div>
 
-        {/* Visual category tiles — Tripoto/TripAdvisor style */}
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-3 max-w-[720px] mx-auto mb-10" style={{ animation: "fadeUp .8s .6s both" }}>
+        {/* Category tiles — larger, more visual */}
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4 max-w-[760px] mx-auto" style={{ animation: "fadeUp .8s .6s both" }}>
           {categories.map((c) => (
             <Link
               key={c.label}
               href={c.href}
-              className="group relative rounded-xl overflow-hidden aspect-[4/5] border border-white/15 hover:border-gold hover:scale-[1.03] transition-all duration-200"
+              className="group relative rounded-2xl overflow-hidden aspect-square border-2 border-white/10 hover:border-gold transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)]"
             >
-              <Image src={c.img} alt={c.label} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="120px" />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-2.5 text-center">
-                <p className="text-white text-xs font-medium tracking-wide uppercase">{c.label}</p>
+              <Image src={c.img} alt={c.label} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="130px" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/75 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-3 text-center">
+                <p className="text-white text-[0.7rem] font-medium tracking-[0.08em] uppercase drop-shadow-lg">{c.label}</p>
               </div>
             </Link>
           ))}
         </div>
 
-        {/* Trust line */}
-        <p className="text-[0.65rem] text-white/35 font-light tracking-wide" style={{ animation: "fadeUp .8s .75s both" }}>
-          500+ trips planned &middot; 59 destinations &middot; 24hr reply &middot; Completely free
+        {/* Minimal trust line */}
+        <p className="text-[0.62rem] text-white/30 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
+          500+ TRIPS PLANNED &nbsp;&middot;&nbsp; 24HR REPLY &nbsp;&middot;&nbsp; COMPLETELY FREE
         </p>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style={{ animation: "fadeUp .8s 1.1s both" }}>
-        <span className="text-[0.55rem] tracking-[0.22em] uppercase text-white/25">Scroll</span>
-        <div className="w-px h-7 bg-gold/30 animate-scroll-pulse origin-top" />
+      {/* Scroll */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40" style={{ animation: "fadeUp .8s 1.2s both" }}>
+        <div className="w-px h-8 bg-white/30 animate-scroll-pulse origin-top" />
       </div>
     </section>
   );

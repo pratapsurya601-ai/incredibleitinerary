@@ -70,7 +70,7 @@ export default function IndiaMapSection() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {REGIONS.map((region, i) => (
             <FadeIn key={region.name} delay={i * 60}>
               <Link href={region.href} className="group block rounded-2xl overflow-hidden relative h-64 border border-white/10 hover:border-gold/40 transition-all duration-300">

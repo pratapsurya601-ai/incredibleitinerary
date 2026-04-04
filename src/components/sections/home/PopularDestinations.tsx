@@ -16,7 +16,7 @@ const POPULAR = [
 
 export default function PopularDestinations() {
   return (
-    <section className="bg-cream py-16 px-6 md:px-12">
+    <section className="bg-cream py-20 px-6 md:px-12">
       <div className="max-w-[1180px] mx-auto">
         <FadeIn className="flex items-end justify-between mb-8 flex-wrap gap-4">
           <div>
@@ -30,11 +30,11 @@ export default function PopularDestinations() {
           </Link>
         </FadeIn>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {POPULAR.map((d, i) => (
             <FadeIn key={d.name} delay={i * 50}>
               <Link href={d.href} className="group block rounded-2xl overflow-hidden border border-parchment-2 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white">
-                <div className="relative h-44 md:h-52 overflow-hidden">
+                <div className="relative h-48 md:h-56 overflow-hidden">
                   <Image src={d.img} alt={d.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" loading={i < 4 ? "eager" : "lazy"} />
                   <div className={`absolute inset-0 bg-gradient-to-t ${d.color}/40 via-transparent to-transparent`} />
                   <span className="absolute top-3 left-3 text-[0.6rem] font-semibold tracking-wider uppercase bg-gold text-ink px-2.5 py-1 rounded-full shadow-sm">
