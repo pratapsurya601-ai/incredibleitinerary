@@ -164,6 +164,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Africa
     { url: `${base}/blog/morocco-7-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/kenya-safari-7-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // More Africa
+    { url: `${base}/blog/tanzania-zanzibar-7-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/cape-town-5-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // South America
+    { url: `${base}/blog/peru-machu-picchu-7-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.93 },
+    { url: `${base}/blog/rio-de-janeiro-5-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // More Europe
+    { url: `${base}/blog/amsterdam-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/germany-7-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
