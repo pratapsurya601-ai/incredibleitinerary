@@ -1886,17 +1886,6 @@ export const blogPosts: BlogPost[] = [
     destination: "Seattle", duration: "3 Days", country: "USA",
     pexelsQuery: "seattle space needle skyline mount rainier washington state",
   },
-  {
-    slug: "grand-canyon-3-days",
-    title: "Grand Canyon in 3 Days: South Rim, Bright Angel Trail & Sunrise Views (2026)",
-    excerpt: "Standing on the South Rim as the canyon turns from purple to gold at sunrise, hiking to the Colorado River 1,500 metres below, and watching a California condor ride thermals above a mile-deep chasm that took 6 million years to carve — the Grand Canyon.",
-    date: "April 5, 2026", readTime: "12 min", category: "North America",
-    tags: ["Grand Canyon", "3 Days", "USA", "South Rim", "Bright Angel Trail", "Sunrise", "Hiking", "Arizona"],
-    image: "https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=800&q=80",
-    imageAlt: "Grand Canyon South Rim Arizona sunrise golden hour Colorado River", featured: false,
-    destination: "Grand Canyon", duration: "3 Days", country: "USA",
-    pexelsQuery: "grand canyon arizona south rim sunrise colorado river",
-  },
   // ── Middle East ──
   {
     slug: "jerusalem-4-days",

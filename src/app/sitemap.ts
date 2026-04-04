@@ -229,7 +229,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/chicago-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/new-orleans-4-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/seattle-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
-    { url: `${base}/blog/grand-canyon-3-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     // Italy (more)
     { url: `${base}/blog/venice-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.93 },
     { url: `${base}/blog/sicily-7-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
