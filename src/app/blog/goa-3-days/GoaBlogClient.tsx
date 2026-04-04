@@ -10,6 +10,7 @@ import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 
@@ -701,6 +702,7 @@ export default function GoaBlogClient() {
             </div>
           </section>
 
+          <CombineWith currentSlug="goa-3-days" />
           <RelatedGuides currentSlug="goa-3-days" />
         </div>
       </main>

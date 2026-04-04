@@ -73,5 +73,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/sundarbans-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/valley-of-flowers-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.86 },
     { url: `${base}/blog/majuli-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.84 },
+    { url: `${base}/compare/goa-vs-pondicherry`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/shimla-vs-manali`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/kashmir-vs-ladakh`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/jaipur-vs-udaipur`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/ooty-vs-kodaikanal`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
   ];
 }

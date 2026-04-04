@@ -9,6 +9,7 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const MEGHALAYA_TOC = [
@@ -550,6 +551,7 @@ export default function MeghalayaClient() {
             </div>
           </section>
 
+          <CombineWith currentSlug="meghalaya-5-days" />
           <RelatedGuides currentSlug="meghalaya-5-days" />
         </div>
       </main>

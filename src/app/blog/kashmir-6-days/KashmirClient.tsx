@@ -10,6 +10,7 @@ import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC = [
@@ -550,6 +551,7 @@ export default function KashmirClient() {
             </div>
           </section>
 
+          <CombineWith currentSlug="kashmir-6-days" />
           <RelatedGuides currentSlug="kashmir-6-days" />
         </div>
       </main>

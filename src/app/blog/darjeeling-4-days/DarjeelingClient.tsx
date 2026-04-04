@@ -10,6 +10,7 @@ import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 
@@ -672,6 +673,7 @@ export default function DarjeelingClient() {
             </div>
           </section>
 
+          <CombineWith currentSlug="darjeeling-4-days" />
           <RelatedGuides currentSlug="darjeeling-4-days" />
         </div>
       </main>

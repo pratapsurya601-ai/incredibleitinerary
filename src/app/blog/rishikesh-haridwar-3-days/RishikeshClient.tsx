@@ -10,6 +10,7 @@ import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import SmartImage from "@/components/ui/SmartImage";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC = [
@@ -123,6 +124,7 @@ export default function RishikeshClient(){
         <section className="mt-14"><h3 className="font-serif text-lg font-light text-ink mb-4">Continue Your Journey</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{[{label:"Manali 5 Days — Snow & Cafes",href:"/blog/manali-5-days"},{label:"Leh Ladakh 7 Days — Bucket List",href:"/blog/leh-ladakh-7-days"},{label:"Varanasi 3 Days — India's Sacred City",href:"/blog/varanasi-3-days"},{label:"Golden Triangle 7 Days",href:"/blog/golden-triangle-7-days"}].map(link=><Link key={link.label} href={link.href} className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group"><span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span><span className="text-xs text-muted">Read →</span></Link>)}</div>
         </section>
+        <CombineWith currentSlug="rishikesh-haridwar-3-days" />
         <RelatedGuides currentSlug="rishikesh-haridwar-3-days" />
       </div>
     </main>

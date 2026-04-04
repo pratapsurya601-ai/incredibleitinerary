@@ -10,6 +10,7 @@ import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import SmartImage from "@/components/ui/SmartImage";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const TOC = [
@@ -618,6 +619,7 @@ export default function LehLadakhClient() {
             </div>
           </section>
 
+          <CombineWith currentSlug="leh-ladakh-7-days" />
           <RelatedGuides currentSlug="leh-ladakh-7-days" />
         </div>
       </main>

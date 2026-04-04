@@ -10,6 +10,7 @@ import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const JAIPUR_TOC = [
@@ -670,6 +671,7 @@ export default function JaipurClient() {
             </div>
           </section>
 
+          <CombineWith currentSlug="jaipur-3-days" />
           <RelatedGuides currentSlug="jaipur-3-days" />
         </div>
       </main>
