@@ -173,6 +173,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // More Europe
     { url: `${base}/blog/amsterdam-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/germany-7-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Central Europe
+    { url: `${base}/blog/prague-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/budapest-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/vienna-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // East Asia (more)
+    { url: `${base}/blog/seoul-5-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/taipei-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.89 },
+    { url: `${base}/blog/nusa-penida-3-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // Scandinavia
+    { url: `${base}/blog/iceland-7-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/norway-fjords-6-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/copenhagen-3-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.89 },
+    // MENA + More
+    { url: `${base}/blog/egypt-7-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/buenos-aires-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/colombia-7-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
