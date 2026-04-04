@@ -225,6 +225,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Cuba
     { url: `${base}/blog/havana-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // USA (more)
+    { url: `${base}/blog/washington-dc-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/boston-3-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/nashville-3-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/san-francisco-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/chicago-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/new-orleans-4-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.91 },
@@ -235,10 +238,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/cinque-terre-3-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // Spain (more)
     { url: `${base}/blog/granada-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
-    // Middle East
+    // Middle East (more)
+    { url: `${base}/blog/doha-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/jerusalem-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Europe (more)
+    { url: `${base}/blog/tbilisi-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // South America (more)
+    { url: `${base}/blog/bolivia-salar-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/galapagos-7-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Africa (more)
+    { url: `${base}/blog/rwanda-gorillas-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/namibia-7-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/ethiopia-lalibela-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     // Caribbean (more)
     { url: `${base}/blog/jamaica-5-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // South Korea
@@ -246,6 +257,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // China (more)
     { url: `${base}/blog/shanghai-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     // Canada (more)
+    { url: `${base}/blog/montreal-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/toronto-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/quebec-city-3-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/vancouver-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
