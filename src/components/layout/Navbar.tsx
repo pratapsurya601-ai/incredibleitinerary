@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import DarkModeToggle from "@/components/ui/DarkModeToggle";
 
 interface NavbarProps {
   onPlanTrip: () => void;
@@ -76,6 +77,7 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
             </a>
           </li>
         ))}
+        <li><DarkModeToggle /></li>
         <li>
           <button
             onClick={onPlanTrip}
