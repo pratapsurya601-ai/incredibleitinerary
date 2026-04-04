@@ -234,6 +234,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/new-orleans-4-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/seattle-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // Italy (more)
+    { url: `${base}/blog/milan-3-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/naples-pompeii-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/venice-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.93 },
     { url: `${base}/blog/sicily-7-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/cinque-terre-3-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.90 },
@@ -263,6 +265,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/alula-3-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/doha-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/jerusalem-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Slovenia
+    { url: `${base}/blog/ljubljana-3-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Finland
+    { url: `${base}/blog/helsinki-3-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Balkans
+    { url: `${base}/blog/sarajevo-3-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/belgrade-3-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // Europe (more)
     { url: `${base}/blog/kotor-3-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/mykonos-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
@@ -270,6 +279,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/berlin-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/tbilisi-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // South America (more)
+    { url: `${base}/blog/medellin-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Central America (more)
+    { url: `${base}/blog/panama-city-3-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Africa (more)
+    { url: `${base}/blog/botswana-okavango-6-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/uruguay-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/bolivia-salar-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/galapagos-7-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.92 },
@@ -286,6 +300,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // South Korea
     { url: `${base}/blog/busan-4-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // China (more)
+    { url: `${base}/blog/xian-4-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/guilin-3-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Hong Kong
+    { url: `${base}/blog/hong-kong-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.93 },
     { url: `${base}/blog/shanghai-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     // Canada (more)
     { url: `${base}/blog/montreal-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.91 },
