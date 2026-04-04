@@ -68,5 +68,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/lonavala-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.84 },
     { url: `${base}/blog/kaziranga-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
     { url: `${base}/blog/shillong-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/mahabaleshwar-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.83 },
+    { url: `${base}/blog/tawang-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.86 },
+    { url: `${base}/blog/sundarbans-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/valley-of-flowers-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.86 },
+    { url: `${base}/blog/majuli-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.84 },
   ];
 }
