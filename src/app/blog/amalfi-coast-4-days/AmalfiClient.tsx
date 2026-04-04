@@ -664,10 +664,10 @@ export default function AmalfiClient() {
               { name: "Le Sirenuse", type: "Luxury 5-star \u00B7 Positano", price: "From \u20AC600/night ($648)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/le-sirenuse.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Path of the Gods Guided Hike", duration: "5 hours", price: "From \u20AC35/person ($38)", badge: "Must do", url: "https://www.getyourguide.com/amalfi-coast-l946/?partner_id=PSZA5UI" },
-              { name: "Capri Day Trip by Ferry", duration: "Full day", price: "From \u20AC22/person ($24)", badge: "Essential", url: "https://www.getyourguide.com/amalfi-coast-l946/?partner_id=PSZA5UI" },
-              { name: "Amalfi Coast Boat Tour", duration: "4 hours", price: "From \u20AC50/person ($54)", url: "https://www.getyourguide.com/amalfi-coast-l946/?partner_id=PSZA5UI" },
-              { name: "Amalfi Cooking Class with Limoncello", duration: "3 hours", price: "From \u20AC65/person ($70)", url: "https://www.getyourguide.com/amalfi-coast-l946/?partner_id=PSZA5UI" },
+              { name: "Path of the Gods Guided Hike", duration: "5 hours", price: "From \u20AC35/person ($38)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=amalfi-coast&partner_id=PSZA5UI" },
+              { name: "Capri Day Trip by Ferry", duration: "Full day", price: "From \u20AC22/person ($24)", badge: "Essential", url: "https://www.getyourguide.com/s/?q=amalfi-coast&partner_id=PSZA5UI" },
+              { name: "Amalfi Coast Boat Tour", duration: "4 hours", price: "From \u20AC50/person ($54)", url: "https://www.getyourguide.com/s/?q=amalfi-coast&partner_id=PSZA5UI" },
+              { name: "Amalfi Cooking Class with Limoncello", duration: "3 hours", price: "From \u20AC65/person ($70)", url: "https://www.getyourguide.com/s/?q=amalfi-coast&partner_id=PSZA5UI" },
             ]}
           />
 

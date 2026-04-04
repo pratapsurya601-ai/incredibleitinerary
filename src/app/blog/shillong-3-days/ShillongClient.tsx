@@ -514,10 +514,10 @@ export default function ShillongClient() {
               { name: "Earle Holiday Home", type: "Heritage \u00B7 Laitumkhrah", price: "From \u20B91,200/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/earle-holiday-home.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Mawphlang Sacred Forest Guided Trek", duration: "Half day", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/shillong-l23456/?partner_id=PSZA5UI" },
-              { name: "David Scott Trail Hiking", duration: "Full day", price: "From \u20B91,200/person", badge: "Adventure", url: "https://www.getyourguide.com/shillong-l23456/?partner_id=PSZA5UI" },
-              { name: "Umiam Lake Water Sports", duration: "2 hours", price: "From \u20B9400/person", url: "https://www.getyourguide.com/shillong-l23456/?partner_id=PSZA5UI" },
-              { name: "Shillong City Heritage Walk", duration: "3 hours", price: "From \u20B9600/person", url: "https://www.getyourguide.com/shillong-l23456/?partner_id=PSZA5UI" },
+              { name: "Mawphlang Sacred Forest Guided Trek", duration: "Half day", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=shillong&partner_id=PSZA5UI" },
+              { name: "David Scott Trail Hiking", duration: "Full day", price: "From \u20B91,200/person", badge: "Adventure", url: "https://www.getyourguide.com/s/?q=shillong&partner_id=PSZA5UI" },
+              { name: "Umiam Lake Water Sports", duration: "2 hours", price: "From \u20B9400/person", url: "https://www.getyourguide.com/s/?q=shillong&partner_id=PSZA5UI" },
+              { name: "Shillong City Heritage Walk", duration: "3 hours", price: "From \u20B9600/person", url: "https://www.getyourguide.com/s/?q=shillong&partner_id=PSZA5UI" },
             ]}
             pdfProductId="shillong-3-days-pdf"
           />

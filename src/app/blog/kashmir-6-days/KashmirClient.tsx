@@ -452,9 +452,9 @@ export default function KashmirClient() {
               { name: "Welcome Hotel Dal View", type: "Heritage · Dal Lake", price: "From ₹5,000/night", rating: "4", badge: "Lake views", url: "https://www.booking.com/hotel/in/welcome-hotel-dal-view-srinagar.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Dal Lake Shikara Sunrise Tour", duration: "2 hours", price: "From ₹500/boat", badge: "Must do", url: `https://www.getyourguide.com/srinagar-l2701/?partner_id=PSZA5UI` },
-              { name: "Gulmarg Gondola + Snow Activities", duration: "Full day", price: "From ₹1,800/person", badge: "Unforgettable", url: `https://www.getyourguide.com/gulmarg-l2702/?partner_id=PSZA5UI` },
-              { name: "Kashmir Valley Sightseeing Tour", duration: "Full day", price: "From ₹2,500/person", url: `https://www.getyourguide.com/srinagar-l2701/?partner_id=PSZA5UI` },
+              { name: "Dal Lake Shikara Sunrise Tour", duration: "2 hours", price: "From ₹500/boat", badge: "Must do", url: `https://www.getyourguide.com/s/?q=srinagar&partner_id=PSZA5UI` },
+              { name: "Gulmarg Gondola + Snow Activities", duration: "Full day", price: "From ₹1,800/person", badge: "Unforgettable", url: `https://www.getyourguide.com/s/?q=gulmarg&partner_id=PSZA5UI` },
+              { name: "Kashmir Valley Sightseeing Tour", duration: "Full day", price: "From ₹2,500/person", url: `https://www.getyourguide.com/s/?q=srinagar&partner_id=PSZA5UI` },
             ]}
           />
 

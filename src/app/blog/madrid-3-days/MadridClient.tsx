@@ -430,10 +430,10 @@ export default function MadridClient() {
               { name: "Four Seasons Madrid", type: "Ultra-Luxury \u00B7 Sol", price: "From \u20AC500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/es/four-seasons-madrid.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Prado Museum Skip-the-Line", duration: "2.5 hours", price: "From \u20AC15", badge: "Must do", url: "https://www.getyourguide.com/madrid-l47/?partner_id=PSZA5UI" },
-              { name: "Toledo Full Day Trip", duration: "8 hours", price: "From \u20AC25", badge: "Day trip", url: "https://www.getyourguide.com/madrid-l47/?partner_id=PSZA5UI" },
-              { name: "Flamenco Show + Tapas Dinner", duration: "3 hours", price: "From \u20AC55", badge: "Cultural", url: "https://www.getyourguide.com/madrid-l47/?partner_id=PSZA5UI" },
-              { name: "Madrid Tapas Walking Tour", duration: "3 hours", price: "From \u20AC35", url: "https://www.getyourguide.com/madrid-l47/?partner_id=PSZA5UI" },
+              { name: "Prado Museum Skip-the-Line", duration: "2.5 hours", price: "From \u20AC15", badge: "Must do", url: "https://www.getyourguide.com/s/?q=madrid&partner_id=PSZA5UI" },
+              { name: "Toledo Full Day Trip", duration: "8 hours", price: "From \u20AC25", badge: "Day trip", url: "https://www.getyourguide.com/s/?q=madrid&partner_id=PSZA5UI" },
+              { name: "Flamenco Show + Tapas Dinner", duration: "3 hours", price: "From \u20AC55", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=madrid&partner_id=PSZA5UI" },
+              { name: "Madrid Tapas Walking Tour", duration: "3 hours", price: "From \u20AC35", url: "https://www.getyourguide.com/s/?q=madrid&partner_id=PSZA5UI" },
             ]}
           />
 

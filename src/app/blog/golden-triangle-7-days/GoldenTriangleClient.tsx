@@ -684,11 +684,11 @@ export default function GoldenTriangleClient() {
               { name: "Samode Haveli", type: "Heritage · Old City · Jaipur", price: "From ₹8,000/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/samode-haveli.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Taj Mahal Sunrise Tour with Guide",       duration: "4 hours",   price: "From ₹2,500/person", badge: "Must do",       url: `https://www.getyourguide.com/agra-l972/?partner_id=PSZA5UI` },
-              { name: "Old Delhi Food & Heritage Walk",          duration: "3.5 hours", price: "From ₹1,200/person", badge: "Top rated",      url: `https://www.getyourguide.com/delhi-l984/?partner_id=PSZA5UI` },
-              { name: "Amber Fort Guided Tour — Jaipur",        duration: "3 hours",   price: "From ₹800/person",  url: `https://www.getyourguide.com/jaipur-l200/?partner_id=PSZA5UI` },
-              { name: "Hot Air Balloon Ride — Jaipur",          duration: "1.5 hours", price: "From ₹8,500/person", badge: "Unforgettable", url: `https://www.getyourguide.com/jaipur-l200/?partner_id=PSZA5UI` },
-              { name: "Fatehpur Sikri Day Trip from Agra",      duration: "Half day",  price: "From ₹1,800/person", url: `https://www.getyourguide.com/agra-l972/?partner_id=PSZA5UI` },
+              { name: "Taj Mahal Sunrise Tour with Guide",       duration: "4 hours",   price: "From ₹2,500/person", badge: "Must do",       url: `https://www.getyourguide.com/s/?q=agra&partner_id=PSZA5UI` },
+              { name: "Old Delhi Food & Heritage Walk",          duration: "3.5 hours", price: "From ₹1,200/person", badge: "Top rated",      url: `https://www.getyourguide.com/s/?q=delhi&partner_id=PSZA5UI` },
+              { name: "Amber Fort Guided Tour — Jaipur",        duration: "3 hours",   price: "From ₹800/person",  url: `https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI` },
+              { name: "Hot Air Balloon Ride — Jaipur",          duration: "1.5 hours", price: "From ₹8,500/person", badge: "Unforgettable", url: `https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI` },
+              { name: "Fatehpur Sikri Day Trip from Agra",      duration: "Half day",  price: "From ₹1,800/person", url: `https://www.getyourguide.com/s/?q=agra&partner_id=PSZA5UI` },
             ]}
           />
 

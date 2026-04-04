@@ -552,10 +552,10 @@ export default function KanyakumariClient() {
               { name: "Hotel Tri Sea", type: "Mid-range \u00B7 Central", price: "From \u20B92,000/night", rating: "3", badge: "Value", url: "https://www.booking.com/hotel/in/tri-sea-kanyakumari.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Vivekananda Rock + Thiruvalluvar Ferry", duration: "3 hours", price: "From \u20B969/person", badge: "Must do", url: "https://www.getyourguide.com/kanyakumari-l2083/?partner_id=PSZA5UI" },
-              { name: "Padmanabhapuram Palace Day Trip", duration: "5 hours", price: "From \u20B91,500/cab", badge: "Heritage", url: "https://www.getyourguide.com/kanyakumari-l2083/?partner_id=PSZA5UI" },
-              { name: "Suchindram Temple Visit", duration: "2 hours", price: "From \u20B9500/cab", url: "https://www.getyourguide.com/kanyakumari-l2083/?partner_id=PSZA5UI" },
-              { name: "Full Day Kanyakumari Heritage Tour", duration: "8 hours", price: "From \u20B92,000/person", url: "https://www.getyourguide.com/kanyakumari-l2083/?partner_id=PSZA5UI" },
+              { name: "Vivekananda Rock + Thiruvalluvar Ferry", duration: "3 hours", price: "From \u20B969/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
+              { name: "Padmanabhapuram Palace Day Trip", duration: "5 hours", price: "From \u20B91,500/cab", badge: "Heritage", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
+              { name: "Suchindram Temple Visit", duration: "2 hours", price: "From \u20B9500/cab", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
+              { name: "Full Day Kanyakumari Heritage Tour", duration: "8 hours", price: "From \u20B92,000/person", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
             ]}
             pdfProductId="kanyakumari-2-days-pdf"
           />

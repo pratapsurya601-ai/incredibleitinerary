@@ -534,10 +534,10 @@ export default function VizagClient() {
               { name: "Taj Gateway Vizag", type: "Luxury Beach Resort", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/gateway-hotel-beach-road.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Araku Valley Vistadome Train Experience", duration: "Full day", price: "From \u20B9700/person", badge: "Must do", url: "https://www.getyourguide.com/visakhapatnam-l4523/?partner_id=PSZA5UI" },
-              { name: "Borra Caves & Eastern Ghats Day Trip", duration: "Full day", price: "From \u20B91,200/person", badge: "Nature", url: "https://www.getyourguide.com/visakhapatnam-l4523/?partner_id=PSZA5UI" },
-              { name: "Vizag City Heritage Walking Tour", duration: "3 hours", price: "From \u20B9500/person", badge: "Cultural", url: "https://www.getyourguide.com/visakhapatnam-l4523/?partner_id=PSZA5UI" },
-              { name: "Rushikonda Beach Water Sports Package", duration: "2 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/visakhapatnam-l4523/?partner_id=PSZA5UI" },
+              { name: "Araku Valley Vistadome Train Experience", duration: "Full day", price: "From \u20B9700/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=visakhapatnam&partner_id=PSZA5UI" },
+              { name: "Borra Caves & Eastern Ghats Day Trip", duration: "Full day", price: "From \u20B91,200/person", badge: "Nature", url: "https://www.getyourguide.com/s/?q=visakhapatnam&partner_id=PSZA5UI" },
+              { name: "Vizag City Heritage Walking Tour", duration: "3 hours", price: "From \u20B9500/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=visakhapatnam&partner_id=PSZA5UI" },
+              { name: "Rushikonda Beach Water Sports Package", duration: "2 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/s/?q=visakhapatnam&partner_id=PSZA5UI" },
             ]}
             pdfProductId="vizag-3-days-pdf"
           />

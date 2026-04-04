@@ -449,10 +449,10 @@ export default function CoorgClient() {
               { name: "The Tamara Coorg", type: "Resort · Coorg", price: "From ₹7,000/night", rating: "5", badge: "Pool + views", url: "https://www.booking.com/hotel/in/the-tamara-coorg.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Dubare Elephant Camp + River Rafting", duration: "Full day", price: "From ₹1,500/person", badge: "Must do", url: `https://www.getyourguide.com/coorg-l3009/?partner_id=PSZA5UI` },
-              { name: "Coorg Coffee Estate Tour",             duration: "2 hours",  price: "From ₹500/person", badge: "Unique",   url: `https://www.getyourguide.com/coorg-l3009/?partner_id=PSZA5UI` },
-              { name: "Coorg Trekking — Brahmagiri Hills",   duration: "Full day", price: "From ₹800/person",  url: `https://www.getyourguide.com/coorg-l3009/?partner_id=PSZA5UI` },
-              { name: "Cauvery River Camping — Coorg",       duration: "Overnight",price: "From ₹2,000/person",url: `https://www.getyourguide.com/coorg-l3009/?partner_id=PSZA5UI` },
+              { name: "Dubare Elephant Camp + River Rafting", duration: "Full day", price: "From ₹1,500/person", badge: "Must do", url: `https://www.getyourguide.com/s/?q=coorg&partner_id=PSZA5UI` },
+              { name: "Coorg Coffee Estate Tour",             duration: "2 hours",  price: "From ₹500/person", badge: "Unique",   url: `https://www.getyourguide.com/s/?q=coorg&partner_id=PSZA5UI` },
+              { name: "Coorg Trekking — Brahmagiri Hills",   duration: "Full day", price: "From ₹800/person",  url: `https://www.getyourguide.com/s/?q=coorg&partner_id=PSZA5UI` },
+              { name: "Cauvery River Camping — Coorg",       duration: "Overnight",price: "From ₹2,000/person",url: `https://www.getyourguide.com/s/?q=coorg&partner_id=PSZA5UI` },
             ]}
           />
 

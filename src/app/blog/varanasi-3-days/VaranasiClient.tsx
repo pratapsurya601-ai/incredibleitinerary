@@ -318,10 +318,10 @@ export default function VaranasiClient() {
               { name: "Hotel Ganges View", type: "Mid-range · Assi Ghat", price: "From ₹2,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/hotel-ganges-view.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Ganga Aarti Evening Ceremony + Boat", duration: "2 hours", price: "From ₹500/person", badge: "Must do", url: `https://www.getyourguide.com/varanasi-l971/?partner_id=PSZA5UI` },
-              { name: "Sunrise Boat Ride on the Ganges", duration: "1.5 hours", price: "From ₹300/person", badge: "Most peaceful", url: `https://www.getyourguide.com/varanasi-l971/?partner_id=PSZA5UI` },
-              { name: "Varanasi Old City Heritage Walk", duration: "3 hours", price: "From ₹800/person", url: `https://www.getyourguide.com/varanasi-l971/?partner_id=PSZA5UI` },
-              { name: "Sarnath Day Trip from Varanasi", duration: "Half day", price: "From ₹600/person", url: `https://www.getyourguide.com/varanasi-l971/?partner_id=PSZA5UI` },
+              { name: "Ganga Aarti Evening Ceremony + Boat", duration: "2 hours", price: "From ₹500/person", badge: "Must do", url: `https://www.getyourguide.com/s/?q=varanasi&partner_id=PSZA5UI` },
+              { name: "Sunrise Boat Ride on the Ganges", duration: "1.5 hours", price: "From ₹300/person", badge: "Most peaceful", url: `https://www.getyourguide.com/s/?q=varanasi&partner_id=PSZA5UI` },
+              { name: "Varanasi Old City Heritage Walk", duration: "3 hours", price: "From ₹800/person", url: `https://www.getyourguide.com/s/?q=varanasi&partner_id=PSZA5UI` },
+              { name: "Sarnath Day Trip from Varanasi", duration: "Half day", price: "From ₹600/person", url: `https://www.getyourguide.com/s/?q=varanasi&partner_id=PSZA5UI` },
             ]}
           />
 

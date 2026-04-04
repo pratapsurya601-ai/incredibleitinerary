@@ -621,10 +621,10 @@ export default function FlorenceClient() {
               { name: "Portrait Firenze", type: "Luxury 5-star \u00B7 Ponte Vecchio", price: "From \u20AC500/night ($540)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/portrait-firenze.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Uffizi Gallery Timed Entry Ticket", duration: "2\u20133 hours", price: "From \u20AC20/person ($22)", badge: "Must do", url: "https://www.getyourguide.com/florence-l32/?partner_id=PSZA5UI" },
-              { name: "Accademia Gallery (David) Entry", duration: "1 hour", price: "From \u20AC16/person ($17)", badge: "Essential", url: "https://www.getyourguide.com/florence-l32/?partner_id=PSZA5UI" },
-              { name: "Chianti Wine & Olive Oil Day Trip", duration: "Half day", price: "From \u20AC60/person ($65)", url: "https://www.getyourguide.com/florence-l32/?partner_id=PSZA5UI" },
-              { name: "Tuscan Cooking Class with Market Visit", duration: "4 hours", price: "From \u20AC65/person ($70)", url: "https://www.getyourguide.com/florence-l32/?partner_id=PSZA5UI" },
+              { name: "Uffizi Gallery Timed Entry Ticket", duration: "2\u20133 hours", price: "From \u20AC20/person ($22)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=florence&partner_id=PSZA5UI" },
+              { name: "Accademia Gallery (David) Entry", duration: "1 hour", price: "From \u20AC16/person ($17)", badge: "Essential", url: "https://www.getyourguide.com/s/?q=florence&partner_id=PSZA5UI" },
+              { name: "Chianti Wine & Olive Oil Day Trip", duration: "Half day", price: "From \u20AC60/person ($65)", url: "https://www.getyourguide.com/s/?q=florence&partner_id=PSZA5UI" },
+              { name: "Tuscan Cooking Class with Market Visit", duration: "4 hours", price: "From \u20AC65/person ($70)", url: "https://www.getyourguide.com/s/?q=florence&partner_id=PSZA5UI" },
             ]}
           />
 

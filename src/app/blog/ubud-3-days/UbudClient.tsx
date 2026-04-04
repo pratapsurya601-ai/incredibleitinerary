@@ -488,9 +488,9 @@ export default function UbudClient() {
               { name: "Four Seasons Sayan", type: "Luxury Jungle Resort", price: "From Rp5M/night (~$317)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/four-seasons-sayan.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Tegallalang Terraces & Temple Tour", duration: "8 hours", price: "From Rp400k/person (~$25)", badge: "Must do", url: "https://www.getyourguide.com/bali-l347/?partner_id=PSZA5UI" },
-              { name: "Balinese Cooking Class", duration: "5 hours", price: "From Rp400k/person (~$25)", badge: "Cultural", url: "https://www.getyourguide.com/bali-l347/?partner_id=PSZA5UI" },
-              { name: "Mount Batur Sunrise Trek", duration: "8 hours", price: "From Rp500k/person (~$32)", url: "https://www.getyourguide.com/bali-l347/?partner_id=PSZA5UI" },
+              { name: "Tegallalang Terraces & Temple Tour", duration: "8 hours", price: "From Rp400k/person (~$25)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=bali&partner_id=PSZA5UI" },
+              { name: "Balinese Cooking Class", duration: "5 hours", price: "From Rp400k/person (~$25)", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=bali&partner_id=PSZA5UI" },
+              { name: "Mount Batur Sunrise Trek", duration: "8 hours", price: "From Rp500k/person (~$32)", url: "https://www.getyourguide.com/s/?q=bali&partner_id=PSZA5UI" },
             ]}
             pdfProductId="ubud-3-days-pdf"
           />

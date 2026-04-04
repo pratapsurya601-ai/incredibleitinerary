@@ -526,10 +526,10 @@ export default function BangkokClient() {
               { name: "Mandarin Oriental", type: "Iconic Luxury \u00B7 Riverside", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/mandarin-oriental-bangkok.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Grand Palace & Temple Tour", duration: "Half day", price: "From \u0E3F800/person (~$23)", badge: "Must do", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },
-              { name: "Floating Market & Railway Market", duration: "Full day", price: "From \u0E3F1,500/person (~$42)", badge: "Popular", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },
-              { name: "Ayutthaya Ancient Ruins Day Trip", duration: "Full day", price: "From \u0E3F1,200/person (~$34)", badge: "Day trip", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },
-              { name: "Bangkok Street Food Tour by Night", duration: "4 hours", price: "From \u0E3F1,800/person (~$50)", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },
+              { name: "Grand Palace & Temple Tour", duration: "Half day", price: "From \u0E3F800/person (~$23)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=bangkok&partner_id=PSZA5UI" },
+              { name: "Floating Market & Railway Market", duration: "Full day", price: "From \u0E3F1,500/person (~$42)", badge: "Popular", url: "https://www.getyourguide.com/s/?q=bangkok&partner_id=PSZA5UI" },
+              { name: "Ayutthaya Ancient Ruins Day Trip", duration: "Full day", price: "From \u0E3F1,200/person (~$34)", badge: "Day trip", url: "https://www.getyourguide.com/s/?q=bangkok&partner_id=PSZA5UI" },
+              { name: "Bangkok Street Food Tour by Night", duration: "4 hours", price: "From \u0E3F1,800/person (~$50)", url: "https://www.getyourguide.com/s/?q=bangkok&partner_id=PSZA5UI" },
             ]}
             pdfProductId="bangkok-4-days-pdf"
           />

@@ -535,10 +535,10 @@ export default function PondicherryClient() {
               { name: "Gratitude Heritage", type: "Heritage Hotel · White Town", price: "From ₹3,500/night", rating: "5", badge: "Value", url: "https://www.booking.com/hotel/in/gratitude-pondicherry.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Auroville & Matrimandir Half-Day Tour", duration: "4 hours", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/pondicherry-l4279/?partner_id=PSZA5UI" },
-              { name: "French Quarter Heritage Walking Tour", duration: "2.5 hours", price: "From ₹600/person", badge: "Cultural", url: "https://www.getyourguide.com/pondicherry-l4279/?partner_id=PSZA5UI" },
-              { name: "Paradise Beach Boat Trip + Lunch", duration: "4 hours", price: "From ₹500/person", url: "https://www.getyourguide.com/pondicherry-l4279/?partner_id=PSZA5UI" },
-              { name: "Franco-Tamil Cooking Class", duration: "4 hours", price: "From ₹1,500/person", url: "https://www.getyourguide.com/pondicherry-l4279/?partner_id=PSZA5UI" },
+              { name: "Auroville & Matrimandir Half-Day Tour", duration: "4 hours", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=pondicherry&partner_id=PSZA5UI" },
+              { name: "French Quarter Heritage Walking Tour", duration: "2.5 hours", price: "From ₹600/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=pondicherry&partner_id=PSZA5UI" },
+              { name: "Paradise Beach Boat Trip + Lunch", duration: "4 hours", price: "From ₹500/person", url: "https://www.getyourguide.com/s/?q=pondicherry&partner_id=PSZA5UI" },
+              { name: "Franco-Tamil Cooking Class", duration: "4 hours", price: "From ₹1,500/person", url: "https://www.getyourguide.com/s/?q=pondicherry&partner_id=PSZA5UI" },
             ]}
             pdfProductId="pondicherry-3-days-pdf"
           />

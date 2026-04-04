@@ -526,10 +526,10 @@ export default function MahabaleshwarClient() {
               { name: "Le Meridien Mahabaleshwar", type: "Luxury Resort", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/le-meridien-mahabaleshwar.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Pratapgad Fort Guided Trek", duration: "Half day", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/mahabaleshwar-l3258/?partner_id=PSZA5UI" },
-              { name: "Mapro Garden & Strawberry Farm Tour", duration: "2 hours", price: "Free entry", badge: "Family", url: "https://www.getyourguide.com/mahabaleshwar-l3258/?partner_id=PSZA5UI" },
-              { name: "Mahabaleshwar Viewpoints Circuit", duration: "Full day", price: "From \u20B91,200/car", url: "https://www.getyourguide.com/mahabaleshwar-l3258/?partner_id=PSZA5UI" },
-              { name: "Old Mahabaleshwar Temple Walk", duration: "2 hours", price: "Free", url: "https://www.getyourguide.com/mahabaleshwar-l3258/?partner_id=PSZA5UI" },
+              { name: "Pratapgad Fort Guided Trek", duration: "Half day", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
+              { name: "Mapro Garden & Strawberry Farm Tour", duration: "2 hours", price: "Free entry", badge: "Family", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
+              { name: "Mahabaleshwar Viewpoints Circuit", duration: "Full day", price: "From \u20B91,200/car", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
+              { name: "Old Mahabaleshwar Temple Walk", duration: "2 hours", price: "Free", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
             ]}
             pdfProductId="mahabaleshwar-2-days-pdf"
           />

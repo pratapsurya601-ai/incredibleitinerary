@@ -463,10 +463,10 @@ export default function WayanadClient() {
               { name: "Rainforest Boutique", type: "Luxury Treehouse \u00B7 Lakkidi", price: "From \u20B98,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/rainforest-wayanad.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Chembra Peak Guided Trek", duration: "Half day", price: "From \u20B9350/person", badge: "Must do", url: "https://www.getyourguide.com/wayanad-l976/?partner_id=PSZA5UI" },
-              { name: "Tholpetty Wildlife Safari", duration: "2 hours", price: "From \u20B9500/person", badge: "Wildlife", url: "https://www.getyourguide.com/wayanad-l976/?partner_id=PSZA5UI" },
-              { name: "Spice Plantation Tour + Lunch", duration: "3 hours", price: "From \u20B9400/person", url: "https://www.getyourguide.com/wayanad-l976/?partner_id=PSZA5UI" },
-              { name: "Edakkal Caves Heritage Walk", duration: "2 hours", price: "From \u20B9230/person", url: "https://www.getyourguide.com/wayanad-l976/?partner_id=PSZA5UI" },
+              { name: "Chembra Peak Guided Trek", duration: "Half day", price: "From \u20B9350/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=wayanad&partner_id=PSZA5UI" },
+              { name: "Tholpetty Wildlife Safari", duration: "2 hours", price: "From \u20B9500/person", badge: "Wildlife", url: "https://www.getyourguide.com/s/?q=wayanad&partner_id=PSZA5UI" },
+              { name: "Spice Plantation Tour + Lunch", duration: "3 hours", price: "From \u20B9400/person", url: "https://www.getyourguide.com/s/?q=wayanad&partner_id=PSZA5UI" },
+              { name: "Edakkal Caves Heritage Walk", duration: "2 hours", price: "From \u20B9230/person", url: "https://www.getyourguide.com/s/?q=wayanad&partner_id=PSZA5UI" },
             ]}
             pdfProductId="wayanad-3-days-pdf"
           />

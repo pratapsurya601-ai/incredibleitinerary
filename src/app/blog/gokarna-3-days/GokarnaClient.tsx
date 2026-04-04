@@ -522,10 +522,10 @@ export default function GokarnaBlogClient() {
               { name: "SwaSwara", type: "Wellness Resort \u00B7 Om Beach", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/swaswara-gokarna.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Beach Trek Guide (Kudle to Paradise)", duration: "Half day", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/gokarna-l12345/?partner_id=PSZA5UI" },
-              { name: "Boat Tour — All 5 Beaches", duration: "3 hours", price: "From \u20B9500/person", badge: "Popular", url: "https://www.getyourguide.com/gokarna-l12345/?partner_id=PSZA5UI" },
-              { name: "Mirjan Fort & Yana Rocks Day Trip", duration: "Full day", price: "From \u20B91,200/person", url: "https://www.getyourguide.com/gokarna-l12345/?partner_id=PSZA5UI" },
-              { name: "Kayaking at Om Beach", duration: "2 hours", price: "From \u20B9300/person", url: "https://www.getyourguide.com/gokarna-l12345/?partner_id=PSZA5UI" },
+              { name: "Beach Trek Guide (Kudle to Paradise)", duration: "Half day", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=gokarna&partner_id=PSZA5UI" },
+              { name: "Boat Tour — All 5 Beaches", duration: "3 hours", price: "From \u20B9500/person", badge: "Popular", url: "https://www.getyourguide.com/s/?q=gokarna&partner_id=PSZA5UI" },
+              { name: "Mirjan Fort & Yana Rocks Day Trip", duration: "Full day", price: "From \u20B91,200/person", url: "https://www.getyourguide.com/s/?q=gokarna&partner_id=PSZA5UI" },
+              { name: "Kayaking at Om Beach", duration: "2 hours", price: "From \u20B9300/person", url: "https://www.getyourguide.com/s/?q=gokarna&partner_id=PSZA5UI" },
             ]}
             pdfProductId="gokarna-3-days-pdf"
           />

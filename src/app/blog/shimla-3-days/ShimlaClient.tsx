@@ -491,10 +491,10 @@ export default function ShimlaClient() {
               { name: "Wildflower Hall", type: "Luxury Oberoi · Mashobra", price: "From ₹18,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/wildflower-hall-shimla.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Kalka-Shimla Toy Train Experience", duration: "5 hours", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },
-              { name: "Shimla Heritage Walking Tour", duration: "2.5 hours", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },
-              { name: "Kufri Snow Adventure Day Trip", duration: "Half day", price: "From ₹1,200/person", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },
-              { name: "Mashobra & Naldehra Nature Drive", duration: "Full day", price: "From ₹2,000/person", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },
+              { name: "Kalka-Shimla Toy Train Experience", duration: "5 hours", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=shimla&partner_id=PSZA5UI" },
+              { name: "Shimla Heritage Walking Tour", duration: "2.5 hours", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=shimla&partner_id=PSZA5UI" },
+              { name: "Kufri Snow Adventure Day Trip", duration: "Half day", price: "From ₹1,200/person", url: "https://www.getyourguide.com/s/?q=shimla&partner_id=PSZA5UI" },
+              { name: "Mashobra & Naldehra Nature Drive", duration: "Full day", price: "From ₹2,000/person", url: "https://www.getyourguide.com/s/?q=shimla&partner_id=PSZA5UI" },
             ]}
             pdfProductId="shimla-3-days-pdf"
           />

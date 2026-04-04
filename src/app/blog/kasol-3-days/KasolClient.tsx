@@ -524,10 +524,10 @@ export default function KasolClient() {
               { name: "Kasol Riverside Cottage", type: "Boutique · Kasol", price: "From ₹3,000/night", rating: "5", badge: "Comfort pick", url: "https://www.booking.com/hotel/in/kasol-riverside.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Kheerganga Trek with Guide", duration: "2 days", price: "From ₹2,500/person", badge: "Must do", url: "https://www.getyourguide.com/kasol-l976/?partner_id=PSZA5UI" },
-              { name: "Malana Village Day Trek", duration: "Full day", price: "From ₹1,500/person", badge: "Cultural", url: "https://www.getyourguide.com/kasol-l976/?partner_id=PSZA5UI" },
-              { name: "Parvati Valley Cafe Walk", duration: "Half day", price: "From ₹500/person", url: "https://www.getyourguide.com/kasol-l976/?partner_id=PSZA5UI" },
-              { name: "Tosh & Chalal Village Walk", duration: "Half day", price: "Free – Self-guided", url: "https://www.getyourguide.com/kasol-l976/?partner_id=PSZA5UI" },
+              { name: "Kheerganga Trek with Guide", duration: "2 days", price: "From ₹2,500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=kasol&partner_id=PSZA5UI" },
+              { name: "Malana Village Day Trek", duration: "Full day", price: "From ₹1,500/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=kasol&partner_id=PSZA5UI" },
+              { name: "Parvati Valley Cafe Walk", duration: "Half day", price: "From ₹500/person", url: "https://www.getyourguide.com/s/?q=kasol&partner_id=PSZA5UI" },
+              { name: "Tosh & Chalal Village Walk", duration: "Half day", price: "Free – Self-guided", url: "https://www.getyourguide.com/s/?q=kasol&partner_id=PSZA5UI" },
             ]}
             pdfProductId="kasol-3-days-pdf"
           />

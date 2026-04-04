@@ -622,10 +622,10 @@ export default function KeralaClient() {
               { name: "Abhinetry",          type: "Cliff-top · Varkala",  price: "From ₹3,500/night", rating: "4", badge: "Best views",     url: "https://www.booking.com/hotel/in/abhinetry-varkala.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Alleppey Houseboat Private Tour",     duration: "Overnight", price: "From ₹8,000/boat",   badge: "Must do",        url: `https://www.getyourguide.com/alleppey-l1234/?partner_id=PSZA5UI` },
-              { name: "Periyar Wildlife Boat Safari",         duration: "3 hours",   price: "From ₹500/person",   badge: "Best for families", url: `https://www.getyourguide.com/thekkady-l1234/?partner_id=PSZA5UI` },
-              { name: "Fort Cochin Heritage Walk",            duration: "3 hours",   price: "From ₹800/person",   url: `https://www.getyourguide.com/kochi-l1234/?partner_id=PSZA5UI` },
-              { name: "Kerala Cooking Class — Fort Cochin",  duration: "3 hours",   price: "From ₹1,200/person",  url: `https://www.getyourguide.com/kochi-l1234/?partner_id=PSZA5UI` },
+              { name: "Alleppey Houseboat Private Tour",     duration: "Overnight", price: "From ₹8,000/boat",   badge: "Must do",        url: `https://www.getyourguide.com/s/?q=alleppey&partner_id=PSZA5UI` },
+              { name: "Periyar Wildlife Boat Safari",         duration: "3 hours",   price: "From ₹500/person",   badge: "Best for families", url: `https://www.getyourguide.com/s/?q=thekkady&partner_id=PSZA5UI` },
+              { name: "Fort Cochin Heritage Walk",            duration: "3 hours",   price: "From ₹800/person",   url: `https://www.getyourguide.com/s/?q=kochi&partner_id=PSZA5UI` },
+              { name: "Kerala Cooking Class — Fort Cochin",  duration: "3 hours",   price: "From ₹1,200/person",  url: `https://www.getyourguide.com/s/?q=kochi&partner_id=PSZA5UI` },
             ]}
             pdfProductId="goa-3-days-pdf"
           />

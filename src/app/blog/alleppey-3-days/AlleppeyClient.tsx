@@ -533,10 +533,10 @@ export default function AlleppeyBlogClient() {
               { name: "Premium Houseboat (2BR Upper Deck)", type: "Luxury Kettuvallam", price: "From \u20B920,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/alleppey-premium-houseboat.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Backwater Canoe Ride (2hrs)", duration: "2 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/alleppey-l2694/?partner_id=PSZA5UI" },
-              { name: "Full-Day Houseboat Cruise", duration: "Full day", price: "From \u20B95,000/boat", badge: "Popular", url: "https://www.getyourguide.com/alleppey-l2694/?partner_id=PSZA5UI" },
-              { name: "Pathiramanal Island Boat Trip", duration: "3 hours", price: "From \u20B9200/person", url: "https://www.getyourguide.com/alleppey-l2694/?partner_id=PSZA5UI" },
-              { name: "Kuttanad Village & Coir Tour", duration: "4 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/alleppey-l2694/?partner_id=PSZA5UI" },
+              { name: "Backwater Canoe Ride (2hrs)", duration: "2 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=alleppey&partner_id=PSZA5UI" },
+              { name: "Full-Day Houseboat Cruise", duration: "Full day", price: "From \u20B95,000/boat", badge: "Popular", url: "https://www.getyourguide.com/s/?q=alleppey&partner_id=PSZA5UI" },
+              { name: "Pathiramanal Island Boat Trip", duration: "3 hours", price: "From \u20B9200/person", url: "https://www.getyourguide.com/s/?q=alleppey&partner_id=PSZA5UI" },
+              { name: "Kuttanad Village & Coir Tour", duration: "4 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/s/?q=alleppey&partner_id=PSZA5UI" },
             ]}
             pdfProductId="alleppey-3-days-pdf"
           />

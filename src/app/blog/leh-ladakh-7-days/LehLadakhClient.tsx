@@ -519,10 +519,10 @@ export default function LehLadakhClient() {
               { name: "Pangong Sarai", type: "Lake Camp · Pangong", price: "From ₹4,500/night", rating: "4", badge: "Lakeside", url: "https://www.booking.com/hotel/in/pangong-sarai.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Pangong Lake Overnight Camp Tour", duration: "2 Days", price: "From ₹4,500/person", badge: "Must do", url: `https://www.getyourguide.com/leh-l3007/?partner_id=PSZA5UI` },
-              { name: "Nubra Valley + Khardung La Tour", duration: "2 Days", price: "From ₹3,500/person", badge: "Iconic", url: `https://www.getyourguide.com/leh-l3007/?partner_id=PSZA5UI` },
-              { name: "Monastery Tour — Thiksey + Hemis", duration: "Full Day", price: "From ₹1,200/person", url: `https://www.getyourguide.com/leh-l3007/?partner_id=PSZA5UI` },
-              { name: "Leh Ladakh Bike Rental — Royal Enfield", duration: "Per day", price: "From ₹1,200/day", url: `https://www.getyourguide.com/leh-l3007/?partner_id=PSZA5UI` },
+              { name: "Pangong Lake Overnight Camp Tour", duration: "2 Days", price: "From ₹4,500/person", badge: "Must do", url: `https://www.getyourguide.com/s/?q=leh&partner_id=PSZA5UI` },
+              { name: "Nubra Valley + Khardung La Tour", duration: "2 Days", price: "From ₹3,500/person", badge: "Iconic", url: `https://www.getyourguide.com/s/?q=leh&partner_id=PSZA5UI` },
+              { name: "Monastery Tour — Thiksey + Hemis", duration: "Full Day", price: "From ₹1,200/person", url: `https://www.getyourguide.com/s/?q=leh&partner_id=PSZA5UI` },
+              { name: "Leh Ladakh Bike Rental — Royal Enfield", duration: "Per day", price: "From ₹1,200/day", url: `https://www.getyourguide.com/s/?q=leh&partner_id=PSZA5UI` },
             ]}
           />
 

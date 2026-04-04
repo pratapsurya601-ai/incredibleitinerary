@@ -530,10 +530,10 @@ export default function JaisalmerClient() {
               { name: "Suryagarh Jaisalmer", type: "Luxury Heritage · Desert Edge", price: "From ₹12,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/suryagarh-jaisalmer.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Camel Safari & Overnight Desert Camp", duration: "Overnight", price: "From ₹1,500/person", badge: "Must do", url: "https://www.getyourguide.com/jaisalmer-l1234/?partner_id=PSZA5UI" },
-              { name: "Jaisalmer Fort Heritage Walking Tour", duration: "3 hours", price: "From ₹600/person", badge: "Cultural", url: "https://www.getyourguide.com/jaisalmer-l1234/?partner_id=PSZA5UI" },
-              { name: "Kuldhara Ghost Village Excursion", duration: "Half day", price: "From ₹800/person", url: "https://www.getyourguide.com/jaisalmer-l1234/?partner_id=PSZA5UI" },
-              { name: "Desert National Park Jeep Safari", duration: "Half day", price: "From ₹1,200/person", url: "https://www.getyourguide.com/jaisalmer-l1234/?partner_id=PSZA5UI" },
+              { name: "Camel Safari & Overnight Desert Camp", duration: "Overnight", price: "From ₹1,500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=jaisalmer&partner_id=PSZA5UI" },
+              { name: "Jaisalmer Fort Heritage Walking Tour", duration: "3 hours", price: "From ₹600/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=jaisalmer&partner_id=PSZA5UI" },
+              { name: "Kuldhara Ghost Village Excursion", duration: "Half day", price: "From ₹800/person", url: "https://www.getyourguide.com/s/?q=jaisalmer&partner_id=PSZA5UI" },
+              { name: "Desert National Park Jeep Safari", duration: "Half day", price: "From ₹1,200/person", url: "https://www.getyourguide.com/s/?q=jaisalmer&partner_id=PSZA5UI" },
             ]}
             pdfProductId="jaisalmer-3-days-pdf"
           />

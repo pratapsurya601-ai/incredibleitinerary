@@ -526,10 +526,10 @@ export default function MunnarClient() {
               { name: "Spice Tree Munnar", type: "Luxury Tea Bungalow", price: "From \u20B910,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/spice-tree-munnar.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Kolukkumalai Sunrise Jeep Safari", duration: "Half day (4am\u20139am)", price: "From \u20B9600/person", badge: "Must do", url: "https://www.getyourguide.com/munnar-l4581/?partner_id=PSZA5UI" },
-              { name: "Eravikulam National Park Visit", duration: "2\u20133 hours", price: "From \u20B9125/person", badge: "Wildlife", url: "https://www.getyourguide.com/munnar-l4581/?partner_id=PSZA5UI" },
-              { name: "Tea Plantation Guided Walk", duration: "2 hours", price: "From \u20B9500/person", url: "https://www.getyourguide.com/munnar-l4581/?partner_id=PSZA5UI" },
-              { name: "Top Station & Mattupetty Full Day", duration: "8 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/munnar-l4581/?partner_id=PSZA5UI" },
+              { name: "Kolukkumalai Sunrise Jeep Safari", duration: "Half day (4am\u20139am)", price: "From \u20B9600/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=munnar&partner_id=PSZA5UI" },
+              { name: "Eravikulam National Park Visit", duration: "2\u20133 hours", price: "From \u20B9125/person", badge: "Wildlife", url: "https://www.getyourguide.com/s/?q=munnar&partner_id=PSZA5UI" },
+              { name: "Tea Plantation Guided Walk", duration: "2 hours", price: "From \u20B9500/person", url: "https://www.getyourguide.com/s/?q=munnar&partner_id=PSZA5UI" },
+              { name: "Top Station & Mattupetty Full Day", duration: "8 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/s/?q=munnar&partner_id=PSZA5UI" },
             ]}
             pdfProductId="munnar-3-days-pdf"
           />

@@ -552,10 +552,10 @@ export default function MaduraiClient() {
               { name: "GRT Regency", type: "Mid-range \u00B7 Central", price: "From \u20B92,200/night", rating: "4", badge: "Value", url: "https://www.booking.com/hotel/in/grt-regency-madurai.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Meenakshi Temple Guided Tour", duration: "3 hours", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/madurai-l2082/?partner_id=PSZA5UI" },
-              { name: "Madurai Food Walking Tour", duration: "3 hours", price: "From \u20B9500/person", badge: "Foodie", url: "https://www.getyourguide.com/madurai-l2082/?partner_id=PSZA5UI" },
-              { name: "Dawn Flower Market Visit", duration: "2 hours", price: "From \u20B9600/person", url: "https://www.getyourguide.com/madurai-l2082/?partner_id=PSZA5UI" },
-              { name: "Full Day Madurai Heritage Tour", duration: "8 hours", price: "From \u20B91,500/person", url: "https://www.getyourguide.com/madurai-l2082/?partner_id=PSZA5UI" },
+              { name: "Meenakshi Temple Guided Tour", duration: "3 hours", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=madurai&partner_id=PSZA5UI" },
+              { name: "Madurai Food Walking Tour", duration: "3 hours", price: "From \u20B9500/person", badge: "Foodie", url: "https://www.getyourguide.com/s/?q=madurai&partner_id=PSZA5UI" },
+              { name: "Dawn Flower Market Visit", duration: "2 hours", price: "From \u20B9600/person", url: "https://www.getyourguide.com/s/?q=madurai&partner_id=PSZA5UI" },
+              { name: "Full Day Madurai Heritage Tour", duration: "8 hours", price: "From \u20B91,500/person", url: "https://www.getyourguide.com/s/?q=madurai&partner_id=PSZA5UI" },
             ]}
             pdfProductId="madurai-2-days-pdf"
           />

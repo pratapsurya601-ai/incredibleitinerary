@@ -505,10 +505,10 @@ export default function AgraClient() {
               { name: "Oberoi Amarvilas", type: "Luxury \u00B7 Taj View", price: "From \u20B925,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/oberoi-amarvilas.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Taj Mahal Sunrise Tour with Guide", duration: "3 hours", price: "From \u20B91,500/person", badge: "Must do", url: "https://www.getyourguide.com/agra-l270/?partner_id=PSZA5UI" },
-              { name: "Fatehpur Sikri Half-Day Excursion", duration: "5 hours", price: "From \u20B91,200/person", badge: "Heritage", url: "https://www.getyourguide.com/agra-l270/?partner_id=PSZA5UI" },
-              { name: "Agra Heritage Walking Tour", duration: "3 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/agra-l270/?partner_id=PSZA5UI" },
-              { name: "Marble Inlay Workshop Experience", duration: "2 hours", price: "From \u20B91,000/person", url: "https://www.getyourguide.com/agra-l270/?partner_id=PSZA5UI" },
+              { name: "Taj Mahal Sunrise Tour with Guide", duration: "3 hours", price: "From \u20B91,500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=agra&partner_id=PSZA5UI" },
+              { name: "Fatehpur Sikri Half-Day Excursion", duration: "5 hours", price: "From \u20B91,200/person", badge: "Heritage", url: "https://www.getyourguide.com/s/?q=agra&partner_id=PSZA5UI" },
+              { name: "Agra Heritage Walking Tour", duration: "3 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/s/?q=agra&partner_id=PSZA5UI" },
+              { name: "Marble Inlay Workshop Experience", duration: "2 hours", price: "From \u20B91,000/person", url: "https://www.getyourguide.com/s/?q=agra&partner_id=PSZA5UI" },
             ]}
             pdfProductId="agra-2-days-pdf"
           />

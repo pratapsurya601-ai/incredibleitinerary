@@ -479,11 +479,11 @@ export default function ManaliClient() {
               { name: "Manu Allaya Resort", type: "Luxury · Old Manali", price: "From ₹6,000/night", rating: "5", badge: "Most luxurious", url: "https://www.booking.com/hotel/in/manu-allaya-resort-manali.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Solang Valley Snow Activities",     duration: "Full day", price: "From ₹800/person",   badge: "Must do",    url: `https://www.getyourguide.com/manali-l3008/?partner_id=PSZA5UI` },
-              { name: "Rohtang Pass Day Trip",             duration: "Full day", price: "From ₹1,200/person", badge: "Iconic",     url: `https://www.getyourguide.com/manali-l3008/?partner_id=PSZA5UI` },
-              { name: "Paragliding at Solang Valley",      duration: "15 mins",  price: "From ₹1,200/person", url: `https://www.getyourguide.com/manali-l3008/?partner_id=PSZA5UI` },
-              { name: "Kasol + Kheerganga Trek Day Trip",  duration: "Full day", price: "From ₹1,500/person", url: `https://www.getyourguide.com/manali-l3008/?partner_id=PSZA5UI` },
-              { name: "Beas Kund Trek 2-Day",              duration: "2 Days",   price: "From ₹2,500/person", url: `https://www.getyourguide.com/manali-l3008/?partner_id=PSZA5UI` },
+              { name: "Solang Valley Snow Activities",     duration: "Full day", price: "From ₹800/person",   badge: "Must do",    url: `https://www.getyourguide.com/s/?q=manali&partner_id=PSZA5UI` },
+              { name: "Rohtang Pass Day Trip",             duration: "Full day", price: "From ₹1,200/person", badge: "Iconic",     url: `https://www.getyourguide.com/s/?q=manali&partner_id=PSZA5UI` },
+              { name: "Paragliding at Solang Valley",      duration: "15 mins",  price: "From ₹1,200/person", url: `https://www.getyourguide.com/s/?q=manali&partner_id=PSZA5UI` },
+              { name: "Kasol + Kheerganga Trek Day Trip",  duration: "Full day", price: "From ₹1,500/person", url: `https://www.getyourguide.com/s/?q=manali&partner_id=PSZA5UI` },
+              { name: "Beas Kund Trek 2-Day",              duration: "2 Days",   price: "From ₹2,500/person", url: `https://www.getyourguide.com/s/?q=manali&partner_id=PSZA5UI` },
             ]}
           />
 

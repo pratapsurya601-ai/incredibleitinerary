@@ -551,10 +551,10 @@ export default function PhuketClient() {
               { name: "Trisara Phuket", type: "Luxury Pool Villa \u00B7 Nai Thon", price: "From \u0E3F18,000/night (~$507)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/trisara.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Phi Phi Island Speedboat Day Trip", duration: "Full day", price: "From \u0E3F1,500/person (~$42)", badge: "Must do", url: "https://www.getyourguide.com/phuket-l182/?partner_id=PSZA5UI" },
-              { name: "Phang Nga Bay & James Bond Island", duration: "Full day", price: "From \u0E3F1,200/person (~$34)", badge: "Popular", url: "https://www.getyourguide.com/phuket-l182/?partner_id=PSZA5UI" },
-              { name: "Thai Cooking Class with Market Tour", duration: "Half day", price: "From \u0E3F1,000/person (~$28)", badge: "Cultural", url: "https://www.getyourguide.com/phuket-l182/?partner_id=PSZA5UI" },
-              { name: "Similan Islands Snorkelling Day Trip", duration: "Full day", price: "From \u0E3F2,500/person (~$70)", url: "https://www.getyourguide.com/phuket-l182/?partner_id=PSZA5UI" },
+              { name: "Phi Phi Island Speedboat Day Trip", duration: "Full day", price: "From \u0E3F1,500/person (~$42)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=phuket&partner_id=PSZA5UI" },
+              { name: "Phang Nga Bay & James Bond Island", duration: "Full day", price: "From \u0E3F1,200/person (~$34)", badge: "Popular", url: "https://www.getyourguide.com/s/?q=phuket&partner_id=PSZA5UI" },
+              { name: "Thai Cooking Class with Market Tour", duration: "Half day", price: "From \u0E3F1,000/person (~$28)", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=phuket&partner_id=PSZA5UI" },
+              { name: "Similan Islands Snorkelling Day Trip", duration: "Full day", price: "From \u0E3F2,500/person (~$70)", url: "https://www.getyourguide.com/s/?q=phuket&partner_id=PSZA5UI" },
             ]}
             pdfProductId="phuket-5-days-pdf"
           />

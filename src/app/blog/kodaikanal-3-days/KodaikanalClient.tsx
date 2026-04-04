@@ -537,10 +537,10 @@ export default function KodaikanalClient() {
               { name: "Sterling Kodai Lake", type: "Premium Resort · Lake View", price: "From ₹6,000/night", rating: "4", badge: "Premium", url: "https://www.booking.com/hotel/in/sterling-kodai-lake.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Berijam Lake Guided Tour", duration: "Half day", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/kodaikanal-l14476/?partner_id=PSZA5UI" },
-              { name: "Kodaikanal Full Day Sightseeing", duration: "Full day", price: "From ₹1,200/person", badge: "Popular", url: "https://www.getyourguide.com/kodaikanal-l14476/?partner_id=PSZA5UI" },
-              { name: "Dolphins Nose Trek", duration: "3 hours", price: "From ₹500/person", url: "https://www.getyourguide.com/kodaikanal-l14476/?partner_id=PSZA5UI" },
-              { name: "Vattakanal Nature Walk", duration: "2 hours", price: "From ₹400/person", url: "https://www.getyourguide.com/kodaikanal-l14476/?partner_id=PSZA5UI" },
+              { name: "Berijam Lake Guided Tour", duration: "Half day", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=kodaikanal&partner_id=PSZA5UI" },
+              { name: "Kodaikanal Full Day Sightseeing", duration: "Full day", price: "From ₹1,200/person", badge: "Popular", url: "https://www.getyourguide.com/s/?q=kodaikanal&partner_id=PSZA5UI" },
+              { name: "Dolphins Nose Trek", duration: "3 hours", price: "From ₹500/person", url: "https://www.getyourguide.com/s/?q=kodaikanal&partner_id=PSZA5UI" },
+              { name: "Vattakanal Nature Walk", duration: "2 hours", price: "From ₹400/person", url: "https://www.getyourguide.com/s/?q=kodaikanal&partner_id=PSZA5UI" },
             ]}
             pdfProductId="kodaikanal-3-days-pdf"
           />

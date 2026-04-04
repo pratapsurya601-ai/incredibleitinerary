@@ -597,10 +597,10 @@ export default function BaliClient() {
               { name: "Alila Villas Uluwatu", type: "Luxury Clifftop Resort", price: "From Rp5M/night (~$317)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/alila-villas-uluwatu.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Nusa Penida Day Trip + Snorkelling", duration: "Full day", price: "From Rp350k/person (~$22)", badge: "Must do", url: "https://www.getyourguide.com/bali-l347/?partner_id=PSZA5UI" },
-              { name: "Uluwatu Kecak Fire Dance", duration: "2 hours", price: "From Rp150k/person (~$9.50)", badge: "Cultural", url: "https://www.getyourguide.com/bali-l347/?partner_id=PSZA5UI" },
-              { name: "Mount Batur Sunrise Trek", duration: "8 hours", price: "From Rp500k/person (~$32)", url: "https://www.getyourguide.com/bali-l347/?partner_id=PSZA5UI" },
-              { name: "Ubud Rice Terrace & Temple Tour", duration: "10 hours", price: "From Rp400k/person (~$25)", url: "https://www.getyourguide.com/bali-l347/?partner_id=PSZA5UI" },
+              { name: "Nusa Penida Day Trip + Snorkelling", duration: "Full day", price: "From Rp350k/person (~$22)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=bali&partner_id=PSZA5UI" },
+              { name: "Uluwatu Kecak Fire Dance", duration: "2 hours", price: "From Rp150k/person (~$9.50)", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=bali&partner_id=PSZA5UI" },
+              { name: "Mount Batur Sunrise Trek", duration: "8 hours", price: "From Rp500k/person (~$32)", url: "https://www.getyourguide.com/s/?q=bali&partner_id=PSZA5UI" },
+              { name: "Ubud Rice Terrace & Temple Tour", duration: "10 hours", price: "From Rp400k/person (~$25)", url: "https://www.getyourguide.com/s/?q=bali&partner_id=PSZA5UI" },
             ]}
             pdfProductId="bali-5-days-pdf"
           />

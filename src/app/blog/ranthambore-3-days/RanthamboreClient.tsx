@@ -724,10 +724,10 @@ export default function RanthamboreClient() {
               { name: "Oberoi Vanyavilas", type: "Luxury Tented Camp", price: "From ₹35,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/oberoi-vanyavilas.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Ranthambore Jeep Safari (Premium Zone)", duration: "3 hours", price: "From ₹2,500/person", badge: "Must do", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },
-              { name: "Ranthambore Fort Guided Tour", duration: "Half day", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },
-              { name: "Village Walk & Cultural Experience", duration: "2 hours", price: "From ₹600/person", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },
-              { name: "Ranthambore Canter Safari (Budget)", duration: "3 hours", price: "From ₹750/person", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },
+              { name: "Ranthambore Jeep Safari (Premium Zone)", duration: "3 hours", price: "From ₹2,500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=ranthambore&partner_id=PSZA5UI" },
+              { name: "Ranthambore Fort Guided Tour", duration: "Half day", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=ranthambore&partner_id=PSZA5UI" },
+              { name: "Village Walk & Cultural Experience", duration: "2 hours", price: "From ₹600/person", url: "https://www.getyourguide.com/s/?q=ranthambore&partner_id=PSZA5UI" },
+              { name: "Ranthambore Canter Safari (Budget)", duration: "3 hours", price: "From ₹750/person", url: "https://www.getyourguide.com/s/?q=ranthambore&partner_id=PSZA5UI" },
             ]}
             pdfProductId="ranthambore-3-days-pdf"
           />

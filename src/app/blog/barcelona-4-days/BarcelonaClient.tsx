@@ -512,10 +512,10 @@ export default function BarcelonaClient() {
               { name: "Mandarin Oriental", type: "Ultra-Luxury \u00B7 Passeig de Gracia", price: "From \u20AC450/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/es/mandarin-oriental-barcelona.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Sagrada Familia Skip-the-Line", duration: "1.5 hours", price: "From \u20AC26", badge: "Must do", url: "https://www.getyourguide.com/barcelona-l45/?partner_id=PSZA5UI" },
-              { name: "Montserrat Half-Day Tour", duration: "5 hours", price: "From \u20AC50", badge: "Day trip", url: "https://www.getyourguide.com/barcelona-l45/?partner_id=PSZA5UI" },
-              { name: "Gothic Quarter Food Tour", duration: "3 hours", price: "From \u20AC65", badge: "Foodie", url: "https://www.getyourguide.com/barcelona-l45/?partner_id=PSZA5UI" },
-              { name: "Sunset Sailing Experience", duration: "2 hours", price: "From \u20AC45", url: "https://www.getyourguide.com/barcelona-l45/?partner_id=PSZA5UI" },
+              { name: "Sagrada Familia Skip-the-Line", duration: "1.5 hours", price: "From \u20AC26", badge: "Must do", url: "https://www.getyourguide.com/s/?q=barcelona&partner_id=PSZA5UI" },
+              { name: "Montserrat Half-Day Tour", duration: "5 hours", price: "From \u20AC50", badge: "Day trip", url: "https://www.getyourguide.com/s/?q=barcelona&partner_id=PSZA5UI" },
+              { name: "Gothic Quarter Food Tour", duration: "3 hours", price: "From \u20AC65", badge: "Foodie", url: "https://www.getyourguide.com/s/?q=barcelona&partner_id=PSZA5UI" },
+              { name: "Sunset Sailing Experience", duration: "2 hours", price: "From \u20AC45", url: "https://www.getyourguide.com/s/?q=barcelona&partner_id=PSZA5UI" },
             ]}
           />
 

@@ -533,10 +533,10 @@ export default function MysoreClient() {
               { name: "Radisson Blu Plaza Mysore", type: "Luxury \u00B7 Central", price: "From \u20B97,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/radisson-blu-plaza-mysore.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Mysore Palace & Chamundi Hills Tour", duration: "Full day", price: "From \u20B91,200/person", badge: "Must do", url: "https://www.getyourguide.com/mysore-l2547/?partner_id=PSZA5UI" },
-              { name: "Srirangapatna Heritage Tour", duration: "Half day", price: "From \u20B9800/person", badge: "Cultural", url: "https://www.getyourguide.com/mysore-l2547/?partner_id=PSZA5UI" },
-              { name: "Mysore Silk & Spice Walking Tour", duration: "3 hours", price: "From \u20B9600/person", url: "https://www.getyourguide.com/mysore-l2547/?partner_id=PSZA5UI" },
-              { name: "Brindavan Gardens & Musical Fountain", duration: "4 hours", price: "From \u20B9500/person", url: "https://www.getyourguide.com/mysore-l2547/?partner_id=PSZA5UI" },
+              { name: "Mysore Palace & Chamundi Hills Tour", duration: "Full day", price: "From \u20B91,200/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
+              { name: "Srirangapatna Heritage Tour", duration: "Half day", price: "From \u20B9800/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
+              { name: "Mysore Silk & Spice Walking Tour", duration: "3 hours", price: "From \u20B9600/person", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
+              { name: "Brindavan Gardens & Musical Fountain", duration: "4 hours", price: "From \u20B9500/person", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
             ]}
             pdfProductId="mysore-3-days-pdf"
           />

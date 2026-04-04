@@ -513,11 +513,11 @@ export default function RajasthanBlogClient() {
               { name: "Dera Rawatsar", type: "Heritage Haveli · Jaipur", price: "From ₹3,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/dera-rawatsar-jaipur.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Amber Fort Skip-the-Line Guided Tour", duration: "3 hours", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/jaipur-l200/?partner_id=PSZA5UI" },
-              { name: "Mehrangarh Fort Audio Tour + Entry", duration: "2.5 hours", price: "From ₹600/person", badge: "Best in Jodhpur", url: "https://www.getyourguide.com/jodhpur-l1435/?partner_id=PSZA5UI" },
-              { name: "Jaisalmer Desert Overnight Camp + Camel Safari", duration: "Overnight", price: "From ₹2,500/person", badge: "Unforgettable", url: "https://www.getyourguide.com/jaisalmer-l1436/?partner_id=PSZA5UI" },
-              { name: "Lake Pichola Private Sunset Boat", duration: "45 minutes", price: "From ₹1,500/person", url: "https://www.getyourguide.com/udaipur-l1437/?partner_id=PSZA5UI" },
-              { name: "Bishnoi Village Safari — Jodhpur", duration: "Half day", price: "From ₹2,000/person", url: "https://www.getyourguide.com/jodhpur-l1435/?partner_id=PSZA5UI" },
+              { name: "Amber Fort Skip-the-Line Guided Tour", duration: "3 hours", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
+              { name: "Mehrangarh Fort Audio Tour + Entry", duration: "2.5 hours", price: "From ₹600/person", badge: "Best in Jodhpur", url: "https://www.getyourguide.com/s/?q=jodhpur&partner_id=PSZA5UI" },
+              { name: "Jaisalmer Desert Overnight Camp + Camel Safari", duration: "Overnight", price: "From ₹2,500/person", badge: "Unforgettable", url: "https://www.getyourguide.com/s/?q=jaisalmer&partner_id=PSZA5UI" },
+              { name: "Lake Pichola Private Sunset Boat", duration: "45 minutes", price: "From ₹1,500/person", url: "https://www.getyourguide.com/s/?q=udaipur&partner_id=PSZA5UI" },
+              { name: "Bishnoi Village Safari — Jodhpur", duration: "Half day", price: "From ₹2,000/person", url: "https://www.getyourguide.com/s/?q=jodhpur&partner_id=PSZA5UI" },
             ]}
             pdfProductId="rajasthan-7-days-pdf"
           />

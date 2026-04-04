@@ -466,11 +466,11 @@ export default function AndamanClient() {
               { name: "Fortune Resort Bay Island", type: "4★ · Port Blair", price: "From ₹5,000/night", rating: "4", badge: "Best in PB", url: "https://www.booking.com/hotel/in/fortune-resort-bay-island-port-blair.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Havelock Island Scuba Diving",         duration: "Half day", price: "From ₹3,500/person", badge: "Must do",    url: `https://www.getyourguide.com/havelock-island-l97872/?partner_id=PSZA5UI` },
-              { name: "Radhanagar Beach Sunset Tour",          duration: "3 hours", price: "From ₹800/person",   badge: "Top rated",  url: `https://www.getyourguide.com/port-blair-l97861/?partner_id=PSZA5UI` },
-              { name: "Elephant Beach Snorkeling + Boat",      duration: "3 hours", price: "From ₹1,200/person",  url: `https://www.getyourguide.com/havelock-island-l97872/?partner_id=PSZA5UI` },
-              { name: "Cellular Jail Sound & Light Show",      duration: "1.5 hrs", price: "From ₹100/person",    url: `https://www.getyourguide.com/port-blair-l97861/?partner_id=PSZA5UI` },
-              { name: "Ross Island + North Bay Day Trip",      duration: "Full day", price: "From ₹600/person",    url: `https://www.getyourguide.com/port-blair-l97861/?partner_id=PSZA5UI` },
+              { name: "Havelock Island Scuba Diving",         duration: "Half day", price: "From ₹3,500/person", badge: "Must do",    url: `https://www.getyourguide.com/s/?q=havelock-island&partner_id=PSZA5UI` },
+              { name: "Radhanagar Beach Sunset Tour",          duration: "3 hours", price: "From ₹800/person",   badge: "Top rated",  url: `https://www.getyourguide.com/s/?q=port-blair&partner_id=PSZA5UI` },
+              { name: "Elephant Beach Snorkeling + Boat",      duration: "3 hours", price: "From ₹1,200/person",  url: `https://www.getyourguide.com/s/?q=havelock-island&partner_id=PSZA5UI` },
+              { name: "Cellular Jail Sound & Light Show",      duration: "1.5 hrs", price: "From ₹100/person",    url: `https://www.getyourguide.com/s/?q=port-blair&partner_id=PSZA5UI` },
+              { name: "Ross Island + North Bay Day Trip",      duration: "Full day", price: "From ₹600/person",    url: `https://www.getyourguide.com/s/?q=port-blair&partner_id=PSZA5UI` },
             ]}
           />
 
