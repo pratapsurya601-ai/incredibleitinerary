@@ -326,6 +326,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/nara-2-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/komodo-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/boracay-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Europe (Batch 8)
+    { url: `${base}/blog/warsaw-4-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/hamburg-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/cologne-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/plovdiv-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/albania-riviera-5-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/ohrid-3-days`,            lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // USA (Batch 8)
+    { url: `${base}/blog/portland-oregon-4-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/denver-3-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/philadelphia-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/san-diego-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Americas & Middle East (Batch 8)
+    { url: `${base}/blog/puerto-rico-5-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/beirut-4-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
