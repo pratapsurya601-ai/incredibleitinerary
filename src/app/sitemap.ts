@@ -241,6 +241,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/mallorca-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/san-sebastian-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/granada-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Mexico
+    { url: `${base}/blog/mexico-city-4-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.93 },
+    { url: `${base}/blog/oaxaca-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/tulum-4-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Central America
+    { url: `${base}/blog/costa-rica-7-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/antigua-guatemala-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // South America (more)
+    { url: `${base}/blog/cartagena-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Baltic States
+    { url: `${base}/blog/tallinn-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/riga-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/vilnius-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Indian Ocean
+    { url: `${base}/blog/seychelles-5-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/mauritius-5-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Africa (more)
+    { url: `${base}/blog/victoria-falls-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     // Middle East (more)
     { url: `${base}/blog/alula-3-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/doha-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.90 },
