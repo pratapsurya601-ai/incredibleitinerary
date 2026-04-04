@@ -24,10 +24,11 @@ export const SITE_CONFIG = {
 
 // ── AFFILIATE LINKS ───────────────────────────────────────────────────────────
 export const AFFILIATE = {
-  // Booking.com affiliate — env var takes priority, hardcoded ID as fallback
+  // Booking.com affiliate — set NEXT_PUBLIC_BOOKING_AID in Vercel env vars
   bookingCom: (destination: string) => {
-    const aid = process.env.NEXT_PUBLIC_BOOKING_AID || "2820480";
-    return `https://www.booking.com/search.html?ss=${encodeURIComponent(destination)}&lang=en-us&aid=${aid}`;
+    const aid = process.env.NEXT_PUBLIC_BOOKING_AID;
+    const base = `https://www.booking.com/search.html?ss=${encodeURIComponent(destination)}&lang=en-us`;
+    return aid ? `${base}&aid=${aid}` : base;
   },
 
   // GetYourGuide — partner code: PSZA5UI ✅ LIVE
@@ -41,10 +42,10 @@ export const AFFILIATE = {
     return vid ? `${base}?mcid=${vid}` : base;
   },
 
-  // Direct hotel links — env var takes priority, hardcoded fallback
+  // Direct hotel links — set NEXT_PUBLIC_BOOKING_AID in Vercel env vars
   hotels: (() => {
-    const aid = process.env.NEXT_PUBLIC_BOOKING_AID || "2820480";
-    const suffix = `?aid=${aid}`;
+    const aid = process.env.NEXT_PUBLIC_BOOKING_AID;
+    const suffix = aid ? `?aid=${aid}` : "";
     return {
       zostelGoa:         `https://www.booking.com/hotel/in/zostel-goa.html${suffix}`,
       raasJodhpur:       `https://www.booking.com/hotel/in/raas-jodhpur.html${suffix}`,
