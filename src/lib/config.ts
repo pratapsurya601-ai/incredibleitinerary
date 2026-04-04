@@ -24,28 +24,27 @@ export const SITE_CONFIG = {
 
 // ── AFFILIATE LINKS ───────────────────────────────────────────────────────────
 export const AFFILIATE = {
-  // Booking.com affiliate — uses env var if set, otherwise clean URL
+  // Booking.com affiliate — env var takes priority, hardcoded ID as fallback
   bookingCom: (destination: string) => {
-    const aid = process.env.NEXT_PUBLIC_BOOKING_AID;
-    const base = `https://www.booking.com/search.html?ss=${encodeURIComponent(destination)}&lang=en-us`;
-    return aid ? `${base}&aid=${aid}` : base;
+    const aid = process.env.NEXT_PUBLIC_BOOKING_AID || "2820480";
+    return `https://www.booking.com/search.html?ss=${encodeURIComponent(destination)}&lang=en-us&aid=${aid}`;
   },
 
   // GetYourGuide — partner code: PSZA5UI ✅ LIVE
   getYourGuide: (destination: string) =>
     `https://www.getyourguide.com/s/?q=${encodeURIComponent(destination)}&partner_id=PSZA5UI`,
 
-  // Viator — uses env var if set, otherwise clean URL
+  // Viator — uses env var if set
   viator: (destination: string) => {
     const vid = process.env.NEXT_PUBLIC_VIATOR_ID;
     const base = `https://www.viator.com/search/${encodeURIComponent(destination)}`;
     return vid ? `${base}?mcid=${vid}` : base;
   },
 
-  // Direct hotel links — uses env var if set
+  // Direct hotel links — env var takes priority, hardcoded fallback
   hotels: (() => {
-    const aid = process.env.NEXT_PUBLIC_BOOKING_AID;
-    const suffix = aid ? `?aid=${aid}` : "";
+    const aid = process.env.NEXT_PUBLIC_BOOKING_AID || "2820480";
+    const suffix = `?aid=${aid}`;
     return {
       zostelGoa:         `https://www.booking.com/hotel/in/zostel-goa.html${suffix}`,
       raasJodhpur:       `https://www.booking.com/hotel/in/raas-jodhpur.html${suffix}`,
