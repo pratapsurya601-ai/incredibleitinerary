@@ -27,6 +27,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   verification: {
     google: "BmoxUjBfGA7mVKr8qayc8cxC7_ND1hdJOEb6zaxloSA",
+    other: { "msvalidate.01": ["32471722DA608250B1B461D6531492B0"] },
   },
   title: "IncredibleItinerary — Free Travel Guides & Itineraries Worldwide",
   description:
