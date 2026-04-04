@@ -22,7 +22,7 @@ interface SmartImageProps {
 export default function SmartImage({
   imageKey,
   query,
-  fallback = "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&q=80",
+  fallback = "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80",
   alt,
   fill,
   width,
