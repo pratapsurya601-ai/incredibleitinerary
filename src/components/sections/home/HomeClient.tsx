@@ -27,6 +27,9 @@ const FinalCTASection = dynamic(() => import("./FinalCTASection"), {
 const NewsletterSection = dynamic(() => import("./NewsletterSection"), {
   loading: () => <div className="bg-parchment py-16 animate-pulse" style={{ minHeight: 200 }} />,
 });
+const IndiaMapSection = dynamic(() => import("./IndiaMapSection"), {
+  loading: () => <div className="bg-ink py-20 animate-pulse" style={{ minHeight: 500 }} />,
+});
 const InquiryModal = dynamic(() => import("@/components/ui/InquiryModal"), { ssr: false });
 
 export default function HomeClient() {
@@ -43,6 +46,7 @@ export default function HomeClient() {
         <HowItWorksSection onPlanTrip={open} />
         <Testimonials />
         <DestinationGridSection />
+        <IndiaMapSection />
         <MonetizationSection onPlanTrip={open} />
         <HomepageFAQ />
         <NewsletterSection />
