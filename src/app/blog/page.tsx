@@ -25,6 +25,13 @@ const FILTERS = [
   { id: "indonesia", label: "Indonesia", emoji: "🇮🇩", slugs: ["bali-5-days","ubud-3-days","lombok-4-days"] },
   { id: "uae", label: "UAE & Oman", emoji: "🇦🇪", slugs: ["dubai-4-days","abu-dhabi-3-days","muscat-3-days"] },
   { id: "spain", label: "Spain", emoji: "🇪🇸", slugs: ["barcelona-4-days","madrid-3-days","seville-3-days"] },
+  { id: "vietnam", label: "Vietnam", emoji: "🇻🇳", slugs: ["hanoi-3-days","ho-chi-minh-city-3-days","ha-long-bay-3-days"] },
+  { id: "greece", label: "Greece", emoji: "🇬🇷", slugs: ["athens-3-days","santorini-4-days","crete-5-days"] },
+  { id: "turkey", label: "Turkey", emoji: "🇹🇷", slugs: ["istanbul-5-days","cappadocia-3-days","antalya-3-days"] },
+  { id: "maldives", label: "Maldives", emoji: "🇲🇻", slugs: ["maldives-5-days"] },
+  { id: "singapore", label: "Singapore", emoji: "🇸🇬", slugs: ["singapore-3-days"] },
+  { id: "portugal", label: "Portugal", emoji: "🇵🇹", slugs: ["lisbon-4-days","porto-3-days","algarve-4-days"] },
+  { id: "malaysia", label: "Malaysia", emoji: "🇲🇾", slugs: ["kuala-lumpur-3-days","langkawi-3-days","penang-3-days"] },
 ];
 
 export default function BlogIndexPage() {

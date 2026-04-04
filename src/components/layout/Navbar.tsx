@@ -18,13 +18,14 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { href: "/blog",          label: "Destinations" },
-    { href: "/quiz",          label: "Find My Trip" },
-    { href: "/tools/trip-calculator", label: "Cost Calculator" },
-    { href: "/tools/visa-checker", label: "Visa Checker" },
-    { href: "/compare/thailand-vs-bali", label: "Compare" },
-    { href: "/shop",          label: "Shop" },
-    { href: "/about",         label: "About" },
+    { href: "/blog",                       label: "Destinations" },
+    { href: "/quiz",                       label: "Find My Trip" },
+    { href: "/tools/trip-calculator",      label: "Cost Calc" },
+    { href: "/tools/currency-converter",   label: "Converter" },
+    { href: "/tools/packing-list",         label: "Packing" },
+    { href: "/compare/thailand-vs-bali",   label: "Compare" },
+    { href: "/shop",                       label: "Shop" },
+    { href: "/about",                      label: "About" },
   ];
 
   return (

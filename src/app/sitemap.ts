@@ -108,5 +108,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/barcelona-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/madrid-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/blog/seville-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    // Vietnam
+    { url: `${base}/blog/hanoi-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/ho-chi-minh-city-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/ha-long-bay-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // Greece
+    { url: `${base}/blog/athens-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/santorini-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/crete-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // Turkey
+    { url: `${base}/blog/istanbul-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/cappadocia-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/antalya-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    // Maldives
+    { url: `${base}/blog/maldives-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Singapore
+    { url: `${base}/blog/singapore-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Portugal
+    { url: `${base}/blog/lisbon-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/porto-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/algarve-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    // Malaysia
+    { url: `${base}/blog/kuala-lumpur-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/langkawi-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/penang-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // Tools
+    { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
   ];
 }
