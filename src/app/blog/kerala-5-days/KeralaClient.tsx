@@ -616,10 +616,10 @@ export default function KeralaClient() {
           <AffiliateBlock
             destination="Kerala"
             hotels={[
-              { name: "Old Harbour Hotel", type: "Heritage · Fort Cochin", price: "From ₹6,000/night", rating: "5", badge: "Best in Kochi", url: "https://www.booking.com/hotel/in/old-harbour-cochin.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Windermere Estate", type: "Tea Estate · Munnar",   price: "From ₹5,000/night", rating: "4", badge: "Couple pick",    url: "https://www.booking.com/hotel/in/windermere-estate-munnar.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Marari Beach Resort",type: "Beach · Alleppey",     price: "From ₹8,000/night", rating: "5", badge: "Most peaceful",  url: "https://www.booking.com/hotel/in/marari-beach-resort.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Abhinetry",          type: "Cliff-top · Varkala",  price: "From ₹3,500/night", rating: "4", badge: "Best views",     url: "https://www.booking.com/hotel/in/abhinetry-varkala.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Old Harbour Hotel", type: "Heritage · Fort Cochin", price: "From ₹6,000/night", rating: "5", badge: "Best in Kochi", url: "https://www.booking.com/hotel/in/old-harbour-cochin.html?aid=2820480" },
+              { name: "Windermere Estate", type: "Tea Estate · Munnar",   price: "From ₹5,000/night", rating: "4", badge: "Couple pick",    url: "https://www.booking.com/hotel/in/windermere-estate-munnar.html?aid=2820480" },
+              { name: "Marari Beach Resort",type: "Beach · Alleppey",     price: "From ₹8,000/night", rating: "5", badge: "Most peaceful",  url: "https://www.booking.com/hotel/in/marari-beach-resort.html?aid=2820480" },
+              { name: "Abhinetry",          type: "Cliff-top · Varkala",  price: "From ₹3,500/night", rating: "4", badge: "Best views",     url: "https://www.booking.com/hotel/in/abhinetry-varkala.html?aid=2820480" },
             ]}
             activities={[
               { name: "Alleppey Houseboat Private Tour",     duration: "Overnight", price: "From ₹8,000/boat",   badge: "Must do",        url: `https://www.getyourguide.com/alleppey-l1234/?partner_id=PSZA5UI` },

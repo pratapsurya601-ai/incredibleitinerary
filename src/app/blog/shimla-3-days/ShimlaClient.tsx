@@ -486,9 +486,9 @@ export default function ShimlaClient() {
           <AffiliateBlock
             destination="Shimla"
             hotels={[
-              { name: "Hotel Combermere", type: "Heritage Budget · Mall Road", price: "From ₹1,800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/combermere-shimla.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Clarke's Hotel", type: "Heritage Classic · Mall Road", price: "From ₹5,500/night", rating: "4", badge: "Family pick", url: "https://www.booking.com/hotel/in/clarkes-shimla.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Wildflower Hall", type: "Luxury Oberoi · Mashobra", price: "From ₹18,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/wildflower-hall-shimla.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Combermere", type: "Heritage Budget · Mall Road", price: "From ₹1,800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/combermere-shimla.html?aid=2820480" },
+              { name: "Clarke's Hotel", type: "Heritage Classic · Mall Road", price: "From ₹5,500/night", rating: "4", badge: "Family pick", url: "https://www.booking.com/hotel/in/clarkes-shimla.html?aid=2820480" },
+              { name: "Wildflower Hall", type: "Luxury Oberoi · Mashobra", price: "From ₹18,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/wildflower-hall-shimla.html?aid=2820480" },
             ]}
             activities={[
               { name: "Kalka-Shimla Toy Train Experience", duration: "5 hours", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },

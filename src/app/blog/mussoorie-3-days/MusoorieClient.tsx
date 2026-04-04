@@ -518,9 +518,9 @@ export default function MusoorieClient() {
           <AffiliateBlock
             destination="Mussoorie"
             hotels={[
-              { name: "Hotel Broadway", type: "Budget &middot; Mall Road", price: "From \u20B91,200/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/broadway-mussoorie.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Rokeby Manor", type: "Heritage Boutique &middot; Landour", price: "From \u20B95,500/night", rating: "5", badge: "Top pick", url: "https://www.booking.com/hotel/in/rokeby-manor.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "JW Marriott Mussoorie", type: "Luxury Resort &middot; Library Road", price: "From \u20B910,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/jw-marriott-mussoorie.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Broadway", type: "Budget &middot; Mall Road", price: "From \u20B91,200/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/broadway-mussoorie.html?aid=2820480" },
+              { name: "Rokeby Manor", type: "Heritage Boutique &middot; Landour", price: "From \u20B95,500/night", rating: "5", badge: "Top pick", url: "https://www.booking.com/hotel/in/rokeby-manor.html?aid=2820480" },
+              { name: "JW Marriott Mussoorie", type: "Luxury Resort &middot; Library Road", price: "From \u20B910,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/jw-marriott-mussoorie.html?aid=2820480" },
             ]}
             activities={[
               { name: "Landour Heritage Walking Tour", duration: "3 hours", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/mussoorie-l4321/landour/?partner_id=PSZA5UI" },

@@ -532,9 +532,9 @@ export default function KodaikanalClient() {
           <AffiliateBlock
             destination="Kodaikanal"
             hotels={[
-              { name: "Hotel Kodai International", type: "Budget · Near Bus Stand", price: "From ₹800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/kodai-international.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "The Carlton", type: "Heritage Resort · Lake View", price: "From ₹5,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/the-carlton-kodaikanal.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Sterling Kodai Lake", type: "Premium Resort · Lake View", price: "From ₹6,000/night", rating: "4", badge: "Premium", url: "https://www.booking.com/hotel/in/sterling-kodai-lake.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Kodai International", type: "Budget · Near Bus Stand", price: "From ₹800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/kodai-international.html?aid=2820480" },
+              { name: "The Carlton", type: "Heritage Resort · Lake View", price: "From ₹5,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/the-carlton-kodaikanal.html?aid=2820480" },
+              { name: "Sterling Kodai Lake", type: "Premium Resort · Lake View", price: "From ₹6,000/night", rating: "4", badge: "Premium", url: "https://www.booking.com/hotel/in/sterling-kodai-lake.html?aid=2820480" },
             ]}
             activities={[
               { name: "Berijam Lake Guided Tour", duration: "Half day", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/kodaikanal-l14476/?partner_id=PSZA5UI" },

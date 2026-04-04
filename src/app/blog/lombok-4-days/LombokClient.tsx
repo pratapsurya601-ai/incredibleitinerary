@@ -563,9 +563,9 @@ export default function LombokClient() {
           <AffiliateBlock
             destination="Lombok"
             hotels={[
-              { name: "Kebun Kupu Kupu", type: "Budget Guesthouse \u00B7 Senggigi", price: "From Rp150k/night (~$9)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/id/kebun-kupu-kupu.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Qunci Villas", type: "Boutique Beach Hotel \u00B7 Senggigi", price: "From Rp800k/night (~$50)", rating: "5", badge: "Mid pick", url: "https://www.booking.com/hotel/id/qunci-villas-lombok.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Novotel Lombok", type: "Luxury Beach Resort", price: "From Rp1.5M/night (~$95)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/novotel-lombok.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Kebun Kupu Kupu", type: "Budget Guesthouse \u00B7 Senggigi", price: "From Rp150k/night (~$9)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/id/kebun-kupu-kupu.html?aid=2820480" },
+              { name: "Qunci Villas", type: "Boutique Beach Hotel \u00B7 Senggigi", price: "From Rp800k/night (~$50)", rating: "5", badge: "Mid pick", url: "https://www.booking.com/hotel/id/qunci-villas-lombok.html?aid=2820480" },
+              { name: "Novotel Lombok", type: "Luxury Beach Resort", price: "From Rp1.5M/night (~$95)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/novotel-lombok.html?aid=2820480" },
             ]}
             activities={[
               { name: "Gili Islands Snorkelling Trip", duration: "Full day", price: "From Rp150k/person (~$9)", badge: "Must do", url: "https://www.getyourguide.com/lombok-l2654/gili/?partner_id=PSZA5UI" },

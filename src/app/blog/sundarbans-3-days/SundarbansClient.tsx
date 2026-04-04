@@ -519,9 +519,9 @@ export default function SundarbansClient() {
           <AffiliateBlock
             destination="Sundarbans"
             hotels={[
-              { name: "Sundarbans Tiger Camp", type: "Eco Lodge \u00B7 Dayapur", price: "From \u20B92,500/night", rating: "4", badge: "Safari pick", url: "https://www.booking.com/hotel/in/sundarbans-tiger-camp.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Sunderban Houseboat", type: "Premium Houseboat", price: "From \u20B96,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/sunderban-houseboat.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Gosaba Island Lodge", type: "Budget Stay \u00B7 Gosaba", price: "From \u20B9600/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/gosaba-island-lodge.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Sundarbans Tiger Camp", type: "Eco Lodge \u00B7 Dayapur", price: "From \u20B92,500/night", rating: "4", badge: "Safari pick", url: "https://www.booking.com/hotel/in/sundarbans-tiger-camp.html?aid=2820480" },
+              { name: "Sunderban Houseboat", type: "Premium Houseboat", price: "From \u20B96,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/sunderban-houseboat.html?aid=2820480" },
+              { name: "Gosaba Island Lodge", type: "Budget Stay \u00B7 Gosaba", price: "From \u20B9600/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/gosaba-island-lodge.html?aid=2820480" },
             ]}
             activities={[
               { name: "Sundarbans 2N/3D Boat Safari", duration: "3 days", price: "From \u20B98,500/person", badge: "Must do", url: "https://www.getyourguide.com/kolkata-l1234/sundarbans/?partner_id=PSZA5UI" },

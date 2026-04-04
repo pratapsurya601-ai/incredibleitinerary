@@ -659,9 +659,9 @@ export default function RomeClient() {
           <AffiliateBlock
             destination="Rome"
             hotels={[
-              { name: "The Yellow Hostel", type: "Budget Hostel \u00B7 Termini", price: "From \u20AC28/night ($30)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/it/the-yellow.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Raphael", type: "Boutique 5-star \u00B7 Piazza Navona", price: "From \u20AC220/night ($238)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/it/raphael.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel de Russie", type: "Luxury 5-star \u00B7 Piazza del Popolo", price: "From \u20AC450/night ($486)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/de-russie.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "The Yellow Hostel", type: "Budget Hostel \u00B7 Termini", price: "From \u20AC28/night ($30)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/it/the-yellow.html?aid=2820480" },
+              { name: "Hotel Raphael", type: "Boutique 5-star \u00B7 Piazza Navona", price: "From \u20AC220/night ($238)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/it/raphael.html?aid=2820480" },
+              { name: "Hotel de Russie", type: "Luxury 5-star \u00B7 Piazza del Popolo", price: "From \u20AC450/night ($486)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/de-russie.html?aid=2820480" },
             ]}
             activities={[
               { name: "Colosseum + Forum + Palatine Combo Ticket", duration: "Half day", price: "From \u20AC18/person ($19.50)", badge: "Must do", url: "https://www.getyourguide.com/rome-l33/colosseum/?partner_id=PSZA5UI" },

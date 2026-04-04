@@ -512,9 +512,9 @@ export default function UdaipurClient() {
           <AffiliateBlock
             destination="Udaipur"
             hotels={[
-              { name: "Zostel Udaipur", type: "Budget Hostel \u00B7 Lal Ghat", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-udaipur.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Jagat Niwas Palace", type: "Heritage Haveli \u00B7 Lake View", price: "From \u20B94,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/jagat-niwas-palace.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Oberoi Udaivilas", type: "Luxury Palace \u00B7 Lakefront", price: "From \u20B935,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/the-oberoi-udaivilas.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Udaipur", type: "Budget Hostel \u00B7 Lal Ghat", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-udaipur.html?aid=2820480" },
+              { name: "Jagat Niwas Palace", type: "Heritage Haveli \u00B7 Lake View", price: "From \u20B94,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/jagat-niwas-palace.html?aid=2820480" },
+              { name: "Oberoi Udaivilas", type: "Luxury Palace \u00B7 Lakefront", price: "From \u20B935,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/the-oberoi-udaivilas.html?aid=2820480" },
             ]}
             activities={[
               { name: "Lake Pichola Sunset Boat Ride", duration: "1.5 hours", price: "From \u20B9400/person", badge: "Must do", url: "https://www.getyourguide.com/udaipur-l1234/boat-ride/?partner_id=PSZA5UI" },

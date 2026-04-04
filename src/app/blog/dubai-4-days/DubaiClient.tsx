@@ -628,9 +628,9 @@ export default function DubaiClient() {
           <AffiliateBlock
             destination="Dubai"
             hotels={[
-              { name: "Rove Downtown", type: "Budget Design Hotel \u00B7 Downtown", price: "From AED 200/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/ae/rove-downtown.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Vida Downtown", type: "Mid-Range Boutique \u00B7 Downtown", price: "From AED 500/night", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/ae/vida-downtown-dubai.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Atlantis The Royal", type: "Ultra-Luxury \u00B7 Palm Jumeirah", price: "From AED 2,500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/ae/atlantis-the-royal.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Rove Downtown", type: "Budget Design Hotel \u00B7 Downtown", price: "From AED 200/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/ae/rove-downtown.html?aid=2820480" },
+              { name: "Vida Downtown", type: "Mid-Range Boutique \u00B7 Downtown", price: "From AED 500/night", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/ae/vida-downtown-dubai.html?aid=2820480" },
+              { name: "Atlantis The Royal", type: "Ultra-Luxury \u00B7 Palm Jumeirah", price: "From AED 2,500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/ae/atlantis-the-royal.html?aid=2820480" },
             ]}
             activities={[
               { name: "Burj Khalifa At the Top", duration: "1.5 hours", price: "From AED 169", badge: "Must do", url: "https://www.getyourguide.com/dubai-l173/burj-khalifa/?partner_id=PSZA5UI" },

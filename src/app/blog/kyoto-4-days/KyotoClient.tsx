@@ -540,9 +540,9 @@ export default function KyotoClient() {
           <AffiliateBlock
             destination="Kyoto"
             hotels={[
-              { name: "Piece Hostel Sanjo", type: "Design Hostel \u00B7 Central", price: "From \u00A53,500/night ($23)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/jp/piece-hostel-sanjo.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Noku Kyoto", type: "Boutique \u00B7 Gion area", price: "From \u00A512,000/night ($80)", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/jp/noku-kyoto.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Aman Kyoto", type: "Luxury Resort \u00B7 Mountains", price: "From \u00A5100,000/night ($667)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/aman-kyoto.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Piece Hostel Sanjo", type: "Design Hostel \u00B7 Central", price: "From \u00A53,500/night ($23)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/jp/piece-hostel-sanjo.html?aid=2820480" },
+              { name: "Noku Kyoto", type: "Boutique \u00B7 Gion area", price: "From \u00A512,000/night ($80)", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/jp/noku-kyoto.html?aid=2820480" },
+              { name: "Aman Kyoto", type: "Luxury Resort \u00B7 Mountains", price: "From \u00A5100,000/night ($667)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/aman-kyoto.html?aid=2820480" },
             ]}
             activities={[
               { name: "Fushimi Inari Early Morning Tour", duration: "3 hours", price: "From \u00A56,000 ($40)", badge: "Must do", url: "https://www.getyourguide.com/kyoto-l96/fushimi-inari/?partner_id=PSZA5UI" },

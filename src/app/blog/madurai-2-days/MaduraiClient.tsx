@@ -547,9 +547,9 @@ export default function MaduraiClient() {
           <AffiliateBlock
             destination="Madurai"
             hotels={[
-              { name: "Hotel Park Plaza", type: "Budget \u00B7 Near Temple", price: "From \u20B9800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/park-plaza-madurai.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Heritage Madurai", type: "Heritage Resort", price: "From \u20B94,000/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/heritage-madurai.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "GRT Regency", type: "Mid-range \u00B7 Central", price: "From \u20B92,200/night", rating: "4", badge: "Value", url: "https://www.booking.com/hotel/in/grt-regency-madurai.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Park Plaza", type: "Budget \u00B7 Near Temple", price: "From \u20B9800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/park-plaza-madurai.html?aid=2820480" },
+              { name: "Heritage Madurai", type: "Heritage Resort", price: "From \u20B94,000/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/heritage-madurai.html?aid=2820480" },
+              { name: "GRT Regency", type: "Mid-range \u00B7 Central", price: "From \u20B92,200/night", rating: "4", badge: "Value", url: "https://www.booking.com/hotel/in/grt-regency-madurai.html?aid=2820480" },
             ]}
             activities={[
               { name: "Meenakshi Temple Guided Tour", duration: "3 hours", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/madurai-l2082/?partner_id=PSZA5UI" },

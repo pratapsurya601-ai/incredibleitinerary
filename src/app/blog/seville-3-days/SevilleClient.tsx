@@ -427,9 +427,9 @@ export default function SevilleClient() {
           <AffiliateBlock
             destination="Seville"
             hotels={[
-              { name: "Oasis Backpackers", type: "Rooftop Hostel \u00B7 Centro", price: "From \u20AC22/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/es/oasis-seville.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Rey Alfonso X", type: "Boutique \u00B7 Centro", price: "From \u20AC80/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/es/rey-alfonso-x.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Alfonso XIII", type: "Historic Luxury \u00B7 Centro", price: "From \u20AC350/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/es/alfonso-xiii.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Oasis Backpackers", type: "Rooftop Hostel \u00B7 Centro", price: "From \u20AC22/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/es/oasis-seville.html?aid=2820480" },
+              { name: "Hotel Rey Alfonso X", type: "Boutique \u00B7 Centro", price: "From \u20AC80/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/es/rey-alfonso-x.html?aid=2820480" },
+              { name: "Hotel Alfonso XIII", type: "Historic Luxury \u00B7 Centro", price: "From \u20AC350/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/es/alfonso-xiii.html?aid=2820480" },
             ]}
             activities={[
               { name: "Real Alcazar Skip-the-Line", duration: "2 hours", price: "From \u20AC14.50", badge: "Must do", url: "https://www.getyourguide.com/seville-l48/alcazar/?partner_id=PSZA5UI" },

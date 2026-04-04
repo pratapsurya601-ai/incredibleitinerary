@@ -487,9 +487,9 @@ export default function GoaBlogClient() {
           <AffiliateBlock
             destination="Goa"
             hotels={[
-              { name: "Zostel Goa", type: "Budget Hostel · Anjuna", price: "From ₹700/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-goa.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Elsewhere Goa", type: "Boutique Beach · Morjim", price: "From ₹5,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/elsewhere-goa.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "W Goa", type: "Luxury Resort · Vagator", price: "From ₹12,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/w-goa.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Goa", type: "Budget Hostel · Anjuna", price: "From ₹700/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-goa.html?aid=2820480" },
+              { name: "Elsewhere Goa", type: "Boutique Beach · Morjim", price: "From ₹5,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/elsewhere-goa.html?aid=2820480" },
+              { name: "W Goa", type: "Luxury Resort · Vagator", price: "From ₹12,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/w-goa.html?aid=2820480" },
             ]}
             activities={[
               { name: "Dudhsagar Waterfall Jeep Safari", duration: "Full day", price: "From ₹1,200/person", badge: "Must do", url: "https://www.getyourguide.com/goa-l976/dudhsagar/?partner_id=PSZA5UI" },

@@ -546,9 +546,9 @@ export default function PhuketClient() {
           <AffiliateBlock
             destination="Phuket"
             hotels={[
-              { name: "Lub d Phuket Patong", type: "Budget Hostel \u00B7 Patong", price: "From \u0E3F500/night (~$14)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/lub-d-phuket-patong.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "The Shore at Katathani", type: "Boutique Resort \u00B7 Kata Noi", price: "From \u0E3F4,500/night (~$127)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/the-shore-at-katathani.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Trisara Phuket", type: "Luxury Pool Villa \u00B7 Nai Thon", price: "From \u0E3F18,000/night (~$507)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/trisara.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Lub d Phuket Patong", type: "Budget Hostel \u00B7 Patong", price: "From \u0E3F500/night (~$14)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/lub-d-phuket-patong.html?aid=2820480" },
+              { name: "The Shore at Katathani", type: "Boutique Resort \u00B7 Kata Noi", price: "From \u0E3F4,500/night (~$127)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/the-shore-at-katathani.html?aid=2820480" },
+              { name: "Trisara Phuket", type: "Luxury Pool Villa \u00B7 Nai Thon", price: "From \u0E3F18,000/night (~$507)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/trisara.html?aid=2820480" },
             ]}
             activities={[
               { name: "Phi Phi Island Speedboat Day Trip", duration: "Full day", price: "From \u0E3F1,500/person (~$42)", badge: "Must do", url: "https://www.getyourguide.com/phuket-l182/phi-phi/?partner_id=PSZA5UI" },

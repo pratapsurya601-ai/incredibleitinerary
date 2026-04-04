@@ -562,9 +562,9 @@ export default function TokyoClient() {
           <AffiliateBlock
             destination="Tokyo"
             hotels={[
-              { name: "Khaosan Tokyo Kabuki", type: "Budget Hostel \u00B7 Asakusa", price: "From \u00A53,500/night ($23)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/jp/khaosan-tokyo-kabuki.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Shinjuku Granbell Hotel", type: "Boutique \u00B7 Shinjuku", price: "From \u00A512,000/night ($80)", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/jp/shinjuku-granbell.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Park Hyatt Tokyo", type: "Luxury \u00B7 Shinjuku", price: "From \u00A565,000/night ($433)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/park-hyatt-tokyo.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Khaosan Tokyo Kabuki", type: "Budget Hostel \u00B7 Asakusa", price: "From \u00A53,500/night ($23)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/jp/khaosan-tokyo-kabuki.html?aid=2820480" },
+              { name: "Shinjuku Granbell Hotel", type: "Boutique \u00B7 Shinjuku", price: "From \u00A512,000/night ($80)", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/jp/shinjuku-granbell.html?aid=2820480" },
+              { name: "Park Hyatt Tokyo", type: "Luxury \u00B7 Shinjuku", price: "From \u00A565,000/night ($433)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/park-hyatt-tokyo.html?aid=2820480" },
             ]}
             activities={[
               { name: "teamLab Borderless Skip-the-Line", duration: "2\u20133 hours", price: "From \u00A53,800 ($25)", badge: "Must do", url: "https://www.getyourguide.com/tokyo-l193/teamlab/?partner_id=PSZA5UI" },

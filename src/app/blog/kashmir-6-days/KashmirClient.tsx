@@ -447,9 +447,9 @@ export default function KashmirClient() {
           <AffiliateBlock
             destination="Kashmir Srinagar"
             hotels={[
-              { name: "The Lalit Grand Palace", type: "5★ Heritage · Srinagar", price: "From ₹12,000/night", rating: "5", badge: "Most iconic", url: "https://www.booking.com/hotel/in/the-lalit-grand-palace-srinagar.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Khyber Himalayan Resort", type: "5★ · Gulmarg", price: "From ₹8,000/night", rating: "5", badge: "Best in Gulmarg", url: "https://www.booking.com/hotel/in/the-khyber-himalayan-resort-spa.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Welcome Hotel Dal View", type: "Heritage · Dal Lake", price: "From ₹5,000/night", rating: "4", badge: "Lake views", url: "https://www.booking.com/hotel/in/welcome-hotel-dal-view-srinagar.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "The Lalit Grand Palace", type: "5★ Heritage · Srinagar", price: "From ₹12,000/night", rating: "5", badge: "Most iconic", url: "https://www.booking.com/hotel/in/the-lalit-grand-palace-srinagar.html?aid=2820480" },
+              { name: "Khyber Himalayan Resort", type: "5★ · Gulmarg", price: "From ₹8,000/night", rating: "5", badge: "Best in Gulmarg", url: "https://www.booking.com/hotel/in/the-khyber-himalayan-resort-spa.html?aid=2820480" },
+              { name: "Welcome Hotel Dal View", type: "Heritage · Dal Lake", price: "From ₹5,000/night", rating: "4", badge: "Lake views", url: "https://www.booking.com/hotel/in/welcome-hotel-dal-view-srinagar.html?aid=2820480" },
             ]}
             activities={[
               { name: "Dal Lake Shikara Sunrise Tour", duration: "2 hours", price: "From ₹500/boat", badge: "Must do", url: `https://www.getyourguide.com/srinagar-l2701/?partner_id=PSZA5UI` },

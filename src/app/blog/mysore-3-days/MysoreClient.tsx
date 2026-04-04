@@ -528,9 +528,9 @@ export default function MysoreClient() {
           <AffiliateBlock
             destination="Mysore"
             hotels={[
-              { name: "Hotel Dasaprakash", type: "Budget Heritage \u00B7 Central", price: "From \u20B9800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/dasaprakash-mysore.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Windflower Spa & Resort", type: "Heritage Resort \u00B7 Mysore", price: "From \u20B94,500/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/windflower-mysore.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Radisson Blu Plaza Mysore", type: "Luxury \u00B7 Central", price: "From \u20B97,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/radisson-blu-plaza-mysore.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Dasaprakash", type: "Budget Heritage \u00B7 Central", price: "From \u20B9800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/dasaprakash-mysore.html?aid=2820480" },
+              { name: "Windflower Spa & Resort", type: "Heritage Resort \u00B7 Mysore", price: "From \u20B94,500/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/windflower-mysore.html?aid=2820480" },
+              { name: "Radisson Blu Plaza Mysore", type: "Luxury \u00B7 Central", price: "From \u20B97,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/radisson-blu-plaza-mysore.html?aid=2820480" },
             ]}
             activities={[
               { name: "Mysore Palace & Chamundi Hills Tour", duration: "Full day", price: "From \u20B91,200/person", badge: "Must do", url: "https://www.getyourguide.com/mysore-l2547/?partner_id=PSZA5UI" },

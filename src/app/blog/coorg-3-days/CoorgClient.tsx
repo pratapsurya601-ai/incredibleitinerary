@@ -443,10 +443,10 @@ export default function CoorgClient() {
           <AffiliateBlock
             destination="Coorg Madikeri Karnataka"
             hotels={[
-              { name: "Amanvana Spa Resort", type: "Luxury Estate · Coorg", price: "From ₹10,000/night", rating: "5", badge: "Most luxurious", url: "https://www.booking.com/hotel/in/amanvana-spa-resort.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Rainforest Retreat", type: "Eco Estate · Coorg", price: "From ₹5,500/night", rating: "4", badge: "Best eco stay", url: "https://www.booking.com/hotel/in/rainforest-retreat-coorg.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Misty Woods", type: "Coffee Estate · Madikeri", price: "From ₹4,000/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/misty-woods-coorg.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "The Tamara Coorg", type: "Resort · Coorg", price: "From ₹7,000/night", rating: "5", badge: "Pool + views", url: "https://www.booking.com/hotel/in/the-tamara-coorg.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Amanvana Spa Resort", type: "Luxury Estate · Coorg", price: "From ₹10,000/night", rating: "5", badge: "Most luxurious", url: "https://www.booking.com/hotel/in/amanvana-spa-resort.html?aid=2820480" },
+              { name: "Rainforest Retreat", type: "Eco Estate · Coorg", price: "From ₹5,500/night", rating: "4", badge: "Best eco stay", url: "https://www.booking.com/hotel/in/rainforest-retreat-coorg.html?aid=2820480" },
+              { name: "Misty Woods", type: "Coffee Estate · Madikeri", price: "From ₹4,000/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/misty-woods-coorg.html?aid=2820480" },
+              { name: "The Tamara Coorg", type: "Resort · Coorg", price: "From ₹7,000/night", rating: "5", badge: "Pool + views", url: "https://www.booking.com/hotel/in/the-tamara-coorg.html?aid=2820480" },
             ]}
             activities={[
               { name: "Dubare Elephant Camp + River Rafting", duration: "Full day", price: "From ₹1,500/person", badge: "Must do", url: `https://www.getyourguide.com/coorg-l3009/?partner_id=PSZA5UI` },

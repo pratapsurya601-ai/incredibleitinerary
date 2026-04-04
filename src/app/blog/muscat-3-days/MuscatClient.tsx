@@ -430,9 +430,9 @@ export default function MuscatClient() {
           <AffiliateBlock
             destination="Muscat"
             hotels={[
-              { name: "Ibis Muscat", type: "Budget Modern \u00B7 Al Khuwair", price: "From OMR 15/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/om/ibis-muscat.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Mysk Al Mouj", type: "Boutique Beach \u00B7 Al Mouj", price: "From OMR 40/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/om/mysk-al-mouj.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "The Chedi Muscat", type: "Luxury Resort \u00B7 Ghubrah", price: "From OMR 100/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/om/the-chedi-muscat.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Ibis Muscat", type: "Budget Modern \u00B7 Al Khuwair", price: "From OMR 15/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/om/ibis-muscat.html?aid=2820480" },
+              { name: "Mysk Al Mouj", type: "Boutique Beach \u00B7 Al Mouj", price: "From OMR 40/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/om/mysk-al-mouj.html?aid=2820480" },
+              { name: "The Chedi Muscat", type: "Luxury Resort \u00B7 Ghubrah", price: "From OMR 100/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/om/the-chedi-muscat.html?aid=2820480" },
             ]}
             activities={[
               { name: "Wadi Shab Guided Hike", duration: "Full day", price: "From OMR 25", badge: "Must do", url: "https://www.getyourguide.com/muscat-l964/wadi-shab/?partner_id=PSZA5UI" },

@@ -525,9 +525,9 @@ export default function JaisalmerClient() {
           <AffiliateBlock
             destination="Jaisalmer"
             hotels={[
-              { name: "Zostel Jaisalmer", type: "Budget Hostel · Near Fort", price: "From ₹500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-jaisalmer.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Tokyo Palace", type: "Heritage · Fort View", price: "From ₹2,500/night", rating: "4", badge: "Mid-range", url: "https://www.booking.com/hotel/in/tokyo-palace-jaisalmer.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Suryagarh Jaisalmer", type: "Luxury Heritage · Desert Edge", price: "From ₹12,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/suryagarh-jaisalmer.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Jaisalmer", type: "Budget Hostel · Near Fort", price: "From ₹500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-jaisalmer.html?aid=2820480" },
+              { name: "Hotel Tokyo Palace", type: "Heritage · Fort View", price: "From ₹2,500/night", rating: "4", badge: "Mid-range", url: "https://www.booking.com/hotel/in/tokyo-palace-jaisalmer.html?aid=2820480" },
+              { name: "Suryagarh Jaisalmer", type: "Luxury Heritage · Desert Edge", price: "From ₹12,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/suryagarh-jaisalmer.html?aid=2820480" },
             ]}
             activities={[
               { name: "Camel Safari & Overnight Desert Camp", duration: "Overnight", price: "From ₹1,500/person", badge: "Must do", url: "https://www.getyourguide.com/jaisalmer-l1234/camel-safari/?partner_id=PSZA5UI" },

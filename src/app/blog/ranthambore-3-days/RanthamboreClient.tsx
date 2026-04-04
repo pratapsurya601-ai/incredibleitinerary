@@ -719,9 +719,9 @@ export default function RanthamboreClient() {
           <AffiliateBlock
             destination="Ranthambore"
             hotels={[
-              { name: "Hotel Ranthambore Regency", type: "Mid-Range · Ranthambore Road", price: "From ₹2,500/night", rating: "4", badge: "Value pick", url: "https://www.booking.com/hotel/in/ranthambore-regency.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Nahargarh Ranthambore", type: "Heritage Resort · Near Park", price: "From ₹6,000/night", rating: "4", badge: "Safari pick", url: "https://www.booking.com/hotel/in/nahargarh-ranthambore.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Oberoi Vanyavilas", type: "Luxury Tented Camp", price: "From ₹35,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/oberoi-vanyavilas.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Ranthambore Regency", type: "Mid-Range · Ranthambore Road", price: "From ₹2,500/night", rating: "4", badge: "Value pick", url: "https://www.booking.com/hotel/in/ranthambore-regency.html?aid=2820480" },
+              { name: "Nahargarh Ranthambore", type: "Heritage Resort · Near Park", price: "From ₹6,000/night", rating: "4", badge: "Safari pick", url: "https://www.booking.com/hotel/in/nahargarh-ranthambore.html?aid=2820480" },
+              { name: "Oberoi Vanyavilas", type: "Luxury Tented Camp", price: "From ₹35,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/oberoi-vanyavilas.html?aid=2820480" },
             ]}
             activities={[
               { name: "Ranthambore Jeep Safari (Premium Zone)", duration: "3 hours", price: "From ₹2,500/person", badge: "Must do", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },

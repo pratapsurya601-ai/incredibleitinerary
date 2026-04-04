@@ -494,9 +494,9 @@ export default function OotyBlogClient() {
           <AffiliateBlock
             destination="Ooty"
             hotels={[
-              { name: "Zostel Ooty", type: "Budget Hostel · Charing Cross", price: "From ₹600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-ooty.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Sterling Ooty Elk Hill", type: "Resort · Elk Hill", price: "From ₹4,500/night", rating: "4", badge: "Family pick", url: "https://www.booking.com/hotel/in/sterling-ooty-elk-hill.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "The Savoy - IHCL", type: "Heritage Luxury · 1829", price: "From ₹9,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/the-savoy-ooty.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Ooty", type: "Budget Hostel · Charing Cross", price: "From ₹600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-ooty.html?aid=2820480" },
+              { name: "Sterling Ooty Elk Hill", type: "Resort · Elk Hill", price: "From ₹4,500/night", rating: "4", badge: "Family pick", url: "https://www.booking.com/hotel/in/sterling-ooty-elk-hill.html?aid=2820480" },
+              { name: "The Savoy - IHCL", type: "Heritage Luxury · 1829", price: "From ₹9,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/the-savoy-ooty.html?aid=2820480" },
             ]}
             activities={[
               { name: "Nilgiri Mountain Railway Full Journey", duration: "5 hours", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/ooty-l976/nilgiri-railway/?partner_id=PSZA5UI" },

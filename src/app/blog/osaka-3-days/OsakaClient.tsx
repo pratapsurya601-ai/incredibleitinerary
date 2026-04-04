@@ -509,9 +509,9 @@ export default function OsakaClient() {
           <AffiliateBlock
             destination="Osaka"
             hotels={[
-              { name: "The Dorm Hostel Osaka", type: "Design Hostel \u00B7 Shinsaibashi", price: "From \u00A53,000/night ($20)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/jp/the-dorm-hostel-osaka.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Cross Hotel Osaka", type: "Boutique \u00B7 Namba", price: "From \u00A510,000/night ($67)", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/jp/cross-hotel-osaka.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "The St. Regis Osaka", type: "Luxury \u00B7 Midosuji", price: "From \u00A550,000/night ($333)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/the-st-regis-osaka.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "The Dorm Hostel Osaka", type: "Design Hostel \u00B7 Shinsaibashi", price: "From \u00A53,000/night ($20)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/jp/the-dorm-hostel-osaka.html?aid=2820480" },
+              { name: "Cross Hotel Osaka", type: "Boutique \u00B7 Namba", price: "From \u00A510,000/night ($67)", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/jp/cross-hotel-osaka.html?aid=2820480" },
+              { name: "The St. Regis Osaka", type: "Luxury \u00B7 Midosuji", price: "From \u00A550,000/night ($333)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/the-st-regis-osaka.html?aid=2820480" },
             ]}
             activities={[
               { name: "Dotonbori Street Food Tour", duration: "3 hours", price: "From \u00A57,000 ($47)", badge: "Must do", url: "https://www.getyourguide.com/osaka-l160/dotonbori/?partner_id=PSZA5UI" },

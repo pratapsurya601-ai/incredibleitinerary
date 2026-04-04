@@ -521,9 +521,9 @@ export default function BangkokClient() {
           <AffiliateBlock
             destination="Bangkok"
             hotels={[
-              { name: "NapPark Hostel", type: "Budget Hostel \u00B7 Khao San", price: "From \u0E3F350/night (~$10)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/nappark-hostel.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Riva Surya Bangkok", type: "Boutique Riverside \u00B7 Old Town", price: "From \u0E3F2,800/night (~$79)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/riva-surya-bangkok.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Mandarin Oriental", type: "Iconic Luxury \u00B7 Riverside", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/mandarin-oriental-bangkok.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "NapPark Hostel", type: "Budget Hostel \u00B7 Khao San", price: "From \u0E3F350/night (~$10)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/nappark-hostel.html?aid=2820480" },
+              { name: "Riva Surya Bangkok", type: "Boutique Riverside \u00B7 Old Town", price: "From \u0E3F2,800/night (~$79)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/riva-surya-bangkok.html?aid=2820480" },
+              { name: "Mandarin Oriental", type: "Iconic Luxury \u00B7 Riverside", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/mandarin-oriental-bangkok.html?aid=2820480" },
             ]}
             activities={[
               { name: "Grand Palace & Temple Tour", duration: "Half day", price: "From \u0E3F800/person (~$23)", badge: "Must do", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },

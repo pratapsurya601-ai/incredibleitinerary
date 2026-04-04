@@ -449,9 +449,9 @@ export default function KhajurahoClient() {
           <AffiliateBlock
             destination="Khajuraho"
             hotels={[
-              { name: "Hotel Harmony", type: "Budget · Near Temples", price: "From ₹600/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/harmony-khajuraho.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Radisson Jass Khajuraho", type: "Comfortable · Pool", price: "From ₹3,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/radisson-jass-khajuraho.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "The Lalit Temple View", type: "Heritage · Temple Views", price: "From ₹6,000/night", rating: "5", badge: "Top pick", url: "https://www.booking.com/hotel/in/the-lalit-temple-view-khajuraho.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Harmony", type: "Budget · Near Temples", price: "From ₹600/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/harmony-khajuraho.html?aid=2820480" },
+              { name: "Radisson Jass Khajuraho", type: "Comfortable · Pool", price: "From ₹3,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/radisson-jass-khajuraho.html?aid=2820480" },
+              { name: "The Lalit Temple View", type: "Heritage · Temple Views", price: "From ₹6,000/night", rating: "5", badge: "Top pick", url: "https://www.booking.com/hotel/in/the-lalit-temple-view-khajuraho.html?aid=2820480" },
             ]}
             activities={[
               { name: "Panna National Park Jeep Safari", duration: "4 hours", price: "From ₹2,500/vehicle", badge: "Must do", url: "https://www.getyourguide.com/khajuraho-l4361/panna/?partner_id=PSZA5UI" },

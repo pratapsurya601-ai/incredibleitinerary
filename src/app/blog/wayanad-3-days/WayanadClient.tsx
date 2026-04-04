@@ -458,9 +458,9 @@ export default function WayanadClient() {
           <AffiliateBlock
             destination="Wayanad"
             hotels={[
-              { name: "Zostel Wayanad", type: "Budget Hostel \u00B7 Kalpetta", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-wayanad.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Vythiri Resort", type: "Treehouse Resort \u00B7 Vythiri", price: "From \u20B95,500/night", rating: "5", badge: "Treehouse pick", url: "https://www.booking.com/hotel/in/vythiri-resort.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Rainforest Boutique", type: "Luxury Treehouse \u00B7 Lakkidi", price: "From \u20B98,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/rainforest-wayanad.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Wayanad", type: "Budget Hostel \u00B7 Kalpetta", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-wayanad.html?aid=2820480" },
+              { name: "Vythiri Resort", type: "Treehouse Resort \u00B7 Vythiri", price: "From \u20B95,500/night", rating: "5", badge: "Treehouse pick", url: "https://www.booking.com/hotel/in/vythiri-resort.html?aid=2820480" },
+              { name: "Rainforest Boutique", type: "Luxury Treehouse \u00B7 Lakkidi", price: "From \u20B98,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/rainforest-wayanad.html?aid=2820480" },
             ]}
             activities={[
               { name: "Chembra Peak Guided Trek", duration: "Half day", price: "From \u20B9350/person", badge: "Must do", url: "https://www.getyourguide.com/wayanad-l976/chembra/?partner_id=PSZA5UI" },

@@ -566,9 +566,9 @@ export default function TawangClient() {
           <AffiliateBlock
             destination="Tawang"
             hotels={[
-              { name: "Dirang Boutique Cottages", type: "Budget Homestay \u00B7 Dirang", price: "From \u20B9800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/dirang-boutique-cottages.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Tawang Heights", type: "Mid-range \u00B7 Tawang Centre", price: "From \u20B92,500/night", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/in/tawang-heights.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Norling Dirang", type: "Premium Resort \u00B7 Dirang Valley", price: "From \u20B95,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/norling-dirang.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Dirang Boutique Cottages", type: "Budget Homestay \u00B7 Dirang", price: "From \u20B9800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/dirang-boutique-cottages.html?aid=2820480" },
+              { name: "Hotel Tawang Heights", type: "Mid-range \u00B7 Tawang Centre", price: "From \u20B92,500/night", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/in/tawang-heights.html?aid=2820480" },
+              { name: "Norling Dirang", type: "Premium Resort \u00B7 Dirang Valley", price: "From \u20B95,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/norling-dirang.html?aid=2820480" },
             ]}
             activities={[
               { name: "Tawang Monastery Guided Tour", duration: "3 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/tawang-l32337/monastery/?partner_id=PSZA5UI" },

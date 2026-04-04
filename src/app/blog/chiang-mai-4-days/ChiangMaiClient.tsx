@@ -517,9 +517,9 @@ export default function ChiangMaiClient() {
           <AffiliateBlock
             destination="Chiang Mai"
             hotels={[
-              { name: "Stamps Hostel", type: "Budget Hostel \u00B7 Old City", price: "From \u0E3F250/night (~$7)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/stamps-hostel.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Ping Nakara", type: "Boutique Heritage \u00B7 Old City", price: "From \u0E3F2,500/night (~$70)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/ping-nakara.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Four Seasons Chiang Mai", type: "Luxury Resort \u00B7 Mae Rim", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/four-seasons-resort-chiang-mai.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Stamps Hostel", type: "Budget Hostel \u00B7 Old City", price: "From \u0E3F250/night (~$7)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/stamps-hostel.html?aid=2820480" },
+              { name: "Ping Nakara", type: "Boutique Heritage \u00B7 Old City", price: "From \u0E3F2,500/night (~$70)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/ping-nakara.html?aid=2820480" },
+              { name: "Four Seasons Chiang Mai", type: "Luxury Resort \u00B7 Mae Rim", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/four-seasons-resort-chiang-mai.html?aid=2820480" },
             ]}
             activities={[
               { name: "Ethical Elephant Sanctuary Half Day", duration: "Half day", price: "From \u0E3F1,500/person (~$42)", badge: "Must do", url: "https://www.getyourguide.com/chiang-mai-l208/elephants/?partner_id=PSZA5UI" },

@@ -473,10 +473,10 @@ export default function ManaliClient() {
           <AffiliateBlock
             destination="Manali Himachal Pradesh"
             hotels={[
-              { name: "The Orchard Greens", type: "Boutique · Old Manali", price: "From ₹3,500/night", rating: "4", badge: "Best location", url: "https://www.booking.com/hotel/in/the-orchard-greens-manali.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Snow Valley Resorts", type: "Mountain Resort · Manali", price: "From ₹4,500/night", rating: "4", badge: "Mountain views", url: "https://www.booking.com/hotel/in/snow-valley-resorts-manali.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Zostel Manali", type: "Hostel · Old Manali", price: "From ₹450/bed", rating: "4", badge: "Best budget", url: "https://www.booking.com/hotel/in/zostel-manali.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Manu Allaya Resort", type: "Luxury · Old Manali", price: "From ₹6,000/night", rating: "5", badge: "Most luxurious", url: "https://www.booking.com/hotel/in/manu-allaya-resort-manali.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "The Orchard Greens", type: "Boutique · Old Manali", price: "From ₹3,500/night", rating: "4", badge: "Best location", url: "https://www.booking.com/hotel/in/the-orchard-greens-manali.html?aid=2820480" },
+              { name: "Snow Valley Resorts", type: "Mountain Resort · Manali", price: "From ₹4,500/night", rating: "4", badge: "Mountain views", url: "https://www.booking.com/hotel/in/snow-valley-resorts-manali.html?aid=2820480" },
+              { name: "Zostel Manali", type: "Hostel · Old Manali", price: "From ₹450/bed", rating: "4", badge: "Best budget", url: "https://www.booking.com/hotel/in/zostel-manali.html?aid=2820480" },
+              { name: "Manu Allaya Resort", type: "Luxury · Old Manali", price: "From ₹6,000/night", rating: "5", badge: "Most luxurious", url: "https://www.booking.com/hotel/in/manu-allaya-resort-manali.html?aid=2820480" },
             ]}
             activities={[
               { name: "Solang Valley Snow Activities",     duration: "Full day", price: "From ₹800/person",   badge: "Must do",    url: `https://www.getyourguide.com/manali-l3008/?partner_id=PSZA5UI` },

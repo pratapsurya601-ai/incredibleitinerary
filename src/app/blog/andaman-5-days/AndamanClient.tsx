@@ -460,10 +460,10 @@ export default function AndamanClient() {
           <AffiliateBlock
             destination="Andaman Islands Havelock"
             hotels={[
-              { name: "Barefoot at Havelock", type: "Eco Resort · Havelock Island", price: "From ₹6,000/night", rating: "5", badge: "Best on island", url: "https://www.booking.com/hotel/in/barefoot-at-havelock.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Symphony Palms", type: "Beach Resort · Havelock", price: "From ₹4,500/night", rating: "4", badge: "Couple pick", url: "https://www.booking.com/hotel/in/symphony-palms-havelock.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Pearl Park Beach Resort", type: "Beach · Neil Island", price: "From ₹3,500/night", rating: "4", badge: "Best on Neil", url: "https://www.booking.com/hotel/in/pearl-park-beach-resort-neil-island.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Fortune Resort Bay Island", type: "4★ · Port Blair", price: "From ₹5,000/night", rating: "4", badge: "Best in PB", url: "https://www.booking.com/hotel/in/fortune-resort-bay-island-port-blair.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Barefoot at Havelock", type: "Eco Resort · Havelock Island", price: "From ₹6,000/night", rating: "5", badge: "Best on island", url: "https://www.booking.com/hotel/in/barefoot-at-havelock.html?aid=2820480" },
+              { name: "Symphony Palms", type: "Beach Resort · Havelock", price: "From ₹4,500/night", rating: "4", badge: "Couple pick", url: "https://www.booking.com/hotel/in/symphony-palms-havelock.html?aid=2820480" },
+              { name: "Pearl Park Beach Resort", type: "Beach · Neil Island", price: "From ₹3,500/night", rating: "4", badge: "Best on Neil", url: "https://www.booking.com/hotel/in/pearl-park-beach-resort-neil-island.html?aid=2820480" },
+              { name: "Fortune Resort Bay Island", type: "4★ · Port Blair", price: "From ₹5,000/night", rating: "4", badge: "Best in PB", url: "https://www.booking.com/hotel/in/fortune-resort-bay-island-port-blair.html?aid=2820480" },
             ]}
             activities={[
               { name: "Havelock Island Scuba Diving",         duration: "Half day", price: "From ₹3,500/person", badge: "Must do",    url: `https://www.getyourguide.com/havelock-island-l97872/?partner_id=PSZA5UI` },

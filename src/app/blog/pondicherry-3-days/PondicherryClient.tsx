@@ -530,9 +530,9 @@ export default function PondicherryClient() {
           <AffiliateBlock
             destination="Pondicherry"
             hotels={[
-              { name: "Palais de Mahe", type: "Heritage Boutique · White Town", price: "From ₹5,500/night", rating: "5", badge: "Top pick", url: "https://www.booking.com/hotel/in/palais-de-mahe.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "La Closerie", type: "French Quarter Guesthouse", price: "From ₹2,200/night", rating: "4", badge: "Couple pick", url: "https://www.booking.com/hotel/in/la-closerie-pondicherry.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Gratitude Heritage", type: "Heritage Hotel · White Town", price: "From ₹3,500/night", rating: "5", badge: "Value", url: "https://www.booking.com/hotel/in/gratitude-pondicherry.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Palais de Mahe", type: "Heritage Boutique · White Town", price: "From ₹5,500/night", rating: "5", badge: "Top pick", url: "https://www.booking.com/hotel/in/palais-de-mahe.html?aid=2820480" },
+              { name: "La Closerie", type: "French Quarter Guesthouse", price: "From ₹2,200/night", rating: "4", badge: "Couple pick", url: "https://www.booking.com/hotel/in/la-closerie-pondicherry.html?aid=2820480" },
+              { name: "Gratitude Heritage", type: "Heritage Hotel · White Town", price: "From ₹3,500/night", rating: "5", badge: "Value", url: "https://www.booking.com/hotel/in/gratitude-pondicherry.html?aid=2820480" },
             ]}
             activities={[
               { name: "Auroville & Matrimandir Half-Day Tour", duration: "4 hours", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/pondicherry-l4279/?partner_id=PSZA5UI" },

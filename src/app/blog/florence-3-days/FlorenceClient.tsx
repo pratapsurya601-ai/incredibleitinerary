@@ -616,9 +616,9 @@ export default function FlorenceClient() {
           <AffiliateBlock
             destination="Florence"
             hotels={[
-              { name: "Plus Florence", type: "Budget Hostel \u00B7 Santa Maria Novella", price: "From \u20AC32/night ($35)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/it/plus-florence.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Davanzati", type: "Boutique 4-star \u00B7 Centro", price: "From \u20AC130/night ($140)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/it/davanzati.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Portrait Firenze", type: "Luxury 5-star \u00B7 Ponte Vecchio", price: "From \u20AC500/night ($540)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/portrait-firenze.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Plus Florence", type: "Budget Hostel \u00B7 Santa Maria Novella", price: "From \u20AC32/night ($35)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/it/plus-florence.html?aid=2820480" },
+              { name: "Hotel Davanzati", type: "Boutique 4-star \u00B7 Centro", price: "From \u20AC130/night ($140)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/it/davanzati.html?aid=2820480" },
+              { name: "Portrait Firenze", type: "Luxury 5-star \u00B7 Ponte Vecchio", price: "From \u20AC500/night ($540)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/portrait-firenze.html?aid=2820480" },
             ]}
             activities={[
               { name: "Uffizi Gallery Timed Entry Ticket", duration: "2\u20133 hours", price: "From \u20AC20/person ($22)", badge: "Must do", url: "https://www.getyourguide.com/florence-l32/uffizi/?partner_id=PSZA5UI" },

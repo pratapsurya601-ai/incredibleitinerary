@@ -469,9 +469,9 @@ export default function DiuClient() {
           <AffiliateBlock
             destination="Diu"
             hotels={[
-              { name: "Radhika Beach Resort", type: "Beach Resort · Nagoa", price: "From ₹2,500/night", rating: "4", badge: "Popular", url: "https://www.booking.com/hotel/in/radhika-beach-resort-diu.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Cidade de Diu", type: "Heritage Hotel · Town", price: "From ₹1,800/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/cidade-de-diu.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Kohinoor", type: "Budget · Town Centre", price: "From ₹600/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/kohinoor-diu.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Radhika Beach Resort", type: "Beach Resort · Nagoa", price: "From ₹2,500/night", rating: "4", badge: "Popular", url: "https://www.booking.com/hotel/in/radhika-beach-resort-diu.html?aid=2820480" },
+              { name: "Cidade de Diu", type: "Heritage Hotel · Town", price: "From ₹1,800/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/cidade-de-diu.html?aid=2820480" },
+              { name: "Hotel Kohinoor", type: "Budget · Town Centre", price: "From ₹600/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/kohinoor-diu.html?aid=2820480" },
             ]}
             activities={[
               { name: "Diu Fort & Heritage Walking Tour", duration: "3 hours", price: "From ₹500/person", badge: "Must do", url: "https://www.getyourguide.com/diu/?partner_id=PSZA5UI" },

@@ -547,9 +547,9 @@ export default function KanyakumariClient() {
           <AffiliateBlock
             destination="Kanyakumari"
             hotels={[
-              { name: "Hotel Sea View", type: "Budget \u00B7 Waterfront", price: "From \u20B9800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/sea-view-kanyakumari.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Sparsa Resort", type: "Comfortable \u00B7 Sea View", price: "From \u20B94,000/night", rating: "4", badge: "Top pick", url: "https://www.booking.com/hotel/in/sparsa-resort-kanyakumari.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Tri Sea", type: "Mid-range \u00B7 Central", price: "From \u20B92,000/night", rating: "3", badge: "Value", url: "https://www.booking.com/hotel/in/tri-sea-kanyakumari.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Sea View", type: "Budget \u00B7 Waterfront", price: "From \u20B9800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/sea-view-kanyakumari.html?aid=2820480" },
+              { name: "Sparsa Resort", type: "Comfortable \u00B7 Sea View", price: "From \u20B94,000/night", rating: "4", badge: "Top pick", url: "https://www.booking.com/hotel/in/sparsa-resort-kanyakumari.html?aid=2820480" },
+              { name: "Hotel Tri Sea", type: "Mid-range \u00B7 Central", price: "From \u20B92,000/night", rating: "3", badge: "Value", url: "https://www.booking.com/hotel/in/tri-sea-kanyakumari.html?aid=2820480" },
             ]}
             activities={[
               { name: "Vivekananda Rock + Thiruvalluvar Ferry", duration: "3 hours", price: "From \u20B969/person", badge: "Must do", url: "https://www.getyourguide.com/kanyakumari-l2083/?partner_id=PSZA5UI" },

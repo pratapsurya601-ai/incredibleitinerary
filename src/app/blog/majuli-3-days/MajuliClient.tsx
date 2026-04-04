@@ -482,9 +482,9 @@ export default function MajuliClient() {
           <AffiliateBlock
             destination="Majuli Island"
             hotels={[
-              { name: "La Maison de Ananda", type: "Eco Lodge · Kamalabari", price: "From ₹1,800/night", rating: "4", badge: "Top pick", url: "https://www.booking.com/hotel/in/la-maison-de-ananda-majuli.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Majuli Island Homestay", type: "Homestay · Near Kamalabari", price: "From ₹800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/majuli-homestay.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Ygdrasill Bamboo Cottage", type: "Eco Cottage · Majuli", price: "From ₹2,500/night", rating: "5", badge: "Cultural", url: "https://www.booking.com/hotel/in/ygdrasill-bamboo-cottage-majuli.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "La Maison de Ananda", type: "Eco Lodge · Kamalabari", price: "From ₹1,800/night", rating: "4", badge: "Top pick", url: "https://www.booking.com/hotel/in/la-maison-de-ananda-majuli.html?aid=2820480" },
+              { name: "Majuli Island Homestay", type: "Homestay · Near Kamalabari", price: "From ₹800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/majuli-homestay.html?aid=2820480" },
+              { name: "Ygdrasill Bamboo Cottage", type: "Eco Cottage · Majuli", price: "From ₹2,500/night", rating: "5", badge: "Cultural", url: "https://www.booking.com/hotel/in/ygdrasill-bamboo-cottage-majuli.html?aid=2820480" },
             ]}
             activities={[
               { name: "Guided Satra Heritage Walk", duration: "Full day", price: "From ₹1,200/person", badge: "Must do", url: "https://www.getyourguide.com/assam-l3456/majuli-satra/?partner_id=PSZA5UI" },

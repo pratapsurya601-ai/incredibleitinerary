@@ -539,9 +539,9 @@ export default function JaipurClient() {
           <AffiliateBlock
             destination="Jaipur"
             hotels={[
-              { name: "Zostel Jaipur", type: "Budget Hostel \u00B7 MI Road", price: "From \u20B9500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-jaipur.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Samode Haveli", type: "Heritage Haveli \u00B7 Old City", price: "From \u20B94,500/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/samode-haveli.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Rambagh Palace", type: "Royal Palace Hotel \u00B7 Taj", price: "From \u20B918,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/rambagh-palace.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Jaipur", type: "Budget Hostel \u00B7 MI Road", price: "From \u20B9500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-jaipur.html?aid=2820480" },
+              { name: "Samode Haveli", type: "Heritage Haveli \u00B7 Old City", price: "From \u20B94,500/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/samode-haveli.html?aid=2820480" },
+              { name: "Rambagh Palace", type: "Royal Palace Hotel \u00B7 Taj", price: "From \u20B918,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/rambagh-palace.html?aid=2820480" },
             ]}
             activities={[
               { name: "Amber Fort & Jaipur City Tour", duration: "Full day", price: "From \u20B91,200/person", badge: "Must do", url: "https://www.getyourguide.com/jaipur-l288/amber-fort/?partner_id=PSZA5UI" },

@@ -501,9 +501,9 @@ export default function AbuDhabiClient() {
           <AffiliateBlock
             destination="Abu Dhabi"
             hotels={[
-              { name: "Centro Yas Island", type: "Budget Modern \u00B7 Yas Island", price: "From AED 180/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/ae/centro-yas-island.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Saadiyat Rotana", type: "Beachfront Resort \u00B7 Saadiyat", price: "From AED 500/night", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/ae/saadiyat-rotana.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Emirates Palace", type: "Ultra-Luxury \u00B7 Corniche", price: "From AED 1,800/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/ae/emirates-palace.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Centro Yas Island", type: "Budget Modern \u00B7 Yas Island", price: "From AED 180/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/ae/centro-yas-island.html?aid=2820480" },
+              { name: "Saadiyat Rotana", type: "Beachfront Resort \u00B7 Saadiyat", price: "From AED 500/night", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/ae/saadiyat-rotana.html?aid=2820480" },
+              { name: "Emirates Palace", type: "Ultra-Luxury \u00B7 Corniche", price: "From AED 1,800/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/ae/emirates-palace.html?aid=2820480" },
             ]}
             activities={[
               { name: "Louvre Abu Dhabi Skip-the-Line", duration: "3 hours", price: "From AED 63", badge: "Must do", url: "https://www.getyourguide.com/abu-dhabi-l174/louvre/?partner_id=PSZA5UI" },

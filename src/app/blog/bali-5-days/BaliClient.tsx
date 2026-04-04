@@ -592,9 +592,9 @@ export default function BaliClient() {
           <AffiliateBlock
             destination="Bali"
             hotels={[
-              { name: "Puri Garden Hotel", type: "Budget Guesthouse \u00B7 Ubud", price: "From Rp200k/night (~$13)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/id/puri-garden-ubud.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Bisma Eight", type: "Boutique Jungle Villa \u00B7 Ubud", price: "From Rp1.2M/night (~$76)", rating: "5", badge: "Mid pick", url: "https://www.booking.com/hotel/id/bisma-eight-ubud.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Alila Villas Uluwatu", type: "Luxury Clifftop Resort", price: "From Rp5M/night (~$317)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/alila-villas-uluwatu.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Puri Garden Hotel", type: "Budget Guesthouse \u00B7 Ubud", price: "From Rp200k/night (~$13)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/id/puri-garden-ubud.html?aid=2820480" },
+              { name: "Bisma Eight", type: "Boutique Jungle Villa \u00B7 Ubud", price: "From Rp1.2M/night (~$76)", rating: "5", badge: "Mid pick", url: "https://www.booking.com/hotel/id/bisma-eight-ubud.html?aid=2820480" },
+              { name: "Alila Villas Uluwatu", type: "Luxury Clifftop Resort", price: "From Rp5M/night (~$317)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/alila-villas-uluwatu.html?aid=2820480" },
             ]}
             activities={[
               { name: "Nusa Penida Day Trip + Snorkelling", duration: "Full day", price: "From Rp350k/person (~$22)", badge: "Must do", url: "https://www.getyourguide.com/bali-l347/nusa-penida/?partner_id=PSZA5UI" },

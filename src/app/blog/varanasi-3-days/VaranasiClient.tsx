@@ -313,9 +313,9 @@ export default function VaranasiClient() {
           <AffiliateBlock
             destination="Varanasi Ganges"
             hotels={[
-              { name: "Brijrama Palace", type: "Heritage Palace · Ganges frontage", price: "From ₹8,000/night", rating: "5", badge: "Most iconic", url: "https://www.booking.com/hotel/in/brijrama-palace.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Suryauday Haveli", type: "Heritage · Shivala Ghat", price: "From ₹4,000/night", rating: "4", badge: "Ghat views", url: "https://www.booking.com/hotel/in/suryauday-haveli.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Ganges View", type: "Mid-range · Assi Ghat", price: "From ₹2,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/hotel-ganges-view.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Brijrama Palace", type: "Heritage Palace · Ganges frontage", price: "From ₹8,000/night", rating: "5", badge: "Most iconic", url: "https://www.booking.com/hotel/in/brijrama-palace.html?aid=2820480" },
+              { name: "Suryauday Haveli", type: "Heritage · Shivala Ghat", price: "From ₹4,000/night", rating: "4", badge: "Ghat views", url: "https://www.booking.com/hotel/in/suryauday-haveli.html?aid=2820480" },
+              { name: "Hotel Ganges View", type: "Mid-range · Assi Ghat", price: "From ₹2,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/hotel-ganges-view.html?aid=2820480" },
             ]}
             activities={[
               { name: "Ganga Aarti Evening Ceremony + Boat", duration: "2 hours", price: "From ₹500/person", badge: "Must do", url: `https://www.getyourguide.com/varanasi-l971/?partner_id=PSZA5UI` },

@@ -529,9 +529,9 @@ export default function VizagClient() {
           <AffiliateBlock
             destination="Vizag"
             hotels={[
-              { name: "Hotel Daspalla", type: "Mid-Range Business Hotel", price: "From \u20B92,500/night", rating: "4", badge: "Value pick", url: "https://www.booking.com/hotel/in/daspalla-visakhapatnam.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Novotel Vizag", type: "Premium Sea-View Hotel", price: "From \u20B95,500/night", rating: "5", badge: "Sea view", url: "https://www.booking.com/hotel/in/novotel-visakhapatnam-varun-beach.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Taj Gateway Vizag", type: "Luxury Beach Resort", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/gateway-hotel-beach-road.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Daspalla", type: "Mid-Range Business Hotel", price: "From \u20B92,500/night", rating: "4", badge: "Value pick", url: "https://www.booking.com/hotel/in/daspalla-visakhapatnam.html?aid=2820480" },
+              { name: "Novotel Vizag", type: "Premium Sea-View Hotel", price: "From \u20B95,500/night", rating: "5", badge: "Sea view", url: "https://www.booking.com/hotel/in/novotel-visakhapatnam-varun-beach.html?aid=2820480" },
+              { name: "Taj Gateway Vizag", type: "Luxury Beach Resort", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/gateway-hotel-beach-road.html?aid=2820480" },
             ]}
             activities={[
               { name: "Araku Valley Vistadome Train Experience", duration: "Full day", price: "From \u20B9700/person", badge: "Must do", url: "https://www.getyourguide.com/visakhapatnam-l4523/?partner_id=PSZA5UI" },

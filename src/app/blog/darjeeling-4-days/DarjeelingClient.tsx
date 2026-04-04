@@ -544,9 +544,9 @@ export default function DarjeelingClient() {
           <AffiliateBlock
             destination="Darjeeling"
             hotels={[
-              { name: "Darjeeling Backpackers", type: "Budget Hostel · Chowrasta", price: "From ₹500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/darjeeling-backpackers.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Cedar Inn", type: "Heritage Boutique · Mall Road", price: "From ₹2,500/night", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/in/cedar-inn-darjeeling.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Windamere Hotel", type: "Heritage Luxury · Observatory Hill", price: "From ₹8,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/windamere-darjeeling.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Darjeeling Backpackers", type: "Budget Hostel · Chowrasta", price: "From ₹500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/darjeeling-backpackers.html?aid=2820480" },
+              { name: "Cedar Inn", type: "Heritage Boutique · Mall Road", price: "From ₹2,500/night", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/in/cedar-inn-darjeeling.html?aid=2820480" },
+              { name: "Windamere Hotel", type: "Heritage Luxury · Observatory Hill", price: "From ₹8,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/windamere-darjeeling.html?aid=2820480" },
             ]}
             activities={[
               { name: "Tiger Hill Sunrise Tour", duration: "4 hours", price: "From ₹500/person", badge: "Must do", url: "https://www.getyourguide.com/darjeeling-l32337/tiger-hill/?partner_id=PSZA5UI" },

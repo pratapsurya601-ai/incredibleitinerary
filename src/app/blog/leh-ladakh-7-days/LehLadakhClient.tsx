@@ -513,10 +513,10 @@ export default function LehLadakhClient() {
           <AffiliateBlock
             destination="Leh Ladakh"
             hotels={[
-              { name: "The Grand Dragon Ladakh", type: "4★ · Leh", price: "From ₹6,000/night", rating: "5", badge: "Best in Leh", url: "https://www.booking.com/hotel/in/the-grand-dragon-ladakh.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Nimmu House", type: "Heritage · Nimmu Village", price: "From ₹8,000/night", rating: "5", badge: "Most unique", url: "https://www.booking.com/hotel/in/nimmu-house-ladakh.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Desert Nubrathala Camp", type: "Luxury Camp · Nubra", price: "From ₹5,000/night", rating: "4", badge: "Nubra pick", url: "https://www.booking.com/hotel/in/desert-nubrathala-camp.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Pangong Sarai", type: "Lake Camp · Pangong", price: "From ₹4,500/night", rating: "4", badge: "Lakeside", url: "https://www.booking.com/hotel/in/pangong-sarai.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "The Grand Dragon Ladakh", type: "4★ · Leh", price: "From ₹6,000/night", rating: "5", badge: "Best in Leh", url: "https://www.booking.com/hotel/in/the-grand-dragon-ladakh.html?aid=2820480" },
+              { name: "Nimmu House", type: "Heritage · Nimmu Village", price: "From ₹8,000/night", rating: "5", badge: "Most unique", url: "https://www.booking.com/hotel/in/nimmu-house-ladakh.html?aid=2820480" },
+              { name: "Desert Nubrathala Camp", type: "Luxury Camp · Nubra", price: "From ₹5,000/night", rating: "4", badge: "Nubra pick", url: "https://www.booking.com/hotel/in/desert-nubrathala-camp.html?aid=2820480" },
+              { name: "Pangong Sarai", type: "Lake Camp · Pangong", price: "From ₹4,500/night", rating: "4", badge: "Lakeside", url: "https://www.booking.com/hotel/in/pangong-sarai.html?aid=2820480" },
             ]}
             activities={[
               { name: "Pangong Lake Overnight Camp Tour", duration: "2 Days", price: "From ₹4,500/person", badge: "Must do", url: `https://www.getyourguide.com/leh-l3007/?partner_id=PSZA5UI` },

@@ -659,9 +659,9 @@ export default function AmalfiClient() {
           <AffiliateBlock
             destination="Amalfi Coast"
             hotels={[
-              { name: "Hostel of the Sun", type: "Budget Hostel \u00B7 Naples (base)", price: "From \u20AC30/night ($32)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/it/hostel-of-the-sun.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Marina Riviera", type: "4-star \u00B7 Amalfi Town", price: "From \u20AC140/night ($151)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/it/marina-riviera.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Le Sirenuse", type: "Luxury 5-star \u00B7 Positano", price: "From \u20AC600/night ($648)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/le-sirenuse.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hostel of the Sun", type: "Budget Hostel \u00B7 Naples (base)", price: "From \u20AC30/night ($32)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/it/hostel-of-the-sun.html?aid=2820480" },
+              { name: "Hotel Marina Riviera", type: "4-star \u00B7 Amalfi Town", price: "From \u20AC140/night ($151)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/it/marina-riviera.html?aid=2820480" },
+              { name: "Le Sirenuse", type: "Luxury 5-star \u00B7 Positano", price: "From \u20AC600/night ($648)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/le-sirenuse.html?aid=2820480" },
             ]}
             activities={[
               { name: "Path of the Gods Guided Hike", duration: "5 hours", price: "From \u20AC35/person ($38)", badge: "Must do", url: "https://www.getyourguide.com/amalfi-coast-l946/path-of-the-gods/?partner_id=PSZA5UI" },

@@ -509,9 +509,9 @@ export default function ShillongClient() {
           <AffiliateBlock
             destination="Shillong"
             hotels={[
-              { name: "Ri Kynjai", type: "Lakeside Resort \u00B7 Umiam Lake", price: "From \u20B97,000/night", rating: "5", badge: "Premium pick", url: "https://www.booking.com/hotel/in/ri-kynjai.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Polo Towers", type: "Mid-Range \u00B7 Police Bazaar", price: "From \u20B92,500/night", rating: "4", badge: "Comfortable pick", url: "https://www.booking.com/hotel/in/polo-towers-shillong.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Earle Holiday Home", type: "Heritage \u00B7 Laitumkhrah", price: "From \u20B91,200/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/earle-holiday-home.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Ri Kynjai", type: "Lakeside Resort \u00B7 Umiam Lake", price: "From \u20B97,000/night", rating: "5", badge: "Premium pick", url: "https://www.booking.com/hotel/in/ri-kynjai.html?aid=2820480" },
+              { name: "Hotel Polo Towers", type: "Mid-Range \u00B7 Police Bazaar", price: "From \u20B92,500/night", rating: "4", badge: "Comfortable pick", url: "https://www.booking.com/hotel/in/polo-towers-shillong.html?aid=2820480" },
+              { name: "Earle Holiday Home", type: "Heritage \u00B7 Laitumkhrah", price: "From \u20B91,200/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/earle-holiday-home.html?aid=2820480" },
             ]}
             activities={[
               { name: "Mawphlang Sacred Forest Guided Trek", duration: "Half day", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/shillong-l23456/sacred-forest/?partner_id=PSZA5UI" },

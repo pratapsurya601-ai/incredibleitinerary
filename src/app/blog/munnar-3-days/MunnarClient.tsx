@@ -521,9 +521,9 @@ export default function MunnarClient() {
           <AffiliateBlock
             destination="Munnar"
             hotels={[
-              { name: "Zostel Munnar", type: "Budget Hostel \u00B7 Town Center", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-munnar.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Windermere Estate", type: "Plantation Homestay \u00B7 Pothamedu", price: "From \u20B94,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/windermere-estate-munnar.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Spice Tree Munnar", type: "Luxury Tea Bungalow", price: "From \u20B910,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/spice-tree-munnar.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Munnar", type: "Budget Hostel \u00B7 Town Center", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-munnar.html?aid=2820480" },
+              { name: "Windermere Estate", type: "Plantation Homestay \u00B7 Pothamedu", price: "From \u20B94,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/windermere-estate-munnar.html?aid=2820480" },
+              { name: "Spice Tree Munnar", type: "Luxury Tea Bungalow", price: "From \u20B910,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/spice-tree-munnar.html?aid=2820480" },
             ]}
             activities={[
               { name: "Kolukkumalai Sunrise Jeep Safari", duration: "Half day (4am\u20139am)", price: "From \u20B9600/person", badge: "Must do", url: "https://www.getyourguide.com/munnar-l4581/kolukkumalai/?partner_id=PSZA5UI" },

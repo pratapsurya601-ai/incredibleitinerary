@@ -521,9 +521,9 @@ export default function MahabaleshwarClient() {
           <AffiliateBlock
             destination="Mahabaleshwar"
             hotels={[
-              { name: "Hotel Panorama", type: "Budget Hotel \u00B7 Main Road", price: "From \u20B91,200/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/panorama-mahabaleshwar.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Brightland Resort", type: "Resort \u00B7 Hilltop", price: "From \u20B94,500/night", rating: "4", badge: "Weekend pick", url: "https://www.booking.com/hotel/in/brightland-resort-mahabaleshwar.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Le Meridien Mahabaleshwar", type: "Luxury Resort", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/le-meridien-mahabaleshwar.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Panorama", type: "Budget Hotel \u00B7 Main Road", price: "From \u20B91,200/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/panorama-mahabaleshwar.html?aid=2820480" },
+              { name: "Brightland Resort", type: "Resort \u00B7 Hilltop", price: "From \u20B94,500/night", rating: "4", badge: "Weekend pick", url: "https://www.booking.com/hotel/in/brightland-resort-mahabaleshwar.html?aid=2820480" },
+              { name: "Le Meridien Mahabaleshwar", type: "Luxury Resort", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/le-meridien-mahabaleshwar.html?aid=2820480" },
             ]}
             activities={[
               { name: "Pratapgad Fort Guided Trek", duration: "Half day", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/mahabaleshwar-l3258/?partner_id=PSZA5UI" },

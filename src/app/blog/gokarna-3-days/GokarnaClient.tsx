@@ -517,9 +517,9 @@ export default function GokarnaBlogClient() {
           <AffiliateBlock
             destination="Gokarna"
             hotels={[
-              { name: "Zostel Gokarna", type: "Budget Hostel \u00B7 Om Beach", price: "From \u20B9500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-gokarna.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Namaste Cafe", type: "Beach Huts \u00B7 Om Beach", price: "From \u20B91,200/night", rating: "4", badge: "Backpacker pick", url: "https://www.booking.com/hotel/in/namaste-cafe-gokarna.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "SwaSwara", type: "Wellness Resort \u00B7 Om Beach", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/swaswara-gokarna.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Gokarna", type: "Budget Hostel \u00B7 Om Beach", price: "From \u20B9500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-gokarna.html?aid=2820480" },
+              { name: "Namaste Cafe", type: "Beach Huts \u00B7 Om Beach", price: "From \u20B91,200/night", rating: "4", badge: "Backpacker pick", url: "https://www.booking.com/hotel/in/namaste-cafe-gokarna.html?aid=2820480" },
+              { name: "SwaSwara", type: "Wellness Resort \u00B7 Om Beach", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/swaswara-gokarna.html?aid=2820480" },
             ]}
             activities={[
               { name: "Beach Trek Guide (Kudle to Paradise)", duration: "Half day", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/gokarna-l12345/beach-trek/?partner_id=PSZA5UI" },

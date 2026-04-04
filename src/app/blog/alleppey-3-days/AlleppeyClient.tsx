@@ -528,9 +528,9 @@ export default function AlleppeyBlogClient() {
           <AffiliateBlock
             destination="Alleppey"
             hotels={[
-              { name: "Houseboat (Budget 1BR)", type: "Backwater Houseboat", price: "From \u20B95,000/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/alleppey-houseboat.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "CGH Marari Beach", type: "Heritage Beach Resort \u00B7 Marari", price: "From \u20B97,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/marari-beach-resort.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Premium Houseboat (2BR Upper Deck)", type: "Luxury Kettuvallam", price: "From \u20B920,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/alleppey-premium-houseboat.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Houseboat (Budget 1BR)", type: "Backwater Houseboat", price: "From \u20B95,000/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/alleppey-houseboat.html?aid=2820480" },
+              { name: "CGH Marari Beach", type: "Heritage Beach Resort \u00B7 Marari", price: "From \u20B97,500/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/marari-beach-resort.html?aid=2820480" },
+              { name: "Premium Houseboat (2BR Upper Deck)", type: "Luxury Kettuvallam", price: "From \u20B920,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/alleppey-premium-houseboat.html?aid=2820480" },
             ]}
             activities={[
               { name: "Backwater Canoe Ride (2hrs)", duration: "2 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/alleppey-l2694/canoe/?partner_id=PSZA5UI" },

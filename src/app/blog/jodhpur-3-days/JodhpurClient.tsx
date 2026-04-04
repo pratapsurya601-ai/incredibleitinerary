@@ -522,9 +522,9 @@ export default function JodhpurClient() {
           <AffiliateBlock
             destination="Jodhpur"
             hotels={[
-              { name: "Zostel Jodhpur", type: "Budget Hostel \u00B7 Old City", price: "From \u20B9500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-jodhpur.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "RAAS Jodhpur", type: "Boutique Heritage \u00B7 Fort View", price: "From \u20B96,000/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/raas-jodhpur.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Umaid Bhawan Palace", type: "Palace Hotel (Taj) \u00B7 Royal", price: "From \u20B925,000/night", rating: "5", badge: "Royal", url: "https://www.booking.com/hotel/in/umaid-bhawan-palace.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Jodhpur", type: "Budget Hostel \u00B7 Old City", price: "From \u20B9500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-jodhpur.html?aid=2820480" },
+              { name: "RAAS Jodhpur", type: "Boutique Heritage \u00B7 Fort View", price: "From \u20B96,000/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/raas-jodhpur.html?aid=2820480" },
+              { name: "Umaid Bhawan Palace", type: "Palace Hotel (Taj) \u00B7 Royal", price: "From \u20B925,000/night", rating: "5", badge: "Royal", url: "https://www.booking.com/hotel/in/umaid-bhawan-palace.html?aid=2820480" },
             ]}
             activities={[
               { name: "Flying Fox Zip-line at Mehrangarh", duration: "1.5 hours", price: "From \u20B91,800/person", badge: "Must do", url: "https://www.getyourguide.com/jodhpur-l1234/zipline/?partner_id=PSZA5UI" },

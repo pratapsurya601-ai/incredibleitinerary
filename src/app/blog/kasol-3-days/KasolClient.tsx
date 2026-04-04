@@ -519,9 +519,9 @@ export default function KasolClient() {
           <AffiliateBlock
             destination="Kasol"
             hotels={[
-              { name: "The Hosteller Kasol", type: "Budget Hostel · Kasol", price: "From ₹400/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/the-hosteller-kasol.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Tosh Valley Homestay", type: "Guesthouse · Tosh", price: "From ₹1,500/night", rating: "4", badge: "Valley views", url: "https://www.booking.com/hotel/in/tosh-valley.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Kasol Riverside Cottage", type: "Boutique · Kasol", price: "From ₹3,000/night", rating: "5", badge: "Comfort pick", url: "https://www.booking.com/hotel/in/kasol-riverside.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "The Hosteller Kasol", type: "Budget Hostel · Kasol", price: "From ₹400/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/the-hosteller-kasol.html?aid=2820480" },
+              { name: "Tosh Valley Homestay", type: "Guesthouse · Tosh", price: "From ₹1,500/night", rating: "4", badge: "Valley views", url: "https://www.booking.com/hotel/in/tosh-valley.html?aid=2820480" },
+              { name: "Kasol Riverside Cottage", type: "Boutique · Kasol", price: "From ₹3,000/night", rating: "5", badge: "Comfort pick", url: "https://www.booking.com/hotel/in/kasol-riverside.html?aid=2820480" },
             ]}
             activities={[
               { name: "Kheerganga Trek with Guide", duration: "2 days", price: "From ₹2,500/person", badge: "Must do", url: "https://www.getyourguide.com/kasol-l976/kheerganga/?partner_id=PSZA5UI" },

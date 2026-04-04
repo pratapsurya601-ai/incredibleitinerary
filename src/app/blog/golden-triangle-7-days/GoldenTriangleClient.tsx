@@ -678,10 +678,10 @@ export default function GoldenTriangleClient() {
           <AffiliateBlock
             destination="Delhi Agra Jaipur Golden Triangle"
             hotels={[
-              { name: "The Imperial", type: "5★ Colonial · New Delhi", price: "From ₹18,000/night", rating: "5", badge: "Best in Delhi", url: "https://www.booking.com/hotel/in/the-imperial.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Oberoi Amarvilas", type: "5★ · Taj Mahal view · Agra", price: "From ₹30,000/night", rating: "5", badge: "Most romantic", url: "https://www.booking.com/hotel/in/the-oberoi-amarvilas-agra.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Rambagh Palace", type: "5★ Palace · Jaipur", price: "From ₹25,000/night", rating: "5", badge: "Former palace", url: "https://www.booking.com/hotel/in/rambagh-palace-jaipur.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Samode Haveli", type: "Heritage · Old City · Jaipur", price: "From ₹8,000/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/samode-haveli.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "The Imperial", type: "5★ Colonial · New Delhi", price: "From ₹18,000/night", rating: "5", badge: "Best in Delhi", url: "https://www.booking.com/hotel/in/the-imperial.html?aid=2820480" },
+              { name: "Oberoi Amarvilas", type: "5★ · Taj Mahal view · Agra", price: "From ₹30,000/night", rating: "5", badge: "Most romantic", url: "https://www.booking.com/hotel/in/the-oberoi-amarvilas-agra.html?aid=2820480" },
+              { name: "Rambagh Palace", type: "5★ Palace · Jaipur", price: "From ₹25,000/night", rating: "5", badge: "Former palace", url: "https://www.booking.com/hotel/in/rambagh-palace-jaipur.html?aid=2820480" },
+              { name: "Samode Haveli", type: "Heritage · Old City · Jaipur", price: "From ₹8,000/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/samode-haveli.html?aid=2820480" },
             ]}
             activities={[
               { name: "Taj Mahal Sunrise Tour with Guide",       duration: "4 hours",   price: "From ₹2,500/person", badge: "Must do",       url: `https://www.getyourguide.com/agra-l972/?partner_id=PSZA5UI` },

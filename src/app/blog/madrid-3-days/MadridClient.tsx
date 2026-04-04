@@ -425,9 +425,9 @@ export default function MadridClient() {
           <AffiliateBlock
             destination="Madrid"
             hotels={[
-              { name: "The Hat Madrid", type: "Design Hostel \u00B7 Sol", price: "From \u20AC28/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/es/the-hat-madrid.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Only YOU Atocha", type: "Boutique Hotel \u00B7 Atocha", price: "From \u20AC120/night", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/es/only-you-atocha.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Four Seasons Madrid", type: "Ultra-Luxury \u00B7 Sol", price: "From \u20AC500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/es/four-seasons-madrid.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "The Hat Madrid", type: "Design Hostel \u00B7 Sol", price: "From \u20AC28/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/es/the-hat-madrid.html?aid=2820480" },
+              { name: "Only YOU Atocha", type: "Boutique Hotel \u00B7 Atocha", price: "From \u20AC120/night", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/es/only-you-atocha.html?aid=2820480" },
+              { name: "Four Seasons Madrid", type: "Ultra-Luxury \u00B7 Sol", price: "From \u20AC500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/es/four-seasons-madrid.html?aid=2820480" },
             ]}
             activities={[
               { name: "Prado Museum Skip-the-Line", duration: "2.5 hours", price: "From \u20AC15", badge: "Must do", url: "https://www.getyourguide.com/madrid-l47/prado/?partner_id=PSZA5UI" },

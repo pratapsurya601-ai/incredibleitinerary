@@ -447,9 +447,9 @@ export default function LonavalaClient() {
           <AffiliateBlock
             destination="Lonavala"
             hotels={[
-              { name: "Zostel Lonavala", type: "Budget Hostel", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-lonavala.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Della Resorts", type: "Adventure Resort", price: "From \u20B95,500/night", rating: "5", badge: "Weekend pick", url: "https://www.booking.com/hotel/in/della-resorts-lonavala.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hilton Shillim Estate", type: "Luxury Wellness Retreat", price: "From \u20B918,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/hilton-shillim-estate.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Lonavala", type: "Budget Hostel", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-lonavala.html?aid=2820480" },
+              { name: "Della Resorts", type: "Adventure Resort", price: "From \u20B95,500/night", rating: "5", badge: "Weekend pick", url: "https://www.booking.com/hotel/in/della-resorts-lonavala.html?aid=2820480" },
+              { name: "Hilton Shillim Estate", type: "Luxury Wellness Retreat", price: "From \u20B918,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/hilton-shillim-estate.html?aid=2820480" },
             ]}
             activities={[
               { name: "Della Adventure Park Day Pass", duration: "Half day", price: "From \u20B91,500/person", badge: "Must do", url: "https://www.getyourguide.com/lonavala/?partner_id=PSZA5UI" },

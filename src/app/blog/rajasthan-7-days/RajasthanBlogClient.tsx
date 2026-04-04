@@ -507,10 +507,10 @@ export default function RajasthanBlogClient() {
           <AffiliateBlock
             destination="Rajasthan"
             hotels={[
-              { name: "Rambagh Palace", type: "5★ Luxury Palace · Jaipur", price: "From ₹25,000/night", rating: "5", badge: "Iconic", url: "https://www.booking.com/hotel/in/rambagh-palace-jaipur.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Raas Jodhpur", type: "Boutique Luxury · Jodhpur", price: "From ₹15,000/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/raas-jodhpur.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Taj Lake Palace", type: "5★ Floating Palace · Udaipur", price: "From ₹28,000/night", rating: "5", badge: "Most romantic", url: "https://www.booking.com/hotel/in/taj-lake-palace-udaipur.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Dera Rawatsar", type: "Heritage Haveli · Jaipur", price: "From ₹3,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/dera-rawatsar-jaipur.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Rambagh Palace", type: "5★ Luxury Palace · Jaipur", price: "From ₹25,000/night", rating: "5", badge: "Iconic", url: "https://www.booking.com/hotel/in/rambagh-palace-jaipur.html?aid=2820480" },
+              { name: "Raas Jodhpur", type: "Boutique Luxury · Jodhpur", price: "From ₹15,000/night", rating: "5", badge: "Couple pick", url: "https://www.booking.com/hotel/in/raas-jodhpur.html?aid=2820480" },
+              { name: "Taj Lake Palace", type: "5★ Floating Palace · Udaipur", price: "From ₹28,000/night", rating: "5", badge: "Most romantic", url: "https://www.booking.com/hotel/in/taj-lake-palace-udaipur.html?aid=2820480" },
+              { name: "Dera Rawatsar", type: "Heritage Haveli · Jaipur", price: "From ₹3,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/dera-rawatsar-jaipur.html?aid=2820480" },
             ]}
             activities={[
               { name: "Amber Fort Skip-the-Line Guided Tour", duration: "3 hours", price: "From ₹800/person", badge: "Must do", url: "https://www.getyourguide.com/jaipur-l200/?partner_id=PSZA5UI" },

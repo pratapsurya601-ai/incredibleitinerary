@@ -483,9 +483,9 @@ export default function UbudClient() {
           <AffiliateBlock
             destination="Ubud"
             hotels={[
-              { name: "Puri Garden Hotel", type: "Budget Guesthouse \u00B7 Central Ubud", price: "From Rp200k/night (~$13)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/id/puri-garden-ubud.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Bisma Eight", type: "Boutique Jungle Villa \u00B7 Ubud", price: "From Rp1.2M/night (~$76)", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/id/bisma-eight-ubud.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Four Seasons Sayan", type: "Luxury Jungle Resort", price: "From Rp5M/night (~$317)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/four-seasons-sayan.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Puri Garden Hotel", type: "Budget Guesthouse \u00B7 Central Ubud", price: "From Rp200k/night (~$13)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/id/puri-garden-ubud.html?aid=2820480" },
+              { name: "Bisma Eight", type: "Boutique Jungle Villa \u00B7 Ubud", price: "From Rp1.2M/night (~$76)", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/id/bisma-eight-ubud.html?aid=2820480" },
+              { name: "Four Seasons Sayan", type: "Luxury Jungle Resort", price: "From Rp5M/night (~$317)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/four-seasons-sayan.html?aid=2820480" },
             ]}
             activities={[
               { name: "Tegallalang Terraces & Temple Tour", duration: "8 hours", price: "From Rp400k/person (~$25)", badge: "Must do", url: "https://www.getyourguide.com/bali-l347/ubud-tour/?partner_id=PSZA5UI" },

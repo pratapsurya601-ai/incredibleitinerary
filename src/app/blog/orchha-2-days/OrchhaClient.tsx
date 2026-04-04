@@ -482,9 +482,9 @@ export default function OrchhaClient() {
           <AffiliateBlock
             destination="Orchha"
             hotels={[
-              { name: "MP Tourism Sheesh Mahal", type: "Heritage Hotel \u00B7 Inside Fort", price: "From \u20B91,500/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/sheesh-mahal-orchha.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Amar Mahal", type: "Heritage Resort \u00B7 Riverside", price: "From \u20B93,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/amar-mahal-orchha.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Bundelkhand Riverside", type: "Boutique \u00B7 River View", price: "From \u20B94,500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/bundelkhand-riverside-orchha.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "MP Tourism Sheesh Mahal", type: "Heritage Hotel \u00B7 Inside Fort", price: "From \u20B91,500/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/sheesh-mahal-orchha.html?aid=2820480" },
+              { name: "Amar Mahal", type: "Heritage Resort \u00B7 Riverside", price: "From \u20B93,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/amar-mahal-orchha.html?aid=2820480" },
+              { name: "Bundelkhand Riverside", type: "Boutique \u00B7 River View", price: "From \u20B94,500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/bundelkhand-riverside-orchha.html?aid=2820480" },
             ]}
             activities={[
               { name: "Orchha Fort Guided Heritage Walk", duration: "3 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/orchha-l4567/fort-walk/?partner_id=PSZA5UI" },

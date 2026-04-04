@@ -500,9 +500,9 @@ export default function AgraClient() {
           <AffiliateBlock
             destination="Agra"
             hotels={[
-              { name: "Zostel Agra", type: "Budget Hostel \u00B7 Taj Ganj", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-agra.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Hotel Atulyaa Taj", type: "Heritage Boutique \u00B7 Fatehabad Rd", price: "From \u20B93,500/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/atulyaa-taj.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Oberoi Amarvilas", type: "Luxury \u00B7 Taj View", price: "From \u20B925,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/oberoi-amarvilas.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Agra", type: "Budget Hostel \u00B7 Taj Ganj", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-agra.html?aid=2820480" },
+              { name: "Hotel Atulyaa Taj", type: "Heritage Boutique \u00B7 Fatehabad Rd", price: "From \u20B93,500/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/atulyaa-taj.html?aid=2820480" },
+              { name: "Oberoi Amarvilas", type: "Luxury \u00B7 Taj View", price: "From \u20B925,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/oberoi-amarvilas.html?aid=2820480" },
             ]}
             activities={[
               { name: "Taj Mahal Sunrise Tour with Guide", duration: "3 hours", price: "From \u20B91,500/person", badge: "Must do", url: "https://www.getyourguide.com/agra-l270/taj-mahal/?partner_id=PSZA5UI" },

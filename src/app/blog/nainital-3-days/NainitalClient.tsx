@@ -521,9 +521,9 @@ export default function NainitalClient() {
           <AffiliateBlock
             destination="Nainital"
             hotels={[
-              { name: "Hotel Alka", type: "Budget · Mall Road", price: "From ₹800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/alka-nainital.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "The Naini Retreat", type: "Heritage · Lakefront", price: "From ₹5,500/night", rating: "5", badge: "Best views", url: "https://www.booking.com/hotel/in/naini-retreat.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Manu Maharani", type: "Luxury Resort · Mallital", price: "From ₹7,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/manu-maharani-nainital.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Hotel Alka", type: "Budget · Mall Road", price: "From ₹800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/alka-nainital.html?aid=2820480" },
+              { name: "The Naini Retreat", type: "Heritage · Lakefront", price: "From ₹5,500/night", rating: "5", badge: "Best views", url: "https://www.booking.com/hotel/in/naini-retreat.html?aid=2820480" },
+              { name: "Manu Maharani", type: "Luxury Resort · Mallital", price: "From ₹7,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/manu-maharani-nainital.html?aid=2820480" },
             ]}
             activities={[
               { name: "Snow View Point Ropeway", duration: "1 hour", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/nainital-l4321/ropeway/?partner_id=PSZA5UI" },

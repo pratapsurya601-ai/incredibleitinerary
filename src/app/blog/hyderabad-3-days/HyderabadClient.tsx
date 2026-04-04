@@ -548,9 +548,9 @@ export default function HyderabadClient() {
           <AffiliateBlock
             destination="Hyderabad"
             hotels={[
-              { name: "Zostel Hyderabad", type: "Budget Hostel \u00B7 Nampally", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-hyderabad.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Novotel HICC", type: "Business Hotel \u00B7 Banjara Hills", price: "From \u20B94,500/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/novotel-hyderabad.html?aid=YOUR_AFFILIATE_ID" },
-              { name: "Taj Falaknuma Palace", type: "Palace Hotel \u00B7 Old City", price: "From \u20B925,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/taj-falaknuma-palace.html?aid=YOUR_AFFILIATE_ID" },
+              { name: "Zostel Hyderabad", type: "Budget Hostel \u00B7 Nampally", price: "From \u20B9600/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-hyderabad.html?aid=2820480" },
+              { name: "Novotel HICC", type: "Business Hotel \u00B7 Banjara Hills", price: "From \u20B94,500/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/novotel-hyderabad.html?aid=2820480" },
+              { name: "Taj Falaknuma Palace", type: "Palace Hotel \u00B7 Old City", price: "From \u20B925,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/taj-falaknuma-palace.html?aid=2820480" },
             ]}
             activities={[
               { name: "Ramoji Film City Premium Tour", duration: "Full day", price: "From \u20B92,500/person", badge: "Must do", url: "https://www.getyourguide.com/hyderabad-l4542/ramoji/?partner_id=PSZA5UI" },
