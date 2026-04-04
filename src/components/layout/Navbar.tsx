@@ -20,10 +20,10 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
   const navLinks = [
     { href: "/blog",          label: "Destinations" },
     { href: "/quiz",          label: "Find My Trip" },
-    { href: "/compare/goa-vs-pondicherry", label: "Compare" },
+    { href: "/tools/trip-calculator", label: "Cost Calculator" },
+    { href: "/tools/visa-checker", label: "Visa Checker" },
     { href: "/shop",          label: "Shop" },
     { href: "/about",         label: "About" },
-    { href: "/contact",       label: "Contact" },
   ];
 
   return (

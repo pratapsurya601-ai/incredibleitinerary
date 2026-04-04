@@ -88,5 +88,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/rome-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/blog/florence-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/blog/amalfi-coast-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // Tools
+    { url: `${base}/tools/trip-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/tools/visa-checker`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
   ];
 }
