@@ -341,6 +341,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Americas & Middle East (Batch 8)
     { url: `${base}/blog/puerto-rico-5-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/beirut-4-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Europe Mediterranean + Atlantic (Batch 9)
+    { url: `${base}/blog/cyprus-5-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/rhodes-4-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/azores-5-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/madeira-5-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // USA South (Batch 9)
+    { url: `${base}/blog/charleston-sc-4-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/savannah-georgia-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Asia (Batch 9)
+    { url: `${base}/blog/hakone-2-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/da-nang-4-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/phnom-penh-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // South America (Batch 9)
+    { url: `${base}/blog/lima-4-days`,             lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/santiago-chile-4-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/mendoza-argentina-4-days`,lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
