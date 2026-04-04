@@ -18,10 +18,9 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
   }, []);
 
   const navLinks = [
+    { href: "/blog",          label: "Destinations" },
     { href: "/quiz",          label: "Find My Trip" },
-    { href: "/#destinations", label: "Destinations" },
-    { href: "/#packages",     label: "Itineraries" },
-    { href: "/blog",          label: "Travel Guides" },
+    { href: "/compare/goa-vs-pondicherry", label: "Compare" },
     { href: "/shop",          label: "Shop" },
     { href: "/about",         label: "About" },
     { href: "/contact",       label: "Contact" },
