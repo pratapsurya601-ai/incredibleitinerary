@@ -725,9 +725,9 @@ export default function RanthamboreClient() {
             ]}
             activities={[
               { name: "Ranthambore Jeep Safari (Premium Zone)", duration: "3 hours", price: "From ₹2,500/person", badge: "Must do", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },
-              { name: "Ranthambore Fort Guided Tour", duration: "Half day", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/ranthambore-l4432/fort-tour/?partner_id=PSZA5UI" },
-              { name: "Village Walk & Cultural Experience", duration: "2 hours", price: "From ₹600/person", url: "https://www.getyourguide.com/ranthambore-l4432/village/?partner_id=PSZA5UI" },
-              { name: "Ranthambore Canter Safari (Budget)", duration: "3 hours", price: "From ₹750/person", url: "https://www.getyourguide.com/ranthambore-l4432/canter/?partner_id=PSZA5UI" },
+              { name: "Ranthambore Fort Guided Tour", duration: "Half day", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },
+              { name: "Village Walk & Cultural Experience", duration: "2 hours", price: "From ₹600/person", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },
+              { name: "Ranthambore Canter Safari (Budget)", duration: "3 hours", price: "From ₹750/person", url: "https://www.getyourguide.com/ranthambore-l4432/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="ranthambore-3-days-pdf"
           />

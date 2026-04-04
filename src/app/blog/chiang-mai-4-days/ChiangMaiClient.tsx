@@ -522,10 +522,10 @@ export default function ChiangMaiClient() {
               { name: "Four Seasons Chiang Mai", type: "Luxury Resort \u00B7 Mae Rim", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/four-seasons-resort-chiang-mai.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Ethical Elephant Sanctuary Half Day", duration: "Half day", price: "From \u0E3F1,500/person (~$42)", badge: "Must do", url: "https://www.getyourguide.com/chiang-mai-l208/elephants/?partner_id=PSZA5UI" },
-              { name: "Thai Cooking Class with Market Tour", duration: "Half day", price: "From \u0E3F800/person (~$23)", badge: "Popular", url: "https://www.getyourguide.com/chiang-mai-l208/cooking/?partner_id=PSZA5UI" },
-              { name: "Doi Suthep & Doi Pui Temple Tour", duration: "Half day", price: "From \u0E3F500/person (~$14)", badge: "Cultural", url: "https://www.getyourguide.com/chiang-mai-l208/doi-suthep/?partner_id=PSZA5UI" },
-              { name: "White Temple Chiang Rai Day Trip", duration: "Full day", price: "From \u0E3F800/person (~$23)", url: "https://www.getyourguide.com/chiang-mai-l208/chiang-rai/?partner_id=PSZA5UI" },
+              { name: "Ethical Elephant Sanctuary Half Day", duration: "Half day", price: "From \u0E3F1,500/person (~$42)", badge: "Must do", url: "https://www.getyourguide.com/chiang-mai-l208/?partner_id=PSZA5UI" },
+              { name: "Thai Cooking Class with Market Tour", duration: "Half day", price: "From \u0E3F800/person (~$23)", badge: "Popular", url: "https://www.getyourguide.com/chiang-mai-l208/?partner_id=PSZA5UI" },
+              { name: "Doi Suthep & Doi Pui Temple Tour", duration: "Half day", price: "From \u0E3F500/person (~$14)", badge: "Cultural", url: "https://www.getyourguide.com/chiang-mai-l208/?partner_id=PSZA5UI" },
+              { name: "White Temple Chiang Rai Day Trip", duration: "Full day", price: "From \u0E3F800/person (~$23)", url: "https://www.getyourguide.com/chiang-mai-l208/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="chiang-mai-4-days-pdf"
           />

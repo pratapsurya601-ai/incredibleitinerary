@@ -487,10 +487,10 @@ export default function MajuliClient() {
               { name: "Ygdrasill Bamboo Cottage", type: "Eco Cottage · Majuli", price: "From ₹2,500/night", rating: "5", badge: "Cultural", url: "https://www.booking.com/hotel/in/ygdrasill-bamboo-cottage-majuli.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Guided Satra Heritage Walk", duration: "Full day", price: "From ₹1,200/person", badge: "Must do", url: "https://www.getyourguide.com/assam-l3456/majuli-satra/?partner_id=PSZA5UI" },
-              { name: "Mask-Making Workshop", duration: "3 hours", price: "From ₹500/person", badge: "Cultural", url: "https://www.getyourguide.com/assam-l3456/majuli-mask/?partner_id=PSZA5UI" },
-              { name: "Mishing Village & Pottery Tour", duration: "Half day", price: "From ₹400/person", url: "https://www.getyourguide.com/assam-l3456/majuli-village/?partner_id=PSZA5UI" },
-              { name: "Brahmaputra Sunset Boat Ride", duration: "2 hours", price: "From ₹300/person", url: "https://www.getyourguide.com/assam-l3456/majuli-boat/?partner_id=PSZA5UI" },
+              { name: "Guided Satra Heritage Walk", duration: "Full day", price: "From ₹1,200/person", badge: "Must do", url: "https://www.getyourguide.com/assam-l3456/?partner_id=PSZA5UI" },
+              { name: "Mask-Making Workshop", duration: "3 hours", price: "From ₹500/person", badge: "Cultural", url: "https://www.getyourguide.com/assam-l3456/?partner_id=PSZA5UI" },
+              { name: "Mishing Village & Pottery Tour", duration: "Half day", price: "From ₹400/person", url: "https://www.getyourguide.com/assam-l3456/?partner_id=PSZA5UI" },
+              { name: "Brahmaputra Sunset Boat Ride", duration: "2 hours", price: "From ₹300/person", url: "https://www.getyourguide.com/assam-l3456/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="majuli-3-days-pdf"
           />

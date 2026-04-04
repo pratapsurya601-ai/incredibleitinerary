@@ -545,10 +545,10 @@ export default function KyotoClient() {
               { name: "Aman Kyoto", type: "Luxury Resort \u00B7 Mountains", price: "From \u00A5100,000/night ($667)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/aman-kyoto.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Fushimi Inari Early Morning Tour", duration: "3 hours", price: "From \u00A56,000 ($40)", badge: "Must do", url: "https://www.getyourguide.com/kyoto-l96/fushimi-inari/?partner_id=PSZA5UI" },
-              { name: "Traditional Tea Ceremony in Gion", duration: "1.5 hours", price: "From \u00A54,000 ($27)", badge: "Cultural", url: "https://www.getyourguide.com/kyoto-l96/tea-ceremony/?partner_id=PSZA5UI" },
-              { name: "Arashiyama Bamboo & Monkey Park", duration: "4 hours", price: "From \u00A55,000 ($33)", url: "https://www.getyourguide.com/kyoto-l96/arashiyama/?partner_id=PSZA5UI" },
-              { name: "Nara Day Trip with Guide", duration: "Full day", price: "From \u00A58,000 ($53)", url: "https://www.getyourguide.com/kyoto-l96/nara/?partner_id=PSZA5UI" },
+              { name: "Fushimi Inari Early Morning Tour", duration: "3 hours", price: "From \u00A56,000 ($40)", badge: "Must do", url: "https://www.getyourguide.com/kyoto-l96/?partner_id=PSZA5UI" },
+              { name: "Traditional Tea Ceremony in Gion", duration: "1.5 hours", price: "From \u00A54,000 ($27)", badge: "Cultural", url: "https://www.getyourguide.com/kyoto-l96/?partner_id=PSZA5UI" },
+              { name: "Arashiyama Bamboo & Monkey Park", duration: "4 hours", price: "From \u00A55,000 ($33)", url: "https://www.getyourguide.com/kyoto-l96/?partner_id=PSZA5UI" },
+              { name: "Nara Day Trip with Guide", duration: "Full day", price: "From \u00A58,000 ($53)", url: "https://www.getyourguide.com/kyoto-l96/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="kyoto-4-days-pdf"
           />

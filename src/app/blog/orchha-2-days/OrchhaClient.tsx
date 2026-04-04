@@ -487,9 +487,9 @@ export default function OrchhaClient() {
               { name: "Bundelkhand Riverside", type: "Boutique \u00B7 River View", price: "From \u20B94,500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/bundelkhand-riverside-orchha.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Orchha Fort Guided Heritage Walk", duration: "3 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/orchha-l4567/fort-walk/?partner_id=PSZA5UI" },
-              { name: "Betwa River Rafting", duration: "1.5 hours", price: "From \u20B9700/person", badge: "Adventure", url: "https://www.getyourguide.com/orchha-l4567/rafting/?partner_id=PSZA5UI" },
-              { name: "Orchha Wildlife Sanctuary Safari", duration: "2 hours", price: "From \u20B9300/person", url: "https://www.getyourguide.com/orchha-l4567/safari/?partner_id=PSZA5UI" },
+              { name: "Orchha Fort Guided Heritage Walk", duration: "3 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/orchha-l4567/?partner_id=PSZA5UI" },
+              { name: "Betwa River Rafting", duration: "1.5 hours", price: "From \u20B9700/person", badge: "Adventure", url: "https://www.getyourguide.com/orchha-l4567/?partner_id=PSZA5UI" },
+              { name: "Orchha Wildlife Sanctuary Safari", duration: "2 hours", price: "From \u20B9300/person", url: "https://www.getyourguide.com/orchha-l4567/?partner_id=PSZA5UI" },
               { name: "Jhansi Fort + Orchha Day Trip", duration: "Full day", price: "From \u20B91,200/person", url: "https://www.getyourguide.com/jhansi-l4568/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="orchha-2-days-pdf"

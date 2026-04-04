@@ -633,10 +633,10 @@ export default function DubaiClient() {
               { name: "Atlantis The Royal", type: "Ultra-Luxury \u00B7 Palm Jumeirah", price: "From AED 2,500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/ae/atlantis-the-royal.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Burj Khalifa At the Top", duration: "1.5 hours", price: "From AED 169", badge: "Must do", url: "https://www.getyourguide.com/dubai-l173/burj-khalifa/?partner_id=PSZA5UI" },
-              { name: "Desert Safari with BBQ Dinner", duration: "6 hours", price: "From AED 200", badge: "Essential", url: "https://www.getyourguide.com/dubai-l173/desert-safari/?partner_id=PSZA5UI" },
-              { name: "Old Dubai Heritage Walking Tour", duration: "3 hours", price: "From AED 120", badge: "Cultural", url: "https://www.getyourguide.com/dubai-l173/heritage/?partner_id=PSZA5UI" },
-              { name: "Dubai Marina Yacht Cruise", duration: "2 hours", price: "From AED 150", url: "https://www.getyourguide.com/dubai-l173/yacht/?partner_id=PSZA5UI" },
+              { name: "Burj Khalifa At the Top", duration: "1.5 hours", price: "From AED 169", badge: "Must do", url: "https://www.getyourguide.com/dubai-l173/?partner_id=PSZA5UI" },
+              { name: "Desert Safari with BBQ Dinner", duration: "6 hours", price: "From AED 200", badge: "Essential", url: "https://www.getyourguide.com/dubai-l173/?partner_id=PSZA5UI" },
+              { name: "Old Dubai Heritage Walking Tour", duration: "3 hours", price: "From AED 120", badge: "Cultural", url: "https://www.getyourguide.com/dubai-l173/?partner_id=PSZA5UI" },
+              { name: "Dubai Marina Yacht Cruise", duration: "2 hours", price: "From AED 150", url: "https://www.getyourguide.com/dubai-l173/?partner_id=PSZA5UI" },
             ]}
           />
 

@@ -492,9 +492,9 @@ export default function ShimlaClient() {
             ]}
             activities={[
               { name: "Kalka-Shimla Toy Train Experience", duration: "5 hours", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },
-              { name: "Shimla Heritage Walking Tour", duration: "2.5 hours", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/shimla-l2034/heritage/?partner_id=PSZA5UI" },
-              { name: "Kufri Snow Adventure Day Trip", duration: "Half day", price: "From ₹1,200/person", url: "https://www.getyourguide.com/shimla-l2034/kufri/?partner_id=PSZA5UI" },
-              { name: "Mashobra & Naldehra Nature Drive", duration: "Full day", price: "From ₹2,000/person", url: "https://www.getyourguide.com/shimla-l2034/naldehra/?partner_id=PSZA5UI" },
+              { name: "Shimla Heritage Walking Tour", duration: "2.5 hours", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },
+              { name: "Kufri Snow Adventure Day Trip", duration: "Half day", price: "From ₹1,200/person", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },
+              { name: "Mashobra & Naldehra Nature Drive", duration: "Full day", price: "From ₹2,000/person", url: "https://www.getyourguide.com/shimla-l2034/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="shimla-3-days-pdf"
           />

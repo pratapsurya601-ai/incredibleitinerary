@@ -527,9 +527,9 @@ export default function BangkokClient() {
             ]}
             activities={[
               { name: "Grand Palace & Temple Tour", duration: "Half day", price: "From \u0E3F800/person (~$23)", badge: "Must do", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },
-              { name: "Floating Market & Railway Market", duration: "Full day", price: "From \u0E3F1,500/person (~$42)", badge: "Popular", url: "https://www.getyourguide.com/bangkok-l169/floating-market/?partner_id=PSZA5UI" },
-              { name: "Ayutthaya Ancient Ruins Day Trip", duration: "Full day", price: "From \u0E3F1,200/person (~$34)", badge: "Day trip", url: "https://www.getyourguide.com/bangkok-l169/ayutthaya/?partner_id=PSZA5UI" },
-              { name: "Bangkok Street Food Tour by Night", duration: "4 hours", price: "From \u0E3F1,800/person (~$50)", url: "https://www.getyourguide.com/bangkok-l169/food/?partner_id=PSZA5UI" },
+              { name: "Floating Market & Railway Market", duration: "Full day", price: "From \u0E3F1,500/person (~$42)", badge: "Popular", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },
+              { name: "Ayutthaya Ancient Ruins Day Trip", duration: "Full day", price: "From \u0E3F1,200/person (~$34)", badge: "Day trip", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },
+              { name: "Bangkok Street Food Tour by Night", duration: "4 hours", price: "From \u0E3F1,800/person (~$50)", url: "https://www.getyourguide.com/bangkok-l169/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="bangkok-4-days-pdf"
           />

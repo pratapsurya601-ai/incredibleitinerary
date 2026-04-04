@@ -506,10 +506,10 @@ export default function AbuDhabiClient() {
               { name: "Emirates Palace", type: "Ultra-Luxury \u00B7 Corniche", price: "From AED 1,800/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/ae/emirates-palace.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Louvre Abu Dhabi Skip-the-Line", duration: "3 hours", price: "From AED 63", badge: "Must do", url: "https://www.getyourguide.com/abu-dhabi-l174/louvre/?partner_id=PSZA5UI" },
-              { name: "Mangrove Kayaking Tour", duration: "2 hours", price: "From AED 100", badge: "Nature", url: "https://www.getyourguide.com/abu-dhabi-l174/mangrove/?partner_id=PSZA5UI" },
-              { name: "Ferrari World Day Pass", duration: "Full day", price: "From AED 295", url: "https://www.getyourguide.com/abu-dhabi-l174/ferrari/?partner_id=PSZA5UI" },
-              { name: "Sheikh Zayed Mosque Guided Tour", duration: "1.5 hours", price: "Free", badge: "Cultural", url: "https://www.getyourguide.com/abu-dhabi-l174/mosque/?partner_id=PSZA5UI" },
+              { name: "Louvre Abu Dhabi Skip-the-Line", duration: "3 hours", price: "From AED 63", badge: "Must do", url: "https://www.getyourguide.com/abu-dhabi-l174/?partner_id=PSZA5UI" },
+              { name: "Mangrove Kayaking Tour", duration: "2 hours", price: "From AED 100", badge: "Nature", url: "https://www.getyourguide.com/abu-dhabi-l174/?partner_id=PSZA5UI" },
+              { name: "Ferrari World Day Pass", duration: "Full day", price: "From AED 295", url: "https://www.getyourguide.com/abu-dhabi-l174/?partner_id=PSZA5UI" },
+              { name: "Sheikh Zayed Mosque Guided Tour", duration: "1.5 hours", price: "Free", badge: "Cultural", url: "https://www.getyourguide.com/abu-dhabi-l174/?partner_id=PSZA5UI" },
             ]}
           />
 

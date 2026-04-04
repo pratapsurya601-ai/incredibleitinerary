@@ -553,10 +553,10 @@ export default function HyderabadClient() {
               { name: "Taj Falaknuma Palace", type: "Palace Hotel \u00B7 Old City", price: "From \u20B925,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/taj-falaknuma-palace.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Ramoji Film City Premium Tour", duration: "Full day", price: "From \u20B92,500/person", badge: "Must do", url: "https://www.getyourguide.com/hyderabad-l4542/ramoji/?partner_id=PSZA5UI" },
-              { name: "Old City Heritage Walking Tour", duration: "3 hours", price: "From \u20B91,200/person", badge: "Cultural", url: "https://www.getyourguide.com/hyderabad-l4542/heritage/?partner_id=PSZA5UI" },
-              { name: "Golconda Fort Guided Tour", duration: "2.5 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/hyderabad-l4542/golconda/?partner_id=PSZA5UI" },
-              { name: "Hyderabadi Food & Biryani Trail", duration: "4 hours", price: "From \u20B91,500/person", url: "https://www.getyourguide.com/hyderabad-l4542/food/?partner_id=PSZA5UI" },
+              { name: "Ramoji Film City Premium Tour", duration: "Full day", price: "From \u20B92,500/person", badge: "Must do", url: "https://www.getyourguide.com/hyderabad-l4542/?partner_id=PSZA5UI" },
+              { name: "Old City Heritage Walking Tour", duration: "3 hours", price: "From \u20B91,200/person", badge: "Cultural", url: "https://www.getyourguide.com/hyderabad-l4542/?partner_id=PSZA5UI" },
+              { name: "Golconda Fort Guided Tour", duration: "2.5 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/hyderabad-l4542/?partner_id=PSZA5UI" },
+              { name: "Hyderabadi Food & Biryani Trail", duration: "4 hours", price: "From \u20B91,500/person", url: "https://www.getyourguide.com/hyderabad-l4542/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="hyderabad-3-days-pdf"
           />

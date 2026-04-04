@@ -549,10 +549,10 @@ export default function DarjeelingClient() {
               { name: "Windamere Hotel", type: "Heritage Luxury · Observatory Hill", price: "From ₹8,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/windamere-darjeeling.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Tiger Hill Sunrise Tour", duration: "4 hours", price: "From ₹500/person", badge: "Must do", url: "https://www.getyourguide.com/darjeeling-l32337/tiger-hill/?partner_id=PSZA5UI" },
-              { name: "Darjeeling Toy Train Joyride", duration: "40 minutes", price: "From ₹800/person", badge: "Heritage", url: "https://www.getyourguide.com/darjeeling-l32337/toy-train/?partner_id=PSZA5UI" },
-              { name: "Happy Valley Tea Estate Tour", duration: "2 hours", price: "Free", url: "https://www.getyourguide.com/darjeeling-l32337/tea/?partner_id=PSZA5UI" },
-              { name: "Full Day Kalimpong Excursion", duration: "Full day", price: "From ₹2,500/person", url: "https://www.getyourguide.com/darjeeling-l32337/kalimpong/?partner_id=PSZA5UI" },
+              { name: "Tiger Hill Sunrise Tour", duration: "4 hours", price: "From ₹500/person", badge: "Must do", url: "https://www.getyourguide.com/darjeeling-l32337/?partner_id=PSZA5UI" },
+              { name: "Darjeeling Toy Train Joyride", duration: "40 minutes", price: "From ₹800/person", badge: "Heritage", url: "https://www.getyourguide.com/darjeeling-l32337/?partner_id=PSZA5UI" },
+              { name: "Happy Valley Tea Estate Tour", duration: "2 hours", price: "Free", url: "https://www.getyourguide.com/darjeeling-l32337/?partner_id=PSZA5UI" },
+              { name: "Full Day Kalimpong Excursion", duration: "Full day", price: "From ₹2,500/person", url: "https://www.getyourguide.com/darjeeling-l32337/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="darjeeling-4-days-pdf"
           />

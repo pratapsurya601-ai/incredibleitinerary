@@ -514,10 +514,10 @@ export default function OsakaClient() {
               { name: "The St. Regis Osaka", type: "Luxury \u00B7 Midosuji", price: "From \u00A550,000/night ($333)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/the-st-regis-osaka.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Dotonbori Street Food Tour", duration: "3 hours", price: "From \u00A57,000 ($47)", badge: "Must do", url: "https://www.getyourguide.com/osaka-l160/dotonbori/?partner_id=PSZA5UI" },
-              { name: "Osaka Castle Guided Tour", duration: "2 hours", price: "From \u00A54,000 ($27)", badge: "Cultural", url: "https://www.getyourguide.com/osaka-l160/castle/?partner_id=PSZA5UI" },
-              { name: "Universal Studios Japan Ticket", duration: "Full day", price: "From \u00A58,600 ($57)", url: "https://www.getyourguide.com/osaka-l160/universal/?partner_id=PSZA5UI" },
-              { name: "Osaka Cooking Class (Takoyaki)", duration: "2.5 hours", price: "From \u00A56,000 ($40)", url: "https://www.getyourguide.com/osaka-l160/cooking/?partner_id=PSZA5UI" },
+              { name: "Dotonbori Street Food Tour", duration: "3 hours", price: "From \u00A57,000 ($47)", badge: "Must do", url: "https://www.getyourguide.com/osaka-l160/?partner_id=PSZA5UI" },
+              { name: "Osaka Castle Guided Tour", duration: "2 hours", price: "From \u00A54,000 ($27)", badge: "Cultural", url: "https://www.getyourguide.com/osaka-l160/?partner_id=PSZA5UI" },
+              { name: "Universal Studios Japan Ticket", duration: "Full day", price: "From \u00A58,600 ($57)", url: "https://www.getyourguide.com/osaka-l160/?partner_id=PSZA5UI" },
+              { name: "Osaka Cooking Class (Takoyaki)", duration: "2.5 hours", price: "From \u00A56,000 ($40)", url: "https://www.getyourguide.com/osaka-l160/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="osaka-3-days-pdf"
           />

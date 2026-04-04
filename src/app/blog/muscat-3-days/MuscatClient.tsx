@@ -435,10 +435,10 @@ export default function MuscatClient() {
               { name: "The Chedi Muscat", type: "Luxury Resort \u00B7 Ghubrah", price: "From OMR 100/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/om/the-chedi-muscat.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Wadi Shab Guided Hike", duration: "Full day", price: "From OMR 25", badge: "Must do", url: "https://www.getyourguide.com/muscat-l964/wadi-shab/?partner_id=PSZA5UI" },
-              { name: "Mutrah Souq Walking Tour", duration: "2 hours", price: "From OMR 10", badge: "Cultural", url: "https://www.getyourguide.com/muscat-l964/mutrah/?partner_id=PSZA5UI" },
-              { name: "Sunset Dhow Cruise", duration: "2 hours", price: "From OMR 15", url: "https://www.getyourguide.com/muscat-l964/dhow/?partner_id=PSZA5UI" },
-              { name: "Jebel Akhdar Day Trip", duration: "Full day", price: "From OMR 35", badge: "Adventure", url: "https://www.getyourguide.com/muscat-l964/jebel-akhdar/?partner_id=PSZA5UI" },
+              { name: "Wadi Shab Guided Hike", duration: "Full day", price: "From OMR 25", badge: "Must do", url: "https://www.getyourguide.com/muscat-l964/?partner_id=PSZA5UI" },
+              { name: "Mutrah Souq Walking Tour", duration: "2 hours", price: "From OMR 10", badge: "Cultural", url: "https://www.getyourguide.com/muscat-l964/?partner_id=PSZA5UI" },
+              { name: "Sunset Dhow Cruise", duration: "2 hours", price: "From OMR 15", url: "https://www.getyourguide.com/muscat-l964/?partner_id=PSZA5UI" },
+              { name: "Jebel Akhdar Day Trip", duration: "Full day", price: "From OMR 35", badge: "Adventure", url: "https://www.getyourguide.com/muscat-l964/?partner_id=PSZA5UI" },
             ]}
           />
 

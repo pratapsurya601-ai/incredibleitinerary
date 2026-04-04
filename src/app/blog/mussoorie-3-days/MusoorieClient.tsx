@@ -523,8 +523,8 @@ export default function MusoorieClient() {
               { name: "JW Marriott Mussoorie", type: "Luxury Resort &middot; Library Road", price: "From \u20B910,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/jw-marriott-mussoorie.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Landour Heritage Walking Tour", duration: "3 hours", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/mussoorie-l4321/landour/?partner_id=PSZA5UI" },
-              { name: "Cloud\u2019s End & Benog Trek", duration: "Half day", price: "From \u20B9600/person", badge: "Nature", url: "https://www.getyourguide.com/mussoorie-l4321/trekking/?partner_id=PSZA5UI" },
+              { name: "Landour Heritage Walking Tour", duration: "3 hours", price: "From \u20B9800/person", badge: "Must do", url: "https://www.getyourguide.com/mussoorie-l4321/?partner_id=PSZA5UI" },
+              { name: "Cloud\u2019s End & Benog Trek", duration: "Half day", price: "From \u20B9600/person", badge: "Nature", url: "https://www.getyourguide.com/mussoorie-l4321/?partner_id=PSZA5UI" },
               { name: "Mussoorie Sightseeing Full Day", duration: "8 hours", price: "From \u20B91,500/person", url: "https://www.getyourguide.com/mussoorie-l4321/?partner_id=PSZA5UI" },
               { name: "Dehradun + Mussoorie Combo Tour", duration: "Full day", price: "From \u20B92,000/person", url: "https://www.getyourguide.com/dehradun-l4322/?partner_id=PSZA5UI" },
             ]}

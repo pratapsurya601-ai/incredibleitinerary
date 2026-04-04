@@ -527,10 +527,10 @@ export default function JodhpurClient() {
               { name: "Umaid Bhawan Palace", type: "Palace Hotel (Taj) \u00B7 Royal", price: "From \u20B925,000/night", rating: "5", badge: "Royal", url: "https://www.booking.com/hotel/in/umaid-bhawan-palace.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Flying Fox Zip-line at Mehrangarh", duration: "1.5 hours", price: "From \u20B91,800/person", badge: "Must do", url: "https://www.getyourguide.com/jodhpur-l1234/zipline/?partner_id=PSZA5UI" },
-              { name: "Bishnoi Village Safari", duration: "Half day", price: "From \u20B91,500/two", badge: "Cultural", url: "https://www.getyourguide.com/jodhpur-l1234/bishnoi/?partner_id=PSZA5UI" },
-              { name: "Mehrangarh Fort Guided Tour", duration: "3 hours", price: "From \u20B9500/person", url: "https://www.getyourguide.com/jodhpur-l1234/fort/?partner_id=PSZA5UI" },
-              { name: "Blue City Walking Tour", duration: "2.5 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/jodhpur-l1234/walking/?partner_id=PSZA5UI" },
+              { name: "Flying Fox Zip-line at Mehrangarh", duration: "1.5 hours", price: "From \u20B91,800/person", badge: "Must do", url: "https://www.getyourguide.com/jodhpur-l1234/?partner_id=PSZA5UI" },
+              { name: "Bishnoi Village Safari", duration: "Half day", price: "From \u20B91,500/two", badge: "Cultural", url: "https://www.getyourguide.com/jodhpur-l1234/?partner_id=PSZA5UI" },
+              { name: "Mehrangarh Fort Guided Tour", duration: "3 hours", price: "From \u20B9500/person", url: "https://www.getyourguide.com/jodhpur-l1234/?partner_id=PSZA5UI" },
+              { name: "Blue City Walking Tour", duration: "2.5 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/jodhpur-l1234/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="jodhpur-3-days-pdf"
           />

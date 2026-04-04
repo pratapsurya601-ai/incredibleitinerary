@@ -571,10 +571,10 @@ export default function TawangClient() {
               { name: "Norling Dirang", type: "Premium Resort \u00B7 Dirang Valley", price: "From \u20B95,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/norling-dirang.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Tawang Monastery Guided Tour", duration: "3 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/tawang-l32337/monastery/?partner_id=PSZA5UI" },
-              { name: "Bumla Pass Border Excursion", duration: "5 hours", price: "From \u20B91,000/person", badge: "Unique", url: "https://www.getyourguide.com/tawang-l32337/bumla/?partner_id=PSZA5UI" },
-              { name: "Madhuri Lake & PTSO Lake Circuit", duration: "4 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/tawang-l32337/lakes/?partner_id=PSZA5UI" },
-              { name: "Sela Pass Photography Tour", duration: "Full day", price: "From \u20B92,000/person", url: "https://www.getyourguide.com/tawang-l32337/sela/?partner_id=PSZA5UI" },
+              { name: "Tawang Monastery Guided Tour", duration: "3 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/tawang-l32337/?partner_id=PSZA5UI" },
+              { name: "Bumla Pass Border Excursion", duration: "5 hours", price: "From \u20B91,000/person", badge: "Unique", url: "https://www.getyourguide.com/tawang-l32337/?partner_id=PSZA5UI" },
+              { name: "Madhuri Lake & PTSO Lake Circuit", duration: "4 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/tawang-l32337/?partner_id=PSZA5UI" },
+              { name: "Sela Pass Photography Tour", duration: "Full day", price: "From \u20B92,000/person", url: "https://www.getyourguide.com/tawang-l32337/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="tawang-4-days-pdf"
           />

@@ -499,10 +499,10 @@ export default function OotyBlogClient() {
               { name: "The Savoy - IHCL", type: "Heritage Luxury · 1829", price: "From ₹9,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/the-savoy-ooty.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Nilgiri Mountain Railway Full Journey", duration: "5 hours", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/ooty-l976/nilgiri-railway/?partner_id=PSZA5UI" },
-              { name: "Ooty Tea Estate Guided Tour", duration: "3 hours", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/ooty-l976/tea-estate/?partner_id=PSZA5UI" },
-              { name: "Doddabetta Peak Sunrise Trip", duration: "3 hours", price: "From ₹500/person", url: "https://www.getyourguide.com/ooty-l976/doddabetta/?partner_id=PSZA5UI" },
-              { name: "Pykara Falls & Lake Boat Ride", duration: "Half day", price: "From ₹600/person", url: "https://www.getyourguide.com/ooty-l976/pykara/?partner_id=PSZA5UI" },
+              { name: "Nilgiri Mountain Railway Full Journey", duration: "5 hours", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/ooty-l976/?partner_id=PSZA5UI" },
+              { name: "Ooty Tea Estate Guided Tour", duration: "3 hours", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/ooty-l976/?partner_id=PSZA5UI" },
+              { name: "Doddabetta Peak Sunrise Trip", duration: "3 hours", price: "From ₹500/person", url: "https://www.getyourguide.com/ooty-l976/?partner_id=PSZA5UI" },
+              { name: "Pykara Falls & Lake Boat Ride", duration: "Half day", price: "From ₹600/person", url: "https://www.getyourguide.com/ooty-l976/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="ooty-3-days-pdf"
           />

@@ -41,59 +41,57 @@ export default function AffiliateBlock({
 
       {/* Hotels */}
       {hotels.length > 0 && (
-        <div className="bg-parchment rounded-2xl border border-parchment-2 overflow-hidden">
-          <div className="px-5 py-3 border-b border-parchment-2 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="text-base">🏨</span>
-              <p className="text-xs font-semibold tracking-[0.12em] uppercase text-muted">
-                Where to Stay in {destination}
-              </p>
+        <div className="rounded-2xl border-2 border-gold/30 overflow-hidden shadow-sm">
+          <div className="bg-gold/10 px-5 py-4 border-b border-gold/20 flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <span className="text-xl">🏨</span>
+              <div>
+                <p className="text-sm font-semibold text-ink">Where to Stay in {destination}</p>
+                <p className="text-[0.65rem] text-muted font-light">Verified prices · Instant booking</p>
+              </div>
             </div>
             <a
               href={AFFILIATE.bookingCom(destination)}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="text-[0.65rem] text-gold-dark font-medium hover:underline underline-offset-2"
+              className="text-[0.7rem] text-white bg-[#003580] hover:bg-[#00224f] px-3 py-1.5 rounded-lg font-medium transition-colors flex-shrink-0"
               onClick={() => trackEvent("affiliate_clicked", { destination, provider: "booking" })}
             >
-              See all on Booking.com →
+              All hotels →
             </a>
           </div>
-          <div className="p-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="bg-white p-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
             {hotels.map((hotel) => (
               <a
                 key={hotel.name}
                 href={hotel.url}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="flex items-start gap-3 p-3 bg-white rounded-xl border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group"
+                className="flex flex-col p-4 bg-parchment rounded-xl border border-parchment-2 hover:border-gold hover:shadow-md transition-all duration-200 group"
+                onClick={() => trackEvent("hotel_clicked", { hotel: hotel.name, destination })}
               >
-                <div className="w-9 h-9 rounded-lg bg-parchment flex items-center justify-center flex-shrink-0 text-base">
-                  🏨
+                <div className="flex items-center justify-between mb-2">
+                  {hotel.badge && (
+                    <span className="text-[0.6rem] bg-gold text-ink px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">
+                      {hotel.badge}
+                    </span>
+                  )}
+                  <span className="text-xs text-gold ml-auto">{"★".repeat(parseInt(hotel.rating))}</span>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5 mb-0.5">
-                    <p className="text-xs font-medium text-ink truncate group-hover:text-teal transition-colors">
-                      {hotel.name}
-                    </p>
-                    {hotel.badge && (
-                      <span className="text-[0.55rem] bg-gold/15 text-gold-dark px-1.5 py-0.5 rounded-full font-medium flex-shrink-0">
-                        {hotel.badge}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-[0.65rem] text-muted font-light">{hotel.type}</p>
-                  <div className="flex items-center justify-between mt-1">
-                    <span className="text-[0.65rem] text-teal font-medium">{hotel.price}</span>
-                    <span className="text-[0.65rem] text-gold">{"★".repeat(parseInt(hotel.rating))}</span>
-                  </div>
+                <p className="text-sm font-semibold text-ink group-hover:text-teal transition-colors mb-0.5">
+                  {hotel.name}
+                </p>
+                <p className="text-[0.65rem] text-muted font-light mb-3">{hotel.type}</p>
+                <div className="mt-auto flex items-center justify-between">
+                  <span className="text-sm font-semibold text-teal">{hotel.price}</span>
+                  <span className="text-[0.65rem] text-[#003580] font-medium group-hover:underline">Book →</span>
                 </div>
               </a>
             ))}
           </div>
-          <div className="px-5 py-2 border-t border-parchment-2">
+          <div className="bg-white px-5 py-2 border-t border-parchment-2">
             <p className="text-[0.6rem] text-muted/60 font-light">
-              * Affiliate links — we earn a small commission at no extra cost to you. Helps keep our guides free.
+              Affiliate links — we earn a small commission at no extra cost to you. Helps keep our guides free.
             </p>
           </div>
         </div>
@@ -101,56 +99,57 @@ export default function AffiliateBlock({
 
       {/* Activities */}
       {activities.length > 0 && (
-        <div className="bg-parchment rounded-2xl border border-parchment-2 overflow-hidden">
-          <div className="px-5 py-3 border-b border-parchment-2 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="text-base">🎯</span>
-              <p className="text-xs font-semibold tracking-[0.12em] uppercase text-muted">
-                Things to Do in {destination}
-              </p>
+        <div className="rounded-2xl border-2 border-teal/30 overflow-hidden shadow-sm">
+          <div className="bg-teal/10 px-5 py-4 border-b border-teal/20 flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <span className="text-xl">🎯</span>
+              <div>
+                <p className="text-sm font-semibold text-ink">Things to Do in {destination}</p>
+                <p className="text-[0.65rem] text-muted font-light">Tours & experiences · Instant confirmation</p>
+              </div>
             </div>
             <a
               href={AFFILIATE.getYourGuide(destination)}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="text-[0.65rem] text-gold-dark font-medium hover:underline underline-offset-2"
+              className="text-[0.7rem] text-white bg-[#FF5533] hover:bg-[#cc4429] px-3 py-1.5 rounded-lg font-medium transition-colors flex-shrink-0"
               onClick={() => trackEvent("affiliate_clicked", { destination, provider: "getyourguide" })}
             >
-              All activities on GetYourGuide →
+              All tours →
             </a>
           </div>
-          <div className="p-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="bg-white p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {activities.map((act) => (
               <a
                 key={act.name}
                 href={act.url}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="flex items-start gap-3 p-3 bg-white rounded-xl border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group"
+                className="flex items-start gap-3 p-4 bg-parchment rounded-xl border border-parchment-2 hover:border-teal hover:shadow-md transition-all duration-200 group"
+                onClick={() => trackEvent("activity_clicked", { activity: act.name, destination })}
               >
-                <div className="w-9 h-9 rounded-lg bg-parchment flex items-center justify-center flex-shrink-0 text-base">
-                  🎯
-                </div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5 mb-0.5">
-                    <p className="text-xs font-medium text-ink group-hover:text-teal transition-colors leading-tight">
+                  <div className="flex items-start justify-between gap-2 mb-1.5">
+                    <p className="text-sm font-semibold text-ink group-hover:text-teal transition-colors leading-tight">
                       {act.name}
                     </p>
                     {act.badge && (
-                      <span className="text-[0.55rem] bg-teal/10 text-teal px-1.5 py-0.5 rounded-full font-medium flex-shrink-0">
+                      <span className="text-[0.6rem] bg-teal/15 text-teal px-2 py-0.5 rounded-full font-semibold flex-shrink-0">
                         {act.badge}
                       </span>
                     )}
                   </div>
-                  <p className="text-[0.65rem] text-muted font-light">⏱ {act.duration}</p>
-                  <p className="text-[0.65rem] text-teal font-medium mt-0.5">{act.price}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[0.65rem] text-muted font-light">⏱ {act.duration}</span>
+                    <span className="text-sm font-semibold text-teal">{act.price}</span>
+                  </div>
                 </div>
               </a>
             ))}
           </div>
-          <div className="px-5 py-2 border-t border-parchment-2">
+          <div className="bg-white px-5 py-2 border-t border-parchment-2">
             <p className="text-[0.6rem] text-muted/60 font-light">
-              * Affiliate links — we earn a small commission at no extra cost to you.
+              Affiliate links — we earn a small commission at no extra cost to you.
             </p>
           </div>
         </div>

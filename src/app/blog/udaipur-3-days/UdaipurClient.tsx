@@ -517,10 +517,10 @@ export default function UdaipurClient() {
               { name: "Oberoi Udaivilas", type: "Luxury Palace \u00B7 Lakefront", price: "From \u20B935,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/the-oberoi-udaivilas.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Lake Pichola Sunset Boat Ride", duration: "1.5 hours", price: "From \u20B9400/person", badge: "Must do", url: "https://www.getyourguide.com/udaipur-l1234/boat-ride/?partner_id=PSZA5UI" },
-              { name: "City Palace Guided Tour", duration: "2.5 hours", price: "From \u20B91,500/person", badge: "Cultural", url: "https://www.getyourguide.com/udaipur-l1234/city-palace/?partner_id=PSZA5UI" },
-              { name: "Kumbhalgarh Fort Day Trip", duration: "Full day", price: "From \u20B92,500/person", url: "https://www.getyourguide.com/udaipur-l1234/kumbhalgarh/?partner_id=PSZA5UI" },
-              { name: "Rajasthani Cooking Class", duration: "3 hours", price: "From \u20B91,200/person", url: "https://www.getyourguide.com/udaipur-l1234/cooking/?partner_id=PSZA5UI" },
+              { name: "Lake Pichola Sunset Boat Ride", duration: "1.5 hours", price: "From \u20B9400/person", badge: "Must do", url: "https://www.getyourguide.com/udaipur-l1234/?partner_id=PSZA5UI" },
+              { name: "City Palace Guided Tour", duration: "2.5 hours", price: "From \u20B91,500/person", badge: "Cultural", url: "https://www.getyourguide.com/udaipur-l1234/?partner_id=PSZA5UI" },
+              { name: "Kumbhalgarh Fort Day Trip", duration: "Full day", price: "From \u20B92,500/person", url: "https://www.getyourguide.com/udaipur-l1234/?partner_id=PSZA5UI" },
+              { name: "Rajasthani Cooking Class", duration: "3 hours", price: "From \u20B91,200/person", url: "https://www.getyourguide.com/udaipur-l1234/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="udaipur-3-days-pdf"
           />

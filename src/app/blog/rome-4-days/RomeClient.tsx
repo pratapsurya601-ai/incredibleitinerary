@@ -664,10 +664,10 @@ export default function RomeClient() {
               { name: "Hotel de Russie", type: "Luxury 5-star \u00B7 Piazza del Popolo", price: "From \u20AC450/night ($486)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/it/de-russie.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Colosseum + Forum + Palatine Combo Ticket", duration: "Half day", price: "From \u20AC18/person ($19.50)", badge: "Must do", url: "https://www.getyourguide.com/rome-l33/colosseum/?partner_id=PSZA5UI" },
-              { name: "Vatican Museums First Entry 7:30am", duration: "3 hours", price: "From \u20AC38/person ($41)", badge: "Essential", url: "https://www.getyourguide.com/rome-l33/vatican/?partner_id=PSZA5UI" },
-              { name: "Trastevere Street Food Tour", duration: "4 hours", price: "From \u20AC45/person ($49)", url: "https://www.getyourguide.com/rome-l33/food-tour/?partner_id=PSZA5UI" },
-              { name: "Borghese Gallery Timed Entry", duration: "2 hours", price: "From \u20AC15/person ($16)", url: "https://www.getyourguide.com/rome-l33/borghese/?partner_id=PSZA5UI" },
+              { name: "Colosseum + Forum + Palatine Combo Ticket", duration: "Half day", price: "From \u20AC18/person ($19.50)", badge: "Must do", url: "https://www.getyourguide.com/rome-l33/?partner_id=PSZA5UI" },
+              { name: "Vatican Museums First Entry 7:30am", duration: "3 hours", price: "From \u20AC38/person ($41)", badge: "Essential", url: "https://www.getyourguide.com/rome-l33/?partner_id=PSZA5UI" },
+              { name: "Trastevere Street Food Tour", duration: "4 hours", price: "From \u20AC45/person ($49)", url: "https://www.getyourguide.com/rome-l33/?partner_id=PSZA5UI" },
+              { name: "Borghese Gallery Timed Entry", duration: "2 hours", price: "From \u20AC15/person ($16)", url: "https://www.getyourguide.com/rome-l33/?partner_id=PSZA5UI" },
             ]}
           />
 

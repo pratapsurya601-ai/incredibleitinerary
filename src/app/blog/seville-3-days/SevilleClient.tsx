@@ -432,10 +432,10 @@ export default function SevilleClient() {
               { name: "Hotel Alfonso XIII", type: "Historic Luxury \u00B7 Centro", price: "From \u20AC350/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/es/alfonso-xiii.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Real Alcazar Skip-the-Line", duration: "2 hours", price: "From \u20AC14.50", badge: "Must do", url: "https://www.getyourguide.com/seville-l48/alcazar/?partner_id=PSZA5UI" },
-              { name: "Authentic Flamenco Show", duration: "1.5 hours", price: "From \u20AC22", badge: "Cultural", url: "https://www.getyourguide.com/seville-l48/flamenco/?partner_id=PSZA5UI" },
-              { name: "Cordoba Day Trip by AVE", duration: "Full day", price: "From \u20AC40", badge: "Day trip", url: "https://www.getyourguide.com/seville-l48/cordoba/?partner_id=PSZA5UI" },
-              { name: "Seville Tapas Walking Tour", duration: "3 hours", price: "From \u20AC30", url: "https://www.getyourguide.com/seville-l48/tapas/?partner_id=PSZA5UI" },
+              { name: "Real Alcazar Skip-the-Line", duration: "2 hours", price: "From \u20AC14.50", badge: "Must do", url: "https://www.getyourguide.com/seville-l48/?partner_id=PSZA5UI" },
+              { name: "Authentic Flamenco Show", duration: "1.5 hours", price: "From \u20AC22", badge: "Cultural", url: "https://www.getyourguide.com/seville-l48/?partner_id=PSZA5UI" },
+              { name: "Cordoba Day Trip by AVE", duration: "Full day", price: "From \u20AC40", badge: "Day trip", url: "https://www.getyourguide.com/seville-l48/?partner_id=PSZA5UI" },
+              { name: "Seville Tapas Walking Tour", duration: "3 hours", price: "From \u20AC30", url: "https://www.getyourguide.com/seville-l48/?partner_id=PSZA5UI" },
             ]}
           />
 

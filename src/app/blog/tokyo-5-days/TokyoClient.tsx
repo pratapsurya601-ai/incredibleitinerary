@@ -567,10 +567,10 @@ export default function TokyoClient() {
               { name: "Park Hyatt Tokyo", type: "Luxury \u00B7 Shinjuku", price: "From \u00A565,000/night ($433)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/park-hyatt-tokyo.html?aid=2820480" },
             ]}
             activities={[
-              { name: "teamLab Borderless Skip-the-Line", duration: "2\u20133 hours", price: "From \u00A53,800 ($25)", badge: "Must do", url: "https://www.getyourguide.com/tokyo-l193/teamlab/?partner_id=PSZA5UI" },
-              { name: "Tsukiji Outer Market Food Tour", duration: "3 hours", price: "From \u00A58,000 ($53)", badge: "Food", url: "https://www.getyourguide.com/tokyo-l193/tsukiji/?partner_id=PSZA5UI" },
-              { name: "Kamakura Day Trip from Tokyo", duration: "Full day", price: "From \u00A510,000 ($67)", url: "https://www.getyourguide.com/tokyo-l193/kamakura/?partner_id=PSZA5UI" },
-              { name: "Mt. Fuji & Hakone Day Tour", duration: "Full day", price: "From \u00A512,000 ($80)", url: "https://www.getyourguide.com/tokyo-l193/fuji/?partner_id=PSZA5UI" },
+              { name: "teamLab Borderless Skip-the-Line", duration: "2\u20133 hours", price: "From \u00A53,800 ($25)", badge: "Must do", url: "https://www.getyourguide.com/tokyo-l193/?partner_id=PSZA5UI" },
+              { name: "Tsukiji Outer Market Food Tour", duration: "3 hours", price: "From \u00A58,000 ($53)", badge: "Food", url: "https://www.getyourguide.com/tokyo-l193/?partner_id=PSZA5UI" },
+              { name: "Kamakura Day Trip from Tokyo", duration: "Full day", price: "From \u00A510,000 ($67)", url: "https://www.getyourguide.com/tokyo-l193/?partner_id=PSZA5UI" },
+              { name: "Mt. Fuji & Hakone Day Tour", duration: "Full day", price: "From \u00A512,000 ($80)", url: "https://www.getyourguide.com/tokyo-l193/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="tokyo-5-days-pdf"
           />

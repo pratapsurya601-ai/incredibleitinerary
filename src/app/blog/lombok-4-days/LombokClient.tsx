@@ -568,10 +568,10 @@ export default function LombokClient() {
               { name: "Novotel Lombok", type: "Luxury Beach Resort", price: "From Rp1.5M/night (~$95)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/novotel-lombok.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Gili Islands Snorkelling Trip", duration: "Full day", price: "From Rp150k/person (~$9)", badge: "Must do", url: "https://www.getyourguide.com/lombok-l2654/gili/?partner_id=PSZA5UI" },
-              { name: "South Lombok Beach Tour", duration: "Full day", price: "From Rp400k/person (~$25)", badge: "Scenic", url: "https://www.getyourguide.com/lombok-l2654/south-coast/?partner_id=PSZA5UI" },
-              { name: "Mount Rinjani 2-Day Trek", duration: "2 days", price: "From Rp2M/person (~$127)", url: "https://www.getyourguide.com/lombok-l2654/rinjani/?partner_id=PSZA5UI" },
-              { name: "Sendang Gile Waterfall Tour", duration: "Half day", price: "From Rp200k/person (~$13)", url: "https://www.getyourguide.com/lombok-l2654/waterfall/?partner_id=PSZA5UI" },
+              { name: "Gili Islands Snorkelling Trip", duration: "Full day", price: "From Rp150k/person (~$9)", badge: "Must do", url: "https://www.getyourguide.com/lombok-l2654/?partner_id=PSZA5UI" },
+              { name: "South Lombok Beach Tour", duration: "Full day", price: "From Rp400k/person (~$25)", badge: "Scenic", url: "https://www.getyourguide.com/lombok-l2654/?partner_id=PSZA5UI" },
+              { name: "Mount Rinjani 2-Day Trek", duration: "2 days", price: "From Rp2M/person (~$127)", url: "https://www.getyourguide.com/lombok-l2654/?partner_id=PSZA5UI" },
+              { name: "Sendang Gile Waterfall Tour", duration: "Half day", price: "From Rp200k/person (~$13)", url: "https://www.getyourguide.com/lombok-l2654/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="lombok-4-days-pdf"
           />

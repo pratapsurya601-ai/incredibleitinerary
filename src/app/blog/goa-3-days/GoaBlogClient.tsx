@@ -492,9 +492,9 @@ export default function GoaBlogClient() {
               { name: "W Goa", type: "Luxury Resort · Vagator", price: "From ₹12,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/w-goa.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Dudhsagar Waterfall Jeep Safari", duration: "Full day", price: "From ₹1,200/person", badge: "Must do", url: "https://www.getyourguide.com/goa-l976/dudhsagar/?partner_id=PSZA5UI" },
-              { name: "Old Goa Heritage Walking Tour", duration: "3 hours", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/goa-l976/heritage/?partner_id=PSZA5UI" },
-              { name: "Mandovi River Sunset Cruise", duration: "2 hours", price: "From ₹1,500/person", url: "https://www.getyourguide.com/goa-l976/cruises/?partner_id=PSZA5UI" },
+              { name: "Dudhsagar Waterfall Jeep Safari", duration: "Full day", price: "From ₹1,200/person", badge: "Must do", url: "https://www.getyourguide.com/goa-l976/?partner_id=PSZA5UI" },
+              { name: "Old Goa Heritage Walking Tour", duration: "3 hours", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/goa-l976/?partner_id=PSZA5UI" },
+              { name: "Mandovi River Sunset Cruise", duration: "2 hours", price: "From ₹1,500/person", url: "https://www.getyourguide.com/goa-l976/?partner_id=PSZA5UI" },
               { name: "North Goa Beaches Full Day Tour", duration: "8 hours", price: "From ₹900/person", url: "https://www.getyourguide.com/goa-l976/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="goa-3-days-pdf"

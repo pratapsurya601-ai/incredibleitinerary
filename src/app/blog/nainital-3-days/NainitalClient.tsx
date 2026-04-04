@@ -526,10 +526,10 @@ export default function NainitalClient() {
               { name: "Manu Maharani", type: "Luxury Resort · Mallital", price: "From ₹7,000/night", rating: "5", badge: "Premium", url: "https://www.booking.com/hotel/in/manu-maharani-nainital.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Snow View Point Ropeway", duration: "1 hour", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/nainital-l4321/ropeway/?partner_id=PSZA5UI" },
-              { name: "Bhimtal & Sattal Lake Tour", duration: "Full day", price: "From ₹1,200/person", badge: "Hidden gem", url: "https://www.getyourguide.com/nainital-l4321/lakes/?partner_id=PSZA5UI" },
-              { name: "Naukuchiatal Paragliding", duration: "30 min", price: "From ₹1,200/person", url: "https://www.getyourguide.com/nainital-l4321/paragliding/?partner_id=PSZA5UI" },
-              { name: "Nainital Heritage Walking Tour", duration: "3 hours", price: "From ₹600/person", url: "https://www.getyourguide.com/nainital-l4321/heritage/?partner_id=PSZA5UI" },
+              { name: "Snow View Point Ropeway", duration: "1 hour", price: "From ₹300/person", badge: "Must do", url: "https://www.getyourguide.com/nainital-l4321/?partner_id=PSZA5UI" },
+              { name: "Bhimtal & Sattal Lake Tour", duration: "Full day", price: "From ₹1,200/person", badge: "Hidden gem", url: "https://www.getyourguide.com/nainital-l4321/?partner_id=PSZA5UI" },
+              { name: "Naukuchiatal Paragliding", duration: "30 min", price: "From ₹1,200/person", url: "https://www.getyourguide.com/nainital-l4321/?partner_id=PSZA5UI" },
+              { name: "Nainital Heritage Walking Tour", duration: "3 hours", price: "From ₹600/person", url: "https://www.getyourguide.com/nainital-l4321/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="nainital-3-days-pdf"
           />

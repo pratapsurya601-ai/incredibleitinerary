@@ -524,10 +524,10 @@ export default function SundarbansClient() {
               { name: "Gosaba Island Lodge", type: "Budget Stay \u00B7 Gosaba", price: "From \u20B9600/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/gosaba-island-lodge.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Sundarbans 2N/3D Boat Safari", duration: "3 days", price: "From \u20B98,500/person", badge: "Must do", url: "https://www.getyourguide.com/kolkata-l1234/sundarbans/?partner_id=PSZA5UI" },
-              { name: "Sundarbans Day Trip from Kolkata", duration: "Full day", price: "From \u20B93,500/person", badge: "Quick trip", url: "https://www.getyourguide.com/kolkata-l1234/sundarbans-day/?partner_id=PSZA5UI" },
-              { name: "Premium Houseboat Experience", duration: "3 days", price: "From \u20B918,000/person", url: "https://www.getyourguide.com/kolkata-l1234/sundarbans-houseboat/?partner_id=PSZA5UI" },
-              { name: "Birdwatching & Photography Tour", duration: "2 days", price: "From \u20B96,000/person", url: "https://www.getyourguide.com/kolkata-l1234/sundarbans-birding/?partner_id=PSZA5UI" },
+              { name: "Sundarbans 2N/3D Boat Safari", duration: "3 days", price: "From \u20B98,500/person", badge: "Must do", url: "https://www.getyourguide.com/kolkata-l1234/?partner_id=PSZA5UI" },
+              { name: "Sundarbans Day Trip from Kolkata", duration: "Full day", price: "From \u20B93,500/person", badge: "Quick trip", url: "https://www.getyourguide.com/kolkata-l1234/?partner_id=PSZA5UI" },
+              { name: "Premium Houseboat Experience", duration: "3 days", price: "From \u20B918,000/person", url: "https://www.getyourguide.com/kolkata-l1234/?partner_id=PSZA5UI" },
+              { name: "Birdwatching & Photography Tour", duration: "2 days", price: "From \u20B96,000/person", url: "https://www.getyourguide.com/kolkata-l1234/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="sundarbans-3-days-pdf"
           />

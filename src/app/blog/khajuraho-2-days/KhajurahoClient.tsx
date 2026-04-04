@@ -454,10 +454,10 @@ export default function KhajurahoClient() {
               { name: "The Lalit Temple View", type: "Heritage · Temple Views", price: "From ₹6,000/night", rating: "5", badge: "Top pick", url: "https://www.booking.com/hotel/in/the-lalit-temple-view-khajuraho.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Panna National Park Jeep Safari", duration: "4 hours", price: "From ₹2,500/vehicle", badge: "Must do", url: "https://www.getyourguide.com/khajuraho-l4361/panna/?partner_id=PSZA5UI" },
-              { name: "Western Group Guided Temple Tour", duration: "2.5 hours", price: "From ₹500/person", badge: "Essential", url: "https://www.getyourguide.com/khajuraho-l4361/temples/?partner_id=PSZA5UI" },
-              { name: "Raneh Falls & Canyon Excursion", duration: "3 hours", price: "From ₹800/person", url: "https://www.getyourguide.com/khajuraho-l4361/raneh/?partner_id=PSZA5UI" },
-              { name: "Sound & Light Show Tickets", duration: "50 min", price: "From ₹250/person", url: "https://www.getyourguide.com/khajuraho-l4361/light-show/?partner_id=PSZA5UI" },
+              { name: "Panna National Park Jeep Safari", duration: "4 hours", price: "From ₹2,500/vehicle", badge: "Must do", url: "https://www.getyourguide.com/khajuraho-l4361/?partner_id=PSZA5UI" },
+              { name: "Western Group Guided Temple Tour", duration: "2.5 hours", price: "From ₹500/person", badge: "Essential", url: "https://www.getyourguide.com/khajuraho-l4361/?partner_id=PSZA5UI" },
+              { name: "Raneh Falls & Canyon Excursion", duration: "3 hours", price: "From ₹800/person", url: "https://www.getyourguide.com/khajuraho-l4361/?partner_id=PSZA5UI" },
+              { name: "Sound & Light Show Tickets", duration: "50 min", price: "From ₹250/person", url: "https://www.getyourguide.com/khajuraho-l4361/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="khajuraho-2-days-pdf"
           />

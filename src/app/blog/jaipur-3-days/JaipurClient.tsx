@@ -544,10 +544,10 @@ export default function JaipurClient() {
               { name: "Rambagh Palace", type: "Royal Palace Hotel \u00B7 Taj", price: "From \u20B918,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/rambagh-palace.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Amber Fort & Jaipur City Tour", duration: "Full day", price: "From \u20B91,200/person", badge: "Must do", url: "https://www.getyourguide.com/jaipur-l288/amber-fort/?partner_id=PSZA5UI" },
-              { name: "Hot Air Balloon Ride", duration: "1 hour", price: "From \u20B98,000/person", badge: "Premium", url: "https://www.getyourguide.com/jaipur-l288/balloon/?partner_id=PSZA5UI" },
-              { name: "Old City Food Walking Tour", duration: "3 hours", price: "From \u20B91,500/person", badge: "Cultural", url: "https://www.getyourguide.com/jaipur-l288/food-tour/?partner_id=PSZA5UI" },
-              { name: "Block Printing Workshop", duration: "2 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/jaipur-l288/workshop/?partner_id=PSZA5UI" },
+              { name: "Amber Fort & Jaipur City Tour", duration: "Full day", price: "From \u20B91,200/person", badge: "Must do", url: "https://www.getyourguide.com/jaipur-l288/?partner_id=PSZA5UI" },
+              { name: "Hot Air Balloon Ride", duration: "1 hour", price: "From \u20B98,000/person", badge: "Premium", url: "https://www.getyourguide.com/jaipur-l288/?partner_id=PSZA5UI" },
+              { name: "Old City Food Walking Tour", duration: "3 hours", price: "From \u20B91,500/person", badge: "Cultural", url: "https://www.getyourguide.com/jaipur-l288/?partner_id=PSZA5UI" },
+              { name: "Block Printing Workshop", duration: "2 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/jaipur-l288/?partner_id=PSZA5UI" },
             ]}
             pdfProductId="jaipur-3-days-pdf"
           />
