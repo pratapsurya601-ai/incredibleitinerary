@@ -93,6 +93,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/rome-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/blog/florence-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/blog/amalfi-coast-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // France
+    { url: `${base}/blog/paris-5-days`,             lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/nice-3-days`,              lastModified: now, changeFrequency: "monthly", priority: 0.89 },
+    { url: `${base}/blog/lyon-3-days`,              lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/bordeaux-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/provence-4-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/mont-saint-michel-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/strasbourg-3-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/marseille-3-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     // Tools
     { url: `${base}/tools/trip-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/tools/visa-checker`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
@@ -132,6 +141,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/kuala-lumpur-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/langkawi-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
     { url: `${base}/blog/penang-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // France
+    { url: `${base}/blog/paris-5-days`,             lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/nice-3-days`,              lastModified: now, changeFrequency: "monthly", priority: 0.89 },
+    { url: `${base}/blog/lyon-3-days`,              lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/bordeaux-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/provence-4-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/mont-saint-michel-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/strasbourg-3-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/marseille-3-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
