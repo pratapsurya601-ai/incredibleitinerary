@@ -25,6 +25,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  verification: {
+    google: "BmoxUjBfGA7mVKr8qayc8cxC7_ND1hdJOEb6zaxloSA",
+  },
   title: "IncredibleItinerary — Curated Private Journeys Across India",
   description:
     "Bespoke, privately crafted travel itineraries across India's most iconic and hidden destinations. Rajasthan, Himalayas, Golden Triangle, Kerala & beyond. 500+ happy travellers.",
