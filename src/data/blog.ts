@@ -1317,6 +1317,52 @@ export const blogPosts: BlogPost[] = [
     destination: "Uluru", duration: "3 Days", country: "Australia",
     pexelsQuery: "uluru ayers rock australia outback red desert sunrise",
   },
+  // ── Japan (more) ──
+  {
+    slug: "hiroshima-2-days",
+    title: "Hiroshima in 2 Days: Peace Memorial, Miyajima Island & the Floating Torii (2026)",
+    excerpt: "The Peace Memorial Museum that will change how you see the world, the A-Bomb Dome at dusk, then Miyajima Island's floating torii gate at high tide — Hiroshima in 2 profound days.",
+    date: "April 5, 2026", readTime: "10 min", category: "Japan",
+    tags: ["Hiroshima", "2 Days", "Japan", "Peace Memorial", "Miyajima", "Torii Gate", "Okonomiyaki"],
+    image: "https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=800&q=80",
+    imageAlt: "Hiroshima Peace Memorial Atomic Bomb Dome Japan river", featured: false,
+    destination: "Hiroshima", duration: "2 Days", country: "Japan",
+    pexelsQuery: "hiroshima peace memorial japan atomic bomb dome",
+  },
+  {
+    slug: "hokkaido-5-days",
+    title: "Hokkaido in 5 Days: Lavender Fields, Blue Pond, Otaru & Sapporo (2026)",
+    excerpt: "Farm Tomita's lavender rows at dawn, Shirogane's milky-turquoise Blue Pond, Otaru's glass-blowing canal district, and sea urchin rice bowls at Nijo Market — Japan's north island in 5 days.",
+    date: "April 5, 2026", readTime: "14 min", category: "Japan",
+    tags: ["Hokkaido", "5 Days", "Japan", "Sapporo", "Lavender", "Blue Pond", "Otaru", "Furano"],
+    image: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80",
+    imageAlt: "Hokkaido lavender fields Farm Tomita Japan Furano purple", featured: false,
+    destination: "Hokkaido", duration: "5 Days", country: "Japan",
+    pexelsQuery: "hokkaido sapporo japan lavender biei snow winter",
+  },
+  // ── Africa ──
+  {
+    slug: "morocco-7-days",
+    title: "Morocco in 7 Days: Marrakech, Fes, Sahara Desert & Chefchaouen (2026)",
+    excerpt: "Djemaa el-Fna at dusk with 200 food stalls, the world's largest medieval medina in Fes, camel sunset in the Sahara, and the blue-painted city of Chefchaouen — Morocco in 7 incredible days.",
+    date: "April 5, 2026", readTime: "15 min", category: "Africa",
+    tags: ["Morocco", "7 Days", "Marrakech", "Fes", "Sahara", "Chefchaouen", "Africa"],
+    image: "https://images.unsplash.com/photo-1548813395-84fe1ba7a58e?w=800&q=80",
+    imageAlt: "Morocco Marrakech medina souks blue doors Africa", featured: false,
+    destination: "Morocco", duration: "7 Days", country: "Morocco",
+    pexelsQuery: "morocco marrakech medina sahara desert camel dunes",
+  },
+  {
+    slug: "kenya-safari-7-days",
+    title: "Kenya Safari in 7 Days: Masai Mara, Amboseli & the Great Migration (2026)",
+    excerpt: "Elephants against Kilimanjaro at dawn in Amboseli, a million wildebeest crossing the Mara River, baby elephants at David Sheldrick orphanage — the East Africa safari most people dream about.",
+    date: "April 5, 2026", readTime: "15 min", category: "Africa",
+    tags: ["Kenya", "7 Days", "Safari", "Masai Mara", "Amboseli", "Great Migration", "Africa"],
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+    imageAlt: "Kenya Masai Mara safari lion savanna Africa sunset", featured: false,
+    destination: "Kenya", duration: "7 Days", country: "Kenya",
+    pexelsQuery: "kenya masai mara safari lion elephants africa savanna",
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

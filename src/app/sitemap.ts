@@ -158,6 +158,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/melbourne-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/great-barrier-reef-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/uluru-3-days`,            lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Japan (more)
+    { url: `${base}/blog/hiroshima-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.89 },
+    { url: `${base}/blog/hokkaido-5-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // Africa
+    { url: `${base}/blog/morocco-7-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/kenya-safari-7-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
