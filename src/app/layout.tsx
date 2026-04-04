@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "IncredibleItinerary — Free Travel Guides Worldwide",
     description:
-      "68 free travel guides across India, Thailand, Japan & Italy. Real prices, local tips, day-by-day itineraries.",
+      "77 free travel guides across India, Thailand, Japan, Indonesia, UAE, Spain & Italy. Real prices, local tips, day-by-day itineraries.",
     url: "https://www.incredibleitinerary.com",
     siteName: "IncredibleItinerary",
     type: "website",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "IncredibleItinerary — Free Travel Guides Worldwide",
-    description: "68 free travel guides across India, Thailand, Japan & Italy.",
+    description: "77 free travel guides across India, Thailand, Japan, Indonesia, UAE, Spain & Italy.",
   },
   robots: {
     index: true,

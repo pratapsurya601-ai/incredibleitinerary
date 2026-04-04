@@ -31,7 +31,7 @@ export default function PopularDestinations() {
             </h2>
           </div>
           <Link href="/blog" className="text-[0.72rem] tracking-[0.12em] uppercase text-gold-dark border-b border-gold-dark pb-0.5 hover:text-ink transition-colors">
-            View All 68 Guides &rarr;
+            View All 77 Guides &rarr;
           </Link>
         </FadeIn>
 

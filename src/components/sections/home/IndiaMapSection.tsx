@@ -87,7 +87,7 @@ export default function IndiaMapSection() {
             Explore by region
           </span>
           <h2 className="font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-light text-white mb-3">
-            68 destinations across <em className="italic text-gold-light">4 countries</em>
+            77 destinations across <em className="italic text-gold-light">7 countries</em>
           </h2>
           <p className="text-sm text-white/40 font-light max-w-md mx-auto">
             India, Thailand, Japan &amp; Italy. Pick a region to start exploring.

@@ -23,6 +23,9 @@ const FILTERS = [
   { id: "thailand", label: "Thailand", emoji: "🇹🇭", slugs: ["bangkok-4-days","phuket-5-days","chiang-mai-4-days"] },
   { id: "japan", label: "Japan", emoji: "🇯🇵", slugs: ["tokyo-5-days","kyoto-4-days","osaka-3-days"] },
   { id: "italy", label: "Italy", emoji: "🇮🇹", slugs: ["rome-4-days","florence-3-days","amalfi-coast-4-days"] },
+  { id: "indonesia", label: "Indonesia", emoji: "🇮🇩", slugs: ["bali-5-days","ubud-3-days","lombok-4-days"] },
+  { id: "uae", label: "UAE & Oman", emoji: "🇦🇪", slugs: ["dubai-4-days","abu-dhabi-3-days","muscat-3-days"] },
+  { id: "spain", label: "Spain", emoji: "🇪🇸", slugs: ["barcelona-4-days","madrid-3-days","seville-3-days"] },
 ];
 
 export default function BlogIndexPage() {

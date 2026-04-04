@@ -5,8 +5,8 @@ export default function TrustStripSection() {
     <div className="bg-ink py-4 px-6">
       <div className="max-w-[800px] mx-auto flex items-center justify-center gap-8 md:gap-14">
         {[
-          { val: "68", label: "Destinations" },
-          { val: "4", label: "Countries" },
+          { val: "77", label: "Destinations" },
+          { val: "7", label: "Countries" },
           { val: "24hr", label: "Response" },
           { val: "Free", label: "Always" },
         ].map((s, i) => (

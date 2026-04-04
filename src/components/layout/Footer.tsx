@@ -91,7 +91,7 @@ export default function Footer() {
               Incredible<span className="text-gold">Itinerary</span>
             </p>
             <p className="text-sm font-light leading-7 max-w-[240px] mb-5">
-              Free travel guides for 68 destinations across India, Thailand, Japan &amp; Italy. Real budgets. Real routes. No tourist traps.
+              Free travel guides for 77 destinations across India, Thailand, Japan, Indonesia, UAE, Spain &amp; Italy. Real budgets. Real routes. No tourist traps.
             </p>
             <div className="flex gap-3 mb-4">
               {SOCIAL_LINKS.map((s) => (
@@ -152,7 +152,7 @@ export default function Footer() {
         {/* Destination mega-menu */}
         <div className="border-t border-white/[0.06] pt-10 mb-10">
           <p className="text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-6 text-center">
-            68 Free Destination Guides — 4 Countries
+            77 Free Destination Guides — 4 Countries
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {Object.entries(REGIONS).map(([region, links]) => (

@@ -8,11 +8,11 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
   const categories = [
     { label: "India", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=75", href: "/blog?filter=heritage" },
-    { label: "Thailand", img: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=75", href: "/blog?filter=thailand" },
+    { label: "Bali", img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=75", href: "/blog?filter=indonesia" },
     { label: "Japan", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=75", href: "/blog?filter=japan" },
+    { label: "Dubai", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=75", href: "/blog?filter=uae" },
     { label: "Italy", img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75", href: "/blog?filter=italy" },
-    { label: "Beaches", img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=400&q=75", href: "/blog?filter=beach" },
-    { label: "Mountains", img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=400&q=75", href: "/blog?filter=mountains" },
+    { label: "Spain", img: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&q=75", href: "/blog?filter=spain" },
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
         </h1>
 
         <p className="text-lg text-white/60 font-light max-w-lg mx-auto mb-10 leading-relaxed" style={{ animation: "fadeUp .8s .3s both" }}>
-          68 free travel guides across India, Thailand, Japan &amp; Italy. Real prices. Local tips.
+          77 free travel guides across 7 countries. Real prices. Local tips.
         </p>
 
         {/* Search bar — large, prominent */}
@@ -43,7 +43,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search any destination — India, Thailand, Japan, Italy..."
+              placeholder="Search any destination — India, Bali, Japan, Dubai, Italy, Spain..."
               className="w-full px-7 py-5 pl-14 rounded-full bg-white text-ink text-base outline-none shadow-[0_12px_48px_rgba(0,0,0,0.35)] focus:ring-2 focus:ring-gold placeholder:text-muted/50 font-light"
               onKeyDown={(e) => {
                 if (e.key === "Enter" && search.trim()) {
@@ -85,7 +85,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
         {/* Minimal trust line */}
         <p className="text-[0.62rem] text-white/30 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
-          68 FREE GUIDES &nbsp;&middot;&nbsp; 4 COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
+          77 FREE GUIDES &nbsp;&middot;&nbsp; 7 COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
         </p>
       </div>
 

@@ -78,6 +78,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/compare/kashmir-vs-ladakh`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/compare/jaipur-vs-udaipur`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/compare/ooty-vs-kodaikanal`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/thailand-vs-bali`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/goa-vs-phuket`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/tokyo-vs-kyoto`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/dubai-vs-singapore`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/compare/barcelona-vs-rome`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     // International
     { url: `${base}/blog/bangkok-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/blog/phuket-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
@@ -91,5 +96,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Tools
     { url: `${base}/tools/trip-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/tools/visa-checker`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Indonesia
+    { url: `${base}/blog/bali-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/ubud-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/lombok-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    // UAE & Oman
+    { url: `${base}/blog/dubai-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/abu-dhabi-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/muscat-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.86 },
+    // Spain
+    { url: `${base}/blog/barcelona-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/madrid-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/blog/seville-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
   ];
 }

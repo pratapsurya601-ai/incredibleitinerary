@@ -32,6 +32,12 @@ const destinations = [
   "Tokyo", "Kyoto", "Osaka",
   // Italy
   "Rome", "Florence", "Amalfi Coast",
+  // Indonesia
+  "Bali", "Ubud", "Lombok",
+  // UAE & Oman
+  "Dubai", "Abu Dhabi", "Muscat",
+  // Spain
+  "Barcelona", "Madrid", "Seville",
   // Other
   "Multiple / Custom",
 ];
