@@ -189,6 +189,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/egypt-7-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/buenos-aires-5-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/colombia-7-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Croatia + More Europe
+    { url: `${base}/blog/dubrovnik-4-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/switzerland-5-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Middle East
+    { url: `${base}/blog/jordan-5-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // South Asia
+    { url: `${base}/blog/nepal-7-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/sri-lanka-7-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // SE Asia (more)
+    { url: `${base}/blog/palawan-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.89 },
+    { url: `${base}/blog/hoi-an-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    // China
+    { url: `${base}/blog/beijing-5-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Canada
+    { url: `${base}/blog/banff-5-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
