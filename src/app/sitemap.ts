@@ -204,6 +204,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/beijing-5-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     // Canada
     { url: `${base}/blog/banff-5-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Ireland
+    { url: `${base}/blog/dublin-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Belgium
+    { url: `${base}/blog/bruges-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.89 },
+    // Poland
+    { url: `${base}/blog/krakow-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Sweden
+    { url: `${base}/blog/stockholm-4-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Vietnam (more)
+    { url: `${base}/blog/mekong-delta-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.89 },
+    // Cambodia
+    { url: `${base}/blog/angkor-wat-4-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Myanmar
+    { url: `${base}/blog/bagan-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Bhutan
+    { url: `${base}/blog/bhutan-5-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Chile
+    { url: `${base}/blog/chile-patagonia-7-days`, lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Cuba
+    { url: `${base}/blog/havana-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // USA (more)
+    { url: `${base}/blog/san-francisco-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/chicago-3-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
