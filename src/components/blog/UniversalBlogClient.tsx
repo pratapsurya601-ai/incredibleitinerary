@@ -408,7 +408,7 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
             </div>
           </section>
 
-          <InlineCTA destination={data.destination} />
+          <InlineCTA destination={data.destination} onPlanTrip={() => setModalOpen(true)} />
 
           {/* ── EMAIL SIGNUP ── */}
           <InlineSignup />
@@ -441,10 +441,18 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
           </section>
         </div>
 
-        <DestinationGallery query={data.galleryQuery || data.heroQuery} destination={data.destination} />
+        <DestinationGallery
+          title={`${data.destination} — Must-See Places`}
+          subtitle={`Explore the best of ${data.destination}, ${data.country}`}
+          spots={[
+            { name: data.destination, query: data.galleryQuery || data.heroQuery, desc: `Highlights of ${data.destination}` },
+            { name: `${data.destination} landscapes`, query: `${data.heroQuery} landscape`, desc: `Scenic views of ${data.destination}` },
+            { name: `${data.destination} culture`, query: `${data.destination} ${data.country} culture food`, desc: `Culture and cuisine in ${data.destination}` },
+          ]}
+        />
         <AffiliateBlock destination={data.destination} />
-        <CombineWith slugs={data.combineWith} />
-        <RelatedGuides slugs={data.relatedSlugs} />
+        <CombineWith currentSlug={data.slug} />
+        <RelatedGuides currentSlug={data.slug} />
         <Comments />
       </main>
 
