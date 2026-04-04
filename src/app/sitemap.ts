@@ -310,6 +310,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/toronto-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/quebec-city-3-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/blog/vancouver-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Central Europe / Mediterranean / Central Asia
+    { url: `${base}/blog/transylvania-4-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/malta-4-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/uzbekistan-7-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Spain Islands
+    { url: `${base}/blog/tenerife-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/ibiza-4-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/valencia-3-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Africa & South America
+    { url: `${base}/blog/madagascar-7-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/kruger-park-5-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/iguazu-falls-4-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.93 },
+    // Asia
+    { url: `${base}/blog/nara-2-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/komodo-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/boracay-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
