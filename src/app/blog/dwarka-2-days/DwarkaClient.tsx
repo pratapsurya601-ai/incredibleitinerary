@@ -1,0 +1,558 @@
+"use client";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import InquiryModal from "@/components/ui/InquiryModal";
+import SmartImage from "@/components/ui/SmartImage";
+import TableOfContents from "@/components/blog/TableOfContents";
+import Comments from "@/components/blog/Comments";
+import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import Breadcrumb from "@/components/blog/Breadcrumb";
+
+const DWARKA_TOC = [
+  { id: "plans",      emoji: "\u26A1", label: "Pick Your Plan" },
+  { id: "itinerary",  emoji: "\uD83D\uDCC5", label: "Day-by-Day Itinerary" },
+  { id: "highlights", emoji: "\uD83C\uDFDB\uFE0F", label: "Must-See Highlights" },
+  { id: "budget",     emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
+  { id: "mistakes",   emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "tips",       emoji: "\uD83D\uDCA1", label: "Pro Tips" },
+  { id: "faq",        emoji: "\u2753", label: "FAQ" },
+];
+
+// ── Reading Progress Bar ──────────────────────────────────────────────────────
+function ReadingProgress() {
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    const update = () => {
+      const el = document.documentElement;
+      const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+      setProgress(Math.min(100, pct));
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+  return (
+    <div className="fixed top-0 left-0 right-0 z-[300] h-1 bg-parchment-2">
+      <div
+        className="h-full bg-gold transition-all duration-100"
+        style={{ width: `${progress}%` }}
+      />
+    </div>
+  );
+}
+
+// ── Share Button ──────────────────────────────────────────────────────────────
+function ShareBar() {
+  const [copied, setCopied] = useState(false);
+  const copy = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <div className="flex items-center gap-2 flex-wrap">
+      <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
+      {[
+        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Dwarka 2-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
+        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://twitter.com/intent/tweet?text=Dwarka in 2 Days guide&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+      ].map((s) => (
+        <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+          className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>
+          {s.label}
+        </a>
+      ))}
+      <button onClick={copy}
+        className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
+        {copied ? "\u2713 Copied" : "Copy Link"}
+      </button>
+    </div>
+  );
+}
+
+// ── Stat Card ─────────────────────────────────────────────────────────────────
+function StatCard({ icon, label, value }: { icon: string; label: string; value: string }) {
+  return (
+    <div className="bg-white rounded-xl border border-parchment-2 p-4 text-center">
+      <div className="text-2xl mb-1">{icon}</div>
+      <p className="font-serif text-lg font-light text-ink">{value}</p>
+      <p className="text-[0.65rem] text-muted uppercase tracking-wide mt-0.5">{label}</p>
+    </div>
+  );
+}
+
+// ── Day Card ──────────────────────────────────────────────────────────────────
+function DayCard({ day, title, items, cost }: { day: string; title: string; items: string[]; cost: string }) {
+  const [open, setOpen] = useState(true);
+  return (
+    <div className="bg-white rounded-xl border border-parchment-2 overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-4 bg-parchment hover:bg-parchment-2 transition-colors"
+      >
+        <div className="flex items-center gap-3 text-left">
+          <span className="font-serif text-xl text-gold-dark font-light">{day}</span>
+          <span className="text-sm text-ink font-medium">{title}</span>
+        </div>
+        <span className="text-muted text-lg">{open ? "\u2212" : "+"}</span>
+      </button>
+      {open && (
+        <div className="p-5">
+          <ul className="space-y-2.5 mb-4">
+            {items.map((item, i) => (
+              <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
+                <span className="text-gold mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div className="pt-3 border-t border-parchment-2 flex items-center gap-2">
+            <span className="text-lg">{"\uD83D\uDCB0"}</span>
+            <span className="text-xs text-muted font-light">Est. cost: </span>
+            <span className="text-xs font-medium text-ink">{cost}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Tip Card ──────────────────────────────────────────────────────────────────
+function TipCard({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
+  return (
+    <div className={`rounded-xl p-5 border ${color}`}>
+      <div className="flex items-start gap-3">
+        <span className="text-xl flex-shrink-0">{icon}</span>
+        <div>
+          <p className="font-medium text-sm text-ink mb-1">{title}</p>
+          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── MAIN COMPONENT ────────────────────────────────────────────────────────────
+export default function DwarkaClient() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"A" | "B">("A");
+
+  const plans = [
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under \u20B94k", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "\uD83D\uDE4F", label: "Pilgrimage", sub: "\u20B95k\u201312k", color: "border-purple-300 bg-purple-50 text-purple-800" },
+  ];
+
+  return (
+    <>
+      <ReadingProgress />
+      <TableOfContents items={DWARKA_TOC} />
+      <Navbar onPlanTrip={() => setModalOpen(true)} />
+      <Breadcrumb destination="Dwarka" />
+
+      <main className="bg-cream min-h-screen">
+
+        {/* ── HERO ── */}
+        <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
+          <SmartImage
+            query="dwarkadhish temple dwarka gujarat coast ocean india"
+            fallback="https://images.unsplash.com/photo-1609947017136-9daf32a15c38?w=1600&q=85"
+            alt="Dwarkadhish Temple towering above the Arabian Sea coast at Dwarka"
+            fill className="object-cover" priority sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
+
+          {/* Breadcrumb */}
+          <div className="absolute top-24 left-0 right-0 px-6 md:px-14">
+            <div className="max-w-[860px] mx-auto flex items-center gap-2 text-white/50 text-xs">
+              <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+              <span>/</span>
+              <Link href="/blog" className="hover:text-gold transition-colors">Blog</Link>
+              <span>/</span>
+              <span className="text-white/70">Dwarka 2 Days</span>
+            </div>
+          </div>
+
+          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
+            <div className="max-w-[860px] mx-auto">
+              <div className="flex items-center gap-3 mb-4 flex-wrap">
+                <span className="bg-gold text-ink text-[0.62rem] tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">
+                  Pilgrimage & Coast
+                </span>
+                <span className="text-white/60 text-xs">April 4, 2026</span>
+                <span className="text-white/30">{"\u00B7"}</span>
+                <span className="text-white/60 text-xs">12 min read</span>
+                <span className="text-white/30">{"\u00B7"}</span>
+                <span className="text-white/60 text-xs">IncredibleItinerary</span>
+              </div>
+              <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
+                Dwarka in 2 Days: Dwarkadhish Temple to Bet Dwarka Island
+                <em className="italic text-gold-light"> (Budget to Pilgrimage, 2026)</em>
+              </h1>
+              <p className="text-white/65 text-sm font-light max-w-[560px] leading-relaxed">
+                2 complete plans with real timings, actual costs, Google Maps routes — covering Krishna&apos;s legendary kingdom, a Jyotirlinga, and an island frozen in time.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── ARTICLE ── */}
+        <div className="max-w-[860px] mx-auto px-6 md:px-8 pt-10 pb-20">
+
+          {/* Share + stats row */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-8 border-b border-parchment-2">
+            <ShareBar />
+            <div className="flex items-center gap-4 text-xs text-muted">
+              <span>{"\uD83C\uDDEE\uD83C\uDDF3"} India</span>
+              <span>{"\u00B7"}</span>
+              <span>{"\uD83D\uDDD3"} 2 Days</span>
+              <span>{"\u00B7"}</span>
+              <span>{"\uD83D\uDCB0"} From {"\u20B9"}3,500</span>
+            </div>
+          </div>
+
+          {/* Honest intro */}
+          <blockquote className="border-l-4 border-gold pl-6 mb-10 bg-parchment/60 rounded-r-xl py-4 pr-4">
+            <p className="font-serif text-[1.1rem] italic text-ink-mid leading-relaxed">
+              Dwarkadhish Temple at dawn during aarti — the sound of bells over the Arabian Sea is something no recording captures. You have to be there. Most visitors do a quick darshan and leave, missing the island, the Jyotirlinga, and a coastline that sits at the edge of India&apos;s oldest mythology. This guide makes sure you don&apos;t.
+            </p>
+          </blockquote>
+
+          {/* ── PICK YOUR PLAN ── */}
+          <section id="plans" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Pick Your Plan</h2>
+            <p className="text-sm text-muted font-light mb-6">Two ways to experience Dwarka — pick yours and jump straight to the itinerary.</p>
+            <div className="grid grid-cols-2 gap-3">
+              {plans.map((p) => (
+                <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itinerary")?.scrollIntoView({ behavior: "smooth" }); }}
+                  className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-gold hover:shadow-md transition-all duration-200 text-center group">
+                  <div className="text-2xl mb-2">{p.emoji}</div>
+                  <p className="font-medium text-sm text-ink">{p.label}</p>
+                  <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {/* ── STAT CARDS ── */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
+            <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="2 Days" />
+            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"\u20B93,500"} />
+            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Oct \u2013 Mar" />
+            <StatCard icon={"\u2708\uFE0F"} label="Nearest Airport" value="Jamnagar" />
+          </div>
+
+          {/* ── MUST-SEE HIGHLIGHTS ── */}
+          <section id="highlights" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83C\uDFDB\uFE0F"} Must-See Highlights</h2>
+            <div className="space-y-4">
+              {[
+                { title: "Dwarkadhish Temple", desc: "The 2,200-year-old five-storey temple dedicated to Lord Krishna stands on the banks of the Gomti River where it meets the Arabian Sea. The 78-metre spire (shikhar) is visible from kilometres away. Morning aarti at 6:30am with temple bells echoing over the ocean is the definitive Dwarka experience.", emoji: "\uD83D\uDD49\uFE0F", color: "bg-amber-50 border-amber-200" },
+                { title: "Nageshwar Jyotirlinga", desc: "One of the 12 sacred Jyotirlingas, located 16km from Dwarka. The massive 25-metre Shiva statue outside is the landmark, but the real power is in the underground sanctum. Visit early morning when the temple is quiet and the atmosphere is meditative.", emoji: "\uD83D\uDD31", color: "bg-teal-50 border-teal-200" },
+                { title: "Bet Dwarka Island", desc: "Bet Dwarka island is a 30-minute ferry ride and feels like stepping 200 years back in time \u2014 no cars, no noise, just narrow lanes and ancient temples. The Krishna temple here is believed to be where Krishna actually lived. The Sudama Setu bridge and marine sanctuary add to the experience.", emoji: "\uD83C\uDFDD\uFE0F", color: "bg-rose-50 border-rose-200" },
+                { title: "Rukmini Temple", desc: "Dedicated to Krishna\u2019s queen, this ornately carved temple sits 2km from the main town. The legend says Durvasa\u2019s curse separated Rukmini from Krishna, so her temple had to be built at a distance. The intricate stone carvings on the exterior walls rival any in Gujarat.", emoji: "\uD83C\uDFDB\uFE0F", color: "bg-amber-50 border-amber-200" },
+                { title: "Gomti Ghat & Confluence", desc: "The sacred ghat where the Gomti River meets the Arabian Sea. Pilgrims bathe here before entering Dwarkadhish Temple. Walk down the 56 steps at sunset \u2014 the light over the water with the temple spire behind you is Dwarka\u2019s most photographed moment.", emoji: "\uD83C\uDF05", color: "bg-teal-50 border-teal-200" },
+                { title: "Dwarka Lighthouse", desc: "The lighthouse on the coast near Dwarkadhish Temple offers a panoramic view of the temple complex, the Gomti-sea confluence, and the Arabian Sea stretching to the horizon. Open afternoons only (4\u20135:30pm). Entry is \u20B925. Worth every rupee for the aerial perspective of Dwarka\u2019s sacred geography.", emoji: "\uD83D\uDEA8", color: "bg-rose-50 border-rose-200" },
+              ].map((h) => (
+                <TipCard key={h.title} icon={h.emoji} title={h.title} desc={h.desc} color={h.color} />
+              ))}
+            </div>
+          </section>
+
+          {/* ── ITINERARIES ── */}
+          <section id="itinerary" className="mb-14 scroll-mt-24">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\uD83D\uDCC5"} Day-by-Day Itinerary</h2>
+            <p className="text-sm text-muted font-light mb-6">Click a plan — days are expandable/collapsible.</p>
+
+            {/* Tab switcher */}
+            <div className="flex gap-2 flex-wrap mb-8 p-1 bg-parchment rounded-xl">
+              {plans.map((p) => (
+                <button key={p.id} onClick={() => setActiveTab(p.id)}
+                  className={`flex-1 px-3 py-2.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-200 ${
+                    activeTab === p.id ? "bg-white shadow text-ink border border-parchment-2" : "text-muted hover:text-ink"
+                  }`}>
+                  {p.emoji} {p.label}
+                </button>
+              ))}
+            </div>
+
+            {/* ── PLAN A: Budget ── */}
+            {activeTab === "A" && (
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl mb-6">
+                  <span className="text-2xl">{"\uD83D\uDCB0"}</span>
+                  <div>
+                    <p className="text-sm font-medium text-amber-800">Budget Plan — Dwarka Town</p>
+                    <p className="text-xs text-amber-600 font-light">Stay: Dharamshala or guesthouse near temple {"\u00B7"} {"\u20B9"}300\u2013{"\u20B9"}800/night {"\u00B7"} Auto: {"\u20B9"}80\u2013150/ride</p>
+                  </div>
+                </div>
+                <DayCard day="Day 1" title="Dwarkadhish Temple, Gomti Ghat & Lighthouse"
+                  items={[
+                    "6:00am \u2014 Morning aarti at Dwarkadhish Temple. Reach by 5:45am for a spot near the front. The bells, chanting, and sea breeze through the open temple is unforgettable.",
+                    "7:30am \u2014 Walk down Gomti Ghat\u2019s 56 steps to the river-sea confluence. Pilgrims bathe here \u2014 even if you skip the dip, the morning light on the water is worth the walk.",
+                    "8:30am \u2014 Breakfast at a local dhaba near the temple. Gujarati nashta \u2014 dhokla, jalebi-fafda, chai \u2014 for \u20B950\u201380.",
+                    "10:00am \u2014 Auto to Rukmini Temple (2km, \u20B980). The carved exterior walls tell the entire Rukmini-Krishna story in stone. Budget 45 minutes.",
+                    "11:30am \u2014 Return to town. Walk through the old bazaar lanes for brass items, beadwork, and temple souvenirs.",
+                    "12:30pm \u2014 Lunch at a Gujarati thali restaurant. Unlimited thali with dal, sabzi, roti, rice, and buttermilk for \u20B9100\u2013150.",
+                    "2:30pm \u2014 Swaminarayan Temple \u2014 a peaceful contrast to the main temple\u2019s intensity. Free entry.",
+                    "4:00pm \u2014 Dwarka Lighthouse (open 4\u20135:30pm, \u20B925). The 360-degree view of the temple complex and coastline is the best perspective in Dwarka.",
+                    "5:30pm \u2014 Sunset at Gomti Ghat. The evening light behind the temple spire over the Arabian Sea is spectacular.",
+                    "7:00pm \u2014 Evening aarti at Dwarkadhish Temple. Less crowded than morning but equally powerful.",
+                    "8:00pm \u2014 Dinner at a local restaurant. Gujarati thali or street food for \u20B9100\u2013150.",
+                  ]}
+                  cost={"\u20B9800\u20131,200"}
+                />
+                <DayCard day="Day 2" title="Bet Dwarka Island & Nageshwar Jyotirlinga"
+                  items={[
+                    "6:00am \u2014 Early bus or shared auto to Okha port (30km, \u20B940\u201360 by bus). First ferries have the shortest queues.",
+                    "7:30am \u2014 Government ferry to Bet Dwarka island (\u20B920\u201350, 30 minutes). The ride across the Gulf of Kutch is beautiful in morning light.",
+                    "8:00am \u2014 Bet Dwarka Krishna Temple \u2014 believed to be Krishna\u2019s actual residence. The island has no cars, just narrow lanes and ancient shrines. Walk everywhere.",
+                    "9:30am \u2014 Explore Hanuman Dandi Temple and the island\u2019s coastal path. The silence here compared to mainland Dwarka is striking.",
+                    "10:30am \u2014 Return ferry to Okha. Pick up fresh fish snacks at the port if you eat seafood.",
+                    "11:30am \u2014 Auto or bus to Nageshwar Jyotirlinga (16km from Dwarka, \u20B9100\u2013150 by shared auto).",
+                    "12:00pm \u2014 Nageshwar Mahadev Temple darshan. The 25-metre Shiva statue is impressive, but spend time in the underground sanctum. Photography is not allowed inside.",
+                    "1:30pm \u2014 Gopi Talav \u2014 a lake nearby with yellow clay banks. Legend says the Gopis\u2019 tears turned the soil golden. Free entry, 20 minutes.",
+                    "2:30pm \u2014 Late lunch back in Dwarka town (\u20B9100\u2013150).",
+                    "4:00pm \u2014 Final visit to Dwarkadhish Temple or depart. Dwarka\u2013Jamnagar bus takes 3 hours (\u20B9150).",
+                  ]}
+                  cost={"\u20B9800\u20131,400"}
+                />
+              </div>
+            )}
+
+            {/* ── PLAN B: Pilgrimage ── */}
+            {activeTab === "B" && (
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-4 bg-purple-50 border border-purple-200 rounded-xl mb-6">
+                  <span className="text-2xl">{"\uD83D\uDE4F"}</span>
+                  <div>
+                    <p className="text-sm font-medium text-purple-800">Pilgrimage Plan — Complete Sacred Circuit</p>
+                    <p className="text-xs text-purple-600 font-light">Stay: Mid-range hotel or trust guesthouse {"\u00B7"} {"\u20B9"}1,200\u2013{"\u20B9"}3,500/night {"\u00B7"} Private auto for the day: {"\u20B9"}800\u20131,500</p>
+                  </div>
+                </div>
+                <DayCard day="Day 1" title="Dwarkadhish Darshan, Rukmini Temple & Sacred Ghats"
+                  items={[
+                    "5:30am \u2014 Mangla aarti at Dwarkadhish Temple (first aarti of the day). The temple is nearly empty and the rituals are deeply intimate. A priest guide (\u20B9200\u2013400) explains the significance of each ceremony.",
+                    "7:00am \u2014 Holy dip at Gomti Ghat. The confluence of the Gomti River and Arabian Sea is one of Hinduism\u2019s most sacred bathing spots.",
+                    "8:00am \u2014 Breakfast at your hotel or a quality restaurant like Toran Tourist Bungalow (\u20B9150\u2013250).",
+                    "9:30am \u2014 Private auto for the day (\u20B9800\u20131,200). First stop: Rukmini Temple. The carvings are Gujarat\u2019s finest outside of Modhera and Rani ki Vav.",
+                    "10:30am \u2014 Bhalka Tirth (5km) \u2014 the site where Lord Krishna was struck by a hunter\u2019s arrow, marking the end of the Dwapar Yug. A deeply significant and contemplative spot.",
+                    "11:30am \u2014 Swaminarayan Temple for a peaceful darshan.",
+                    "12:30pm \u2014 Lunch at a quality restaurant. Gujarati thali with extras (\u20B9180\u2013300).",
+                    "2:00pm \u2014 Dwarkadhish Temple revisit for midday darshan. The temple is less crowded now \u2014 spend time studying the carved pillars and the 60-column prayer hall.",
+                    "4:00pm \u2014 Dwarka Lighthouse for the aerial view (\u20B925). Combine with a walk along the coastal path.",
+                    "5:30pm \u2014 Sunset at Gomti Ghat \u2014 the temple silhouette against the orange sky is moving.",
+                    "7:00pm \u2014 Shayan aarti (night aarti) at Dwarkadhish Temple. The temple lit with oil lamps and the deity being put to sleep for the night is a rare and beautiful ritual.",
+                    "8:30pm \u2014 Dinner. Try a Kathiawadi thali at a recommended restaurant (\u20B9200\u2013400).",
+                  ]}
+                  cost={"\u20B92,500\u20134,500"}
+                />
+                <DayCard day="Day 2" title="Bet Dwarka, Nageshwar Jyotirlinga & Departure"
+                  items={[
+                    "5:30am \u2014 Private vehicle to Okha port (30km, 45 minutes). Your driver will wait while you visit the island.",
+                    "6:30am \u2014 Ferry to Bet Dwarka (\u20B920\u201350). Morning is best \u2014 the island wakes slowly and the temples are peaceful.",
+                    "7:00am \u2014 Bet Dwarka Krishna Temple \u2014 perform a full puja here. This is believed to be where Krishna held court. A local priest can arrange the ritual (\u20B9200\u2013300).",
+                    "8:00am \u2014 Visit Hanuman Dandi, Vishnu Temple, and walk the island\u2019s ancient lanes. Bet Dwarka is a living museum of medieval maritime Gujarat.",
+                    "9:00am \u2014 Return ferry. The morning sun over the Gulf of Kutch on the return ride is golden.",
+                    "10:00am \u2014 Drive to Nageshwar Jyotirlinga (16km from Dwarka). One of the 12 Jyotirlingas \u2014 perform abhishek if possible (\u20B9200\u2013500).",
+                    "11:00am \u2014 Gopi Talav \u2014 the lake with golden-yellow soil. The legend of the Gopis is told beautifully by local guides. Free entry.",
+                    "12:00pm \u2014 Brunch at your hotel or a Dwarka restaurant (\u20B9200\u2013300).",
+                    "1:30pm \u2014 Final Dwarkadhish darshan. Many pilgrims circle the temple 7 times (parikrama) as a farewell ritual.",
+                    "3:00pm \u2014 Depart Dwarka. Bus to Jamnagar (3hrs, \u20B9150) for flights, or overnight train to Ahmedabad.",
+                  ]}
+                  cost={"\u20B93,000\u20135,500"}
+                />
+              </div>
+            )}
+
+            {/* Embedded map */}
+            <div className="mt-6 rounded-xl overflow-hidden border border-parchment-2">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d59076.5!2d68.95!3d22.24!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%" height="380" style={{ border: 0 }} allowFullScreen loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade" title="Dwarka Travel Map" />
+            </div>
+          </section>
+
+          {/* ── TEMPLE IMAGE ── */}
+          <div className="mb-14 rounded-2xl overflow-hidden shadow-md">
+            <SmartImage
+              query="nageshwar jyotirlinga shiva statue temple dwarka gujarat"
+              fallback="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=900&q=80"
+              alt="The massive Shiva statue at Nageshwar Jyotirlinga temple near Dwarka"
+              width={860} height={380}
+              className="w-full object-cover h-64"
+            />
+            <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
+              <p className="text-xs text-muted font-light italic text-center">
+                The submarine temple of Dwarka (reportedly Krishna&apos;s original city now underwater) is one of India&apos;s greatest archaeological mysteries. Scuba tours are now available but book weeks ahead.
+              </p>
+            </div>
+          </div>
+
+          {/* ── BUDGET BREAKDOWN ── */}
+          <section id="budget" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCB0"} Budget Breakdown</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { plan: "Budget Plan", emoji: "\uD83D\uDCB0", total: "Under \u20B94,000", bg: "bg-amber-50 border-amber-200",
+                  rows: [["Accommodation","2 nights: \u20B9600\u20131,600"],["Food","5\u20136 meals: \u20B9500\u2013700"],["Transport","Bus + autos + ferry: \u20B9400\u2013600"],["Attractions","Temples (free) + lighthouse (\u20B925): \u20B925"],["Extras","Souvenirs, tips: \u20B9200\u2013400"]] },
+                { plan: "Pilgrimage Plan", emoji: "\uD83D\uDE4F", total: "\u20B95,000\u201312,000", bg: "bg-purple-50 border-purple-200",
+                  rows: [["Accommodation","2 nights: \u20B92,400\u20137,000"],["Food","5\u20136 meals: \u20B9800\u20131,500"],["Transport","Private auto + ferry: \u20B91,500\u20132,500"],["Priest & Puja","Temple rituals: \u20B9400\u2013800"],["Extras","Offerings, souvenirs: \u20B9500\u20131,000"]] },
+              ].map((b) => (
+                <div key={b.plan} className={`rounded-xl border p-5 ${b.bg}`}>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-xl">{b.emoji}</span>
+                    <div>
+                      <p className="font-medium text-sm text-ink">{b.plan}</p>
+                      <p className="text-xs text-muted font-light">Total per person: {b.total}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    {b.rows.map(([k, v]) => (
+                      <div key={k} className="flex justify-between text-xs">
+                        <span className="text-muted font-light">{k}</span>
+                        <span className="text-ink font-medium">{v}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── BET DWARKA IMAGE ── */}
+          <div className="mb-14 rounded-2xl overflow-hidden shadow-md">
+            <SmartImage
+              query="bet dwarka island ferry boat arabian sea gujarat india"
+              fallback="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80"
+              alt="Ferry boat crossing to Bet Dwarka island across the calm Arabian Sea"
+              width={860} height={380}
+              className="w-full object-cover h-64"
+            />
+            <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
+              <p className="text-xs text-muted font-light italic text-center">
+                Bet Dwarka: a 30-minute ferry ride from Okha to an island where time moves differently. No cars, no noise — just ancient temples and narrow lanes.
+              </p>
+            </div>
+          </div>
+
+          {/* ── MISTAKES ── */}
+          <section id="mistakes" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <div className="space-y-3">
+              {[
+                { title: "Skipping the morning aarti", desc: "The 6:30am aarti at Dwarkadhish is the single most powerful experience in Dwarka. Tour groups arrive by 9am and the temple becomes a queue. Non-negotiable: be there at 6am.", icon: "\u23F0" },
+                { title: "Missing the last ferry from Bet Dwarka", desc: "The last government ferry from Bet Dwarka to Okha is around 5:30pm. Miss it and you are stuck on the island overnight with very limited accommodation. Keep track of time.", icon: "\u26F4\uFE0F" },
+                { title: "Visiting the lighthouse in the morning", desc: "The Dwarka Lighthouse is only open from 4pm to 5:30pm. Many visitors walk there in the morning, find it closed, and never return. Plan it for late afternoon.", icon: "\uD83D\uDEA8" },
+                { title: "Not carrying water to Nageshwar", desc: "Nageshwar Jyotirlinga is 16km outside Dwarka with minimal facilities en route. The midday heat in Gujarat is brutal. Carry at least 1.5 litres of water and sunscreen.", icon: "\uD83D\uDCA7" },
+                { title: "Expecting seafood in Dwarka town", desc: "Dwarka is a vegetarian pilgrim town. Almost every restaurant serves pure veg only. For seafood, you need to go to Okha port area or eat before arriving in Dwarka.", icon: "\uD83C\uDF7D\uFE0F" },
+                { title: "Wearing shorts or sleeveless tops to temples", desc: "Dwarka temples have strict dress codes. Men need to cover knees, women need covered shoulders. Carry a shawl or dupatta. Leather items (belts, bags) must be left outside many temples.", icon: "\uD83D\uDC55" },
+              ].map((m) => (
+                <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
+                  color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
+              ))}
+            </div>
+          </section>
+
+          {/* ── PRO TIPS ── */}
+          <section id="tips" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {[
+                { icon: "\uD83C\uDF05", title: "Sunset at Gomti Ghat", desc: "The 56 steps leading down to the confluence are Dwarka\u2019s best sunset spot. Arrive by 5:15pm for a step with a view. The temple spire silhouetted against the orange sky is unforgettable.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83D\uDEF6", title: "First Ferry to Bet Dwarka", desc: "Take the earliest ferry (around 6:30am). The island is magical before tour groups arrive at 10am. You get quiet temples, friendly locals, and morning light in the narrow lanes.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83E\uDDED", title: "Hire a Priest Guide", desc: "A temple guide (\u20B9200\u2013400) at Dwarkadhish transforms the visit. They explain the mythology of each section, manage darshan flow, and can arrange special puja. Worth every rupee.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83C\uDF7D\uFE0F", title: "Gujarati Thali is King", desc: "Don\u2019t fight the veg-only reality \u2014 embrace it. The unlimited Gujarati thali here (\u20B9100\u2013180) is one of India\u2019s great food bargains: dal, kadhi, 3\u20134 sabzis, rotli, rice, papad, and buttermilk.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83D\uDCF1", title: "Download Offline Maps", desc: "Mobile signal drops between Dwarka and Okha, and is patchy on Bet Dwarka island. Download Google Maps offline for the entire area before you leave your hotel.", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct\u2013Nov \u2705 best weather, fewer crowds | Dec\u2013Feb \u2705 peak pilgrimage, pleasant 20\u201330\u00B0C | Mar \u2600\uFE0F warming up | Apr\u2013Jun \u274C extreme heat 40\u00B0C+ | Jul\u2013Sep \uD83C\uDF27\uFE0F monsoon, ferries may stop | Janmashtami (Aug\u2013Sep): spectacular but massively crowded", color: "bg-rose-50 border-rose-200" },
+              ].map((t) => <TipCard key={t.title} {...t} />)}
+            </div>
+          </section>
+
+          {/* ── INLINE CTA ── */}
+          <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
+            <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
+            <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
+              Want This Planned for You?
+            </h2>
+            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+              Tell us your dates, group and budget — we&apos;ll send a personalised Dwarka itinerary within 24 hours. Free.
+            </p>
+            <div className="flex gap-3 justify-center flex-wrap">
+              <button onClick={() => setModalOpen(true)} className="btn-gold">
+                Plan My Dwarka Trip {"\u2192"}
+              </button>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+            </div>
+          </div>
+
+          {/* ── FAQ ── */}
+          <section id="faq" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              {[
+                { q: "How many days are enough for Dwarka?", a: "2 days is the sweet spot. Day 1 covers Dwarkadhish Temple, Gomti Ghat, Rukmini Temple, and the lighthouse. Day 2 covers Bet Dwarka island, Nageshwar Jyotirlinga, and Gopi Talav. 1 day is too rushed if you want the Bet Dwarka ferry trip. 3 days only if you want to include Porbandar, Somnath, or the underwater archaeology sites." },
+                { q: "What is the best time to visit Dwarka?", a: "October to March. October\u2013November offers pleasant weather and fewer crowds. December\u2013February is peak pilgrimage season with comfortable 20\u201330\u00B0C temperatures. Janmashtami (August\u2013September) is spectacular but extremely crowded \u2014 book accommodation months ahead. Avoid April\u2013June when it crosses 40\u00B0C." },
+                { q: "How much does a 2-day Dwarka trip cost?", a: "Budget solo: under \u20B94,000 including accommodation, food, and ferry. Pilgrimage mid-range: \u20B95,000\u201312,000 per person with better hotels, private transport, and priest guides. Temple entry is free everywhere. Bet Dwarka ferry is the cheapest part at \u20B920\u201350." },
+                { q: "How do I reach Bet Dwarka island?", a: "Take a bus or auto from Dwarka to Okha port (30km, 45 minutes). Government ferries run every 30 minutes from Okha to Bet Dwarka. The ride is 30 minutes and costs \u20B920\u201350. Last return ferry is around 5:30pm. Private boats cost \u20B9500\u2013800 for a group. Do not miss the last ferry." },
+                { q: "Is the underwater city of Dwarka real?", a: "Marine archaeological surveys have found submerged structures off the Dwarka coast. Whether it is Krishna\u2019s legendary city is debated, but the archaeological site is real and significant. Scuba diving tours to the underwater ruins are available through authorized operators but must be booked weeks in advance. The visibility window is October\u2013February." },
+                { q: "What food is Dwarka famous for?", a: "Dwarka is a vegetarian pilgrim town. The Gujarati unlimited thali (\u20B9100\u2013180) is the highlight: dal, kadhi, multiple sabzis, rotli, rice, papad, and chaas. Street food standouts are kachori, dabeli, and fresh sugarcane juice. Temple prasadam at Dwarkadhish is available daily. For seafood, head to Okha port area." },
+              ].map((item, i) => <FaqItem key={i} {...item} />)}
+            </div>
+          </section>
+
+          {/* ── COMMENTS ── */}
+          <Comments />
+
+          {/* ── INTERNAL LINKS ── */}
+          <section>
+            <h3 className="font-serif text-lg font-light text-ink mb-4">Exploring More of Gujarat & Western India?</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { label: "Gujarat \u2014 7 Day Complete Circuit", href: "/blog/gujarat-7-days", soon: false },
+                { label: "Rameswaram \u2014 2 Day Pilgrimage Guide", href: "/blog/rameswaram-2-days", soon: false },
+                { label: "Varanasi \u2014 3 Day Spiritual Guide", href: "/blog/varanasi-3-days", soon: false },
+                { label: "Browse All India Packages", href: "/#packages", soon: false },
+              ].map((link) => (
+                <Link key={link.label} href={link.href}
+                  className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
+                  <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
+                  <span className="text-xs text-muted">{link.soon ? "Coming Soon \u2192" : "View \u2192"}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <RelatedGuides currentSlug="dwarka-2-days" />
+        </div>
+      </main>
+
+      <Footer />
+      <InquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
+  );
+}
+
+// ── FAQ Item accordion ────────────────────────────────────────────────────────
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border border-parchment-2 rounded-xl overflow-hidden bg-white">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-parchment transition-colors"
+      >
+        <span className="font-medium text-sm text-ink pr-4">{q}</span>
+        <span className={`text-gold text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
+          +
+        </span>
+      </button>
+      {open && (
+        <div className="px-5 pb-5 pt-1 border-t border-parchment-2">
+          <p className="text-sm text-muted font-light leading-relaxed">{a}</p>
+        </div>
+      )}
+    </div>
+  );
+}
