@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1622227056993-6e7f88420855?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/darjeeling-4-days",
+    canonical: "https://www.incredibleitinerary.com/blog/darjeeling-4-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/darjeeling-4-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/darjeeling-4-days#article",
       "headline": "Darjeeling in 4 Days: Complete Hill Station Guide (Budget to Premium, 2026)",
       "description": "3 complete Darjeeling plans — Budget, Comfortable, Premium — with Tiger Hill sunrise, toy train, tea estates, real timings and costs.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/darjeeling-4-days",
+        "@id": "https://www.incredibleitinerary.com/blog/darjeeling-4-days",
       },
       "keywords": "darjeeling itinerary, darjeeling 4 days, tiger hill sunrise, darjeeling toy train, happy valley tea estate",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Darjeeling in 4 Days",
-          "item": "https://incredibleitinerary.com/blog/darjeeling-4-days",
+          "item": "https://www.incredibleitinerary.com/blog/darjeeling-4-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Darjeeling, West Bengal, India",
       "description": "Queen of the Hills — a colonial-era hill station at 6,710 ft known for tea gardens, Kangchenjunga views, the UNESCO Heritage toy train, and Himalayan culture.",
-      "url": "https://incredibleitinerary.com/blog/darjeeling-4-days",
+      "url": "https://www.incredibleitinerary.com/blog/darjeeling-4-days",
       "touristType": ["Mountain Tourism", "Cultural Tourism", "Heritage Tourism", "Tea Tourism"],
     },
   ],

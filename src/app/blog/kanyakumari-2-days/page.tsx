@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/kanyakumari-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/kanyakumari-2-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/kanyakumari-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/kanyakumari-2-days#article",
       "headline": "Kanyakumari in 2 Days: Where Three Oceans Meet — Sunrise, Sunset & Vivekananda Rock (2026)",
       "description": "Complete Kanyakumari guide — Vivekananda Rock Memorial, Thiruvalluvar Statue, Triveni Sangam, sunrise and sunset from the same spot, Padmanabhapuram Palace. 2 plans with real costs.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/kanyakumari-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/kanyakumari-2-days",
       },
       "keywords": "kanyakumari itinerary, kanyakumari 2 days, vivekananda rock memorial, triveni sangam, three oceans, kanyakumari sunrise sunset",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Kanyakumari in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/kanyakumari-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/kanyakumari-2-days",
         },
       ],
     },
@@ -165,7 +165,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Kanyakumari, Tamil Nadu, India",
       "description": "The southernmost tip of mainland India where the Arabian Sea, Bay of Bengal, and Indian Ocean meet — famous for sunrise and sunset views from the same point, Vivekananda Rock Memorial, and Thiruvalluvar Statue.",
-      "url": "https://incredibleitinerary.com/blog/kanyakumari-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/kanyakumari-2-days",
       "touristType": ["Coastal Tourism", "Cultural Tourism", "Pilgrimage Tourism"],
     },
   ],

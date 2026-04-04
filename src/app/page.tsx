@@ -10,11 +10,11 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "IncredibleItinerary",
-            url: "https://incredibleitinerary.com",
+            url: "https://www.incredibleitinerary.com",
             description: "Free, handcrafted India travel itineraries with real prices and local tips.",
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://incredibleitinerary.com/quiz?q={search_term_string}",
+              target: "https://www.incredibleitinerary.com/quiz?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           }),

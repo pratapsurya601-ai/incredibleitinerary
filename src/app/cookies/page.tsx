@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = { title: "Cookie Policy — IncredibleItinerary", alternates: { canonical: "https://incredibleitinerary.com/cookies" } };
+export const metadata: Metadata = { title: "Cookie Policy — IncredibleItinerary", alternates: { canonical: "https://www.incredibleitinerary.com/cookies" } };
 export default function CookiesPage() {
   return (
     <main className="bg-cream min-h-screen pt-28 pb-20 px-6">

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1592639296346-560c37a0f711?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/khajuraho-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/khajuraho-2-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/khajuraho-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/khajuraho-2-days#article",
       "headline": "Khajuraho in 2 Days: UNESCO Temples, Raneh Falls & Panna Safari (2026)",
       "description":
         "Complete Khajuraho guide covering Western, Eastern and Southern temple groups, Raneh Falls canyon, Panna National Park and Sound & Light Show. 2 plans for every budget.",
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/khajuraho-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/khajuraho-2-days",
       },
       "keywords": "khajuraho itinerary, khajuraho 2 days, khajuraho temples, western group temples, raneh falls, panna national park",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Travel Guides",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Khajuraho in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/khajuraho-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/khajuraho-2-days",
         },
       ],
     },
@@ -163,7 +163,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Khajuraho, Madhya Pradesh, India",
       "description": "A UNESCO World Heritage Site famous for its medieval Hindu and Jain temples adorned with intricate sculptures, located in Madhya Pradesh. One of India's most remarkable architectural achievements.",
-      "url": "https://incredibleitinerary.com/blog/khajuraho-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/khajuraho-2-days",
       "touristType": ["Heritage Tourism", "Cultural Tourism", "Religious Tourism"],
     },
   ],

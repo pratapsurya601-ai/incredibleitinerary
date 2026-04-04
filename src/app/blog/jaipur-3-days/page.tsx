@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/jaipur-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/jaipur-3-days",
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/jaipur-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/jaipur-3-days#article",
       "headline": "Jaipur in 3 Days: The Only Itinerary Guide You Need (Budget to Royal, 2026)",
       "description": "3 complete Jaipur plans — Budget, Heritage, Royal — with real timings, costs, Google Maps routes and the mistakes every first-timer makes.",
       "image": {
@@ -64,20 +64,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/jaipur-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/jaipur-3-days",
       },
       "keywords": "jaipur itinerary, jaipur 3 days, jaipur travel guide, amber fort, hawa mahal, city palace, rajasthan",
       "articleSection": "Travel Guides",
@@ -93,19 +93,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Jaipur in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/jaipur-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/jaipur-3-days",
         },
       ],
     },
@@ -170,7 +170,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Jaipur, Rajasthan, India",
       "description": "The Pink City of India, known for its stunning forts, ornate palaces, vibrant bazaars, and rich Rajasthani heritage. A UNESCO World Heritage City.",
-      "url": "https://incredibleitinerary.com/blog/jaipur-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/jaipur-3-days",
       "touristType": ["Cultural Tourism", "Heritage Tourism", "Food Tourism"],
     },
   ],

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1590559899731-a382839e5549?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/osaka-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/osaka-3-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/osaka-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/osaka-3-days#article",
       "headline": "Osaka in 3 Days: The Only Itinerary Guide You Need (Budget to Luxury, 2026)",
       "description": "3 complete Osaka plans — Budget, Mid-Range, Luxury — with real timings, costs in yen, street food maps and the mistakes every first-timer makes.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/osaka-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/osaka-3-days",
       },
       "keywords": "osaka itinerary, osaka 3 days, japan travel guide, dotonbori, osaka street food",
       "articleSection": "Travel Guides",
@@ -89,19 +89,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Osaka in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/osaka-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/osaka-3-days",
         },
       ],
     },
@@ -162,7 +162,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Osaka, Japan",
       "description": "Japan's kitchen and comedy capital, known for world-class street food, neon-lit Dotonbori canal, historic castle, and the warmest people in Japan.",
-      "url": "https://incredibleitinerary.com/blog/osaka-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/osaka-3-days",
       "touristType": ["Food Tourism", "City Tourism", "Cultural Tourism"],
     },
   ],

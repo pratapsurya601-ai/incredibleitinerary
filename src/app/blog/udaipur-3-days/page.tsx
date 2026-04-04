@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/udaipur-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/udaipur-3-days",
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/udaipur-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/udaipur-3-days#article",
       "headline": "Udaipur in 3 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
       "description": "3 complete Udaipur plans — Budget, Couple/Romantic, Luxury — with real timings, costs, Lake Pichola boat rides and the mistakes every first-timer makes.",
       "image": {
@@ -64,20 +64,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/udaipur-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/udaipur-3-days",
       },
       "keywords": "udaipur itinerary, udaipur 3 days, udaipur travel guide, city palace, lake pichola, jag mandir",
       "articleSection": "Travel Guides",
@@ -93,19 +93,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Udaipur in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/udaipur-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/udaipur-3-days",
         },
       ],
     },
@@ -170,7 +170,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Udaipur, Rajasthan, India",
       "description": "Known as the City of Lakes, Udaipur is India's most romantic city, famous for its ornate palaces, shimmering lakes, Rajput heritage, and rooftop restaurants overlooking Lake Pichola.",
-      "url": "https://incredibleitinerary.com/blog/udaipur-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/udaipur-3-days",
       "touristType": ["Cultural Tourism", "Heritage Tourism", "Romantic Tourism", "Lake Tourism"],
     },
   ],

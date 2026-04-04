@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/jaisalmer-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/jaisalmer-3-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/jaisalmer-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/jaisalmer-3-days#article",
       "headline": "Jaisalmer in 3 Days: Golden City Itinerary (Budget to Luxury Camp, 2026)",
       "description": "3 complete Jaisalmer plans — Budget, Desert Experience, Luxury Camp — with real timings, costs, and the insider tips that most guides skip.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/jaisalmer-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/jaisalmer-3-days",
       },
       "keywords": "jaisalmer itinerary, jaisalmer 3 days, jaisalmer fort, sam sand dunes, kuldhara ghost village, desert camp rajasthan",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Jaisalmer in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/jaisalmer-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/jaisalmer-3-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Jaisalmer, Rajasthan, India",
       "description": "The Golden City of India, known for its massive sandstone fort, ornate havelis, Thar Desert sand dunes, and living Rajasthani culture.",
-      "url": "https://incredibleitinerary.com/blog/jaisalmer-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/jaisalmer-3-days",
       "touristType": ["Desert Tourism", "Cultural Tourism", "Heritage Tourism"],
     },
   ],

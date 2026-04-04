@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/goa-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/goa-3-days",
   },
 };
 
@@ -55,7 +55,7 @@ const jsonLd = {
     // Article schema — shows author, date, image in Google
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/goa-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/goa-3-days#article",
       "headline": "Goa in 3 Days: The Only Itinerary Guide You Need (Budget to Luxury, 2026)",
       "description": "4 complete Goa plans — Budget, Couple, Party, Relaxed — with real timings, costs, Google Maps routes and the mistakes every first-timer makes.",
       "image": {
@@ -69,20 +69,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/goa-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/goa-3-days",
       },
       "keywords": "goa itinerary, goa 3 days, goa travel guide, palolem beach, north goa south goa",
       "articleSection": "Travel Guides",
@@ -98,19 +98,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Goa in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/goa-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/goa-3-days",
         },
       ],
     },
@@ -175,7 +175,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Goa, India",
       "description": "India's smallest state and most famous beach destination, known for its Portuguese heritage, beaches, nightlife, and cuisine.",
-      "url": "https://incredibleitinerary.com/blog/goa-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/goa-3-days",
       "touristType": ["Beach Tourism", "Cultural Tourism", "Adventure Tourism"],
     },
   ],

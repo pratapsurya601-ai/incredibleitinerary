@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/madurai-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/madurai-2-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/madurai-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/madurai-2-days#article",
       "headline": "Madurai in 2 Days: Meenakshi Temple, Flower Market & South Indian Food Trail (2026)",
       "description": "Complete Madurai guide — Meenakshi Amman Temple at dawn, Thirumalai Nayakkar Palace, Gandhi Museum, 4am flower market, Jigarthanda trail. 2 plans with real costs.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/madurai-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/madurai-2-days",
       },
       "keywords": "madurai itinerary, madurai 2 days, meenakshi temple, madurai food trail, jigarthanda, flower market madurai",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Madurai in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/madurai-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/madurai-2-days",
         },
       ],
     },
@@ -165,7 +165,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Madurai, Tamil Nadu, India",
       "description": "One of the oldest continuously inhabited cities in the world, known for the magnificent Meenakshi Amman Temple, vibrant flower markets, and legendary South Indian food.",
-      "url": "https://incredibleitinerary.com/blog/madurai-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/madurai-2-days",
       "touristType": ["Cultural Tourism", "Religious Tourism", "Food Tourism"],
     },
   ],

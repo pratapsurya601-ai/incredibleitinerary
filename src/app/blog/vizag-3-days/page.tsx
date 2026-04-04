@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/vizag-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/vizag-3-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/vizag-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/vizag-3-days#article",
       "headline": "Vizag in 3 Days: Complete Itinerary Guide (Budget to Premium, 2026)",
       "description": "3 complete Vizag plans — Budget, Nature, Premium — with real timings, costs, Google Maps routes and the spots most tourists miss entirely.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/vizag-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/vizag-3-days",
       },
       "keywords": "vizag itinerary, vizag 3 days, visakhapatnam travel guide, araku valley, borra caves, rk beach",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Vizag in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/vizag-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/vizag-3-days",
         },
       ],
     },
@@ -163,7 +163,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Visakhapatnam (Vizag), India",
       "description": "Andhra Pradesh's coastal jewel — known for its beaches, the Eastern Ghats, Araku Valley coffee plantations, and one of India's best scenic train rides.",
-      "url": "https://incredibleitinerary.com/blog/vizag-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/vizag-3-days",
       "touristType": ["Beach Tourism", "Nature Tourism", "Cultural Tourism"],
     },
   ],

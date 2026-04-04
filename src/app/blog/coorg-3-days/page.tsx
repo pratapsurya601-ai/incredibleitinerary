@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: "Abbey Falls, coffee estates, Dubare Elephant Camp — 4 plans, real costs from Bangalore.",
     images: ["https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=1200&q=80"],
   },
-  alternates: { canonical: "https://incredibleitinerary.com/blog/coorg-3-days" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/blog/coorg-3-days" },
 };
 
 const jsonLd = {
@@ -42,8 +42,8 @@ const jsonLd = {
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=1200&q=80" },
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
-      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "coorg, madikeri, abbey falls, coffee estate, dubare elephant camp, raja seat, coorg weekend trip",
       "wordCount": 5200,
       "articleSection": "Travel Guides",
@@ -52,9 +52,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Coorg 3 Days", "item": "https://incredibleitinerary.com/blog/coorg-3-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Coorg 3 Days", "item": "https://www.incredibleitinerary.com/blog/coorg-3-days" },
       ],
     },
     {
@@ -70,7 +70,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Coorg (Kodagu), Karnataka, India",
       "description": "The Scotland of India — a lush hill district in Karnataka known for coffee plantations, misty hills, Abbey Falls, Dubare Elephant Camp and Kodava culture.",
-      "url": "https://incredibleitinerary.com/blog/coorg-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/coorg-3-days",
       "touristType": ["Eco Tourism", "Cultural Tourism", "Wellness Tourism"],
     },
   ],

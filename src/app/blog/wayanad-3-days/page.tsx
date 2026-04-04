@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/wayanad-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/wayanad-3-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/wayanad-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/wayanad-3-days#article",
       "headline": "Wayanad in 3 Days: Treehouses, Treks & Hidden Caves (Budget to Premium, 2026)",
       "description": "3 complete Wayanad plans — Budget, Nature Explorer, Premium Treehouse — with trek timings, real costs, Google Maps routes and the spots most tourists miss.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/wayanad-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/wayanad-3-days",
       },
       "keywords": "wayanad itinerary, wayanad 3 days, wayanad treehouse, chembra peak, edakkal caves, wayanad wildlife sanctuary",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Wayanad in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/wayanad-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/wayanad-3-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Wayanad, Kerala, India",
       "description": "A lush hill district in Kerala's Western Ghats known for ancient caves, misty treehouses, wildlife sanctuaries, and some of the best trekking trails in South India.",
-      "url": "https://incredibleitinerary.com/blog/wayanad-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/wayanad-3-days",
       "touristType": ["Nature Tourism", "Adventure Tourism", "Wildlife Tourism", "Eco Tourism"],
     },
   ],

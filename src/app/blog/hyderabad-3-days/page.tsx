@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1603813507806-0d8e1a22d22c?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/hyderabad-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/hyderabad-3-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/hyderabad-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/hyderabad-3-days#article",
       "headline": "Hyderabad in 3 Days: Biryani, Forts & Bazaars — Complete Itinerary (2026)",
       "description": "3 complete Hyderabad plans — Budget, Heritage, Premium — covering Charminar, Golconda Fort, Hussain Sagar, Ramoji Film City, Salar Jung Museum, Chowmahalla Palace, Laad Bazaar and the biryani trail.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/hyderabad-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/hyderabad-3-days",
       },
       "keywords": "hyderabad itinerary, hyderabad 3 days, charminar, golconda fort, hyderabad biryani, ramoji film city",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Hyderabad in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/hyderabad-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/hyderabad-3-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Hyderabad, India",
       "description": "The City of Pearls and Nizams — known for its 400-year-old Charminar, Golconda Fort, legendary biryani, and a unique blend of Deccani, Mughal and modern culture.",
-      "url": "https://incredibleitinerary.com/blog/hyderabad-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/hyderabad-3-days",
       "touristType": ["Heritage Tourism", "Cultural Tourism", "Culinary Tourism"],
     },
   ],

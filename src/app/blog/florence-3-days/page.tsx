@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/florence-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/florence-3-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/florence-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/florence-3-days#article",
       "headline": "Florence in 3 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
       "description": "3 complete Florence plans — Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, advance booking tips and the mistakes every first-timer makes.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/florence-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/florence-3-days",
       },
       "keywords": "florence itinerary, florence 3 days, florence travel guide, uffizi, duomo, accademia, tuscany",
       "articleSection": "Travel Guides",
@@ -85,9 +85,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Florence in 3 Days", "item": "https://incredibleitinerary.com/blog/florence-3-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Florence in 3 Days", "item": "https://www.incredibleitinerary.com/blog/florence-3-days" },
       ],
     },
     {
@@ -147,7 +147,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Florence, Italy",
       "description": "The birthplace of the Renaissance, home to Michelangelo's David, the Uffizi Gallery, and some of the finest food and wine in Italy.",
-      "url": "https://incredibleitinerary.com/blog/florence-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/florence-3-days",
       "touristType": ["Cultural Tourism", "Art Tourism", "Food & Wine Tourism"],
     },
   ],

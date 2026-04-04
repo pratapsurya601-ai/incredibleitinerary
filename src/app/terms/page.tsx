@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = { title: "Terms of Use — IncredibleItinerary", alternates: { canonical: "https://incredibleitinerary.com/terms" } };
+export const metadata: Metadata = { title: "Terms of Use — IncredibleItinerary", alternates: { canonical: "https://www.incredibleitinerary.com/terms" } };
 export default function TermsPage() {
   return (
     <main className="bg-cream min-h-screen pt-28 pb-20 px-6">

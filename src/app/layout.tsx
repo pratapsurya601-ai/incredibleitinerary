@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "IncredibleItinerary — Free Travel Guides Worldwide",
     description:
       "68 free travel guides across India, Thailand, Japan & Italy. Real prices, local tips, day-by-day itineraries.",
-    url: "https://incredibleitinerary.com",
+    url: "https://www.incredibleitinerary.com",
     siteName: "IncredibleItinerary",
     type: "website",
     images: [
@@ -108,8 +108,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "IncredibleItinerary",
-              url: "https://incredibleitinerary.com",
-              logo: "https://incredibleitinerary.com/logo.png",
+              url: "https://www.incredibleitinerary.com",
+              logo: "https://www.incredibleitinerary.com/logo.png",
               description: "Bespoke, privately crafted travel itineraries across India's most iconic and hidden destinations.",
               sameAs: [
                 "https://instagram.com/incredibleitinerary",

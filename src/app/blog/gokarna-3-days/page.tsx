@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/gokarna-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/gokarna-3-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/gokarna-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/gokarna-3-days#article",
       "headline": "Gokarna in 3 Days: Beach Treks, Temples & Budget Guide (2026)",
       "description": "3 complete Gokarna plans — Budget, Backpacker, Comfortable — with real timings, costs, beach trek routes and the spots most tourists never find.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/gokarna-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/gokarna-3-days",
       },
       "keywords": "gokarna itinerary, gokarna 3 days, gokarna travel guide, om beach, kudle beach, half moon beach, beach trek",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Gokarna in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/gokarna-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/gokarna-3-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Gokarna, Karnataka, India",
       "description": "A laid-back temple town on Karnataka's coast, known for pristine beaches, cliff-top treks, and the ancient Mahabaleshwar Temple. Often called what Goa was 20 years ago.",
-      "url": "https://incredibleitinerary.com/blog/gokarna-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/gokarna-3-days",
       "touristType": ["Beach Tourism", "Pilgrimage Tourism", "Adventure Tourism"],
     },
   ],

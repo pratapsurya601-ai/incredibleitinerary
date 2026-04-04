@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1609766856923-7e0a7a3b0908?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/mount-abu-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/mount-abu-2-days",
   },
 };
 
@@ -51,7 +51,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/mount-abu-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/mount-abu-2-days#article",
       "headline": "Mount Abu in 2 Days: Dilwara Temples, Nakki Lake & Guru Shikhar Guide (2026)",
       "description": "2 complete Mount Abu plans — Budget and Comfortable — with real timings for Dilwara Jain Temples, Nakki Lake, Sunset Point, Guru Shikhar, and Achalgarh Fort.",
       "image": {
@@ -65,20 +65,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/mount-abu-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/mount-abu-2-days",
       },
       "keywords": "mount abu itinerary, dilwara temples, nakki lake, guru shikhar, achalgarh fort, rajasthan hill station",
       "articleSection": "Travel Guides",
@@ -92,19 +92,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Mount Abu in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/mount-abu-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/mount-abu-2-days",
         },
       ],
     },
@@ -165,7 +165,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Mount Abu, Rajasthan, India",
       "description": "Rajasthan's only hill station, home to the extraordinary Dilwara Jain Temples, Nakki Lake, and the highest peak in the Aravalli Range.",
-      "url": "https://incredibleitinerary.com/blog/mount-abu-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/mount-abu-2-days",
       "touristType": ["Hill Station Tourism", "Cultural Tourism", "Religious Tourism", "Nature Tourism"],
     },
   ],

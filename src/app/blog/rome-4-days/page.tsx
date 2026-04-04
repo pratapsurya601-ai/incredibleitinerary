@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/rome-4-days",
+    canonical: "https://www.incredibleitinerary.com/blog/rome-4-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/rome-4-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/rome-4-days#article",
       "headline": "Rome in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
       "description": "3 complete Rome plans — Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, first-entry Vatican tips and the mistakes every first-timer makes.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/rome-4-days",
+        "@id": "https://www.incredibleitinerary.com/blog/rome-4-days",
       },
       "keywords": "rome itinerary, rome 4 days, rome travel guide, colosseum, vatican, sistine chapel",
       "articleSection": "Travel Guides",
@@ -85,9 +85,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Rome in 4 Days", "item": "https://incredibleitinerary.com/blog/rome-4-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Rome in 4 Days", "item": "https://www.incredibleitinerary.com/blog/rome-4-days" },
       ],
     },
     {
@@ -147,7 +147,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Rome, Italy",
       "description": "Italy's capital and a living museum spanning 2,800 years of history, from the Colosseum to the Vatican, known for its art, architecture, and cuisine.",
-      "url": "https://incredibleitinerary.com/blog/rome-4-days",
+      "url": "https://www.incredibleitinerary.com/blog/rome-4-days",
       "touristType": ["Cultural Tourism", "Historical Tourism", "Food Tourism"],
     },
   ],

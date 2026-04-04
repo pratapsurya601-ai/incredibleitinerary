@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/auli-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/auli-3-days",
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/auli-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/auli-3-days#article",
       "headline": "Auli in 3 Days: Skiing, Snow & Nanda Devi Views (Budget to Premium, 2026)",
       "description": "3 complete Auli plans — Budget, Skiing, Premium — with real costs, cable car timings, Gorson Bugyal trek guide, skiing tips, and Himalayan views.",
       "image": {
@@ -64,20 +64,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/auli-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/auli-3-days",
       },
       "keywords": "auli itinerary, auli skiing, auli 3 days, gorson bugyal, joshimath cable car, nanda devi view, kwani bugyal",
       "articleSection": "Travel Guides",
@@ -93,19 +93,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Auli in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/auli-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/auli-3-days",
         },
       ],
     },
@@ -170,7 +170,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Auli, Uttarakhand, India",
       "description": "Himalayan ski resort town at 2,500-3,050m known for Asia's longest cable car, panoramic Nanda Devi views, alpine meadows (bugyals), and India's best skiing slopes.",
-      "url": "https://incredibleitinerary.com/blog/auli-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/auli-3-days",
       "touristType": ["Adventure Tourism", "Skiing", "Trekking", "Mountain Tourism"],
     },
   ],

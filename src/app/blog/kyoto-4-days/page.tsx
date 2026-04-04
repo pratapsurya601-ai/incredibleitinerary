@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/kyoto-4-days",
+    canonical: "https://www.incredibleitinerary.com/blog/kyoto-4-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/kyoto-4-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/kyoto-4-days#article",
       "headline": "Kyoto in 4 Days: The Only Itinerary Guide You Need (Budget to Luxury, 2026)",
       "description": "3 complete Kyoto plans — Budget, Mid-Range, Luxury — with real timings, costs in yen, temple strategies and the mistakes every first-timer makes.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/kyoto-4-days",
+        "@id": "https://www.incredibleitinerary.com/blog/kyoto-4-days",
       },
       "keywords": "kyoto itinerary, kyoto 4 days, japan travel guide, fushimi inari, arashiyama",
       "articleSection": "Travel Guides",
@@ -89,19 +89,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Kyoto in 4 Days",
-          "item": "https://incredibleitinerary.com/blog/kyoto-4-days",
+          "item": "https://www.incredibleitinerary.com/blog/kyoto-4-days",
         },
       ],
     },
@@ -162,7 +162,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Kyoto, Japan",
       "description": "Japan's ancient capital with over 2,000 temples and shrines, traditional geisha districts, bamboo groves, and the finest examples of Japanese garden design.",
-      "url": "https://incredibleitinerary.com/blog/kyoto-4-days",
+      "url": "https://www.incredibleitinerary.com/blog/kyoto-4-days",
       "touristType": ["Cultural Tourism", "Temple Tourism", "Heritage Tourism"],
     },
   ],

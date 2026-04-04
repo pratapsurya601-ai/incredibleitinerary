@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/sikkim-6-days",
+    canonical: "https://www.incredibleitinerary.com/blog/sikkim-6-days",
   },
 };
 
@@ -51,7 +51,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/sikkim-6-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/sikkim-6-days#article",
       "headline": "Sikkim in 6 Days: Complete Itinerary from Gangtok to Pelling (Budget to Premium, 2026)",
       "description": "3 complete Sikkim plans — Budget, Comfortable, Premium — with day-by-day routes through Gangtok, Tsomgo Lake, Nathula Pass, Ravangla and Pelling.",
       "image": {
@@ -65,20 +65,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/sikkim-6-days",
+        "@id": "https://www.incredibleitinerary.com/blog/sikkim-6-days",
       },
       "keywords": "sikkim itinerary, sikkim 6 days, gangtok, nathula pass, pelling, tsomgo lake, ravangla, kangchenjunga",
       "articleSection": "Travel Guides",
@@ -92,19 +92,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Sikkim in 6 Days",
-          "item": "https://incredibleitinerary.com/blog/sikkim-6-days",
+          "item": "https://www.incredibleitinerary.com/blog/sikkim-6-days",
         },
       ],
     },
@@ -165,7 +165,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Sikkim, India",
       "description": "A small Himalayan state in northeast India known for its Buddhist monasteries, Kangchenjunga views, rhododendron forests, and organic farming. India's cleanest and one of its safest states.",
-      "url": "https://incredibleitinerary.com/blog/sikkim-6-days",
+      "url": "https://www.incredibleitinerary.com/blog/sikkim-6-days",
       "touristType": ["Mountain Tourism", "Cultural Tourism", "Adventure Tourism", "Eco Tourism"],
     },
   ],

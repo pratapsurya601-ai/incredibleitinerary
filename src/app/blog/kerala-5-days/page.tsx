@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "Kochi, Munnar, Alleppey backwaters, Varkala — 4 plans, real budgets.",
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },
-  alternates: { canonical: "https://incredibleitinerary.com/blog/kerala-5-days" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/blog/kerala-5-days" },
 };
 
 const jsonLd = {
@@ -40,14 +40,14 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/kerala-5-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/kerala-5-days#article",
       "headline": "Kerala in 5 Days: The Backwaters, Hills & Beach Guide (2026)",
       "description": "Complete Kerala itinerary — Kochi, Munnar, Alleppey backwaters and Varkala beach with 4 plans, real budgets and Google Maps routes.",
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80", "width": 1200, "height": 630 },
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
-      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "kerala itinerary, kerala 5 days, alleppey backwaters, munnar tea gardens, varkala beach",
       "wordCount": 5800,
       "articleSection": "Travel Guides",
@@ -56,9 +56,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog",  "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Kerala 5 Days", "item": "https://incredibleitinerary.com/blog/kerala-5-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog",  "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Kerala 5 Days", "item": "https://www.incredibleitinerary.com/blog/kerala-5-days" },
       ],
     },
     {
@@ -90,7 +90,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Kerala, India",
       "description": "India's southernmost coastal state — known as God's Own Country — famous for backwaters, tea gardens, spice plantations, Ayurveda and beaches.",
-      "url": "https://incredibleitinerary.com/blog/kerala-5-days",
+      "url": "https://www.incredibleitinerary.com/blog/kerala-5-days",
     },
   ],
 };

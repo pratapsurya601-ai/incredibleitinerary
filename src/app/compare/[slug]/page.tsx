@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const comparison = getComparisonBySlug(slug);
   if (!comparison) return {};
 
-  const url = `https://incredibleitinerary.com/compare/${slug}`;
+  const url = `https://www.incredibleitinerary.com/compare/${slug}`;
 
   return {
     title: `${comparison.title} | IncredibleItinerary`,
@@ -53,19 +53,19 @@ export default async function ComparisonPage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://incredibleitinerary.com",
+        item: "https://www.incredibleitinerary.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Compare Destinations",
-        item: "https://incredibleitinerary.com/compare",
+        item: "https://www.incredibleitinerary.com/compare",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: comparison.title,
-        item: `https://incredibleitinerary.com/compare/${slug}`,
+        item: `https://www.incredibleitinerary.com/compare/${slug}`,
       },
     ],
   };

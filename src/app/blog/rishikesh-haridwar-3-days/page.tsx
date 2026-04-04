@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1593765390540-1c3d1e0a8c3a?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
   },
 };
 
@@ -47,7 +47,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/rishikesh-haridwar-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/rishikesh-haridwar-3-days#article",
       "headline": "Rishikesh & Haridwar in 3 Days: Rafting, Yoga & Ganga Aarti (2026)",
       "description":
         "Complete Rishikesh and Haridwar itinerary with white water rafting, Beatles Ashram, Ganga Aarti at Har Ki Pauri and yoga retreats. 4 plans with real costs from Delhi.",
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
       },
       "keywords": "rishikesh itinerary, haridwar ganga aarti, rishikesh rafting, beatles ashram, yoga rishikesh",
       "articleSection": "Travel Guides",
@@ -89,19 +89,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Travel Guides",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Rishikesh & Haridwar in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
         },
       ],
     },
@@ -162,7 +162,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Rishikesh & Haridwar, Uttarakhand, India",
       "description": "Twin holy cities on the Ganges in the foothills of the Himalayas — Rishikesh is the Yoga Capital of the World and India's adventure sports hub, while Haridwar is one of the seven holiest cities in Hinduism.",
-      "url": "https://incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
       "touristType": ["Adventure Tourism", "Spiritual Tourism", "Wellness Tourism"],
     },
   ],

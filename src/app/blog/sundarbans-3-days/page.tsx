@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1596587984190-acc4b7257cfc?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/sundarbans-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/sundarbans-3-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/sundarbans-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/sundarbans-3-days#article",
       "headline": "Sundarbans in 3 Days: Complete Safari Guide (Budget to Premium Houseboat, 2026)",
       "description": "3 complete Sundarbans plans — Budget, Safari, Premium Houseboat — with boat routes, tiger reserve permits, best watchtowers and the mangrove experiences most tourists miss.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/sundarbans-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/sundarbans-3-days",
       },
       "keywords": "sundarbans itinerary, sundarbans 3 days, sundarbans safari, royal bengal tiger, mangrove forest, dobanki canopy walk",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Sundarbans in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/sundarbans-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/sundarbans-3-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Sundarbans, West Bengal, India",
       "description": "The world's largest mangrove forest and a UNESCO World Heritage Site, home to the Royal Bengal Tiger, spanning the delta of the Ganges, Brahmaputra, and Meghna rivers.",
-      "url": "https://incredibleitinerary.com/blog/sundarbans-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/sundarbans-3-days",
       "touristType": ["Wildlife Tourism", "Eco Tourism", "Adventure Tourism"],
     },
   ],

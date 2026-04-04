@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/jodhpur-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/jodhpur-3-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/jodhpur-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/jodhpur-3-days#article",
       "headline": "Jodhpur in 3 Days: Blue City Itinerary Guide (Budget to Royal, 2026)",
       "description": "3 complete Jodhpur plans — Budget, Heritage, Royal — with real timings, costs, Google Maps routes. Mehrangarh Fort, Blue City, Umaid Bhawan, Clock Tower food trail.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/jodhpur-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/jodhpur-3-days",
       },
       "keywords": "jodhpur itinerary, jodhpur 3 days, blue city, mehrangarh fort, umaid bhawan palace, clock tower market",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Jodhpur in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/jodhpur-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/jodhpur-3-days",
         },
       ],
     },
@@ -163,7 +163,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Jodhpur, Rajasthan, India",
       "description": "The Blue City of India, known for Mehrangarh Fort, blue-painted old city houses, Umaid Bhawan Palace, vibrant street food and Rajasthani heritage.",
-      "url": "https://incredibleitinerary.com/blog/jodhpur-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/jodhpur-3-days",
       "touristType": ["Cultural Tourism", "Heritage Tourism", "Adventure Tourism", "Food Tourism"],
     },
   ],

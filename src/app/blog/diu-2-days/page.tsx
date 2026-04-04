@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/diu-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/diu-2-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/diu-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/diu-2-days#article",
       "headline": "Diu in 2 Days: Complete Itinerary Guide (Budget & Comfortable, 2026)",
       "description": "2 complete Diu plans — Budget and Comfortable — with real timings, costs, Google Maps routes and the things nobody tells you about this hidden union territory.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/diu-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/diu-2-days",
       },
       "keywords": "diu itinerary, diu 2 days, diu travel guide, diu fort, naida caves, nagoa beach",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Diu in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/diu-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/diu-2-days",
         },
       ],
     },
@@ -163,7 +163,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Diu, India",
       "description": "A small island union territory off the coast of Gujarat, known for its Portuguese colonial architecture, pristine beaches, ancient forts, and unique status as a liquor-friendly enclave in dry Gujarat.",
-      "url": "https://incredibleitinerary.com/blog/diu-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/diu-2-days",
       "touristType": ["Beach Tourism", "Cultural Tourism", "Heritage Tourism"],
     },
   ],

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1597074866923-dc0589150e44?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/shimla-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/shimla-3-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/shimla-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/shimla-3-days#article",
       "headline": "Shimla in 3 Days: Complete Hill Station Guide (Budget to Premium, 2026)",
       "description": "3 complete Shimla plans — Budget, Family, Premium — with real timings, costs, toy train tips and the mistakes every first-timer makes.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/shimla-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/shimla-3-days",
       },
       "keywords": "shimla itinerary, shimla 3 days, shimla travel guide, mall road shimla, kalka shimla toy train, kufri",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Shimla in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/shimla-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/shimla-3-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Shimla, Himachal Pradesh, India",
       "description": "The former summer capital of British India, known for its colonial architecture, Mall Road promenade, snow-covered peaks, and the UNESCO-listed Kalka-Shimla toy train.",
-      "url": "https://incredibleitinerary.com/blog/shimla-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/shimla-3-days",
       "touristType": ["Hill Station Tourism", "Cultural Tourism", "Heritage Tourism"],
     },
   ],

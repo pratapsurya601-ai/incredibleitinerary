@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/pushkar-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/pushkar-2-days",
   },
 };
 
@@ -51,7 +51,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/pushkar-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/pushkar-2-days#article",
       "headline": "Pushkar in 2 Days: Brahma Temple, Lake Ghats & Camel Fair Guide (2026)",
       "description": "2 complete Pushkar plans — Budget and Comfortable — with real timings for Brahma Temple, Savitri Temple trek, Pushkar Lake, and Camel Fair.",
       "image": {
@@ -65,20 +65,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/pushkar-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/pushkar-2-days",
       },
       "keywords": "pushkar itinerary, brahma temple, pushkar lake, camel fair, savitri temple, ajmer dargah, rajasthan travel",
       "articleSection": "Travel Guides",
@@ -92,19 +92,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Pushkar in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/pushkar-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/pushkar-2-days",
         },
       ],
     },
@@ -165,7 +165,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Pushkar, Rajasthan, India",
       "description": "One of the oldest cities in India, home to the world's only Brahma Temple, the sacred Pushkar Lake, and the famous annual Camel Fair.",
-      "url": "https://incredibleitinerary.com/blog/pushkar-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/pushkar-2-days",
       "touristType": ["Religious Tourism", "Cultural Tourism", "Heritage Tourism", "Festival Tourism"],
     },
   ],

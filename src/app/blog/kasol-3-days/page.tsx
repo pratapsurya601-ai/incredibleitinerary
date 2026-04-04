@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/kasol-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/kasol-3-days",
   },
 };
 
@@ -51,7 +51,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/kasol-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/kasol-3-days#article",
       "headline": "Kasol & Kheerganga in 3 Days: Complete Parvati Valley Guide (Budget to Comfortable, 2026)",
       "description": "3 complete Kasol plans — Budget, Backpacker, Comfortable — with Kheerganga trek details, real costs, Tosh & Chalal walks, and the cafes worth finding.",
       "image": {
@@ -65,20 +65,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/kasol-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/kasol-3-days",
       },
       "keywords": "kasol itinerary, kheerganga trek, parvati valley, tosh village, kasol travel guide",
       "articleSection": "Travel Guides",
@@ -92,19 +92,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Kasol & Kheerganga in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/kasol-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/kasol-3-days",
         },
       ],
     },
@@ -165,7 +165,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Kasol, Parvati Valley, Himachal Pradesh",
       "description": "India's backpacker capital in the Parvati Valley, known for trekking, Israeli cafes, hot springs, and mountain village culture.",
-      "url": "https://incredibleitinerary.com/blog/kasol-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/kasol-3-days",
       "touristType": ["Adventure Tourism", "Trekking", "Backpacking", "Cultural Tourism"],
     },
   ],

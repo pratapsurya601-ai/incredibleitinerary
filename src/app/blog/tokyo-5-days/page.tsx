@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/tokyo-5-days",
+    canonical: "https://www.incredibleitinerary.com/blog/tokyo-5-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/tokyo-5-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/tokyo-5-days#article",
       "headline": "Tokyo in 5 Days: The Only Itinerary Guide You Need (Budget to Luxury, 2026)",
       "description": "3 complete Tokyo plans — Budget, Mid-Range, Luxury — with real timings, costs in yen and the mistakes every first-timer makes.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/tokyo-5-days",
+        "@id": "https://www.incredibleitinerary.com/blog/tokyo-5-days",
       },
       "keywords": "tokyo itinerary, tokyo 5 days, japan travel guide, shibuya crossing, shinjuku",
       "articleSection": "Travel Guides",
@@ -89,19 +89,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Tokyo in 5 Days",
-          "item": "https://incredibleitinerary.com/blog/tokyo-5-days",
+          "item": "https://www.incredibleitinerary.com/blog/tokyo-5-days",
         },
       ],
     },
@@ -162,7 +162,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Tokyo, Japan",
       "description": "Japan's capital and the world's largest metropolitan area, blending ancient temples with cutting-edge technology, world-class cuisine, and vibrant street culture.",
-      "url": "https://incredibleitinerary.com/blog/tokyo-5-days",
+      "url": "https://www.incredibleitinerary.com/blog/tokyo-5-days",
       "touristType": ["City Tourism", "Cultural Tourism", "Food Tourism"],
     },
   ],

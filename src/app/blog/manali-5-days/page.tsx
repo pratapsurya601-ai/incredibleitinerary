@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: "Solang Valley, Rohtang Pass, Old Manali — 4 plans, real costs, permit guide.",
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },
-  alternates: { canonical: "https://incredibleitinerary.com/blog/manali-5-days" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/blog/manali-5-days" },
 };
 
 const jsonLd = {
@@ -42,8 +42,8 @@ const jsonLd = {
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80" },
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
-      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "manali, solang valley, rohtang pass, old manali, himachal pradesh, manali snow",
       "wordCount": 5800,
       "articleSection": "Travel Guides",
@@ -52,9 +52,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Manali 5 Days", "item": "https://incredibleitinerary.com/blog/manali-5-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Manali 5 Days", "item": "https://www.incredibleitinerary.com/blog/manali-5-days" },
       ],
     },
     {
@@ -70,7 +70,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Manali, Himachal Pradesh, India",
       "description": "A popular hill station in the Kullu Valley — known for snow-covered mountains, Solang Valley adventure sports, Rohtang Pass, Old Manali's backpacker culture and as the gateway to Ladakh and Spiti.",
-      "url": "https://incredibleitinerary.com/blog/manali-5-days",
+      "url": "https://www.incredibleitinerary.com/blog/manali-5-days",
       "touristType": ["Adventure Tourism", "Snow Tourism", "Backpacker Tourism"],
     },
   ],

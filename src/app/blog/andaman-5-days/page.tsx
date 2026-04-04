@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: "Havelock, Neil Island, Port Blair — 4 plans, real budgets, ferry guide.",
     images: ["https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80"],
   },
-  alternates: { canonical: "https://incredibleitinerary.com/blog/andaman-5-days" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/blog/andaman-5-days" },
 };
 
 const jsonLd = {
@@ -41,8 +41,8 @@ const jsonLd = {
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80" },
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
-      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "andaman islands, havelock island, radhanagar beach, andaman scuba diving, neil island, port blair",
       "wordCount": 5500,
       "articleSection": "Travel Guides",
@@ -51,9 +51,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Andaman 5 Days", "item": "https://incredibleitinerary.com/blog/andaman-5-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Andaman 5 Days", "item": "https://www.incredibleitinerary.com/blog/andaman-5-days" },
       ],
     },
     {
@@ -81,7 +81,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Andaman Islands, India",
       "description": "India's tropical island archipelago in the Bay of Bengal — known for white sand beaches, coral reefs, scuba diving, and the historic Cellular Jail.",
-      "url": "https://incredibleitinerary.com/blog/andaman-5-days",
+      "url": "https://www.incredibleitinerary.com/blog/andaman-5-days",
     },
   ],
 };

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1609947017136-9daf32a15c38?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/dwarka-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/dwarka-2-days",
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/dwarka-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/dwarka-2-days#article",
       "headline": "Dwarka in 2 Days: Dwarkadhish Temple to Bet Dwarka Island (Budget to Pilgrimage, 2026)",
       "description": "2 complete Dwarka plans — Budget and Pilgrimage — with real timings, costs, Google Maps routes and the spots most tourists miss at Krishna's legendary kingdom on the Arabian Sea.",
       "image": {
@@ -64,20 +64,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/dwarka-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/dwarka-2-days",
       },
       "keywords": "dwarka itinerary, dwarkadhish temple, nageshwar jyotirlinga, bet dwarka, gomti ghat, dwarka 2 days",
       "articleSection": "Travel Guides",
@@ -93,19 +93,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Dwarka in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/dwarka-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/dwarka-2-days",
         },
       ],
     },
@@ -170,7 +170,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Dwarka, India",
       "description": "One of the four sacred Char Dham pilgrimage sites and the legendary kingdom of Lord Krishna, located on the western tip of Gujarat where the Gomti River meets the Arabian Sea. Home to the ancient Dwarkadhish Temple and the Nageshwar Jyotirlinga.",
-      "url": "https://incredibleitinerary.com/blog/dwarka-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/dwarka-2-days",
       "touristType": ["Pilgrimage Tourism", "Cultural Tourism", "Heritage Tourism"],
     },
   ],

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1609766857041-2924cf3a8ede?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/tawang-4-days",
+    canonical: "https://www.incredibleitinerary.com/blog/tawang-4-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/tawang-4-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/tawang-4-days#article",
       "headline": "Tawang in 4 Days: Complete Arunachal Pradesh Guide (Budget to Premium, 2026)",
       "description": "3 complete Tawang plans — Budget, Comfortable, Premium — with Tawang Monastery, Sela Pass, Madhuri Lake, Bumla Pass, real timings and costs.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/tawang-4-days",
+        "@id": "https://www.incredibleitinerary.com/blog/tawang-4-days",
       },
       "keywords": "tawang itinerary, tawang 4 days, tawang monastery, sela pass, madhuri lake, bumla pass, arunachal pradesh",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Tawang in 4 Days",
-          "item": "https://incredibleitinerary.com/blog/tawang-4-days",
+          "item": "https://www.incredibleitinerary.com/blog/tawang-4-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Tawang, Arunachal Pradesh, India",
       "description": "Home to India's largest Buddhist monastery, perched at 10,000ft in the eastern Himalayas. Known for Sela Pass, high-altitude lakes, the India-China border at Bumla, and the 1962 war memorial.",
-      "url": "https://incredibleitinerary.com/blog/tawang-4-days",
+      "url": "https://www.incredibleitinerary.com/blog/tawang-4-days",
       "touristType": ["Mountain Tourism", "Cultural Tourism", "Buddhist Tourism", "Adventure Tourism"],
     },
   ],

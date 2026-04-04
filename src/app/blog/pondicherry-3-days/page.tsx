@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/pondicherry-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/pondicherry-3-days",
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/pondicherry-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/pondicherry-3-days#article",
       "headline": "Pondicherry in 3 Days: Budget to Relaxed Itinerary Guide (2026)",
       "description": "3 complete Pondicherry plans — Budget, Couple, Relaxed — with real timings, costs, and the French Quarter tips no travel blog will tell you.",
       "image": {
@@ -64,20 +64,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/pondicherry-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/pondicherry-3-days",
       },
       "keywords": "pondicherry itinerary, pondicherry 3 days, french quarter, auroville, paradise beach, promenade beach",
       "articleSection": "Travel Guides",
@@ -93,19 +93,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Pondicherry in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/pondicherry-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/pondicherry-3-days",
         },
       ],
     },
@@ -170,7 +170,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Pondicherry (Puducherry), India",
       "description": "A former French colonial territory on India's southeast coast, known for its French Quarter, Auroville township, beaches, Sri Aurobindo Ashram, and unique Franco-Tamil cuisine.",
-      "url": "https://incredibleitinerary.com/blog/pondicherry-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/pondicherry-3-days",
       "touristType": ["Cultural Tourism", "Beach Tourism", "Spiritual Tourism"],
     },
   ],

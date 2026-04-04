@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/amritsar-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/amritsar-2-days",
   },
 };
 
@@ -51,7 +51,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/amritsar-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/amritsar-2-days#article",
       "headline": "Amritsar in 2 Days: Golden Temple, Wagah Border & the Best Street Food in India (2026)",
       "description": "2 complete Amritsar plans — Budget and Comfortable — with real timings for the Golden Temple, Wagah Border ceremony, Partition Museum, and street food guide.",
       "image": {
@@ -65,20 +65,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/amritsar-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/amritsar-2-days",
       },
       "keywords": "amritsar itinerary, golden temple, wagah border, amritsar street food, jallianwala bagh, partition museum",
       "articleSection": "Travel Guides",
@@ -92,19 +92,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Amritsar in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/amritsar-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/amritsar-2-days",
         },
       ],
     },
@@ -165,7 +165,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Amritsar, Punjab, India",
       "description": "The spiritual capital of Sikhism, home to the Golden Temple (Harmandir Sahib), the Wagah Border ceremony, and some of the best street food in India.",
-      "url": "https://incredibleitinerary.com/blog/amritsar-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/amritsar-2-days",
       "touristType": ["Religious Tourism", "Cultural Tourism", "Food Tourism", "Heritage Tourism"],
     },
   ],

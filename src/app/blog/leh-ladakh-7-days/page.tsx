@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: "Pangong Lake, Nubra Valley, Khardung La — 4 plans, acclimatisation guide, real costs.",
     images: ["https://images.unsplash.com/photo-1574482620826-903a9948f5cb?w=1200&q=80"],
   },
-  alternates: { canonical: "https://incredibleitinerary.com/blog/leh-ladakh-7-days" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/blog/leh-ladakh-7-days" },
 };
 
 const jsonLd = {
@@ -42,8 +42,8 @@ const jsonLd = {
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1574482620826-903a9948f5cb?w=1200&q=80" },
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
-      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "leh ladakh, pangong lake, nubra valley, khardung la, ladakh road trip, ladakh bike trip",
       "wordCount": 6500,
       "articleSection": "Travel Guides",
@@ -52,9 +52,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Leh Ladakh 7 Days", "item": "https://incredibleitinerary.com/blog/leh-ladakh-7-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Leh Ladakh 7 Days", "item": "https://www.incredibleitinerary.com/blog/leh-ladakh-7-days" },
       ],
     },
     {
@@ -82,7 +82,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Leh Ladakh, India",
       "description": "India's highest plateau region — a cold desert known for stunning high-altitude lakes, ancient Buddhist monasteries, the world's highest motorable passes and epic road trips.",
-      "url": "https://incredibleitinerary.com/blog/leh-ladakh-7-days",
+      "url": "https://www.incredibleitinerary.com/blog/leh-ladakh-7-days",
       "touristType": ["Adventure Tourism", "Cultural Tourism", "Road Trip Tourism"],
     },
   ],

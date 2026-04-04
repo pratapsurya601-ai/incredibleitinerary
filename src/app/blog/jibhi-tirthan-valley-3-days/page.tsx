@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1585087905632-6e3af9e60baf?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days#article",
       "headline": "Jibhi & Tirthan Valley in 3 Days: Himachal's Hidden Gem (2026)",
       "description":
         "Complete Jibhi and Tirthan Valley travel guide with Great Himalayan National Park, Jalori Pass, Serolsar Lake, trout fishing and authentic Himachali homestays.",
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
       },
       "keywords": "jibhi, tirthan valley, jalori pass, serolsar lake, great himalayan national park, himachal hidden gem",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Travel Guides",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Jibhi & Tirthan Valley in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
         },
       ],
     },
@@ -163,7 +163,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Jibhi & Tirthan Valley, Himachal Pradesh, India",
       "description": "A hidden gem in Himachal Pradesh's Kullu district — a peaceful valley known for traditional wooden homestays, trout-filled rivers, the Great Himalayan National Park, and Jalori Pass treks.",
-      "url": "https://incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
       "touristType": ["Eco Tourism", "Adventure Tourism", "Wellness Tourism"],
     },
   ],

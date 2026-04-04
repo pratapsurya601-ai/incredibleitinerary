@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/bangkok-4-days",
+    canonical: "https://www.incredibleitinerary.com/blog/bangkok-4-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/bangkok-4-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/bangkok-4-days#article",
       "headline": "Bangkok in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
       "description": "3 complete Bangkok plans — Budget, Mid-Range, Luxury — with real timings, costs in Thai Baht, temple routes, street food spots and the mistakes every first-timer makes.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/bangkok-4-days",
+        "@id": "https://www.incredibleitinerary.com/blog/bangkok-4-days",
       },
       "keywords": "bangkok itinerary, bangkok 4 days, bangkok travel guide, grand palace, chatuchak market, bangkok street food",
       "articleSection": "Travel Guides",
@@ -85,9 +85,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Bangkok in 4 Days", "item": "https://incredibleitinerary.com/blog/bangkok-4-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Bangkok in 4 Days", "item": "https://www.incredibleitinerary.com/blog/bangkok-4-days" },
       ],
     },
     {
@@ -147,7 +147,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Bangkok, Thailand",
       "description": "Thailand's capital city known for ornate temples, vibrant street food, floating markets, and a seamless blend of traditional culture and modern city life.",
-      "url": "https://incredibleitinerary.com/blog/bangkok-4-days",
+      "url": "https://www.incredibleitinerary.com/blog/bangkok-4-days",
       "touristType": ["Cultural Tourism", "Food Tourism", "Shopping Tourism"],
     },
   ],

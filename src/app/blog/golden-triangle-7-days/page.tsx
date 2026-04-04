@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: "Delhi, Agra, Jaipur — 4 plans, real budgets, Taj Mahal timing guide.",
     images: ["https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80"],
   },
-  alternates: { canonical: "https://incredibleitinerary.com/blog/golden-triangle-7-days" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/blog/golden-triangle-7-days" },
 };
 
 const jsonLd = {
@@ -41,14 +41,14 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/golden-triangle-7-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/golden-triangle-7-days#article",
       "headline": "Golden Triangle in 7 Days: Delhi, Agra & Jaipur (2026)",
       "description": "Complete Golden Triangle itinerary — Delhi, Agra and Jaipur with 4 plans, real budgets, Google Maps routes and the Taj Mahal timing guide.",
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80", "width": 1200, "height": 630 },
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
-      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "golden triangle, delhi agra jaipur, taj mahal, india itinerary, amber fort jaipur",
       "wordCount": 6200,
       "articleSection": "Travel Guides",
@@ -57,9 +57,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Golden Triangle 7 Days", "item": "https://incredibleitinerary.com/blog/golden-triangle-7-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Golden Triangle 7 Days", "item": "https://www.incredibleitinerary.com/blog/golden-triangle-7-days" },
       ],
     },
     {
@@ -91,7 +91,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Golden Triangle, India",
       "description": "India's most famous tourist circuit connecting Delhi, Agra and Jaipur — encompassing the Taj Mahal, Amber Fort, Red Fort and some of the world's greatest Mughal and Rajput heritage.",
-      "url": "https://incredibleitinerary.com/blog/golden-triangle-7-days",
+      "url": "https://www.incredibleitinerary.com/blog/golden-triangle-7-days",
     },
   ],
 };

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/phuket-5-days",
+    canonical: "https://www.incredibleitinerary.com/blog/phuket-5-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/phuket-5-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/phuket-5-days#article",
       "headline": "Phuket in 5 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
       "description": "3 complete Phuket plans — Budget, Mid-Range, Luxury — with Phi Phi Island, Phang Nga Bay, Old Town, real costs in Thai Baht and the mistakes every first-timer makes.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/phuket-5-days",
+        "@id": "https://www.incredibleitinerary.com/blog/phuket-5-days",
       },
       "keywords": "phuket itinerary, phuket 5 days, phi phi island, phang nga bay, james bond island, phuket beaches",
       "articleSection": "Travel Guides",
@@ -85,9 +85,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Phuket in 5 Days", "item": "https://incredibleitinerary.com/blog/phuket-5-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Phuket in 5 Days", "item": "https://www.incredibleitinerary.com/blog/phuket-5-days" },
       ],
     },
     {
@@ -147,7 +147,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Phuket, Thailand",
       "description": "Thailand's largest island known for stunning beaches, Phi Phi Island day trips, Phang Nga Bay limestone karsts, vibrant Old Town, and world-class diving.",
-      "url": "https://incredibleitinerary.com/blog/phuket-5-days",
+      "url": "https://www.incredibleitinerary.com/blog/phuket-5-days",
       "touristType": ["Beach Tourism", "Island Tourism", "Adventure Tourism", "Cultural Tourism"],
     },
   ],

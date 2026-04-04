@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1585063560582-52e578c02953?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/kaziranga-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/kaziranga-3-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/kaziranga-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/kaziranga-3-days#article",
       "headline": "Kaziranga in 3 Days: Safari Guide for Every Budget (2026)",
       "description": "3 complete Kaziranga plans — Budget, Safari-Focused, Premium Lodge — with safari booking tips, rhino sighting strategy, range-by-range breakdown and real costs.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/kaziranga-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/kaziranga-3-days",
       },
       "keywords": "kaziranga itinerary, kaziranga 3 days, kaziranga safari, one-horned rhinoceros, assam wildlife",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Kaziranga in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/kaziranga-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/kaziranga-3-days",
         },
       ],
     },
@@ -165,7 +165,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Kaziranga National Park, Assam, India",
       "description": "UNESCO World Heritage Site and home to two-thirds of the world's one-horned rhinoceros population, along with tigers, elephants, wild water buffalo, and over 480 bird species.",
-      "url": "https://incredibleitinerary.com/blog/kaziranga-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/kaziranga-3-days",
       "touristType": ["Wildlife Tourism", "Eco Tourism", "Nature Tourism"],
     },
   ],

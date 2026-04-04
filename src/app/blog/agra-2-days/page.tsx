@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/agra-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/agra-2-days",
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/agra-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/agra-2-days#article",
       "headline": "Agra in 2 Days: Taj Mahal Sunrise to Fatehpur Sikri (Budget to Luxury, 2026)",
       "description": "3 complete Agra plans — Budget, Heritage, Luxury — with sunrise timings, real costs, Google Maps routes and the tourist traps every first-timer falls for.",
       "image": {
@@ -64,20 +64,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/agra-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/agra-2-days",
       },
       "keywords": "agra itinerary, taj mahal sunrise, agra 2 days, agra fort, fatehpur sikri, mehtab bagh",
       "articleSection": "Travel Guides",
@@ -93,19 +93,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Agra in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/agra-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/agra-2-days",
         },
       ],
     },
@@ -170,7 +170,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Agra, India",
       "description": "Home to the Taj Mahal, Agra Fort, and Fatehpur Sikri — three UNESCO World Heritage Sites within a single city. The heart of Mughal architecture in India.",
-      "url": "https://incredibleitinerary.com/blog/agra-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/agra-2-days",
       "touristType": ["Cultural Tourism", "Heritage Tourism", "Historical Tourism"],
     },
   ],

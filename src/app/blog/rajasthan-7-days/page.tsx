@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: "4 plans, real timings, actual budgets, Google Maps routes.",
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/rajasthan-7-days",
+    canonical: "https://www.incredibleitinerary.com/blog/rajasthan-7-days",
   },
 };
 
@@ -47,7 +47,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/rajasthan-7-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/rajasthan-7-days#article",
       "headline": "Rajasthan in 7 Days: The Royal Circuit That Actually Works (Budget to Luxury, 2026)",
       "description": "The only Rajasthan itinerary you need — Jaipur, Jodhpur, Jaisalmer & Udaipur with 4 complete plans, real timings, budgets and Google Maps routes.",
       "image": {
@@ -61,12 +61,12 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "keywords": "rajasthan itinerary, 7 days rajasthan, jaipur jodhpur jaisalmer udaipur, amber fort, mehrangarh fort",
       "wordCount": 6000,
@@ -76,9 +76,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Rajasthan 7 Days", "item": "https://incredibleitinerary.com/blog/rajasthan-7-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Rajasthan 7 Days", "item": "https://www.incredibleitinerary.com/blog/rajasthan-7-days" },
       ],
     },
     {
@@ -138,7 +138,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Rajasthan, India",
       "description": "India's largest state, known as the Land of Kings, famous for its royal heritage, Thar Desert, magnificent forts, lake palaces and vibrant culture.",
-      "url": "https://incredibleitinerary.com/blog/rajasthan-7-days",
+      "url": "https://www.incredibleitinerary.com/blog/rajasthan-7-days",
     },
   ],
 };

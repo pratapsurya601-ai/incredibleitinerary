@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: "3 plans, real timings, actual budgets, best vegetarian food in India.",
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/gujarat-7-days",
+    canonical: "https://www.incredibleitinerary.com/blog/gujarat-7-days",
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/gujarat-7-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/gujarat-7-days#article",
       "headline": "Gujarat in 7 Days: India's Most Underrated State (Budget to Premium, 2026)",
       "description": "The complete Gujarat itinerary — Ahmedabad, Rann of Kutch, Gir National Park, Somnath & Diu with real budgets, timings, and the best vegetarian food in India.",
       "image": {
@@ -64,12 +64,12 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "keywords": "gujarat itinerary, 7 days gujarat, rann of kutch, gir national park, ahmedabad, somnath temple, dwarka, diu",
       "wordCount": 5500,
@@ -79,9 +79,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Gujarat 7 Days", "item": "https://incredibleitinerary.com/blog/gujarat-7-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Gujarat 7 Days", "item": "https://www.incredibleitinerary.com/blog/gujarat-7-days" },
       ],
     },
     {
@@ -141,7 +141,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Gujarat, India",
       "description": "India's westernmost state, home to the only wild Asiatic Lions at Gir, the surreal white salt desert of the Rann of Kutch, UNESCO heritage city of Ahmedabad, sacred temples of Somnath and Dwarka, and arguably the best vegetarian cuisine in the country.",
-      "url": "https://incredibleitinerary.com/blog/gujarat-7-days",
+      "url": "https://www.incredibleitinerary.com/blog/gujarat-7-days",
     },
   ],
 };

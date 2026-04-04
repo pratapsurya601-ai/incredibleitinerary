@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = { title: "Privacy Policy — IncredibleItinerary", alternates: { canonical: "https://incredibleitinerary.com/privacy" } };
+export const metadata: Metadata = { title: "Privacy Policy — IncredibleItinerary", alternates: { canonical: "https://www.incredibleitinerary.com/privacy" } };
 export default function PrivacyPage() {
   return (
     <main className="bg-cream min-h-screen pt-28 pb-20 px-6">

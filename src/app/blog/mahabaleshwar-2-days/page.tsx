@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/mahabaleshwar-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/mahabaleshwar-2-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/mahabaleshwar-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/mahabaleshwar-2-days#article",
       "headline": "Mahabaleshwar in 2 Days: Hill Station Itinerary with Viewpoints, Forts & Strawberry Farms (2026)",
       "description": "2 complete Mahabaleshwar plans — Budget and Weekend — with real timings, costs, viewpoint tips and the mistakes every first-timer makes.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/mahabaleshwar-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/mahabaleshwar-2-days",
       },
       "keywords": "mahabaleshwar itinerary, mahabaleshwar 2 days, arthurs seat, pratapgad fort, strawberry farms, western ghats",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Mahabaleshwar in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/mahabaleshwar-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/mahabaleshwar-2-days",
         },
       ],
     },
@@ -163,7 +163,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Mahabaleshwar, Maharashtra, India",
       "description": "Maharashtra's most popular hill station in the Western Ghats, famous for dramatic cliff viewpoints, strawberry farms, ancient temples, and the historic Pratapgad Fort.",
-      "url": "https://incredibleitinerary.com/blog/mahabaleshwar-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/mahabaleshwar-2-days",
       "touristType": ["Nature Tourism", "Hill Station", "Weekend Getaway", "Heritage Tourism"],
     },
   ],

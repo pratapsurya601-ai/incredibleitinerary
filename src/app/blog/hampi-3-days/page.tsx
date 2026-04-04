@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1600100317816-0a8b8a4fba14?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/hampi-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/hampi-3-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/hampi-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/hampi-3-days#article",
       "headline": "Hampi in 3 Days: Complete Guide to India's Most Surreal Landscape (2026)",
       "description":
         "Complete Hampi travel guide with Virupaksha Temple, Vittala Temple stone chariot, boulder treks, Sanapur Lake and hippie island. 4 plans for every type of traveller.",
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/hampi-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/hampi-3-days",
       },
       "keywords": "hampi itinerary, hampi 3 days, vittala temple, virupaksha temple, hampi bouldering, hippie island",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Travel Guides",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Hampi in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/hampi-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/hampi-3-days",
         },
       ],
     },
@@ -163,7 +163,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Hampi, Karnataka, India",
       "description": "A UNESCO World Heritage Site and the ruins of the Vijayanagara Empire, known for its surreal boulder landscape, ancient temples, and one of India's best backpacker scenes.",
-      "url": "https://incredibleitinerary.com/blog/hampi-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/hampi-3-days",
       "touristType": ["Heritage Tourism", "Cultural Tourism", "Adventure Tourism"],
     },
   ],

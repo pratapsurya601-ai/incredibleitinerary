@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/tools/trip-calculator",
+    canonical: "https://www.incredibleitinerary.com/tools/trip-calculator",
   },
 };
 
@@ -40,7 +40,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Trip Cost Calculator",
-  url: "https://incredibleitinerary.com/tools/trip-calculator",
+  url: "https://www.incredibleitinerary.com/tools/trip-calculator",
   description:
     "Free trip cost calculator for India, Thailand, Japan & Italy. Estimate accommodation, food, transport & activity costs across Budget, Mid-Range and Luxury tiers.",
   applicationCategory: "TravelApplication",
@@ -53,7 +53,7 @@ const jsonLd = {
   creator: {
     "@type": "Organization",
     name: "IncredibleItinerary",
-    url: "https://incredibleitinerary.com",
+    url: "https://www.incredibleitinerary.com",
   },
 };
 

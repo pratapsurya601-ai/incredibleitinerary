@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "India Travel Itinerary PDFs — Shop | IncredibleItinerary",
   description:
     "Download ready-made India travel itinerary PDFs. Goa 3-day guide, Rajasthan 7-day royal circuit, India budget guide — instant download after payment.",
-  alternates: { canonical: "https://incredibleitinerary.com/shop" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/shop" },
   openGraph: {
     title: "India Travel PDFs — Instant Download | IncredibleItinerary",
     description: "Ready-made itinerary PDFs for Goa, Rajasthan and India travel. Instant download.",
@@ -20,7 +20,7 @@ const jsonLd = [
     "@type": "Store",
     name: "IncredibleItinerary Shop",
     description: "Digital travel itinerary PDFs for India",
-    url: "https://incredibleitinerary.com/shop",
+    url: "https://www.incredibleitinerary.com/shop",
     currenciesAccepted: "INR",
     paymentAccepted: "Credit Card, UPI, Net Banking",
     priceRange: "₹149 - ₹299",
@@ -30,7 +30,7 @@ const jsonLd = [
     "@type": "Product",
     name: p.title,
     description: p.subtitle,
-    url: `https://incredibleitinerary.com/shop#${p.id}`,
+    url: `https://www.incredibleitinerary.com/shop#${p.id}`,
     offers: {
       "@type": "Offer",
       price: p.price,

@@ -25,16 +25,16 @@ export const metadata: Metadata = {
     description:
       "Select your passport and destination to instantly see visa requirements, costs, processing times and what you need to apply.",
     type: "website",
-    url: "https://incredibleitinerary.com/tools/visa-checker",
+    url: "https://www.incredibleitinerary.com/tools/visa-checker",
   },
-  alternates: { canonical: "https://incredibleitinerary.com/tools/visa-checker" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/tools/visa-checker" },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Visa Checker",
-  url: "https://incredibleitinerary.com/tools/visa-checker",
+  url: "https://www.incredibleitinerary.com/tools/visa-checker",
   description:
     "Check visa requirements for any destination based on your passport country. Covers visa-free travel, eVisa, visa on arrival and embassy visa information.",
   applicationCategory: "TravelApplication",
@@ -47,7 +47,7 @@ const jsonLd = {
   author: {
     "@type": "Organization",
     name: "IncredibleItinerary",
-    url: "https://incredibleitinerary.com",
+    url: "https://www.incredibleitinerary.com",
   },
 };
 

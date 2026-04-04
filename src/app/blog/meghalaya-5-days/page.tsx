@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["https://images.pexels.com/photos/2104882/pexels-photo-2104882.jpeg?auto=compress&w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/meghalaya-5-days",
+    canonical: "https://www.incredibleitinerary.com/blog/meghalaya-5-days",
   },
 };
 
@@ -52,7 +52,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/meghalaya-5-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/meghalaya-5-days#article",
       "headline": "Meghalaya in 5 Days: Complete Itinerary Guide (Budget to Premium, 2026)",
       "description": "3 complete Meghalaya plans — Budget, Comfortable, Premium — with real timings, costs, and the honest advice most travel blogs skip.",
       "image": {
@@ -66,20 +66,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/meghalaya-5-days",
+        "@id": "https://www.incredibleitinerary.com/blog/meghalaya-5-days",
       },
       "keywords": "meghalaya itinerary, meghalaya 5 days, cherrapunji, living root bridges, dawki river, shillong, mawlynnong",
       "articleSection": "Travel Guides",
@@ -95,19 +95,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Meghalaya in 5 Days",
-          "item": "https://incredibleitinerary.com/blog/meghalaya-5-days",
+          "item": "https://www.incredibleitinerary.com/blog/meghalaya-5-days",
         },
       ],
     },
@@ -172,7 +172,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Meghalaya, India",
       "description": "The Abode of Clouds — India's northeastern gem known for living root bridges, the wettest place on earth, crystal-clear rivers, sacred forests, and the matrilineal Khasi culture.",
-      "url": "https://incredibleitinerary.com/blog/meghalaya-5-days",
+      "url": "https://www.incredibleitinerary.com/blog/meghalaya-5-days",
       "touristType": ["Adventure Tourism", "Eco Tourism", "Cultural Tourism", "Nature Tourism"],
     },
   ],

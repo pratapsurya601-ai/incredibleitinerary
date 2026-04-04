@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1598977580666-2a2e33f1e1f6?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/spiti-valley-7-days",
+    canonical: "https://www.incredibleitinerary.com/blog/spiti-valley-7-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/spiti-valley-7-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/spiti-valley-7-days#article",
       "headline": "Spiti Valley in 7 Days: The Complete Road Trip Guide (2026)",
       "description":
         "Complete Spiti Valley travel guide with Key Monastery, Chandratal Lake, Kaza, Pin Valley and Kunzum Pass. Manali to Spiti circuit with real costs and permit guide.",
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/spiti-valley-7-days",
+        "@id": "https://www.incredibleitinerary.com/blog/spiti-valley-7-days",
       },
       "keywords": "spiti valley, key monastery, chandratal lake, kaza, kunzum pass, manali to spiti",
       "articleSection": "Travel Guides",
@@ -90,19 +90,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Travel Guides",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Spiti Valley in 7 Days",
-          "item": "https://incredibleitinerary.com/blog/spiti-valley-7-days",
+          "item": "https://www.incredibleitinerary.com/blog/spiti-valley-7-days",
         },
       ],
     },
@@ -163,7 +163,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Spiti Valley, Himachal Pradesh, India",
       "description": "A remote high-altitude desert valley in the Himalayas, known for ancient Buddhist monasteries, dramatic mountain passes, and some of the most stunning landscapes in India.",
-      "url": "https://incredibleitinerary.com/blog/spiti-valley-7-days",
+      "url": "https://www.incredibleitinerary.com/blog/spiti-valley-7-days",
       "touristType": ["Adventure Tourism", "Cultural Tourism", "Road Trip Tourism"],
     },
   ],

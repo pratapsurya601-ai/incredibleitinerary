@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Dal Lake houseboat, Gulmarg snow, Pahalgam valleys — 4 plans, real budgets.",
     images: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"],
   },
-  alternates: { canonical: "https://incredibleitinerary.com/blog/kashmir-6-days" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/blog/kashmir-6-days" },
 };
 
 const jsonLd = {
@@ -35,8 +35,8 @@ const jsonLd = {
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" },
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
-      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "kashmir, srinagar, dal lake, gulmarg, pahalgam, kashmir houseboat, kashmir honeymoon",
       "wordCount": 6000,
       "articleSection": "Travel Guides",
@@ -45,9 +45,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Kashmir 6 Days", "item": "https://incredibleitinerary.com/blog/kashmir-6-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Kashmir 6 Days", "item": "https://www.incredibleitinerary.com/blog/kashmir-6-days" },
       ],
     },
     {
@@ -63,7 +63,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Kashmir, India",
       "description": "Paradise on Earth — India's northernmost region known for Dal Lake houseboats, snow-covered Gulmarg, the green valleys of Pahalgam and Sonamarg, and Mughal gardens.",
-      "url": "https://incredibleitinerary.com/blog/kashmir-6-days",
+      "url": "https://www.incredibleitinerary.com/blog/kashmir-6-days",
       "touristType": ["Snow Tourism", "Honeymoon Tourism", "Adventure Tourism"],
     },
   ],

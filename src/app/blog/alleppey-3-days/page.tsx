@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/alleppey-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/alleppey-3-days",
   },
 };
 
@@ -51,7 +51,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/alleppey-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/alleppey-3-days#article",
       "headline": "Alleppey in 3 Days: Houseboats, Backwaters & Beaches (Budget to Luxury, 2026)",
       "description": "3 complete Alleppey plans — Budget, Couple, Luxury Houseboat — with real timings, costs, Google Maps routes and insider tips for Kerala's backwater capital.",
       "image": {
@@ -65,20 +65,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/alleppey-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/alleppey-3-days",
       },
       "keywords": "alleppey itinerary, alleppey 3 days, alleppey houseboat, kerala backwaters, marari beach, alappuzha",
       "articleSection": "Travel Guides",
@@ -93,19 +93,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Alleppey in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/alleppey-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/alleppey-3-days",
         },
       ],
     },
@@ -168,7 +168,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Alleppey (Alappuzha), Kerala, India",
       "description": "Known as the Venice of the East, Alleppey is Kerala's backwater capital famous for houseboat cruises, canoe rides through narrow canals, palm-fringed waterways, and pristine beaches.",
-      "url": "https://incredibleitinerary.com/blog/alleppey-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/alleppey-3-days",
       "touristType": ["Backwater Tourism", "Beach Tourism", "Cultural Tourism", "Eco Tourism"],
     },
   ],

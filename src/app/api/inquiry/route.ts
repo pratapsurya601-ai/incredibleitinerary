@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const YOUR_EMAIL = "hello@incredibleitinerary.com";
 const RESEND_KEY = process.env.RESEND_API_KEY || "";
-const BASE       = "https://incredibleitinerary.com";
+const BASE       = "https://www.incredibleitinerary.com";
 
 // ── security helpers ────────────────────────────────────────────────────────
 function sanitize(str: string): string {

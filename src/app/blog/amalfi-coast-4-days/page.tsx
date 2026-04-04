@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/amalfi-coast-4-days",
+    canonical: "https://www.incredibleitinerary.com/blog/amalfi-coast-4-days",
   },
 };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/amalfi-coast-4-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/amalfi-coast-4-days#article",
       "headline": "Amalfi Coast in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
       "description": "3 complete Amalfi Coast plans — Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, Path of the Gods tips and the mistakes every first-timer makes.",
       "image": {
@@ -62,20 +62,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/amalfi-coast-4-days",
+        "@id": "https://www.incredibleitinerary.com/blog/amalfi-coast-4-days",
       },
       "keywords": "amalfi coast itinerary, amalfi coast 4 days, positano, ravello, path of the gods, capri day trip",
       "articleSection": "Travel Guides",
@@ -85,9 +85,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Amalfi Coast in 4 Days", "item": "https://incredibleitinerary.com/blog/amalfi-coast-4-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Amalfi Coast in 4 Days", "item": "https://www.incredibleitinerary.com/blog/amalfi-coast-4-days" },
       ],
     },
     {
@@ -147,7 +147,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Amalfi Coast, Italy",
       "description": "A UNESCO World Heritage coastline in southern Italy, famous for its dramatic cliffs, colourful villages, lemon groves, and Mediterranean cuisine.",
-      "url": "https://incredibleitinerary.com/blog/amalfi-coast-4-days",
+      "url": "https://www.incredibleitinerary.com/blog/amalfi-coast-4-days",
       "touristType": ["Coastal Tourism", "Hiking Tourism", "Food & Wine Tourism"],
     },
   ],

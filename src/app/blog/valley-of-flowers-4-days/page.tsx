@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/valley-of-flowers-4-days",
+    canonical: "https://www.incredibleitinerary.com/blog/valley-of-flowers-4-days",
   },
 };
 
@@ -52,7 +52,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/valley-of-flowers-4-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/valley-of-flowers-4-days#article",
       "headline": "Valley of Flowers in 4 Days: Trek Guide, Hemkund Sahib & Wildflower Season (2026)",
       "description": "3 complete Valley of Flowers plans — Budget Trek, Comfortable, Guided — with real costs, trek route, 600+ wildflower species, and Hemkund Sahib guide.",
       "image": {
@@ -66,20 +66,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/valley-of-flowers-4-days",
+        "@id": "https://www.incredibleitinerary.com/blog/valley-of-flowers-4-days",
       },
       "keywords": "valley of flowers trek, hemkund sahib, ghangaria, govindghat, uttarakhand wildflowers, nanda devi biosphere, bhyundar valley, UNESCO world heritage",
       "articleSection": "Travel Guides",
@@ -95,19 +95,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Valley of Flowers in 4 Days",
-          "item": "https://incredibleitinerary.com/blog/valley-of-flowers-4-days",
+          "item": "https://www.incredibleitinerary.com/blog/valley-of-flowers-4-days",
         },
       ],
     },
@@ -172,7 +172,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Valley of Flowers National Park, Uttarakhand, India",
       "description": "UNESCO World Heritage Site in the Nanda Devi Biosphere Reserve, known for its 600+ species of wildflowers, alpine meadows in Bhyundar Valley, and proximity to Hemkund Sahib gurdwara at 4,632m.",
-      "url": "https://incredibleitinerary.com/blog/valley-of-flowers-4-days",
+      "url": "https://www.incredibleitinerary.com/blog/valley-of-flowers-4-days",
       "touristType": ["Trekking", "Nature Tourism", "Eco Tourism", "Adventure Tourism"],
     },
   ],

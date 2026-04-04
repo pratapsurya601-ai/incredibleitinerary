@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1600011247426-3bca6e68e678?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/lonavala-2-days",
+    canonical: "https://www.incredibleitinerary.com/blog/lonavala-2-days",
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/lonavala-2-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/lonavala-2-days#article",
       "headline": "Lonavala in 2 Days: Complete Hill Station Guide (Budget & Weekend, 2026)",
       "description": "2 complete Lonavala plans — Budget and Weekend Getaway — with real timings, costs, monsoon tips, trek routes, and the spots most tourists miss.",
       "image": {
@@ -63,20 +63,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/lonavala-2-days",
+        "@id": "https://www.incredibleitinerary.com/blog/lonavala-2-days",
       },
       "keywords": "lonavala itinerary, lonavala 2 days, lonavala travel guide, bhushi dam, rajmachi fort trek, karla caves",
       "articleSection": "Travel Guides",
@@ -91,19 +91,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Lonavala in 2 Days",
-          "item": "https://incredibleitinerary.com/blog/lonavala-2-days",
+          "item": "https://www.incredibleitinerary.com/blog/lonavala-2-days",
         },
       ],
     },
@@ -166,7 +166,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Lonavala, Maharashtra, India",
       "description": "A popular hill station in the Western Ghats of Maharashtra, known for its monsoon beauty, ancient Buddhist caves, Shivaji-era forts, and proximity to Mumbai and Pune.",
-      "url": "https://incredibleitinerary.com/blog/lonavala-2-days",
+      "url": "https://www.incredibleitinerary.com/blog/lonavala-2-days",
       "touristType": ["Hill Station Tourism", "Adventure Tourism", "Cultural Tourism", "Weekend Getaway"],
     },
   ],

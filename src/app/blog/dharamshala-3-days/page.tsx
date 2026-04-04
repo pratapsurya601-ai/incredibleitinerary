@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },
   alternates: {
-    canonical: "https://incredibleitinerary.com/blog/dharamshala-3-days",
+    canonical: "https://www.incredibleitinerary.com/blog/dharamshala-3-days",
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
     // Article schema
     {
       "@type": "Article",
-      "@id": "https://incredibleitinerary.com/blog/dharamshala-3-days#article",
+      "@id": "https://www.incredibleitinerary.com/blog/dharamshala-3-days#article",
       "headline": "Dharamshala & McLeodGanj in 3 Days: Budget to Spiritual Retreat Guide (2026)",
       "description": "3 complete Dharamshala plans — Budget, Comfortable, Spiritual — with real costs, Triund trek tips, Tibetan food spots, and monastery timings.",
       "image": {
@@ -64,20 +64,20 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
       },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",
-        "url": "https://incredibleitinerary.com",
+        "url": "https://www.incredibleitinerary.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://incredibleitinerary.com/logo.png",
+          "url": "https://www.incredibleitinerary.com/logo.png",
         },
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://incredibleitinerary.com/blog/dharamshala-3-days",
+        "@id": "https://www.incredibleitinerary.com/blog/dharamshala-3-days",
       },
       "keywords": "dharamshala itinerary, mcleodganj 3 days, triund trek, dalai lama temple, dharamkot, tibetan food",
       "articleSection": "Travel Guides",
@@ -93,19 +93,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://incredibleitinerary.com",
+          "item": "https://www.incredibleitinerary.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://incredibleitinerary.com/blog",
+          "item": "https://www.incredibleitinerary.com/blog",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Dharamshala & McLeodGanj in 3 Days",
-          "item": "https://incredibleitinerary.com/blog/dharamshala-3-days",
+          "item": "https://www.incredibleitinerary.com/blog/dharamshala-3-days",
         },
       ],
     },
@@ -170,7 +170,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Dharamshala & McLeodGanj, Himachal Pradesh, India",
       "description": "Hill station in the Kangra Valley known as the residence of the Dalai Lama, Tibetan Buddhist monasteries, Himalayan treks, and a thriving cafe culture blending Indian and Tibetan influences.",
-      "url": "https://incredibleitinerary.com/blog/dharamshala-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/dharamshala-3-days",
       "touristType": ["Cultural Tourism", "Spiritual Tourism", "Adventure Tourism", "Trekking"],
     },
   ],

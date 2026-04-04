@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Dashashwamedh Ghat, Manikarnika, Sarnath, morning Ganges boat ride.",
     images: ["https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80"],
   },
-  alternates: { canonical: "https://incredibleitinerary.com/blog/varanasi-3-days" },
+  alternates: { canonical: "https://www.incredibleitinerary.com/blog/varanasi-3-days" },
 };
 
 const jsonLd = {
@@ -35,8 +35,8 @@ const jsonLd = {
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80" },
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
-      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://incredibleitinerary.com" },
+      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "varanasi, ganga aarti, kashi vishwanath, varanasi ghats, sarnath, ganges boat ride",
       "wordCount": 5000,
       "articleSection": "Travel Guides",
@@ -45,9 +45,9 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://incredibleitinerary.com" },
-        { "@type": "ListItem", "position": 2, "name": "Travel Guides", "item": "https://incredibleitinerary.com/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Varanasi in 3 Days", "item": "https://incredibleitinerary.com/blog/varanasi-3-days" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.incredibleitinerary.com" },
+        { "@type": "ListItem", "position": 2, "name": "Travel Guides", "item": "https://www.incredibleitinerary.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Varanasi in 3 Days", "item": "https://www.incredibleitinerary.com/blog/varanasi-3-days" },
       ],
     },
     {
@@ -63,7 +63,7 @@ const jsonLd = {
       "@type": "TouristDestination",
       "name": "Varanasi, Uttar Pradesh, India",
       "description": "One of the oldest continuously inhabited cities in the world and the spiritual capital of India — known for the ghats along the Ganges, the evening Ganga Aarti, Kashi Vishwanath Temple and the nearby Buddhist pilgrimage site of Sarnath.",
-      "url": "https://incredibleitinerary.com/blog/varanasi-3-days",
+      "url": "https://www.incredibleitinerary.com/blog/varanasi-3-days",
       "touristType": ["Spiritual Tourism", "Cultural Tourism", "Heritage Tourism"],
     },
   ],
