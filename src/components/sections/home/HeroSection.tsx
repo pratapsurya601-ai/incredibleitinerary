@@ -33,66 +33,51 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
       <div className="absolute inset-0"
         style={{ background: `linear-gradient(to bottom, rgba(10,6,2,0.75) 0%, rgba(10,6,2,0.50) 35%, rgba(10,6,2,0.55) 65%, rgba(10,6,2,0.92) 100%)` }} />
 
-      <div className="relative z-10 max-w-[840px] px-6 pt-28 pb-16 mx-auto w-full">
+      <div className="relative z-10 max-w-[840px] px-6 pt-32 pb-20 mx-auto w-full">
 
-        {/* Hook badge — the pattern interrupt */}
-        <div className="inline-flex items-center gap-2.5 bg-red-500/20 backdrop-blur-sm border border-red-400/40 rounded-full px-4 py-2 mb-7" style={{ animation: "fadeUp .7s .1s both" }}>
-          <span className="text-red-400 text-base leading-none">⚠</span>
-          <span className="text-[0.7rem] tracking-[0.12em] uppercase text-red-200 font-medium">Most Indian travellers overpay by ₹3,000–₹5,000 per trip</span>
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-gold/15 backdrop-blur-sm border border-gold/30 rounded-full px-4 py-2 mb-8" style={{ animation: "fadeUp .7s .1s both" }}>
+          <span className="text-[0.7rem] tracking-[0.12em] uppercase text-gold font-medium">59 Free India Travel Guides</span>
         </div>
 
-        {/* Headline — problem → solution */}
-        <h1 className="font-serif text-[clamp(2.8rem,7vw,5.6rem)] font-light text-white leading-[1.05] mb-5" style={{ animation: "fadeUp .8s .2s both" }}>
-          Stop Using Generic<br />
-          <em className="italic text-gold-light">Itineraries. Start Saving.</em>
+        {/* Headline */}
+        <h1 className="font-serif text-[clamp(2.6rem,6.5vw,5rem)] font-light text-white leading-[1.08] mb-6" style={{ animation: "fadeUp .8s .2s both" }}>
+          Plan India Like<br />
+          <em className="italic text-gold-light">a Local. Save Thousands.</em>
         </h1>
 
-        {/* Subline — specific, visceral */}
-        <p className="text-[1.05rem] text-white/80 font-light max-w-[520px] mx-auto mb-2 leading-relaxed" style={{ animation: "fadeUp .8s .32s both" }}>
-          Free, handcrafted India itineraries that tell you <strong className="text-white font-medium">exactly</strong> where you&apos;re being overcharged — and the better, cheaper alternatives locals actually use.
-        </p>
-        <p className="text-sm text-gold-light/80 font-light mb-2" style={{ animation: "fadeUp .8s .38s both" }}>
-          Built for Indian travellers · 500+ trips planned · 24hr reply
-        </p>
-        {/* Credibility line */}
-        <p className="text-[0.75rem] text-white/55 font-light mb-3" style={{ animation: "fadeUp .8s .41s both" }}>
-          Free to plan. No obligation. Just great trips.
-        </p>
-        <p className="text-[0.68rem] text-white/35 tracking-[0.14em] uppercase mb-10" style={{ animation: "fadeUp .8s .44s both" }}>
-          Goa · Rajasthan · Kashmir · Kerala · Andaman · Varanasi · Golden Triangle
+        {/* One clear subline */}
+        <p className="text-lg text-white/75 font-light max-w-[540px] mx-auto mb-10 leading-relaxed" style={{ animation: "fadeUp .8s .35s both" }}>
+          Day-by-day itineraries with real prices, local tips, and the tourist traps to avoid. Personalised for your dates and budget.
         </p>
 
-        {/* Trip style selector */}
-        <div style={{ animation: "fadeUp .8s .52s both" }}>
-          <p className="text-[0.65rem] tracking-[0.2em] uppercase text-white/40 mb-3">🧭 What kind of trip are you planning?</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 max-w-[640px] mx-auto mb-8">
-            {STYLES.map((s) => (
-              <Link key={s.id} href={s.href}
-                onMouseEnter={() => setHovered(s.id)} onMouseLeave={() => setHovered(null)}
-                className={`flex flex-col items-center gap-1.5 py-4 px-3 rounded-xl border-2 transition-all duration-200 backdrop-blur-sm ${
-                  hovered === s.id ? "bg-gold border-gold text-ink scale-[1.04] shadow-xl" : "bg-white/10 border-white/20 text-white hover:bg-white/15"
-                }`}>
-                <span className="text-2xl">{s.emoji}</span>
-                <span className="font-medium text-sm">{s.label}</span>
-                <span className={`text-[0.62rem] ${hovered === s.id ? "text-ink/60" : "text-white/50"}`}>{s.sub}</span>
-              </Link>
-            ))}
-          </div>
+        {/* Trip style cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-[640px] mx-auto mb-10" style={{ animation: "fadeUp .8s .5s both" }}>
+          {STYLES.map((s) => (
+            <Link key={s.id} href={s.href}
+              onMouseEnter={() => setHovered(s.id)} onMouseLeave={() => setHovered(null)}
+              className={`flex flex-col items-center gap-1.5 py-4 px-3 rounded-xl border transition-all duration-200 backdrop-blur-sm ${
+                hovered === s.id ? "bg-gold border-gold text-ink scale-[1.03] shadow-xl" : "bg-white/8 border-white/15 text-white hover:bg-white/12 hover:border-white/25"
+              }`}>
+              <span className="text-2xl">{s.emoji}</span>
+              <span className="font-medium text-sm">{s.label}</span>
+            </Link>
+          ))}
         </div>
 
         {/* CTAs */}
-        <div className="flex gap-3 justify-center flex-wrap" style={{ animation: "fadeUp .8s .62s both" }}>
+        <div className="flex gap-3 justify-center flex-wrap" style={{ animation: "fadeUp .8s .65s both" }}>
           <button onClick={onPlanTrip} className="btn-gold text-[0.85rem] px-9 py-4 shadow-[0_8px_32px_rgba(201,169,110,0.4)]">
-            Fix My Itinerary — Free →
+            Plan My Trip &rarr;
           </button>
-          <Link href="/quiz" className="inline-flex items-center gap-2 px-8 py-4 border border-white/30 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold hover:bg-white/5 transition-all duration-300 backdrop-blur-sm">
-            Where Should I Go? ✦
+          <Link href="/blog" className="inline-flex items-center gap-2 px-8 py-4 border border-white/25 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold hover:bg-white/5 transition-all duration-300 backdrop-blur-sm">
+            Browse 59 Guides
           </Link>
         </div>
 
-        {/* Micro proof */}
-        <p className="text-[0.62rem] text-white/30 mt-5 font-light" style={{ animation: "fadeUp .8s .72s both" }}>
-          No account · No credit card · Priya saved ₹4,200 on her Rajasthan trip last month
+        {/* One trust line */}
+        <p className="text-[0.65rem] text-white/35 mt-6 font-light tracking-wide" style={{ animation: "fadeUp .8s .8s both" }}>
+          500+ trips planned &middot; 24hr reply &middot; Completely free
         </p>
       </div>
 

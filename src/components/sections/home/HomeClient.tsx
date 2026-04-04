@@ -6,29 +6,22 @@ import Footer from "@/components/layout/Footer";
 import { trackEvent } from "@/lib/analytics";
 import HeroSection from "./HeroSection";
 import TrustStripSection from "./TrustStripSection";
-import WhyDifferentSection from "./WhyDifferentSection";
 import SampleItinerarySection from "./SampleItinerarySection";
 import HowItWorksSection from "./HowItWorksSection";
 import Testimonials from "@/components/sections/Testimonials";
 
 // Lazy-load below-the-fold sections
-const DestinationGridSection = dynamic(() => import("./DestinationGridSection"), {
-  loading: () => <div className="bg-cream py-20 animate-pulse" style={{ minHeight: 400 }} />,
-});
-const MonetizationSection = dynamic(() => import("./MonetizationSection"), {
-  loading: () => <div className="bg-ink py-20 animate-pulse" style={{ minHeight: 400 }} />,
+const IndiaMapSection = dynamic(() => import("./IndiaMapSection"), {
+  loading: () => <div className="bg-ink py-20 animate-pulse" style={{ minHeight: 500 }} />,
 });
 const HomepageFAQ = dynamic(() => import("@/components/sections/HomepageFAQ"), {
   loading: () => <div className="bg-cream py-20 animate-pulse" style={{ minHeight: 300 }} />,
 });
-const FinalCTASection = dynamic(() => import("./FinalCTASection"), {
-  loading: () => <div className="bg-ink py-24 animate-pulse" style={{ minHeight: 300 }} />,
-});
 const NewsletterSection = dynamic(() => import("./NewsletterSection"), {
   loading: () => <div className="bg-parchment py-16 animate-pulse" style={{ minHeight: 200 }} />,
 });
-const IndiaMapSection = dynamic(() => import("./IndiaMapSection"), {
-  loading: () => <div className="bg-ink py-20 animate-pulse" style={{ minHeight: 500 }} />,
+const FinalCTASection = dynamic(() => import("./FinalCTASection"), {
+  loading: () => <div className="bg-ink py-24 animate-pulse" style={{ minHeight: 300 }} />,
 });
 const InquiryModal = dynamic(() => import("@/components/ui/InquiryModal"), { ssr: false });
 
@@ -41,13 +34,10 @@ export default function HomeClient() {
       <main id="main-content">
         <HeroSection onPlanTrip={open} />
         <TrustStripSection />
-        <WhyDifferentSection onPlanTrip={open} />
         <SampleItinerarySection onPlanTrip={open} />
         <HowItWorksSection onPlanTrip={open} />
-        <Testimonials />
-        <DestinationGridSection />
         <IndiaMapSection />
-        <MonetizationSection onPlanTrip={open} />
+        <Testimonials />
         <HomepageFAQ />
         <NewsletterSection />
         <FinalCTASection onPlanTrip={open} />
