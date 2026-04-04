@@ -58,5 +58,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/wayanad-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/pushkar-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.84 },
     { url: `${base}/blog/madurai-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.86 },
+    { url: `${base}/blog/hyderabad-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${base}/blog/vizag-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.84 },
+    { url: `${base}/blog/kanyakumari-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/rameswaram-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.84 },
+    { url: `${base}/blog/mount-abu-2-days`, lastModified: now, changeFrequency: "monthly", priority: 0.84 },
   ];
 }
