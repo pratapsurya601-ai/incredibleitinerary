@@ -8,6 +8,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 
@@ -660,6 +661,7 @@ export default function CorbettClient() {
             </div>
           </section>
 
+          <AffiliateBlock destination="Jim Corbett" />
           <RelatedGuides currentSlug="jim-corbett-3-days" />
         </div>
       </main>

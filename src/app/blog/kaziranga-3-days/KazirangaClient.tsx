@@ -8,6 +8,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 
@@ -684,6 +685,7 @@ export default function KazirangaClient() {
             </div>
           </section>
 
+          <AffiliateBlock destination="Kaziranga" />
           <RelatedGuides currentSlug="kaziranga-3-days" />
         </div>
       </main>
