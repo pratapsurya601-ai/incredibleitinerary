@@ -23,7 +23,6 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
     { href: "/tools/trip-calculator",      label: "Cost Calc" },
     { href: "/tools/currency-converter",   label: "Converter" },
     { href: "/tools/packing-list",         label: "Packing" },
-    { href: "/compare/thailand-vs-bali",   label: "Compare" },
     { href: "/shop",                       label: "Shop" },
     { href: "/about",                      label: "About" },
   ];

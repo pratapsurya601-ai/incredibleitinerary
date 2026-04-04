@@ -148,7 +148,7 @@ export default function ContactClient() {
             </p>
             {/* Trust bar */}
             <div className="flex items-center justify-center gap-6 flex-wrap text-xs text-muted">
-              {["✦ Free service", "⚡ 24hr response", "🇮🇳 India specialists", "500+ trips planned"].map(t => (
+              {["✦ Free service", "⚡ 24hr response", "🇮🇳 India specialists", "96+ free guides"].map(t => (
                 <span key={t}>{t}</span>
               ))}
             </div>

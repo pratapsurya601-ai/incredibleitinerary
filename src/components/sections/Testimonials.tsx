@@ -40,15 +40,15 @@ export default function Testimonials() {
           <h2 className="font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-light text-ink mb-3">
             Real trips. Real savings.<em className="italic text-gold-dark"> Real reviews.</em>
           </h2>
-          <p className="text-sm text-muted font-light max-w-[400px] mx-auto">From solo first-timers to families of six — over 500 trips planned and counting.</p>
+          <p className="text-sm text-muted font-light max-w-[400px] mx-auto">From solo first-timers to families of six — real travellers, real experiences.</p>
         </AnimatedSection>
 
         {/* Trust bar */}
         <AnimatedSection delay={100}>
           <div className="flex items-center justify-center gap-5 md:gap-8 flex-wrap mb-12 py-4 px-6 bg-white rounded-2xl border border-parchment-2 shadow-sm">
             {[
-              { icon: "✅", val: "500+", sub: "Trips Planned" },
-              { icon: "🌍", val: "68", sub: "Destinations" },
+              { icon: "🌍", val: "96+", sub: "Destinations" },
+              { icon: "🗺️", val: "12", sub: "Countries" },
               { icon: "📖", val: "Free", sub: "All Guides" },
               { icon: "⚡", val: "24hr", sub: "Response" },
             ].map((s, i) => (
@@ -86,7 +86,7 @@ export default function Testimonials() {
 
         <AnimatedSection delay={200}>
           <p className="text-center text-[0.68rem] text-muted uppercase tracking-[0.15em] font-light mt-10">
-            Our guides have been read by <strong className="text-ink font-medium not-italic">12,000+ travellers</strong> across India and internationally
+            Covering 96+ destinations across 12 countries — free guides, real detail, no fluff
           </p>
         </AnimatedSection>
 

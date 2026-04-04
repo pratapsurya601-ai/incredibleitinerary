@@ -11,8 +11,8 @@ export default function AboutClient() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const stats = [
-    { num: "500+", label: "Trips Planned" },
-    { num: "4+", label: "Years Experience" },
+    { num: "96+", label: "Free Guides" },
+    { num: "12", label: "Countries Covered" },
     { num: "24hr", label: "Response Time" },
     { num: "100%", label: "Personalised" },
   ];

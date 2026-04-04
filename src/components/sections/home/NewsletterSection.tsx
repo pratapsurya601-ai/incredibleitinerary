@@ -77,7 +77,7 @@ export default function NewsletterSection() {
           )}
 
           <p className="text-[0.6rem] text-muted/40 mt-4 font-light">
-            12,000+ travellers read our guides &middot; Free forever &middot; No spam
+            96+ free destination guides &middot; New content added regularly &middot; No spam
           </p>
         </FadeIn>
       </div>

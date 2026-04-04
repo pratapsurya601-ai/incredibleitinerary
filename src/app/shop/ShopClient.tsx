@@ -249,12 +249,10 @@ export default function ShopClient() {
             </div>
             <div className="flex gap-3 justify-center flex-wrap">
               <a
-                href="https://gumroad.com/l/YOUR_BUNDLE_ID"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="btn-gold inline-flex"
               >
-                Buy Bundle — ₹449 →
+                Get Bundle — ₹449 →
               </a>
               <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip →</a>
             </div>
