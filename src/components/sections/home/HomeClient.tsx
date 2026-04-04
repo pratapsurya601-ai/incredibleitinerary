@@ -6,11 +6,10 @@ import Footer from "@/components/layout/Footer";
 import { trackEvent } from "@/lib/analytics";
 import HeroSection from "./HeroSection";
 import TrustStripSection from "./TrustStripSection";
-import SampleItinerarySection from "./SampleItinerarySection";
+import PopularDestinations from "./PopularDestinations";
 import HowItWorksSection from "./HowItWorksSection";
 import Testimonials from "@/components/sections/Testimonials";
 
-// Lazy-load below-the-fold sections
 const IndiaMapSection = dynamic(() => import("./IndiaMapSection"), {
   loading: () => <div className="bg-ink py-20 animate-pulse" style={{ minHeight: 500 }} />,
 });
@@ -21,7 +20,7 @@ const NewsletterSection = dynamic(() => import("./NewsletterSection"), {
   loading: () => <div className="bg-parchment py-16 animate-pulse" style={{ minHeight: 200 }} />,
 });
 const FinalCTASection = dynamic(() => import("./FinalCTASection"), {
-  loading: () => <div className="bg-ink py-24 animate-pulse" style={{ minHeight: 300 }} />,
+  loading: () => <div className="bg-ink py-24 animate-pulse" style={{ minHeight: 250 }} />,
 });
 const InquiryModal = dynamic(() => import("@/components/ui/InquiryModal"), { ssr: false });
 
@@ -34,7 +33,7 @@ export default function HomeClient() {
       <main id="main-content">
         <HeroSection onPlanTrip={open} />
         <TrustStripSection />
-        <SampleItinerarySection onPlanTrip={open} />
+        <PopularDestinations />
         <HowItWorksSection onPlanTrip={open} />
         <IndiaMapSection />
         <Testimonials />
