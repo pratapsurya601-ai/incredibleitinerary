@@ -226,7 +226,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/havana-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // USA (more)
     { url: `${base}/blog/san-francisco-4-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
-    { url: `${base}/blog/chicago-3-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/chicago-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/new-orleans-4-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/seattle-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/grand-canyon-3-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Italy (more)
+    { url: `${base}/blog/venice-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.93 },
+    { url: `${base}/blog/sicily-7-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/cinque-terre-3-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Spain (more)
+    { url: `${base}/blog/granada-4-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Middle East
+    { url: `${base}/blog/jerusalem-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // South America (more)
+    { url: `${base}/blog/galapagos-7-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Caribbean (more)
+    { url: `${base}/blog/jamaica-5-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // South Korea
+    { url: `${base}/blog/busan-4-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // China (more)
+    { url: `${base}/blog/shanghai-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Canada (more)
+    { url: `${base}/blog/vancouver-4-days`,     lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
