@@ -87,18 +87,9 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
           ))}
         </div>
 
-        {/* CTAs */}
-        <div className="flex gap-3 justify-center flex-wrap" style={{ animation: "fadeUp .8s .75s both" }}>
-          <button onClick={onPlanTrip} className="btn-gold text-sm px-8 py-3.5 shadow-[0_8px_32px_rgba(201,169,110,0.4)]">
-            Get Free Custom Plan &rarr;
-          </button>
-          <Link href="/blog" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/25 text-white text-[0.78rem] font-light tracking-[0.08em] uppercase rounded-[1px] hover:border-gold hover:bg-white/5 transition-all backdrop-blur-sm">
-            Browse All 59 Guides
-          </Link>
-        </div>
-
-        <p className="text-[0.62rem] text-white/30 mt-5 font-light tracking-wide" style={{ animation: "fadeUp .8s .9s both" }}>
-          500+ trips planned &middot; 24hr reply &middot; Completely free
+        {/* Trust line */}
+        <p className="text-[0.65rem] text-white/35 font-light tracking-wide" style={{ animation: "fadeUp .8s .75s both" }}>
+          500+ trips planned &middot; 59 destinations &middot; 24hr reply &middot; Completely free
         </p>
       </div>
 
