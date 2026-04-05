@@ -442,42 +442,44 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
           </section>
         </div>
 
-        <DestinationGallery
-          title={`${data.destination} — Must-See Places`}
-          subtitle={data.intro ? data.intro.split('.')[0] + '.' : `Explore the best of ${data.destination}, ${data.country}`}
-          spots={[
-            { name: `${data.destination} Highlights`, query: data.galleryQuery || data.heroQuery, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The iconic sights and unmissable experiences of ${data.destination}.` },
-            { name: `${data.destination} Landscapes`, query: `${data.heroQuery} scenic landscape nature`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The natural scenery that makes ${data.destination} unforgettable.` },
-            { name: `${data.destination} Architecture`, query: `${data.destination} ${data.country} architecture historic landmark`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `Historic landmarks and architectural wonders of ${data.destination}.` },
-            { name: `${data.destination} Food & Culture`, query: `${data.destination} ${data.country} local food culture market`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `Local cuisine, markets, and cultural life in ${data.destination}.` },
-            { name: `${data.destination} Streets & Life`, query: `${data.destination} ${data.country} street life people vibrant`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The everyday atmosphere and street character of ${data.destination}.` },
-          ]}
-        />
-        <AffiliateBlock
-          destination={data.destination}
-          hotels={(() => {
-            const rows = data.budgetTable;
-            const tiers = [
-              { idx: 0, name: `Budget Stay in ${data.destination}`, rating: "3", badge: "Best Value" },
-              { idx: Math.floor(rows.length / 2), name: `Mid-Range Hotel in ${data.destination}`, rating: "4", badge: "Most Popular" },
-              { idx: rows.length - 1, name: `Luxury Hotel in ${data.destination}`, rating: "5" },
-            ];
-            return tiers.map(({ idx, name, rating, badge }) => {
-              const row = rows[idx] || rows[0];
-              const acc = row?.accommodation || "";
-              const priceRaw = acc.split("(")[0].trim();
-              const typeRaw = acc.includes("(") ? acc.replace(/^[^(]+\(/, "").replace(/\)$/, "") : "Hotel";
-              return { name, type: typeRaw, price: priceRaw, rating, url: AFFILIATE.bookingCom(data.destination), badge };
-            });
-          })()}
-          activities={[
-            { name: `Top-Rated Tours in ${data.destination}`, duration: "Half or full day", price: "From $25", url: AFFILIATE.getYourGuide(data.destination), badge: "Bestseller" },
-            { name: `${data.destination} City Highlights Tour`, duration: "3–4 hours", price: "From $15", url: AFFILIATE.getYourGuide(data.destination) },
-          ]}
-        />
-        <CombineWith currentSlug={data.slug} />
-        <RelatedGuides currentSlug={data.slug} />
-        <Comments />
+        <div className="max-w-[860px] mx-auto px-6 md:px-8 pb-20">
+          <DestinationGallery
+            title={`${data.destination} — Must-See Places`}
+            subtitle={data.intro ? data.intro.split('.')[0] + '.' : `Explore the best of ${data.destination}, ${data.country}`}
+            spots={[
+              { name: `${data.destination} Highlights`, query: data.galleryQuery || data.heroQuery, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The iconic sights and unmissable experiences of ${data.destination}.` },
+              { name: `${data.destination} Landscapes`, query: `${data.heroQuery} scenic landscape nature`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The natural scenery that makes ${data.destination} unforgettable.` },
+              { name: `${data.destination} Architecture`, query: `${data.destination} ${data.country} architecture historic landmark`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `Historic landmarks and architectural wonders of ${data.destination}.` },
+              { name: `${data.destination} Food & Culture`, query: `${data.destination} ${data.country} local food culture market`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `Local cuisine, markets, and cultural life in ${data.destination}.` },
+              { name: `${data.destination} Streets & Life`, query: `${data.destination} ${data.country} street life people vibrant`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The everyday atmosphere and street character of ${data.destination}.` },
+            ]}
+          />
+          <AffiliateBlock
+            destination={data.destination}
+            hotels={(() => {
+              const rows = data.budgetTable;
+              const tiers = [
+                { idx: 0, name: `Budget Stay in ${data.destination}`, rating: "3", badge: "Best Value" },
+                { idx: Math.floor(rows.length / 2), name: `Mid-Range Hotel in ${data.destination}`, rating: "4", badge: "Most Popular" },
+                { idx: rows.length - 1, name: `Luxury Hotel in ${data.destination}`, rating: "5" },
+              ];
+              return tiers.map(({ idx, name, rating, badge }) => {
+                const row = rows[idx] || rows[0];
+                const acc = row?.accommodation || "";
+                const priceRaw = acc.split("(")[0].trim();
+                const typeRaw = acc.includes("(") ? acc.replace(/^[^(]+\(/, "").replace(/\)$/, "") : "Hotel";
+                return { name, type: typeRaw, price: priceRaw, rating, url: AFFILIATE.bookingCom(data.destination), badge };
+              });
+            })()}
+            activities={[
+              { name: `Top-Rated Tours in ${data.destination}`, duration: "Half or full day", price: "From $25", url: AFFILIATE.getYourGuide(data.destination), badge: "Bestseller" },
+              { name: `${data.destination} City Highlights Tour`, duration: "3–4 hours", price: "From $15", url: AFFILIATE.getYourGuide(data.destination) },
+            ]}
+          />
+          <CombineWith currentSlug={data.slug} />
+          <RelatedGuides currentSlug={data.slug} />
+          <Comments />
+        </div>
       </main>
 
       <Footer />
