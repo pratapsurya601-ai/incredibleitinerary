@@ -5,7 +5,7 @@ const MAX_FREE = 2;
 const SECRET = process.env.DOWNLOAD_SECRET || "dev-secret-please-change";
 
 // Available guides
-const VALID_SLUGS = ["rajasthan-7-days"];
+const VALID_SLUGS = ["rajasthan-7-days", "kerala-5-days"];
 
 // ── Token generation (15-min windows, valid for 30 min) ──────────────────────
 function generateToken(slug: string): string {

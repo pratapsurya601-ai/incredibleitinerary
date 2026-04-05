@@ -27,10 +27,19 @@ const AVAILABLE = [
     href: "/blog/rajasthan-7-days",
     country: "India",
   },
+  {
+    slug: "kerala-5-days",
+    title: "Kerala 5 Days",
+    sub: "Kochi · Munnar · Alleppey · Varkala",
+    emoji: "🌊",
+    pages: 10,
+    includes: ["Houseboat booking guide", "Budget table (₹15k–₹1L)", "Packing list", "Route maps"],
+    href: "/blog/kerala-5-days",
+    country: "India",
+  },
 ];
 
 const COMING_SOON = [
-  { emoji: "🌊", title: "Kerala 6 Days",     sub: "Munnar · Alleppey · Kovalam",       country: "India" },
   { emoji: "🎭", title: "Goa 5 Days",        sub: "North · South · Hinterland",         country: "India" },
   { emoji: "🏔️", title: "Kashmir 6 Days",   sub: "Srinagar · Gulmarg · Pahalgam",      country: "India" },
   { emoji: "⛰️", title: "Manali 5 Days",    sub: "Solang · Rohtang · Old Manali",      country: "India" },

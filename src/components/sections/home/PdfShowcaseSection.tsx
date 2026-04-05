@@ -13,13 +13,13 @@ const GUIDES = [
     available: true,
   },
   {
-    slug: "kerala-6-days",
-    title: "Kerala 6 Days",
-    sub: "Munnar · Alleppey · Kovalam",
+    slug: "kerala-5-days",
+    title: "Kerala 5 Days",
+    sub: "Kochi · Munnar · Alleppey · Varkala",
     emoji: "🌊",
     pages: "10 pages",
-    tag: "Coming soon",
-    available: false,
+    tag: "Available now",
+    available: true,
   },
   {
     slug: "goa-5-days",
