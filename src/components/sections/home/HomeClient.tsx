@@ -9,6 +9,7 @@ import TrustStripSection from "./TrustStripSection";
 import PopularDestinations from "./PopularDestinations";
 import HowItWorksSection from "./HowItWorksSection";
 import Testimonials from "@/components/sections/Testimonials";
+import PdfShowcaseSection from "./PdfShowcaseSection";
 
 const IndiaMapSection = dynamic(() => import("./IndiaMapSection"), {
   loading: () => <div className="bg-ink py-20 animate-pulse" style={{ minHeight: 500 }} />,
@@ -37,6 +38,7 @@ export default function HomeClient() {
         <HowItWorksSection onPlanTrip={open} />
         <IndiaMapSection />
         <Testimonials />
+        <PdfShowcaseSection />
         <HomepageFAQ />
         <NewsletterSection />
         <FinalCTASection onPlanTrip={open} />
