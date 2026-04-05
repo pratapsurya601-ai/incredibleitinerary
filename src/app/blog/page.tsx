@@ -535,7 +535,11 @@ export default function BlogIndexPage() {
   );
 }
 
+// Slugs that have a downloadable PDF guide
+const PDF_SLUGS = new Set(["rajasthan-7-days"]);
+
 function BlogCard({ post }: { post: ListingPost }) {
+  const hasPdf = PDF_SLUGS.has(post.slug);
   return (
     <div className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block">
       <Link href={`/blog/${post.slug}`} className="block">
@@ -555,6 +559,11 @@ function BlogCard({ post }: { post: ListingPost }) {
           <span className="absolute top-2.5 right-2.5 text-xs font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">
             {post.duration}
           </span>
+          {hasPdf && (
+            <span className="absolute top-2.5 left-2.5 flex items-center gap-1 bg-ink/80 backdrop-blur-sm text-white text-[0.6rem] font-medium px-2 py-1 rounded-full border border-white/10">
+              📄 PDF Guide
+            </span>
+          )}
         </div>
         <div className="p-5">
           <div className="flex items-center gap-2 mb-2.5">
@@ -577,9 +586,25 @@ function BlogCard({ post }: { post: ListingPost }) {
           </div>
         </div>
       </Link>
-      {/* Share row */}
+      {/* Share + PDF row */}
       <div className="px-5 pb-4 flex items-center justify-between border-t border-parchment-2/50 pt-3">
-        <span className="text-[0.65rem] text-muted/60 font-light">Share this guide</span>
+        {hasPdf ? (
+          <Link
+            href={`/blog/${post.slug}#pdf`}
+            className="flex items-center gap-1 text-[0.65rem] font-medium text-gold-dark hover:text-gold transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+              className="w-3 h-3" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Free PDF
+          </Link>
+        ) : (
+          <span className="text-[0.65rem] text-muted/60 font-light">Share this guide</span>
+        )}
         <ShareButton title={post.title} slug={post.slug} />
       </div>
     </div>
