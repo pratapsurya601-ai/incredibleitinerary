@@ -3,7 +3,10 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import Script from "next/script";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import EmailCaptureWrapper from "@/components/email/EmailCaptureWrapper";
+import { blogPosts } from "@/data/blog";
 import "./globals.css";
+
+const _count = blogPosts.length;
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -30,9 +33,9 @@ export const metadata: Metadata = {
     google: "BmoxUjBfGA7mVKr8qayc8cxC7_ND1hdJOEb6zaxloSA",
     other: { "msvalidate.01": ["32471722DA608250B1B461D6531492B0"] },
   },
-  title: "IncredibleItinerary — 284 Free Travel Guides Worldwide",
+  title: `IncredibleItinerary — ${_count} Free Travel Guides Worldwide`,
   description:
-    "Free, detailed travel guides for India, Thailand, Japan, Italy, Vietnam, Greece, Turkey, Portugal, Malaysia & more. 284 destination itineraries with real prices, local tips, and day-by-day plans. Skip the tourist traps.",
+    `Free, detailed travel guides for India, Thailand, Japan, Italy, Vietnam, Greece, Turkey, Portugal, Malaysia & more. ${_count} destination itineraries with real prices, local tips, and day-by-day plans. Skip the tourist traps.`,
   keywords: [
     "travel itinerary",
     "India travel guide",
@@ -50,9 +53,9 @@ export const metadata: Metadata = {
     "custom travel planner",
   ],
   openGraph: {
-    title: "IncredibleItinerary — 284 Free Travel Guides Worldwide",
+    title: `IncredibleItinerary — ${_count} Free Travel Guides Worldwide`,
     description:
-      "284 free travel guides across India, Thailand, Japan, Italy, Indonesia, UAE, Spain, Vietnam, Greece, Turkey, Portugal & Malaysia. Real prices, local tips, day-by-day itineraries.",
+      `${_count} free travel guides across India, Thailand, Japan, Italy, Indonesia, UAE, Spain, Vietnam, Greece, Turkey, Portugal & Malaysia. Real prices, local tips, day-by-day itineraries.`,
     url: "https://www.incredibleitinerary.com",
     siteName: "IncredibleItinerary",
     type: "website",
@@ -68,7 +71,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "IncredibleItinerary — Free Travel Guides Worldwide",
-    description: "284 free travel guides across India, Thailand, Japan, Indonesia, UAE, Spain, Italy, Vietnam, Greece, Turkey, Portugal & more.",
+    description: `${_count} free travel guides across India, Thailand, Japan, Indonesia, UAE, Spain, Italy, Vietnam, Greece, Turkey, Portugal & more.`,
   },
   robots: {
     index: true,
@@ -127,7 +130,7 @@ export default function RootLayout({
               name: "IncredibleItinerary",
               url: "https://www.incredibleitinerary.com",
               logo: "https://www.incredibleitinerary.com/logo.png",
-              description: "284 free travel guides across India, Japan, Thailand, Italy, Bali, Dubai, Greece & 50+ countries. Real prices, day-by-day itineraries, local tips.",
+              description: `${_count} free travel guides across India, Japan, Thailand, Italy, Bali, Dubai, Greece & 50+ countries. Real prices, day-by-day itineraries, local tips.`,
               sameAs: [
                 "https://instagram.com/incredibleitinerary",
                 "https://facebook.com/incredibleitinerary",

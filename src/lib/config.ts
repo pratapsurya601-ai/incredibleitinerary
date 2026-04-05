@@ -1,6 +1,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // SITE CONFIGURATION — edit this file to update your details everywhere
 // ─────────────────────────────────────────────────────────────────────────────
+import { blogPosts } from "@/data/blog";
 
 export const SITE_CONFIG = {
   // ── Contact ────────────────────────────────────────────────────────────────
@@ -18,7 +19,7 @@ export const SITE_CONFIG = {
 
   // ── Business ───────────────────────────────────────────────────────────────
   foundedYear: "2024",
-  guidesPublished: "284+",
+  guidesPublished: `${blogPosts.length}+`,
   responseTime: "24 hours",
 };
 

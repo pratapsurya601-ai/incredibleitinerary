@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
+import { blogPosts } from "@/data/blog";
 
 const BLOGS = [
   { name: "Kashmir",        emoji: "🏔️", days: "6 Days", budget: "From ₹18k", href: "/blog/kashmir-6-days",        img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=75", tag: "Heaven on Earth" },
@@ -26,7 +27,7 @@ export default function DestinationGridSection() {
           <div>
             <span className="section-label">Free itinerary guides</span>
             <h2 className="font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-light text-ink">
-              284+ destinations.<br /><em className="italic text-teal">All free. All detailed.</em>
+              {blogPosts.length}+ destinations.<br /><em className="italic text-teal">All free. All detailed.</em>
             </h2>
           </div>
           <Link href="/blog" className="text-[0.72rem] tracking-[0.12em] uppercase text-gold-dark border-b border-gold-dark pb-0.5 hover:text-ink transition-colors">

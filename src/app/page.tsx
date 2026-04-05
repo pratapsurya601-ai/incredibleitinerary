@@ -1,4 +1,7 @@
 import HomeClient from "@/components/sections/home/HomeClient";
+import { blogPosts } from "@/data/blog";
+
+const _count = blogPosts.length;
 
 export default function Home() {
   return (
@@ -11,7 +14,7 @@ export default function Home() {
             "@type": "WebSite",
             name: "IncredibleItinerary",
             url: "https://www.incredibleitinerary.com",
-            description: "284 free travel guides across 50+ countries — India, Japan, Thailand, Italy, Bali, Dubai, Greece & more. Real prices, local tips, day-by-day itineraries.",
+            description: `${_count} free travel guides across 50+ countries — India, Japan, Thailand, Italy, Bali, Dubai, Greece & more. Real prices, local tips, day-by-day itineraries.`,
             potentialAction: {
               "@type": "SearchAction",
               target: "https://www.incredibleitinerary.com/blog?q={search_term_string}",

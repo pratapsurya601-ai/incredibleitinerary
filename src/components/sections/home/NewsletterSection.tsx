@@ -2,6 +2,7 @@
 import { useState } from "react";
 import FadeIn from "@/components/ui/FadeIn";
 import { trackEvent } from "@/lib/analytics";
+import { blogPosts } from "@/data/blog";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -43,7 +44,7 @@ export default function NewsletterSection() {
           {status === "success" ? (
             <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
               <p className="text-lg text-green-800 font-medium mb-1">You&apos;re in! &#x1f389;</p>
-              <p className="text-sm text-green-700 font-light">Check your inbox — we just sent you links to all 19 free destination guides.</p>
+              <p className="text-sm text-green-700 font-light">Check your inbox — we just sent you links to our free destination guides.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
@@ -77,7 +78,7 @@ export default function NewsletterSection() {
           )}
 
           <p className="text-[0.6rem] text-muted/40 mt-4 font-light">
-            96+ free destination guides &middot; New content added regularly &middot; No spam
+            {blogPosts.length}+ free destination guides &middot; New content added regularly &middot; No spam
           </p>
         </FadeIn>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { blogPosts } from "@/data/blog";
 
 const REVIEWS = [
   { name: "Priya Sharma", initials: "PS", trip: "Royal Rajasthan Circuit", month: "Feb 2026", rating: 5, text: "I was quoted ₹18,000 for a Jaipur–Jodhpur package. The IncredibleItinerary plan showed me the same trip for ₹13,800 — and it was better, no forced shopping stops. Amber Fort at 6am with nobody else there was extraordinary.", color: "bg-amber-50 border-amber-100" },
@@ -47,8 +48,8 @@ export default function Testimonials() {
         <AnimatedSection delay={100}>
           <div className="flex items-center justify-center gap-5 md:gap-8 flex-wrap mb-12 py-4 px-6 bg-white rounded-2xl border border-parchment-2 shadow-sm">
             {[
-              { icon: "🌍", val: "96+", sub: "Destinations" },
-              { icon: "🗺️", val: "12", sub: "Countries" },
+              { icon: "🌍", val: `${blogPosts.length}+`, sub: "Destinations" },
+              { icon: "🗺️", val: "50+", sub: "Countries" },
               { icon: "📖", val: "Free", sub: "All Guides" },
               { icon: "⚡", val: "24hr", sub: "Response" },
             ].map((s, i) => (
@@ -86,7 +87,7 @@ export default function Testimonials() {
 
         <AnimatedSection delay={200}>
           <p className="text-center text-[0.68rem] text-muted uppercase tracking-[0.15em] font-light mt-10">
-            Covering 96+ destinations across 12 countries — free guides, real detail, no fluff
+            Covering {blogPosts.length}+ destinations across 50+ countries — free guides, real detail, no fluff
           </p>
         </AnimatedSection>
 
