@@ -12,6 +12,7 @@ interface GallerySpot {
   name: string;
   query: string;
   desc: string;
+  fallback?: string;
 }
 
 interface DestinationGalleryProps {
@@ -47,9 +48,13 @@ export default function DestinationGallery({
                 photographer: data.photographer || "",
                 pexelsUrl: data.pexels_url || "",
               };
+            } else if (spot.fallback) {
+              results[spot.name] = { url: spot.fallback, alt: spot.name, photographer: "", pexelsUrl: "" };
             }
           } catch {
-            // silently skip failed photos
+            if (spot.fallback) {
+              results[spot.name] = { url: spot.fallback, alt: spot.name, photographer: "", pexelsUrl: "" };
+            }
           }
         })
       );
