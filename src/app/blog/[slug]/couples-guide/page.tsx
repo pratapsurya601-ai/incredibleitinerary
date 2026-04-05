@@ -5,6 +5,7 @@ import { blogPosts, getPostBySlug } from "@/data/blog";
 import { getDestinationMeta } from "@/data/destinationMeta";
 import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "../BlogSlugNav";
+import { BlogPostSchema } from "@/components/SchemaMarkup";
 
 interface Props {
   params: { slug: string };
@@ -42,6 +43,7 @@ export default function CouplesGuidePage({ params }: Props) {
 
   return (
     <>
+      <BlogPostSchema post={post} />
       <BlogSlugNav />
       <main className="pt-[72px] bg-cream min-h-screen">
 

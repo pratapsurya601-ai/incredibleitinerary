@@ -85,6 +85,40 @@ export default function BlogPostPage({ params }: Props) {
           </>
         )}
 
+        {/* Related Guides */}
+        {!PostContent && (() => {
+          const related = getRelatedPosts(post.slug, post);
+          if (!related.length) return null;
+          return (
+            <div className="bg-parchment border-t border-parchment-2 py-14 px-6 md:px-12">
+              <div className="max-w-[860px] mx-auto">
+                <p className="text-[0.65rem] tracking-[0.18em] uppercase text-gold font-medium mb-2">You Might Also Like</p>
+                <h2 className="font-serif text-xl font-light text-ink mb-6">Related Destination Guides</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {related.map((r) => (
+                    <Link
+                      key={r.slug}
+                      href={`/blog/${r.slug}`}
+                      className="group block rounded-xl overflow-hidden border border-parchment-2 hover:border-gold hover:shadow-md transition-all duration-300 bg-white"
+                    >
+                      <div className="relative h-28 overflow-hidden">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={r.image} alt={r.imageAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                        <p className="absolute bottom-2 left-3 font-serif text-sm text-white font-light">{r.destination}</p>
+                      </div>
+                      <div className="p-3">
+                        <p className="text-[0.65rem] text-muted font-light">{r.duration} · {r.category}</p>
+                        <p className="text-xs text-gold-dark font-medium mt-1 group-hover:text-teal transition-colors">Read guide →</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
         {/* Share bar */}
         <div className="border-t border-parchment-2 bg-white py-5 px-6 md:px-12">
           <div className="max-w-[780px] mx-auto flex items-center justify-between flex-wrap gap-4">
@@ -134,3 +168,21 @@ function getPostContent(slug: string): (() => React.JSX.Element) | null {
 
 // React import needed for JSX.Element type
 import React from "react";
+import type { BlogPost } from "@/data/blog";
+
+/** Score-based related post finder — same country > same category > shared tags */
+function getRelatedPosts(currentSlug: string, current: BlogPost, count = 4): BlogPost[] {
+  return blogPosts
+    .filter((p) => p.slug !== currentSlug)
+    .map((p) => {
+      let score = 0;
+      if (p.country === current.country) score += 3;
+      if (p.category === current.category) score += 2;
+      const sharedTags = p.tags.filter((t) => current.tags.includes(t)).length;
+      score += sharedTags;
+      return { post: p, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, count)
+    .map((x) => x.post);
+}
