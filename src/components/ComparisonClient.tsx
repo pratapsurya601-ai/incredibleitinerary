@@ -19,6 +19,26 @@ const DEST_PDF_SLUGS: Record<string, string> = {
   "/blog/bali-5-days":       "bali-5-days",
   "/blog/bangkok-4-days":    "bangkok-4-days",
   "/blog/dubai-4-days":      "dubai-4-days",
+  // Phase 2
+  "/blog/andaman-5-days":    "andaman-5-days",
+  "/blog/varanasi-3-days":   "varanasi-3-days",
+  "/blog/singapore-3-days":  "singapore-4-days",
+  "/blog/sri-lanka-7-days":  "sri-lanka-7-days",
+  "/blog/tokyo-5-days":      "japan-10-days",
+  "/blog/kyoto-4-days":      "japan-10-days",
+  "/blog/osaka-3-days":      "japan-10-days",
+  // Phase 3
+  "/blog/hanoi-3-days":           "vietnam-10-days",
+  "/blog/ho-chi-minh-city-3-days":"vietnam-10-days",
+  "/blog/ha-long-bay-3-days":     "vietnam-10-days",
+  "/blog/phuket-5-days":          "thailand-10-days",
+  "/blog/chiang-mai-4-days":      "thailand-10-days",
+  "/blog/lisbon-4-days":          "portugal-7-days",
+  "/blog/porto-3-days":           "portugal-7-days",
+  "/blog/algarve-4-days":         "portugal-7-days",
+  "/blog/athens-3-days":          "greece-10-days",
+  "/blog/santorini-4-days":       "greece-10-days",
+  "/blog/crete-5-days":           "greece-10-days",
 };
 
 /* ── Winner badge ───────────────────────────────────────────────────────────── */

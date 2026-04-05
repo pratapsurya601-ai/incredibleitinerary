@@ -127,19 +127,131 @@ const AVAILABLE = [
     country: "International",
     price: "₹249",
   },
+  // Phase 2
+  {
+    slug: "andaman-5-days",
+    title: "Andaman 5 Days",
+    sub: "Port Blair · Havelock · Neil Island · Scuba",
+    emoji: "🏝️",
+    pages: 7,
+    includes: ["Ferry booking guide", "Radhanagar + Elephant Beach", "Scuba diving guide", "Cash survival tips"],
+    href: "/blog/andaman-5-days",
+    country: "India",
+    price: "₹149",
+  },
+  {
+    slug: "varanasi-3-days",
+    title: "Varanasi 3 Days",
+    sub: "Ghats · Ganga Aarti · Kashi Vishwanath · Sarnath",
+    emoji: "🕌",
+    pages: 6,
+    includes: ["Ganga Aarti guide", "Sunrise boat ride", "Sarnath day trip", "Silk buying guide"],
+    href: "/blog/varanasi-3-days",
+    country: "India",
+    price: "₹99",
+  },
+  {
+    slug: "singapore-4-days",
+    title: "Singapore 4 Days",
+    sub: "Marina Bay · Sentosa · Little India · Orchard",
+    emoji: "🇸🇬",
+    pages: 7,
+    includes: ["eVisa guide for Indians", "MRT navigation guide", "Hawker centre map", "Budget in ₹ & SGD"],
+    href: "/blog/singapore-3-days",
+    country: "International",
+    price: "₹199",
+  },
+  {
+    slug: "sri-lanka-7-days",
+    title: "Sri Lanka 7 Days",
+    sub: "Colombo · Kandy · Ella · Yala · Galle",
+    emoji: "🦁",
+    pages: 8,
+    includes: ["Ella train booking guide", "Yala leopard safari", "Free visa on arrival for Indians", "Budget in ₹ & LKR"],
+    href: "/blog/sri-lanka-7-days",
+    country: "International",
+    price: "₹199",
+  },
+  {
+    slug: "japan-10-days",
+    title: "Japan 10 Days",
+    sub: "Tokyo · Kyoto · Osaka · Hiroshima · Nara",
+    emoji: "🗼",
+    pages: 10,
+    includes: ["Japan visa guide", "JR Pass buying guide (saves ₹15k+)", "Cherry blossom timing", "Budget in ₹ & JPY"],
+    href: "/blog/tokyo-5-days",
+    country: "International",
+    price: "₹299",
+  },
+  // Phase 3
+  {
+    slug: "vietnam-10-days",
+    title: "Vietnam 10 Days",
+    sub: "Hanoi · Ha Long Bay · Hội An · Đà Nẵng · Saigon",
+    emoji: "🇻🇳",
+    pages: 8,
+    includes: ["E-visa guide for Indians", "Ha Long Bay cruise guide", "North↔South route options", "Budget in ₹ & VND"],
+    href: "/blog/hanoi-3-days",
+    country: "International",
+    price: "₹199",
+  },
+  {
+    slug: "thailand-10-days",
+    title: "Thailand 10 Days",
+    sub: "Bangkok · Chiang Mai · Phuket · Phi Phi · Krabi",
+    emoji: "🌴",
+    pages: 8,
+    includes: ["Visa on arrival for Indians (free)", "Island hopping guide", "Ethical elephant sanctuary guide", "Budget in ₹ & THB"],
+    href: "/blog/phuket-5-days",
+    country: "International",
+    price: "₹199",
+  },
+  {
+    slug: "bhutan-5-days",
+    title: "Bhutan 5 Days",
+    sub: "Paro · Thimphu · Punakha · Tiger's Nest",
+    emoji: "🏔️",
+    pages: 6,
+    includes: ["Indians: no visa needed", "Tiger's Nest full hike guide", "SDF fee breakdown (₹1,200/night)", "Best festival dates"],
+    href: "/blog",
+    country: "International",
+    price: "₹199",
+  },
+  {
+    slug: "portugal-7-days",
+    title: "Portugal 7 Days",
+    sub: "Lisbon · Sintra · Porto · Douro Valley · Algarve",
+    emoji: "🇵🇹",
+    pages: 8,
+    includes: ["Schengen visa guide for Indians", "Lisbon tram + miradouros route", "Porto wine cellar guide", "Budget in ₹ & EUR"],
+    href: "/blog/lisbon-4-days",
+    country: "International",
+    price: "₹249",
+  },
+  {
+    slug: "greece-10-days",
+    title: "Greece 10 Days",
+    sub: "Athens · Mykonos · Santorini · Crete · Rhodes",
+    emoji: "🇬🇷",
+    pages: 10,
+    includes: ["Schengen visa guide", "Island hopping ferry guide", "Santorini oia sunset secrets", "Budget in ₹ & EUR"],
+    href: "/blog/athens-3-days",
+    country: "International",
+    price: "₹299",
+  },
 ];
 
 const COMING_SOON = [
-  { emoji: "🗼", title: "Japan 10 Days",     sub: "Tokyo · Kyoto · Osaka · Hiroshima",  country: "International" },
-  { emoji: "🌅", title: "Santorini 4 Days",  sub: "Oia · Fira · Akrotiri",              country: "International" },
-  { emoji: "🏖️", title: "Andaman 5 Days",   sub: "Port Blair · Havelock · Neil",       country: "India" },
-  { emoji: "🕌", title: "Varanasi 3 Days",   sub: "Ghats · Temples · Sarnath",          country: "India" },
-  { emoji: "🌿", title: "Coorg 3 Days",      sub: "Coffee · Waterfalls · Treks",        country: "India" },
-  { emoji: "🏝️", title: "Maldives 5 Days",  sub: "Malé · North Malé · South Malé",     country: "International" },
-  { emoji: "🇸🇬", title: "Singapore 4 Days", sub: "Marina Bay · Sentosa · Chinatown",   country: "International" },
-  { emoji: "🏔️", title: "Spiti Valley 7 Days", sub: "Kaza · Key · Chandratal",         country: "India" },
-  { emoji: "🌿", title: "Meghalaya 5 Days",  sub: "Shillong · Cherrapunji · Dawki",     country: "India" },
-  { emoji: "🦁", title: "Sri Lanka 7 Days",  sub: "Colombo · Kandy · Ella · Galle",     country: "International" },
+  { emoji: "🌿", title: "Coorg 3 Days",           sub: "Coffee · Waterfalls · Treks",              country: "India" },
+  { emoji: "🏝️", title: "Maldives 5 Days",       sub: "Malé · North Malé · South Malé",           country: "International" },
+  { emoji: "🏔️", title: "Spiti Valley 7 Days",   sub: "Kaza · Key · Chandratal",                  country: "India" },
+  { emoji: "🌿", title: "Meghalaya 5 Days",        sub: "Shillong · Cherrapunji · Dawki",           country: "India" },
+  { emoji: "🇮🇹", title: "Italy 10 Days",         sub: "Rome · Florence · Amalfi · Venice",        country: "International" },
+  { emoji: "🇪🇸", title: "Spain 10 Days",         sub: "Madrid · Barcelona · Seville · Granada",   country: "International" },
+  { emoji: "🇲🇾", title: "Malaysia 7 Days",       sub: "KL · Penang · Langkawi · Borneo",          country: "International" },
+  { emoji: "🇹🇷", title: "Turkey 10 Days",        sub: "Istanbul · Cappadocia · Antalya · Pamukkale", country: "International" },
+  { emoji: "🇳🇵", title: "Nepal 7 Days",          sub: "Kathmandu · Pokhara · Everest Base Camp",  country: "International" },
+  { emoji: "🌊", title: "Andhra Pradesh 5 Days",  sub: "Vizag · Araku · Tirupati · Hampi",         country: "India" },
 ];
 
 export default function GuidesPage() {
@@ -156,7 +268,7 @@ export default function GuidesPage() {
         </h1>
         <p className="text-white/60 text-base max-w-md mx-auto font-light leading-relaxed mb-6">
           Every itinerary as a downloadable PDF — day plans, budgets, packing lists,
-          route maps. Download 2 guides free, unlock all 50+ for ₹499.
+          route maps. Download 2 guides free, unlock all 20 for ₹499.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
           {["📄 Print-ready A4", "✈️ Works offline", "🎁 2 free per email", "♾️ Unlock all for ₹499"].map((t) => (
@@ -245,7 +357,7 @@ export default function GuidesPage() {
             One-Time · No Subscription · Lifetime Access
           </p>
           <h2 className="font-serif text-white text-[clamp(1.6rem,4vw,2.4rem)] font-light leading-tight mb-3">
-            Unlock All 50+ Guides — ₹499
+            Unlock All 20+ Guides — ₹499
           </h2>
           <p className="text-white/50 text-sm font-light max-w-sm mx-auto mb-7 leading-relaxed">
             Every guide we&apos;ve made and every guide we ever will make.

@@ -9,7 +9,11 @@ import EmailCaptureWrapper from "@/components/email/EmailCaptureWrapper";
 import { blogPosts } from "@/data/blog";
 import "./globals.css";
 
-const _count = blogPosts.length;
+// Count only posts whose date is today or in the past
+const _count = blogPosts.filter((p) => {
+  const d = new Date(p.date);
+  return isNaN(d.getTime()) || d <= new Date();
+}).length;
 
 // display:"optional" — browser won't block render waiting for fonts.
 // First visit: Georgia/system-ui fallback (no CLS, no render-blocking).
@@ -33,6 +37,9 @@ const jost = Jost({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  minimumScale: 1,
+  // Prevent iOS Safari from zooming out on wide content
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -121,6 +128,8 @@ export default function RootLayout({
             gtag('config', '${GA_ID}', { send_page_view: true });
           `}
         </Script>
+        {/* Travelpayouts Emerald — converts hotel/tour links to affiliate links */}
+        <Script src="https://emrld.ltd/NTE1MTIx.js?t=515121" strategy="afterInteractive" />
         <script dangerouslySetInnerHTML={{ __html: `
           (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();
         `}} />

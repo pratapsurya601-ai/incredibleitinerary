@@ -5,12 +5,26 @@ const KEY_SECRET = process.env.RAZORPAY_KEY_SECRET || "";
 
 // ── Which slugs each payment tier unlocks ─────────────────────────────────────
 const TIER_SLUGS: Record<string, string[]> = {
-  "II-PDF-99":        ["goa-3-days", "india-budget-guide"],
-  "II-PDF-149":       ["rajasthan-7-days", "kerala-5-days"],
-  "II-PDF-199":       ["leh-ladakh-7-days", "bangkok-4-days"],
-  "II-PDF-249":       ["leh-ladakh-7-days", "bangkok-4-days"],   // international tier
-  "II-INDIAPACK-001": ["rajasthan-7-days", "kerala-5-days", "goa-3-days", "india-budget-guide", "leh-ladakh-7-days"],
-  "II-ALLGUIDES-001": [], // handled separately → premium: true
+  // ₹99 — short India + budget guide
+  "II-PDF-99":        ["goa-3-days", "india-budget-guide", "varanasi-3-days"],
+  // ₹149 — week-long India
+  "II-PDF-149":       ["rajasthan-7-days", "kerala-5-days", "kashmir-6-days", "manali-5-days", "andaman-5-days"],
+  // ₹199 — complex India + budget international
+  "II-PDF-199":       ["leh-ladakh-7-days", "bangkok-4-days", "bali-5-days", "singapore-4-days", "sri-lanka-7-days"],
+  // ₹249 — premium international
+  "II-PDF-249":       ["dubai-4-days", "portugal-7-days"],
+  // ₹299 — Japan + Greece premium
+  "II-PDF-299":       ["japan-10-days", "greece-10-days"],
+  // ₹199 Phase 3
+  "II-PDF-199-P3":    ["vietnam-10-days", "thailand-10-days", "bhutan-5-days"],
+  // India Pack — all India guides
+  "II-INDIAPACK-001": [
+    "rajasthan-7-days", "kerala-5-days", "goa-3-days", "india-budget-guide",
+    "leh-ladakh-7-days", "kashmir-6-days", "manali-5-days", "andaman-5-days", "varanasi-3-days",
+    "bhutan-5-days",
+  ],
+  // All Access — handled separately → premium: true (covers all 15 slugs)
+  "II-ALLGUIDES-001": [],
 };
 
 // ── Redis helpers (same pattern as /api/download) ─────────────────────────────
@@ -134,7 +148,7 @@ export async function POST(req: NextRequest) {
   // ── Build download tokens for unlocked guides ────────────────────────────────
   const allUnlocked = isAllAccess
     ? ["rajasthan-7-days", "kerala-5-days", "goa-3-days", "india-budget-guide", "leh-ladakh-7-days", "bangkok-4-days"]
-    : [...new Set([...data.slugs])];
+    : Array.from(new Set(data.slugs));
 
   const tokens: Record<string, string> = {};
   for (const slug of allUnlocked) {

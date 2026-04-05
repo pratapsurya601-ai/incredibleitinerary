@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Vietnam in 10 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#c2410c;--primary-light:#fed7aa;--primary-dark:#9a3412;
+  --accent:#166534;--accent-light:#dcfce7;
+  --ink:#1a0800;--cream:#fff8f4;--parchment:#fef0e7;
+  --muted:#7c4a2e;--white:#ffffff;--gold:#b45309;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.42}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,8,0,0.97) 0%,rgba(26,8,0,0.6) 50%,rgba(26,8,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fed7aa;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(26,8,0,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── STATS BAR ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(26,8,0,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+/* ── ROUTE BAR ── */
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.green{background:var(--accent)}
+.route-stop.amber{background:#b45309}
+.route-stop.dark{background:var(--primary-dark)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+/* ── CITY GRID ── */
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(194,65,12,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── CALLOUT ── */
+.callout{background:linear-gradient(135deg,rgba(194,65,12,0.06),rgba(194,65,12,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY HEADER ── */
+.day-header{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.15);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fed7aa;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fed7aa;font-weight:500;margin-top:1mm}
+
+/* ── DAY BODY / TIME ROWS ── */
+.day-body{margin-bottom:5mm}
+.time-row{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+/* ── HIGHLIGHT BOXES ── */
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.orange{background:rgba(194,65,12,0.07);border:1px solid rgba(194,65,12,0.2);color:var(--primary-dark)}
+.highlight-box.green{background:rgba(22,101,52,0.07);border:1px solid rgba(22,101,52,0.2);color:var(--accent)}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+
+/* ── BUDGET TABLE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(26,8,0,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(26,8,0,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(194,65,12,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic}
+
+/* ── TIPS GRID ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── PACKING GRID ── */
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.pack-col h4{font-size:8pt;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(26,8,0,0.08)}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:7.5pt;color:var(--muted);font-weight:300;margin-bottom:2mm;line-height:1.4}
+.pack-check{color:var(--muted);flex-shrink:0;margin-top:0.5px;font-size:9pt}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=1200&q=80" alt="Vietnam landscape"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Vietnam<br/><em>in 10 Days</em></h1>
+    <p class="cover-sub">Hanoi's chaos, Ha Long Bay's silence, Hội An's lanterns, Saigon's energy — the complete north-to-south journey</p>
+    <div class="cover-pills">
+      <span class="pill">🗓 10 Days</span>
+      <span class="pill">🏙 4 Cities</span>
+      <span class="pill">💰 ₹55,000–₹1,60,000</span>
+      <span class="pill">🌤 Best: Feb–Apr, Sep–Nov</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(194,65,12,0.3);border:1px solid rgba(254,215,170,0.3);color:#fed7aa;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹149 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Vietnam 10-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">North to South — The Complete Vietnam Circuit</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">10 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏙</div><span class="stat-val">4 Cities</span><span class="stat-label">Destinations</span></div>
+    <div class="stat-box"><div class="stat-icon">💱</div><span class="stat-val">₹1 = 285 VND</span><span class="stat-label">Exchange Rate</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤</div><span class="stat-val">Feb–Apr</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Hanoi</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Days 1–2</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop green">Ha Long Bay</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Day 3</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop amber">Hue</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Day 4</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Hội An</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Days 5–6</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Da Nang</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Day 7</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop green">HCMC</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Days 8–10</span>
+    <span class="route-sub">Fly Hanoi in · Saigon out</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Days 1–2</div>
+      <div class="city-name">🏮 Hanoi</div>
+      <div class="city-desc">Old Quarter street food, Hoan Kiem Lake, Temple of Literature, Hoa Lo Prison. Chaotic and wonderful. Bun cha, egg coffee and bia hoi on tiny stools.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🌊 Ha Long Bay</div>
+      <div class="city-desc">UNESCO World Heritage. 2,000+ limestone islands rising from emerald water. Overnight cruise or day trip from Hanoi — kayaking, caves, sunset on deck.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 5–6</div>
+      <div class="city-name">🏯 Hội An</div>
+      <div class="city-desc">Most beautiful town in Vietnam. Ancient town, lantern-lit streets, tailors, My Son ruins nearby. UNESCO World Heritage. White rose dumplings and cao lau.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 8–10</div>
+      <div class="city-name">🛵 Ho Chi Minh City</div>
+      <div class="city-desc">War Remnants Museum, Cu Chi Tunnels, Ben Thanh Market, rooftop bars. Mekong Delta day trip. Pure, electric, unforgettable Saigon energy.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Vietnam is the kind of place where you plan 10 days and book a flight back for 3 weeks. The food alone is worth the journey."</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3mm">
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);margin-bottom:1mm">Budget</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">~₹29,500</div>
+      <div style="font-size:7pt;color:var(--muted)">Hostels + street food</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);margin-bottom:1mm">Mid-Range</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">~₹66,000</div>
+      <div style="font-size:7pt;color:var(--muted)">Hotels + good food</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);margin-bottom:1mm">Premium</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">₹1,44,000+</div>
+      <div style="font-size:7pt;color:var(--muted)">Boutique + luxury cruise</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — PRE-TRIP + DAYS 1–2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Vietnam 10-Day Itinerary</span>
+    <span class="page-header-right">Pre-Trip Essentials · Days 1–2 Hanoi</span>
+  </div>
+
+  <div class="label">Before You Fly</div>
+  <h2 class="section-title" style="margin-bottom:4mm">Pre-Trip Essentials</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm">🛂 Visa — e-Visa Required</div>
+      <div style="font-size:7.5pt;color:var(--muted);line-height:1.5">Indians require e-Visa. Apply at evisa.xuatnhapcanh.gov.vn. Cost: $25. Processing: 3 working days. 90-day single entry. Apply at least 1 week before travel.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm">✈️ Flight — Direct from India</div>
+      <div style="font-size:7.5pt;color:var(--muted);line-height:1.5">Direct Hanoi or HCMC from Delhi/Mumbai. IndiGo, Air India, Vietnam Airlines. 4–5 hrs. Fly into Hanoi (HAN), fly out of HCMC (SGN) for best routing.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm">💱 Currency — Vietnamese Dong</div>
+      <div style="font-size:7.5pt;color:var(--muted);line-height:1.5">₹1 = ~285 VND. ₹10,000 = ~28,50,000 VND. ATMs everywhere. Carry USD $100 as backup. Grab handles most payments in cities.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm">📱 SIM + Apps</div>
+      <div style="font-size:7.5pt;color:var(--muted);line-height:1.5">Viettel or Vietnamobile at airport. 30GB for ~₹250. Best coverage. Install: Grab (rides + food), Google Translate (offline Vietnamese), Maps.me.</div>
+    </div>
+  </div>
+
+  <div class="label">Days 1–2 · Hanoi</div>
+  <h3 class="sub-title">Hanoi: Old Quarter, Culture &amp; History</h3>
+
+  <div class="day-header">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Hanoi Arrival</div>
+      <div class="day-title">Old Quarter &amp; Hoan Kiem Lake</div>
+      <div class="day-sub">Noi Bai Airport → Old Quarter · Lake walk · Bun cha dinner · Bia hoi corner</div>
+      <div class="day-cost">💰 Budget: ~₹1,200 · Mid: ~₹3,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Arrive</div>
+      <div class="time-content">
+        <div class="time-title">Noi Bai International Airport (HAN) — To Old Quarter</div>
+        <div class="time-desc">Grab cab to Old Quarter: ~₹400 (200,000 VND). Journey 45 mins. Hotel: Old Quarter area — budget hostels ₹500–800/night, mid-range ₹2,000–4,000, boutique hotels ₹5,000+. Drop bags and head straight out.</div>
+        <div class="time-price">Grab cab: ₹400 · Budget hostel: ₹500–800/night</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Hoan Kiem Lake + Ngoc Son Temple + 36 Streets</div>
+        <div class="time-desc">Walk the beautiful lake — free and peaceful. Cross the red Huc Bridge to Ngoc Son Temple on the island. Then explore the Old Quarter's 36 streets — each historically sold one product: tin street, paper street, silk street. Still partly true today.</div>
+        <div class="time-price">Hoan Kiem: Free · Ngoc Son Temple: ₹70</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Bun Cha Huong Lien + Bia Hoi Corner</div>
+        <div class="time-desc">Obama ate here in 2016 with Anthony Bourdain — the most famous bun cha in Vietnam. Grilled pork patties in broth with vermicelli. ₹150. Then head to the bia hoi corner (intersection of Luong Ngoc Quyen and Ta Hien) — 30 paise beer (~₹18) on tiny plastic stools surrounded by locals. This is Hanoi.</div>
+        <div class="time-price">Bun cha: ₹150 · Bia hoi: ₹18/glass</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Night</div>
+      <div class="time-content">
+        <div class="time-title">Hoan Kiem Walking Street (Weekends)</div>
+        <div class="time-desc">On Friday, Saturday and Sunday nights the roads around Hoan Kiem Lake become a pedestrian zone with live music, food stalls, and street performers. Free and wonderful. Weekdays — walk Ta Hien street instead.</div>
+        <div class="time-price">Free entry</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Hanoi</div>
+      <div class="day-title">Culture, History &amp; Egg Coffee</div>
+      <div class="day-sub">Ho Chi Minh Mausoleum · Temple of Literature · Hoa Lo Prison · Egg coffee</div>
+      <div class="day-cost">💰 Budget: ~₹600 activities · Must try: egg coffee at Cafe Giang ₹70</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Ho Chi Minh Mausoleum + Museum + One Pillar Pagoda</div>
+        <div class="time-desc">The mausoleum complex where Ho Chi Minh's embalmed body is preserved — free entry but closed Monday and Friday. Dress respectfully (no shorts, sleeves). Nearby: Ho Chi Minh Museum (₹50) and the elegant One Pillar Pagoda built in 1049.</div>
+        <div class="time-price">Mausoleum: Free (closed Mon &amp; Fri) · Museum: ₹50</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Temple of Literature — Vietnam's First University</div>
+        <div class="time-desc">Built in 1070 during the Ly Dynasty, Vietnam's first national university. Five beautiful courtyards with pavilions, stone steles bearing the names of graduates, and a peaceful garden. Perfectly preserved. Allow 1.5 hours to appreciate it properly.</div>
+        <div class="time-price">Entry: ₹90 · Open daily 8am–5pm</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Hoa Lo Prison "Hanoi Hilton"</div>
+        <div class="time-desc">Sobering and important. Built by French colonizers as a prison for Vietnamese political prisoners — then used by North Vietnam to hold American POWs (including John McCain). Exhibits are fascinating though one-sided. Essential historical context for understanding Vietnam.</div>
+        <div class="time-price">Entry: ₹100 · 1–1.5 hrs</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Train Street + Egg Coffee at Cafe Giang</div>
+        <div class="time-desc">Phung Hung Street — a narrow alley where trains pass twice daily (check times: ~7am and ~7pm), restaurants and cafes lining both sides. Then: egg coffee at Cafe Giang (Est. 1946) — whipped egg yolk and condensed milk piled on strong Vietnamese coffee. Strange, then heavenly.</div>
+        <div class="time-price">Train Street: Free · Egg coffee: ₹70</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAYS 3–5 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Vietnam 10-Day Itinerary</span>
+    <span class="page-header-right">Days 3–5 · Ha Long Bay · Hue · Hội An</span>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · UNESCO Wonder</div>
+      <div class="day-title">Ha Long Bay — Limestone Karsts &amp; Emerald Water</div>
+      <div class="day-sub">Hanoi → Ha Long City · Cruise · Kayaking · Sung Sot Cave · Sunset on deck</div>
+      <div class="day-cost">💰 Day cruise: ₹2,500–3,500 · Overnight 2D/1N: ₹6,000–12,000 (all-inclusive)</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Hanoi to Ha Long City — 3.5 hrs by Bus/Car</div>
+        <div class="time-desc">Book your cruise in Hanoi the night before — most hotels can arrange. The bus picks you up from your hotel. Overnight cruise strongly recommended — the bay at dawn before other boats arrive is magnificent. Budget: Indochina Sails. Mid: Heritage Cruises. Luxury: Paradise Cruises.</div>
+        <div class="time-price">Transfer included in cruise package · Book 1 day ahead</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Highlights</div>
+      <div class="time-content">
+        <div class="time-title">Sung Sot Cave + Kayaking + Sunset</div>
+        <div class="time-desc">Sung Sot (Surprise Cave) — largest in Ha Long, cathedral-like chambers with illuminated stalactites. Kayak through limestone arches and hidden lagoons accessible only by boat. Swim at designated stops. Sunset from the deck with Vietnamese beer in hand — 2,000+ islands around you.</div>
+        <div class="time-price">Overnight cruise (2D/1N): ₹6,000–12,000 all-inclusive</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Imperial Hue</div>
+      <div class="day-title">Hue — Imperial Citadel &amp; Royal Tombs</div>
+      <div class="day-sub">Fly/train Hanoi → Hue · Citadel · Thien Mu Pagoda · Royal Tombs · Dong Ba Market</div>
+      <div class="day-cost">💰 Flight: ₹2,000–3,500 · Train sleeper: ₹1,500 · Activities: ~₹700</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Imperial Citadel — Nguyen Dynasty Capital</div>
+        <div class="time-desc">Fly or take overnight train Hanoi → Hue (or Da Nang + taxi). The Imperial Citadel was the 19th-century seat of the Nguyen dynasty — Vietnam's last royal family. UNESCO World Heritage. Moats, gates, throne rooms and ornate pavilions across a vast walled city. Allow 2–3 hours.</div>
+        <div class="time-price">Entry: ₹400 · Flight: ₹2,000–3,500 · Train sleeper: ₹1,500</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Thien Mu Pagoda + Royal Tombs of Minh Mang</div>
+        <div class="time-desc">Thien Mu Pagoda — 7-tier octagonal tower on the Perfume River, built 1601. Free, 30 min from city by motorbike taxi (₹80). Lunch: Bun bo Hue, the city's fiery beef noodle soup — spicier than pho, utterly addictive (₹120). Royal Tombs of Minh Mang — most architecturally beautiful of all royal tombs.</div>
+        <div class="time-price">Thien Mu: Free · Tombs of Minh Mang: ₹250 · Bun bo: ₹120</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Dong Ba Market + Banh Mi from Street Stalls</div>
+        <div class="time-desc">Hue's main market for local shopping — lacquerware, conical hats, local spices. Excellent for gifts. Pick up banh mi from the street stalls outside — Hue's version uses more vegetables and less meat than Hội An's famous version. ₹40.</div>
+        <div class="time-price">Banh mi: ₹40 · Market: free entry, haggle for goods</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">05–06</div>
+    <div class="day-info">
+      <div class="day-tag">Days Five–Six · UNESCO Ancient Town</div>
+      <div class="day-title">Hội An — Lanterns, Tailors &amp; My Son</div>
+      <div class="day-sub">Ancient Town · Lantern street nights · Custom tailoring · My Son Ruins day trip</div>
+      <div class="day-cost">💰 Ancient Town tickets: ₹450 · My Son day trip: ₹800 · Tailoring: ₹1,000–2,500</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Day 5 AM</div>
+      <div class="time-content">
+        <div class="time-title">Arrive Hội An — 1hr Drive from Da Nang</div>
+        <div class="time-desc">One hour drive from Da Nang (taxi ₹600, Grab ₹350) or train to Da Nang + taxi. Hội An is the most charming town in Southeast Asia — a preserved trading port from the 15th–19th centuries. Get Ancient Town entry tickets (₹450, covers 5 sites: Japanese Covered Bridge, assembly halls, old houses, museums).</div>
+        <div class="time-price">Ancient Town tickets: ₹450 · Night walking: free</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 5 PM</div>
+      <div class="time-content">
+        <div class="time-title">Custom Tailoring — Visit Tailors, Give Reference Photos</div>
+        <div class="time-desc">Hội An is famous worldwide for its tailors — skilled artisans who can replicate almost any garment in 24 hours. Visit 2–3 tailors, compare fabrics and prices, bring photos of what you want. Budget: shirt ₹1,000–1,500, dress ₹1,500–2,500, suit ₹4,000–8,000. Collect next day. Top shops: Bebe Tailor, Yaly Couture, Kimmy Fashion.</div>
+        <div class="time-price">Shirt: ₹1,000–1,500 · Dress: ₹1,500–2,500 · 24hr turnaround</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 5 Night</div>
+      <div class="time-content">
+        <div class="time-title">Ancient Town at Night — Lantern Magic</div>
+        <div class="time-desc">After dark the Ancient Town becomes magical — hundreds of silk lanterns in every colour light the narrow streets. On the 14th of every lunar month, all electric lights are turned off and only lanterns glow. Release a lantern boat on the Thu Bon River (₹50). White Rose dumplings ₹150, Cao lau noodles ₹180, Banh mi Phuong ₹60 (Anthony Bourdain called it the best in the world).</div>
+        <div class="time-price">Lantern boat: ₹50 · Banh mi Phuong: ₹60 · White rose: ₹150</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 6 AM</div>
+      <div class="time-content">
+        <div class="time-title">My Son Ruins — Vietnam's Angkor Wat (Day Trip)</div>
+        <div class="time-desc">4th–13th century Hindu temples built by the Champa kingdom in a remote jungle valley — UNESCO World Heritage. The complex of brick temples is atmospheric and largely free of tourists in the morning. Book a group tour from Hội An (₹800 includes transport, guide, entry). Leave at 7am, back by noon.</div>
+        <div class="time-price">Group tour with transport: ₹800 · Solo taxi + entry: ~₹1,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAYS 7–10 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Vietnam 10-Day Itinerary</span>
+    <span class="page-header-right">Days 7–10 · Da Nang · Ho Chi Minh City</span>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">07</div>
+    <div class="day-info">
+      <div class="day-tag">Day Seven · Da Nang</div>
+      <div class="day-title">Dragon Bridge, Marble Mountains &amp; My Khe Beach</div>
+      <div class="day-sub">30 min from Hội An · Dragon Bridge fire Sat/Sun 9pm · Marble Mountains · Beach</div>
+      <div class="day-cost">💰 Marble Mountains: ₹250 · Beach: Free · Dragon Bridge fire show: Free</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Marble Mountains — Five Elemental Hills</div>
+        <div class="time-desc">Five marble-and-limestone hills named after the elements: water, fire, wood, metal, earth. Climb Thuy Son (Water Mountain) — highest and most rewarding — for panoramic views of Da Nang and the East Sea. Caves contain Buddhist and Hindu shrines. Entry ₹250.</div>
+        <div class="time-price">Entry: ₹250 · Elevator up available: ₹60 extra</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">My Khe Beach + Son Tra Peninsula</div>
+        <div class="time-desc">My Khe Beach — 30km of white sand, clear water, one of the best urban beaches in Central Vietnam. Free, well-maintained, lifeguards present. Afternoon: drive up Son Tra Peninsula (rent motorbike ₹300/day) — viewpoints over the bay, monkey colony, the giant Lady Buddha visible from the sea.</div>
+        <div class="time-price">Beach: Free · Motorbike rental: ₹300/day</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Sat/Sun 9pm</div>
+      <div class="time-content">
+        <div class="time-title">Dragon Bridge Fire &amp; Water Show</div>
+        <div class="time-desc">The iconic Dragon Bridge (2013) spans 666m across the Han River, shaped like a dragon with scales and a head at the east end. Every Saturday and Sunday at 9pm the dragon breathes fire and water — free, spectacular, crowd-draws but worth it. Grab a spot 30 mins early.</div>
+        <div class="time-price">Free · Saturday &amp; Sunday only · 9:00 PM sharp</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">08–10</div>
+    <div class="day-info">
+      <div class="day-tag">Days Eight–Ten · Saigon</div>
+      <div class="day-title">Ho Chi Minh City — War History, Tunnels &amp; Energy</div>
+      <div class="day-sub">Fly Da Nang → HCMC · War Museum · Cu Chi Tunnels · Mekong · Bui Vien nightlife</div>
+      <div class="day-cost">💰 Flight: ₹1,500–2,500 · Cu Chi: ₹1,500 · Mekong: ₹2,000</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Day 8 AM</div>
+      <div class="time-content">
+        <div class="time-title">Fly Da Nang → HCMC + War Remnants Museum</div>
+        <div class="time-desc">Fly Da Nang → Ho Chi Minh City (1.5hrs, ₹1,500–2,500) or take overnight bus (₹600, 15hrs). War Remnants Museum — the most powerful museum in Vietnam, documenting the American War from the Vietnamese perspective. Graphic but essential. Don't skip. Reunification Palace nearby (₹180) — exactly as it was on April 30, 1975.</div>
+        <div class="time-price">Flight: ₹1,500–2,500 · War Museum: ₹150 · Palace: ₹180</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 8 PM</div>
+      <div class="time-content">
+        <div class="time-title">Ben Thanh Market + Pham Ngu Lao Street Food</div>
+        <div class="time-desc">Ben Thanh Market — the tourist hub for souvenirs, lacquerware, silk scarves and Vietnamese coffee. Bargain hard (start at 40% of asking price). Evening: Pham Ngu Lao (backpacker district) for cheap, excellent street food. Banh mi, pho, com tam (broken rice with pork), fresh coconuts.</div>
+        <div class="time-price">Banh mi: ₹60 · Com tam: ₹150 · Pho: ₹120</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 9</div>
+      <div class="time-content">
+        <div class="time-title">Cu Chi Tunnels Day Trip — Underground Vietnam</div>
+        <div class="time-desc">250km of underground tunnels dug by Viet Cong guerrillas — living quarters, hospitals, kitchens, meeting rooms all underground. You can crawl through a widened section (not for the claustrophobic). The ingenuity is mind-blowing. Book a group tour from HCMC (₹1,500 includes transport + guide). Mekong Delta day trip alternative (₹2,000) — boat through canals, coconut candy factories, floating markets.</div>
+        <div class="time-price">Cu Chi group tour: ₹1,500 · Mekong Delta: ₹2,000</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 10</div>
+      <div class="time-content">
+        <div class="time-title">Bui Vien Walking Street + Rooftop Bar + Airport</div>
+        <div class="time-desc">Final night: Bui Vien Walking Street — Saigon's neon-lit backpacker street, wall-to-wall bars, live music, street food chaos. Cocktails from ₹200. For a stunning farewell: Chill Sky Bar at AB Tower (₹1,200/cocktail but the view of the city at night is extraordinary). Fly home from Tan Son Nhat Airport (SGN) — arrive 3hrs early.</div>
+        <div class="time-price">Bui Vien: Free entry · Chill Sky Bar cocktail: ₹1,200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>💡 Saigon vs Hanoi:</strong> Spend more time in HCMC if energy and history excite you more than culture and calm. Hanoi is slower, older, more French — Saigon is faster, younger, more American. Both are essential Vietnam. If you had to choose one extra day, give it to HCMC.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — BUDGET TABLE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Vietnam 10-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Cost Guide</div>
+  <h2 class="section-title" style="margin-bottom:5mm">10-Day Budget Breakdown — 2026</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>💰 Budget (₹)</th>
+        <th>🏨 Mid-Range (₹)</th>
+        <th>✨ Premium (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>🏨 Accommodation (10 nights)</td><td>6,000</td><td>20,000</td><td>55,000+</td></tr>
+      <tr><td>✈️ Domestic Flights (3 sectors)</td><td>6,000</td><td>8,000</td><td>12,000</td></tr>
+      <tr><td>🚢 Ha Long Bay Cruise</td><td>2,500</td><td>8,000</td><td>20,000</td></tr>
+      <tr><td>🍜 Food (all 10 days)</td><td>8,000</td><td>18,000</td><td>35,000</td></tr>
+      <tr><td>🚕 Transport + Grab + Taxis</td><td>4,000</td><td>6,000</td><td>10,000</td></tr>
+      <tr><td>🏛 Activities + Entry Fees</td><td>3,000</td><td>6,000</td><td>12,000</td></tr>
+      <tr><td>TOTAL — 10 days per person</td><td>~₹29,500</td><td>~₹66,000</td><td>₹1,44,000+</td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note" style="margin-bottom:6mm">All prices INR 2026 per person. Budget = hostels + street food + group tours. Mid-range = 3-star hotels + restaurant meals + good cruise. Premium = boutique hotels + luxury Ha Long cruise + fine dining + private transfers.</p>
+
+  <h3 class="sub-title">Internal Travel Between Cities</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Hanoi → Ha Long</div>
+      <div style="font-size:7pt;color:var(--muted)">Bus/car included in cruise package. 3.5hrs. No need to book separately.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Hanoi → Hue</div>
+      <div style="font-size:7pt;color:var(--muted)">Flight ₹2,000–3,500 (1hr). Train sleeper ₹1,500 (13hrs). Scenic train is iconic.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Hue → Hội An</div>
+      <div style="font-size:7pt;color:var(--muted)">Taxi or bus via Da Nang. ₹600–1,200. Train to Da Nang + Grab works well.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Da Nang → HCMC</div>
+      <div style="font-size:7pt;color:var(--muted)">Flight ₹1,500–2,500 (1.5hrs). Overnight bus ₹600 (15hrs). Fly if time is precious.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Reunification Express</div>
+      <div style="font-size:7pt;color:var(--muted)">Hanoi → HCMC full journey = 30hrs by train. Iconic but only for partial routes with time.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,8,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">City Transport</div>
+      <div style="font-size:7pt;color:var(--muted)">Grab for everything in cities. Never metered taxis — always Grab. Motorbike taxis (xe om) are cheap and fun.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box orange">
+    <strong>Ha Long Bay tip:</strong> The overnight cruise is worth every extra rupee. The bay at 5am before tour boats arrive — mist rising off the water, silence broken only by fishing boats — is one of the great travel experiences of Southeast Asia. Don't do just a day trip.
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>⚠️ Exchange Rate Warning:</strong> ₹1 = 285 VND means prices look enormous (a ₹1,000 meal costs 285,000 VND). Don't panic at VND prices — divide by 285 to get rupees. Always agree on price before tuk-tuks, cycles or unmetered transport.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — TIPS + PACKING ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Vietnam 10-Day Itinerary</span>
+    <span class="page-header-right">Essential Tips &amp; Packing List</span>
+  </div>
+
+  <div class="label">Know Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:4mm">Essential Vietnam Tips</h2>
+
+  <div class="tips-grid" style="margin-bottom:5mm">
+    <div class="tip-box">
+      <div class="tip-icon">🛂</div>
+      <div class="tip-title">e-Visa — Apply 1 Week Ahead</div>
+      <div class="tip-desc">Indians require e-Visa ($25). Apply at evisa.xuatnhapcanh.gov.vn — processing takes 3 working days but apply 7+ days ahead for buffer. 90-day single entry. Do NOT attempt visa on arrival — Vietnam does not offer this for Indians.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-title">Grab App — Always</div>
+      <div class="tip-desc">Metered taxis in Vietnam are infamous for scamming tourists — rigged meters, long routes. Use Grab for every single ride in every city. Price shown upfront. No surprises. Install and register before you land.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚢</div>
+      <div class="tip-title">Ha Long Bay Overnight</div>
+      <div class="tip-desc">The overnight cruise is worth the extra cost. Budget operators: Indochina Sails (₹6,000). Mid: Heritage Cruises (₹9,000). Luxury: Paradise Cruises (₹18,000+). All include meals, kayaking, cave visits. Book in Hanoi the day before.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">✂️</div>
+      <div class="tip-title">Hội An Tailors — Bring Photos</div>
+      <div class="tip-desc">Quality varies enormously. Bring clear reference photos on your phone. Visit 2–3 tailors, compare fabrics. Allow 24hrs minimum (48hrs for complex garments). Check stitching before paying. Top recommendation: Yaly Couture (pricier but reliable quality).</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🥖</div>
+      <div class="tip-title">Banh Mi — Eat It Everywhere</div>
+      <div class="tip-desc">₹40–80 for the best sandwich you'll ever eat. The French left Vietnam their baguettes — Vietnamese made them better. Every city has its own style. Hội An's Banh Mi Phuong is most famous (Bourdain-approved), but the street stall outside your guesthouse will also be outstanding.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍜</div>
+      <div class="tip-title">Street Food Safety</div>
+      <div class="tip-desc">Vietnam street food is safer than you think. The rule: busy stall = fresh food, high turnover, locals eating there. Avoid empty stalls. Pho, bun cha, com tam, banh cuon — all safe, all incredible. The stomach medication in your bag is for the humidity, not the food.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Ben Thanh Bargaining</div>
+      <div class="tip-desc">Ben Thanh Market in HCMC: start your counter-offer at 40% of asking price. Seller will go to 50–60%. Settle around 50–55%. Never feel bad — this is expected, normal, and enjoyable. If they say "last price" and walk away, they'll come back.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚂</div>
+      <div class="tip-title">Reunification Express Train</div>
+      <div class="tip-desc">The Hanoi–HCMC rail line is one of Asia's great train journeys — the Hai Van Pass section near Da Nang (Top Gear's "best coast road") is spectacular. Take the train for at least the Hue→Da Nang leg. Book at vietnam-railway.com. SE trains are the comfortable express services.</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">What to Pack</div>
+  <h3 class="sub-title" style="margin-bottom:4mm">Vietnam Packing List</h3>
+
+  <div class="packing-grid">
+    <div class="pack-col">
+      <h4>Clothing &amp; Essentials</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Rain jacket (tropical showers can appear without warning)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Light cover-up for temples (shoulders + knees)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Comfortable walking shoes for Old Quarter cobblestones</div>
+      <div class="pack-item"><span class="pack-check">□</span>Flip flops or slip-ons (removing shoes at temples)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Swimwear for Ha Long Bay and beach stops</div>
+      <div class="pack-item"><span class="pack-check">□</span>Light layer for Ha Long Bay evenings (can be breezy)</div>
+      <h4 style="margin-top:4mm">Health</h4>
+      <div class="pack-item"><span class="pack-check">□</span>DEET mosquito repellent (essential — malaria-free but dengue present)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Stomach medication (just in case — Norflox + ORS)</div>
+      <div class="pack-item"><span class="pack-check">□</span>SPF 50 sunscreen (intense tropical sun)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Hand sanitiser + wet wipes for street food</div>
+    </div>
+    <div class="pack-col">
+      <h4>Money &amp; Tech</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Niyo or Wise card for VND withdrawals (no forex fees)</div>
+      <div class="pack-item"><span class="pack-check">□</span>USD $100 as emergency backup cash</div>
+      <div class="pack-item"><span class="pack-check">□</span>Power bank — long days on the road</div>
+      <div class="pack-item"><span class="pack-check">□</span>Grab app installed and registered before landing</div>
+      <div class="pack-item"><span class="pack-check">□</span>Google Translate with offline Vietnamese downloaded</div>
+      <div class="pack-item"><span class="pack-check">□</span>Maps.me or Google Maps offline for cities</div>
+      <h4 style="margin-top:4mm">Documents</h4>
+      <div class="pack-item"><span class="pack-check">□</span>E-Visa printout + digital copy (always)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Passport (original required at many hotels)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Travel insurance covering Southeast Asia</div>
+      <div class="pack-item"><span class="pack-check">□</span>Hotel booking printouts for first 2 nights</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:40pt;margin-bottom:6mm">🍜</div>
+  <h2>Plan More. <em style="font-style:italic;color:rgba(255,255,255,0.5)">Worry Less.</em></h2>
+  <p>50+ free destination guides on IncredibleItinerary.com — India, Southeast Asia, Europe and beyond. Every guide written with real costs, real routes and zero fluff.</p>
+  <div class="back-cta">Visit IncredibleItinerary.com →</div>
+  <div class="back-url">incredibleitinerary.com/guides</div>
+  <p style="color:rgba(255,255,255,0.4);font-size:9pt;margin-bottom:6mm">More guides: Thailand · Bali · Japan · Kashmir · Rajasthan · Singapore · Sri Lanka · Dubai</p>
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · For personal use only · Not for redistribution<br/>
+    All prices are approximate and based on 2026 market rates. Verify independently before travel.<br/>
+    This guide is provided free of charge. If it helped you, share it with a friend.
+  </div>
+</div>
+
+</body>
+</html>

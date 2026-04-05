@@ -7,6 +7,10 @@ import { GeneratedPost, getGeneratedPostsByParent, GeneratedPostType } from "@/d
 import { BlogPost } from "@/data/blog";
 import { generateContent, ParentMeta } from "@/lib/content-generators";
 import ShareButton from "@/components/ui/ShareButton";
+import AdUnit from "@/components/ads/AdUnit";
+import AutoPdfCta from "@/components/blog/AutoPdfCta";
+import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import AutoTableOfContents from "@/components/blog/AutoTableOfContents";
 
 // ---------------------------------------------------------------------------
 // Type badge config
@@ -178,8 +182,20 @@ export default function GeneratedPostContent({
           {post.description}
         </p>
 
+        {/* Auto Table of Contents — sticky sidebar on desktop, pill on mobile */}
+        <AutoTableOfContents />
+
         {/* Generated content */}
         {content}
+
+        {/* Auto PDF CTA — shows if parent slug has a PDF */}
+        {post.parentSlug && <AutoPdfCta blogSlug={post.parentSlug} />}
+
+        {/* Affiliate block — hotels + tours for this destination */}
+        <AffiliateBlock destination={post.destination} />
+
+        {/* Mid-article ad */}
+        <AdUnit slot="5913027384" format="auto" />
       </div>
 
       {/* ------------------------------------------------------------------ */}

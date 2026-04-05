@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Bhutan in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#c2410c;--primary-light:#fdba74;--primary-dark:#7c2d12;
+  --accent:#166534;--accent-light:#bbf7d0;
+  --light:#fdba74;--cream:#fff8f4;
+  --ink:#1a0800;--muted:#7a4030;--white:#ffffff;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--primary-dark);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.38}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(124,45,18,0.97) 0%,rgba(124,45,18,0.65) 45%,rgba(124,45,18,0.22) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--primary-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:140mm;line-height:1.65}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(26,8,0,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(194,65,12,0.12);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.green{background:var(--accent)}
+.route-stop.gold{background:#854d0e}
+.route-stop.blue{background:#1d4ed8}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(194,65,12,0.1);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(194,65,12,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-days.green{background:rgba(22,101,52,0.1);color:var(--accent)}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(194,65,12,0.06),rgba(194,65,12,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.55;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--primary-light);margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:var(--primary-light);font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:3.5mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(194,65,12,0.08);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.amber{background:rgba(194,65,12,0.07);border:1px solid rgba(194,65,12,0.2);color:#7c2d12}
+.highlight-box.green{background:rgba(22,101,52,0.07);border:1px solid rgba(22,101,52,0.2);color:#14532d}
+.highlight-box.gold{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a5f}
+
+/* ── INFO BOX ── */
+.info-section{background:#fff;border:1px solid rgba(194,65,12,0.1);border-radius:10px;padding:4mm 5mm;margin-bottom:5mm}
+.info-section-title{font-size:9pt;font-weight:600;color:var(--ink);margin-bottom:2mm;display:flex;align-items:center;gap:2mm}
+.info-row{display:flex;gap:2mm;margin-bottom:1.5mm;font-size:7.5pt;color:var(--muted);line-height:1.45;font-weight:300}
+.info-row strong{color:var(--ink);font-weight:500;min-width:40mm;flex-shrink:0}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(194,65,12,0.12);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(194,65,12,0.08);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(194,65,12,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:5mm}
+
+/* ── TIPS ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-card{background:#fff;border:1px solid rgba(194,65,12,0.08);border-radius:10px;padding:4mm}
+.tip-icon{font-size:15pt;margin-bottom:1.5mm}
+.tip-title{font-size:8.5pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm}
+.tip-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+
+/* ── PACKING ── */
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm}
+.packing-item{display:flex;align-items:flex-start;gap:2.5mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4;padding:1.5mm 0}
+.packing-check{width:12px;height:12px;border:1.5px solid rgba(194,65,12,0.35);border-radius:3px;flex-shrink:0;margin-top:1px}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1606298855672-3efb63017be8?w=1200&q=80" alt="Bhutan Tiger's Nest Monastery"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Bhutan<br/>in <em>5 Days</em></h1>
+    <p class="cover-sub">The last Himalayan kingdom — Tiger's Nest monastery, dzong fortresses, rice wine with monks, and a country that measures happiness. A complete guide for Indian travellers, with real costs in ₹.</p>
+    <div class="cover-pills">
+      <span class="pill">5 Days</span>
+      <span class="pill">3 Regions</span>
+      <span class="pill">$250/day SDF (non-Indians)</span>
+      <span class="pill">Best: Mar–May, Sep–Nov</span>
+      <span class="pill">Indians: $15/night SDF only</span>
+      <span class="pill">No Visa for Indians</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;font-size:8pt;color:rgba(255,255,255,0.35);font-weight:300">₹199 Guide — International</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bhutan 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Your 5 Days in Bhutan</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-icon">📅</div>
+      <span class="stat-val">5 Days</span>
+      <div class="stat-label">Duration</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🏔️</div>
+      <span class="stat-val">3 Regions</span>
+      <div class="stat-label">Paro · Thimphu · Punakha</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">💰</div>
+      <span class="stat-val">$15/night</span>
+      <div class="stat-label">SDF for Indians</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🌤</div>
+      <span class="stat-val">Mar–May</span>
+      <div class="stat-label">Best Season</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">Your Route — The Classic Kingdom Circuit</div>
+  <div class="route-bar" style="margin-bottom:6mm">
+    <span class="route-stop">Paro (Day 1)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop green">Thimphu (Days 2–3)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Punakha (Day 4)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Tiger's Nest (Day 5, Paro)</span>
+    <span class="route-sub">5 days · 3 regions</span>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">Region by Region</div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-name">Paro</div>
+      <span class="city-days">Day 1 + Day 5</span>
+      <div class="city-desc">Gateway to Bhutan. Paro Airport — one of the world's most challenging landings, only 8 certified pilots globally. Paro Dzong, National Museum, ancient cantilever bridge. Tiger's Nest monastery is 3 hours from Paro town on foot.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Thimphu</div>
+      <span class="city-days">Days 2–3</span>
+      <div class="city-desc">Bhutan's capital — only capital in the world with no traffic lights. Buddha Dordenma (51m bronze statue), Folk Heritage Museum, Textile Museum, weekend market. A city that moves at a wonderfully unhurried pace.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Punakha</div>
+      <span class="city-days green">Day 4</span>
+      <div class="city-desc">Former capital of Bhutan. Punakha Dzong — the most beautiful fortress in the kingdom — sits at the confluence of two rivers. Suspension bridge (180m), Chimi Lhakhang fertility temple, and the dramatic Dochula Pass en route.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Tiger's Nest (Paro Taktsang)</div>
+      <span class="city-days">Day 5</span>
+      <div class="city-desc">The most iconic image of Bhutan — a monastery clinging to a 3,120m cliff. Three-hour hike return. Built in 1692 at the site where Guru Rinpoche meditated in the 8th century. The most important day of your trip.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Bhutan is proof that a country can choose to be different. No traffic lights, no billboards, no fast food chains. The happiness here is not measured — it is felt."</p>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>Indian Travellers:</strong> No visa required — just a valid Indian passport or voter ID. SDF is only $15/night (not $250 — that is for other nationalities). Must book through a licensed Bhutanese tour operator. Your operator handles permits, accommodation, meals, guide, and transport.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — SDF + VISA + DAYS 1–2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bhutan 5-Day Itinerary</span>
+    <span class="page-header-right">SDF · Visa · Days 1–2</span>
+  </div>
+
+  <!-- SDF INFO BOX -->
+  <div class="label">Essential: Bhutan SDF &amp; Entry for Indians</div>
+  <div class="info-section" style="margin-bottom:5mm">
+    <div class="info-section-title">&#127465;&#127463; Sustainable Development Fee (SDF) — What Indians Actually Pay</div>
+    <div class="info-row"><strong>SDF for Indians:</strong> $15/night (approx. ₹1,250/night) — NOT the $250/day charged to other nationalities</div>
+    <div class="info-row"><strong>Visa:</strong> Indians do NOT need a visa — a valid Indian passport or voter ID is sufficient</div>
+    <div class="info-row"><strong>Permit:</strong> Apply through your licensed Bhutanese tour operator — they handle the Bhutan permit/clearance entirely</div>
+    <div class="info-row"><strong>Operator requirement:</strong> All Indians must book through a licensed Bhutanese operator (mandatory by law)</div>
+    <div class="info-row"><strong>Budget package:</strong> ₹8,000–12,000/day all-inclusive (accommodation, meals, guide, transport, entry fees)</div>
+    <div class="info-row"><strong>Mid-range package:</strong> ₹15,000–25,000/day all-inclusive through operator</div>
+    <div class="info-row"><strong>Book ahead:</strong> 1–2 months in advance — Bhutan limits tourist numbers and operators have limited capacity</div>
+    <div class="info-row"><strong>Flights:</strong> Only Drukair and Bhutan Airlines fly to Paro (PBH) — from Kolkata, Delhi, Mumbai, Kathmandu</div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Arrival</div>
+      <div class="day-title">Paro — The Kingdom Begins</div>
+      <div class="day-sub">Land at Paro (PBH) · Rinpung Dzong · National Museum · Paro market dinner</div>
+      <div class="day-cost">Approx. spend: incl. in operator package · Museum entry ₹600</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Paro International Airport (PBH) — The World's Most Dramatic Landing</div>
+        <div class="time-desc">Only 8 pilots in the world are certified to land at Paro. The aircraft weaves between Himalayan peaks before suddenly the runway appears in a narrow valley. Book the window seat on the right side for breathtaking Himalaya views on approach from India. Your operator's representative meets you at the airport. Flights from Kolkata (1hr), Delhi (2.5hrs), Mumbai (3.5hrs), Kathmandu (45min).</div>
+        <div class="time-price">Operator representative meets you at airport · All transport included in package</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Rinpung Dzong + National Museum</div>
+        <div class="time-desc">Rinpung Dzong is a 17th-century fortress-monastery perched above the Paro river — a stunning introduction to Bhutanese dzong architecture. Free with your guide. Walk across the ancient covered cantilever bridge at its base. The National Museum sits above the dzong — 10 galleries of thangka paintings, weapons, costumes, and natural history. A compact but excellent introduction to Bhutanese history and culture.</div>
+        <div class="time-price">Dzong: Free with guide · National Museum: ₹600</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Paro Town Market + Welcome Dinner</div>
+        <div class="time-desc">Paro's main market street is relaxed and genuinely Bhutanese. Buy Bhutanese incense, thangka paintings, yak cheese, hand-woven textiles. For dinner: try ema datshi — Bhutan's national dish — a fiery, creamy curry of green chillies and yak cheese. Warn your operator if you cannot handle spice. Red rice is the Bhutanese staple, nutty and slightly pink. Chang (rice wine) available at most restaurants.</div>
+        <div class="time-price">Dinner: included in package · Market shopping: budget ₹500–2,000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Capital of Happiness</div>
+      <div class="day-title">Drive to Thimphu + Buddha Dordenma</div>
+      <div class="day-sub">Paro → Thimphu (1.5hrs) · Buddha Dordenma · Folk Heritage Museum · Weekend Market</div>
+      <div class="day-cost">Museum entry approx. ₹400 · Chang: ₹100</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Paro → Thimphu Drive (1.5 Hours)</div>
+        <div class="time-desc">The road follows the Paro Chhu river through pine forests and traditional Bhutanese farmhouses. At 2,300m, Thimphu is one of the world's highest capitals. The drive is beautiful — watch for painted phalluses on farmhouse walls (a traditional fertility blessing practice). Arrive Thimphu by mid-morning. Check in to accommodation — your operator selects based on package tier.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Buddha Dordenma — Best at 9am</div>
+        <div class="time-desc">A 51-metre bronze Buddha statue on a hill overlooking the entire Thimphu valley — the largest sitting Buddha in the world at its elevation. The golden statue gleams in morning light against pine forests and blue sky. Inside the statue's base: 125,000 smaller Buddha statues. Free entry. The viewpoint from the Buddha's platform offers one of the finest panoramas in Bhutan. Arrive by 9am for the best light and fewer visitors.</div>
+        <div class="time-price">Entry: Free · Best time: 9am sharp for morning light</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Folk Heritage Museum + Textile Museum</div>
+        <div class="time-desc">The Folk Heritage Museum is a traditional Bhutanese farmhouse preserved intact — three floors of authentic rural life, granary, weaving room, kitchen with open fire, sleeping quarters. Guides explain daily life customs that have changed little in centuries (₹400). The Textile Museum next is free and showcases Bhutan's extraordinary weaving traditions — kira (women's dress) and gho (men's robe) take weeks to make by hand. Weekend market (Fri–Sun) near Changlimithang: local produce, handicrafts, incense, dried yak meat, fresh ngalum cheese.</div>
+        <div class="time-price">Folk Heritage Museum: ₹400 · Textile Museum: Free · Weekend market: Free entry</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Thimphu Nightlife — Chang &amp; Traditional Music</div>
+        <div class="time-desc">Thimphu has a small but genuine bar scene — a few establishments around the Clock Tower Square play live traditional Bhutanese music. Chang (rice wine, ₹100 a glass) and ara (distilled grain spirit) are the local drinks. It is modest by any global standard, but there is something deeply charming about hearing traditional instruments in a country that has barely discovered neon signs. End early — Day 3 is full.</div>
+        <div class="time-price">Chang: ₹100 · Dinner at local restaurant: ₹300–800 (or included in package)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAYS 3–5 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bhutan 5-Day Itinerary</span>
+    <span class="page-header-right">Days 3–5</span>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Monasteries &amp; Local Life</div>
+      <div class="day-title">Thimphu — Dzongs &amp; Deep Culture</div>
+      <div class="day-sub">Tashichho Dzong · National Memorial Chorten · Simply Bhutan · Hot Stone Bath</div>
+      <div class="day-cost">Simply Bhutan: ₹1,200 · Hot stone bath: ₹1,500–3,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Tashichho Dzong — Seat of Government</div>
+        <div class="time-desc">The official seat of the Bhutanese government and the throne room of the king. A massive white-and-red dzong rebuilt in 1962 with traditional joinery (no nails), overlooking the Wang Chhu river. The exterior and monastery gardens are accessible; inner administrative quarters are sometimes restricted. Free to visit with your guide. Best photographed in early morning light when monks in red and saffron robes cross the courtyards.</div>
+        <div class="time-price">Entry: Free · Best time: Morning for monks' activity</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Mid-Morning</div>
+      <div class="time-content">
+        <div class="time-title">National Memorial Chorten — Daily Ritual</div>
+        <div class="time-desc">A beautiful white stupa standing in the middle of Thimphu, built in 1974 in memory of the third king. Every morning and evening, hundreds of Thimphu residents walk clockwise circles around it — elderly women with prayer wheels, monks, school children, businessmen. Sit on a bench and watch for 20 minutes. This is the authentic pulse of Bhutan, unhurried and profound. One of the most peaceful experiences on this trip.</div>
+        <div class="time-price">Entry: Free · Budget 20–30 minutes here</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Simply Bhutan Museum — Immersive Cultural Experience</div>
+        <div class="time-desc">Simply Bhutan is a living-culture museum and hands-on experience: try on traditional Bhutanese dress (kira and gho), shoot a traditional Bhutanese bow (archery is the national sport), taste ara (local grain spirit) and butter tea, see traditional crafts demonstrated live. Staff explain each tradition with warmth and detail. ₹1,200 entry — compulsory admission but genuinely worth every rupee. Allow 1.5 hours.</div>
+        <div class="time-price">Entry: ₹1,200 · Duration: 1.5 hours · Archery and dress try-on included</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Hot Stone Bath (Dotsho) — Traditional Bhutanese Wellness</div>
+        <div class="time-desc">The most authentically Bhutanese wellness ritual — a wooden tub filled with river water, medicinal herbs (artemisia, sichuan pepper bark), and river stones heated red-hot in a fire and rolled in through a channel. The mineral-rich water reaches 38–42°C. Profoundly relaxing after two days of walking and altitude. Many hotels and guesthouses offer this. ₹1,500–3,000 depending on accommodation tier. Book through your operator in advance.</div>
+        <div class="time-price">Hot stone bath: ₹1,500–3,000 depending on accommodation · Book ahead</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · The Beautiful Valley</div>
+      <div class="day-title">Punakha — Bhutan's Most Stunning Dzong</div>
+      <div class="day-sub">Dochula Pass (3,100m) · Punakha Dzong · Suspension Bridge · Chimi Lhakhang</div>
+      <div class="day-cost">Punakha Dzong entry: ₹600 · Chimi Lhakhang: Free</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Dochula Pass — 108 Chortens at 3,100m</div>
+        <div class="time-desc">The 2-hour drive from Thimphu to Punakha crosses the Dochula Pass at 3,100m — on a clear morning, the entire eastern Himalayan range is visible, including peaks over 7,000m. Druk Wangyal Chortens: 108 memorial stupas built in concentric rings, creating a dreamlike landscape. The pass has a small café and monastery. Dress warmly — at 3,100m the temperature is 10°C cooler than Thimphu. If clouds obscure the views, sunrise is the best window.</div>
+        <div class="time-price">Dochula Pass: Free · Café tea: ₹80</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Mid-Morning</div>
+      <div class="time-content">
+        <div class="time-title">Punakha Dzong — The Most Beautiful Fortress in Bhutan</div>
+        <div class="time-desc">Built in 1637 at the confluence of the Mo Chhu (Mother River) and Pho Chhu (Father River), Punakha Dzong is widely considered the most beautiful fortress-monastery in Bhutan — and possibly in the Himalayas. White walls, golden roofs, intricate woodwork. Inside: monks' quarters, ancient thangkas, and the preserved body of Zhabdrung (Bhutan's unifying leader). In spring (March), jacaranda trees in the courtyard burst purple. ₹600 entry. Allow 90 minutes.</div>
+        <div class="time-price">Entry: ₹600 · Duration: 90 minutes · Best: Morning before tour groups arrive</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Punakha Suspension Bridge + Chimi Lhakhang</div>
+        <div class="time-desc">Punakha Suspension Bridge is Bhutan's longest — 180 metres across the Po Chhu river, draped in prayer flags, a 10-minute walk from the dzong. Free and perfectly walkable. Then: Chimi Lhakhang — the Fertility Temple. A 45-minute walk through mustard fields and rice paddies to a hilltop temple of the "Divine Madman" — Drukpa Kunley, a tantric Buddhist saint celebrated for outrageous behaviour and fertility blessings. Pilgrims come from across Asia for blessings. The walk through rice fields alone is worth it.</div>
+        <div class="time-price">Suspension Bridge: Free · Chimi Lhakhang: Free · Walk: 45 min each way</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Return Thimphu or Overnight Punakha</div>
+        <div class="time-desc">Option A: Return 2 hours to Thimphu for your base accommodation. Option B: Stay overnight in a Punakha guesthouse (budget ₹2,500–5,000, often included in mid-range packages) and wake up to the dzong reflected in the river at dawn — the most magical photograph in Bhutan. Either way: depart Punakha by 7am next morning to return to Paro for Tiger's Nest.</div>
+        <div class="time-price">Punakha guesthouse overnight: ₹2,500–5,000 · Or return to Thimphu included in package</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · The Main Event</div>
+      <div class="day-title">Tiger's Nest — The Hike of a Lifetime</div>
+      <div class="day-sub">Start by 8am · 3hr hike up · Monastery visit · Kichu Lhakhang · Farewell dinner</div>
+      <div class="day-cost">Trailhead parking: ₹300 (via operator) · Horse: ₹1,500 return · No entry fee</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Paro Taktsang (Tiger's Nest) — Begin the Hike</div>
+        <div class="time-desc">Start by 8am sharp — morning light hits the monastery perfectly and you beat the crowds. The trailhead is in a conifer forest. The hike is 2.5–3 hours up (900m elevation gain), 1.5–2 hours down. Moderate difficulty — fit adults with good shoes manage comfortably. Optional: hire a horse to the halfway point café (₹1,500 return) — saves 45 minutes but the walk through the forest is beautiful. The monastery perches impossibly on a 3,120m cliff face, built in 1692 exactly where Guru Rinpoche arrived on a flying tigress in the 8th century.</div>
+        <div class="time-price">Horse to halfway: ₹1,500 return · Packed lunch from operator recommended</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Halfway</div>
+      <div class="time-content">
+        <div class="time-title">Halfway Cafeteria — Lunch with a View</div>
+        <div class="time-desc">At the halfway point (approx. 1.5hrs up), there is a cafeteria with outdoor seating directly facing Tiger's Nest across the valley. The view is magnificent — the monastery gleaming white against sheer rock and pine forest. Food is average (basic Bhutanese thali, ₹400–600) but the view is priceless. Take your lunch break here on the ascent or descent. Your legs will thank you. Good for a 20-minute rest either way.</div>
+        <div class="time-price">Thali lunch: ₹400–600 · Tea: ₹80</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Summit</div>
+      <div class="time-content">
+        <div class="time-title">Tiger's Nest Monastery — The Sacred Space</div>
+        <div class="time-desc">Remove shoes before entering. No photography inside the monastery — respect this fully. The interior is intimate and intensely sacred: flickering butter lamps, ancient murals, low chanting monks, the smell of juniper incense. Four main temples, each containing significant statues and relics. The cave where Guru Rinpoche meditated is accessible. Standing inside a 330-year-old monastery on a cliff face at 3,120m with the Paro valley 900m below is one of those experiences that stays with you permanently.</div>
+        <div class="time-price">Entry: No fee · No photos inside · Shoes off · Modest dress required</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Kichu Lhakhang — 7th Century Temple (Optional)</div>
+        <div class="time-desc">Kichu Lhakhang is one of Bhutan's oldest and most sacred temples, built in the 7th century by Tibetan King Songtsen Gampo — the same king who built Jokhang temple in Lhasa. A peaceful, flat 10-minute walk in Paro valley. Two temples in a garden courtyard, ancient and beautiful, with resident monks. Free entry. A gentle counterpoint to Tiger's Nest's dramatic hike. Then: Paro town farewell dinner — ema datshi one last time. Fly out next morning.</div>
+        <div class="time-price">Kichu Lhakhang: Free · Farewell dinner: included in package or ₹400–1,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — BUDGET + TIPS + PACKING ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bhutan 5-Day Itinerary</span>
+    <span class="page-header-right">Budget · Tips · Packing</span>
+  </div>
+
+  <div class="label">Budget Breakdown</div>
+  <h2 class="section-title" style="margin-bottom:4mm">5 Days in Bhutan — What It Costs (Indians)</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Budget (₹)</th>
+        <th>Mid-Range (₹)</th>
+        <th>Premium (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tour package (guide + transport + stays + meals)</td>
+        <td>25,000</td>
+        <td>40,000</td>
+        <td>70,000+</td>
+      </tr>
+      <tr>
+        <td>Accommodation (5 nights) — incl. in package</td>
+        <td>incl.</td>
+        <td>incl.</td>
+        <td>incl.</td>
+      </tr>
+      <tr>
+        <td>Meals — included in package</td>
+        <td>incl.</td>
+        <td>incl.</td>
+        <td>incl.</td>
+      </tr>
+      <tr>
+        <td>Return flights from India</td>
+        <td>15,000</td>
+        <td>20,000</td>
+        <td>25,000</td>
+      </tr>
+      <tr>
+        <td>SDF ($15/night × 5 nights for Indians)</td>
+        <td>6,000</td>
+        <td>6,000</td>
+        <td>6,000</td>
+      </tr>
+      <tr>
+        <td>Shopping + extras + museum entries</td>
+        <td>3,000</td>
+        <td>8,000</td>
+        <td>20,000</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL (per person)</strong></td>
+        <td><strong>~₹49,000</strong></td>
+        <td><strong>~₹74,000</strong></td>
+        <td><strong>₹1,21,000+</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="budget-note">All costs per person. SDF ($15/night) applies to Indians, Bangladeshis. Non-Indian nationals pay $250/day SDF. Tour package includes accommodation, all meals, licensed guide, private transport, and dzong entry fees. Flight costs from major Indian cities (Kolkata cheapest). Premium tier: boutique Uma by COMO or Six Senses Paro properties.</p>
+
+  <div class="label" style="margin-bottom:3mm">Insider Tips</div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">📅</div>
+      <div class="tip-title">Book Your Operator Early</div>
+      <div class="tip-desc">Bhutan limits tourist numbers and licensed operators have limited capacity. Book 1–2 months ahead for Mar–May and Sep–Nov peak seasons. Last-minute bookings often impossible for these windows.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏔️</div>
+      <div class="tip-title">Tiger's Nest: Start Before 8am</div>
+      <div class="tip-desc">Morning light hits the monastery perfectly from 8–10am. Starting early also means beating tour groups. The trail is much more atmospheric in the cool morning air through conifer forest mist.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🧥</div>
+      <div class="tip-title">Pack Layers — 15°C Swings</div>
+      <div class="tip-desc">Even in summer, Bhutan's temperature swings 15°C between day and night. Paro and Punakha are warmer; Thimphu (2,300m) and Dochula Pass (3,100m) are significantly cooler. Light down jacket essential.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🛍️</div>
+      <div class="tip-title">No Plastic Bags in Bhutan</div>
+      <div class="tip-desc">Bhutan banned plastic bags in 1999 — one of the first countries in the world to do so. Bring reusable bags for shopping. Also: no tobacco sales in Bhutan (bring your own if needed, duty applies).</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📷</div>
+      <div class="tip-title">Photography Etiquette</div>
+      <div class="tip-desc">Always ask before photographing inside dzongs and temples. No photography inside Tiger's Nest monastery — non-negotiable. Locals are generally happy to be photographed if asked with a smile.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌶️</div>
+      <div class="tip-title">Ema Datshi Warning</div>
+      <div class="tip-desc">Bhutan's national dish (chilli cheese curry) is genuinely fiery — made with large green or red Bhutanese chillies. Tell your operator your spice tolerance clearly. Most operators can arrange milder versions.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💧</div>
+      <div class="tip-title">Altitude — Stay Hydrated</div>
+      <div class="tip-desc">Thimphu sits at 2,300m; Dochula Pass at 3,100m; Tiger's Nest at 3,120m. No acute altitude issues for most people but stay well hydrated, avoid alcohol on Day 1, and carry altitude headache tablets.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💵</div>
+      <div class="tip-title">Indian Rupees Accepted</div>
+      <div class="tip-desc">Indian rupees (₹) are accepted as legal tender across Bhutan alongside the Bhutanese ngultrum (BTN, pegged 1:1 to INR). You do not need to exchange currency — just bring rupee notes. ₹2,000 notes not always accepted.</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-bottom:3mm">Packing List</div>
+  <div class="packing-grid">
+    <div class="packing-item"><div class="packing-check"></div><span>Good trekking shoes — essential for Tiger's Nest (900m elevation gain)</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Warm layers — light down jacket, fleece, thermal base layer</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Modest clothing for monasteries — shoulders and knees covered</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Rain jacket — showers possible in all seasons in the hills</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Altitude headache tablets (Diamox or paracetamol)</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Small daypack for Tiger's Nest hike (water, snacks, jacket)</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Camera — no drones allowed anywhere in Bhutan</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Sunscreen — high altitude UV is intense even on cloudy days</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Indian rupees (₹100 and ₹500 notes preferred)</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Reusable shopping bags — plastic bags banned in Bhutan</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Valid Indian passport or voter ID (no visa needed)</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Operator contact and Bhutan permit document (operator provides)</span></div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="position:relative;z-index:2;text-align:center">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:11pt;color:rgba(255,255,255,0.4);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:8mm">IncredibleItinerary.com</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:32pt;font-weight:300;color:#fff;line-height:1.15;margin-bottom:6mm">Bhutan in 5 Days</div>
+    <div style="width:40mm;height:1px;background:rgba(253,186,116,0.4);margin:0 auto 6mm"></div>
+    <div style="font-size:9pt;color:rgba(255,255,255,0.45);font-weight:300;max-width:100mm;line-height:1.7;margin:0 auto 10mm">"The happiness here is not measured — it is felt."</div>
+    <div style="display:flex;gap:6mm;justify-content:center;flex-wrap:wrap;margin-bottom:10mm">
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55);font-size:7.5pt;padding:4px 14px;border-radius:20px">5 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55);font-size:7.5pt;padding:4px 14px;border-radius:20px">Paro · Thimphu · Punakha</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55);font-size:7.5pt;padding:4px 14px;border-radius:20px">Tiger's Nest</span>
+    </div>
+    <div style="font-size:7.5pt;color:rgba(255,255,255,0.25);letter-spacing:0.1em">incredibleitinerary.com · 2026 Edition · ₹199</div>
+  </div>
+</div>
+
+</body>
+</html>

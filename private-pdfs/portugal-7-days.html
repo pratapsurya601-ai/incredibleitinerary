@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Portugal in 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#1d4ed8;--primary-light:#93c5fd;--primary-dark:#1e3a8a;
+  --accent:#c2410c;--accent-light:#fdba74;
+  --light:#93c5fd;--cream:#f0f4ff;
+  --ink:#0a0f1a;--muted:#3d5075;--white:#ffffff;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--primary-dark);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,58,138,0.97) 0%,rgba(30,58,138,0.65) 45%,rgba(30,58,138,0.22) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--primary-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:140mm;line-height:1.65}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(10,15,26,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(29,78,216,0.12);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.orange{background:var(--accent)}
+.route-stop.teal{background:#0f766e}
+.route-stop.gold{background:#b45309}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(29,78,216,0.1);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(29,78,216,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-days.orange{background:rgba(194,65,12,0.1);color:var(--accent)}
+.city-days.teal{background:rgba(15,118,110,0.1);color:#0f766e}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(29,78,216,0.06),rgba(29,78,216,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.55;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--primary-light);margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:var(--primary-light);font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:3.5mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.blue{background:rgba(29,78,216,0.07);border:1px solid rgba(29,78,216,0.2);color:#1e3a5f}
+.highlight-box.orange{background:rgba(194,65,12,0.07);border:1px solid rgba(194,65,12,0.2);color:#7c2d12}
+.highlight-box.green{background:rgba(15,118,110,0.07);border:1px solid rgba(15,118,110,0.2);color:#134e4a}
+.highlight-box.gold{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+
+/* ── INFO SECTION ── */
+.info-section{background:#fff;border:1px solid rgba(29,78,216,0.1);border-radius:10px;padding:4mm 5mm;margin-bottom:5mm}
+.info-section-title{font-size:9pt;font-weight:600;color:var(--ink);margin-bottom:2mm}
+.info-row{display:flex;gap:2mm;margin-bottom:1.5mm;font-size:7.5pt;color:var(--muted);line-height:1.45;font-weight:300}
+.info-row strong{color:var(--ink);font-weight:500;min-width:44mm;flex-shrink:0}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(29,78,216,0.12);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(29,78,216,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(29,78,216,0.05);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:5mm}
+
+/* ── TIPS ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-card{background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:10px;padding:4mm}
+.tip-icon{font-size:15pt;margin-bottom:1.5mm}
+.tip-title{font-size:8.5pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm}
+.tip-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+
+/* ── PACKING ── */
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm}
+.packing-item{display:flex;align-items:flex-start;gap:2.5mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4;padding:1.5mm 0}
+.packing-check{width:12px;height:12px;border:1.5px solid rgba(29,78,216,0.35);border-radius:3px;flex-shrink:0;margin-top:1px}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80" alt="Portugal Lisbon view"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Portugal<br/>in <em>7 Days</em></h1>
+    <p class="cover-sub">Lisbon's trams and fado music, Sintra's fairy-tale palaces, Porto's wine cellars, and the Algarve's golden cliffs — Europe's most underrated journey. A complete guide for Indian travellers, with real costs in ₹.</p>
+    <div class="cover-pills">
+      <span class="pill">7 Days</span>
+      <span class="pill">3 Cities + Algarve</span>
+      <span class="pill">€80–200/day</span>
+      <span class="pill">Best: Apr–Jun, Sep–Oct</span>
+      <span class="pill">Schengen Visa Required</span>
+      <span class="pill">€1 = ₹90</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;font-size:8pt;color:rgba(255,255,255,0.35);font-weight:300">₹199 Guide — International</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Portugal 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Your 7 Days in Portugal</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-icon">📅</div>
+      <span class="stat-val">7 Days</span>
+      <div class="stat-label">Duration</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🏛️</div>
+      <span class="stat-val">3 Cities</span>
+      <div class="stat-label">Lisbon · Porto · Algarve</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">💱</div>
+      <span class="stat-val">€1 = ₹90</span>
+      <div class="stat-label">Exchange Rate</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🌤</div>
+      <span class="stat-val">Apr–Jun</span>
+      <div class="stat-label">Best Season</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">Your Route — The Classic Portugal Circuit</div>
+  <div class="route-bar" style="margin-bottom:6mm">
+    <span class="route-stop">Lisbon (Days 1–3)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop teal">Sintra (Day 2)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop orange">Porto (Days 4–5)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Algarve (Days 6–7)</span>
+    <span class="route-sub">7 days · 3 regions</span>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">Destination by Destination</div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-name">Lisbon</div>
+      <span class="city-days">Days 1–3</span>
+      <div class="city-desc">Europe's sunniest capital — yellow trams on steep cobblestone hills, pastéis de nata from 1837, Alfama neighbourhood's white-washed houses, Fado music in candlelit tasca restaurants, and the 25th of April Bridge glowing in the evening light.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Sintra</div>
+      <span class="city-days teal">Day 2 (from Lisbon)</span>
+      <div class="city-desc">UNESCO World Heritage town 30km from Lisbon. Pena Palace — a fairy-tale yellow-and-red palace on a forested mountain, built 1854. Moorish Castle, Quinta da Regaleira's mysterious initiatic well. Europe's most dramatic royal landscape.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Porto</div>
+      <span class="city-days orange">Days 4–5</span>
+      <div class="city-desc">UNESCO old town, Port wine caves in Vila Nova de Gaia, Ribeira waterfront, azulejo tile churches, Livraria Lello (the "Harry Potter bookshop"), Francesinha sandwiches, and a city that wears its soul on its sleeve.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Algarve</div>
+      <span class="city-days" style="background:rgba(180,83,9,0.1);color:#b45309">Days 6–7</span>
+      <div class="city-desc">Southern Portugal's golden coast. Ponta da Piedade's limestone sea stacks, Benagil Cave (kayak in), Lagos old town, and Sagres — Europe's southwestern tip where Henry the Navigator launched the Age of Discovery. Stunning Atlantic cliffs.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Portugal is what happens when a country stops trying to impress the world and just becomes quietly, impossibly beautiful. The pastéis, the trams, the fado — you'll understand when you get there."</p>
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>Schengen Visa (Indians):</strong> Apply at the Portuguese consulate or VFS Global 6–8 weeks before travel. Fee €80 (~₹7,200). Required: bank statements, confirmed hotel bookings, return flight, travel insurance. A valid Schengen visa also allows entry to 26 other European countries.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — PRE-TRIP + DAYS 1–2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Portugal 7-Day Itinerary</span>
+    <span class="page-header-right">Pre-Trip · Days 1–2</span>
+  </div>
+
+  <!-- PRE-TRIP INFO -->
+  <div class="label">Pre-Trip Essentials</div>
+  <div class="info-section" style="margin-bottom:5mm">
+    <div class="info-section-title">Visa · Flights · Money · Transport · SIM</div>
+    <div class="info-row"><strong>Visa:</strong> Schengen visa — apply at Portuguese consulate/VFS 6–8 weeks ahead. Fee €80 (~₹7,200). Documents: bank statement, hotel booking, return flight, travel insurance.</div>
+    <div class="info-row"><strong>Flights:</strong> Lisbon (LIS) from Mumbai/Delhi via Doha, Dubai, or Frankfurt. Total 14–18hrs. Return tickets: ₹55,000–90,000. Book 2–3 months ahead for best prices.</div>
+    <div class="info-row"><strong>Currency:</strong> Euro (€). €1 = ~₹90. Cards accepted everywhere in Portugal. Use Multibanco ATMs for best exchange rates. Withdraw €200–300 on arrival.</div>
+    <div class="info-row"><strong>Intercity trains:</strong> CP (comboios.pt) Alfa Pendular train Lisbon→Porto: 3hrs, €25 (book 2 weeks ahead online). Porto→Algarve: fly 1hr (~₹2,000) or rent a car (4hrs drive).</div>
+    <div class="info-row"><strong>SIM card:</strong> NOS or MEO from Lisbon airport. 20GB data for €15 (~₹1,350). Excellent 4G coverage across Portugal including Algarve.</div>
+    <div class="info-row"><strong>City transport:</strong> Lisbon metro €1.50/trip. Trams €3. Porto: metro €1.20. Algarve: rental car essential (€40–80/day from Faro airport).</div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Arrival</div>
+      <div class="day-title">Lisbon — Belém, Tram 28 &amp; Fado</div>
+      <div class="day-sub">Humberto Delgado Airport → Metro → Belém Tower → Jerónimos → Tram 28 → Alfama → Fado dinner</div>
+      <div class="day-cost">Full day approx. €30–50pp (₹2,700–4,500) excl. accommodation</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Lisbon Airport → City Centre by Metro</div>
+        <div class="time-desc">Humberto Delgado Airport (LIS) is 7km from Lisbon city centre. The Red Line metro runs directly from the airport to Alameda in 15 minutes (€1.50). Buy a reloadable Viva Viagem card (€0.50) at the metro machines for all Lisbon transport. Taxis to Baixa cost €12–15 (metered). Rideshares (Bolt, Uber) available for €8–12. Best area to stay: Baixa/Chiado for central location. Budget €50–80/night, mid-range €100–180/night.</div>
+        <div class="time-price">Metro to city centre: €1.50 (₹135) · Hotel: €50–80 budget, €100–180 mid</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Belém Tower + Jerónimos Monastery + Original Pastéis de Belém</div>
+        <div class="time-desc">Belém Tower (€6, ₹540) is a 16th-century fortress on the Tagus river — UNESCO, Manueline Gothic architecture, built to celebrate Vasco da Gama's discoveries. Next door: Jerónimos Monastery (€10, ₹900) — UNESCO, the most spectacular Manueline building in Portugal with its impossibly elaborate stone carvings. Vasco da Gama is buried here. Then: Pastéis de Belém bakery (since 1837, the original custard tart recipe kept secret for 189 years). Two pastéis de nata for €2.60 with cinnamon and powdered sugar — the best €2.60 you will spend in Europe.</div>
+        <div class="time-price">Belém Tower: €6 (₹540) · Jerónimos: €10 (₹900) · Pastéis de Belém: €1.30/tart</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Tram 28 — Lisbon's Most Iconic Experience</div>
+        <div class="time-desc">The yellow Tram 28 climbs through streets so narrow the tram's sides nearly brush the building walls — through Alfama, past the Sé Cathedral, up the steep Graça hill and down through Estrela. €3 (₹270) for a journey that no bus or metro can replicate. Beware pickpockets on board — keep bags in front. Ride it one way to Sé Cathedral and walk back through Alfama's medieval alleys: white-washed houses, laundry strung between windows, cats sleeping in doorways.</div>
+        <div class="time-price">Tram 28: €3 (₹270) · Sé Cathedral: free exterior</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Fado Dinner — Book Ahead</div>
+        <div class="time-desc">Fado is Portugal's soul — UNESCO-listed intangible heritage, a mournful, achingly beautiful music of longing (saudade). Authentic fado at Mesa de Frades (a tiny converted chapel) or Tasca do Chico (intimate, 20 seats) in Alfama. Both require advance booking — call 3–4 days ahead. Cover charge ~€25 including dinner or minimum spend. Performers enter unannounced mid-dinner. You will be the only table not silently crying by the end. One of the great cultural experiences in Europe.</div>
+        <div class="time-price">Fado dinner: €25–40pp cover + food · Book 3–4 days ahead</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAYS 2–3 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Portugal 7-Day Itinerary</span>
+    <span class="page-header-right">Days 2–3 · Lisbon &amp; Sintra</span>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Fairy-Tale Day Trip</div>
+      <div class="day-title">Sintra — Palaces on a Mountain</div>
+      <div class="day-sub">Train from Rossio (1hr) · Pena Palace · Moorish Castle · Quinta da Regaleira · Lisbon sunset</div>
+      <div class="day-cost">Full day approx. €35–45pp (₹3,150–4,050) all entries</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Train: Lisbon Rossio → Sintra (40 Minutes)</div>
+        <div class="time-desc">Trains run every 15–20 minutes from Lisbon Rossio station. €5 return (₹450) — one of Europe's great bargain train rides through wooded suburbs. Sintra station is walkable to the centre. Arrive by 9:30am to beat the queues at Pena Palace. This is genuinely important — after 10:30am the ticket queue can be 45–60 minutes. Buy your Pena Palace ticket online at parquesdesintra.pt in advance to skip entirely.</div>
+        <div class="time-price">Train return: €5 (₹450) · Buy Pena Palace tickets online to skip queues</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Pena Palace — Portugal's Most Visited Sight</div>
+        <div class="time-desc">Built in 1854 for Queen Maria II, Pena Palace sits at 529m on a forested mountain above Sintra. Half yellow, half blood-red, with turrets, terraces, Moorish arches, and Gothic spires — a Romantic fantasy made stone. Inside: original 19th-century royal apartments intact, staterooms with period furniture, the king's study, the queen's quarters. The palace terrace overlooks the Atlantic, Lisbon, and on clear days — the Algarve. One of the most photogenic buildings in all of Europe. €14 (₹1,260) — worth every cent.</div>
+        <div class="time-price">Pena Palace: €14 (₹1,260) · Buy online to skip queues</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Midday</div>
+      <div class="time-content">
+        <div class="time-title">Moorish Castle + Quinta da Regaleira</div>
+        <div class="time-desc">Moorish Castle (€8, ₹720): 10th-century Moorish battlements walkable from Pena Palace through the forest — panoramic views over Sintra town and the Atlantic coast. Then descend to town for lunch (local pastel de Sintra pastry, €1.50) before Quinta da Regaleira (€10, ₹900): a neo-Manueline palace with initiatic wells — spiral stone staircases descending into the earth, connected by underground tunnels used for Masonic initiation rituals. Simultaneously beautiful and genuinely strange. Allow 90 minutes.</div>
+        <div class="time-price">Moorish Castle: €8 (₹720) · Quinta da Regaleira: €10 (₹900)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Return Lisbon — Sunset Viewpoint + Ginjinha</div>
+        <div class="time-desc">Return train to Lisbon by 5pm. Head directly to Miradouro da Graça — Lisbon's best viewpoint, free, with the castle and Alfama below and the Tagus river and 25th April Bridge ahead in the golden evening light. Then: A Ginjinha bar on Largo de São Domingos (since 1840) — Ginjinha is Lisbon's sour cherry liqueur, served in a tiny shot glass for €1.50. It has been made by the same family for 185 years. Possibly the best €1.50 in Europe.</div>
+        <div class="time-price">Miradouro da Graça: Free · Ginjinha shot: €1.50 (₹135)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · The Real Lisbon</div>
+      <div class="day-title">LX Factory, Time Out Market &amp; Azulejo Museum</div>
+      <div class="day-sub">LX Factory · Time Out Market · Museu do Azulejo · Bairro Alto bar-hopping</div>
+      <div class="day-cost">Full day approx. €25–40pp (₹2,250–3,600) food + entries</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">LX Factory — Creative Hub in a Former Textile Factory</div>
+        <div class="time-desc">LX Factory is a large 19th-century textile factory complex transformed into a creative village of independent boutiques, design studios, bookshops, restaurants, and art galleries. Free to enter and wander. On Sundays, the Sunday Market (10am–8pm) fills the courtyard with vintage clothing, artisan food, and handmade goods. Livraria Ler Devagar inside is one of Lisbon's most beautiful bookshops (a bicycle dangling from the industrial ceiling, floor-to-ceiling books). Always buzzing, always interesting.</div>
+        <div class="time-price">LX Factory: Free · Sunday Market: Free entry · Shopping optional</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Midday</div>
+      <div class="time-content">
+        <div class="time-title">Time Out Market — Best Food Market in Europe</div>
+        <div class="time-desc">Time Out Market Lisbon is a converted 1882 market hall housing 40 of Lisbon's best restaurant stalls under one roof — all curated, all quality. €6–15 per dish. Recommended: bifanas (pork sandwiches, the Portuguese street food), arroz de marisco (seafood rice), grilled octopus, pastel de bacalhau (codfish cakes), and pastéis de nata from the Manteigaria counter. Sit at the long communal tables. It is packed by 1pm — arrive by 12:15.</div>
+        <div class="time-price">Lunch at Time Out Market: €12–20pp (₹1,080–1,800)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Museu Nacional do Azulejo — Unmissable</div>
+        <div class="time-desc">The National Tile Museum tells the 500-year story of azulejo — the blue-and-white painted tin-glazed tiles that cover every church, palace, and train station in Portugal. Housed in a beautiful 16th-century convent with its own tiled cloisters. The highlights: a 23-metre panoramic tile panel of Lisbon before the 1755 earthquake, Moorish geometric tiles, 18th-century narrative hunting scenes, and contemporary azulejo art. €5 (₹450). Genuinely one of the best museums in Portugal. Allow 1.5 hours.</div>
+        <div class="time-price">Entry: €5 (₹450) · Duration: 1.5 hours</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Bairro Alto Bar-Hopping or Cais do Sodré Pink Street</div>
+        <div class="time-desc">Bairro Alto (Upper District) is Lisbon's bohemian bar neighbourhood — dozens of tiny bars lining steep narrow streets, drinks from €4–8, a different crowd at every door, conversation spilling onto the cobblestones. Or head to Rua Nova do Carvalho — the "Pink Street" in Cais do Sodré, Lisbon's old sailors' district now painted neon pink, with bars, live music, and a younger international crowd. Both are safe, both are fun, both are quintessentially Lisbon.</div>
+        <div class="time-price">Drinks: €4–8 each · Dinner in Bairro Alto: €15–25pp</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAYS 4–5 PORTO ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Portugal 7-Day Itinerary</span>
+    <span class="page-header-right">Days 4–5 · Porto</span>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Portugal's Soul City</div>
+      <div class="day-title">Porto — Ribeira, Lello &amp; Sunset</div>
+      <div class="day-sub">Alfa Pendular train (3hrs) · Ribeira waterfront · Livraria Lello · Porto Cathedral · Serra do Pilar sunset</div>
+      <div class="day-cost">Train: €25 (₹2,250) booked ahead · Day approx. €20–35pp</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Alfa Pendular: Lisbon → Porto (3 Hours)</div>
+        <div class="time-desc">The Alfa Pendular is Portugal's premium intercity train — comfortable, punctual, and scenic. Book online at cp.pt at least 2 weeks ahead for €25 (₹2,250). Walk-in price can be €45–55. The train follows the Atlantic coast through vineyards, pine forests, and fishing villages. Arrive Porto Campanhã or São Bento station. Note: São Bento station itself is a destination — its entrance hall is lined with 20,000 azulejo tiles depicting Portuguese history. Arrive and just stand there for five minutes.</div>
+        <div class="time-price">Alfa Pendular: €25 (₹2,250) booked 2 weeks ahead · Book at cp.pt</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Ribeira Waterfront — UNESCO World Heritage</div>
+        <div class="time-desc">The Ribeira (riverside district) is Porto at its most photogenic — colourful crumbling medieval houses stacked above the Douro river, old fishing boats (barcos rabelos) moored below, the Dom Luís I double-decker iron bridge (1886) arching across to Vila Nova de Gaia. Walk the riverside promenade from Praça da Ribeira west and east. Free. Every street climbing up from the water contains a café, a tiled church front, or a viewpoint that makes you stop and stare. Porto's old town is UNESCO-listed for good reason.</div>
+        <div class="time-price">Ribeira waterfront: Free · Riverside café coffee: €1.20</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Livraria Lello — The Most Beautiful Bookshop in the World</div>
+        <div class="time-desc">Livraria Lello (1906) is a neo-Gothic bookshop with a sinuous red Art Nouveau wooden staircase that spirals to the upper floor, stained glass ceiling, and carved wooden balconies. J.K. Rowling taught English in Porto and visited regularly — it partially inspired Hogwarts. €5 voucher required (₹450, redeemable on any book purchase). Queue forms from 11am — go at opening (9am) or late afternoon. Genuinely one of the most beautiful interiors in Portugal. Even if you are not a book lover, go.</div>
+        <div class="time-price">Entry voucher: €5 (₹450, redeemable on books) · Go before 10am or after 5pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Porto Cathedral + Miradouro da Serra do Pilar</div>
+        <div class="time-desc">Porto Cathedral (Sé do Porto) is a 12th-century Romanesque fortress-church on a hill above the Ribeira — free exterior. Then cross the Dom Luís I bridge (upper level) on foot to Vila Nova de Gaia and climb to Miradouro da Serra do Pilar — a terrace before the 17th-century rotunda with the most panoramic view in Porto: the entire Ribeira, the six bridges, the Douro glittering in evening light. The best sunset spot in the city. Free. Get there 30 minutes before sunset.</div>
+        <div class="time-price">Porto Cathedral: Free exterior · Miradouro: Free · Sunset: worth every minute</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Wine &amp; Tiles</div>
+      <div class="day-title">Porto — Port Wine Caves + Azulejo Stations</div>
+      <div class="day-sub">Vila Nova de Gaia wine caves · São Bento azulejo tiles · Clérigos Tower · Francesinha dinner</div>
+      <div class="day-cost">Wine cave tour: €15–20 (₹1,350–1,800) · Full day approx. €30–50pp</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Port Wine Caves — Vila Nova de Gaia</div>
+        <div class="time-desc">Vila Nova de Gaia (across the Dom Luís bridge) is lined with the lodges (armazéns) of Portugal's great Port wine houses: Taylor's, Graham's, Sandeman, Calem, Ramos Pinto. Each offers 45–60 minute cellar tours (dark stone caves lined with massive wooden barrels) followed by a tasting of 2–3 Ports: Tawny, Ruby, Vintage. Book morning slots at Taylor's or Graham's (views over the Douro from the terrace). €15–20 (₹1,350–1,800) including tasting. Essential Porto experience — you will leave knowing exactly what good Port tastes like.</div>
+        <div class="time-price">Cave tour + tasting: €15–20 (₹1,350–1,800) · Book morning slot online</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Midday</div>
+      <div class="time-content">
+        <div class="time-title">São Bento Station — 20,000 Azulejo Tiles</div>
+        <div class="time-desc">São Bento railway station's entrance hall is not a tourist attraction — it is an active train station that happens to contain one of the great decorative art installations in Europe. 20,000 blue-and-white azulejo tiles completed in 1930 by artist Jorge Colaço depict scenes from Portuguese history: the conquest of Ceuta, the Battle of Valdevez, the arrival of the Court in Porto, rural scenes of the Minho region. It is free. You do not need a train ticket to enter. Stand in the centre of the hall and look up.</div>
+        <div class="time-price">São Bento Station: Free to enter · No ticket needed</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Clérigos Tower + Majestic Café</div>
+        <div class="time-desc">Clérigos Tower (€5, ₹450) is Porto's most recognisable landmark — a 76m Baroque granite tower with 225 steps to a narrow platform with 360-degree views of Porto's roofscape to the Atlantic. Then: Café Majestic (Rua de Santa Catarina) — a 1921 Belle Époque café listed among the most beautiful in the world. Coffee and pastry €4–8. J.K. Rowling wrote parts of Harry Potter here (as a regular in the 1990s). Slightly touristy now, but genuine and beautiful.</div>
+        <div class="time-price">Clérigos Tower: €5 (₹450) · Café Majestic coffee + pastry: €4–8</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Dinner</div>
+      <div class="time-content">
+        <div class="time-title">Francesinha — Porto's Signature Dish</div>
+        <div class="time-desc">The Francesinha is Porto's gift to world cuisine — a layered sandwich of bread, ham, linguiça sausage, fresh sausage, and steak, encased in melted cheese, then drowned in a fiery, slightly sweet tomato-beer sauce with a fried egg on top. Some people's idea of heaven; others are confused. €10–14 at Café Santiago (Rua de Passos Manuel) — the most famous Francesinha address in Porto, queues from 7pm. Budget option: any old tasca in the Bonfim neighbourhood. Eat it. You will not regret it.</div>
+        <div class="time-price">Francesinha at Café Santiago: €10–14 (₹900–1,260) · Queue from 7pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — DAYS 6–7 ALGARVE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Portugal 7-Day Itinerary</span>
+    <span class="page-header-right">Days 6–7 · Algarve</span>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-hero">
+    <div class="day-number">06</div>
+    <div class="day-info">
+      <div class="day-tag">Day Six · Golden Cliffs</div>
+      <div class="day-title">Algarve — Lagos, Ponta da Piedade &amp; Sea Caves</div>
+      <div class="day-sub">Fly Porto → Faro (1hr) · Rent car · Ponta da Piedade · Lagos old town · Benagil Cave boat tour</div>
+      <div class="day-cost">Flight: €30–60 (₹2,700–5,400) · Rental car: €40–80/day · Boat tour: €20–25pp</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Porto → Faro Flight + Rental Car</div>
+        <div class="time-desc">Fly Porto (OPO) to Faro (FAO): 1 hour, Ryanair/TAP, €30–60 depending on timing. Book 2–4 weeks ahead for best prices. At Faro Airport: collect your rental car immediately — Algarve's best sights are spread along 150km of coastline and public transport is poor. Most international car hire brands (Hertz, Europcar, local agents) at Faro airport. Full-sized car €40–80/day. Roads are excellent, driving is straightforward on the N125 coastal road. Book rental before you fly — airport walk-ins are significantly more expensive.</div>
+        <div class="time-price">Flight: €30–60 (₹2,700–5,400) · Rental car: €40–80/day · Book ahead</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Ponta da Piedade — Lagos's Golden Sea Stacks</div>
+        <div class="time-desc">Ponta da Piedade is a headland of golden-orange limestone sea stacks, grottos, and arches 2km south of Lagos — the most dramatic coastal scenery in mainland Portugal. Park at the top and walk down the 149 steps to the water level where the turquoise Atlantic pushes between the rocks. Free entry. Bring water (no facilities, full sun). Late morning light turns the cliffs a deep amber. The stairs are manageable but steep. Allow 45 minutes down and back.</div>
+        <div class="time-price">Ponta da Piedade: Free · Parking: Free · Bring water and sunscreen</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Midday</div>
+      <div class="time-content">
+        <div class="time-title">Lagos Old Town — Whitewashed &amp; Wonderful</div>
+        <div class="time-desc">Lagos is the Algarve's most charming town — Roman walls enclosing whitewashed streets, azulejo-fronted churches (Igreja de Santo António, free), and the best fresh grilled fish lunch you will eat. Cervejaria Os Arcos on the riverfront does whole grilled sea bream and espada (swordfish) for €12–16. Lagos was Henry the Navigator's launch point for Portuguese exploration in the 15th century. The slave market building (now a museum, €4) is a sobering and important visit. Walk the town walls: free, views to the sea.</div>
+        <div class="time-price">Lagos grilled fish lunch: €12–16pp · Slave market museum: €4 (₹360)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Benagil Cave — Algarve's Most Famous Sight</div>
+        <div class="time-desc">Benagil Cave is a sea cave accessible only by water — a cathedral-like arch of golden limestone with a hole in the dome ceiling and a sandy beach inside, the sea glittering through the entrance. You cannot swim there safely (the current is strong). Options: guided kayak tour from Benagil beach (€25–35, 1.5hrs), motorboat tour from Lagos marina (€20, includes multiple caves), or SUP tour. Book tours from Lagos marina in the morning for afternoon slots. The cave is best lit 10am–2pm when sunlight streams through the dome hole. Do not miss this.</div>
+        <div class="time-price">Benagil Cave boat tour: €20–25 (₹1,800–2,250) · Book from Lagos marina</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-hero">
+    <div class="day-number">07</div>
+    <div class="day-info">
+      <div class="day-tag">Day Seven · Edge of the World</div>
+      <div class="day-title">Sagres — The End of Europe</div>
+      <div class="day-sub">Fortaleza de Sagres · Cape St. Vincent · Atlantic cliffs · Fly home from Faro</div>
+      <div class="day-cost">Sagres fortress: €3 (₹270) · Cape St. Vincent: Free</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Fortaleza de Sagres — Henry the Navigator's Base</div>
+        <div class="time-desc">Sagres sits at Europe's southwestern extremity — the windswept promontory from which Prince Henry the Navigator organised the 15th-century Portuguese maritime expeditions that changed the world. The Fortaleza de Sagres (€3, ₹270) is a stark 16th-century fortress on a wind-battered clifftop. Inside: the mysterious Rosa dos Ventos (compass rose in stone, 43m diameter, visible from above), Henry's original chapel, and a small museum. The winds here are Atlantic raw even in summer. Dress in layers.</div>
+        <div class="time-price">Fortaleza de Sagres: €3 (₹270) · Allow 45 minutes</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Cape St. Vincent — Europe's Most Southwestern Point</div>
+        <div class="time-desc">Three kilometres west of Sagres, Cape St. Vincent is the extreme southwestern tip of Continental Europe — 75m sheer basalt cliffs plunging straight into the Atlantic. A working lighthouse (not always open), a small café, and absolute nothing to the west until Brazil. The feeling here is genuinely elemental: standing at the edge of the known world, the wind trying to push you off, the ocean stretching without interruption to the Americas. Free. Go at golden hour if your flight allows. Unforgettable.</div>
+        <div class="time-price">Cape St. Vincent: Free · Small café for last coffee · Drive 3km from Sagres</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Drive to Faro + Departure (FAO)</div>
+        <div class="time-desc">Faro Airport is 110km from Sagres — approximately 1.5hrs on the A22 toll motorway (€4–6 in tolls). Return rental car at Faro Airport 2 hours before departure — allow extra time if returning with a full tank (petrol stations near the airport). Faro Airport (FAO) is small and manageable. Emirates/Iberia/Ryanair fly back to Lisbon for connecting flights, or direct TAP Air Portugal flights to Lisbon, Heathrow, Dubai (connecting to India). Get one last pastel de nata at the airport café.</div>
+        <div class="time-price">Drive Sagres → Faro: 1.5hrs · Toll: €4–6 · Return car 2hrs before flight</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box orange" style="margin-top:3mm">
+    <strong>Algarve Essential:</strong> Rental car is non-negotiable for Days 6–7. The best beaches, cliffs, and caves are 5–30km apart with no useful public transport connecting them. Sagres, Cape St. Vincent, Ponta da Piedade, and Benagil are each separate stops requiring a car.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — BUDGET + TIPS + PACKING ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Portugal 7-Day Itinerary</span>
+    <span class="page-header-right">Budget · Tips · Packing</span>
+  </div>
+
+  <div class="label">Budget Breakdown</div>
+  <h2 class="section-title" style="margin-bottom:4mm">7 Days in Portugal — What It Costs (per person, flights from India extra)</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Budget (₹)</th>
+        <th>Mid-Range (₹)</th>
+        <th>Premium (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Accommodation (7 nights — hostel/guesthouse to boutique hotel)</td>
+        <td>25,000</td>
+        <td>60,000</td>
+        <td>1,40,000+</td>
+      </tr>
+      <tr>
+        <td>Intercity transport (trains + internal flight + rental car)</td>
+        <td>10,000</td>
+        <td>15,000</td>
+        <td>25,000</td>
+      </tr>
+      <tr>
+        <td>Food (cafés, market lunches, restaurants, fado dinner)</td>
+        <td>15,000</td>
+        <td>30,000</td>
+        <td>60,000</td>
+      </tr>
+      <tr>
+        <td>Attractions (palaces, museums, wine tours, boat trips)</td>
+        <td>5,000</td>
+        <td>10,000</td>
+        <td>18,000</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL in Portugal (per person)</strong></td>
+        <td><strong>~₹55,000</strong></td>
+        <td><strong>~₹1,15,000</strong></td>
+        <td><strong>₹2,43,000+</strong></td>
+      </tr>
+      <tr>
+        <td>Return flights from India (additional)</td>
+        <td>₹55,000</td>
+        <td>₹70,000</td>
+        <td>₹1,20,000+</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="budget-note">All costs per person. Budget: hostels, bakery lunches, cheap restaurants. Mid-range: 3-star hotels, sit-down restaurants, all major sights. Premium: 5-star hotels (Bairro Alto Hotel Lisbon, The Yeatman Porto), private tours, Michelin-starred dining. Schengen visa fee (€80, ₹7,200) and travel insurance (₹3,000–6,000) not included above.</p>
+
+  <div class="label" style="margin-bottom:3mm">Insider Tips</div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">📋</div>
+      <div class="tip-title">Schengen Visa — Apply Early</div>
+      <div class="tip-desc">Apply 6–8 weeks before travel. Never leave it to the last 3 weeks. Peak summer slots at VFS Global fill up weeks in advance. Documents required: confirmed hotel, return flights, €50/day bank balance, travel insurance with €30,000 coverage.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏰</div>
+      <div class="tip-title">Sintra: Arrive by 9:30am</div>
+      <div class="tip-desc">After 10:30am, the Pena Palace ticket queue is 45–60 minutes. Buy tickets online at parquesdesintra.pt before you go. Visit mid-week if possible — weekends are significantly more crowded from Lisbon day-trippers.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🥐</div>
+      <div class="tip-title">Pastéis de Nata: Two Addresses</div>
+      <div class="tip-desc">Pastéis de Belém (Lisbon, since 1837) uses the original secret recipe. Manteigaria (Chiado) is the modern rival. Both are exceptional. Eat them warm, dusted with cinnamon and powdered sugar. They are best straight from the oven — never take away.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🚂</div>
+      <div class="tip-title">Trains: Book 2 Weeks Ahead</div>
+      <div class="tip-desc">Alfa Pendular (Lisbon → Porto, 3hrs) costs €25 booked 2 weeks ahead at cp.pt but €45–55 at the station. The train fills quickly in summer. Book the moment your dates are confirmed. Window seats on the right side going north for Atlantic views.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🎭</div>
+      <div class="tip-title">Fado Dinner: Book 3–4 Days Ahead</div>
+      <div class="tip-desc">Authentic fado venues in Alfama (Mesa de Frades, Tasca do Chico, Clube de Fado) have small capacity and fill up. Call or book online 3–4 days ahead. Avoid tourist fado shows advertised on the street — book where Portuguese locals eat.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌞</div>
+      <div class="tip-title">Best Months: Apr–June &amp; Sept–Oct</div>
+      <div class="tip-desc">July–August: very crowded everywhere, Sintra queues double, Algarve beaches packed, prices +30%. April, May, September, October: pleasant 18–24°C, manageable crowds, best hotel prices, wildflowers on the Algarve cliffs.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-title">Algarve: Rental Car Essential</div>
+      <div class="tip-desc">The best cliff walks, secret beaches, Benagil Cave, Sagres, and Cape St. Vincent are only reachable by car. Book your Faro rental car online before flying. Local companies (Auto Jardim, Goldcar) are cheaper than international brands.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💳</div>
+      <div class="tip-title">Tip Culture &amp; Cash</div>
+      <div class="tip-desc">Tipping not expected but 5–10% appreciated at sit-down restaurants. Cards accepted almost everywhere. Carry €50–100 cash for markets, small cafés, trams, and tips. Avoid airport currency exchange — Multibanco ATMs give the best rates.</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-bottom:3mm">Packing List</div>
+  <div class="packing-grid">
+    <div class="packing-item"><div class="packing-check"></div><span>Comfortable walking shoes — Lisbon's cobblestones are brutal on flat-soled feet</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Light jacket — Lisbon and Porto evenings cool even in summer; Sagres always windy</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Swimwear — Algarve beaches and sea cave kayaking (Days 6–7)</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>All Schengen visa documents (printed) + passport with 6 months validity</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Cards (Visa/Mastercard) + €200 cash for markets and small venues</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Compact travel umbrella — Atlantic rain arrives suddenly in spring and autumn</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Daypack for Sintra mountain hike and Ponta da Piedade cliff walk</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Sunscreen SPF 50 — UV near the Atlantic is intense even in April</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Camera — every street in Lisbon, Porto, and the Algarve is worth photographing</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>Travel insurance documents (mandatory for Schengen visa, minimum €30,000)</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>European power adapter (Type F plug, 230V)</span></div>
+    <div class="packing-item"><div class="packing-check"></div><span>CP train bookings printed / downloaded (Lisbon → Porto Alfa Pendular)</span></div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="position:relative;z-index:2;text-align:center">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:11pt;color:rgba(255,255,255,0.4);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:8mm">IncredibleItinerary.com</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:32pt;font-weight:300;color:#fff;line-height:1.15;margin-bottom:6mm">Portugal in 7 Days</div>
+    <div style="width:40mm;height:1px;background:rgba(147,197,253,0.4);margin:0 auto 6mm"></div>
+    <div style="font-size:9pt;color:rgba(255,255,255,0.45);font-weight:300;max-width:110mm;line-height:1.7;margin:0 auto 10mm">"Portugal is what happens when a country stops trying to impress the world and just becomes quietly, impossibly beautiful."</div>
+    <div style="display:flex;gap:6mm;justify-content:center;flex-wrap:wrap;margin-bottom:10mm">
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55);font-size:7.5pt;padding:4px 14px;border-radius:20px">7 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55);font-size:7.5pt;padding:4px 14px;border-radius:20px">Lisbon · Sintra · Porto · Algarve</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55);font-size:7.5pt;padding:4px 14px;border-radius:20px">Fado · Port Wine · Golden Cliffs</span>
+    </div>
+    <div style="font-size:7.5pt;color:rgba(255,255,255,0.25);letter-spacing:0.1em">incredibleitinerary.com · 2026 Edition · ₹199</div>
+  </div>
+</div>
+
+</body>
+</html>

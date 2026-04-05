@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Andaman Islands in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0e7490;--primary-light:#22d3ee;--primary-dark:#164e63;
+  --accent:#f97316;--accent-light:#fed7aa;
+  --ink:#0a1628;--cream:#f0fafa;--parchment:#e0f2f7;
+  --white:#ffffff;--muted:#4a6373;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.42}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.97) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#22d3ee;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(14,116,144,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(14,116,144,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.mid{background:#0c5a70}
+.route-stop.accent{background:var(--accent)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(14,116,144,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(14,116,144,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(14,116,144,0.06),rgba(14,116,144,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#22d3ee;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#22d3ee;font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(14,116,144,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.ocean{background:rgba(14,116,144,0.07);border:1px solid rgba(14,116,144,0.2);color:var(--primary-dark)}
+.highlight-box.amber{background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.highlight-box.coral{background:#fff5f0;border:1px solid #fdba74;color:#9a3412}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(14,116,144,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(14,116,144,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(14,116,144,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+
+/* ── TIPS ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(14,116,144,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── PACKING ── */
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(14,116,144,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--accent);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=1200&q=80" alt="Andaman Islands turquoise waters"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Andaman Islands<br/><em>in 5 Days</em></h1>
+    <p class="cover-sub">A complete guide to Port Blair, Havelock &amp; Neil Island — beaches, diving, history &amp; island life</p>
+    <div class="cover-pills">
+      <span class="pill">🏝️ 5 Days</span>
+      <span class="pill">🌊 3 Islands</span>
+      <span class="pill">💰 ₹18,000–₹55,000</span>
+      <span class="pill">☀️ Best: Oct–May</span>
+      <span class="pill">🤿 World-class Diving</span>
+      <span class="pill">🏖️ Asia's Best Beach</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(14,116,144,0.3);border:1px solid rgba(34,211,238,0.3);color:#22d3ee;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹149 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Andaman Islands 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Three Islands, Infinite Blue</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏝️</div><span class="stat-val">3 Islands</span><span class="stat-label">Destinations</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹18k–55k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–May</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Port Blair</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop mid">Havelock</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop accent">Radhanagar</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Neil Island</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Port Blair</span>
+    <span class="route-sub">Ferry circuit · Fly in &amp; out Port Blair (IXZ)</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🏰 Port Blair</div>
+      <div class="city-desc">The gateway — rich colonial &amp; war history. Cellular Jail, Corbyn's Cove, the seafood market. Your entry point to the archipelago and a city worth half a day of exploration.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 2–3</div>
+      <div class="city-name">🌊 Havelock Island</div>
+      <div class="city-desc">Clear turquoise waters and Radhanagar Beach — voted Asia's best by Time magazine. Elephant Beach snorkelling, world-class scuba diving with 20–30m visibility. The Andaman's crown jewel.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4</div>
+      <div class="city-name">🌿 Neil Island</div>
+      <div class="city-desc">The quiet alternative. Bharatpur Beach, the Natural Bridge geological formation, Laxmanpur sunset. Smaller, calmer, the island life at its most authentic. Explore the whole island by bicycle.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 5</div>
+      <div class="city-name">✈️ Port Blair Farewell</div>
+      <div class="city-desc">Ross Island ruins overgrown with jungle, North Bay water sports including the remarkable sea walk, Aberdeen Bazaar shopping for shells and spices, then your evening flight home.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Radhanagar Beach was voted Asia's best beach by Time magazine — the sunsets here will ruin every other beach for you."</p>
+  </div>
+
+  <div class="highlight-box amber" style="margin-bottom:3mm">
+    <strong>⚠️ Must-Know Before You Go:</strong> Permits required for foreign nationals (Indians do not need any). Book ferry tickets at least 48 hours ahead — they sell out in peak season. Carry sufficient cash as ATMs are limited on outer islands. Makruzz and Green Ocean are the reliable private ferry operators.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAYS 1–2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Andaman Islands 5-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Port Blair &amp; Havelock</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Port Blair Arrival</div>
+      <div class="day-title">Cellular Jail, Corbyn's Cove &amp; Seafood</div>
+      <div class="day-sub">Arrive IXZ · Cellular Jail · Light &amp; Sound Show · Corbyn's Cove · Aberdeen Bazaar dinner</div>
+      <div class="day-cost">💰 Budget: ₹400–₹800 · Mid-range: ₹1,500–₹2,500 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Land at Veer Savarkar Airport (IXZ) — Check In</div>
+        <div class="time-desc">Pre-book a hotel near Aberdeen Bazaar for easy access to everything. Taxis from airport: ₹300–₹500. The area around Aberdeen Bazaar is Port Blair's beating heart — markets, ferries, and food all within walking distance. Freshen up and get your bearings.</div>
+        <div class="time-price">Budget guesthouses: ₹800–₹1,200/night · Mid-range: ₹2,500–₹4,000/night</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Cellular Jail National Memorial — India's "Kala Pani"</div>
+        <div class="time-desc">This is why you stay a day in Port Blair. The colonial-era prison where India's independence fighters were exiled and tortured. Seven radiating wings, solitary confinement cells, the gallows. The guided tour is haunting and essential. The 3pm Light &amp; Sound Show (in English) brings the history to life in a way nothing else can — book ahead, it fills up.</div>
+        <div class="time-price">Entry: ₹30 · Light &amp; Sound Show: ₹200 — book ahead at the counter</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Corbyn's Cove Beach — Sunset &amp; Seafood</div>
+        <div class="time-desc">A 20-minute auto ride from the city. Black sand, gentle waves, a relaxed atmosphere and one of Port Blair's best sunsets. Beach shacks serve cold beer and grilled fish. Then head to Aberdeen Bazaar for dinner at a local dhaba — fresh fish curry and rice is the move. Look for Icy Spicy or any packed local place.</div>
+        <div class="time-price">Auto to beach: ₹80 · Fish curry + rice: ₹150–₹200 at local dhaba</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Ferry to Paradise</div>
+      <div class="day-title">Havelock Island &amp; Radhanagar Beach</div>
+      <div class="day-sub">6:30am ferry · Check in · Radhanagar Beach sunset · Market dinner</div>
+      <div class="day-cost">💰 Ferry: ₹500–₹1,200 · Beach huts: ₹800–₹1,500 · Mid-range: ₹3,000–₹6,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Ferry from Phoenix Bay Jetty to Havelock — 2.5 hours</div>
+        <div class="time-desc">Book Makruzz or Green Ocean ferry online at least 2 days ahead at makruzz.com or journey.in — they sell out. Government ferries are cheaper but slower and less comfortable. The crossing takes 2–2.5 hours; carry motion sickness tablets if you're sensitive. The government jetty on Havelock is at Havelock Village (Jetty No.1).</div>
+        <div class="time-price">Makruzz/Green Ocean: ₹900–₹1,200 · Government ferry: ₹500 · Book 48hrs ahead</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Check In — Havelock Accommodation</div>
+        <div class="time-desc">Havelock has the best accommodation range in the Andamans. Budget beach huts at Vijay Nagar beach are charming. For mid-range, Emerald Gecko and Symphony Palms offer good value. Barefoot Resort and Manta Ray Island Resort are the luxury options — beachfront, stunning, worth every rupee if your budget allows.</div>
+        <div class="time-price">Beach huts: ₹800–₹1,500 · Mid-range: ₹3,000–₹6,000 · Barefoot/Manta Ray: ₹12,000+</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">4:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Radhanagar Beach (Beach No. 7) — Asia's Best Sunset</div>
+        <div class="time-desc">A 2km stretch of powder-white sand curving into impossibly clear turquoise water, backed by forest. Voted Asia's best beach by Time magazine. The walk from the main road is 10 minutes through jungle. Entry fee: ₹50. Arrive by 4:30pm — the beach fills up by 5pm and the sunset is the main event. This is the reason you came to the Andamans.</div>
+        <div class="time-price">Entry: ₹50 · Auto from market: ₹150 · Best light: 5:30–6:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Havelock Market Shacks — Tuna &amp; Coconut Water</div>
+        <div class="time-desc">The market near the jetty has several open-air shacks serving fresh catch. Tuna steak grilled with spices is the must-order at ₹350. Cold kingfisher, coconut water ₹40, and the most relaxed atmosphere you've encountered in weeks. No rush, no noise — just the sound of waves and a generator.</div>
+        <div class="time-price">Tuna steak: ₹350 · Coconut water: ₹40 · Full meal: ₹500–₹700</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAYS 3–4 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Andaman Islands 5-Day Itinerary</span>
+    <span class="page-header-right">Day 3–4 — Havelock Diving &amp; Neil Island</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Underwater Havelock</div>
+      <div class="day-title">Elephant Beach, Scuba Diving &amp; Kalapathar</div>
+      <div class="day-sub">9am boat to Elephant Beach · Snorkelling · Optional scuba dive · Kalapathar sunset</div>
+      <div class="day-cost">💰 Boat + snorkelling: ₹300–₹500 · Scuba dive: ₹3,500–₹4,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Boat to Elephant Beach — Snorkelling in Coral Gardens</div>
+        <div class="time-desc">30-minute speedboat ride from the jetty to Elephant Beach — one of the most spectacular snorkelling spots in all of India. The coral reef starts just metres from shore: parrotfish, angelfish, sea turtles, stingrays and vast fields of staghorn coral. Snorkelling equipment is included in the boat fare. Best in morning when the water is calmer and visibility highest.</div>
+        <div class="time-price">Boat + snorkel gear: ₹300–₹500/person · 30 min each way</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Scuba Diving — World-Class Visibility at 20–30 Metres</div>
+        <div class="time-desc">The Andamans has visibility of 20–30 metres — among the best in Asia. If you have never dived before, a Discover Scuba session is the single best thing you can do here. Barefoot Scuba (at Barefoot Resort) and Dive India are the two most reputable operators. After a 45-minute briefing, you do one dive to 6–9m with an instructor. Absolutely no experience required. If you're certified, the sites around Havelock rival the Maldives.</div>
+        <div class="time-price">Discover Scuba (1 dive): ₹3,500–₹4,500 · Certified: ₹2,500–₹3,500/dive</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Kalapathar Beach — the Quiet Sunset Spot</div>
+        <div class="time-desc">While Radhanagar gets the crowds, Kalapathar (Black Rock Beach) is the photographer's choice. Black volcanic rocks contrast against white sand and turquoise water. Almost never crowded. A 20-minute walk from the market, or ₹100 auto ride. The sunset here is softer, more private. Also visit the ATM at Havelock market — there are only two on the entire island. Carry extra cash.</div>
+        <div class="time-price">Auto: ₹100 · Free entry · ATM: near market (only 2 on island — carry extra cash)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · The Quiet Island</div>
+      <div class="day-title">Neil Island — Bicycles, Beaches &amp; Natural Bridge</div>
+      <div class="day-sub">Morning ferry · Bharatpur Beach · Natural Bridge · Laxmanpur sunset · Neil's Kitchen</div>
+      <div class="day-cost">💰 Ferry: ₹500–₹900 · Cycle hire: ₹100/day · Stay: ₹800–₹2,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Ferry to Neil Island — Havelock–Neil Route</div>
+        <div class="time-desc">Take the morning ferry from Havelock to Neil Island (check schedule the night before — timings change by season). Neil Island is smaller and calmer than Havelock — 5km long, no ATMs, one main road and a pace of life that feels like the 1990s. This is the Andaman that hasn't been discovered yet. Hire a bicycle at the jetty for ₹100/day — the entire island takes 2 hours by bike.</div>
+        <div class="time-price">Ferry: ₹500–₹900 · Book the evening before · Cycle hire: ₹100/day at jetty</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Bharatpur Beach + Natural Bridge</div>
+        <div class="time-desc">Bharatpur Beach (near the jetty) has excellent snorkelling with gear rentals at ₹200. The coral here is shallower and easier for beginners. From Bharatpur, cycle 2km to the Natural Bridge — a naturally occurring rock arch formation carved by the sea over millennia. The 20-minute walk through jungle to reach it is half the experience. Photogenic and unusual.</div>
+        <div class="time-price">Snorkel gear: ₹200 · Natural Bridge: free · 20 min walk from road</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Laxmanpur Beach — Best Sunset on Neil Island</div>
+        <div class="time-desc">Laxmanpur Beach on the western shore has the best sunset on Neil Island — the silhouettes of the rock formations against the orange sky are spectacular. A 3km cycle from the main village. Almost nobody here compared to Radhanagar. Sit on the sand, watch the fishing boats come in, and understand why people never want to leave the Andamans.</div>
+        <div class="time-price">Free · Cycle 3km from village · Best light: 5:00–6:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Dinner</div>
+      <div class="time-content">
+        <div class="time-title">Neil's Kitchen — Best Fish Curry on Neil Island</div>
+        <div class="time-desc">A small family-run restaurant near the main junction — no signage, just locals pointing you to it. The fish curry with steamed rice is widely considered the best on the island at ₹250. The prawns in coconut gravy are equally excellent. Cash only, limited seating. If it's full, wait — it's worth it.</div>
+        <div class="time-price">Fish curry + rice: ₹250 · Cash only</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box ocean">
+    <strong>Stay on Neil overnight if possible:</strong> The night sky on Neil Island, away from any light pollution, is extraordinary. Sleeping in a beachside hut at ₹800–₹2,000 and waking up to the sound of the ocean is the Andaman experience at its purest.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAY 5 + BUDGET + TIPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Andaman Islands 5-Day Itinerary</span>
+    <span class="page-header-right">Day 5 · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Farewell to Paradise</div>
+      <div class="day-title">Ross Island, North Bay Sea Walk &amp; Departure</div>
+      <div class="day-sub">North Bay water sports · Ross Island ruins · Aberdeen Bazaar shopping · Evening flight</div>
+      <div class="day-cost">💰 Sea Walk: ₹3,500 · Speed boat: ₹150 · Ross Island entry: ₹75 boat</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">North Bay Island — Sea Walk (Walk on the Ocean Floor)</div>
+        <div class="time-desc">The sea walk at North Bay is unlike any experience you'll have elsewhere in India. A helmet is placed over your head, connected to a surface oxygen supply, and you walk on the actual ocean floor at 5–6 metres depth — fish swim around you, you can touch the coral. No swimming required, no certification needed. Also available: speed boat ride (₹150), glass-bottom boat, and basic snorkelling. Book the sea walk ahead at the jetty the previous evening.</div>
+        <div class="time-price">Sea walk: ₹3,500 · Speed boat: ₹150 · Glass-bottom boat: ₹300</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Late Morning</div>
+      <div class="time-content">
+        <div class="time-title">Ross Island — Jungle-Covered British Ruins</div>
+        <div class="time-desc">Now officially renamed Netaji Subhas Chandra Bose Island. A short ₹75 boat ride from Aberdeen Jetty. The entire island is a haunting tableau of British colonial ruins — ballroom, barracks, church — all now completely overgrown with jungle and colonised by spotted deer that roam freely. Peacocks strut through the ruins. The deer come right up to you. 2–3 hours is ideal; last ferry back by 3pm.</div>
+        <div class="time-price">Boat: ₹75 return · Entry free · 2–3 hrs recommended</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Aberdeen Bazaar Shopping — Shells, Spices &amp; Departure</div>
+        <div class="time-desc">Final stop: Aberdeen Bazaar for shells and shell jewellery, Andaman coconut oil (exceptional quality), spice boxes from the local market, and a glass of coconut water for the road. Flight check-in by 4pm for evening departures. Flights back to Chennai, Kolkata, and Delhi operate daily. The Andamans will follow you home in your dreams.</div>
+        <div class="time-price">Spice boxes: ₹200–₹500 · Shell jewellery: ₹100–₹2,000 · Airport: 30 min from Aberdeen</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 5 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Budget (₹)</th>
+        <th>Mid-Range (₹)</th>
+        <th>Luxury (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation</td><td>4,000</td><td>15,000</td><td>40,000+</td></tr>
+      <tr><td>Ferries (inter-island)</td><td>2,500</td><td>4,500</td><td>4,500</td></tr>
+      <tr><td>Activities &amp; Diving</td><td>2,000</td><td>6,000</td><td>12,000</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>2,500</td><td>5,000</td><td>10,000</td></tr>
+      <tr><td>Local Transport</td><td>800</td><td>1,500</td><td>3,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹11,800</strong></td><td><strong>~₹32,000</strong></td><td><strong>₹69,500+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Excludes flights to/from Port Blair. Add ₹6,000–₹18,000 per person return depending on city of origin and booking window.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — TIPS + PACKING ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Andaman Islands 5-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Packing List</span>
+  </div>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Know Before You Go</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">⛴️</div>
+      <div class="tip-title">Book Ferries 48 Hours Ahead</div>
+      <div class="tip-desc">Use makruzz.com or journey.in for Makruzz and Green Ocean ferries. Peak season (Dec–Feb) they sell out days ahead. Book as soon as your travel dates are fixed. Government ferry counters at Phoenix Bay open at 6am.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💵</div>
+      <div class="tip-title">Carry ₹5,000+ Cash from Port Blair</div>
+      <div class="tip-desc">There are only 2 ATMs on Havelock and none on Neil Island. Carry sufficient cash when leaving Port Blair. Most small restaurants and guesthouses are cash-only. Cards work only at larger resorts.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌊</div>
+      <div class="tip-title">Monsoon: Avoid Jun–Sep Entirely</div>
+      <div class="tip-desc">June to September sees ferries cancelled for days at a time, many resorts close, and rough seas make swimming and snorkelling impossible. The Andamans are a Oct–May destination. Best conditions: November to March.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🤿</div>
+      <div class="tip-title">Best Snorkelling Spots</div>
+      <div class="tip-desc">Elephant Beach (Havelock) for variety and ease. Bharatpur Beach (Neil) for shallow beginners. Mahatma Gandhi Marine National Park (near Wandoor, Port Blair) for the most biodiverse reef in the Andamans — day trip worth adding.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏊</div>
+      <div class="tip-title">Scuba at Havelock — Don't Miss It</div>
+      <div class="tip-desc">The Andamans has world-class diving with 20–30m visibility. Barefoot Scuba and Dive India are both certified PADI operators. Even a single Discover Scuba dive will be among your life's best experiences. Book a day ahead — slots fill up.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌅</div>
+      <div class="tip-title">Radhanagar Sunset: Arrive by 4:30pm</div>
+      <div class="tip-desc">The beach fills completely by 5pm in peak season. Walk down by 4:30pm to find your spot on the sand. The forest walk from the parking area takes 10 minutes. No food stalls on the beach itself — eat before you go or bring snacks.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📶</div>
+      <div class="tip-title">SIM Cards — Which Networks Work</div>
+      <div class="tip-desc">Airtel and BSNL work reasonably well across Port Blair and Havelock. Jio is patchy on outer islands including Neil. Download offline maps (Maps.me or Google Maps offline) before you leave Port Blair. WiFi is available at most mid-range resorts.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Sunscreen is Your Most Important Packing Item</div>
+      <div class="tip-desc">The Andaman sun is equatorial and relentless. Bring SPF 50+ and apply every 2 hours. You will burn badly in the first day if unprepared. Reef-safe sunscreen is preferred and appreciated — the coral ecosystem is fragile.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing List for Andaman Islands</div>
+  <div class="pack-list">
+    <div class="pack-item">☀️ <strong>SPF 50+ Sunscreen</strong> — bring enough for 5 days. Overpriced in Port Blair.</div>
+    <div class="pack-item">👙 <strong>Swimwear × 3 sets</strong> — you'll be in the water daily. Quick-dry fabric essential.</div>
+    <div class="pack-item">🥽 <strong>Snorkel mask</strong> — bring your own for hygiene. Rental masks can be poorly maintained.</div>
+    <div class="pack-item">👟 <strong>Water shoes</strong> — for coral walks, rocky beaches and sea walk. Essential.</div>
+    <div class="pack-item">💊 <strong>Motion sickness tablets</strong> — ferry crossing can be rough. Take 30 min before boarding.</div>
+    <div class="pack-item">💵 <strong>Sufficient cash</strong> — ₹5,000+ minimum when leaving Port Blair for outer islands.</div>
+    <div class="pack-item">🔦 <strong>Torch / headlamp</strong> — power cuts happen on outer islands, especially at night.</div>
+    <div class="pack-item">📵 <strong>Offline maps downloaded</strong> — no reliable data on Neil Island. Download before you leave.</div>
+    <div class="pack-item">🦟 <strong>Mosquito repellent</strong> — evenings near jungle/beach are particularly bad. DEET-based preferred.</div>
+    <div class="pack-item">🎒 <strong>Day backpack</strong> — for beach days. Waterproof or carry a dry bag inside.</div>
+    <div class="pack-item">🩴 <strong>Flip-flops + sandals</strong> — easy on/off for beaches and boat boarding.</div>
+    <div class="pack-item">🏥 <strong>Basic first aid kit</strong> — antiseptic for coral cuts (very common). Nearest hospital is in Port Blair.</div>
+  </div>
+
+  <div class="highlight-box coral">
+    <strong>Coral respect:</strong> Do not touch, stand on, or collect coral. The reef ecosystem takes decades to recover from damage. Andaman's coral bleaching from climate change is already a concern — be a responsible visitor. Use reef-safe sunscreen, don't feed fish, and take nothing but photographs.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <h2 class="serif">More Indian Adventures<br/>Await You</h2>
+  <p>From the Himalayas to the backwaters of Kerala, from Rajasthan's desert forts to the temples of Tamil Nadu — IncredibleItinerary has a complete guide for every journey.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Kashmir · Kerala · Rajasthan · Leh-Ladakh · Goa · Manali · Varanasi · Bangkok · Bali · Dubai</p>
+  <div class="back-legal">This guide is for personal use only. Prices, ferry schedules and availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

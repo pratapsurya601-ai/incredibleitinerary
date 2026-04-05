@@ -143,7 +143,8 @@ export default function BlogIndexPage() {
   const [regionFilter, setRegionFilter] = useState("all");
   const [catFilter, setCatFilter]       = useState("all-cat");
   const [durFilter, setDurFilter]       = useState("all-dur");
-  const [page, setPage]                 = useState(1);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [batchStart, setBatchStart]     = useState(0);
   const searchRef = useRef<HTMLDivElement>(null);
 
   // Combine regular blog posts with published generated posts
@@ -180,9 +181,10 @@ export default function BlogIndexPage() {
 
   const query = search.toLowerCase().trim();
 
-  // Reset to page 1 whenever filters change
+  // Reset to first batch whenever filters change
   useEffect(() => {
-    setPage(1);
+    setVisibleCount(PAGE_SIZE);
+    setBatchStart(0);
   }, [query, regionFilter, catFilter, durFilter]);
 
   const filtered = useMemo(() => {
@@ -223,11 +225,9 @@ export default function BlogIndexPage() {
   const featured = showFeatured ? allPosts.find((p) => p.featured) : null;
   const rest = featured ? filtered.filter((p) => !p.featured) : filtered;
 
-  // Pagination
-  const totalPages = Math.ceil(rest.length / PAGE_SIZE);
-  const pageStart  = (page - 1) * PAGE_SIZE;
-  const pageEnd    = pageStart + PAGE_SIZE;
-  const pageItems  = rest.slice(pageStart, pageEnd);
+  // Load More
+  const visibleItems = rest.slice(0, visibleCount);
+  const hasMore      = visibleCount < rest.length;
 
   function clearAllFilters() {
     setSearch("");
@@ -244,7 +244,9 @@ export default function BlogIndexPage() {
           <div className="max-w-[1180px] mx-auto">
             <span className="section-label">Travel Guides & Itineraries</span>
             <h1 className="serif-title text-[clamp(2.2rem,4vw,3.5rem)] text-ink mb-2">
-              {allPosts.length} Free Travel Guides
+              {filtered.length > 0 && hasActiveFilter
+                ? `${filtered.length} Guides Found`
+                : `${allPosts.length} Free Travel Guides`}
             </h1>
             <p className="text-sm text-muted font-light max-w-[480px] mx-auto leading-relaxed mb-8">
               Real budgets. Real timings. Real routes. No filler. Pick a destination or browse by category.
@@ -444,61 +446,41 @@ export default function BlogIndexPage() {
                     : "All Guides"}
                 </p>
                 <span className="text-xs text-muted">
-                  {pageStart + 1}–{Math.min(pageEnd, rest.length)} of {rest.length} guides
+                  {rest.length} {rest.length === 1 ? "guide" : "guides"}
                 </span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {pageItems.map((post) => (
-                  <BlogCard key={post.slug} post={post} />
+                {visibleItems.map((post, idx) => (
+                  <BlogCard
+                    key={post.slug}
+                    post={post}
+                    isNew={batchStart > 0 && idx >= batchStart}
+                  />
                 ))}
               </div>
 
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-2 mt-12">
+              {/* Load More */}
+              {hasMore && (
+                <div className="mt-12 flex flex-col items-center gap-3">
+                  <p className="text-xs text-muted">
+                    Showing {visibleItems.length} of {rest.length} guides
+                  </p>
                   <button
-                    onClick={() => { setPage((p) => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                    disabled={page === 1}
-                    className="px-4 py-2 text-xs font-medium tracking-wide uppercase border border-parchment-2 rounded-full text-muted hover:border-gold hover:text-gold-dark transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                    onClick={() => {
+                      setBatchStart(visibleCount);
+                      setVisibleCount((c) => c + PAGE_SIZE);
+                    }}
+                    className="btn-gold"
                   >
-                    ← Prev
-                  </button>
-
-                  {/* Page numbers */}
-                  {Array.from({ length: totalPages }, (_, i) => i + 1)
-                    .filter((n) => n === 1 || n === totalPages || Math.abs(n - page) <= 1)
-                    .reduce<(number | "…")[]>((acc, n, idx, arr) => {
-                      if (idx > 0 && n - (arr[idx - 1] as number) > 1) acc.push("…");
-                      acc.push(n);
-                      return acc;
-                    }, [])
-                    .map((item, idx) =>
-                      item === "…" ? (
-                        <span key={`ellipsis-${idx}`} className="px-2 text-xs text-muted">…</span>
-                      ) : (
-                        <button
-                          key={item}
-                          onClick={() => { setPage(item as number); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                          className={`w-9 h-9 text-xs font-medium rounded-full border transition-all ${
-                            page === item
-                              ? "bg-gold text-ink border-gold"
-                              : "border-parchment-2 text-muted hover:border-gold hover:text-gold-dark"
-                          }`}
-                        >
-                          {item}
-                        </button>
-                      )
-                    )}
-
-                  <button
-                    onClick={() => { setPage((p) => Math.min(totalPages, p + 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                    disabled={page === totalPages}
-                    className="px-4 py-2 text-xs font-medium tracking-wide uppercase border border-parchment-2 rounded-full text-muted hover:border-gold hover:text-gold-dark transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-                  >
-                    Next →
+                    Load More Guides
                   </button>
                 </div>
+              )}
+              {!hasMore && rest.length > PAGE_SIZE && (
+                <p className="mt-12 text-center text-xs text-muted/60">
+                  You&apos;ve seen all {rest.length} guides ✦
+                </p>
               )}
             </div>
           ) : (
@@ -549,10 +531,13 @@ const PDF_SLUGS = new Set([
   "dubai-4-days",
 ]);
 
-function BlogCard({ post }: { post: ListingPost }) {
+function BlogCard({ post, isNew }: { post: ListingPost; isNew?: boolean }) {
   const hasPdf = PDF_SLUGS.has(post.slug);
   return (
-    <div className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block">
+    <div
+      className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block"
+      style={isNew ? { animation: "fadeIn 0.35s ease both" } : undefined}
+    >
       <Link href={`/blog/${post.slug}`} className="block">
         <div className="relative h-48 overflow-hidden bg-parchment-2">
           <SmartImage

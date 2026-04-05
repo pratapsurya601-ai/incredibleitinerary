@@ -196,7 +196,9 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className={`md:hidden flex flex-col gap-[5px] p-2.5 rounded-lg transition-colors duration-300 ${
+            !scrolled && !menuOpen ? "bg-black/40 backdrop-blur-sm" : ""
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -204,11 +206,11 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
           {[0, 1, 2].map((i) => (
             <span
               key={i}
-              className={`block w-6 h-px transition-all duration-300 ${
+              className={`block w-5 h-0.5 rounded-full transition-all duration-300 ${
                 scrolled ? "bg-ink" : "bg-white"
-              } ${menuOpen && i === 0 ? "rotate-45 translate-y-2" : ""} ${
-                menuOpen && i === 1 ? "opacity-0" : ""
-              } ${menuOpen && i === 2 ? "-rotate-45 -translate-y-2" : ""}`}
+              } ${menuOpen && i === 0 ? "rotate-45 translate-y-[7px]" : ""} ${
+                menuOpen && i === 1 ? "opacity-0 scale-x-0" : ""
+              } ${menuOpen && i === 2 ? "-rotate-45 -translate-y-[7px]" : ""}`}
             />
           ))}
         </button>

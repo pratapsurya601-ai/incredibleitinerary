@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Thailand in 10 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b45309;--primary-light:#fcd34d;--primary-dark:#92400e;
+  --accent:#0891b2;--accent-light:#e0f2fe;
+  --ink:#1a0f00;--cream:#fffbf0;--parchment:#fef3c7;
+  --muted:#78530a;--white:#ffffff;--green:#166534;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.42}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,15,0,0.97) 0%,rgba(26,15,0,0.6) 50%,rgba(26,15,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fcd34d;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(26,15,0,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── STATS BAR ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(26,15,0,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+/* ── ROUTE BAR ── */
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.blue{background:var(--accent)}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.green{background:var(--green)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+/* ── CITY GRID ── */
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(180,83,9,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── CALLOUT ── */
+.callout{background:linear-gradient(135deg,rgba(180,83,9,0.06),rgba(180,83,9,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY HEADER ── */
+.day-header{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.15);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fcd34d;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fcd34d;font-weight:500;margin-top:1mm}
+
+/* ── DAY BODY / TIME ROWS ── */
+.day-body{margin-bottom:5mm}
+.time-row{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+/* ── HIGHLIGHT BOXES ── */
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.amber{background:rgba(180,83,9,0.07);border:1px solid rgba(180,83,9,0.2);color:var(--primary-dark)}
+.highlight-box.blue{background:rgba(8,145,178,0.07);border:1px solid rgba(8,145,178,0.2);color:#0e7490}
+.highlight-box.yellow{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.highlight-box.green{background:rgba(22,101,52,0.07);border:1px solid rgba(22,101,52,0.2);color:var(--green)}
+
+/* ── BUDGET TABLE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(26,15,0,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(26,15,0,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(180,83,9,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic}
+
+/* ── TIPS GRID ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── PACKING GRID ── */
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.pack-col h4{font-size:8pt;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(26,15,0,0.08)}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:7.5pt;color:var(--muted);font-weight:300;margin-bottom:2mm;line-height:1.4}
+.pack-check{color:var(--muted);flex-shrink:0;margin-top:0.5px;font-size:9pt}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1200&q=80" alt="Thailand temples"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Thailand<br/><em>in 10 Days</em></h1>
+    <p class="cover-sub">Bangkok's temples and street food, Chiang Mai's elephants, Phuket's beaches, Krabi's limestone cliffs — the perfect Thai circuit</p>
+    <div class="cover-pills">
+      <span class="pill">🗓 10 Days</span>
+      <span class="pill">🗺 4 Regions</span>
+      <span class="pill">💰 ₹60,000–₹1,80,000</span>
+      <span class="pill">🌤 Best: Nov–Mar</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(180,83,9,0.3);border:1px solid rgba(252,211,77,0.3);color:#fcd34d;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹149 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Thailand 10-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Temples, Elephants, Beaches — The Perfect Thai Circuit</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">10 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🗺</div><span class="stat-val">4 Regions</span><span class="stat-label">Destinations</span></div>
+    <div class="stat-box"><div class="stat-icon">💱</div><span class="stat-val">₹1 = 0.42 THB</span><span class="stat-label">Exchange Rate</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤</div><span class="stat-val">Nov–Mar</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Bangkok</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Days 1–3</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop green">Chiang Mai</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Days 4–5</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop blue">Phuket</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Days 6–7</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Krabi</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Days 8–9</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Depart</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;padding:0 1mm">Day 10</span>
+    <span class="route-sub">Fly Bangkok in · Phuket out</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Days 1–3</div>
+      <div class="city-name">🏯 Bangkok</div>
+      <div class="city-desc">Grand Palace, Wat Pho, Wat Arun, floating markets, Chatuchak, rooftop bars, Ayutthaya day trip. The most energetic city in Southeast Asia.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 4–5</div>
+      <div class="city-name">🐘 Chiang Mai</div>
+      <div class="city-desc">Elephant sanctuaries (ethical), night bazaar, Doi Suthep temple, cooking classes, moat city, Sunday Walking Street. The soul of northern Thailand.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 6–7</div>
+      <div class="city-name">🌊 Phuket</div>
+      <div class="city-desc">Patong Beach, Big Buddha, Phi Phi Islands day trip, scuba diving, Bangla Road nightlife. Thailand's most famous beach destination.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 8–9</div>
+      <div class="city-name">🧗 Krabi</div>
+      <div class="city-desc">Railay Beach (only by boat), 4 Islands tour, rock climbing, kayaking, mangroves. Stunning limestone cliffs plunging into turquoise water.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Thailand doesn't just welcome you — it seduces you. The food, the smiles, the temples, the beaches. You arrive for 10 days and start planning your return on day 3."</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3mm">
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);margin-bottom:1mm">Budget</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">~₹44,000</div>
+      <div style="font-size:7pt;color:var(--muted)">Hostels + street food</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);margin-bottom:1mm">Mid-Range</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">~₹92,000</div>
+      <div style="font-size:7pt;color:var(--muted)">Hotels + activities</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);margin-bottom:1mm">Premium</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">₹2,00,000+</div>
+      <div style="font-size:7pt;color:var(--muted)">Resorts + experiences</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — PRE-TRIP + DAYS 1–3 BANGKOK ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Thailand 10-Day Itinerary</span>
+    <span class="page-header-right">Pre-Trip Essentials · Days 1–3 Bangkok</span>
+  </div>
+
+  <div class="label">Before You Fly</div>
+  <h2 class="section-title" style="margin-bottom:4mm">Pre-Trip Essentials</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm">🛂 Visa — Free, No Pre-Application</div>
+      <div style="font-size:7.5pt;color:var(--muted);line-height:1.5">Indians get visa on arrival — 30 days, free since 2024. No pre-application needed. Queue at immigration with passport photo + onward ticket. Fast lane available.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm">✈️ Flight — Direct from India</div>
+      <div style="font-size:7.5pt;color:var(--muted);line-height:1.5">Direct Bangkok (BKK/DMK) from Delhi, Mumbai, Chennai. 4–5 hrs. ₹8,000–18,000 return. Fly into Bangkok Suvarnabhumi (BKK), out of Phuket (HKT).</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm">💱 Currency — Thai Baht</div>
+      <div style="font-size:7.5pt;color:var(--muted);line-height:1.5">₹1 = ~0.42 THB (so ₹2,400 = 1,000 THB). Superrich exchange booths in Bangkok give the best rates — avoid airport counters. Carry some THB cash for beaches.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm">📱 SIM + Apps</div>
+      <div style="font-size:7.5pt;color:var(--muted);line-height:1.5">DTAC or TrueMove H at airport. 15GB for ~₹350 (30 days). Install: Grab (rides + food), Klook (activities, often 20-30% cheaper than direct), Google Maps.</div>
+    </div>
+  </div>
+
+  <div class="label">Days 1–3 · Bangkok</div>
+  <h3 class="sub-title">Bangkok: Grand Palace, Markets &amp; Ayutthaya</h3>
+
+  <div class="day-header">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Bangkok</div>
+      <div class="day-title">Grand Palace, Wat Pho &amp; Wat Arun</div>
+      <div class="day-sub">Grand Palace · Emerald Buddha · Reclining Buddha massage · Wat Arun sunset</div>
+      <div class="day-cost">💰 Activities: ~₹2,400 · Mid budget hotel: ₹2,000–6,000/night</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Arrive</div>
+      <div class="time-content">
+        <div class="time-title">Suvarnabhumi Airport → Hotel via BTS or Grab</div>
+        <div class="time-desc">BTS Skytrain from Suvarnabhumi to central Bangkok: ₹450 (Airport Rail Link + Skytrain). Grab costs ~₹800 but faster with luggage. Hotel: Sukhumvit or Silom area ₹2,000–6,000. Budget: near Khao San Road ₹600–1,500/night.</div>
+        <div class="time-price">BTS + Skytrain: ₹450 · Grab: ~₹800 · Check-in, freshen up</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Grand Palace + Wat Phra Kaew (Emerald Buddha)</div>
+        <div class="time-desc">The most ornate complex in Thailand — 218,000 sqm of gilded spires, mosaic-encrusted walls, mythological murals and the sacred Emerald Buddha (actually jade, 66cm tall). Dress code strictly enforced: cover knees and shoulders — free sarong loan available at entrance. Arrive at opening (8:30am) to beat crowds. Allow 2–2.5 hours.</div>
+        <div class="time-price">Entry: ₹1,250 · Open 8:30am–3:30pm · Dress code: cover knees &amp; shoulders</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Wat Pho — Reclining Buddha + Traditional Massage</div>
+        <div class="time-desc">5-min walk from Grand Palace. The 46m-long gold Reclining Buddha is one of Thailand's most impressive sights. Wat Pho is also the birthplace of traditional Thai massage — the school here is the most respected in the country. Book a 1-hour massage (₹900) in the pavilions within the temple complex.</div>
+        <div class="time-price">Entry: ₹500 · 1hr traditional massage: ₹900</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Chao Phraya River Ferry → Wat Arun (Temple of Dawn)</div>
+        <div class="time-desc">Take the Chao Phraya Express Boat (₹30) across the river to Wat Arun — the most beautiful temple in Bangkok at sunset. The 70m prang (tower) is encrusted with colourful porcelain chips that catch the evening light magnificently. Climb the steep steps to the middle terrace for river views. Back by ferry for dinner.</div>
+        <div class="time-price">Ferry: ₹30 each way · Entry: ₹150 · Best: 5:00–6:30pm</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Dinner</div>
+      <div class="time-content">
+        <div class="time-title">Thip Samai Pad Thai + Optional Jay Fai</div>
+        <div class="time-desc">Thip Samai on Mahachai Road — the most famous pad thai in Bangkok since 1966. Queue ~30 min, order the "Special" wrapped in egg crepe. ₹280. Or splurge on Jay Fai's legendary crab omelette (₹5,000+, Michelin-starred street food — book weeks ahead online). Both are bucket-list worthy.</div>
+        <div class="time-price">Thip Samai pad thai: ₹280 · Jay Fai crab omelette: ₹5,000+ (book ahead)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAYS 2–3 + DAY 4 CHIANG MAI ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Thailand 10-Day Itinerary</span>
+    <span class="page-header-right">Days 2–5 · Bangkok cont. · Chiang Mai</span>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Bangkok</div>
+      <div class="day-title">Floating Market + Chatuchak + Rooftop Bar</div>
+      <div class="day-sub">Damnoen Saduak · Chatuchak Weekend Market (Sat–Sun) · Rooftop bar sunset</div>
+      <div class="day-cost">💰 Floating Market tour: ₹2,500 · Chatuchak shopping: ₹2,000–5,000</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Damnoen Saduak Floating Market</div>
+        <div class="time-desc">2 hours from Bangkok — most photogenic floating market in Thailand. Vendors in straw hats selling tropical fruits, noodles and spices from wooden boats on the canals. Join a group tour from Bangkok (₹2,500, includes transport + boat ride). Alternatively: Amphawa Floating Market (closer, Fri–Sun, more local and authentic).</div>
+        <div class="time-price">Group tour: ₹2,500 including transport · Boat ride included</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Chatuchak Weekend Market (Saturday &amp; Sunday Only)</div>
+        <div class="time-desc">One of the world's largest weekend markets: 15,000 stalls across 35 acres. Everything imaginable — antiques, plants, vintage clothes, ceramics, street food, live animals, handcrafts. Budget ₹2,000–5,000 for shopping. Open Sat–Sun 9am–6pm only. Nearest BTS: Mo Chit. On weekdays: MBK Center or Terminal 21 for shopping instead.</div>
+        <div class="time-price">Free entry · Saturday &amp; Sunday 9am–6pm · BTS Mo Chit</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Rooftop Bar — Bangkok Skyline</div>
+        <div class="time-desc">Lebua Sky Bar (The Hangover bar) — 64th floor, ₹2,500/drink, smart dress, no shorts. Free entry. OR Vertigo at Banyan Tree (₹3,500). Budget option: Octave Rooftop at Marriott Sukhumvit (₹1,200) — great view, relaxed dress code, no minimum spend. All are spectacular at golden hour.</div>
+        <div class="time-price">Octave: ₹1,200 · Lebua: ₹2,500 · Vertigo: ₹3,500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Bangkok Day Trip</div>
+      <div class="day-title">Ayutthaya — Ancient Capital of Siam</div>
+      <div class="day-sub">Train from Hua Lamphong · Bicycle or tuk-tuk · UNESCO ruins · Evening return</div>
+      <div class="day-cost">💰 Train: ₹50 · Bicycle: ₹200 · Day total: ~₹2,000</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Hua Lamphong Station → Ayutthaya (1.5hrs)</div>
+        <div class="time-desc">Train from Hua Lamphong Station ₹50 — slow, scenic and quintessentially Thai. Alternatively Grab to Ayutthaya (~₹2,000) for groups. At Ayutthaya: rent bicycle (₹200/day) for maximum flexibility, or share a tuk-tuk for the day (₹1,500). The ruins spread over a large island — cycling is by far the best way.</div>
+        <div class="time-price">Train: ₹50 return · Bicycle: ₹200/day · Tuk-tuk: ₹1,500/day shared</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">All Day</div>
+      <div class="time-content">
+        <div class="time-title">Ayutthaya Historical Park — UNESCO World Heritage</div>
+        <div class="time-desc">Former capital of the Kingdom of Siam (1350–1767). Wat Phra Si Sanphet — three great chedis, the most iconic image of Ayutthaya. Wat Mahathat — famous Buddha head entwined in banyan tree roots (do not take selfies at same height as Buddha). Wat Phra Ram, Wat Chaiwatthanaram — magnificent riverside ruins. Entry ₹250 per major site.</div>
+        <div class="time-price">₹250 entry per major temple · Full day · Return Bangkok by 7pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">04–05</div>
+    <div class="day-info">
+      <div class="day-tag">Days Four–Five · Northern Thailand</div>
+      <div class="day-title">Chiang Mai — Elephants, Temples &amp; Night Bazaar</div>
+      <div class="day-sub">Doi Suthep · Elephant Sanctuary · Thai cooking class · Night Bazaar · Nimman area</div>
+      <div class="day-cost">💰 Flight BKK→CNX: ₹1,500–3,000 · Elephant Sanctuary: ₹4,000–6,000</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Day 4 AM</div>
+      <div class="time-content">
+        <div class="time-title">Fly Bangkok → Chiang Mai (1.5hrs) + Doi Suthep</div>
+        <div class="time-desc">Fly from Suvarnabhumi or Don Mueang (₹1,500–3,000) or overnight train from Bangkok (11hrs, sleeper ₹800 — scenic and romantic). Hotel: Old City inside the moat is the best base (₹1,200–4,000). Afternoon: hire tuk-tuk to Doi Suthep temple (₹400, 30km drive up mountain). Gold-spired Wat Phra That Doi Suthep has stunning views over the city. Entry ₹200.</div>
+        <div class="time-price">Flight: ₹1,500–3,000 · Tuk-tuk Doi Suthep: ₹400 · Entry: ₹200</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 4 Eve</div>
+      <div class="time-content">
+        <div class="time-title">Nimman Area Cafes + Sunday Walking Street</div>
+        <div class="time-desc">Nimman (Nimmanhaemin Road) is Chiang Mai's hipster district — excellent coffee shops, boutique galleries and Thai fusion restaurants. If it's Sunday: Sunday Walking Street along Wualai Road (6pm–midnight) is extraordinary — local artisans, street food, live traditional music. The best street market in Thailand.</div>
+        <div class="time-price">Sunday Walking Street: Free entry · Street food from ₹80/dish</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 5 AM</div>
+      <div class="time-content">
+        <div class="time-title">Elephant Sanctuary — Ethical, No Riding</div>
+        <div class="time-desc">ONLY book ethical sanctuaries where elephants are not ridden, not chained, not used for performance. Elephant Nature Park (most reputable, founded by Lek Chailert) or Elephant Jungle Sanctuary. Half-day: feed, bathe and walk with elephants in natural surroundings. Transport from Chiang Mai included. Book 2 days ahead.</div>
+        <div class="time-price">Half-day including transport: ₹4,000–6,000 · Book: elephantnaturepark.org</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 5 PM</div>
+      <div class="time-content">
+        <div class="time-title">Thai Cooking Class + Night Bazaar</div>
+        <div class="time-desc">3-hour cooking class (₹1,500–2,500): visit local market, learn 4–5 dishes (pad thai, green curry, mango sticky rice), take home recipe cards. Afternoon finish. Evening: Chiang Mai Night Bazaar along Chang Khlan Road — silk, silverware, hill tribe crafts, street food. More authentic than Bangkok's Chatuchak.</div>
+        <div class="time-price">Cooking class: ₹1,500–2,500 · Night Bazaar: free entry</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAYS 6–10 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Thailand 10-Day Itinerary</span>
+    <span class="page-header-right">Days 6–10 · Phuket · Krabi · Departure</span>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">06–07</div>
+    <div class="day-info">
+      <div class="day-tag">Days Six–Seven · Phuket</div>
+      <div class="day-title">Phuket — Big Buddha, Phi Phi Islands &amp; Beaches</div>
+      <div class="day-sub">Fly Chiang Mai → Phuket · Big Buddha · Kata Beach · Phi Phi day trip · Bangla Road</div>
+      <div class="day-cost">💰 Flight CNX→HKT: ₹2,000–4,000 · Phi Phi tour: ₹2,500–3,500</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Day 6 AM</div>
+      <div class="time-content">
+        <div class="time-title">Fly Chiang Mai → Phuket + Big Buddha</div>
+        <div class="time-desc">Fly Chiang Mai → Phuket (1.5hrs, ₹2,000–4,000). Hotel: Patong Beach area — budget guesthouses ₹1,500, mid-range resorts ₹4,000–8,000, overlooking Kata Beach is quieter and prettier. Afternoon: Big Buddha on Nakkerd Hills — 45m white marble statue visible from most of Phuket. Free, 20 minutes from Patong. Spectacular 360-degree views.</div>
+        <div class="time-price">Flight: ₹2,000–4,000 · Big Buddha: Free · Tuk-tuk: ₹300–400</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 6 PM</div>
+      <div class="time-content">
+        <div class="time-title">Kata Beach + Promthep Cape Sunset</div>
+        <div class="time-desc">Kata Beach is significantly cleaner and less crowded than Patong — great snorkelling off the south end. Afternoon: drive to Promthep Cape (southern tip of Phuket) for the most famous sunset viewpoint in southern Thailand. Crowds gather but the panorama over the Andaman Sea is worth it.</div>
+        <div class="time-price">Kata Beach: Free · Promthep Cape: Free</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 7</div>
+      <div class="time-content">
+        <div class="time-title">Phi Phi Islands Day Trip — Maya Bay &amp; Snorkelling</div>
+        <div class="time-desc">The Phi Phi Islands are among the most beautiful in the world — steep limestone cliffs, turquoise water, white sand. Day trip from Phuket (₹2,500–3,500) includes Maya Bay (made famous by The Beach with Leonardo DiCaprio), snorkelling at multiple reefs, Monkey Beach, and Pileh Lagoon. Book via Klook — often ₹500–800 cheaper than local agents. Departs 8am.</div>
+        <div class="time-price">Phi Phi day trip via Klook: ₹2,500–3,500 · Includes lunch &amp; snorkel gear</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 7 Night</div>
+      <div class="time-content">
+        <div class="time-title">Bangla Road — Patong's Famous Party Street</div>
+        <div class="time-desc">If nightlife is your scene: Bangla Road in Patong is one of Asia's most infamous streets — 400m of neon, live music bars, cabaret, street food. Even if you don't drink, walking through at 10pm is an experience. Budget ₹800–2,000 for the evening. Tiger Kingdom (if you must — controversial, tigers sedated, ₹3,000) is nearby.</div>
+        <div class="time-price">Bangla Road: Free entry · Budget drinks from ₹300</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">08–09</div>
+    <div class="day-info">
+      <div class="day-tag">Days Eight–Nine · Krabi</div>
+      <div class="day-title">Krabi &amp; Railay Beach — Limestone &amp; Emerald Water</div>
+      <div class="day-sub">Speedboat Phuket → Krabi · Railay by longtail · 4 Islands Tour · Rock climbing</div>
+      <div class="day-cost">💰 Ferry: ₹800 · Longtail to Railay: ₹300 · 4 Islands: ₹1,800</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Day 8 AM</div>
+      <div class="time-content">
+        <div class="time-title">Phuket → Krabi + Railay Beach by Longtail</div>
+        <div class="time-desc">Speedboat or ferry Phuket → Krabi (2hrs, ₹800). Or fly (35 min, ₹1,500). From Ao Nang Beach, longtail boats go to Railay Beach every 20 minutes (₹300, 15 min). Railay is completely cut off from the mainland by limestone cliffs — no roads, no cars. Magical. Hotel: Railay Bay Resort or budget bungalows ₹1,500–5,000.</div>
+        <div class="time-price">Ferry Phuket→Krabi: ₹800 · Longtail Ao Nang→Railay: ₹300</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 8 PM</div>
+      <div class="time-content">
+        <div class="time-title">Railay West Beach + Rock Climbing</div>
+        <div class="time-desc">Railay West Beach — the classic postcard view. Dramatic limestone cliffs rising from crystal-clear water. Railay is world-famous for rock climbing — vertical karst walls with routes for all levels. Equipment rental ₹1,500, guided half-day ₹3,000. Even beginners can do the easier routes. Sunset from Railay Viewpoint (20-min scramble up jungle trail, free) is spectacular.</div>
+        <div class="time-price">Beach: Free · Rock climbing equipment: ₹1,500 · Guided: ₹3,000</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Day 9</div>
+      <div class="time-content">
+        <div class="time-title">4 Islands Boat Tour — Snorkelling &amp; Emerald Cave</div>
+        <div class="time-desc">Full-day longtail boat tour to four islands around Krabi: Ko Mook, Ko Kradan, Ko Libong and Ko Waen. Highlight: Emerald Cave (Tham Morakot) on Ko Mook — swim 80m through a pitch-black tunnel to emerge in a hidden beach surrounded by sheer cliffs. Lunch included. Book through your guesthouse or Klook. Departs 8:30am.</div>
+        <div class="time-price">4 Islands tour including lunch: ₹1,800 · Departs 8:30am</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-header">
+    <div class="day-number">10</div>
+    <div class="day-info">
+      <div class="day-tag">Day Ten · Departure</div>
+      <div class="day-title">Final Day — Islands or Fly Home from Phuket</div>
+      <div class="day-sub">Optional Ko Lanta day trip · Ferry Krabi → Phuket · Fly home from HKT</div>
+      <div class="day-cost">💰 Ferry Krabi→Phuket: ₹800 · Ko Lanta ferry: ₹500</div>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="time-row">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Optional Extension: Ko Lanta or Ko Phi Phi Don Overnight</div>
+        <div class="time-desc">If your flight is afternoon/evening: day trip to Ko Lanta (ferry ₹500, 2hrs from Krabi) — more relaxed than Phi Phi, white sand beaches, excellent diving. Or overnight Ko Phi Phi Don (budget bungalow ₹1,500) if you didn't go on the day trip. Or simply relax on Railay for a final morning.</div>
+        <div class="time-price">Ko Lanta ferry: ₹500 return · Ko Phi Phi bungalow: ₹1,500</div>
+      </div>
+    </div>
+    <div class="time-row">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Ferry Krabi → Phuket → Tan Son Nhat Airport (HKT)</div>
+        <div class="time-desc">Ferry Krabi → Phuket (2hrs, ₹800) then Grab to Phuket International Airport (HKT). Allow 4 hours total for this journey. Most evening flights to India depart 7–11pm. Phuket airport has good dining options — have one final mango sticky rice before boarding.</div>
+        <div class="time-price">Ferry + Grab: ₹1,200 · Arrive airport 2.5hrs before flight</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>💡 Krabi vs Phuket:</strong> Phuket is bigger, better infrastructure, more nightlife. Krabi is more beautiful, more adventurous, better rock climbing and kayaking. Railay Beach has no equivalent in Phuket. If you can only do one — do Krabi. If you can do both — do both.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — BUDGET TABLE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Thailand 10-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Cost Guide</div>
+  <h2 class="section-title" style="margin-bottom:5mm">10-Day Budget Breakdown — 2026</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>💰 Budget (₹)</th>
+        <th>🏨 Mid-Range (₹)</th>
+        <th>✨ Premium (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>🏨 Accommodation (10 nights)</td><td>10,000</td><td>28,000</td><td>80,000+</td></tr>
+      <tr><td>✈️ Flights (India return + 3 domestic)</td><td>15,000</td><td>22,000</td><td>35,000</td></tr>
+      <tr><td>🍜 Food (all 10 days)</td><td>8,000</td><td>18,000</td><td>40,000</td></tr>
+      <tr><td>🏛 Activities + Entry Fees</td><td>8,000</td><td>18,000</td><td>35,000</td></tr>
+      <tr><td>🚕 Local Transport (Grab + ferries)</td><td>3,000</td><td>6,000</td><td>10,000</td></tr>
+      <tr><td>TOTAL — 10 days per person</td><td>~₹44,000</td><td>~₹92,000</td><td>₹2,00,000+</td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note" style="margin-bottom:6mm">All prices INR 2026 per person. India return flights included in all tiers. Budget = hostels + street food + group activities. Mid-range = 3-star hotels + restaurant meals + good activities. Premium = resorts + private transfers + premium experiences.</p>
+
+  <h3 class="sub-title">Internal Travel Between Cities</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Bangkok → Chiang Mai</div>
+      <div style="font-size:7pt;color:var(--muted)">Fly: ₹1,500–3,000 (1.5hrs). Train overnight: ₹800 (11hrs, scenic, highly recommended).</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Chiang Mai → Phuket</div>
+      <div style="font-size:7pt;color:var(--muted)">Fly direct: ₹2,000–4,000 (1.5hrs). No good ground option — always fly this leg.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Phuket → Krabi</div>
+      <div style="font-size:7pt;color:var(--muted)">Speedboat: ₹800 (2hrs). Fly: ₹1,500 (35min). Ferry + minivan combo also available.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Bangkok → Ayutthaya</div>
+      <div style="font-size:7pt;color:var(--muted)">Train from Hua Lamphong: ₹50 (1.5hrs). Most charming and cheap. Grab: ₹2,000.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Ao Nang → Railay</div>
+      <div style="font-size:7pt;color:var(--muted)">Longtail boat only: ₹300 (15min). No roads to Railay — boat is the only access.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Bangkok City Transport</div>
+      <div style="font-size:7pt;color:var(--muted)">BTS Skytrain for major areas. Grab for everything else. Tuk-tuks: negotiate price before getting in.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>💡 Klook vs Direct Booking:</strong> For Phi Phi day trips, elephant sanctuaries, cooking classes and Ayutthaya tours — always check Klook first. Prices are typically 20–30% lower than booking direct at your hotel or with street touts. Instant confirmation, good refund policy.
+  </div>
+
+  <div class="highlight-box yellow">
+    <strong>⚠️ Currency Exchange:</strong> ₹2,400 = approximately 1,000 THB. Do NOT exchange at airports — rates are terrible. Use Superrich exchange booths in Bangkok (bright orange or green storefronts) for the best rates. Outside Bangkok, ATMs with Wise/Niyo cards work well.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — TIPS + PACKING ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Thailand 10-Day Itinerary</span>
+    <span class="page-header-right">Essential Tips &amp; Packing List</span>
+  </div>
+
+  <div class="label">Know Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:4mm">Essential Thailand Tips</h2>
+
+  <div class="tips-grid" style="margin-bottom:5mm">
+    <div class="tip-box">
+      <div class="tip-icon">🛂</div>
+      <div class="tip-title">Visa on Arrival — Join the Queue Confidently</div>
+      <div class="tip-desc">Indians get 30-day visa on arrival, free since 2024. No pre-application. At immigration: join the VOA queue (not e-Visa queue). Have passport photo (4x6cm), onward ticket, and cash for emergency proof of funds. Queue is usually 20–40 minutes.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏯</div>
+      <div class="tip-title">Temple Etiquette — Cover Up Always</div>
+      <div class="tip-desc">All temples require covered knees and shoulders — no exceptions. Free sarong loans available at Grand Palace entrance. Remove shoes before entering temple buildings. Women should never touch or hand anything directly to a monk. Speak quietly inside temple compounds.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛺</div>
+      <div class="tip-title">Tuk-Tuks — Agree Price Before Getting In</div>
+      <div class="tip-desc">Tuk-tuks are fun but negotiate the price firmly before you get in. Typical city ride: ₹150–400. If a tuk-tuk offers to take you sightseeing "for free" they will take you to gem shops or tailor shops where they earn commission — politely decline.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💱</div>
+      <div class="tip-title">Superrich Exchange — Best Rates in Asia</div>
+      <div class="tip-desc">Bangkok's Superrich exchange booths (bright orange stores) consistently offer the best THB rates for INR/USD/EUR. Look for them on Ratchadamri Road, Asok, and near Chatuchak. Rates are 5–8% better than airport counters — meaningful on larger amounts.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🐘</div>
+      <div class="tip-title">Elephant Sanctuaries — Never Ride</div>
+      <div class="tip-desc">Riding elephants causes spinal damage. Hooks (ankus) cause physical harm. Only visit sanctuaries where elephants roam freely, no riding, no performance. Elephant Nature Park (Park Artitaya) is the gold standard. Avoid "elephant shows" and camps using hooks. No hooks = ethical.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍜</div>
+      <div class="tip-title">Street Food — Follow the Queue</div>
+      <div class="tip-desc">Thai street food is extraordinarily safe and delicious. Pad thai, som tam, mango sticky rice, satay, roti — all amazing. The safety rule: find the stall with the longest queue of locals. High turnover = fresh ingredients. Jay Fai's street stall is Michelin-starred — ₹5,000 a dish but legendary.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌊</div>
+      <div class="tip-title">Phi Phi &amp; Krabi via Klook</div>
+      <div class="tip-desc">Book Phi Phi Islands and 4 Islands tours through Klook — typically 20–30% cheaper than hotel tour desks. Instant confirmation. Klook also has elephant sanctuary bookings, Grand Palace skip-the-queue tickets, and cooking class reservations at discounts.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎉</div>
+      <div class="tip-title">Songkran (April) — Book 3 Months Ahead</div>
+      <div class="tip-desc">Songkran (Thai New Year, April 13–15) is the world's biggest water fight — streets become a water war. Absolutely magical experience. But hotels book out 3 months ahead and prices triple. Plan specifically for Songkran or plan around it — don't get caught unprepared.</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">What to Pack</div>
+  <h3 class="sub-title" style="margin-bottom:4mm">Thailand Packing List</h3>
+
+  <div class="packing-grid">
+    <div class="pack-col">
+      <h4>Clothing &amp; Beach Gear</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Rash guard — sun protection for snorkelling and islands</div>
+      <div class="pack-item"><span class="pack-check">□</span>Temple cover-up: lightweight scarf (shoulders + knees)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Flip flops — you will remove shoes constantly at temples</div>
+      <div class="pack-item"><span class="pack-check">□</span>Comfortable walking shoes for city days</div>
+      <div class="pack-item"><span class="pack-check">□</span>Swimwear (2 sets — one always drying)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Compact umbrella (random tropical showers year-round)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Light breathable clothes — hot and humid everywhere</div>
+      <h4 style="margin-top:4mm">Health &amp; Safety</h4>
+      <div class="pack-item"><span class="pack-check">□</span>DEET insect repellent (dengue mosquitoes in cities too)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Stomach medication (Norflox + ORS + antacid)</div>
+      <div class="pack-item"><span class="pack-check">□</span>SPF 50 sunscreen — tropical UV is intense even on cloudy days</div>
+      <div class="pack-item"><span class="pack-check">□</span>Travel insurance — mandatory for water sports + motorbike</div>
+    </div>
+    <div class="pack-col">
+      <h4>Money &amp; Tech</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Niyo or Wise card — best THB exchange rates at ATMs</div>
+      <div class="pack-item"><span class="pack-check">□</span>Cash THB ₹5,000 equivalent for islands (ATMs limited)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Power bank — long beach and island days</div>
+      <div class="pack-item"><span class="pack-check">□</span>Waterproof phone case for islands and boat trips</div>
+      <div class="pack-item"><span class="pack-check">□</span>Grab app installed and registered before landing</div>
+      <div class="pack-item"><span class="pack-check">□</span>Klook app — book activities at discounted prices</div>
+      <div class="pack-item"><span class="pack-check">□</span>Dry bag for longtail boat rides to Railay (spray gets heavy)</div>
+      <h4 style="margin-top:4mm">Documents</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Passport (minimum 6 months validity from travel date)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Passport-size photos (2) for visa on arrival queue</div>
+      <div class="pack-item"><span class="pack-check">□</span>Onward/return flight printout for immigration</div>
+      <div class="pack-item"><span class="pack-check">□</span>Travel insurance documents (required at some sanctuaries)</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:40pt;margin-bottom:6mm">🏯</div>
+  <h2>Plan More. <em style="font-style:italic;color:rgba(255,255,255,0.5)">Worry Less.</em></h2>
+  <p>50+ free destination guides on IncredibleItinerary.com — India, Southeast Asia, Europe and beyond. Every guide written with real costs, real routes and zero fluff.</p>
+  <div class="back-cta">Visit IncredibleItinerary.com →</div>
+  <div class="back-url">incredibleitinerary.com/guides</div>
+  <p style="color:rgba(255,255,255,0.4);font-size:9pt;margin-bottom:6mm">More guides: Vietnam · Bali · Japan · Kashmir · Rajasthan · Singapore · Sri Lanka · Dubai</p>
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · For personal use only · Not for redistribution<br/>
+    All prices are approximate and based on 2026 market rates. Verify independently before travel.<br/>
+    This guide is provided free of charge. If it helped you, share it with a friend.
+  </div>
+</div>
+
+</body>
+</html>

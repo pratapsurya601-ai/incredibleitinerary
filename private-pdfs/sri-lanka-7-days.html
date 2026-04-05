@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sri Lanka in 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b45309;--primary-light:#fcd34d;--primary-dark:#78350f;
+  --accent:#166534;--accent-light:#bbf7d0;
+  --light:#fcd34d;--cream:#fffbf0;
+  --ink:#1a0f00;--muted:#78624a;--white:#ffffff;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--primary-dark);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.38}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(120,53,15,0.97) 0%,rgba(120,53,15,0.60) 45%,rgba(120,53,15,0.20) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--primary-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:140mm;line-height:1.65}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(26,15,0,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(26,15,0,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.green{background:var(--accent)}
+.route-stop.gold{background:#854d0e}
+.route-stop.blue{background:#1d4ed8}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(180,83,9,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-days.green{background:rgba(22,101,52,0.1);color:var(--accent)}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(180,83,9,0.06),rgba(180,83,9,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.55;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--primary-light);margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:var(--primary-light);font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:3.5mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.amber{background:rgba(180,83,9,0.07);border:1px solid rgba(180,83,9,0.2);color:#78350f}
+.highlight-box.green{background:rgba(22,101,52,0.07);border:1px solid rgba(22,101,52,0.2);color:#14532d}
+.highlight-box.gold{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a5f}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(26,15,0,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(26,15,0,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(180,83,9,0.05);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:5mm}
+
+/* ── TIPS ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-card{background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:10px;padding:4mm}
+.tip-icon{font-size:15pt;margin-bottom:1.5mm}
+.tip-title{font-size:8.5pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm}
+.tip-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+
+/* ── PACKING ── */
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm}
+.packing-item{display:flex;align-items:flex-start;gap:2.5mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4;padding:1.5mm 0}
+.packing-check{width:12px;height:12px;border:1.5px solid rgba(180,83,9,0.35);border-radius:3px;flex-shrink:0;margin-top:1px}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1200&q=80" alt="Sri Lanka tea highlands"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Sri Lanka<br/>in <em>7 Days</em></h1>
+    <p class="cover-sub">The pearl of the Indian Ocean — ancient temples, tea highlands, surfing beaches, wildlife safaris &amp; the warmest people in Asia. A complete guide for Indian travellers, with real costs in ₹.</p>
+    <div class="cover-pills">
+      <span class="pill">7 Days</span>
+      <span class="pill">4 Regions</span>
+      <span class="pill">₹40,000–₹1,20,000 Total</span>
+      <span class="pill">Best: Dec–Mar (South)</span>
+      <span class="pill">Free Visa on Arrival (Indians)</span>
+      <span class="pill">4 UNESCO World Heritage Sites</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;font-size:8pt;color:rgba(255,255,255,0.35);font-weight:300">₹199 Guide — International</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Sri Lanka 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Your 7 Days in Sri Lanka</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-icon">📅</div>
+      <span class="stat-val">7 Days</span>
+      <div class="stat-label">Duration</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🏛️</div>
+      <span class="stat-val">4 UNESCO</span>
+      <div class="stat-label">Heritage Sites</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">💱</div>
+      <span class="stat-val">LKR 1 = ₹0.25</span>
+      <div class="stat-label">Exchange Rate</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🌤</div>
+      <span class="stat-val">Dec–Mar</span>
+      <div class="stat-label">Best Season</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">Your Route — The Classic Loop</div>
+  <div class="route-bar" style="margin-bottom:6mm">
+    <span class="route-stop">Colombo</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop green">Kandy</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Ella</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Yala</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop blue">Galle</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Colombo / Fly</span>
+    <span class="route-sub">7 days · 4 regions</span>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">Region by Region</div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-name">Colombo</div>
+      <span class="city-days">Day 1</span>
+      <div class="city-desc">Modern Sri Lanka at its most cosmopolitan. Galle Face Green seafront promenade, the Dutch Hospital colonial restaurant precinct, Pettah Market's controlled chaos, and excellent crab restaurants. Colombo 3 (Colpetty) and Colombo 7 (Cinnamon Gardens) are the best areas to stay.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Kandy</div>
+      <span class="city-days">Days 2–3</span>
+      <div class="city-desc">Sri Lanka's cultural capital in the central highlands. The Temple of the Sacred Tooth Relic (UNESCO, LKR 1,500) is the country's holiest site. Peradeniya Botanical Gardens, traditional Kandyan dance, cooler mountain climate. The 2.5-hour train from Colombo is a journey in itself.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Ella</div>
+      <span class="city-days">Days 3–5</span>
+      <div class="city-desc">Sri Lanka's most Instagrammed destination — a tiny mountain village surrounded by emerald tea plantations. The Nine Arch Bridge, Little Adam's Peak hike, tea factory tours, and the legendary train ride from Kandy through cloud-wreathed hills. Everyone who goes wishes they'd stayed longer.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Yala + Galle</div>
+      <span class="city-days">Days 5–7</span>
+      <div class="city-desc">Yala National Park has the world's highest density of wild leopards — a 6am jeep safari (LKR 10,000–15,000/jeep) is a bucket list experience. Then Galle Dutch Fort (UNESCO, free), Unawatuna beach, and whale watching at Mirissa (Nov–Apr). The perfect finale.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Sri Lanka is India's neighbour but feels like a different world — less chaotic, more personal, impossibly green. The train through the tea highlands is one of Earth's great journeys."</p>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>Indian Visa:</strong> Indian passport holders get a 30-day visa on arrival — Free! (Verify on the official Sri Lanka ETA portal before travel as rules are updated periodically.) No pre-application needed in most cases.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAYS 1 & 2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Sri Lanka 7-Day Itinerary</span>
+    <span class="page-header-right">Days 1–2</span>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Arrival</div>
+      <div class="day-title">Colombo — Arrive &amp; Explore</div>
+      <div class="day-sub">Bandaranaike Airport → PickMe → Hotel → Galle Face Green → Dutch Hospital → Pettah Market</div>
+      <div class="day-cost">Approx. spend: LKR 2,000–5,000 (₹500–1,250) excl. accommodation</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Bandaranaike Airport (CMB) → City</div>
+        <div class="time-desc">Bandaranaike International Airport is 30km north of Colombo city centre. Download the PickMe app before landing — it is Sri Lanka's Uber and vastly cheaper than metered airport taxis. A PickMe to central Colombo costs LKR 2,500–3,500 (₹625–875). The journey takes 45–60 minutes depending on traffic. Avoid the taxis parked outside arrivals — they charge 3x more.</div>
+        <div class="time-price">PickMe to Colombo: LKR 2,500–3,500 (₹625–875)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Hotel</div>
+      <div class="time-content">
+        <div class="time-title">Where to Stay in Colombo</div>
+        <div class="time-desc">Best areas: Colombo 3 (Colpetty/Kollupitiya) — central, near restaurants and Galle Face Green. Colombo 7 (Cinnamon Gardens) — leafy, upscale, close to parks. Budget: LKR 2,500–4,000/night (₹625–1,000) for guesthouses. Mid-range: LKR 8,000–15,000 (₹2,000–3,750). Luxury: Galle Face Hotel (historic 1864) or Shangri-La.</div>
+        <div class="time-price">Budget: LKR 2,500–4,000/night · Mid: LKR 8,000–15,000/night</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Galle Face Green + Dutch Hospital Precinct</div>
+        <div class="time-desc">Galle Face Green is a 500-metre seaside promenade where Colombo comes to breathe — families flying kites, vendors selling kottu and isso wade (prawn fritters), spectacular Indian Ocean sunsets. Free. Then walk to the Dutch Hospital Precinct — a beautifully restored 17th-century colonial building now home to upscale restaurants and boutiques. Great for dinner later.</div>
+        <div class="time-price">Galle Face Green: Free · Dutch Hospital restaurants: LKR 1,000–3,000/person</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Pettah Market + Kottu Roti Dinner</div>
+        <div class="time-desc">Pettah is Colombo's oldest bazaar — chaotic, colourful, and utterly alive. Each street specialises in something different: fabric, spices, electronics, jewellery. It feels like home for Indian travellers. For dinner: street kottu roti (shredded roti stir-fried with vegetables, egg, and chilli) at a roadside kadé costs LKR 300–500 (₹75–125). Or book Ministry of Crab (famous, book ahead, LKR 5,000+) in the Dutch Hospital.</div>
+        <div class="time-price">Kottu roti: LKR 300–500 · Ministry of Crab: LKR 5,000+ pp (book ahead)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Cultural Capital</div>
+      <div class="day-title">Train to Kandy + Temple of the Tooth</div>
+      <div class="day-sub">8:30am train → Kandy (2.5hrs) → Temple of the Tooth → Peradeniya Gardens → Kandyan Dance</div>
+      <div class="day-cost">Full day: LKR 5,000–8,000pp (₹1,250–2,000) including entry fees</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Train: Colombo Fort → Kandy (2.5 Hours)</div>
+        <div class="time-desc">Buy your ticket at Colombo Fort railway station — 2nd class seat LKR 160 (₹40!) and one of the great transport bargains in Asia. The train climbs through coconut plantations, rubber estates, and increasingly lush green hills as it ascends to Kandy. Arrive at Kandy station in the centre of town. Book seats ahead at the station the day before if possible — carriages fill up.</div>
+        <div class="time-price">2nd class ticket: LKR 160 (₹40) · Journey: 2.5–3hrs</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Temple of the Sacred Tooth Relic (Sri Dalada Maligawa)</div>
+        <div class="time-desc">Sri Lanka's most sacred site — a UNESCO World Heritage site housing a tooth relic of the Buddha. The temple complex on the edge of Kandy Lake is stunning. Three puja (offering) ceremonies daily at 6:30am, 9:30am, and 6:30pm — the 6:30pm evening puja with drumming, incense, and candlelight is the most atmospheric. Dress modestly (shoulders and knees covered). Shoes off at entrance.</div>
+        <div class="time-price">Entry: LKR 1,500 (₹375) · Puja ceremonies: included</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Late Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Peradeniya Botanical Gardens</div>
+        <div class="time-desc">4km from Kandy — 60 acres of royal botanical gardens established in 1371, redesigned under British rule. The famous giant Java fig tree (100-metre canopy), an entire avenue of Royal Palms, a bamboo grove, an orchid house, and spice garden. Take a tuk-tuk from Kandy centre (LKR 300 return) or walk along the river. Allow 90 minutes minimum.</div>
+        <div class="time-price">Entry: LKR 1,500 (₹375) · Tuk-tuk: LKR 300 return</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Kandyan Cultural Show + Kandy Lake Walk</div>
+        <div class="time-desc">The Kandyan Cultural Show at the Cultural Centre (5pm, LKR 1,000) showcases fire dancing, Kandyan drumming, traditional dances, and a fire-walking ceremony. Genuinely spectacular. Then an evening walk around Kandy Lake (free) — the lake lit at night with the temple behind it is one of Sri Lanka's most peaceful scenes. Dinner at Slightly Chilled on Dalada Veediya for western-Lankan fusion.</div>
+        <div class="time-price">Cultural show: LKR 1,000 (₹250) · Kandy Lake: Free</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAYS 3–5: ELLA ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Sri Lanka 7-Day Itinerary</span>
+    <span class="page-header-right">Days 3–5 · Ella</span>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · The Famous Train Ride</div>
+      <div class="day-title">Kandy → Ella — 6 Hours of Wonder</div>
+      <div class="day-sub">8:45am train · Kandy → Nanu Oya → Ella · World's most scenic rail journey</div>
+      <div class="day-cost">Train ticket: LKR 200 (2nd class unreserved) to LKR 1,000+ (1st class observation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:45 AM</div>
+      <div class="time-content">
+        <div class="time-title">The Kandy → Ella Train — Sri Lanka's Greatest Journey</div>
+        <div class="time-desc">The 8:45am train from Kandy to Ella is one of the world's most celebrated rail journeys — 6 hours climbing through misty tea highlands, past cascading waterfalls, across colonial-era viaducts, and through tunnels blasted into mountain rock. Sitting in the open doorway with a warm cup of chai watching the tea bushes go by is an experience that stays with you for years. Book the 1st class observation car weeks in advance on 12go.asia — it sells out far ahead. Alternatively, 2nd class unreserved (LKR 200/₹50) means standing room or floor sitting, but you get the open doors.</div>
+        <div class="time-price">2nd class unreserved: LKR 200 (₹50) · 1st class observation: LKR 1,000+ (book on 12go.asia)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Arrive Ella — Check In + Explore</div>
+        <div class="time-desc">Ella is impossibly small — one main street, a few dozen guesthouses, and one of the world's most beautiful backdrops. Everything is walkable. Check in, then explore: Ella town has a string of rooftop cafes, small restaurants, and viewpoints. 98 Acres Resort has a public viewpoint cafe where non-guests can watch the sunset over Ella Gap — the valley stretching into the distance, flanked by misty ridges, is spectacular.</div>
+        <div class="time-price">Budget guesthouses: LKR 2,500–4,000/night (₹625–1,000)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Tea Country</div>
+      <div class="day-title">Nine Arch Bridge + Little Adam's Peak + Tea</div>
+      <div class="day-sub">7am Nine Arch Bridge → 10am Little Adam's Peak hike → Tea factory tour → Sunset at Ella Gap</div>
+      <div class="day-cost">Full day cost: LKR 1,000–2,000pp (₹250–500) — mostly free</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Nine Arch Bridge — The Iconic Shot</div>
+        <div class="time-desc">The Nine Arch Bridge is Sri Lanka's most photographed structure — a magnificent colonial-era viaduct built entirely in stone and brick (no steel, due to WWI shortages). Walk 30 minutes from Ella town centre through tea estates, or take a tuk-tuk (LKR 150). The best experience is watching a train cross the bridge: Google "Ella train timetable" for exact crossing times. The 8:30am train crossing with morning mist in the valley below is extraordinary. Free to visit.</div>
+        <div class="time-price">Entry: Free · Tuk-tuk: LKR 150 each way</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Little Adam's Peak — Easy Hike, Big Views</div>
+        <div class="time-desc">Little Adam's Peak is a 1-hour return hike from Ella town — easy, well-marked trail winding up through tea estates to a 1,141-metre summit with 360° views of the entire Ella Gap and surrounding highlands. On a clear morning, you can see for 50km in every direction. Go early (before 10am) before clouds roll in. Free trail, no guide needed. Easier than the big Adam's Peak (which takes 5 hours at night).</div>
+        <div class="time-price">Free · 1.5 hrs return · Best before 10am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Tea Factory Tour — From Leaf to Cup</div>
+        <div class="time-desc">Multiple tea factories offer tours within 5km of Ella — Newburgh Tea Factory and Uva Halpewatte are the most accessible. Watch the full Ceylon tea process: plucking, withering, rolling, oxidising, drying. Understand why Ella-grown tea differs from Colombo-grown. Includes tasting of 4–5 grades. The smell inside a working tea factory — warm, grassy, slightly sweet — is unforgettable. LKR 200–400 per person.</div>
+        <div class="time-price">Tea factory tour: LKR 200–400 including tasting</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Dream Cafe Rooftop + Cafe Chill Dinner</div>
+        <div class="time-desc">The Dream Cafe has Ella's best sunset rooftop — a 180° view of the Ella Gap at golden hour is why people come here. Then dinner at Cafe Chill — the most popular restaurant in Ella, famous for its enormous rice and curry plate (LKR 400–600, ₹100–150) with 8–10 small curries including dhal, pol sambol, and jackfruit curry. The banana flower curry alone is worth the visit.</div>
+        <div class="time-price">Dinner: LKR 400–800/person (₹100–200)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Wildlife + Coast</div>
+      <div class="day-title">Yala Safari + Drive to the Beach</div>
+      <div class="day-sub">6am Yala National Park jeep safari → afternoon drive to Mirissa/Unawatuna → beach evening</div>
+      <div class="day-cost">Yala jeep: LKR 10,000–15,000/jeep (shared = LKR 2,500pp) + park fees</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Early Drive to Yala National Park (2.5 Hours)</div>
+        <div class="time-desc">Leave Ella by 5am to reach Yala by 6am for the morning safari — this is non-negotiable. The first 2 hours after sunrise are when leopards are most active. Arrange the drive and safari jeep through your Ella guesthouse the evening before — they'll sort the jeep, driver, park entry, and tracker. Share with other guests to split the cost. Yala has the highest density of wild leopards on Earth; also elephants, sloth bears, crocodiles, water buffalo, peacocks, and rare birds.</div>
+        <div class="time-price">Jeep hire: LKR 10,000–15,000 (₹2,500–3,750) · Park entry: LKR 6,000pp</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Yala Safari — Leopards &amp; Wildlife</div>
+        <div class="time-desc">A typical morning Yala safari runs 6am–10am. Your tracker will radio other jeeps for sightings — the leopard-spotting network is efficient. Leopard sighting rate in peak season (July–October) can be 90%+ on a good morning. Even without a leopard, elephant herds, crocodiles in the lagoons, and the park's extraordinary birdlife make it a magnificent experience. Bring sunscreen and a hat — the jeep is open-top.</div>
+        <div class="time-price">Safari duration: 3–4 hours · Leopard sighting rate: high in dry season</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Drive to South Coast — Mirissa or Unawatuna (2hrs)</div>
+        <div class="time-desc">After the safari, drive 2 hours west to Mirissa or Unawatuna beach. Check in to a beach guesthouse (LKR 3,000–6,000/night). Both beaches have clear water, coral reefs, excellent seafood restaurants, and a relaxed atmosphere very different from the highlands. Mirissa is better for whale watching (Nov–Apr); Unawatuna is better for snorkelling. Swim, have fresh grilled fish for dinner, and rest.</div>
+        <div class="time-price">Beach guesthouse: LKR 3,000–6,000/night (₹750–1,500)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAYS 6–7 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Sri Lanka 7-Day Itinerary</span>
+    <span class="page-header-right">Days 6–7</span>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-hero">
+    <div class="day-number">06</div>
+    <div class="day-info">
+      <div class="day-tag">Day Six · Historic South Coast</div>
+      <div class="day-title">Galle Fort + Unawatuna Beach</div>
+      <div class="day-sub">Galle Dutch Fort walk → Ramparts → Lighthouse → Unawatuna swimming → Mirissa sunset</div>
+      <div class="day-cost">Galle Fort: Free to walk · Unawatuna: Free · Whale watching: LKR 5,000–6,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Galle Dutch Fort — UNESCO World Heritage</div>
+        <div class="time-desc">Galle Fort was built by the Portuguese in 1588 and extensively fortified by the Dutch from 1663 — it is the best-preserved colonial sea fortress in Asia. Walk the full 1.3km circuit of the ramparts for Indian Ocean views. Inside: cobblestone streets, Dutch-era churches, a lighthouse, boutique shops, cafes, and museums. The Fort feels like a perfectly preserved 17th-century Dutch town transplanted to the tropics. Entry to walk the fort is completely free.</div>
+        <div class="time-price">Galle Fort: Free to walk · National Museum inside: LKR 500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Unawatuna Beach — Swimming + Snorkelling</div>
+        <div class="time-desc">Unawatuna is 6km east of Galle — a crescent beach with calm, clear water perfect for swimming and snorkelling. The coral gardens just 100 metres offshore are accessible without a boat — rent a mask and fins for LKR 500. Beach restaurants serve fresh grilled fish, prawn curry, and cold Lion Lager at tables on the sand. Jungle Beach, a 20-minute walk around the headland, is quieter and more beautiful if you want solitude.</div>
+        <div class="time-price">Snorkelling gear: LKR 500 · Beach restaurants: LKR 800–2,000/person</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Optional</div>
+      <div class="time-content">
+        <div class="time-title">Mirissa Whale Watching (Nov–April Only)</div>
+        <div class="time-desc">Mirissa is 40 minutes west of Unawatuna — the best location in the Indian Ocean for blue whale watching. Blue whales here are the largest animals ever to have existed on Earth. Tours depart at 6:30am and last 4–5 hours. Success rate is high November through April. Book through your guesthouse or directly at Mirissa harbour. Outside this season, sperm whales and dolphins are still commonly spotted.</div>
+        <div class="time-price">Whale watching: LKR 5,000–6,000 (₹1,250–1,500) · Nov–Apr only for blue whales</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-hero">
+    <div class="day-number">07</div>
+    <div class="day-info">
+      <div class="day-tag">Day Seven · Departure</div>
+      <div class="day-title">Colombo &amp; Fly Home</div>
+      <div class="day-sub">Drive/train to Colombo → Dutch Hospital last lunch → Laksala souvenirs → Airport</div>
+      <div class="day-cost">Comfortable last day — budget LKR 3,000–5,000 for food and souvenirs</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Return to Colombo — Train or Bus (2–3 Hours)</div>
+        <div class="time-desc">From Galle, take the coastal train back to Colombo Fort (LKR 200–400, 2.5hrs) — it runs right along the Indian Ocean cliffs for the first hour. Or take an air-conditioned express bus (LKR 300, 2hrs). Arrive Colombo by midday. Store luggage at your hotel or the Fort train station left luggage counter (LKR 200/bag/day) for the afternoon.</div>
+        <div class="time-price">Train Galle→Colombo: LKR 200–400 (₹50–100)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Dutch Hospital Shopping + Laksala Souvenirs</div>
+        <div class="time-desc">Final shopping stop: Laksala (the Government-run craft emporium on York Street) sells quality Sri Lankan crafts at fixed fair prices — batik fabric, lacquerware, handloom textiles, ebony carvings, and certified gemstones (buy gems only from certified dealers to avoid fakes). The Dutch Hospital precinct is the best place for a farewell lunch — upscale cafes with excellent seafood in colonial surroundings.</div>
+        <div class="time-price">Laksala: York Street, Colombo Fort · Lunch: LKR 1,500–3,000/person</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Departure</div>
+      <div class="time-content">
+        <div class="time-title">Bandaranaike Airport — Arrive 3 Hours Before</div>
+        <div class="time-desc">Take a PickMe from Colombo to the airport (LKR 2,500–3,500, 45 minutes in normal traffic — allow 90 minutes in peak hour). Arrive 3 hours before international flights — Bandaranaike airport has a single main terminal and queues can be long at immigration. Duty-free at the airport sells Ceylon tea, spices, and arrack at competitive prices.</div>
+        <div class="time-price">PickMe to airport: LKR 2,500–3,500 (₹625–875)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber" style="margin-top:2mm">
+    <strong>The Perfect Loop:</strong> Colombo → Kandy → Ella → Galle → Colombo is the most-recommended Sri Lanka circuit for good reason. It covers cultural heritage, mountain scenery, wildlife, and beaches without doubling back. Don't rush Ella — it rewards an extra day.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — BUDGET + TIPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Sri Lanka 7-Day Itinerary</span>
+    <span class="page-header-right">Budget + Essential Tips</span>
+  </div>
+
+  <div class="label">Money Matters</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Budget Breakdown — 7 Days, Per Person</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Budget (₹)</th>
+        <th>Mid-Range (₹)</th>
+        <th>Premium (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Accommodation (7 nights)</td>
+        <td>₹5,000</td>
+        <td>₹18,000</td>
+        <td>₹55,000+</td>
+      </tr>
+      <tr>
+        <td>Food &amp; Drinks</td>
+        <td>₹5,000</td>
+        <td>₹12,000</td>
+        <td>₹25,000</td>
+      </tr>
+      <tr>
+        <td>Transport (trains + tuk-tuks + PickMe)</td>
+        <td>₹5,000</td>
+        <td>₹10,000</td>
+        <td>₹20,000</td>
+      </tr>
+      <tr>
+        <td>Activities + Yala Safari</td>
+        <td>₹6,000</td>
+        <td>₹15,000</td>
+        <td>₹30,000</td>
+      </tr>
+      <tr>
+        <td>Entry Fees (temples, gardens, etc.)</td>
+        <td>₹2,000</td>
+        <td>₹4,000</td>
+        <td>₹6,000</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL (7 Days)</strong></td>
+        <td><strong>~₹23,000</strong></td>
+        <td><strong>~₹59,000</strong></td>
+        <td><strong>₹1,36,000+</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Currency: LKR 1 = approx ₹0.25. ₹1,000 = LKR 4,000. Cards work in Colombo, Kandy, and Galle; carry LKR cash for national parks, small towns, and tuk-tuks.</p>
+
+  <div class="label" style="margin-top:1mm">Essential Tips for Indian Travellers</div>
+  <div class="tips-grid" style="margin-top:3mm">
+    <div class="tip-card">
+      <div class="tip-icon">🛂</div>
+      <div class="tip-title">Visa — Free for Indians (Check Before Travel)</div>
+      <div class="tip-desc">Indians typically receive a 30-day visa on arrival at no cost. However, Sri Lanka's ETA rules have changed multiple times — verify the current policy on eta.gov.lk before booking. Some nationalities now need to apply for an ETA online ($20) before arrival. Carry your hotel bookings, return ticket, and bank statement for immigration.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🚂</div>
+      <div class="tip-title">Train Bookings — Plan Ahead</div>
+      <div class="tip-desc">The 1st class observation car on the Kandy→Ella train sells out 3–4 weeks ahead. Book on 12go.asia or Bookmeceylon.com. The 2nd class unreserved is LKR 200 (₹50) but means standing in the doorway — still a fantastic experience and wildly cheap. For Colombo→Kandy, any 2nd class reserved seat (LKR 160) is fine — book at the station a day before.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">PickMe App — Essential</div>
+      <div class="tip-desc">PickMe is Sri Lanka's ride-hailing app (like Ola). Download and set up before you land. It's the only way to get fairly-priced rides in Colombo — metered airport taxis and tuk-tuks will quote 3–4x the PickMe price. In Kandy, Ella, and Galle, tuk-tuks are the norm — agree on price before getting in (LKR 150–300 for short hops).</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🍛</div>
+      <div class="tip-title">Sri Lankan Food — Must Eat List</div>
+      <div class="tip-desc">Rice and curry (7–10 side curries on a banana leaf, LKR 200–500), kottu roti (shredded flatbread stir-fried with egg and curry, LKR 300–500), hoppers (crispy bowl-shaped pancakes, LKR 50–80 each), string hoppers with dhal curry, and fresh coconut sambal. At local "kadés" (small restaurants), full meals cost ₹50–150. Vegetarians are very well catered for throughout.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌧️</div>
+      <div class="tip-title">Monsoon Season — Plan Around It</div>
+      <div class="tip-desc">Sri Lanka has two monsoon seasons affecting different coasts. South/West coast (Colombo, Galle, Unawatuna): wet June–September, best December–March. East coast (Trincomalee, Arugam Bay): wet November–February, best April–September. The Hill Country (Kandy, Ella) gets rain year-round but is wettest May–July. Yala is best in the dry season (June–October) when animals concentrate near water.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🦁</div>
+      <div class="tip-title">Yala Safari — Pro Tips</div>
+      <div class="tip-desc">Book your Yala safari through your Ella guesthouse the night before departure — they have reliable jeep contacts and can include the 5am transfer from Ella in the price. Share the jeep (max 6 people) to reduce cost per head. LKR 2,000–2,500/person for a shared jeep is a reasonable budget rate. Bring binoculars, sunscreen, and a wide-angle lens. The leopards are usually spotted near water holes.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💎</div>
+      <div class="tip-title">Gems &amp; Souvenirs — Buy Smart</div>
+      <div class="tip-desc">Sri Lanka is world-famous for sapphires, rubies, and other gems. Buy only from Sri Lanka Gem &amp; Jewellery Association certified dealers — fake gems are a major tourist trap. For general souvenirs, Laksala (government craft stores) in Colombo and Kandy sell quality items at fixed fair prices: batik fabric, lacquerware, brass, masks. Ceylon tea from a factory shop is the best value souvenir.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔌</div>
+      <div class="tip-title">Practical Essentials</div>
+      <div class="tip-desc">Power sockets: Type D and G (Indian 3-pin and UK 3-pin both work — bring both adapters). Voltage: 230V. SIM card: Dialog or Mobitel at the airport — LKR 1,500 for a good data package. Tap water: Do not drink in most areas. Use bottled water (LKR 60–100). The hill country (Kandy, Ella) gets cold at night (15–18°C) — bring a light jacket. Colombo and coast are hot (30–35°C) year-round.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — PACKING + BACK COVER ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Sri Lanka 7-Day Itinerary</span>
+    <span class="page-header-right">Packing List</span>
+  </div>
+
+  <div class="label">What to Pack</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Packing List for Sri Lanka</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin-bottom:6mm">
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:10px;padding:4mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3mm;padding-bottom:2mm;border-bottom:1px solid rgba(26,15,0,0.08)">Clothing</div>
+      <div class="packing-grid" style="grid-template-columns:1fr">
+        <div class="packing-item"><span class="packing-check"></span>Light breathable clothes (30–35°C coast)</div>
+        <div class="packing-item"><span class="packing-check"></span>Light jacket or fleece (Ella 15–18°C nights)</div>
+        <div class="packing-item"><span class="packing-check"></span>Swimwear (beaches + hotel pool)</div>
+        <div class="packing-item"><span class="packing-check"></span>Modest outfit for temples (cover knees &amp; shoulders)</div>
+        <div class="packing-item"><span class="packing-check"></span>Sturdy walking shoes or trail shoes (hikes)</div>
+        <div class="packing-item"><span class="packing-check"></span>Flip-flops or sandals (beach + temples)</div>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:10px;padding:4mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3mm;padding-bottom:2mm;border-bottom:1px solid rgba(26,15,0,0.08)">Health &amp; Safety</div>
+      <div class="packing-grid" style="grid-template-columns:1fr">
+        <div class="packing-item"><span class="packing-check"></span>DEET-based mosquito repellent (Yala, coast)</div>
+        <div class="packing-item"><span class="packing-check"></span>Sunscreen SPF 50+ (intense tropical sun)</div>
+        <div class="packing-item"><span class="packing-check"></span>Stomach medication (metronidazole/ORS)</div>
+        <div class="packing-item"><span class="packing-check"></span>Water purification tablets (backup)</div>
+        <div class="packing-item"><span class="packing-check"></span>Basic first aid kit with antihistamine</div>
+        <div class="packing-item"><span class="packing-check"></span>Prescription medicines (hard to find locally)</div>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:10px;padding:4mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3mm;padding-bottom:2mm;border-bottom:1px solid rgba(26,15,0,0.08)">Tech &amp; Documents</div>
+      <div class="packing-grid" style="grid-template-columns:1fr">
+        <div class="packing-item"><span class="packing-check"></span>Passport (valid 6+ months)</div>
+        <div class="packing-item"><span class="packing-check"></span>ETA or visa documentation (if applicable)</div>
+        <div class="packing-item"><span class="packing-check"></span>Camera with zoom lens (wildlife)</div>
+        <div class="packing-item"><span class="packing-check"></span>Binoculars (Yala safari, birds)</div>
+        <div class="packing-item"><span class="packing-check"></span>Type D + G power adapters</div>
+        <div class="packing-item"><span class="packing-check"></span>Portable power bank (long train days)</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:1px solid rgba(26,15,0,0.07);border-radius:10px;padding:4mm;margin-bottom:5mm">
+    <div style="font-size:8pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3mm;padding-bottom:2mm;border-bottom:1px solid rgba(26,15,0,0.08)">Money &amp; Transport</div>
+    <div class="packing-grid">
+      <div class="packing-item"><span class="packing-check"></span>Mix of USD and LKR cash (parks prefer cash)</div>
+      <div class="packing-item"><span class="packing-check"></span>International debit card (Niyo/Wise/Fi)</div>
+      <div class="packing-item"><span class="packing-check"></span>Compact umbrella (afternoon rain showers)</div>
+      <div class="packing-item"><span class="packing-check"></span>PickMe app installed and verified before arrival</div>
+      <div class="packing-item"><span class="packing-check"></span>12go.asia account (train bookings)</div>
+      <div class="packing-item"><span class="packing-check"></span>Google Maps offline maps (hill country signal is patchy)</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Bring less than you think you need. Sri Lanka's guesthouses will wash your clothes for LKR 100 a piece and dry them overnight. The lighter your bag, the more freely you'll move."</p>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>Wildlife Photography:</strong> For Yala, bring a telephoto lens (at least 200mm). Keep your camera ready when the jeep is moving — leopard sightings are often brief. A fast shutter speed (1/1000 or above) is needed for moving animals. Early morning light is the best for photography.
+  </div>
+
+  <div class="highlight-box gold">
+    <strong>What NOT to bring:</strong> Don't bring expensive jewellery (unnecessary and draws attention). Don't bring single-use plastic bags (increasingly restricted). Don't bring large amounts of foreign currency in single denominations — exchange in Colombo at authorised money changers, not the airport.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover" style="background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(180,83,9,0.30) 0%,transparent 65%)"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:60mm;background:linear-gradient(to top,rgba(22,101,52,0.25),transparent)"></div>
+  <div style="position:relative;z-index:2;width:100%;padding:20mm;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:297mm">
+    <div style="font-size:8pt;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6mm;font-weight:400">IncredibleItinerary.com</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1;text-align:center">The Pearl of the<br/>Indian Ocean Awaits</h2>
+    <p style="color:rgba(255,255,255,0.5);font-size:10pt;font-weight:300;max-width:125mm;margin:0 auto 8mm;line-height:1.65;text-align:center">From the world's greatest train journey to a leopard's golden eyes at dawn in Yala — Sri Lanka offers more per square kilometre than almost anywhere on Earth. It's India's neighbour, but it feels like a world apart.</p>
+    <div style="background:var(--primary);color:#fff;font-size:10pt;font-weight:500;padding:4mm 12mm;border-radius:30px;display:inline-block;margin-bottom:8mm;letter-spacing:0.05em">More guides at IncredibleItinerary.com</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:18pt;font-weight:300;color:rgba(255,255,255,0.35);margin-bottom:10mm">incredibleitinerary.com</div>
+    <div style="display:flex;gap:4mm;flex-wrap:wrap;justify-content:center;margin-bottom:12mm">
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Bali 5 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Bangkok 4 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Singapore 4 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Dubai 4 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Kerala 5 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Rajasthan 7 Days</span>
+    </div>
+    <div style="font-size:6.5pt;color:rgba(255,255,255,0.18);line-height:1.7;max-width:130mm;margin:0 auto;text-align:center">All prices are approximate and subject to change. Exchange rates are indicative. Attraction prices, visa requirements, train timetables and opening hours should be verified before travel. IncredibleItinerary.com accepts no liability for errors or omissions. © 2026 IncredibleItinerary.com</div>
+  </div>
+</div>
+
+</body>
+</html>

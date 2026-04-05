@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Japan in 10 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#dc2626; --red-dark:#991b1b; --red-light:#fca5a5;
+  --ink:#0f0a0a; --cream:#fff8f8; --parchment:#fef2f2;
+  --gold:#b45309; --muted:#6b4c4c; --white:#ffffff;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+
+/* Cover */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,10,0.97) 0%,rgba(15,10,10,0.55) 50%,rgba(15,10,10,0.2) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--red-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* Inner pages */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(15,10,10,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);font-weight:500;margin-bottom:2mm}
+
+/* Stats */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(15,10,10,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+/* Route bar */
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--red);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--red-dark)}
+.route-stop.gold{background:var(--gold)}
+.route-stop.fly{background:#1d4ed8}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+
+/* City grid */
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(15,10,10,0.07);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(220,38,38,0.1);color:var(--red);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* Callout */
+.callout{background:linear-gradient(135deg,rgba(220,38,38,0.05),rgba(220,38,38,0.01));border-left:3px solid var(--red);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* Day blocks */
+.day-header{background:var(--red);color:#fff;padding:4mm 5mm;border-radius:10px 10px 0 0;margin-bottom:0}
+.day-header-sub{font-size:7pt;opacity:0.7;margin-bottom:1mm;letter-spacing:0.15em;text-transform:uppercase}
+.day-header h3{font-family:'Cormorant Garamond',serif;font-size:18pt;font-weight:300;line-height:1.1}
+.day-body{background:#fff;border:1px solid rgba(15,10,10,0.07);border-top:none;border-radius:0 0 10px 10px;padding:4mm 5mm;margin-bottom:5mm}
+.time-row{display:flex;gap:3mm;margin-bottom:3mm;align-items:flex-start}
+.time-label{font-size:7pt;color:var(--red);font-weight:600;min-width:14mm;padding-top:0.5mm;letter-spacing:0.05em}
+.time-content{font-size:8.5pt;color:var(--ink);line-height:1.55;font-weight:300;flex:1}
+.time-content strong{font-weight:500;color:var(--ink)}
+
+/* Pre-trip essentials */
+.essentials-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.essential-card{background:#fff;border:1px solid rgba(15,10,10,0.07);border-radius:8px;padding:3.5mm}
+.essential-icon{font-size:13pt;margin-bottom:1.5mm}
+.essential-title{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.essential-text{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.essential-highlight{font-size:7.5pt;color:var(--red);font-weight:500;margin-top:1mm}
+
+/* Budget table */
+.budget-table{width:100%;border-collapse:collapse;margin:4mm 0;font-size:8pt}
+.budget-table th{background:var(--red);color:#fff;padding:3mm 4mm;text-align:left;font-weight:500;font-size:7.5pt;letter-spacing:0.05em}
+.budget-table td{padding:2.5mm 4mm;border-bottom:1px solid rgba(15,10,10,0.06);color:var(--ink)}
+.budget-table tr:nth-child(even) td{background:rgba(220,38,38,0.02)}
+.budget-table tr:last-child td{font-weight:600;background:rgba(220,38,38,0.06);border-top:2px solid rgba(220,38,38,0.2)}
+
+/* Tips grid */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:4mm 0}
+.tip-card{background:#fff;border:1px solid rgba(15,10,10,0.07);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.tip-text{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* Packing */
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2mm}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:8pt;color:var(--ink);padding:2mm;background:#fff;border-radius:6px;border:1px solid rgba(15,10,10,0.06)}
+.pack-emoji{font-size:11pt;flex-shrink:0}
+
+/* Highlight note */
+.note-box{background:rgba(220,38,38,0.04);border:1px solid rgba(220,38,38,0.15);border-radius:8px;padding:3mm 4mm;margin:3mm 0;font-size:7.5pt;color:var(--red-dark);line-height:1.5}
+.note-box strong{font-weight:600}
+
+/* Day header dark variant */
+.day-header.dark-bg{background:var(--red-dark)}
+.day-header.gold-bg{background:var(--gold)}
+
+/* Section divider */
+.section-rule{border:none;border-top:1px solid rgba(15,10,10,0.08);margin:4mm 0}
+
+/* Two col layout */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+
+/* Currency bar */
+.currency-bar{background:var(--ink);color:#fff;border-radius:8px;padding:3mm 5mm;margin-bottom:5mm;display:flex;align-items:center;gap:6mm;flex-wrap:wrap}
+.currency-item{text-align:center}
+.currency-val{font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:300;display:block;line-height:1.1}
+.currency-label{font-size:6.5pt;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.1em}
+.currency-divider{width:1px;height:8mm;background:rgba(255,255,255,0.1)}
+
+/* Option tag */
+.option-tag{display:inline-block;font-size:7pt;font-weight:600;background:rgba(180,83,9,0.12);color:var(--gold);padding:2px 8px;border-radius:20px;margin-bottom:2mm;letter-spacing:0.05em}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 1 — COVER
+═══════════════════════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1200&q=80" alt="Japan"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · Premium Guide · ₹299</div>
+    <h1 class="serif">Japan in<br/><em>10 Days</em></h1>
+    <p class="cover-sub">Tokyo's neon chaos, Kyoto's temple silence, Osaka's food obsession, Hiroshima's gravity — the complete first-timer's circuit</p>
+    <div class="cover-pills">
+      <span class="pill">10 Days</span>
+      <span class="pill">4 Cities</span>
+      <span class="pill">₹1,20,000–₹3,50,000</span>
+      <span class="pill">Best: Mar–May (Cherry Blossom)</span>
+      <span class="pill">Oct–Nov (Autumn Foliage)</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 2 — OVERVIEW
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Trip Overview · Page 2</span>
+  </div>
+
+  <div class="label">The Complete Circuit</div>
+  <h2 class="section-title">Your Japan<br/>at a glance</h2>
+  <p style="font-size:8.5pt;color:var(--muted);font-weight:300;margin-bottom:6mm;max-width:150mm">Ten days is the sweet spot for Japan — long enough to experience four vastly different cities, short enough to keep every day vivid. This guide covers the classic first-timer's route, executed with precision.</p>
+
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-icon">📅</div>
+      <span class="stat-val">10 Days</span>
+      <span class="stat-label">Duration</span>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🏙️</div>
+      <span class="stat-val">4 Cities</span>
+      <span class="stat-label">Tokyo · Kyoto · Osaka · Hiroshima</span>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">💴</div>
+      <span class="stat-val">¥1 = ₹0.55</span>
+      <span class="stat-label">Exchange Rate (approx)</span>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🌸</div>
+      <span class="stat-val">Mar–May</span>
+      <span class="stat-label">Best Season</span>
+    </div>
+  </div>
+
+  <div class="route-bar">
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;font-weight:400;text-transform:uppercase;letter-spacing:0.12em;margin-right:2mm">Route</span>
+    <span class="route-stop">Tokyo</span>
+    <span class="route-arrow" style="font-size:8pt">Days 1–4</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Kyoto</span>
+    <span class="route-arrow" style="font-size:8pt">Days 5–7</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Osaka</span>
+    <span class="route-arrow" style="font-size:8pt">Days 8–9</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Hiroshima</span>
+    <span class="route-arrow" style="font-size:8pt">Day trip</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop fly">Fly KIX</span>
+    <span class="route-arrow" style="font-size:8pt">Day 10</span>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Cities &amp; Highlights</div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-name">Tokyo</div>
+      <span class="city-days">Days 1–4</span>
+      <p class="city-desc">World's largest city and Japan's electric beating heart. Shibuya crossing, Harajuku street fashion, Shinjuku nightlife, Akihabara anime district, Asakusa temple, Tsukiji seafood, and the mind-bending TeamLab digital art.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Nikko / Kamakura</div>
+      <span class="city-days">Day 3 or 4 Option</span>
+      <p class="city-desc">Nikko (2hrs): UNESCO shrine complex — the most ornate shrines in Japan. Tosho-gu is overwhelming in its gilded detail. Or Kamakura (1hr): Great Buddha + coastal temple town. Choose one.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Kyoto</div>
+      <span class="city-days">Days 5–7</span>
+      <p class="city-desc">Japan's cultural and spiritual capital. 1,600 temples in a city. Fushimi Inari's 10,000 torii gates, Arashiyama bamboo grove, Gion geisha district, Nishiki Market. Every corner is a photograph.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Nara</div>
+      <span class="city-days">Day 6 Half-Day</span>
+      <p class="city-desc">Sacred deer roam freely through the park, bowing for crackers. Todai-ji temple houses the world's largest bronze Buddha. 45 min from Kyoto — one of Japan's most magical detours.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Osaka</div>
+      <span class="city-days">Days 8–9</span>
+      <p class="city-desc">Japan's kitchen and its most charismatic city. Dotonbori street food paradise, Osaka Castle, Kuromon Market, retro Shinsekai. More relaxed than Tokyo, more unfiltered than Kyoto. Wildly fun nightlife.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Hiroshima + Miyajima</div>
+      <span class="city-days">Day 9 Day Trip</span>
+      <p class="city-desc">Peace Memorial Park and the A-Bomb Dome — emotional, necessary, unforgettable. Then ferry to Miyajima Island for the floating torii gate of Itsukushima Shrine. Deer here too. All covered by JR Pass.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Japan is the only country where I've never once felt the need to worry — about safety, about quality, about being cheated. It is, in every sense, a different civilization."</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 3 — PRE-TRIP ESSENTIALS + DAYS 1–2
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Pre-Trip Essentials · Page 3</span>
+  </div>
+
+  <div class="label">Before You Fly</div>
+  <h2 class="section-title" style="font-size:20pt;margin-bottom:4mm">Pre-trip essentials</h2>
+
+  <div class="essentials-grid">
+    <div class="essential-card">
+      <div class="essential-icon">🛂</div>
+      <div class="essential-title">Japan Visa (Required)</div>
+      <p class="essential-text">Indians require a tourist visa — no visa on arrival. Apply at VFS Japan in Mumbai, Delhi, Chennai, Kolkata, or Bengaluru. Takes 5–7 working days. Submit bank statement (3 months), hotel bookings, detailed itinerary, return flight ticket.</p>
+      <p class="essential-highlight">Cost: ₹1,700 · Apply 3–4 weeks before travel</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🚄</div>
+      <div class="essential-title">JR Pass — Buy in India</div>
+      <p class="essential-text">The Japan Rail Pass covers all Shinkansen (bullet train) travel + most local JR trains. 7-day ¥50,000 (₹27,500). 14-day ¥80,000. BUY BEFORE FLYING — it's significantly cheaper in India. Cannot be purchased after landing. Purchase from IRCTC Japan or authorised agents.</p>
+      <p class="essential-highlight">Covers: Tokyo ↔ Kyoto ↔ Osaka ↔ Hiroshima + Narita Express</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🪙</div>
+      <div class="essential-title">IC Card: Suica or Pasmo</div>
+      <p class="essential-text">Rechargeable card for all local trains, buses, and metro across Japan. ¥500 deposit + load as needed. Also works at convenience stores, vending machines, and some restaurants. Get one at Narita/Haneda airport or major JR stations.</p>
+      <p class="essential-highlight">Load ¥3,000–5,000 to start · Refund deposit on departure</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">💴</div>
+      <div class="essential-title">Cash — Japan is Cash-First</div>
+      <p class="essential-text">Many restaurants, temples, and smaller shops are still cash-only. Do not rely on cards. 7-Eleven ATMs and Japan Post ATMs accept international Mastercard/Visa and give the best exchange rates. Withdraw ¥30,000–50,000 at once to minimise fees.</p>
+      <p class="essential-highlight">¥10,000 = ₹5,500 · Always carry ¥5,000–10,000 minimum</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">📶</div>
+      <div class="essential-title">SIM Card / Pocket WiFi</div>
+      <p class="essential-text">Buy at airport arrivals — IIJmio or B-Mobile SIM for ₹1,500 (15 days unlimited data). Alternative: Pocket WiFi rental from airport desk, ₹1,000/day, return at departure. Google Maps + Translate offline essential. Download Japanese for camera translate.</p>
+      <p class="essential-highlight">Also download: Hyperdia app for train navigation</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🌦️</div>
+      <div class="essential-title">Weather + Timing Notes</div>
+      <p class="essential-text">Cherry blossom (sakura): late March to mid-April — magical but pack hotels 6–8 months ahead. Autumn foliage: mid-November — equally stunning, cooler. Avoid Golden Week (late April–early May) — everything is packed and expensive. Tenki.jp for accurate Japan forecasts.</p>
+      <p class="essential-highlight">Shoulder seasons = perfect weather + manageable crowds</p>
+    </div>
+  </div>
+
+  <!-- Day 1 -->
+  <div class="day-header">
+    <div class="day-header-sub">Day 1 · Tokyo</div>
+    <h3>Arrive Tokyo — Shinjuku First Night</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Arrival</span>
+      <span class="time-content">Land at <strong>Narita (NRT)</strong> or <strong>Haneda (HND)</strong>. Narita Express (N'EX) to Shinjuku station: ¥3,070, 1hr 30min — use your JR Pass here for the first time. Haneda is closer; JR train or monorail ¥500, 30 min.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Check-In</span>
+      <span class="time-content">Stay in <strong>Shinjuku or Shibuya</strong>. Budget hostels ¥2,500–4,000 (₹1,375–2,200). Business hotels ¥8,000–15,000. Mid-range recommendation: Shinjuku Granbell Hotel, or Super Hotel Shinjuku. Luxury: Park Hyatt Tokyo (Lost in Translation hotel) ¥30,000+.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Shinjuku Gyoen Garden</strong> ¥500 (₹275) — 58 hectares of formal Japanese, French, and English gardens. Perfect for gentle jet-lag recovery. Spectacular during cherry blossom and autumn seasons.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content"><strong>Omoide Yokocho</strong> ("Memory Lane") — a narrow alley crammed with tiny yakitori stalls, smoke, and salarymen since 1946. One of Tokyo's most atmospheric spots. Skewers ¥800–1,500. Atmospheric and slightly chaotic.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Night</span>
+      <span class="time-content"><strong>Shinjuku Kabukicho</strong> — Tokyo's famous entertainment district. Walk, observe, absorb. The Godzilla head on the Toho Cinemas building at night. Massive arcades, neon, bars. Safe to walk alone at any hour.</span>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-header">
+    <div class="day-header-sub">Day 2 · Tokyo</div>
+    <h3>Shibuya + Harajuku + Meiji Shrine</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">8:00 AM</span>
+      <span class="time-content"><strong>Meiji Shrine</strong> (free, opens 6am) — a vast forested Shinto shrine dedicated to Emperor Meiji, right in the middle of Tokyo. The walk through the towering torii gates and cedar forest is genuinely meditative. 30 min walk from Harajuku station.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">10:00 AM</span>
+      <span class="time-content"><strong>Harajuku — Takeshita Street</strong> — Tokyo's youth fashion epicentre. Rainbow crepes ¥500, vintage clothing, absurdly creative outfits. Walk Omotesando afterward for the luxury end of the spectrum (LVMH's Omotesando Hills is architecturally stunning).</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">12:00 PM</span>
+      <span class="time-content"><strong>Shibuya Crossing</strong> — the world's busiest pedestrian intersection. Up to 3,000 people cross at once from all directions. Cross it. Do it again. Best viewed from the second-floor Starbucks or from the Scramble Square rooftop. Free.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">2:00 PM</span>
+      <span class="time-content"><strong>Shibuya Sky</strong> observation deck ¥2,000 — 360° open-air view from the top of Shibuya Scramble Square (46th floor). One of Tokyo's best city views. <em>Book online 2–3 days ahead</em> — sells out on clear days.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">4:00 PM</span>
+      <span class="time-content"><strong>Daikanyama / Nakameguro</strong> canal walk — Tokyo's chicest neighbourhood. Daikanyama T-Site bookshop is an architectural and cultural experience. Nakameguro canal lined with cherry trees (magical in spring) and boutique cafes.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content">Dinner: <strong>Ichiran Ramen</strong> ¥900 — solo booth ramen, private wooden partitions, the most focused dining experience possible. Or <strong>Midori Sushi Shibuya</strong> — conveyor belt sushi ¥100–300/plate, always fresh queue. Both are legendary.</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 4 — DAYS 3–4 TOKYO
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Tokyo · Days 3–4 · Page 4</span>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-header">
+    <div class="day-header-sub">Day 3 · Tokyo</div>
+    <h3>Asakusa + Akihabara + Skytree + TeamLab</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">8:00 AM</span>
+      <span class="time-content"><strong>Senso-ji Temple, Asakusa</strong> (free, opens 6am) — Tokyo's oldest temple (645 AD), framed by the iconic Kaminarimon (Thunder Gate) with its enormous red lantern. Nakamise shopping street leading to the temple sells traditional Japanese souvenirs — ningyo dolls, fans, sembei rice crackers. Arrive before 9am to avoid coach tour crowds.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">10:00 AM</span>
+      <span class="time-content"><strong>Asakusa area exploration</strong> — Nakamise shopping street for traditional crafts. The Hoppy Street nearby for daytime yakitori (unusual but locals do it). Azuma Bridge for classic Skytree + Senso-ji skyline photograph.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">11:00 AM</span>
+      <span class="time-content"><strong>Tokyo Skytree</strong> ¥2,100 (₹1,155) — at 634m, the tallest structure in Japan and second tallest in the world. Views to Mt Fuji on clear days (winter mornings are clearest). Skip if it's overcast — waste of money. The shopping mall complex at the base is also excellent.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">2:00 PM</span>
+      <span class="time-content"><strong>Akihabara Electric Town</strong> — seven-story electronics stores, anime figurines, manga, vintage video games, and the surreal world of maid cafes (¥500–1,000 for a coffee with theatrical service). Wild and fascinating even if you have zero interest in anime. Yodobashi Camera for electronics.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">6:00 PM</span>
+      <span class="time-content"><strong>Tsukiji Outer Market</strong> for dinner — the inner tuna auction market moved to Toyosu, but the outer market remains active and excellent. Stalls serving fresh sashimi sets ¥1,500–3,000, grilled scallops ¥300, tamagoyaki (egg omelette on stick) ¥300. Come hungry.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">8:00 PM</span>
+      <span class="time-content"><strong>TeamLab Planets, Toyosu</strong> ¥3,200 — the world's most spectacular immersive digital art installation. Walk through rooms of infinite mirrors, wade through a water room, lie on the floor under a galaxy ceiling. <em>Book online weeks in advance</em> — this sells out constantly. One of the best experiences in Japan.</span>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-header dark-bg">
+    <div class="day-header-sub">Day 4 · Day Trip from Tokyo</div>
+    <h3>Nikko or Kamakura — Choose Your Adventure</h3>
+  </div>
+  <div class="day-body">
+    <div style="margin-bottom:3mm">
+      <span class="option-tag">Option A — Nikko (Recommended for architecture lovers)</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Travel</span>
+      <span class="time-content">JR Shinkansen + local train from Shinjuku to Nikko, approx 2 hours. JR Pass covers most of the journey. Leave by 8:30am to make the most of the day.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">All Day</span>
+      <span class="time-content"><strong>Tosho-gu Shrine Complex</strong> ¥1,300 — UNESCO World Heritage Site and the most ornate, gilded, elaborate shrine complex in Japan. Built to enshrine Tokugawa Ieyasu, the shogun who unified Japan. Every surface is carved and lacquered. The famous three wise monkeys carving is here. Allow 3 hours minimum to walk the full complex.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Nearby</span>
+      <span class="time-content"><strong>Shinkyo Bridge</strong> — sacred red bridge over the Daiya River, one of Japan's three finest bridges. <strong>Rinno-ji Temple</strong> and surrounding cedar forests. Stunning in autumn foliage (mid-October to mid-November) — one of Japan's best autumn spots.</span>
+    </div>
+
+    <hr class="section-rule"/>
+
+    <div style="margin-bottom:3mm;margin-top:3mm">
+      <span class="option-tag">Option B — Kamakura (Recommended for coastal/relaxed feel)</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Travel</span>
+      <span class="time-content">JR Yokosuka Line from Tokyo Station or Shinjuku, approx 1 hour. JR Pass covers this. Arrive Kamakura Station.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Kotoku-in Temple — Great Buddha (Daibutsu)</strong> ¥300 — a 13.35m tall bronze Buddha seated outdoors since 1252. Serene, ancient, extraordinary. You can enter the hollow statue for an additional ¥20.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Hase-dera Temple</strong> ¥400 — ocean views, cave of Benzaiten goddess, thousands of small Jizo statues. Then <strong>Tsurugaoka Hachimangu</strong> shrine — Kamakura's most important shrine. Coastal town vibe throughout — good seafood lunch ¥1,500–2,500.</span>
+    </div>
+
+    <div class="note-box" style="margin-top:4mm">
+      <strong>Evening — Pack for Kyoto:</strong> Whichever day trip you choose, return to Tokyo by 6–7pm. Pack bags tonight. Tomorrow you take the Shinkansen to Kyoto (2hrs 20min). Lay out your JR Pass — it starts earning its keep tomorrow.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 5 — DAYS 5–7 KYOTO
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Kyoto · Days 5–7 · Page 5</span>
+  </div>
+
+  <div class="label">Days 5–7 · Kyoto</div>
+  <h2 class="section-title" style="font-size:20pt;margin-bottom:2mm">The Cultural Heart of Japan</h2>
+  <p style="font-size:8pt;color:var(--muted);font-weight:300;margin-bottom:5mm">Former imperial capital for over 1,000 years. 1,600 Buddhist temples, 400 Shinto shrines, 17 UNESCO World Heritage Sites. Every street in Kyoto has a story. Three days is barely enough — but it's a beginning.</p>
+
+  <!-- Day 5 -->
+  <div class="day-header">
+    <div class="day-header-sub">Day 5 · Kyoto — Arrival Day</div>
+    <h3>Fushimi Inari + Gion Evening</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Shinkansen: Tokyo → Kyoto</strong> 2hrs 20min (JR Pass covers this fully). Nozomi trains are fastest but not covered — take Hikari or Sakura. Depart Tokyo by 9am to arrive before noon. Sit on the right side for Mt. Fuji views (clear mornings, first 30 min).</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Check-In</span>
+      <span class="time-content">Stay in <strong>Fushimiku, Gion, or Higashiyama</strong> area. A traditional <em>machiya</em> (townhouse guesthouse) is worth the premium — ¥12,000–20,000/night for the experience. Recommendations: Nishiyama Ryokan, Gion Nanba, or the more budget-friendly K's House Kyoto.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">2:00 PM</span>
+      <span class="time-content"><strong>Fushimi Inari Shrine</strong> (free, open 24hrs) — 10,000 vermillion torii gates winding up Mount Inari for 4km. Walk to the first summit (Yotsutsuji intersection, 45 min) for city views and manageable crowds. Full circuit to the top: 2.5 hours. The deeper you go, the fewer tourists. Go in the afternoon, stay for dusk light through the gates.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content"><strong>Gion district walk</strong> — Kyoto's preserved geisha neighbourhood. Hanamikoji Street is the most atmospheric at dusk: latticed wooden teahouses, paper lanterns, occasional kimono-clad figures. Do not photograph geisha (maiko) without permission — it's genuinely disrespectful and they move fast.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Dinner</span>
+      <span class="time-content"><strong>Nishiki Market</strong> for evening browsing (closes 6pm for most stalls). Dinner at <strong>Omen Restaurant</strong> ¥1,500 — simple, beautiful udon and tofu cuisine in a historic wooden space near Nanzen-ji. Or Gion side streets for kaiseki-lite set meals ¥2,000–3,500.</span>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day-header dark-bg">
+    <div class="day-header-sub">Day 6 · Kyoto + Nara</div>
+    <h3>Arashiyama Bamboo + Sacred Deer of Nara</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">7:00 AM</span>
+      <span class="time-content"><strong>Arashiyama Bamboo Grove</strong> (free) — arrive before 8am for a near-crowd-free experience in one of the most otherworldly places on earth. 10 minutes of towering green bamboo stalks, light filtering through, absolute quiet. By 10am it's thick with tourists. Go early or miss the point entirely.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">8:30 AM</span>
+      <span class="time-content"><strong>Tenryu-ji Temple</strong> ¥500 — UNESCO garden included. The stroll garden with a pond reflecting the Arashiyama hills is one of Kyoto's finest views. Then <strong>Jojakko-ji Temple</strong> ¥500 (five-minute walk) — a hidden gem of mossy stone steps, rare tree species, and a bamboo grove almost as striking as the famous one.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Optional</span>
+      <span class="time-content">Rickshaw ride through Arashiyama bamboo with a <em>jinrikisha</em> — ¥5,000–8,000 for 2 persons (30 min). Drivers speak some English and give commentary. Extremely Japanese experience.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">11:00 AM</span>
+      <span class="time-content"><strong>JR train to Nara</strong> — 45 minutes from Kyoto Station (JR Nara Line, JR Pass covers). Nara Park: 1,200 freely roaming sacred Sika deer. Buy <strong>shika senbei</strong> (deer crackers) ¥200 and prepare to be surrounded. The deer genuinely bow for crackers.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">1:00 PM</span>
+      <span class="time-content"><strong>Todai-ji Temple</strong> ¥600 — the world's largest wooden building (57m tall), housing a 15m bronze Buddha (Daibutsu) cast in 752 AD. The scale is humbling. The narrow wooden pillar with a hole at the base — same size as Buddha's nostril — is said to grant enlightenment if you squeeze through. Children and thin adults only.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">3:00 PM</span>
+      <span class="time-content">Stroll <strong>Kasuga Taisha Shrine</strong> (free exterior) — ancient stone lanterns lining forested paths. Late afternoon light through the trees is exceptional. Then JR train back to Kyoto by 5pm. Dinner at your Kyoto accommodation area.</span>
+    </div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day-header gold-bg">
+    <div class="day-header-sub">Day 7 · Kyoto — Final Day</div>
+    <h3>Golden Pavilion + Philosopher's Path + Pontocho</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">9:00 AM</span>
+      <span class="time-content"><strong>Kinkaku-ji — Golden Pavilion</strong> ¥500 — Japan's most photographed structure. A Zen temple covered in gold leaf, reflected in a mirror pond. Arrive before 9:30am to beat the busiest crowds. The garden circuit takes 30–45 minutes. Do not expect silence — but the image is as transcendent as advertised.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">11:00 AM</span>
+      <span class="time-content"><strong>Ryoan-ji Temple</strong> ¥600 — Japan's most famous rock garden: 15 stones arranged in raked white gravel, none ever fully visible at once. Deliberately enigmatic. Built 1499. Sit on the wooden platform and look for as long as you need. The large stroll pond garden surrounding it is also beautiful.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">1:00 PM</span>
+      <span class="time-content"><strong>Philosopher's Path</strong> (Tetsugaku-no-Michi) — a 2km canal-side stone path named after philosopher Nishida Kitaro who walked it daily. Lined with 450 cherry trees (a tunnel of blossom in spring). Walk north to south, stopping at small shrines, cafes, and tofu shops along the way. Free.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">2:30 PM</span>
+      <span class="time-content"><strong>Nanzen-ji Temple</strong> — free exterior, ¥600 for hojo garden. The enormous sanmon gate (1628) is one of Japan's most imposing entrances. The aqueduct running through the grounds is a surprising 19th-century addition. Walk up to the Nanzen-in sub-temple pond garden for solitude.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content"><strong>Pontocho Alley</strong> — a narrow 500m lantern-lit alley of restaurants, sake bars, and jazz bars running parallel to the Kamo River. One of Kyoto's most atmospheric streets. Budget ¥2,000–4,000 for a full dinner. Reserve at better spots. Try <em>tofu kaiseki</em> or river-view dining on the raised platforms (<em>kawayuka</em>) in summer.</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 6 — DAYS 8–10 OSAKA + HIROSHIMA
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Osaka · Hiroshima · Days 8–10 · Page 6</span>
+  </div>
+
+  <div class="label">Days 8–10 · Osaka &amp; Beyond</div>
+  <h2 class="section-title" style="font-size:20pt;margin-bottom:2mm">Japan's Kitchen &amp; Its Most Sobering Day</h2>
+  <p style="font-size:8pt;color:var(--muted);font-weight:300;margin-bottom:5mm">Osaka is a relief after Kyoto's temple intensity — louder, funnier, less formal, obsessively food-focused. Then Day 9 takes you to Hiroshima and Miyajima for Japan's most emotionally complete experience.</p>
+
+  <!-- Day 8 -->
+  <div class="day-header">
+    <div class="day-header-sub">Day 8 · Osaka</div>
+    <h3>Osaka Castle + Dotonbori Street Food + Shinsekai</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Shinkansen or local train: Kyoto → Osaka</strong> — 15 min by Shinkansen (JR Pass), 30 min by local JR line (also covered). Check into Namba or Shinsaibashi area. Recommendation: Cross Hotel Osaka, or budget-friendly Dormy Inn Namba ¥7,000–9,000.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">10:00 AM</span>
+      <span class="time-content"><strong>Osaka Castle</strong> ¥600 — built 1583 by Toyotomi Hideyoshi, who unified Japan. Eight-storey reconstruction is visually magnificent even if the interior is a museum. <strong>Osaka-jo Park</strong> surrounds it — free to explore, exceptional cherry blossom spot in spring. Allow 1.5 hours.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">1:00 PM</span>
+      <span class="time-content"><strong>Dotonbori</strong> — the beating, neon heart of Osaka. The canal-side street of food stalls and restaurants is Japan's most concentrated street food experience. Must eat: <strong>Takoyaki</strong> (octopus balls, ¥500 for 6), <strong>Okonomiyaki</strong> (savoury pancake, ¥900), <strong>Kushikatsu</strong> at Daruma (deep-fried skewers, ¥1,500). The iconic Glico running man billboard is here.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">4:00 PM</span>
+      <span class="time-content"><strong>Shinsekai neighbourhood</strong> — retro 1950s Osaka that feels like a film set. Cheap kushikatsu bars, blowfish restaurants, the Tsutenkaku Tower neighbourhood, old-school pachinko parlours. Locals and tourists in equal measure. Inexpensive and character-rich. Kushikatsu for ¥800–1,200.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Night</span>
+      <span class="time-content"><strong>Dotonbori at night</strong> — return for the neon in full effect. The reflection of signs in the canal is spectacular. Bar-hop along the canal or head to Namba area izakayas (Japanese pub restaurants, ¥2,000–3,000 for drinks + food). Osaka nightlife is the most approachable in Japan.</span>
+    </div>
+  </div>
+
+  <!-- Day 9 -->
+  <div class="day-header dark-bg">
+    <div class="day-header-sub">Day 9 · Day Trip — 3hrs Each Way</div>
+    <h3>Hiroshima Peace Park + Miyajima Island</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">7:00 AM</span>
+      <span class="time-content"><strong>Shinkansen: Osaka → Hiroshima</strong> 1hr 20min (JR Pass covers fully). Take the first or second Nozomi/Sakura of the day from Shin-Osaka station. Arrive Hiroshima by 8:30–9am for maximum time.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">9:00 AM</span>
+      <span class="time-content"><strong>Peace Memorial Park</strong> — the park stands at the hypocentre of the August 6, 1945 atomic bomb. The <strong>A-Bomb Dome</strong> (Genbaku Dome) — the only structure left standing near the blast — is now a UNESCO World Heritage Site and the most arresting piece of preserved history you will see. Free to approach.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">10:00 AM</span>
+      <span class="time-content"><strong>Hiroshima Peace Memorial Museum</strong> ¥200 — one of the most important museums in the world. Personal effects, photographs, testimonies of survivors. Allow 1.5–2 hours minimum. It will be difficult. It is necessary. The museum is extremely well curated in English.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">1:00 PM</span>
+      <span class="time-content"><strong>Ferry to Miyajima Island</strong> ¥180 (JR Pass covers the Miyajima Ferry fully). 10-minute crossing. <strong>Itsukushima Shrine</strong> with its famous torii gate appearing to float in the sea at high tide — one of Japan's "three views" and the country's most iconic photograph. Low tide: walk out to the gate through the sand.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">2:00 PM</span>
+      <span class="time-content">Explore Miyajima — freely roaming deer (smaller than Nara's), the five-storey pagoda, hiking trail up Mt Misen (cable car ¥1,800 return) for views across the Seto Inland Sea. Lunch: Hiroshima-style oysters grilled on the shell ¥500 each — the island is famous for them. Fresh anago (conger eel) over rice ¥1,800.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">5:30 PM</span>
+      <span class="time-content">Ferry back to Hiroshima, Shinkansen back to Osaka. Arrive Osaka by 8–9pm. Light dinner: convenience store onigiri and beer counts tonight — it's been a full day. Or a quick Dotonbori bowl of ramen ¥900.</span>
+    </div>
+  </div>
+
+  <!-- Day 10 -->
+  <div class="day-header gold-bg">
+    <div class="day-header-sub">Day 10 · Osaka — Final Morning</div>
+    <h3>Kuromon Market + Fly from Kansai (KIX)</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">8:00 AM</span>
+      <span class="time-content"><strong>Kuromon Ichiba Market</strong> — "Osaka's Kitchen." A 600m covered market open since 1822, with 170 stalls of fresh seafood, Wagyu beef, produce, and prepared food. Breakfast here: grilled scallops ¥300, fresh crab, sea urchin, Wagyu skewer ¥800. Arrive early for the freshest produce and the least crowds.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">10:00 AM</span>
+      <span class="time-content"><strong>Tsutenkaku Tower</strong> ¥1,000 — retro 103m observation tower in Shinsekai, Osaka's symbol since 1912. The neighbourhood around it has been left gloriously unrenovated. Good for a final Osaka photograph and the last kushikatsu meal.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Head to Kansai International Airport (KIX)</strong> — JR Haruka Express from Namba or Tennoji station, approx 75 min, JR Pass covers it fully. Allow 3 hours before international departure. Terminal 1 for international flights. Duty-free shopping — Japanese whisky, Kit-Kat flavours (the ones you can't get elsewhere), mochi sweets.</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 7 — BUDGET + PRACTICAL DETAILS
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Budget &amp; Costs · Page 7</span>
+  </div>
+
+  <div class="label">Money Matters</div>
+  <h2 class="section-title" style="font-size:22pt;margin-bottom:3mm">Budget breakdown<br/>for 10 days</h2>
+
+  <div class="currency-bar">
+    <div class="currency-item">
+      <span class="currency-val">¥1 = ₹0.55</span>
+      <span class="currency-label">Exchange Rate (approx)</span>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-item">
+      <span class="currency-val">¥10,000 = ₹5,500</span>
+      <span class="currency-label">Quick Reference</span>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-item">
+      <span class="currency-val">¥1,000 = ₹550</span>
+      <span class="currency-label">Daily Unit</span>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-item">
+      <span class="currency-val">₹27,500</span>
+      <span class="currency-label">JR Pass 7-Day Cost</span>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-item">
+      <span class="currency-val">7-Eleven ATM</span>
+      <span class="currency-label">Best Cash Source</span>
+    </div>
+  </div>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Expense Item</th>
+        <th>Budget (₹)</th>
+        <th>Mid-Range (₹)</th>
+        <th>Premium (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Accommodation (10 nights)</td>
+        <td>₹22,000</td>
+        <td>₹55,000</td>
+        <td>₹1,50,000+</td>
+      </tr>
+      <tr>
+        <td>JR Pass — 7-day (¥50,000)</td>
+        <td>₹27,500</td>
+        <td>₹27,500</td>
+        <td>₹27,500</td>
+      </tr>
+      <tr>
+        <td>Local transport (metro, IC card)</td>
+        <td>₹4,000</td>
+        <td>₹6,000</td>
+        <td>₹8,000</td>
+      </tr>
+      <tr>
+        <td>Food &amp; drinks</td>
+        <td>₹12,000</td>
+        <td>₹25,000</td>
+        <td>₹50,000</td>
+      </tr>
+      <tr>
+        <td>Attractions &amp; entry fees</td>
+        <td>₹8,000</td>
+        <td>₹15,000</td>
+        <td>₹25,000</td>
+      </tr>
+      <tr>
+        <td>Shopping &amp; souvenirs</td>
+        <td>₹5,000</td>
+        <td>₹20,000</td>
+        <td>₹1,00,000+</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL (excl. flights)</strong></td>
+        <td><strong>~₹78,500</strong></td>
+        <td><strong>~₹1,48,500</strong></td>
+        <td><strong>₹3,60,500+</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box" style="margin-bottom:5mm">
+    <strong>Currency note:</strong> Japan is expensive relative to USD/EUR but surprisingly reasonable from India — especially on food. A full meal at a respectable restaurant costs ¥1,000–2,000 (₹550–1,100). Convenience store meals are ¥400–700 and genuinely excellent. The JR Pass at ₹27,500 pays for itself on just the Tokyo–Kyoto–Osaka–Hiroshima route alone (individual tickets would cost ₹35,000+).
+  </div>
+
+  <div class="label">Money-Saving Strategies</div>
+  <div class="essentials-grid" style="margin-bottom:5mm">
+    <div class="essential-card">
+      <div class="essential-icon">🏪</div>
+      <div class="essential-title">Convenience Store Meals</div>
+      <p class="essential-text">7-Eleven, Lawson, and FamilyMart in Japan are a genuine revelation. Onigiri (rice balls) ¥120, sandwiches ¥200, hot oden soup ¥100/piece, fresh pastries ¥180. Hot foods at the counter. Breakfast from a conbini every 2–3 days saves ₹3,000–4,000 over the trip without sacrificing quality.</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🍜</div>
+      <div class="essential-title">Lunch vs Dinner Pricing</div>
+      <p class="essential-text">Many good restaurants offer identical food at lunch for 40–50% less than dinner. A ¥2,500 dinner set is often ¥1,200 at lunch. Plan your bigger meals as lunches. Kaiseki (multi-course Japanese cuisine) at dinner is ¥8,000–15,000 per person; the same restaurant's lunch set is ¥2,500–3,500.</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🎌</div>
+      <div class="essential-title">Free Temples &amp; Shrines</div>
+      <p class="essential-text">Many of Japan's most beautiful sites are free. Fushimi Inari — free. Meiji Shrine — free. Arashiyama bamboo grove — free. Gion district walk — free. Nishiki Market — free. Philosopher's Path — free. Budget the ¥500–¥1,300 entry fees strategically for the truly exceptional paid sites.</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🚌</div>
+      <div class="essential-title">Day Pass Buses (Kyoto)</div>
+      <p class="essential-text">In Kyoto, the city bus ¥600/day pass covers all bus routes. Many temples in Arashiyama, Nishiyama, and Higashiyama are bus-accessible. The Kyoto City Bus network is comprehensive and has English signage. Saves ¥200–300 per journey if you're making 4+ trips a day.</p>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:1mm">Flight Options from India</div>
+  <div class="day-body" style="border-radius:10px;border:1px solid rgba(15,10,10,0.07);margin-bottom:0">
+    <div class="time-row">
+      <span class="time-label">Direct</span>
+      <span class="time-content"><strong>Air India</strong> flies Delhi → Tokyo Narita (9.5hrs) and Mumbai → Tokyo. <strong>IndiGo</strong> has seasonal direct routes Mumbai/Delhi → Tokyo. Direct flights ₹35,000–65,000 return. Book 3–4 months ahead for best prices.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Via Hub</span>
+      <span class="time-content">More options via <strong>Singapore Airlines</strong> (Singapore), <strong>Qatar Airways</strong> (Doha), <strong>Cathay Pacific</strong> (Hong Kong), or <strong>ANA/JAL</strong>. One-stop options ₹28,000–50,000 return. Singapore layover adds 1–2hrs each way but can be worth the price difference.</span>
+    </div>
+    <div class="time-row" style="margin-bottom:0">
+      <span class="time-label">Return</span>
+      <span class="time-content">Fly home from <strong>Kansai International (KIX)</strong> — Osaka. Saves you the return Shinkansen to Tokyo. JR Haruka Express to KIX: 75 min, JR Pass covers it. Check if your airline flies out of KIX — most major carriers do.</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 8 — PRACTICAL TIPS
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Practical Tips · Page 8</span>
+  </div>
+
+  <div class="label">Things That Make Japan Different</div>
+  <h2 class="section-title" style="font-size:22pt;margin-bottom:3mm">8 things to know<br/>before you land</h2>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🛂</div>
+      <div class="tip-title">1. Japan Visa — Plan Ahead</div>
+      <p class="tip-text">Indians need a Japan tourist visa — no visa on arrival. Apply at VFS Japan centres in Mumbai, Delhi, Chennai, Kolkata, or Bengaluru. Processing: 5–7 working days. Cost: ₹1,700. Required documents: 3 months bank statement, hotel bookings, itinerary, confirmed return flight, employment letter. Apply 3–4 weeks before travel to be safe.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🚄</div>
+      <div class="tip-title">2. JR Pass — Buy Before Flying</div>
+      <p class="tip-text">The 7-day JR Pass (¥50,000 = ₹27,500) covers all Shinkansen bullet trains (except Nozomi/Mizuho), Narita Express, and most JR local trains. Cannot be purchased in Japan — only from authorised overseas agents or IRCTC Japan. On this 10-day itinerary, the pass pays for itself on the Tokyo–Kyoto–Osaka–Hiroshima route alone. Activate on Day 1 at the train station.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏧</div>
+      <div class="tip-title">3. Cash Culture &amp; ATMs</div>
+      <p class="tip-text">Japan is largely cash-based. Many restaurants, temples, small shops, and traditional inns (ryokan) do not accept cards. 7-Eleven ATMs and Japan Post ATMs accept foreign Mastercard/Visa/Maestro reliably. Withdraw ¥30,000–50,000 at a time to minimise fees. Keep ¥5,000–10,000 accessible at all times. Never rely on cards alone.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌸</div>
+      <div class="tip-title">4. Cherry Blossom Season</div>
+      <p class="tip-text">Late March to mid-April is Japan's most spectacular and most crowded season. Under cherry trees everything becomes ethereal. Book accommodation 6–8 months in advance for this period — hotels fill completely. Bloom timing varies year to year by 1–2 weeks; monitor Japan Meteorological Corporation forecasts from February. Worth every ounce of planning.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏪</div>
+      <div class="tip-title">5. Convenience Stores Are Extraordinary</div>
+      <p class="tip-text">Japan's convenience stores (7-Eleven, Lawson, FamilyMart) are unlike anything elsewhere in the world. Hot foods, incredibly fresh onigiri, quality sandwiches, hot noodles, excellent coffee, ATMs, printing services, bill payment, and sometimes alcohol. Onigiri ¥120, hot coffee ¥100. Eating one meal a day from a conbini is not a compromise — it's part of the experience.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">👟</div>
+      <div class="tip-title">6. Shoe Etiquette</div>
+      <p class="tip-text">You will remove your shoes at temple interiors, traditional ryokan guesthouses, many restaurants, and occasionally at some homes and ryokan common areas. Bring slip-on shoes or shoes without complex lacing. Keep your socks clean and hole-free (genuinely). Some places provide indoor slippers — remove those before stepping on tatami mat rooms.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔇</div>
+      <div class="tip-title">7. Train &amp; Public Etiquette</div>
+      <p class="tip-text">No phone calls on trains — step off or text instead. Keep voices low in public spaces. No eating while walking (eat at the stall, sit on a bench, find a konbini corner — never walking down the street). Give up priority seats for elderly and pregnant. Queue in the marked lines on platforms. These aren't strict rules — they're cultural norms everyone follows instinctively. Follow them and you'll feel the difference.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">8. Navigation &amp; Translation Apps</div>
+      <p class="tip-text">Download <strong>Google Maps</strong> offline for all four cities. <strong>Google Translate</strong> with Japanese downloaded — point camera at any menu or sign for instant translation. <strong>Hyperdia</strong> or <strong>Jorudan</strong> for train route planning with JR Pass compatibility filter. <strong>Tenki.jp</strong> for the most accurate Japanese weather forecasts. <strong>PayPay</strong> QR payment app works at many places if you have a Japanese number.</p>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:4mm">Food Glossary — Order Confidently</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2mm;margin-bottom:5mm">
+    <div class="pack-item"><span class="pack-emoji">🍱</span><div><strong style="font-size:7.5pt">Bento</strong><br/><span style="font-size:7pt;color:var(--muted)">Box meal, always good value</span></div></div>
+    <div class="pack-item"><span class="pack-emoji">🍣</span><div><strong style="font-size:7.5pt">Omakase</strong><br/><span style="font-size:7pt;color:var(--muted)">Chef's choice sushi — premium</span></div></div>
+    <div class="pack-item"><span class="pack-emoji">🍜</span><div><strong style="font-size:7.5pt">Ramen</strong><br/><span style="font-size:7pt;color:var(--muted)">Tonkotsu, shoyu, miso, shio</span></div></div>
+    <div class="pack-item"><span class="pack-emoji">🍢</span><div><strong style="font-size:7.5pt">Yakitori</strong><br/><span style="font-size:7pt;color:var(--muted)">Grilled chicken skewers, ¥150+</span></div></div>
+    <div class="pack-item"><span class="pack-emoji">🐙</span><div><strong style="font-size:7.5pt">Takoyaki</strong><br/><span style="font-size:7pt;color:var(--muted)">Octopus balls, Osaka staple</span></div></div>
+    <div class="pack-item"><span class="pack-emoji">🥘</span><div><strong style="font-size:7.5pt">Kaiseki</strong><br/><span style="font-size:7pt;color:var(--muted)">Multi-course Japanese haute cuisine</span></div></div>
+    <div class="pack-item"><span class="pack-emoji">🍶</span><div><strong style="font-size:7.5pt">Izakaya</strong><br/><span style="font-size:7pt;color:var(--muted)">Japanese pub, food + drinks</span></div></div>
+    <div class="pack-item"><span class="pack-emoji">🍡</span><div><strong style="font-size:7.5pt">Mochi</strong><br/><span style="font-size:7pt;color:var(--muted)">Rice cake sweet, comes in 30+ flavours</span></div></div>
+    <div class="pack-item"><span class="pack-emoji">🫖</span><div><strong style="font-size:7.5pt">Matcha</strong><br/><span style="font-size:7pt;color:var(--muted)">Green tea powder, in everything</span></div></div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 9 — ACCOMMODATION + PACKING LIST
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Accommodation &amp; Packing · Page 9</span>
+  </div>
+
+  <div class="label">Where to Sleep</div>
+  <h2 class="section-title" style="font-size:20pt;margin-bottom:3mm">Accommodation guide<br/>by city &amp; style</h2>
+
+  <div class="city-grid" style="margin-bottom:5mm">
+    <div class="city-card">
+      <div class="city-name">Tokyo — Recommended Areas</div>
+      <span class="city-days">Days 1–4</span>
+      <p class="city-desc"><strong>Shinjuku:</strong> Central, transport hub, lively at night. <strong>Shibuya:</strong> Trendy, great transport links. <strong>Asakusa:</strong> Traditional feel, near Senso-ji. <strong>Budget:</strong> Khaosan Tokyo hostels ¥2,500. <strong>Mid:</strong> Shinjuku Granbell ¥9,000. <strong>Luxury:</strong> Park Hyatt Tokyo ¥45,000+.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Kyoto — Recommended Areas</div>
+      <span class="city-days">Days 5–7</span>
+      <p class="city-desc"><strong>Gion/Higashiyama:</strong> Most atmospheric, close to temples. <strong>Kyoto Station area:</strong> Convenient transport hub. <strong>Budget:</strong> K's House Kyoto ¥2,800. <strong>Mid:</strong> Kyoto Granvia ¥11,000. <strong>Splurge:</strong> Authentic machiya townhouse stay ¥15,000–25,000.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Osaka — Recommended Areas</div>
+      <span class="city-days">Days 8–9</span>
+      <p class="city-desc"><strong>Namba/Dotonbori:</strong> Walking distance to everything, buzzing at night. <strong>Shinsaibashi:</strong> Great shopping and food. <strong>Budget:</strong> The Millennials Osaka ¥3,500. <strong>Mid:</strong> Dormy Inn Namba ¥8,000. <strong>Luxury:</strong> Conrad Osaka ¥35,000+.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Ryokan Experience</div>
+      <span class="city-days">Worth the Premium</span>
+      <p class="city-desc">A Japanese ryokan (traditional inn) is a cultural experience: tatami floors, yukata robes, communal onsen bath, multi-course kaiseki dinner. Best in Kyoto or near Hakone (day trip from Tokyo). Budget ¥20,000–40,000/person including dinner + breakfast. Non-negotiable experience once per trip.</p>
+    </div>
+  </div>
+
+  <hr class="section-rule"/>
+
+  <div class="label" style="margin-top:4mm">What to Pack</div>
+  <h3 class="sub-title" style="font-size:14pt;margin-bottom:3mm">Packing list for Japan</h3>
+  <p style="font-size:8pt;color:var(--muted);font-weight:300;margin-bottom:4mm">Japan's trains have no luggage racks for large suitcases (overhead bins are small). Pack lighter than you think you need. A 20kg suitcase on Japanese trains is a liability — a 7kg cabin bag is freedom.</p>
+
+  <div class="packing-grid">
+    <div class="pack-item">
+      <span class="pack-emoji">🎒</span>
+      <div><strong>Light Luggage</strong><br/><span style="font-size:7pt;color:var(--muted)">Carry-on only if possible. Suitcase shipment service (takkyubin) available hotel-to-hotel ¥1,500–2,000.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">👟</span>
+      <div><strong>Slip-On Shoes</strong><br/><span style="font-size:7pt;color:var(--muted)">Removed constantly at temples, ryokans, some restaurants. Comfort + easy removal essential.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">💴</span>
+      <div><strong>Cash — ¥30,000+ on Arrival</strong><br/><span style="font-size:7pt;color:var(--muted)">Top up at 7-Eleven ATMs. Always have ¥5,000–10,000 accessible. Never rely on cards alone.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">🎫</span>
+      <div><strong>JR Pass + Activation Plan</strong><br/><span style="font-size:7pt;color:var(--muted)">Bought in India. Activate at Narita/Haneda on Day 1. Keep the paper pass safe — it's irreplaceable.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">📱</span>
+      <div><strong>Suica/Pasmo Card Loaded</strong><br/><span style="font-size:7pt;color:var(--muted)">Get at airport or major JR station. Load ¥3,000 to start. Works on trains, buses, and convenience stores.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">🌡️</span>
+      <div><strong>Layered Clothing</strong><br/><span style="font-size:7pt;color:var(--muted)">Weather varies significantly city to city. Tokyo in April: 12–20°C. Light jacket + layers. Spring/autumn ideal.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">🧴</span>
+      <div><strong>Toiletries from India</strong><br/><span style="font-size:7pt;color:var(--muted)">Western deodorant options limited in Japan. Japanese skincare and sunscreen (SPF 50+) are world-class and cheap — stock up.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">📄</span>
+      <div><strong>Japan Visa + All Documents</strong><br/><span style="font-size:7pt;color:var(--muted)">Visa, passport, travel insurance, hotel bookings, return ticket, JR Pass exchange order. Keep digital copies too.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">☂️</span>
+      <div><strong>Compact Umbrella</strong><br/><span style="font-size:7pt;color:var(--muted)">Japan gets sudden rain. Convenience stores sell excellent ¥500 umbrellas too. Light rain gear for hiking days.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">🎁</span>
+      <div><strong>Small Gifts from India</strong><br/><span style="font-size:7pt;color:var(--muted)">Culturally meaningful at ryokans and with hosts. Small boxes of Indian sweets or dry fruits go a long way. The gesture is always remembered.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">🔌</span>
+      <div><strong>Universal Power Adapter</strong><br/><span style="font-size:7pt;color:var(--muted)">Japan uses Type A plugs (flat two-pin, 100V). Indian plugs don't fit directly. Bring a compact universal adapter.</span></div>
+    </div>
+    <div class="pack-item">
+      <span class="pack-emoji">💊</span>
+      <div><strong>Basic Medications from India</strong><br/><span style="font-size:7pt;color:var(--muted)">Some common Indian medications (even basic OTC) may be controlled substances in Japan. Bring what you need with a doctor's letter if prescription.</span></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 10 — QUICK REFERENCE + BACK COVER
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Japan in 10 Days</span>
+    <span class="page-header-right">Quick Reference · Page 10</span>
+  </div>
+
+  <div class="label">At-a-Glance Itinerary</div>
+  <h2 class="section-title" style="font-size:20pt;margin-bottom:4mm">Complete day-by-day<br/>summary</h2>
+
+  <table class="budget-table" style="margin-bottom:5mm">
+    <thead>
+      <tr>
+        <th style="width:18mm">Day</th>
+        <th style="width:28mm">City</th>
+        <th>Key Experiences</th>
+        <th style="width:28mm">Est. Spend (¥)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Day 1</strong></td>
+        <td>Tokyo — Shinjuku</td>
+        <td>Arrive, Shinjuku Gyoen, Omoide Yokocho, Kabukicho</td>
+        <td>¥3,000–5,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 2</strong></td>
+        <td>Tokyo — Shibuya</td>
+        <td>Meiji Shrine, Harajuku, Shibuya Crossing, Shibuya Sky, Nakameguro</td>
+        <td>¥4,000–6,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 3</strong></td>
+        <td>Tokyo — Asakusa</td>
+        <td>Senso-ji, Tokyo Skytree, Akihabara, Tsukiji, TeamLab Planets</td>
+        <td>¥8,000–11,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 4</strong></td>
+        <td>Nikko or Kamakura</td>
+        <td>Tosho-gu Shrine (Nikko) or Great Buddha (Kamakura)</td>
+        <td>¥4,000–7,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 5</strong></td>
+        <td>Kyoto — Arrive</td>
+        <td>Shinkansen Tokyo→Kyoto, Fushimi Inari, Gion dusk walk</td>
+        <td>¥3,000–5,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 6</strong></td>
+        <td>Kyoto + Nara</td>
+        <td>Arashiyama Bamboo Grove, Tenryu-ji, Nara deer, Todai-ji</td>
+        <td>¥4,000–7,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 7</strong></td>
+        <td>Kyoto — Temples</td>
+        <td>Kinkaku-ji, Ryoan-ji, Philosopher's Path, Nanzen-ji, Pontocho</td>
+        <td>¥4,000–7,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 8</strong></td>
+        <td>Osaka — Arrive</td>
+        <td>Shinkansen Kyoto→Osaka, Osaka Castle, Dotonbori, Shinsekai</td>
+        <td>¥4,000–7,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 9</strong></td>
+        <td>Hiroshima + Miyajima</td>
+        <td>Peace Memorial Museum, A-Bomb Dome, Miyajima floating torii</td>
+        <td>¥5,000–8,000</td>
+      </tr>
+      <tr>
+        <td><strong>Day 10</strong></td>
+        <td>Osaka → Fly KIX</td>
+        <td>Kuromon Market, Tsutenkaku, JR Haruka to Kansai Airport</td>
+        <td>¥3,000–5,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="label">Emergency Numbers &amp; Useful Japanese</div>
+  <div class="two-col" style="gap:4mm;margin-bottom:5mm">
+    <div>
+      <div class="day-body" style="border-radius:10px;border:1px solid rgba(15,10,10,0.07)">
+        <div class="time-row" style="margin-bottom:2mm">
+          <span class="time-label">Police</span>
+          <span class="time-content"><strong>110</strong> — English operators available 24/7</span>
+        </div>
+        <div class="time-row" style="margin-bottom:2mm">
+          <span class="time-label">Ambulance</span>
+          <span class="time-content"><strong>119</strong> — Fire + medical emergencies</span>
+        </div>
+        <div class="time-row" style="margin-bottom:2mm">
+          <span class="time-label">Tourist Help</span>
+          <span class="time-content"><strong>050-3816-2787</strong> — Japan Tourism Agency, 9am–9pm</span>
+        </div>
+        <div class="time-row" style="margin-bottom:0">
+          <span class="time-label">Indian Emb.</span>
+          <span class="time-content">Tokyo: <strong>+81-3-3262-2391</strong></span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="day-body" style="border-radius:10px;border:1px solid rgba(15,10,10,0.07)">
+        <div class="time-row" style="margin-bottom:2mm">
+          <span class="time-label">Arigatou</span>
+          <span class="time-content">Thank you — use constantly</span>
+        </div>
+        <div class="time-row" style="margin-bottom:2mm">
+          <span class="time-label">Sumimasen</span>
+          <span class="time-content">Excuse me / sorry — very useful</span>
+        </div>
+        <div class="time-row" style="margin-bottom:2mm">
+          <span class="time-label">Ikura desu ka</span>
+          <span class="time-content">How much is this?</span>
+        </div>
+        <div class="time-row" style="margin-bottom:0">
+          <span class="time-label">Eigo wa hanasemasu ka</span>
+          <span class="time-content">Do you speak English?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final callout / closing -->
+  <div style="background:var(--ink);border-radius:14px;padding:7mm 8mm;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-10mm;right:-10mm;font-size:80pt;opacity:0.04;font-family:'Cormorant Garamond',serif;font-weight:300;color:#fff;line-height:1">日本</div>
+    <div class="label" style="color:var(--red-light);margin-bottom:2mm">From IncredibleItinerary</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:#fff;line-height:1.5;margin-bottom:3mm">"Japan will rearrange something in you. You'll return home and find yourself noticing things you never did before — how food is presented, how quietly public spaces can function, how beauty can exist in the smallest details. No country in the world rewards attention like Japan does."</p>
+    <div style="display:flex;gap:3mm;flex-wrap:wrap;margin-top:3mm">
+      <span style="font-size:7.5pt;color:rgba(255,255,255,0.4);font-weight:300">For questions: hello@incredibleitinerary.com</span>
+      <span style="font-size:7.5pt;color:rgba(255,255,255,0.2)">·</span>
+      <span style="font-size:7.5pt;color:rgba(255,255,255,0.4);font-weight:300">incredibleitinerary.com</span>
+      <span style="font-size:7.5pt;color:rgba(255,255,255,0.2)">·</span>
+      <span style="font-size:7.5pt;color:rgba(255,255,255,0.4);font-weight:300">Premium Guide · ₹299</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Japan in 10 Days</span>
+    <span class="page-footer-text">© 2025 IncredibleItinerary · All rights reserved</span>
+  </div>
+</div>
+
+</body>
+</html>

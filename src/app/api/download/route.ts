@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
+import { sendEmail } from "@/lib/email";
+import { DRIP_STEPS, getDestinationName } from "@/lib/drip-templates";
 
 const MAX_FREE = 2;
 const SECRET = process.env.DOWNLOAD_SECRET || "dev-secret-please-change";
@@ -16,6 +18,18 @@ const VALID_SLUGS = [
   "manali-5-days",
   "bali-5-days",
   "dubai-4-days",
+  // Phase 2
+  "andaman-5-days",
+  "varanasi-3-days",
+  "singapore-4-days",
+  "sri-lanka-7-days",
+  "japan-10-days",
+  // Phase 3
+  "vietnam-10-days",
+  "thailand-10-days",
+  "bhutan-5-days",
+  "portugal-7-days",
+  "greece-10-days",
 ];
 
 // ── Token generation (15-min windows, valid for 30 min) ──────────────────────
@@ -125,6 +139,24 @@ export async function POST(req: NextRequest) {
   data.slugs.push(slug);
   await saveDownloads(normalizedEmail, data);
 
+  // Enroll in email drip queue (fire-and-forget)
+  try {
+    const redis = await getRedis();
+    if (redis) {
+      const dripKey = `drip:${normalizedEmail}`;
+      const existing = await redis.get(dripKey);
+      if (!existing) {
+        // First download — start drip from step 1 (step 0 = welcome email is sent immediately above)
+        await redis.set(
+          dripKey,
+          JSON.stringify({ slug, step: 1, enrolledAt: new Date().toISOString() }),
+          "EX", 60 * 60 * 24 * 60  // keep for 60 days (full sequence = 15 days)
+        );
+      }
+      redis.disconnect();
+    }
+  } catch { /* ignore */ }
+
   // Silently subscribe to Mailchimp with source tag (fire-and-forget)
   try {
     fetch(`${req.nextUrl.origin}/api/subscribe`, {
@@ -132,6 +164,23 @@ export async function POST(req: NextRequest) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: normalizedEmail, source: "pdf-download", slug }),
     }).catch(() => {});
+  } catch { /* ignore */ }
+
+  // Send immediate welcome email (Step 0 of drip) — fire-and-forget
+  try {
+    const welcomeStep = DRIP_STEPS[0];
+    const destination = getDestinationName(slug);
+    const site = req.nextUrl.origin;
+    const ctx = {
+      email: normalizedEmail,
+      slug,
+      destination,
+      pdfUrl: `${site}/thank-you?flow=lookup`,
+      allAccessUrl: "https://rzp.io/rzp/qhP2iBq",
+      guidesUrl: `${site}/guides`,
+    };
+    const subject = welcomeStep.subject.replace(/\{\{destination\}\}/g, destination);
+    sendEmail({ to: normalizedEmail, subject, html: welcomeStep.html(ctx) }).catch(() => {});
   } catch { /* ignore */ }
 
   const token = generateToken(slug);

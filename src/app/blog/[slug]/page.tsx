@@ -10,6 +10,10 @@ import BlogSlugNav from "./BlogSlugNav";
 import ShareButton from "@/components/ui/ShareButton";
 import { BlogPostSchema, GeneratedPostSchema } from "@/components/SchemaMarkup";
 import GeneratedPostContent from "./GeneratedPostContent";
+import AdUnit from "@/components/ads/AdUnit";
+import AutoPdfCta from "@/components/blog/AutoPdfCta";
+import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import AutoTableOfContents from "@/components/blog/AutoTableOfContents";
 
 interface Props {
   params: { slug: string };
@@ -138,9 +142,17 @@ export default function BlogPostPage({ params }: Props) {
             </div>
 
             <div className="max-w-[780px] mx-auto px-6 py-16 text-center">
+              {/* Auto Table of Contents — sticky sidebar on desktop, pill on mobile */}
+              <AutoTableOfContents />
               <p className="font-serif text-xl text-muted font-light italic mb-8">
                 {post!.excerpt}
               </p>
+              {/* Auto PDF CTA — shows only if this destination has a PDF */}
+              <AutoPdfCta blogSlug={post!.slug} />
+              {/* Affiliate block — hotels + tours */}
+              <AffiliateBlock destination={post!.destination} />
+              {/* Mid-article AdSense */}
+              <AdUnit slot="2847391056" format="auto" />
               <Link href="/blog" className="btn-gold inline-flex">
                 ← Back to Blog
               </Link>

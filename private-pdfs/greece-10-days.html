@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Greece in 10 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#1d4ed8; --blue-light:#93c5fd; --blue-dark:#1e3a8a;
+  --ink:#0a0f1e; --cream:#f0f6ff; --parchment:#e8f0fe;
+  --gold:#b45309; --terracotta:#c2410c; --muted:#4a5580; --white:#ffffff;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+
+/* Cover */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.42}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,30,0.97) 0%,rgba(10,15,30,0.55) 50%,rgba(10,15,30,0.15) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--blue-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:135mm;line-height:1.5}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* Inner pages */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(29,78,216,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:2mm}
+
+/* Stats */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(29,78,216,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+/* Route bar */
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--blue);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--blue-dark)}
+.route-stop.gold{background:var(--gold)}
+.route-stop.terra{background:var(--terracotta)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+
+/* City grid */
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(29,78,216,0.08);color:var(--blue);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* Callout */
+.callout{background:linear-gradient(135deg,rgba(29,78,216,0.05),rgba(29,78,216,0.01));border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* Day blocks */
+.day-header{background:var(--blue);color:#fff;padding:4mm 5mm;border-radius:10px 10px 0 0;margin-bottom:0}
+.day-header-sub{font-size:7pt;opacity:0.7;margin-bottom:1mm;letter-spacing:0.15em;text-transform:uppercase}
+.day-header h3{font-family:'Cormorant Garamond',serif;font-size:18pt;font-weight:300;line-height:1.1}
+.day-body{background:#fff;border:1px solid rgba(29,78,216,0.08);border-top:none;border-radius:0 0 10px 10px;padding:4mm 5mm;margin-bottom:5mm}
+.time-row{display:flex;gap:3mm;margin-bottom:3mm;align-items:flex-start}
+.time-label{font-size:7pt;color:var(--blue);font-weight:600;min-width:14mm;padding-top:0.5mm;letter-spacing:0.05em}
+.time-content{font-size:8.5pt;color:var(--ink);line-height:1.55;font-weight:300;flex:1}
+.time-content strong{font-weight:500;color:var(--ink)}
+
+/* Pre-trip essentials */
+.essentials-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.essential-card{background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:8px;padding:3.5mm}
+.essential-icon{font-size:13pt;margin-bottom:1.5mm}
+.essential-title{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.essential-text{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.essential-highlight{font-size:7.5pt;color:var(--blue);font-weight:500;margin-top:1mm}
+
+/* Budget table */
+.budget-table{width:100%;border-collapse:collapse;margin:4mm 0;font-size:8pt}
+.budget-table th{background:var(--blue);color:#fff;padding:3mm 4mm;text-align:left;font-weight:500;font-size:7.5pt;letter-spacing:0.05em}
+.budget-table td{padding:2.5mm 4mm;border-bottom:1px solid rgba(29,78,216,0.07);color:var(--ink)}
+.budget-table tr:nth-child(even) td{background:rgba(29,78,216,0.02)}
+.budget-table tr.total-row td{font-weight:600;background:rgba(29,78,216,0.06);border-top:2px solid rgba(29,78,216,0.2)}
+.budget-table tr.flights-row td{font-weight:500;background:rgba(180,83,9,0.05);color:var(--gold)}
+
+/* Tips grid */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:4mm 0}
+.tip-card{background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.tip-text{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* Packing */
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2mm}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:8pt;color:var(--ink);padding:2mm;background:#fff;border-radius:6px;border:1px solid rgba(29,78,216,0.07)}
+.pack-emoji{font-size:11pt;flex-shrink:0}
+
+/* Highlight note */
+.note-box{background:rgba(29,78,216,0.04);border:1px solid rgba(29,78,216,0.15);border-radius:8px;padding:3mm 4mm;margin:3mm 0;font-size:7.5pt;color:var(--blue-dark);line-height:1.5}
+.note-box strong{font-weight:600}
+.note-box.terra{background:rgba(194,65,12,0.04);border-color:rgba(194,65,12,0.2);color:var(--terracotta)}
+.note-box.gold{background:rgba(180,83,9,0.04);border-color:rgba(180,83,9,0.2);color:var(--gold)}
+
+/* Day header variants */
+.day-header.dark-bg{background:var(--blue-dark)}
+.day-header.gold-bg{background:var(--gold)}
+.day-header.terra-bg{background:var(--terracotta)}
+
+/* Section divider */
+.section-rule{border:none;border-top:1px solid rgba(29,78,216,0.1);margin:4mm 0}
+
+/* Two col layout */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+
+/* Currency bar */
+.currency-bar{background:var(--ink);color:#fff;border-radius:8px;padding:3mm 5mm;margin-bottom:5mm;display:flex;align-items:center;gap:6mm;flex-wrap:wrap}
+.currency-item{text-align:center}
+.currency-val{font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:300;display:block;line-height:1.1}
+.currency-label{font-size:6.5pt;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.1em}
+.currency-divider{width:1px;height:8mm;background:rgba(255,255,255,0.1)}
+
+/* Option tag */
+.option-tag{display:inline-block;font-size:7pt;font-weight:600;background:rgba(180,83,9,0.12);color:var(--gold);padding:2px 8px;border-radius:20px;margin-bottom:2mm;letter-spacing:0.05em}
+
+/* Island ferry strip */
+.ferry-strip{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:#fff;border-radius:10px;padding:4mm 5mm;margin-bottom:5mm;display:flex;align-items:center;gap:4mm;flex-wrap:wrap}
+.ferry-info{flex:1}
+.ferry-title{font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:300;margin-bottom:1mm}
+.ferry-detail{font-size:7.5pt;opacity:0.8;line-height:1.5}
+.ferry-badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:3mm 4mm;text-align:center;white-space:nowrap}
+.ferry-badge-val{font-family:'Cormorant Garamond',serif;font-size:12pt;font-weight:300;display:block}
+.ferry-badge-label{font-size:6.5pt;opacity:0.6;letter-spacing:0.1em;text-transform:uppercase}
+
+/* Accommodation grid */
+.accom-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-bottom:4mm}
+.accom-box{background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:8px;padding:3mm;text-align:center}
+.accom-tier{font-size:7pt;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1mm}
+.accom-tier.budget{color:var(--blue)}
+.accom-tier.mid{color:var(--gold)}
+.accom-tier.prem{color:var(--terracotta)}
+.accom-price{font-family:'Cormorant Garamond',serif;font-size:12pt;font-weight:300;color:var(--ink);display:block}
+.accom-label{font-size:6.5pt;color:var(--muted)}
+
+/* Section badge */
+.section-badge{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;font-size:7.5pt;font-weight:500;padding:3px 10px 3px 6px;border-radius:20px;margin-bottom:3mm;letter-spacing:0.05em}
+
+/* Highlight stripe */
+.highlight-stripe{background:linear-gradient(135deg,rgba(29,78,216,0.07),rgba(147,197,253,0.07));border:1px solid rgba(29,78,216,0.12);border-radius:10px;padding:3.5mm 5mm;margin-bottom:4mm;font-size:8pt;color:var(--ink);line-height:1.55}
+.highlight-stripe strong{color:var(--blue);font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 1 — COVER
+═══════════════════════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=1200&q=80" alt="Greece — Santorini blue domes"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · Premium Guide · ₹299</div>
+    <h1 class="serif">Greece in<br/><em>10 Days</em></h1>
+    <p class="cover-sub">Athens' ancient ruins, Santorini's blue-domed sunsets, Mykonos' whitewashed lanes, Crete's gorges and beaches — the perfect Aegean journey</p>
+    <div class="cover-pills">
+      <span class="pill">10 Days</span>
+      <span class="pill">4 Islands + Mainland</span>
+      <span class="pill">€120–350/day</span>
+      <span class="pill">Best: May–Jun, Sep–Oct</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 2 — OVERVIEW
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Trip Overview · Page 2</span>
+  </div>
+
+  <div class="label">The Ultimate Aegean Circuit</div>
+  <h2 class="section-title">Your Greece<br/>at a glance</h2>
+  <p style="font-size:8.5pt;color:var(--muted);font-weight:300;margin-bottom:6mm;max-width:150mm">Ten days unlocks the full spectrum of Greece — the weight of ancient history in Athens, the glamour of Mykonos, the impossible beauty of Santorini, and the raw, unhurried soul of Crete. This is the route that delivers everything.</p>
+
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-icon">📅</div>
+      <span class="stat-val">10 Days</span>
+      <span class="stat-label">Duration</span>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🏛️</div>
+      <span class="stat-val">4 Destinations</span>
+      <span class="stat-label">Athens · Mykonos · Santorini · Crete</span>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">💶</div>
+      <span class="stat-val">€1 = ₹90</span>
+      <span class="stat-label">Exchange Rate (approx)</span>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">☀️</div>
+      <span class="stat-val">May–Jun</span>
+      <span class="stat-label">Best Season</span>
+    </div>
+  </div>
+
+  <div class="route-bar">
+    <span style="color:rgba(255,255,255,0.4);font-size:7.5pt;font-weight:400;text-transform:uppercase;letter-spacing:0.12em;margin-right:2mm">Route</span>
+    <span class="route-stop">Athens</span>
+    <span class="route-arrow" style="font-size:8pt">Days 1–2</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Mykonos</span>
+    <span class="route-arrow" style="font-size:8pt">Days 3–4</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Santorini</span>
+    <span class="route-arrow" style="font-size:8pt">Days 5–6</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop terra">Crete</span>
+    <span class="route-arrow" style="font-size:8pt">Days 7–8</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Athens</span>
+    <span class="route-arrow" style="font-size:8pt">Days 9–10</span>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Destinations &amp; Highlights</div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-name">Athens</div>
+      <span class="city-days">Days 1–2</span>
+      <p class="city-desc">The cradle of Western civilisation. Acropolis + Parthenon, Plaka neighbourhood, National Archaeological Museum, Monastiraki flea market, rooftop dinner with Acropolis views. A city that rewards every hour.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Mykonos</div>
+      <span class="city-days">Days 3–4</span>
+      <p class="city-desc">Most glamorous Greek island. Little Venice with houses hanging over water, iconic windmills, party beaches (Paradise, Super Paradise), celebrity yachts, and some of the most electric nightlife in the Mediterranean.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Santorini</div>
+      <span class="city-days">Days 5–6</span>
+      <p class="city-desc">The postcard Greece. Oia sunset (world's best), caldera views, black sand beaches (Perissa/Kamari), wine tasting with volcano view. Book your caldera hotel 3–4 months ahead — it will sell out.</p>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Crete</div>
+      <span class="city-days">Days 7–8</span>
+      <p class="city-desc">Greece's largest island. Palace of Knossos (3,500 years old), Samaria Gorge hike (Europe's longest), Elafonissi pink sand beach, Chania old town Venetian harbour. Vastly underrated by most tourists.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Standing on the Acropolis, watching the Parthenon catch golden hour light, you realise Greece isn't just a destination — it's the beginning of Western civilisation, and somehow still the best dinner you've ever had."</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 3 — PRE-TRIP ESSENTIALS + DAYS 1–2 ATHENS
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Pre-Trip Essentials · Page 3</span>
+  </div>
+
+  <div class="label">Before You Fly</div>
+  <h2 class="section-title" style="font-size:20pt;margin-bottom:4mm">Pre-trip essentials</h2>
+
+  <div class="essentials-grid">
+    <div class="essential-card">
+      <div class="essential-icon">🛂</div>
+      <div class="essential-title">Schengen Visa (Required)</div>
+      <p class="essential-text">Indians require a Schengen Visa. Apply at the Greek consulate or VFS Global. €80 fee (~₹7,200). Documents: 3-month bank statement, hotel bookings, return flight ticket, travel insurance. Straightforward process — Greece is one of the easier Schengen applications.</p>
+      <p class="essential-highlight">Apply 6–8 weeks before travel · Allow extra time in peak season</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">✈️</div>
+      <div class="essential-title">Flights to Athens (ATH)</div>
+      <p class="essential-text">Fly from Mumbai or Delhi via Dubai (Emirates), Doha (Qatar Airways), or Abu Dhabi (Etihad). Total journey 12–16 hrs with one stop. Athens International Airport (ATH) — Metro Line 3 to city centre costs €9 and takes 40 min. Affordable and easy.</p>
+      <p class="essential-highlight">Return fares: ₹55,000–95,000 · Book 3–4 months ahead for best prices</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">⛴️</div>
+      <div class="essential-title">Island Ferries — Book Early</div>
+      <p class="essential-text">Book at ferryhopper.com or directferries.com. High season (July–August) sells out weeks ahead. Conventional ferries are cheaper and have more deck space. High-speed ferries halve the time but cost more. Check weather in spring — rough seas can cancel sailings.</p>
+      <p class="essential-highlight">Book at least 3 weeks ahead in summer · Piraeus Port = Athens ferry hub</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">💶</div>
+      <div class="essential-title">Currency: Euro</div>
+      <p class="essential-text">€1 = ~₹90. ATMs are everywhere on all islands. Many small tavernas and local shops are cash-only — do not rely entirely on cards. Exchange in India before flying for a better rate. Airports have poor rates. Carry at least €150–200 in small notes.</p>
+      <p class="essential-highlight">€50/day budget · €120–150/day mid · €300+/day luxury islands</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">📶</div>
+      <div class="essential-title">SIM Card</div>
+      <p class="essential-text">Cosmote or Vodafone Greece SIMs available at Athens airport arrivals and mobile shops across all islands. €10 for 5GB — cheap and reliable. Greece has good 4G coverage across the islands. Download offline maps before visiting smaller coves and beaches.</p>
+      <p class="essential-highlight">Cosmote has the best island coverage · Available at airport Day 1</p>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🏨</div>
+      <div class="essential-title">Accommodation — Book Far Ahead</div>
+      <p class="essential-text">Santorini and Mykonos are the most in-demand hotel destinations in all of Europe. Caldera-view hotels in Santorini and anything decent in Mykonos during July–August will be fully booked 3–4 months in advance. Book as soon as your visa is confirmed.</p>
+      <p class="essential-highlight">Santorini caldera views: 3–4 months ahead · Crete: 2 weeks is fine</p>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:1mm">Days 1–2 · Athens</div>
+  <div class="day-header">
+    <div class="day-header-sub">Day 1 · Athens · Ancient Capital</div>
+    <h3>Arrive Athens — Acropolis &amp; Plaka</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Arrival</span>
+      <span class="time-content">Land at <strong>Athens International (ATH)</strong>. Metro Line 3 to Syntagma or Monastiraki: €9, 40 min. Stay in <strong>Monastiraki or Syntagma</strong> areas. Budget €45–70. Mid-range €90–160. Boutique €200+.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">8:00 AM</span>
+      <span class="time-content"><strong>Acropolis</strong> (€20 combo ticket, ₹1,800 — covers 7 sites) — go first thing, doors open 8am. Parthenon, Erechtheion, Temple of Athena Nike. By 10am it becomes crowded and extremely hot in summer. The view over Athens from the top is the best in the city.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">10:30 AM</span>
+      <span class="time-content"><strong>Acropolis Museum</strong> (€10) directly below the Acropolis — world-class, houses the original Parthenon sculptures (the Elgin Marbles that Britain has yet to return). The building itself is architectural drama — ancient ruins visible through the glass floor below you.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Plaka neighbourhood</strong> — Athens' oldest neighbourhood, Ottoman-era winding streets, bougainvillea, tavernas. Walk into <strong>Monastiraki flea market</strong> — always open, always chaotic, excellent for leather sandals and olive wood.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content">Dinner at <strong>Strofi Taverna</strong> near the Acropolis — rooftop terrace with direct Parthenon views, excellent Greek food, ~€40/person. Book ahead in peak season. One of Athens' most memorable dining moments.</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 4 — DAY 2 ATHENS + DAY 3 MYKONOS
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Athens · Mykonos · Page 4</span>
+  </div>
+
+  <div class="day-header dark-bg">
+    <div class="day-header-sub">Day 2 · Athens · Ancient Agora + Museums</div>
+    <h3>Ancient Agora, Museums &amp; Cape Sounion</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Ancient Agora</strong> (€10) — where Socrates taught, where democracy was debated. The Stoa of Attalos has been fully reconstructed and now houses a superb museum. Smaller and more intimate than the Acropolis but arguably more atmospheric.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">11:30 AM</span>
+      <span class="time-content"><strong>National Archaeological Museum</strong> (€12) — the finest collection of Greek antiquities on the planet. Mycenaean gold death masks, ancient marble sculptures, and the <strong>Antikythera mechanism</strong> — a 2,000-year-old analogue computer that still astonishes scientists. Allow 2 hours minimum.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Day trip to Cape Sounion</strong> (optional, 2hrs, €30 organised tour) — the Temple of Poseidon sits on a 60m cliff at the tip of Attica, looking directly out over the Aegean. Lord Byron carved his name into a column here. Sunset from the temple is spectacular. Highly recommended.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content">Dinner in <strong>Psirri neighbourhood</strong> — Athens' most authentic dining quarter. Grilled octopus (€16), saganaki (€8), tzatziki (€5). €25–35/person for a full feast with wine. More local, less touristy than Plaka.</span>
+    </div>
+  </div>
+
+  <div class="section-rule"></div>
+
+  <div class="ferry-strip">
+    <div class="ferry-info">
+      <div class="ferry-title">Athens (Piraeus) → Mykonos</div>
+      <p class="ferry-detail">Conventional ferry: 5 hrs · €45–65 per person · Board at Piraeus Port (Metro: Piraeus station)<br/>High-speed catamaran: 2 hrs · €75–95 · Faster but less deck space · Book 2–3 weeks ahead in summer</p>
+    </div>
+    <div class="ferry-badge">
+      <span class="ferry-badge-val">€45–95</span>
+      <span class="ferry-badge-label">Per person</span>
+    </div>
+    <div class="ferry-badge">
+      <span class="ferry-badge-val">2–5 hrs</span>
+      <span class="ferry-badge-label">Journey</span>
+    </div>
+  </div>
+
+  <div class="label">Days 3–4 · Mykonos</div>
+  <div class="day-header terra-bg">
+    <div class="day-header-sub">Day 3 · Mykonos · Arrival + Chora</div>
+    <h3>Little Venice, Windmills &amp; Sunset Drinks</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Arrival</span>
+      <span class="time-content">Arrive Mykonos by ferry or fly from Athens (45 min, €80–150). <strong>Accommodation warning:</strong> cheapest hotel in Mykonos in high season is €120+. Book 2–3 months ahead. Stay in Mykonos Town or near a beach you prefer. Budget €120–200. Mid €250–500. Luxury €800+.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Mykonos Town (Chora)</strong> — get lost in the whitewashed labyrinth of lanes. Every alley is a photograph. Find <strong>Little Venice</strong> — a row of houses built directly over the water, cafes extending onto the sea. One of the most scenic spots in the whole Mediterranean.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Sunset</span>
+      <span class="time-content"><strong>Kato Mili Windmills</strong> — the 5 iconic white windmills overlooking the town, best at golden hour. Walk to <strong>Alefkandra Square</strong> for sunset drinks (€15–20/cocktail — yes, it is expensive, but the view over Little Venice with the windmills is the image of Mykonos).</span>
+    </div>
+  </div>
+
+  <div class="day-header" style="background:var(--blue-dark)">
+    <div class="day-header-sub">Day 4 · Mykonos · Beaches + Delos</div>
+    <h3>Paradise Beach &amp; Sacred Delos Island</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Delos Island day trip</strong> (€20 boat return + €12 entry) — a 30-min boat from Mykonos Town. The sacred birthplace of Apollo and Artemis. The entire island is one vast ancient ruins site — UNESCO World Heritage, spectacularly preserved. One of the most important archaeological sites in Europe.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Paradise Beach</strong> (sun lounger €20/day) — Mykonos' most famous party beach, music from noon. Or <strong>Agios Sostis</strong> for the opposite experience — remote, free, untouched, no sunbeds, local crowd. Both 20 min by bus or taxi from Mykonos Town.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content">Mykonos nightlife starts late — dinner at 9pm, bars from 11pm, clubs from 1am. Cavo Paradiso (cliff-top club, world-famous DJs), or Skandinavian Bar in town for something more relaxed. This is the party island of Europe — if you want it, it's all here.</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 5 — DAYS 5–6 SANTORINI
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Santorini · Page 5</span>
+  </div>
+
+  <div class="ferry-strip">
+    <div class="ferry-info">
+      <div class="ferry-title">Mykonos → Santorini</div>
+      <p class="ferry-detail">High-speed catamaran: 2.5 hrs · €40–65 per person · Book 2 weeks ahead minimum in high season<br/>Views of the caldera arriving by sea are spectacular — sit on deck for the approach into Athinios Port</p>
+    </div>
+    <div class="ferry-badge">
+      <span class="ferry-badge-val">€40–65</span>
+      <span class="ferry-badge-label">Per person</span>
+    </div>
+    <div class="ferry-badge">
+      <span class="ferry-badge-val">2.5 hrs</span>
+      <span class="ferry-badge-label">Journey</span>
+    </div>
+  </div>
+
+  <div class="accom-strip">
+    <div class="accom-box">
+      <div class="accom-tier budget">Budget</div>
+      <span class="accom-price">€70–120</span>
+      <div class="accom-label">Fira — caldera views from town</div>
+    </div>
+    <div class="accom-box">
+      <div class="accom-tier mid">Mid-Range</div>
+      <span class="accom-price">€150–300</span>
+      <div class="accom-label">Firostefani — caldera views, quieter</div>
+    </div>
+    <div class="accom-box">
+      <div class="accom-tier prem">Luxury</div>
+      <span class="accom-price">€500–2,000+</span>
+      <div class="accom-label">Oia — cave hotels, infinity pools</div>
+    </div>
+  </div>
+
+  <div class="note-box terra">
+    <strong>Book Santorini 3–4 months ahead:</strong> Caldera-view hotels and anything in Oia are fully booked for July–September within days of opening reservations. This is the most in-demand hotel location in Europe. Book the moment your visa is approved.
+  </div>
+
+  <div class="label">Days 5–6 · Santorini</div>
+  <div class="day-header gold-bg">
+    <div class="day-header-sub">Day 5 · Santorini · Oia + Caldera Walk</div>
+    <h3>Oia Village, Caldera Walk &amp; World's Best Sunset</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content">Check in, breathe in the caldera view. <strong>Fira to Oia cliffside walk</strong> — 5km along the crater rim, 2 hours, absolutely spectacular. Caldera falls away on your left, the Aegean stretches to the horizon. This is Santorini's best free experience. Wear good shoes — path is uneven.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Oia Village</strong> — the blue domes and white walls you've seen in every photograph. Wander freely. Shop for local art, lava jewellery, saffron. Lunch: Greek salad €10, fresh grilled fish €20–35 at a terrace taverna. <strong>Santo Wines winery</strong> — caldera-view wine tasting €20, the most scenic winery experience in Europe.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Sunset</span>
+      <span class="time-content"><strong>Oia sunset — world famous, deservedly so.</strong> Arrive at the Castle of Oia viewpoint (Kastro) <strong>90 minutes early</strong> to claim a spot. Summer sunset ~7–8pm. Massive crowds but genuinely unforgettable. The sky turns amber, pink, violet — the caldera below glows. Bring a snack and patience.</span>
+    </div>
+  </div>
+
+  <div class="day-header dark-bg">
+    <div class="day-header-sub">Day 6 · Santorini · Beaches + Akrotiri</div>
+    <h3>Black Sand Beaches, Red Beach &amp; Minoan Ruins</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Akrotiri excavations</strong> (€12) — a Minoan Bronze Age city perfectly preserved under volcanic ash from the 1640 BC eruption. Santorini's own Pompeii, arguably more remarkable. Frescoes, multi-storey buildings, intact streets. Allow 1.5 hours. Fascinating and undervisited.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Midday</span>
+      <span class="time-content"><strong>Red Beach</strong> — a short 15-min walk from Akrotiri. Dramatic deep-red volcanic cliffs towering over the Aegean, dark volcanic sand, strikingly beautiful. One of the most unusual beaches in Europe. Can get crowded at peak hours — go before noon.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Perissa or Kamari</strong> — Santorini's black sand beach towns on the island's eastern coast. Volcanic black sand (gets very hot — bring sandals). Sun loungers €10/day. Clear, calm water. Significantly cheaper food and drinks than anywhere near the caldera — eat lunch here.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content">Final Santorini evening — dinner at a caldera-view terrace. Try Assyrtiko white wine — grown in volcanic soil unique to Santorini, mineral and dry, world-class. Or Vinsanto dessert wine — one of Greece's great treasures. €25–40/person for dinner with wine and view.</span>
+    </div>
+  </div>
+
+  <div class="highlight-stripe">
+    <strong>Santorini food tip:</strong> Avoid restaurants right in Oia village — markups are 60–80% higher than elsewhere. Walk 10 minutes to Finikia village for the exact same views and food at realistic prices. Local tip that saves €20–30 per meal.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 6 — DAYS 7–8 CRETE
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Crete · Page 6</span>
+  </div>
+
+  <div class="ferry-strip">
+    <div class="ferry-info">
+      <div class="ferry-title">Santorini → Heraklion, Crete</div>
+      <p class="ferry-detail">Ferry: 2 hrs · €35 standard / €50 fast ferry · Book ahead · OR fly: 30 min · €50–80 (Aegean Airlines)<br/>Alternatively: overnight ferry (Santorini → Crete, 9pm departure, arrive 6am) saves a night's accommodation</p>
+    </div>
+    <div class="ferry-badge">
+      <span class="ferry-badge-val">€35–50</span>
+      <span class="ferry-badge-label">Ferry</span>
+    </div>
+    <div class="ferry-badge">
+      <span class="ferry-badge-val">€50–80</span>
+      <span class="ferry-badge-label">Fly</span>
+    </div>
+  </div>
+
+  <div class="label">Days 7–8 · Crete</div>
+  <div class="day-header terra-bg">
+    <div class="day-header-sub">Day 7 · Crete · Heraklion — Knossos + Beaches</div>
+    <h3>Palace of Knossos &amp; Minoan Civilisation</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Palace of Knossos</strong> (€15, 30 min bus from Heraklion) — the Bronze Age Minoan palace complex, 3,500 years old and partially reconstructed. The Minoans had indoor plumbing, frescoed walls, multi-storey buildings — an advanced civilisation that predates classical Greece. Allow 2 hours. Fascinating.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Midday</span>
+      <span class="time-content"><strong>Heraklion Archaeological Museum</strong> (€10, city centre) — houses the finest Minoan collection in the world. Original Knossos frescoes (the restored reconstructions at the palace are copies), gold jewellery, carved sealstones. The gold bee pendant is worth the entry alone. 2 hours.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Elafonissi</strong> (3 hrs from Heraklion, €30 tour or hire a car) — UNESCO-protected pink sand beach, shallow turquoise lagoon. The pink colour comes from crushed coral and shells. Surreal colour in afternoon light. One of the most beautiful beaches in all of Europe. Worth the journey.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content">Heraklion waterfront for dinner — or drive west and check into Chania for a far more beautiful base. <strong>Recommendation:</strong> stay in Chania for Day 8, it is the most beautiful town in Crete and deserves a full evening.</span>
+    </div>
+  </div>
+
+  <div class="day-header gold-bg">
+    <div class="day-header-sub">Day 8 · Crete · Chania + Samaria Gorge or Balos</div>
+    <h3>Venetian Harbour, Gorge Hike &amp; Turquoise Lagoon</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Dawn</span>
+      <span class="time-content"><strong>Chania Venetian Harbour at dawn</strong> — free, and one of the most magical moments in all of Greece. The 14th-century lighthouse, the curved harbour wall, the reflection of the old town in still water before tourists arrive. Be there by 7am. You'll understand immediately why Crete is different.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Chania Old Town</strong> — Byzantine and Ottoman streets, the covered Agora market hall (free, excellent for local cheese, olive oil, honey, thyme). The leather street off the harbour for handmade sandals. Smaller and more authentic than Athens, more historically layered than Mykonos or Santorini.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Full Day<br/>Option A</span>
+      <span class="time-content"><strong>Samaria Gorge hike</strong> (€5 entry, full day) — Europe's longest gorge at 16km. Starts at 1,250m altitude, descends to sea level at Agia Roumeli. Spectacular limestone walls, wildflowers, goat sightings. Arrange transport from Chania (€25 organised tour or local bus). Finish with a boat back to Chania. Moderate fitness required.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Full Day<br/>Option B</span>
+      <span class="time-content"><strong>Balos Lagoon by boat</strong> (€25 day trip from Kissamos Port) — the turquoise shallow lagoon at the northwest tip of Crete, accessible by boat or 4WD. Unreal water colour — blue, green, turquoise, all at once. Flamingos visit in spring. One of the most photographed spots in all of Greece.</span>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>Crete is Greece's best-kept secret:</strong> Despite being the largest Greek island and one of Europe's great destinations, Crete is far less crowded than Mykonos or Santorini outside of August. Hire a car for Day 7–8 for maximum freedom — roads are excellent and scenery is outstanding.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 7 — DAYS 9–10 ATHENS FAREWELL
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Athens Farewell · Page 7</span>
+  </div>
+
+  <div class="ferry-strip" style="background:linear-gradient(135deg,var(--terracotta),var(--gold))">
+    <div class="ferry-info">
+      <div class="ferry-title">Chania → Athens (Return)</div>
+      <p class="ferry-detail">Fly: Chania Airport (CHQ) → Athens (ATH) · 45 min · €40–80 · Aegean Airlines or Sky Express<br/>Book alongside your original Athens arrival flight. Flying is faster and often cheapest option for the return leg.</p>
+    </div>
+    <div class="ferry-badge">
+      <span class="ferry-badge-val">€40–80</span>
+      <span class="ferry-badge-label">Chania → ATH</span>
+    </div>
+    <div class="ferry-badge">
+      <span class="ferry-badge-val">45 min</span>
+      <span class="ferry-badge-label">Flight</span>
+    </div>
+  </div>
+
+  <div class="label">Days 9–10 · Athens Farewell</div>
+  <div class="day-header">
+    <div class="day-header-sub">Day 9 · Athens · Neighbourhoods &amp; Culture</div>
+    <h3>The Athens You Missed the First Time</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Kolonaki</strong> — Athens' upmarket neighbourhood. Designer boutiques, excellent coffee, the National Gallery of Greece (€10). <strong>Lycabettus Hill</strong> (funicular or walk) — the highest point in Athens, 360° panorama over the city to the sea, with the Acropolis below. Best view of the Parthenon in context.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Midday</span>
+      <span class="time-content"><strong>Koukaki neighbourhood</strong> — the hipster alternative to Plaka, immediately south of the Acropolis. Specialty coffee, independent bookshops, excellent lunch options. Try souvlaki here — €2.50–3.50 each, some of the best in Athens at Kostas or O Thanasis nearby.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Afternoon</span>
+      <span class="time-content"><strong>Stavros Niarchos Cultural Centre</strong> (free, 30 min from centre) — a stunning piece of Renzo Piano architecture on the waterfront. Houses the Greek National Opera and National Library. The rooftop garden has sweeping sea views. An unexpected highlight — modern Athens at its most confident.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Evening</span>
+      <span class="time-content"><strong>Exarchia neighbourhood</strong> — Athens' alternative culture hub. Street art everywhere, independent bars, live music venues. Or return to Monastiraki for a final rooftop dinner with Acropolis views at golden hour. One last Greek salad, one last glass of Assyrtiko, one last look at the Parthenon lit against the night sky.</span>
+    </div>
+  </div>
+
+  <div class="day-header dark-bg">
+    <div class="day-header-sub">Day 10 · Athens · Market Morning + Fly Home</div>
+    <h3>Athens Central Market &amp; Departure</h3>
+  </div>
+  <div class="day-body">
+    <div class="time-row">
+      <span class="time-label">Morning</span>
+      <span class="time-content"><strong>Varvakios Agora</strong> (Athens Central Market) — the covered fish and meat market in central Athens, operating since 1886. One of the great markets of Europe. Fish hall, meat hall, surrounding stalls of spices, olives, dried herbs, feta. Bring cash. Open from 6am — incredible atmosphere before noon. Free to enter and browse.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Shopping</span>
+      <span class="time-content">Last chance shopping: <strong>Monastiraki flea market</strong> for leather sandals (€25–45 handmade), olive wood items, and worry beads (komboloi). <strong>Minoan-replica jewellery</strong> from museum shops. <strong>Greek saffron, dried oregano, thyme honey</strong> from the market — excellent gifts that pack flat.</span>
+    </div>
+    <div class="time-row">
+      <span class="time-label">Departure</span>
+      <span class="time-content">Metro Line 3 from Monastiraki or Syntagma to <strong>Athens International Airport (ATH)</strong> — 40 min, €9. Aim to be at the airport 3 hours before international departure. Duty-free at ATH is good for Greek olive oil, wines, and honey for gifts.</span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"The Parthenon is 2,470 years old. The Greeks invented theatre, democracy, philosophy, the Olympic Games, and the alarm clock. And then they also invented baklava and grilled octopus. It's an unfair level of achievement for one civilisation."</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 8 — BUDGET BREAKDOWN
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Budget Breakdown · Page 8</span>
+  </div>
+
+  <div class="label">10-Day Cost Breakdown</div>
+  <h2 class="section-title" style="font-size:22pt;margin-bottom:2mm">What does Greece cost?</h2>
+  <p style="font-size:8.5pt;color:var(--muted);font-weight:300;margin-bottom:5mm;max-width:150mm">All figures per person, excluding flights from India. Greece spans a remarkable price range — Mykonos and Santorini are among the most expensive destinations in Europe, while Athens and Crete remain surprisingly affordable.</p>
+
+  <div class="currency-bar">
+    <div class="currency-item">
+      <span class="currency-val">€1 = ₹90</span>
+      <span class="currency-label">Exchange Rate</span>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-item">
+      <span class="currency-val">€120–350</span>
+      <span class="currency-label">Daily Budget Range</span>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-item">
+      <span class="currency-val">₹1,08,000–₹3,15,000</span>
+      <span class="currency-label">10-Day Total (trip only)</span>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-item">
+      <span class="currency-val">May–Jun</span>
+      <span class="currency-label">Best Value Season</span>
+    </div>
+  </div>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Budget (₹)</th>
+        <th>Mid-Range (₹)</th>
+        <th>Premium (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Athens — 2 nights accommodation</td>
+        <td>₹8,000</td>
+        <td>₹18,000</td>
+        <td>₹45,000+</td>
+      </tr>
+      <tr>
+        <td>Mykonos — 2 nights accommodation</td>
+        <td>₹12,000</td>
+        <td>₹30,000</td>
+        <td>₹90,000+</td>
+      </tr>
+      <tr>
+        <td>Santorini — 2 nights accommodation</td>
+        <td>₹15,000</td>
+        <td>₹40,000</td>
+        <td>₹1,50,000+</td>
+      </tr>
+      <tr>
+        <td>Crete — 2 nights accommodation</td>
+        <td>₹7,000</td>
+        <td>₹18,000</td>
+        <td>₹50,000+</td>
+      </tr>
+      <tr>
+        <td>Ferries + domestic flights</td>
+        <td>₹12,000</td>
+        <td>₹20,000</td>
+        <td>₹35,000</td>
+      </tr>
+      <tr>
+        <td>Food &amp; drinks (all meals, 10 days)</td>
+        <td>₹20,000</td>
+        <td>₹40,000</td>
+        <td>₹90,000</td>
+      </tr>
+      <tr>
+        <td>Attractions, museums &amp; day trips</td>
+        <td>₹8,000</td>
+        <td>₹12,000</td>
+        <td>₹20,000</td>
+      </tr>
+      <tr class="total-row">
+        <td><strong>TOTAL (excl. India flights)</strong></td>
+        <td><strong>~₹82,000</strong></td>
+        <td><strong>~₹1,78,000</strong></td>
+        <td><strong>₹4,80,000+</strong></td>
+      </tr>
+      <tr class="flights-row">
+        <td>Return flights from India</td>
+        <td>₹60,000</td>
+        <td>₹80,000</td>
+        <td>₹1,40,000+</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="two-col" style="margin-top:5mm">
+    <div>
+      <div class="label">Budget Breakdown Notes</div>
+      <div class="note-box" style="margin-bottom:3mm">
+        <strong>Mykonos + Santorini premium:</strong> These two islands account for 70% of your accommodation budget. If you need to cut costs, stay in Fira (not Oia) in Santorini, and consider 1 night in Mykonos instead of 2. The experience remains exceptional.
+      </div>
+      <div class="note-box gold">
+        <strong>Best time for budget travel:</strong> May and October offer 30–40% lower hotel prices than July–August with similar weather. Shoulder season Greece is the smart traveller's choice.
+      </div>
+    </div>
+    <div>
+      <div class="label">What €50/day gets you in Greece</div>
+      <div style="background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:8px;padding:4mm;font-size:8pt;color:var(--muted);line-height:1.7">
+        <div>☀️ Budget hotel in Crete or Athens</div>
+        <div>🥗 Greek salad + gyros + coffee daily</div>
+        <div>🏛️ 2–3 museum entries</div>
+        <div>⛴️ Local ferry deck ticket</div>
+        <div>🍺 Beer at a local bar (not Mykonos!)</div>
+        <div style="margin-top:2mm;padding-top:2mm;border-top:1px solid rgba(29,78,216,0.08);color:var(--blue);font-weight:500">Note: €50/day is very tight in Mykonos/Santorini. Budget €120+ minimum on those islands.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 9 — TIPS + PACKING
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Insider Tips · Page 9</span>
+  </div>
+
+  <div class="label">8 Things That Make the Difference</div>
+  <h2 class="section-title" style="font-size:22pt;margin-bottom:4mm">Insider tips for Greece</h2>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🛂</div>
+      <div class="tip-title">Schengen Visa Strategy</div>
+      <p class="tip-text">Apply 6–8 weeks ahead at VFS Global or Greek consulate. Always book hotels before applying — you need confirmed reservations. Greek consulate is known to be one of the smoother Schengen processes. €80 fee, typical turnaround 2–3 weeks. Travel insurance is mandatory in the application.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏨</div>
+      <div class="tip-title">Santorini Hotel — The 3-Month Rule</div>
+      <p class="tip-text">Caldera-view hotels in Oia and Firostefani sell out 3–4 months ahead for May to October. The moment you have your visa, book Santorini. Non-negotiable. Fira is the budget fallback — you'll still have caldera views from the town. Oia is worth saving for if you can manage it.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⛴️</div>
+      <div class="tip-title">Ferry Booking System</div>
+      <p class="tip-text">Use ferryhopper.com — the best aggregator for Greek island ferries. Book at least 3 weeks ahead in summer for all routes. Mykonos→Santorini and Santorini→Crete are the most booked-out routes. Conventional ferries have deck space to sit in sun — high-speed catamarans keep you below deck.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌅</div>
+      <div class="tip-title">Oia Sunset — The 90-Minute Rule</div>
+      <p class="tip-text">Arrive at the Castle of Oia viewpoint (Kastro Oia) 90 minutes before sunset. The Instagram shot is from the castle ruins looking left. Bring water and a snack — you're waiting but it's worth it. The crowds are massive in July–August; May and September are more manageable. Never skip it.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏛️</div>
+      <div class="tip-title">Acropolis Timing is Critical</div>
+      <p class="tip-text">Open at 8am — be there at 8am. By 10am it's extremely crowded and by midday in July/August it reaches 40°C+ on the exposed rock. The €20 combo ticket covers 7 sites including Acropolis Museum, Ancient Agora, and more — excellent value. Use it over 5 days as sites are spread across Athens.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-title">Eating Well in Greece</div>
+      <p class="tip-text">Gyros €2.50. Greek salad €8–12. Fresh grilled fish €20–40 depending on weight. Don't eat in Oia village — tourist markup is brutal. Walk 10 min to Finikia village for same views, real prices. Always ask to see the kitchen or the day's catch — Greek tavernas are proud to show you. Never order without checking if it's fresh.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📅</div>
+      <div class="tip-title">When to Go — Month by Month</div>
+      <p class="tip-text">May: perfect — warm, not crowded, everything open, best hotel prices. June: still excellent with slightly more people. July–August: expensive, crowded, extremely hot (38–42°C). September: best month overall — locals' favourite. October: cooler, quieter, great prices, some island businesses beginning to close. Avoid December–February on islands.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🛡️</div>
+      <div class="tip-title">Safety + Practical Reality</div>
+      <p class="tip-text">Greece is extremely safe. No major safety concerns beyond standard tourist awareness. Athens Metro has some pickpocket activity — keep bags in front. Island crime is minimal. Greeks are enormously hospitable to Indian tourists — you will be welcomed everywhere. Healthcare is EU-standard. Emergency: 112 (European standard emergency number).</p>
+    </div>
+  </div>
+
+  <hr class="section-rule" style="margin:5mm 0"/>
+
+  <div class="label">What to Pack</div>
+  <h3 class="sub-title" style="font-size:15pt;margin-bottom:3mm">Packing for Greece</h3>
+
+  <div class="packing-grid">
+    <div class="pack-item"><span class="pack-emoji">👟</span><span>Comfortable walking shoes — Athens cobblestones and Acropolis paths are uneven and tiring on unsupportive footwear</span></div>
+    <div class="pack-item"><span class="pack-emoji">👙</span><span>Swimwear ×3 — you will be swimming every single day. Three sets to avoid wet swimwear repeats</span></div>
+    <div class="pack-item"><span class="pack-emoji">🕶️</span><span>Quality polarised sunglasses — Mediterranean sun reflects off white buildings and water intensely</span></div>
+    <div class="pack-item"><span class="pack-emoji">☀️</span><span>SPF 50+ sunscreen — bring from India; island prices are 3× higher and stock is limited in small shops</span></div>
+    <div class="pack-item"><span class="pack-emoji">🧴</span><span>After-sun lotion — the sun is unforgiving, especially on boat decks and at black sand beaches where reflection adds burn</span></div>
+    <div class="pack-item"><span class="pack-emoji">💊</span><span>Seasickness tablets — island ferries can be rough, particularly in spring and early autumn winds (Meltemi)</span></div>
+    <div class="pack-item"><span class="pack-emoji">👗</span><span>Smart-casual evening wear — Mykonos and Santorini restaurants are genuinely dressy; linen shirts and sundresses are the standard</span></div>
+    <div class="pack-item"><span class="pack-emoji">📄</span><span>Schengen visa + all documents in physical copies — hotel confirmations, insurance, return ticket. Keep originals and photocopies separate</span></div>
+    <div class="pack-item"><span class="pack-emoji">💳</span><span>Cards + €200 cash — small tavernas and local shops often cash-only; ATMs on islands but can run low in peak season</span></div>
+    <div class="pack-item"><span class="pack-emoji">🎒</span><span>Daypack for hikes — essential for Samaria Gorge (water, snacks, layers), Acropolis, and beach-to-village walks in Santorini</span></div>
+    <div class="pack-item"><span class="pack-emoji">🌂</span><span>Light rain jacket — Athens spring can bring brief showers; folds flat and doubles as a layer on evening ferry decks</span></div>
+    <div class="pack-item"><span class="pack-emoji">🩴</span><span>Sandals or flip-flops — essential for boat decks, beach to taverna transitions, and Chania old town cobblestones in heat</span></div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 10 — FINAL PAGE: QUICK REFERENCE
+═══════════════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Greece in 10 Days</span>
+    <span class="page-header-right">Quick Reference · Page 10</span>
+  </div>
+
+  <div class="label">Quick Reference — Everything in One Place</div>
+  <h2 class="section-title" style="font-size:22pt;margin-bottom:4mm">At-a-glance reference</h2>
+
+  <div class="two-col" style="margin-bottom:5mm">
+    <div>
+      <div class="label" style="margin-bottom:2mm">Key Bookings Checklist</div>
+      <div style="background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:10px;padding:4mm;font-size:8pt;color:var(--ink);line-height:2">
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--blue);font-weight:700">✓</span> <span>Schengen visa (6–8 weeks ahead)</span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--blue);font-weight:700">✓</span> <span>Return India ↔ Athens flights</span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--terracotta);font-weight:700">!</span> <span><strong>Santorini caldera hotel (3–4 months early)</strong></span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--terracotta);font-weight:700">!</span> <span><strong>Mykonos hotel (2–3 months early)</strong></span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--blue);font-weight:700">✓</span> <span>Athens → Mykonos ferry (ferryhopper.com)</span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--blue);font-weight:700">✓</span> <span>Mykonos → Santorini ferry</span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--blue);font-weight:700">✓</span> <span>Santorini → Crete ferry</span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--blue);font-weight:700">✓</span> <span>Chania → Athens domestic flight</span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--gold);font-weight:700">$</span> <span>Travel insurance (required for Schengen)</span></div>
+        <div style="display:flex;gap:2mm;align-items:center"><span style="color:var(--blue);font-weight:700">✓</span> <span>Cosmote/Vodafone SIM — buy at ATH airport</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:2mm">Key Entry Prices</div>
+      <div style="background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:10px;padding:4mm;font-size:8pt;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;padding:2mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span>Acropolis combo ticket (7 sites)</span><span style="color:var(--blue);font-weight:600">€20 / ₹1,800</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span>Acropolis Museum</span><span style="color:var(--blue);font-weight:600">€10 / ₹900</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span>Ancient Agora</span><span style="color:var(--blue);font-weight:600">€10 / ₹900</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span>National Archaeological Museum</span><span style="color:var(--blue);font-weight:600">€12 / ₹1,080</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span>Delos Island (boat + entry)</span><span style="color:var(--blue);font-weight:600">€32 / ₹2,880</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span>Akrotiri excavations (Santorini)</span><span style="color:var(--blue);font-weight:600">€12 / ₹1,080</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span>Palace of Knossos</span><span style="color:var(--blue);font-weight:600">€15 / ₹1,350</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span>Heraklion Museum</span><span style="color:var(--blue);font-weight:600">€10 / ₹900</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2mm 0"><span>Samaria Gorge</span><span style="color:var(--blue);font-weight:600">€5 / ₹450</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">10-Day Route Summary</div>
+  <div style="background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3mm">
+      <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:3mm;text-align:center">
+        <div style="color:var(--blue-light);font-size:7pt;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1mm">Days 1–2</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:300;color:#fff;margin-bottom:1mm">Athens</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,0.45);line-height:1.4">Acropolis · Plaka · Agora · Museum</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:3mm;text-align:center">
+        <div style="color:var(--blue-light);font-size:7pt;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1mm">Days 3–4</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:300;color:#fff;margin-bottom:1mm">Mykonos</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,0.45);line-height:1.4">Windmills · Delos · Party beaches</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:3mm;text-align:center">
+        <div style="color:var(--gold);font-size:7pt;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1mm">Days 5–6</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:300;color:#fff;margin-bottom:1mm">Santorini</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,0.45);line-height:1.4">Oia sunset · Caldera · Akrotiri</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:3mm;text-align:center">
+        <div style="color:#fca5a5;font-size:7pt;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1mm">Days 7–8</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:300;color:#fff;margin-bottom:1mm">Crete</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,0.45);line-height:1.4">Knossos · Chania · Samaria Gorge</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:3mm;text-align:center">
+        <div style="color:var(--blue-light);font-size:7pt;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1mm">Days 9–10</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:13pt;font-weight:300;color:#fff;margin-bottom:1mm">Athens</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,0.45);line-height:1.4">Neighbourhoods · Market · Depart</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="label" style="margin-bottom:2mm">Useful Greek Phrases</div>
+      <div style="background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:10px;padding:4mm;font-size:8pt;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="color:var(--muted)">Hello</span><span style="font-weight:500">Yia sas (formal) / Yia sou</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="color:var(--muted)">Thank you</span><span style="font-weight:500">Efcharistó</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="color:var(--muted)">Please / You're welcome</span><span style="font-weight:500">Parakaló</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="color:var(--muted)">Cheers (toast)</span><span style="font-weight:500">Yamas!</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="color:var(--muted)">The bill, please</span><span style="font-weight:500">Ton logariasmó, parakaló</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0"><span style="color:var(--muted)">Very beautiful</span><span style="font-weight:500">Poli ómorfo</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:2mm">Greek Food to Know</div>
+      <div style="background:#fff;border:1px solid rgba(29,78,216,0.08);border-radius:10px;padding:4mm;font-size:8pt;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="font-weight:500">Gyros</span><span style="color:var(--muted)">Street souvlaki wrap — the Greek burger</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="font-weight:500">Saganaki</span><span style="color:var(--muted)">Pan-fried cheese, flambéed tableside</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="font-weight:500">Dakos</span><span style="color:var(--muted)">Cretan rusk with tomato and feta</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="font-weight:500">Loukoumades</span><span style="color:var(--muted)">Honey-drenched doughnut holes</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0;border-bottom:1px solid rgba(29,78,216,0.06)"><span style="font-weight:500">Assyrtiko</span><span style="color:var(--muted)">Santorini's world-class white wine</span></div>
+        <div style="display:flex;justify-content:space-between;padding:1.5mm 0"><span style="font-weight:500">Loukoumi</span><span style="color:var(--muted)">Greek delight — better than Turkish</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:5mm;margin-bottom:0">
+    <p>"Kali antamosi — until we meet again. Greece is not a destination you visit once. You visit it, and then you spend the rest of your life finding reasons to return."</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">IncredibleItinerary · Greece in 10 Days · ₹299 Premium Guide</span>
+    <span class="page-footer-text">incredibleitinerary.com</span>
+  </div>
+</div>
+
+</body>
+</html>

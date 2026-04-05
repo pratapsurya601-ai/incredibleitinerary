@@ -1,14 +1,53 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 const STORAGE_SUBSCRIBED = 'ii_subscribed';
 const STORAGE_DISMISSED  = 'ii_popup_dismissed';
 const DISMISS_TTL_MS     = 7 * 24 * 60 * 60 * 1000; // 7 days
-const SLUG               = 'rajasthan-7-days';
 
 type Step = 'form' | 'loading' | 'success' | 'paywall';
+
+// ── Blog slug → PDF info mapping ─────────────────────────────────────────────
+const BLOG_TO_PDF: Record<string, { pdfSlug: string; title: string; emoji: string; free: boolean; price?: string }> = {
+  "rajasthan-7-days":        { pdfSlug: "rajasthan-7-days",  title: "Rajasthan 7-Day Guide",  emoji: "🏰", free: true },
+  "kerala-5-days":           { pdfSlug: "kerala-5-days",      title: "Kerala 5-Day Guide",     emoji: "🌿", free: true },
+  "goa-3-days":              { pdfSlug: "goa-3-days",          title: "Goa 3-Day Guide",        emoji: "🏖️", free: false, price: "₹99" },
+  "india-budget-guide":      { pdfSlug: "india-budget-guide",  title: "India Budget Guide",     emoji: "🇮🇳", free: false, price: "₹99" },
+  "leh-ladakh-7-days":       { pdfSlug: "leh-ladakh-7-days",   title: "Leh Ladakh 7-Day Guide", emoji: "🏔️", free: false, price: "₹199" },
+  "bangkok-4-days":          { pdfSlug: "bangkok-4-days",      title: "Bangkok 4-Day Guide",    emoji: "🇹🇭", free: false, price: "₹199" },
+  "kashmir-6-days":          { pdfSlug: "kashmir-6-days",      title: "Kashmir 6-Day Guide",    emoji: "❄️", free: false, price: "₹149" },
+  "manali-5-days":           { pdfSlug: "manali-5-days",       title: "Manali 5-Day Guide",     emoji: "⛰️", free: false, price: "₹149" },
+  "bali-5-days":             { pdfSlug: "bali-5-days",         title: "Bali 5-Day Guide",       emoji: "🌴", free: false, price: "₹199" },
+  "dubai-4-days":            { pdfSlug: "dubai-4-days",        title: "Dubai 4-Day Guide",      emoji: "🏙️", free: false, price: "₹249" },
+  // Phase 2
+  "andaman-5-days":          { pdfSlug: "andaman-5-days",      title: "Andaman 5-Day Guide",    emoji: "🏝️", free: false, price: "₹149" },
+  "varanasi-3-days":         { pdfSlug: "varanasi-3-days",     title: "Varanasi 3-Day Guide",   emoji: "🕌", free: false, price: "₹99" },
+  "singapore-3-days":        { pdfSlug: "singapore-4-days",    title: "Singapore 4-Day Guide",  emoji: "🇸🇬", free: false, price: "₹199" },
+  "sri-lanka-7-days":        { pdfSlug: "sri-lanka-7-days",    title: "Sri Lanka 7-Day Guide",  emoji: "🦁", free: false, price: "₹199" },
+  "tokyo-5-days":            { pdfSlug: "japan-10-days",       title: "Japan 10-Day Guide",     emoji: "🗼", free: false, price: "₹299" },
+  "kyoto-4-days":            { pdfSlug: "japan-10-days",       title: "Japan 10-Day Guide",     emoji: "🗼", free: false, price: "₹299" },
+  "osaka-3-days":            { pdfSlug: "japan-10-days",       title: "Japan 10-Day Guide",     emoji: "🗼", free: false, price: "₹299" },
+  // Phase 3 — Vietnam
+  "hanoi-3-days":            { pdfSlug: "vietnam-10-days",     title: "Vietnam 10-Day Guide",   emoji: "🇻🇳", free: false, price: "₹199" },
+  "ho-chi-minh-city-3-days": { pdfSlug: "vietnam-10-days",     title: "Vietnam 10-Day Guide",   emoji: "🇻🇳", free: false, price: "₹199" },
+  "ha-long-bay-3-days":      { pdfSlug: "vietnam-10-days",     title: "Vietnam 10-Day Guide",   emoji: "🇻🇳", free: false, price: "₹199" },
+  // Phase 3 — Thailand
+  "phuket-5-days":           { pdfSlug: "thailand-10-days",    title: "Thailand 10-Day Guide",  emoji: "🌴", free: false, price: "₹199" },
+  "chiang-mai-4-days":       { pdfSlug: "thailand-10-days",    title: "Thailand 10-Day Guide",  emoji: "🌴", free: false, price: "₹199" },
+  // Phase 3 — Portugal
+  "lisbon-4-days":           { pdfSlug: "portugal-7-days",     title: "Portugal 7-Day Guide",   emoji: "🇵🇹", free: false, price: "₹249" },
+  "porto-3-days":            { pdfSlug: "portugal-7-days",     title: "Portugal 7-Day Guide",   emoji: "🇵🇹", free: false, price: "₹249" },
+  "algarve-4-days":          { pdfSlug: "portugal-7-days",     title: "Portugal 7-Day Guide",   emoji: "🇵🇹", free: false, price: "₹249" },
+  // Phase 3 — Greece
+  "athens-3-days":           { pdfSlug: "greece-10-days",      title: "Greece 10-Day Guide",    emoji: "🇬🇷", free: false, price: "₹299" },
+  "santorini-4-days":        { pdfSlug: "greece-10-days",      title: "Greece 10-Day Guide",    emoji: "🇬🇷", free: false, price: "₹299" },
+  "crete-5-days":            { pdfSlug: "greece-10-days",      title: "Greece 10-Day Guide",    emoji: "🇬🇷", free: false, price: "₹299" },
+};
+
+const DEFAULT_PDF = { pdfSlug: "rajasthan-7-days", title: "Rajasthan 7-Day Guide", emoji: "🏰", free: true, price: undefined as string | undefined };
 
 function Spinner() {
   return (
@@ -21,12 +60,17 @@ function Spinner() {
 }
 
 export default function ExitIntentPopup() {
+  const pathname = usePathname();
   const [isOpen,    setIsOpen]    = useState(false);
   const [step,      setStep]      = useState<Step>('form');
   const [email,     setEmail]     = useState('');
   const [error,     setError]     = useState('');
   const [remaining, setRemaining] = useState<number | null>(null);
   const triggered = useRef(false);
+
+  // ── Derive which PDF to show based on current URL ─────────────────────────
+  const blogSlug = pathname?.startsWith('/blog/') ? pathname.replace('/blog/', '').replace(/\/$/, '') : null;
+  const pdf = (blogSlug && BLOG_TO_PDF[blogSlug]) ? BLOG_TO_PDF[blogSlug] : DEFAULT_PDF;
 
   // ── suppress logic ────────────────────────────────────────────────────────
   function shouldSuppress(): boolean {
@@ -54,6 +98,14 @@ export default function ExitIntentPopup() {
 
   // ── triggers ──────────────────────────────────────────────────────────────
   useEffect(() => {
+    // Reset triggered when path changes (navigating to different blog post)
+    triggered.current = false;
+    setIsOpen(false);
+    setStep('form');
+    setError('');
+  }, [pathname]);
+
+  useEffect(() => {
     const onMouseLeave = (e: MouseEvent) => { if (e.clientY < 10) openPopup(); };
     const onScroll = () => {
       const scrolled = window.scrollY + window.innerHeight;
@@ -69,7 +121,7 @@ export default function ExitIntentPopup() {
       clearTimeout(timer);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [pathname]);
 
   // ── submit ────────────────────────────────────────────────────────────────
   async function handleSubmit(e: React.FormEvent) {
@@ -81,7 +133,7 @@ export default function ExitIntentPopup() {
       const res  = await fetch('/api/download', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email: email.toLowerCase().trim(), slug: SLUG }),
+        body:    JSON.stringify({ email: email.toLowerCase().trim(), slug: pdf.pdfSlug }),
       });
       const data = await res.json();
 
@@ -105,7 +157,7 @@ export default function ExitIntentPopup() {
       } catch { /* ignore */ }
 
       // Open guide in new tab
-      const url = `/api/serve-pdf?slug=${encodeURIComponent(SLUG)}&token=${encodeURIComponent(data.token)}`;
+      const url = `/api/serve-pdf?slug=${encodeURIComponent(pdf.pdfSlug)}&token=${encodeURIComponent(data.token)}`;
       window.open(url, '_blank', 'noopener');
 
       setRemaining(data.remaining ?? null);
@@ -141,18 +193,19 @@ export default function ExitIntentPopup() {
           {/* ── FORM ─────────────────────────────────────────────────────── */}
           {(step === 'form' || step === 'loading') && (
             <div className="flex flex-col items-center text-center">
-              <span className="text-5xl mb-4" aria-hidden="true">📄</span>
+              <span className="text-5xl mb-4" aria-hidden="true">{pdf.emoji}</span>
 
               <h2 className="font-serif text-ink font-semibold mb-2 leading-tight" style={{ fontSize: '1.75rem' }}>
-                Free Rajasthan 7-Day PDF
+                {pdf.free ? `Free ${pdf.title}` : `Get the ${pdf.title}`}
               </h2>
               <p className="text-muted text-sm mb-4 max-w-sm leading-relaxed">
-                Day-by-day plan · real budgets · packing list · route maps.
-                Download it instantly — no email chain, opens right now.
+                {pdf.free
+                  ? "Day-by-day plan · real budgets · packing list · route maps. Download it instantly — opens right now."
+                  : `Day-by-day plan · real prices · local tips · offline-ready. ${pdf.price} — instant download.`}
               </p>
 
               <span className="inline-flex items-center gap-1.5 border border-gold/30 bg-gold/10 text-gold-dark text-xs rounded-full px-3 py-1 mb-5 font-medium">
-                🎁 Free · 2 guides per email · No credit card
+                {pdf.free ? "🎁 Free · 2 guides per email · No credit card" : `📄 ${pdf.price} · Instant access · Offline-ready`}
               </span>
 
               <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3">
@@ -174,7 +227,7 @@ export default function ExitIntentPopup() {
                   disabled={step === 'loading'}
                   className="w-full rounded-lg bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {step === 'loading' ? <><Spinner />Opening guide…</> : 'Download Free PDF →'}
+                  {step === 'loading' ? <><Spinner />Opening guide…</> : pdf.free ? 'Download Free PDF →' : `Get PDF for ${pdf.price} →`}
                 </button>
               </form>
 
@@ -207,9 +260,9 @@ export default function ExitIntentPopup() {
                   <p className="text-green-700 text-xs">
                     ✅ You have <strong>{remaining} free guide{remaining > 1 ? 's' : ''}</strong> remaining.
                     Try{' '}
-                    <Link href="/blog/kerala-6-days" onClick={handleDismiss} className="underline font-medium">Kerala</Link>
+                    <Link href="/blog/kerala-5-days" onClick={handleDismiss} className="underline font-medium">Kerala</Link>
                     {' '}or{' '}
-                    <Link href="/blog/goa-5-days" onClick={handleDismiss} className="underline font-medium">Goa</Link>.
+                    <Link href="/blog/rajasthan-7-days" onClick={handleDismiss} className="underline font-medium">Rajasthan</Link>.
                   </p>
                 </div>
               )}
@@ -223,7 +276,7 @@ export default function ExitIntentPopup() {
                     rel="noopener noreferrer"
                     className="inline-block mt-2 bg-gold text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-gold-dark transition-colors"
                   >
-                    Unlock All 50+ Guides — ₹499 →
+                    Unlock All 20+ Guides — ₹499 →
                   </a>
                 </div>
               )}
@@ -245,7 +298,7 @@ export default function ExitIntentPopup() {
                 You&apos;ve used 2 free guides
               </h2>
               <p className="text-muted text-sm mb-5 max-w-xs leading-relaxed">
-                Unlock <strong className="text-ink">all 50+ guides forever</strong> — one-time payment, no subscription.
+                Unlock <strong className="text-ink">all 20+ guides forever</strong> — one-time payment, no subscription.
               </p>
 
               <div className="w-full flex flex-col gap-2 mb-4">
@@ -255,7 +308,7 @@ export default function ExitIntentPopup() {
                   rel="noopener noreferrer"
                   className="w-full block text-center bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-colors duration-200"
                 >
-                  All 50+ Guides — ₹499 one-time →
+                  All 20+ Guides — ₹499 one-time →
                 </a>
                 <a
                   href="https://rzp.io/rzp/SfJqFBV"

@@ -5,10 +5,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Prevent iOS Safari shrink-to-fit zoom-out on wide content */
+    width: 100%;
   }
 
   body {
     @apply bg-cream text-ink font-sans overflow-x-hidden;
+    width: 100%;
+    max-width: 100vw;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -167,3 +172,21 @@
   border-radius: 99px;
 }
 ::-webkit-scrollbar-thumb:hover { background: #8B6835; }
+
+/* ─── Keyframe animations ─────────────────────────────────────────── */
+@keyframes shimmer {
+  to { background-position: -200% 0; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.25s ease both; }

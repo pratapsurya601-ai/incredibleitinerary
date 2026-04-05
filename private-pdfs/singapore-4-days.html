@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Singapore in 4 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#dc2626;--primary-light:#fca5a5;--primary-dark:#7f1d1d;
+  --light:#fca5a5;--cream:#fff5f5;
+  --ink:#1a0a0a;--muted:#6b5555;--white:#ffffff;
+  --gold:#b5860d;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--primary-dark);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(127,29,29,0.97) 0%,rgba(127,29,29,0.65) 45%,rgba(127,29,29,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:48pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--primary-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:140mm;line-height:1.65}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(26,10,10,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(26,10,10,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.alt{background:#b45309}
+.route-stop.blue{background:#1d4ed8}
+.route-stop.teal{background:#0f766e}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(220,38,38,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(220,38,38,0.06),rgba(220,38,38,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.55;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--primary-light);margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:var(--primary-light);font-weight:500;margin-top:1mm}
+
+.two-day-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-bottom:5mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:3.5mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.red{background:rgba(220,38,38,0.06);border:1px solid rgba(220,38,38,0.2);color:#7f1d1d}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.teal{background:#f0fdfa;border:1px solid #99f6e4;color:#134e4a}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a5f}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(26,10,10,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(26,10,10,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(220,38,38,0.05);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:5mm}
+
+/* ── TIPS ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-card{background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:10px;padding:4mm}
+.tip-icon{font-size:15pt;margin-bottom:1.5mm}
+.tip-title{font-size:8.5pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm}
+.tip-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+
+/* ── PACKING ── */
+.packing-section{margin-bottom:5mm}
+.packing-title{font-size:8pt;font-weight:600;color:var(--ink);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2.5mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(26,10,10,0.08)}
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm}
+.packing-item{display:flex;align-items:flex-start;gap:2.5mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4;padding:1.5mm 0}
+.packing-check{width:12px;height:12px;border:1.5px solid rgba(220,38,38,0.35);border-radius:3px;flex-shrink:0;margin-top:1px}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1200&q=80" alt="Singapore Marina Bay Skyline"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Singapore<br/>in <em>4 Days</em></h1>
+    <p class="cover-sub">The city that has everything — Marina Bay skyline, hawker centres, Sentosa beaches, street art &amp; the world's best airport. A complete guide for Indian travellers, with real costs in ₹.</p>
+    <div class="cover-pills">
+      <span class="pill">4 Days</span>
+      <span class="pill">1 City-State</span>
+      <span class="pill">₹35,000–₹90,000 Total</span>
+      <span class="pill">Best: Feb–Apr, Sep–Nov</span>
+      <span class="pill">eVisa Required (S$30)</span>
+      <span class="pill">MRT City Transport</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;font-size:8pt;color:rgba(255,255,255,0.35);font-weight:300">₹199 Guide — International</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Singapore 4-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Your 4 Days in Singapore</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-icon">📅</div>
+      <span class="stat-val">4 Days</span>
+      <div class="stat-label">Duration</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">👥</div>
+      <span class="stat-val">5.8M</span>
+      <div class="stat-label">Population</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">💱</div>
+      <span class="stat-val">S$1 = ₹62</span>
+      <div class="stat-label">Exchange Rate</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🌤</div>
+      <span class="stat-val">Feb–Apr</span>
+      <div class="stat-label">Best Season</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">Your Route</div>
+  <div class="route-bar" style="margin-bottom:6mm">
+    <span class="route-stop">Changi Airport</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Marina Bay</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop alt">Little India / Chinatown</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop teal">Sentosa / Gardens</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop blue">Orchard / Departure</span>
+    <span class="route-sub">4 days · 1 city-state</span>
+  </div>
+
+  <div class="label" style="margin-bottom:2mm">Zone by Zone</div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-name">Marina Bay</div>
+      <span class="city-days">Day 1</span>
+      <div class="city-desc">The postcard Singapore. Marina Bay Sands SkyPark, the iconic Merlion, Helix Bridge, and the spectacular Gardens by the Bay. The ArtScience Museum (S$28) sits on the water's edge. At 7:45pm and 8:45pm, the free Supertree Grove light show transforms the bay into something otherworldly.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Chinatown + Little India</div>
+      <span class="city-days">Day 2</span>
+      <div class="city-desc">Old Singapore, beautifully preserved. Sri Veeramakaliamman Temple, the Buddha Tooth Relic Temple, and the world-famous Maxwell Food Centre — home of Tian Tian chicken rice. The heritage quarters are free to explore on foot. Cheap hawker food, colourful temples, and colonial shophouses.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Sentosa Island</div>
+      <span class="city-days">Day 3</span>
+      <div class="city-desc">Singapore's pleasure island. Universal Studios Singapore (S$83), Palawan &amp; Siloso beaches (free), Adventure Cove Waterpark (S$38), and the stunning Wings of Time laser-water-fire show (S$18) on the beach at 7:40pm. Accessible by cable car (S$35) or VivoCity monorail (S$4).</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Orchard + Bugis + Haji Lane</div>
+      <span class="city-days">Day 4</span>
+      <div class="city-desc">Singapore's shopping and street culture district. Ion Orchard, Paragon, and Takashimaya for retail. Haji Lane in Kampong Glam for street art and indie boutiques. Sim Lim Square for electronics. End at Jewel Changi — the world's tallest indoor waterfall — before your flight.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Singapore is proof that a city can be impossibly clean, impossibly safe, and impossibly delicious — all at once. Hawker centres alone are worth the flight."</p>
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>For Indian Travellers:</strong> Indians require an eVisa — apply on the Singapore ICA website (ica.gov.sg). S$30, usually instant approval. Do this before booking flights. No eVisa = no entry.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAYS 1 & 2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Singapore 4-Day Itinerary</span>
+    <span class="page-header-right">Days 1–2</span>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Arrival</div>
+      <div class="day-title">Arrival + Marina Bay Sands</div>
+      <div class="day-sub">Changi Airport → MRT → Hotel → Merlion Park → Gardens by the Bay → Supertree Light Show</div>
+      <div class="day-cost">Approx. spend: S$50–80 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Changi Airport → City by MRT</div>
+        <div class="time-desc">Take the MRT from Changi Airport Terminal 1/2/3 directly to the city. Buy an EZ-Link card at the MRT counter (S$12 including S$7 travel credit) — use it for all MRT and bus trips throughout your stay. The airport-to-city ride takes 30 minutes and costs S$2.50. Fastest airport-to-city transit in the world.</div>
+        <div class="time-price">MRT: S$2.50 · EZ-Link card: S$12 (one-time, includes S$7 credit)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Hotel</div>
+      <div class="time-content">
+        <div class="time-title">Check In — Where to Stay</div>
+        <div class="time-desc">Budget (S$80–150/night): Bugis or Lavender area — great MRT access, cheap hawker food nearby. Mid-range (S$200–400): Marina Bay/Clarke Quay — walking distance to all Day 1 sights. Luxury (S$400+): Sentosa island or Marina Bay Sands itself. Book at least 3 weeks ahead — Singapore hotels fill fast.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Merlion Park + Helix Bridge + Marina Bay Sands</div>
+        <div class="time-desc">Merlion Park is free — the half-lion, half-fish statue spouting water into the bay is Singapore's most photographed landmark. Walk across the Helix Bridge (free, beautiful architecture) to Marina Bay Sands. Take the SkyPark Observation Deck for the best city views in Asia — the 57th floor infinity pool view with the city behind it is unmistakable.</div>
+        <div class="time-price">Merlion + Helix: Free · MBS Observation Deck: S$28</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Gardens by the Bay — Supertrees + Domes</div>
+        <div class="time-desc">The Cloud Forest dome (S$28) is extraordinary — a 35-metre indoor mountain wrapped in living plants with a cool mist. The Flower Dome (S$14) displays Mediterranean gardens. OR save money and enjoy the outdoor Supertree Grove for free — 18 tree-like vertical gardens up to 16 storeys tall. The free OCBC Garden Rhapsody light show at 7:45pm and 8:45pm is not to be missed.</div>
+        <div class="time-price">Outdoor Supertrees: Free · Cloud Forest: S$28 · Flower Dome: S$14 · Light show: Free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Dinner</div>
+      <div class="time-content">
+        <div class="time-title">Satay by the Bay or Lau Pa Sat Hawker Centre</div>
+        <div class="time-desc">Satay by the Bay is the open-air hawker spot right inside Gardens by the Bay — skewers S$3–8 each, cold beer, bay views. Alternative: Lau Pa Sat on Robinson Road, an 1894 Victorian cast-iron market now a hawker centre — historic architecture, local food S$5–12/dish. Both are quintessential Singapore evenings.</div>
+        <div class="time-price">Budget: S$8–15/person · Satay skewers: S$3–8 each</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Heritage Singapore</div>
+      <div class="day-title">Little India + Chinatown</div>
+      <div class="day-sub">Sri Veeramakaliamman Temple → Maxwell Food Centre → Chinatown Street Market → Clarke Quay</div>
+      <div class="day-cost">Approx. spend: S$30–50 (excl. accommodation) — mostly free sights</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Little India — Temple + Mustafa Centre</div>
+        <div class="time-desc">Sri Veeramakaliamman Temple on Serangoon Road is free — a riot of colour and Dravidian towers. Remove shoes before entering. Then Mustafa Centre nearby — open 24hrs, cheap electronics, Indian groceries, and gold at competitive prices. Perfect place to stock up on anything. Lunch: Komala Vilas on Serangoon for banana leaf rice (S$8, vegetarian, excellent).</div>
+        <div class="time-price">Temple: Free · Komala Vilas lunch: S$8</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Chinatown — Buddha Tooth Temple + Maxwell</div>
+        <div class="time-desc">Buddha Tooth Relic Temple on South Bridge Road houses a sacred tooth relic of the Buddha — free entry, stunning interior, no shorts allowed. Then walk to Maxwell Food Centre for S$3–6 dishes. Tian Tian Hainanese Chicken Rice (stall #10) is legendary — arrive by 1pm before it sells out. Wander the Chinatown Street Market for souvenirs, spices, and antiques.</div>
+        <div class="time-price">Temple: Free · Maxwell lunch: S$3–6/dish</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Ann Siang Hill or Clarke Quay</div>
+        <div class="time-desc">Ann Siang Hill is a hidden bar street above Chinatown — relaxed rooftop bars, craft cocktails, colonial shophouse settings, S$15–20/drink. Or take the MRT to Clarke Quay for louder, more vibrant riverside bars along the Singapore River. Sunset at Fort Canning Park (free) above Clarke Quay is a perfect end to the heritage day.</div>
+        <div class="time-price">Cocktails: S$15–25 · Fort Canning Park: Free</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAYS 3 & 4 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Singapore 4-Day Itinerary</span>
+    <span class="page-header-right">Days 3–4</span>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Pleasure Island</div>
+      <div class="day-title">Sentosa Island</div>
+      <div class="day-sub">Cable Car → Universal Studios or Beaches → Wings of Time Show → VivoCity Dinner</div>
+      <div class="day-cost">USS day: S$100–120pp · Beach day: S$30–50pp</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Getting to Sentosa — Cable Car or Monorail</div>
+        <div class="time-desc">Two options: Cable car from Harbourfront MRT station (S$35 return) for spectacular aerial views of the harbour and Sentosa. OR take the Sentosa Express monorail from VivoCity mall Level 3 (S$4). The cable car is worth it on a clear day — views over the container port and city are superb.</div>
+        <div class="time-price">Cable car: S$35 return · Monorail: S$4 return</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10 AM</div>
+      <div class="time-content">
+        <div class="time-title">Universal Studios Singapore — OR — Beach Day</div>
+        <div class="time-desc"><strong>USS (S$83/adult):</strong> Book online in advance. Highlights: Battlestar Galactica (tallest duelling coasters in the world), Transformers: The Ride (incredible 4D), Puss in Boots' Giant Journey (fun for all ages). Allow minimum 4 hours — 6 hours if you want everything. Arrive at 10am sharp to beat queues on Transformers and Battlestar.<br/><strong>Beach Day (free):</strong> Palawan Beach and Siloso Beach are free with sunbeds, swimming, and calm waters. Water sports S$20–40. Adventure Cove Waterpark S$38.</div>
+        <div class="time-price">USS: S$83 (online) / S$88 (gate) · Beaches: Free · Adventure Cove: S$38</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">7:40 PM</div>
+      <div class="time-content">
+        <div class="time-title">Wings of Time — Beach Laser Spectacular</div>
+        <div class="time-desc">Wings of Time at Siloso Beach is the highlight of Sentosa evenings — a 25-minute outdoor show combining lasers, fire jets, water screens, and pyrotechnics set against the sea. Two shows: 7:40pm and 8:40pm. Watching from the beach with the sea breeze and the spray from the water jets is genuinely spectacular. Book online.</div>
+        <div class="time-price">S$18/person (standard) · Book online at sentosa.com.sg</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Dinner</div>
+      <div class="time-content">
+        <div class="time-title">VivoCity Food Court — Back on the Mainland</div>
+        <div class="time-desc">Head back via VivoCity mall (connected to Harbourfront MRT). The food court on Level 3 has great hawker food at reasonable prices — S$8–15 per person. More affordable than Sentosa island eateries and excellent quality. VivoCity itself has a rooftop open-air deck with views back towards Sentosa.</div>
+        <div class="time-price">Food court: S$8–15/person</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Departure Day</div>
+      <div class="day-title">Orchard, Haji Lane &amp; Jewel Changi</div>
+      <div class="day-sub">Haji Lane street art → Orchard Road shopping → Sim Lim Square → Jewel Changi waterfall</div>
+      <div class="day-cost">Approx. spend: S$20–30 (excl. shopping) — mostly free sights</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Haji Lane, Kampong Glam — Street Art + Heritage</div>
+        <div class="time-desc">Haji Lane is Singapore's hipster heartland — a narrow alley in Kampong Glam lined with street murals, indie boutiques, vintage shops, and cafes. Free to walk. Visit the Sultan Mosque (free, covered dress required) and the Malay Heritage Centre (S$8) to understand the cultural fabric of Malay Singapore. The best coffee in Singapore is around here — try Arabica or Symmetry.</div>
+        <div class="time-price">Haji Lane: Free · Malay Heritage Centre: S$8 · Sultan Mosque: Free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Orchard Road — Shopping Boulevard</div>
+        <div class="time-desc">Orchard Road is one of Asia's great shopping streets — Ion Orchard, Paragon, Takashimaya, 313@Somerset all line the 2km strip. Luxury brands, mid-range international retail, and food halls in every basement. For electronics, head to Sim Lim Square (take MRT to Little India, then walk) — bargain hard, compare multiple stalls before buying. Duty-free allowance applies at the airport.</div>
+        <div class="time-price">Ion Orchard basement food hall: S$8–15 for lunch</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Departure</div>
+      <div class="time-content">
+        <div class="time-title">Changi Airport — Jewel + Check-in</div>
+        <div class="time-desc">Arrive at Changi at least 2.5 hours before your flight. But first — Jewel Changi. The RAIN VORTEX inside Jewel is the world's tallest indoor waterfall (40 metres), surrounded by the HSBC Rain Vortex forest walkways. It's free to enter and genuinely breathtaking. Terminal 3 also has a rooftop swimming pool (transit hotel guests only) if you have a long layover.</div>
+        <div class="time-price">Jewel Changi: Free to enter · Rain Vortex: Free</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Departure tip:</strong> Singapore has strict baggage rules. Liquids over 100ml in carry-on will be confiscated. Durian is banned on the MRT and in most hotels. No chewing gum to bring home either — banned in Singapore since 1992.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — BUDGET ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Singapore 4-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Money Matters</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Budget Breakdown — 4 Days, Per Person</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Budget (₹)</th>
+        <th>Mid-Range (₹)</th>
+        <th>Luxury (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Accommodation (4 nights)</td>
+        <td>₹12,000</td>
+        <td>₹28,000</td>
+        <td>₹70,000+</td>
+      </tr>
+      <tr>
+        <td>Food &amp; Drinks</td>
+        <td>₹4,000</td>
+        <td>₹8,000</td>
+        <td>₹18,000</td>
+      </tr>
+      <tr>
+        <td>Transport (MRT + EZ-Link)</td>
+        <td>₹1,500</td>
+        <td>₹2,500</td>
+        <td>₹4,000</td>
+      </tr>
+      <tr>
+        <td>Attractions &amp; Shows</td>
+        <td>₹5,000</td>
+        <td>₹12,000</td>
+        <td>₹20,000</td>
+      </tr>
+      <tr>
+        <td>Shopping</td>
+        <td>₹3,000</td>
+        <td>₹10,000</td>
+        <td>₹50,000+</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL (4 Days)</strong></td>
+        <td><strong>~₹25,500</strong></td>
+        <td><strong>~₹60,500</strong></td>
+        <td><strong>₹1,62,000+</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Currency: S$1 = approx ₹62. ATMs everywhere. Cards accepted at virtually all shops, restaurants, and attractions. Mastercard and Visa work universally. Inform your bank before travel.</p>
+
+  <div class="label" style="margin-top:2mm">What Things Cost — Quick Reference</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-bottom:5mm;margin-top:2mm">
+    <div style="background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:7pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1mm">MRT Ride</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--primary)">S$1–3</div>
+      <div style="font-size:7pt;color:var(--muted)">₹62–186 per trip</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:7pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1mm">Hawker Meal</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--primary)">S$3–8</div>
+      <div style="font-size:7pt;color:var(--muted)">₹186–496 per dish</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:7pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1mm">Restaurant Meal</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--primary)">S$20–50</div>
+      <div style="font-size:7pt;color:var(--muted)">₹1,240–3,100 pp</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:7pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1mm">Grab Taxi (5km)</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--primary)">S$8–12</div>
+      <div style="font-size:7pt;color:var(--muted)">₹496–744 per ride</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:7pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1mm">SIM Card</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--primary)">S$15</div>
+      <div style="font-size:7pt;color:var(--muted)">100GB / 10 days</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(26,10,10,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:7pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1mm">Hotel (Budget)</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--primary)">S$80–150</div>
+      <div style="font-size:7pt;color:var(--muted)">₹4,960–9,300/night</div>
+    </div>
+  </div>
+
+  <div class="highlight-box red" style="margin-bottom:3mm">
+    <strong>Free in Singapore:</strong> Supertree Grove light show · Merlion Park · Helix Bridge · Haji Lane walk · Jewel Changi Rain Vortex · Fort Canning Park · National Museum of Singapore (permanent galleries) · Chinatown &amp; Little India street walks · Botanical Gardens (UNESCO site)
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>Save money like a local:</strong> Eat every meal at hawker centres — Maxwell, Lau Pa Sat, Newton, Old Airport Road. Take the MRT everywhere (never taxis in peak hours). Buy groceries at FairPrice supermarket for breakfast. Water from Singapore taps is clean and drinkable.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — TIPS + PACKING ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Singapore 4-Day Itinerary</span>
+    <span class="page-header-right">Essential Tips + Packing</span>
+  </div>
+
+  <div class="label">Know Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Essential Tips for Indian Travellers</h2>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🛂</div>
+      <div class="tip-title">eVisa — Required for Indians</div>
+      <div class="tip-desc">Apply on Singapore ICA website (ica.gov.sg/apply-evisa). Fee: S$30 (approx ₹1,860). Most applications are approved instantly or within hours. Print the approval letter. You cannot board your flight without it. Apply at least 3 days before travel to be safe. Validity: 30 days from arrival.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🚇</div>
+      <div class="tip-title">MRT is Your Best Friend</div>
+      <div class="tip-desc">Singapore's MRT covers everything you need. Buy an EZ-Link card at Changi Airport (S$12, includes S$7 credit). Top up at any MRT station or 7-Eleven. Grab rides cost 4–5x more than MRT. MRT runs 5:30am–midnight daily. Google Maps has perfect MRT directions — trust it completely.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🍜</div>
+      <div class="tip-title">Hawker Centres Are the Experience</div>
+      <div class="tip-desc">Maxwell Food Centre, Lau Pa Sat, Newton Food Centre, and Old Airport Road Food Centre are the best. Each has 50–100 stalls selling S$3–8 dishes. This is where Singaporeans eat every day — the food is extraordinary. Chicken rice, char kway teow, laksa, roti prata, BBQ sambal stingray, chilli crab. Try everything.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⚖️</div>
+      <div class="tip-title">Singapore Laws — Very Real</div>
+      <div class="tip-desc">No chewing gum (banned since 1992 — don't bring it). Jaywalking fine: S$50. Littering fines from S$300. Smoking only in designated areas. Drug offences carry the death penalty. Vandalism (including graffiti) is caned. These are not rumours — Singapore enforces its laws. Just be a respectful visitor and you'll have no issues whatsoever.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">Essential Apps</div>
+      <div class="tip-desc">Grab — ride-hailing and food delivery. Far cheaper than metered taxis. SingaRide — MRT journey planning. Google Maps — best for walking and MRT directions. Singtel/StarHub apps — top up your SIM data. Get a Singtel or StarHub SIM at the airport arrivals — S$15 for 100GB / 10 days. Strong 4G everywhere including the MRT.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔌</div>
+      <div class="tip-title">Practical Essentials</div>
+      <div class="tip-desc">Power sockets: Type G (same as UK — 3 rectangular pins). Voltage: 230V. Bring a Type G adapter or buy one at Changi. Tap water is fully drinkable everywhere — no need to buy bottled water. Weather: 32°C year-round with high humidity. Afternoon rain showers common — quick and heavy, then clear. Carry a compact umbrella.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💳</div>
+      <div class="tip-title">Money Tips</div>
+      <div class="tip-desc">Cards accepted at virtually every shop, restaurant, and hawker stall. Use a zero-forex card (Niyo Global, Wise, or Fi Money) to avoid the 3.5% international transaction fee charged by Indian banks. ATMs are everywhere and dispense SGD. Avoid currency exchange counters at the airport — rates are poor. Hawker centres accept PayNow/NETS.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Weather + Clothing</div>
+      <div class="tip-desc">Singapore is tropical — 30–33°C year-round with 80% humidity. Wear light, breathable cotton or linen. But: malls, MRT, and restaurants are aggressively air-conditioned — bring a light layer. Smart-casual dress required for rooftop bars (no slippers/flip-flops in nicer venues). Comfortable walking shoes are essential — you will walk 12–15km daily.</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">What to Pack</div>
+  <h3 class="sub-title" style="margin-bottom:3mm">Packing List for Singapore</h3>
+  <div class="packing-grid">
+    <div class="packing-item"><span class="packing-check"></span>Compact umbrella (sudden tropical downpours)</div>
+    <div class="packing-item"><span class="packing-check"></span>Comfortable walking shoes (12–15km/day)</div>
+    <div class="packing-item"><span class="packing-check"></span>Light breathable clothes (32°C, high humidity)</div>
+    <div class="packing-item"><span class="packing-check"></span>One smart-casual outfit (rooftop bars)</div>
+    <div class="packing-item"><span class="packing-check"></span>Light cardigan/layer (mall air-con)</div>
+    <div class="packing-item"><span class="packing-check"></span>Sunscreen SPF 50+ (intense equatorial sun)</div>
+    <div class="packing-item"><span class="packing-check"></span>Type G power adapter (UK 3-pin plug)</div>
+    <div class="packing-item"><span class="packing-check"></span>eVisa approval letter (printout + digital)</div>
+    <div class="packing-item"><span class="packing-check"></span>International debit card (Niyo/Wise/Fi)</div>
+    <div class="packing-item"><span class="packing-check"></span>Google Maps + Grab app (pre-downloaded)</div>
+    <div class="packing-item"><span class="packing-check"></span>Portable power bank (long days out)</div>
+    <div class="packing-item"><span class="packing-check"></span>Reusable water bottle (tap water is safe)</div>
+    <div class="packing-item"><span class="packing-check"></span>Modest cover-up for temples (no shorts)</div>
+    <div class="packing-item"><span class="packing-check"></span>Swimwear (Sentosa beaches + hotel pool)</div>
+    <div class="packing-item"><span class="packing-check"></span>Passport (valid 6 months beyond travel date)</div>
+    <div class="packing-item"><span class="packing-check"></span>Hotel confirmation printout for immigration</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(220,38,38,0.25) 0%,transparent 70%)"></div>
+  <div style="position:relative;z-index:2;width:100%;padding:20mm;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:297mm">
+    <div style="font-size:8pt;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6mm;font-weight:400">IncredibleItinerary.com</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1;text-align:center">Your Singapore<br/>Adventure Awaits</h2>
+    <p style="color:rgba(255,255,255,0.5);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.65;text-align:center">From the hawker stall that's been serving chicken rice since 1953 to the infinity pool 57 floors above the city — Singapore rewards every kind of traveller. Go.</p>
+    <div style="background:var(--primary);color:#fff;font-size:10pt;font-weight:500;padding:4mm 12mm;border-radius:30px;display:inline-block;margin-bottom:8mm;letter-spacing:0.05em">More guides at IncredibleItinerary.com</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:18pt;font-weight:300;color:rgba(255,255,255,0.35);margin-bottom:10mm">incredibleitinerary.com</div>
+    <div style="display:flex;gap:4mm;flex-wrap:wrap;justify-content:center;margin-bottom:12mm">
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Bali 5 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Bangkok 4 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Dubai 4 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Sri Lanka 7 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Kerala 5 Days</span>
+      <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:7.5pt;padding:3px 12px;border-radius:20px">Rajasthan 7 Days</span>
+    </div>
+    <div style="font-size:6.5pt;color:rgba(255,255,255,0.18);line-height:1.7;max-width:130mm;margin:0 auto;text-align:center">All prices are approximate and subject to change. Exchange rates are indicative. Attraction prices, opening hours, and visa requirements should be verified before travel. IncredibleItinerary.com accepts no liability for errors or omissions. © 2026 IncredibleItinerary.com</div>
+  </div>
+</div>
+
+</body>
+</html>

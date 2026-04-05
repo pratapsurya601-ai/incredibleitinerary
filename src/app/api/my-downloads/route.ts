@@ -12,6 +12,18 @@ const ALL_SLUGS = [
   "manali-5-days",
   "bali-5-days",
   "dubai-4-days",
+  // Phase 2
+  "andaman-5-days",
+  "varanasi-3-days",
+  "singapore-4-days",
+  "sri-lanka-7-days",
+  "japan-10-days",
+  // Phase 3
+  "vietnam-10-days",
+  "thailand-10-days",
+  "bhutan-5-days",
+  "portugal-7-days",
+  "greece-10-days",
 ];
 
 function generateToken(slug: string): string {

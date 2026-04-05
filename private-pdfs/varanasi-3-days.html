@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Varanasi in 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#92400e;--primary-light:#f59e0b;--primary-dark:#78350f;
+  --accent:#dc2626;--accent-light:#fca5a5;
+  --ink:#1a0a00;--cream:#fffbf5;--parchment:#fef3c7;
+  --white:#ffffff;--muted:#6b4c2a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,10,0,0.97) 0%,rgba(26,10,0,0.6) 50%,rgba(26,10,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#f59e0b;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(146,64,14,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(146,64,14,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--primary-light);color:var(--ink)}
+.route-stop.vermillion{background:var(--accent)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(146,64,14,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(146,64,14,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(245,158,11,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#f59e0b;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#f59e0b;font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(146,64,14,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:var(--primary-dark)}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.highlight-box.maroon{background:#fef3f2;border:1px solid #fca5a5;color:#7f1d1d}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(146,64,14,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(146,64,14,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(146,64,14,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+
+/* ── TIPS ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(146,64,14,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── PACKING ── */
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(146,64,14,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1561361058-c12e04a0a7e4?w=1200&q=80" alt="Varanasi ghats and Ganga Aarti"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Varanasi<br/><em>in 3 Days</em></h1>
+    <p class="cover-sub">India's oldest living city — Ghats, Ganga Aarti, temples, silk &amp; the philosophy of impermanence</p>
+    <div class="cover-pills">
+      <span class="pill">🕯️ 3 Days</span>
+      <span class="pill">🏛️ 1 City</span>
+      <span class="pill">💰 ₹5,000–₹20,000</span>
+      <span class="pill">🌤️ Best: Oct–Mar</span>
+      <span class="pill">⛵ Ganga Sunrise Boat</span>
+      <span class="pill">🕌 84 Ghats</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(146,64,14,0.3);border:1px solid rgba(245,158,11,0.4);color:#f59e0b;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Varanasi 3-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Eternal City — In Three Days</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏛️</div><span class="stat-val">84 Ghats</span><span class="stat-label">Along the Ganges</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹5k–20k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Mar</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Arrival</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">Dashashwamedh</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop vermillion">Kashi Vishwanath</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Assi Ghat</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Sarnath</span>
+    <span class="route-sub">All within 1 city · Fly in/out Lal Bahadur Shastri Airport (VNS)</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Core Experience</div>
+      <div class="city-name">🌊 The Ghats</div>
+      <div class="city-desc">84 ghats line the western bank of the Ganges. Sunrise boat rides, cremation at Manikarnika (viewed respectfully), the evening Ganga Aarti at Dashashwamedh. The soul of Varanasi — and of India.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 1 Evening</div>
+      <div class="city-name">🔥 Kashi Vishwanath Corridor</div>
+      <div class="city-desc">Rebuilt and opened in 2022, this temple complex is one of the 12 Jyotirlinga shrines — among the holiest sites in Hinduism. Book the 5am or 7am darshan slot on the official app for shorter queues. Free entry. No phones permitted inside.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3 Morning</div>
+      <div class="city-name">🏯 Sarnath</div>
+      <div class="city-desc">10km from the city. Where the Buddha gave his first sermon after enlightenment. Dhamek Stupa (3rd century BC), the archaeological museum with the original Ashoka lion capital — India's national emblem — and Tibetan and Thai temples worth visiting.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Throughout</div>
+      <div class="city-name">🛍️ Old City Bazaars</div>
+      <div class="city-desc">Vishwanath Gali with its 100-year-old silk saree shops. Thatheri Bazaar for brassware. The famous Blue Lassi Shop, paan from street vendors, kachori sabzi for breakfast. The alleyways of the old city are the experience.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Varanasi doesn't follow you home. It lives inside you. The city is 5,000 years old and somehow feels like the future."</p>
+  </div>
+
+  <div class="highlight-box saffron">
+    <strong>Best Time to Visit:</strong> October to March for pleasant weather (15–25°C). December and January are the best months — cool, clear, and atmospheric. April to June is brutal (40–45°C). Monsoon (July–September) floods some ghats but is spiritually significant for many pilgrims.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAYS 1–2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Varanasi 3-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Aarti, Sunrise Boat &amp; Temples</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Arrival &amp; Ganga Aarti</div>
+      <div class="day-title">The River, the Fire &amp; the Eternal City</div>
+      <div class="day-sub">Arrive · Settle in near the ghats · 6:30pm Ganga Aarti at Dashashwamedh · Blue Lassi · Old City wander</div>
+      <div class="day-cost">💰 Budget: ₹600–₹900 · Mid-range: ₹1,500–₹3,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Lal Bahadur Shastri Airport (VNS) or Varanasi Junction (BSB)</div>
+        <div class="time-desc">Auto-rickshaw from airport to the ghats area: ₹150–₹300. Train travellers arrive at Varanasi Junction — auto to Assi Ghat or Dashashwamedh: ₹60–₹100. Stay near Assi Ghat for a calmer, more residential experience. Stay near Dashashwamedh if you want the city's pulse right outside your door. Both are excellent — decide based on your preference for quiet vs action.</div>
+        <div class="time-price">Budget guesthouses near ghats: ₹400–₹800 · Mid-range: ₹2,000–₹5,000 · Heritage havelis: ₹8,000+</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Walk to Nearest Ghat — Let Varanasi Find You</div>
+        <div class="time-desc">Varanasi is best experienced without a plan. Walk to the nearest ghat. Sit on the stone steps. Watch the boats, the pilgrims bathing, the priests performing rituals, children playing cricket on the sand in winter. The city will reveal itself. There is no better orientation than simply being present at the river. Resist the urge to immediately visit temples — the ghat IS the experience.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Dashashwamedh Ghat Ganga Aarti — Arrive Early</div>
+        <div class="time-desc">Arrive at least 30 minutes before the ceremony (which begins at 6:30pm in winter, 7pm in summer — confirm locally). Seven priests in synchronised ritual perform the fire ceremony using enormous brass lamps, flowers, incense and conch shells. The Ganges reflected in fire, the chanting, the crowd of thousands — this is among the most powerful spiritual spectacles anywhere in India. Watch from the ghats for free or hire a boat (₹200–₹500/person) for the river view.</div>
+        <div class="time-price">Free from ghats · Boat: ₹200–₹500/person · Arrive 30 min early for good spot</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Blue Lassi + Kachori Sabzi — Non-Negotiable</div>
+        <div class="time-desc">Two food experiences that are obligatory in Varanasi. The Blue Lassi Shop near Vishwanath Temple (look for the tiny shop covered in tourist photographs) — a legendary thick lassi with fruit and nuts, ₹50–₹80. Best eaten on the lane. Then walk to Kashi Chaat Bhandar or any local stall for kachori sabzi — fried bread with spiced potato curry, ₹30. This is Varanasi breakfast culture at its finest, and it works equally well as a late evening snack.</div>
+        <div class="time-price">Blue Lassi: ₹50–₹80 · Kachori sabzi: ₹30 · Both in Vishwanath Gali area</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · The City Awakens</div>
+      <div class="day-title">Sunrise Boat Ride, Kashi Vishwanath &amp; Silk Lanes</div>
+      <div class="day-sub">4:30am wake · Sunrise boat · Kashi Vishwanath darshan · Vishwanath Gali · Afternoon temples</div>
+      <div class="day-cost">💰 Boat: ₹200–₹400 shared · Temple: free entry · Silk: as much as you want</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Sunrise Boat Ride from Assi Ghat — the City Waking Up</div>
+        <div class="time-desc">The most important Varanasi experience. Before the city wakes, hire a boat from Assi Ghat and drift north past all 84 ghats as dawn breaks. The golden light on the ancient buildings, priests beginning their rituals, pilgrims in the water, smoke rising from Manikarnika. When you pass Manikarnika Ghat (the main cremation ghat), observe quietly and respectfully from the boat. Photography is absolutely not permitted here. This boat ride will stay with you for life.</div>
+        <div class="time-price">Shared boat: ₹200–₹400/person · Private: ₹800–₹1,500 · Best light: 5:30–7:00am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">7:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Kashi Vishwanath Temple — One of 12 Jyotirlingas</div>
+        <div class="time-desc">Book your darshan slot on the official Kashi Vishwanath Temple app before visiting — the 5am and 7am slots are less crowded than midday. The 2022-rebuilt corridor complex is architecturally stunning, with a direct visual axis from the temple to the Ganga. No phones, bags or leather items inside — use the cloakroom. Dress modestly (cover shoulders and knees). The darshan itself is brief but the ambience is profound.</div>
+        <div class="time-price">Entry: free · Darshan slot: book on official app · Cloakroom: ₹10</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Vishwanath Gali — Banarasi Silk &amp; 100-Year-Old Shops</div>
+        <div class="time-desc">The narrow lane leading to the temple is lined with shops that have been here for generations. Banarasi silk sarees are the finest in India — real zari (gold thread) weaving, intricate designs, extraordinary softness. The best shops are the plain-fronted family establishments that don't aggressively tout. Prices for a genuine Banarasi silk saree: ₹3,000–₹50,000+. Also: dhoop incense, rudraksha beads, brass temple items, Ganga water containers.</div>
+        <div class="time-price">Banarasi silk sarees: ₹3,000–₹50,000 · Verify with burn test · Bargaining expected</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Bharat Mata Temple + Sankat Mochan Hanuman Temple</div>
+        <div class="time-desc">Bharat Mata Temple is unique — not a temple to any deity, but to India itself. Inside, the entire country is carved in relief in marble — rivers, mountains, cities. A contemplative and unusual space. Then walk to Sankat Mochan Hanuman Temple, founded by the poet Tulsidas in the 16th century — the resident monkeys are everywhere and the atmosphere is deeply devotional. The evening prayer here is less crowded and more intimate than Dashashwamedh.</div>
+        <div class="time-price">Both free entry · Modest dress required · Sankat Mochan: remove shoes at entrance</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Assi Ghat Evening Aarti + Local Chai</div>
+        <div class="time-desc">The evening aarti at Assi Ghat (southernmost major ghat) is smaller and more intimate than Dashashwamedh — and often more moving for it. A single priest, a small crowd, the smell of sandalwood and marigolds. Afterwards, sit at one of the chai stalls on the ghat with a clay cup of chai (₹10) and watch the boats. This is Varanasi at its most human scale.</div>
+        <div class="time-price">Free · Chai: ₹10 · Best experienced without a camera</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAY 3 + BUDGET ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Varanasi 3-Day Itinerary</span>
+    <span class="page-header-right">Day 3 · Sarnath · Budget</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Where Buddhism Began</div>
+      <div class="day-title">Sarnath, the Ashoka Capital &amp; Farewell</div>
+      <div class="day-sub">8am auto to Sarnath · Dhamek Stupa · Museum with Ashoka capital · Last Kashi experiences · Shopping · Departure</div>
+      <div class="day-cost">💰 Auto to Sarnath: ₹200 return · Museum: ₹25 · Shopping: as desired</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Auto to Sarnath — Where the Buddha Gave His First Sermon</div>
+        <div class="time-desc">Sarnath, 10km from the city, is where Siddhartha Gautama delivered his first teaching after achieving enlightenment under the Bodhi tree at Bodh Gaya. This is where Buddhism as a religion was born. Negotiate a return auto from your ghat: ₹200 for the round trip. Allow 3–4 hours at the site. The deer park (where the Buddha taught) is peaceful and green — a world away from Varanasi's intensity.</div>
+        <div class="time-price">Return auto: ₹200 · Allow 3–4 hours · Open from 9am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Dhamek Stupa — 3rd Century BC, 34 Metres Tall</div>
+        <div class="time-desc">Built by Emperor Ashoka in the 3rd century BC and later enlarged, the Dhamek Stupa marks the exact spot where the Buddha gave his first discourse. The cylindrical structure is imposing and serene. The carved stone panels visible on the lower portion are some of the finest surviving Gupta-era stonework. Walk the circumambulation path around the stupa — Buddhist monks from Japan, Tibet, Thailand and Korea all come here to pray.</div>
+        <div class="time-price">Stupa complex entry: ₹40 Indians · Morning light is most beautiful</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Archaeological Museum — The Ashoka Lion Capital</div>
+        <div class="time-desc">The single most important museum object in India, arguably. The original Ashoka lion capital — four lions back to back on an abacus with the Dharma Chakra — was found here at Sarnath and now sits in this museum. This exact sculpture was adopted as India's national emblem in 1950. The museum also has extraordinary Gupta-period Buddhist sculptures and terracotta figures. Small, manageable, and essential.</div>
+        <div class="time-price">Entry: ₹25 · Photography restricted · 1–1.5hrs is ideal</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Late Morning</div>
+      <div class="time-content">
+        <div class="time-title">Tibetan Temple + Thai Temple — A World of Buddhism</div>
+        <div class="time-desc">Near the main complex, several Buddhist temples built by different nations are worth a quick visit. The Tibetan temple has painted mandalas and thangkas. The Thai temple is ornate and golden. Both are quiet, contemplative spaces that offer a striking contrast to the Hindu intensity of the main city. No entry fee, respectful dress required, remove shoes at entrance.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Back to Varanasi — Final Kashi Moments</div>
+        <div class="time-desc">Return to the city for last experiences. If visiting October to February: try Malaiyyo — a uniquely Varanasi winter dessert made from dew-condensed milk foam, only available in these months. Otherwise: Thandai (cold spiced milk drink) or the city's famous paan. Walk one last time to the river. There is an old saying — Kashi mein maran mukthi (to die in Kashi is liberation). Whether you believe it or not, you will leave this city changed.</div>
+        <div class="time-price">Malaiyyo (seasonal Oct–Feb): ₹30–₹50 · Thandai: ₹50 · Last ghat walk: priceless</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Shopping: Silk, Brassware, Rudraksha &amp; Gulal</div>
+        <div class="time-desc">Last chance shopping. Banarasi silk (verify: burn a thread — pure silk smells like burning hair, synthetic smells like plastic). Brassware for the home — diyas (oil lamps), puja bells, Ganesh figurines from Thatheri Bazaar. Rudraksha (prayer beads) — genuine ones from certified shops, not random street stalls. Gulal (Holi powder) from the market — vivid colours make excellent gifts.</div>
+        <div class="time-price">Pure Banarasi silk saree: ₹3,000–₹50,000 · Brassware: ₹200–₹2,000 · Rudraksha: ₹50–₹5,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 3 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Budget (₹)</th>
+        <th>Mid-Range (₹)</th>
+        <th>Luxury (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation</td><td>1,200</td><td>6,000</td><td>20,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>600</td><td>2,000</td><td>5,000</td></tr>
+      <tr><td>Transport (local)</td><td>500</td><td>1,500</td><td>3,000</td></tr>
+      <tr><td>Activities &amp; Boat</td><td>500</td><td>2,000</td><td>4,000</td></tr>
+      <tr><td>Shopping</td><td>0</td><td>2,000</td><td>20,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹2,800</strong></td><td><strong>~₹13,500</strong></td><td><strong>₹52,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Excludes flights or trains to/from Varanasi. Train from Delhi: ₹400–₹2,500 depending on class. Flight from Delhi: ₹2,500–₹6,000 one way.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — TIPS + PACKING ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Varanasi 3-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Packing List</span>
+  </div>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Know Before You Go</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">Book Kashi Vishwanath Darshan on the App</div>
+      <div class="tip-desc">Download the official Kashi Vishwanath Temple app before you arrive. Book a darshan slot to skip the main queue. The 5am slot is less crowded than 10am. Without a slot, you may wait 1–3 hours in peak season. The app also shows crowd levels in real time.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🕯️</div>
+      <div class="tip-title">Manikarnika Ghat — Respect Above All Else</div>
+      <div class="tip-desc">Manikarnika is a working cremation ghat — 300+ cremations happen every day. View only from the boat and at a respectful distance. Never photograph the cremations. Never enter the burning area. Some "guides" offer access for tips — decline. The ghat is sacred and grief-filled. Silent respect is the only appropriate response.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚫</div>
+      <div class="tip-title">Scam Alert — "Free Tour" Guides</div>
+      <div class="tip-desc">Near the main ghats, men will offer to show you around for "free" — they earn commission by taking you to silk shops. Politely say no and walk on. If you want a guide, book through your hotel or a registered government-approved guide at the tourist office. Pay a proper rate upfront.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Seasons Matter More Here Than Anywhere</div>
+      <div class="tip-desc">October to March is ideal: 12–25°C, clear skies, the city at its most photogenic. April to June reaches 45°C — miserable and can be dangerous. Monsoon (July–September) floods the lower ghats but the city takes on a mystical green-grey quality. December/January: morning fog on the Ganga is extraordinary but require a jacket.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🧵</div>
+      <div class="tip-title">Banarasi Silk Verification Test</div>
+      <div class="tip-desc">Burn a thread from the saree edge: genuine silk burns like hair (it self-extinguishes and smells like burning hair). Synthetic fibres burn like plastic and melt. Don't skip this test for expensive purchases. Reputable fixed-price government emporiums on Varanasi Cantonment Road are reliable alternatives to bazaar bargaining.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛺</div>
+      <div class="tip-title">Sarnath — Half Day, Entirely Worth It</div>
+      <div class="tip-desc">Many visitors skip Sarnath thinking Varanasi's ghats are enough. This is a mistake. The Ashoka lion capital alone justifies the visit. Budget ₹200 for a return auto, ₹25 museum entry, and 3 hours of your final morning. You will not regret it.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🥤</div>
+      <div class="tip-title">Lassi, Kachori &amp; Thandai — Non-Negotiable</div>
+      <div class="tip-desc">Blue Lassi (near Vishwanath Temple) is the most famous — thick, fruity, layered, ₹50–₹80. Kachori sabzi at Deena Chaat (Luxa Road) for breakfast — ₹40. Thandai (cold spiced milk with nuts and rose water) is Varanasi's signature drink, available everywhere, ₹50.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚶</div>
+      <div class="tip-title">Navigate Touts — One Rule</div>
+      <div class="tip-desc">Touts near main ghats (especially Dashashwamedh) are persistent. The single most effective response: keep walking, acknowledge once with "no, thank you," and do not engage further. Do not be aggressive — just keep moving. Most touts give up after one polite no. Engaging even briefly invites persistence.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Varanasi</div>
+  <div class="pack-list">
+    <div class="pack-item">🕌 <strong>Modest clothing</strong> — cover shoulders and knees for temple visits. Scarves are useful for women.</div>
+    <div class="pack-item">👟 <strong>Closed sandals</strong> — ghats are muddy, uneven and wet. Easy to remove at temples.</div>
+    <div class="pack-item">💊 <strong>Bottled water only</strong> — do not drink tap or river water. Carry 2L always.</div>
+    <div class="pack-item">🦟 <strong>Mosquito repellent</strong> — evenings near the Ganga are bad. DEET-based works best.</div>
+    <div class="pack-item">🔋 <strong>Power bank</strong> — old city alleyways have almost no charging points. A 10,000mAh bank is ideal.</div>
+    <div class="pack-item">🧻 <strong>Tissues and wet wipes</strong> — ghats can be messy; street food is eaten standing. Essential.</div>
+    <div class="pack-item">🎒 <strong>Small backpack</strong> — auto-rickshaws are tight. Keep only day essentials. Leave large bags at hotel.</div>
+    <div class="pack-item">😷 <strong>Face mask (optional)</strong> — incense smoke and crowded lanes can be intense. Useful for sensitive visitors.</div>
+    <div class="pack-item">📵 <strong>Offline maps downloaded</strong> — old city lanes are a maze. Google Maps offline or Maps.me before arriving.</div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>One last thing:</strong> Varanasi will confuse, overwhelm and move you — often simultaneously. It is not a city you understand on the first visit. Give it time. Sit on the ghats at 6am with no agenda. The city will teach you things about life, impermanence and beauty that nothing else can.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the Andaman Islands to the high passes of Leh-Ladakh, from Kerala's backwaters to Rajasthan's desert forts — IncredibleItinerary has a complete guide for every journey across this extraordinary country.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Kashmir · Kerala · Rajasthan · Leh-Ladakh · Goa · Manali · Andaman · Bangkok · Bali · Dubai</p>
+  <div class="back-legal">This guide is for personal use only. Prices, temple schedules and availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

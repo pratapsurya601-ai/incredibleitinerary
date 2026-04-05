@@ -10,7 +10,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
   const categories = [
     { label: "India", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=75", href: "/blog?filter=all" },
     { label: "Bali", img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=75", href: "/blog/bali-5-days" },
-    { label: "Japan", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=75", href: "/blog?filter=japan" },
+    { label: "Japan", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=75", href: "/blog/tokyo-5-days" },
     { label: "Dubai", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=75", href: "/blog/dubai-4-days" },
     { label: "Italy", img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75", href: "/blog?filter=italy" },
     { label: "Spain", img: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&q=75", href: "/blog?filter=spain" },
@@ -57,14 +57,14 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search any destination — India, Bali, Japan, Dubai, Italy, Spain..."
-              className="w-full px-7 py-5 pl-14 pr-36 rounded-full bg-white text-ink text-base outline-none shadow-[0_12px_48px_rgba(0,0,0,0.35)] focus:ring-2 focus:ring-gold placeholder:text-muted/50 font-light"
+              className="w-full py-4 md:py-5 pl-12 pr-24 md:pr-36 rounded-full bg-white text-ink text-sm md:text-base outline-none shadow-[0_12px_48px_rgba(0,0,0,0.35)] focus:ring-2 focus:ring-gold placeholder:text-muted/50 font-light"
               onKeyDown={(e) => {
                 if (e.key === "Enter" && search.trim()) {
                   window.location.href = `/blog?q=${encodeURIComponent(search.trim())}`;
                 }
               }}
             />
-            <svg className="absolute left-5 top-1/2 -translate-y-1/2 text-muted/40" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-muted/40" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
             </svg>
             <button
@@ -72,7 +72,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
                 if (search.trim()) window.location.href = `/blog?q=${encodeURIComponent(search.trim())}`;
                 else onPlanTrip();
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-gold text-ink px-7 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-gold-dark hover:text-white transition-all shadow-sm"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-gold text-ink px-4 md:px-7 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-medium tracking-wide hover:bg-gold-dark hover:text-white transition-all shadow-sm whitespace-nowrap"
             >
               {search.trim() ? "Search" : "Plan Trip"}
             </button>

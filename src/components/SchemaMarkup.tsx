@@ -35,12 +35,57 @@ function estimateWordCount(duration: string): number {
 }
 
 // ---------------------------------------------------------------------------
-// BlogPostSchema — Article + BreadcrumbList + TouristDestination + Speakable
+// Generate destination-specific FAQs from post metadata
+// Used for posts that don't have a dedicated page.tsx with custom JSON-LD
 // ---------------------------------------------------------------------------
-export function BlogPostSchema({ post }: { post: BlogPost }) {
+function generateFAQs(post: BlogPost): { question: string; answer: string }[] {
+  const dest = post.destination;
+  const dur  = post.duration;
+  const days = parseInt(dur) || 5;
+  const cat  = post.category;
+  const country = post.country ?? "India";
+  const isIndia = country === "India";
+
+  return [
+    {
+      question: `How many days is enough for ${dest}?`,
+      answer: `${dur} is the recommended duration for a fulfilling ${dest} trip. This gives you enough time to cover the top highlights, experience local culture, and explore ${cat.toLowerCase()} experiences without feeling rushed.`,
+    },
+    {
+      question: `What is the best time to visit ${dest}?`,
+      answer: isIndia
+        ? `The best time to visit ${dest} is generally October to March when the weather is cooler and more pleasant. The peak tourist season runs November to February. Avoid the monsoon months (June–September) unless you specifically enjoy lush green landscapes.`
+        : `The best time to visit ${dest} depends on your preferences. Generally, spring (March–May) and autumn (September–November) offer the most comfortable weather with fewer crowds and better prices on flights and accommodation.`,
+    },
+    {
+      question: `How much does a ${days}-day trip to ${dest} cost?`,
+      answer: isIndia
+        ? `A ${dur} trip to ${dest} costs approximately ₹8,000–₹12,000 on a budget, ₹18,000–₹35,000 mid-range, and ₹60,000+ for a luxury experience per person. Costs vary based on accommodation type, travel season, and activities chosen.`
+        : `A ${dur} trip to ${dest} typically costs ₹50,000–₹90,000 per person at a mid-range budget, including flights from India. Budget travellers can manage in ₹35,000–₹55,000, while a comfortable experience runs ₹80,000–₹1,50,000+.`,
+    },
+    {
+      question: `Is ${dest} safe for solo travellers?`,
+      answer: isIndia
+        ? `${dest} is generally safe for solo travellers, including solo women. Stay in well-reviewed accommodation, avoid poorly lit areas at night, and keep your accommodation details private. Millions of solo travellers visit every year without incident.`
+        : `${dest} is considered safe for solo travellers. Like any destination, take standard precautions — keep copies of your passport, use reputable transport, and stay in reviewed accommodation. Check your government's current travel advisory before departure.`,
+    },
+  ];
+}
+
+// ---------------------------------------------------------------------------
+// BlogPostSchema — Article + BreadcrumbList + FAQPage + TouristDestination
+// ---------------------------------------------------------------------------
+export function BlogPostSchema({
+  post,
+  faqs,
+}: {
+  post: BlogPost;
+  faqs?: { question: string; answer: string }[];
+}) {
   const url = `${BASE_URL}/blog/${post.slug}`;
   const iso = toISO(post.date);
   const wordCount = estimateWordCount(post.duration);
+  const faqItems = faqs && faqs.length > 0 ? faqs : generateFAQs(post);
 
   const schema = {
     "@context": "https://schema.org",
@@ -80,10 +125,18 @@ export function BlogPostSchema({ post }: { post: BlogPost }) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home",  item: BASE_URL },
-          { "@type": "ListItem", position: 2, name: "Blog",  item: `${BASE_URL}/blog` },
-          { "@type": "ListItem", position: 3, name: post.destination, item: url },
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: "Travel Guides", item: `${BASE_URL}/blog` },
+          { "@type": "ListItem", position: 3, name: `${post.destination} ${post.duration} Guide`, item: url },
         ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
       },
     ],
   };
