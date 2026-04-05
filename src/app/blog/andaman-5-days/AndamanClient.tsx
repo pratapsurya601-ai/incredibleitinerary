@@ -9,6 +9,7 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -473,6 +474,8 @@ export default function AndamanClient() {
               { name: "Ross Island + North Bay Day Trip",      duration: "Full day", price: "From ₹600/person",    url: `https://www.getyourguide.com/s/?q=port-blair&partner_id=PSZA5UI` },
             ]}
           />
+
+          <Stay22Widget destination="Port Blair, Andaman Islands, India" label="Andaman" />
 
           <DestinationGallery
             title="Andaman Islands — Must-See Places"

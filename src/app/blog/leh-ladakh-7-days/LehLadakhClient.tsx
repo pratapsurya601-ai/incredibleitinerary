@@ -8,6 +8,7 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import Stay22Widget from "@/components/ui/Stay22Widget";
 import SmartImage from "@/components/ui/SmartImage";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -525,6 +526,8 @@ export default function LehLadakhClient() {
               { name: "Leh Ladakh Bike Rental — Royal Enfield", duration: "Per day", price: "From ₹1,200/day", url: `https://www.getyourguide.com/s/?q=leh&partner_id=PSZA5UI` },
             ]}
           />
+
+          <Stay22Widget destination="Leh, Ladakh, India" label="Leh Ladakh" />
 
           <DestinationGallery
             title="Leh Ladakh — Must-See Places"

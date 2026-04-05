@@ -8,6 +8,7 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import Stay22Widget from "@/components/ui/Stay22Widget";
 import SmartImage from "@/components/ui/SmartImage";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -486,6 +487,8 @@ export default function ManaliClient() {
               { name: "Beas Kund Trek 2-Day",              duration: "2 Days",   price: "From ₹2,500/person", url: `https://www.getyourguide.com/s/?q=manali&partner_id=PSZA5UI` },
             ]}
           />
+
+          <Stay22Widget destination="Manali, Himachal Pradesh, India" label="Manali" />
 
           <DestinationGallery
             title="Manali — Must-See Places"

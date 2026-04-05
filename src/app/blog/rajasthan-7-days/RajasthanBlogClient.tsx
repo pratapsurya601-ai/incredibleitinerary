@@ -9,6 +9,7 @@ import Comments from "@/components/blog/Comments";
 import TableOfContents from "@/components/blog/TableOfContents";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -521,6 +522,8 @@ export default function RajasthanBlogClient() {
             ]}
             pdfProductId="rajasthan-7-days-pdf"
           />
+
+          <Stay22Widget destination="Jaipur, Rajasthan, India" label="Rajasthan" />
 
           {/* Rajasthan Destination Gallery */}
           <DestinationGallery

@@ -9,6 +9,7 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -457,6 +458,8 @@ export default function KashmirClient() {
               { name: "Kashmir Valley Sightseeing Tour", duration: "Full day", price: "From ₹2,500/person", url: `https://www.getyourguide.com/s/?q=srinagar&partner_id=PSZA5UI` },
             ]}
           />
+
+          <Stay22Widget destination="Srinagar, Kashmir, India" label="Kashmir" />
 
           <DestinationGallery
             title="Kashmir — Must-See Places"

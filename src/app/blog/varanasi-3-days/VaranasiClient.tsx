@@ -9,6 +9,7 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -324,6 +325,8 @@ export default function VaranasiClient() {
               { name: "Sarnath Day Trip from Varanasi", duration: "Half day", price: "From ₹600/person", url: `https://www.getyourguide.com/s/?q=varanasi&partner_id=PSZA5UI` },
             ]}
           />
+
+          <Stay22Widget destination="Varanasi, Uttar Pradesh, India" label="Varanasi" />
 
           <DestinationGallery
             title="Varanasi — The City of Light"

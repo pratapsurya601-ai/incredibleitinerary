@@ -8,6 +8,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -445,6 +446,8 @@ export default function MeghalayaClient() {
               { name: "Mawphlang Sacred Forest Walk", duration: "1.5 hours", price: "₹300 (guide)", url: "https://www.getyourguide.com/meghalaya-l97028/" },
             ]}
           />
+
+          <Stay22Widget destination="Shillong, Meghalaya, India" label="Meghalaya" />
 
           {/* ── Mid-article image ── */}
           <div className="mb-14 rounded-2xl overflow-hidden shadow-md">
