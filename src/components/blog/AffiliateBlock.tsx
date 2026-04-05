@@ -225,7 +225,7 @@ export default function AffiliateBlock({
             </div>
           </div>
           <a
-            href={pdfProduct.gumroadUrl}
+            href={pdfProduct.razorpayUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 px-5 py-2.5 bg-gold text-ink text-xs font-medium tracking-wide uppercase rounded-lg hover:bg-gold-dark hover:text-white transition-all duration-200 whitespace-nowrap"

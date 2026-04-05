@@ -4,12 +4,13 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
+import DownloadButton from "@/components/pdf/DownloadButton";
 import { SHOP_PRODUCTS } from "@/lib/config";
 import { trackEvent } from "@/lib/analytics";
 
 // ── Product Card ──────────────────────────────────────────────────────────────
 function ProductCard({ product, featured = false }: {
-  product: typeof SHOP_PRODUCTS[0];
+  product: typeof SHOP_PRODUCTS[0] & { downloadSlug?: string };
   featured?: boolean;
 }) {
   const [buying, setBuying] = useState(false);
@@ -17,15 +18,16 @@ function ProductCard({ product, featured = false }: {
   const handleBuy = () => {
     setBuying(true);
     trackEvent("shop_product_clicked", { product: product.id, destination: product.destination });
-    if (product.gumroadUrl && !product.gumroadUrl.includes("YOUR_")) {
-      window.open(product.gumroadUrl, "_blank");
+    if (product.razorpayUrl) {
+      window.open(product.razorpayUrl, "_blank");
     } else {
-      alert("Payment link coming soon! WhatsApp us to get this PDF directly.");
+      window.location.href = "/unlock";
     }
     setTimeout(() => setBuying(false), 2000);
   };
 
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+  const hasFreeDownload = !!product.downloadSlug;
 
   return (
     <div className={`bg-white rounded-2xl border-2 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
@@ -36,9 +38,16 @@ function ProductCard({ product, featured = false }: {
         <span className={`text-[0.65rem] font-semibold tracking-[0.15em] uppercase ${featured ? "text-ink" : "text-muted"}`}>
           {product.badge}
         </span>
-        <span className={`text-[0.65rem] font-medium px-2 py-0.5 rounded-full ${featured ? "bg-ink/15 text-ink" : "bg-gold/15 text-gold-dark"}`}>
-          {discount}% off
-        </span>
+        <div className="flex items-center gap-2">
+          {hasFreeDownload && (
+            <span className="text-[0.6rem] font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full border border-green-200">
+              🎁 Free sample
+            </span>
+          )}
+          <span className={`text-[0.65rem] font-medium px-2 py-0.5 rounded-full ${featured ? "bg-ink/15 text-ink" : "bg-gold/15 text-gold-dark"}`}>
+            {discount}% off
+          </span>
+        </div>
       </div>
 
       <div className="p-6">
@@ -87,6 +96,21 @@ function ProductCard({ product, featured = false }: {
 
         <div className="h-px bg-parchment-2 mb-5" />
 
+        {/* Free download strip — shown only for guides with a live PDF */}
+        {hasFreeDownload && (
+          <div className="mb-4 p-3.5 bg-amber-50 border border-gold/30 rounded-xl">
+            <p className="text-[0.65rem] text-amber-700 font-medium mb-2">
+              🎁 Try before you buy — download a free sample
+            </p>
+            <DownloadButton
+              slug={product.downloadSlug!}
+              title={product.title}
+              variant="secondary"
+              className="w-full justify-center text-xs !px-3 !py-2"
+            />
+          </div>
+        )}
+
         {/* Price + CTA */}
         <div className="flex items-center justify-between mb-4">
           <div>
@@ -111,7 +135,7 @@ function ProductCard({ product, featured = false }: {
                 : "bg-ink text-white hover:bg-ink-mid"
             } disabled:opacity-60`}
           >
-            {buying ? "Opening..." : "Buy Now →"}
+            {buying ? "Going..." : "Buy Now →"}
           </button>
         </div>
 
@@ -119,7 +143,7 @@ function ProductCard({ product, featured = false }: {
         <div className="flex items-center gap-2 p-3 bg-parchment rounded-lg border border-parchment-2">
           <span className="text-base">🔒</span>
           <p className="text-[0.65rem] text-muted font-light leading-relaxed">
-            Secure payment via Gumroad. Instant delivery to your email.
+            Secure payment via Razorpay — UPI, Cards, Net Banking. Instant delivery.
             100% satisfaction guarantee — full refund if not happy.
           </p>
         </div>
@@ -133,12 +157,13 @@ export default function ShopClient() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const faqs = [
-    { q: "How do I receive the PDF?", a: "Immediately after payment, Gumroad sends the PDF to your email. You can also download it directly from the Gumroad confirmation page. No waiting." },
+    { q: "How do I receive the PDF?", a: "Immediately after payment you can download the PDF directly. We also send it to your email. No waiting — it's instant." },
     { q: "What format is the PDF in?", a: "Standard PDF — works on any device. Mobile, tablet, laptop. You can print it or save it offline for travel with no internet." },
     { q: "Can I share the PDF with my travel group?", a: "Yes — share it with your travel companions. We only ask that you don't resell or publicly distribute it." },
     { q: "What if the information is outdated?", a: "We update all PDFs regularly. If you've already purchased and a major update is released, email us and we'll send you the new version free." },
     { q: "I want a custom itinerary, not a template PDF.", a: "That's what our free trip planning service is for! Fill the inquiry form and we'll build a personalised plan for your exact dates, group and budget within 24 hours." },
-    { q: "Do you accept UPI / Razorpay?", a: "Currently payments go through Gumroad (accepts UPI, cards, net banking). We're also setting up direct Razorpay integration — coming soon." },
+    { q: "Do you accept UPI / Razorpay?", a: "Yes! Payments go through Razorpay — supports UPI, Credit/Debit Cards, Net Banking, and Wallets. Very easy for Indian users." },
+    { q: "Can I try before buying?", a: "Yes! The Rajasthan and Kerala guides have free sample downloads — enter your email and get the guide instantly. 2 free per email." },
   ];
 
   return (
@@ -166,9 +191,9 @@ export default function ShopClient() {
             <div className="flex items-center justify-center gap-5 flex-wrap">
               {[
                 { icon: "⚡", text: "Instant delivery" },
-                { icon: "🔒", text: "Secure payment" },
+                { icon: "🔒", text: "Razorpay · UPI · Cards" },
                 { icon: "✓", text: "100% satisfaction" },
-                { icon: "🔄", text: "Free updates" },
+                { icon: "🎁", text: "2 guides free" },
               ].map((t) => (
                 <div key={t.text} className="flex items-center gap-1.5 text-xs text-white/50">
                   <span>{t.icon}</span>
@@ -179,8 +204,27 @@ export default function ShopClient() {
           </div>
         </div>
 
+        {/* ── FREE GUIDES CALLOUT ── */}
+        <div className="max-w-[1180px] mx-auto px-6 md:px-12 pt-10">
+          <div className="bg-amber-50 border border-gold/40 rounded-2xl px-7 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold text-ink mb-0.5">🎁 Start with 2 free guides</p>
+              <p className="text-xs text-muted font-light">
+                Rajasthan 7-Day and Kerala 5-Day PDFs are free to download — just enter your email.
+                Unlock all 50+ guides for ₹499.
+              </p>
+            </div>
+            <Link
+              href="/guides"
+              className="flex-shrink-0 bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3 rounded-full transition-colors whitespace-nowrap"
+            >
+              See Free Guides →
+            </Link>
+          </div>
+        </div>
+
         {/* ── PRODUCTS ── */}
-        <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-16">
+        <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-12">
 
           {/* Compare vs custom planning */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-14 p-6 bg-parchment rounded-2xl border border-parchment-2">
@@ -189,7 +233,7 @@ export default function ShopClient() {
                 📄 PDF Itinerary — Buy once
               </p>
               <ul className="space-y-1.5">
-                {["Ready in seconds", "Fixed plan for the most popular routes", "Perfect for independent travellers", "Covers every standard situation", "₹149–₹299 one-time"].map(t => (
+                {["Ready in seconds", "Fixed plan for the most popular routes", "Perfect for independent travellers", "Covers every standard situation", "₹149–₹499 one-time"].map(t => (
                   <li key={t} className="flex items-center gap-2 text-xs text-muted font-light">
                     <span className="text-teal">✓</span>{t}
                   </li>
@@ -237,27 +281,37 @@ export default function ShopClient() {
               Best Value
             </span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
-              Get All 3 PDFs — Save 40%
+              Unlock All 50+ Guides — ₹499
             </h2>
             <p className="text-sm text-white/55 font-light mb-2 max-w-sm mx-auto leading-relaxed">
-              Goa + Rajasthan + India Budget Guide
+              Every guide we&apos;ve made and every guide we&apos;ll ever make.
+              India + International. Pay once, download forever.
             </p>
             <div className="flex items-baseline justify-center gap-3 mb-6">
-              <span className="font-serif text-[2.5rem] font-light text-gold">₹449</span>
-              <span className="text-white/40 line-through text-lg">₹747</span>
-              <span className="text-xs text-gold-light bg-gold/15 px-2 py-1 rounded-full">Save ₹298</span>
+              <span className="font-serif text-[2.5rem] font-light text-gold">₹499</span>
+              <span className="text-white/40 line-through text-lg">₹2,000+</span>
+              <span className="text-xs text-gold-light bg-gold/15 px-2 py-1 rounded-full">Lifetime access</span>
             </div>
             <div className="flex gap-3 justify-center flex-wrap">
               <a
-                href="/contact"
+                href="https://rzp.io/rzp/qhP2iBq"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-gold inline-flex"
               >
-                Get Bundle — ₹449 →
+                Get Lifetime Access — ₹499 →
               </a>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip →</a>
+              <a
+                href="https://rzp.io/rzp/SfJqFBV"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 border border-white/20 text-white/70 text-[0.78rem] font-medium tracking-[0.05em] rounded-full hover:bg-white/15 hover:text-white transition-colors"
+              >
+                India Pack only — ₹249
+              </a>
             </div>
-            <p className="text-xs text-white/50 mt-4">
-              Bundle also available via WhatsApp — pay via UPI and get PDFs instantly
+            <p className="text-xs text-white/30 mt-4">
+              UPI · Cards · Net Banking · Wallets via Razorpay
             </p>
           </div>
 

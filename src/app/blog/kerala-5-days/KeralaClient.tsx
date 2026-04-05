@@ -13,6 +13,7 @@ import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import DownloadButton from "@/components/pdf/DownloadButton";
 
 const KERALA_TOC = [
   { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
@@ -714,6 +715,18 @@ export default function KeralaClient() {
             </div>
           </section>
 
+          {/* ── PDF Mid-Article Banner ── */}
+          <div className="my-10 bg-ink rounded-2xl overflow-hidden">
+            <div className="flex flex-col sm:flex-row items-center gap-5 px-6 py-6">
+              <div className="flex-1 text-center sm:text-left">
+                <p className="text-gold text-xs tracking-[0.15em] uppercase font-medium mb-1">Save this guide offline</p>
+                <p className="font-serif text-white text-xl font-light leading-snug mb-1">Kerala 5-Day PDF — Free Download</p>
+                <p className="text-white/50 text-xs font-light">Day plans · Budget table · Packing list · 10 pages · Print-ready A4</p>
+              </div>
+              <DownloadButton slug="kerala-5-days" title="Kerala 5-Day Itinerary" variant="secondary" />
+            </div>
+          </div>
+
           {/* CTA */}
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
@@ -745,6 +758,17 @@ export default function KeralaClient() {
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
           </section>
+
+          {/* ── PDF End-of-Article Banner ── */}
+          <div id="pdf" className="my-10 border-2 border-gold/30 bg-gradient-to-br from-teal-50 to-parchment rounded-2xl p-7 text-center">
+            <span className="text-3xl block mb-3">🌊</span>
+            <p className="font-serif text-ink text-xl font-light mb-1">Take Kerala With You — Free PDF</p>
+            <p className="text-muted text-sm font-light mb-5 max-w-sm mx-auto leading-relaxed">
+              Print-ready day plans, full budget table, packing list and houseboat booking guide. 10 pages. Yours free.
+            </p>
+            <DownloadButton slug="kerala-5-days" title="Kerala 5-Day Itinerary" variant="primary" />
+            <p className="text-muted/50 text-xs mt-3">2 free guides per email · No credit card</p>
+          </div>
 
           {/* Comments */}
           <Comments />
