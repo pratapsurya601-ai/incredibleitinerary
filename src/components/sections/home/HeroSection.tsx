@@ -2,10 +2,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { blogPosts } from "@/data/blog";
 
 export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) {
   const [search, setSearch] = useState("");
+  const router = useRouter();
 
   const categories = [
     { label: "India", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=75", href: "/blog?filter=all" },
@@ -70,7 +72,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
             <button
               onClick={() => {
                 if (search.trim()) window.location.href = `/blog?q=${encodeURIComponent(search.trim())}`;
-                else onPlanTrip();
+                else router.push("/quiz");
               }}
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-gold text-ink px-4 md:px-7 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-medium tracking-wide hover:bg-gold-dark hover:text-white transition-all shadow-sm whitespace-nowrap"
             >
