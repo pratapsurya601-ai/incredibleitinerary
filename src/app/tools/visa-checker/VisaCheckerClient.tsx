@@ -67,6 +67,84 @@ const DESTINATIONS = [
       { name: "Amalfi Coast", href: "/blog/amalfi-coast-4-days" },
     ],
   },
+  {
+    id: "uae",
+    label: "UAE",
+    flag: "\ud83c\udde6\ud83c\uddea",
+    cities: [
+      { name: "Dubai", href: "/blog/dubai-4-days" },
+      { name: "Abu Dhabi", href: "/blog/abu-dhabi-3-days" },
+    ],
+  },
+  {
+    id: "spain",
+    label: "Spain",
+    flag: "\ud83c\uddea\ud83c\uddf8",
+    cities: [
+      { name: "Barcelona", href: "/blog/barcelona-4-days" },
+      { name: "Madrid", href: "/blog/madrid-3-days" },
+      { name: "Seville", href: "/blog/seville-3-days" },
+    ],
+  },
+  {
+    id: "indonesia",
+    label: "Indonesia / Bali",
+    flag: "\ud83c\uddee\ud83c\udde9",
+    cities: [
+      { name: "Bali", href: "/blog/bali-5-days" },
+      { name: "Ubud", href: "/blog/ubud-3-days" },
+      { name: "Lombok", href: "/blog/lombok-4-days" },
+    ],
+  },
+  {
+    id: "vietnam",
+    label: "Vietnam",
+    flag: "\ud83c\uddfb\ud83c\uddf3",
+    cities: [
+      { name: "Hanoi", href: "/blog/hanoi-3-days" },
+      { name: "Ho Chi Minh City", href: "/blog/ho-chi-minh-city-3-days" },
+      { name: "Ha Long Bay", href: "/blog/ha-long-bay-3-days" },
+    ],
+  },
+  {
+    id: "greece",
+    label: "Greece",
+    flag: "\ud83c\uddec\ud83c\uddf7",
+    cities: [
+      { name: "Athens", href: "/blog/athens-3-days" },
+      { name: "Santorini", href: "/blog/santorini-4-days" },
+      { name: "Crete", href: "/blog/crete-5-days" },
+    ],
+  },
+  {
+    id: "turkey",
+    label: "Turkey",
+    flag: "\ud83c\uddf9\ud83c\uddf7",
+    cities: [
+      { name: "Istanbul", href: "/blog/istanbul-5-days" },
+      { name: "Cappadocia", href: "/blog/cappadocia-3-days" },
+    ],
+  },
+  {
+    id: "portugal",
+    label: "Portugal",
+    flag: "\ud83c\uddf5\ud83c\uddf9",
+    cities: [
+      { name: "Lisbon", href: "/blog/lisbon-4-days" },
+      { name: "Porto", href: "/blog/porto-3-days" },
+      { name: "Algarve", href: "/blog/algarve-4-days" },
+    ],
+  },
+  {
+    id: "malaysia",
+    label: "Malaysia",
+    flag: "\ud83c\uddf2\ud83c\uddfe",
+    cities: [
+      { name: "Kuala Lumpur", href: "/blog/kuala-lumpur-3-days" },
+      { name: "Langkawi", href: "/blog/langkawi-3-days" },
+      { name: "Penang", href: "/blog/penang-3-days" },
+    ],
+  },
 ] as const;
 
 // ── VISA STATUS TYPES ─────────────────────────────────────────────────────────
@@ -308,6 +386,298 @@ function getVisaResult(passport: string, destination: string): VisaResult {
         "Financial proof and employment letter",
       ],
       notes: "Apply at VFS Global or the nearest Italian embassy/consulate.",
+    };
+  }
+
+  // ── UAE ─────────────────────────────────────────────────────────────
+  if (destination === "uae") {
+    if (group === "IN") {
+      return {
+        status: "visa_on_arrival", label: "Visa on Arrival", emoji: "\u2708\ufe0f",
+        duration: "14 days (extendable)", cost: "AED 100–120 (~$27–$33)", processing: "On arrival",
+        requirements: [
+          "Passport valid for 6+ months",
+          "Return flight ticket",
+          "Proof of accommodation",
+          "Sufficient funds",
+        ],
+        notes: "Indian passport holders can get visa on arrival at Dubai and Abu Dhabi airports. Can also apply for a pre-approved UAE visa through airlines or travel agents.",
+      };
+    }
+    if (group === "US_UK_CA_AU" || group === "EU" || group === "SG_MY") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "30–90 days (varies)", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid for 6+ months", "Return flight ticket"],
+        notes: "Most Western passport holders receive 30–90 days visa-free on arrival. UK citizens get 30 days; US/EU citizens get 90 days.",
+      };
+    }
+    return {
+      status: "evisa", label: "eVisa Required", emoji: "\ud83d\udcf1",
+      duration: "30 days", cost: "AED 250–350 (~$68–$95)", processing: "3–5 business days",
+      requirements: ["Passport valid for 6+ months", "Passport photo", "Return ticket", "Bank statement"],
+      notes: "Apply for a UAE tourist visa through Emirates, Air Arabia, or the official ICA portal (ICA.GOV.AE).",
+    };
+  }
+
+  // ── Spain (Schengen) ────────────────────────────────────────────────
+  if (destination === "spain") {
+    if (group === "IN") {
+      return {
+        status: "visa_required", label: "Schengen Visa Required", emoji: "\ud83c\udfe2",
+        duration: "Up to 90 days in 180 days", cost: "\u20ac80 (~$86)", processing: "15–30 business days",
+        requirements: [
+          "Passport valid for 3+ months beyond return date",
+          "Schengen visa application form",
+          "Two recent passport photos (35x45 mm)",
+          "Travel insurance (min. \u20ac30,000 coverage)",
+          "Round-trip flight reservation",
+          "Hotel bookings for entire stay",
+          "Bank statements (last 3–6 months)",
+          "Employment/income proof",
+        ],
+        notes: "Apply at VFS Global (Spain) at least 3 months before travel. Book appointments early — they fill quickly during summer. The Schengen visa covers all 27 Schengen countries.",
+      };
+    }
+    if (group === "EU") {
+      return {
+        status: "visa_free", label: "Free Movement (EU)", emoji: "\u2705",
+        duration: "Unlimited", cost: "Free", processing: "N/A",
+        requirements: ["Valid EU national ID card or passport"],
+      };
+    }
+    if (group === "US_UK_CA_AU" || group === "SG_MY") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "90 days in 180 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid for 3+ months beyond departure", "Return/onward ticket", "Proof of accommodation"],
+        notes: "90-day allowance applies across all Schengen countries combined. ETIAS pre-authorization may be required — check before booking.",
+      };
+    }
+    return {
+      status: "visa_required", label: "Schengen Visa Required", emoji: "\ud83c\udfe2",
+      duration: "Up to 90 days in 180 days", cost: "\u20ac80 (~$86)", processing: "15–30 business days",
+      requirements: ["Schengen application form", "Passport photos", "Travel insurance", "Flight & hotel bookings", "Financial proof"],
+    };
+  }
+
+  // ── Indonesia / Bali ────────────────────────────────────────────────
+  if (destination === "indonesia") {
+    if (group === "IN") {
+      return {
+        status: "visa_on_arrival", label: "Visa on Arrival", emoji: "\u2708\ufe0f",
+        duration: "30 days (extendable once)", cost: "IDR 500,000 (~$31)", processing: "On arrival (15–30 min)",
+        requirements: [
+          "Passport valid for 6+ months",
+          "Return flight ticket",
+          "Proof of accommodation",
+          "IDR 500,000 cash (USD/EUR not accepted at most counters)",
+        ],
+        notes: "VOA available at Ngurah Rai (Bali), Soekarno-Hatta (Jakarta) and other major airports. Can be extended once for another 30 days at immigration office.",
+      };
+    }
+    if (group === "US_UK_CA_AU" || group === "EU" || group === "SG_MY") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "30 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid for 6+ months", "Return flight ticket", "Proof of accommodation"],
+        notes: "30 days visa-free on arrival at designated airports including Bali. Can be extended once for 30 days.",
+      };
+    }
+    return {
+      status: "visa_on_arrival", label: "Visa on Arrival", emoji: "\u2708\ufe0f",
+      duration: "30 days", cost: "IDR 500,000 (~$31)", processing: "On arrival",
+      requirements: ["Passport valid for 6+ months", "Return ticket", "Proof of accommodation", "IDR 500,000 cash"],
+    };
+  }
+
+  // ── Vietnam ─────────────────────────────────────────────────────────
+  if (destination === "vietnam") {
+    if (group === "IN") {
+      return {
+        status: "evisa", label: "eVisa Available", emoji: "\ud83d\udcf1",
+        duration: "90 days (single or multiple entry)", cost: "$25", processing: "3 business days",
+        requirements: [
+          "Passport valid for 6+ months from entry date",
+          "Digital passport photo",
+          "Entry/exit dates and accommodation address",
+        ],
+        notes: "Apply at evisa.xuatnhapcanh.gov.vn — the official Vietnam e-visa portal. Processing is fast (3 business days) and reliable.",
+      };
+    }
+    if (group === "SG_MY") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "30 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid for 6+ months", "Return/onward ticket"],
+      };
+    }
+    if (group === "US_UK_CA_AU" || group === "EU") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "45 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid for 6+ months", "Return/onward ticket"],
+        notes: "UK, EU, US, CA, AU citizens get 45 days visa-free. Can be extended or re-entered after leaving.",
+      };
+    }
+    return {
+      status: "evisa", label: "eVisa Available", emoji: "\ud83d\udcf1",
+      duration: "90 days", cost: "$25", processing: "3 business days",
+      requirements: ["Passport valid 6+ months", "Digital photo", "Accommodation address"],
+      notes: "Apply at evisa.xuatnhapcanh.gov.vn.",
+    };
+  }
+
+  // ── Greece (Schengen) ───────────────────────────────────────────────
+  if (destination === "greece") {
+    if (group === "IN") {
+      return {
+        status: "visa_required", label: "Schengen Visa Required", emoji: "\ud83c\udfe2",
+        duration: "Up to 90 days in 180 days", cost: "\u20ac80 (~$86)", processing: "15–30 business days",
+        requirements: [
+          "Passport valid for 3+ months beyond return date",
+          "Schengen visa application",
+          "Two passport photos",
+          "Travel insurance (min. \u20ac30,000)",
+          "Round-trip flight reservation",
+          "Hotel bookings",
+          "Bank statements (last 3–6 months)",
+          "Employment/income proof",
+        ],
+        notes: "Apply at VFS Global (Greece) 3+ months in advance. Peak season (June–Sept) appointments fill very fast.",
+      };
+    }
+    if (group === "EU") {
+      return { status: "visa_free", label: "Free Movement (EU)", emoji: "\u2705", duration: "Unlimited", cost: "Free", processing: "N/A", requirements: ["Valid EU ID card or passport"] };
+    }
+    if (group === "US_UK_CA_AU" || group === "SG_MY") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "90 days in 180 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid 3+ months beyond departure", "Return ticket", "Proof of accommodation"],
+        notes: "90-day allowance covers all Schengen countries combined.",
+      };
+    }
+    return {
+      status: "visa_required", label: "Schengen Visa Required", emoji: "\ud83c\udfe2",
+      duration: "Up to 90 days in 180 days", cost: "\u20ac80", processing: "15–30 business days",
+      requirements: ["Schengen application form", "Passport photos", "Travel insurance", "Flight & hotel bookings", "Financial proof"],
+    };
+  }
+
+  // ── Turkey ──────────────────────────────────────────────────────────
+  if (destination === "turkey") {
+    if (group === "IN") {
+      return {
+        status: "evisa", label: "eVisa Required", emoji: "\ud83d\udcf1",
+        duration: "30 days per entry (multiple entry, 180 days total)", cost: "$50", processing: "Instant (usually)",
+        requirements: [
+          "Passport valid for 6+ months",
+          "Credit/debit card for payment",
+          "Email address for delivery",
+        ],
+        notes: "Apply at evisa.gov.tr — Turkey's official e-visa portal. Processing is near-instant. Print or save the e-visa to your phone.",
+      };
+    }
+    if (group === "EU") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "90 days in 180 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid for 6+ months (or valid national ID for some EU nationalities)"],
+      };
+    }
+    if (group === "US_UK_CA_AU") {
+      return {
+        status: "evisa", label: "eVisa Required", emoji: "\ud83d\udcf1",
+        duration: "90 days per entry", cost: "$50", processing: "Instant",
+        requirements: ["Passport valid for 6+ months", "Credit card for payment"],
+        notes: "Apply at evisa.gov.tr. US/UK/CA/AU citizens need an eVisa (not visa-free). Process takes minutes.",
+      };
+    }
+    if (group === "SG_MY") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "30–90 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid for 6+ months"],
+      };
+    }
+    return {
+      status: "evisa", label: "eVisa Available", emoji: "\ud83d\udcf1",
+      duration: "30 days", cost: "$50", processing: "Instant",
+      requirements: ["Passport valid 6+ months", "Payment card"],
+      notes: "Apply at evisa.gov.tr.",
+    };
+  }
+
+  // ── Portugal (Schengen) ─────────────────────────────────────────────
+  if (destination === "portugal") {
+    if (group === "IN") {
+      return {
+        status: "visa_required", label: "Schengen Visa Required", emoji: "\ud83c\udfe2",
+        duration: "Up to 90 days in 180 days", cost: "\u20ac80 (~$86)", processing: "15–30 business days",
+        requirements: [
+          "Passport valid for 3+ months beyond return date",
+          "Schengen visa application",
+          "Two passport photos",
+          "Travel insurance (min. \u20ac30,000)",
+          "Round-trip flight reservation",
+          "Hotel bookings",
+          "Bank statements (last 3–6 months)",
+          "Employment/income proof",
+        ],
+        notes: "Apply at VFS Global (Portugal) or the Portuguese consulate 3+ months in advance.",
+      };
+    }
+    if (group === "EU") {
+      return { status: "visa_free", label: "Free Movement (EU)", emoji: "\u2705", duration: "Unlimited", cost: "Free", processing: "N/A", requirements: ["Valid EU ID card or passport"] };
+    }
+    if (group === "US_UK_CA_AU" || group === "SG_MY") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "90 days in 180 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid 3+ months beyond departure", "Return ticket"],
+        notes: "90-day allowance covers all Schengen countries combined. ETIAS may be required — check before booking.",
+      };
+    }
+    return {
+      status: "visa_required", label: "Schengen Visa Required", emoji: "\ud83c\udfe2",
+      duration: "Up to 90 days in 180 days", cost: "\u20ac80", processing: "15–30 business days",
+      requirements: ["Schengen application form", "Passport photos", "Travel insurance", "Flight & hotel bookings", "Financial proof"],
+    };
+  }
+
+  // ── Malaysia ────────────────────────────────────────────────────────
+  if (destination === "malaysia") {
+    if (group === "IN") {
+      return {
+        status: "evisa", label: "eVisa Required", emoji: "\ud83d\udcf1",
+        duration: "30 days", cost: "MYR 200 (~$43)", processing: "1–3 business days",
+        requirements: [
+          "Passport valid for 6+ months",
+          "Digital passport photo",
+          "Return flight ticket",
+          "Proof of accommodation",
+          "Bank statement",
+        ],
+        notes: "Apply at evisa.imi.gov.my — Malaysia's official e-visa portal. Indian nationals require an eVisa (not visa on arrival).",
+      };
+    }
+    if (group === "US_UK_CA_AU" || group === "EU") {
+      return {
+        status: "visa_free", label: "Visa Free", emoji: "\u2705",
+        duration: "90 days", cost: "Free", processing: "N/A",
+        requirements: ["Passport valid for 6+ months", "Return/onward ticket"],
+        notes: "Most Western passport holders get 90 days visa-free. Immigration may ask for hotel booking proof.",
+      };
+    }
+    if (group === "SG_MY") {
+      return { status: "visa_free", label: "Visa Free", emoji: "\u2705", duration: "Unlimited (MY) / 30 days (SG)", cost: "Free", processing: "N/A", requirements: ["Valid passport"] };
+    }
+    return {
+      status: "evisa", label: "eVisa Available", emoji: "\ud83d\udcf1",
+      duration: "30 days", cost: "MYR 200 (~$43)", processing: "1–3 business days",
+      requirements: ["Passport valid 6+ months", "Digital photo", "Return ticket", "Bank statement"],
+      notes: "Apply at evisa.imi.gov.my.",
     };
   }
 

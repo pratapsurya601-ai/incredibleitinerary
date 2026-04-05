@@ -91,7 +91,7 @@ export default function Footer() {
               Incredible<span className="text-gold">Itinerary</span>
             </p>
             <p className="text-sm font-light leading-7 max-w-[240px] mb-5">
-              Free travel guides for 77 destinations across India, Thailand, Japan, Indonesia, UAE, Spain &amp; Italy. Real budgets. Real routes. No tourist traps.
+              284 free travel guides across India, Europe, Southeast Asia, Middle East, Americas, Africa &amp; Oceania. Real budgets. Real routes. No tourist traps.
             </p>
             <div className="flex gap-3 mb-4">
               {SOCIAL_LINKS.map((s) => (
