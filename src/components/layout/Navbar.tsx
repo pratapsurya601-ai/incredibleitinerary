@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
 
 interface NavbarProps {
@@ -22,11 +23,15 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar({ onPlanTrip }: NavbarProps) {
+  const pathname = usePathname();
   const [scrolled, setScrolled]       = useState(false);
   const [menuOpen, setMenuOpen]       = useState(false);
   const [toolsOpen, setToolsOpen]     = useState(false);
   const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
   const toolsRef = useRef<HTMLLIElement>(null);
+
+  // Close mobile menu on route change
+  useEffect(() => { setMenuOpen(false); setToolsOpen(false); }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -60,9 +65,12 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
     return () => document.removeEventListener("mousedown", handleOutside);
   }, []);
 
-  const linkClass = `text-[0.73rem] tracking-[0.13em] uppercase transition-colors duration-300 hover:text-gold ${
-    scrolled ? "text-muted" : "text-white"
-  }`;
+  const linkClass = (href: string) => {
+    const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
+    return `nav-link text-[0.73rem] tracking-[0.13em] uppercase transition-colors duration-300 hover:text-gold ${
+      isActive ? "active" : scrolled ? "text-muted" : "text-white"
+    }`;
+  };
 
   return (
     <>
@@ -104,14 +112,14 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
         <ul className="hidden md:flex items-center gap-7 list-none">
           {/* Destinations */}
           <li>
-            <Link href="/blog" className={linkClass}>
+            <Link href="/blog" className={linkClass("/blog")}>
               Destinations
             </Link>
           </li>
 
           {/* Find My Trip */}
           <li>
-            <Link href="/quiz" className={linkClass}>
+            <Link href="/quiz" className={linkClass("/quiz")}>
               Find My Trip
             </Link>
           </li>
@@ -163,14 +171,14 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
 
           {/* Shop */}
           <li>
-            <Link href="/shop" className={linkClass}>
+            <Link href="/shop" className={linkClass("/shop")}>
               Shop
             </Link>
           </li>
 
           {/* About */}
           <li>
-            <Link href="/about" className={linkClass}>
+            <Link href="/about" className={linkClass("/about")}>
               About
             </Link>
           </li>

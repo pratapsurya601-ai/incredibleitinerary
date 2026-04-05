@@ -13,48 +13,81 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Dark mode overrides */
+  /* ─── Text selection ──────────────────────────────────────────── */
+  ::selection {
+    background-color: rgba(201, 169, 110, 0.25);
+    color: #161008;
+  }
+  .dark ::selection {
+    background-color: rgba(201, 169, 110, 0.35);
+    color: #f0e8d8;
+  }
+
+  /* ─── Keyboard focus-visible (not mouse clicks) ──────────────── */
+  :focus-visible {
+    outline: 2px solid #C9A96E;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #C9A96E;
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* ─── Respect prefers-reduced-motion ─────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration:        0.01ms !important;
+      animation-iteration-count: 1      !important;
+      transition-duration:       0.01ms !important;
+      scroll-behavior:           auto   !important;
+    }
+  }
+
+  /* ─── Dark mode overrides ─────────────────────────────────────── */
   .dark body,
   html.dark body {
     @apply bg-[#0e0a06] text-white/90;
   }
 
-  .dark .bg-cream { background-color: #0e0a06; }
-  .dark .bg-parchment { background-color: #161008; }
-  .dark .bg-white { background-color: #1a1209; }
-  .dark .bg-white\/5 { background-color: rgba(255,255,255,0.05); }
-  .dark .bg-white\/10 { background-color: rgba(255,255,255,0.1); }
-  .dark .bg-white\/60 { background-color: rgba(255,255,255,0.08); }
-
-  .dark .text-ink { color: #f0e8d8; }
-  .dark .text-muted { color: #a89878; }
-  .dark .border-parchment-2 { border-color: rgba(255,255,255,0.1); }
-
-  .dark .bg-cream\/97 { background-color: rgba(14,10,6,0.97); }
+  .dark .bg-cream          { background-color: #0e0a06; }
+  .dark .bg-parchment      { background-color: #161008; }
+  .dark .bg-white          { background-color: #1a1209; }
+  .dark .bg-white\/5       { background-color: rgba(255,255,255,0.05); }
+  .dark .bg-white\/10      { background-color: rgba(255,255,255,0.1); }
+  .dark .bg-white\/60      { background-color: rgba(255,255,255,0.08); }
+  .dark .text-ink          { color: #f0e8d8; }
+  .dark .text-muted        { color: #a89878; }
+  .dark .border-parchment-2{ border-color: rgba(255,255,255,0.1); }
+  .dark .bg-cream\/97      { background-color: rgba(14,10,6,0.97); }
 }
 
 @layer components {
-  /* Section label */
+  /* ─── Section label ───────────────────────────────────────────── */
   .section-label {
     @apply text-[0.7rem] tracking-[0.22em] uppercase text-gold-dark mb-2.5 block font-sans font-medium;
   }
 
-  /* Serif display title */
+  /* ─── Serif display title ─────────────────────────────────────── */
   .serif-title {
     @apply font-serif font-light leading-[1.15] tracking-[0.01em];
   }
 
-  /* Primary gold button */
+  /* ─── Primary gold button ─────────────────────────────────────── */
   .btn-gold {
     @apply inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-ink text-[0.78rem] font-medium tracking-[0.12em] uppercase rounded-[1px] transition-all duration-300 hover:bg-gold-dark hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(201,169,110,0.35)] active:scale-[0.98];
   }
 
-  /* Ghost/outline button */
+  /* ─── Ghost / outline button ──────────────────────────────────── */
   .btn-outline-white {
     @apply inline-flex items-center gap-2 px-8 py-3.5 border border-white/40 text-white text-[0.78rem] font-light tracking-[0.12em] uppercase rounded-[1px] transition-all duration-300 hover:border-gold-light hover:bg-gold/10;
   }
 
-  /* Destination card */
+  /* ─── Destination card ────────────────────────────────────────── */
   .dest-card {
     @apply relative rounded-md overflow-hidden cursor-pointer block;
   }
@@ -65,7 +98,7 @@
     @apply scale-105;
   }
 
-  /* Package card */
+  /* ─── Package card ────────────────────────────────────────────── */
   .pkg-card {
     @apply border border-parchment-2 rounded-lg overflow-hidden bg-cream transition-all duration-300 block text-ink no-underline;
   }
@@ -73,7 +106,7 @@
     @apply shadow-[0_16px_48px_rgba(22,16,8,0.1)] -translate-y-1.5;
   }
 
-  /* Form input */
+  /* ─── Form input ──────────────────────────────────────────────── */
   .form-field {
     @apply w-full px-3.5 py-2.5 border border-parchment-2 rounded bg-cream text-ink font-sans text-sm font-light outline-none transition-colors duration-200 focus:border-gold placeholder:text-muted/50 appearance-none;
   }
@@ -81,16 +114,56 @@
     @apply bg-[#1a1209] border-white/15 text-white/90 placeholder:text-white/30;
   }
 
-  /* Animate on scroll */
+  /* ─── Animate on scroll ───────────────────────────────────────── */
   .anim-up {
     @apply opacity-0 translate-y-6 transition-all duration-700 ease-in-out;
   }
   .anim-up.in-view {
     @apply opacity-100 translate-y-0;
   }
+
+  /* ─── Shimmer loading skeleton ────────────────────────────────── */
+  .skeleton {
+    background: linear-gradient(90deg, #F8F2E8 25%, #EDE4D2 50%, #F8F2E8 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+  .dark .skeleton {
+    background: linear-gradient(90deg, #1a1209 25%, #231a0e 50%, #1a1209 75%);
+    background-size: 200% 100%;
+  }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
+/* ─── Animated nav link underline (outside @layer to avoid purging) ── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #C9A96E;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.nav-link.active {
+  color: #C9A96E !important;
+}
+
+/* ─── Custom scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 3px; }
+::-webkit-scrollbar-thumb {
+  background: #C9A96E;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: #8B6835; }

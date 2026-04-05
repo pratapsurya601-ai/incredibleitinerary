@@ -37,22 +37,45 @@ const config: Config = {
         "xs": ["0.75rem", { lineHeight: "1.2rem" }],
       },
       animation: {
-        "zoom-bg": "zoomBg 24s ease-in-out infinite alternate",
+        "zoom-bg":    "zoomBg 24s ease-in-out infinite alternate",
         "scroll-pulse": "scrollPulse 2s ease-in-out infinite",
-        "fade-up": "fadeUp 0.8s ease forwards",
+        "fade-up":    "fadeUp 0.8s ease forwards",
+        "slide-down": "slideDown 0.28s cubic-bezier(0.4,0,0.2,1) forwards",
+        "slide-up":   "slideUp 0.22s cubic-bezier(0.4,0,0.2,1) forwards",
+        "shimmer":    "shimmer 1.6s ease-in-out infinite",
       },
       keyframes: {
         zoomBg: {
-          "0%": { transform: "scale(1)" },
+          "0%":   { transform: "scale(1)" },
           "100%": { transform: "scale(1.07)" },
         },
         scrollPulse: {
           "0%, 100%": { opacity: "0.4", transform: "scaleY(0.5)" },
-          "50%": { opacity: "1", transform: "scaleY(1)" },
+          "50%":      { opacity: "1",   transform: "scaleY(1)" },
         },
         fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(28px)" },
+          "0%":   { opacity: "0", transform: "translateY(28px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideDown: {
+          "0%":   { opacity: "0", transform: "translateY(-8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideUp: {
+          "0%":   { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(-8px)" },
+        },
+        shimmer: {
+          "0%":   { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        toastIn: {
+          "0%":   { opacity: "0", transform: "translateY(12px) scale(0.92)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        toastOut: {
+          "0%":   { opacity: "1", transform: "translateY(0) scale(1)" },
+          "100%": { opacity: "0", transform: "translateY(-8px) scale(0.95)" },
         },
       },
       screens: {

@@ -3,6 +3,8 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import Script from "next/script";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import BackToTop from "@/components/ui/BackToTop";
+import PageProgress from "@/components/ui/PageProgress";
+import Toast from "@/components/ui/Toast";
 import EmailCaptureWrapper from "@/components/email/EmailCaptureWrapper";
 import { blogPosts } from "@/data/blog";
 import "./globals.css";
@@ -145,9 +147,11 @@ export default function RootLayout({
             }),
           }}
         />
+        <PageProgress />
         {children}
         <WhatsAppButton />
         <BackToTop />
+        <Toast />
         <EmailCaptureWrapper />
       </body>
     </html>
