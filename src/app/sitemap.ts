@@ -357,6 +357,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/lima-4-days`,             lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/santiago-chile-4-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/mendoza-argentina-4-days`,lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Asia (Batch 10)
+    { url: `${base}/blog/siargao-4-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/yokohama-2-days`,         lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // South America (Batch 10)
+    { url: `${base}/blog/quito-ecuador-4-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Caribbean (Batch 10)
+    { url: `${base}/blog/trinidad-tobago-5-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Europe (Batch 10)
+    { url: `${base}/blog/reykjavik-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/ghent-3-days`,            lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/split-croatia-4-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/kotor-montenegro-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/tirana-albania-3-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
