@@ -14,6 +14,7 @@ import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 import InlineCTA from "@/components/blog/InlineCTA";
 import InlineSignup from "@/components/email/InlineSignup";
+import { AFFILIATE } from "@/lib/config";
 
 /* ── Types ─────────────────────────────────────────────────────────────── */
 export interface DayData {
@@ -452,7 +453,28 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
             { name: `${data.destination} Streets & Life`, query: `${data.destination} ${data.country} street life people vibrant`, desc: `The everyday atmosphere and street character of ${data.destination}.` },
           ]}
         />
-        <AffiliateBlock destination={data.destination} />
+        <AffiliateBlock
+          destination={data.destination}
+          hotels={(() => {
+            const rows = data.budgetTable;
+            const tiers = [
+              { idx: 0, name: `Budget Stay in ${data.destination}`, rating: "3", badge: "Best Value" },
+              { idx: Math.floor(rows.length / 2), name: `Mid-Range Hotel in ${data.destination}`, rating: "4", badge: "Most Popular" },
+              { idx: rows.length - 1, name: `Luxury Hotel in ${data.destination}`, rating: "5" },
+            ];
+            return tiers.map(({ idx, name, rating, badge }) => {
+              const row = rows[idx] || rows[0];
+              const acc = row?.accommodation || "";
+              const priceRaw = acc.split("(")[0].trim();
+              const typeRaw = acc.includes("(") ? acc.replace(/^[^(]+\(/, "").replace(/\)$/, "") : "Hotel";
+              return { name, type: typeRaw, price: priceRaw, rating, url: AFFILIATE.bookingCom(data.destination), badge };
+            });
+          })()}
+          activities={[
+            { name: `Top-Rated Tours in ${data.destination}`, duration: "Half or full day", price: "From $25", url: AFFILIATE.getYourGuide(data.destination), badge: "Bestseller" },
+            { name: `${data.destination} City Highlights Tour`, duration: "3–4 hours", price: "From $15", url: AFFILIATE.getYourGuide(data.destination) },
+          ]}
+        />
         <CombineWith currentSlug={data.slug} />
         <RelatedGuides currentSlug={data.slug} />
         <Comments />
