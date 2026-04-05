@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import Script from "next/script";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import BackToTop from "@/components/ui/BackToTop";
 import EmailCaptureWrapper from "@/components/email/EmailCaptureWrapper";
 import { blogPosts } from "@/data/blog";
 import "./globals.css";
@@ -146,6 +147,7 @@ export default function RootLayout({
         />
         {children}
         <WhatsAppButton />
+        <BackToTop />
         <EmailCaptureWrapper />
       </body>
     </html>

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
 
@@ -7,9 +7,26 @@ interface NavbarProps {
   onPlanTrip: () => void;
 }
 
+const TOOL_LINKS = [
+  { href: "/tools/trip-calculator",    label: "Cost Calculator" },
+  { href: "/tools/visa-checker",       label: "Visa Checker" },
+  { href: "/tools/currency-converter", label: "Currency Converter" },
+  { href: "/tools/packing-list",       label: "Packing List" },
+];
+
+const NAV_LINKS = [
+  { href: "/blog",  label: "Destinations" },
+  { href: "/quiz",  label: "Find My Trip" },
+  { href: "/shop",  label: "Shop" },
+  { href: "/about", label: "About" },
+];
+
 export default function Navbar({ onPlanTrip }: NavbarProps) {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [menuOpen, setMenuOpen]       = useState(false);
+  const [toolsOpen, setToolsOpen]     = useState(false);
+  const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
+  const toolsRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -17,101 +34,185 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: "/blog",                       label: "Destinations" },
-    { href: "/quiz",                       label: "Find My Trip" },
-    { href: "/tools/trip-calculator",      label: "Cost Calc" },
-    { href: "/tools/visa-checker",         label: "Visa Checker" },
-    { href: "/tools/currency-converter",   label: "Converter" },
-    { href: "/tools/packing-list",         label: "Packing" },
-    { href: "/shop",                       label: "Shop" },
-    { href: "/about",                      label: "About" },
-  ];
+  // Body scroll lock when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") { setMenuOpen(false); setToolsOpen(false); }
+    }
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, []);
+
+  // Close tools dropdown on outside click
+  useEffect(() => {
+    function handleOutside(e: MouseEvent) {
+      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
+        setToolsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleOutside);
+    return () => document.removeEventListener("mousedown", handleOutside);
+  }, []);
+
+  const linkClass = `text-[0.73rem] tracking-[0.13em] uppercase transition-colors duration-300 hover:text-gold ${
+    scrolled ? "text-muted" : "text-white"
+  }`;
 
   return (
     <>
-      {/* Skip to content — screen-reader / keyboard only, invisible to mouse users */}
+      {/* Skip to content */}
       <a href="#main-content" className="sr-only">
         Skip to content
       </a>
-      {/* Dark gradient at top — ensures navbar text is readable over any hero image */}
+      {/* Dark gradient — ensures navbar text is readable over hero images */}
       {!scrolled && (
         <div className="fixed top-0 left-0 right-0 z-[199] h-28 bg-gradient-to-b from-ink/60 to-transparent pointer-events-none" />
       )}
       <nav
-      id="main-nav"
-      className={`fixed top-0 left-0 right-0 z-[200] h-[72px] flex items-center justify-between px-6 md:px-12 transition-all duration-300 ${
-        scrolled
-          ? "bg-cream/97 backdrop-blur-md shadow-[0_1px_0_rgba(22,16,8,0.07)]"
-          : "bg-transparent"
-      }`}
-    >
-      {/* Brand */}
-      <Link href="/" className="flex flex-col leading-tight group">
-        <span
-          className={`font-serif text-2xl font-light tracking-wide transition-colors duration-300 ${
-            scrolled ? "text-ink" : "text-white"
-          }`}
-        >
-          Incredible<span className="text-gold">Itinerary</span>
-        </span>
-        <span
-          className={`text-[0.58rem] tracking-[0.18em] uppercase transition-colors duration-300 ${
-            scrolled ? "text-muted" : "text-white/70"
-          }`}
-        >
-          Curated Travel Guides Worldwide
-        </span>
-      </Link>
+        id="main-nav"
+        className={`fixed top-0 left-0 right-0 z-[200] h-[72px] flex items-center justify-between px-6 md:px-12 transition-all duration-300 ${
+          scrolled
+            ? "bg-cream/97 backdrop-blur-md shadow-[0_1px_0_rgba(22,16,8,0.07)]"
+            : "bg-transparent"
+        }`}
+      >
+        {/* Brand */}
+        <Link href="/" className="flex flex-col leading-tight group">
+          <span
+            className={`font-serif text-2xl font-light tracking-wide transition-colors duration-300 ${
+              scrolled ? "text-ink" : "text-white"
+            }`}
+          >
+            Incredible<span className="text-gold">Itinerary</span>
+          </span>
+          <span
+            className={`text-[0.58rem] tracking-[0.18em] uppercase transition-colors duration-300 ${
+              scrolled ? "text-muted" : "text-white/70"
+            }`}
+          >
+            Curated Travel Guides Worldwide
+          </span>
+        </Link>
 
-      {/* Desktop links */}
-      <ul className="hidden md:flex items-center gap-8 list-none">
-        {navLinks.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              className={`text-[0.73rem] tracking-[0.13em] uppercase transition-colors duration-300 hover:text-gold ${
-                scrolled ? "text-muted" : "text-white"
-              }`}
-            >
-              {link.label}
+        {/* Desktop nav */}
+        <ul className="hidden md:flex items-center gap-7 list-none">
+          {/* Destinations */}
+          <li>
+            <Link href="/blog" className={linkClass}>
+              Destinations
             </Link>
           </li>
-        ))}
-        <li><DarkModeToggle /></li>
-        <li>
-          <button
-            onClick={onPlanTrip}
-            className="bg-gold text-ink px-5 py-2.5 text-[0.73rem] tracking-[0.1em] uppercase font-medium rounded-[1px] transition-all duration-300 hover:bg-gold-dark hover:text-white hover:-translate-y-px"
-          >
-            Plan My Trip ↗
-          </button>
-        </li>
-      </ul>
 
-      {/* Mobile hamburger */}
-      <button
-        className="md:hidden flex flex-col gap-1.5 p-2"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
-        aria-expanded={menuOpen}
-      >
-        {[0, 1, 2].map((i) => (
-          <span
-            key={i}
-            className={`block w-6 h-px transition-all duration-300 ${
-              scrolled ? "bg-ink" : "bg-white"
-            } ${menuOpen && i === 0 ? "rotate-45 translate-y-2" : ""} ${
-              menuOpen && i === 1 ? "opacity-0" : ""
-            } ${menuOpen && i === 2 ? "-rotate-45 -translate-y-2" : ""}`}
-          />
-        ))}
-      </button>
+          {/* Find My Trip */}
+          <li>
+            <Link href="/quiz" className={linkClass}>
+              Find My Trip
+            </Link>
+          </li>
 
-      {/* Mobile menu */}
-      <div className={`absolute top-[72px] left-0 right-0 bg-cream/98 backdrop-blur-md shadow-lg border-t border-parchment-2 md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`}>
+          {/* Tools dropdown */}
+          <li ref={toolsRef} className="relative">
+            <button
+              onClick={() => setToolsOpen((o) => !o)}
+              className={`flex items-center gap-1 text-[0.73rem] tracking-[0.13em] uppercase transition-colors duration-300 hover:text-gold ${
+                scrolled ? "text-muted" : "text-white"
+              }`}
+              aria-expanded={toolsOpen}
+              aria-haspopup="true"
+            >
+              Tools
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                fill="currentColor"
+                className={`transition-transform duration-200 ${toolsOpen ? "rotate-180" : ""}`}
+              >
+                <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            {toolsOpen && (
+              <div
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 rounded-xl overflow-hidden z-50"
+                style={{
+                  background: "rgba(253,250,244,0.98)",
+                  border: "1px solid rgba(237,228,210,0.8)",
+                  boxShadow: "0 8px 32px rgba(22,16,8,0.12)",
+                }}
+              >
+                {TOOL_LINKS.map((t) => (
+                  <Link
+                    key={t.href}
+                    href={t.href}
+                    onClick={() => setToolsOpen(false)}
+                    className="block px-4 py-2.5 text-xs text-muted tracking-wide hover:text-gold hover:bg-parchment transition-colors"
+                  >
+                    {t.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </li>
+
+          {/* Shop */}
+          <li>
+            <Link href="/shop" className={linkClass}>
+              Shop
+            </Link>
+          </li>
+
+          {/* About */}
+          <li>
+            <Link href="/about" className={linkClass}>
+              About
+            </Link>
+          </li>
+
+          <li><DarkModeToggle /></li>
+          <li>
+            <button
+              onClick={onPlanTrip}
+              className="bg-gold text-ink px-5 py-2.5 text-[0.73rem] tracking-[0.1em] uppercase font-medium rounded-[1px] transition-all duration-300 hover:bg-gold-dark hover:text-white hover:-translate-y-px"
+            >
+              Plan My Trip ↗
+            </button>
+          </li>
+        </ul>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+        >
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className={`block w-6 h-px transition-all duration-300 ${
+                scrolled ? "bg-ink" : "bg-white"
+              } ${menuOpen && i === 0 ? "rotate-45 translate-y-2" : ""} ${
+                menuOpen && i === 1 ? "opacity-0" : ""
+              } ${menuOpen && i === 2 ? "-rotate-45 -translate-y-2" : ""}`}
+            />
+          ))}
+        </button>
+
+        {/* Mobile menu */}
+        <div
+          className={`absolute top-[72px] left-0 right-0 bg-cream/98 backdrop-blur-md shadow-lg border-t border-parchment-2 md:hidden overflow-hidden transition-all duration-300 ${
+            menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+          }`}
+        >
           <ul className="flex flex-col p-6 gap-4 list-none">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -122,6 +223,41 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
                 </Link>
               </li>
             ))}
+
+            {/* Tools section in mobile */}
+            <li>
+              <button
+                onClick={() => setMobileToolsOpen((o) => !o)}
+                className="flex items-center gap-1.5 text-sm tracking-[0.12em] uppercase text-muted hover:text-gold transition-colors w-full text-left"
+              >
+                Tools
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="currentColor"
+                  className={`transition-transform duration-200 ${mobileToolsOpen ? "rotate-180" : ""}`}
+                >
+                  <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              {mobileToolsOpen && (
+                <ul className="mt-2 pl-4 flex flex-col gap-3 list-none">
+                  {TOOL_LINKS.map((t) => (
+                    <li key={t.href}>
+                      <Link
+                        href={t.href}
+                        onClick={() => { setMenuOpen(false); setMobileToolsOpen(false); }}
+                        className="text-xs tracking-[0.12em] uppercase text-muted hover:text-gold transition-colors"
+                      >
+                        {t.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
             <li>
               <button
                 onClick={() => { onPlanTrip(); setMenuOpen(false); }}
@@ -131,8 +267,8 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
               </button>
             </li>
           </ul>
-      </div>
-    </nav>
+        </div>
+      </nav>
     </>
   );
 }

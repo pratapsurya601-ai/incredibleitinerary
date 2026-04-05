@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import LegalWrapper from "@/components/layout/LegalWrapper";
 export const metadata: Metadata = { title: "Cookie Policy — IncredibleItinerary", alternates: { canonical: "https://www.incredibleitinerary.com/cookies" } };
 export default function CookiesPage() {
   return (
+    <LegalWrapper>
     <main className="bg-cream min-h-screen pt-28 pb-20 px-6">
       <div className="max-w-[720px] mx-auto">
         <Link href="/" className="text-xs text-muted uppercase tracking-widest hover:text-gold transition-colors mb-8 block">← Back to Home</Link>
@@ -22,5 +24,6 @@ export default function CookiesPage() {
         ))}
       </div>
     </main>
+    </LegalWrapper>
   );
 }

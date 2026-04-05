@@ -108,7 +108,7 @@ export default function KashmirClient() {
 
         {/* HERO */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
-          <SmartImage imageKey="kashmir" fallback="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85" alt="Dal Lake Kashmir houseboat" fill className="object-cover" priority sizes="100vw" />
+          <SmartImage imageKey="kashmir" fallback="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1600&q=85" alt="Dal Lake Kashmir houseboat" fill className="object-cover" priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
           <div className="absolute top-24 left-0 right-0 px-6 md:px-14">
             <div className="max-w-[860px] mx-auto flex items-center gap-2 text-white/50 text-xs">

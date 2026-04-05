@@ -1,6 +1,5 @@
 "use client";
 import { useState, useMemo, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import SmartImage from "@/components/ui/SmartImage";
 import Navbar from "@/components/layout/Navbar";
@@ -9,50 +8,98 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import ShareButton from "@/components/ui/ShareButton";
 import { blogPosts, type BlogPost } from "@/data/blog";
 
-// ── Filter categories ──
-const FILTERS = [
-  { id: "all", label: "All", emoji: "✦" },
-  { id: "beach", label: "Beach", emoji: "🏖️", slugs: ["goa-3-days","andaman-5-days","gokarna-3-days","pondicherry-3-days","diu-2-days","vizag-3-days"] },
-  { id: "mountains", label: "Mountains", emoji: "🏔️", slugs: ["kashmir-6-days","leh-ladakh-7-days","manali-5-days","spiti-valley-7-days","dharamshala-3-days","kasol-3-days","auli-3-days","valley-of-flowers-4-days"] },
-  { id: "heritage", label: "Heritage", emoji: "🏰", slugs: ["rajasthan-7-days","jaipur-3-days","jodhpur-3-days","jaisalmer-3-days","udaipur-3-days","golden-triangle-7-days","agra-2-days","hampi-3-days","khajuraho-2-days","orchha-2-days","mysore-3-days"] },
-  { id: "hillstation", label: "Hill Stations", emoji: "🌿", slugs: ["shimla-3-days","ooty-3-days","kodaikanal-3-days","mussoorie-3-days","nainital-3-days","darjeeling-4-days","mount-abu-2-days","mahabaleshwar-2-days","coorg-3-days"] },
-  { id: "spiritual", label: "Spiritual", emoji: "🕯️", slugs: ["varanasi-3-days","amritsar-2-days","rishikesh-haridwar-3-days","rameswaram-2-days","dwarka-2-days","pushkar-2-days","madurai-2-days"] },
-  { id: "northeast", label: "Northeast", emoji: "🌄", slugs: ["meghalaya-5-days","sikkim-6-days","shillong-3-days","kaziranga-3-days","tawang-4-days","majuli-3-days"] },
-  { id: "wildlife", label: "Wildlife", emoji: "🐅", slugs: ["jim-corbett-3-days","ranthambore-3-days","kaziranga-3-days","sundarbans-3-days"] },
-  { id: "weekend", label: "Weekend", emoji: "⚡", slugs: ["lonavala-2-days","mahabaleshwar-2-days","pushkar-2-days","pondicherry-3-days","coorg-3-days","jibhi-tirthan-valley-3-days","nainital-3-days","mount-abu-2-days","diu-2-days"] },
-  { id: "food", label: "Food Trail", emoji: "🍛", slugs: ["amritsar-2-days","hyderabad-3-days","madurai-2-days","varanasi-3-days","jaipur-3-days","goa-3-days","bangkok-4-days","osaka-3-days"] },
-  { id: "thailand", label: "Thailand", emoji: "🇹🇭", slugs: ["bangkok-4-days","phuket-5-days","chiang-mai-4-days"] },
-  { id: "japan", label: "Japan", emoji: "🇯🇵", slugs: ["tokyo-5-days","kyoto-4-days","osaka-3-days"] },
-  { id: "italy", label: "Italy", emoji: "🇮🇹", slugs: ["rome-4-days","florence-3-days","amalfi-coast-4-days"] },
-  { id: "indonesia", label: "Indonesia", emoji: "🇮🇩", slugs: ["bali-5-days","ubud-3-days","lombok-4-days"] },
-  { id: "uae", label: "UAE & Oman", emoji: "🇦🇪", slugs: ["dubai-4-days","abu-dhabi-3-days","muscat-3-days"] },
-  { id: "spain", label: "Spain", emoji: "🇪🇸", slugs: ["barcelona-4-days","madrid-3-days","seville-3-days"] },
-  { id: "vietnam", label: "Vietnam", emoji: "🇻🇳", slugs: ["hanoi-3-days","ho-chi-minh-city-3-days","ha-long-bay-3-days"] },
-  { id: "greece", label: "Greece", emoji: "🇬🇷", slugs: ["athens-3-days","santorini-4-days","crete-5-days"] },
-  { id: "turkey", label: "Turkey", emoji: "🇹🇷", slugs: ["istanbul-5-days","cappadocia-3-days","antalya-3-days"] },
-  { id: "maldives", label: "Maldives", emoji: "🇲🇻", slugs: ["maldives-5-days"] },
-  { id: "singapore", label: "Singapore", emoji: "🇸🇬", slugs: ["singapore-3-days"] },
-  { id: "portugal", label: "Portugal", emoji: "🇵🇹", slugs: ["lisbon-4-days","porto-3-days","algarve-4-days"] },
-  { id: "malaysia", label: "Malaysia", emoji: "🇲🇾", slugs: ["kuala-lumpur-3-days","langkawi-3-days","penang-3-days"] },
+const PAGE_SIZE = 24;
+
+// ── Region / country filter tabs ──
+const REGION_FILTERS = [
+  { id: "all",         label: "All Destinations", emoji: "✦" },
+  { id: "india",       label: "India",            emoji: "🇮🇳" },
+  { id: "southeast",   label: "SE Asia",          emoji: "🌏" },
+  { id: "japan",       label: "Japan & Korea",    emoji: "🇯🇵" },
+  { id: "middleeast",  label: "Middle East",      emoji: "🕌" },
+  { id: "europe",      label: "Europe",           emoji: "🏰" },
+  { id: "americas",    label: "Americas",         emoji: "🌎" },
+  { id: "africa",      label: "Africa",           emoji: "🦁" },
+  { id: "oceania",     label: "Oceania",          emoji: "🦘" },
 ];
 
+const REGION_COUNTRIES: Record<string, string[]> = {
+  india:      ["India"],
+  southeast:  ["Thailand","Indonesia","Vietnam","Malaysia","Singapore","Philippines","Cambodia","Myanmar"],
+  japan:      ["Japan","South Korea"],
+  middleeast: ["UAE","Oman","Jordan","Saudi Arabia","Qatar","Bahrain","Kuwait"],
+  europe:     ["Italy","Spain","Portugal","Greece","Turkey","France","Germany","UK","Netherlands","Austria","Switzerland","Czech Republic","Hungary","Poland","Croatia","Iceland","Norway","Sweden","Denmark","Finland","Ireland","Belgium","Malta","Cyprus","Bratislava","Wroclaw","Romania","Bulgaria"],
+  americas:   ["USA","Canada","Mexico","Argentina","Brazil","Peru","Colombia","Chile","Cuba","Costa Rica","Ecuador"],
+  africa:     ["Kenya","Tanzania","Rwanda","Namibia","South Africa","Morocco","Egypt","Uganda","Ethiopia","Ghana","Senegal"],
+  oceania:    ["Australia","New Zealand","Fiji","Maldives","Seychelles","Mauritius"],
+};
+
+// ── Category filters ──
+const CATEGORY_FILTERS = [
+  { id: "all-cat",    label: "Any Category" },
+  { id: "beach",      label: "Beach" },
+  { id: "mountains",  label: "Mountains" },
+  { id: "heritage",   label: "Heritage" },
+  { id: "hillstation",label: "Hill Stations" },
+  { id: "spiritual",  label: "Spiritual" },
+  { id: "wildlife",   label: "Wildlife" },
+  { id: "city",       label: "City" },
+  { id: "food",       label: "Food Trail" },
+  { id: "adventure",  label: "Adventure" },
+];
+
+// ── Duration filters ──
+const DURATION_FILTERS = [
+  { id: "all-dur", label: "Any Length" },
+  { id: "2",       label: "2 Days" },
+  { id: "3",       label: "3 Days" },
+  { id: "4",       label: "4 Days" },
+  { id: "5",       label: "5 Days" },
+  { id: "6",       label: "6 Days" },
+  { id: "7+",      label: "7+ Days" },
+];
+
+function matchesDuration(post: BlogPost, dur: string): boolean {
+  if (dur === "all-dur") return true;
+  const n = parseInt(post.duration);
+  if (isNaN(n)) return false;
+  if (dur === "7+") return n >= 7;
+  return n === parseInt(dur);
+}
+
+function matchesRegion(post: BlogPost, region: string): boolean {
+  if (region === "all") return true;
+  // Posts without a country field are India guides
+  const country = post.country ?? "India";
+  const countries = REGION_COUNTRIES[region] ?? [];
+  return countries.some((c) => country.toLowerCase().includes(c.toLowerCase()));
+}
+
+function matchesCategory(post: BlogPost, cat: string): boolean {
+  if (cat === "all-cat") return true;
+  return post.category?.toLowerCase().includes(cat.toLowerCase());
+}
+
 export default function BlogIndexPage() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [search, setSearch] = useState("");
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [modalOpen, setModalOpen]       = useState(false);
+  const [search, setSearch]             = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [regionFilter, setRegionFilter] = useState("all");
+  const [catFilter, setCatFilter]       = useState("all-cat");
+  const [durFilter, setDurFilter]       = useState("all-dur");
+  const [page, setPage]                 = useState(1);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Read URL params on mount (?q= for search, ?filter= for category)
+  // Read URL params on mount
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const q = params.get("q");
-    const f = params.get("filter");
+    const r = params.get("region");
     if (q) setSearch(q);
-    if (f) setActiveFilter(f);
+    if (r) setRegionFilter(r);
   }, []);
 
-  // Close dropdown on outside click
+  // Close autocomplete on outside click
   useEffect(() => {
     function handleOutside(e: MouseEvent) {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
@@ -65,47 +112,61 @@ export default function BlogIndexPage() {
 
   const query = search.toLowerCase().trim();
 
+  // Reset to page 1 whenever filters change
+  useEffect(() => {
+    setPage(1);
+  }, [query, regionFilter, catFilter, durFilter]);
+
   const filtered = useMemo(() => {
-    let posts = blogPosts;
-
-    // Apply category filter
-    if (activeFilter !== "all") {
-      const filter = FILTERS.find((f) => f.id === activeFilter);
-      if (filter && "slugs" in filter && filter.slugs) {
-        const slugs = filter.slugs;
-        posts = posts.filter((p) => slugs.includes(p.slug));
+    return blogPosts.filter((p) => {
+      if (!matchesRegion(p, regionFilter)) return false;
+      if (!matchesCategory(p, catFilter)) return false;
+      if (!matchesDuration(p, durFilter)) return false;
+      if (query) {
+        return (
+          p.title.toLowerCase().includes(query) ||
+          p.destination.toLowerCase().includes(query) ||
+          p.tags.some((t) => t.toLowerCase().includes(query)) ||
+          p.category.toLowerCase().includes(query) ||
+          p.excerpt.toLowerCase().includes(query)
+        );
       }
-    }
+      return true;
+    });
+  }, [query, regionFilter, catFilter, durFilter]);
 
-    // Apply search
-    if (query) {
-      posts = posts.filter((p) =>
-        p.title.toLowerCase().includes(query) ||
-        p.destination.toLowerCase().includes(query) ||
-        p.tags.some((t) => t.toLowerCase().includes(query)) ||
-        p.category.toLowerCase().includes(query) ||
-        p.excerpt.toLowerCase().includes(query)
-      );
-    }
-
-    return posts;
-  }, [query, activeFilter]);
-
-  // Live autocomplete suggestions (top 8 matching posts)
+  // Autocomplete suggestions
   const suggestions = useMemo(() => {
     if (!query || query.length < 2) return [];
     return blogPosts
-      .filter((p) =>
-        p.destination.toLowerCase().includes(query) ||
-        p.title.toLowerCase().includes(query) ||
-        p.tags.some((t) => t.toLowerCase().includes(query))
+      .filter(
+        (p) =>
+          p.destination.toLowerCase().includes(query) ||
+          p.title.toLowerCase().includes(query) ||
+          p.tags.some((t) => t.toLowerCase().includes(query))
       )
       .slice(0, 8);
   }, [query]);
 
-  const showFeatured = !query && activeFilter === "all";
+  const hasActiveFilter =
+    query || regionFilter !== "all" || catFilter !== "all-cat" || durFilter !== "all-dur";
+
+  const showFeatured = !hasActiveFilter;
   const featured = showFeatured ? blogPosts.find((p) => p.featured) : null;
   const rest = featured ? filtered.filter((p) => !p.featured) : filtered;
+
+  // Pagination
+  const totalPages = Math.ceil(rest.length / PAGE_SIZE);
+  const pageStart  = (page - 1) * PAGE_SIZE;
+  const pageEnd    = pageStart + PAGE_SIZE;
+  const pageItems  = rest.slice(pageStart, pageEnd);
+
+  function clearAllFilters() {
+    setSearch("");
+    setRegionFilter("all");
+    setCatFilter("all-cat");
+    setDurFilter("all-dur");
+  }
 
   return (
     <>
@@ -121,8 +182,8 @@ export default function BlogIndexPage() {
               Real budgets. Real timings. Real routes. No filler. Pick a destination or browse by category.
             </p>
 
-            {/* Search — upgraded with autocomplete */}
-            <div ref={searchRef} className="max-w-xl mx-auto relative mb-6">
+            {/* Search */}
+            <div ref={searchRef} className="max-w-xl mx-auto relative mb-8">
               <div className="relative">
                 <input
                   type="text"
@@ -131,7 +192,7 @@ export default function BlogIndexPage() {
                   onFocus={() => setShowDropdown(true)}
                   onKeyDown={(e) => { if (e.key === "Escape") setShowDropdown(false); }}
                   placeholder="Search any destination — Kashmir, Bali, Japan, Paris..."
-                  className="w-full px-5 py-4 pl-13 pr-12 border-2 border-parchment-2 rounded-2xl bg-white text-ink text-sm font-light outline-none transition-all duration-200 focus:border-gold focus:shadow-[0_4px_20px_rgba(0,0,0,0.08)] placeholder:text-muted/40 shadow-sm"
+                  className="w-full px-5 py-4 border-2 border-parchment-2 rounded-2xl bg-white text-ink text-sm font-light outline-none transition-all duration-200 focus:border-gold focus:shadow-[0_4px_20px_rgba(0,0,0,0.08)] placeholder:text-muted/40 shadow-sm"
                   style={{ paddingLeft: "3.25rem" }}
                 />
                 <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-muted/40" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -147,7 +208,7 @@ export default function BlogIndexPage() {
                 )}
               </div>
 
-              {/* Autocomplete dropdown */}
+              {/* Autocomplete */}
               {showDropdown && suggestions.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-parchment-2 shadow-[0_16px_48px_rgba(22,16,8,0.12)] z-50 overflow-hidden">
                   <p className="text-[0.6rem] tracking-[0.14em] uppercase text-muted font-medium px-4 pt-3 pb-1">
@@ -186,40 +247,81 @@ export default function BlogIndexPage() {
               )}
             </div>
 
-            {/* Category filter pills */}
-            <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
-              {FILTERS.map((f) => (
-                <button
-                  key={f.id}
-                  onClick={() => { setActiveFilter(f.id); setSearch(""); }}
-                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-200 border ${
-                    activeFilter === f.id
-                      ? "bg-gold text-ink border-gold shadow-sm"
-                      : "bg-white text-muted border-parchment-2 hover:border-gold hover:text-gold-dark"
+            {/* ── Filters row ── */}
+            <div className="space-y-4">
+              {/* Region tabs */}
+              <div className="flex flex-wrap justify-center gap-2">
+                {REGION_FILTERS.map((f) => (
+                  <button
+                    key={f.id}
+                    onClick={() => setRegionFilter(f.id)}
+                    className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-200 border ${
+                      regionFilter === f.id
+                        ? "bg-gold text-ink border-gold shadow-sm"
+                        : "bg-white text-muted border-parchment-2 hover:border-gold hover:text-gold-dark"
+                    }`}
+                  >
+                    <span aria-hidden="true">{f.emoji}</span>
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Category + Duration row */}
+              <div className="flex flex-wrap justify-center gap-3">
+                {/* Category select */}
+                <select
+                  value={catFilter}
+                  onChange={(e) => setCatFilter(e.target.value)}
+                  className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide border cursor-pointer transition-all duration-200 bg-white outline-none ${
+                    catFilter !== "all-cat"
+                      ? "border-gold text-gold-dark shadow-sm"
+                      : "border-parchment-2 text-muted hover:border-gold"
                   }`}
                 >
-                  <span aria-hidden="true">{f.emoji}</span>
-                  {f.label}
-                  {"slugs" in f && f.slugs && (
-                    <span className={`text-[0.6rem] ml-0.5 ${activeFilter === f.id ? "text-ink/50" : "text-muted/50"}`}>
-                      {f.slugs.length}
-                    </span>
-                  )}
-                </button>
-              ))}
+                  {CATEGORY_FILTERS.map((c) => (
+                    <option key={c.id} value={c.id}>{c.label}</option>
+                  ))}
+                </select>
+
+                {/* Duration select */}
+                <select
+                  value={durFilter}
+                  onChange={(e) => setDurFilter(e.target.value)}
+                  className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide border cursor-pointer transition-all duration-200 bg-white outline-none ${
+                    durFilter !== "all-dur"
+                      ? "border-gold text-gold-dark shadow-sm"
+                      : "border-parchment-2 text-muted hover:border-gold"
+                  }`}
+                >
+                  {DURATION_FILTERS.map((d) => (
+                    <option key={d.id} value={d.id}>{d.label}</option>
+                  ))}
+                </select>
+
+                {/* Clear filters */}
+                {hasActiveFilter && (
+                  <button
+                    onClick={clearAllFilters}
+                    className="inline-flex items-center gap-1 px-4 py-2 rounded-full text-xs font-medium tracking-wide border border-ink/20 text-ink/60 hover:border-ink hover:text-ink transition-all bg-white"
+                  >
+                    ✕ Clear
+                  </button>
+                )}
+              </div>
             </div>
 
-            {(query || activeFilter !== "all") && (
+            {hasActiveFilter && (
               <p className="text-xs text-muted mt-4">
                 {filtered.length} {filtered.length === 1 ? "guide" : "guides"} found
                 {query ? ` for "${search}"` : ""}
-                {activeFilter !== "all" ? ` in ${FILTERS.find((f) => f.id === activeFilter)?.label}` : ""}
               </p>
             )}
           </div>
         </div>
 
         <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-16">
+          {/* Featured (only when no filters active) */}
           {featured && (
             <div className="mb-14">
               <p className="section-label mb-6">Featured Guide</p>
@@ -262,19 +364,74 @@ export default function BlogIndexPage() {
             </div>
           )}
 
+          {/* Guide grid */}
           {rest.length > 0 ? (
             <div>
               <div className="flex items-center justify-between mb-6">
                 <p className="section-label mb-0">
-                  {query ? `Results for "${search}"` : activeFilter !== "all" ? FILTERS.find((f) => f.id === activeFilter)?.label + " Destinations" : "All Guides"}
+                  {query
+                    ? `Results for "${search}"`
+                    : regionFilter !== "all"
+                    ? REGION_FILTERS.find((f) => f.id === regionFilter)?.label + " Guides"
+                    : "All Guides"}
                 </p>
-                <span className="text-xs text-muted">{rest.length} guides</span>
+                <span className="text-xs text-muted">
+                  {pageStart + 1}–{Math.min(pageEnd, rest.length)} of {rest.length} guides
+                </span>
               </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {rest.map((post) => (
+                {pageItems.map((post) => (
                   <BlogCard key={post.slug} post={post} />
                 ))}
               </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-12">
+                  <button
+                    onClick={() => { setPage((p) => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    disabled={page === 1}
+                    className="px-4 py-2 text-xs font-medium tracking-wide uppercase border border-parchment-2 rounded-full text-muted hover:border-gold hover:text-gold-dark transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                  >
+                    ← Prev
+                  </button>
+
+                  {/* Page numbers */}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1)
+                    .filter((n) => n === 1 || n === totalPages || Math.abs(n - page) <= 1)
+                    .reduce<(number | "…")[]>((acc, n, idx, arr) => {
+                      if (idx > 0 && n - (arr[idx - 1] as number) > 1) acc.push("…");
+                      acc.push(n);
+                      return acc;
+                    }, [])
+                    .map((item, idx) =>
+                      item === "…" ? (
+                        <span key={`ellipsis-${idx}`} className="px-2 text-xs text-muted">…</span>
+                      ) : (
+                        <button
+                          key={item}
+                          onClick={() => { setPage(item as number); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className={`w-9 h-9 text-xs font-medium rounded-full border transition-all ${
+                            page === item
+                              ? "bg-gold text-ink border-gold"
+                              : "border-parchment-2 text-muted hover:border-gold hover:text-gold-dark"
+                          }`}
+                        >
+                          {item}
+                        </button>
+                      )
+                    )}
+
+                  <button
+                    onClick={() => { setPage((p) => Math.min(totalPages, p + 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    disabled={page === totalPages}
+                    className="px-4 py-2 text-xs font-medium tracking-wide uppercase border border-parchment-2 rounded-full text-muted hover:border-gold hover:text-gold-dark transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                  >
+                    Next →
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <div className="text-center py-16">
@@ -283,7 +440,7 @@ export default function BlogIndexPage() {
                 No guides found{query ? ` for "${search}"` : ""}
               </h3>
               <p className="text-sm text-muted font-light mb-6">Try a different filter or search term.</p>
-              <button onClick={() => { setSearch(""); setActiveFilter("all"); }} className="btn-gold">
+              <button onClick={clearAllFilters} className="btn-gold">
                 Show All Guides
               </button>
             </div>
@@ -314,43 +471,43 @@ function BlogCard({ post }: { post: BlogPost }) {
   return (
     <div className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block">
       <Link href={`/blog/${post.slug}`} className="block">
-      <div className="relative h-48 overflow-hidden bg-parchment-2">
-        <SmartImage
-          query={post.pexelsQuery || post.destination}
-          fallback={post.image}
-          alt={post.imageAlt}
-          fill
-          className="object-cover transition-all duration-700 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 33vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
-        <span className="absolute bottom-3 left-3 text-white font-serif text-base font-light drop-shadow-lg">
-          {post.destination}
-        </span>
-        <span className="absolute top-2.5 right-2.5 text-[0.58rem] font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">
-          {post.duration}
-        </span>
-      </div>
-      <div className="p-5">
-        <div className="flex items-center gap-2 mb-2.5">
-          <span className="text-[0.62rem] tracking-[0.12em] uppercase text-gold-dark bg-gold/10 px-2.5 py-1 rounded-full">
-            {post.category}
+        <div className="relative h-48 overflow-hidden bg-parchment-2">
+          <SmartImage
+            query={post.pexelsQuery || post.destination}
+            fallback={post.image}
+            alt={post.imageAlt}
+            fill
+            className="object-cover transition-all duration-700 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
+          <span className="absolute bottom-3 left-3 text-white font-serif text-base font-light drop-shadow-lg">
+            {post.destination}
           </span>
-          <span className="text-[0.62rem] text-muted">{post.readTime}</span>
-        </div>
-        <h3 className="font-serif text-[1.05rem] font-light text-ink leading-snug mb-2 group-hover:text-teal transition-colors line-clamp-2">
-          {post.title}
-        </h3>
-        <p className="text-xs text-muted font-light leading-relaxed mb-3 line-clamp-2">
-          {post.excerpt}
-        </p>
-        <div className="flex items-center justify-between pt-3 border-t border-parchment-2">
-          <span className="text-[0.62rem] text-muted">{post.date}</span>
-          <span className="text-xs font-medium text-gold-dark group-hover:text-teal transition-colors">
-            Read &rarr;
+          <span className="absolute top-2.5 right-2.5 text-[0.58rem] font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">
+            {post.duration}
           </span>
         </div>
-      </div>
+        <div className="p-5">
+          <div className="flex items-center gap-2 mb-2.5">
+            <span className="text-[0.62rem] tracking-[0.12em] uppercase text-gold-dark bg-gold/10 px-2.5 py-1 rounded-full">
+              {post.category}
+            </span>
+            <span className="text-[0.62rem] text-muted">{post.readTime}</span>
+          </div>
+          <h3 className="font-serif text-[1.05rem] font-light text-ink leading-snug mb-2 group-hover:text-teal transition-colors line-clamp-2">
+            {post.title}
+          </h3>
+          <p className="text-xs text-muted font-light leading-relaxed mb-3 line-clamp-2">
+            {post.excerpt}
+          </p>
+          <div className="flex items-center justify-between pt-3 border-t border-parchment-2">
+            <span className="text-[0.62rem] text-muted">{post.date}</span>
+            <span className="text-xs font-medium text-gold-dark group-hover:text-teal transition-colors">
+              Read &rarr;
+            </span>
+          </div>
+        </div>
       </Link>
       {/* Share row */}
       <div className="px-5 pb-4 flex items-center justify-between border-t border-parchment-2/50 pt-3">
