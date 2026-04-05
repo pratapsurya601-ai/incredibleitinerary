@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/config";
+import { blogPosts } from "@/data/blog";
 
 const REGIONS = {
   "Rajasthan": [
@@ -91,7 +92,7 @@ export default function Footer() {
               Incredible<span className="text-gold">Itinerary</span>
             </p>
             <p className="text-sm font-light leading-7 max-w-[240px] mb-5">
-              284 free travel guides across India, Europe, Southeast Asia, Middle East, Americas, Africa &amp; Oceania. Real budgets. Real routes. No tourist traps.
+              {blogPosts.length} free travel guides across India, Europe, Southeast Asia, Middle East, Americas, Africa &amp; Oceania. Real budgets. Real routes. No tourist traps.
             </p>
             <div className="flex gap-3 mb-4">
               {SOCIAL_LINKS.map((s) => (
@@ -152,7 +153,7 @@ export default function Footer() {
         {/* Destination mega-menu */}
         <div className="border-t border-white/[0.06] pt-10 mb-10">
           <p className="text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-6 text-center">
-            284+ Free Destination Guides — 50+ Countries
+            {blogPosts.length}+ Free Destination Guides — 50+ Countries
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {Object.entries(REGIONS).map(([region, links]) => (

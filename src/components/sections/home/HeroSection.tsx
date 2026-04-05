@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { blogPosts } from "@/data/blog";
 
 export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) {
   const [search, setSearch] = useState("");
@@ -33,7 +34,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
         </h1>
 
         <p className="text-lg text-white/60 font-light max-w-lg mx-auto mb-10 leading-relaxed" style={{ animation: "fadeUp .8s .3s both" }}>
-          284 free travel guides across 50+ countries. Real prices. Local tips.
+          {blogPosts.length} free travel guides across 50+ countries. Real prices. Local tips.
         </p>
 
         {/* Search bar — large, prominent */}
@@ -85,7 +86,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
         {/* Minimal trust line */}
         <p className="text-[0.62rem] text-white/30 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
-          284 FREE GUIDES &nbsp;&middot;&nbsp; 50+ COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
+          {blogPosts.length} FREE GUIDES &nbsp;&middot;&nbsp; 50+ COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
         </p>
       </div>
 

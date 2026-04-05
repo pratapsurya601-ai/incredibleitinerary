@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
+import { blogPosts } from "@/data/blog";
 
 // ── Full pool — 24 destinations ─────────────────────────────────────────────
 const ALL_DESTINATIONS = [
@@ -14,9 +15,9 @@ const ALL_DESTINATIONS = [
   { name: "Leh Ladakh", duration: "7 Days", budget: "From ₹25k", tag: "🇮🇳 Adventure", img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=75", href: "/blog/leh-ladakh-7-days" },
   { name: "Andaman", duration: "5 Days", budget: "From ₹20k", tag: "🇮🇳 Island", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75", href: "/blog/andaman-5-days" },
   { name: "Manali", duration: "5 Days", budget: "From ₹12k", tag: "🇮🇳 Mountains", img: "https://images.unsplash.com/photo-1570458436416-b8fcccfe883f?w=600&q=75", href: "/blog/manali-5-days" },
-  { name: "Meghalaya", duration: "5 Days", budget: "From ₹14k", tag: "🇮🇳 Northeast", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75", href: "/blog/meghalaya-5-days" },
+  { name: "Meghalaya", duration: "5 Days", budget: "From ₹14k", tag: "🇮🇳 Northeast", img: "https://images.unsplash.com/photo-1698429358246-807d8972da9a?w=600&q=75", href: "/blog/meghalaya-5-days" },
   { name: "Varanasi", duration: "3 Days", budget: "From ₹7k", tag: "🇮🇳 Spiritual", img: "https://images.unsplash.com/photo-1561361058-c24e018b8ffa?w=600&q=75", href: "/blog/varanasi-3-days" },
-  { name: "Spiti Valley", duration: "7 Days", budget: "From ₹18k", tag: "🇮🇳 Offbeat", img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=75", href: "/blog/spiti-valley-7-days" },
+  { name: "Spiti Valley", duration: "7 Days", budget: "From ₹18k", tag: "🇮🇳 Offbeat", img: "https://images.unsplash.com/photo-1673246239376-f3c01a13bab0?w=600&q=75", href: "/blog/spiti-valley-7-days" },
   // International
   { name: "Bangkok", duration: "4 Days", budget: "From $22/day", tag: "🇹🇭 Thailand", img: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=600&q=75", href: "/blog/bangkok-4-days" },
   { name: "Tokyo", duration: "5 Days", budget: "From $53/day", tag: "🇯🇵 Japan", img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=75", href: "/blog/tokyo-5-days" },
@@ -83,7 +84,7 @@ export default function PopularDestinations() {
               Shuffle
             </button>
             <Link href="/blog" className="text-[0.72rem] tracking-[0.12em] uppercase text-gold-dark border-b border-gold-dark pb-0.5 hover:text-ink transition-colors">
-              View All 302+ Guides &rarr;
+              View All {blogPosts.length}+ Guides &rarr;
             </Link>
           </div>
         </FadeIn>

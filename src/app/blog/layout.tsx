@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { blogPosts } from "@/data/blog";
+
+const count = blogPosts.length;
 
 export const metadata: Metadata = {
-  title: "284 Free Travel Guides — India, Japan, Europe, Southeast Asia & More | IncredibleItinerary",
-  description:
-    "Browse 284 free destination guides with real budgets, day-by-day itineraries, and local insider tips. India, Thailand, Japan, Vietnam, Greece, Italy, Spain, Portugal, UAE, Morocco, Kenya & more.",
+  title: `${count} Free Travel Guides — India, Japan, Europe, Southeast Asia & More | IncredibleItinerary`,
+  description: `Browse ${count} free destination guides with real budgets, day-by-day itineraries, and local insider tips. India, Thailand, Japan, Vietnam, Greece, Italy, Spain, Portugal, UAE, Morocco, Kenya & more.`,
   keywords: [
     "free travel guides",
     "destination itineraries",
@@ -16,9 +18,8 @@ export const metadata: Metadata = {
     "day by day itinerary",
   ],
   openGraph: {
-    title: "284 Free Travel Guides Worldwide | IncredibleItinerary",
-    description:
-      "Real budgets. Real timings. Real routes. 284 destination guides covering India, Japan, Thailand, Vietnam, Greece, Italy, Spain, Portugal, UAE, Morocco & more.",
+    title: `${count} Free Travel Guides Worldwide | IncredibleItinerary`,
+    description: `Real budgets. Real timings. Real routes. ${count} destination guides covering India, Japan, Thailand, Vietnam, Greece, Italy, Spain, Portugal, UAE, Morocco & more.`,
     url: "https://www.incredibleitinerary.com/blog",
     type: "website",
   },

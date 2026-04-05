@@ -1,11 +1,12 @@
 "use client";
+import { blogPosts } from "@/data/blog";
 
 export default function TrustStripSection() {
   return (
     <div className="bg-ink py-4 px-6">
       <div className="max-w-[800px] mx-auto flex items-center justify-center gap-8 md:gap-14">
         {[
-          { val: "284+", label: "Guides" },
+          { val: `${blogPosts.length}+`, label: "Guides" },
           { val: "50+", label: "Countries" },
           { val: "24hr", label: "Response" },
           { val: "Free", label: "Always" },

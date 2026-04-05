@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
+import { blogPosts } from "@/data/blog";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
 import { SITE_CONFIG } from "@/lib/config";
@@ -123,7 +124,7 @@ export default function ContactClient() {
   const faqs = [
     { q: "How quickly do you respond?", a: "Within 24 hours — usually much faster. Email is the best way to reach us." },
     { q: "Is the itinerary planning service free?", a: "Yes, completely free. We charge nothing to plan your trip. Revenue comes from the service arrangements if you choose to book through us." },
-    { q: "Which countries do you cover?", a: "We cover 50+ countries — India, Japan, Thailand, Bali, Vietnam, UAE, Spain, Italy, Portugal, Greece, Turkey, UK, France, and many more. Browse all 284+ free guides at incredibleitinerary.com/blog." },
+    { q: "Which countries do you cover?", a: `We cover 50+ countries — India, Japan, Thailand, Bali, Vietnam, UAE, Spain, Italy, Portugal, Greece, Turkey, UK, France, and many more. Browse all ${blogPosts.length}+ free guides at incredibleitinerary.com/blog.` },
     { q: "Can you help with last-minute trips?", a: "Absolutely. We've planned trips with as little as 48 hours notice. Email us directly for urgent requests." },
     { q: "Do you arrange hotels and transport too?", a: "Yes — we can handle everything end-to-end: hotels, transport, guides, activities, permits. Or we can just give you the plan and you book yourself." },
   ];
@@ -148,7 +149,7 @@ export default function ContactClient() {
             </p>
             {/* Trust bar */}
             <div className="flex items-center justify-center gap-6 flex-wrap text-xs text-muted">
-              {["✦ Free service", "⚡ 24hr response", "🌍 50+ countries", "284+ free guides"].map(t => (
+              {["✦ Free service", "⚡ 24hr response", "🌍 50+ countries", `${blogPosts.length}+ free guides`].map(t => (
                 <span key={t}>{t}</span>
               ))}
             </div>

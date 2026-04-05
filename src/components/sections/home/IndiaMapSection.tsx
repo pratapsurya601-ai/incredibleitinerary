@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
+import { blogPosts } from "@/data/blog";
 
 const REGIONS = [
   {
@@ -87,7 +88,7 @@ export default function IndiaMapSection() {
             Explore by region
           </span>
           <h2 className="font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-light text-white mb-3">
-            284+ guides across <em className="italic text-gold-light">50+ countries</em>
+            {blogPosts.length}+ guides across <em className="italic text-gold-light">50+ countries</em>
           </h2>
           <p className="text-sm text-white/40 font-light max-w-md mx-auto">
             India, Japan, Thailand, Europe, SE Asia, Middle East &amp; more. Pick a region to start exploring.
@@ -124,7 +125,7 @@ export default function IndiaMapSection() {
 
         <FadeIn delay={400} className="text-center mt-8">
           <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light transition-colors font-medium">
-            View all 284+ destination guides &rarr;
+            View all {blogPosts.length}+ destination guides &rarr;
           </Link>
         </FadeIn>
       </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { blogPosts } from "@/data/blog";
 import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import { SITE_CONFIG } from "@/lib/config";
@@ -11,7 +12,7 @@ export default function AboutClient() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const stats = [
-    { num: "284+", label: "Free Guides" },
+    { num: `${blogPosts.length}+`, label: "Free Guides" },
     { num: "50+", label: "Countries Covered" },
     { num: "24hr", label: "Response Time" },
     { num: "100%", label: "Personalised" },
