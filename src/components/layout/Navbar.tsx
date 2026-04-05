@@ -30,8 +30,8 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
 
   return (
     <>
-      {/* Skip to content */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[999] focus:bg-gold focus:text-ink focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-medium">
+      {/* Skip to content — screen-reader / keyboard only, invisible to mouse users */}
+      <a href="#main-content" className="sr-only">
         Skip to content
       </a>
       {/* Dark gradient at top — ensures navbar text is readable over any hero image */}
