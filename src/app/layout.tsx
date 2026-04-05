@@ -11,19 +11,23 @@ import "./globals.css";
 
 const _count = blogPosts.length;
 
+// display:"optional" — browser won't block render waiting for fonts.
+// First visit: Georgia/system-ui fallback (no CLS, no render-blocking).
+// Repeat visits: Cormorant/Jost served from cache instantly.
+// This is the single biggest FCP improvement on mobile Slow 4G.
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "600"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
-  display: "swap",
+  display: "optional",
 });
 
 const jost = Jost({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   variable: "--font-jost",
-  display: "swap",
+  display: "optional",
 });
 
 export const viewport: Viewport = {
@@ -92,10 +96,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
       <head>
-        {/* Preconnect to image CDNs and font servers — cuts network latency */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preconnect only to origins actually fetched client-side.
+            Unsplash + fonts.gstatic are served via Next.js CDN, not the browser,
+            so preconnecting to them wastes TCP handshakes. */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         {/* Google Ads deferred to after page is interactive — reduces TBT */}
