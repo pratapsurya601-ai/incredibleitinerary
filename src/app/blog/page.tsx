@@ -2,6 +2,7 @@
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SmartImage from "@/components/ui/SmartImage";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
@@ -153,8 +154,9 @@ export default function BlogIndexPage() {
                 className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-xl overflow-hidden border border-parchment-2 hover:shadow-[0_16px_48px_rgba(22,16,8,0.1)] transition-all duration-300"
               >
                 <div className="relative h-64 lg:h-auto overflow-hidden">
-                  <Image
-                    src={featured.image}
+                  <SmartImage
+                    query={featured.pexelsQuery || featured.destination}
+                    fallback={featured.image}
                     alt={featured.imageAlt}
                     fill
                     className="object-cover transition-all duration-700 group-hover:scale-105"
@@ -241,8 +243,9 @@ function BlogCard({ post }: { post: BlogPost }) {
       className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block"
     >
       <div className="relative h-48 overflow-hidden bg-parchment-2">
-        <Image
-          src={post.image}
+        <SmartImage
+          query={post.pexelsQuery || post.destination}
+          fallback={post.image}
           alt={post.imageAlt}
           fill
           className="object-cover transition-all duration-700 group-hover:scale-105"
