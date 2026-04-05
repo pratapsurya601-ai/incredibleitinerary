@@ -124,7 +124,7 @@ export default function IndiaMapSection() {
 
         <FadeIn delay={400} className="text-center mt-8">
           <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light transition-colors font-medium">
-            View all 59 destination guides &rarr;
+            View all 284+ destination guides &rarr;
           </Link>
         </FadeIn>
       </div>

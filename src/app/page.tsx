@@ -11,10 +11,10 @@ export default function Home() {
             "@type": "WebSite",
             name: "IncredibleItinerary",
             url: "https://www.incredibleitinerary.com",
-            description: "Free, handcrafted India travel itineraries with real prices and local tips.",
+            description: "284 free travel guides across 50+ countries — India, Japan, Thailand, Italy, Bali, Dubai, Greece & more. Real prices, local tips, day-by-day itineraries.",
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://www.incredibleitinerary.com/quiz?q={search_term_string}",
+              target: "https://www.incredibleitinerary.com/blog?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           }),

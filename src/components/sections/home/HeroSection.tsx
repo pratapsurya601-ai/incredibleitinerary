@@ -44,7 +44,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search any destination — India, Bali, Japan, Dubai, Italy, Spain..."
-              className="w-full px-7 py-5 pl-14 rounded-full bg-white text-ink text-base outline-none shadow-[0_12px_48px_rgba(0,0,0,0.35)] focus:ring-2 focus:ring-gold placeholder:text-muted/50 font-light"
+              className="w-full px-7 py-5 pl-14 pr-36 rounded-full bg-white text-ink text-base outline-none shadow-[0_12px_48px_rgba(0,0,0,0.35)] focus:ring-2 focus:ring-gold placeholder:text-muted/50 font-light"
               onKeyDown={(e) => {
                 if (e.key === "Enter" && search.trim()) {
                   window.location.href = `/blog?q=${encodeURIComponent(search.trim())}`;

@@ -68,14 +68,14 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
       <ul className="hidden md:flex items-center gap-8 list-none">
         {navLinks.map((link) => (
           <li key={link.href}>
-            <a
+            <Link
               href={link.href}
               className={`text-[0.73rem] tracking-[0.13em] uppercase transition-colors duration-300 hover:text-gold ${
                 scrolled ? "text-muted" : "text-white"
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           </li>
         ))}
         <li><DarkModeToggle /></li>
@@ -113,13 +113,13 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
           <ul className="flex flex-col p-6 gap-4 list-none">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   className="text-sm tracking-[0.12em] uppercase text-muted hover:text-gold transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>

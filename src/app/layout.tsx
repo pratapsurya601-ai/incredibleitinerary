@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         url: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80",
         width: 1200,
         height: 630,
-        alt: "Incredible India travel",
+        alt: "IncredibleItinerary — Free Travel Guides Worldwide",
       },
     ],
   },
@@ -127,7 +127,7 @@ export default function RootLayout({
               name: "IncredibleItinerary",
               url: "https://www.incredibleitinerary.com",
               logo: "https://www.incredibleitinerary.com/logo.png",
-              description: "Bespoke, privately crafted travel itineraries across India's most iconic and hidden destinations.",
+              description: "284 free travel guides across India, Japan, Thailand, Italy, Bali, Dubai, Greece & 50+ countries. Real prices, day-by-day itineraries, local tips.",
               sameAs: [
                 "https://instagram.com/incredibleitinerary",
                 "https://facebook.com/incredibleitinerary",
