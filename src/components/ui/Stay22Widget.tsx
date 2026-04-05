@@ -6,8 +6,7 @@ interface Stay22WidgetProps {
 }
 
 export default function Stay22Widget({ destination, label }: Stay22WidgetProps) {
-  const campaignId = process.env.NEXT_PUBLIC_STAY22_ID || "incredibleitinerary";
-  const src = `https://www.stay22.com/embed/map?campaignid=${encodeURIComponent(campaignId)}&address=${encodeURIComponent(destination)}`;
+  const bookingUrl = `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(destination)}&aid=2820480&lang=en-us&sb=1&src=searchresults&src_elem=sb`;
 
   return (
     <div className="my-10">
@@ -24,20 +23,22 @@ export default function Stay22Widget({ destination, label }: Stay22WidgetProps) 
           Best-rated • All budgets • Instant booking
         </p>
       </div>
-      <div className="rounded-2xl overflow-hidden border border-parchment-2 shadow-sm">
-        <iframe
-          src={src}
-          width="100%"
-          height="480"
-          frameBorder="0"
-          title={`Hotels in ${label || destination}`}
-          loading="lazy"
-          style={{ display: "block" }}
-        />
+      <div className="rounded-2xl overflow-hidden border border-parchment-2 shadow-sm bg-parchment p-8 flex flex-col items-center gap-5 text-center">
+        <p className="text-sm text-muted font-light max-w-md">
+          Compare prices across hundreds of hotels, guesthouses, and resorts in {label || destination}. Best price guarantee on Booking.com.
+        </p>
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-gold text-white text-sm font-medium px-6 py-3 rounded-xl hover:bg-gold/90 transition-colors"
+        >
+          Search Hotels in {label || destination} →
+        </a>
+        <p className="text-xs text-muted/60 font-light">
+          Opens Booking.com · Free cancellation options available
+        </p>
       </div>
-      <p className="text-xs text-muted/60 mt-2 text-center font-light">
-        Prices shown are per night · Updated in real-time · Book directly for best rates
-      </p>
     </div>
   );
 }
