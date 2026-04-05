@@ -18,7 +18,7 @@ export const SITE_CONFIG = {
 
   // ── Business ───────────────────────────────────────────────────────────────
   foundedYear: "2024",
-  guidesPublished: "96+",
+  guidesPublished: "284+",
   responseTime: "24 hours",
 };
 

@@ -155,6 +155,53 @@ export default function AffiliateBlock({
         </div>
       )}
 
+      {/* Generic fallback CTAs — shown when no specific hotels/activities are provided */}
+      {hotels.length === 0 && activities.length === 0 && (
+        <div className="rounded-2xl border-2 border-gold/30 overflow-hidden shadow-sm">
+          <div className="bg-gold/10 px-5 py-4 border-b border-gold/20">
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="text-xl">🏨</span>
+              <div>
+                <p className="text-sm font-semibold text-ink">Where to Stay in {destination}</p>
+                <p className="text-[0.65rem] text-muted font-light">Compare prices · Free cancellation on most rooms</p>
+              </div>
+            </div>
+            <a
+              href={AFFILIATE.bookingCom(destination)}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="block w-full text-center text-sm text-white bg-[#003580] hover:bg-[#00224f] px-4 py-3 rounded-xl font-medium transition-colors"
+              onClick={() => trackEvent("affiliate_clicked", { destination, provider: "booking" })}
+            >
+              Search Hotels in {destination} on Booking.com →
+            </a>
+          </div>
+          <div className="bg-white px-5 py-4 border-b border-parchment-2">
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="text-xl">🎯</span>
+              <div>
+                <p className="text-sm font-semibold text-ink">Tours &amp; Activities in {destination}</p>
+                <p className="text-[0.65rem] text-muted font-light">Skip the queue · Instant confirmation · Free cancellation</p>
+              </div>
+            </div>
+            <a
+              href={AFFILIATE.getYourGuide(destination)}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="block w-full text-center text-sm text-white bg-[#FF5533] hover:bg-[#cc4429] px-4 py-3 rounded-xl font-medium transition-colors"
+              onClick={() => trackEvent("affiliate_clicked", { destination, provider: "getyourguide" })}
+            >
+              Find Top Tours in {destination} on GetYourGuide →
+            </a>
+          </div>
+          <div className="bg-white px-5 py-2">
+            <p className="text-[0.6rem] text-muted/60 font-light">
+              Affiliate links — we earn a small commission at no extra cost to you. Helps keep our guides free.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* PDF upsell */}
       {pdfProduct && (
         <div className={`rounded-2xl border p-5 ${pdfProduct.color} flex flex-col sm:flex-row items-start sm:items-center gap-5`}>

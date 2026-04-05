@@ -443,11 +443,13 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
 
         <DestinationGallery
           title={`${data.destination} — Must-See Places`}
-          subtitle={`Explore the best of ${data.destination}, ${data.country}`}
+          subtitle={data.intro ? data.intro.split('.')[0] + '.' : `Explore the best of ${data.destination}, ${data.country}`}
           spots={[
-            { name: data.destination, query: data.galleryQuery || data.heroQuery, desc: `Highlights of ${data.destination}` },
-            { name: `${data.destination} landscapes`, query: `${data.heroQuery} landscape`, desc: `Scenic views of ${data.destination}` },
-            { name: `${data.destination} culture`, query: `${data.destination} ${data.country} culture food`, desc: `Culture and cuisine in ${data.destination}` },
+            { name: `${data.destination} Highlights`, query: data.galleryQuery || data.heroQuery, desc: `The iconic sights and unmissable experiences of ${data.destination}.` },
+            { name: `${data.destination} Landscapes`, query: `${data.heroQuery} scenic landscape nature`, desc: `The natural scenery that makes ${data.destination} unforgettable.` },
+            { name: `${data.destination} Architecture`, query: `${data.destination} ${data.country} architecture historic landmark`, desc: `Historic landmarks and architectural wonders of ${data.destination}.` },
+            { name: `${data.destination} Food & Culture`, query: `${data.destination} ${data.country} local food culture market`, desc: `Local cuisine, markets, and cultural life in ${data.destination}.` },
+            { name: `${data.destination} Streets & Life`, query: `${data.destination} ${data.country} street life people vibrant`, desc: `The everyday atmosphere and street character of ${data.destination}.` },
           ]}
         />
         <AffiliateBlock destination={data.destination} />
