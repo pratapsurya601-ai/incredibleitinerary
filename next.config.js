@@ -22,12 +22,6 @@ const nextConfig = {
     imageSizes: [16, 32, 64, 96, 128, 130, 256, 384],
   },
 
-  // Target modern browsers — eliminates the 11.7 KiB legacy polyfill chunk
-  // (Array.at, flat, flatMap, Object.fromEntries, Object.hasOwn, trimStart/End)
-  experimental: {
-    browsersListForSwc: true,
-  },
-
   async redirects() {
     return [
       {
