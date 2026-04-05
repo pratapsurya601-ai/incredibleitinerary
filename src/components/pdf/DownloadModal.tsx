@@ -176,13 +176,14 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
                     You've used both free downloads. Unlock all{" "}
                     <strong>50+ guides forever</strong> for a one-time payment.
                   </p>
-                  <Link
-                    href="/unlock"
-                    onClick={onClose}
+                  <a
+                    href="https://rzp.io/rzp/qhP2iBq"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block mt-3 bg-gold text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-gold-dark transition-colors"
                   >
-                    Unlock All Guides — ₹499 one-time →
-                  </Link>
+                    Unlock All 50+ Guides — ₹499 →
+                  </a>
                 </div>
               ) : remaining !== null && remaining > 0 ? (
                 <div className="w-full bg-green-50 border border-green-200 rounded-xl p-3 mb-4 text-left">
@@ -229,13 +230,22 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
                 ))}
               </ul>
 
-              <Link
-                href="/unlock"
-                onClick={onClose}
-                className="w-full block text-center bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors duration-200 mb-3"
+              <a
+                href="https://rzp.io/rzp/qhP2iBq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full block text-center bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors duration-200 mb-2"
               >
-                Unlock All Guides — ₹499 one-time →
-              </Link>
+                All 50+ Guides — ₹499 one-time →
+              </a>
+              <a
+                href="https://rzp.io/rzp/SfJqFBV"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full block text-center border border-ink/20 hover:border-ink text-ink font-medium text-sm px-6 py-3 rounded-lg transition-colors duration-200 mb-3"
+              >
+                India Pack only — ₹249 →
+              </a>
 
               <button
                 onClick={onClose}
