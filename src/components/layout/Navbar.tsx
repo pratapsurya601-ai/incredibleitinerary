@@ -21,6 +21,7 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
     { href: "/blog",                       label: "Destinations" },
     { href: "/quiz",                       label: "Find My Trip" },
     { href: "/tools/trip-calculator",      label: "Cost Calc" },
+    { href: "/tools/visa-checker",         label: "Visa Checker" },
     { href: "/tools/currency-converter",   label: "Converter" },
     { href: "/tools/packing-list",         label: "Packing" },
     { href: "/shop",                       label: "Shop" },

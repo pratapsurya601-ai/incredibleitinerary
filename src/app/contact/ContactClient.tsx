@@ -67,7 +67,7 @@ function ContactForm() {
           <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Where do you want to go?</label>
           <select {...register("destination")} className="form-field">
             <option value="">Select destination</option>
-            {["Rajasthan", "Goa", "Kerala Backwaters", "Golden Triangle", "Kashmir", "Himalayas", "Varanasi", "Multiple / Custom"].map(d => (
+            {["Rajasthan", "Goa", "Kerala", "Kashmir", "Himalayas", "Golden Triangle", "Bali / Indonesia", "Japan", "Thailand", "Dubai / UAE", "Europe", "Vietnam", "Singapore", "Greece", "Italy", "Spain", "Portugal", "Multiple / Custom"].map(d => (
               <option key={d} value={d}>{d}</option>
             ))}
           </select>
@@ -123,7 +123,7 @@ export default function ContactClient() {
   const faqs = [
     { q: "How quickly do you respond?", a: "Within 24 hours — usually much faster. Email is the best way to reach us." },
     { q: "Is the itinerary planning service free?", a: "Yes, completely free. We charge nothing to plan your trip. Revenue comes from the service arrangements if you choose to book through us." },
-    { q: "Do you only cover India?", a: "Currently yes — we specialise exclusively in India. Goa, Rajasthan, Kerala, Himalayas, Golden Triangle and beyond." },
+    { q: "Which countries do you cover?", a: "We cover 50+ countries — India, Japan, Thailand, Bali, Vietnam, UAE, Spain, Italy, Portugal, Greece, Turkey, UK, France, and many more. Browse all 284+ free guides at incredibleitinerary.com/blog." },
     { q: "Can you help with last-minute trips?", a: "Absolutely. We've planned trips with as little as 48 hours notice. Email us directly for urgent requests." },
     { q: "Do you arrange hotels and transport too?", a: "Yes — we can handle everything end-to-end: hotels, transport, guides, activities, permits. Or we can just give you the plan and you book yourself." },
   ];
@@ -140,7 +140,7 @@ export default function ContactClient() {
             <span className="section-label">Get in Touch</span>
             <h1 className="font-serif text-[clamp(2.2rem,4vw,3.2rem)] font-light text-ink mb-4 leading-tight">
               Let&apos;s Plan Your<br />
-              <em className="italic text-teal">Perfect India Trip</em>
+              <em className="italic text-teal">Perfect Trip</em>
             </h1>
             <p className="text-sm text-muted font-light leading-relaxed mb-8 max-w-[480px] mx-auto">
               Tell us where you want to go, your travel dates, and your budget.
@@ -148,7 +148,7 @@ export default function ContactClient() {
             </p>
             {/* Trust bar */}
             <div className="flex items-center justify-center gap-6 flex-wrap text-xs text-muted">
-              {["✦ Free service", "⚡ 24hr response", "🇮🇳 India specialists", "96+ free guides"].map(t => (
+              {["✦ Free service", "⚡ 24hr response", "🌍 50+ countries", "284+ free guides"].map(t => (
                 <span key={t}>{t}</span>
               ))}
             </div>

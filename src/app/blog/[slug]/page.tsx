@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogPosts, getPostBySlug } from "@/data/blog";
 import Footer from "@/components/layout/Footer";
+import BlogSlugNav from "./BlogSlugNav";
 
 interface Props {
   params: { slug: string };
@@ -39,28 +40,7 @@ export default function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      {/* Navbar */}
-      <div className="fixed top-0 left-0 right-0 z-[200] h-[72px] flex items-center justify-between px-6 md:px-12 bg-cream/97 backdrop-blur-md shadow-[0_1px_0_rgba(22,16,8,0.07)]">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="font-serif text-2xl font-light text-ink tracking-wide">
-            Incredible<span className="text-gold">Itinerary</span>
-          </span>
-          <span className="text-[0.58rem] tracking-[0.18em] uppercase text-muted">
-            Curated Journeys Across India
-          </span>
-        </Link>
-        <div className="hidden md:flex items-center gap-8">
-          <Link href="/#destinations" className="text-[0.73rem] tracking-[0.13em] uppercase text-muted hover:text-gold transition-colors">Destinations</Link>
-          <Link href="/#packages" className="text-[0.73rem] tracking-[0.13em] uppercase text-muted hover:text-gold transition-colors">Packages</Link>
-          <Link href="/blog" className="text-[0.73rem] tracking-[0.13em] uppercase text-gold font-medium border-b border-gold pb-px">Blog</Link>
-          <Link
-            href="/"
-            className="bg-gold text-ink px-5 py-2.5 text-[0.73rem] tracking-[0.1em] uppercase font-medium rounded-[1px] hover:bg-gold-dark hover:text-white transition-all duration-300"
-          >
-            Plan My Trip ↗
-          </Link>
-        </div>
-      </div>
+      <BlogSlugNav />
 
       <main className="pt-[72px] bg-cream min-h-screen">
         {PostContent ? (

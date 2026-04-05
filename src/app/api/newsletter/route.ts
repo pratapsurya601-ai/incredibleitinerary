@@ -70,7 +70,7 @@ function welcomeEmail(email: string, name: string | undefined) {
   <!-- HEADER -->
   <tr><td style="background:#161008;border-radius:14px 14px 0 0;padding:28px 32px;text-align:center;">
     <p style="margin:0;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#C9A96E;font-weight:600;">Incredible<span style="color:#fff;">Itinerary</span></p>
-    <p style="margin:6px 0 0;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#ffffff55;">Curated Journeys Across India</p>
+    <p style="margin:6px 0 0;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#ffffff55;">Curated Travel Guides Worldwide</p>
   </td></tr>
 
   <!-- HERO BAND -->

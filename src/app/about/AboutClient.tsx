@@ -11,8 +11,8 @@ export default function AboutClient() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const stats = [
-    { num: "96+", label: "Free Guides" },
-    { num: "12", label: "Countries Covered" },
+    { num: "284+", label: "Free Guides" },
+    { num: "50+", label: "Countries Covered" },
     { num: "24hr", label: "Response Time" },
     { num: "100%", label: "Personalised" },
   ];
@@ -51,9 +51,9 @@ export default function AboutClient() {
   ];
 
   const destinations = [
-    "Rajasthan", "Goa", "Kerala", "Himachal Pradesh",
-    "Uttarakhand", "Kashmir", "Varanasi", "Golden Triangle",
-    "Ladakh", "Karnataka", "Tamil Nadu", "Andaman Islands",
+    "Rajasthan", "Goa", "Kerala", "Kashmir",
+    "Japan", "Bali", "Thailand", "Dubai",
+    "Italy", "Spain", "Portugal", "Greece",
   ];
 
   return (
@@ -77,7 +77,7 @@ export default function AboutClient() {
             </span>
             <h1 className="font-serif text-[clamp(2rem,4vw,3.2rem)] font-light text-white leading-tight">
               We&apos;re Not a Travel Agency.<br />
-              <em className="italic text-gold-light">We&apos;re Your India Expert.</em>
+              <em className="italic text-gold-light">We&apos;re Your Travel Expert.</em>
             </h1>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function AboutClient() {
                   So we built something different — a personal travel planning service where every itinerary is built from scratch, around the actual human who will be travelling. Not a template. Not an algorithm. A plan made by someone who has been to these places, eaten the food, made the mistakes, and knows what's actually worth your time.
                 </p>
                 <p className="font-medium text-ink">
-                  That's IncredibleItinerary. India, planned for you.
+                  That&apos;s IncredibleItinerary. The world, planned for you.
                 </p>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function AboutClient() {
             <div className="text-center mb-8">
               <span className="section-label">Where We Plan</span>
               <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink">
-                Across All of India
+                Across 50+ Countries
               </h2>
             </div>
             <div className="flex flex-wrap gap-3 justify-center">
