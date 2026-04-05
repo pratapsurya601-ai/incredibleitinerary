@@ -6,6 +6,7 @@ import { blogPosts, getPostBySlug } from "@/data/blog";
 import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "./BlogSlugNav";
 import ShareButton from "@/components/ui/ShareButton";
+import { BlogPostSchema } from "@/components/SchemaMarkup";
 
 interface Props {
   params: { slug: string };
@@ -41,6 +42,8 @@ export default function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      {/* Schema for posts using this fallback template (no dedicated page.tsx) */}
+      {!PostContent && <BlogPostSchema post={post} />}
       <BlogSlugNav />
 
       <main className="pt-[72px] bg-cream min-h-screen">
