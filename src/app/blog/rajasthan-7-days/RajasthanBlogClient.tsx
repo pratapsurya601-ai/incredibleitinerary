@@ -524,6 +524,29 @@ export default function RajasthanBlogClient() {
             <p className="text-xs text-muted font-light mt-3 italic">All prices INR 2026. International visitors: budget ₹30,000–₹50,000/person for quality mid-range. Rajasthan offers extraordinary value vs equivalent heritage destinations in Europe.</p>
           </section>
 
+          {/* ── MID-ARTICLE DOWNLOAD BANNER ── */}
+          <div className="my-10 bg-ink rounded-2xl overflow-hidden">
+            <div className="flex flex-col sm:flex-row items-center gap-5 px-6 py-6">
+              <div className="flex-1 text-center sm:text-left">
+                <p className="text-gold text-xs tracking-[0.15em] uppercase font-medium mb-1">Save this guide offline</p>
+                <p className="font-serif text-white text-xl font-light leading-snug mb-1">
+                  Rajasthan 7-Day PDF — Free Download
+                </p>
+                <p className="text-white/50 text-xs font-light">
+                  All 7 days · budget table · packing list · maps — print it, pin it, use it offline
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <DownloadButton
+                  slug="rajasthan-7-days"
+                  title="Rajasthan 7-Day Itinerary"
+                  variant="secondary"
+                  className="!border-gold !text-gold hover:!bg-gold hover:!text-ink"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* ── RAJASTHAN AFFILIATE BLOCK ── */}
           <AffiliateBlock
             destination="Rajasthan"
@@ -676,6 +699,26 @@ export default function RajasthanBlogClient() {
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
           </section>
+
+          {/* ── END-OF-ARTICLE DOWNLOAD BANNER ── */}
+          <div className="my-10 border-2 border-gold/30 bg-gradient-to-br from-amber-50 to-parchment rounded-2xl p-7 text-center">
+            <p className="text-3xl mb-3" aria-hidden="true">📄</p>
+            <h3 className="font-serif text-ink text-2xl font-light mb-2">
+              Take This Guide With You
+            </h3>
+            <p className="text-muted text-sm font-light mb-5 max-w-sm mx-auto leading-relaxed">
+              You&apos;ve just read the full Rajasthan itinerary. Download it as a PDF —
+              print it, share it, use it offline at the airport or in the desert.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <DownloadButton
+                slug="rajasthan-7-days"
+                title="Rajasthan 7-Day Itinerary"
+                variant="primary"
+              />
+              <p className="text-muted/60 text-xs">Free · 2 guides per email · No credit card</p>
+            </div>
+          </div>
 
           {/* Comments */}
           <Comments />
