@@ -446,11 +446,11 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
           title={`${data.destination} — Must-See Places`}
           subtitle={data.intro ? data.intro.split('.')[0] + '.' : `Explore the best of ${data.destination}, ${data.country}`}
           spots={[
-            { name: `${data.destination} Highlights`, query: data.galleryQuery || data.heroQuery, fallback: data.image, desc: `The iconic sights and unmissable experiences of ${data.destination}.` },
-            { name: `${data.destination} Landscapes`, query: `${data.heroQuery} scenic landscape nature`, fallback: data.image, desc: `The natural scenery that makes ${data.destination} unforgettable.` },
-            { name: `${data.destination} Architecture`, query: `${data.destination} ${data.country} architecture historic landmark`, fallback: data.image, desc: `Historic landmarks and architectural wonders of ${data.destination}.` },
-            { name: `${data.destination} Food & Culture`, query: `${data.destination} ${data.country} local food culture market`, fallback: data.image, desc: `Local cuisine, markets, and cultural life in ${data.destination}.` },
-            { name: `${data.destination} Streets & Life`, query: `${data.destination} ${data.country} street life people vibrant`, fallback: data.image, desc: `The everyday atmosphere and street character of ${data.destination}.` },
+            { name: `${data.destination} Highlights`, query: data.galleryQuery || data.heroQuery, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The iconic sights and unmissable experiences of ${data.destination}.` },
+            { name: `${data.destination} Landscapes`, query: `${data.heroQuery} scenic landscape nature`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The natural scenery that makes ${data.destination} unforgettable.` },
+            { name: `${data.destination} Architecture`, query: `${data.destination} ${data.country} architecture historic landmark`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `Historic landmarks and architectural wonders of ${data.destination}.` },
+            { name: `${data.destination} Food & Culture`, query: `${data.destination} ${data.country} local food culture market`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `Local cuisine, markets, and cultural life in ${data.destination}.` },
+            { name: `${data.destination} Streets & Life`, query: `${data.destination} ${data.country} street life people vibrant`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The everyday atmosphere and street character of ${data.destination}.` },
           ]}
         />
         <AffiliateBlock
