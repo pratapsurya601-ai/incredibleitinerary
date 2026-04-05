@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Manali in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#7c3aed;--primary-light:#a78bfa;--primary-dark:#5b21b6;
+  --light:#ede9fe;--light2:#f5f3ff;
+  --ink:#161008;--cream:#faf9ff;--parchment:#f0eeff;
+  --muted:#6b6070;--white:#ffffff;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--primary-dark);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.38}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(91,33,182,0.97) 0%,rgba(91,33,182,0.65) 50%,rgba(91,33,182,0.3) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--primary-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(22,16,8,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(124,58,237,0.12);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--primary-dark);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.s2{background:#6d28d9}
+.route-stop.s3{background:#4c1d95}
+.route-stop.s4{background:#7c3aed;opacity:0.85}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(124,58,237,0.1);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(124,58,237,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(124,58,237,0.06),rgba(124,58,237,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--primary-dark);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.15);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--primary-light);margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:var(--primary-light);font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(124,58,237,0.1);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.purple{background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);color:var(--primary-dark)}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(124,58,237,0.12);margin-bottom:5mm}
+.budget-table th{background:var(--primary-dark);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(124,58,237,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(124,58,237,0.05);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic}
+
+/* ── PACKING PAGE ── */
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.pack-col h4{font-size:8pt;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(124,58,237,0.1)}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:7.5pt;color:var(--muted);font-weight:300;margin-bottom:2mm;line-height:1.4}
+.pack-check{color:var(--muted);flex-shrink:0;margin-top:0.5px;font-size:9pt}
+
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.tip-box{background:#fff;border:1px solid rgba(124,58,237,0.1);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80&auto=format&fit=crop" alt="Manali snow mountains"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Manali in 5 Days:<br/><em>Snow, Passes &amp; Old Hills</em></h1>
+    <p class="cover-sub">Solang Valley · Rohtang · Old Manali · Kasol — 4 complete plans, real costs, Rohtang permit guide and the altitude mistake that ruins most Himachal trips.</p>
+    <div class="cover-pills">
+      <span class="pill">⛰️ Rohtang Pass 3978m</span>
+      <span class="pill">🏔️ Solang Valley Snow</span>
+      <span class="pill">🌿 Old Manali Cafes</span>
+      <span class="pill">🏕️ Kheerganga Trek</span>
+      <span class="pill">💰 ₹149 Guide</span>
+      <span class="pill">May–Jun &amp; Sep–Oct Best</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Manali 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Himalayas at Their Finest — In Five Days</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🌡</div><span class="stat-val">May–Oct</span><span class="stat-label">Best Season</span></div>
+    <div class="stat-box"><div class="stat-icon">🏔️</div><span class="stat-val">3,978m</span><span class="stat-label">Rohtang Pass</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹2k/day</span><span class="stat-label">Budget From</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Arrive Manali</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop s2">Solang Valley</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop s3">Rohtang Pass</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop s4">Old Manali / Kasol</span>
+    <span class="route-sub">Fly Delhi→Bhuntar · Or 14hr Volvo bus ₹1,200–₹1,800</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🏘️ Manali Town &amp; Old Manali</div>
+      <div class="city-desc">Arrive, acclimatise, Mall Road, Hadimba Temple (free, remove shoes), Manu Temple, Old Manali cafes. The first evening sets the pace for the whole trip.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🏔️ Solang Valley</div>
+      <div class="city-desc">15km from Manali. Zorbing, paragliding, cable car, snow activities. Book your Rohtang permit online today — only 1,200 vehicles allowed per day.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">❄️ Rohtang Pass</div>
+      <div class="city-desc">Start by 6am — traffic is brutal by 9am. Snow even in June. Rahala Falls on the way up. Rohtang closes Nov–Apr. Altitude: 3,978m above sea level.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4–5</div>
+      <div class="city-name">🌿 Kasol / Kheerganga</div>
+      <div class="city-desc">75km day trip to Kasol or Kheerganga trek (12km, 5hrs up, ₹500 camp, natural hot spring). Final day: Jogini Waterfall, local markets, departure.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Manali rewards the patient traveller. Go slow, acclimatise properly, and the mountains will give you everything — snow in June, stars at altitude and silence you cannot find anywhere else in India."</p>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Getting There:</strong> Fly Delhi → Bhuntar (Kullu Airport, 50km from Manali, ₹3,000–₹8,000). Or take the overnight Volvo bus from Delhi ISBT Kashmere Gate (14 hrs, ₹1,200–₹1,800). Buses are comfortable, arrive early morning — gives you a full first day.
+  </div>
+
+  <div class="highlight-box purple" style="margin-bottom:0">
+    <strong>Altitude Note:</strong> Manali sits at 2,050m. Take Day 1 easy — no vigorous activity. Rohtang (3,978m) and Kheerganga (2,950m) can cause AMS (headache, nausea) if you rush. Carry Diamox if prone to altitude sickness.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAY 1 &amp; 2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Manali 5-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Arrival &amp; Solang Valley</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Manali Arrival</div>
+      <div class="day-title">Arrive, Acclimatise &amp; Explore Old Manali</div>
+      <div class="day-sub">Mall Road · Hadimba Temple · Manu Temple · Old Manali Cafes</div>
+      <div class="day-cost">💰 Budget: ₹800–₹1,500 · Couple: ₹2,500–₹5,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Arrive &amp; Check In — Rest First</div>
+        <div class="time-desc">If arriving by overnight bus, check in early or drop bags and get breakfast. Do not rush to any high-altitude spot on Day 1. Spend the first few hours just walking at town level — your body needs 12–24 hrs to start adjusting to 2,050m altitude.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Hadimba Temple &amp; Manu Temple</div>
+        <div class="time-desc">Hadimba Devi Temple (circa 1553) — a four-storey pagoda-style wooden temple in the middle of a deodar cedar forest. Must visit. Remove shoes before entering. Free entry. Manu Temple: a 20-min walk uphill through Old Manali village — quieter, fewer tourists, excellent views of the Beas River valley below.</div>
+        <div class="time-price">Free · Remove footwear at Hadimba · 30 min each</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">4:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Mall Road Walk &amp; Market</div>
+        <div class="time-desc">The main promenade — lined with shops selling Kullu shawls, dry fruits, woolens, silver jewellery and trekking gear. Good place to pick up last-minute supplies (gloves, thermals, rain cover) before Rohtang. Evening light over the mountains from here is beautiful.</div>
+        <div class="time-price">Shopping: ₹200–₹2,000 depending on what you need</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Old Manali Cafes — Cafe 1947 / Dylan's</div>
+        <div class="time-desc">Old Manali (across the bridge) is where backpackers congregate. Cafe 1947 — wooden interiors, live acoustic music, excellent Israeli and Indian food, ₹200–₹400/dish. Dylan's Toasted &amp; Roasted — best coffee in Manali, great sandwiches, ₹150–₹300. Both have roof seating with mountain views.</div>
+        <div class="time-price">Budget dinner: ₹250–₹400 · Couple: ₹800–₹1,500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:4mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Solang Valley</div>
+      <div class="day-title">Solang Valley — Adventure &amp; Snow</div>
+      <div class="day-sub">Zorbing · Paragliding · Cable Car · Book Rohtang Permit Tonight</div>
+      <div class="day-cost">💰 Budget: ₹1,200–₹2,000 · Couple: ₹4,000–₹7,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Solang Valley (15km from Manali)</div>
+        <div class="time-desc">Shared taxi from Mall Road ₹100/person or private cab ₹600–₹800 return. The valley opens up dramatically as you approach — snow-capped peaks on three sides. In winter (Nov–Mar) the entire valley is under snow and is a ski resort. In summer: green meadows, adventure sports, river.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Activities</div>
+      <div class="time-content">
+        <div class="time-title">Zorbing / Paragliding / Cable Car / River Crossing</div>
+        <div class="time-desc">Zorbing (rolling downhill in a transparent ball): ₹400. Paragliding tandem: ₹2,500 (15–20 min flight, stunning views). Cable car to Shitidhar: ₹500 return (top has snow even in May–June). River crossing / zip line: ₹300–₹500. Choose 2–3 activities — no need to rush.</div>
+        <div class="time-price">Zorbing ₹400 · Paragliding ₹2,500 · Cable car ₹500 · Zip line ₹300</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Book Rohtang Permit Online — Mandatory</div>
+        <div class="time-desc">Rohtang Pass requires an online permit from the Himachal Pradesh government portal (rohtangpermits.nic.in). Only 1,200 vehicles per day are allowed. Permit fee ₹500+ (varies by vehicle type). Book at least 1–2 days in advance — slots fill quickly in peak season (June, September–October).</div>
+        <div class="time-price">Permit: ₹500+ · Book at rohtangpermits.nic.in · Carry printout</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Bike Rental Option:</strong> Royal Enfield Bullet ₹500–₹800/day, smaller bikes ₹300–₹500/day. Riding Rohtang on a Bullet is iconic but requires a valid licence, mountain riding experience and a full fuel tank before you leave Manali (no petrol stations beyond town).
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAY 3 &amp; 4 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Manali 5-Day Itinerary</span>
+    <span class="page-header-right">Day 3–4 — Rohtang &amp; Kasol</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Rohtang Pass</div>
+      <div class="day-title">Rohtang Pass — 3,978m Above Sea Level</div>
+      <div class="day-sub">Leave by 6am · Rahala Falls · Snow Photography · Back by 2pm</div>
+      <div class="day-cost">💰 Budget: ₹1,200–₹2,000 · Couple: ₹3,000–₹5,000 (transport + activities)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Depart Manali — Early Start Is Non-Negotiable</div>
+        <div class="time-desc">Traffic on the Manali–Rohtang road becomes gridlocked by 9am. Leave by 6am or you will spend 3 hours stuck in a queue of vehicles. Shared cab from Mall Road: ₹300–₹400/person return. Private SUV (mandatory beyond certain points): ₹2,500–₹3,500 return for 4 people. Carry your permit printout.</div>
+        <div class="time-price">Shared cab ₹300–₹400/person · Private SUV ₹2,500–₹3,500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">On the Way</div>
+      <div class="time-content">
+        <div class="time-title">Rahala Falls (2,501m)</div>
+        <div class="time-desc">A spectacular waterfall visible from the road about halfway to Rohtang. The water comes directly from glacial snowmelt — ice cold, crystal clear. Most drivers stop here for 15 minutes. The gorge around it is impressive even in summer. Don't skip this.</div>
+        <div class="time-price">Free · Roadside stop · 15 minutes</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Rohtang Pass Summit — Snow in June</div>
+        <div class="time-desc">At 3,978m, snow persists on the pass even in peak summer (May–June). The view from the top: two completely different worlds — the Kullu Valley behind you (green, forested, warm) and the Lahaul &amp; Spiti cold desert ahead (grey, barren, otherworldly). Most tourists only see the tourist zone — walk 10 minutes further for real solitude.</div>
+        <div class="time-price">Snow gear rental at the pass: ₹200–₹400 (jacket, boots, gloves)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Note</div>
+      <div class="time-content">
+        <div class="time-title">Rohtang Closure: November to April</div>
+        <div class="time-desc">Rohtang Pass is completely closed due to heavy snowfall from November to April (sometimes until mid-May). The best windows are May–June and September–October. July–August is monsoon — the road is prone to landslides and is often blocked. Check current road status on the HPRTC website before visiting.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Back in Manali — Rest, Recover, Lunch</div>
+        <div class="time-desc">Return by 2pm to avoid the worst of afternoon traffic. Altitude (3,978m) can cause mild headaches even in healthy people — drink lots of water, eat light. Afternoon: rest, cafes in Old Manali, or explore Naggar Castle (25km south, medieval stone-and-wood Himalayan architecture, ₹50 entry).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>⚠️ AMS Warning:</strong> Rohtang is at 3,978m. If you feel severe headache, nausea, shortness of breath or confusion — descend immediately. Do not push through altitude sickness symptoms. Carry Diamox (acetazolamide) if advised by your doctor.
+  </div>
+
+  <div class="day-hero" style="margin-top:3mm">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Kasol or Kheerganga</div>
+      <div class="day-title">Kasol Day Trip — Or Kheerganga Trek</div>
+      <div class="day-sub">Parvati Valley · Israeli Food Belt · Hot Spring at the Summit</div>
+      <div class="day-cost">💰 Budget: ₹800–₹1,500 · Adventure: ₹1,500–₹3,000 (Kheerganga camp + trek)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Option A</div>
+      <div class="time-content">
+        <div class="time-title">Kasol Day Trip (75km, ~3 hrs each way)</div>
+        <div class="time-desc">Kasol sits in the Parvati Valley along the Parvati River. Famous for its bohemian atmosphere, Israeli bakeries and Israeli food (hummus, shakshuka, fresh bread). Very laid-back. Walk along the river, try Moon Dance Cafe or Evergreen Cafe. Bus from Manali: ₹120–₹180. Taxi: ₹1,800–₹2,500 return.</div>
+        <div class="time-price">Bus ₹120–₹180 each way · Taxi ₹1,800–₹2,500 return</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Option B</div>
+      <div class="time-content">
+        <div class="time-title">Kheerganga Trek (from Kasol) — 12km, 5 hrs Up</div>
+        <div class="time-desc">Start from Barshaini village (30 min beyond Kasol by local bus). Trek through dense pine and birch forest, crossing wooden bridges over roaring streams. Camp at the top (₹500/person, basic tents provided). The reward: a natural geothermal hot spring at 2,950m — sitting in hot mineral water while surrounded by snow peaks is extraordinary. Descend next morning.</div>
+        <div class="time-price">Camp ₹500 · Hot spring free · Trek guide optional ₹500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Option C</div>
+      <div class="time-content">
+        <div class="time-title">Naggar Castle &amp; Roerich Art Gallery</div>
+        <div class="time-desc">Only 25km south of Manali. Naggar Castle (15th century, mountain-stone architecture, ₹50 entry) overlooks the Kullu Valley. Next to it: the Nicholas Roerich Art Gallery — Russian painter who fell in love with the Himalayas. Peaceful, uncrowded, genuinely interesting. A good Day 4 alternative if you're trekked-out.</div>
+        <div class="time-price">Naggar Castle ₹50 · Roerich Gallery ₹50 · Taxi ₹600–₹800 return</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAY 5 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Manali 5-Day Itinerary</span>
+    <span class="page-header-right">Day 5 — Final Day &amp; Departure</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Final Day</div>
+      <div class="day-title">Jogini Falls, Markets &amp; Departure</div>
+      <div class="day-sub">Morning trek · Woolens &amp; dry fruits · Evening bus or flight</div>
+      <div class="day-cost">💰 Budget: ₹500–₹1,000 · Couple: ₹1,500–₹3,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Jogini Waterfall Trek (3km, 2 hrs)</div>
+        <div class="time-desc">Start from Old Manali village — the trailhead is a 10-minute walk from the bridge. 3km trail through apple orchards and deodar forest, gaining about 200m elevation. The waterfall at the top cascades over multiple tiers — no one knows about this one, so it's quiet even in peak season. Free, no permit needed. Best done in the cool morning hours.</div>
+        <div class="time-price">Free · No permit required · Easy–moderate trail</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Alternate</div>
+      <div class="time-content">
+        <div class="time-title">Jana Waterfall (15km from Manali)</div>
+        <div class="time-desc">If Jogini feels too familiar, Jana Waterfall near the village of Jana is higher, more dramatic and almost completely tourist-free. 20-minute walk from the road. Local bus ₹30 or taxi ₹400–₹500 return. Few people know about it — you may well have it to yourself.</div>
+        <div class="time-price">Bus ₹30 · Taxi ₹400–₹500 return · Free entry</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Mall Road Market — Last Chance Shopping</div>
+        <div class="time-desc">Kullu shawls (₹400–₹2,000 — hand-woven, warmer than any pashmina at this price). Dry fruits from Himachal: walnuts, apricots, almonds (₹300–₹800/kg, far cheaper than city prices). Silver jewellery in Old Manali: rings, pendants, earrings. Tibetan market behind Mall Road: singing bowls, thangka paintings, incense.</div>
+        <div class="time-price">Kullu shawl ₹400–₹2,000 · Dry fruits ₹300–₹800/kg</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Lunch, Pack &amp; Depart</div>
+        <div class="time-desc">Last meal at Johnson's Cafe (upscale, trout and river fish, ₹400–₹700/dish) or at any Old Manali dhaba (₹100–₹200, home-cooked Himachali dal and rajma). Evening buses to Delhi depart from the HRTC bus stand at 4pm, 5pm, 6pm. Book in advance during peak season — Volvo ₹1,200–₹1,800. Flight from Bhuntar: pre-arrange taxi ₹900–₹1,200 (1.5 hrs).</div>
+        <div class="time-price">Bus to Delhi: ₹1,200–₹1,800 · Taxi to Bhuntar airport: ₹900–₹1,200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box purple">
+    <strong>Best Hostels in Manali:</strong> Zostel Old Manali (dorm ₹600–₹800, private ₹1,800–₹2,500 — excellent social atmosphere, right in Old Manali village). The Hosteller Old Manali (₹700–₹900 dorm — rooftop with Himalaya views, great breakfast included). Both book up fast in June and September — reserve at least a week in advance.
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Don't Leave Without:</strong> A jar of local Himachali apple jam (₹80–₹150) or a bottle of Manali HPMC apple juice. Also: fill your bag with walnuts — Manali walnuts are among the finest in the country and cost a third of what you'd pay in Delhi or Mumbai.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — BUDGET ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Manali 5-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Cost Guide</div>
+  <h2 class="section-title" style="margin-bottom:5mm">5-Day Budget Breakdown — 2026</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>🎒 Budget Backpacker</th>
+        <th>💑 Couple</th>
+        <th>🧗 Adventure</th>
+        <th>👨‍👩‍👧 Family</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🏨 Stay (per night)</td>
+        <td>₹400–₹800<br/><span style="font-size:6.5pt;color:#9ca3af">Hostel dorm</span></td>
+        <td>₹1,500–₹4,000<br/><span style="font-size:6.5pt;color:#9ca3af">Hotel room</span></td>
+        <td>₹800–₹1,500<br/><span style="font-size:6.5pt;color:#9ca3af">Camp / hostel</span></td>
+        <td>₹3,000–₹7,000<br/><span style="font-size:6.5pt;color:#9ca3af">Family room</span></td>
+      </tr>
+      <tr>
+        <td>🍽️ Food (per day)</td>
+        <td>₹300–₹500</td>
+        <td>₹1,000–₹2,500</td>
+        <td>₹400–₹800</td>
+        <td>₹1,500–₹3,000</td>
+      </tr>
+      <tr>
+        <td>🚗 Transport (5 days)</td>
+        <td>₹1,500–₹2,500<br/><span style="font-size:6.5pt;color:#9ca3af">Bus + shared cabs</span></td>
+        <td>₹5,000–₹9,000<br/><span style="font-size:6.5pt;color:#9ca3af">Private car</span></td>
+        <td>₹2,500–₹4,000<br/><span style="font-size:6.5pt;color:#9ca3af">Bike rental + buses</span></td>
+        <td>₹8,000–₹14,000<br/><span style="font-size:6.5pt;color:#9ca3af">Tempo traveller</span></td>
+      </tr>
+      <tr>
+        <td>🎯 Activities (total)</td>
+        <td>₹1,500–₹3,000<br/><span style="font-size:6.5pt;color:#9ca3af">Permit + zorbing + cable</span></td>
+        <td>₹4,000–₹8,000<br/><span style="font-size:6.5pt;color:#9ca3af">Paragliding + activities</span></td>
+        <td>₹3,000–₹6,000<br/><span style="font-size:6.5pt;color:#9ca3af">Trek + rafting + snow</span></td>
+        <td>₹5,000–₹10,000<br/><span style="font-size:6.5pt;color:#9ca3af">All activities family</span></td>
+      </tr>
+      <tr>
+        <td>TOTAL 5 Days (per person)</td>
+        <td>₹9,000–₹16,000</td>
+        <td>₹20,000–₹38,000</td>
+        <td>₹16,000–₹28,000</td>
+        <td>₹15,000–₹28,000</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="budget-note" style="margin-bottom:6mm">All prices INR 2026 per person unless stated. Family total assumes 4 people sharing transport costs. Adventure includes bike rental days. Bus Delhi–Manali not included — add ₹1,200–₹1,800 each way.</p>
+
+  <h3 class="sub-title">Where to Stay in Manali</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(124,58,237,0.1);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Zostel Old Manali</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Hostel · Old Manali · Dorm ₹600–₹800/night</div>
+      <div style="font-size:7pt;color:var(--primary)">Best social hostel — rooftop views, in the heart of Old Manali village</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(124,58,237,0.1);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">The Hosteller Old Manali</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Hostel · Old Manali · Dorm ₹700–₹900/night</div>
+      <div style="font-size:7pt;color:var(--primary)">Himalaya-view rooftop, breakfast included, great staff for trek advice</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(124,58,237,0.1);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Solang Valley Camps</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Glamping · Solang · ₹2,000–₹4,000/night (incl. meals)</div>
+      <div style="font-size:7pt;color:var(--primary)">Sleep at the foot of snowy peaks — bonfire, stargazing, mountain air</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(124,58,237,0.1);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Johnson's Hotel &amp; Spa</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Boutique · Manali · ₹4,000–₹8,000/night ★★★★</div>
+      <div style="font-size:7pt;color:var(--primary)">Best mid-luxury in Manali — garden, trout cafe, central location</div>
+    </div>
+  </div>
+
+  <div class="highlight-box purple">
+    <strong>Book in advance for June &amp; September:</strong> These are peak months when permits, hostels and camps sell out weeks ahead. For Kheerganga camping, call the camp directly — no reliable online booking. For Rohtang permits, the portal opens at 10am daily for the next day's slots and fills within minutes in June.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — PACKING + TIPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Manali 5-Day Itinerary</span>
+    <span class="page-header-right">Packing List &amp; Pro Tips</span>
+  </div>
+
+  <div class="label">What to Pack</div>
+  <h2 class="section-title" style="margin-bottom:4mm;font-size:20pt">Manali Packing List</h2>
+
+  <div class="pack-grid" style="margin-bottom:5mm">
+    <div class="pack-col">
+      <h4>Clothing — Layers Are Everything</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Thermal base layer top &amp; bottom (mandatory)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Fleece or down mid-layer jacket</div>
+      <div class="pack-item"><span class="pack-check">□</span>Waterproof rain jacket / shell (Jul–Aug monsoon)</div>
+      <div class="pack-item"><span class="pack-check">□</span>3–4 t-shirts (cotton or merino wool)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Trekking trousers (quick-dry, 2 pairs)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Warm hat and gloves (nights are cold even in June)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Sturdy trekking shoes (waterproof recommended)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Sandals / flip-flops for town and temples</div>
+      <div class="pack-item"><span class="pack-check">□</span>Light scarf / modesty cover for temples</div>
+
+      <h4 style="margin-top:4mm">Health &amp; Safety</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Diamox (acetazolamide) if prone to AMS — consult doctor</div>
+      <div class="pack-item"><span class="pack-check">□</span>Ibuprofen / paracetamol (altitude headaches)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Lip balm with SPF (UV is intense at altitude)</div>
+      <div class="pack-item"><span class="pack-check">□</span>SPF 50 sunscreen (stronger UV above 2,000m)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Blister plasters (new trekking shoes)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Rehydration sachets (altitude dehydration)</div>
+    </div>
+    <div class="pack-col">
+      <h4>Documents &amp; Money</h4>
+      <div class="pack-item"><span class="pack-check">□</span>ID (Aadhaar / Passport — required for permits)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Rohtang permit printout (mandatory)</div>
+      <div class="pack-item"><span class="pack-check">□</span>This PDF guide (offline)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Hotel and bus booking confirmations</div>
+      <div class="pack-item"><span class="pack-check">□</span>Cash in ₹ — ATMs are limited beyond Manali town</div>
+      <div class="pack-item"><span class="pack-check">□</span>UPI set up (most shops accept it now)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Emergency contact numbers saved offline</div>
+
+      <h4 style="margin-top:4mm">Gadgets &amp; Extras</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Power bank (long travel and trekking days)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Offline Google Maps downloaded (Himachal)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Headlamp / torch (camps, trekking)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Dry bag or waterproof pack cover</div>
+      <div class="pack-item"><span class="pack-check">□</span>Reusable insulated water bottle</div>
+      <div class="pack-item"><span class="pack-check">□</span>Trekking poles (optional but useful for Kheerganga)</div>
+    </div>
+  </div>
+
+  <div class="label">Pro Tips</div>
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">⛽</div>
+      <div class="tip-title">Full tank before Rohtang</div>
+      <div class="tip-desc">There are no petrol stations beyond Manali town on the Rohtang route. Fill up the night before — whether you're on a bike or in a car. Running out of fuel on a mountain pass is not a fun experience.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌧️</div>
+      <div class="tip-title">Avoid July–August for Rohtang</div>
+      <div class="tip-desc">Monsoon brings landslides and road closures on the Manali–Rohtang stretch. The road can be blocked for days. If you're visiting Jul–Aug, stick to Manali town, Solang Valley and the Beas Valley — Rohtang is a gamble.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💵</div>
+      <div class="tip-title">Cash is king beyond Manali</div>
+      <div class="tip-desc">Solang Valley, Kasol, Kheerganga and small dhabas are largely cash-only. The single ATM in Kasol often runs out during peak season. Withdraw enough from Manali town before heading out — carry at least ₹3,000 in cash.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏕️</div>
+      <div class="tip-title">Kheerganga: call ahead for camping</div>
+      <div class="tip-desc">There is no reliable online booking for Kheerganga camps. Ask your hostel to call directly (they usually know the camp operators). Alternatively, just show up — camps always find space, but a prior booking guarantees a sleeping bag during cold nights.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:40pt;margin-bottom:6mm">⛰️</div>
+  <h2>Plan More. <em style="font-style:italic;color:rgba(255,255,255,0.5)">Worry Less.</em></h2>
+  <p>50+ free destination guides on IncredibleItinerary.com — India, Southeast Asia, Europe and beyond. Every guide written with real costs, real routes and zero fluff.</p>
+  <div class="back-cta">Visit IncredibleItinerary.com →</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.4);font-size:9pt;margin-bottom:6mm">More guides: Kerala · Rajasthan · Goa · Kashmir · Ladakh · Bali · Japan · Dubai</p>
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · For personal use only · Not for redistribution<br/>
+    All prices are approximate and based on 2026 market rates. Verify independently before travel.<br/>
+    This guide is provided free of charge. If it helped you, share it with a friend.
+  </div>
+</div>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, firstName } = await req.json();
+    const { email, firstName, source, slug } = await req.json();
 
     // Validate
     if (!email || !email.includes("@")) {
@@ -43,7 +43,10 @@ export async function POST(req: NextRequest) {
         merge_fields: {
           FNAME: firstName || "",
         },
-        tags: ["website-popup"],
+        tags: [
+          source === "pdf-download" ? "pdf-download" : "website-popup",
+          slug ? `pdf-${slug}` : null,
+        ].filter(Boolean) as string[],
       }),
     });
 

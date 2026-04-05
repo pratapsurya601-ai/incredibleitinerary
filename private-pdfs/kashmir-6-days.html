@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Kashmir in 6 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pine:#15803d;--pine-light:#4ade80;--pine-dark:#14532d;
+  --green-bg:#dcfce7;
+  --ink:#0f1a0f;--cream:#f4faf4;--parchment:#eaf4ea;
+  --gold:#b5860d;--white:#ffffff;--muted:#5a6b5a;
+  --amber:#92400e;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.45}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,26,15,0.97) 0%,rgba(15,26,15,0.6) 50%,rgba(15,26,15,0.3) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#4ade80;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(15,26,15,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--pine);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(15,26,15,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--pine);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--pine-dark)}
+.route-stop.mid{background:#166534}
+.route-stop.amber{background:var(--amber)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(21,128,61,0.1);color:var(--pine);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(21,128,61,0.06),rgba(21,128,61,0.02));border-left:3px solid var(--pine);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.15);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#4ade80;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#4ade80;font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--pine);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--pine);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.pine{background:rgba(21,128,61,0.08);border:1px solid rgba(21,128,61,0.2);color:var(--pine-dark)}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:var(--amber)}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(15,26,15,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(15,26,15,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(21,128,61,0.05);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic}
+
+/* ── PACKING PAGE ── */
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.pack-col h4{font-size:8pt;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(15,26,15,0.08)}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:7.5pt;color:var(--muted);font-weight:300;margin-bottom:2mm;line-height:1.4}
+.pack-check{color:var(--muted);flex-shrink:0;margin-top:0.5px;font-size:9pt}
+
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.tip-box{background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--pine-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--gold);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1566837945700-30057527ade0?w=1600&q=80&auto=format&fit=crop" alt="Dal Lake Kashmir houseboats with snow-capped mountains"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Kashmir in 6 Days:<br/><em>Heaven on Earth</em></h1>
+    <p class="cover-sub">Srinagar · Gulmarg · Pahalgam · Sonamarg — 4 complete plans, real costs, houseboat guide, gondola tips and the permit everything foreign nationals need to know.</p>
+    <div class="cover-pills">
+      <span class="pill">❄️ Gondola to 4,200m</span>
+      <span class="pill">🏔️ Thajiwas Glacier</span>
+      <span class="pill">🛶 Dal Lake Houseboat</span>
+      <span class="pill">🌸 Mughal Gardens</span>
+      <span class="pill">💰 From ₹18,000/person</span>
+      <span class="pill">Apr–Jun &amp; Sep–Oct Best</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(21,128,61,0.3);border:1px solid rgba(74,222,128,0.3);color:#4ade80;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹149 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW + PERMITS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kashmir 6-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Paradise Found — In Six Days</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">6 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">✈️</div><span class="stat-val">Fly SXR</span><span class="stat-label">Srinagar Airport</span></div>
+    <div class="stat-box"><div class="stat-icon">🌡</div><span class="stat-val">Apr–Jun, Sep–Oct</span><span class="stat-label">Best Season</span></div>
+    <div class="stat-box"><div class="stat-icon">🏔️</div><span class="stat-val">4 Regions</span><span class="stat-label">Destinations</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Srinagar</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop mid">Gulmarg</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Pahalgam</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop amber">Sonamarg</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Srinagar</span>
+    <span class="route-sub">~340km circuit · Fly in &amp; out Srinagar (SXR)</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Days 1–2</div>
+      <div class="city-name">🛶 Srinagar</div>
+      <div class="city-desc">The crown jewel of Kashmir. Dal Lake houseboats, Mughal gardens laid out by Mughal emperors, Old City's wooden mosques and the world's most photogenic shikara rides at sunset.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">❄️ Gulmarg</div>
+      <div class="city-desc">Asia's highest gondola reaches 4,200m Apharwat Peak — snow year-round. India's best ski resort in winter. In summer, meadows of wildflowers with Himalayan peaks all around.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 3–4</div>
+      <div class="city-name">🌿 Pahalgam</div>
+      <div class="city-desc">The "Valley of Shepherds." Betaab Valley, Aru Valley, Baisaran (mini-Switzerland). Start of the Amarnath Yatra pilgrimage. Lidder River runs crystal-clear through pine forests.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 5</div>
+      <div class="city-name">🏔️ Sonamarg</div>
+      <div class="city-desc">The "Golden Meadow" at 2,740m. Thajiwas Glacier, Zero Point, and some of the most dramatic mountain scenery in the entire Himalayan range.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber" style="margin-bottom:4mm">
+    <strong>Permits — Foreign Nationals:</strong> Foreign nationals require a Protected Area Permit (PAP) to visit certain areas in J&amp;K. Apply through the Deputy Commissioner's office or reputable local tour operators in Srinagar. Indian citizens do NOT need any permit to visit Kashmir.
+  </div>
+
+  <div class="highlight-box pine">
+    <strong>💡 Houseboat tip:</strong> Book a heritage houseboat directly on Dal Lake — not a hotel. The experience of waking up on water with the Zabarwan mountains reflected in the lake is the single most unique thing Kashmir offers. Negotiate direct (cut out touts). Prices: ₹2,000–₹8,000/night.
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-bottom:4mm">
+    <div style="background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--pine);margin-bottom:1mm">Budget</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">₹3,000/day</div>
+      <div style="font-size:7pt;color:var(--muted)">Guesthouse + local food</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--pine);margin-bottom:1mm">Couple</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">₹6,000/day</div>
+      <div style="font-size:7pt;color:var(--muted)">Houseboat + private cab</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--pine);margin-bottom:1mm">Family</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">₹8,000/day</div>
+      <div style="font-size:7pt;color:var(--muted)">Hotel + tempo traveller</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm;text-align:center">
+      <div style="font-size:8pt;font-weight:600;color:var(--pine);margin-bottom:1mm">Luxury</div>
+      <div style="font-size:9pt;font-weight:500;color:var(--ink)">₹15,000/day</div>
+      <div style="font-size:7pt;color:var(--muted)">Luxury houseboat + SUV</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAY 1–2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kashmir 6-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Srinagar &amp; Gulmarg</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Srinagar Arrival</div>
+      <div class="day-title">Dal Lake, Mughal Gardens &amp; the Old City</div>
+      <div class="day-sub">Arrive Srinagar · Shikara sunset · Mughal Gardens · Old City · Ahdoos dinner</div>
+      <div class="day-cost">💰 Budget: ₹1,500–₹2,500 · Couple: ₹4,000–₹7,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrive</div>
+      <div class="time-content">
+        <div class="time-title">Srinagar Airport (SXR) — Check into Houseboat</div>
+        <div class="time-desc">Pre-book your houseboat directly on Dal Lake. Take an auto or prepaid taxi from the airport (₹300–₹500). Your houseboat is moored on the lake — a shikara will ferry you to it. Settle in, have Kashmiri Kahwa tea, and let the silence of the lake sink in.</div>
+        <div class="time-price">Houseboat: ₹2,000–₹8,000/night · Deluxe: ₹5,000–₹12,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">4:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Shikara Ride — Dal Lake at Sunset</div>
+        <div class="time-desc">Hire a shikara from the main ghat or directly through your houseboat. The 1-hour ride takes you past floating vegetable gardens, lotus beds, fishermen's nets and other houseboats. The mountains reflected in still water at golden hour are unforgettable. Negotiate the rate before boarding.</div>
+        <div class="time-price">₹500/hour (negotiate) · Best: 5:00–6:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning D1</div>
+      <div class="time-content">
+        <div class="time-title">Mughal Gardens — Shalimar, Nishat &amp; Chashme Shahi</div>
+        <div class="time-desc">Three terraced gardens built by Mughal emperors on the shores of Dal Lake. Shalimar Bagh (built 1619 by Jahangir) — most romantic, best flowerbeds. Nishat Bagh — largest, best lake views from the upper terraces. Chashme Shahi — smallest but has a natural spring with the purest drinking water. Visit all three in one auto-rickshaw loop (negotiate ₹300 round trip).</div>
+        <div class="time-price">Entry ₹24/person each · Auto: ₹300 round trip</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Old City Walk — Jama Masjid &amp; Shah Hamdan Mosque</div>
+        <div class="time-desc">The old city's wooden architecture is unlike anywhere else in India — influenced by Central Asian and Persian styles. Jama Masjid (1400 AD) has 378 wooden pillars. Shah Hamdan Mosque is covered in papier-mâché artwork. Walk the lanes of Nowhatta — see the wazwan cooks, copper craftsmen, and the city's real life.</div>
+        <div class="time-price">Free entry · Modest dress required</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Dinner</div>
+      <div class="time-content">
+        <div class="time-title">Ahdoos Restaurant — The Definitive Wazwan</div>
+        <div class="time-desc">Residency Road's most famous address since 1918. Order the full wazwan: Rogan Josh (the original), Gushtaba (minced meat in yoghurt gravy) and Yakhni. One thali serves two comfortably. The Seekh Kebab starter is exceptional. Cash preferred. Budget ₹600–₹900 for two.</div>
+        <div class="time-price">₹300–₹450 per person · Residency Road</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box pine">
+    <strong>Stay on the lake, not in a hotel:</strong> Many visitors make the mistake of booking a hotel in the city. The houseboat on Dal Lake IS the Kashmir experience — the morning mist, the shikara delivering fresh bread, the silence. Don't skip it to save ₹1,000.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAY 2 GULMARG ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kashmir 6-Day Itinerary</span>
+    <span class="page-header-right">Day 2 — Gulmarg</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Gulmarg Day Trip</div>
+      <div class="day-title">Gulmarg — Asia's Highest Gondola at 4,200m</div>
+      <div class="day-sub">Cab from Srinagar · Gondola Phase 1 &amp; 2 · Apharwat Peak · Snow · Back to Srinagar</div>
+      <div class="day-cost">💰 Budget: ₹2,500–₹3,500 · Couple: ₹5,000–₹7,000 (incl. gondola, excl. cab)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Srinagar to Gulmarg — 56km, ~1.5 hrs</div>
+        <div class="time-desc">Hire a cab from your houseboat or from Dal Gate. The road winds through apple orchards and pine forests. Leave early — gondola queues build rapidly after 9am. Shared cabs from Dalgate bus stand (₹300/person) if you're on a tight budget.</div>
+        <div class="time-price">Private cab: ₹1,200 return · Shared: ₹300/person</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Gondola Phase 1 — Gulmarg to Kongdori (2,600m → 3,080m)</div>
+        <div class="time-desc">The first phase of Asia's highest and longest cable car. 8-minute ride over dense pine forests, emerging above the treeline to a wide alpine meadow at Kongdori. Mountain views begin here — you can see Nanga Parbat (8,126m) on a clear day. Buy Phase 1 and Phase 2 tickets together at the base to avoid re-queuing.</div>
+        <div class="time-price">Phase 1 ticket: ₹900/person · Buy both phases together</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Gondola Phase 2 — Kongdori to Apharwat Peak (3,080m → 4,200m)</div>
+        <div class="time-desc">The second phase is the one you cannot miss. The gondola rises steeply above all vegetation into a world of snow, rock and sky. Apharwat Peak has permanent snow year-round — even in July. At the top: 360-degree Himalayan panorama, bone-dry thin air, and a temperature 15–20°C colder than Srinagar. Bring a warm jacket. Altitude sickness can occur — ascend slowly, hydrate.</div>
+        <div class="time-price">Phase 2: ₹900/person extra · Snow guaranteed year-round</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Winter Only</div>
+      <div class="time-content">
+        <div class="time-title">Skiing at Gulmarg (Dec–Mar)</div>
+        <div class="time-desc">India's premier ski resort — over 1,000m of vertical, 13km of runs. Equipment rental (skis + boots + poles) ₹1,000–₹1,500/day. Professional instructors ₹2,000–₹3,000/day for group lessons. The powder snow quality rivals European resorts at a fraction of the cost. Snow conditions are best January–February.</div>
+        <div class="time-price">Equipment rental: ₹1,000–₹1,500/day · Instructor: ₹2,000–₹3,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Explore Gulmarg Meadow + Lunch + Return to Srinagar</div>
+        <div class="time-desc">At Kongdori level, walk the meadow (stunning in summer with wildflowers). Lunch at the Highlands Park Hotel restaurant (₹400–₹600 for a meal) or packed meals from Srinagar. Leave Gulmarg by 3pm to avoid evening traffic on the mountain road. Back in Srinagar by 5pm — sunset shikara if time permits.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>⚠️ Gondola queue reality:</strong> On weekends and peak season, gondola queues at Phase 1 can be 2–3 hours long. Arrive by 8:30am. Weekday visits are significantly easier. Buy tickets online via the JKTDC app if available, or at the booking counter — not from touts who charge ₹200–₹500 "commission."
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAY 3–4 PAHALGAM ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kashmir 6-Day Itinerary</span>
+    <span class="page-header-right">Day 3–4 — Pahalgam</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Days Three &amp; Four · Valley of Shepherds</div>
+      <div class="day-title">Pahalgam — Valleys, Glaciers &amp; the Lidder River</div>
+      <div class="day-sub">Drive via Awantipora · Betaab Valley · Aru · Baisaran · Chandanwari day trip</div>
+      <div class="day-cost">💰 Budget: ₹1,500–₹2,500/day · Couple: ₹4,000–₹6,500/day (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Drive D3</div>
+      <div class="time-content">
+        <div class="time-title">Srinagar → Pahalgam (96km, ~2.5 hrs) via Awantipora</div>
+        <div class="time-desc">En route, stop at Awantipora ruins — a 9th-century Pratihara temple complex, dramatically weathered. In October, the saffron fields between Pampore and Pahalgam turn purple — a sight worth slowing down for. Saffron from this region is the world's most expensive (₹3–₹5 lakh/kg). Buy genuine saffron only from certified government outlets, not roadside stalls.</div>
+        <div class="time-price">Cab Srinagar–Pahalgam: ₹1,800–₹2,500 (private)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon D3</div>
+      <div class="time-content">
+        <div class="time-title">Betaab Valley (₹50) + Aru Valley (₹50)</div>
+        <div class="time-desc">Betaab Valley — named after the 1983 Bollywood film shot here — is a wide green valley surrounded by snow peaks. The river runs straight through. ₹50 entry. Aru Valley is 12km from Pahalgam: quieter, more pristine, end-of-road feeling. Meadows grazed by Gujjar shepherds. Book a local cab for the circuit (₹800–₹1,200).</div>
+        <div class="time-price">Entry ₹50 each · Local cab ₹800–₹1,200 for both</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning D3</div>
+      <div class="time-content">
+        <div class="time-title">Baisaran — "Mini Switzerland" (Pony or Walk)</div>
+        <div class="time-desc">A high meadow 5km from Pahalgam town, accessible only by pony or foot. Surrounded by dense fir forests with snow-capped peaks visible on all sides. The Swiss comparison is no exaggeration — rolling green meadows, wildflowers, silence. Pony ride up and back is the comfortable option. The walk takes 1.5 hours each way on a steep trail.</div>
+        <div class="time-price">Pony: ₹400–₹600 return · On foot: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening D3</div>
+      <div class="time-content">
+        <div class="time-title">Lidder River Walk</div>
+        <div class="time-desc">The Lidder River runs through Pahalgam town — glacier-cold, crystal-clear. Walk the riverside path at dusk. Trout fishing is possible (licence from Forest Dept, ₹200). The river banks are lined with willows and pines. Listen for the sound — it genuinely sounds different from other rivers.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 4</div>
+      <div class="time-content">
+        <div class="time-title">Chandanwari Day Trip — Amarnath Yatra Basecamp</div>
+        <div class="time-desc">16km from Pahalgam, Chandanwari (2,895m) is the starting point of the famous Amarnath Yatra pilgrimage. Even outside the yatra season, the scenery is spectacular — a natural amphitheatre of mountains with a river bridge. ATV rides available on the snow (₹300–₹500). A snow point at the top is accessible by pony (₹600 return). Back in Pahalgam by evening.</div>
+        <div class="time-price">Cab to Chandanwari: ₹700–₹1,000 return · ATV: ₹300–₹500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box pine">
+    <strong>Pahalgam accommodation:</strong> Stay in Pahalgam town itself, not a hotel on the highway. The riverside hotels (Heevan Resort, Hotel Pine View) have mountain views from the rooms and you can hear the Lidder River from bed. Prices: ₹1,500–₹6,000/night depending on season.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — DAY 5–6 SONAMARG + SRINAGAR ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kashmir 6-Day Itinerary</span>
+    <span class="page-header-right">Day 5–6 — Sonamarg &amp; Srinagar Exit</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Days Five &amp; Six · Golden Meadow + Farewell</div>
+      <div class="day-title">Sonamarg &amp; Srinagar — Glaciers, Markets &amp; Goodbye</div>
+      <div class="day-sub">Thajiwas Glacier · Zero Point · Jama Masjid · Pashmina shopping · Evening flight</div>
+      <div class="day-cost">💰 Budget: ₹2,000–₹3,000 · Couple: ₹5,000–₹8,000 (Day 5 all-in excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM D5</div>
+      <div class="time-content">
+        <div class="time-title">Pahalgam → Srinagar → Sonamarg (87km from Srinagar)</div>
+        <div class="time-desc">Return to Srinagar from Pahalgam, drop bags at your houseboat, and head to Sonamarg same day — or stay a night in Sonamarg (basic hotels, ₹1,000–₹3,000). The road to Sonamarg follows the Sindh River through willow-lined valleys. Sonamarg (2,740m) means "Golden Meadow" — named for the saffron-coloured grasses in autumn. The approach through the meadow with the Thajiwas glacier visible is one of India's great natural vistas.</div>
+        <div class="time-price">Cab Srinagar–Sonamarg return: ₹2,500–₹3,500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning D5</div>
+      <div class="time-content">
+        <div class="time-title">Thajiwas Glacier Walk</div>
+        <div class="time-desc">A 3km walk from the main Sonamarg meadow leads to the base of the Thajiwas Glacier. The walk is easy — well-marked, gentle gradient — through meadows with wildflowers (May–July). At the glacier base you can touch glacial ice and cross a meltwater stream. Pony ride to the glacier is available for those who prefer not to walk.</div>
+        <div class="time-price">Walk: free · Pony to glacier: ₹600–₹800 return</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">If Road Open</div>
+      <div class="time-content">
+        <div class="time-title">Zero Point — Zojila Pass Approach (4,108m)</div>
+        <div class="time-desc">Zero Point is 25km beyond Sonamarg — only accessible when the Zojila Pass road is open (typically Jun–Oct, check locally). The road climbs steeply to permanent snow fields. Hire a local taxi at Sonamarg — private vehicles are not permitted beyond a checkpoint. The final snowfields are vast — bring sunglasses (snow glare). This is the highest point most tourists reach in Kashmir.</div>
+        <div class="time-price">Shared taxi from Sonamarg: ₹3,500 return (4-seater)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning D6</div>
+      <div class="time-content">
+        <div class="time-title">Day 6 — Srinagar: Old City, Markets &amp; Shopping</div>
+        <div class="time-desc">Last morning in Srinagar. Revisit Jama Masjid and Shah Hamdan Mosque in the morning light. Head to the main bazaar for shopping. Genuine Pashmina shawls: buy from Government Emporium (fixed price, certified) to avoid fakes. Test: real Pashmina passes through a ring and is warm even when thin. Dry fruits (walnuts, almonds, apricots) — buy from Lal Chowk market, not airport. Kashmiri Kahwa tea (loose leaf, ₹200–₹500/250g).</div>
+        <div class="time-price">Govt. Emporium Pashmina: ₹2,500–₹25,000 · Market: haggle hard</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening D6</div>
+      <div class="time-content">
+        <div class="time-title">Srinagar Airport (SXR) — Depart</div>
+        <div class="time-desc">Allow 3 hours before departure — security at Srinagar Airport has additional checks (military presence, document verification, luggage scans). Pre-book your airport cab. If your flight is delayed, use the time for a last Kahwa at the airport cafeteria. Take a mental photograph of the Zabarwan hills from the runway — Kashmir has a way of staying with you.</div>
+        <div class="time-price">Airport cab: ₹500–₹800 · Arrive 3 hrs early</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>⚠️ Genuine Pashmina vs Fake:</strong> 90% of "Pashmina" sold in tourist markets is acrylic or wool blend. Real Pashmina (from Changthangi goats) passes through a ring, feels extraordinarily soft, and is warm despite being thin. Price under ₹1,500 = almost certainly fake. Buy from J&amp;K Govt. Handicrafts Emporium (GI-certified) or reputable weavers in old city.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — BUDGET TABLE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kashmir 6-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Cost Guide</div>
+  <h2 class="section-title" style="margin-bottom:5mm">6-Day Budget Breakdown — 2026</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>💰 Budget</th>
+        <th>💑 Couple</th>
+        <th>👨‍👩‍👧 Family</th>
+        <th>✨ Luxury</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>🏨 Houseboat / Hotel (6N)</td><td>₹6,000–₹12,000</td><td>₹18,000–₹36,000</td><td>₹24,000–₹48,000</td><td>₹60,000–₹1,20,000</td></tr>
+      <tr><td>🍽 Food &amp; Drinks</td><td>₹4,500–₹7,500</td><td>₹9,000–₹15,000</td><td>₹12,000–₹18,000</td><td>₹18,000–₹30,000</td></tr>
+      <tr><td>🚗 Cabs &amp; Transport</td><td>₹4,000–₹6,000</td><td>₹8,000–₹12,000</td><td>₹10,000–₹15,000</td><td>₹18,000–₹25,000</td></tr>
+      <tr><td>🚡 Gondola + Activities</td><td>₹2,500–₹4,000</td><td>₹5,000–₹8,000</td><td>₹8,000–₹14,000</td><td>₹12,000–₹20,000</td></tr>
+      <tr><td>🛶 Shikara + Pony rides</td><td>₹1,000–₹2,000</td><td>₹2,000–₹4,000</td><td>₹3,000–₹6,000</td><td>₹5,000–₹10,000</td></tr>
+      <tr><td>TOTAL 6-day trip (per person)</td><td>₹18,000–₹31,500</td><td>₹21,000–₹37,500</td><td>₹14,250–₹25,250</td><td>₹56,500–₹1,02,500</td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note" style="margin-bottom:6mm">All prices INR 2026 per person unless stated. Family column assumes 2 adults + 2 children (children often half-price on gondola/activities). Luxury column = luxury houseboat + private SUV + fine dining.</p>
+
+  <h3 class="sub-title">Where to Stay</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Houseboat New Buckingham</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Heritage Houseboat · Dal Lake · ₹4,000–₹8,000/night ★★★★</div>
+      <div style="font-size:7pt;color:var(--pine)">Hand-carved walnut interiors, butler service, breakfast on the deck</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">The Lalit Grand Palace</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Luxury Hotel · Srinagar · ₹12,000–₹25,000/night ★★★★★</div>
+      <div style="font-size:7pt;color:var(--pine)">Maharaja's palace, Dal Lake views, pool, most iconic building in Srinagar</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Highlands Park Hotel</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Hotel · Gulmarg · ₹5,000–₹10,000/night ★★★★</div>
+      <div style="font-size:7pt;color:var(--pine)">British-era colonial hotel, ski-in ski-out in winter, mountain panoramas</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(15,26,15,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Heevan Resort Pahalgam</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Resort · Pahalgam · ₹4,000–₹8,000/night ★★★★</div>
+      <div style="font-size:7pt;color:var(--pine)">Riverside location, hear the Lidder from your room, forest views</div>
+    </div>
+  </div>
+
+  <div class="highlight-box pine">
+    <strong>Best value window:</strong> April–May (tulips in full bloom, pleasant weather, lower prices than June peak). September–October is spectacular with clear skies, golden-orange chinar leaves, and saffron fields turning purple — and 20–30% cheaper than summer peak. Avoid July–August if possible (crowds and monsoon cloud cover).
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — PACKING + SAFETY ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kashmir 6-Day Itinerary</span>
+    <span class="page-header-right">Packing List &amp; Essential Tips</span>
+  </div>
+
+  <div class="label">What to Pack</div>
+  <h2 class="section-title" style="margin-bottom:4mm;font-size:20pt">Kashmir Packing List</h2>
+
+  <div class="pack-grid" style="margin-bottom:5mm">
+    <div class="pack-col">
+      <h4>Clothing — Layer Up</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Thermal base layers (essential even in June at Gulmarg)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Fleece mid-layer or warm sweater</div>
+      <div class="pack-item"><span class="pack-check">□</span>Windproof outer jacket (Sonamarg/Apharwat wind is brutal)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Light cotton clothes for Srinagar city</div>
+      <div class="pack-item"><span class="pack-check">□</span>Comfortable walking shoes (for Old City)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Waterproof trekking shoes (for glacier walks)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Gloves and woollen hat (glacier areas)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Modest clothing for mosques (cover arms and legs)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Slip-on footwear (remove at mosques often)</div>
+
+      <h4 style="margin-top:4mm">Health &amp; Practical</h4>
+      <div class="pack-item"><span class="pack-check">□</span>SPF 50 sunscreen (high-altitude UV is extremely strong)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Polarised sunglasses (snow glare at Apharwat/Zero Point)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Lip balm — dry air above 3,000m cracks lips fast</div>
+      <div class="pack-item"><span class="pack-check">□</span>Altitude sickness tablets (Diamox — consult doctor first)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Personal medications (pharmacies limited in remote areas)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Small first-aid kit (bandages, antiseptic)</div>
+    </div>
+    <div class="pack-col">
+      <h4>Money &amp; Connectivity</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Carry substantial cash — ATMs unreliable in Gulmarg, Sonamarg, Pahalgam</div>
+      <div class="pack-item"><span class="pack-check">□</span>UPI works in Srinagar but patchy in valleys</div>
+      <div class="pack-item"><span class="pack-check">□</span>BSNL or Airtel prepaid SIM (Jio may not work in Kashmir on tourist SIM)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Note: Mobile internet can be restricted during curfews — not frequent but possible</div>
+      <div class="pack-item"><span class="pack-check">□</span>Download Google Maps offline before leaving Srinagar</div>
+      <div class="pack-item"><span class="pack-check">□</span>Power bank — cold weather drains batteries faster</div>
+      <div class="pack-item"><span class="pack-check">□</span>Camera spare batteries (cold kills battery charge)</div>
+
+      <h4 style="margin-top:4mm">Documents</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Aadhar / Passport (ID checked at multiple checkpoints)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Foreign nationals: PAP permit (arrange in advance)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Hotel booking printouts (sometimes requested at checkpoints)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Travel insurance covering altitude activities</div>
+    </div>
+  </div>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🏔️</div>
+      <div class="tip-title">Altitude &amp; Weather</div>
+      <div class="tip-desc">Gulmarg (2,650m) and Apharwat (4,200m) are significantly colder than Srinagar even in summer. Temperatures at Apharwat can be -5°C in July. The gondola is wind-exposed — dress for it. Hydrate heavily above 3,000m.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📡</div>
+      <div class="tip-title">Mobile &amp; Internet</div>
+      <div class="tip-desc">Post-paid SIMs from BSNL or Airtel work best. Prepaid tourist SIMs can be restricted. Internet speeds vary. Download offline maps, WhatsApp caches and hotel confirmations before you head to remote valleys.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍖</div>
+      <div class="tip-title">Best Wazwan Restaurants</div>
+      <div class="tip-desc">Ahdoos (Residency Rd), Mughal Darbar (Residency Rd), and Shamyana (Lal Chowk) are Srinagar's most trusted wazwan spots. For authentic home-style, ask your houseboat host to arrange a traditional wazwan dinner — unforgettable.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">⚠️</div>
+      <div class="tip-title">Safety &amp; Awareness</div>
+      <div class="tip-desc">Kashmir is safe for tourists — millions visit annually. Avoid political demonstrations, check JKTDC and local news for any advisories. Military checkpoints are routine (carry ID). Follow your houseboat host's guidance on current local conditions.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 8</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 9 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:40pt;margin-bottom:6mm">❄️</div>
+  <h2>Plan More. <em style="font-style:italic;color:rgba(255,255,255,0.5)">Worry Less.</em></h2>
+  <p>50+ free destination guides on IncredibleItinerary.com — India, Southeast Asia, Europe and beyond. Every guide written with real costs, real routes and zero fluff.</p>
+  <div class="back-cta">Visit IncredibleItinerary.com →</div>
+  <div class="back-url">incredibleitinerary.com/guides</div>
+  <p style="color:rgba(255,255,255,0.4);font-size:9pt;margin-bottom:6mm">More guides: Kerala · Rajasthan · Goa · Ladakh · Spiti · Bali · Japan · Dubai</p>
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · For personal use only · Not for redistribution<br/>
+    All prices are approximate and based on 2026 market rates. Verify independently before travel.<br/>
+    This guide is provided free of charge. If it helped you, share it with a friend.
+  </div>
+</div>
+
+</body>
+</html>

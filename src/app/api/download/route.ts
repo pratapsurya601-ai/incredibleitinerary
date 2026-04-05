@@ -12,6 +12,10 @@ const VALID_SLUGS = [
   "india-budget-guide",
   "leh-ladakh-7-days",
   "bangkok-4-days",
+  "kashmir-6-days",
+  "manali-5-days",
+  "bali-5-days",
+  "dubai-4-days",
 ];
 
 // ── Token generation (15-min windows, valid for 30 min) ──────────────────────
@@ -121,12 +125,12 @@ export async function POST(req: NextRequest) {
   data.slugs.push(slug);
   await saveDownloads(normalizedEmail, data);
 
-  // Silently subscribe to Mailchimp (fire-and-forget)
+  // Silently subscribe to Mailchimp with source tag (fire-and-forget)
   try {
     fetch(`${req.nextUrl.origin}/api/subscribe`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: normalizedEmail }),
+      body: JSON.stringify({ email: normalizedEmail, source: "pdf-download", slug }),
     }).catch(() => {});
   } catch { /* ignore */ }
 

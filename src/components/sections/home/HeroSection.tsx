@@ -33,9 +33,21 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
           <em className="italic text-gold-light">Skip the Tourist Traps.</em>
         </h1>
 
-        <p className="text-lg text-white/60 font-light max-w-lg mx-auto mb-10 leading-relaxed" style={{ animation: "fadeUp .8s .3s both" }}>
+        <p className="text-lg text-white/60 font-light max-w-lg mx-auto mb-5 leading-relaxed" style={{ animation: "fadeUp .8s .3s both" }}>
           {blogPosts.length} free travel guides across 50+ countries. Real prices. Local tips.
         </p>
+
+        {/* PDF pill */}
+        <div className="flex justify-center mb-8" style={{ animation: "fadeUp .8s .38s both" }}>
+          <a
+            href="/guides"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-gold/60 text-white/80 hover:text-white text-xs font-medium px-5 py-2 rounded-full transition-all duration-200"
+          >
+            <span>📄</span>
+            <span>10 free PDF guides — download offline</span>
+            <span className="text-gold">→</span>
+          </a>
+        </div>
 
         {/* Search bar — large, prominent */}
         <div className="max-w-xl mx-auto mb-14" style={{ animation: "fadeUp .8s .45s both" }}>
@@ -86,7 +98,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
         {/* Minimal trust line */}
         <p className="text-xs text-white/55 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
-          {blogPosts.length} FREE GUIDES &nbsp;&middot;&nbsp; 50+ COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
+          {blogPosts.length} FREE GUIDES &nbsp;&middot;&nbsp; 10 PDF DOWNLOADS &nbsp;&middot;&nbsp; 50+ COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
         </p>
       </div>
 

@@ -5,7 +5,21 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
+import DownloadButton from "@/components/pdf/DownloadButton";
 import type { Comparison } from "@/data/comparisons";
+
+// Map destination hrefs to PDF slugs
+const DEST_PDF_SLUGS: Record<string, string> = {
+  "/blog/goa-3-days":        "goa-3-days",
+  "/blog/kerala-5-days":     "kerala-5-days",
+  "/blog/rajasthan-7-days":  "rajasthan-7-days",
+  "/blog/kashmir-6-days":    "kashmir-6-days",
+  "/blog/manali-5-days":     "manali-5-days",
+  "/blog/leh-ladakh-7-days": "leh-ladakh-7-days",
+  "/blog/bali-5-days":       "bali-5-days",
+  "/blog/bangkok-4-days":    "bangkok-4-days",
+  "/blog/dubai-4-days":      "dubai-4-days",
+};
 
 /* ── Winner badge ───────────────────────────────────────────────────────────── */
 function WinnerBadge() {
@@ -267,6 +281,43 @@ export default function ComparisonClient({
           </p>
         </div>
       </section>
+
+      {/* ── PDF Download Strip ───────────────────────────────────────────── */}
+      {(DEST_PDF_SLUGS[dest1.href] || DEST_PDF_SLUGS[dest2.href]) && (
+        <section className="bg-amber-50 border-y border-gold/30 py-10">
+          <div className="max-w-3xl mx-auto px-6 text-center">
+            <p className="text-gold-dark text-xs tracking-[0.18em] uppercase font-medium mb-2">Free PDF Guides</p>
+            <h3 className="font-serif text-xl text-ink font-light mb-6">
+              Take the guides offline — download for free
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {DEST_PDF_SLUGS[dest1.href] && (
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-2xl">{dest1.emoji}</span>
+                  <DownloadButton
+                    slug={DEST_PDF_SLUGS[dest1.href]}
+                    title={`${dest1.name} Guide`}
+                    variant="primary"
+                    className="text-xs"
+                  />
+                </div>
+              )}
+              {DEST_PDF_SLUGS[dest2.href] && (
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-2xl">{dest2.emoji}</span>
+                  <DownloadButton
+                    slug={DEST_PDF_SLUGS[dest2.href]}
+                    title={`${dest2.name} Guide`}
+                    variant="primary"
+                    className="text-xs"
+                  />
+                </div>
+              )}
+            </div>
+            <p className="text-muted/50 text-xs mt-4">2 guides free per email · No credit card</p>
+          </div>
+        </section>
+      )}
 
       {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section className="bg-ink dark:bg-[#0a0704] py-14 md:py-20">

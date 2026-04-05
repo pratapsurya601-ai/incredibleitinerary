@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Bali in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#059669;--primary-light:#34d399;--primary-dark:#065f46;
+  --light:#d1fae5;--emerald:#047857;
+  --ink:#161008;--cream:#faf7f2;--parchment:#f2ede4;
+  --gold:#b5860d;--white:#ffffff;--muted:#6b6560;
+  --amber:#92400e;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--primary-dark);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.45}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,95,70,0.97) 0%,rgba(6,95,70,0.6) 50%,rgba(6,95,70,0.3) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--primary-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(22,16,8,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(22,16,8,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.green{background:var(--emerald)}
+.route-stop.blue{background:#1d4ed8}
+.route-stop.amber{background:var(--amber)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(5,150,105,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(5,150,105,0.06),rgba(5,150,105,0.02));border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.15);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--primary-light);margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:var(--primary-light);font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.teal{background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.2);color:var(--primary-dark)}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:var(--amber)}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(22,16,8,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(22,16,8,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(5,150,105,0.05);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic}
+
+/* ── ESSENTIALS GRID ── */
+.essentials-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.essential-card{background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:10px;padding:4mm}
+.essential-icon{font-size:16pt;margin-bottom:1.5mm}
+.essential-title{font-size:8.5pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm}
+.essential-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+
+.plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-bottom:5mm}
+.plan-card{background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:10px;padding:4mm;text-align:center}
+.plan-name{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.plan-price{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--primary);display:block;line-height:1.1;margin-bottom:1mm}
+.plan-unit{font-size:6.5pt;color:var(--muted);letter-spacing:0.1em}
+.plan-desc{font-size:7pt;color:var(--muted);margin-top:1.5mm;font-weight:300;line-height:1.4}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=80&auto=format&fit=crop" alt="Bali rice terraces"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Bali in 5 Days:<br/><em>The Island of the Gods</em></h1>
+    <p class="cover-sub">Ubud · Seminyak · Uluwatu · Canggu — 4 complete plans, real costs in ₹, everything an Indian traveller needs to know before landing in Bali.</p>
+    <div class="cover-pills">
+      <span class="pill">🌴 Ubud Rice Terraces</span>
+      <span class="pill">🌊 Uluwatu Cliffs</span>
+      <span class="pill">🏄 Canggu Surf</span>
+      <span class="pill">🌅 Seminyak Sunsets</span>
+      <span class="pill">💰 From ₹20,000 for 5 Days</span>
+      <span class="pill">✅ Visa Free for Indians (2024)</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;font-size:8pt;color:rgba(255,255,255,0.35);font-weight:300">₹199 Guide — International</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — ESSENTIALS FOR INDIANS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bali 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Essentials for Indian Travellers</h2>
+
+  <div class="essentials-grid">
+    <div class="essential-card">
+      <div class="essential-icon">🛂</div>
+      <div class="essential-title">Visa — Free on Arrival (No Fee Since 2024)</div>
+      <div class="essential-desc">Indian passport holders get a <strong>30-day Visa on Arrival</strong> at Ngurah Rai International Airport (DPS) — completely free since February 2024. No pre-application needed. Just show your return ticket, hotel booking, and a bank statement. Can be extended once for another 30 days (small admin fee applies).</div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">💱</div>
+      <div class="essential-title">Currency — Indonesian Rupiah (IDR)</div>
+      <div class="essential-desc">1 IDR = ₹0.0052 &nbsp;|&nbsp; ₹1 = ~193 IDR. So ₹1,000 = ~1,93,000 IDR. Change cash at money changers in Kuta/Seminyak (better rates than airport). Avoid airport exchange. Bring USD or withdraw IDR from local ATMs — BNI and BCA have the best rates. Tip: withdraw larger amounts to avoid per-transaction fees.</div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">✈️</div>
+      <div class="essential-title">Flights from India</div>
+      <div class="essential-desc">IndiGo and AirAsia fly <strong>direct from Mumbai (BOM) and Delhi (DEL)</strong> to Ngurah Rai, Bali (DPS). Flight time is 5–6 hours. Book 2–3 months ahead for best fares. Typical return fare: ₹18,000–₹35,000. Check prices on Skyscanner or Google Flights. Fly out Delhi/Mumbai — no transit required.</div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">📱</div>
+      <div class="essential-title">SIM Card &amp; Getting Around</div>
+      <div class="essential-desc">Buy a local SIM at the airport — <strong>Telkomsel or XL Axiata</strong>, 30-day unlimited data for ~₹800. Grab app works across all of Bali (book cabs, food delivery). Avoid unmetered taxis — always use Grab. Scooter rental is ₹300–400/day and the easiest way to get around. International driving licence required legally.</div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🌤</div>
+      <div class="essential-title">Best Time to Visit</div>
+      <div class="essential-desc"><strong>April to October (dry season)</strong> is ideal — sunny, low humidity, perfect for beaches and outdoor activities. July–August is peak season (book hotels early). November–March is wet season — heavy afternoon downpours but cheaper prices. Avoid December 20–January 5 (overcrowded, expensive). April and May are the sweet spot.</div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-icon">🍛</div>
+      <div class="essential-title">Food for Indians</div>
+      <div class="essential-desc">Bali food is <strong>not spicy by Indian standards</strong>. Nasi goreng (fried rice), mie goreng (fried noodles), gado-gado, and satay are safe bets. Vegetarians will find plenty of options — Ubud has excellent vegetarian restaurants. Indian food is available in Seminyak and Kuta if you need a fix. Coconut water is ₹40–60 IDR equivalent.</div>
+    </div>
+  </div>
+
+  <div class="label">Choose Your Plan</div>
+  <div class="plan-grid">
+    <div class="plan-card">
+      <div class="plan-name">💰 Budget</div>
+      <span class="plan-price">₹4,000</span>
+      <div class="plan-unit">Per Day / Per Person</div>
+      <div class="plan-desc">Hostels, warungs, scooter, free beaches. Bali is genuinely cheap — $30/day is comfortable.</div>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">💑 Couple</div>
+      <span class="plan-price">₹8,000</span>
+      <div class="plan-unit">Per Day / Per Person</div>
+      <div class="plan-desc">Rice field villa, restaurant dinners, activities. The classic Bali honeymoon experience.</div>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">✨ Luxury</div>
+      <span class="plan-price">₹20,000</span>
+      <div class="plan-unit">Per Day / Per Person</div>
+      <div class="plan-desc">Private pool villas, beach clubs, spa, fine dining. Bali luxury is world-class and far cheaper than equivalent in Europe.</div>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">🎉 Party</div>
+      <span class="plan-price">₹10,000</span>
+      <div class="plan-unit">Per Day / Per Person</div>
+      <div class="plan-desc">Beach clubs, nightlife, surf lessons, day trips. Seminyak + Canggu based. Bali's party scene is world-famous.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>Indian payment tip:</strong> UPI and Indian credit cards may not work at Balinese businesses. Carry adequate IDR cash. Most ATMs dispense IDR directly. Notify your bank before travel to avoid card blocks on international transactions.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAY 1: UBUD ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bali 5-Day Itinerary</span>
+    <span class="page-header-right">Day 1 — Ubud</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Cultural Heart of Bali</div>
+      <div class="day-title">Ubud — Rice Terraces, Temples &amp; Kecak Fire Dance</div>
+      <div class="day-sub">Arrive · Tegallalang · Monkey Forest · Ubud Palace · Kecak dance</div>
+      <div class="day-cost">💰 Budget: ₹2,000–₹3,000 · Couple: ₹6,000–₹10,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Tegallalang Rice Terraces</div>
+        <div class="time-desc">Bali's most iconic landscape — cascading emerald rice paddies carved into steep hillsides 15km north of Ubud. Arrive before 9am to beat the crowds and get the best light for photos. The famous Instagram swing is here too. Walk the full terrace trail (45 min). Watch your belongings near the parking area.</div>
+        <div class="time-price">Entry: ₹500 (~10,000 IDR) · Best light: 7–9am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Sacred Monkey Forest Sanctuary</div>
+        <div class="time-desc">Home to over 700 Balinese long-tailed macaques in a lush jungle sanctuary in the heart of Ubud. Three ancient temples inside the forest. The monkeys will steal anything — secure your glasses, earrings, phone, and bags. Don't eat in there. Visit Pura Dalem Agung Padangtegal temple. Genuinely extraordinary atmosphere.</div>
+        <div class="time-price">Entry: ₹500 (~10,000 IDR) · Allow 60–90 min</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Ubud Palace &amp; Ubud Art Market</div>
+        <div class="time-desc">Puri Saren Agung (Ubud Palace) is the former royal residence at the heart of town — free to enter, still a working royal family home. Just opposite is the Ubud Art Market selling sarongs, wood carvings, silver jewellery, batik fabric. Bargain hard — start at 30% of the first asking price, walk away if needed.</div>
+        <div class="time-price">Palace: Free · Market: Bargain from 30% of asking price</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Kecak Fire Dance — Uluwatu or Ubud</div>
+        <div class="time-desc">The most spectacular performance in Bali — 50+ men chanting in trance-like rhythm (no instruments, only voices) as a Ramayana story unfolds in firelight. The Uluwatu temple setting at cliff-edge with the ocean behind is more dramatic. Ubud version is more accessible. Book ahead — sells out in peak season.</div>
+        <div class="time-price">₹600 (~120,000 IDR) · Book at your hotel or online</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Dinner</div>
+      <div class="time-content">
+        <div class="time-title">Locavore (Luxury) · Warung Babi Guling (Budget)</div>
+        <div class="time-desc">Budget/Culture: Warung Babi Guling Ibu Oka — Ubud's most famous suckling pig warung, serving Bali's signature dish since 1950s. Full plate ₹400 (~80,000 IDR). The crispy skin is extraordinary. Arrive at noon or 6pm before it sells out. Luxury: Locavore, one of Asia's best restaurants — Balinese tasting menu, ₹5,000–₹8,000/person, book weeks ahead.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>Where to stay in Ubud:</strong> Book a rice field view villa — waking up to terraced green fields and mist is the definitive Ubud experience. Options: Komaneka at Bisma (luxury, ₹25,000+/night), Bisma Eight (couple, ₹8,000–₹15,000/night), Ketut's Place (budget, ₹2,000–₹4,000/night with rice field view).
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAY 2: UBUD + SPIRITUAL ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bali 5-Day Itinerary</span>
+    <span class="page-header-right">Day 2 — Ubud &amp; Spiritual</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Temples, Treks &amp; Traditions</div>
+      <div class="day-title">Ubud — Holy Springs, Ancient Carvings &amp; Volcano Sunrise</div>
+      <div class="day-sub">Tirta Empul · Gunung Kawi · Batur volcano trek · Cooking class</div>
+      <div class="day-cost">💰 Budget: ₹1,500–₹2,500 · Couple: ₹5,000–₹10,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">3:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Batur Volcano Sunrise Trek (Optional but Unmissable)</div>
+        <div class="time-desc">Mount Batur (1,717m) is Bali's active volcano — the sunrise trek from the crater rim is one of Southeast Asia's great experiences. Start at 3am with a guide, reach the summit by 5:30am as the sky turns orange over the caldera lake. Active fumaroles, views of Agung and Lombok on clear days. Book through your hotel — never go alone.</div>
+        <div class="time-price">₹3,000–₹4,000 (~600,000–800,000 IDR) incl. guide · Return by noon</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Tirta Empul Holy Spring Temple</div>
+        <div class="time-desc">Bali's most sacred water temple — pilgrims have come to purify themselves in these natural springs since 962 AD. You can participate in the purification ritual in the spring pools (sarong provided, ₹300 entry). Deeply moving experience. Come early (8am) to see genuine devotion before tourist crowds arrive. Respectful dress essential — cover shoulders and legs.</div>
+        <div class="time-price">Entry: ₹300 (~60,000 IDR) · Sarong provided · Allow 60 min</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Gunung Kawi Ancient Rock Carvings</div>
+        <div class="time-desc">Eleven 7-metre royal tombs carved directly into a cliff face in 1080 AD — among the most impressive ancient monuments in Bali and still actively used for prayer. Descend 315 steep steps through rice paddies to reach the site. Return to Ubud via local roads — stop at small family temple ceremonies if you see one (always welcome, dress modestly).</div>
+        <div class="time-price">Entry: ₹250 (~50,000 IDR) · Hire scooter ₹300/day</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">OR: 5:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Campuhan Ridge Walk (Free Sunrise Alternative)</div>
+        <div class="time-desc">If you skip the volcano trek, this is Ubud's best free morning activity. A 9km ridge walk through jungle and rice paddies starting from the centre of Ubud. Start at sunrise (5:30am) for golden light and cool air. Completely free. Bring water. Walk to Karsa Kafe for breakfast at the end — set among rice fields, excellent coffee.</div>
+        <div class="time-price">Completely free · 9km · Allow 2–3 hours</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Balinese Cooking Class</div>
+        <div class="time-desc">One of Bali's best experiences — visit a local market at 8am to buy ingredients, then learn to cook 5–6 Balinese dishes (nasi goreng, satay lilit, lawar, black rice pudding) in a family compound kitchen. You eat what you cook. Take the recipes home. Offered by dozens of local families around Ubud — Paon Bali and Lobong Culinary are consistently excellent.</div>
+        <div class="time-price">₹2,500 (~500,000 IDR) per person incl. market visit and full meal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Volcano trek weather tip:</strong> Check weather the night before — cloudy nights mean zero visibility at summit. Your guide will know. Reschedule if the forecast is bad (most operators allow this). Bring a jacket — it's cold at 3am and at the summit even in dry season.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAY 3: SEMINYAK + CANGGU ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bali 5-Day Itinerary</span>
+    <span class="page-header-right">Day 3 — Seminyak &amp; Canggu</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Beach &amp; Beach Clubs</div>
+      <div class="day-title">Seminyak &amp; Canggu — Sunsets, Surf &amp; Beach Clubs</div>
+      <div class="day-sub">Move to coast · Seminyak sunset · Canggu surf · Tanah Lot optional</div>
+      <div class="day-cost">💰 Budget: ₹2,500–₹4,000 · Couple: ₹8,000–₹15,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Ubud to Seminyak (1.5 hrs by Grab)</div>
+        <div class="time-desc">Check out of Ubud and head to Seminyak on the southwest coast — Bali's most stylish beach strip. The drive takes 1.5–2 hours depending on traffic (Bali traffic is notoriously bad). Book Grab in advance from Ubud — metered taxis will quote 3x the Grab price. Check in, then head straight to the beach for lunch.</div>
+        <div class="time-price">Grab: ~₹600–₹800 (~130,000 IDR)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Seminyak Beach &amp; Ku De Ta</div>
+        <div class="time-desc">Seminyak Beach is Bali's most fashionable stretch — wide, clean, excellent surf but strong undertow (swim between flags). Ku De Ta beach club sits right on the sand — world-famous for its sunset views, cocktails and international crowd. Day pass not required — order drinks and you can stay. One cocktail is ~₹900 (180,000 IDR). Worth it for the setting.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Potato Head Beach Club</div>
+        <div class="time-desc">Bali's most architecturally impressive beach club — a curving wall of antique wooden window frames forms the entrance. Day pass includes a drinks credit. Infinity pool overlooking the ocean, DJ, great food menu. The iconic Bali beach club experience. Book ahead for weekend visits or peak season.</div>
+        <div class="time-price">Day pass: ₹3,000 (~600,000 IDR) incl. drinks credit</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">4:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Canggu — Surf Lesson at Echo Beach</div>
+        <div class="time-desc">Canggu is 20 min north of Seminyak — hipper, younger, more casual. Echo Beach is beginner-friendly with consistent waves and many surf schools on the sand. A 2-hour lesson with board and instructor included. Berawa Beach nearby is more relaxed. Finish the day at La Brisa or Deus Ex Machina Cafe — both iconic Canggu hangouts.</div>
+        <div class="time-price">Surf lesson: ₹2,000 (~400,000 IDR) · 2 hrs incl. board</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">OPTION</div>
+      <div class="time-content">
+        <div class="time-title">Tanah Lot Temple at Sunset (30km from Seminyak)</div>
+        <div class="time-desc">Bali's most photographed temple — sitting on a sea stack rock surrounded by crashing waves. The sunset silhouette of the temple is iconic. Best visited in the final hour of daylight (5:30–6:30pm). Get there early and walk the full coastal path. Can be done as a detour en route from Ubud to Seminyak or as an afternoon trip.</div>
+        <div class="time-price">Entry: ₹600 (~120,000 IDR) · 30km from Seminyak</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>Beach safety:</strong> Bali's west-coast beaches have powerful rip currents and strong undertow. Always swim between the red-and-yellow flags where lifeguards are present. Seminyak, Canggu and Kuta have regular drowning incidents among tourists who ignore the flags — please don't.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — DAY 4: ULUWATU ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bali 5-Day Itinerary</span>
+    <span class="page-header-right">Day 4 — Uluwatu</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · The Bukit Peninsula</div>
+      <div class="day-title">Uluwatu — Clifftop Temple, Hidden Beaches &amp; Jimbaran Seafood</div>
+      <div class="day-sub">Move south · Uluwatu temple · Padang Padang · Jimbaran sunset dinner</div>
+      <div class="day-cost">💰 Budget: ₹2,000–₹3,000 · Couple: ₹7,000–₹15,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Seminyak to Uluwatu (30 min)</div>
+        <div class="time-desc">Move south to the Bukit Peninsula — Bali's southernmost tip, dramatically different from the north. Clifftop limestone headlands with turquoise ocean below. Check in to your Uluwatu accommodation — the cliff-edge villas here have the best views in Bali. Then head immediately to Uluwatu Temple before the tourist rush.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Pura Luhur Uluwatu Temple</div>
+        <div class="time-desc">One of Bali's six key temples, perched 70m above the Indian Ocean on a sheer limestone cliff. The views are spectacular. The resident macaques are aggressive — secure your glasses, earrings, phones and bags (they've learned to steal them and bargain for food). Sarong is provided at entry. Walk the full clifftop path (30 min). Come back at 6pm for the sunset Kecak performance.</div>
+        <div class="time-price">Entry: ₹300 (~60,000 IDR) · Sarong included</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Padang Padang Beach</div>
+        <div class="time-desc">Walk down 100 steps cut into the limestone cliff to reach this stunning small cove — turquoise water, white sand, surrounded by rocky outcrops. Famous from the film Eat Pray Love. Excellent snorkelling on the right side of the cove. Gets busy by noon — arrive before 11am for fewer people. Strong current outside the cove — stay inside.</div>
+        <div class="time-price">Entry: ₹150 (~30,000 IDR) · 100 steps down to beach</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Bingin Beach &amp; Single Fin (Sundays Only)</div>
+        <div class="time-desc">Bingin is Uluwatu's most atmospheric beach — accessed via steep stairs, surrounded by budget warung cafes on the cliff. Great for snorkelling and watching surfers on one of Bali's finest reef breaks. Single Fin is the legendary clifftop bar overlooking the break — their Sunday Sessions (from noon) are the best weekly party in Bali: DJ, good food, incredible views.</div>
+        <div class="time-price">No entry fee · Drinks from ₹400 (~80,000 IDR)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Dinner</div>
+      <div class="time-content">
+        <div class="time-title">Jimbaran Seafood on the Beach</div>
+        <div class="time-desc">Drive 20 min north to Jimbaran Bay — a long crescent beach where dozens of restaurants set tables right on the sand. Order fresh lobster, tiger prawns, red snapper, crab — all grilled over coconut husks with sambal and lime. Candles at sunset, waves lapping at your feet. ₹2,000–₹3,000 for two people with fresh lobster and prawns. Negotiate — prices are often posted but adjust for quantity.</div>
+        <div class="time-price">₹2,000–₹3,000 for two · Fresh seafood grilled to order</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>⚠️ Monkey warning at Uluwatu:</strong> The monkeys at Uluwatu temple are notorious thieves. They specifically target glasses, sunglasses, jewellery, phones, hats and bags. If a monkey grabs something, don't pull it back — they can bite. Guards will help negotiate the return (usually with food). Put everything away before you enter.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — DAY 5: NUSA PENIDA / DEPARTURE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bali 5-Day Itinerary</span>
+    <span class="page-header-right">Day 5 — Nusa Penida or Departure</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Island Day Trip or Relaxation</div>
+      <div class="day-title">Nusa Penida Day Trip — or — Spa &amp; Departure</div>
+      <div class="day-sub">Fast boat from Sanur · Kelingking Beach · Angel's Billabong · OR Spa day</div>
+      <div class="day-cost">💰 Nusa Penida day trip: ₹2,500–₹3,500 all-in · Spa day: ₹500–₹1,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">OPTION A</div>
+      <div class="time-content">
+        <div class="time-title">Nusa Penida Full Day Trip (Highly Recommended)</div>
+        <div class="time-desc">Take the fast boat from Sanur Harbour (45 min, ₹1,200 return). Nusa Penida is a rawer, wilder island with jaw-dropping clifftop scenery. Full day trip packages including boat + private driver + all sites: ₹2,500–₹3,500 per person. Book through your hotel or reputable operator the night before. Early boat (7am) is essential to beat crowds at Kelingking.</div>
+        <div class="time-price">Full day trip: ₹2,500–₹3,500 incl. boat + driver · 7am departure</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Kelingking Beach — Bali's Most Iconic View</div>
+        <div class="time-desc">The T-Rex cliff — a limestone peninsula shaped like a Tyrannosaurus Rex head jutting into turquoise water — is the most photographed view in Indonesia. The viewpoint is at the top. You can hike down to the beach (40 min down, harder back up, slippery — wear good shoes) but the view from the top is the money shot. Go early before it fills with day-trippers.</div>
+        <div class="time-price">No entry fee · Strong shoes required if hiking down</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Angel's Billabong &amp; Broken Beach</div>
+        <div class="time-desc">Angel's Billabong is a natural infinity pool cut into coastal rock — at low tide it fills with clear turquoise seawater and you can swim in it. 200m away is Broken Beach — a dramatic coastal arch with crashing waves inside. One of the most geologically spectacular spots in Bali. Check tide times — Angel's Billabong is accessible only at low tide.</div>
+        <div class="time-price">Entry: Small local fee (~₹50) · Check tide times</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Crystal Bay — Manta Ray Snorkelling</div>
+        <div class="time-desc">Crystal Bay is one of Southeast Asia's best snorkel sites — Mola-Mola (ocean sunfish) spotted July–October, manta rays year-round in the deeper water. Snorkel gear hire: ₹250. The bay itself is sheltered and beautiful even without the marine life. Return fast boat from Nusa Penida at 4:30–5pm, back in Sanur by 5:30pm.</div>
+        <div class="time-price">Snorkel gear: ₹250 · Return boat 4:30–5pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">OPTION B</div>
+      <div class="time-content">
+        <div class="time-title">Spa Day &amp; Final Shopping (If Departing)</div>
+        <div class="time-desc">Bali is famous for its spas — a 2-hour traditional Balinese massage (full body + head + reflexology) costs ₹500–₹700 at a local spa, ₹1,500 at a hotel spa. Jari Menari and Taksu Spa in Ubud are excellent. Then: final shopping at Seminyak's boutiques (local batik, Balinese silver, essential oils), last coconut on the beach, and Grab to Ngurah Rai airport (DPS).</div>
+        <div class="time-price">2hr Balinese massage: ₹500–₹1,500 · Airport Grab: ₹400–₹600</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Nusa Penida safety:</strong> The roads on Nusa Penida are steep, narrow and poorly maintained — do not hire a scooter unless you're an experienced rider. Always book a private driver for the day (included in most packages). The roads to Kelingking in particular are extremely challenging.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — BUDGET TABLE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bali 5-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Cost Guide</div>
+  <h2 class="section-title" style="margin-bottom:5mm">5-Day Budget Breakdown — 2026</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>💰 Budget</th>
+        <th>💑 Couple</th>
+        <th>✨ Luxury</th>
+        <th>🎉 Party</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>🏨 Villa / Hotel (5 nights)</td><td>₹8,000–₹15,000</td><td>₹25,000–₹50,000</td><td>₹80,000–₹2,00,000</td><td>₹20,000–₹40,000</td></tr>
+      <tr><td>🍽 Food &amp; Drinks</td><td>₹5,000–₹8,000</td><td>₹12,000–₹20,000</td><td>₹25,000–₹50,000</td><td>₹15,000–₹25,000</td></tr>
+      <tr><td>🛵 Transport (Grab + scooter ₹300/day)</td><td>₹3,000–₹5,000</td><td>₹5,000–₹8,000</td><td>₹8,000–₹15,000</td><td>₹5,000–₹8,000</td></tr>
+      <tr><td>🎯 Activities &amp; Entry Fees</td><td>₹3,000–₹5,000</td><td>₹6,000–₹10,000</td><td>₹10,000–₹20,000</td><td>₹6,000–₹10,000</td></tr>
+      <tr><td>🏖 Beach Clubs</td><td>—</td><td>₹3,000–₹6,000</td><td>₹8,000–₹20,000</td><td>₹10,000–₹20,000</td></tr>
+      <tr><td>🚤 Nusa Penida Day Trip</td><td>₹2,500</td><td>₹5,000</td><td>₹8,000–₹12,000</td><td>₹5,000</td></tr>
+      <tr><td>TOTAL 5 Days — ₹ (per person)</td><td>₹21,500–₹35,500</td><td>₹56,000–₹94,000</td><td>₹1,39,000–₹3,17,000</td><td>₹61,000–₹1,03,000</td></tr>
+      <tr><td>TOTAL 5 Days — USD (approx.)</td><td>$260–$430</td><td>$675–$1,130</td><td>$1,670–$3,820</td><td>$735–$1,240</td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note" style="margin-bottom:6mm">All prices INR 2026 per person unless stated. Exchange rate: 1 USD = ₹83. Flights to Bali from India not included (₹18,000–₹35,000 return). Budget plan uses hostels/guesthouses, warungs, scooter rental. Couple plan uses private villas, restaurants and Grab. Luxury plan uses 5-star cliff villas, private transfers and fine dining.</p>
+
+  <h3 class="sub-title">Where to Stay</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Komaneka at Bisma</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Luxury · Ubud · From ₹25,000/night ★★★★★</div>
+      <div style="font-size:7pt;color:var(--primary)">Infinity pool floating above the Campuhan River gorge — best views in Ubud</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Bisma Eight</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Couple · Ubud · From ₹8,000/night ★★★★</div>
+      <div style="font-size:7pt;color:var(--primary)">Canopy walk, rice field views, the best mid-range hotel in Ubud</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">The Layar Private Villas</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Luxury · Seminyak · From ₹40,000/night ★★★★★</div>
+      <div style="font-size:7pt;color:var(--primary)">Private pool villas 5 min from Seminyak beach — butler service</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Alaya Uluwatu</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Cliff-top · Uluwatu · From ₹15,000/night ★★★★★</div>
+      <div style="font-size:7pt;color:var(--primary)">Clifftop infinity pool overlooking the Indian Ocean — spectacular sunsets</div>
+    </div>
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>Best value secret:</strong> Bali's villa prices drop 30–40% if you book direct with the property (WhatsApp them after finding on Booking.com). Most small villas and guesthouses prefer direct bookings to avoid the OTA commission — they'll often throw in airport pickup, breakfast or a discount. Always ask.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 8</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 9 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:40pt;margin-bottom:6mm">🌴</div>
+  <h2>Plan More. <em style="font-style:italic;color:rgba(255,255,255,0.5)">Worry Less.</em></h2>
+  <p>50+ free destination guides on IncredibleItinerary.com — India, Southeast Asia, Europe and beyond. Every guide written with real costs, real routes and zero fluff — made for Indian travellers.</p>
+  <div class="back-cta">Visit IncredibleItinerary.com →</div>
+  <div class="back-url">incredibleitinerary.com/guides</div>
+  <p style="color:rgba(255,255,255,0.4);font-size:9pt;margin-bottom:6mm">More guides: Kerala · Rajasthan · Goa · Kashmir · Japan · Dubai · Thailand · Vietnam · Santorini</p>
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · For personal use only · Not for redistribution<br/>
+    All prices are approximate and based on 2026 market rates. Verify independently before travel.<br/>
+    Currency: 1 IDR ≈ ₹0.0052 · 1 USD ≈ ₹83 · Subject to change. Visa rules correct as of 2024 — verify at indonesianembassy.in before travel.
+  </div>
+</div>
+
+</body>
+</html>

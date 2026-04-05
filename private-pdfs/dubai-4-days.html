@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Dubai in 4 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#d97706;--gold-light:#f59e0b;--gold-dark:#92400e;
+  --cream-light:#fef3c7;--amber-mid:#fbbf24;
+  --ink:#161008;--cream:#faf7f2;--parchment:#f2ede4;
+  --white:#ffffff;--muted:#6b6560;
+  --teal:#0f766e;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(22,16,8,0.97) 0%,rgba(22,16,8,0.6) 50%,rgba(22,16,8,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--amber-mid);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(22,16,8,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW / ESSENTIALS PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(22,16,8,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--gold);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--gold-dark)}
+.route-stop.mid{background:#b45309}
+.route-stop.light{background:#ca8a04}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.info-card{background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:10px;padding:4mm}
+.info-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.info-badge{display:inline-block;font-size:7pt;background:rgba(217,119,6,0.1);color:var(--gold-dark);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.info-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(217,119,6,0.06),rgba(217,119,6,0.02));border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.15);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber-mid);margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:var(--amber-mid);font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--gold-dark);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--gold-dark);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.gold{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);color:var(--gold-dark)}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:var(--gold-dark)}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(22,16,8,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(22,16,8,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(217,119,6,0.05);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic}
+
+/* ── PACKING PAGE ── */
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.pack-col h4{font-size:8pt;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(22,16,8,0.08)}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:7.5pt;color:var(--muted);font-weight:300;margin-bottom:2mm;line-height:1.4}
+.pack-check{color:var(--muted);flex-shrink:0;margin-top:0.5px;font-size:9pt}
+
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.tip-box{background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--gold-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--gold);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80&auto=format&fit=crop" alt="Dubai skyline with Burj Khalifa"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Dubai in 4 Days:<br/><em>Gold, Glass &amp; Desert</em></h1>
+    <p class="cover-sub">Downtown · Marina · Desert · Deira — 4 complete plans, real costs in ₹ and AED, and the booking mistakes that make Dubai twice as expensive as it needs to be.</p>
+    <div class="cover-pills">
+      <span class="pill">🏙️ Burj Khalifa &amp; Dubai Mall</span>
+      <span class="pill">🏜️ Desert Safari Under Stars</span>
+      <span class="pill">⚓ Marina &amp; Palm Jumeirah</span>
+      <span class="pill">🪙 Gold &amp; Spice Souks</span>
+      <span class="pill">💰 From ₹10,000/day</span>
+      <span class="pill">Nov – Mar Best Season</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+    </div>
+    <div style="margin-top:4mm;font-size:8pt;font-weight:500;color:rgba(255,255,255,0.45);letter-spacing:0.05em">₹249 Guide — International</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — ESSENTIALS FOR INDIANS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Dubai 4-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Essentials for Indian Travellers</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">4 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹10k/day</span><span class="stat-label">Budget From</span></div>
+    <div class="stat-box"><div class="stat-icon">🌡</div><span class="stat-val">Nov – Mar</span><span class="stat-label">Best Season</span></div>
+    <div class="stat-box"><div class="stat-icon">✈️</div><span class="stat-val">3–4 hrs</span><span class="stat-label">Flight Time</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Downtown</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Old Dubai</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop mid">Marina</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop light">Desert</span>
+    <span class="route-sub">1 AED = ₹22.5 approx · Currency: UAE Dirham</span>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-badge">Visa</div>
+      <div class="info-name">🛂 UAE Visa for Indians</div>
+      <div class="info-desc">Indians need a UAE Tourist Visa — not on arrival. Apply online via UAE ICA (ica.gov.ae) or through a reputed travel agent. Cost: ₹4,000–₹6,000 for 30 days. Processing takes 3–5 working days. Apply at least 1 week before travel. Keep a printed copy on you.</div>
+    </div>
+    <div class="info-card">
+      <div class="info-badge">Currency</div>
+      <div class="info-name">💵 Money in Dubai</div>
+      <div class="info-desc">UAE Dirham (AED). 1 AED ≈ ₹22.5 (verify before travel). Dubai is an expensive city — budget realistically. Always withdraw AED from airport ATM on arrival (better rates than exchange counters). UPI/cards work in malls; carry AED cash for souks and abra rides.</div>
+    </div>
+    <div class="info-card">
+      <div class="info-badge">Getting Around</div>
+      <div class="info-name">🚇 Dubai Metro — Your Best Friend</div>
+      <div class="info-desc">Dubai Metro (Red + Green line) covers all major tourist spots. Buy a Nol Card at the airport for ₹90 (AED 4). Metro rides cost ₹30–₹150 per trip. Clean, air-conditioned, on time. Avoid taxis — Dubai taxis are expensive (₹300–₹800 per ride). Use Careem (like Uber) if Metro isn't convenient.</div>
+    </div>
+    <div class="info-card">
+      <div class="info-badge">Flights</div>
+      <div class="info-name">✈️ Flying from India</div>
+      <div class="info-desc">IndiGo, Air India, and Emirates fly from Mumbai, Delhi, Bengaluru, Hyderabad, Chennai, Kochi and more. Flight time: 3–4 hours. Book 6–8 weeks ahead for best fares. Terminal 3 (Emirates) is particularly stunning — worth arriving early. Dubai airport (DXB) is connected to the city by metro.</div>
+    </div>
+  </div>
+
+  <div class="label">Season &amp; Budget Plans</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:10px;padding:3.5mm;text-align:center">
+      <div style="font-size:9pt;margin-bottom:1mm">💰</div>
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Budget</div>
+      <div style="font-size:11pt;font-family:'Cormorant Garamond',serif;color:var(--gold-dark);font-weight:300;margin-bottom:1mm">₹10k/day</div>
+      <div style="font-size:6.5pt;color:var(--muted)">Hostel/budget hotel, metro, street food, free attractions</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:10px;padding:3.5mm;text-align:center">
+      <div style="font-size:9pt;margin-bottom:1mm">💑</div>
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Couple</div>
+      <div style="font-size:11pt;font-family:'Cormorant Garamond',serif;color:var(--gold-dark);font-weight:300;margin-bottom:1mm">₹18k/day</div>
+      <div style="font-size:6.5pt;color:var(--muted)">3-star hotel, mix of metro &amp; Careem, restaurants</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:10px;padding:3.5mm;text-align:center">
+      <div style="font-size:9pt;margin-bottom:1mm">✨</div>
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Luxury</div>
+      <div style="font-size:11pt;font-family:'Cormorant Garamond',serif;color:var(--gold-dark);font-weight:300;margin-bottom:1mm">₹40k/day</div>
+      <div style="font-size:6.5pt;color:var(--muted)">5-star hotel, private transfers, fine dining, VIP access</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:10px;padding:3.5mm;text-align:center">
+      <div style="font-size:9pt;margin-bottom:1mm">👨‍👩‍👧</div>
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Family</div>
+      <div style="font-size:11pt;font-family:'Cormorant Garamond',serif;color:var(--gold-dark);font-weight:300;margin-bottom:1mm">₹25k/day</div>
+      <div style="font-size:6.5pt;color:var(--muted)">4-star apartment hotel, family tickets, metro passes</div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Best time to visit:</strong> November to March — temperatures are a pleasant 20–25°C, perfect for outdoor sightseeing. Summer (May–September) hits 40°C+ — outdoor activities become miserable and expensive (you'll be in ACs all day). Avoid summer unless you plan to be in malls and waterparks.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAY 1 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Dubai 4-Day Itinerary</span>
+    <span class="page-header-right">Day 1 — Downtown Dubai</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Downtown Dubai</div>
+      <div class="day-title">Burj Khalifa, The Fountain &amp; Dubai Frame</div>
+      <div class="day-sub">World's tallest tower · Fountain show · DIFC arts district</div>
+      <div class="day-cost">💰 Budget: ₹3,500–₹5,000 · Couple: ₹8,000–₹12,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Burj Khalifa — At the Top (Book Weeks Ahead)</div>
+        <div class="time-desc">The world's tallest building at 828m. Go early to avoid queues — book online at burjkhalifa.ae well in advance (prices double at the gate and tickets often sell out). At the Top (124th floor, 452m): stunning 360° views of Dubai. Ideal for first-timers. Do not wait to book on the day — it will cost double and may not be available.</div>
+        <div class="time-price">At the Top 124F: ₹3,000 · At the Top Sky 148F: ₹6,000 · Book online only</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Dubai Mall — World's Largest Mall (Free)</div>
+        <div class="time-desc">1,200 shops, an indoor ice rink, a massive aquarium, and a waterfall inside the building. Free to enter. Dubai Aquarium &amp; Underwater Zoo inside (optional, ₹2,200). Just walking through is an experience — the scale is genuinely surreal. Souk Al Bahar across the bridge offers the best angle to photograph the Burj Khalifa reflected in the fountain lake.</div>
+        <div class="time-price">Mall entry: Free · Aquarium: ₹2,200 optional</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Dubai Fountain Show — Free, Every 30 Minutes</div>
+        <div class="time-desc">The world's largest choreographed fountain — jets shoot 150m into the air, dancing to Arabic music. Shows run every 30 minutes after 6pm. Watch from the Souk Al Bahar bridge for the best view. Completely free. The combination of the Burj Khalifa lit up, the fountain, and the Dubai skyline at dusk is one of the most spectacular sights on earth.</div>
+        <div class="time-price">Free · Shows every 30 min after 6pm, every 20 min at 1pm &amp; 1:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Dubai Frame — Where Old Meets New (Before Sunset)</div>
+        <div class="time-desc">A 150m picture frame structure bridging old and new Dubai. One side shows historic Deira and Bur Dubai; the other shows modern skyscraper Dubai. The glass-bottomed sky bridge walkway between the two towers is genuinely nerve-wracking (in a good way). Perfect golden-hour stop. Go before the fountain show.</div>
+        <div class="time-price">₹1,200 · Zaabeel Park, Dubai · Metro to Al Jafiliya</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Dubai Opera Walk + DIFC Art Galleries</div>
+        <div class="time-desc">Walk past the stunning Dubai Opera building (dhow boat-shaped architecture). DIFC (Dubai International Financial Centre) art galleries are free and open evenings — world-class contemporary art. Dinner: Comptoir 102 (healthy, ₹2,500/person), Zuma DIFC (fine dining, ₹5,000+), or head back to Dubai Mall food court (₹500–₹800).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box gold">
+    <strong>Critical booking tip:</strong> Book Burj Khalifa tickets the moment you finalize your travel dates — ideally 2–3 weeks ahead. Tickets sell out on weekends and during peak season. The online price is also 30–50% cheaper than at-the-gate. burjkhalifa.ae is the only official site.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAY 2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Dubai 4-Day Itinerary</span>
+    <span class="page-header-right">Day 2 — Old Dubai</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Deira + Bur Dubai</div>
+      <div class="day-title">Gold Souk, Creek &amp; Al Fahidi Heritage District</div>
+      <div class="day-sub">Abra crossing · Gold Souk · Spice Souk · Al Seef · JBR Beach</div>
+      <div class="day-cost">💰 Budget: ₹500–₹1,500 · Couple: ₹3,000–₹8,000 (excl. accommodation + gold purchases)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Deira Gold Souk — World's Largest</div>
+        <div class="time-desc">Over 300 gold shops under one roof — the largest concentration of gold shops in the world. Overwhelming and dazzling in equal measure. Best to buy 22K gold here (hallmarked, genuine). Gold is sold by weight — the price per gram is fixed by the government daily, but making charges are negotiable. Bargain 10–20% on making charges. Mornings are less crowded. Go before 10am.</div>
+        <div class="time-price">Free entry · Gold prices set daily by Dubai Gold &amp; Jewellery Group</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Deira Spice Souk — Frankincense, Saffron &amp; More</div>
+        <div class="time-desc">A labyrinth of sacks filled with saffron, frankincense, dried rose petals, turmeric and exotic spices. The air is thick and heady. Iranian saffron here is excellent — ₹200–₹500 for a good quantity. Frankincense (luban) makes a great take-home gift. Bargain gently. The souk has changed but remains atmospheric and genuine.</div>
+        <div class="time-price">Free entry · Saffron ₹200–₹500 · Frankincense ₹100–₹300</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Abra Water Taxi Across Dubai Creek — ₹5</div>
+        <div class="time-desc">The most authentic Dubai experience: a wooden abra (water taxi) across the Dubai Creek from Deira to Bur Dubai. Costs AED 1 (₹22) per person. The 5-minute crossing on a packed wooden boat with the old city skyline on both sides is irreplaceable. This is how Dubai residents have crossed the creek for 200 years. Do not skip this.</div>
+        <div class="time-price">AED 1 (≈ ₹22) per person · Runs constantly through the day</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Al Fahidi Historical District + Dubai Museum</div>
+        <div class="time-desc">The oldest surviving part of Dubai — 150-year-old wind-tower buildings (barjeel), narrow lanes, and a glimpse of pre-oil Dubai. Completely free to walk. The Dubai Museum inside Al Fahidi Fort is excellent — shows how Dubai went from a fishing village to a megacity in 50 years. ₹90 entry, 45 minutes. Al Seef waterfront next to it is great for lunch.</div>
+        <div class="time-price">District: Free · Dubai Museum: ₹90 · Al Seef restaurants: ₹400–₹1,200</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">La Mer Beach or JBR Beach — Free Sunset</div>
+        <div class="time-desc">Both are free public beaches. JBR (Jumeirah Beach Residence) Walk is livelier — outdoor restaurants, street performers, beachfront cafes, and a great atmosphere at sunset. La Mer is quieter and more curated. Metro to Jumeirah Lakes Towers then a short Careem to JBR. Walk the entire JBR strip (1.5km) for dinner options ranging from ₹500 to ₹3,000.</div>
+        <div class="time-price">Beach entry: Free · Dinner at JBR: ₹500–₹2,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Gold buying tips for Indians:</strong> Check the day's gold rate on the Dubai Gold &amp; Jewellery Group website before entering the souk. The metal price is non-negotiable — only the making charges (craftsmanship fee) can be bargained. Stick to shops displaying the official certification logo. Carry your passport for larger purchases. Customs limit for gold jewellery brought into India: ₹50,000 (men) / ₹1,00,000 (women) duty-free.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAY 3 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Dubai 4-Day Itinerary</span>
+    <span class="page-header-right">Day 3 — Marina &amp; Palm</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Marina + Palm Jumeirah</div>
+      <div class="day-title">Ain Dubai, Atlantis &amp; Sunset at the Marina</div>
+      <div class="day-sub">Dubai Marina Walk · Bluewaters Island · Palm Jumeirah · Pier 7</div>
+      <div class="day-cost">💰 Budget: ₹2,000–₹4,000 · Couple: ₹6,000–₹15,000 · Full Atlantis day: ₹8,000/person</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Dubai Marina Walk — Most Photogenic in Dubai</div>
+        <div class="time-desc">A 7km waterfront promenade lined with restaurants, yachts, and some of Dubai's most striking residential towers. Walk the full loop early (8–10am) when it is cool and uncrowded for the best photography. Marina Mall is at one end if you need coffee. Take the Metro (Red Line) to DMCC station — it drops you right in the heart of the Marina.</div>
+        <div class="time-price">Free · DMCC Metro station · Best: early morning or sunset</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Ain Dubai — World's Largest Ferris Wheel (Bluewaters Island)</div>
+        <div class="time-desc">250m tall — taller than the London Eye. Located on Bluewaters Island (10 min from JBR by free shuttle or short Careem ride). One cabin ride takes 38 minutes. Stunning 360° views of the Marina, Palm, and Arabian Sea. Book online. The island itself has great dining and a quirky Madame Tussauds if you have kids. Worth it for the views alone.</div>
+        <div class="time-price">Standard cabin: AED 130 (≈ ₹3,000) · Book online at aindubai.com</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Palm Jumeirah — Monorail + The View at The Palm</div>
+        <div class="time-desc">Take the Palm Monorail from Atlantis to the Gateway Station and back (₹800 return). Walk the Palm trunk and crescent boardwalk for photos of the Marina skyline. The View at The Palm — a stunning observation deck on the 52nd floor of The Palm Tower — is highly recommended: ₹1,800, incredible panorama of the entire Palm and city. Or go full day at Atlantis Aquaventure Waterpark (₹8,000, all-day access to slides and private beach — best for families and waterpark lovers).</div>
+        <div class="time-price">Monorail: ₹800 return · The View: ₹1,800 · Atlantis: ₹8,000 full day</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Pier 7 Rooftop — Seven Restaurants, One View</div>
+        <div class="time-desc">Dubai Marina's iconic circular tower with seven different restaurant floors — seafood, Japanese, Indian, Italian and more. Take the elevator to your restaurant of choice. The view of the Marina at sunset with the Ain Dubai in the background is spectacular. Book a table in advance for weekend evenings. Dress smart-casual. Budget ₹2,000–₹5,000 per person for dinner.</div>
+        <div class="time-price">Dinner from ₹2,000 pp · Book on OpenTable or restaurant website</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box gold">
+    <strong>Atlantis Aquaventure tip:</strong> Book online (atlantis.com) at least 1 week ahead for the best price. Gate tickets cost 20–30% more. Arrive by 9am — the most popular slides have 45-min queues by noon. The private beach access and lazy river are included. Bring reef shoes (the deck gets hot). Best for families with children or if you love waterparks.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — DAY 4 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Dubai 4-Day Itinerary</span>
+    <span class="page-header-right">Day 4 — Desert Safari</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Desert + Departure</div>
+      <div class="day-title">Desert Safari — Dunes, Camels &amp; Bedouin Stars</div>
+      <div class="day-sub">4x4 dune bashing · Sandboarding · Camel ride · BBQ under stars · OR: IMG Worlds</div>
+      <div class="day-cost">💰 Desert Safari: ₹3,000–₹5,000/person · IMG Worlds: ₹7,000/person</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Last Morning — Dubai Mall or Gold Souk Shopping</div>
+        <div class="time-desc">If departing late, morning is ideal for any last-minute shopping. Dubai Duty Free at the airport is excellent but expensive. Gold Souk in Deira opens by 9am (best for jewellery). Dubai Mall for chocolates, dates, perfumes, and branded goods. Dubai is a tax-free shopping destination — electronics, perfumes and branded bags are often cheaper than India (check customs limits before buying).</div>
+        <div class="time-price">Dubai Duty Free: open 24/7 at DXB · Customs limit: USD 500 per person duty-free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Desert Safari — The Unmissable Dubai Experience (3pm–10pm)</div>
+        <div class="time-desc">Book through a reputed tour operator (not hotel desk touts — they overcharge). Pickup from hotel by 3pm. The safari includes: 45 minutes of thrilling 4x4 dune bashing (sand roller-coaster — genuinely exhilarating), sandboarding on 100m dunes, camel ride, quad biking (optional extra), henna painting, traditional Emirati dress photos, Tanoura (whirling dervish) dance show, and a lavish BBQ buffet dinner in a Bedouin-style camp under a sky full of stars. Returns to hotel by 10pm.</div>
+        <div class="time-price">Standard: ₹3,000/person · Premium with private camp: ₹5,000/person · Book online</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Alternative</div>
+      <div class="time-content">
+        <div class="time-title">IMG Worlds of Adventure — Largest Indoor Theme Park</div>
+        <div class="time-desc">If you have children or prefer to skip the desert, IMG Worlds of Adventure is the world's largest temperature-controlled indoor theme park. Four zones: Marvel (Spider-Man, Thor, Iron Man rides), Cartoon Network (Ben 10, Adventure Time), IMG Boulevard, and Dinosaur Land. Full day experience. Arrive at 10am. Rides suitable for ages 6 and above.</div>
+        <div class="time-price">₹7,000/person · imgworlds.com · Book online for 15% discount · City of Arabia Metro</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Departure</div>
+      <div class="time-content">
+        <div class="time-title">Airport Transfer — Book in Advance</div>
+        <div class="time-desc">Dubai Metro Red Line connects the city to DXB Airport (Terminal 1 and 3). Take metro from Union or DMCC to Airport Terminal 1/3 — ₹110–₹150, 30–45 minutes. Pre-book a Careem for a stress-free transfer if you have luggage. Arrive at airport 3 hours before international departure. Emirates Terminal 3 is worth exploring even if you're flying another airline — not possible, but Terminal 3 departures lounge is something else.</div>
+        <div class="time-price">Metro to airport: ₹110–₹150 · Careem: ₹600–₹1,000 depending on area</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>⚠️ Desert Safari booking warning:</strong> Do NOT book through hotel reception — they add a 40–60% markup. Book directly via Viator, GetYourGuide, or a reputed Dubai tour agency online. Also verify the operator is licensed by Dubai Tourism (DTCM). Read reviews on Tripadvisor before paying. Average group safari should cost no more than ₹3,500/person including dinner.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — BUDGET TABLE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Dubai 4-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Cost Guide</div>
+  <h2 class="section-title" style="margin-bottom:5mm">4-Day Budget Breakdown — 2026</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>💰 Budget</th>
+        <th>💑 Couple</th>
+        <th>✨ Luxury</th>
+        <th>👨‍👩‍👧 Family (4)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>🏨 Hotel (4 Nights / per person)</td><td>₹6,000–₹10,000</td><td>₹12,000–₹20,000</td><td>₹30,000–₹60,000</td><td>₹8,000–₹15,000</td></tr>
+      <tr><td>🍽️ Food &amp; Drinks (4 days)</td><td>₹4,000–₹8,000</td><td>₹8,000–₹16,000</td><td>₹20,000–₹40,000</td><td>₹10,000–₹20,000</td></tr>
+      <tr><td>🚇 Metro + Transport</td><td>₹1,500–₹3,000</td><td>₹3,000–₹6,000</td><td>₹8,000–₹15,000</td><td>₹4,000–₹8,000</td></tr>
+      <tr><td>🎯 Attractions (Burj, Ain, Frame…)</td><td>₹5,000–₹8,000</td><td>₹8,000–₹14,000</td><td>₹15,000–₹25,000</td><td>₹12,000–₹20,000</td></tr>
+      <tr><td>🏜️ Desert Safari</td><td>₹3,000</td><td>₹6,000 (2 persons)</td><td>₹10,000–₹15,000</td><td>₹12,000 (4 persons)</td></tr>
+      <tr><td>🛂 UAE Visa</td><td>₹4,000–₹6,000</td><td>₹4,000–₹6,000</td><td>₹4,000–₹6,000</td><td>₹16,000–₹24,000</td></tr>
+      <tr><td style="font-weight:700">TOTAL 4-Day Trip (per person)</td><td style="font-weight:700">₹23k–₹38k<br/><span style="font-size:6.5pt;font-weight:400">≈ AED 1,000–1,700</span></td><td style="font-weight:700">₹40k–₹65k<br/><span style="font-size:6.5pt;font-weight:400">≈ AED 1,800–2,900</span></td><td style="font-weight:700">₹90k–₹1,60,000<br/><span style="font-size:6.5pt;font-weight:400">≈ AED 4,000–7,000</span></td><td style="font-weight:700">₹25k–₹45k pp<br/><span style="font-size:6.5pt;font-weight:400">≈ AED 1,100–2,000</span></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note" style="margin-bottom:6mm">All prices INR 2026 per person unless stated. 1 AED ≈ ₹22.5 — verify exchange rate before travel. Visa cost is per person. Family column assumes 2 adults + 2 children sharing one room.</p>
+
+  <h3 class="sub-title">Where to Stay in Dubai</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Rove Downtown Dubai</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Budget-Smart · Downtown · From ₹6,000/night ★★★</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">Walking distance to Burj Khalifa — best value in Downtown</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Address Dubai Marina</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Couple · Marina · From ₹18,000/night ★★★★★</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">Stunning infinity pool over the marina — best couple hotel</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Atlantis The Palm</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Luxury · Palm Jumeirah · From ₹35,000/night ★★★★★</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">Waterpark included — the ultimate Dubai luxury experience</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(22,16,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Ramada by Wyndham JBR</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Family · JBR · From ₹10,000/night ★★★★</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">Steps from the beach, great family rooms, strong value</div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Book 2 weeks ahead minimum:</strong> Burj Khalifa tickets, Atlantis Aquaventure, and Desert Safari all cost significantly more at the gate — if they're available at all. Weekend evenings at Pier 7 and popular restaurants also need advance reservations. Planning ahead in Dubai saves both money and disappointment.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — PACKING + VISA TIPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Dubai 4-Day Itinerary</span>
+    <span class="page-header-right">Packing List &amp; Visa Tips</span>
+  </div>
+
+  <div class="label">What to Pack</div>
+  <h2 class="section-title" style="margin-bottom:4mm;font-size:20pt">Dubai Packing List</h2>
+
+  <div class="pack-grid" style="margin-bottom:5mm">
+    <div class="pack-col">
+      <h4>Clothing</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Light cotton shirts / breathable tops (3–4)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Long trousers / full-length pants (2 pairs)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Modest outfit for souks &amp; heritage sites</div>
+      <div class="pack-item"><span class="pack-check">□</span>Swimwear (for beach, hotel pool, Atlantis)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Light jacket / cardigan (malls are heavily AC'd)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Smart-casual outfit for rooftop restaurants</div>
+      <div class="pack-item"><span class="pack-check">□</span>Comfortable walking shoes for souk days</div>
+      <div class="pack-item"><span class="pack-check">□</span>Reef shoes / flip-flops for beach days</div>
+
+      <h4 style="margin-top:4mm">Health &amp; Essentials</h4>
+      <div class="pack-item"><span class="pack-check">□</span>SPF 50+ sunscreen (strong desert sun year-round)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Lip balm with SPF (dry desert air)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Reusable water bottle (hydration is critical)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Basic medicines (stomach, headache, allergy)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Compact umbrella (rare but useful Nov–Mar)</div>
+    </div>
+    <div class="pack-col">
+      <h4>Documents &amp; Money</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Passport (valid 6+ months beyond travel date)</div>
+      <div class="pack-item"><span class="pack-check">□</span>UAE Tourist Visa printout (keep on person)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Return flight ticket printout</div>
+      <div class="pack-item"><span class="pack-check">□</span>Hotel confirmation (first night at minimum)</div>
+      <div class="pack-item"><span class="pack-check">□</span>AED cash (for souks, abra, tips, small shops)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Travel insurance documents</div>
+      <div class="pack-item"><span class="pack-check">□</span>International debit/credit card (Visa/Mastercard)</div>
+
+      <h4 style="margin-top:4mm">Apps to Download Before Flying</h4>
+      <div class="pack-item"><span class="pack-check">□</span>RTA Dubai — metro routes, Nol card top-up</div>
+      <div class="pack-item"><span class="pack-check">□</span>Careem — ride-hailing (better than taxis)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Google Maps offline (Dubai downloaded)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Visit Dubai — official tourism app</div>
+      <div class="pack-item"><span class="pack-check">□</span>Zomato or TalabatGo for restaurant discovery</div>
+      <div class="pack-item"><span class="pack-check">□</span>Power bank (full days outside — essential)</div>
+    </div>
+  </div>
+
+  <div class="label">Visa + Cultural Tips</div>
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🛂</div>
+      <div class="tip-title">UAE Visa — Apply via Official Channel</div>
+      <div class="tip-desc">Apply on the UAE ICA official website (ica.gov.ae) or Emirates airline visa portal. Avoid random agents on Instagram. Cost: AED 175–350 (₹4,000–₹6,000). 30-day tourist visa. Processing: 3–5 working days. Keep printed copy.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">👗</div>
+      <div class="tip-title">Dress Code — Respectful, Not Restrictive</div>
+      <div class="tip-desc">Dubai is modern and tolerant, but respect is important. Cover shoulders and knees in souks, mosques and heritage areas. Beachwear only on beaches and pool areas. Malls are now relaxed — sleeveless is generally fine — but a light cover-up is always a good idea.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌙</div>
+      <div class="tip-title">Ramadan Etiquette</div>
+      <div class="tip-desc">If visiting during Ramadan (dates shift each year), avoid eating, drinking or smoking in public during daylight hours. Restaurants operate with curtained dining. Nightlife is subdued. On the positive side: iftar buffets are spectacular and Ramadan is a beautiful time to be in the souks after sunset.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚫</div>
+      <div class="tip-title">What Not to Do in Dubai</div>
+      <div class="tip-desc">No alcohol in public spaces (only licensed venues). No public displays of affection. Do not photograph people without permission — especially Emirati locals and women. Swearing in public can result in a fine. VPNs are in a legal grey area — use with caution. Drugs carry severe penalties.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 8</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 9 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:40pt;margin-bottom:6mm">🏙️</div>
+  <h2>Plan More. <em style="font-style:italic;color:rgba(255,255,255,0.5)">Worry Less.</em></h2>
+  <p>50+ free destination guides on IncredibleItinerary.com — India, Southeast Asia, Europe, Middle East and beyond. Every guide written with real costs, real routes and zero fluff.</p>
+  <div class="back-cta">Visit IncredibleItinerary.com →</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.4);font-size:9pt;margin-bottom:6mm">More guides: Rajasthan · Goa · Kerala · Bali · Japan · Singapore · Santorini</p>
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · For personal use only · Not for redistribution<br/>
+    All prices are approximate and based on 2026 market rates. 1 AED ≈ ₹22.5 — verify independently before travel.<br/>
+    This guide is provided for personal trip planning. Always check current visa, entry and customs regulations before travelling.
+  </div>
+</div>
+
+</body>
+</html>

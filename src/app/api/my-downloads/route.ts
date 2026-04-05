@@ -8,6 +8,10 @@ const ALL_SLUGS = [
   "india-budget-guide",
   "leh-ladakh-7-days",
   "bangkok-4-days",
+  "kashmir-6-days",
+  "manali-5-days",
+  "bali-5-days",
+  "dubai-4-days",
 ];
 
 function generateToken(slug: string): string {

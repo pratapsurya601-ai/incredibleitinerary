@@ -540,8 +540,13 @@ const PDF_SLUGS = new Set([
   "rajasthan-7-days",
   "kerala-5-days",
   "goa-3-days",
+  "india-budget-guide",
   "leh-ladakh-7-days",
   "bangkok-4-days",
+  "kashmir-6-days",
+  "manali-5-days",
+  "bali-5-days",
+  "dubai-4-days",
 ]);
 
 function BlogCard({ post }: { post: ListingPost }) {
