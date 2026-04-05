@@ -17,27 +17,44 @@ export function generateToken(slug: string): string {
     .slice(0, 40);
 }
 
-// ── KV helpers (graceful fallback if KV not configured) ──────────────────────
-async function getDownloads(email: string): Promise<{ slugs: string[]; premium: boolean }> {
+// ── Redis helpers (lazy singleton, graceful fallback) ─────────────────────────
+type DownloadData = { slugs: string[]; premium: boolean };
+
+async function getRedis() {
+  const url = process.env.REDIS_URL || process.env.KV_REST_API_URL;
+  if (!url) return null;
   try {
-    const { kv } = await import("@vercel/kv");
-    const data = await kv.get<{ slugs: string[]; premium: boolean }>(`dl:${email}`);
-    return data ?? { slugs: [], premium: false };
+    const { default: Redis } = await import("ioredis");
+    return new Redis(url, { lazyConnect: true, connectTimeout: 3000, maxRetriesPerRequest: 1 });
+  } catch {
+    return null;
+  }
+}
+
+async function getDownloads(email: string): Promise<DownloadData> {
+  const redis = await getRedis();
+  if (!redis) return { slugs: [], premium: false };
+  try {
+    const raw = await redis.get(`dl:${email}`);
+    redis.disconnect();
+    if (!raw) return { slugs: [], premium: false };
+    return JSON.parse(raw) as DownloadData;
   } catch {
     return { slugs: [], premium: false };
   }
 }
 
-async function saveDownloads(
-  email: string,
-  data: { slugs: string[]; premium: boolean }
-): Promise<void> {
+async function saveDownloads(email: string, data: DownloadData): Promise<void> {
+  const redis = await getRedis();
+  if (!redis) {
+    console.warn("[download] Redis not configured — running without download tracking");
+    return;
+  }
   try {
-    const { kv } = await import("@vercel/kv");
-    await kv.set(`dl:${email}`, data, { ex: 60 * 60 * 24 * 365 }); // 1 year TTL
+    await redis.set(`dl:${email}`, JSON.stringify(data), "EX", 60 * 60 * 24 * 365);
+    redis.disconnect();
   } catch {
-    // KV not configured — dev mode, allow download anyway
-    console.warn("[download] Vercel KV not configured — running without download tracking");
+    console.warn("[download] Redis write failed");
   }
 }
 
@@ -53,7 +70,6 @@ export async function POST(req: NextRequest) {
 
   const { email, slug } = body;
 
-  // Validate inputs
   if (!email || !slug) {
     return NextResponse.json({ error: "Email and guide slug are required" }, { status: 400 });
   }
@@ -70,64 +86,48 @@ export async function POST(req: NextRequest) {
   const normalizedEmail = email.toLowerCase().trim();
   const data = await getDownloads(normalizedEmail);
 
-  // Premium users get unlimited access
+  // Premium — unlimited access
   if (data.premium) {
     const token = generateToken(slug);
-    return NextResponse.json({
-      success: true,
-      token,
-      slug,
-      premium: true,
-      remaining: 999,
-    });
+    return NextResponse.json({ success: true, token, slug, premium: true, remaining: 999 });
   }
 
-  // Already downloaded this guide — give them the link again (no extra charge)
+  // Already downloaded this guide — re-issue token (no charge)
   if (data.slugs.includes(slug)) {
     const token = generateToken(slug);
     return NextResponse.json({
-      success: true,
-      token,
-      slug,
+      success: true, token, slug,
       alreadyOwned: true,
       remaining: MAX_FREE - data.slugs.length,
     });
   }
 
-  // Hit the free limit — show paywall
+  // Hit the free limit — paywall
   if (data.slugs.length >= MAX_FREE) {
     return NextResponse.json(
-      {
-        paywall: true,
-        count: data.slugs.length,
-        downloaded: data.slugs,
-      },
+      { paywall: true, count: data.slugs.length, downloaded: data.slugs },
       { status: 402 }
     );
   }
 
-  // Grant download — add slug to their list
+  // Grant download
   data.slugs.push(slug);
   await saveDownloads(normalizedEmail, data);
 
-  // Also silently subscribe to Mailchimp (fire-and-forget)
+  // Silently subscribe to Mailchimp (fire-and-forget)
   try {
     fetch(`${req.nextUrl.origin}/api/subscribe`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: normalizedEmail }),
     }).catch(() => {});
-  } catch {
-    // ignore
-  }
+  } catch { /* ignore */ }
 
   const token = generateToken(slug);
   const remaining = MAX_FREE - data.slugs.length;
 
   return NextResponse.json({
-    success: true,
-    token,
-    slug,
+    success: true, token, slug,
     remaining,
     isLast: remaining === 0,
     total: data.slugs.length,
