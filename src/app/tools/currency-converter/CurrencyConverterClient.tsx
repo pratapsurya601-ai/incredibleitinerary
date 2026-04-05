@@ -291,12 +291,12 @@ export default function CurrencyConverterClient() {
                           {c.code}
                         </span>
                         {c.code === toCode && (
-                          <span className="ml-1.5 text-[0.6rem] bg-gold/20 text-gold-dark px-1.5 py-0.5 rounded-full uppercase tracking-wide font-medium">
+                          <span className="ml-1.5 text-xs bg-gold/20 text-gold-dark px-1.5 py-0.5 rounded-full uppercase tracking-wide font-medium">
                             selected
                           </span>
                         )}
                         {isFrom && (
-                          <span className="ml-1.5 text-[0.6rem] bg-ink/10 text-ink px-1.5 py-0.5 rounded-full uppercase tracking-wide font-medium">
+                          <span className="ml-1.5 text-xs bg-ink/10 text-ink px-1.5 py-0.5 rounded-full uppercase tracking-wide font-medium">
                             source
                           </span>
                         )}
@@ -309,7 +309,7 @@ export default function CurrencyConverterClient() {
                         {numericAmount > 0 ? formatAmount(c.converted, c.code) : "—"}
                       </span>
                     </div>
-                    <p className="text-[0.62rem] text-muted/60 mt-1">
+                    <p className="text-xs text-muted/60 mt-1">
                       1 {fromCode} = {formatAmount(convert(1, fromCode, c.code), c.code)} {c.code}
                     </p>
                   </button>

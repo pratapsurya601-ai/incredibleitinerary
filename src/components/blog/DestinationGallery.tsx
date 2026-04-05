@@ -161,7 +161,7 @@ export default function DestinationGallery({
               )}
               {/* Label */}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent flex items-end p-1.5">
-                <p className="text-[0.6rem] text-white font-medium leading-tight">
+                <p className="text-xs text-white font-medium leading-tight">
                   {spot.name}
                 </p>
               </div>

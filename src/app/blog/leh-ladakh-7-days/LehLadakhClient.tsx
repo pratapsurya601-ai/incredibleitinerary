@@ -122,9 +122,9 @@ export default function LehLadakhClient() {
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
             <div className="max-w-[860px] mx-auto">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="bg-blue-600 text-white text-[0.62rem] tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">India&apos;s Bucket List Trip</span>
+                <span className="bg-blue-600 text-white text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">India&apos;s Bucket List Trip</span>
                 <span className="text-white/60 text-xs">March 21, 2026</span>
-                <span className="text-white/30">·</span>
+                <span className="text-white/50">·</span>
                 <span className="text-white/60 text-xs">16 min read</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -222,7 +222,7 @@ export default function LehLadakhClient() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2 flex-wrap">
                         <p className="font-semibold text-sm text-ink">{t.title}</p>
-                        <span className="text-[0.6rem] bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.badge}</span>
+                        <span className="text-xs bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.badge}</span>
                       </div>
                       <p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p>
                     </div>

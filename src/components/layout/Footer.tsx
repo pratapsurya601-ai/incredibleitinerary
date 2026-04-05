@@ -97,7 +97,7 @@ export default function Footer() {
             <div className="flex gap-3 mb-4">
               {SOCIAL_LINKS.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                  className="w-9 h-9 rounded-full border border-white/12 flex items-center justify-center text-sm text-white/50 hover:border-gold hover:text-gold transition-all duration-200">
+                  className="w-11 h-11 rounded-full border border-white/12 flex items-center justify-center text-sm text-white/60 hover:border-gold hover:text-gold transition-all duration-200">
                   {s.icon}
                 </a>
               ))}
@@ -106,7 +106,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <p className="text-[0.68rem] tracking-[0.18em] uppercase text-white/65 mb-4">Plan</p>
+            <p className="text-xs tracking-[0.18em] uppercase text-white/65 mb-4">Plan</p>
             <ul className="flex flex-col gap-2.5">
               {[
                 { label: "Custom Itinerary (Free)", href: "/contact" },
@@ -116,12 +116,12 @@ export default function Footer() {
                 { label: "All Travel Guides", href: "/blog" },
                 { label: "PDF Shop", href: "/shop" },
               ].map((item) => (
-                <li key={item.label}><Link href={item.href} className="text-sm text-white/38 hover:text-gold transition-colors">{item.label}</Link></li>
+                <li key={item.label}><Link href={item.href} className="text-sm text-white/55 hover:text-gold transition-colors">{item.label}</Link></li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="text-[0.68rem] tracking-[0.18em] uppercase text-white/65 mb-4">Company</p>
+            <p className="text-xs tracking-[0.18em] uppercase text-white/65 mb-4">Company</p>
             <ul className="flex flex-col gap-2.5">
               {[
                 { label: "About Us", href: "/about" },
@@ -129,12 +129,12 @@ export default function Footer() {
                 { label: "Privacy Policy", href: "/privacy" },
                 { label: "Terms of Use", href: "/terms" },
               ].map((item) => (
-                <li key={item.label}><Link href={item.href} className="text-sm text-white/38 hover:text-gold transition-colors">{item.label}</Link></li>
+                <li key={item.label}><Link href={item.href} className="text-sm text-white/55 hover:text-gold transition-colors">{item.label}</Link></li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="text-[0.68rem] tracking-[0.18em] uppercase text-white/65 mb-4">Popular</p>
+            <p className="text-xs tracking-[0.18em] uppercase text-white/65 mb-4">Popular</p>
             <ul className="flex flex-col gap-2.5">
               {[
                 { label: "Rajasthan 7 Days", href: "/blog/rajasthan-7-days" },
@@ -144,7 +144,7 @@ export default function Footer() {
                 { label: "Meghalaya 5 Days", href: "/blog/meghalaya-5-days" },
                 { label: "Golden Triangle", href: "/blog/golden-triangle-7-days" },
               ].map((item) => (
-                <li key={item.label}><Link href={item.href} className="text-sm text-white/38 hover:text-gold transition-colors">{item.label}</Link></li>
+                <li key={item.label}><Link href={item.href} className="text-sm text-white/55 hover:text-gold transition-colors">{item.label}</Link></li>
               ))}
             </ul>
           </div>
@@ -152,19 +152,19 @@ export default function Footer() {
 
         {/* Destination mega-menu */}
         <div className="border-t border-white/[0.06] pt-10 mb-10">
-          <p className="text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-6 text-center">
+          <p className="text-xs tracking-[0.22em] uppercase text-gold mb-6 text-center">
             {blogPosts.length}+ Free Destination Guides — 50+ Countries
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {Object.entries(REGIONS).map(([region, links]) => (
               <div key={region}>
-                <p className="text-[0.62rem] tracking-[0.15em] uppercase text-white/50 mb-2.5 font-medium">
+                <p className="text-xs tracking-[0.15em] uppercase text-white/55 mb-2.5 font-medium">
                   {region}
                 </p>
                 <ul className="flex flex-col gap-1.5">
                   {links.map((item) => (
                     <li key={item.href}>
-                      <Link href={item.href} className="text-[0.72rem] text-white/30 hover:text-gold transition-colors leading-relaxed">
+                      <Link href={item.href} className="text-xs text-white/50 hover:text-gold transition-colors leading-relaxed">
                         {item.label}
                       </Link>
                     </li>
@@ -180,7 +180,7 @@ export default function Footer() {
           <p className="text-xs">
             &copy; 2026 IncredibleItinerary.com &mdash; All rights reserved.
           </p>
-          <p className="text-[0.62rem] text-white/20">
+          <p className="text-xs text-white/45">
             Made with ✦ for Indian travellers
           </p>
         </div>

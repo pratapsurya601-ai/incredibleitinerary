@@ -41,7 +41,7 @@ export default function DestinationGridSection() {
                 <div className="relative h-36 overflow-hidden">
                   <Image src={b.img} alt={`${b.name} travel destination`} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-                  <span className="absolute top-2.5 left-2.5 text-[0.58rem] font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">{b.tag}</span>
+                  <span className="absolute top-2.5 left-2.5 text-xs font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">{b.tag}</span>
                   <p className="absolute bottom-2.5 left-3 font-serif text-white text-lg font-light">{b.emoji} {b.name}</p>
                 </div>
                 <div className="p-3 flex items-center justify-between">

@@ -59,14 +59,14 @@ export default function PreQualModal({ isOpen, onClose, packageName, onComplete 
             <p className="text-[0.65rem] tracking-[0.18em] uppercase text-muted font-medium">
               {packageName ? `Enquiring about: ${packageName}` : "Quick trip details"}
             </p>
-            <button onClick={reset} className="text-muted hover:text-ink transition-colors text-xl leading-none">×</button>
+            <button onClick={reset} aria-label="Close" className="w-8 h-8 flex items-center justify-center rounded-full text-muted hover:text-ink hover:bg-parchment-2 transition-colors text-xl leading-none">×</button>
           </div>
           {/* Step progress */}
           <div className="flex gap-2 mb-3">
             {STEPS.map((s, i) => (
               <div key={s} className="flex-1">
                 <div className={`h-1 rounded-full transition-all duration-300 ${i <= step ? "bg-gold" : "bg-parchment-2"}`} />
-                <p className={`text-[0.6rem] mt-1 text-center transition-colors ${i === step ? "text-gold-dark font-medium" : "text-muted/50"}`}>{s}</p>
+                <p className={`text-xs mt-1 text-center transition-colors ${i === step ? "text-gold-dark font-medium" : "text-muted/50"}`}>{s}</p>
               </div>
             ))}
           </div>
@@ -92,9 +92,9 @@ export default function PreQualModal({ isOpen, onClose, packageName, onComplete 
         {/* Footer */}
         <div className="px-6 py-4 border-t border-parchment-2 bg-parchment/50 flex items-center justify-between">
           {step > 0 ? (
-            <button onClick={() => setStep(step - 1)} className="text-xs text-muted hover:text-ink transition-colors">← Back</button>
+            <button onClick={() => setStep(step - 1)} className="text-xs text-muted hover:text-ink transition-colors px-3 py-2 min-h-[44px] flex items-center">← Back</button>
           ) : <div />}
-          <p className="text-[0.62rem] text-muted/60 font-light">No obligation · Free planning · 24hr reply</p>
+          <p className="text-xs text-muted/70 font-light">No obligation · Free planning · 24hr reply</p>
         </div>
       </div>
     </div>

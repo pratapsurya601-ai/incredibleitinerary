@@ -72,7 +72,7 @@ export default function AffiliateBlock({
               >
                 <div className="flex items-center justify-between mb-2">
                   {hotel.badge && (
-                    <span className="text-[0.6rem] bg-gold text-ink px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">
+                    <span className="text-xs bg-gold text-ink px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">
                       {hotel.badge}
                     </span>
                   )}
@@ -90,7 +90,7 @@ export default function AffiliateBlock({
             ))}
           </div>
           <div className="bg-white px-5 py-2 border-t border-parchment-2">
-            <p className="text-[0.6rem] text-muted/60 font-light">
+            <p className="text-xs text-muted/60 font-light">
               Affiliate links — we earn a small commission at no extra cost to you. Helps keep our guides free.
             </p>
           </div>
@@ -134,7 +134,7 @@ export default function AffiliateBlock({
                       {act.name}
                     </p>
                     {act.badge && (
-                      <span className="text-[0.6rem] bg-teal/15 text-teal px-2 py-0.5 rounded-full font-semibold flex-shrink-0">
+                      <span className="text-xs bg-teal/15 text-teal px-2 py-0.5 rounded-full font-semibold flex-shrink-0">
                         {act.badge}
                       </span>
                     )}
@@ -148,7 +148,7 @@ export default function AffiliateBlock({
             ))}
           </div>
           <div className="bg-white px-5 py-2 border-t border-parchment-2">
-            <p className="text-[0.6rem] text-muted/60 font-light">
+            <p className="text-xs text-muted/60 font-light">
               Affiliate links — we earn a small commission at no extra cost to you.
             </p>
           </div>
@@ -195,7 +195,7 @@ export default function AffiliateBlock({
             </a>
           </div>
           <div className="bg-white px-5 py-2">
-            <p className="text-[0.6rem] text-muted/60 font-light">
+            <p className="text-xs text-muted/60 font-light">
               Affiliate links — we earn a small commission at no extra cost to you. Helps keep our guides free.
             </p>
           </div>

@@ -110,7 +110,7 @@ export default function IndiaMapSection() {
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
                   <div className="flex items-center gap-2 mb-2">
                     <h3 className="font-serif text-2xl text-white font-light">{region.name}</h3>
-                    <span className="text-[0.6rem] bg-gold/20 text-gold px-2 py-0.5 rounded-full font-medium">
+                    <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full font-medium">
                       {region.count} guides
                     </span>
                   </div>

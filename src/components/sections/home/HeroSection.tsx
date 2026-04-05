@@ -85,7 +85,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
         </div>
 
         {/* Minimal trust line */}
-        <p className="text-[0.62rem] text-white/30 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
+        <p className="text-xs text-white/55 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
           {blogPosts.length} FREE GUIDES &nbsp;&middot;&nbsp; 50+ COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
         </p>
       </div>

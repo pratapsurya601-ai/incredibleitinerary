@@ -200,13 +200,13 @@ export default function AmritsarClient() {
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
             <div className="max-w-[860px] mx-auto">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="bg-gold text-ink text-[0.62rem] tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">
+                <span className="bg-gold text-ink text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">
                   Heritage & Food
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/30">·</span>
+                <span className="text-white/50">·</span>
                 <span className="text-white/60 text-xs">12 min read</span>
-                <span className="text-white/30">·</span>
+                <span className="text-white/50">·</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -443,7 +443,7 @@ export default function AmritsarClient() {
                     <span className="text-2xl">{b.emoji}</span>
                     <p className="font-serif text-base text-ink mt-1">{b.plan}</p>
                     <p className="font-serif text-xl text-ink font-medium mt-1">{b.total}</p>
-                    <p className="text-[0.6rem] text-muted uppercase tracking-wider">per person</p>
+                    <p className="text-xs text-muted uppercase tracking-wider">per person</p>
                   </div>
                   <div className="space-y-2">
                     {b.items.map(([k, v]) => (

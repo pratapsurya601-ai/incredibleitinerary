@@ -204,9 +204,9 @@ export default function KeralaClient() {
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
             <div className="max-w-[860px] mx-auto">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="bg-teal text-white text-[0.62rem] tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">Backwaters & Hills</span>
+                <span className="bg-teal text-white text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">Backwaters & Hills</span>
                 <span className="text-white/60 text-xs">March 21, 2026</span>
-                <span className="text-white/30">·</span>
+                <span className="text-white/50">·</span>
                 <span className="text-white/60 text-xs">14 min read</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -285,7 +285,7 @@ export default function KeralaClient() {
                     ? <span key={i} className="text-muted font-bold text-lg">→</span>
                     : <div key={i} className={`px-4 py-2.5 rounded-xl text-center ${s.color}`}>
                         <p className="font-bold text-xs">{s.city}</p>
-                        <p className="text-[0.62rem] opacity-80">{s.days}</p>
+                        <p className="text-xs opacity-80">{s.days}</p>
                       </div>
                 ))}
               </div>

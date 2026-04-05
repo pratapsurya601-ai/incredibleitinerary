@@ -75,7 +75,7 @@ export default function CouplesGuidePage({ params }: Props) {
 
           {/* Why it's romantic */}
           <div className="bg-parchment border border-parchment-2 rounded-2xl p-7 mb-12">
-            <p className="text-[0.62rem] tracking-[0.18em] uppercase text-gold font-medium mb-2">Why Couples Love It</p>
+            <p className="text-xs tracking-[0.18em] uppercase text-gold font-medium mb-2">Why Couples Love It</p>
             <p className="font-serif text-xl font-light text-ink leading-relaxed mb-3">{meta.couplesNote}</p>
             <p className="text-sm text-muted font-light">
               Best time for couples:{" "}

@@ -77,7 +77,7 @@ export default function NewsletterSection() {
             <p className="text-sm text-red-600 mt-3">Something went wrong. Try again or email us directly.</p>
           )}
 
-          <p className="text-[0.6rem] text-muted/40 mt-4 font-light">
+          <p className="text-xs text-muted/40 mt-4 font-light">
             {blogPosts.length}+ free destination guides &middot; New content added regularly &middot; No spam
           </p>
         </FadeIn>

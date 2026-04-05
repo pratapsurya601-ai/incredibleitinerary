@@ -845,19 +845,19 @@ export default function VisaCheckerClient() {
                 {/* Info grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                   <div className="bg-parchment/50 rounded-lg p-4 text-center">
-                    <span className="text-[0.62rem] tracking-[0.14em] uppercase text-muted block mb-1">
+                    <span className="text-xs tracking-[0.14em] uppercase text-muted block mb-1">
                       Duration
                     </span>
                     <span className="font-serif text-lg text-ink">{result.duration}</span>
                   </div>
                   <div className="bg-parchment/50 rounded-lg p-4 text-center">
-                    <span className="text-[0.62rem] tracking-[0.14em] uppercase text-muted block mb-1">
+                    <span className="text-xs tracking-[0.14em] uppercase text-muted block mb-1">
                       Cost
                     </span>
                     <span className="font-serif text-lg text-ink">{result.cost}</span>
                   </div>
                   <div className="bg-parchment/50 rounded-lg p-4 text-center">
-                    <span className="text-[0.62rem] tracking-[0.14em] uppercase text-muted block mb-1">
+                    <span className="text-xs tracking-[0.14em] uppercase text-muted block mb-1">
                       Processing
                     </span>
                     <span className="font-serif text-lg text-ink">{result.processing}</span>

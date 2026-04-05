@@ -24,7 +24,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
-        <div className="absolute top-3.5 left-3.5 bg-gold text-ink text-[0.6rem] tracking-[0.12em] uppercase font-medium px-2.5 py-1 rounded-[1px]">
+        <div className="absolute top-3.5 left-3.5 bg-gold text-ink text-xs tracking-[0.12em] uppercase font-medium px-2.5 py-1 rounded-[1px]">
           {post.category}
         </div>
       </div>

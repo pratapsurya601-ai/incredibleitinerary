@@ -100,7 +100,7 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
             Incredible<span className="text-gold">Itinerary</span>
           </span>
           <span
-            className={`text-[0.58rem] tracking-[0.18em] uppercase transition-colors duration-300 ${
+            className={`text-xs tracking-[0.18em] uppercase transition-colors duration-300 ${
               scrolled ? "text-muted" : "text-white/70"
             }`}
           >

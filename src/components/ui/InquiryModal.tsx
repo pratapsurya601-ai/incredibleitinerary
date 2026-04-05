@@ -205,7 +205,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                 {isSubmitting ? "Sending..." : "Send My Inquiry →"}
               </button>
 
-              <p className="text-center text-[0.62rem] text-muted/60 mt-3 font-light">
+              <p className="text-center text-xs text-muted/60 mt-3 font-light">
                 We reply within 24 hours · No spam · No obligation
               </p>
             </form>

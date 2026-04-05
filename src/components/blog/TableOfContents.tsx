@@ -69,7 +69,7 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
             style={{ borderColor: "rgba(237,228,210,0.6)" }}
           >
             <p
-              className="text-[0.62rem] font-semibold tracking-[0.2em] uppercase"
+              className="text-xs font-semibold tracking-[0.2em] uppercase"
               style={{ color: "#8B6835" }}
             >
               Contents
@@ -166,7 +166,7 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
               style={{ borderColor: "rgba(237,228,210,0.6)" }}
             >
               <p
-                className="text-[0.6rem] font-semibold tracking-[0.18em] uppercase"
+                className="text-xs font-semibold tracking-[0.18em] uppercase"
                 style={{ color: "#8B6835" }}
               >
                 Jump to section

@@ -368,7 +368,7 @@ function getTipsData(destination: string, country: string, category: string): Ar
 function QuickAnswer({ children }: { children: React.ReactNode }) {
   return (
     <div className="bg-gold/10 border border-gold/20 rounded-xl p-6 my-8">
-      <p className="text-[0.6rem] tracking-[0.18em] uppercase text-gold-dark font-medium mb-2">Quick Answer</p>
+      <p className="text-xs tracking-[0.18em] uppercase text-gold-dark font-medium mb-2">Quick Answer</p>
       <p className="text-sm text-ink font-light leading-relaxed">{children}</p>
     </div>
   );

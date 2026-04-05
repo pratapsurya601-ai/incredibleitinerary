@@ -142,7 +142,7 @@ export default function GeneratedPostContent({
         <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 pb-10 max-w-[900px]">
           {/* Type badge */}
           <span
-            className={`inline-flex items-center gap-1.5 border text-[0.62rem] tracking-[0.1em] uppercase font-medium px-2.5 py-1 rounded-[2px] mb-4 ${typeConfig.color}`}
+            className={`inline-flex items-center gap-1.5 border text-xs tracking-[0.1em] uppercase font-medium px-2.5 py-1 rounded-[2px] mb-4 ${typeConfig.color}`}
           >
             <span aria-hidden="true">{typeConfig.icon}</span>
             {typeConfig.label}
@@ -204,7 +204,7 @@ export default function GeneratedPostContent({
                   className="group block bg-white rounded-xl border border-parchment-2 hover:border-gold/50 hover:shadow-md transition-all duration-300 p-5"
                 >
                   <span
-                    className={`inline-flex items-center gap-1 text-[0.6rem] tracking-[0.1em] uppercase font-medium border px-2 py-0.5 rounded-[2px] mb-3 ${cfg.color}`}
+                    className={`inline-flex items-center gap-1 text-xs tracking-[0.1em] uppercase font-medium border px-2 py-0.5 rounded-[2px] mb-3 ${cfg.color}`}
                   >
                     <span aria-hidden="true">{cfg.icon}</span>
                     {cfg.label}
@@ -239,7 +239,7 @@ export default function GeneratedPostContent({
                   </p>
                 </div>
                 <div className="p-4">
-                  <p className="text-[0.62rem] text-muted font-light">
+                  <p className="text-xs text-muted font-light">
                     {parent.duration} · {parent.category}
                   </p>
                   <p className="text-xs text-gold-dark font-medium mt-1 group-hover:text-teal transition-colors">
@@ -257,7 +257,7 @@ export default function GeneratedPostContent({
       {/* ------------------------------------------------------------------ */}
       <div className="bg-cream border-t border-parchment-2 py-16 px-6 md:px-12 text-center">
         <div className="max-w-[520px] mx-auto">
-          <span className="text-[0.6rem] tracking-[0.2em] uppercase text-gold font-medium">
+          <span className="text-xs tracking-[0.2em] uppercase text-gold font-medium">
             Free · Personalised · No commitment
           </span>
           <h2 className="font-serif text-[clamp(1.8rem,3vw,2.4rem)] font-light text-ink mt-3 mb-3">

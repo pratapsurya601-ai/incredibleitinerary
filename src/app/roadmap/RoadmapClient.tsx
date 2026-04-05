@@ -181,7 +181,7 @@ function PassivityBar({ value, color }: { value: number; color: string }) {
       <div className="flex-1 h-1.5 bg-parchment-2 rounded-full overflow-hidden">
         <div className={`h-full rounded-full ${color} transition-all duration-1000`} style={{ width: `${value}%` }} />
       </div>
-      <span className="text-[0.6rem] text-muted w-7 text-right">{value}%</span>
+      <span className="text-xs text-muted w-7 text-right">{value}%</span>
     </div>
   );
 }
@@ -210,7 +210,7 @@ export default function RoadmapClient() {
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl px-7 py-5 text-center">
-              <p className="text-[0.6rem] text-white/40 uppercase tracking-widest mb-1">Target</p>
+              <p className="text-xs text-white/40 uppercase tracking-widest mb-1">Target</p>
               <p className="font-serif text-3xl text-gold font-light">₹2L</p>
               <p className="text-[0.65rem] text-white/40">per month</p>
             </div>
@@ -232,23 +232,23 @@ export default function RoadmapClient() {
                 className={`rounded-2xl p-5 border-2 transition-all duration-300 ${m.active
                   ? "border-teal bg-teal/5 shadow-md"
                   : "border-parchment-2 bg-white"}`}>
-                <div className={`text-[0.6rem] uppercase tracking-widest font-medium mb-2 ${m.active ? "text-teal" : "text-muted"}`}>
+                <div className={`text-xs uppercase tracking-widest font-medium mb-2 ${m.active ? "text-teal" : "text-muted"}`}>
                   {m.label}
                 </div>
                 <div className={`font-serif text-3xl font-light mb-1 ${m.active ? "text-teal" : "text-ink"}`}>
                   {m.sessions}
                 </div>
-                <div className="text-[0.6rem] text-muted mb-3">sessions/month</div>
+                <div className="text-xs text-muted mb-3">sessions/month</div>
                 <div className={`text-sm font-semibold mb-1 ${m.active ? "text-teal" : "text-ink"}`}>{m.revenue}</div>
                 <div className="text-[0.65rem] text-muted font-light leading-relaxed">{m.unlocks}</div>
                 {m.active && (
                   <div className="mt-3 flex items-center gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
-                    <span className="text-[0.6rem] text-teal font-medium">You are here</span>
+                    <span className="text-xs text-teal font-medium">You are here</span>
                   </div>
                 )}
                 {!m.active && (
-                  <div className="mt-3 text-[0.6rem] text-muted/60">
+                  <div className="mt-3 text-xs text-muted/60">
                     Step {i + 1} of 4
                   </div>
                 )}
@@ -290,7 +290,7 @@ export default function RoadmapClient() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
                         <p className="font-semibold text-ink text-sm">{s.name}</p>
-                        <span className={`text-[0.6rem] px-2 py-0.5 rounded-full font-medium ${
+                        <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                           s.status === "live" ? "bg-teal/15 text-teal" :
                           s.status === "partial" ? "bg-gold/20 text-gold-dark" :
                           s.status === "locked" ? "bg-purple-100 text-purple-600" :
@@ -303,11 +303,11 @@ export default function RoadmapClient() {
                     {/* Potential */}
                     <div className="text-right flex-shrink-0 hidden sm:block">
                       <p className="font-semibold text-sm text-ink">{s.potential}</p>
-                      <p className="text-[0.6rem] text-muted">{s.potentialNote}</p>
+                      <p className="text-xs text-muted">{s.potentialNote}</p>
                     </div>
                     {/* Passivity */}
                     <div className="w-24 flex-shrink-0 hidden md:block">
-                      <p className="text-[0.6rem] text-muted mb-1">Passivity</p>
+                      <p className="text-xs text-muted mb-1">Passivity</p>
                       <PassivityBar value={s.passivity} color={s.bar} />
                     </div>
                     {/* Toggle */}
@@ -363,7 +363,7 @@ export default function RoadmapClient() {
                   <h3 className="font-serif text-xl font-light text-ink">{phase.title}</h3>
                 </div>
                 <div className="bg-white rounded-xl px-4 py-2 border border-parchment-2">
-                  <p className="text-[0.6rem] text-muted uppercase tracking-wide">Goal</p>
+                  <p className="text-xs text-muted uppercase tracking-wide">Goal</p>
                   <p className="text-sm font-semibold text-ink">{phase.goal}</p>
                 </div>
               </div>

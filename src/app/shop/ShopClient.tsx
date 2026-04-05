@@ -256,7 +256,7 @@ export default function ShopClient() {
               </a>
               <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip →</a>
             </div>
-            <p className="text-xs text-white/30 mt-4">
+            <p className="text-xs text-white/50 mt-4">
               Bundle also available via WhatsApp — pay via UPI and get PDFs instantly
             </p>
           </div>

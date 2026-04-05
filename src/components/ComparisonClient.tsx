@@ -145,7 +145,7 @@ export default function ComparisonClient({
                 {dest1Wins} {dest1Wins === 1 ? "win" : "wins"}
               </span>
             </div>
-            <span className="font-serif text-2xl text-white/30 italic">vs</span>
+            <span className="font-serif text-2xl text-white/50 italic">vs</span>
             <div className="text-center">
               <span className="text-3xl md:text-4xl block mb-1">{dest2.emoji}</span>
               <span className="font-serif text-xl md:text-2xl text-white">

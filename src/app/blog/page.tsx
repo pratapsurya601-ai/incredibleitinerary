@@ -279,7 +279,7 @@ export default function BlogIndexPage() {
               {/* Autocomplete */}
               {showDropdown && suggestions.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-parchment-2 shadow-[0_16px_48px_rgba(22,16,8,0.12)] z-50 overflow-hidden">
-                  <p className="text-[0.6rem] tracking-[0.14em] uppercase text-muted font-medium px-4 pt-3 pb-1">
+                  <p className="text-xs tracking-[0.14em] uppercase text-muted font-medium px-4 pt-3 pb-1">
                     Jump to destination
                   </p>
                   {suggestions.map((post) => (
@@ -552,16 +552,16 @@ function BlogCard({ post }: { post: ListingPost }) {
           <span className="absolute bottom-3 left-3 text-white font-serif text-base font-light drop-shadow-lg">
             {post.destination}
           </span>
-          <span className="absolute top-2.5 right-2.5 text-[0.58rem] font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">
+          <span className="absolute top-2.5 right-2.5 text-xs font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">
             {post.duration}
           </span>
         </div>
         <div className="p-5">
           <div className="flex items-center gap-2 mb-2.5">
-            <span className="text-[0.62rem] tracking-[0.12em] uppercase text-gold-dark bg-gold/10 px-2.5 py-1 rounded-full">
+            <span className="text-xs tracking-[0.12em] uppercase text-gold-dark bg-gold/10 px-2.5 py-1 rounded-full">
               {post.category}
             </span>
-            <span className="text-[0.62rem] text-muted">{post.readTime}</span>
+            <span className="text-xs text-muted">{post.readTime}</span>
           </div>
           <h3 className="font-serif text-[1.05rem] font-light text-ink leading-snug mb-2 group-hover:text-teal transition-colors line-clamp-2">
             {post.title}
@@ -570,7 +570,7 @@ function BlogCard({ post }: { post: ListingPost }) {
             {post.excerpt}
           </p>
           <div className="flex items-center justify-between pt-3 border-t border-parchment-2">
-            <span className="text-[0.62rem] text-muted">{post.date}</span>
+            <span className="text-xs text-muted">{post.date}</span>
             <span className="text-xs font-medium text-gold-dark group-hover:text-teal transition-colors">
               Read &rarr;
             </span>

@@ -116,10 +116,10 @@ export default function CombineWith({ currentSlug }: CombineWithProps) {
               className="flex flex-col bg-white rounded-xl border border-parchment-2 p-4 hover:border-gold hover:shadow-md transition-all duration-200 group"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-[0.62rem] bg-teal/10 text-teal px-2 py-0.5 rounded-full font-medium">
+                <span className="text-xs bg-teal/10 text-teal px-2 py-0.5 rounded-full font-medium">
                   +{post.duration}
                 </span>
-                <span className="text-[0.58rem] text-muted">{p.travel}</span>
+                <span className="text-xs text-muted">{p.travel}</span>
               </div>
               <p className="font-medium text-sm text-ink group-hover:text-teal transition-colors mb-1">
                 {post.destination} &rarr;

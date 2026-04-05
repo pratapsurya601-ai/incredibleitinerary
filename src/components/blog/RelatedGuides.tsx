@@ -113,7 +113,7 @@ export default function RelatedGuides({ currentSlug }: RelatedGuidesProps) {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-              <span className="absolute top-2.5 left-2.5 text-[0.58rem] font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">
+              <span className="absolute top-2.5 left-2.5 text-xs font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">
                 {post.category}
               </span>
               <p className="absolute bottom-2.5 left-3 font-serif text-white text-lg font-light">

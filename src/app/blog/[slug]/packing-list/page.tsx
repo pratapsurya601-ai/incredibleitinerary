@@ -125,7 +125,7 @@ export default function PackingListPage({ params }: Props) {
 
           {/* Quick summary */}
           <div className="bg-parchment border border-parchment-2 rounded-2xl p-7 mb-12">
-            <p className="text-[0.62rem] tracking-[0.18em] uppercase text-gold font-medium mb-2">Trip Summary</p>
+            <p className="text-xs tracking-[0.18em] uppercase text-gold font-medium mb-2">Trip Summary</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-3">
               {[
                 { label: "Duration", value: post.duration },
@@ -134,7 +134,7 @@ export default function PackingListPage({ params }: Props) {
                 { label: "Items Listed", value: `${totalItems}+` },
               ].map((item) => (
                 <div key={item.label}>
-                  <p className="text-[0.62rem] tracking-[0.12em] uppercase text-muted font-medium">{item.label}</p>
+                  <p className="text-xs tracking-[0.12em] uppercase text-muted font-medium">{item.label}</p>
                   <p className="font-serif text-lg font-light text-ink mt-0.5">{item.value}</p>
                 </div>
               ))}

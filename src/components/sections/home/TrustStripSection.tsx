@@ -13,7 +13,7 @@ export default function TrustStripSection() {
         ].map((s, i) => (
           <div key={i} className="flex items-baseline gap-1.5">
             <span className="text-gold font-serif text-base font-light">{s.val}</span>
-            <span className="text-[0.58rem] tracking-[0.15em] uppercase text-white/30">{s.label}</span>
+            <span className="text-xs tracking-[0.15em] uppercase text-white/50">{s.label}</span>
           </div>
         ))}
       </div>

@@ -23,7 +23,7 @@ export default function InlineCTA({ destination, onPlanTrip }: InlineCTAProps) {
       >
         Get My Free Custom Plan &rarr;
       </button>
-      <p className="text-[0.6rem] text-muted/50 mt-3 font-light">
+      <p className="text-xs text-muted/50 mt-3 font-light">
         No account &middot; No credit card &middot; Takes 2 minutes
       </p>
     </div>

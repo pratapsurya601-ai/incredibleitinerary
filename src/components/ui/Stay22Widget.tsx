@@ -35,7 +35,7 @@ export default function Stay22Widget({ destination, label }: Stay22WidgetProps) 
           style={{ display: "block" }}
         />
       </div>
-      <p className="text-[0.62rem] text-muted/60 mt-2 text-center font-light">
+      <p className="text-xs text-muted/60 mt-2 text-center font-light">
         Prices shown are per night · Updated in real-time · Book directly for best rates
       </p>
     </div>

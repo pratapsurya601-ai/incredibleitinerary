@@ -113,9 +113,9 @@ export default function ManaliClient() {
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
             <div className="max-w-[860px] mx-auto">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="bg-green-600 text-white text-[0.62rem] tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">Himachal Pradesh</span>
+                <span className="bg-green-600 text-white text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">Himachal Pradesh</span>
                 <span className="text-white/60 text-xs">March 21, 2026</span>
-                <span className="text-white/30">·</span>
+                <span className="text-white/50">·</span>
                 <span className="text-white/60 text-xs">13 min read</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -207,7 +207,7 @@ export default function ManaliClient() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
                         <p className="font-semibold text-sm text-ink">{t.title}</p>
-                        <span className="text-[0.62rem] bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.badge}</span>
+                        <span className="text-xs bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.badge}</span>
                       </div>
                       <p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p>
                     </div>
@@ -385,8 +385,8 @@ export default function ManaliClient() {
                     <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
                       <p className="font-medium text-sm text-ink">{activity.name}</p>
                       <div className="flex gap-2">
-                        <span className="text-[0.62rem] bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full border border-blue-200">{activity.level}</span>
-                        <span className="text-[0.62rem] bg-green-50 text-green-600 px-2 py-0.5 rounded-full border border-green-200">{activity.cost}</span>
+                        <span className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full border border-blue-200">{activity.level}</span>
+                        <span className="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full border border-green-200">{activity.cost}</span>
                       </div>
                     </div>
                     <p className="text-xs text-muted font-light leading-relaxed">{activity.desc}</p>

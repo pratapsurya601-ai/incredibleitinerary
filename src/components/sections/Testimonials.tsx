@@ -56,7 +56,7 @@ export default function Testimonials() {
               <div key={s.sub} className="flex items-center gap-2.5">
                 {i > 0 && <div className="hidden md:block w-px h-7 bg-parchment-2" />}
                 <span className="text-xl">{s.icon}</span>
-                <div><p className="font-serif text-base font-light text-ink leading-none">{s.val}</p><p className="text-[0.6rem] text-muted uppercase tracking-wide">{s.sub}</p></div>
+                <div><p className="font-serif text-base font-light text-ink leading-none">{s.val}</p><p className="text-xs text-muted uppercase tracking-wide">{s.sub}</p></div>
               </div>
             ))}
           </div>
@@ -67,11 +67,11 @@ export default function Testimonials() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8" aria-live="polite" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
             {visible.map((r, i) => (
               <div key={`${active}-${i}`} className={`rounded-2xl border p-6 transition-all duration-500 ${r.color} ${i === 0 ? "shadow-md" : "opacity-80"}`}>
-                <div className="flex items-center justify-between mb-3"><Stars n={r.rating} /><span className="text-[0.6rem] text-muted font-light">{r.month}</span></div>
+                <div className="flex items-center justify-between mb-3"><Stars n={r.rating} /><span className="text-xs text-muted font-light">{r.month}</span></div>
                 <p className="text-sm text-ink font-light leading-relaxed mb-4 italic">&ldquo;{r.text}&rdquo;</p>
                 <div className="flex items-center gap-2.5 pt-3 border-t border-black/[0.06]">
-                  <div className="w-8 h-8 rounded-full bg-ink text-white text-[0.62rem] font-medium flex items-center justify-center flex-shrink-0">{r.initials}</div>
-                  <div><p className="font-medium text-xs text-ink">{r.name}</p><p className="text-[0.6rem] text-muted font-light">{r.trip}</p></div>
+                  <div className="w-8 h-8 rounded-full bg-ink text-white text-xs font-medium flex items-center justify-center flex-shrink-0">{r.initials}</div>
+                  <div><p className="font-medium text-xs text-ink">{r.name}</p><p className="text-xs text-muted font-light">{r.trip}</p></div>
                 </div>
               </div>
             ))}

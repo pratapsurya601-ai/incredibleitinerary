@@ -50,7 +50,7 @@ export default function SampleItinerarySection({ onPlanTrip }: { onPlanTrip: () 
           </div>
           {/* Savings callout */}
           <div className="bg-teal text-white rounded-2xl px-6 py-4 text-center min-w-[180px] shadow-lg">
-            <p className="text-[0.62rem] tracking-[0.15em] uppercase font-light mb-1 text-white/70">Day 1 total spend</p>
+            <p className="text-xs tracking-[0.15em] uppercase font-light mb-1 text-white/70">Day 1 total spend</p>
             <p className="font-serif text-3xl font-light mb-0.5">{SAMPLE_TOTAL.budget}</p>
             <p className="text-[0.65rem] text-white/60 line-through">{SAMPLE_TOTAL.vs}</p>
             <p className="text-[0.7rem] font-semibold text-white/90 mt-1">You save {SAMPLE_TOTAL.saved}</p>

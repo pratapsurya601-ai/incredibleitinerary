@@ -106,7 +106,7 @@ export default function PopularDestinations() {
                     loading={i < 4 ? "eager" : "lazy"}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
-                  <span className="absolute top-3 left-3 text-[0.58rem] font-semibold tracking-wider uppercase bg-gold text-ink px-2.5 py-1 rounded-full shadow-sm">
+                  <span className="absolute top-3 left-3 text-xs font-semibold tracking-wider uppercase bg-gold text-ink px-2.5 py-1 rounded-full shadow-sm">
                     {d.tag}
                   </span>
                   <div className="absolute bottom-0 left-0 right-0 p-4">

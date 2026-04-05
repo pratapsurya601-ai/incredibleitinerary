@@ -77,7 +77,7 @@ export default function BestTimePage({ params }: Props) {
 
           {/* Quick answer */}
           <div className="bg-parchment border border-parchment-2 rounded-2xl p-7 mb-12">
-            <p className="text-[0.62rem] tracking-[0.18em] uppercase text-gold font-medium mb-2">Quick Answer</p>
+            <p className="text-xs tracking-[0.18em] uppercase text-gold font-medium mb-2">Quick Answer</p>
             <p className="font-serif text-xl font-light text-ink mb-3">
               The best time to visit {post.destination} is{" "}
               <span className="text-gold">
@@ -142,7 +142,7 @@ export default function BestTimePage({ params }: Props) {
                     <div>
                       <div className="flex items-center gap-3 flex-wrap mb-2">
                         <h3 className="font-serif text-lg font-light text-ink">{season.name}</h3>
-                        <span className={`text-[0.6rem] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full font-medium ${
+                        <span className={`text-xs tracking-[0.15em] uppercase px-2 py-0.5 rounded-full font-medium ${
                           season.type === "best"
                             ? "bg-gold/15 text-amber-800"
                             : season.type === "avoid"

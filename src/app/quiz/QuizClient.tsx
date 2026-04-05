@@ -626,7 +626,7 @@ function ResultCard({
         <img src={dest.image} alt={dest.name} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-4">
-          <p className="text-[0.62rem] tracking-[0.15em] uppercase text-gold-light mb-1">
+          <p className="text-xs tracking-[0.15em] uppercase text-gold-light mb-1">
             {isPrimary ? "Best match" : rank === "secondary" ? "2nd choice" : "Also great"}
           </p>
           <h3 className="font-serif text-2xl font-light text-white">{dest.emoji} {dest.name}</h3>
@@ -726,7 +726,7 @@ function EmailCapture({ destination, onSkip }: { destination: string; onSkip: ()
       <button onClick={onSkip} className="mt-3 text-xs text-muted hover:text-ink transition-colors underline-offset-2 hover:underline">
         Skip — just show my results
       </button>
-      <p className="text-[0.62rem] text-muted/60 mt-3">No spam. Unsubscribe anytime.</p>
+      <p className="text-xs text-muted/60 mt-3">No spam. Unsubscribe anytime.</p>
     </div>
   );
 }

@@ -125,7 +125,7 @@ export default function BlogPostPage({ params }: Props) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 max-w-[860px]">
-                <span className="inline-block bg-gold text-ink text-[0.62rem] tracking-[0.12em] uppercase font-medium px-2.5 py-1 rounded-[1px] mb-4">
+                <span className="inline-block bg-gold text-ink text-xs tracking-[0.12em] uppercase font-medium px-2.5 py-1 rounded-[1px] mb-4">
                   {post!.category}
                 </span>
                 <h1 className="font-serif text-[clamp(1.8rem,4vw,3rem)] font-light text-white leading-tight">

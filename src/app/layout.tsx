@@ -101,16 +101,6 @@ export default function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
-        <Script id="travelpayouts" strategy="afterInteractive">
-          {`
-            (function () {
-              var script = document.createElement("script");
-              script.async = 1;
-              script.src = 'https://emrld.ltd/NTE1MTIx.js?t=515121';
-              document.head.appendChild(script);
-            })();
-          `}
-        </Script>
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];

@@ -50,12 +50,12 @@ export default function WhyDifferentSection({ onPlanTrip }: { onPlanTrip: () => 
                   <p className="text-xs text-white/50 font-light mb-2">{feat}</p>
                   <div className="flex justify-between items-center">
                     <div>
-                      <p className="text-[0.6rem] text-gold uppercase tracking-wider mb-0.5 font-semibold">Us</p>
+                      <p className="text-xs text-gold uppercase tracking-wider mb-0.5 font-semibold">Us</p>
                       <p className="text-sm text-gold font-semibold">{us}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-[0.6rem] text-white/30 uppercase tracking-wider mb-0.5">Others</p>
-                      <p className="text-sm text-white/30 font-light">{them}</p>
+                      <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Others</p>
+                      <p className="text-sm text-white/50 font-light">{them}</p>
                     </div>
                   </div>
                 </div>
@@ -65,9 +65,9 @@ export default function WhyDifferentSection({ onPlanTrip }: { onPlanTrip: () => 
             <table className="hidden md:table w-full text-center">
               <thead>
                 <tr>
-                  <th className="p-4 border-r border-white/10 text-[0.62rem] text-white/30 uppercase tracking-wider font-normal">Feature</th>
-                  <th className="p-4 border-r border-white/10 bg-gold/10 text-[0.62rem] text-gold uppercase tracking-wider font-semibold">IncredibleItinerary</th>
-                  <th className="p-4 text-[0.62rem] text-white/30 uppercase tracking-wider font-normal">Generic AI / Blog</th>
+                  <th className="p-4 border-r border-white/10 text-xs text-white/50 uppercase tracking-wider font-normal">Feature</th>
+                  <th className="p-4 border-r border-white/10 bg-gold/10 text-xs text-gold uppercase tracking-wider font-semibold">IncredibleItinerary</th>
+                  <th className="p-4 text-xs text-white/50 uppercase tracking-wider font-normal">Generic AI / Blog</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,7 +75,7 @@ export default function WhyDifferentSection({ onPlanTrip }: { onPlanTrip: () => 
                   <tr key={feat}>
                     <td className="px-4 py-2.5 border-t border-white/10 text-xs text-white/50 font-light text-left">{feat}</td>
                     <td className="px-4 py-2.5 border-t border-white/10 border-x border-gold/20 text-xs text-gold font-semibold bg-gold/5">{us}</td>
-                    <td className="px-4 py-2.5 border-t border-white/10 text-xs text-white/30 font-light">{them}</td>
+                    <td className="px-4 py-2.5 border-t border-white/10 text-xs text-white/50 font-light">{them}</td>
                   </tr>
                 ))}
               </tbody>

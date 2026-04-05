@@ -62,7 +62,7 @@ export default function HowItWorksSection({ onPlanTrip }: { onPlanTrip: () => vo
                 <div className="w-14 h-14 rounded-2xl bg-gold/8 border border-gold/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-gold/15 transition-colors">
                   {s.icon}
                 </div>
-                <div className="text-[0.6rem] text-gold tracking-[0.2em] uppercase font-medium mb-2">Step {s.n}</div>
+                <div className="text-xs text-gold tracking-[0.2em] uppercase font-medium mb-2">Step {s.n}</div>
                 <p className="font-serif text-lg text-ink mb-2 font-light">{s.title}</p>
                 <p className="text-xs text-muted font-light leading-relaxed">{s.desc}</p>
                 {s.action && (
