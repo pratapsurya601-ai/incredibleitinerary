@@ -152,7 +152,7 @@ export default function Footer() {
         {/* Destination mega-menu */}
         <div className="border-t border-white/[0.06] pt-10 mb-10">
           <p className="text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-6 text-center">
-            77 Free Destination Guides — 4 Countries
+            284+ Free Destination Guides — 50+ Countries
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {Object.entries(REGIONS).map(([region, links]) => (

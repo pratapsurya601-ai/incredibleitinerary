@@ -26,7 +26,7 @@ export default function DestinationGridSection() {
           <div>
             <span className="section-label">Free itinerary guides</span>
             <h2 className="font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-light text-ink">
-              19 destinations.<br /><em className="italic text-teal">All free. All detailed.</em>
+              284+ destinations.<br /><em className="italic text-teal">All free. All detailed.</em>
             </h2>
           </div>
           <Link href="/blog" className="text-[0.72rem] tracking-[0.12em] uppercase text-gold-dark border-b border-gold-dark pb-0.5 hover:text-ink transition-colors">
