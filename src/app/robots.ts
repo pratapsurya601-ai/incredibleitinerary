@@ -7,6 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://www.incredibleitinerary.com/sitemap.xml",
+    sitemap: [
+      "https://www.incredibleitinerary.com/sitemap.xml",
+      "https://www.incredibleitinerary.com/sitemap-images.xml",
+    ],
   };
 }

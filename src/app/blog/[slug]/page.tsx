@@ -8,7 +8,7 @@ import type { GeneratedPost } from "@/data/generated-posts";
 import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "./BlogSlugNav";
 import ShareButton from "@/components/ui/ShareButton";
-import { BlogPostSchema } from "@/components/SchemaMarkup";
+import { BlogPostSchema, GeneratedPostSchema } from "@/components/SchemaMarkup";
 import GeneratedPostContent from "./GeneratedPostContent";
 
 interface Props {
@@ -23,16 +23,25 @@ export async function generateStaticParams() {
 }
 
 // Dynamic metadata per post
+const SITE = "https://www.incredibleitinerary.com";
+const AUTHORS = [{ name: "IncredibleItinerary Editorial Team", url: `${SITE}/about` }];
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (post) {
     return {
       title: `${post.title} — IncredibleItinerary`,
       description: post.excerpt,
+      authors: AUTHORS,
+      alternates: { canonical: `${SITE}/blog/${post.slug}` },
       openGraph: {
         title: post.title,
         description: post.excerpt,
-        images: [{ url: post.image, alt: post.imageAlt }],
+        url: `${SITE}/blog/${post.slug}`,
+        type: "article",
+        publishedTime: post.date,
+        authors: ["IncredibleItinerary Editorial Team"],
+        images: [{ url: post.image, width: 1200, height: 630, alt: post.imageAlt }],
       },
     };
   }
@@ -42,11 +51,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: `${generatedPost.title} — IncredibleItinerary`,
       description: generatedPost.description,
-      alternates: { canonical: `https://www.incredibleitinerary.com/blog/${generatedPost.slug}` },
+      authors: AUTHORS,
+      alternates: { canonical: `${SITE}/blog/${generatedPost.slug}` },
       openGraph: {
         title: generatedPost.title,
         description: generatedPost.description,
-        images: [{ url: generatedPost.image, alt: generatedPost.destination }],
+        url: `${SITE}/blog/${generatedPost.slug}`,
+        type: "article",
+        publishedTime: generatedPost.publishDate,
+        images: [{ url: generatedPost.image, width: 1200, height: 630, alt: generatedPost.destination }],
       },
     };
   }
@@ -70,6 +83,14 @@ export default function BlogPostPage({ params }: Props) {
       : null;
     return (
       <>
+        <GeneratedPostSchema
+          slug={generatedPost.slug}
+          title={generatedPost.title}
+          description={generatedPost.description}
+          destination={generatedPost.destination}
+          publishDate={generatedPost.publishDate}
+          image={generatedPost.image}
+        />
         <BlogSlugNav />
         <GeneratedPostContent post={generatedPost} parent={parentBlogPost} />
         <Footer />

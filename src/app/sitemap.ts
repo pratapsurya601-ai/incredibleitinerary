@@ -36,13 +36,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  // ── Blog posts — auto-generated from data, always complete ─────────────────
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: post.featured ? 0.95 : 0.85,
-  }));
+  // ── Blog posts — use actual publish date so Google tracks freshness correctly
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => {
+    const postDate = post.date ? new Date(post.date) : now;
+    return {
+      url: `${base}/blog/${post.slug}`,
+      lastModified: isNaN(postDate.getTime()) ? now : postDate,
+      changeFrequency: "monthly",
+      priority: post.featured ? 0.95 : 0.85,
+    };
+  });
 
   // ── Programmatic sub-pages (best-time / couples-guide / packing-list) ────────
   const subPages: MetadataRoute.Sitemap = blogPosts.flatMap((post) => [
