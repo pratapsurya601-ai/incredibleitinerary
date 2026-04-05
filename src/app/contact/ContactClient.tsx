@@ -7,6 +7,17 @@ import { blogPosts } from "@/data/blog";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
 import { SITE_CONFIG } from "@/lib/config";
+import { showToast } from "@/components/ui/Toast";
+
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null;
+  return (
+    <p className="flex items-center gap-1 text-[0.7rem] text-rust mt-1.5 animate-[slideDown_0.2s_ease_forwards]">
+      <span className="font-bold leading-none">!</span>
+      {message}
+    </p>
+  );
+}
 
 interface FormData {
   name: string;
@@ -20,11 +31,17 @@ function ContactForm() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting, isSubmitSuccessful } } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    await fetch("/api/inquiry", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, source: "contact-page" }),
-    });
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, source: "contact-page" }),
+      });
+      if (!res.ok) throw new Error();
+      showToast("Message sent! We'll reply within 24 hours ✓", "success");
+    } catch {
+      showToast("Something went wrong — please try again", "error");
+    }
   };
 
   if (isSubmitSuccessful) {
@@ -50,15 +67,17 @@ function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Your Name *</label>
-          <input {...register("name", { required: true })}
+          <input {...register("name", { required: "Name is required" })}
             placeholder="Rahul Sharma"
             className={`form-field ${errors.name ? "border-rust" : ""}`} />
+          <FieldError message={errors.name?.message} />
         </div>
         <div>
           <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Email *</label>
-          <input {...register("email", { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ })}
+          <input {...register("email", { required: "Email is required", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter a valid email address" } })}
             type="email" placeholder="rahul@example.com"
             className={`form-field ${errors.email ? "border-rust" : ""}`} />
+          <FieldError message={errors.email?.message} />
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

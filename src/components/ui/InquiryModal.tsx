@@ -3,6 +3,18 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { X } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import { showToast } from "@/components/ui/Toast";
+
+// Animated inline field error
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null;
+  return (
+    <p className="flex items-center gap-1 text-[0.7rem] text-rust mt-1.5 animate-[slideDown_0.2s_ease_forwards]">
+      <span className="font-bold leading-none">!</span>
+      {message}
+    </p>
+  );
+}
 
 interface InquiryModalProps {
   isOpen: boolean;
@@ -70,8 +82,10 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
       });
       if (!res.ok) throw new Error("API error");
       trackEvent("inquiry_submitted", { destination: data.destination });
+      showToast("Inquiry sent! We'll reply within 24 hours ✓", "success");
     } catch {
       setApiError("Something went wrong. Please try again or email us at hello@incredibleitinerary.com");
+      showToast("Something went wrong — please try again", "error");
     }
   };
 
@@ -115,36 +129,39 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div>
                   <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">First Name *</label>
-                  <input {...register("firstName", { required: true })} placeholder="Rahul" className={`form-field ${errors.firstName ? "border-red-400" : ""}`} />
+                  <input {...register("firstName", { required: "First name is required" })} placeholder="Rahul" className={`form-field ${errors.firstName ? "border-rust" : ""}`} />
+                  <FieldError message={errors.firstName?.message} />
                 </div>
                 <div>
                   <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Last Name *</label>
-                  <input {...register("lastName", { required: true })} placeholder="Sharma" className={`form-field ${errors.lastName ? "border-red-400" : ""}`} />
+                  <input {...register("lastName", { required: "Last name is required" })} placeholder="Sharma" className={`form-field ${errors.lastName ? "border-rust" : ""}`} />
+                  <FieldError message={errors.lastName?.message} />
                 </div>
               </div>
 
               {/* Email */}
               <div className="mb-4">
                 <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Email Address *</label>
-                <input {...register("email", { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ })} type="email" placeholder="rahul@gmail.com" className={`form-field ${errors.email ? "border-red-400" : ""}`} />
-                {errors.email && <p className="text-xs text-red-500 mt-1">Please enter a valid email</p>}
+                <input {...register("email", { required: "Email is required", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter a valid email address" } })} type="email" placeholder="rahul@gmail.com" className={`form-field ${errors.email ? "border-rust" : ""}`} />
+                <FieldError message={errors.email?.message} />
               </div>
 
               {/* WhatsApp */}
               <div className="mb-4">
                 <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">WhatsApp Number *</label>
-                <input {...register("whatsapp", { required: true, validate: (v) => v.replace(/\D/g, "").length >= 10 || "Must be at least 10 digits" })} type="tel" placeholder="+91 98765 43210" className={`form-field ${errors.whatsapp ? "border-red-400" : ""}`} />
-                {errors.whatsapp && <p className="text-xs text-red-500 mt-1">{typeof errors.whatsapp.message === "string" ? errors.whatsapp.message : "Please enter a valid WhatsApp number"}</p>}
+                <input {...register("whatsapp", { required: "WhatsApp number is required", validate: (v) => v.replace(/\D/g, "").length >= 10 || "Must be at least 10 digits" })} type="tel" placeholder="+91 98765 43210" className={`form-field ${errors.whatsapp ? "border-rust" : ""}`} />
+                <FieldError message={errors.whatsapp?.message} />
               </div>
 
               {/* Destination + Duration */}
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div>
                   <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Destination *</label>
-                  <select {...register("destination", { required: true })} className={`form-field ${errors.destination ? "border-red-400" : ""}`}>
+                  <select {...register("destination", { required: "Please select a destination" })} className={`form-field ${errors.destination ? "border-rust" : ""}`}>
                     <option value="">Choose...</option>
                     {destinations.map((d) => <option key={d} value={d}>{d}</option>)}
                   </select>
+                  <FieldError message={errors.destination?.message} />
                 </div>
                 <div>
                   <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Duration</label>

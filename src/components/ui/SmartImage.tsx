@@ -3,6 +3,17 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { ImageQueryKey } from "@/lib/pexels";
 
+// ---------------------------------------------------------------------------
+// Warm shimmer blur placeholder — parchment tones, animates left→right
+// Using Next.js official SVG-to-base64 pattern for external image blur
+// ---------------------------------------------------------------------------
+const _shimmerSvg = `<svg width="700" height="475" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g"><stop stop-color="#F8F2E8" offset="20%"/><stop stop-color="#EDE4D2" offset="50%"/><stop stop-color="#F8F2E8" offset="70%"/></linearGradient></defs><rect width="700" height="475" fill="#F8F2E8"/><rect id="r" width="700" height="475" fill="url(#g)"><animate attributeName="x" from="-700" to="700" dur="1.5s" repeatCount="indefinite"/></rect></svg>`;
+const _toBase64 = (str: string) =>
+  typeof window === "undefined"
+    ? Buffer.from(str).toString("base64")
+    : window.btoa(str);
+const BLUR_PLACEHOLDER = `data:image/svg+xml;base64,${_toBase64(_shimmerSvg)}`;
+
 interface SmartImageProps {
   // Use a predefined keyword key from IMAGE_QUERIES
   imageKey?: ImageQueryKey;
@@ -63,6 +74,8 @@ export default function SmartImage({
           src={src}
           alt={alt}
           fill
+          placeholder="blur"
+          blurDataURL={BLUR_PLACEHOLDER}
           className={`${className} ${loading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}
           priority={priority}
           sizes={sizes || "(max-width: 768px) 100vw, 50vw"}
@@ -75,6 +88,8 @@ export default function SmartImage({
           alt={alt}
           width={width || 800}
           height={height || 500}
+          placeholder="blur"
+          blurDataURL={BLUR_PLACEHOLDER}
           className={`${className} ${loading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}
           priority={priority}
           onLoad={() => setLoading(false)}
