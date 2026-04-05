@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>India on a Budget — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --orange:#ea580c;--orange-light:#fb923c;--orange-dark:#9a3412;
+  --orange-pale:#ffedd5;--orange-mid:#fed7aa;
+  --ink:#1a0e06;--cream:#fdf8f4;--parchment:#f5ede3;
+  --gold:#b5860d;--white:#ffffff;--muted:#6b5f58;
+  --green:#166534;--green-light:#dcfce7;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-bg{position:absolute;inset:0;background:linear-gradient(160deg,#9a3412 0%,#7c2d12 30%,#1a0e06 70%,#0f0a05 100%)}
+.cover-pattern{position:absolute;inset:0;opacity:0.07;background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.cover-accent{position:absolute;top:0;right:0;width:80mm;height:80mm;background:radial-gradient(circle at top right,rgba(234,88,12,0.4),transparent 70%)}
+.cover-accent2{position:absolute;bottom:40mm;left:-20mm;width:90mm;height:90mm;background:radial-gradient(circle,rgba(234,88,12,0.15),transparent 70%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-emoji{font-size:48pt;margin-bottom:4mm;display:block}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:48pt;font-weight:300;color:#fff;line-height:1.0;margin-bottom:4mm}
+.cover h1 em{color:var(--orange-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.6);font-size:11pt;font-weight:300;margin-bottom:8mm;max-width:140mm;line-height:1.5}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.45);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(26,14,6,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);font-weight:500;margin-bottom:2mm}
+
+/* ── STAT BOXES ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(26,14,6,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+/* ── FORMULA / BUDGET BREAKDOWN ── */
+.formula-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm}
+.formula-row{display:flex;align-items:center;flex-wrap:wrap;gap:2mm;margin-bottom:3mm}
+.formula-item{background:var(--orange-dark);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.05em}
+.formula-item.transport{background:#1d4ed8}
+.formula-item.activity{background:var(--green)}
+.formula-item.buffer{background:#6b21a8}
+.formula-plus{color:rgba(255,255,255,0.4);font-size:11pt;font-weight:300}
+.formula-equals{color:var(--orange-light);font-size:11pt;font-weight:600}
+.formula-total{color:var(--orange-light);font-family:'Cormorant Garamond',serif;font-size:18pt;font-weight:600}
+.formula-sub{color:rgba(255,255,255,0.45);font-size:7.5pt;margin-top:2mm}
+
+.tip-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-card{background:#fff;border:1px solid rgba(26,14,6,0.07);border-radius:10px;padding:4mm}
+.tip-card-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-card-title{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1.5mm;letter-spacing:0.03em}
+.tip-card-body{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.tip-card-body strong{color:var(--orange-dark);font-weight:600}
+
+/* ── HIGHLIGHT BOXES ── */
+.callout{background:linear-gradient(135deg,rgba(234,88,12,0.07),rgba(234,88,12,0.02));border-left:3px solid var(--orange);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:5mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.orange{background:var(--orange-pale);border:1px solid rgba(234,88,12,0.25);color:var(--orange-dark)}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.highlight-box.green{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534}
+.highlight-box strong{font-weight:600}
+
+/* ── ACCOMMODATION TYPES ── */
+.accom-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.accom-card{background:#fff;border:1px solid rgba(26,14,6,0.07);border-radius:10px;padding:4mm}
+.accom-type{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.accom-price{display:inline-block;font-size:7pt;background:var(--orange-pale);color:var(--orange-dark);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.accom-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── FOOD ITEMS ── */
+.food-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3mm;margin-bottom:5mm}
+.food-card{background:#fff;border:1px solid rgba(26,14,6,0.07);border-radius:10px;padding:3.5mm}
+.food-name{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.food-price{font-size:8pt;color:var(--orange);font-weight:600;margin-bottom:1mm}
+.food-region{font-size:7pt;color:var(--muted);font-weight:300}
+
+/* ── TRANSPORT TABLE ── */
+.transport-block{background:#fff;border:1px solid rgba(26,14,6,0.08);border-radius:10px;overflow:hidden;margin-bottom:4mm}
+.transport-header{background:var(--orange-dark);color:#fff;font-size:8pt;font-weight:600;padding:3mm 4mm;letter-spacing:0.05em;display:flex;align-items:center;gap:2mm}
+.transport-body{padding:3mm 4mm}
+.transport-row{display:flex;gap:3mm;align-items:flex-start;margin-bottom:2.5mm;padding-bottom:2.5mm;border-bottom:1px solid rgba(26,14,6,0.05)}
+.transport-row:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.transport-label{font-size:7.5pt;font-weight:500;color:var(--ink);min-width:30mm;flex-shrink:0}
+.transport-detail{font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.5;flex:1}
+.transport-price{font-size:7.5pt;color:var(--orange);font-weight:600;min-width:20mm;text-align:right;flex-shrink:0}
+
+/* ── DESTINATION TABLE ── */
+.dest-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(26,14,6,0.08);margin-bottom:5mm;font-size:7.5pt}
+.dest-table th{background:var(--orange-dark);color:#fff;font-size:7pt;font-weight:500;padding:2.5mm 3mm;text-align:left;letter-spacing:0.05em}
+.dest-table td{padding:2.5mm 3mm;border-bottom:1px solid rgba(26,14,6,0.06);color:var(--muted);font-weight:300;vertical-align:top}
+.dest-table td:first-child{font-weight:500;color:var(--ink)}
+.dest-table td.price{font-weight:600;color:var(--orange-dark)}
+.dest-table tr:nth-child(even) td{background:rgba(255,237,213,0.3)}
+.dest-table tr:last-child td{border-bottom:none}
+
+/* ── APPS GRID ── */
+.app-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3mm;margin-bottom:5mm}
+.app-card{background:#fff;border:1px solid rgba(26,14,6,0.07);border-radius:10px;padding:3.5mm;display:flex;align-items:flex-start;gap:3mm}
+.app-icon{font-size:20pt;flex-shrink:0;line-height:1}
+.app-info{}
+.app-name{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:0.5mm}
+.app-desc{font-size:7pt;color:var(--muted);font-weight:300;line-height:1.45}
+
+/* ── SCAMS ── */
+.scam-list{margin-bottom:5mm}
+.scam-item{background:#fff;border:1px solid rgba(26,14,6,0.07);border-radius:10px;padding:3.5mm 4mm;margin-bottom:3mm;display:flex;gap:3mm;align-items:flex-start}
+.scam-flag{font-size:10pt;flex-shrink:0;padding-top:0.5mm}
+.scam-content{}
+.scam-name{font-size:8pt;font-weight:600;color:#991b1b;margin-bottom:1mm}
+.scam-desc{font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.5}
+.scam-fix{font-size:7.5pt;color:var(--green);font-weight:500;margin-top:1mm}
+
+/* ── SEASONAL GRID ── */
+.season-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-bottom:5mm}
+.season-block{background:#fff;border:1px solid rgba(26,14,6,0.07);border-radius:10px;padding:3.5mm;overflow:hidden}
+.season-header{font-size:7.5pt;font-weight:600;color:var(--orange-dark);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(234,88,12,0.15)}
+.season-months{font-size:7pt;color:var(--muted);font-weight:300;line-height:1.6}
+.season-months strong{color:var(--ink);font-weight:500}
+
+/* ── FREE THINGS ── */
+.free-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.free-card{background:#fff;border:1px solid rgba(26,14,6,0.07);border-radius:10px;padding:4mm}
+.free-icon{font-size:16pt;margin-bottom:1.5mm}
+.free-title{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.free-body{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── BACK COVER ── */
+.back-cover{background:linear-gradient(160deg,#9a3412 0%,#7c2d12 40%,#1a0e06 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm;position:relative;overflow:hidden}
+.back-cover-pattern{position:absolute;inset:0;opacity:0.06;background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.back-cover-content{position:relative;z-index:2}
+.back-cover-emoji{font-size:40pt;margin-bottom:6mm;display:block}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:34pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:9.5pt;font-weight:300;max-width:120mm;margin:0 auto 7mm;line-height:1.65}
+.back-cta{background:var(--orange);color:#fff;font-size:9.5pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:8mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:7mm}
+.back-guides{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-bottom:8mm}
+.back-guide-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55);font-size:7pt;padding:3px 10px;border-radius:20px}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover-bg"></div>
+  <div class="cover-pattern"></div>
+  <div class="cover-accent"></div>
+  <div class="cover-accent2"></div>
+  <div class="cover-content">
+    <span class="cover-emoji">🇮🇳</span>
+    <div class="cover-tag">IncredibleItinerary · 2026 Budget Edition</div>
+    <h1 class="serif">India on a<br/><em>Budget</em></h1>
+    <p class="cover-sub">Travel all of India for under ₹3,000 per day — real prices, honest advice, and everything you need to stretch every rupee without missing a thing.</p>
+    <div class="cover-pills">
+      <span class="pill">💰 Under ₹3,000/day</span>
+      <span class="pill">🏨 Best Budget Stays</span>
+      <span class="pill">🚂 Train Travel Mastery</span>
+      <span class="pill">🍛 Eat Well for ₹200</span>
+      <span class="pill">📱 Essential Apps</span>
+      <span class="pill">⚠️ Scams to Avoid</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — THE ₹3000/DAY FORMULA ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">The Daily Budget Formula</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The ₹3,000/Day Formula</h2>
+
+  <div class="formula-bar">
+    <div class="formula-row">
+      <span class="formula-item">🏨 ₹800 Accommodation</span>
+      <span class="formula-plus">+</span>
+      <span class="formula-item" style="background:#b45309">🍛 ₹600 Food</span>
+      <span class="formula-plus">+</span>
+      <span class="formula-item transport">🚂 ₹800 Transport</span>
+      <span class="formula-plus">+</span>
+      <span class="formula-item activity">🎭 ₹400 Activities</span>
+      <span class="formula-plus">+</span>
+      <span class="formula-item buffer">💼 ₹400 Buffer</span>
+      <span class="formula-equals">=</span>
+      <span class="formula-total">₹3,000</span>
+    </div>
+    <div class="formula-sub">Per person · Solo traveller · Budget tier. Couples sharing a room: accommodation cost halves → <strong style="color:rgba(255,255,255,0.8)">₹2,000/person/day</strong> is very achievable.</div>
+  </div>
+
+  <div class="tip-grid">
+    <div class="tip-card">
+      <div class="tip-card-icon">🏨</div>
+      <div class="tip-card-title">Accommodation — ₹800 target</div>
+      <div class="tip-card-body">Hostel dorms (₹400–600) or OYO rooms (₹700–900) hit this easily in most cities. <strong>Couples sharing: ₹400/person</strong> each in a private room. Avoid peak weekends — rates spike 50%. Book Sunday–Thursday for best prices.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">🍛</div>
+      <div class="tip-card-title">Food — ₹600 target</div>
+      <div class="tip-card-body">Thali lunch ₹100 + breakfast ₹60 + dinner ₹140 + chai &amp; snacks ₹100 = <strong>₹400 eating well</strong>. The remaining ₹200 is buffer for the occasional restaurant meal. Never eat near monuments — prices triple.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">🚂</div>
+      <div class="tip-card-title">Transport — ₹800 target</div>
+      <div class="tip-card-body">This averages out. On travel days you spend ₹400–1,200 on trains/buses. On rest days you spend ₹50–150 on local metro/autos. <strong>Overnight trains = free accommodation</strong>. Factor this into your daily average.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">🎭</div>
+      <div class="tip-card-title">Activities — ₹400 target</div>
+      <div class="tip-card-body">Most temples are free. ASI monument fees: ₹20–50 for Indians, ₹500–600 for foreigners. Budget ₹300–500 on "big" days (Taj Mahal, boat rides). Many days cost <strong>zero — beaches, ghats, markets</strong> are all free.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"₹3,000/day isn't about deprivation — it's about spending like a smart local, not a tourist. The Indians eating at that dhaba know something you don't."</p>
+  </div>
+
+  <div class="highlight-box orange">
+    <strong>Couples tip:</strong> A private room for two at ₹1,000–1,200 per night means just ₹500–600 each for accommodation — well under the ₹800 budget. The formula above makes ₹2,000/person/day easily achievable for couples travelling together.
+  </div>
+
+  <div class="highlight-box green">
+    <strong>Pro move:</strong> Book overnight trains whenever the journey is 6+ hours. A Sleeper class seat costs ₹300–600 and you save one night's accommodation. A 3-week trip with 5 overnight trains saves ₹3,000–5,000 vs. paying for both transport and hotels.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — ACCOMMODATION GUIDE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">Accommodation</span>
+  </div>
+
+  <div class="label">Where to Sleep</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Accommodation Guide</h2>
+
+  <div class="accom-grid">
+    <div class="accom-card">
+      <div class="accom-type">🛏️ Hostel Dorms</div>
+      <div class="accom-price">₹400–800 / night</div>
+      <div class="accom-desc">Best option for solo travellers. AC dorms in Zostel, Moustache or The Hosteller are clean, social and well-located. Lockers provided. Usually includes free Wi-Fi and sometimes breakfast. Book ahead for weekends.</div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-type">🔑 Hostel Private Rooms</div>
+      <div class="accom-price">₹1,000–1,500 / night</div>
+      <div class="accom-desc">Private rooms in hostels give you the social atmosphere without the dorm. Excellent for couples. Many include en-suite bathrooms. More reliable than random guesthouses at a similar price.</div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-type">🏠 Budget Guesthouses</div>
+      <div class="accom-price">₹500–1,200 / night</div>
+      <div class="accom-desc">Family-run guesthouses dominate smaller towns and religious cities. Often the best value — home-cooked meals sometimes available. Ask to see the room before paying. Quality varies enormously.</div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-type">📱 OYO Rooms</div>
+      <div class="accom-price">₹700–1,500 / night</div>
+      <div class="accom-desc">Budget hotel aggregator with standardised (if basic) quality. Guaranteed clean linen and working AC/fan. App-based booking. Useful in tier-2 cities where hostels don't exist. Flash sales can drop prices to ₹400.</div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-type">🛕 Dharamshalas</div>
+      <div class="accom-price">₹100–400 / night</div>
+      <div class="accom-desc">Temple-run pilgrim lodges near religious sites (Varanasi, Rishikesh, Amritsar, Pushkar). Ultra-basic but safe and clean. Open to all visitors, not just pilgrims. The Golden Temple in Amritsar offers free accommodation and meals.</div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-type">🌐 Booking Tips</div>
+      <div class="accom-price">Save 20–40%</div>
+      <div class="accom-desc">Use <strong>Hostelworld</strong> for hostels, <strong>Goibibo</strong> and <strong>MakeMyTrip</strong> for hotels (frequent coupons). Book directly with guesthouses in smaller towns — they'll often match online rates without the commission cut.</div>
+    </div>
+  </div>
+
+  <div class="label">Top Budget Hostel Chains</div>
+  <div class="tip-grid" style="margin-bottom:5mm">
+    <div class="tip-card">
+      <div class="tip-card-icon">⭐</div>
+      <div class="tip-card-title">Zostel</div>
+      <div class="tip-card-body">India's largest hostel chain — present in 80+ cities and hill stations. Consistent quality, great common areas, reliable Wi-Fi. <strong>Dorms from ₹450.</strong> Book at zostel.com for best rates. Their "pod" hostels in major cities are exceptional.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">⭐</div>
+      <div class="tip-card-title">Moustache Hostel</div>
+      <div class="tip-card-body">Premium budget brand in Jaipur, Delhi, Agra, Jaisalmer, Udaipur. Known for rooftop social spaces and reliable cleanliness. <strong>Dorms from ₹500.</strong> Slightly pricier than Zostel but excellent value for the quality.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">⭐</div>
+      <div class="tip-card-title">The Hosteller</div>
+      <div class="tip-card-body">Strong presence in hill stations: Manali, Kasol, Rishikesh, Spiti. Perfect for trekking and adventure destinations. <strong>Dorms from ₹400.</strong> Often have outdoor seating areas with mountain views — rare for this price point.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">💡</div>
+      <div class="tip-card-title">Booking Smart</div>
+      <div class="tip-card-body"><strong>Sunday–Thursday:</strong> 20–30% cheaper than weekends. <strong>Avoid:</strong> Indian long weekends, Diwali, Holi, school holidays — prices double. <strong>Last-minute:</strong> Walk-in rates often lower than online for guesthouses. Always ask.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Amritsar hack:</strong> The Golden Temple offers free accommodation (Guru Ram Das Serai) and free langar (community meals) 24/7. One of India's most extraordinary experiences — and completely free. Suggested donation only.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — FOOD GUIDE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">Food</span>
+  </div>
+
+  <div class="label">Eating on a Budget</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Food Guide — ₹150–300/Day Eating Well</h2>
+
+  <div class="tip-grid" style="margin-bottom:5mm">
+    <div class="tip-card">
+      <div class="tip-card-icon">🍽️</div>
+      <div class="tip-card-title">Thali Meals — The Budget Staple</div>
+      <div class="tip-card-body">A thali is India's best value meal: unlimited refills of dal, sabzi (vegetable curry), rice or roti, pickle and sometimes dessert. <strong>₹80–150 anywhere in India.</strong> Gujarati thalis are the most generous — often ₹120 for a feast. Eat thali at lunch, not dinner (fresher).</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">🛣️</div>
+      <div class="tip-card-title">Highway Dhabas</div>
+      <div class="tip-card-body">Roadside dhabas on national highways serve the best-value food in India — truckers and bus drivers eat here, so food is plentiful and fresh. Dal makhani, butter roti, chai. <strong>Full meal ₹80–120.</strong> Look for dhabas with many trucks parked outside — that's the quality signal.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">🥥</div>
+      <div class="tip-card-title">Udupi Restaurants</div>
+      <div class="tip-card-body">South Indian vegetarian restaurant chains found across all of India. Idli, dosa, uttapam, sambar — the cheapest sit-down meals in any Indian city. <strong>Full breakfast ₹60–90.</strong> Hygienically run, consistent quality, no meat. Look for "Udupi" or "Darshini" in the name.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-icon">🥘</div>
+      <div class="tip-card-title">Mess Canteens</div>
+      <div class="tip-card-body">College and office district "mess" canteens serve unlimited meals at subsidised prices. Open to all. <strong>Full meal ₹50–80.</strong> Find them near universities and IT parks. Not always obvious — ask locals "yahan koi mess hai?" (is there a mess here?) for directions.</div>
+    </div>
+  </div>
+
+  <div class="label">Best Cheap Meals by Region</div>
+  <div class="food-grid" style="margin-bottom:5mm">
+    <div class="food-card">
+      <div class="food-name">Chole Bhature</div>
+      <div class="food-price">₹60–80</div>
+      <div class="food-region">North India · Delhi specialty · Filling breakfast or lunch</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Vada Pav</div>
+      <div class="food-price">₹20–30</div>
+      <div class="food-region">Mumbai · India's cheapest hot snack · Find at any street stall</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Masala Dosa</div>
+      <div class="food-price">₹50–80</div>
+      <div class="food-region">South India · Crispy rice crepe with potato filling + coconut chutney</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Litti Chokha</div>
+      <div class="food-price">₹40–60</div>
+      <div class="food-region">Bihar &amp; eastern UP · Wheat balls roasted over coal · Incredibly filling</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Dal Baati Churma</div>
+      <div class="food-price">₹80–120</div>
+      <div class="food-region">Rajasthan · Baked wheat balls in ghee · Rich and very filling</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Misal Pav</div>
+      <div class="food-price">₹50–70</div>
+      <div class="food-region">Maharashtra · Spicy sprouted bean curry with bread · Breakfast classic</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Momo (Steamed/Fried)</div>
+      <div class="food-price">₹50–80</div>
+      <div class="food-region">Darjeeling, Sikkim, Delhi · 10-piece plate · Veg or chicken filling</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Pav Bhaji</div>
+      <div class="food-price">₹60–100</div>
+      <div class="food-region">Mumbai &amp; West India · Spiced mashed vegetable curry with buttered rolls</div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>Street food safety rules:</strong> Eat food cooked to order in front of you (not pre-made). Avoid cut fruit and raw salads from street stalls. Carry hand sanitiser. Chai from a boiling kettle is always safe. Stick to busy stalls with high turnover — the food doesn't sit around.
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Tourist trap:</strong> Restaurants within 200m of any major monument (Taj Mahal, Red Fort, Jaisalmer Fort) charge 3–5× the normal rate for identical food. Walk 10 minutes away or ask your guesthouse where locals eat.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — TRANSPORT GUIDE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">Transport</span>
+  </div>
+
+  <div class="label">Getting Around India</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Transport Guide</h2>
+
+  <div class="transport-block" style="margin-bottom:4mm">
+    <div class="transport-header">🚂 Trains — The Backbone of Budget India Travel</div>
+    <div class="transport-body">
+      <div class="transport-row">
+        <div class="transport-label">Sleeper Class (SL)</div>
+        <div class="transport-detail">Open berths, fans, no AC. Perfectly fine for overnight journeys — pack earplugs and a light sheet. The default choice for budget travel. Safe for solo travellers including women (ladies compartment available).</div>
+        <div class="transport-price">₹300–800</div>
+      </div>
+      <div class="transport-row">
+        <div class="transport-label">3-Tier AC (3AC)</div>
+        <div class="transport-detail">Air conditioned with curtains, cleaner linen service. The "sweet spot" between comfort and cost. Worth the upgrade for journeys over 12 hours or during peak summer.</div>
+        <div class="transport-price">₹600–1,500</div>
+      </div>
+      <div class="transport-row">
+        <div class="transport-label">How to Book</div>
+        <div class="transport-detail">IRCTC.co.in or the IRCTC Rail Connect app (requires Indian mobile number). Alternatives: Confirmtkt or Railyatri (slightly higher fee, easier for tourists). Book 60–120 days ahead for popular routes.</div>
+        <div class="transport-price">Free–₹50 fee</div>
+      </div>
+      <div class="transport-row">
+        <div class="transport-label">Tatkal Quota</div>
+        <div class="transport-detail">Emergency seats released 24 hours before departure. Higher price (₹100–300 surcharge) but guaranteed confirmed seat. Opens at 10am for AC classes, 11am for Sleeper. Good for last-minute plans.</div>
+        <div class="transport-price">+₹100–300</div>
+      </div>
+      <div class="transport-row">
+        <div class="transport-label">Waitlist (WL) Strategy</div>
+        <div class="transport-detail">Buy a waitlist ticket — most WL1–WL20 tickets confirm before departure as people cancel. Check Confirmtkt app for confirmation probability. If WL 40+, avoid — unlikely to confirm. Refund is automatic if it doesn't.</div>
+        <div class="transport-price">Same fare</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transport-block" style="margin-bottom:4mm">
+    <div class="transport-header">🚌 Buses — Best for Short Hops</div>
+    <div class="transport-body">
+      <div class="transport-row">
+        <div class="transport-label">State Buses</div>
+        <div class="transport-detail">KSRTC (Karnataka/Kerala), MSRTC (Maharashtra), RSRTC (Rajasthan) — government buses are cheapest and cover routes trains don't. No booking required, just turn up. Slightly slower but reliable for 2–4 hour trips.</div>
+        <div class="transport-price">₹50–200</div>
+      </div>
+      <div class="transport-row">
+        <div class="transport-label">Private Sleeper Buses</div>
+        <div class="transport-detail">For overnight routes without good trains (Goa–Mumbai, Manali–Delhi, Spiti Valley). Volvo semi-sleeper is comfortable. Book via redBus or AbhiBus. More reliable than no-name operators.</div>
+        <div class="transport-price">₹400–1,200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transport-block" style="margin-bottom:4mm">
+    <div class="transport-header">✈️ Flights — When Trains Don't Make Sense</div>
+    <div class="transport-body">
+      <div class="transport-row">
+        <div class="transport-label">Budget Airlines</div>
+        <div class="transport-detail">IndiGo and SpiceJet dominate budget flying. Mumbai–Goa, Delhi–Srinagar, Chennai–Andaman: flights are often the only practical option. Book 6–8 weeks ahead for lowest fares. Use Skyscanner or Google Flights to compare.</div>
+        <div class="transport-price">₹1,500–3,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transport-block">
+    <div class="transport-header">🛺 Local Transport — Within Cities</div>
+    <div class="transport-body">
+      <div class="transport-row">
+        <div class="transport-label">Metro</div>
+        <div class="transport-detail">Delhi, Mumbai, Bengaluru, Hyderabad, Chennai, Kochi, Pune, Jaipur — all have metro now. Cheapest, fastest, AC. No negotiation needed. Download city metro app for route planning.</div>
+        <div class="transport-price">₹10–60/trip</div>
+      </div>
+      <div class="transport-row">
+        <div class="transport-label">Auto Rickshaw</div>
+        <div class="transport-detail">Negotiate firmly before boarding in cities without meter enforcement. Ask your guesthouse for fair rates. In Bengaluru and Hyderabad, meters are used reliably. Rapido Autos via app = no negotiation needed.</div>
+        <div class="transport-price">₹30–150</div>
+      </div>
+      <div class="transport-row">
+        <div class="transport-label">Rapido Bikes</div>
+        <div class="transport-detail">Bike taxis — fastest and cheapest for solo city travel. Available in most major cities. App-based, no negotiation, GPS tracked. Not available in some states due to regulations — check the app.</div>
+        <div class="transport-price">₹30–80/trip</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — DESTINATION BREAKDOWN ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">Destination Breakdown</span>
+  </div>
+
+  <div class="label">City by City</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Destination Budget Breakdown</h2>
+
+  <table class="dest-table">
+    <thead>
+      <tr>
+        <th>Destination</th>
+        <th>Budget/Day</th>
+        <th>Best Months</th>
+        <th>What's Free</th>
+        <th>What Costs Most</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🏛️ Delhi</td>
+        <td class="price">₹1,800–2,500</td>
+        <td>Oct – Mar</td>
+        <td>Humayun's Tomb garden, Lodhi Garden, Qutub complex grounds, Jama Masjid, Old Delhi lanes</td>
+        <td>Red Fort (₹500 foreign), private AC transport across the huge city</td>
+      </tr>
+      <tr>
+        <td>🌊 Mumbai</td>
+        <td class="price">₹2,000–3,000</td>
+        <td>Nov – Feb</td>
+        <td>Marine Drive, Bandra Bandstand, Dharavi walk, Gateway of India exterior, Juhu Beach</td>
+        <td>Accommodation (most expensive in India), Elephanta Caves ferry (₹200)</td>
+      </tr>
+      <tr>
+        <td>🏖️ Goa</td>
+        <td class="price">₹1,500–2,500</td>
+        <td>Nov – Feb</td>
+        <td>All beaches, Old Goa churches exterior, Dudhsagar Falls hike (seasonal)</td>
+        <td>Beach shack food (overpriced), scooter rental ₹350–500/day (worth it though)</td>
+      </tr>
+      <tr>
+        <td>🏰 Rajasthan</td>
+        <td class="price">₹1,500–2,200</td>
+        <td>Oct – Mar</td>
+        <td>Mehrangarh Fort views from outside, most temples, Pushkar Lake, Sam Sand Dunes sunset walk</td>
+        <td>Fort entry fees stack up (Amber ₹100, Mehrangarh ₹100), camel rides overpriced</td>
+      </tr>
+      <tr>
+        <td>🌿 Kerala</td>
+        <td class="price">₹1,800–2,500</td>
+        <td>Oct – Mar</td>
+        <td>All beaches, Fort Kochi walk, Periyar Wildlife Sanctuary entrance areas, tea garden views</td>
+        <td>Houseboat rental (₹5,000+/night), Kathakali show (₹400+)</td>
+      </tr>
+      <tr>
+        <td>🏔️ Manali</td>
+        <td class="price">₹1,200–2,000</td>
+        <td>May – Jun, Sep – Oct</td>
+        <td>Old Manali village, Solang Valley walk, Hadimba Temple, Beas River banks, Rohtang views</td>
+        <td>Rohtang Pass permit + taxi (₹2,500–3,000), snow activities overpriced</td>
+      </tr>
+      <tr>
+        <td>🛕 Varanasi</td>
+        <td class="price">₹1,200–1,800</td>
+        <td>Oct – Mar</td>
+        <td>All ghats, Ganga Aarti ceremony, temple lane walks, sunrise boat view from shore</td>
+        <td>Sunrise boat ride (negotiate hard, max ₹200), some ghats charge access</td>
+      </tr>
+      <tr>
+        <td>🏝️ Andaman Islands</td>
+        <td class="price">₹2,500–3,500</td>
+        <td>Oct – May</td>
+        <td>Cellular Jail (₹30), Corbyn's Cove Beach, Ross Island ferry (budget), snorkelling at Elephant Beach</td>
+        <td>Scuba diving (₹3,000–5,000), seaplane, inter-island ferries add up quickly</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p>"Rajasthan and Varanasi are India's most dramatic destinations and among the cheapest. The expensive cities — Mumbai, Goa peak season — still undercut most of Southeast Asia."</p>
+  </div>
+
+  <div class="highlight-box orange">
+    <strong>Foreigner vs Indian pricing:</strong> ASI (Archaeological Survey of India) monuments charge separate foreigner prices — typically ₹500–600 vs ₹20–50 for Indians. Budget extra ₹300–600/day in Agra, Delhi and Rajasthan if you plan to visit multiple monuments in one day.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — FREE THINGS ACROSS INDIA ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">Free Experiences</span>
+  </div>
+
+  <div class="label">Zero-Rupee Experiences</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Free Things Across India</h2>
+
+  <div class="free-grid">
+    <div class="free-card">
+      <div class="free-icon">🛕</div>
+      <div class="free-title">Temples — Almost Always Free</div>
+      <div class="free-body">The vast majority of India's thousands of temples charge no entry fee. Golden Temple (Amritsar), Meenakshi Temple (Madurai), Brihadeeswara (Thanjavur), Kashi Vishwanath (Varanasi) — all free. The experience is often more moving than any paid monument.</div>
+    </div>
+    <div class="free-card">
+      <div class="free-icon">🌊</div>
+      <div class="free-title">Beaches</div>
+      <div class="free-body">All Indian beaches are public and free. Goa's 105km of beaches, Kerala's Varkala and Kovalam, Marina Beach (Chennai, Asia's longest), Juhu (Mumbai), Puri (Odisha), Radhanagar (Havelock, Andaman — rated Asia's best). Zero entry fee.</div>
+    </div>
+    <div class="free-card">
+      <div class="free-icon">⛰️</div>
+      <div class="free-title">Mountains &amp; Viewpoints</div>
+      <div class="free-body">Himalayas are free. Sunrise from Tiger Hill (Darjeeling, ₹30 nominal), Rohtang Pass views, Spiti Valley's Pin Valley, Triund trek (Dharamshala), Chopta (Uttarakhand). National parks charge entry but the mountains themselves don't.</div>
+    </div>
+    <div class="free-card">
+      <div class="free-icon">🌅</div>
+      <div class="free-title">Ghats of Varanasi</div>
+      <div class="free-body">84 ghats along the Ganges — all free to walk. Dashashwamedh Ghat Aarti at sunrise and sunset: free to watch from the ghat steps. The most spiritually overwhelming experience in India costs nothing. Arrive 30 minutes early for a good spot.</div>
+    </div>
+    <div class="free-card">
+      <div class="free-icon">🏛️</div>
+      <div class="free-title">National Museums</div>
+      <div class="free-body">National Museum Delhi (₹20), National Gallery of Modern Art (₹20), Government Museum Chennai (₹15), Victoria Memorial Kolkata grounds (free). India's national museum network is vast and criminally undervisited — extraordinary collections for almost nothing.</div>
+    </div>
+    <div class="free-card">
+      <div class="free-icon">🏙️</div>
+      <div class="free-title">Markets &amp; Bazaars</div>
+      <div class="free-body">Chandni Chowk (Delhi), Crawford Market (Mumbai), Johari Bazaar (Jaipur), Colaba Causeway (Mumbai), Tibetan Market (Janpath Delhi) — free to explore, endlessly entertaining. India's markets are a living museum of culture, spice and chaos.</div>
+    </div>
+    <div class="free-card">
+      <div class="free-icon">🎊</div>
+      <div class="free-title">Republic Day &amp; Independence Day</div>
+      <div class="free-body">26 January (Republic Day) and 15 August (Independence Day): all ASI monuments are free for Indians and foreigners alike. Plan your visit to coincide with these dates if you're hitting multiple monuments — saves ₹2,000–4,000 on entry fees alone.</div>
+    </div>
+    <div class="free-card">
+      <div class="free-icon">📅</div>
+      <div class="free-title">Free Entry Fridays</div>
+      <div class="free-body">Some state-run monuments and parks offer free entry on Fridays for Indian nationals. Foreigners often also get in free or at Indian price on these days — rules vary by state. Always ask at the ticket counter; you may be pleasantly surprised.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>Langar — Free food at Sikh Gurdwaras:</strong> Every Sikh Gurdwara runs a free community kitchen (langar) open to people of all faiths, 24 hours a day. Golden Temple Amritsar feeds 50,000–100,000 people daily. In Delhi, Gurudwara Bangla Sahib does the same. Sit with everyone, eat dal and roti, experience genuine community. It's one of the most powerful things you can do in India — and it costs nothing.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — APPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">Essential Apps</span>
+  </div>
+
+  <div class="label">Digital Toolkit</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Apps Every India Traveller Needs</h2>
+
+  <div class="app-grid">
+    <div class="app-card">
+      <div class="app-icon">🚂</div>
+      <div class="app-info">
+        <div class="app-name">IRCTC Rail Connect</div>
+        <div class="app-desc">Official Indian Railways app. Book train tickets, check PNR status, see live train running. Requires Indian SIM for OTP verification. Use Confirmtkt or Railyatri if you don't have one — they book via IRCTC with a small fee.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🏍️</div>
+      <div class="app-info">
+        <div class="app-name">Rapido</div>
+        <div class="app-desc">Bike taxis and autos at fixed app prices — no negotiation, GPS tracked, faster than cabs in traffic. Works in 100+ cities. The cheapest and often fastest way to move short distances. Download before you arrive.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🚕</div>
+      <div class="app-info">
+        <div class="app-name">Ola / Uber</div>
+        <div class="app-desc">Both work across India. Ola has wider coverage in tier-2 cities. Uber is sometimes faster in metros. Use for airport transfers (always cheaper than pre-paid taxis if surge isn't on) and late-night travel when negotiating isn't fun.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🗺️</div>
+      <div class="app-info">
+        <div class="app-name">Google Maps (Offline)</div>
+        <div class="app-desc">Download offline maps for each city before you arrive — Indian mobile data can be spotty in hill stations and remote areas. Maps works for walking directions, metro routes and finding restaurants nearby. Also works for finding ATMs.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">✈️</div>
+      <div class="app-info">
+        <div class="app-name">MakeMyTrip</div>
+        <div class="app-desc">India's leading travel booking platform — hotels, flights, buses. Frequent coupon codes (MMTFIRST, MMTNEW) give 10–20% off first bookings. Also lists OYO, ibis Budget and other budget hotel chains in one place. Compare with Goibibo too.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🏨</div>
+      <div class="app-info">
+        <div class="app-name">Hostelworld</div>
+        <div class="app-desc">Best app for booking Zostel, Moustache, The Hosteller and independent hostels. Shows verified reviews, photos, dorm vs private availability. Book dorms here — often cheaper than booking directly. Cashback on first booking available.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">💱</div>
+      <div class="app-info">
+        <div class="app-name">XE Currency</div>
+        <div class="app-desc">Live currency conversion — works offline. Essential for knowing if you're being quoted a fair price in tourist areas. Quick mental maths: ₹1,000 = roughly £10 / $12 / €11. Check the rate daily as it fluctuates. ATM withdrawals give the best rates.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🌐</div>
+      <div class="app-info">
+        <div class="app-name">Google Translate (Offline)</div>
+        <div class="app-desc">Download Hindi, Tamil, Telugu, Bengali and Marathi language packs before arriving. Camera translation works for menus and signs. Most Indians in tourist areas speak English, but in rural areas and train stations, translate helps enormously.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">💳</div>
+      <div class="app-info">
+        <div class="app-name">Paytm / PhonePe</div>
+        <div class="app-desc">India's UPI payment apps — scan QR codes to pay instantly at dhabas, markets and guesthouses. Requires Indian bank account or international card link. Many small vendors prefer UPI over cash now. PhonePe is more widely accepted in South India.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🚌</div>
+      <div class="app-info">
+        <div class="app-name">redBus / AbhiBus</div>
+        <div class="app-desc">Book buses across India — state buses and private operators. Filter by operator rating, bus type and price. Seat selection included. Essential for Goa–Mumbai, Manali–Delhi, Jaipur–Jodhpur routes where trains are inconvenient or full.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box orange">
+    <strong>SIM card first priority:</strong> Get a local SIM (Airtel or Jio) at the airport immediately on arrival — bring your passport. ₹300–400 gets you 30 days unlimited data (2GB/day high-speed). Indian mobile internet is among the cheapest and fastest in the world. Every app above works far better with a local SIM.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 8</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 9 — SCAMS TO AVOID ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">Scams to Avoid</span>
+  </div>
+
+  <div class="label">Stay Safe &amp; Smart</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Scams to Avoid</h2>
+
+  <div class="scam-list">
+    <div class="scam-item">
+      <div class="scam-flag">⚠️</div>
+      <div class="scam-content">
+        <div class="scam-name">Airport Taxi Overcharging</div>
+        <div class="scam-desc">Touts at arrivals will offer "fixed price" taxis at 3–5× the going rate. They're persistent and confident. Delhi IGI, Mumbai CSMT, Jaipur — all airports have this problem.</div>
+        <div class="scam-fix">✅ Fix: Use the official prepaid taxi counter inside the terminal (look for signs), or book Ola/Uber from the designated app-cab zone. App cabs from airports are almost always cheaper.</div>
+      </div>
+    </div>
+    <div class="scam-item">
+      <div class="scam-flag">⚠️</div>
+      <div class="scam-content">
+        <div class="scam-name">Fake Tourist Information Offices</div>
+        <div class="scam-desc">Shops near Connaught Place (Delhi), Agra Fort Road and Jaipur's Badi Chaupar with "Tourist Information" or "Government Approved Tour Agent" signs. They are private shops. They'll book you overpriced tours, redirect you to commission-paying hotels.</div>
+        <div class="scam-fix">✅ Fix: The only real Tourist Office is India Tourism (incrediblindia.org). Your hotel front desk is always a better source of local advice than anyone who approaches you on the street.</div>
+      </div>
+    </div>
+    <div class="scam-item">
+      <div class="scam-flag">⚠️</div>
+      <div class="scam-content">
+        <div class="scam-name">Gem &amp; Jewellery Scam (Jaipur)</div>
+        <div class="scam-desc">A "friendly local" (often near Amber Fort or Hawa Mahal) offers to show you around, then steers you to his "family gem shop." Pressure to buy gems you can supposedly resell at massive profit abroad. The gems are worthless glass or synthetic stones.</div>
+        <div class="scam-fix">✅ Fix: Never buy gems from someone you just met. If you want genuine Rajasthani jewellery, shop at fixed-price government emporiums (Rajasthali) or established shops in Johari Bazaar.</div>
+      </div>
+    </div>
+    <div class="scam-item">
+      <div class="scam-flag">⚠️</div>
+      <div class="scam-content">
+        <div class="scam-name">Milk / Baby Formula Scam</div>
+        <div class="scam-desc">A man with a baby approaches asking for money to buy milk for the child. You're taken to a shop, buy expensive formula — the shopkeeper later returns it and splits the profit with the scammer. Common near major monuments.</div>
+        <div class="scam-fix">✅ Fix: If you want to help, donate to a verified NGO. Never buy items at someone else's request from an unknown shop. Genuine emergencies go to police, not random tourists.</div>
+      </div>
+    </div>
+    <div class="scam-item">
+      <div class="scam-flag">⚠️</div>
+      <div class="scam-content">
+        <div class="scam-name">"Closed Today — Special Guide" Scam</div>
+        <div class="scam-desc">Near the Taj Mahal, Red Fort or Amber Fort: a person tells you the main gate is closed today (strike/holiday/restoration), offers to take you to a "better entrance" or "special viewing spot." The monument is open. They're taking you somewhere else entirely.</div>
+        <div class="scam-fix">✅ Fix: Walk directly to the main gate and check yourself. Official ASI monument opening times are on asi.nic.in. The Taj Mahal is only closed on Fridays. Ignore all unsolicited guidance near monuments.</div>
+      </div>
+    </div>
+    <div class="scam-item">
+      <div class="scam-flag">⚠️</div>
+      <div class="scam-content">
+        <div class="scam-name">Overpriced Chai Near the Taj Mahal</div>
+        <div class="scam-desc">A chai vendor near Taj Mahal East Gate offers "free chai" to sit and chat, then demands ₹500–1,000 for two cups. Sometimes escalates to threats if you refuse. Also common near Pushkar Lake for "flower blessings."</div>
+        <div class="scam-fix">✅ Fix: Never accept anything "free" near major monuments. Establish a price before sitting. If someone puts something in your hand (flower, tikka, food), you can simply hand it back — you owe nothing.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>General rule:</strong> Anyone who approaches you first — on streets near monuments, in train stations, at tourist offices — has a financial interest in the conversation. That doesn't mean all Indians are scammers (most are genuinely helpful), but unsolicited guidance near tourist sites is almost always commission-motivated. Seek advice from your guesthouse or other travellers instead.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 9</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 10 — SEASONAL GUIDE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">India Budget Guide</span>
+    <span class="page-header-right">When to Go</span>
+  </div>
+
+  <div class="label">Month by Month</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Seasonal Travel Guide</h2>
+
+  <div class="stats-bar" style="margin-bottom:5mm">
+    <div class="stat-box"><div class="stat-icon">❄️</div><span class="stat-val">Oct – Feb</span><span class="stat-label">North India Peak</span></div>
+    <div class="stat-box"><div class="stat-icon">🌧️</div><span class="stat-val">Jun – Sep</span><span class="stat-label">Monsoon Season</span></div>
+    <div class="stat-box"><div class="stat-icon">🏔️</div><span class="stat-val">May – Sep</span><span class="stat-label">Mountain Season</span></div>
+    <div class="stat-box"><div class="stat-icon">🏖️</div><span class="stat-val">Nov – Mar</span><span class="stat-label">South &amp; Goa Best</span></div>
+  </div>
+
+  <div class="season-grid">
+    <div class="season-block">
+      <div class="season-header">January</div>
+      <div class="season-months"><strong>Go:</strong> Rajasthan (crisp and perfect), Goa (peak but worth it), Kerala, Tamil Nadu, Gujarat (Rann of Kutch festival). <strong>Skip:</strong> Kashmir, Manali (heavy snow, roads closed). Republic Day 26 Jan = free ASI entry.</div>
+    </div>
+    <div class="season-block">
+      <div class="season-header">February</div>
+      <div class="season-months"><strong>Go:</strong> Rajasthan, Hampi, Goa (slightly cheaper than Jan), Andaman Islands, Madurai. <strong>Best:</strong> Holi festival (late Feb/early Mar) — Mathura and Vrindavan are extraordinary. Shoulder season pricing begins.</div>
+    </div>
+    <div class="season-block">
+      <div class="season-header">March</div>
+      <div class="season-months"><strong>Go:</strong> Holi festival destinations (Rajasthan, UP), Darjeeling (rhododendrons blooming), Odisha coast, Andaman still great. <strong>Avoid:</strong> North India heat building fast. Goa winding down. Prices dropping — excellent value.</div>
+    </div>
+    <div class="season-block">
+      <div class="season-header">April</div>
+      <div class="season-months"><strong>Go:</strong> Hill stations (Shimla, Ooty, Kodaikanal, Coorg), Darjeeling for tea-flush season, Kashmir Valley (tulip season). <strong>Skip:</strong> Rajasthan, Delhi (40°C+), plains of India — brutally hot. Very low tourist prices.</div>
+    </div>
+    <div class="season-block">
+      <div class="season-header">May – June</div>
+      <div class="season-months"><strong>Go:</strong> Manali, Spiti Valley, Leh–Ladakh (Khardung La and Pangong Lake accessible from Jun), Himachal Pradesh, Kashmir. <strong>Skip:</strong> All of South India, Rajasthan, Delhi, Goa (unbearably hot). Indian domestic tourists flood hills.</div>
+    </div>
+    <div class="season-block">
+      <div class="season-header">July – August</div>
+      <div class="season-months"><strong>Go:</strong> Meghalaya (world's wettest place — waterfalls at peak), Munnar and Kerala hills (lush and green), Coorg, Spiti (rain shadow, stays dry). Independence Day 15 Aug = free ASI entry. <strong>Skip:</strong> Rajasthan, Goa (flooding).</div>
+    </div>
+    <div class="season-block">
+      <div class="season-header">September</div>
+      <div class="season-months"><strong>Go:</strong> Manali (monsoon clearing, before snow), Spiti still accessible, Rajasthan starts again (post-rain green), Kerala backwaters (lush). <strong>Value:</strong> Shoulder season across most of India — best prices of the year before Oct peak hits.</div>
+    </div>
+    <div class="season-block">
+      <div class="season-header">October</div>
+      <div class="season-months"><strong>Go:</strong> Everywhere in North India, Rajasthan, Goa reopening, Kerala, Tamil Nadu. Navratri and Diwali festivals. <strong>Note:</strong> Diwali week = hotels double pricing and book out — plan ahead or avoid. First week of Oct = best shoulder rates.</div>
+    </div>
+    <div class="season-block">
+      <div class="season-header">November – December</div>
+      <div class="season-months"><strong>Go:</strong> Goa (perfect weather, busy), Rajasthan, Kerala, Tamil Nadu temple circuit, Andaman Islands. Pushkar Camel Fair (Nov). <strong>Skip:</strong> Manali and Spiti (heavy snow, roads closed by Dec). Peak pricing — book everything 4–6 weeks ahead.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box orange">
+    <strong>Shoulder season secret:</strong> September and early October in North India — post-monsoon green, empty roads, 30–40% lower hotel prices, no tourist queues. Rajasthan is particularly stunning after the rains. The single best time to visit India if you're on a strict budget.
+  </div>
+
+  <div class="callout">
+    <p>"India doesn't have one season — it has 28 climates. The skill is knowing which part of the country is perfect right now."</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 11 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div class="back-cover-pattern"></div>
+  <div class="back-cover-content">
+    <span class="back-cover-emoji">🇮🇳</span>
+    <h2>Plan Your Perfect<br/>India Trip</h2>
+    <p>Destination-specific itineraries, day-by-day plans with real prices, insider routing tips and curated budget accommodation lists — all at IncredibleItinerary.com</p>
+    <div class="back-cta">Free Guides at incredibleitinerary.com/guides</div>
+    <div class="back-url">incredibleitinerary.com</div>
+    <div class="back-guides">
+      <span class="back-guide-pill">🌿 Kerala 5 Days</span>
+      <span class="back-guide-pill">🏰 Rajasthan 7 Days</span>
+      <span class="back-guide-pill">🛕 Varanasi Weekend</span>
+      <span class="back-guide-pill">🏔️ Manali–Spiti Route</span>
+      <span class="back-guide-pill">🏖️ Goa Budget Guide</span>
+      <span class="back-guide-pill">🏛️ Delhi 3 Days</span>
+      <span class="back-guide-pill">🌅 Andaman Islands</span>
+      <span class="back-guide-pill">🗺️ Golden Triangle</span>
+    </div>
+    <div class="back-legal">Prices are approximate and subject to change. All costs are in Indian Rupees (₹) and based on 2025–2026 market rates. Budget estimates are per person for solo travellers on a budget tier. IncredibleItinerary.com is an independent travel guide. We are not affiliated with any booking platform, hotel chain or tour operator. Always verify current prices and entry requirements before travel.</div>
+  </div>
+</div>
+
+</body>
+</html>

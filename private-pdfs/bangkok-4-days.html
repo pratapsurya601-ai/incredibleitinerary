@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Bangkok in 4 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#b45309;--gold-light:#d97706;--gold-dark:#92400e;
+  --gold-bg:#fef3c7;--gold-mid:#fde68a;
+  --ink:#1c1108;--cream:#faf8f2;--parchment:#f4efe4;
+  --white:#ffffff;--muted:#6b6258;
+  --amber:#92400e;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.42}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,17,8,0.97) 0%,rgba(28,17,8,0.65) 50%,rgba(28,17,8,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.55);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fbbf24;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.52);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.48);letter-spacing:0.05em}
+.cover-price{background:var(--gold);color:#fff;font-size:8pt;font-weight:600;padding:4px 14px;border-radius:20px;letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(28,17,8,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW / STATS ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(28,17,8,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.essentials-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.essential-card{background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:10px;padding:4mm}
+.essential-title{font-size:8.5pt;font-weight:600;color:var(--gold-dark);margin-bottom:1.5mm;display:flex;align-items:center;gap:1.5mm}
+.essential-body{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.essential-body strong{color:var(--ink);font-weight:500}
+
+.plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-bottom:6mm}
+.plan-card{border-radius:10px;padding:3.5mm;text-align:center}
+.plan-card.budget{background:rgba(180,83,9,0.07);border:1px solid rgba(180,83,9,0.18)}
+.plan-card.couple{background:rgba(219,39,119,0.05);border:1px solid rgba(219,39,119,0.15)}
+.plan-card.party{background:rgba(109,40,217,0.05);border:1px solid rgba(109,40,217,0.15)}
+.plan-card.culture{background:rgba(5,150,105,0.05);border:1px solid rgba(5,150,105,0.15)}
+.plan-icon{font-size:16pt;margin-bottom:1.5mm}
+.plan-name{font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.plan-desc{font-size:7pt;color:var(--muted);line-height:1.4;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(180,83,9,0.07),rgba(180,83,9,0.02));border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:5mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fbbf24;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.42);font-weight:300}
+.day-cost{font-size:8pt;color:#fbbf24;font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--gold);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.gold{background:rgba(254,243,199,0.8);border:1px solid #fde68a;color:var(--gold-dark)}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:var(--amber)}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.highlight-box.green{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534}
+.highlight-box strong{font-weight:600}
+
+/* ── BUDGET TABLE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(28,17,8,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(28,17,8,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(180,83,9,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic}
+
+/* ── FOOD MAP ── */
+.food-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.food-card{background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3.5mm}
+.food-name{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.food-desc{font-size:7pt;color:var(--muted);line-height:1.4;font-weight:300}
+.food-price{font-size:7pt;color:var(--gold);font-weight:500;margin-top:1mm}
+
+.street-bar{background:var(--ink);border-radius:10px;padding:4mm 5mm;margin-bottom:5mm}
+.street-bar-title{font-size:7.5pt;font-weight:600;color:#fbbf24;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3mm}
+.street-item{display:flex;align-items:flex-start;gap:2mm;margin-bottom:2mm}
+.street-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:3px}
+.street-text{font-size:7.5pt;color:rgba(255,255,255,0.72);font-weight:300;line-height:1.4}
+.street-text strong{color:#fff;font-weight:500}
+
+/* ── PACKING PAGE ── */
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.pack-col h4{font-size:8pt;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(28,17,8,0.08)}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:7.5pt;color:var(--muted);font-weight:300;margin-bottom:2mm;line-height:1.4}
+.pack-check{color:var(--muted);flex-shrink:0;margin-top:0.5px;font-size:9pt}
+
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.tip-box{background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--gold-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:#fbbf24;color:#1c1108;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=1600&q=80&auto=format&fit=crop" alt="Bangkok Grand Palace temple at golden hour"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition · International Guide</div>
+    <h1 class="serif">Bangkok in 4 Days:<br/><em>Temples · Street Food · Nightlife</em></h1>
+    <p class="cover-sub">🇹🇭 Complete guide for Indian travellers — visa, currency, flights, Grab vs taxis, and where to eat pad thai for ₹120.</p>
+    <div class="cover-pills">
+      <span class="pill">🛕 Grand Palace &amp; Wat Pho</span>
+      <span class="pill">🍜 Best Street Food Streets</span>
+      <span class="pill">🌃 Rooftop Bars &amp; Nightlife</span>
+      <span class="pill">🏛 Ayutthaya Day Trip</span>
+      <span class="pill">💰 e-Visa on Arrival — Free 30 Days</span>
+      <span class="pill">Nov – Feb Best Season</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span class="cover-price">International Guide ₹199</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW + ESSENTIALS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bangkok 4-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview &amp; Essentials for Indians</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Bangkok — City of Temples, Street Food &amp; Skyline</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">4 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🌡</div><span class="stat-val">Nov – Feb</span><span class="stat-label">Best Season</span></div>
+    <div class="stat-box"><div class="stat-icon">✈️</div><span class="stat-val">Direct Flights</span><span class="stat-label">Delhi / Mumbai / Chennai</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">Free 30 Days</span><span class="stat-label">e-Visa on Arrival</span></div>
+  </div>
+
+  <div class="essentials-grid">
+    <div class="essential-card">
+      <div class="essential-title">💱 Currency &amp; Money</div>
+      <div class="essential-body">Thai Baht (THB). <strong>1 THB ≈ ₹2.4.</strong> So ₹100 = ~42 THB. Exchange at Superrich money changers (yellow/green) — best rates in Bangkok. Avoid airport forex counters (terrible rates). ATMs charge ₹500–₹600 per withdrawal — bring cash from India to exchange.</div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-title">📱 SIM Card</div>
+      <div class="essential-body">Buy at Suvarnabhumi Airport arrivals hall. <strong>AIS Tourist SIM</strong> — 15 days unlimited data + 100 min calls: ~600 THB (≈₹1,450). <strong>DTAC</strong> is slightly cheaper at ~500 THB. Both work excellently across Bangkok. Your Indian number will rack up roaming charges — swap immediately on arrival.</div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-title">🚇 Getting Around</div>
+      <div class="essential-body"><strong>BTS Skytrain:</strong> Fastest, AC, covers tourist areas. ~20–50 THB (₹48–₹120) per trip. <strong>MRT:</strong> Underground, similar pricing. <strong>Grab:</strong> Use always — fixed prices, AC, no scams. Never negotiate with metered taxis (tourist traps, often broken meters). <strong>River boats:</strong> Chao Phraya Express ₹30–75 (30 THB) — scenic &amp; cheap.</div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-title">🛂 Visa for Indians</div>
+      <div class="essential-body"><strong>Visa on Arrival — Free 30 days</strong> as of 2025 (India–Thailand bilateral agreement). Carry: passport (6+ months validity), return ticket, hotel booking, ₹5,000 in cash or equivalent THB proof of funds. Immigration is quick. No pre-application needed — just queue at the VOA counter at Suvarnabhumi.</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Choose Your Bangkok Style</div>
+  <div class="plan-grid">
+    <div class="plan-card budget">
+      <div class="plan-icon">🎒</div>
+      <div class="plan-name">Budget</div>
+      <div class="plan-desc">Hostels, street food, public BTS, free temples. ₹3,000/day. Solo traveller or backpacker.</div>
+    </div>
+    <div class="plan-card couple">
+      <div class="plan-icon">💑</div>
+      <div class="plan-name">Couple</div>
+      <div class="plan-desc">Mid-range hotels, rooftop bars, Grab everywhere, nice dinners. ₹5,000/day per person.</div>
+    </div>
+    <div class="plan-card party">
+      <div class="plan-icon">🎉</div>
+      <div class="plan-name">Party</div>
+      <div class="plan-desc">Nightlife focus, Silom/Sukhumvit clubs, rooftop cocktails, late checkout. ₹7,000/day.</div>
+    </div>
+    <div class="plan-card culture">
+      <div class="plan-icon">🏛</div>
+      <div class="plan-name">Culture</div>
+      <div class="plan-desc">Deep temple visits, Ayutthaya day trip, Jim Thompson, local markets. ₹4,000/day.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Bangkok rewards the curious. Every soi (lane) hides a 200-year-old temple, a ₹80 bowl of noodles, or a rooftop bar with views that rival anywhere in the world."</p>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Dress Code Warning:</strong> Grand Palace and all major wats require covered shoulders and knees. Carry a light scarf or buy a sarong at the gate (free loan at some temples). Vest tops and shorts = turned away at the door, no exceptions.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAY 1 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bangkok 4-Day Itinerary</span>
+    <span class="page-header-right">Day 1 — Old Bangkok</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Rattanakosin District</div>
+      <div class="day-title">Old Bangkok — Grand Palace, Temples &amp; Khao San Road</div>
+      <div class="day-sub">Grand Palace · Wat Pho · Wat Arun · Chao Phraya River · Khao San Road evening</div>
+      <div class="day-cost">💰 Budget: ₹2,200–₹3,000 · Couple: ₹4,500–₹6,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Grand Palace — Arrive Right at Opening</div>
+        <div class="time-desc">The most stunning complex in Thailand and one of the most impressive in Asia. Home to the sacred Emerald Buddha. Dress code strictly enforced — shoulders and knees covered (sarongs available at gate). Allow 2–2.5 hours minimum. Grab from your hotel, arrive exactly at 8:30am to beat the crowd — by 10am it is packed. The Emerald Buddha chamber, Phra Mondop library, and the Grand Palace buildings are all within the compound.</div>
+        <div class="time-price">Entry: 500 THB ≈ ₹1,200 | Open: 8:30am–3:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Wat Pho — The Reclining Buddha (10-min walk)</div>
+        <div class="time-desc">One of Bangkok's oldest and largest temples. Home to a 46-metre gilded reclining Buddha — the soles of the feet are inlaid with mother-of-pearl depicting the 108 characteristics of the Buddha. Also the birthplace of traditional Thai massage — get a 30-min foot massage in the temple grounds (300 THB ≈ ₹720, excellent value). Beautiful courtyard with dozens of smaller chedis.</div>
+        <div class="time-price">Entry: 100 THB ≈ ₹240 | Massage: 300 THB ≈ ₹720</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Chao Phraya River Boat to Wat Arun</div>
+        <div class="time-desc">Walk to Pier 9 (Tha Tien, 5 minutes from Wat Pho). Take the cross-river ferry to Wat Arun — Temple of Dawn. One of Bangkok's most iconic skylines. Climb the steep prangs (towers) for views across the river. The mosaic-covered spires shimmer differently in morning vs afternoon light. Ferry is dirt cheap and part of the experience.</div>
+        <div class="time-price">Ferry: 5 THB ≈ ₹12 each way | Wat Arun entry: 50 THB ≈ ₹120</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Chao Phraya Express Boat Upriver (Scenic + Cheap)</div>
+        <div class="time-desc">Take the orange-flag express boat from Wat Arun pier northward — pass under bridges, see temples from the water, spot longtail boats. Hop off at Phra Arthit pier near Khao San Road. The river is Bangkok's original highway and this 30-minute ride shows you a side of the city most tourists miss entirely.</div>
+        <div class="time-price">Express boat: 15–30 THB ≈ ₹36–₹72</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Khao San Road — Bangkok's Backpacker Hub</div>
+        <div class="time-desc">The most famous backpacker street in the world. Lively from 6pm, electric from 9pm. Street stalls sell pad thai (50 THB ≈ ₹120), fresh fruit, pad kra pao, insects (try if adventurous). Cheap beer from buckets (200 THB ≈ ₹480 for a bucket), live music everywhere. Great people-watching — mix of Thai locals, travellers from every country, and vendors. Walk the full length and nearby Rambuttri Road (quieter, better restaurants).</div>
+        <div class="time-price">Beer: 80–120 THB ≈ ₹192–₹290 | Pad Thai: 50 THB ≈ ₹120</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box gold">
+    <strong>River tip:</strong> Buy a one-day pass for the Chao Phraya Tourist Boat (200 THB ≈ ₹480) if you plan multiple stops — it covers all the major piers including Grand Palace, Wat Pho, Wat Arun, Asiatique, and more. Unlimited hops all day.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAY 2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bangkok 4-Day Itinerary</span>
+    <span class="page-header-right">Day 2 — Modern Bangkok &amp; Shopping</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Chatuchak · Siam · Silom</div>
+      <div class="day-title">Modern Bangkok — Mega Markets, Malls &amp; Rooftop Bars</div>
+      <div class="day-sub">Chatuchak Weekend Market · Jim Thompson House · MBK · Siam Paragon · Silom night market · Rooftop bar</div>
+      <div class="day-cost">💰 Budget: ₹2,500–₹4,000 · Couple: ₹6,000–₹12,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>Chatuchak Weekend Only:</strong> This market runs Saturdays and Sundays only, 9am–6pm. If you're visiting on a weekday, swap Day 2 and Day 3 activities. Missing Chatuchak is genuinely one of Bangkok's biggest tourist regrets.
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Chatuchak Weekend Market — Arrive Early</div>
+        <div class="time-desc">One of the world's largest markets — 15,000+ stalls across 35 acres. Clothes, vintage, furniture, antiques, plants, street food, ceramics, handmade goods, electronics accessories. Arrive by 9am before the heat and the 200,000 daily visitors turn it into a sweat-box by noon. Get a map at the entrance. Key sections: Section 2–4 (clothing), Section 7–8 (vintage), Section 26 (food). <strong>Bargaining is expected — start at 50% of asking price, settle around 65–70%.</strong></div>
+        <div class="time-price">Free entry | BTS Mo Chit or MRT Chatuchak Park | ₹0 entry</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Jim Thompson House — Silk Museum &amp; Heritage House</div>
+        <div class="time-desc">An American silk entrepreneur who made Thai silk famous worldwide — and then mysteriously disappeared in the Malaysian jungle in 1967. His converted traditional Thai house is now a museum of Asian antiques, silk, and intrigue. Guided tours run every 20 minutes. The shop sells excellent quality silk products at fair prices. Near BTS National Stadium.</div>
+        <div class="time-price">Entry: 200 THB ≈ ₹480 | Guided tour included | Open daily 9am–6pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">MBK Center — Budget Shopping + AC Break</div>
+        <div class="time-desc">Seven-floor shopping mall, Bangkok's budget shopping destination. Electronics (good prices, check carefully), phone accessories, clothes, bags, shoes. Ground floor has a huge food court (cheap, local food, ₹150–₹300 per meal). Great place to stock up on gifts — phone cases, Thai snacks, keychains. Then walk across to Siam Paragon for a proper AC break — luxury brands, Kinokuniya bookstore, massive aquarium in the basement.</div>
+        <div class="time-price">Free entry | Food court meals: 60–100 THB ≈ ₹145–₹240</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Silom Road Evening &amp; Night Market</div>
+        <div class="time-desc">Silom is Bangkok's financial district by day, lively street scene by night. The Silom night market (near Sala Daeng BTS) has street food, clothes and accessories. Patpong Night Market nearby for souvenir shopping (bargain hard). The entire area comes alive at dusk — lots of dining options from cheap Thai to international restaurants.</div>
+        <div class="time-price">Free to explore | Street food: 50–150 THB ≈ ₹120–₹360</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">8:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Rooftop Bar — Splurge or Budget Option</div>
+        <div class="time-desc"><strong>Lebua Sky Bar (The Hangover Bar):</strong> 64th floor, State Tower, Silom — the iconic bar from The Hangover Part II. Cocktails from 600 THB ≈ ₹1,440. Smart dress required. Reservations recommended. Utterly spectacular views. <strong>Budget option — Octave Rooftop Lounge (Marriott, Sukhumvit):</strong> Equally stunning panoramic views, cocktails from 350 THB ≈ ₹840, more relaxed dress code. Both are extraordinary at sunset.</div>
+        <div class="time-price">Lebua: cocktails from 600 THB ≈ ₹1,440 | Octave: from 350 THB ≈ ₹840</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAY 3 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bangkok 4-Day Itinerary</span>
+    <span class="page-header-right">Day 3 — Day Trip</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Day Trip Options</div>
+      <div class="day-title">Day Trip — Ayutthaya Ancient Capital or Floating Markets</div>
+      <div class="day-sub">Option A: Ayutthaya ruins by bicycle · Option B: Damnoen Saduak or Amphawa Floating Market</div>
+      <div class="day-cost">💰 Budget: ₹1,500–₹2,500 · Couple: ₹3,000–₹5,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="label">Option A — Ayutthaya (Recommended)</div>
+  <div class="highlight-box gold" style="margin-bottom:4mm">
+    <strong>Why Ayutthaya:</strong> UNESCO World Heritage Site — once the richest city in Asia, now a landscape of ancient chedis and headless Buddhas. The iconic "Buddha head entwined in tree roots" at Wat Mahathat is here. More rewarding than the floating market for history lovers.
+  </div>
+
+  <div class="timeline" style="margin-bottom:5mm">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Train from Hua Lamphong Station (MRT: Hua Lamphong)</div>
+        <div class="time-desc">Take the MRT to Hua Lamphong station (Bangkok's main railway terminus). Trains to Ayutthaya depart frequently from 6am. Journey: 1.5–2 hours. Third-class train: 20 THB ≈ ₹48. Second class: 60 THB ≈ ₹145. No booking needed — just buy at the window. The train runs through the heart of Thailand's central plains — rice paddies, temples, rural life.</div>
+        <div class="time-price">Train: 20–60 THB ≈ ₹48–₹145 each way | ~1.5 hrs</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Hire Bicycle at Ayutthaya Station</div>
+        <div class="time-desc">Rent a bicycle right outside the station from multiple shops — the best way to cover the island city at your own pace. The entire ancient capital sits on an island surrounded by rivers. Distance between major sites: 1–3km. Cycling through temple ruins at dawn light with almost nobody around is one of Thailand's finest experiences. Alternatively, hire a tuk-tuk for the day (400–500 THB ≈ ₹960–₹1,200) if cycling isn't your preference.</div>
+        <div class="time-price">Bicycle: 50–80 THB ≈ ₹120–₹192 per day</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Wat Mahathat — Buddha Head in Tree Roots</div>
+        <div class="time-desc">The most photographed image in Ayutthaya — a stone Buddha head entwined within the roots of a bodhi tree. How it got there is debated. Come early before the tour groups arrive. The surrounding temple complex is also beautiful — rows of headless Buddha statues, crumbling prangs covered in moss. Kneel when photographing the Buddha head as a sign of respect (it's required).</div>
+        <div class="time-price">Entry: 50 THB ≈ ₹120</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Wat Phra Si Sanphet — Three Royal Chedis</div>
+        <div class="time-desc">The most impressive temple in Ayutthaya — three large bell-shaped chedis (stupas) in a row, containing the ashes of three Ayutthaya kings. Once the holiest temple in the kingdom, housing a 16-metre gold-plated standing Buddha (looted by Burmese invaders in 1767). The chedis are perfectly photogenic at any time of day. Adjacent is the Viharn Phra Mongkol Bophit — a large Buddha shrine, free entry.</div>
+        <div class="time-price">Entry: 50 THB ≈ ₹120</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Return Train to Bangkok</div>
+        <div class="time-desc">Head back to the station by 3–4pm to catch the return train. Arrive in Bangkok around 5:30–6pm. Have dinner at Yaowarat (Chinatown) or near your hotel. Trains run until evening but it's nicer to arrive before dark.</div>
+        <div class="time-price">Return train: 20–60 THB ≈ ₹48–₹145</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label">Option B — Floating Markets</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:4mm">
+    <div style="background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Damnoen Saduak</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">2 hrs from Bangkok · Daily · Go before 9am</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">The classic floating market — wooden boats loaded with tropical fruits, noodles, souvenirs. Very touristy but visually spectacular. Go early (7am departure from Bangkok) before tour groups arrive.</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Amphawa Floating Market</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">90 km from Bangkok · Weekends only · More local</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">More authentic than Damnoen Saduak — frequented by Thai locals, not just tourists. Best on Friday–Sunday evenings. Fireflies on the river at night. Combine with Maeklong Railway Market (trains pass through a market stall — vendors fold awnings as the train approaches).</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — DAY 4 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bangkok 4-Day Itinerary</span>
+    <span class="page-header-right">Day 4 — Temples &amp; Departure</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Wat Saket · Chinatown · Airport</div>
+      <div class="day-title">Final Day — Golden Mount, Chinatown &amp; Last Shopping</div>
+      <div class="day-sub">Wat Saket · Giant Swing · Amulet Market · Yaowarat Chinatown lunch · ICONSIAM · Suvarnabhumi</div>
+      <div class="day-cost">💰 Budget: ₹2,000–₹3,000 · Couple: ₹4,000–₹8,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Wat Saket — The Golden Mount (Best City Views)</div>
+        <div class="time-desc">A man-made hill topped with a golden chedi — Bangkok's only "mountain." Climb the 318 steps via a shaded spiral path past bells, prayer flags and small shrines. At the top, 360-degree panoramic views over Old Bangkok — the Royal Palace dome, Wat Pho, Wat Arun, and the modern city skyline all visible from one spot. Best visited at 8–9am before heat. Very few tourists this early. The climb takes 15 minutes and is completely worth it.</div>
+        <div class="time-price">Entry: 20 THB ≈ ₹48 | Open from 7am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Giant Swing &amp; Amulet Market (Free)</div>
+        <div class="time-desc">A 5-minute walk from Wat Saket. The Giant Swing (Sao Ching Cha) is a massive red ceremonial swing used in Brahmin festivals — now a Bangkok landmark. Walk down to the nearby Amulet Market along Maharat Road (near Wat Mahathat on the Bangkok side). Hundreds of vendors sell Buddhist amulets, protective talismans and antique religious items. The atmosphere is fascinating — serious collectors haggling with monks. Completely free to browse.</div>
+        <div class="time-price">Free | Open daily, mornings best</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Yaowarat — Bangkok's Chinatown for Lunch</div>
+        <div class="time-desc">Bangkok's Chinatown is one of the best in Southeast Asia. The main street (Yaowarat Road) is lined with gold shops, herbal medicine dealers, and the most incredible street food. For lunch: <strong>T&amp;K Seafood</strong> for grilled prawns and oyster omelette (very popular, queue expected), or duck noodle soup from the countless small shophouses (80 THB ≈ ₹192). <strong>Dim sum at Shangarila:</strong> best roast duck and dim sum in Bangkok, ₹200–₹400 per person. Yaowarat is also famous for mango sticky rice dessert — multiple stalls, all excellent.</div>
+        <div class="time-price">Meal: 100–200 THB ≈ ₹240–₹480 per person</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">ICONSIAM — Last Shopping Stop</div>
+        <div class="time-desc">One of Bangkok's newest and most spectacular malls on the Chao Phraya riverfront. Take a river boat or Grab. Inside is the extraordinary SookSiam — an indoor floating market replicating Thailand's regional markets and crafts. Great for last-minute gift shopping: Thai silk, ceramics, dried fruits, packaged snacks. Also has a huge supermarket for picking up Thai curry pastes, Tom Yum packs and snacks to bring back to India. The riverside view from the upper floors is beautiful.</div>
+        <div class="time-price">Free entry | BTS Gold Line to ICONSIAM</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Suvarnabhumi Airport — Arrive 3 Hours Early</div>
+        <div class="time-desc">Bangkok's main international airport. From central Bangkok (Siam/Sukhumvit): <strong>Airport Rail Link (ARL)</strong> from Phaya Thai station — 30 mins, 45 THB ≈ ₹108, runs every 15 mins. Or Grab for 400–600 THB ≈ ₹960–₹1,440 depending on traffic. Arrive <strong>3 hours before departure</strong> — security queues can be long especially at evening peak. The duty-free at Suvarnabhumi is excellent — Thai whisky, cosmetics, snacks, silk. Pay in THB at the best rate.</div>
+        <div class="time-price">ARL: 45 THB ≈ ₹108 | Grab: 400–600 THB ≈ ₹960–₹1,440</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box gold">
+    <strong>Airport shopping tip:</strong> Buy Chatuchak-priced Thai snacks and packaged goods from 7-Eleven or Family Mart in the city before heading to the airport — airport prices are 2–3x higher. Pack in your checked bag if buying liquid curry pastes or chilli sauces.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — BUDGET TABLE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bangkok 4-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Budget Breakdown</div>
+  <h2 class="section-title" style="margin-bottom:2mm">What Bangkok Costs — Per Person, 4 Days</h2>
+  <p style="font-size:8pt;color:var(--muted);margin-bottom:5mm;font-weight:300">All prices in ₹ (INR) and THB · Based on 2026 rates · 1 THB ≈ ₹2.4</p>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Expense Category</th>
+        <th>🎒 Budget<br/><span style="font-size:6.5pt;font-weight:300;opacity:0.7">Solo / Backpacker</span></th>
+        <th>💑 Couple<br/><span style="font-size:6.5pt;font-weight:300;opacity:0.7">Per Person</span></th>
+        <th>🎉 Party<br/><span style="font-size:6.5pt;font-weight:300;opacity:0.7">Nightlife Focus</span></th>
+        <th>🏛 Culture<br/><span style="font-size:6.5pt;font-weight:300;opacity:0.7">Temples &amp; Day Trips</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🏨 Hotel (per night)</td>
+        <td>₹800–₹1,500<br/><span style="font-size:6.5pt">330–625 THB</span></td>
+        <td>₹2,500–₹5,000<br/><span style="font-size:6.5pt">1,040–2,080 THB</span></td>
+        <td>₹4,000–₹8,000<br/><span style="font-size:6.5pt">1,665–3,330 THB</span></td>
+        <td>₹2,000–₹4,000<br/><span style="font-size:6.5pt">830–1,665 THB</span></td>
+      </tr>
+      <tr>
+        <td>🍜 Food &amp; Drinks (daily)</td>
+        <td>₹600–₹1,000<br/><span style="font-size:6.5pt">250–415 THB</span></td>
+        <td>₹1,200–₹2,500<br/><span style="font-size:6.5pt">500–1,040 THB</span></td>
+        <td>₹1,500–₹3,000<br/><span style="font-size:6.5pt">625–1,250 THB</span></td>
+        <td>₹800–₹1,500<br/><span style="font-size:6.5pt">330–625 THB</span></td>
+      </tr>
+      <tr>
+        <td>🚇 Transport (daily)</td>
+        <td>₹200–₹400<br/><span style="font-size:6.5pt">BTS + river boats</span></td>
+        <td>₹500–₹900<br/><span style="font-size:6.5pt">Grab + BTS</span></td>
+        <td>₹700–₹1,200<br/><span style="font-size:6.5pt">Grab everywhere</span></td>
+        <td>₹400–₹700<br/><span style="font-size:6.5pt">BTS + day trip train</span></td>
+      </tr>
+      <tr>
+        <td>🛕 Entry Fees (total)</td>
+        <td>₹1,800–₹2,400<br/><span style="font-size:6.5pt">Grand Palace + temples</span></td>
+        <td>₹2,200–₹3,000<br/><span style="font-size:6.5pt">All sites + Jim Thompson</span></td>
+        <td>₹1,200–₹1,800<br/><span style="font-size:6.5pt">Select sites only</span></td>
+        <td>₹2,500–₹3,500<br/><span style="font-size:6.5pt">All sites + Ayutthaya</span></td>
+      </tr>
+      <tr>
+        <td>🎉 Nightlife &amp; Shopping</td>
+        <td>₹1,000–₹2,000<br/><span style="font-size:6.5pt">Khao San basics</span></td>
+        <td>₹3,000–₹6,000<br/><span style="font-size:6.5pt">Rooftop + shopping</span></td>
+        <td>₹8,000–₹15,000<br/><span style="font-size:6.5pt">Clubs + rooftops</span></td>
+        <td>₹2,000–₹4,000<br/><span style="font-size:6.5pt">Market shopping</span></td>
+      </tr>
+      <tr>
+        <td>TOTAL — 4-Day Trip (₹)</td>
+        <td>₹12,000–₹18,000</td>
+        <td>₹22,000–₹38,000</td>
+        <td>₹40,000–₹70,000</td>
+        <td>₹18,000–₹30,000</td>
+      </tr>
+      <tr>
+        <td>TOTAL — 4-Day Trip (THB)</td>
+        <td>5,000–7,500 THB</td>
+        <td>9,165–15,830 THB</td>
+        <td>16,665–29,165 THB</td>
+        <td>7,500–12,500 THB</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="budget-note" style="margin-bottom:6mm">Prices per person in INR (2026 estimates). Hotel costs shown per room/night — couple plan assumes shared room. Excludes international flights and travel insurance. Nightlife column assumes 2–3 rooftop bars/clubs over 4 nights.</p>
+
+  <h3 class="sub-title">Where to Stay</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Lub d Bangkok Silom</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Hostel · Silom · From ₹800/night (dorm) · ₹2,500 (private)</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">Best budget hostel in Bangkok — social, clean, great location, rooftop pool</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Ibis Bangkok Sukhumvit 4</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Mid-range · Sukhumvit · From ₹2,500–₹3,500/night</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">Best mid-range value — on BTS line, clean rooms, great breakfast, safe area</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Chatrium Hotel Riverside</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Luxury · Riverside · From ₹8,000–₹12,000/night ★★★★★</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">Best views — pool facing Chao Phraya, free shuttle boat to Sathorn Pier</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(28,17,8,0.07);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Arun Residence</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Boutique · Old Bangkok · From ₹5,000–₹7,000/night ★★★★</div>
+      <div style="font-size:7pt;color:var(--gold-dark)">Faces Wat Arun from rooftop restaurant — most romantic location in Bangkok</div>
+    </div>
+  </div>
+
+  <div class="highlight-box gold">
+    <strong>Location matters:</strong> Stay in Silom or Sukhumvit for the BTS Skytrain. Old Bangkok (near Khao San) is atmospheric but BTS access is limited — you'll use river boats and Grab more. Sukhumvit gives best overall access to both tourist sites and nightlife.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — STREET FOOD MAP ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bangkok 4-Day Itinerary</span>
+    <span class="page-header-right">Street Food Guide</span>
+  </div>
+
+  <div class="label">Bangkok Street Food — Must Eats</div>
+  <h2 class="section-title" style="margin-bottom:2mm">The Indian Traveller's Bangkok Food Bible</h2>
+  <p style="font-size:8pt;color:var(--muted);margin-bottom:5mm;font-weight:300">Thai food is bold, aromatic, and completely different from what Indian restaurants serve back home. Try everything. Tell them "pet nit noi" (a little spicy) if you need to manage heat levels.</p>
+
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-name">🍜 Pad Thai — ผัดไทย</div>
+      <div class="food-desc">Stir-fried rice noodles with egg, tofu, bean sprouts, peanuts, tamarind. Thailand's most famous dish. Order with shrimp (goong) or chicken (gai). Best from street stalls, not restaurants.</div>
+      <div class="food-price">50–80 THB ≈ ₹120–₹192</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">🥗 Som Tum — ส้มตำ</div>
+      <div class="food-desc">Green papaya salad pounded in a mortar — chilli, lime, fish sauce, tomatoes, peanuts. Intensely sour, salty and spicy. Ask for "mai pet" (not spicy) if needed. Eaten with sticky rice.</div>
+      <div class="food-price">40–80 THB ≈ ₹96–₹192 | Ask for "vegetarian" version</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">🥭 Mango Sticky Rice — ข้าวเหนียวมะม่วง</div>
+      <div class="food-desc">Fresh ripe mango over warm glutinous sticky rice, drizzled with sweet coconut cream and toasted sesame seeds. One of the world's great desserts. Best in mango season (April–June). Available year-round from street stalls.</div>
+      <div class="food-price">60–100 THB ≈ ₹145–₹240</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">🍲 Tom Yum Soup — ต้มยำ</div>
+      <div class="food-desc">Hot and sour broth with lemongrass, galangal, kaffir lime, chilli and shrimp. Tom Kha (coconut milk version) is milder and creamier. Order as a shared dish — comes in a small clay pot. Deeply fragrant.</div>
+      <div class="food-price">80–150 THB ≈ ₹192–₹360</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">🍳 Khao Pad — ข้าวผัด</div>
+      <div class="food-desc">Thai fried rice — simpler than Pad Thai but incredibly satisfying. Made with jasmine rice, egg, garlic, fish sauce. Order with chicken, shrimp, or pork. Add a fried egg on top ("kai dao"). Everywhere, anytime, always good.</div>
+      <div class="food-price">50–80 THB ≈ ₹120–₹192 | Great hangover food</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">🍢 Satay Skewers — สะเต๊ะ</div>
+      <div class="food-desc">Grilled chicken or pork on bamboo skewers, marinated in turmeric and coconut milk. Served with peanut sauce and cucumber pickle. Sold at every street corner from charcoal grills. Buy 5–10 at a time.</div>
+      <div class="food-price">10–15 THB ≈ ₹24–₹36 per stick</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">🥥 Fresh Coconut — มะพร้าว</div>
+      <div class="food-desc">A whole young coconut, hacked open with a machete, served with a straw. Refreshing and hydrating in Bangkok's 32°C heat. Often served with a spoon to scoop out the soft coconut flesh. Found at every market and many 7-Elevens.</div>
+      <div class="food-price">30–50 THB ≈ ₹72–₹120</div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">🫓 Roti with Banana — โรตีกล้วย</div>
+      <div class="food-desc">A Thai-Muslim flatbread (roti) fried in butter on a griddle, stuffed with banana and drizzled with condensed milk and sugar. Thin, crispy, sweet, addictive. A Bangkok street food institution. Often sold late night near backpacker areas.</div>
+      <div class="food-price">25–40 THB ≈ ₹60–₹96</div>
+    </div>
+  </div>
+
+  <div class="street-bar">
+    <div class="street-bar-title">Best Streets &amp; Markets for Food</div>
+    <div class="street-item">
+      <div class="street-dot"></div>
+      <div class="street-text"><strong>Yaowarat Road (Chinatown):</strong> Bangkok's best food street. Roast duck, dim sum, oyster omelettes, seafood. Go after 6pm when the street food stalls set up. Packed with locals and in-the-know visitors.</div>
+    </div>
+    <div class="street-item">
+      <div class="street-dot"></div>
+      <div class="street-text"><strong>Sukhumvit Soi 38 Night Market:</strong> Convenient for Sukhumvit hotel guests. Pad Thai, grilled meats, papaya salad, mango sticky rice. Opens from 6pm daily. More accessible than Yaowarat for first-timers.</div>
+    </div>
+    <div class="street-item">
+      <div class="street-dot"></div>
+      <div class="street-text"><strong>Or Tor Kor Market (near Chatuchak):</strong> Upscale fresh produce market — premium quality Thai fruits, prepared foods, and regional specialties. Cleaner and more comfortable than street stalls. Excellent for mangoes and tropical fruits to try before buying gifts.</div>
+    </div>
+    <div class="street-item">
+      <div class="street-dot"></div>
+      <div class="street-text"><strong>7-Eleven:</strong> Your best friend in Bangkok. Exists on every corner (there are 14,000+ in Thailand). Cheap coffee (35 THB ≈ ₹84), ready meals, fresh sandwiches, cold drinks, snacks. Perfect for breakfast on the go or late-night hunger.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 8</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 9 — PACKING + TIPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Bangkok 4-Day Itinerary</span>
+    <span class="page-header-right">Packing List &amp; Pro Tips</span>
+  </div>
+
+  <div class="label">What to Pack</div>
+  <h2 class="section-title" style="margin-bottom:4mm;font-size:20pt">Bangkok Packing List</h2>
+
+  <div class="pack-grid" style="margin-bottom:5mm">
+    <div class="pack-col">
+      <h4>Clothing</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Lightweight cotton / linen shirts (3–4) — Bangkok is 32°C and humid year-round</div>
+      <div class="pack-item"><span class="pack-check">□</span>Light trousers or long skirt (2) — for temple entry and air-conditioned malls</div>
+      <div class="pack-item"><span class="pack-check">□</span>Scarf or light shawl — mandatory for temple cover-ups, keep in bag at all times</div>
+      <div class="pack-item"><span class="pack-check">□</span>Shorts (2) — for casual days, markets and nightlife (not temples)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Comfortable walking shoes — you'll walk 10–15km on temple days</div>
+      <div class="pack-item"><span class="pack-check">□</span>Flip flops — easy to remove at temples (shoes off required), beach/pool use</div>
+      <div class="pack-item"><span class="pack-check">□</span>One smart outfit — for rooftop bars (some have dress codes)</div>
+    </div>
+    <div class="pack-col">
+      <h4>Health &amp; Essentials</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Mosquito repellent (DEET-based) — mosquitoes active especially at dawn/dusk</div>
+      <div class="pack-item"><span class="pack-check">□</span>High SPF sunscreen (SPF 50+) — UV index extreme, reapply every 2 hours outdoors</div>
+      <div class="pack-item"><span class="pack-check">□</span>Power bank (20,000 mAh) — long days of Grab, maps and photos will drain your phone</div>
+      <div class="pack-item"><span class="pack-check">□</span>Small day bag / backpack — for temple days (don't carry full luggage)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Diarrhoea tablets (Imodium) — street food is safe but stomachs adjust slowly</div>
+      <div class="pack-item"><span class="pack-check">□</span>Electrolyte sachets — sweating heavily in Bangkok heat causes dehydration</div>
+      <div class="pack-item"><span class="pack-check">□</span>Universal plug adapter — Thailand uses Type A/B plugs (same as India, mostly fine)</div>
+    </div>
+  </div>
+
+  <div class="label">Pro Tips for Indian Travellers</div>
+  <h3 class="sub-title" style="margin-bottom:3mm">Survive &amp; Thrive in Bangkok</h3>
+
+  <div class="tips-grid" style="margin-bottom:4mm">
+    <div class="tip-box">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">Always Use Grab</div>
+      <div class="tip-desc">Never negotiate with tuk-tuks or metered taxis. Grab is Thailand's Uber — fixed prices, AC, safe, transparent. Download before you fly. Set up payment with your Indian card (Visa/Mastercard works). Add a Thai number once you get your SIM. Tuk-tuks quote 5x the Grab price for tourists.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏪</div>
+      <div class="tip-title">7-Eleven is Your HQ</div>
+      <div class="tip-desc">Bangkok has more 7-Elevens per square km than almost anywhere on Earth. Cheap bottled water (10 THB ≈ ₹24), coffee, microwave meals, fresh sandwiches, ATM inside. They also sell sunscreen, mosquito repellent, and phone chargers. Open 24/7. Non-spicy snacks are great for sensitive stomachs.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🙏</div>
+      <div class="tip-title">Learn 3 Thai Phrases</div>
+      <div class="tip-desc"><strong>Sawasdee (kha/krub):</strong> Hello (kha for women, krub for men — always add these). <strong>Khob Khun (kha/krub):</strong> Thank you. <strong>Aroy:</strong> Delicious — say this after eating street food and the vendor will love you. Thais are immensely proud of their food and culture — any effort with the language is met with huge smiles.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💵</div>
+      <div class="tip-title">Cash is King</div>
+      <div class="tip-desc">Street food, markets, temples, tuk-tuks, river boats — all cash only. Exchange money at Superrich (yellow logo) — rates 3–5% better than banks. Avoid airport exchange counters. Carry small bills (20s and 50s) for boats and street food. ATMs charge 220 THB ≈ ₹530 per withdrawal — withdraw large amounts at once.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛕</div>
+      <div class="tip-title">Temple Etiquette</div>
+      <div class="tip-desc">Remove shoes before entering any temple building (even small neighbourhood ones). Never point feet toward a Buddha image — it's deeply disrespectful. Do not touch Buddha statues. Women should not hand anything directly to monks. Dress modestly — sarongs are available at major temples to borrow. Speak softly inside temple halls.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡</div>
+      <div class="tip-title">Beat the Heat</div>
+      <div class="tip-desc">Bangkok is 32°C+ with 80% humidity from March–October. Best months: November–February (cooler, drier). Plan outdoor activities (temples, markets) before noon. Rest in malls or your hotel 12–3pm. Carry a small water bottle always — drink constantly. The BTS and MRT are gloriously air-conditioned — take the long route if needed to cool down.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>India-specific tip:</strong> Thai restaurants near tourist areas often have Indian food on the menu — avoid it. The real Thai food is on the streets for a fraction of the price and 10x better. Most Thai curries use coconut milk base and are not extremely spicy — easier on Indian stomachs than you'd expect. Try everything at least once.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 9</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 10 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:44pt;margin-bottom:6mm">🇹🇭</div>
+  <h2>Explore More. <em style="font-style:italic;color:rgba(255,255,255,0.45)">Spend Less.</em></h2>
+  <p>More destination guides for Indian travellers at IncredibleItinerary.com — real costs, real routes, and zero fluff. Southeast Asia, Europe, the Middle East and beyond.</p>
+  <div class="back-cta">More guides at IncredibleItinerary.com →</div>
+  <div class="back-url">incredibleitinerary.com/guides</div>
+  <p style="color:rgba(255,255,255,0.38);font-size:9pt;margin-bottom:6mm">Also available: Kerala · Goa · Rajasthan · Bali · Singapore · Dubai · Vietnam · Japan</p>
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · For personal use only · Not for redistribution<br/>
+    All prices are approximate and based on 2026 market rates. Verify independently before travel. Exchange rates fluctuate — confirm current THB/INR rate before departure.<br/>
+    Visa rules subject to change — confirm current India–Thailand visa policy at thaiembassy.in before travelling.
+  </div>
+</div>
+
+</body>
+</html>

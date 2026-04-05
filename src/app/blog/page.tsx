@@ -536,7 +536,13 @@ export default function BlogIndexPage() {
 }
 
 // Slugs that have a downloadable PDF guide
-const PDF_SLUGS = new Set(["rajasthan-7-days", "kerala-5-days"]);
+const PDF_SLUGS = new Set([
+  "rajasthan-7-days",
+  "kerala-5-days",
+  "goa-3-days",
+  "leh-ladakh-7-days",
+  "bangkok-4-days",
+]);
 
 function BlogCard({ post }: { post: ListingPost }) {
   const hasPdf = PDF_SLUGS.has(post.slug);

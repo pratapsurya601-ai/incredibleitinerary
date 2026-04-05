@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Goa in 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#0891b2;--teal-light:#22d3ee;--teal-dark:#0e7490;
+  --teal-pale:#cffafe;--teal-subtle:#ecfeff;
+  --ink:#0a1628;--cream:#f0f9ff;--parchment:#e0f2fe;
+  --gold:#b5860d;--white:#ffffff;--muted:#5b7b8a;
+  --navy:#0c4a6e;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,17,40,0.97) 0%,rgba(8,17,40,0.55) 50%,rgba(8,17,40,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:var(--teal-light);font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(8,145,178,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:2mm}
+
+/* ── OVERVIEW PAGE ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(8,145,178,0.15);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+.route-bar{background:var(--navy);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--teal);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.green{background:#059669}
+.route-stop.blue{background:#6d28d9}
+.route-stop.amber{background:#b45309}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(8,145,178,0.1);color:var(--teal-dark);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+.callout{background:linear-gradient(135deg,rgba(8,145,178,0.07),rgba(8,145,178,0.02));border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--navy);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal-light);margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:var(--teal-light);font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--teal);font-weight:500;margin-top:1.5mm}
+
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.teal{background:rgba(8,145,178,0.08);border:1px solid rgba(8,145,178,0.2);color:var(--teal-dark)}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.highlight-box strong{font-weight:600}
+
+/* ── BUDGET PAGE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(8,145,178,0.15);margin-bottom:5mm}
+.budget-table th{background:var(--navy);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(8,145,178,0.08);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(8,145,178,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic}
+
+/* ── PACKING PAGE ── */
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.pack-col h4{font-size:8pt;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(8,145,178,0.1)}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:7.5pt;color:var(--muted);font-weight:300;margin-bottom:2mm;line-height:1.4}
+.pack-check{color:var(--muted);flex-shrink:0;margin-top:0.5px;font-size:9pt}
+
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.tip-box{background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── BACK COVER ── */
+.back-cover{background:var(--teal-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--gold);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+
+/* ── PLAN TYPE CARDS ── */
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.plan-card{background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:10px;padding:4mm}
+.plan-title{font-size:9pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.plan-badge{display:inline-block;font-size:7pt;padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.plan-badge.budget{background:rgba(5,150,105,0.1);color:#065f46}
+.plan-badge.couple{background:rgba(219,39,119,0.1);color:#9d174d}
+.plan-badge.party{background:rgba(124,58,237,0.1);color:#4c1d95}
+.plan-badge.relaxed{background:rgba(8,145,178,0.1);color:var(--teal-dark)}
+.plan-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?w=1600&q=80&auto=format&fit=crop" alt="Goa beach aerial view"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition · Free Download</div>
+    <h1 class="serif">Goa in 3 Days:<br/><em>North · South · Hinterland</em></h1>
+    <p class="cover-sub">Baga · Anjuna · Palolem · Dudhsagar — 4 complete plans, real ₹ costs, the hidden beaches most travellers never find, and why you should skip Goa in December.</p>
+    <div class="cover-pills">
+      <span class="pill">🏖️ North &amp; South Beaches</span>
+      <span class="pill">🌊 Palolem Hidden Lagoon</span>
+      <span class="pill">💦 Dudhsagar Waterfall</span>
+      <span class="pill">🛺 Scooter ₹300/day</span>
+      <span class="pill">💰 From ₹3,000/day</span>
+      <span class="pill">Oct – Feb Best Season</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Goa 3-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">India's Party Capital — Done Properly</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹3,000+</span><span class="stat-label">Per Day From</span></div>
+    <div class="stat-box"><div class="stat-icon">🌡</div><span class="stat-val">Oct – Feb</span><span class="stat-label">Best Season</span></div>
+    <div class="stat-box"><div class="stat-icon">✈️</div><span class="stat-val">GOI Airport</span><span class="stat-label">Fly Into Goa</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Day 1 · North Goa</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop green">Day 2 · South Goa</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop blue">Day 3 · Hinterland</span>
+    <span class="route-sub">Fly into Goa (GOI/Dabolim) · Scooter or taxi between zones</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🏖️ North Goa — Baga, Anjuna, Vagator</div>
+      <div class="city-desc">The energy hub of Goa. Baga and Calangute for beach action, Anjuna for the famous flea market (Wednesdays only), Vagator cliffs for the best sunset north of the Mandovi River. Stay in Anjuna or Baga for maximum access.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🌊 South Goa — Palolem, Cola, Cabo</div>
+      <div class="city-desc">Quieter, cleaner, more beautiful. Palolem is Goa's most photogenic beach — a perfect crescent bay with calm water. Cola beach hides a freshwater lagoon separated from the sea by a sandbar. Cabo de Rama fort for history and views.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">💦 Dudhsagar + Old Goa</div>
+      <div class="city-desc">India's tallest waterfall accessible by jeep safari through the Bhagwan Mahavir Wildlife Sanctuary. Return via a spice plantation lunch and the UNESCO churches of Old Goa — Basilica of Bom Jesus houses the remains of St. Francis Xavier.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">All Days</div>
+      <div class="city-name">🛺 Getting Around</div>
+      <div class="city-desc">Rent a scooter (₹300–₹400/day) — it's the only way to properly explore Goa. Taxis are overpriced and scarce on app. Use Rapido Bike for short solo trips. Inter-zone travel (North to South) takes 1 hour by road — plan accordingly.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Goa rewards slow travel and punishes rushing. Three days is enough to see both coasts and the hinterland — if you stop trying to do everything and commit to one zone each day."</p>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Choose Your Goa Experience</div>
+  <div class="plan-grid">
+    <div class="plan-card">
+      <span class="plan-badge budget">💰 Budget Backpacker</span>
+      <div class="plan-title">₹3,000/day per person</div>
+      <div class="plan-desc">Hostel dorm (₹600–₹900/night), beach shack meals (₹150–₹250/plate), rented scooter for the full trip. Anjuna flea market, Palolem by bus (₹60). Dudhsagar on shared jeep tour (₹600–₹800/person). Real Goa at minimum cost.</div>
+    </div>
+    <div class="plan-card">
+      <span class="plan-badge couple">💑 Couple Getaway</span>
+      <div class="plan-title">₹6,000/day per couple</div>
+      <div class="plan-desc">Boutique guesthouse or Airbnb in Anjuna (₹2,000–₹3,500/night), private scooter, candlelit dinner at Thalassa (₹2,000–₹3,000 for two), sunset cocktails at Vagator. Cola beach lagoon swim — one of India's most romantic spots.</div>
+    </div>
+    <div class="plan-card">
+      <span class="plan-badge party">🎉 Party Trip</span>
+      <div class="plan-title">₹8,000/day per person</div>
+      <div class="plan-desc">Stay in Baga or Anjuna for maximum nightlife access. Tito's Lane, LPK Waterfront, Curlies at Anjuna beach. Day 2 at Palolem silent disco (headphone party on the beach, starts 10pm). Budget includes drinks, club entries, late-night food.</div>
+    </div>
+    <div class="plan-card">
+      <span class="plan-badge relaxed">🌅 Relaxed Beach</span>
+      <div class="plan-title">₹12,000/day per person</div>
+      <div class="plan-desc">Resort stay at Palolem or Morjim (₹5,000–₹10,000/night), beach yoga, Ayurvedic massage (₹1,500–₹2,500), private taxi all days, seafood at Fisherman's Wharf or Britto's. Zero rush. Maximum Goa peace.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAY 1 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Goa 3-Day Itinerary</span>
+    <span class="page-header-right">Day 1 — North Goa</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · North Goa</div>
+      <div class="day-title">Arrive · Beaches · Anjuna · Vagator Sunset</div>
+      <div class="day-sub">Baga / Calangute · Anjuna Flea Market (Wed only) · Vagator cliff · Thalassa dinner</div>
+      <div class="day-cost">💰 Budget: ₹1,200–₹2,000 · Couple: ₹4,000–₹7,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Arrive at Goa Airport (GOI) · Check In · Rent Scooter</div>
+        <div class="time-desc">Goa International Airport (Dabolim/GOI) is in South Goa — if you're staying in North Goa (recommended for Day 1), pre-book a taxi (₹700–₹1,000) or use Rapido. Check in to your stay in Anjuna or Baga. First task after dropping bags: rent a scooter from any local shop near your guesthouse. Show your driving licence.</div>
+        <div class="time-price">Airport taxi: ₹700–₹1,000 · Scooter rental: ₹300–₹400/day (full tank included)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11 AM</div>
+      <div class="time-content">
+        <div class="time-title">Baga &amp; Calangute Beach — North Goa's Main Strip</div>
+        <div class="time-desc">Calangute is Goa's most popular beach — busy, commercial, great for people-watching. Baga (1km north) is livelier with more beach shacks, water sports and a younger crowd. Try parasailing (₹500–₹800), jet ski (₹800/15 min) or just settle into a shack with a kingfisher and some fish curry rice. Don't leave without trying Sol Kadi — a Goan cooling drink made from kokum and coconut milk.</div>
+        <div class="time-price">Water sports: ₹500–₹800 · Fish curry rice at shack: ₹150–₹250</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2 PM</div>
+      <div class="time-content">
+        <div class="time-title">Anjuna Flea Market (Wednesdays Only) or Anjuna Beach</div>
+        <div class="time-desc">If you're here on a Wednesday: the Anjuna Flea Market (8am–6pm) is one of Asia's best — Kashmiri handicrafts, Tibetan jewellery, Rajasthani textiles, spices, vintage clothing. Bargain hard — start at 40% of asking price. Budget ₹500–₹2,000 for shopping. Any other day: Anjuna beach itself is rockier but far less crowded than Baga, with a more bohemian vibe.</div>
+        <div class="time-price">Market entry: Free · Shopping budget: ₹500–₹2,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Vagator Cliff — Best Sunset in North Goa</div>
+        <div class="time-desc">Drive north 10 minutes from Anjuna to Vagator. Park at the top, walk to the red laterite cliff overlooking Little Vagator beach. The cliff drops straight into the Arabian Sea. The view south across the entire North Goa coastline is extraordinary at golden hour. Arrive by 5pm for a good spot — it gets crowded at peak season.</div>
+        <div class="time-price">Free · Sunset: 6:00–6:30pm (Oct–Feb)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">8 PM</div>
+      <div class="time-content">
+        <div class="time-title">Dinner at Thalassa (Couple/Splurge) or Anjuna Beach Shacks (Budget)</div>
+        <div class="time-desc">Thalassa (Siolim, 15 min from Vagator): Goa's finest Greek-Mediterranean restaurant, open-air with sea views. Grilled seafood, wood-fired pizza, Greek mezze. Reservation essential (call ahead). Budget: ₹2,000–₹3,500 for two. Budget option: Stay at Anjuna beach shacks — prawn masala (₹250), grilled pomfret (₹350), cold beer (₹120). Sit with your feet in the sand.</div>
+        <div class="time-price">Thalassa: ₹2,000–₹3,500 for two · Beach shack: ₹400–₹700 for two</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>Where to stay in North Goa:</strong> Anjuna &gt; Vagator &gt; Baga — in that order. Anjuna gives you access to the flea market, quieter beach and the best restaurants. Baga is louder but closer to the main beach strip. Avoid Calangute for staying — noisy, overpriced, worse value than Anjuna.
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Party tip:</strong> Night life doesn't start until 11pm in Goa. LPK Waterfront and Curlies (Anjuna) are the go-to venues. Entry is usually free for women, ₹500–₹1,000 for men (includes drinks). Taxis back at 2am are hard — arrange return with your driver beforehand.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAY 2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Goa 3-Day Itinerary</span>
+    <span class="page-header-right">Day 2 — South Goa</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · South Goa</div>
+      <div class="day-title">Palolem, Cola Lagoon &amp; Cabo de Rama Fort</div>
+      <div class="day-sub">Colva · Benaulim · Cola hidden beach · Palolem crescent · Cabo de Rama at sunset</div>
+      <div class="day-cost">💰 Budget: ₹1,000–₹1,800 · Couple: ₹3,500–₹6,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Drive South — North to South Goa is 1 Hour</div>
+        <div class="time-desc">Leave by 8am on your scooter (or hire a taxi for the day, ₹2,500–₹3,500). The Zuari bridge crossing is the dividing line. South Goa feels immediately different — narrower roads, taller palms, far fewer tourists, longer emptier beaches. First stop: Colva or Benaulim for a quick break and breakfast at a local bakery (Goan pão bread with butter and chai, ₹30–₹50).</div>
+        <div class="time-price">Scooter fuel for the day: ₹100–₹150 · Day taxi: ₹2,500–₹3,500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10 AM</div>
+      <div class="time-content">
+        <div class="time-title">Cola Beach — Goa's Best Kept Secret</div>
+        <div class="time-desc">This is the one most visitors miss. Cola (also written Khola) is a hidden cove 20km north of Palolem. The beach has a freshwater lagoon — a large lake separated from the Arabian Sea by a narrow sandbar. You can swim in fresh water, walk across the sandbar, and dive into the sea — all in one spot. Access via a rough track (10 min walk from the parking area). No crowds, no development, just nature.</div>
+        <div class="time-price">Free · Bring your own water and snacks · No facilities on beach</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Palolem Beach — Goa's Most Beautiful</div>
+        <div class="time-desc">A perfect crescent-shaped bay with calm, clear water — the most photogenic beach in Goa. The southern end curves into a small island (Canacona Island) connected at low tide. The beach has the best-quality shack restaurants in Goa. Order the grilled kingfish thali (₹250), fresh prawn curry (₹350) or a lobster if budget allows (₹800–₹1,500 depending on size). The water is calm and safe for swimming — far better than North Goa's rough surf.</div>
+        <div class="time-price">Shack lunch: ₹250–₹600 · Sun lounger: ₹100–₹200/day</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">4:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Cabo de Rama Fort — Colonial History on the Cliff</div>
+        <div class="time-desc">A 16th-century Portuguese fort 20km north of Palolem, perched on a 150m cliff above the Arabian Sea. Named after the Hindu epic Ramayana — legend says Ram and Sita sheltered here during exile. The fort is largely ruined but the setting is extraordinary: a 180-degree view of the South Goa coastline and sea. Arrive at 4:30pm — the golden light makes it even more dramatic. Free entry, almost no tourists.</div>
+        <div class="time-price">Entry: Free · 30 min from Palolem by scooter</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Seafood Dinner at Palolem Beach Shacks</div>
+        <div class="time-desc">Return to Palolem for dinner as the sun sets. The beach shacks light up with lanterns after dark. Magic of Palolem is best experienced at night — string lights, the sound of the sea, fresh Goan seafood. Try: Dropadi, German Bakery (quirky but excellent), or simply whichever shack you ate lunch at. The silent disco on the beach (headphone party, ₹300–₹500 entry) runs from around 10pm on weekends.</div>
+        <div class="time-price">Dinner: ₹400–₹800/person · Silent disco entry: ₹300–₹500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>Stay in Palolem tonight</strong> if you plan to do Dudhsagar on Day 3 — Dudhsagar jeep safaris depart from Kulem/Colem village, 1.5 hrs from Palolem. Book your jeep safari the evening before (ask your guesthouse), leave by 5:30am. This makes the logistics seamless.
+  </div>
+
+  <div class="highlight-box red">
+    <strong>⚠️ Benaulim warning:</strong> Benaulim and Colva are often recommended in older guides. They're now overdeveloped and overpriced — skip them for anything beyond a quick breakfast stop. Palolem and Cola are vastly superior alternatives right now.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAY 3 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Goa 3-Day Itinerary</span>
+    <span class="page-header-right">Day 3 — Hinterland</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Hinterland &amp; Departure</div>
+      <div class="day-title">Dudhsagar Waterfall, Spice Plantation &amp; Old Goa</div>
+      <div class="day-sub">6am jeep start · Dudhsagar · Spice lunch · Basilica of Bom Jesus · Evening flight</div>
+      <div class="day-cost">💰 Budget: ₹1,500–₹2,500 · Couple: ₹3,500–₹5,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Depart for Dudhsagar Jeep Safari (Must Book Ahead)</div>
+        <div class="time-desc">Leave your accommodation by 5:30am — the jeep safaris depart from Kulem/Colem village between 6:00–7:00am. The jeep takes you through the Bhagwan Mahavir Wildlife Sanctuary over rough forest tracks (45 min each way) to the base of Dudhsagar. Jeeps carry 6–8 people. Book through your guesthouse or a Goa travel agent the evening before — do NOT just turn up, especially Oct–Feb when spots fill fast. The forest route itself is spectacular — dense Western Ghats jungle, rivers to cross, possible wildlife sightings.</div>
+        <div class="time-price">Jeep safari: ₹2,800/jeep (shared among 6–8 people = ₹400–₹500/person) · Private jeep: ₹3,500–₹4,500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Dudhsagar Waterfall — India's Fifth Tallest</div>
+        <div class="time-desc">At 310 metres, Dudhsagar ("Sea of Milk") is one of India's most dramatic waterfalls. The water cascades in multiple tiers down a black rock face into a turquoise pool. You can swim in the pool at the base — the water is cold and clear even in December. The view looking up is extraordinary: the Goa-Karnataka railway viaduct crosses above the waterfall and trains occasionally pass during your visit. Morning light (8–10am) is optimal — the falls are in shadow by midday.</div>
+        <div class="time-price">Sanctuary entry fee: ₹300/Indian · ₹1,500/foreign national · Swimming: included</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11 AM</div>
+      <div class="time-content">
+        <div class="time-title">Spice Plantation Lunch — Savoi or Tropical</div>
+        <div class="time-desc">On your way back from Dudhsagar, stop at one of Goa's spice plantations in Ponda (Savoi Plantation, Tropical Spice Plantation). A 45-minute guided walk shows you cardamom, nutmeg, vanilla, pepper, areca palms and cashew trees growing together — the original polyculture farming system. Lunch included: a Goan thali with rice, fish curry, sol kadi, kokum sherbet — as many servings as you want. One of the best meal experiences in Goa and often overlooked.</div>
+        <div class="time-price">Entry + tour + lunch: ₹600–₹800/person · Well worth the cost</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Old Goa — Basilica of Bom Jesus (UNESCO)</div>
+        <div class="time-desc">Old Goa (Velha Goa) was the Portuguese capital — at its peak in the 1600s it was larger than Lisbon. The Basilica of Bom Jesus (1605) houses the relics of St. Francis Xavier — the mummified body of the Jesuit missionary who brought Christianity to Asia. The 17th-century baroque architecture is extraordinary; the gilded interior unlike anything else in India. Also visit Se Cathedral (the largest church in Asia) next door — free, 20 minutes from the basilica.</div>
+        <div class="time-price">Entry: Free · Open 9am–6pm · 30 min from Panjim / 45 min from airport</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Head to Goa Airport (GOI) for Evening Flight</div>
+        <div class="time-desc">Old Goa to airport is 30–40 minutes. Pre-book your taxi the night before (₹500–₹700 from Old Goa). Rapido works well from Old Goa too. Allow 2 hours before departure — Goa airport gets heavily congested on evenings in peak season (Dec–Jan). If your flight is early next morning, Panjim city (30 min from airport) has good affordable hotels and excellent seafood restaurants along the Mandovi river promenade for a last dinner.</div>
+        <div class="time-price">Taxi to airport: ₹500–₹700 · Rapido: ₹200–₹350</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Dudhsagar is seasonal:</strong> The waterfall runs best October through January — full-flow after monsoon, still powerful through December. By February–March the flow reduces significantly. The jeep trail is closed during monsoon season (June–September) entirely due to flooding. Book your trip between October and January for the best experience.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — BUDGET ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Goa 3-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Cost Guide</div>
+  <h2 class="section-title" style="margin-bottom:5mm">3-Day Budget Breakdown — 2026</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>💰 Budget Backpacker</th>
+        <th>💑 Couple Getaway</th>
+        <th>🎉 Party Trip</th>
+        <th>🌅 Relaxed Beach</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>🏨 Accommodation (3N)</td><td>₹1,800–₹2,700<br/><small style="font-size:6.5pt;color:#6b8f9a">(₹600–900/night dorm)</small></td><td>₹6,000–₹12,000<br/><small style="font-size:6.5pt;color:#6b8f9a">(₹2k–4k/night boutique)</small></td><td>₹4,500–₹9,000<br/><small style="font-size:6.5pt;color:#6b8f9a">(₹1.5k–3k/night Baga)</small></td><td>₹15,000–₹30,000<br/><small style="font-size:6.5pt;color:#6b8f9a">(₹5k–10k/night resort)</small></td></tr>
+      <tr><td>🍽️ Food &amp; Drinks (3 days)</td><td>₹1,500–₹2,500</td><td>₹4,000–₹8,000</td><td>₹3,000–₹6,000</td><td>₹5,000–₹10,000</td></tr>
+      <tr><td>🛺 Transport (scooter/taxi)</td><td>₹900–₹1,200<br/><small style="font-size:6.5pt;color:#6b8f9a">(₹300–400/day scooter)</small></td><td>₹2,500–₹4,000<br/><small style="font-size:6.5pt;color:#6b8f9a">(mix scooter + day taxi)</small></td><td>₹1,500–₹3,000</td><td>₹6,000–₹10,000<br/><small style="font-size:6.5pt;color:#6b8f9a">(private taxi all days)</small></td></tr>
+      <tr><td>🎯 Activities &amp; Entry Fees</td><td>₹800–₹1,500<br/><small style="font-size:6.5pt;color:#6b8f9a">(shared Dudhsagar jeep)</small></td><td>₹3,000–₹5,000<br/><small style="font-size:6.5pt;color:#6b8f9a">(private jeep + plantation)</small></td><td>₹2,000–₹4,000<br/><small style="font-size:6.5pt;color:#6b8f9a">(clubs + water sports)</small></td><td>₹3,500–₹6,000<br/><small style="font-size:6.5pt;color:#6b8f9a">(spa + private tours)</small></td></tr>
+      <tr><td><strong>Total 3-Day Trip (per person)</strong></td><td><strong>₹9,000–₹15,000</strong></td><td><strong>₹18,000–₹32,000</strong></td><td><strong>₹22,000–₹40,000</strong></td><td><strong>₹36,000–₹70,000</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note" style="margin-bottom:6mm">All prices INR 2026 per person unless stated. Couple column = total for two people. Party column includes nightlife budget (drinks, entry). Does not include flights.</p>
+
+  <h3 class="sub-title">Where to Stay</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm">
+    <div style="background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Anjuna hostels (Zostel / Jungle)</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Budget · North Goa · ₹600–₹900/night dorm</div>
+      <div style="font-size:7pt;color:var(--teal)">Best location for exploring North Goa — 10 min walk to Anjuna beach and flea market</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Nilaya Hermitage</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Boutique · Arpora, North Goa · From ₹8,000/night</div>
+      <div style="font-size:7pt;color:var(--teal)">Design-forward boutique hotel, pool, curated interiors — best couple stay in North Goa</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Palolem Beach Cabanas</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Beach huts · South Goa · ₹1,500–₹4,000/night</div>
+      <div style="font-size:7pt;color:var(--teal)">Sleep 20m from the water — the quintessential Goa beach shack experience at Palolem</div>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:8px;padding:3.5mm">
+      <div style="font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:1mm">Intercontinental Goa / Lalit</div>
+      <div style="font-size:7pt;color:var(--muted);margin-bottom:1mm">Luxury resort · South Goa · From ₹8,000/night</div>
+      <div style="font-size:7pt;color:var(--teal)">Pool, private beach, Ayurvedic spa — full resort experience without leaving the property</div>
+    </div>
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>Booking timing matters:</strong> Goa prices triple during Dec 20 – Jan 5 (Christmas/New Year). The same room that costs ₹2,000 in November costs ₹8,000–₹12,000 in late December. If you can travel in November or early January, you get the same weather at 60–70% lower cost and far fewer crowds.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — PACKING + TIPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Goa 3-Day Itinerary</span>
+    <span class="page-header-right">Packing List &amp; Pro Tips</span>
+  </div>
+
+  <div class="label">What to Pack</div>
+  <h2 class="section-title" style="margin-bottom:4mm;font-size:20pt">Goa Beach Packing List</h2>
+
+  <div class="pack-grid" style="margin-bottom:5mm">
+    <div class="pack-col">
+      <h4>Beach Essentials</h4>
+      <div class="pack-item"><span class="pack-check">□</span>SPF 50 sunscreen (reapply every 2 hours — Goa sun is brutal)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Swimwear (2 pairs — one always needs to dry)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Lightweight cotton shorts and tees (3–4)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Sarong / beach wrap (doubles as temple cover)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Flip-flops (walk-to-beach) + sandals (exploring)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Waterproof dry bag (Cola beach and Dudhsagar)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Sunglasses + wide-brim hat or cap</div>
+      <div class="pack-item"><span class="pack-check">□</span>Reusable water bottle (fill at your guesthouse)</div>
+
+      <h4 style="margin-top:4mm">What NOT to Bring</h4>
+      <div class="pack-item"><span class="pack-check">✗</span>Heavy jeans or thick clothing — you will not wear them</div>
+      <div class="pack-item"><span class="pack-check">✗</span>Expensive jewellery — leave at home</div>
+      <div class="pack-item"><span class="pack-check">✗</span>Full toiletry kit — everything available in Goa at chemists</div>
+      <div class="pack-item"><span class="pack-check">✗</span>Formal shoes — not needed for 3 days in Goa</div>
+      <div class="pack-item"><span class="pack-check">✗</span>More than one bag — a backpack + one small day bag is optimal</div>
+    </div>
+    <div class="pack-col">
+      <h4>Documents &amp; Money</h4>
+      <div class="pack-item"><span class="pack-check">□</span>ID (Aadhaar / Passport) + driving licence for scooter</div>
+      <div class="pack-item"><span class="pack-check">□</span>This PDF saved offline</div>
+      <div class="pack-item"><span class="pack-check">□</span>Hotel / hostel confirmation (screenshot)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Dudhsagar jeep booking confirmation</div>
+      <div class="pack-item"><span class="pack-check">□</span>Cash in ₹ (beach shacks and markets are cash-first)</div>
+      <div class="pack-item"><span class="pack-check">□</span>UPI set up and working (Paytm / GPay)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Flight tickets downloaded offline</div>
+
+      <h4 style="margin-top:4mm">Health &amp; Practical</h4>
+      <div class="pack-item"><span class="pack-check">□</span>Mosquito repellent (evenings, especially south Goa)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Stomach tablets (change in seafood-heavy diet)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Rehydration sachets (heat + alcohol dehydration)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Power bank (beach days = no charging)</div>
+      <div class="pack-item"><span class="pack-check">□</span>Offline Google Maps — download Goa before you arrive</div>
+      <div class="pack-item"><span class="pack-check">□</span>Lightweight rain jacket (Oct–Nov occasional showers)</div>
+    </div>
+  </div>
+
+  <div class="label">5 Pro Tips — What Most Goa Guides Won't Tell You</div>
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🛺</div>
+      <div class="tip-title">Rent a scooter — ₹300/day changes everything</div>
+      <div class="tip-desc">Taxis in Goa are expensive (₹300–₹600 per short trip) and hard to find at night. A rented scooter (₹300–₹400/day, fuel included) gives you total freedom. Valid Indian driving licence required. Most guesthouses can arrange one in 15 minutes. Wear a helmet — checkpoints are common.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">Use Rapido instead of OLA/Uber</div>
+      <div class="tip-desc">Ola and Uber are largely non-functional in Goa (local taxi lobby keeps them out). Rapido Bike works well for solo travellers for short hops (₹30–₹100 per trip). For longer journeys, negotiate with local taxis directly — ask your guesthouse for recommended drivers to avoid tourist pricing.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🦐</div>
+      <div class="tip-title">Best beach shacks — locals' list</div>
+      <div class="tip-desc">North: Curlies (Anjuna), Britto's (Baga), A Reverie (Calangute). South: Dropadi (Palolem), Cafe Inn (Palolem), Home (Agonda). Avoid shacks with laminated menus with photos — always a red flag. The best ones have handwritten daily specials based on the morning's catch.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📅</div>
+      <div class="tip-title">Avoid Dec 20 – Jan 5 (peak madness)</div>
+      <div class="tip-desc">Christmas-New Year week transforms Goa: prices triple, beaches get dangerously crowded, water quality drops, scams increase. October–November (post-monsoon, lush green Goa) or January 6–February is the sweet spot — same sun, fraction of the crowds, 50–60% lower accommodation costs.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💦</div>
+      <div class="tip-title">Book Dudhsagar the evening before</div>
+      <div class="tip-desc">The forest department limits the number of jeeps entering the sanctuary per day. Spots fill by 8pm the evening before. Book through your guesthouse or call a local travel agent — not an online aggregator (they add ₹500–₹1,000 and don't actually guarantee your spot). Confirm the meeting point and time clearly.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌊</div>
+      <div class="tip-title">North vs South — know before you go</div>
+      <div class="tip-desc">North Goa = parties, flea market, more tourists, rougher sea, better nightlife. South Goa = quieter, cleaner water (safe swimming), fewer crowds, better beaches for couples and families. The two zones are genuinely different — this guide covers both. Pick your base based on your travel style, not just what's trending on Instagram.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:40pt;margin-bottom:6mm">🏖️</div>
+  <h2>More Free Guides. <em style="font-style:italic;color:rgba(255,255,255,0.5)">Zero Fluff.</em></h2>
+  <p>50+ free destination guides at IncredibleItinerary.com — real routes, real costs, and every tip written by someone who's actually been there. No affiliate links. No sponsored stays.</p>
+  <div class="back-cta">Get More Guides at IncredibleItinerary.com →</div>
+  <div class="back-url">incredibleitinerary.com/guides</div>
+  <p style="color:rgba(255,255,255,0.4);font-size:9pt;margin-bottom:4mm">Popular guides: Kerala · Rajasthan · Kashmir · Coorg · Andaman · Bali · Japan</p>
+  <p style="color:rgba(255,255,255,0.35);font-size:9pt;margin-bottom:10mm">Follow us: @IncredibleItinerary</p>
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · For personal use only · Not for redistribution<br/>
+    All prices are approximate and based on 2026 market rates. Verify independently before travel.<br/>
+    This guide is provided free of charge. If it helped you, share it with a friend.
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Leh Ladakh in 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#1d4ed8;--blue-light:#3b82f6;--blue-dark:#1e3a8a;
+  --blue-pale:#dbeafe;--blue-mid:#2563eb;
+  --ink:#0f172a;--cream:#f8fafc;--parchment:#f1f5f9;
+  --gold:#b45309;--white:#ffffff;--muted:#64748b;
+  --red:#991b1b;--red-light:#fef2f2;--red-border:#fecaca;
+  --amber:#92400e;--amber-light:#fffbeb;--amber-border:#fde68a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* ── PAGE SETUP ── */
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+
+/* ── COVER ── */
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,23,42,0.98) 0%,rgba(15,23,42,0.65) 50%,rgba(15,23,42,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#60a5fa;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;justify-content:space-between;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.cover-price{font-size:9pt;font-weight:600;color:#60a5fa;letter-spacing:0.05em}
+
+/* ── INNER PAGES ── */
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(15,23,42,0.08)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+
+/* ── SECTION TITLES ── */
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:2mm}
+
+/* ── STATS BAR ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(15,23,42,0.08);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+
+/* ── ROUTE BAR ── */
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--blue);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.blue2{background:var(--blue-mid)}
+.route-stop.blue3{background:#3b82f6}
+.route-stop.blue4{background:var(--blue-dark)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+
+/* ── PLAN GRID ── */
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.plan-card{background:#fff;border:1px solid rgba(15,23,42,0.07);border-radius:10px;padding:4mm}
+.plan-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.plan-badge{display:inline-block;font-size:7pt;background:rgba(29,78,216,0.1);color:var(--blue);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.plan-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── CALLOUT ── */
+.callout{background:linear-gradient(135deg,rgba(29,78,216,0.06),rgba(29,78,216,0.02));border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+
+/* ── HIGHLIGHT BOXES ── */
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.blue{background:var(--blue-pale);border:1px solid #bfdbfe;color:var(--blue-dark)}
+.highlight-box.amber{background:var(--amber-light);border:1px solid var(--amber-border);color:var(--amber)}
+.highlight-box.red{background:var(--red-light);border:1px solid var(--red-border);color:var(--red)}
+.highlight-box.green{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534}
+.highlight-box strong{font-weight:600}
+
+/* ── WARNING PAGE ── */
+.warning-hero{background:linear-gradient(135deg,#7f1d1d,#991b1b);border-radius:12px;padding:6mm 7mm;margin-bottom:6mm;color:#fff}
+.warning-hero h3{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;margin-bottom:2mm}
+.warning-hero p{font-size:8.5pt;color:rgba(255,255,255,0.8);line-height:1.6;font-weight:300}
+.warning-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.warning-box{background:#fff;border:2px solid var(--red-border);border-radius:10px;padding:4mm}
+.warning-box.critical{border-color:#ef4444}
+.warning-box-title{font-size:8pt;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:2mm;display:flex;align-items:center;gap:2mm}
+.warning-list{list-style:none;padding:0}
+.warning-list li{font-size:7.5pt;color:#374151;line-height:1.5;margin-bottom:1.5mm;padding-left:3mm;position:relative;font-weight:300}
+.warning-list li::before{content:"•";position:absolute;left:0;color:var(--red)}
+.medicine-row{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-bottom:5mm}
+.med-card{background:#fff;border:1px solid var(--red-border);border-radius:8px;padding:3mm;text-align:center}
+.med-name{font-size:8pt;font-weight:600;color:var(--red);margin-bottom:1mm}
+.med-use{font-size:7pt;color:var(--muted);line-height:1.4;font-weight:300}
+
+/* ── PERMIT BOX ── */
+.permit-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.permit-card{background:#fff;border:1px solid rgba(15,23,42,0.07);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:4mm}
+.permit-name{font-size:8.5pt;font-weight:600;color:var(--ink);margin-bottom:1mm}
+.permit-detail{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.permit-cost{font-size:7pt;color:var(--blue);font-weight:600;margin-top:1mm}
+
+/* ── DAY PAGES ── */
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#60a5fa;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#60a5fa;font-weight:500;margin-top:1mm}
+
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(15,23,42,0.07);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--blue);font-weight:500;margin-top:1.5mm}
+
+/* ── ALTITUDE BADGE ── */
+.altitude-badge{display:inline-block;background:var(--blue-dark);color:#fff;font-size:7pt;font-weight:600;padding:2px 8px;border-radius:20px;margin-left:3mm;letter-spacing:0.05em}
+
+/* ── BUDGET TABLE ── */
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(15,23,42,0.08);margin-bottom:5mm}
+.budget-table th{background:var(--blue-dark);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(15,23,42,0.06);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr.total-row td{font-weight:700;color:var(--blue-dark);background:var(--blue-pale);border-bottom:none;font-size:8pt}
+.budget-table tr.total-row td:first-child{color:var(--blue-dark)}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:3mm}
+
+/* ── PACKING ── */
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.pack-col h4{font-size:8pt;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:3mm;padding-bottom:1.5mm;border-bottom:1px solid rgba(15,23,42,0.08)}
+.pack-item{display:flex;align-items:flex-start;gap:2mm;font-size:7.5pt;color:var(--muted);font-weight:300;margin-bottom:2mm;line-height:1.4}
+.pack-check{color:var(--blue);flex-shrink:0;margin-top:0.5px;font-size:9pt}
+
+/* ── TIPS GRID ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.tip-box{background:#fff;border:1px solid rgba(15,23,42,0.07);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ── CONTACT TABLE ── */
+.contact-table{width:100%;border-collapse:collapse;margin-bottom:5mm}
+.contact-table tr{border-bottom:1px solid rgba(15,23,42,0.06)}
+.contact-table td{padding:2.5mm 3mm;font-size:7.5pt;vertical-align:top}
+.contact-table td:first-child{font-weight:500;color:var(--ink);width:45mm}
+.contact-table td:last-child{color:var(--muted);font-weight:300}
+
+/* ── BACK COVER ── */
+.back-cover{background:linear-gradient(160deg,var(--blue-dark) 0%,#1e40af 50%,var(--blue) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.6);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:#f59e0b;color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:18pt;font-weight:300;color:rgba(255,255,255,0.45);margin-bottom:8mm}
+.back-guides{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;max-width:140mm;margin:0 auto 8mm}
+.back-guide-tag{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:3mm;border-radius:8px}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1600&q=80&auto=format&fit=crop" alt="Pangong Lake Ladakh"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Premium Edition</div>
+    <h1 class="serif">🏔️ Leh Ladakh<br/><em>in 7 Days</em></h1>
+    <p class="cover-sub">Pangong Lake · Nubra Valley · Khardung La — The complete guide to India's highest road trip. Real acclimatisation protocol, permits, prices and the altitude mistakes that hospitalise 1 in 10 unprepared visitors.</p>
+    <div class="cover-pills">
+      <span class="pill">🏔️ Khardung La 5,359m</span>
+      <span class="pill">🦢 Pangong Lake</span>
+      <span class="pill">🐪 Nubra Camel Safari</span>
+      <span class="pill">🏍️ Royal Enfield Route</span>
+      <span class="pill">💰 From ₹28,000 total</span>
+      <span class="pill">Jun – Sep Only</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span class="cover-price">Premium Guide · ₹199</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — CRITICAL WARNINGS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Read This First</span>
+  </div>
+
+  <div class="warning-hero">
+    <h3>⚠️ Read Before You Book Anything</h3>
+    <p>Ladakh sits at 3,500m and above — higher than most Alps peaks. Every year, visitors who skip acclimatisation are evacuated by army helicopter at a cost of ₹1–3 lakh. This section is not optional reading. Altitude sickness (AMS) does not care how fit you are. A 25-year-old marathon runner and a 60-year-old with no fitness history are equally at risk.</p>
+  </div>
+
+  <div class="warning-grid">
+    <div class="warning-box critical">
+      <div class="warning-box-title">🚨 AMS Symptoms — Know These</div>
+      <ul class="warning-list">
+        <li><strong>Headache</strong> that worsens on lying down — first warning sign</li>
+        <li><strong>Nausea or vomiting</strong> — do not dismiss this</li>
+        <li><strong>Dizziness or lightheadedness</strong> especially on standing</li>
+        <li><strong>Fatigue</strong> disproportionate to activity level</li>
+        <li><strong>Loss of appetite</strong> — common on Day 1–2</li>
+        <li><strong>Shortness of breath at rest</strong> — serious sign</li>
+        <li><strong>Confusion or loss of coordination</strong> — descend immediately</li>
+        <li><strong>Persistent dry cough</strong> — early sign of HAPE (pulmonary oedema)</li>
+      </ul>
+    </div>
+    <div class="warning-box">
+      <div class="warning-box-title">✅ Acclimatisation Protocol</div>
+      <ul class="warning-list">
+        <li><strong>Day 1 in Leh: REST COMPLETELY.</strong> No sightseeing, no alcohol, no climbing stairs unnecessarily</li>
+        <li>Drink 3–4 litres of water daily throughout the trip</li>
+        <li><strong>Day 2:</strong> Gentle walks only — market, flat monastery. No high passes.</li>
+        <li>Do not fly from Leh and go directly to Khardung La. Two nights in Leh minimum before any high pass</li>
+        <li>Sleep low, explore high — always return to lower altitude to sleep</li>
+        <li>Avoid hot showers on Day 1 (can trigger headaches)</li>
+        <li>No alcohol for first 48 hours — accelerates dehydration</li>
+        <li>Start Diamox 250mg twice daily 24 hrs before arrival if prescribed by doctor</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="label">Medicines to Carry — Get a Prescription Before You Travel</div>
+  <div class="medicine-row">
+    <div class="med-card">
+      <div class="med-name">Diamox (Acetazolamide)</div>
+      <div class="med-use">250mg twice daily. AMS prevention and treatment. Consult doctor. Causes increased urination — drink more water.</div>
+    </div>
+    <div class="med-card">
+      <div class="med-name">Disprin / Aspirin</div>
+      <div class="med-use">For altitude headaches. 650mg as needed. Do not take more than 3 tablets/day. Avoid on empty stomach.</div>
+    </div>
+    <div class="med-card">
+      <div class="med-name">Dexamethasone</div>
+      <div class="med-use">Emergency use only for severe AMS. 8mg loading dose. Only use if descend is impossible. Prescription required.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>When to Descend Immediately:</strong> If headache + vomiting does not resolve with rest and Diamox after 4 hours, descend to a lower altitude immediately — even at night. Losing 500m of altitude is often sufficient. Every hour of delay worsens the outcome. SNM District Hospital Leh: +91-1982-252014. Army Helpline: +91-1982-252126.
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Pangong (4,350m) and Nubra (3,048m) note:</strong> Even after acclimatising in Leh (3,500m), Pangong is higher. Symptoms can re-emerge. Keep medicines accessible at all times. Ensure your travel insurance covers high-altitude evacuation — most standard policies do not.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — OVERVIEW + PERMITS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Overview &amp; Permits</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Last Frontier — In Seven Days</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">7 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">✈️</div><span class="stat-val">Direct Flights</span><span class="stat-label">Delhi / Mumbai</span></div>
+    <div class="stat-box"><div class="stat-icon">🌡</div><span class="stat-val">Jun – Sep</span><span class="stat-label">Only Season</span></div>
+    <div class="stat-box"><div class="stat-icon">⛰️</div><span class="stat-val">3,500m+</span><span class="stat-label">Base Altitude</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Leh</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop blue2">Khardung La</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop blue3">Nubra Valley</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop blue4">Pangong Lake</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Leh</span>
+    <span class="route-sub">~600km total loop · Fly in &amp; out of Leh (IXL)</span>
+  </div>
+
+  <div class="label" style="margin-bottom:3mm">Permits Required — Apply on Day 1 or 2 in Leh</div>
+  <div class="permit-grid">
+    <div class="permit-card">
+      <div class="permit-name">Inner Line Permit (ILP) — Nubra Valley</div>
+      <div class="permit-detail">Mandatory for all Indian nationals. Apply at DC Office, Leh (Fort Road). Bring 2 passport photos, Aadhaar/Passport photocopy. Processing time: same day, usually 1–2 hours. Open Mon–Sat, 10am–4pm.</div>
+      <div class="permit-cost">₹400 per person · Valid 7 days</div>
+    </div>
+    <div class="permit-card">
+      <div class="permit-name">Inner Line Permit (ILP) — Pangong Lake</div>
+      <div class="permit-detail">Separate permit needed for Pangong. Same DC Office. Apply for both Nubra and Pangong together in a single visit. Carry 4 photocopies of IDs total (2 each). Permits are checked at multiple army checkposts.</div>
+      <div class="permit-cost">₹400 per person · Valid 7 days</div>
+    </div>
+    <div class="permit-card">
+      <div class="permit-name">Photography Permit</div>
+      <div class="permit-detail">Required for professional photography/videography near border areas and some monasteries. Casual tourist photos on smartphones generally do not require this. Drone use is restricted near Leh city and army installations — prohibited without prior clearance from CIAL Leh.</div>
+      <div class="permit-cost">₹25–₹100 depending on site</div>
+    </div>
+    <div class="permit-card">
+      <div class="permit-name">Foreign Nationals</div>
+      <div class="permit-detail">Foreign tourists require Protected Area Permit (PAP) for restricted areas (Pangong, Nubra). Apply through a registered travel agency in Leh or at the DC Office. Passport required. Takes 1–2 days. Some areas remain restricted for foreign nationals entirely.</div>
+      <div class="permit-cost">₹500–₹1,000 via agency</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-bottom:3mm">Choose Your Travel Style</div>
+  <div class="plan-grid">
+    <div class="plan-card">
+      <div class="plan-badge">Budget Biker</div>
+      <div class="plan-name">🏍️ Royal Enfield / Self-Drive</div>
+      <div class="plan-desc">Rent a Royal Enfield 350/500cc or Himalayan in Leh. Full freedom, ultimate experience. Best for groups of 2+. Budget: ₹4,000–₹5,000/day total. Book bike rentals in advance for Jun/Jul.</div>
+    </div>
+    <div class="plan-card">
+      <div class="plan-badge">Couple</div>
+      <div class="plan-name">💑 Shared Taxi + Lakeside Camps</div>
+      <div class="plan-desc">Comfortable SUV taxis (Innova/Bolero) with driver. No navigation stress. Perfect for honeymooners. Budget: ₹7,000–₹9,000/day for a couple including accommodation.</div>
+    </div>
+    <div class="plan-card">
+      <div class="plan-badge">Solo</div>
+      <div class="plan-name">🎒 Shared Jeep / Backpacker</div>
+      <div class="plan-desc">Join shared jeep circuits (ask at hotels in Leh). Hostels available. Budget: ₹4,500–₹6,000/day. Meet other travellers easily. Hostels in Leh from ₹500/night.</div>
+    </div>
+    <div class="plan-card">
+      <div class="plan-badge">Family</div>
+      <div class="plan-name">👨‍👩‍👧‍👦 Private Taxi + Good Hotels</div>
+      <div class="plan-desc">Hire a full private taxi for 7 days (₹18,000–₹25,000 total). 3-star hotels in Leh, Swiss tents at Pangong. Kids 8+ years okay with proper acclimatisation. Avoid bringing infants or toddlers to high altitude.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAY 1–2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Leh Acclimatisation</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01–02</div>
+    <div class="day-info">
+      <div class="day-tag">Days One &amp; Two · Leh City</div>
+      <div class="day-title">Arrive Leh — Rest, Then Explore</div>
+      <div class="day-sub">Acclimatise · Leh Palace · Thiksey · Hemis Monastery</div>
+      <div class="day-cost">💰 Budget: ₹1,500–₹2,500/day · Couple: ₹4,000–₹7,000/day (excl. flights)</div>
+    </div>
+  </div>
+
+  <div class="highlight-box red" style="margin-bottom:4mm">
+    <strong>Day 1 Rule — NON-NEGOTIABLE:</strong> After landing in Leh, go directly to your hotel. Sleep, eat light, drink water. Do NOT visit any attraction today. Do NOT consume alcohol. Your body needs 24–36 hours to begin adapting to 3,500m altitude.
+  </div>
+
+  <div class="label">Day 1 — Arrive and Rest</div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Arrive at Kushok Bakula Rimpochhe Airport, Leh</div>
+        <div class="time-desc">Most Delhi and Mumbai flights land by 9–10am. The airport is 5km from Leh town — taxi ₹300–₹400. The moment you step off the plane you will feel the thin air. Walk slowly. Do not rush. Pre-book your hotel; many include airport pickup.</div>
+        <div class="time-price">Airport taxi: ₹300–₹400 · Hotel pickup: often free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">All Day</div>
+      <div class="time-content">
+        <div class="time-title">Hotel Room — Mandatory Rest</div>
+        <div class="time-desc">Drink 3 litres of water. Eat light — dal, rice, soup. Avoid heavy protein or meat on Day 1 as digestion is harder at altitude. Garlic soup is a local remedy said to aid acclimatisation (available in most Leh restaurants). Nap if tired — your body is working hard just to breathe.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Hall of Fame Museum (Optional — only if feeling well)</div>
+        <div class="time-desc">A 10-minute flat walk from most central hotels. The Indian Army's tribute to Kargil War heroes and Siachen soldiers. Deeply moving. Flat terrain — no exertion. If you have any headache, skip this too and rest. Entry ₹50.</div>
+        <div class="time-price">Entry: ₹50 · Open 9am–7pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label">Day 2 — Gentle Leh Exploration</div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Leh Palace &amp; Namgyal Tsemo Gompa</div>
+        <div class="time-desc">The 17th-century nine-storey palace overlooks Leh. It was modelled on the Potala Palace in Lhasa. Take the path up slowly — it is a 20-minute uphill walk. The views over the Indus Valley are extraordinary. Namgyal Tsemo Gompa (monastery) sits above the palace — another 10 minutes up. Worth every step if you feel okay.</div>
+        <div class="time-price">Palace entry: ₹15 (ASI monument) · Gompa: Free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Thiksey Monastery (19km from Leh)</div>
+        <div class="time-desc">One of the most visually spectacular monasteries in Ladakh — 12 storeys built into a hillside, resembling the Potala. Home to 500 monks. The maitreya (future Buddha) statue inside is 15m tall and takes your breath away in the best possible sense. Taxi from Leh: ₹600–₹800 return. Visit before 1pm to catch morning prayer sounds.</div>
+        <div class="time-price">Taxi return: ₹600–₹800 · Entry: ₹50 · Best: 8–11am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Late Aftn</div>
+      <div class="time-content">
+        <div class="time-title">Hemis Monastery + Shanti Stupa Sunset</div>
+        <div class="time-desc">Hemis is Ladakh's largest and wealthiest monastery, run by the Drukpa Kagyu order. Famous for the Hemis Festival (Jun/Jul — coincide if possible). Return to Leh for Shanti Stupa — a white Buddhist stupa on a hilltop with 360° views. The sunset here, with mountains turning pink-orange, is one of the most beautiful sights in India. 269 steps up — take it slow.</div>
+        <div class="time-price">Hemis entry: ₹50 · Shanti Stupa: Free · Combined taxi: ₹1,200–₹1,500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Leh Main Bazaar — Get Permits + Dinner</div>
+        <div class="time-desc">Visit the DC Office for Inner Line Permits (open until 4pm — go early). Then explore Leh bazaar: Tibetan handicrafts, pashmina shawls (buy here, not at tourist shops), thangka paintings. Try dinner at a local dhaba — thukpa (Tibetan noodle soup, ₹120) or momos (₹80–₹120). The best dhabas are the ones without English menus.</div>
+        <div class="time-price">Permits: ₹400/person · Dinner: ₹150–₹400</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — DAY 3 NUBRA VALLEY ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Day 3 — Nubra Valley</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Khardung La → Nubra</div>
+      <div class="day-title">Nubra Valley via Khardung La</div>
+      <div class="day-sub">World's Highest Motorable Road · Diskit · Hunder Dunes · Camel Ride</div>
+      <div class="day-cost">💰 Budget Biker: ₹1,800 · Couple/Taxi: ₹6,500–₹9,000 total (taxi + camp)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Depart Leh — Early Start Essential</div>
+        <div class="time-desc">The 120km drive to Nubra takes 4–5 hours. Leave by 6:30–7am to reach Khardung La before 10am (afternoon clouds and wind can be severe). Pack a warm jacket, water and energy bars. Fill fuel in Leh — no reliable petrol station on this route. Have your Inner Line Permit ready for checkpost.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Khardung La Pass — 5,359m <span class="altitude-badge">World's Highest Motorable Road</span></div>
+        <div class="time-desc">At 5,359 metres, the air has half the oxygen of sea level. Limit your stop to 15–20 minutes maximum. The altitude here is intense — shortness of breath is normal. Take photos, absorb the lunar landscape and move on. The BRO (Border Roads Organisation) maintains a tea stall at the top — a cup of warm chai is recommended. Do not overexert yourself.</div>
+        <div class="time-price">Tea at top: ₹30 · Keep stop to max 20 minutes</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Khardung Village — Descend &amp; Breathe</div>
+        <div class="time-desc">After the pass, the descent to Khardung village (3,600m) brings relief. Stop for 20 minutes to let your body adjust. The valley below opens dramatically — steep canyon walls, sparse poplars, and the Shyok river appearing in the distance. The change in landscape from pass to valley is striking.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Diskit Monastery &amp; Giant Maitreya Buddha</div>
+        <div class="time-desc">Diskit is Nubra's main town and home to a 1,000-year-old monastery overlooking the valley. The 32-metre Maitreya Buddha statue (inaugurated by the Dalai Lama in 2010) faces Pakistan — a powerful image of peace. The monastery is an active institution with 90+ monks. Visit the main prayer hall and the top terrace for panoramic Nubra views.</div>
+        <div class="time-price">Diskit Monastery entry: ₹50 · Good restaurant nearby for lunch ₹150–₹250</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">4:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Hunder Village — Sand Dunes &amp; Bactrian Camels</div>
+        <div class="time-desc">Hunder's white sand dunes against a backdrop of snow-capped mountains are one of Ladakh's most surreal sights — the "cold desert". Double-humped Bactrian camels (an endangered species, original to Central Asia, stranded here by the old Silk Route) are available for rides on the dunes. ₹500 for a 20-minute ride. Best photographed at golden hour — the camels, dunes and mountains together are extraordinary.</div>
+        <div class="time-price">Camel ride: ₹500 per camel (fits 2 people) · Dunes: free entry</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Stay at Hunder Camp — Night Sky</div>
+        <div class="time-desc">Hunder has excellent tent camps ranging from basic (₹1,500/night) to luxury Swiss tents (₹5,000–₹8,000/night). Dinner is included at most camps. At night, the Nubra sky is extraordinary — virtually zero light pollution. The Milky Way is visible with the naked eye. Bring a fleece even in July — temperatures drop to 5–8°C at night.</div>
+        <div class="time-price">Budget tents: ₹1,500–₹2,500 · Premium camps: ₹4,000–₹8,000 (incl. meals)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>Silk Route History:</strong> Hunder was a key stop on the ancient Silk Route connecting Ladakh with Yarkand (now in China). The Bactrian camels were used as cargo animals. The route was used until Indian independence in 1947. Some families in Nubra are descended from Silk Route traders.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — DAY 4 PANGONG LAKE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Day 4 — Pangong Lake</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Nubra → Shyok → Pangong</div>
+      <div class="day-title">Pangong Lake — The Colour-Changing Sky</div>
+      <div class="day-sub">5-Hour Drive · Shyok Valley · Lakeside Camp · Unforgettable Sunset</div>
+      <div class="day-cost">💰 Taxi Nubra→Pangong: ₹4,500–₹6,000 · Camp: ₹2,000–₹8,000 (meals incl.)</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Pangong is not a lake you photograph and leave. It is a lake you sit beside in silence for two hours and understand why people cry when they first see it."</p>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Depart Hunder — Nubra to Pangong via Shyok Valley</div>
+        <div class="time-desc">The Nubra–Pangong route (via Shyok Valley) opened to civilian traffic relatively recently and is now the most scenic road in Ladakh. 160km, 5 hours. The Shyok River road hugs the riverbank through narrow gorges, past ancient villages and herds of kiang (wild Tibetan asses). This drive itself is worth the entire trip. Keep your ILP ready — multiple checkposts.</div>
+        <div class="time-price">Shared jeep Nubra→Pangong: ₹1,500–₹2,000 · Private taxi: ₹4,500–₹6,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Lunch at Durbuk Village</div>
+        <div class="time-desc">Durbuk, roughly halfway, has a few small dhabas serving dal, rice and Maggi. The food is basic but hot. Altitude is around 3,900m here — you may notice mild breathlessness again if you have been feeling better at Nubra's lower altitude. Eat light, drink water.</div>
+        <div class="time-price">Lunch: ₹100–₹200 per person</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">First Glimpse of Pangong <span class="altitude-badge">4,350m</span></div>
+        <div class="time-desc">As you crest a small rise, the lake appears below you — an impossible blue-green shimmer stretching 134km into Tibet. Two-thirds of the lake is in China. The blue changes shade every hour: turquoise in morning light, royal blue at noon, electric blue-violet at sunset, mirror-silver at night. The surrounding mountains are completely barren — not a tree in sight. This is a UNESCO tentative World Heritage site.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">3 Idiots Shooting Point &amp; Merak Village</div>
+        <div class="time-desc">The famous scene from 3 Idiots was filmed at the eastern end of Pangong. A marker now stands there. More interesting is Merak village — a small settlement of Changpa nomads who live by the lake year-round, surviving -40°C winters. Their black yak-hair tents and pashmina-producing Changthangi goats make for extraordinary photographs if you engage respectfully.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Sunset at Pangong — Do Not Miss This</div>
+        <div class="time-desc">Sit at the lakeside as the light falls. The mountains turn from brown to orange to purple. The lake surface turns from blue to violet to near-black. The silence is complete. No boat traffic, no village sounds, just wind. This is the moment everything in this 7-day trip builds toward.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Night</div>
+      <div class="time-content">
+        <div class="time-title">Stay at Lakeside Camp</div>
+        <div class="time-desc">Over 30 tent camps now line the Pangong shore. Budget camps (₹2,000–₹3,000) have basic beds and shared bathrooms but are right on the lake. Premium Swiss-tent camps (₹5,000–₹8,000) offer attached bathrooms and better bedding. All include dinner and breakfast. The sound of the lake at night — silent except for soft waves — is deeply calming.</div>
+        <div class="time-price">Budget camp: ₹2,000–₹3,000 · Premium camp: ₹5,000–₹8,000 (meals incl.)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Important:</strong> There are no ATMs at Pangong Lake. Carry sufficient cash (minimum ₹5,000) before leaving Leh. Mobile data is also unreliable — download offline maps (Maps.me or Google Maps offline) before departing.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 6</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 7 — DAY 5–6 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Day 5–6 — Return to Leh</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">05–06</div>
+    <div class="day-info">
+      <div class="day-tag">Days Five &amp; Six · Chang La → Leh</div>
+      <div class="day-title">Return via Chang La — River, Monastery &amp; Market</div>
+      <div class="day-sub">Chang La Pass · Magnetic Hill · Zanskar Rafting · Leh Shopping</div>
+      <div class="day-cost">💰 Taxi Pangong→Leh: ₹4,000–₹5,000 · Activities: ₹600–₹1,200 extra</div>
+    </div>
+  </div>
+
+  <div class="label">Day 5 — Pangong to Leh via Chang La</div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Dawn</div>
+      <div class="time-content">
+        <div class="time-title">Sunrise at Pangong — Wake Up Before 5:30am</div>
+        <div class="time-desc">The sunrise at Pangong is even more remarkable than the sunset. The sky turns pink, then orange, then the lake ignites in colour. You will have it nearly to yourself — most visitors are still asleep. Do not waste this. Set an alarm.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Depart Pangong — Chang La Pass (5,360m)</div>
+        <div class="time-desc">The return route to Leh goes via Chang La — the third highest motorable pass in the world at 5,360m. Slightly higher than Khardung La but less congested. Road conditions are good. The BRO has built a café and army post at the top. Same altitude rules — limit stop to 15–20 minutes, do not run around. The descent to Durbuk and then Sakti is beautiful.</div>
+        <div class="time-price">No toll · Chang La–Leh journey: ~4 hours total</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Thiksey Monastery (if skipped on Day 2)</div>
+        <div class="time-desc">En route from Chang La back to Leh, Thiksey is an ideal stop. By now your body is better acclimatised and you will appreciate the climb up the monastery steps far more than on Day 2. Catch the butter lamp offering ceremony if you arrive between 12:30–1:30pm.</div>
+        <div class="time-price">Entry: ₹50</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Back in Leh — Hot Shower, Rest, Good Dinner</div>
+        <div class="time-desc">After days of rough roads and camping, a good hotel shower in Leh feels remarkable. Have dinner at one of Leh's better restaurants — The Tibetan Kitchen (Leh Main Bazaar) for authentic Tibetan food, or Bon Appetit for a mix of Indian and continental. Budget ₹300–₹600 per person.</div>
+        <div class="time-price">Dinner at better restaurant: ₹300–₹600/person</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label">Day 6 — Leh Day Trips &amp; Shopping</div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Magnetic Hill + Gurudwara Pathar Sahib</div>
+        <div class="time-desc">Magnetic Hill (30km from Leh on Srinagar highway) is an optical illusion where vehicles appear to roll uphill against gravity. Scientifically it is a visual trick of perspective, but deeply entertaining. 5 minutes away is Gurudwara Pathar Sahib — one of the most beautiful gurdwaras in the country, built in 1517 to commemorate Guru Nanak's visit to Ladakh. Managed by the Indian Army. Langar (free community meal) is served all day.</div>
+        <div class="time-price">Both sites: Free · Taxi from Leh: ₹800–₹1,200 return</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Sangam — Confluence of Indus &amp; Zanskar Rivers</div>
+        <div class="time-desc">Just past Gurudwara Pathar Sahib, the turquoise Zanskar meets the murky brown Indus in a dramatic visible line — two rivers flowing side by side without mixing for several hundred metres, the colour boundary clearly visible. One of Ladakh's most beautiful and overlooked spots. Free to visit. Ideal photography between 10am–2pm when colours are most distinct.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Zanskar River Rafting — Grade II/III</div>
+        <div class="time-desc">From the Sangam point, rafting operators offer a 90-minute Zanskar rapids experience ending near Leh. Grade II–III (suitable for beginners). The canyon walls tower 300m above. Rafts are run by certified operators. ₹600–₹800 per person. Book on site or through any hotel in Leh. Best done in the afternoon when river flow is typically calmer.</div>
+        <div class="time-price">Rafting: ₹600–₹800 per person · Life jackets included</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Leh Market — Final Shopping</div>
+        <div class="time-desc">Main Bazaar and Changspa Road for: Pashmina shawls (genuine, ₹3,000–₹15,000 — avoid anything under ₹2,000 that claims to be "pure pashmina"), Ladakhi thangka paintings, prayer wheels, turquoise and silver jewellery, Himalayan sea buckthorn juice, dried apricots from Nubra (sweeter than store-bought, ₹200–₹300/kg), and yak cheese. Bargain politely — most vendors will go 20–30% below initial ask.</div>
+        <div class="time-price">Budget ₹2,000–₹10,000 depending on shopping preferences</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 7</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 8 — DAY 7 DEPARTURE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Day 7 — Departure</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">07</div>
+    <div class="day-info">
+      <div class="day-tag">Day Seven · Departure Day</div>
+      <div class="day-title">Fly Out of Leh — Early Morning Departure</div>
+      <div class="day-sub">Early Alarm · Airport Tips · Flight Booking Advice</div>
+      <div class="day-cost">💰 Airport taxi: ₹300–₹400 · Fly Delhi/Mumbai from ₹4,000–₹12,000 (IndiGo / Air India)</div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>Critical Flight Booking Warning:</strong> Leh airport frequently cancels flights due to poor visibility and mountain weather — particularly in the morning fog window. Book a flight before noon (ideally 6–8am) as weather deteriorates by afternoon. NEVER book a connecting flight out of Delhi on the same day as your Leh departure. Leave a buffer of minimum 4 hours in Delhi. Always buy comprehensive travel insurance covering flight cancellation.
+  </div>
+
+  <div class="label">Morning — Departure Day Protocol</div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">4:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Wake Up — Most Leh Flights Depart 6:00–8:00am</div>
+        <div class="time-desc">IndiGo, Air India, SpiceJet and Go First (where operational) all fly Leh to Delhi in approximately 1hr 15min. GoAir previously also operated. Check current airlines — schedules change seasonally. Leh airport is tiny — check-in opens 2 hours before departure. Lines move fast but arrive no later than 90 minutes before. Set two alarms.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Hotel Checkout &amp; Taxi to Airport</div>
+        <div class="time-desc">Pre-arrange your taxi the night before (₹300–₹400). Airport is 5km from most central hotels — 15 minutes. The early morning Leh streets in dim light with mountains visible are unexpectedly beautiful. Many travellers say this quiet pre-dawn Leh is their strongest memory of the trip.</div>
+        <div class="time-price">Pre-booked taxi: ₹300–₹400 · Book the night before</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">At Airport</div>
+      <div class="time-content">
+        <div class="time-title">Leh Airport — What to Expect</div>
+        <div class="time-desc">Kushok Bakula Rimpochhe Airport (IXL) is a military-shared airport with strict security. No photography inside the airport complex. Bags are X-rayed at the entrance gate before even entering the terminal. The security queue can take 30–45 minutes on peak days. The departure lounge is small — arrive early to get a seat. The mountain views from the runway on takeoff are spectacular.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:4mm">Flight Booking Advice for Leh</div>
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">📅</div>
+      <div class="tip-title">Book 60–90 Days in Advance</div>
+      <div class="tip-desc">Leh has limited seats (small airport, limited runway capacity). Jun–Aug tickets sell out fast. Prices double-triple closer to travel dates. Book as soon as your dates are confirmed.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">✈️</div>
+      <div class="tip-title">Best Airlines for Leh</div>
+      <div class="tip-desc">IndiGo has the highest frequency (Delhi–Leh, Mumbai–Leh). Air India also operates. Always check direct routes — connecting through Jammu or Chandigarh adds 4+ hours with no benefit.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">⛅</div>
+      <div class="tip-title">Weather Cancellation Buffer</div>
+      <div class="tip-desc">Mountain airports cancel without warning. Build 1 extra day on return if possible. If cancelled, Air India has historic priority on rescheduling Leh passengers. Keep airport hotel numbers saved.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎒</div>
+      <div class="tip-title">Baggage &amp; Weight Tips</div>
+      <div class="tip-desc">Leh routes often have 15kg check-in + 7kg cabin weight limits. Repacked sleeping bags and camping gear gets heavy fast. Ship excess baggage from Leh post office (₹200–₹400) to your Delhi address — cheaper than excess baggage fees.</div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:5mm">
+    <p>"Leh is one of those places that changes you in ways you don't notice until you are back home, stuck in traffic, remembering the silence beside Pangong Lake."</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 8</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 9 — BUDGET TABLE ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Budget Breakdown</span>
+  </div>
+
+  <div class="label">Complete Budget Breakdown</div>
+  <h2 class="section-title" style="margin-bottom:2mm">What Does Ladakh Actually Cost?</h2>
+  <p style="font-size:8pt;color:var(--muted);margin-bottom:5mm;font-weight:300">All figures are per person per day unless noted. Prices are 2025–26 estimates. Flights not included.</p>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Expense Category</th>
+        <th>🏍️ Budget Biker<br/><span style="font-weight:300;font-size:6.5pt">Solo / Pair on Bike</span></th>
+        <th>💑 Couple<br/><span style="font-weight:300;font-size:6.5pt">Taxi + Good Camps</span></th>
+        <th>🎒 Solo<br/><span style="font-weight:300;font-size:6.5pt">Shared Jeep</span></th>
+        <th>👨‍👩‍👧‍👦 Family of 4<br/><span style="font-weight:300;font-size:6.5pt">Private Taxi</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🏍️ Bike Rental / Taxi</td>
+        <td>₹700–₹900<br/><span style="font-size:6.5pt">(RE 350cc, split 2)</span></td>
+        <td>₹2,000–₹3,000<br/><span style="font-size:6.5pt">(Innova, per couple/day)</span></td>
+        <td>₹600–₹1,000<br/><span style="font-size:6.5pt">(shared jeep circuits)</span></td>
+        <td>₹2,500–₹3,500<br/><span style="font-size:6.5pt">(private Innova/day)</span></td>
+      </tr>
+      <tr>
+        <td>🏕️ Accommodation</td>
+        <td>₹500–₹1,500<br/><span style="font-size:6.5pt">(guesthouse/budget tent)</span></td>
+        <td>₹3,000–₹6,000<br/><span style="font-size:6.5pt">(good hotel + lake camp)</span></td>
+        <td>₹500–₹1,200<br/><span style="font-size:6.5pt">(hostel/budget guesthouse)</span></td>
+        <td>₹5,000–₹10,000<br/><span style="font-size:6.5pt">(3-star hotel + premium camp)</span></td>
+      </tr>
+      <tr>
+        <td>🍜 Food &amp; Meals</td>
+        <td>₹400–₹600<br/><span style="font-size:6.5pt">(dhabas, local cafes)</span></td>
+        <td>₹600–₹1,200<br/><span style="font-size:6.5pt">(restaurants + camp meals)</span></td>
+        <td>₹350–₹550<br/><span style="font-size:6.5pt">(mostly dhabas)</span></td>
+        <td>₹1,500–₹2,500<br/><span style="font-size:6.5pt">(family, proper restaurants)</span></td>
+      </tr>
+      <tr>
+        <td>🎟️ Permits &amp; Entry Fees</td>
+        <td>₹100<br/><span style="font-size:6.5pt">(permits avg/day)</span></td>
+        <td>₹100<br/><span style="font-size:6.5pt">(permits avg/day)</span></td>
+        <td>₹100<br/><span style="font-size:6.5pt">(permits avg/day)</span></td>
+        <td>₹400<br/><span style="font-size:6.5pt">(family, 4 persons avg/day)</span></td>
+      </tr>
+      <tr>
+        <td>🎡 Activities &amp; Experiences</td>
+        <td>₹200–₹400<br/><span style="font-size:6.5pt">(camel ride, rafting avg)</span></td>
+        <td>₹400–₹800<br/><span style="font-size:6.5pt">(camel ride + rafting)</span></td>
+        <td>₹200–₹400<br/><span style="font-size:6.5pt">(selective activities)</span></td>
+        <td>₹800–₹1,500<br/><span style="font-size:6.5pt">(full activities, family)</span></td>
+      </tr>
+      <tr>
+        <td>⛽ Fuel (Bikers Only)</td>
+        <td>₹300–₹500<br/><span style="font-size:6.5pt">(RE 350 gets ~25kmpl)</span></td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr class="total-row">
+        <td>💰 Total Per Day (Per Person)</td>
+        <td>₹2,200–₹3,900</td>
+        <td>₹3,050–₹5,550</td>
+        <td>₹1,750–₹3,150</td>
+        <td>₹2,550–₹4,475</td>
+      </tr>
+      <tr class="total-row" style="background:var(--blue-dark)">
+        <td style="color:#fff">🗓️ Total 7-Day Trip (Per Person)</td>
+        <td style="color:#fff">₹15,000–₹27,000</td>
+        <td style="color:#fff">₹21,000–₹39,000</td>
+        <td style="color:#fff">₹12,000–₹22,000</td>
+        <td style="color:#fff">₹18,000–₹31,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="budget-note">* Flights not included (typically ₹6,000–₹18,000 return from Delhi; ₹9,000–₹25,000 from Mumbai). Book 60+ days in advance for best prices.</p>
+  <p class="budget-note">* Fuel note for bikers: Fill up in Leh before every major leg. The Indian Oil petrol pump on Main Bazaar Road is reliable. Carry an extra 2-litre fuel can. After Leh, the next guaranteed fuel is Diskit (Nubra) — 120km away. Pangong has no fuel at all.</p>
+
+  <div class="highlight-box green" style="margin-top:4mm">
+    <strong>Money-saving tips:</strong> Stay 3 nights in Leh at the same guesthouse (negotiate weekly rates — 20–30% off). Buy a local SIM (BSNL works best in Ladakh — Airtel and Jio have dead zones on most mountain routes). Carry ₹15,000 cash minimum as ATMs are only in Leh town and sometimes out of order.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 9</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 10 — PACKING LIST ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Packing List</span>
+  </div>
+
+  <div class="label">High-Altitude Packing List</div>
+  <h2 class="section-title" style="margin-bottom:2mm">Pack for the Mountains, Not the Brochure</h2>
+  <p style="font-size:8pt;color:var(--muted);margin-bottom:5mm;font-weight:300">Even in July, temperatures in Ladakh can drop to 5°C at night and at high passes. In Leh town it can be 30°C by afternoon. You need both extremes covered.</p>
+
+  <div class="pack-grid">
+    <div class="pack-col">
+      <h4>🧥 Clothing &amp; Layering</h4>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Thermal base layer top &amp; bottom (merino wool preferred — lightweight, odour-resistant, warm even when wet)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Mid-layer fleece jacket — 200gsm minimum</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Down jacket / puffer jacket — even in June-July, essential for Khardung La, Chang La and night camps</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Windproof outer shell jacket (rain jacket doubles up)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>3–4 pairs quick-dry trekking trousers/pants</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Thermal leggings for night camps</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Warm gloves — light liner gloves minimum</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Warm beanie / woollen hat (hat is mandatory at 5,000m passes)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Neck gaiter / buff (protects against cold wind and dust on bike)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Good quality trekking socks × 4 pairs (wool or synthetic)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Sturdy trekking shoes or ankle-support boots</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Sandals or flip-flops for camp evenings</span></div>
+    </div>
+    <div class="pack-col">
+      <h4>🏥 Health &amp; Safety</h4>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Diamox (Acetazolamide) 250mg — consult doctor before trip for prescription</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Disprin / Aspirin for altitude headaches</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Dexamethasone — emergency use only, prescription required</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Oral Rehydration Salts (ORS) — for dehydration</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Water purification tablets (areas beyond Pangong have no clean water access)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Sunscreen SPF 50+ (UV radiation is 50% stronger at altitude — reapply every 2 hours)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Lip balm with SPF — lips crack badly in dry high-altitude air</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Quality UV-400 sunglasses — snow blindness is a real risk</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Moisturiser — skin becomes extremely dry; basic Vaseline works</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Basic first aid: bandages, antiseptic cream, blister plasters, pain balm</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Pulse oximeter (₹800–₹1,500 on Amazon) — monitor blood oxygen at altitude</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Personal prescription medicines — carry double the required quantity</span></div>
+    </div>
+  </div>
+
+  <div class="pack-grid" style="margin-top:1mm">
+    <div class="pack-col">
+      <h4>🏍️ Bike Gear (Bikers Only)</h4>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Full-face helmet — renting from agencies is possible but bring your own if possible</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Riding jacket with CE armour (shoulder, elbow, back)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Riding gloves — waterproof, full-finger</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Knee guards / riding pants with armour</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>2-litre spare fuel can</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Basic toolkit + puncture repair kit (agencies often provide)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Bike insurance documents + RC copy</span></div>
+    </div>
+    <div class="pack-col">
+      <h4>📱 Electronics &amp; Documents</h4>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Phone with Maps.me / Google Maps offline downloaded for Leh, Nubra, Pangong areas</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Power bank — 20,000mAh minimum (camps may have limited charging)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>BSNL SIM card (buy in Delhi or on arrival at Leh airport)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Camera + extra memory cards (SD cards can malfunction in cold)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>ILP copies × 10 (printed — checkposts collect one copy each)</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>ID (Aadhaar/Passport) originals + 6 photocopies</span></div>
+      <div class="pack-item"><span class="pack-check">☐</span><span>Travel insurance policy document (must cover altitude evacuation)</span></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 11 — EMERGENCY CONTACTS + TIPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Leh Ladakh 7-Day Itinerary</span>
+    <span class="page-header-right">Emergency Contacts &amp; Expert Tips</span>
+  </div>
+
+  <div class="label">Emergency Contacts — Save These Before You Leave Home</div>
+  <table class="contact-table">
+    <tr style="background:var(--red-light)">
+      <td style="font-weight:700;color:var(--red)">🚑 SNM District Hospital, Leh</td>
+      <td style="color:var(--red);font-weight:500">+91-1982-252014 / +91-1982-252364 · 24-hour emergency. The only proper hospital in Ladakh. For severe AMS, get here immediately — they have oxygen and basic stabilisation.</td>
+    </tr>
+    <tr>
+      <td>🪖 Army Helpline (Leh)</td>
+      <td>+91-1982-252126 · For emergencies in restricted areas, road blockages, or if a vehicle breaks down on high passes. Army patrols Khardung La and Chang La regularly.</td>
+    </tr>
+    <tr>
+      <td>🚔 Police Control Room, Leh</td>
+      <td>+91-1982-252018 · Leh Police Station: +91-1982-252068</td>
+    </tr>
+    <tr>
+      <td>✈️ Leh Airport (IXL)</td>
+      <td>+91-1982-257381 · For flight status, cancellations. Check IndiGo/Air India apps — push notifications for Leh are important.</td>
+    </tr>
+    <tr>
+      <td>🏨 Leh Tourist Office</td>
+      <td>+91-1982-252094 · For permit queries, registered operator lists, and area access information</td>
+    </tr>
+    <tr>
+      <td>🇮🇳 BSNL Customer Care</td>
+      <td>198 (from BSNL SIM) · BSNL is the only reliable network across Nubra and Pangong areas. Buy a BSNL SIM before entering Ladakh.</td>
+    </tr>
+  </table>
+
+  <div class="label" style="margin-top:4mm">Recommended Bike Rental Agencies — Leh</div>
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🏍️</div>
+      <div class="tip-title">Enfield Café (Leh Main Market)</div>
+      <div class="tip-desc">Royal Enfield 350cc: ₹1,200–₹1,500/day. Himalayan: ₹1,800–₹2,200/day. Includes basic toolkit. Deposit required. One of the most established agencies. Book online in advance for Jun–Aug.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏍️</div>
+      <div class="tip-title">Rimo Expeditions</div>
+      <div class="tip-desc">Well-maintained bikes and full touring packages available. Also offer guided bike tours with support vehicle — ideal for first-timers. Contact via Leh Main Bazaar or pre-book online.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏍️</div>
+      <div class="tip-title">Jawa / Yezdi Rentals</div>
+      <div class="tip-desc">Newer Jawa and Yezdi bikes now available from some agencies in Leh — smoother ride than classic RE. ₹1,500–₹2,000/day. Availability limited — book early. Check Facebook groups: "Ladakh Bikers" for latest agency reviews.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚐</div>
+      <div class="tip-title">JKTDC (J&amp;K Tourism) Taxis</div>
+      <div class="tip-desc">Government-regulated taxi union in Leh with fixed rates for all circuits. Leh to Pangong return: ₹9,000–₹11,000. Leh to Nubra return: ₹7,500–₹9,000. Ask at Leh taxi stand near the Main Bazaar for the official rate card — protects against overcharging.</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:4mm">Fuel Stations — Critical Information</div>
+  <div class="highlight-box amber">
+    <strong>Fuel availability is the #1 logistical challenge for bikers in Ladakh:</strong> The only reliable petrol pumps are in Leh town (Indian Oil + Hindustan Petroleum, Main Bazaar area). After Leh: Diskit in Nubra Valley has one pump (sometimes limited supply). Pangong Lake — NO FUEL AT ALL. Chang La route has no fuel between Leh and Sakti. Always fill your tank to the brim in Leh before departing. Carry minimum 2 litres extra in a fuel can. A Royal Enfield 350 gets 25–30kmpl — plan accordingly for the 120km Leh–Khardung La–Nubra leg and the 160km Nubra–Pangong leg.
+  </div>
+
+  <div class="label">Recommended Tour Operators — Leh</div>
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🗺️</div>
+      <div class="tip-title">Ladakh Eco Tours</div>
+      <div class="tip-desc">Specialises in responsible tourism and village homestays. Pangong + Nubra 5-day package from ₹25,000/person (all inclusive except flights). Government registered operator.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🗺️</div>
+      <div class="tip-title">World Expeditions (Leh office)</div>
+      <div class="tip-desc">International operator with strong Ladakh presence. Premium guided tours. Ideal for groups and families requiring full support. Also offer Zanskar trekking extensions.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 11</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 12 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <div style="font-size:48pt;margin-bottom:6mm">🏔️</div>
+  <h2>You're Ready for Ladakh.</h2>
+  <p>You have the route, the permits guide, the altitude protocol, and the real prices. Now go book that flight and feel that thin, clean air.</p>
+
+  <div class="back-cta">More Free &amp; Premium Guides at IncredibleItinerary.com</div>
+
+  <div class="back-url">incredibleitinerary.com</div>
+
+  <div class="back-guides">
+    <div class="back-guide-tag">🌊 Kerala 5 Days</div>
+    <div class="back-guide-tag">🏔️ Spiti Valley 10 Days</div>
+    <div class="back-guide-tag">🐅 Rajasthan 10 Days</div>
+    <div class="back-guide-tag">🌿 Coorg Weekend</div>
+    <div class="back-guide-tag">🏝️ Andaman 6 Days</div>
+    <div class="back-guide-tag">⛪ Varanasi 3 Days</div>
+  </div>
+
+  <p style="font-size:9pt;color:rgba(255,255,255,0.5);margin-bottom:6mm">All guides at <strong style="color:rgba(255,255,255,0.7)">incredibleitinerary.com/guides</strong></p>
+
+  <div class="back-legal">
+    © 2026 IncredibleItinerary.com · All rights reserved. This guide is for personal use only and may not be redistributed or resold. Information accurate as of 2025–26 season. Prices are approximate and subject to change. Always verify permits, road conditions and safety information with local authorities before travel. Travel to high-altitude areas involves inherent risk — consult a physician before visiting Ladakh if you have cardiac, respiratory or blood pressure conditions.
+  </div>
+</div>
+
+</body>
+</html>

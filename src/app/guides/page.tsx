@@ -26,6 +26,7 @@ const AVAILABLE = [
     includes: ["Day-by-day plan", "Budget table (₹20k–₹3L)", "Packing list", "Route maps"],
     href: "/blog/rajasthan-7-days",
     country: "India",
+    price: "Free",
   },
   {
     slug: "kerala-5-days",
@@ -36,6 +37,51 @@ const AVAILABLE = [
     includes: ["Houseboat booking guide", "Budget table (₹15k–₹1L)", "Packing list", "Route maps"],
     href: "/blog/kerala-5-days",
     country: "India",
+    price: "Free",
+  },
+  {
+    slug: "goa-3-days",
+    title: "Goa 3 Days",
+    sub: "North · South · Hinterland · Dudhsagar",
+    emoji: "🏖️",
+    pages: 8,
+    includes: ["4 itinerary types", "Budget table (₹3k–₹12k/day)", "Scooter & shack tips", "Packing list"],
+    href: "/blog/goa-3-days",
+    country: "India",
+    price: "₹99",
+  },
+  {
+    slug: "india-budget-guide",
+    title: "India Budget Guide",
+    sub: "Travel India for under ₹3,000/day",
+    emoji: "🇮🇳",
+    pages: 11,
+    includes: ["₹3k/day formula", "8-city budget table", "Scam guide", "Best apps & transport tips"],
+    href: "/blog",
+    country: "India",
+    price: "₹99",
+  },
+  {
+    slug: "leh-ladakh-7-days",
+    title: "Leh Ladakh 7 Days",
+    sub: "Pangong Lake · Nubra Valley · Khardung La",
+    emoji: "🏔️",
+    pages: 12,
+    includes: ["AMS protocol", "Permit guide (ILP)", "Budget table", "High-altitude packing list"],
+    href: "/blog/leh-ladakh-7-days",
+    country: "India",
+    price: "₹199",
+  },
+  {
+    slug: "bangkok-4-days",
+    title: "Bangkok 4 Days",
+    sub: "Temples · Street Food · Ayutthaya · Nightlife",
+    emoji: "🇹🇭",
+    pages: 10,
+    includes: ["Indian traveller essentials", "Street food map", "Budget in ₹ & THB", "Day trip guide"],
+    href: "/blog/bangkok-4-days",
+    country: "International",
+    price: "₹199",
   },
 ];
 
@@ -47,10 +93,11 @@ const COMING_SOON = [
   { emoji: "🗼", title: "Japan 10 Days",     sub: "Tokyo · Kyoto · Osaka",              country: "International" },
   { emoji: "🏙️", title: "Dubai 4 Days",     sub: "Creek · Marina · Desert",            country: "International" },
   { emoji: "🌅", title: "Santorini 4 Days",  sub: "Oia · Fira · Akrotiri",              country: "International" },
-  { emoji: "🍜", title: "Bangkok 4 Days",    sub: "Old Town · Sukhumvit · Floating Mkt",country: "International" },
   { emoji: "🏖️", title: "Andaman 5 Days",   sub: "Port Blair · Havelock · Neil",       country: "India" },
   { emoji: "🕌", title: "Varanasi 3 Days",   sub: "Ghats · Temples · Sarnath",          country: "India" },
   { emoji: "🌿", title: "Coorg 3 Days",      sub: "Coffee · Waterfalls · Treks",        country: "India" },
+  { emoji: "🏝️", title: "Maldives 5 Days",  sub: "Malé · North Malé · South Malé",     country: "International" },
+  { emoji: "🌸", title: "Japan 10 Days",     sub: "Tokyo · Kyoto · Osaka · Hiroshima",  country: "International" },
 ];
 
 export default function GuidesPage() {
@@ -88,9 +135,11 @@ export default function GuidesPage() {
           {AVAILABLE.map((g) => (
             <div key={g.slug} className="bg-white rounded-2xl border border-gold/30 overflow-hidden hover:border-gold hover:shadow-md transition-all duration-200">
               {/* Tag bar */}
-              <div className="bg-gold px-4 py-1.5 flex items-center justify-between">
-                <span className="text-[0.6rem] font-bold tracking-widest uppercase text-ink">Free Download</span>
-                <span className="text-[0.6rem] text-ink/60">{g.country}</span>
+              <div className={`px-4 py-1.5 flex items-center justify-between ${g.price === "Free" ? "bg-gold" : "bg-ink"}`}>
+                <span className={`text-[0.6rem] font-bold tracking-widest uppercase ${g.price === "Free" ? "text-ink" : "text-gold"}`}>
+                  {g.price === "Free" ? "Free Download" : `${g.price} — Instant Download`}
+                </span>
+                <span className={`text-[0.6rem] ${g.price === "Free" ? "text-ink/60" : "text-white/50"}`}>{g.country}</span>
               </div>
 
               <div className="p-6">
@@ -106,7 +155,7 @@ export default function GuidesPage() {
                   ))}
                 </ul>
 
-                <p className="text-muted/50 text-[0.65rem] mb-4">📄 {g.pages} pages · A4 format</p>
+                <p className="text-muted/50 text-[0.65rem] mb-4">📄 {g.pages} pages · A4 · Print-ready</p>
 
                 <div className="flex flex-col gap-2">
                   <DownloadButton slug={g.slug} title={g.title} variant="primary" className="w-full justify-center" />
