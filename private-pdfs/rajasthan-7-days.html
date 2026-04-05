@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rajasthan 7-Day Itinerary — IncredibleItinerary 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+/* ─── Reset & Base ────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #C9A96E;
+  --gold-light: #E8D4A8;
+  --gold-dark: #8B6835;
+  --ink: #161008;
+  --ink-mid: #332515;
+  --cream: #FDFAF4;
+  --parchment: #F8F2E8;
+  --parchment-2: #EDE4D2;
+  --muted: #7A6A52;
+  --teal: #1E6B5E;
+  --rust: #B84E24;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', system-ui, sans-serif;
+}
+html { font-family: var(--sans); color: var(--ink); background: white; }
+
+/* ─── Print Page Setup ────────────────────────────────── */
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  .page { page-break-after: always; break-after: page; }
+  .no-break { page-break-inside: avoid; break-inside: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ─── Page Container ──────────────────────────────────── */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+@media screen {
+  .page {
+    max-width: 210mm;
+    margin: 0 auto 2rem;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+  }
+  body { background: #d0c8b8; padding: 2rem; }
+}
+
+/* ─── Typography ──────────────────────────────────────── */
+h1,h2,h3,h4 { font-family: var(--serif); font-weight: 300; line-height: 1.1; }
+p { font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+
+/* ─── Cover Page ──────────────────────────────────────── */
+.cover {
+  background: var(--ink);
+  height: 297mm;
+  display: flex;
+  flex-direction: column;
+}
+.cover-image-wrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.cover-image-wrap img {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.75;
+}
+.cover-gradient {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(22,16,8,0.2) 0%, rgba(22,16,8,0.1) 40%, rgba(22,16,8,0.85) 100%);
+}
+.cover-text {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 14mm 14mm 10mm;
+}
+.cover-label {
+  font-family: var(--sans); font-weight: 500; font-size: 8pt;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6mm;
+}
+.cover-title {
+  font-family: var(--serif); font-weight: 300;
+  font-size: 42pt; line-height: 1.0;
+  color: white; margin-bottom: 4mm;
+}
+.cover-title em { font-style: italic; color: var(--gold-light); }
+.cover-sub {
+  font-family: var(--sans); font-weight: 300; font-size: 10pt;
+  color: rgba(255,255,255,0.65); margin-bottom: 8mm;
+  letter-spacing: 0.04em;
+}
+.cover-pills {
+  display: flex; gap: 3mm; flex-wrap: wrap; margin-bottom: 10mm;
+}
+.pill {
+  background: rgba(201,169,110,0.2); border: 1px solid rgba(201,169,110,0.5);
+  color: var(--gold-light); font-family: var(--sans); font-size: 7pt;
+  letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500;
+  padding: 1.5mm 4mm; border-radius: 20px;
+}
+.cover-bottom {
+  padding: 5mm 14mm;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cover-brand { font-family: var(--serif); font-size: 14pt; color: white; font-weight: 300; }
+.cover-brand span { color: var(--gold); }
+.cover-url { font-family: var(--sans); font-size: 7pt; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; }
+
+/* ─── Inner Pages ─────────────────────────────────────── */
+.inner { padding: 14mm 14mm 10mm; min-height: 297mm; display: flex; flex-direction: column; }
+
+/* Header strip */
+.page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: 5mm; margin-bottom: 6mm;
+  border-bottom: 1px solid var(--parchment-2);
+}
+.page-brand { font-family: var(--serif); font-size: 10pt; color: var(--muted); font-weight: 300; }
+.page-brand span { color: var(--gold); }
+.page-num { font-family: var(--sans); font-size: 7pt; color: var(--muted); letter-spacing: 0.12em; }
+
+/* Section heading */
+.section-eyebrow {
+  font-family: var(--sans); font-size: 7pt; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark);
+  margin-bottom: 2mm;
+}
+.section-title {
+  font-family: var(--serif); font-size: 28pt; font-weight: 300;
+  color: var(--ink); margin-bottom: 6mm; line-height: 1.05;
+}
+.section-title em { font-style: italic; color: var(--teal); }
+
+/* Horizontal rule */
+.rule { height: 1px; background: var(--parchment-2); margin: 5mm 0; }
+.rule-gold { height: 1px; background: var(--gold); margin: 5mm 0; opacity: 0.4; }
+
+/* ─── Quick Stats Bar ─────────────────────────────────── */
+.stats-bar {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 3mm; margin-bottom: 6mm;
+}
+.stat-cell {
+  background: var(--parchment); border: 1px solid var(--parchment-2);
+  border-radius: 4px; padding: 4mm;
+  text-align: center;
+}
+.stat-value { font-family: var(--serif); font-size: 18pt; font-weight: 300; color: var(--gold-dark); }
+.stat-label { font-family: var(--sans); font-size: 6.5pt; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 1mm; }
+
+/* ─── Two Column ──────────────────────────────────────── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+
+/* ─── Info Box ────────────────────────────────────────── */
+.info-box {
+  background: var(--parchment); border-left: 3px solid var(--gold);
+  padding: 4mm 5mm; border-radius: 0 4px 4px 0; margin-bottom: 4mm;
+}
+.info-box-title { font-family: var(--sans); font-size: 7.5pt; font-weight: 500; color: var(--ink); margin-bottom: 2mm; text-transform: uppercase; letter-spacing: 0.1em; }
+.info-box p { font-size: 8.5pt; color: var(--muted); }
+
+.tip-box {
+  background: #f0faf8; border-left: 3px solid var(--teal);
+  padding: 4mm 5mm; border-radius: 0 4px 4px 0; margin-bottom: 4mm;
+}
+.warn-box {
+  background: #fdf5f0; border-left: 3px solid var(--rust);
+  padding: 4mm 5mm; border-radius: 0 4px 4px 0; margin-bottom: 4mm;
+}
+
+/* ─── Day Card ────────────────────────────────────────── */
+.day-header {
+  background: var(--ink); color: white;
+  padding: 6mm 14mm 5mm;
+  margin: -14mm -14mm 6mm;
+}
+.day-num {
+  font-family: var(--sans); font-size: 7pt; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 2mm;
+}
+.day-title { font-family: var(--serif); font-size: 30pt; font-weight: 300; line-height: 1; color: white; }
+.day-title em { font-style: italic; color: var(--gold-light); }
+.day-subtitle { font-family: var(--sans); font-size: 9pt; color: rgba(255,255,255,0.55); margin-top: 2mm; font-weight: 300; }
+
+/* Segment (morning/afternoon/evening) */
+.segment { margin-bottom: 5mm; }
+.segment-head {
+  display: flex; align-items: center; gap: 2mm;
+  margin-bottom: 3mm;
+}
+.segment-icon { font-size: 11pt; }
+.segment-label { font-family: var(--sans); font-size: 7pt; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dark); }
+.segment-title { font-family: var(--serif); font-size: 14pt; color: var(--ink); font-weight: 400; margin-bottom: 2mm; }
+.segment-items { list-style: none; }
+.segment-items li {
+  font-family: var(--sans); font-size: 8.5pt; color: var(--muted);
+  font-weight: 300; line-height: 1.6;
+  padding-left: 5mm; position: relative; margin-bottom: 1.5mm;
+}
+.segment-items li::before { content: "→"; position: absolute; left: 0; color: var(--gold); font-size: 7pt; top: 1px; }
+
+/* Cost footer */
+.day-cost {
+  background: var(--parchment); border: 1px solid var(--parchment-2);
+  border-radius: 4px; padding: 3mm 5mm;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: auto;
+}
+.cost-label { font-family: var(--sans); font-size: 7pt; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.cost-values { display: flex; gap: 4mm; }
+.cost-tier { text-align: center; }
+.cost-tier-label { font-family: var(--sans); font-size: 6pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.cost-tier-val { font-family: var(--serif); font-size: 12pt; font-weight: 400; }
+.cost-tier-val.budget { color: var(--teal); }
+.cost-tier-val.mid { color: var(--gold-dark); }
+.cost-tier-val.luxury { color: var(--rust); }
+
+/* ─── Budget Table ────────────────────────────────────── */
+.budget-table { width: 100%; border-collapse: collapse; margin-bottom: 5mm; }
+.budget-table th {
+  background: var(--ink); color: white;
+  font-family: var(--sans); font-size: 7pt; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 3mm 4mm; text-align: left;
+}
+.budget-table td {
+  font-family: var(--sans); font-size: 8.5pt; font-weight: 300;
+  padding: 3mm 4mm; border-bottom: 1px solid var(--parchment-2);
+  color: var(--muted);
+}
+.budget-table tr:nth-child(even) td { background: var(--parchment); }
+.budget-table tr.total td {
+  font-weight: 500; color: var(--ink); border-top: 2px solid var(--gold);
+  border-bottom: none; background: var(--parchment);
+}
+.budget-table td:not(:first-child) { text-align: right; }
+.budget-table th:not(:first-child) { text-align: right; }
+
+/* ─── Packing Grid ────────────────────────────────────── */
+.pack-category { margin-bottom: 5mm; }
+.pack-title { font-family: var(--sans); font-size: 7.5pt; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 2.5mm; }
+.pack-items { display: flex; flex-wrap: wrap; gap: 2mm; }
+.pack-item {
+  font-family: var(--sans); font-size: 7.5pt; color: var(--muted); font-weight: 300;
+  background: var(--parchment); border: 1px solid var(--parchment-2);
+  padding: 1.5mm 3mm; border-radius: 3px;
+  display: flex; align-items: center; gap: 1.5mm;
+}
+.pack-item::before { content: "□"; color: var(--gold); font-size: 8pt; }
+
+/* ─── Route Visual ────────────────────────────────────── */
+.route-bar {
+  display: flex; align-items: center;
+  background: var(--parchment); border: 1px solid var(--parchment-2);
+  border-radius: 6px; padding: 4mm 5mm; margin-bottom: 4mm;
+}
+.route-city {
+  text-align: center; flex: 1;
+}
+.route-city-name { font-family: var(--serif); font-size: 12pt; font-weight: 400; color: var(--ink); }
+.route-city-day { font-family: var(--sans); font-size: 6.5pt; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.5mm; }
+.route-arrow {
+  color: var(--gold); font-size: 10pt; flex-shrink: 0;
+  padding: 0 2mm;
+}
+.route-info { font-family: var(--sans); font-size: 6.5pt; color: var(--muted); text-align: center; }
+
+/* ─── Callout Quote ───────────────────────────────────── */
+.callout {
+  border: 1px solid var(--parchment-2);
+  border-radius: 6px; padding: 5mm;
+  background: var(--parchment); margin-bottom: 4mm;
+}
+.callout-text { font-family: var(--serif); font-size: 13pt; font-weight: 300; font-style: italic; color: var(--ink-mid); line-height: 1.5; }
+.callout-source { font-family: var(--sans); font-size: 7pt; color: var(--muted); margin-top: 2mm; letter-spacing: 0.1em; }
+
+/* ─── Footer ──────────────────────────────────────────── */
+.page-footer {
+  margin-top: auto; padding-top: 5mm;
+  border-top: 1px solid var(--parchment-2);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.page-footer-brand { font-family: var(--sans); font-size: 7pt; color: var(--muted); }
+.page-footer-url { font-family: var(--sans); font-size: 7pt; color: var(--gold-dark); }
+
+/* ─── Back Cover ──────────────────────────────────────── */
+.back-cover {
+  background: var(--ink); height: 297mm;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 16mm;
+}
+.bc-logo { font-family: var(--serif); font-size: 32pt; color: white; font-weight: 300; margin-bottom: 4mm; }
+.bc-logo span { color: var(--gold); }
+.bc-tagline { font-family: var(--sans); font-size: 9pt; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-bottom: 10mm; font-weight: 300; }
+.bc-divider { width: 12mm; height: 1px; background: var(--gold); margin: 0 auto 10mm; }
+.bc-cta { font-family: var(--serif); font-size: 22pt; color: white; font-weight: 300; font-style: italic; margin-bottom: 4mm; }
+.bc-url { font-family: var(--sans); font-size: 10pt; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 12mm; }
+.bc-note { font-family: var(--sans); font-size: 7.5pt; color: rgba(255,255,255,0.3); max-width: 120mm; line-height: 1.7; font-weight: 300; }
+
+/* ─── QR placeholder ──────────────────────────────────── */
+.qr-box {
+  width: 24mm; height: 24mm;
+  border: 1.5px solid rgba(201,169,110,0.4);
+  border-radius: 4px; margin: 0 auto 4mm;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.2); font-size: 7pt;
+  font-family: var(--sans); letter-spacing: 0.08em; text-align: center;
+  line-height: 1.4;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 1 — COVER                                            -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover-image-wrap">
+    <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&q=85&auto=format&fit=crop" alt="Rajasthan" />
+    <div class="cover-gradient"></div>
+    <div class="cover-text">
+      <p class="cover-label">IncredibleItinerary · 2026 Edition</p>
+      <h1 class="cover-title">Rajasthan<br />in <em>7 Days</em></h1>
+      <p class="cover-sub">The Complete Day-by-Day Itinerary · Budget to Luxury · Real Prices</p>
+      <div class="cover-pills">
+        <span class="pill">Jaipur → Jodhpur → Jaisalmer</span>
+        <span class="pill">7 Nights</span>
+        <span class="pill">From ₹15,000/person</span>
+        <span class="pill">Oct – Mar Best Season</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <span class="cover-brand">Incredible<span>Itinerary</span></span>
+    <span class="cover-url">www.incredibleitinerary.com</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 2 — OVERVIEW & ROUTE                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="page-header">
+    <span class="page-brand">Incredible<span>Itinerary</span></span>
+    <span class="page-num">Rajasthan 7 Days · Overview</span>
+  </div>
+
+  <p class="section-eyebrow">Your Journey at a Glance</p>
+  <h2 class="section-title">The Golden Triangle<br /><em>of Rajasthan</em></h2>
+
+  <div class="stats-bar">
+    <div class="stat-cell">
+      <div class="stat-value">7</div>
+      <div class="stat-label">Days / Nights</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Cities</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-value">₹15k</div>
+      <div class="stat-label">From (per person)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-value">Oct–Mar</div>
+      <div class="stat-label">Best Season</div>
+    </div>
+  </div>
+
+  <!-- Route Visual -->
+  <p class="section-eyebrow" style="margin-top:4mm;">The Route</p>
+  <div class="route-bar">
+    <div class="route-city">
+      <div class="route-city-name">Delhi</div>
+      <div class="route-city-day">Fly in</div>
+    </div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">
+      <div class="route-city-name">Jaipur</div>
+      <div class="route-city-day">Days 1–2</div>
+    </div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">
+      <div class="route-city-name">Jodhpur</div>
+      <div class="route-city-day">Days 3–4</div>
+    </div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">
+      <div class="route-city-name">Jaisalmer</div>
+      <div class="route-city-day">Days 5–7</div>
+    </div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">
+      <div class="route-city-name">Delhi</div>
+      <div class="route-city-day">Fly out</div>
+    </div>
+  </div>
+  <p class="route-info">Total driving distance: ~750 km · Best done by private car or train</p>
+
+  <div class="rule"></div>
+
+  <div class="two-col" style="margin-bottom:4mm;">
+    <div class="info-box">
+      <div class="info-box-title">🌤️ Best Time to Visit</div>
+      <p><strong>October – March</strong> is ideal. Temperatures 10–28°C. Avoid April–June (45°C+). Monsoon (July–Sept) brings greenery but limited desert access.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title">✈️ How to Reach</div>
+      <p>Fly into <strong>Delhi (DEL)</strong>, then take the train or fly to Jaipur (JAI). Return from Jaisalmer via Jodhpur (JDH) to Delhi.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title">🚆 Getting Around</div>
+      <p><strong>Private cab</strong> (₹6,000–12,000 total for the route) is most flexible. Trains connect all cities but book 30+ days ahead on IRCTC.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title">💳 Money Matters</div>
+      <p>Carry <strong>cash</strong> — smaller towns and markets are cash-only. ATMs available in all cities. Budget ₹3,000–5,000 cash per day.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p class="callout-text">"Rajasthan is not just a destination — it's a time machine. Each fort, each haveli, each desert sunset tells a story 500 years in the making."</p>
+    <p class="callout-source">— IncredibleItinerary Editorial Team</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary · Free to share with friends</span>
+    <span class="page-footer-url">incredibleitinerary.com</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 3 — DAY 1: JAIPUR ARRIVAL                           -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="day-header">
+    <p class="day-num">Day 1 · Jaipur</p>
+    <h2 class="day-title">The <em>Pink City</em> Awaits</h2>
+    <p class="day-subtitle">Arrival · City Orientation · First Sunset at Nahargarh</p>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head">
+      <span class="segment-icon">🌅</span>
+      <span class="segment-label">Morning</span>
+    </div>
+    <p class="segment-title">Arrive & Check In</p>
+    <ul class="segment-items">
+      <li>Arrive at Jaipur Airport or Railway Station. Pre-book an Ola/Uber cab — auto drivers quote 3–4× the meter price to new arrivals.</li>
+      <li>Check into your hotel and freshen up. Most hotels allow early check-in if you call ahead.</li>
+      <li>Breakfast at <strong>Rawat Misthan Bhandar</strong> — legendary pyaaz kachori (₹25/piece) that locals queue for every morning on Station Road.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head">
+      <span class="segment-icon">☀️</span>
+      <span class="segment-label">Afternoon</span>
+    </div>
+    <p class="segment-title">Old City Walk & Hawa Mahal</p>
+    <ul class="segment-items">
+      <li>Walk through <strong>Johari Bazaar</strong> — Jaipur's famous jewellery market. Don't buy on Day 1; prices drop significantly if you return on Day 2 morning.</li>
+      <li>Photograph <strong>Hawa Mahal</strong> (Palace of Winds) from the street — the iconic 953-windowed pink facade. Entry ₹200 for the interior museum.</li>
+      <li>Walk to <strong>City Palace</strong> complex (₹700 entry). The Mubarak Mahal textile museum alone is worth the entry fee.</li>
+      <li>Lunch at <strong>Peacock Rooftop Restaurant</strong> inside Hotel Pearl Palace — ₹400–600 per person, views of the old city, excellent Dal Baati Churma.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head">
+      <span class="segment-icon">🌙</span>
+      <span class="segment-label">Evening</span>
+    </div>
+    <p class="segment-title">Nahargarh Fort Sunset</p>
+    <ul class="segment-items">
+      <li>Hire an auto or cab to <strong>Nahargarh Fort</strong> (~15 min from City Palace). Arrive 45 minutes before sunset for the best light on the city below.</li>
+      <li>Sundowner at <strong>Padao Restaurant</strong> inside Nahargarh — cold Kingfisher with the entire pink city spread before you. ₹500–700 per person.</li>
+      <li>Return to hotel, rest. Tomorrow is a packed day — Amber Fort opens at 8 AM.</li>
+    </ul>
+  </div>
+
+  <div class="tip-box no-break">
+    <div class="info-box-title">💡 Local Tip</div>
+    <p style="font-size:8.5pt; color:#3d6b5e;">Book Amber Fort tickets online at rajasthantickets.rajasthan.gov.in the night before. Walk-up queues on weekends stretch to 90 minutes. Online entry is ₹550 for foreigners, ₹100 for Indians.</p>
+  </div>
+
+  <div class="day-cost no-break">
+    <span class="cost-label">💰 Day 1 Estimated Cost (per person)</span>
+    <div class="cost-values">
+      <div class="cost-tier"><div class="cost-tier-label">Budget</div><div class="cost-tier-val budget">₹1,800</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Mid-Range</div><div class="cost-tier-val mid">₹4,500</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Luxury</div><div class="cost-tier-val luxury">₹12,000</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary</span>
+    <span class="page-footer-url">incredibleitinerary.com/blog/rajasthan-7-days</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 4 — DAY 2: JAIPUR FORTS & MARKETS                   -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="day-header">
+    <p class="day-num">Day 2 · Jaipur</p>
+    <h2 class="day-title">Forts, <em>Elephants</em> & Bazaars</h2>
+    <p class="day-subtitle">Amber Fort · Jal Mahal · Shopping · Chokhi Dhani</p>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🌅</span><span class="segment-label">Morning (7:30 AM)</span></div>
+    <p class="segment-title">Amber Fort — Start Early</p>
+    <ul class="segment-items">
+      <li>Reach <strong>Amber Fort</strong> by 7:30 AM to beat the crowds and the heat. The morning light on the golden-amber battlements is extraordinary.</li>
+      <li>Book a <strong>jeep ride up</strong> (₹800 round-trip per jeep, share with 3–4 others) rather than the elephant ride — the elephant experience raises ethical concerns.</li>
+      <li>Inside: Sheesh Mahal (Hall of Mirrors), Ganesh Pol gate, and the rooftop views of Maota Lake. Allow 2–2.5 hours minimum.</li>
+      <li>En route back, stop at <strong>Jal Mahal</strong> (Water Palace) — photograph from the road, no interior access but strikingly beautiful at 9 AM light.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">☀️</span><span class="segment-label">Afternoon</span></div>
+    <p class="segment-title">Jantar Mantar & Shopping</p>
+    <ul class="segment-items">
+      <li><strong>Jantar Mantar</strong> (UNESCO World Heritage) — the world's largest stone sundial still accurate to 2 seconds. ₹200 entry. Allow 45 minutes with the audio guide.</li>
+      <li>Spend 2 hours in <strong>Bapu Bazaar & Johari Bazaar</strong> — buy block-print textiles (₹200–800/metre), blue pottery (₹150–600/piece), and lac bangles.</li>
+      <li>Tip: Bargain to 40–60% of the first quoted price. Walk away — they'll call you back.</li>
+      <li>Lunch at <strong>Laxmi Misthan Bhandar (LMB)</strong>, Johari Bazaar — a Jaipur institution since 1954. Their dal baati churma thali is ₹450.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🌙</span><span class="segment-label">Evening</span></div>
+    <p class="segment-title">Chokhi Dhani — Rajasthani Cultural Village</p>
+    <ul class="segment-items">
+      <li><strong>Chokhi Dhani</strong> (20 km from city, ₹1,200–1,800/person all-inclusive) — Rajasthani folk performances, camel rides, puppet shows, and a traditional thali dinner. Kitsch but genuinely fun and the food is outstanding.</li>
+      <li>Alternatively, book a table at <strong>1135 AD</strong> at Amber Fort — fine dining in a 17th-century setting (₹3,500–5,000/person).</li>
+    </ul>
+  </div>
+
+  <div class="warn-box no-break">
+    <div class="info-box-title">⚠️ Watch Out For</div>
+    <p style="font-size:8.5pt; color:#8b3a1a;">Gem touts near Amber Fort. They'll befriend you, take you to a "government emporium" (it's not), and sell overpriced stones. If anyone mentions exporting gems or asks where you're from before you're inside the fort — walk away.</p>
+  </div>
+
+  <div class="day-cost no-break">
+    <span class="cost-label">💰 Day 2 Estimated Cost (per person)</span>
+    <div class="cost-values">
+      <div class="cost-tier"><div class="cost-tier-label">Budget</div><div class="cost-tier-val budget">₹2,200</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Mid-Range</div><div class="cost-tier-val mid">₹5,500</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Luxury</div><div class="cost-tier-val luxury">₹15,000</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary</span>
+    <span class="page-footer-url">incredibleitinerary.com/blog/rajasthan-7-days</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 5 — DAY 3: JAIPUR → JODHPUR                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="day-header">
+    <p class="day-num">Day 3 · Jaipur → Jodhpur</p>
+    <h2 class="day-title">Road to the <em>Blue City</em></h2>
+    <p class="day-subtitle">Scenic Drive · Stepwells · Mehrangarh Fort First Look</p>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🌅</span><span class="segment-label">Morning (Early Start)</span></div>
+    <p class="segment-title">Depart Jaipur → Jodhpur (5.5 hrs)</p>
+    <ul class="segment-items">
+      <li>Leave Jaipur by 7 AM. The drive via NH48 is mostly highway — flat, dotted with tiny dhabas and occasional peacocks on the road.</li>
+      <li>Stop at <strong>Abhaneri Stepwell (Chand Baori)</strong>, 90 km from Jaipur — one of the world's largest stepwells, 13 stories deep, 3,500 steps. Featured in The Dark Knight Rises. Allow 45 minutes.</li>
+      <li>Driver dhaba lunch at <strong>Hotel Ratan Vilas, Nagaur</strong> or any clean-looking roadside stop. Dal-roti-sabzi, ₹120–180 per person.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">☀️</span><span class="segment-label">Afternoon (Arrive ~2 PM)</span></div>
+    <p class="segment-title">Check In & First Blue City Walk</p>
+    <ul class="segment-items">
+      <li>Check into hotel. Drop bags and head immediately to <strong>Clock Tower (Ghanta Ghar)</strong> and <strong>Sardar Market</strong> — the chaotic, beautiful heart of old Jodhpur.</li>
+      <li>Walk the lanes of the old city — the indigo-blue houses are not painted blue for Instagram. It's a centuries-old Brahmin tradition using copper sulphate to keep insects away.</li>
+      <li>Find a rooftop cafe in the old city — <strong>Indique</strong> or <strong>On the Rocks</strong> — and get your first view of Mehrangarh Fort rising above the blue city. A glass of lassi: ₹80.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🌙</span><span class="segment-label">Evening</span></div>
+    <p class="segment-title">Sunset at Mehrangarh (Outside)</p>
+    <ul class="segment-items">
+      <li>Walk up to <strong>Mehrangarh Fort</strong> outer walls for sunset — the fort glows gold as the city turns blue below. Save the interior for tomorrow morning when it's cooler.</li>
+      <li>Dinner at <strong>Jhankar Choti Haveli</strong> — rooftop with fort views, live folk music Thu–Sat, excellent Rajasthani thali (₹600–900/person).</li>
+    </ul>
+  </div>
+
+  <div class="info-box no-break">
+    <div class="info-box-title">🚗 Transport Options: Jaipur → Jodhpur</div>
+    <div class="three-col" style="margin-top:2mm;">
+      <div>
+        <p style="font-size:7.5pt; font-weight:500; color:var(--ink);">Private Cab</p>
+        <p style="font-size:7.5pt; color:var(--muted);">₹3,500–5,000<br/>Most flexible, door-to-door</p>
+      </div>
+      <div>
+        <p style="font-size:7.5pt; font-weight:500; color:var(--ink);">Train (Recommended)</p>
+        <p style="font-size:7.5pt; color:var(--muted);">₹300–1,200<br/>Mandore Express, 5.5 hrs</p>
+      </div>
+      <div>
+        <p style="font-size:7.5pt; font-weight:500; color:var(--ink);">Volvo Bus</p>
+        <p style="font-size:7.5pt; color:var(--muted);">₹450–700<br/>RSRTC, 5–6 hrs overnight</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-cost no-break">
+    <span class="cost-label">💰 Day 3 Estimated Cost (per person, incl. transport)</span>
+    <div class="cost-values">
+      <div class="cost-tier"><div class="cost-tier-label">Budget</div><div class="cost-tier-val budget">₹1,500</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Mid-Range</div><div class="cost-tier-val mid">₹4,000</div></div>
+      <div class="cost-tier"><div class="cost-tier-val luxury">₹9,000</div><div class="cost-tier-label">Luxury</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary</span>
+    <span class="page-footer-url">incredibleitinerary.com/blog/rajasthan-7-days</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 6 — DAY 4: JODHPUR DEEP DIVE                        -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="day-header">
+    <p class="day-num">Day 4 · Jodhpur</p>
+    <h2 class="day-title">Inside <em>Mehrangarh</em></h2>
+    <p class="day-subtitle">The Greatest Fort in India · Jaswant Thada · Bishnoi Village</p>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🌅</span><span class="segment-label">Morning (8 AM — Beat the Heat)</span></div>
+    <p class="segment-title">Mehrangarh Fort — Full Exploration</p>
+    <ul class="segment-items">
+      <li><strong>Mehrangarh Fort</strong> (₹600 Indians / ₹1,000 foreigners — includes audio guide) is widely considered the finest fort in Rajasthan. Allow 3 hours minimum.</li>
+      <li>Must-see inside: <strong>Phool Mahal</strong> (Flower Palace) with its 24-carat gold ceiling; <strong>Moti Mahal</strong> (Pearl Palace); the armoury with Mughal cannonballs still lodged in the walls.</li>
+      <li>The audio guide (free with entry) narrated by William Dalrymple is exceptional — genuinely one of the best museum audio guides in India.</li>
+      <li>From the fort ramparts, spot the Chamunda Devi Temple and the sweeping blue city below — the best photograph opportunity of the entire trip.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">☀️</span><span class="segment-label">Afternoon</span></div>
+    <p class="segment-title">Jaswant Thada & Bishnoi Village</p>
+    <ul class="segment-items">
+      <li><strong>Jaswant Thada</strong> (₹30 entry) — a stunning white marble cenotaph, called the "Taj Mahal of Marwar." Quiet, beautiful, 15-minute walk from Mehrangarh.</li>
+      <li>Afternoon: <strong>Bishnoi Village Safari</strong> (₹1,500–2,500/person) — a half-day excursion to traditional Bishnoi villages where blackbuck, chinkaras, and peacocks roam freely. The Bishnoi community has protected wildlife for 500+ years before it was fashionable.</li>
+      <li>Lunch back in the city: <strong>Gypsy Restaurant</strong> near Circuit House, famous for its laal maas (fiery Rajasthani mutton, ₹400). Order well done unless you want to cry.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🌙</span><span class="segment-label">Evening & Departure Prep</span></div>
+    <p class="segment-title">Old City Shopping & Farewell Dinner</p>
+    <ul class="segment-items">
+      <li>Jodhpur is famous for <strong>antique furniture and iron craft</strong> (Umaid Bhawan Road). Jodhpuri jutis (leather shoes, ₹400–1,200) and mirrorwork fabrics are excellent buys.</li>
+      <li>Farewell dinner at <strong>Stepwell Cafe</strong> near Toorji Ka Jhalra — ₹300–500 per person, rooftop seating overlooking the ancient stepwell lit at night.</li>
+      <li>Pack and prepare for tomorrow's early departure to Jaisalmer.</li>
+    </ul>
+  </div>
+
+  <div class="day-cost no-break">
+    <span class="cost-label">💰 Day 4 Estimated Cost (per person)</span>
+    <div class="cost-values">
+      <div class="cost-tier"><div class="cost-tier-label">Budget</div><div class="cost-tier-val budget">₹2,000</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Mid-Range</div><div class="cost-tier-val mid">₹5,500</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Luxury</div><div class="cost-tier-val luxury">₹14,000</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary</span>
+    <span class="page-footer-url">incredibleitinerary.com/blog/rajasthan-7-days</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 7 — DAYS 5–6: JAISALMER                             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="day-header">
+    <p class="day-num">Days 5–6 · Jodhpur → Jaisalmer</p>
+    <h2 class="day-title">The <em>Golden City</em> & Sam Dunes</h2>
+    <p class="day-subtitle">Desert Fort · Patwon Ki Haveli · Camel Safari · Overnight Desert Camp</p>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🚗</span><span class="segment-label">Day 5 Morning — Drive (4.5 hrs)</span></div>
+    <p class="segment-title">Jodhpur → Jaisalmer Road Trip</p>
+    <ul class="segment-items">
+      <li>Leave Jodhpur by 7 AM. The NH125 drive through the Thar Desert is strikingly beautiful — flat, endless, dotted with tiny villages, wind turbines, and migrating birds in winter.</li>
+      <li>Stop at <strong>Pokhran</strong> (midway) — where India conducted its nuclear tests in 1998. The old fort here is worth a 30-minute visit.</li>
+      <li>Arrive Jaisalmer by noon. Check in, freshen up, and head straight to the fort.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">☀️</span><span class="segment-label">Day 5 Afternoon</span></div>
+    <p class="segment-title">Jaisalmer Fort & Patwon Ki Haveli</p>
+    <ul class="segment-items">
+      <li><strong>Jaisalmer Fort</strong> is one of the world's few living forts — 5,000 people still live inside. No entry fee to walk in; museum is ₹150. Explore the Jain Temples inside (stunning sandstone carvings) and the many rooftop cafes with desert views.</li>
+      <li><strong>Patwon Ki Haveli</strong> (₹150 entry) — five interconnected mansions built by a wealthy merchant, each with more elaborate jharokha (latticed window) carvings than the last.</li>
+      <li><strong>Nathmal Ki Haveli</strong> — built by two brothers who competed to outdo each other; the left and right sides are slightly different. Free to view from outside.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🌙</span><span class="segment-label">Day 5 Evening → Day 6</span></div>
+    <p class="segment-title">Sam Sand Dunes — Desert Camp Overnight</p>
+    <ul class="segment-items">
+      <li>Head to <strong>Sam Sand Dunes</strong> (42 km from Jaisalmer, 1 hour). Arrive at 4 PM for the golden hour — the Thar Desert dunes turn deep amber as the sun sets. Truly one of India's most magical landscapes.</li>
+      <li><strong>Camel ride</strong> (₹300–500/30 min) to your desert camp. Book a <strong>mid-range desert camp</strong> (₹3,500–6,000/person all-inclusive) with attached bathroom, cultural shows, dinner, and bonfire.</li>
+      <li>Night in the desert under one of India's clearest skies. Zero light pollution — the Milky Way is visible with the naked eye Oct–Feb.</li>
+      <li>Day 6 morning: sunrise over the dunes (set alarm for 5:30 AM). Breakfast at camp, then return to Jaisalmer by 10 AM.</li>
+    </ul>
+  </div>
+
+  <div class="tip-box no-break">
+    <div class="info-box-title">💡 Desert Camp Booking Tips</div>
+    <p style="font-size:8.5pt; color:#1e6b5e;">Avoid the cheapest camps (₹800–1,200) — shared bathrooms, thin mattresses, and poor food. The ₹3,500–5,000 range gets you a comfortable experience. <strong>Recommended: Desert Haveli Camp, Mirage Desert Camp, or Royal Camp Jaisalmer.</strong> Book directly by phone to avoid OTA markups.</p>
+  </div>
+
+  <div class="day-cost no-break">
+    <span class="cost-label">💰 Days 5–6 Estimated Cost (per person, incl. transport + camp)</span>
+    <div class="cost-values">
+      <div class="cost-tier"><div class="cost-tier-label">Budget</div><div class="cost-tier-val budget">₹3,500</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Mid-Range</div><div class="cost-tier-val mid">₹8,000</div></div>
+      <div class="cost-tier"><div class="cost-tier-val luxury">₹20,000</div><div class="cost-tier-label">Luxury</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary</span>
+    <span class="page-footer-url">incredibleitinerary.com/blog/rajasthan-7-days</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 8 — DAY 7: DEPARTURE                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="day-header">
+    <p class="day-num">Day 7 · Jaisalmer → Delhi</p>
+    <h2 class="day-title">Gadisar Lake & <em>Goodbye</em> Rajasthan</h2>
+    <p class="day-subtitle">Last Morning · Gadisar Lake · Departure</p>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">🌅</span><span class="segment-label">Morning</span></div>
+    <p class="segment-title">Gadisar Lake — The Perfect Last Morning</p>
+    <ul class="segment-items">
+      <li>Return from Sam Dunes camp to Jaisalmer by 9:30 AM. Don't check out yet — leave bags at hotel.</li>
+      <li><strong>Gadisar Lake</strong> (10-minute auto from city) is a 14th-century reservoir surrounded by temples and shrines. Rent a wooden boat (₹200/30 min) and row among migratory birds. In winter, thousands of ducks, pelicans, and painted storks gather here.</li>
+      <li>The ornate <strong>Tilon Ki Pol</strong> archway leading to the lake was built by a famous courtesan — the king tried to demolish it, she added a Vishnu temple on top so it couldn't be removed. True story.</li>
+      <li>Final shopping: <strong>Khadi fabric scarves</strong> (₹150–300), camel-leather bags (₹500–1,500), desert spices.</li>
+    </ul>
+  </div>
+
+  <div class="segment no-break">
+    <div class="segment-head"><span class="segment-icon">☀️</span><span class="segment-label">Midday Onwards</span></div>
+    <p class="segment-title">Departure — Jaisalmer to Delhi</p>
+    <ul class="segment-items">
+      <li><strong>By Train:</strong> Jaisalmer has one daily direct train to Delhi (Jaisalmer–Delhi SF Express), departing ~5 PM, arriving next morning. Book 30 days ahead; 3AC is ₹1,100–1,400. <em>Book at irctc.co.in or via Cleartrip/MakeMyTrip.</em></li>
+      <li><strong>By Flight:</strong> Fly Jaisalmer (JSA) to Delhi (DEL) via IndiGo or Air India — 1.5 hrs, ₹2,500–6,000. One morning flight at ~10 AM. Taxi to airport: ₹400 (15 min).</li>
+      <li><strong>By Road + Flight:</strong> Drive Jaisalmer → Jodhpur (4.5 hrs), fly Jodhpur → Delhi. Gives 4 extra hours in Jaisalmer AND cheaper Delhi flight options.</li>
+    </ul>
+  </div>
+
+  <div class="callout no-break">
+    <p class="callout-text">"You leave Rajasthan differently than you arrived. The colours have gotten inside you — the gold of Jaisalmer, the blue of Jodhpur, the pink of Jaipur. They don't wash out."</p>
+    <p class="callout-source">— IncredibleItinerary reader, Dec 2025</p>
+  </div>
+
+  <div class="info-box no-break">
+    <div class="info-box-title">📸 Best Photo Opportunities of the Trip</div>
+    <div class="two-col" style="margin-top:2mm;">
+      <ul class="segment-items">
+        <li>Amber Fort with Maota Lake at dawn (Day 2, 7:30 AM)</li>
+        <li>Blue city from Mehrangarh ramparts (Day 4, 9 AM)</li>
+        <li>Jaisalmer Fort at magic hour (Day 5, 5:30 PM)</li>
+      </ul>
+      <ul class="segment-items">
+        <li>Sam Dunes camel silhouette at sunset (Day 5, 5:45 PM)</li>
+        <li>Milky Way from desert camp (Day 5–6 night)</li>
+        <li>Gadisar Lake boat reflection (Day 7, 9 AM)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="day-cost no-break">
+    <span class="cost-label">💰 Day 7 Estimated Cost (per person, incl. departure transport)</span>
+    <div class="cost-values">
+      <div class="cost-tier"><div class="cost-tier-label">Budget</div><div class="cost-tier-val budget">₹1,800</div></div>
+      <div class="cost-tier"><div class="cost-tier-label">Mid-Range</div><div class="cost-tier-val mid">₹5,500</div></div>
+      <div class="cost-tier"><div class="cost-tier-val luxury">₹12,000</div><div class="cost-tier-label">Luxury</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary</span>
+    <span class="page-footer-url">incredibleitinerary.com/blog/rajasthan-7-days</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 9 — FULL BUDGET BREAKDOWN                            -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="page-header">
+    <span class="page-brand">Incredible<span>Itinerary</span></span>
+    <span class="page-num">Rajasthan 7 Days · Budget Breakdown</span>
+  </div>
+
+  <p class="section-eyebrow">Complete Cost Guide — Per Person</p>
+  <h2 class="section-title">How Much Does<br /><em>Rajasthan Cost?</em></h2>
+  <p style="font-size:8.5pt; color:var(--muted); margin-bottom:5mm; font-weight:300;">Prices in Indian Rupees (₹). Based on two people travelling together. Solo travellers add 20–30% for accommodation. International flights not included.</p>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Budget</th>
+        <th>Mid-Range</th>
+        <th>Luxury</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Accommodation</strong> (7 nights, per person)</td>
+        <td>₹4,200</td>
+        <td>₹14,000</td>
+        <td>₹42,000</td>
+      </tr>
+      <tr>
+        <td><strong>Food & Drinks</strong> (7 days)</td>
+        <td>₹3,500</td>
+        <td>₹8,400</td>
+        <td>₹21,000</td>
+      </tr>
+      <tr>
+        <td><strong>Intercity Transport</strong> (trains + cabs)</td>
+        <td>₹2,800</td>
+        <td>₹6,000</td>
+        <td>₹12,000</td>
+      </tr>
+      <tr>
+        <td><strong>Entry Fees & Monuments</strong></td>
+        <td>₹1,200</td>
+        <td>₹2,500</td>
+        <td>₹4,000</td>
+      </tr>
+      <tr>
+        <td><strong>Desert Camp (Sam Dunes)</strong></td>
+        <td>₹1,500</td>
+        <td>₹4,500</td>
+        <td>₹12,000</td>
+      </tr>
+      <tr>
+        <td><strong>Local Transport</strong> (autos, cabs, within cities)</td>
+        <td>₹1,400</td>
+        <td>₹3,500</td>
+        <td>₹7,000</td>
+      </tr>
+      <tr>
+        <td><strong>Shopping & Souvenirs</strong></td>
+        <td>₹1,000</td>
+        <td>₹4,000</td>
+        <td>₹15,000</td>
+      </tr>
+      <tr>
+        <td><strong>Activities</strong> (Bishnoi safari, camel, etc.)</td>
+        <td>₹800</td>
+        <td>₹3,000</td>
+        <td>₹8,000</td>
+      </tr>
+      <tr>
+        <td><strong>Misc / Buffer (10%)</strong></td>
+        <td>₹1,640</td>
+        <td>₹4,600</td>
+        <td>₹12,100</td>
+      </tr>
+      <tr class="total">
+        <td><strong>TOTAL (7 Days, Per Person)</strong></td>
+        <td><strong>₹18,040</strong></td>
+        <td><strong>₹50,500</strong></td>
+        <td><strong>₹1,33,100</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="two-col" style="margin-bottom:4mm;">
+    <div class="info-box">
+      <div class="info-box-title">🏨 Where to Stay — Quick Pick</div>
+      <p><strong>Budget:</strong> Zostel Jaipur (₹500/dorm), Hotel Haveli Jodhpur (₹900/room), Moustache Jaisalmer (₹700/dorm)</p>
+      <p style="margin-top:2mm;"><strong>Mid-Range:</strong> Alsisar Haveli Jaipur (₹3,500), Ratan Vilas Jodhpur (₹4,000), Suryagarh Jaisalmer (₹8,000)</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title">💡 Money-Saving Tips</div>
+      <p>• Book trains 30–60 days ahead on IRCTC for 3AC rates</p>
+      <p>• Share cabs between Jodhpur–Jaisalmer (2–4 people)</p>
+      <p>• Eat at dhabas inside forts, not tourist restaurants outside</p>
+      <p>• Entry combo tickets save 15–20% at multiple sites</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary · Prices updated Dec 2025</span>
+    <span class="page-footer-url">incredibleitinerary.com</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 10 — PACKING LIST & PRO TIPS                        -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+<div class="inner">
+  <div class="page-header">
+    <span class="page-brand">Incredible<span>Itinerary</span></span>
+    <span class="page-num">Rajasthan 7 Days · Packing & Tips</span>
+  </div>
+
+  <p class="section-eyebrow">Be Prepared</p>
+  <h2 class="section-title">Packing List &<br /><em>Pro Tips</em></h2>
+
+  <div class="two-col" style="margin-bottom:5mm;">
+    <div>
+      <div class="pack-category">
+        <div class="pack-title">👕 Clothing</div>
+        <div class="pack-items">
+          <div class="pack-item">Lightweight cotton shirts (4–5)</div>
+          <div class="pack-item">Full-length trousers (2)</div>
+          <div class="pack-item">Light jacket / fleece (Nov–Feb nights)</div>
+          <div class="pack-item">Comfortable walking shoes</div>
+          <div class="pack-item">Sandals (for fort interiors)</div>
+          <div class="pack-item">Dupatta/scarf (temple modesty)</div>
+          <div class="pack-item">Sun hat / cap</div>
+          <div class="pack-item">Sunglasses (desert glare)</div>
+        </div>
+      </div>
+      <div class="pack-category" style="margin-top:4mm;">
+        <div class="pack-title">🧴 Health & Hygiene</div>
+        <div class="pack-items">
+          <div class="pack-item">Sunscreen SPF 50+</div>
+          <div class="pack-item">Lip balm (desert dryness)</div>
+          <div class="pack-item">ORS sachets</div>
+          <div class="pack-item">Diarrhoea tablets (just in case)</div>
+          <div class="pack-item">Hand sanitiser</div>
+          <div class="pack-item">Insect repellent (evenings)</div>
+          <div class="pack-item">Wet wipes (desert dust)</div>
+          <div class="pack-item">Personal medications</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="pack-category">
+        <div class="pack-title">📱 Tech & Documents</div>
+        <div class="pack-items">
+          <div class="pack-item">Aadhaar / Passport (for entry tickets)</div>
+          <div class="pack-item">Power bank (10,000 mAh+)</div>
+          <div class="pack-item">Universal adapter</div>
+          <div class="pack-item">Offline Google Maps (download Rajasthan)</div>
+          <div class="pack-item">IRCTC app (train booking)</div>
+          <div class="pack-item">PhonePe / UPI (for vendors)</div>
+          <div class="pack-item">Emergency cash ₹5,000 (card not always accepted)</div>
+          <div class="pack-item">Camera / extra memory cards</div>
+        </div>
+      </div>
+      <div class="pack-category" style="margin-top:4mm;">
+        <div class="pack-title">🌵 Desert-Specific</div>
+        <div class="pack-items">
+          <div class="pack-item">Shemagh/bandana (dust storms)</div>
+          <div class="pack-item">Extra water bottle (2L+)</div>
+          <div class="pack-item">Warm layer for desert night</div>
+          <div class="pack-item">Torch / headlamp for camp</div>
+          <div class="pack-item">Plastic bags (sand gets everywhere)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-gold"></div>
+  <p class="section-eyebrow" style="margin-top:3mm;">Avoid These Mistakes</p>
+
+  <div class="two-col">
+    <div class="warn-box">
+      <div class="info-box-title">❌ Don't Underestimate Distances</div>
+      <p style="font-size:8pt; color:#7a3a20;">Jaipur → Jodhpur is 340 km, Jodhpur → Jaisalmer is 290 km. Each drive is 4–5 hours. Plan transit days accordingly — don't cram full sightseeing on drive days.</p>
+    </div>
+    <div class="warn-box">
+      <div class="info-box-title">❌ Don't Visit in May–June</div>
+      <p style="font-size:8pt; color:#7a3a20;">Temperatures regularly hit 47–48°C in Jaisalmer in summer. Fort stone surfaces become too hot to touch. Even locals migrate. Oct–March only.</p>
+    </div>
+    <div class="tip-box">
+      <div class="info-box-title">✅ Do Book Trains Early</div>
+      <p style="font-size:8pt; color:#1e5c50;">Rajasthan trains fill up 30–60 days ahead, especially in peak season (Dec–Jan). If you can't get a confirmed berth, use Tatkal quota (opens 1 day before at premium).</p>
+    </div>
+    <div class="tip-box">
+      <div class="info-box-title">✅ Do Carry Small Notes</div>
+      <p style="font-size:8pt; color:#1e5c50;">Temple offerings, auto fares, street food — everything under ₹200. Vendors rarely have change for ₹500 notes. Break big notes at restaurants or petrol stations.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-brand">© 2026 IncredibleItinerary · For personal use only</span>
+    <span class="page-footer-url">incredibleitinerary.com</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 11 — BACK COVER                                      -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page back-cover">
+  <div class="qr-box">Scan for<br/>Live Guide</div>
+  <p class="bc-logo">Incredible<span>Itinerary</span></p>
+  <p class="bc-tagline">Free Travel Guides · Real Prices · No Tourist Traps</p>
+  <div class="bc-divider"></div>
+  <p class="bc-cta">"Plan your next trip — free."</p>
+  <p class="bc-url">www.incredibleitinerary.com</p>
+  <p class="bc-note" style="color:rgba(255,255,255,0.5); font-size:8pt; margin-bottom:8mm;">Get a fully custom itinerary for your exact travel dates, group size, and budget — completely free. We reply within 24 hours.</p>
+  <div style="height:1px; width:20mm; background:rgba(201,169,110,0.3); margin:0 auto 8mm;"></div>
+  <p class="bc-note">© 2026 IncredibleItinerary.com · All content researched on the ground by our editorial team. Prices and timings are accurate as of December 2025 and subject to change. This PDF is for personal use only. Redistribution for commercial purposes is not permitted.</p>
+</div>
+
+</body>
+</html>

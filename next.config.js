@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Include private-pdfs in the Vercel serverless function bundle
+  // so /api/serve-pdf can read them with fs.readFileSync
+  experimental: {
+    outputFileTracingIncludes: {
+      "/api/serve-pdf": ["./private-pdfs/**/*"],
+    },
+  },
+
   images: {
     remotePatterns: [
       {

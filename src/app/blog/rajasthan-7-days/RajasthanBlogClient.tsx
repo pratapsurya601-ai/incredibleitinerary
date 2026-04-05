@@ -12,6 +12,7 @@ import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import DownloadButton from "@/components/pdf/DownloadButton";
 
 
 const RAJASTHAN_TOC = [
@@ -222,6 +223,25 @@ export default function RajasthanBlogClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>🇮🇳 Rajasthan</span><span>·</span><span>🗓 7 Days</span><span>·</span><span>💰 From ₹20,000</span>
+            </div>
+          </div>
+
+          {/* ── PDF Download Banner ── */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-amber-50 to-parchment border border-gold/25 rounded-2xl px-6 py-5 mb-10">
+            <div>
+              <p className="font-serif text-ink text-lg font-light leading-tight">
+                📄 Rajasthan 7-Day PDF Guide
+              </p>
+              <p className="text-muted text-xs mt-0.5 font-light">
+                All 7 days · budget table · packing list · route maps — offline ready
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <DownloadButton
+                slug="rajasthan-7-days"
+                title="Rajasthan 7-Day Itinerary"
+                variant="primary"
+              />
             </div>
           </div>
 
