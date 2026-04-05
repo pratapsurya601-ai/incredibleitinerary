@@ -20,7 +20,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       {/* Background image — static, no zoom animation (removes non-composited animation + 122ms forced reflow) */}
       <div className="absolute inset-0 -z-10">
-        <Image src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1080&q=60" alt="World travel destinations" fill priority quality={55} className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 100vw, 100vw" />
+        <Image src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1080&q=55&auto=format&fit=crop" alt="World travel destinations" fill priority quality={55} className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 100vw, 100vw" />
       </div>
       {/* Overlay — lighter than before for more photo visibility */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,6,2,0.55) 0%, rgba(10,6,2,0.35) 35%, rgba(10,6,2,0.40) 60%, rgba(10,6,2,0.85) 100%)" }} />
@@ -90,9 +90,9 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
         </p>
       </div>
 
-      {/* Scroll */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40" style={{ animation: "fadeUp .8s 1.2s both" }}>
-        <div className="w-px h-8 bg-white/30 animate-scroll-pulse origin-top" />
+      {/* Scroll indicator — static, no animation (was non-composited, caused Lighthouse warning) */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-35" style={{ animation: "fadeUp .8s 1.2s both" }}>
+        <div className="w-px h-8 bg-white/40 origin-top" />
       </div>
     </section>
   );
