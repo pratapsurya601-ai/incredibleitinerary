@@ -39,7 +39,7 @@ export default function DestinationGridSection() {
             <FadeIn key={b.name} delay={i * 60}>
               <Link href={b.href} className="group block rounded-2xl overflow-hidden border border-parchment-2 hover:border-gold hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
                 <div className="relative h-36 overflow-hidden">
-                  <Image src={b.img} alt={`${b.name} travel destination`} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" loading="lazy" />
+                  <Image src={b.img} alt={`${b.name} travel destination`} fill quality={70} className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
                   <span className="absolute top-2.5 left-2.5 text-xs font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">{b.tag}</span>
                   <p className="absolute bottom-2.5 left-3 font-serif text-white text-lg font-light">{b.emoji} {b.name}</p>

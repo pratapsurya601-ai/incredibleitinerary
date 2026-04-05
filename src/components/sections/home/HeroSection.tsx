@@ -20,7 +20,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 will-change-transform animate-zoom-bg -z-10">
-        <Image src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=85" alt="World travel destinations" fill priority className="object-cover" sizes="100vw" />
+        <Image src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=75" alt="World travel destinations" fill priority quality={75} className="object-cover" sizes="(max-width: 768px) 100vw, 100vw" />
       </div>
       {/* Overlay — lighter than before for more photo visibility */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,6,2,0.55) 0%, rgba(10,6,2,0.35) 35%, rgba(10,6,2,0.40) 60%, rgba(10,6,2,0.85) 100%)" }} />
