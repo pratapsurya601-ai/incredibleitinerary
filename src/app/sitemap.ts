@@ -370,6 +370,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/split-croatia-4-days`,    lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     { url: `${base}/blog/kotor-montenegro-3-days`, lastModified: now, changeFrequency: "monthly", priority: 0.91 },
     { url: `${base}/blog/tirana-albania-3-days`,   lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Final Batch: Europe
+    { url: `${base}/blog/bratislava-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/luxembourg-city-2-days`,  lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${base}/blog/zagreb-3-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/belfast-4-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/galway-3-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/bilbao-3-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/oslo-3-days`,             lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/wroclaw-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/palermo-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    // Final Batch: Middle East & Africa
+    { url: `${base}/blog/amman-4-days`,            lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/casablanca-3-days`,       lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/fez-morocco-3-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/nairobi-4-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    // Final Batch: Asia
+    { url: `${base}/blog/yangon-3-days`,           lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/colombo-3-days`,          lastModified: now, changeFrequency: "monthly", priority: 0.91 },
+    { url: `${base}/blog/kathmandu-4-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${base}/blog/vientiane-3-days`,        lastModified: now, changeFrequency: "monthly", priority: 0.90 },
+    // Final Batch: Caribbean
+    { url: `${base}/blog/havana-cuba-4-days`,      lastModified: now, changeFrequency: "monthly", priority: 0.92 },
     // Tools
     { url: `${base}/tools/packing-list`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/tools/currency-converter`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
