@@ -3,10 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogPosts, getPostBySlug } from "@/data/blog";
+import { getGeneratedPostBySlug, getPublishedGeneratedPosts } from "@/data/generated-posts";
+import type { GeneratedPost } from "@/data/generated-posts";
 import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "./BlogSlugNav";
 import ShareButton from "@/components/ui/ShareButton";
 import { BlogPostSchema } from "@/components/SchemaMarkup";
+import GeneratedPostContent from "./GeneratedPostContent";
 
 interface Props {
   params: { slug: string };
@@ -14,28 +17,67 @@ interface Props {
 
 // Generate static params for all posts
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  const regularParams = blogPosts.map((post) => ({ slug: post.slug }));
+  const generatedParams = getPublishedGeneratedPosts().map((post) => ({ slug: post.slug }));
+  return [...regularParams, ...generatedParams];
 }
 
 // Dynamic metadata per post
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
-  if (!post) return { title: "Post Not Found" };
-  return {
-    title: `${post.title} — IncredibleItinerary`,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
+  if (post) {
+    return {
+      title: `${post.title} — IncredibleItinerary`,
       description: post.excerpt,
-      images: [{ url: post.image, alt: post.imageAlt }],
-    },
-  };
+      openGraph: {
+        title: post.title,
+        description: post.excerpt,
+        images: [{ url: post.image, alt: post.imageAlt }],
+      },
+    };
+  }
+
+  const generatedPost = getGeneratedPostBySlug(params.slug);
+  if (generatedPost) {
+    return {
+      title: `${generatedPost.title} — IncredibleItinerary`,
+      description: generatedPost.description,
+      alternates: { canonical: `https://www.incredibleitinerary.com/blog/${generatedPost.slug}` },
+      openGraph: {
+        title: generatedPost.title,
+        description: generatedPost.description,
+        images: [{ url: generatedPost.image, alt: generatedPost.destination }],
+      },
+    };
+  }
+
+  return { title: "Post Not Found" };
 }
 
 export default function BlogPostPage({ params }: Props) {
+  // Check regular blog posts first
   const post = getPostBySlug(params.slug);
-  if (!post) notFound();
 
+  // Check generated posts if not found in regular posts
+  const generatedPost = !post ? getGeneratedPostBySlug(params.slug) : null;
+
+  if (!post && !generatedPost) notFound();
+
+  // If it's a generated post, find the parent blog post and render GeneratedPostContent
+  if (generatedPost) {
+    const parentBlogPost = generatedPost.parentSlug
+      ? getPostBySlug(generatedPost.parentSlug) ?? null
+      : null;
+    return (
+      <>
+        <BlogSlugNav />
+        <GeneratedPostContent post={generatedPost} parent={parentBlogPost} />
+        <Footer />
+      </>
+    );
+  }
+
+  // Regular blog post rendering below
   // Redirect to the dedicated page for known posts
   // Each post has its own Client component for full interactivity
   const PostContent = getPostContent(params.slug);
@@ -43,7 +85,7 @@ export default function BlogPostPage({ params }: Props) {
   return (
     <>
       {/* Schema for posts using this fallback template (no dedicated page.tsx) */}
-      {!PostContent && <BlogPostSchema post={post} />}
+      {!PostContent && <BlogPostSchema post={post!} />}
       <BlogSlugNav />
 
       <main className="pt-[72px] bg-cream min-h-screen">
@@ -54,8 +96,8 @@ export default function BlogPostPage({ params }: Props) {
           <>
             <div className="relative h-[420px] overflow-hidden">
               <Image
-                src={post.image}
-                alt={post.imageAlt}
+                src={post!.image}
+                alt={post!.imageAlt}
                 fill
                 className="object-cover"
                 priority
@@ -63,20 +105,20 @@ export default function BlogPostPage({ params }: Props) {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 max-w-[860px]">
                 <span className="inline-block bg-gold text-ink text-[0.62rem] tracking-[0.12em] uppercase font-medium px-2.5 py-1 rounded-[1px] mb-4">
-                  {post.category}
+                  {post!.category}
                 </span>
                 <h1 className="font-serif text-[clamp(1.8rem,4vw,3rem)] font-light text-white leading-tight">
-                  {post.title}
+                  {post!.title}
                 </h1>
                 <p className="text-white/60 text-sm mt-3">
-                  {post.date} · {post.readTime} read
+                  {post!.date} · {post!.readTime} read
                 </p>
               </div>
             </div>
 
             <div className="max-w-[780px] mx-auto px-6 py-16 text-center">
               <p className="font-serif text-xl text-muted font-light italic mb-8">
-                {post.excerpt}
+                {post!.excerpt}
               </p>
               <Link href="/blog" className="btn-gold inline-flex">
                 ← Back to Blog
@@ -87,7 +129,7 @@ export default function BlogPostPage({ params }: Props) {
 
         {/* Related Guides */}
         {!PostContent && (() => {
-          const related = getRelatedPosts(post.slug, post);
+          const related = getRelatedPosts(post!.slug, post!);
           if (!related.length) return null;
           return (
             <div className="bg-parchment border-t border-parchment-2 py-14 px-6 md:px-12">
@@ -123,7 +165,7 @@ export default function BlogPostPage({ params }: Props) {
         <div className="border-t border-parchment-2 bg-white py-5 px-6 md:px-12">
           <div className="max-w-[780px] mx-auto flex items-center justify-between flex-wrap gap-4">
             <p className="text-sm text-muted font-light">Enjoyed this guide? Share it with fellow travellers.</p>
-            <ShareButton title={post.title} slug={post.slug} />
+            <ShareButton title={post!.title} slug={post!.slug} />
           </div>
         </div>
 
@@ -131,7 +173,7 @@ export default function BlogPostPage({ params }: Props) {
         <div className="bg-parchment border-t border-parchment-2 py-16 px-6 md:px-12 text-center">
           <div className="max-w-[520px] mx-auto">
             <h2 className="font-serif text-[clamp(1.8rem,3vw,2.4rem)] font-light text-ink mb-3">
-              Ready to Visit {post.destination}?
+              Ready to Visit {post!.destination}?
             </h2>
             <p className="text-sm text-muted font-light mb-7 leading-[1.8]">
               We&apos;ll build a personalised itinerary around your exact dates, group size, and budget — completely free.

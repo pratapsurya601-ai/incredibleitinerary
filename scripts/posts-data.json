@@ -1,0 +1,2418 @@
+[
+  {
+    "slug": "kashmir-6-days",
+    "destination": "Kashmir",
+    "duration": "6 Days",
+    "image": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&q=80",
+    "category": "Heaven on Earth",
+    "country": "India"
+  },
+  {
+    "slug": "golden-triangle-7-days",
+    "destination": "Golden Triangle",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80",
+    "category": "Heritage & Mughal",
+    "country": "India"
+  },
+  {
+    "slug": "rajasthan-7-days",
+    "destination": "Rajasthan",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80",
+    "category": "Heritage & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "kerala-5-days",
+    "destination": "Kerala",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80",
+    "category": "Backwaters & Hills",
+    "country": "India"
+  },
+  {
+    "slug": "goa-3-days",
+    "destination": "Goa",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1587922546307-776227941871?w=800&q=80",
+    "category": "Beach & Coast",
+    "country": "India"
+  },
+  {
+    "slug": "varanasi-3-days",
+    "destination": "Varanasi",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1561359313-0639aad49ca6?w=800&q=80",
+    "category": "Oldest Living City",
+    "country": "India"
+  },
+  {
+    "slug": "andaman-5-days",
+    "destination": "Andaman Islands",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1586359716568-3e1907e4cf9f?w=800&q=80",
+    "category": "Asia's Best Beach",
+    "country": "India"
+  },
+  {
+    "slug": "leh-ladakh-7-days",
+    "destination": "Leh Ladakh",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1600438831035-48f5f196d3bf?w=800&q=80",
+    "category": "Bucket List Trip",
+    "country": "India"
+  },
+  {
+    "slug": "manali-5-days",
+    "destination": "Manali",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1677821374212-8c3e88292b1b?w=800&q=80",
+    "category": "Hill Station",
+    "country": "India"
+  },
+  {
+    "slug": "coorg-3-days",
+    "destination": "Coorg",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1742107939655-4f8af7484dfa?w=800&q=80",
+    "category": "Weekend Trip",
+    "country": "India"
+  },
+  {
+    "slug": "rishikesh-haridwar-3-days",
+    "destination": "Rishikesh & Haridwar",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1570804485046-b5b8d795dc5d?w=800&q=80",
+    "category": "Spiritual + Adventure",
+    "country": "India"
+  },
+  {
+    "slug": "jibhi-tirthan-valley-3-days",
+    "destination": "Jibhi & Tirthan Valley",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1587293005014-ecd16293d120?w=800&q=80",
+    "category": "Hidden Gem",
+    "country": "India"
+  },
+  {
+    "slug": "hampi-3-days",
+    "destination": "Hampi",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1651569213711-b29d1fc3f995?w=800&q=80",
+    "category": "Heritage",
+    "country": "India"
+  },
+  {
+    "slug": "spiti-valley-7-days",
+    "destination": "Spiti Valley",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1673246239376-f3c01a13bab0?w=800&q=80",
+    "category": "Mountain Circuit",
+    "country": "India"
+  },
+  {
+    "slug": "meghalaya-5-days",
+    "destination": "Meghalaya",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1698429358246-807d8972da9a?w=800&q=80",
+    "category": "Northeast India",
+    "country": "India"
+  },
+  {
+    "slug": "sikkim-6-days",
+    "destination": "Sikkim",
+    "duration": "6 Days",
+    "image": "https://images.unsplash.com/photo-1627119703136-3964f14b7325?w=800&q=80",
+    "category": "Himalayan Northeast",
+    "country": "India"
+  },
+  {
+    "slug": "pondicherry-3-days",
+    "destination": "Pondicherry",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1662572594228-3aca8503b782?w=800&q=80",
+    "category": "Beach & Heritage",
+    "country": "India"
+  },
+  {
+    "slug": "gujarat-7-days",
+    "destination": "Gujarat",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?w=800&q=80",
+    "category": "Offbeat & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "amritsar-2-days",
+    "destination": "Amritsar",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1561304381-70c65d96a3de?w=800&q=80",
+    "category": "Spiritual & Food",
+    "country": "India"
+  },
+  {
+    "slug": "dharamshala-3-days",
+    "destination": "Dharamshala",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1683177511074-06295930b77c?w=800&q=80",
+    "category": "Mountains & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "udaipur-3-days",
+    "destination": "Udaipur",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1566138977236-8d8a94824b19?w=800&q=80",
+    "category": "Heritage & Romance",
+    "country": "India"
+  },
+  {
+    "slug": "jaipur-3-days",
+    "destination": "Jaipur",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?w=800&q=80",
+    "category": "Heritage & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "ooty-3-days",
+    "destination": "Ooty",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1756009481685-1513779372cf?w=800&q=80",
+    "category": "Hill Station",
+    "country": "India"
+  },
+  {
+    "slug": "darjeeling-4-days",
+    "destination": "Darjeeling",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1677858741808-c843c4fcb81f?w=800&q=80",
+    "category": "Hill Station & Tea",
+    "country": "India"
+  },
+  {
+    "slug": "mysore-3-days",
+    "destination": "Mysore",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1580294647332-8a399cd9ed45?w=800&q=80",
+    "category": "Heritage & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "gokarna-3-days",
+    "destination": "Gokarna",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1587923623987-c7e4083beb23?w=800&q=80",
+    "category": "Beach & Offbeat",
+    "country": "India"
+  },
+  {
+    "slug": "shimla-3-days",
+    "destination": "Shimla",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1648830802584-ec070946e591?w=800&q=80",
+    "category": "Hill Station",
+    "country": "India"
+  },
+  {
+    "slug": "kasol-3-days",
+    "destination": "Kasol",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80",
+    "category": "Trekking & Backpacking",
+    "country": "India"
+  },
+  {
+    "slug": "nainital-3-days",
+    "destination": "Nainital",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1629946266592-8a82b745ffb2?w=800&q=80",
+    "category": "Hill Station & Lakes",
+    "country": "India"
+  },
+  {
+    "slug": "agra-2-days",
+    "destination": "Agra",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+    "category": "Heritage & Iconic",
+    "country": "India"
+  },
+  {
+    "slug": "jodhpur-3-days",
+    "destination": "Jodhpur",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1602643454724-21d5a40722db?w=800&q=80",
+    "category": "Heritage & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "jaisalmer-3-days",
+    "destination": "Jaisalmer",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1566130169377-6d33c379efa7?w=800&q=80",
+    "category": "Desert & Heritage",
+    "country": "India"
+  },
+  {
+    "slug": "khajuraho-2-days",
+    "destination": "Khajuraho",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1624612987062-a7060ae996da?w=800&q=80",
+    "category": "Heritage & UNESCO",
+    "country": "India"
+  },
+  {
+    "slug": "orchha-2-days",
+    "destination": "Orchha",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1670313304832-f3ce26f69120?w=800&q=80",
+    "category": "Offbeat Heritage",
+    "country": "India"
+  },
+  {
+    "slug": "mussoorie-3-days",
+    "destination": "Mussoorie",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1675545177806-e83ef7d73773?w=800&q=80",
+    "category": "Hill Station",
+    "country": "India"
+  },
+  {
+    "slug": "auli-3-days",
+    "destination": "Auli",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1623727705498-51a6a4154384?w=800&q=80",
+    "category": "Snow & Adventure",
+    "country": "India"
+  },
+  {
+    "slug": "kodaikanal-3-days",
+    "destination": "Kodaikanal",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1619020933389-e96f49742bce?w=800&q=80",
+    "category": "Hill Station",
+    "country": "India"
+  },
+  {
+    "slug": "jim-corbett-3-days",
+    "destination": "Jim Corbett",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&q=80",
+    "category": "Wildlife & Safari",
+    "country": "India"
+  },
+  {
+    "slug": "ranthambore-3-days",
+    "destination": "Ranthambore",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1615474286632-e31ac3633d58?w=800&q=80",
+    "category": "Wildlife & Heritage",
+    "country": "India"
+  },
+  {
+    "slug": "alleppey-3-days",
+    "destination": "Alleppey",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1593417034675-3ed7eda1bee9?w=800&q=80",
+    "category": "Backwaters & Beach",
+    "country": "India"
+  },
+  {
+    "slug": "munnar-3-days",
+    "destination": "Munnar",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1742106856193-5cc3424ac450?w=800&q=80",
+    "category": "Hills & Tea",
+    "country": "India"
+  },
+  {
+    "slug": "wayanad-3-days",
+    "destination": "Wayanad",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1662281208154-a16c8806e365?w=800&q=80",
+    "category": "Nature & Adventure",
+    "country": "India"
+  },
+  {
+    "slug": "pushkar-2-days",
+    "destination": "Pushkar",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1667572838728-b48773f67d07?w=800&q=80",
+    "category": "Spiritual & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "madurai-2-days",
+    "destination": "Madurai",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1572146462570-2129a547e6dd?w=800&q=80",
+    "category": "Temple & Food",
+    "country": "India"
+  },
+  {
+    "slug": "hyderabad-3-days",
+    "destination": "Hyderabad",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1591786621837-65823ced96f8?w=800&q=80",
+    "category": "Heritage & Food",
+    "country": "India"
+  },
+  {
+    "slug": "vizag-3-days",
+    "destination": "Vizag",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1742826986977-1a0bd9c01887?w=800&q=80",
+    "category": "Beach & Nature",
+    "country": "India"
+  },
+  {
+    "slug": "kanyakumari-2-days",
+    "destination": "Kanyakumari",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1560273436-eaa99ede2d44?w=800&q=80",
+    "category": "Spiritual & Scenic",
+    "country": "India"
+  },
+  {
+    "slug": "rameswaram-2-days",
+    "destination": "Rameswaram",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1664798742617-f998b9371d3d?w=800&q=80",
+    "category": "Pilgrimage & Offbeat",
+    "country": "India"
+  },
+  {
+    "slug": "mount-abu-2-days",
+    "destination": "Mount Abu",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1587951792304-fbbc70704a15?w=800&q=80",
+    "category": "Hill Station & Heritage",
+    "country": "India"
+  },
+  {
+    "slug": "diu-2-days",
+    "destination": "Diu",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1653280459455-d61c6f7e9e3d?w=800&q=80",
+    "category": "Beach & Heritage",
+    "country": "India"
+  },
+  {
+    "slug": "dwarka-2-days",
+    "destination": "Dwarka",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1638717768359-130b8a6e8935?w=800&q=80",
+    "category": "Pilgrimage & Coast",
+    "country": "India"
+  },
+  {
+    "slug": "lonavala-2-days",
+    "destination": "Lonavala",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1667108971575-c5d7acdabc5a?w=800&q=80",
+    "category": "Weekend Getaway",
+    "country": "India"
+  },
+  {
+    "slug": "kaziranga-3-days",
+    "destination": "Kaziranga",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1670099355126-2561c8a08d7c?w=800&q=80",
+    "category": "Wildlife & Safari",
+    "country": "India"
+  },
+  {
+    "slug": "shillong-3-days",
+    "destination": "Shillong",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1665551896704-b0f439e7087d?w=800&q=80",
+    "category": "Northeast & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "mahabaleshwar-2-days",
+    "destination": "Mahabaleshwar",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1598528831787-6a3a98049990?w=800&q=80",
+    "category": "Hill Station & Weekend",
+    "country": "India"
+  },
+  {
+    "slug": "tawang-4-days",
+    "destination": "Tawang",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1628443266300-e8490ee38875?w=800&q=80",
+    "category": "Northeast & Mountains",
+    "country": "India"
+  },
+  {
+    "slug": "sundarbans-3-days",
+    "destination": "Sundarbans",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1674235750425-0356dfae67a0?w=800&q=80",
+    "category": "Wildlife & Nature",
+    "country": "India"
+  },
+  {
+    "slug": "valley-of-flowers-4-days",
+    "destination": "Valley of Flowers",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1720965859956-c1ece6d29c87?w=800&q=80",
+    "category": "Trek & UNESCO",
+    "country": "India"
+  },
+  {
+    "slug": "majuli-3-days",
+    "destination": "Majuli",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1759738101611-07ef8510f0cb?w=800&q=80",
+    "category": "Offbeat & Cultural",
+    "country": "India"
+  },
+  {
+    "slug": "mumbai-3-days",
+    "destination": "Mumbai",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=800&q=80",
+    "category": "City & Urban",
+    "country": "India"
+  },
+  {
+    "slug": "kolkata-3-days",
+    "destination": "Kolkata",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&q=80",
+    "category": "City & Cultural",
+    "country": "India"
+  },
+  {
+    "slug": "delhi-3-days",
+    "destination": "Delhi",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80",
+    "category": "Heritage & Urban",
+    "country": "India"
+  },
+  {
+    "slug": "bangalore-3-days",
+    "destination": "Bangalore",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&q=80",
+    "category": "City & Lifestyle",
+    "country": "India"
+  },
+  {
+    "slug": "varkala-3-days",
+    "destination": "Varkala",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=80",
+    "category": "Beach & Relaxation",
+    "country": "India"
+  },
+  {
+    "slug": "thekkady-3-days",
+    "destination": "Thekkady",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800&q=80",
+    "category": "Wildlife & Nature",
+    "country": "India"
+  },
+  {
+    "slug": "chikmagalur-3-days",
+    "destination": "Chikmagalur",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=800&q=80",
+    "category": "Hill Station & Nature",
+    "country": "India"
+  },
+  {
+    "slug": "mahabalipuram-2-days",
+    "destination": "Mahabalipuram",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=800&q=80",
+    "category": "Heritage & Ancient",
+    "country": "India"
+  },
+  {
+    "slug": "tirupati-2-days",
+    "destination": "Tirupati",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?w=800&q=80",
+    "category": "Spiritual & Pilgrimage",
+    "country": "India"
+  },
+  {
+    "slug": "puri-3-days",
+    "destination": "Puri",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1625819718540-f6e8c65e06d7?w=800&q=80",
+    "category": "Spiritual & Beach",
+    "country": "India"
+  },
+  {
+    "slug": "bhubaneswar-3-days",
+    "destination": "Bhubaneswar",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&q=80",
+    "category": "Heritage & Spiritual",
+    "country": "India"
+  },
+  {
+    "slug": "chopta-tungnath-3-days",
+    "destination": "Chopta & Tungnath",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1570804485046-b5b8d795dc5d?w=800&q=80",
+    "category": "Trek & Mountains",
+    "country": "India"
+  },
+  {
+    "slug": "mukteshwar-2-days",
+    "destination": "Mukteshwar",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80",
+    "category": "Hill Station",
+    "country": "India"
+  },
+  {
+    "slug": "gangtok-3-days",
+    "destination": "Gangtok",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1627119703136-3964f14b7325?w=800&q=80",
+    "category": "Mountain & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "bir-billing-3-days",
+    "destination": "Bir Billing",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+    "category": "Adventure & Nature",
+    "country": "India"
+  },
+  {
+    "slug": "kutch-3-days",
+    "destination": "Kutch",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1621996659490-3275b4d0d951?w=800&q=80",
+    "category": "Offbeat & Desert",
+    "country": "India"
+  },
+  {
+    "slug": "mangalore-2-days",
+    "destination": "Mangalore",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80",
+    "category": "Beach & Culture",
+    "country": "India"
+  },
+  {
+    "slug": "pachmarhi-3-days",
+    "destination": "Pachmarhi",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1581974944026-5d6ed762f617?w=800&q=80",
+    "category": "Hill Station & Nature",
+    "country": "India"
+  },
+  {
+    "slug": "cherrapunji-2-days",
+    "destination": "Cherrapunji",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1698429358246-807d8972da9a?w=800&q=80",
+    "category": "Northeast & Nature",
+    "country": "India"
+  },
+  {
+    "slug": "coimbatore-2-days",
+    "destination": "Coimbatore",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-VBbXycfXy-w?w=800&q=80",
+    "category": "Spiritual & Gateway",
+    "country": "India"
+  },
+  {
+    "slug": "bangkok-4-days",
+    "destination": "Bangkok",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "India"
+  },
+  {
+    "slug": "phuket-5-days",
+    "destination": "Phuket",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Thailand"
+  },
+  {
+    "slug": "chiang-mai-4-days",
+    "destination": "Chiang Mai",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1598935898639-81586f7d2129?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Thailand"
+  },
+  {
+    "slug": "tokyo-5-days",
+    "destination": "Tokyo",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80",
+    "category": "East Asia",
+    "country": "Thailand"
+  },
+  {
+    "slug": "kyoto-4-days",
+    "destination": "Kyoto",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
+    "category": "East Asia",
+    "country": "Japan"
+  },
+  {
+    "slug": "osaka-3-days",
+    "destination": "Osaka",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80",
+    "category": "East Asia",
+    "country": "Japan"
+  },
+  {
+    "slug": "rome-4-days",
+    "destination": "Rome",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80",
+    "category": "Europe",
+    "country": "Japan"
+  },
+  {
+    "slug": "florence-3-days",
+    "destination": "Florence",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?w=800&q=80",
+    "category": "Europe",
+    "country": "Italy"
+  },
+  {
+    "slug": "amalfi-coast-4-days",
+    "destination": "Amalfi Coast",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&q=80",
+    "category": "Europe",
+    "country": "Italy"
+  },
+  {
+    "slug": "bali-5-days",
+    "destination": "Bali",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Italy"
+  },
+  {
+    "slug": "ubud-3-days",
+    "destination": "Ubud",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Indonesia"
+  },
+  {
+    "slug": "lombok-4-days",
+    "destination": "Lombok",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1570789210967-2cac24e2beee?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Indonesia"
+  },
+  {
+    "slug": "dubai-4-days",
+    "destination": "Dubai",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
+    "category": "Middle East",
+    "country": "Indonesia"
+  },
+  {
+    "slug": "abu-dhabi-3-days",
+    "destination": "Abu Dhabi",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=800&q=80",
+    "category": "Middle East",
+    "country": "UAE"
+  },
+  {
+    "slug": "muscat-3-days",
+    "destination": "Muscat",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1587974928442-77dc3e0748b1?w=800&q=80",
+    "category": "Middle East",
+    "country": "UAE"
+  },
+  {
+    "slug": "barcelona-4-days",
+    "destination": "Barcelona",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80",
+    "category": "Europe",
+    "country": "Oman"
+  },
+  {
+    "slug": "madrid-3-days",
+    "destination": "Madrid",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&q=80",
+    "category": "Europe",
+    "country": "Spain"
+  },
+  {
+    "slug": "seville-3-days",
+    "destination": "Seville",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=800&q=80",
+    "category": "Europe",
+    "country": "Spain"
+  },
+  {
+    "slug": "hanoi-3-days",
+    "destination": "Hanoi",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Spain"
+  },
+  {
+    "slug": "ho-chi-minh-city-3-days",
+    "destination": "Ho Chi Minh City",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Vietnam"
+  },
+  {
+    "slug": "ha-long-bay-3-days",
+    "destination": "Ha Long Bay",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1573270689103-d7a4e42b609a?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Vietnam"
+  },
+  {
+    "slug": "athens-3-days",
+    "destination": "Athens",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80",
+    "category": "Europe",
+    "country": "Vietnam"
+  },
+  {
+    "slug": "santorini-4-days",
+    "destination": "Santorini",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80",
+    "category": "Europe",
+    "country": "Greece"
+  },
+  {
+    "slug": "crete-5-days",
+    "destination": "Crete",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?w=800&q=80",
+    "category": "Europe",
+    "country": "Greece"
+  },
+  {
+    "slug": "istanbul-5-days",
+    "destination": "Istanbul",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
+    "category": "Europe",
+    "country": "Greece"
+  },
+  {
+    "slug": "cappadocia-3-days",
+    "destination": "Cappadocia",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=800&q=80",
+    "category": "Europe",
+    "country": "Turkey"
+  },
+  {
+    "slug": "antalya-3-days",
+    "destination": "Antalya",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1589395937658-0557e7d89fad?w=800&q=80",
+    "category": "Europe",
+    "country": "Turkey"
+  },
+  {
+    "slug": "maldives-5-days",
+    "destination": "Maldives",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80",
+    "category": "Indian Ocean",
+    "country": "Turkey"
+  },
+  {
+    "slug": "singapore-3-days",
+    "destination": "Singapore",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Maldives"
+  },
+  {
+    "slug": "lisbon-4-days",
+    "destination": "Lisbon",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80",
+    "category": "Europe",
+    "country": "Singapore"
+  },
+  {
+    "slug": "porto-3-days",
+    "destination": "Porto",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800&q=80",
+    "category": "Europe",
+    "country": "Portugal"
+  },
+  {
+    "slug": "algarve-4-days",
+    "destination": "Algarve",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1548625361-58a9d86b2c46?w=800&q=80",
+    "category": "Europe",
+    "country": "Portugal"
+  },
+  {
+    "slug": "kuala-lumpur-3-days",
+    "destination": "Kuala Lumpur",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Portugal"
+  },
+  {
+    "slug": "langkawi-3-days",
+    "destination": "Langkawi",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Malaysia"
+  },
+  {
+    "slug": "penang-3-days",
+    "destination": "Penang",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1573108037329-37aa135a142e?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Malaysia"
+  },
+  {
+    "slug": "paris-5-days",
+    "destination": "Paris",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
+    "category": "Europe",
+    "country": "Malaysia"
+  },
+  {
+    "slug": "nice-3-days",
+    "destination": "Nice",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=800&q=80",
+    "category": "Europe",
+    "country": "France"
+  },
+  {
+    "slug": "lyon-3-days",
+    "destination": "Lyon",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=800&q=80",
+    "category": "Europe",
+    "country": "France"
+  },
+  {
+    "slug": "bordeaux-3-days",
+    "destination": "Bordeaux",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=800&q=80",
+    "category": "Europe",
+    "country": "France"
+  },
+  {
+    "slug": "provence-4-days",
+    "destination": "Provence",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=800&q=80",
+    "category": "Europe",
+    "country": "France"
+  },
+  {
+    "slug": "mont-saint-michel-2-days",
+    "destination": "Mont Saint-Michel",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1571150374697-36a0935e7736?w=800&q=80",
+    "category": "Europe",
+    "country": "France"
+  },
+  {
+    "slug": "strasbourg-3-days",
+    "destination": "Strasbourg",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1574857552823-a5f3adcef547?w=800&q=80",
+    "category": "Europe",
+    "country": "France"
+  },
+  {
+    "slug": "marseille-3-days",
+    "destination": "Marseille",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1571366343168?w=800&q=80",
+    "category": "Europe",
+    "country": "France"
+  },
+  {
+    "slug": "new-york-5-days",
+    "destination": "New York City",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80",
+    "category": "USA",
+    "country": "France"
+  },
+  {
+    "slug": "los-angeles-5-days",
+    "destination": "Los Angeles",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=800&q=80",
+    "category": "USA",
+    "country": "USA"
+  },
+  {
+    "slug": "hawaii-7-days",
+    "destination": "Hawaii",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+    "category": "USA",
+    "country": "USA"
+  },
+  {
+    "slug": "las-vegas-4-days",
+    "destination": "Las Vegas",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1605833556294-ea5c7a74f57d?w=800&q=80",
+    "category": "USA",
+    "country": "USA"
+  },
+  {
+    "slug": "miami-4-days",
+    "destination": "Miami",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-ZFXrgzHu1KU?w=800&q=80",
+    "category": "USA",
+    "country": "USA"
+  },
+  {
+    "slug": "grand-canyon-3-days",
+    "destination": "Grand Canyon",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=800&q=80",
+    "category": "USA",
+    "country": "USA"
+  },
+  {
+    "slug": "london-5-days",
+    "destination": "London",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80",
+    "category": "UK",
+    "country": "USA"
+  },
+  {
+    "slug": "edinburgh-4-days",
+    "destination": "Edinburgh",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1603197396060?w=800&q=80",
+    "category": "UK",
+    "country": "UK"
+  },
+  {
+    "slug": "bath-2-days",
+    "destination": "Bath",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=800&q=80",
+    "category": "UK",
+    "country": "UK"
+  },
+  {
+    "slug": "cotswolds-3-days",
+    "destination": "Cotswolds",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1548695607-9c73430aa1e0?w=800&q=80",
+    "category": "UK",
+    "country": "UK"
+  },
+  {
+    "slug": "sydney-5-days",
+    "destination": "Sydney",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-PjRnF3aYPeg?w=800&q=80",
+    "category": "Australia",
+    "country": "UK"
+  },
+  {
+    "slug": "melbourne-4-days",
+    "destination": "Melbourne",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1514395462725-fb4566210144?w=800&q=80",
+    "category": "Australia",
+    "country": "Australia"
+  },
+  {
+    "slug": "great-barrier-reef-4-days",
+    "destination": "Great Barrier Reef",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&q=80",
+    "category": "Australia",
+    "country": "Australia"
+  },
+  {
+    "slug": "uluru-3-days",
+    "destination": "Uluru",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=800&q=80",
+    "category": "Australia",
+    "country": "Australia"
+  },
+  {
+    "slug": "hiroshima-2-days",
+    "destination": "Hiroshima",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=800&q=80",
+    "category": "Japan",
+    "country": "Australia"
+  },
+  {
+    "slug": "hokkaido-5-days",
+    "destination": "Hokkaido",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80",
+    "category": "Japan",
+    "country": "Japan"
+  },
+  {
+    "slug": "morocco-7-days",
+    "destination": "Morocco",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1548813395-84fe1ba7a58e?w=800&q=80",
+    "category": "Africa",
+    "country": "Japan"
+  },
+  {
+    "slug": "kenya-safari-7-days",
+    "destination": "Kenya",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+    "category": "Africa",
+    "country": "Morocco"
+  },
+  {
+    "slug": "tanzania-zanzibar-7-days",
+    "destination": "Tanzania",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&q=80",
+    "category": "Africa",
+    "country": "Kenya"
+  },
+  {
+    "slug": "cape-town-5-days",
+    "destination": "Cape Town",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
+    "category": "Africa",
+    "country": "Tanzania"
+  },
+  {
+    "slug": "peru-machu-picchu-7-days",
+    "destination": "Peru",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80",
+    "category": "South America",
+    "country": "South Africa"
+  },
+  {
+    "slug": "rio-de-janeiro-5-days",
+    "destination": "Rio de Janeiro",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80",
+    "category": "South America",
+    "country": "Peru"
+  },
+  {
+    "slug": "amsterdam-4-days",
+    "destination": "Amsterdam",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&q=80",
+    "category": "Europe",
+    "country": "Brazil"
+  },
+  {
+    "slug": "germany-7-days",
+    "destination": "Germany",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80",
+    "category": "Europe",
+    "country": "Netherlands"
+  },
+  {
+    "slug": "prague-4-days",
+    "destination": "Prague",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=80",
+    "category": "Europe",
+    "country": "Germany"
+  },
+  {
+    "slug": "budapest-4-days",
+    "destination": "Budapest",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1551867633-194f125bddfa?w=800&q=80",
+    "category": "Europe",
+    "country": "Czech Republic"
+  },
+  {
+    "slug": "vienna-4-days",
+    "destination": "Vienna",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=800&q=80",
+    "category": "Europe",
+    "country": "Hungary"
+  },
+  {
+    "slug": "seoul-5-days",
+    "destination": "Seoul",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800&q=80",
+    "category": "East Asia",
+    "country": "Austria"
+  },
+  {
+    "slug": "taipei-4-days",
+    "destination": "Taipei",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80",
+    "category": "East Asia",
+    "country": "South Korea"
+  },
+  {
+    "slug": "nusa-penida-3-days",
+    "destination": "Nusa Penida",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1537953773345-d172ccf13cf4?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Taiwan"
+  },
+  {
+    "slug": "iceland-7-days",
+    "destination": "Iceland",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
+    "category": "Europe",
+    "country": "Indonesia"
+  },
+  {
+    "slug": "norway-fjords-6-days",
+    "destination": "Norway",
+    "duration": "6 Days",
+    "image": "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=800&q=80",
+    "category": "Europe",
+    "country": "Iceland"
+  },
+  {
+    "slug": "copenhagen-3-days",
+    "destination": "Copenhagen",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-B8LJRm9iiwM?w=800&q=80",
+    "category": "Europe",
+    "country": "Norway"
+  },
+  {
+    "slug": "egypt-7-days",
+    "destination": "Egypt",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?w=800&q=80",
+    "category": "Africa",
+    "country": "Denmark"
+  },
+  {
+    "slug": "buenos-aires-5-days",
+    "destination": "Buenos Aires",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1588373547122-e1be9bb0b22d?w=800&q=80",
+    "category": "South America",
+    "country": "Egypt"
+  },
+  {
+    "slug": "colombia-7-days",
+    "destination": "Colombia",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1590516905717-2cfbd1ffe1e5?w=800&q=80",
+    "category": "South America",
+    "country": "Argentina"
+  },
+  {
+    "slug": "dubrovnik-4-days",
+    "destination": "Dubrovnik",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1555990538-1736ea2f51d0?w=800&q=80",
+    "category": "Europe",
+    "country": "Colombia"
+  },
+  {
+    "slug": "switzerland-5-days",
+    "destination": "Switzerland",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
+    "category": "Europe",
+    "country": "Croatia"
+  },
+  {
+    "slug": "jordan-5-days",
+    "destination": "Jordan",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1573008975469?w=800&q=80",
+    "category": "Middle East",
+    "country": "Switzerland"
+  },
+  {
+    "slug": "nepal-7-days",
+    "destination": "Nepal",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+    "category": "South Asia",
+    "country": "Jordan"
+  },
+  {
+    "slug": "sri-lanka-7-days",
+    "destination": "Sri Lanka",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80",
+    "category": "South Asia",
+    "country": "Nepal"
+  },
+  {
+    "slug": "palawan-4-days",
+    "destination": "Palawan",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Sri Lanka"
+  },
+  {
+    "slug": "hoi-an-3-days",
+    "destination": "Hoi An",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1559592413-7cbb600a2c42?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Philippines"
+  },
+  {
+    "slug": "beijing-5-days",
+    "destination": "Beijing",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=80",
+    "category": "East Asia",
+    "country": "Vietnam"
+  },
+  {
+    "slug": "banff-5-days",
+    "destination": "Banff",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
+    "category": "North America",
+    "country": "China"
+  },
+  {
+    "slug": "dublin-4-days",
+    "destination": "Dublin",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1549918864-48ac978761a4?w=800&q=80",
+    "category": "Europe",
+    "country": "Canada"
+  },
+  {
+    "slug": "bruges-3-days",
+    "destination": "Bruges",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?w=800&q=80",
+    "category": "Europe",
+    "country": "Ireland"
+  },
+  {
+    "slug": "krakow-4-days",
+    "destination": "Krakow",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1607427293702-036933bbf746?w=800&q=80",
+    "category": "Europe",
+    "country": "Belgium"
+  },
+  {
+    "slug": "stockholm-4-days",
+    "destination": "Stockholm",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=800&q=80",
+    "category": "Europe",
+    "country": "Poland"
+  },
+  {
+    "slug": "mekong-delta-3-days",
+    "destination": "Mekong Delta",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Sweden"
+  },
+  {
+    "slug": "angkor-wat-4-days",
+    "destination": "Angkor Wat",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1567699281040-6b3feac5e4f3?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Vietnam"
+  },
+  {
+    "slug": "bagan-4-days",
+    "destination": "Bagan",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1619106379232?w=800&q=80",
+    "category": "Southeast Asia",
+    "country": "Cambodia"
+  },
+  {
+    "slug": "bhutan-5-days",
+    "destination": "Bhutan",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1558619672?w=800&q=80",
+    "category": "South Asia",
+    "country": "Myanmar"
+  },
+  {
+    "slug": "chile-patagonia-7-days",
+    "destination": "Patagonia",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1564415637254-92c66292cd64?w=800&q=80",
+    "category": "South America",
+    "country": "Bhutan"
+  },
+  {
+    "slug": "havana-4-days",
+    "destination": "Havana",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1500759285222-a95626b934cb?w=800&q=80",
+    "category": "Caribbean",
+    "country": "Chile"
+  },
+  {
+    "slug": "san-francisco-4-days",
+    "destination": "San Francisco",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80",
+    "category": "North America",
+    "country": "Cuba"
+  },
+  {
+    "slug": "chicago-3-days",
+    "destination": "Chicago",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "venice-4-days",
+    "destination": "Venice",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80",
+    "category": "Europe",
+    "country": "USA"
+  },
+  {
+    "slug": "sicily-7-days",
+    "destination": "Sicily",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=800&q=80",
+    "category": "Europe",
+    "country": "Italy"
+  },
+  {
+    "slug": "cinque-terre-3-days",
+    "destination": "Cinque Terre",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80",
+    "category": "Europe",
+    "country": "Italy"
+  },
+  {
+    "slug": "mallorca-4-days",
+    "destination": "Mallorca",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1527838832700?w=800&q=80",
+    "category": "Europe",
+    "country": "Italy"
+  },
+  {
+    "slug": "san-sebastian-3-days",
+    "destination": "San Sebastián",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1600698952580?w=800&q=80",
+    "category": "Europe",
+    "country": "Spain"
+  },
+  {
+    "slug": "granada-4-days",
+    "destination": "Granada",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&q=80",
+    "category": "Europe",
+    "country": "Spain"
+  },
+  {
+    "slug": "austin-3-days",
+    "destination": "Austin",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=800&q=80",
+    "category": "North America",
+    "country": "Spain"
+  },
+  {
+    "slug": "washington-dc-4-days",
+    "destination": "Washington DC",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "boston-3-days",
+    "destination": "Boston",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1501979376754-f96feba9c38f?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "nashville-3-days",
+    "destination": "Nashville",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1545996124-0501ebae84d0?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "new-orleans-4-days",
+    "destination": "New Orleans",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1568096889942-6eedde686635?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "seattle-3-days",
+    "destination": "Seattle",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "alula-3-days",
+    "destination": "AlUla",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1586087640083-9e6f6b7c4cf8?w=800&q=80",
+    "category": "Middle East",
+    "country": "USA"
+  },
+  {
+    "slug": "doha-3-days",
+    "destination": "Doha",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80",
+    "category": "Middle East",
+    "country": "Saudi Arabia"
+  },
+  {
+    "slug": "milan-3-days",
+    "destination": "Milan",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=800&q=80",
+    "category": "Europe",
+    "country": "Qatar"
+  },
+  {
+    "slug": "naples-pompeii-4-days",
+    "destination": "Naples & Pompeii",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1563563006?w=800&q=80",
+    "category": "Europe",
+    "country": "Italy"
+  },
+  {
+    "slug": "ljubljana-3-days",
+    "destination": "Ljubljana",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1627818939029?w=800&q=80",
+    "category": "Europe",
+    "country": "Italy"
+  },
+  {
+    "slug": "tallinn-3-days",
+    "destination": "Tallinn",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1516715094483-75da7dee9758?w=800&q=80",
+    "category": "Europe",
+    "country": "Slovenia"
+  },
+  {
+    "slug": "riga-3-days",
+    "destination": "Riga",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&q=80",
+    "category": "Europe",
+    "country": "Estonia"
+  },
+  {
+    "slug": "vilnius-3-days",
+    "destination": "Vilnius",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1543349689?w=800&q=80",
+    "category": "Europe",
+    "country": "Latvia"
+  },
+  {
+    "slug": "helsinki-3-days",
+    "destination": "Helsinki",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1573160813959-8d9462b1a9bc?w=800&q=80",
+    "category": "Europe",
+    "country": "Lithuania"
+  },
+  {
+    "slug": "sarajevo-3-days",
+    "destination": "Sarajevo",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1569758668671?w=800&q=80",
+    "category": "Europe",
+    "country": "Finland"
+  },
+  {
+    "slug": "belgrade-3-days",
+    "destination": "Belgrade",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1574197525264?w=800&q=80",
+    "category": "Europe",
+    "country": "Bosnia & Herzegovina"
+  },
+  {
+    "slug": "kotor-3-days",
+    "destination": "Kotor",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1562880469?w=800&q=80",
+    "category": "Europe",
+    "country": "Serbia"
+  },
+  {
+    "slug": "mykonos-4-days",
+    "destination": "Mykonos",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1572116469696?w=800&q=80",
+    "category": "Europe",
+    "country": "Montenegro"
+  },
+  {
+    "slug": "munich-3-days",
+    "destination": "Munich",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?w=800&q=80",
+    "category": "Europe",
+    "country": "Greece"
+  },
+  {
+    "slug": "berlin-4-days",
+    "destination": "Berlin",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&q=80",
+    "category": "Europe",
+    "country": "Germany"
+  },
+  {
+    "slug": "tbilisi-4-days",
+    "destination": "Tbilisi",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80",
+    "category": "Europe",
+    "country": "Germany"
+  },
+  {
+    "slug": "mexico-city-4-days",
+    "destination": "Mexico City",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80",
+    "category": "North America",
+    "country": "Georgia"
+  },
+  {
+    "slug": "oaxaca-4-days",
+    "destination": "Oaxaca",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=800&q=80",
+    "category": "North America",
+    "country": "Mexico"
+  },
+  {
+    "slug": "tulum-4-days",
+    "destination": "Tulum",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1551862299-6f36d27a08f1?w=800&q=80",
+    "category": "North America",
+    "country": "Mexico"
+  },
+  {
+    "slug": "costa-rica-7-days",
+    "destination": "Costa Rica",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=800&q=80",
+    "category": "Central America",
+    "country": "Mexico"
+  },
+  {
+    "slug": "antigua-guatemala-4-days",
+    "destination": "Antigua",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+    "category": "Central America",
+    "country": "Costa Rica"
+  },
+  {
+    "slug": "medellin-4-days",
+    "destination": "Medellín",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1569952040166-d0b3abf20eab?w=800&q=80",
+    "category": "South America",
+    "country": "Guatemala"
+  },
+  {
+    "slug": "panama-city-3-days",
+    "destination": "Panama City",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1591086427600?w=800&q=80",
+    "category": "Central America",
+    "country": "Colombia"
+  },
+  {
+    "slug": "botswana-okavango-6-days",
+    "destination": "Okavango Delta",
+    "duration": "6 Days",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",
+    "category": "Africa",
+    "country": "Panama"
+  },
+  {
+    "slug": "cartagena-4-days",
+    "destination": "Cartagena",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1566508833406-8b36429c3ada?w=800&q=80",
+    "category": "South America",
+    "country": "Botswana"
+  },
+  {
+    "slug": "uruguay-4-days",
+    "destination": "Uruguay",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1586096389870-3b675cf42fbd?w=800&q=80",
+    "category": "South America",
+    "country": "Colombia"
+  },
+  {
+    "slug": "bolivia-salar-5-days",
+    "destination": "Salar de Uyuni",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1531761535209-180857e963b9?w=800&q=80",
+    "category": "South America",
+    "country": "Uruguay"
+  },
+  {
+    "slug": "seychelles-5-days",
+    "destination": "Seychelles",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&q=80",
+    "category": "Africa",
+    "country": "Bolivia"
+  },
+  {
+    "slug": "mauritius-5-days",
+    "destination": "Mauritius",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=800&q=80",
+    "category": "Africa",
+    "country": "Seychelles"
+  },
+  {
+    "slug": "victoria-falls-4-days",
+    "destination": "Victoria Falls",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-h_YF3jVEa9k?w=800&q=80",
+    "category": "Africa",
+    "country": "Mauritius"
+  },
+  {
+    "slug": "rwanda-gorillas-5-days",
+    "destination": "Rwanda",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-pJGA1LYp_lc?w=800&q=80",
+    "category": "Africa",
+    "country": "Zimbabwe"
+  },
+  {
+    "slug": "namibia-7-days",
+    "destination": "Namibia",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-_jmXZHtCi4U?w=800&q=80",
+    "category": "Africa",
+    "country": "Rwanda"
+  },
+  {
+    "slug": "ethiopia-lalibela-5-days",
+    "destination": "Lalibela",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80",
+    "category": "Africa",
+    "country": "Namibia"
+  },
+  {
+    "slug": "jerusalem-4-days",
+    "destination": "Jerusalem",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1552423314-cf29ab68ad73?w=800&q=80",
+    "category": "Middle East",
+    "country": "Ethiopia"
+  },
+  {
+    "slug": "galapagos-7-days",
+    "destination": "Galápagos Islands",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800&q=80",
+    "category": "South America",
+    "country": "Israel"
+  },
+  {
+    "slug": "fiji-5-days",
+    "destination": "Fiji",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1559628129-67cf63b72248?w=800&q=80",
+    "category": "Pacific",
+    "country": "Ecuador"
+  },
+  {
+    "slug": "queenstown-4-days",
+    "destination": "Queenstown",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=800&q=80",
+    "category": "Pacific",
+    "country": "Fiji"
+  },
+  {
+    "slug": "barbados-5-days",
+    "destination": "Barbados",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
+    "category": "Caribbean",
+    "country": "New Zealand"
+  },
+  {
+    "slug": "jamaica-5-days",
+    "destination": "Jamaica",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&q=80",
+    "category": "Caribbean",
+    "country": "Barbados"
+  },
+  {
+    "slug": "busan-4-days",
+    "destination": "Busan",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+    "category": "East Asia",
+    "country": "Jamaica"
+  },
+  {
+    "slug": "xian-4-days",
+    "destination": "Xi'an",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=80",
+    "category": "East Asia",
+    "country": "South Korea"
+  },
+  {
+    "slug": "guilin-3-days",
+    "destination": "Guilin",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1513415431648-c8b9be7a31da?w=800&q=80",
+    "category": "East Asia",
+    "country": "China"
+  },
+  {
+    "slug": "hong-kong-4-days",
+    "destination": "Hong Kong",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80",
+    "category": "East Asia",
+    "country": "China"
+  },
+  {
+    "slug": "shanghai-4-days",
+    "destination": "Shanghai",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?w=800&q=80",
+    "category": "East Asia",
+    "country": "Hong Kong SAR"
+  },
+  {
+    "slug": "montreal-4-days",
+    "destination": "Montreal",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1569791828668?w=800&q=80",
+    "category": "North America",
+    "country": "China"
+  },
+  {
+    "slug": "toronto-4-days",
+    "destination": "Toronto",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&q=80",
+    "category": "North America",
+    "country": "Canada"
+  },
+  {
+    "slug": "quebec-city-3-days",
+    "destination": "Quebec City",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1519181245277-cffeb31da2e3?w=800&q=80",
+    "category": "North America",
+    "country": "Canada"
+  },
+  {
+    "slug": "vancouver-4-days",
+    "destination": "Vancouver",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1559521783-1d1599583485?w=800&q=80",
+    "category": "North America",
+    "country": "Canada"
+  },
+  {
+    "slug": "transylvania-4-days",
+    "destination": "Transylvania",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=800&q=80",
+    "category": "Europe",
+    "country": "Canada"
+  },
+  {
+    "slug": "malta-4-days",
+    "destination": "Malta",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-WyexUIm5IkQ?w=800&q=80",
+    "category": "Europe",
+    "country": "Romania"
+  },
+  {
+    "slug": "uzbekistan-7-days",
+    "destination": "Uzbekistan",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1563282097-40cc49555ea9?w=800&q=80",
+    "category": "Central Asia",
+    "country": "Malta"
+  },
+  {
+    "slug": "tenerife-4-days",
+    "destination": "Tenerife",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1567515004624-219c11d31f2e?w=800&q=80",
+    "category": "Europe",
+    "country": "Uzbekistan"
+  },
+  {
+    "slug": "ibiza-4-days",
+    "destination": "Ibiza",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=800&q=80",
+    "category": "Europe",
+    "country": "Spain"
+  },
+  {
+    "slug": "valencia-3-days",
+    "destination": "Valencia",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1505761671935?w=800&q=80",
+    "category": "Europe",
+    "country": "Spain"
+  },
+  {
+    "slug": "madagascar-7-days",
+    "destination": "Madagascar",
+    "duration": "7 Days",
+    "image": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
+    "category": "Africa",
+    "country": "Spain"
+  },
+  {
+    "slug": "kruger-park-5-days",
+    "destination": "Kruger Park",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",
+    "category": "Africa",
+    "country": "Madagascar"
+  },
+  {
+    "slug": "iguazu-falls-4-days",
+    "destination": "Iguazu Falls",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=800&q=80",
+    "category": "South America",
+    "country": "South Africa"
+  },
+  {
+    "slug": "nara-2-days",
+    "destination": "Nara",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1614518720474?w=800&q=80",
+    "category": "Asia",
+    "country": "Argentina/Brazil"
+  },
+  {
+    "slug": "komodo-4-days",
+    "destination": "Komodo",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80",
+    "category": "Asia",
+    "country": "Japan"
+  },
+  {
+    "slug": "boracay-4-days",
+    "destination": "Boracay",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-PyyK898UZLA?w=800&q=80",
+    "category": "Asia",
+    "country": "Indonesia"
+  },
+  {
+    "slug": "warsaw-4-days",
+    "destination": "Warsaw",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=800&q=80",
+    "category": "Europe",
+    "country": "Philippines"
+  },
+  {
+    "slug": "hamburg-3-days",
+    "destination": "Hamburg",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-25uEmJ_ml5Q?w=800&q=80",
+    "category": "Europe",
+    "country": "Poland"
+  },
+  {
+    "slug": "cologne-3-days",
+    "destination": "Cologne",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1577048982768-5cb3e7ddfa23?w=800&q=80",
+    "category": "Europe",
+    "country": "Germany"
+  },
+  {
+    "slug": "plovdiv-3-days",
+    "destination": "Plovdiv",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1602088113235-229c19758e9f?w=800&q=80",
+    "category": "Europe",
+    "country": "Germany"
+  },
+  {
+    "slug": "albania-riviera-5-days",
+    "destination": "Albania Riviera",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1571202297152?w=800&q=80",
+    "category": "Europe",
+    "country": "Bulgaria"
+  },
+  {
+    "slug": "ohrid-3-days",
+    "destination": "Ohrid",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1524398051?w=800&q=80",
+    "category": "Europe",
+    "country": "Albania"
+  },
+  {
+    "slug": "portland-oregon-4-days",
+    "destination": "Portland",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1536625479481?w=800&q=80",
+    "category": "North America",
+    "country": "North Macedonia"
+  },
+  {
+    "slug": "denver-3-days",
+    "destination": "Denver",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1546156929-a4c0ac411f47?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "philadelphia-4-days",
+    "destination": "Philadelphia",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1569761316261-9a8696fa2ca3?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "san-diego-4-days",
+    "destination": "San Diego",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1580752300992-559f8e0734e0?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "puerto-rico-5-days",
+    "destination": "Puerto Rico",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1580271853710-ee57a8a7a8f0?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "beirut-4-days",
+    "destination": "Beirut",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1590086782957-93c06ef21604?w=800&q=80",
+    "category": "Middle East",
+    "country": "Puerto Rico"
+  },
+  {
+    "slug": "cyprus-5-days",
+    "destination": "Cyprus",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-V517EvbP5tk?w=800&q=80",
+    "category": "Europe",
+    "country": "Lebanon"
+  },
+  {
+    "slug": "rhodes-4-days",
+    "destination": "Rhodes",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1577717903315?w=800&q=80",
+    "category": "Europe",
+    "country": "Cyprus"
+  },
+  {
+    "slug": "azores-5-days",
+    "destination": "Azores",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800&q=80",
+    "category": "Europe",
+    "country": "Greece"
+  },
+  {
+    "slug": "madeira-5-days",
+    "destination": "Madeira",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80",
+    "category": "Europe",
+    "country": "Portugal"
+  },
+  {
+    "slug": "charleston-sc-4-days",
+    "destination": "Charleston",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1569761316261-9a8696fa2ca3?w=800&q=80",
+    "category": "North America",
+    "country": "Portugal"
+  },
+  {
+    "slug": "savannah-georgia-3-days",
+    "destination": "Savannah",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1585637071?w=800&q=80",
+    "category": "North America",
+    "country": "USA"
+  },
+  {
+    "slug": "hakone-2-days",
+    "destination": "Hakone",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1549880338?w=800&q=80",
+    "category": "Asia",
+    "country": "USA"
+  },
+  {
+    "slug": "da-nang-4-days",
+    "destination": "Da Nang",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=800&q=80",
+    "category": "Asia",
+    "country": "Japan"
+  },
+  {
+    "slug": "phnom-penh-3-days",
+    "destination": "Phnom Penh",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1506377247377?w=800&q=80",
+    "category": "Asia",
+    "country": "Vietnam"
+  },
+  {
+    "slug": "lima-4-days",
+    "destination": "Lima",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80",
+    "category": "South America",
+    "country": "Cambodia"
+  },
+  {
+    "slug": "santiago-chile-4-days",
+    "destination": "Santiago",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1541804793527-7f39c9e3af93?w=800&q=80",
+    "category": "South America",
+    "country": "Peru"
+  },
+  {
+    "slug": "mendoza-argentina-4-days",
+    "destination": "Mendoza",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1528629297340?w=800&q=80",
+    "category": "South America",
+    "country": "Chile"
+  },
+  {
+    "slug": "siargao-4-days",
+    "destination": "Siargao",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80",
+    "category": "Asia",
+    "country": "Argentina"
+  },
+  {
+    "slug": "yokohama-2-days",
+    "destination": "Yokohama",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1578469645742-46cae010e5d4?w=800&q=80",
+    "category": "Asia",
+    "country": "Philippines"
+  },
+  {
+    "slug": "quito-ecuador-4-days",
+    "destination": "Quito",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-IUwpdJVM4Fc?w=800&q=80",
+    "category": "South America",
+    "country": "Japan"
+  },
+  {
+    "slug": "trinidad-tobago-5-days",
+    "destination": "Trinidad & Tobago",
+    "duration": "5 Days",
+    "image": "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80",
+    "category": "Caribbean",
+    "country": "Ecuador"
+  },
+  {
+    "slug": "reykjavik-4-days",
+    "destination": "Reykjavik",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=800&q=80",
+    "category": "Europe",
+    "country": "Trinidad & Tobago"
+  },
+  {
+    "slug": "ghent-3-days",
+    "destination": "Ghent",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1559113202-c916b8e44373?w=800&q=80",
+    "category": "Europe",
+    "country": "Iceland"
+  },
+  {
+    "slug": "split-croatia-4-days",
+    "destination": "Split",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80",
+    "category": "Europe",
+    "country": "Belgium"
+  },
+  {
+    "slug": "kotor-montenegro-3-days",
+    "destination": "Kotor",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1545079968?w=800&q=80",
+    "category": "Europe",
+    "country": "Croatia"
+  },
+  {
+    "slug": "tirana-albania-3-days",
+    "destination": "Tirana",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1523482580672?w=800&q=80",
+    "category": "Europe",
+    "country": "Montenegro"
+  },
+  {
+    "slug": "bratislava-3-days",
+    "destination": "Bratislava",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-8rtZkhmqsN4?w=800&q=80",
+    "category": "Europe",
+    "country": "Albania"
+  },
+  {
+    "slug": "luxembourg-city-2-days",
+    "destination": "Luxembourg City",
+    "duration": "2 Days",
+    "image": "https://images.unsplash.com/photo-1574895516668-c84aa49df2bc?w=800&q=80",
+    "category": "Europe",
+    "country": "Slovakia"
+  },
+  {
+    "slug": "zagreb-3-days",
+    "destination": "Zagreb",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1570168007204?w=800&q=80",
+    "category": "Europe",
+    "country": "Luxembourg"
+  },
+  {
+    "slug": "belfast-4-days",
+    "destination": "Belfast",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1516939884455?w=800&q=80",
+    "category": "Europe",
+    "country": "Croatia"
+  },
+  {
+    "slug": "galway-3-days",
+    "destination": "Galway",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1590698933947?w=800&q=80",
+    "category": "Europe",
+    "country": "Northern Ireland"
+  },
+  {
+    "slug": "bilbao-3-days",
+    "destination": "Bilbao",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1509721434272-b79147e0e708?w=800&q=80",
+    "category": "Europe",
+    "country": "Ireland"
+  },
+  {
+    "slug": "oslo-3-days",
+    "destination": "Oslo",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-ncrAA1Kc7QM?w=800&q=80",
+    "category": "Europe",
+    "country": "Spain"
+  },
+  {
+    "slug": "wroclaw-3-days",
+    "destination": "Wroclaw",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-nalMhDUhxWU?w=800&q=80",
+    "category": "Europe",
+    "country": "Norway"
+  },
+  {
+    "slug": "palermo-3-days",
+    "destination": "Palermo",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1507608616759?w=800&q=80",
+    "category": "Europe",
+    "country": "Poland"
+  },
+  {
+    "slug": "amman-4-days",
+    "destination": "Amman",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1533929736458?w=800&q=80",
+    "category": "Middle East",
+    "country": "Italy"
+  },
+  {
+    "slug": "casablanca-3-days",
+    "destination": "Casablanca",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1466854076813?w=800&q=80",
+    "category": "Africa",
+    "country": "Jordan"
+  },
+  {
+    "slug": "fez-morocco-3-days",
+    "destination": "Fez",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80",
+    "category": "Africa",
+    "country": "Morocco"
+  },
+  {
+    "slug": "nairobi-4-days",
+    "destination": "Nairobi",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=800&q=80",
+    "category": "Africa",
+    "country": "Morocco"
+  },
+  {
+    "slug": "yangon-3-days",
+    "destination": "Yangon",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1526481280693?w=800&q=80",
+    "category": "Asia",
+    "country": "Kenya"
+  },
+  {
+    "slug": "colombo-3-days",
+    "destination": "Colombo",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&q=80",
+    "category": "Asia",
+    "country": "Myanmar"
+  },
+  {
+    "slug": "kathmandu-4-days",
+    "destination": "Kathmandu",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=800&q=80",
+    "category": "Asia",
+    "country": "Sri Lanka"
+  },
+  {
+    "slug": "vientiane-3-days",
+    "destination": "Vientiane",
+    "duration": "3 Days",
+    "image": "https://images.unsplash.com/photo-1566651236484?w=800&q=80",
+    "category": "Asia",
+    "country": "Nepal"
+  },
+  {
+    "slug": "havana-cuba-4-days",
+    "destination": "Havana",
+    "duration": "4 Days",
+    "image": "https://images.unsplash.com/photo-1553494664-2f5b79a98b23?w=800&q=80",
+    "category": "Caribbean",
+    "country": "Laos"
+  }
+]

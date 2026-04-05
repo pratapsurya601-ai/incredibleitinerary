@@ -7,8 +7,65 @@ import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
 import ShareButton from "@/components/ui/ShareButton";
 import { blogPosts, type BlogPost } from "@/data/blog";
+import { getPublishedGeneratedPosts, type GeneratedPost } from "@/data/generated-posts";
 
 const PAGE_SIZE = 24;
+
+// ── Minimal listing interface — intersection of BlogPost and GeneratedPost fields ──
+interface ListingPost {
+  slug: string;
+  title: string;
+  destination: string;
+  duration: string;
+  category: string;
+  image: string;
+  imageAlt: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  country: string;
+  tags: string[];
+  featured: boolean;
+  // Optional fields used in features like SmartImage
+  pexelsQuery?: string;
+}
+
+function blogPostToListing(p: BlogPost): ListingPost {
+  return {
+    slug: p.slug,
+    title: p.title,
+    destination: p.destination,
+    duration: p.duration,
+    category: p.category,
+    image: p.image,
+    imageAlt: p.imageAlt,
+    excerpt: p.excerpt,
+    date: p.date,
+    readTime: p.readTime,
+    country: p.country ?? "India",
+    tags: p.tags,
+    featured: p.featured ?? false,
+    pexelsQuery: p.pexelsQuery,
+  };
+}
+
+function generatedPostToListing(p: GeneratedPost): ListingPost {
+  return {
+    slug: p.slug,
+    title: p.title,
+    destination: p.destination,
+    duration: p.duration,
+    category: p.category,
+    image: p.image,
+    imageAlt: `${p.destination} travel guide`,
+    excerpt: p.description,
+    date: p.publishDate,
+    readTime: "6 min",
+    country: p.country,
+    tags: [p.destination, p.country, p.type],
+    featured: false,
+  };
+}
 
 // ── Region / country filter tabs ──
 const REGION_FILTERS = [
@@ -59,7 +116,7 @@ const DURATION_FILTERS = [
   { id: "7+",      label: "7+ Days" },
 ];
 
-function matchesDuration(post: BlogPost, dur: string): boolean {
+function matchesDuration(post: ListingPost, dur: string): boolean {
   if (dur === "all-dur") return true;
   const n = parseInt(post.duration);
   if (isNaN(n)) return false;
@@ -67,15 +124,14 @@ function matchesDuration(post: BlogPost, dur: string): boolean {
   return n === parseInt(dur);
 }
 
-function matchesRegion(post: BlogPost, region: string): boolean {
+function matchesRegion(post: ListingPost, region: string): boolean {
   if (region === "all") return true;
-  // Posts without a country field are India guides
   const country = post.country ?? "India";
   const countries = REGION_COUNTRIES[region] ?? [];
   return countries.some((c) => country.toLowerCase().includes(c.toLowerCase()));
 }
 
-function matchesCategory(post: BlogPost, cat: string): boolean {
+function matchesCategory(post: ListingPost, cat: string): boolean {
   if (cat === "all-cat") return true;
   return post.category?.toLowerCase().includes(cat.toLowerCase());
 }
@@ -89,6 +145,18 @@ export default function BlogIndexPage() {
   const [durFilter, setDurFilter]       = useState("all-dur");
   const [page, setPage]                 = useState(1);
   const searchRef = useRef<HTMLDivElement>(null);
+
+  // Combine regular blog posts with published generated posts
+  const allPosts = useMemo<ListingPost[]>(() => {
+    const regular = blogPosts.map(blogPostToListing);
+    const generated = getPublishedGeneratedPosts().map(generatedPostToListing);
+    // Sort by date descending so newest appear first
+    return [...regular, ...generated].sort((a, b) => {
+      const da = new Date(a.date).getTime();
+      const db = new Date(b.date).getTime();
+      return db - da;
+    });
+  }, []);
 
   // Read URL params on mount
   useEffect(() => {
@@ -118,7 +186,7 @@ export default function BlogIndexPage() {
   }, [query, regionFilter, catFilter, durFilter]);
 
   const filtered = useMemo(() => {
-    return blogPosts.filter((p) => {
+    return allPosts.filter((p) => {
       if (!matchesRegion(p, regionFilter)) return false;
       if (!matchesCategory(p, catFilter)) return false;
       if (!matchesDuration(p, durFilter)) return false;
@@ -133,12 +201,12 @@ export default function BlogIndexPage() {
       }
       return true;
     });
-  }, [query, regionFilter, catFilter, durFilter]);
+  }, [query, regionFilter, catFilter, durFilter, allPosts]);
 
   // Autocomplete suggestions
   const suggestions = useMemo(() => {
     if (!query || query.length < 2) return [];
-    return blogPosts
+    return allPosts
       .filter(
         (p) =>
           p.destination.toLowerCase().includes(query) ||
@@ -146,13 +214,13 @@ export default function BlogIndexPage() {
           p.tags.some((t) => t.toLowerCase().includes(query))
       )
       .slice(0, 8);
-  }, [query]);
+  }, [query, allPosts]);
 
   const hasActiveFilter =
     query || regionFilter !== "all" || catFilter !== "all-cat" || durFilter !== "all-dur";
 
   const showFeatured = !hasActiveFilter;
-  const featured = showFeatured ? blogPosts.find((p) => p.featured) : null;
+  const featured = showFeatured ? allPosts.find((p) => p.featured) : null;
   const rest = featured ? filtered.filter((p) => !p.featured) : filtered;
 
   // Pagination
@@ -176,7 +244,7 @@ export default function BlogIndexPage() {
           <div className="max-w-[1180px] mx-auto">
             <span className="section-label">Travel Guides & Itineraries</span>
             <h1 className="serif-title text-[clamp(2.2rem,4vw,3.5rem)] text-ink mb-2">
-              {blogPosts.length} Free Travel Guides
+              {allPosts.length} Free Travel Guides
             </h1>
             <p className="text-sm text-muted font-light max-w-[480px] mx-auto leading-relaxed mb-8">
               Real budgets. Real timings. Real routes. No filler. Pick a destination or browse by category.
@@ -467,7 +535,7 @@ export default function BlogIndexPage() {
   );
 }
 
-function BlogCard({ post }: { post: BlogPost }) {
+function BlogCard({ post }: { post: ListingPost }) {
   return (
     <div className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block">
       <Link href={`/blog/${post.slug}`} className="block">

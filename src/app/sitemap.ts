@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/data/blog";
+import { getPublishedGeneratedPosts } from "@/data/generated-posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.incredibleitinerary.com";
@@ -65,5 +66,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...staticPages, ...comparePages, ...blogPages, ...subPages];
+  // ── Generated posts — published programmatic content ──────────────────────
+  const generatedPages: MetadataRoute.Sitemap = getPublishedGeneratedPosts().map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: new Date(post.publishDate),
+    changeFrequency: "monthly" as const,
+    priority: 0.72,
+  }));
+
+  return [...staticPages, ...comparePages, ...blogPages, ...subPages, ...generatedPages];
 }
