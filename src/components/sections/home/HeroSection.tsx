@@ -7,10 +7,10 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
   const [search, setSearch] = useState("");
 
   const categories = [
-    { label: "India", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=75", href: "/blog?filter=heritage" },
-    { label: "Bali", img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=75", href: "/blog?filter=indonesia" },
+    { label: "India", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=75", href: "/blog?filter=all" },
+    { label: "Bali", img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=75", href: "/blog/bali-5-days" },
     { label: "Japan", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=75", href: "/blog?filter=japan" },
-    { label: "Dubai", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=75", href: "/blog?filter=uae" },
+    { label: "Dubai", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=75", href: "/blog/dubai-4-days" },
     { label: "Italy", img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75", href: "/blog?filter=italy" },
     { label: "Spain", img: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&q=75", href: "/blog?filter=spain" },
   ];

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { blogPosts, getPostBySlug } from "@/data/blog";
 import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "./BlogSlugNav";
+import ShareButton from "@/components/ui/ShareButton";
 
 interface Props {
   params: { slug: string };
@@ -80,6 +81,14 @@ export default function BlogPostPage({ params }: Props) {
             </div>
           </>
         )}
+
+        {/* Share bar */}
+        <div className="border-t border-parchment-2 bg-white py-5 px-6 md:px-12">
+          <div className="max-w-[780px] mx-auto flex items-center justify-between flex-wrap gap-4">
+            <p className="text-sm text-muted font-light">Enjoyed this guide? Share it with fellow travellers.</p>
+            <ShareButton title={post.title} slug={post.slug} />
+          </div>
+        </div>
 
         {/* Bottom CTA */}
         <div className="bg-parchment border-t border-parchment-2 py-16 px-6 md:px-12 text-center">

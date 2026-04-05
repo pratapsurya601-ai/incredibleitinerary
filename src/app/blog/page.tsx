@@ -1,11 +1,12 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SmartImage from "@/components/ui/SmartImage";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
+import ShareButton from "@/components/ui/ShareButton";
 import { blogPosts, type BlogPost } from "@/data/blog";
 
 // ── Filter categories ──
@@ -39,6 +40,8 @@ export default function BlogIndexPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
 
   // Read URL params on mount (?q= for search, ?filter= for category)
   useEffect(() => {
@@ -47,6 +50,17 @@ export default function BlogIndexPage() {
     const f = params.get("filter");
     if (q) setSearch(q);
     if (f) setActiveFilter(f);
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleOutside(e: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setShowDropdown(false);
+      }
+    }
+    document.addEventListener("mousedown", handleOutside);
+    return () => document.removeEventListener("mousedown", handleOutside);
   }, []);
 
   const query = search.toLowerCase().trim();
@@ -77,6 +91,18 @@ export default function BlogIndexPage() {
     return posts;
   }, [query, activeFilter]);
 
+  // Live autocomplete suggestions (top 8 matching posts)
+  const suggestions = useMemo(() => {
+    if (!query || query.length < 2) return [];
+    return blogPosts
+      .filter((p) =>
+        p.destination.toLowerCase().includes(query) ||
+        p.title.toLowerCase().includes(query) ||
+        p.tags.some((t) => t.toLowerCase().includes(query))
+      )
+      .slice(0, 8);
+  }, [query]);
+
   const showFeatured = !query && activeFilter === "all";
   const featured = showFeatured ? blogPosts.find((p) => p.featured) : null;
   const rest = featured ? filtered.filter((p) => !p.featured) : filtered;
@@ -95,20 +121,68 @@ export default function BlogIndexPage() {
               Real budgets. Real timings. Real routes. No filler. Pick a destination or browse by category.
             </p>
 
-            {/* Search */}
-            <div className="max-w-md mx-auto relative mb-6">
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search destinations, tags, or topics..."
-                className="w-full px-5 py-3.5 pl-12 border border-parchment-2 rounded-full bg-white text-ink text-sm font-light outline-none transition-colors duration-200 focus:border-gold placeholder:text-muted/50 shadow-sm"
-              />
-              <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-muted/40" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
-              </svg>
-              {search && (
-                <button onClick={() => setSearch("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-muted/40 hover:text-ink transition-colors text-lg">&times;</button>
+            {/* Search — upgraded with autocomplete */}
+            <div ref={searchRef} className="max-w-xl mx-auto relative mb-6">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => { setSearch(e.target.value); setShowDropdown(true); }}
+                  onFocus={() => setShowDropdown(true)}
+                  onKeyDown={(e) => { if (e.key === "Escape") setShowDropdown(false); }}
+                  placeholder="Search any destination — Kashmir, Bali, Japan, Paris..."
+                  className="w-full px-5 py-4 pl-13 pr-12 border-2 border-parchment-2 rounded-2xl bg-white text-ink text-sm font-light outline-none transition-all duration-200 focus:border-gold focus:shadow-[0_4px_20px_rgba(0,0,0,0.08)] placeholder:text-muted/40 shadow-sm"
+                  style={{ paddingLeft: "3.25rem" }}
+                />
+                <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-muted/40" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+                </svg>
+                {search && (
+                  <button
+                    onClick={() => { setSearch(""); setShowDropdown(false); }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-parchment-2 text-muted hover:bg-parchment-2/80 hover:text-ink transition-all flex items-center justify-center text-sm"
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+
+              {/* Autocomplete dropdown */}
+              {showDropdown && suggestions.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-parchment-2 shadow-[0_16px_48px_rgba(22,16,8,0.12)] z-50 overflow-hidden">
+                  <p className="text-[0.6rem] tracking-[0.14em] uppercase text-muted font-medium px-4 pt-3 pb-1">
+                    Jump to destination
+                  </p>
+                  {suggestions.map((post) => (
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      onClick={() => setShowDropdown(false)}
+                      className="flex items-center gap-3 px-4 py-2.5 hover:bg-parchment transition-colors group"
+                    >
+                      <div className="relative w-11 h-11 rounded-xl overflow-hidden flex-shrink-0 bg-parchment-2">
+                        <img
+                          src={`${post.image.split("?")[0]}?w=100&q=60`}
+                          alt={post.destination}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0 text-left">
+                        <p className="text-sm font-medium text-ink leading-tight truncate group-hover:text-gold transition-colors">{post.destination}</p>
+                        <p className="text-[0.68rem] text-muted font-light truncate">{post.duration} · {post.category}</p>
+                      </div>
+                      <span className="text-xs text-gold-dark flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">Read →</span>
+                    </Link>
+                  ))}
+                  {filtered.length > suggestions.length && (
+                    <button
+                      onClick={() => setShowDropdown(false)}
+                      className="w-full text-left px-4 py-3 border-t border-parchment-2 text-xs text-gold-dark hover:bg-parchment transition-colors"
+                    >
+                      See all {filtered.length} results below ↓
+                    </button>
+                  )}
+                </div>
               )}
             </div>
 
@@ -238,10 +312,8 @@ export default function BlogIndexPage() {
 
 function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block"
-    >
+    <div className="group rounded-xl overflow-hidden border border-parchment-2 bg-white hover:shadow-[0_12px_36px_rgba(22,16,8,0.09)] hover:-translate-y-1 transition-all duration-300 block">
+      <Link href={`/blog/${post.slug}`} className="block">
       <div className="relative h-48 overflow-hidden bg-parchment-2">
         <SmartImage
           query={post.pexelsQuery || post.destination}
@@ -279,6 +351,12 @@ function BlogCard({ post }: { post: BlogPost }) {
           </span>
         </div>
       </div>
-    </Link>
+      </Link>
+      {/* Share row */}
+      <div className="px-5 pb-4 flex items-center justify-between border-t border-parchment-2/50 pt-3">
+        <span className="text-[0.65rem] text-muted/60 font-light">Share this guide</span>
+        <ShareButton title={post.title} slug={post.slug} />
+      </div>
+    </div>
   );
 }
