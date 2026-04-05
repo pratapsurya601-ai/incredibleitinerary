@@ -106,6 +106,7 @@ export default function RootLayout({
         {/* Preconnect only to origins actually fetched client-side.
             Unsplash + fonts.gstatic are served via Next.js CDN, not the browser,
             so preconnecting to them wastes TCP handshakes. */}
+        <link rel="alternate" type="application/rss+xml" title="IncredibleItinerary — Free Travel Guides" href="/feed.xml" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         {/* Google Ads deferred to after page is interactive — reduces TBT */}
