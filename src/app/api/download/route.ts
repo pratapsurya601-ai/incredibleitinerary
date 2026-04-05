@@ -8,7 +8,7 @@ const SECRET = process.env.DOWNLOAD_SECRET || "dev-secret-please-change";
 const VALID_SLUGS = ["rajasthan-7-days"];
 
 // ── Token generation (15-min windows, valid for 30 min) ──────────────────────
-export function generateToken(slug: string): string {
+function generateToken(slug: string): string {
   const window = Math.floor(Date.now() / 1000 / 900);
   return crypto
     .createHmac("sha256", SECRET)
