@@ -10,15 +10,27 @@ import { trackEvent } from "@/lib/analytics";
 
 const QUESTIONS = [
   {
+    id: "region",
+    emoji: "🌍",
+    question: "Where are you dreaming of going?",
+    subtitle: "Pick a region — this shapes your results",
+    options: [
+      { id: "india",       emoji: "🇮🇳", label: "India",                  sub: "Domestic trip" },
+      { id: "se_asia",     emoji: "🌴", label: "Southeast Asia",           sub: "Thailand, Bali, Singapore, Vietnam" },
+      { id: "middle_east", emoji: "🏙️", label: "Middle East & Islands",    sub: "Dubai, Maldives, Oman" },
+      { id: "europe",      emoji: "🗺️", label: "Europe & East Asia",       sub: "Paris, Rome, Tokyo, Barcelona" },
+    ],
+  },
+  {
     id: "vibe",
     emoji: "🌈",
     question: "What's your ideal trip vibe?",
     subtitle: "Pick the one that excites you most",
     options: [
-      { id: "beach",     emoji: "🏖️", label: "Beach & Chill",       sub: "Sun, sand, seafood" },
-      { id: "culture",   emoji: "🏛️", label: "History & Culture",    sub: "Forts, temples, stories" },
-      { id: "nature",    emoji: "🌿", label: "Nature & Mountains",   sub: "Valleys, treks, views" },
-      { id: "spiritual", emoji: "🕯️", label: "Spiritual & Soulful",  sub: "Ghats, ashrams, silence" },
+      { id: "beach",   emoji: "🏖️", label: "Beach & Chill",     sub: "Sun, sand, seafood" },
+      { id: "culture", emoji: "🏛️", label: "History & Culture",  sub: "Forts, temples, stories" },
+      { id: "nature",  emoji: "🌿", label: "Nature & Mountains", sub: "Valleys, treks, views" },
+      { id: "city",    emoji: "🏙️", label: "City & Food",        sub: "Streets, markets, nightlife" },
     ],
   },
   {
@@ -27,10 +39,10 @@ const QUESTIONS = [
     question: "What's your trip budget per person?",
     subtitle: "Total including flights, stays and food",
     options: [
-      { id: "budget",   emoji: "💸", label: "Under ₹20,000",  sub: "Backpacker mode" },
-      { id: "mid",      emoji: "💳", label: "₹20k – ₹50,000", sub: "Comfortable mid-range" },
-      { id: "premium",  emoji: "💎", label: "₹50k – ₹1,50,000", sub: "Premium experience" },
-      { id: "luxury",   emoji: "👑", label: "₹1,50,000+",      sub: "Palace hotels, private tours" },
+      { id: "budget",  emoji: "💸", label: "Budget",    sub: "Under ₹25k / $300" },
+      { id: "mid",     emoji: "💳", label: "Mid-range", sub: "₹25k–₹75k / $300–$900" },
+      { id: "premium", emoji: "💎", label: "Premium",   sub: "₹75k–₹2L / $900–$2,500" },
+      { id: "luxury",  emoji: "👑", label: "Luxury",    sub: "₹2L+ / $2,500+" },
     ],
   },
   {
@@ -39,10 +51,10 @@ const QUESTIONS = [
     question: "Who are you travelling with?",
     subtitle: "Your group changes everything",
     options: [
-      { id: "solo",    emoji: "🧳", label: "Solo",         sub: "Just me" },
-      { id: "couple",  emoji: "💑", label: "Couple",       sub: "Partner trip" },
-      { id: "friends", emoji: "🎉", label: "Friends",      sub: "Group of 3–6" },
-      { id: "family",  emoji: "👨‍👩‍👧", label: "Family",      sub: "With kids or parents" },
+      { id: "solo",    emoji: "🧳",    label: "Solo",    sub: "Just me" },
+      { id: "couple",  emoji: "💑",    label: "Couple",  sub: "Partner trip" },
+      { id: "friends", emoji: "🎉",    label: "Friends", sub: "Group of 3–6" },
+      { id: "family",  emoji: "👨‍👩‍👧", label: "Family",  sub: "With kids or parents" },
     ],
   },
   {
@@ -51,10 +63,10 @@ const QUESTIONS = [
     question: "How many days do you have?",
     subtitle: "Include travel days",
     options: [
-      { id: "short",  emoji: "⚡", label: "3–4 Days",  sub: "Quick getaway" },
-      { id: "week",   emoji: "📅", label: "5–7 Days",  sub: "Full week" },
-      { id: "long",   emoji: "🌍", label: "8–14 Days", sub: "Extended holiday" },
-      { id: "open",   emoji: "♾️", label: "15+ Days",  sub: "Long trip" },
+      { id: "short", emoji: "⚡", label: "3–4 Days",  sub: "Quick getaway" },
+      { id: "week",  emoji: "📅", label: "5–7 Days",  sub: "Full week" },
+      { id: "long",  emoji: "🌍", label: "8–14 Days", sub: "Extended holiday" },
+      { id: "open",  emoji: "♾️", label: "15+ Days",  sub: "Long trip" },
     ],
   },
   {
@@ -63,10 +75,10 @@ const QUESTIONS = [
     question: "What matters most to you?",
     subtitle: "Choose your #1 priority",
     options: [
-      { id: "food",       emoji: "🍛", label: "Amazing Food",        sub: "Local cuisine & hidden spots" },
-      { id: "photo",      emoji: "📸", label: "Jaw-dropping Photos",  sub: "Instagram-worthy moments" },
-      { id: "adventure",  emoji: "🤿", label: "Adventure Activities", sub: "Diving, trekking, rafting" },
-      { id: "relax",      emoji: "😌", label: "Total Relaxation",     sub: "Zero stress, slow pace" },
+      { id: "food",      emoji: "🍛", label: "Amazing Food",        sub: "Local cuisine & hidden spots" },
+      { id: "photo",     emoji: "📸", label: "Jaw-dropping Photos",  sub: "Instagram-worthy moments" },
+      { id: "adventure", emoji: "🤿", label: "Adventure Activities", sub: "Diving, trekking, rafting" },
+      { id: "relax",     emoji: "😌", label: "Total Relaxation",     sub: "Zero stress, slow pace" },
     ],
   },
 ];
@@ -75,55 +87,136 @@ const QUESTIONS = [
 
 type Answers = Record<string, string>;
 
-function getResult(answers: Answers) {
-  const { vibe, budget, group, duration, priority } = answers;
+const INDIA      = ["goa","rajasthan","kashmir","kerala","golden_triangle","varanasi","andaman","meghalaya","sikkim","pondicherry","gujarat","amritsar","leh_ladakh","manali","spiti_valley"];
+const SE_ASIA    = ["bangkok","bali","singapore","phuket","hoi_an"];
+const ME_ISLANDS = ["dubai","maldives"];
+const EUROPE_EA  = ["paris","rome","barcelona","santorini","cappadocia","tokyo","kyoto","amsterdam"];
 
-  // Scoring system — each destination gets points
-  const scores: Record<string, number> = {
-    goa: 0, rajasthan: 0, kashmir: 0, kerala: 0,
-    golden_triangle: 0, varanasi: 0, andaman: 0,
-    meghalaya: 0, sikkim: 0, pondicherry: 0, gujarat: 0, amritsar: 0,
+function getResult(answers: Answers) {
+  const { region, vibe, budget, group, duration, priority } = answers;
+
+  const scores: Record<string, number> = {};
+  [...INDIA, ...SE_ASIA, ...ME_ISLANDS, ...EUROPE_EA].forEach(d => { scores[d] = 0; });
+
+  // REGION boost — destinations in chosen region get a large base advantage
+  const regionMap: Record<string, string[]> = {
+    india: INDIA, se_asia: SE_ASIA, middle_east: ME_ISLANDS, europe: EUROPE_EA,
   };
+  const chosenPool = regionMap[region] ?? [...INDIA, ...SE_ASIA, ...ME_ISLANDS, ...EUROPE_EA];
+  chosenPool.forEach(d => { scores[d] += 8; });
 
   // VIBE scoring
-  if (vibe === "beach")    { scores.goa += 4; scores.andaman += 4; scores.kerala += 2; scores.pondicherry += 3; }
-  if (vibe === "culture")  { scores.rajasthan += 4; scores.golden_triangle += 4; scores.varanasi += 3; scores.gujarat += 3; scores.amritsar += 3; }
-  if (vibe === "nature")   { scores.kashmir += 4; scores.kerala += 3; scores.andaman += 2; scores.meghalaya += 4; scores.sikkim += 4; }
-  if (vibe === "spiritual") { scores.varanasi += 5; scores.rajasthan += 2; scores.amritsar += 4; scores.sikkim += 2; }
+  if (vibe === "beach") {
+    scores.goa += 4; scores.andaman += 4; scores.kerala += 2; scores.pondicherry += 3;
+    scores.phuket += 5; scores.bali += 4; scores.maldives += 5; scores.hoi_an += 3; scores.santorini += 3;
+  }
+  if (vibe === "culture") {
+    scores.rajasthan += 4; scores.golden_triangle += 4; scores.varanasi += 3; scores.gujarat += 3; scores.amritsar += 3;
+    scores.kyoto += 5; scores.tokyo += 3; scores.rome += 4; scores.barcelona += 3; scores.paris += 3;
+    scores.amsterdam += 3; scores.cappadocia += 3; scores.bangkok += 3;
+  }
+  if (vibe === "nature") {
+    scores.kashmir += 4; scores.kerala += 3; scores.meghalaya += 4; scores.sikkim += 4;
+    scores.leh_ladakh += 5; scores.manali += 4; scores.spiti_valley += 5;
+    scores.bali += 3; scores.cappadocia += 4;
+  }
+  if (vibe === "city") {
+    scores.goa += 2; scores.golden_triangle += 2; scores.gujarat += 2;
+    scores.bangkok += 5; scores.singapore += 5; scores.dubai += 5; scores.tokyo += 5;
+    scores.paris += 4; scores.barcelona += 4; scores.amsterdam += 3;
+  }
 
   // BUDGET scoring
-  if (budget === "budget")  { scores.goa += 3; scores.varanasi += 3; scores.amritsar += 3; scores.pondicherry += 2; }
-  if (budget === "mid")     { scores.kerala += 2; scores.goa += 2; scores.golden_triangle += 2; scores.rajasthan += 2; scores.meghalaya += 2; scores.gujarat += 2; }
-  if (budget === "premium") { scores.kashmir += 3; scores.andaman += 3; scores.kerala += 2; scores.sikkim += 2; }
-  if (budget === "luxury")  { scores.kashmir += 3; scores.rajasthan += 3; scores.andaman += 2; }
+  if (budget === "budget") {
+    scores.goa += 3; scores.varanasi += 3; scores.amritsar += 3; scores.pondicherry += 2; scores.manali += 2;
+    scores.bangkok += 4; scores.hoi_an += 5; scores.bali += 3;
+  }
+  if (budget === "mid") {
+    scores.kerala += 2; scores.goa += 2; scores.golden_triangle += 2; scores.rajasthan += 2;
+    scores.meghalaya += 2; scores.gujarat += 2; scores.leh_ladakh += 2;
+    scores.phuket += 2; scores.bali += 2; scores.singapore += 2; scores.bangkok += 2;
+    scores.cappadocia += 2; scores.kyoto += 2; scores.rome += 2;
+  }
+  if (budget === "premium") {
+    scores.kashmir += 3; scores.andaman += 3; scores.kerala += 2; scores.sikkim += 2;
+    scores.maldives += 3; scores.tokyo += 3; scores.paris += 3; scores.rome += 2;
+    scores.barcelona += 2; scores.santorini += 3; scores.dubai += 2;
+  }
+  if (budget === "luxury") {
+    scores.kashmir += 3; scores.rajasthan += 3; scores.andaman += 2;
+    scores.maldives += 5; scores.dubai += 4; scores.paris += 3;
+    scores.santorini += 4; scores.kyoto += 3; scores.tokyo += 2;
+  }
 
   // GROUP scoring
-  if (group === "solo")    { scores.goa += 2; scores.varanasi += 2; scores.meghalaya += 2; scores.pondicherry += 2; }
-  if (group === "couple")  { scores.kashmir += 3; scores.kerala += 3; scores.andaman += 3; scores.pondicherry += 3; scores.sikkim += 2; }
-  if (group === "friends") { scores.goa += 4; scores.andaman += 2; scores.rajasthan += 2; scores.meghalaya += 3; }
-  if (group === "family")  { scores.golden_triangle += 3; scores.rajasthan += 3; scores.kerala += 2; scores.gujarat += 3; scores.amritsar += 2; }
+  if (group === "solo") {
+    scores.goa += 2; scores.varanasi += 2; scores.meghalaya += 2; scores.pondicherry += 2; scores.leh_ladakh += 3; scores.spiti_valley += 3;
+    scores.bangkok += 4; scores.hoi_an += 4; scores.tokyo += 3; scores.amsterdam += 3;
+  }
+  if (group === "couple") {
+    scores.kashmir += 3; scores.kerala += 3; scores.andaman += 3; scores.pondicherry += 3; scores.sikkim += 2;
+    scores.bali += 5; scores.maldives += 5; scores.paris += 5; scores.santorini += 5; scores.kyoto += 3;
+  }
+  if (group === "friends") {
+    scores.goa += 4; scores.andaman += 2; scores.rajasthan += 2; scores.meghalaya += 3; scores.manali += 3;
+    scores.phuket += 5; scores.bangkok += 4; scores.bali += 3; scores.dubai += 3; scores.barcelona += 4;
+  }
+  if (group === "family") {
+    scores.golden_triangle += 3; scores.rajasthan += 3; scores.kerala += 2; scores.gujarat += 3; scores.amritsar += 2;
+    scores.singapore += 5; scores.dubai += 4; scores.tokyo += 2; scores.rome += 3;
+  }
 
   // DURATION scoring
-  if (duration === "short") { scores.goa += 3; scores.varanasi += 3; scores.amritsar += 4; scores.pondicherry += 3; }
-  if (duration === "week")  { scores.kashmir += 2; scores.kerala += 2; scores.andaman += 2; scores.meghalaya += 3; scores.sikkim += 3; scores.gujarat += 2; }
-  if (duration === "long")  { scores.rajasthan += 3; scores.golden_triangle += 2; scores.kashmir += 2; scores.gujarat += 3; }
-  if (duration === "open")  { scores.rajasthan += 2; scores.golden_triangle += 2; scores.kashmir += 2; scores.meghalaya += 2; }
+  if (duration === "short") {
+    scores.goa += 3; scores.varanasi += 3; scores.amritsar += 4; scores.pondicherry += 3;
+    scores.singapore += 3; scores.dubai += 3; scores.bangkok += 2;
+  }
+  if (duration === "week") {
+    scores.kashmir += 2; scores.kerala += 2; scores.andaman += 2; scores.meghalaya += 3;
+    scores.sikkim += 3; scores.gujarat += 2;
+    scores.bali += 3; scores.phuket += 2; scores.tokyo += 2; scores.rome += 2;
+    scores.barcelona += 2; scores.cappadocia += 3;
+  }
+  if (duration === "long") {
+    scores.rajasthan += 3; scores.golden_triangle += 2; scores.kashmir += 2; scores.gujarat += 3; scores.leh_ladakh += 3;
+    scores.tokyo += 3; scores.kyoto += 3; scores.hoi_an += 3; scores.amsterdam += 2; scores.santorini += 2;
+  }
+  if (duration === "open") {
+    scores.rajasthan += 2; scores.golden_triangle += 2; scores.kashmir += 2; scores.meghalaya += 2; scores.leh_ladakh += 2;
+    scores.hoi_an += 3; scores.bali += 3; scores.cappadocia += 2; scores.paris += 2;
+  }
 
   // PRIORITY scoring
-  if (priority === "food")      { scores.varanasi += 3; scores.rajasthan += 2; scores.goa += 2; scores.amritsar += 4; scores.gujarat += 3; }
-  if (priority === "photo")     { scores.kashmir += 3; scores.rajasthan += 3; scores.meghalaya += 4; scores.sikkim += 3; }
-  if (priority === "adventure") { scores.andaman += 4; scores.kashmir += 3; scores.meghalaya += 3; scores.sikkim += 2; }
-  if (priority === "relax")     { scores.kerala += 4; scores.andaman += 3; scores.pondicherry += 3; scores.sikkim += 2; }
+  if (priority === "food") {
+    scores.varanasi += 3; scores.rajasthan += 2; scores.goa += 2; scores.amritsar += 4; scores.gujarat += 3;
+    scores.bangkok += 5; scores.hoi_an += 5; scores.tokyo += 5; scores.singapore += 4; scores.rome += 3; scores.barcelona += 3;
+  }
+  if (priority === "photo") {
+    scores.kashmir += 3; scores.rajasthan += 3; scores.meghalaya += 4; scores.sikkim += 3; scores.leh_ladakh += 4; scores.spiti_valley += 4;
+    scores.bali += 3; scores.santorini += 5; scores.cappadocia += 5; scores.kyoto += 4; scores.paris += 3;
+  }
+  if (priority === "adventure") {
+    scores.andaman += 4; scores.kashmir += 3; scores.meghalaya += 3; scores.sikkim += 2; scores.leh_ladakh += 4; scores.manali += 3; scores.spiti_valley += 3;
+    scores.phuket += 3; scores.bali += 3; scores.cappadocia += 2;
+  }
+  if (priority === "relax") {
+    scores.kerala += 4; scores.andaman += 3; scores.pondicherry += 3; scores.sikkim += 2;
+    scores.bali += 5; scores.maldives += 5; scores.santorini += 3; scores.kyoto += 3;
+  }
 
-  // Find top 3
-  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  // Only rank within the chosen region
+  const filteredScores = Object.fromEntries(
+    Object.entries(scores).filter(([k]) => chosenPool.includes(k))
+  );
+
+  const sorted = Object.entries(filteredScores).sort((a, b) => b[1] - a[1]);
   const [top, second, third] = sorted;
 
   return {
-    primary: DESTINATIONS[top[0]],
+    primary:   DESTINATIONS[top[0]],
     secondary: DESTINATIONS[second[0]],
-    tertiary: DESTINATIONS[third[0]],
-    scores,
+    tertiary:  DESTINATIONS[third[0]],
+    scores:    filteredScores,
   };
 }
 
@@ -132,6 +225,7 @@ const DESTINATIONS: Record<string, {
   duration: string; budget: string; href: string;
   color: string; image: string; tips: string[];
 }> = {
+  // ── INDIA ────────────────────────────────────────────────────────────────────
   goa: {
     name: "Goa",
     emoji: "🏖️",
@@ -165,7 +259,7 @@ const DESTINATIONS: Record<string, {
     budget: "₹18,000–₹90,000/person",
     href: "/blog/kashmir-6-days",
     color: "from-blue-500 to-indigo-600",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&q=80",
     tips: ["Dal Lake shikara at 5:30am — you'll have it to yourself", "Visit Oct–Nov for golden chinar trees", "Gondola Phase 2 at Gulmarg — worth every rupee"],
   },
   kerala: {
@@ -196,12 +290,12 @@ const DESTINATIONS: Record<string, {
     name: "Varanasi",
     emoji: "🕯️",
     tagline: "India's soul — unlike anything else on earth",
-    why: "Your spiritual answers and food priorities point to Varanasi above everywhere else. It's the most intense, overwhelming and unforgettable city in India — and the street food is extraordinary.",
+    why: "Your priorities point to Varanasi above everywhere else. It's the most intense, overwhelming and unforgettable city in India — and the street food is extraordinary. Every hour reveals something new.",
     duration: "3–4 days ideal",
     budget: "₹6,000–₹20,000/person",
     href: "/blog/varanasi-3-days",
     color: "from-orange-500 to-red-600",
-    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?w=800&q=80",
     tips: ["Morning Ganges boat at 5:30am — the best thing you'll do in India", "Ganga Aarti — arrive 45 minutes early for a spot", "Blue Lassi Shop — queue for it, worth every minute"],
   },
   andaman: {
@@ -213,19 +307,19 @@ const DESTINATIONS: Record<string, {
     budget: "₹18,000–₹75,000/person",
     href: "/blog/andaman-5-days",
     color: "from-teal-500 to-cyan-600",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1586359716568-3e1907e4cf9f?w=800&q=80",
     tips: ["Book Makruzz ferry before you arrive — sells out in peak season", "Radhanagar Beach at 5:30am — 2km of empty Asia's Best Beach", "Fly via Chennai — saves ₹5,000–₹8,000 vs Delhi"],
   },
   meghalaya: {
     name: "Meghalaya",
     emoji: "🌿",
-    tagline: "Northeast India's hidden paradise — waterfalls, root bridges, crystal rivers",
+    tagline: "Northeast India's hidden paradise — waterfalls & root bridges",
     why: "Your love of nature and photography points to Meghalaya — living root bridges, the clearest river in India at Dawki, and Cherrapunji's dramatic waterfalls. This is what Kasol was 10 years ago.",
     duration: "5–6 days ideal",
     budget: "₹12,000–₹35,000/person",
     href: "/blog/meghalaya-5-days",
     color: "from-emerald-500 to-green-600",
-    image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1698429358246-807d8972da9a?w=800&q=80",
     tips: ["Dawki River clarity is real — not Photoshopped", "Skip Elephant Falls, go to Laitlum Canyons instead", "Oct-Nov is the sweet spot — post-monsoon, waterfalls still flowing"],
   },
   sikkim: {
@@ -268,13 +362,235 @@ const DESTINATIONS: Record<string, {
     name: "Amritsar",
     emoji: "🕌",
     tagline: "Golden Temple, Wagah Border and India's best street food",
-    why: "Two days that will change how you see India. The Golden Temple at dawn is the most powerful spiritual experience many travellers have. Add the best street food in the country and Wagah Border theatre — it's an essential India stop.",
+    why: "Two days that will change how you see India. The Golden Temple at dawn is the most powerful spiritual experience many travellers have. Add the best street food in the country and Wagah Border theatre.",
     duration: "2–3 days ideal",
     budget: "₹4,000–₹15,000/person",
     href: "/blog/amritsar-2-days",
     color: "from-amber-400 to-yellow-500",
     image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80",
     tips: ["Golden Temple at 4:30am — arrive before sunrise for the Palki Sahib", "Kulcha at Bharawan Da Dhaba is mandatory", "Add Amritsar to any Golden Triangle trip — 6hr train from Delhi"],
+  },
+  leh_ladakh: {
+    name: "Leh Ladakh",
+    emoji: "🏔️",
+    tagline: "The roof of the world — India's most dramatic landscape",
+    why: "Moonscapes at 4,500m, Buddhist monasteries older than nations, the clearest skies you'll ever photograph, and roads that push you to your edge. Your answers point to someone ready for Ladakh's pure, untouched world.",
+    duration: "7–10 days ideal",
+    budget: "₹20,000–₹65,000/person",
+    href: "/blog/leh-ladakh-7-days",
+    color: "from-sky-500 to-blue-700",
+    image: "https://images.unsplash.com/photo-1600438831035-48f5f196d3bf?w=800&q=80",
+    tips: ["Spend 2 full days in Leh acclimatising before any high-altitude driving", "Pangong Lake — stay overnight, not just a day trip", "Permit for Nubra Valley takes 1 day to process — apply on arrival day"],
+  },
+  manali: {
+    name: "Manali",
+    emoji: "🌨️",
+    tagline: "Snow peaks, adventure and Himachal's favourite escape",
+    why: "Rohtang Pass snow, Old Manali's backpacker cafes, Solang Valley paragliding, and Kasol nearby — your adventure-nature combination points squarely at Manali, India's most popular hill escape.",
+    duration: "4–6 days ideal",
+    budget: "₹10,000–₹35,000/person",
+    href: "/blog/manali-5-days",
+    color: "from-slate-500 to-blue-600",
+    image: "https://images.unsplash.com/photo-1677821374212-8c3e88292b1b?w=800&q=80",
+    tips: ["Rohtang Pass permit must be booked online 1 day in advance", "Old Manali vs Mall Road — stay in Old Manali, every time", "May and October are ideal — summer crowd is July–August"],
+  },
+  spiti_valley: {
+    name: "Spiti Valley",
+    emoji: "🏜️",
+    tagline: "Cold desert monastery circuit — India's most offbeat journey",
+    why: "Key Monastery at 4,166m, Chandratal Lake like a sapphire in the Himalayas, and a road trip so remote it rewires your brain. For solo travellers and serious photographers, Spiti is India's ultimate secret.",
+    duration: "7–8 days ideal",
+    budget: "₹15,000–₹40,000/person",
+    href: "/blog/spiti-valley-7-days",
+    color: "from-stone-500 to-orange-600",
+    image: "https://images.unsplash.com/photo-1673246239376-f3c01a13bab0?w=800&q=80",
+    tips: ["June–September only — road is closed rest of year", "Chandratal camping — book a fixed tent camp, not open camping", "Kaza is base camp — acclimatise here before exploring higher villages"],
+  },
+
+  // ── SOUTHEAST ASIA ───────────────────────────────────────────────────────────
+  bangkok: {
+    name: "Bangkok",
+    emoji: "🛕",
+    tagline: "The world's greatest street food city — endlessly exciting",
+    why: "Your city & food priorities make Bangkok the obvious answer. Grand Palace at dawn, then Chatuchak market, then 10 courses of street food for $15 — Bangkok packs more flavour per hour than anywhere else on earth.",
+    duration: "3–5 days ideal",
+    budget: "$25–$80/day per person",
+    href: "/blog/bangkok-4-days",
+    color: "from-orange-500 to-red-600",
+    image: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&q=80",
+    tips: ["Wat Pho at 8am, Wat Arun at sunset — two temples, one day, perfect", "Yaowarat (Chinatown) for dinner — best street food in the city", "BTS Skytrain covers most sights — avoid taxis in traffic"],
+  },
+  bali: {
+    name: "Bali",
+    emoji: "🌸",
+    tagline: "The Island of Gods — beauty, temples and perfect surf",
+    why: "Tegallalang rice terraces, Uluwatu cliff temple at sunset, Ubud's healing energy, and Seminyak's beach bars — Bali matches every answer you gave. It's the world's most complete travel destination.",
+    duration: "5–8 days ideal",
+    budget: "$35–$120/day per person",
+    href: "/blog/bali-5-days",
+    color: "from-green-500 to-emerald-600",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
+    tips: ["Hire a private driver — Wayan or Ketut will change your Bali experience", "Sunrise at Mount Batur is a 4am hike worth every step", "Stay in Ubud for culture, Seminyak for beach — split your trip"],
+  },
+  singapore: {
+    name: "Singapore",
+    emoji: "🦁",
+    tagline: "Asia's most efficient city — world-class food and Gardens by the Bay",
+    why: "Hawker centres with Michelin-starred food stalls, Marina Bay Sands, Gardens by the Bay, and Little India all in one spotless city-state. Your group and family preferences make Singapore the ideal Asia intro.",
+    duration: "3–4 days ideal",
+    budget: "$80–$200/day per person",
+    href: "/blog/singapore-3-days",
+    color: "from-red-500 to-rose-600",
+    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80",
+    tips: ["Maxwell Food Centre has the best Hainanese chicken rice on Earth", "Gardens by the Bay — go at 7:45pm for the free light show", "MRT goes everywhere — taxis are rarely needed"],
+  },
+  phuket: {
+    name: "Phuket",
+    emoji: "🏝️",
+    tagline: "Thailand's island paradise — beach parties, diving and longtail boats",
+    why: "Phi Phi Island day trips, the Similan Islands for world-class diving, Patong Beach energy, and some of the cheapest great seafood in Asia. Your beach + friends combination is peak Phuket.",
+    duration: "5–7 days ideal",
+    budget: "$30–$100/day per person",
+    href: "/blog/phuket-5-days",
+    color: "from-blue-400 to-cyan-500",
+    image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&q=80",
+    tips: ["Phi Phi Island by speedboat — book direct at the pier, saves 40%", "Kata Noi Beach is better than Patong for non-party travellers", "Diving season is November–April — visibility is stunning"],
+  },
+  hoi_an: {
+    name: "Hoi An",
+    emoji: "🏮",
+    tagline: "Vietnam's lantern town — the most charming place in Southeast Asia",
+    why: "Ancient town lanterns reflecting on the Thu Bon River at night, the best Cao Lau noodles in the world (only made here), bespoke tailors who can make a suit in 24 hours, and My Son Hindu ruins nearby.",
+    duration: "3–5 days ideal",
+    budget: "$25–$70/day per person",
+    href: "/blog/hoi-an-4-days",
+    color: "from-yellow-400 to-amber-500",
+    image: "https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=800&q=80",
+    tips: ["Old Town is car-free — rent a bicycle, it's the only way", "Full Moon Lantern Festival: 14th of every lunar month", "White Rose dumplings at White Rose Restaurant — the original"],
+  },
+
+  // ── MIDDLE EAST & ISLANDS ─────────────────────────────────────────────────────
+  dubai: {
+    name: "Dubai",
+    emoji: "🏙️",
+    tagline: "The city of superlatives — sky-high luxury and desert adventures",
+    why: "Burj Khalifa at sunset, desert dune bashing with dinner under the stars, the world's largest mall with an indoor ski slope, and some of the best-value luxury hotels on earth. Your luxury city answers point here.",
+    duration: "3–5 days ideal",
+    budget: "$80–$250/day per person",
+    href: "/blog/dubai-4-days",
+    color: "from-amber-400 to-yellow-500",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
+    tips: ["Burj Khalifa Level 124 at sunset — book tickets a week ahead", "Old Dubai's Al Fahidi neighbourhood is the antidote to the skyscrapers", "Desert safari: book a private 4WD, not a shared bus tour"],
+  },
+  maldives: {
+    name: "Maldives",
+    emoji: "🏝️",
+    tagline: "The world's most beautiful overwater bungalows — pure paradise",
+    why: "Overwater bungalows with glass floors over a turquoise lagoon, snorkelling with manta rays and whale sharks, bioluminescent beaches at night — the Maldives is the world's ultimate relaxation and romance destination.",
+    duration: "5–7 days ideal",
+    budget: "$200–$600/day per person",
+    href: "/blog/maldives-5-days",
+    color: "from-cyan-400 to-teal-600",
+    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80",
+    tips: ["Book a local island stay + resort split — cuts cost by 50%", "Whale shark snorkelling is year-round, peak season is Nov–April", "Speedboat transfers cost 3x more at the resort — pre-book externally"],
+  },
+
+  // ── EUROPE & EAST ASIA ────────────────────────────────────────────────────────
+  paris: {
+    name: "Paris",
+    emoji: "🗼",
+    tagline: "The most romantic city on earth — culture, cuisine and elegance",
+    why: "Louvre at opening time when it's still quiet, croissants at a boulangerie with zero English, Montmartre artists' quarter, and Seine river walks that prove every cliché about Paris being beautiful is completely true.",
+    duration: "4–6 days ideal",
+    budget: "$95–$250/day per person",
+    href: "/blog/paris-5-days",
+    color: "from-rose-400 to-pink-600",
+    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
+    tips: ["Louvre — enter through the Richelieu wing to avoid queues at the pyramid", "Marché des Enfants Rouges in Le Marais — best market lunch in the city", "Paris Museum Pass covers 60 museums — worth it if you plan to visit 3+"],
+  },
+  rome: {
+    name: "Rome",
+    emoji: "🏛️",
+    tagline: "The Eternal City — 3,000 years of history on every street corner",
+    why: "Colosseum, Vatican, Pantheon, and the world's best pasta — Rome rewards every type of traveller your answers suggest. Walk between the Forum and Trastevere for dinner and you'll understand why people never leave.",
+    duration: "3–5 days ideal",
+    budget: "$65–$180/day per person",
+    href: "/blog/rome-4-days",
+    color: "from-orange-400 to-amber-500",
+    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80",
+    tips: ["Colosseum + Roman Forum — book skip-the-line 2 weeks ahead", "Trastevere for dinner, every night — avoid restaurants near tourist sights", "Vatican — book first entry of the day, arrive 30 min before opening"],
+  },
+  barcelona: {
+    name: "Barcelona",
+    emoji: "🌊",
+    tagline: "Gaudí, tapas, beach and the best nightlife in Europe",
+    why: "Sagrada Família's impossible spires, La Boqueria market at 8am, tapas bar-hopping in El Born, and the beach 10 minutes from the Gothic Quarter — Barcelona is architecture, food and energy in one perfect city.",
+    duration: "4–5 days ideal",
+    budget: "$70–$180/day per person",
+    href: "/blog/barcelona-4-days",
+    color: "from-yellow-500 to-red-500",
+    image: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80",
+    tips: ["Sagrada Família — towers ticket costs more but gives the best views", "La Boqueria is for tourists; Mercat de Santa Caterina is for locals", "Park Güell free area is fine — paid section is not worth the queue"],
+  },
+  santorini: {
+    name: "Santorini",
+    emoji: "🌅",
+    tagline: "Blue domes, volcanic sunsets and Aegean infinity pools",
+    why: "The world's most photographed sunset in Oia, wine from grapes grown in volcanic ash, boat tours around the caldera — your photo and romance priorities lead directly to Santorini.",
+    duration: "4–5 days ideal",
+    budget: "$90–$300/day per person",
+    href: "/blog/santorini-4-days",
+    color: "from-blue-400 to-indigo-500",
+    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80",
+    tips: ["Oia sunset — claim a spot on the castle walls 90 minutes early", "Stay in Imerovigli if you want sunset views without Oia crowds", "Rent an ATV — the island's roads are made for it"],
+  },
+  cappadocia: {
+    name: "Cappadocia",
+    emoji: "🎈",
+    tagline: "Fairy chimneys and hot air balloons — Turkey's most magical landscape",
+    why: "Watching 100 hot-air balloons rise over the fairy chimneys of Göreme at dawn is one of the single greatest travel moments on earth. Your photography and nature priorities lead here with no competition.",
+    duration: "3–4 days ideal",
+    budget: "$55–$150/day per person",
+    href: "/blog/cappadocia-3-days",
+    color: "from-orange-400 to-rose-500",
+    image: "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=800&q=80",
+    tips: ["Hot air balloon — book Royal Balloon or Butterfly Balloons, never the cheapest", "Rose Valley hike at sunset — no guide needed, 3km loop", "Cave hotel rooms add nothing in price but everything in experience"],
+  },
+  tokyo: {
+    name: "Tokyo",
+    emoji: "🗼",
+    tagline: "The world's greatest city — neon, ramen, temples and Shibuya",
+    why: "Shibuya crossing at rush hour, ramen at 2am in a 6-seat shop, Senso-ji at dawn, teamLab digital art — Tokyo is the most overwhelming and rewarding city on Earth. Your food and city priorities are a perfect match.",
+    duration: "5–7 days ideal",
+    budget: "$55–$180/day per person",
+    href: "/blog/tokyo-5-days",
+    color: "from-red-500 to-pink-600",
+    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80",
+    tips: ["IC card (Suica) for all transport — never buy individual tickets", "Tsukiji Outer Market at 7am for the best sushi breakfast of your life", "Shinjuku at night — Omoide Yokocho (Memory Lane) for yakitori under the train tracks"],
+  },
+  kyoto: {
+    name: "Kyoto",
+    emoji: "⛩️",
+    tagline: "Ancient Japan's soul — temples, geishas and bamboo groves",
+    why: "Fushimi Inari's 10,000 torii gates at 5:30am, Arashiyama bamboo grove before the crowds, kaiseki dinner in a machiya townhouse — Kyoto is what Japan looked like before modernity. Your culture and photo priorities match perfectly.",
+    duration: "4–5 days ideal",
+    budget: "$50–$180/day per person",
+    href: "/blog/kyoto-4-days",
+    color: "from-pink-500 to-rose-600",
+    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
+    tips: ["Fushimi Inari — go at 5:30am, you'll have it near-alone for 45 minutes", "Gion at 6am — highest chance of seeing a geiko or maiko", "Arashiyama bamboo grove is 15 minutes at 6am, a nightmare at 11am"],
+  },
+  amsterdam: {
+    name: "Amsterdam",
+    emoji: "🚲",
+    tagline: "Canals, Rembrandt and the most liveable city in Europe",
+    why: "Golden Age canal houses, the Rijksmuseum's Rembrandt collection, cycling everywhere, and a solo traveller's dream of independent cafes and the world's most tolerant city. Your culture and city preferences lead here.",
+    duration: "3–4 days ideal",
+    budget: "$75–$200/day per person",
+    href: "/blog/amsterdam-3-days",
+    color: "from-orange-400 to-amber-500",
+    image: "https://images.unsplash.com/photo-1584003564911-5f8e0c9e4b8b?w=800&q=80",
+    tips: ["Rijksmuseum — book first slot of the day, arrive 10 minutes early", "Rent a bike on day 1 — it's the only way to see Amsterdam properly", "Jordaan neighbourhood for dinner — avoid Leidseplein tourist restaurants"],
   },
 };
 
@@ -419,7 +735,7 @@ function EmailCapture({ destination, onSkip }: { destination: string; onSkip: ()
 
 export default function QuizClient() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [step, setStep] = useState(0); // 0 = intro, 1–5 = questions, 6 = email, 7 = results
+  const [step, setStep] = useState(0); // 0 = intro, 1–6 = questions, 7 = email, 8 = results
   const [answers, setAnswers] = useState<Answers>({});
   const [selected, setSelected] = useState<string | null>(null);
   const [result, setResult] = useState<ReturnType<typeof getResult> | null>(null);
@@ -462,11 +778,11 @@ export default function QuizClient() {
               Takes 60 seconds
             </span>
             <h1 className="font-serif text-[clamp(2.4rem,5vw,3.8rem)] font-light text-ink leading-[1.08] mb-5">
-              Where in India<br />
+              Where in the world<br />
               <em className="italic text-teal">should you go?</em>
             </h1>
             <p className="text-base text-muted font-light max-w-[440px] mx-auto mb-8 leading-relaxed">
-              Answer 5 quick questions and get your perfect Indian destination — with a free personalised itinerary, real budgets and insider tips.
+              Answer 6 quick questions and get your perfect destination — India, Southeast Asia, Middle East, Europe or East Asia — with a free personalised itinerary and real insider tips.
             </p>
 
             {/* What you'll get */}
@@ -488,7 +804,7 @@ export default function QuizClient() {
               className="btn-gold text-base px-10 py-4 inline-block">
               Start the Quiz →
             </button>
-            <p className="text-xs text-muted mt-4 font-light">19 destinations · No signup required · Free forever</p>
+            <p className="text-xs text-muted mt-4 font-light">30 destinations worldwide · No signup required · Free forever</p>
           </div>
         )}
 
