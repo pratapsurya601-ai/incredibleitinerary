@@ -110,6 +110,47 @@ const COST_DATA: Record<string, CostData> = {
 };
 
 // ---------------------------------------------------------------------------
+// INFLATION UTILITIES — adjusts 2026 base prices to the post's publish year
+// ---------------------------------------------------------------------------
+const COST_BASE_YEAR = 2026;
+
+function getPublishYear(publishDate: string): number {
+  try { return new Date(publishDate).getFullYear(); } catch { return COST_BASE_YEAR; }
+}
+
+/** Apply compound inflation to all ₹ amounts in a price string like "₹1,500–2,500" */
+function inflatePrice(priceStr: string, multiplier: number): string {
+  if (multiplier === 1) return priceStr;
+  return priceStr.replace(/₹([\d,]+)/g, (_, num) => {
+    const val = parseInt(num.replace(/,/g, ""));
+    if (!val) return `₹${num}`;
+    // Round to nearest ₹100 for readability
+    const inflated = Math.round((val * multiplier) / 100) * 100;
+    return `₹${inflated.toLocaleString("en-IN")}`;
+  });
+}
+
+/** India ~5%/yr, international ~4%/yr from base year 2026 */
+function getInflationMultiplier(publishDate: string, isIndia: boolean): number {
+  const years = getPublishYear(publishDate) - COST_BASE_YEAR;
+  if (years <= 0) return 1;
+  const rate = isIndia ? 0.05 : 0.04;
+  return Math.pow(1 + rate, years);
+}
+
+function inflateCostRow(
+  row: { accommodation: string; meal: string; transport: string; total: string },
+  m: number
+) {
+  return {
+    accommodation: inflatePrice(row.accommodation, m),
+    meal: inflatePrice(row.meal, m),
+    transport: inflatePrice(row.transport, m),
+    total: inflatePrice(row.total, m),
+  };
+}
+
+// ---------------------------------------------------------------------------
 // TRANSPORT DATA — keyed by destination
 // ---------------------------------------------------------------------------
 const TRANSPORT_DATA: Record<string, { options: Array<{ mode: string; details: string; duration: string; cost: string }>; tips: string[] }> = {
@@ -362,6 +403,28 @@ function CTALink({ href, children, external = false }: { href: string; children:
     <Link href={href} className="inline-flex items-center gap-1.5 text-sm font-medium text-gold-dark hover:text-teal transition-colors underline-offset-2 hover:underline">
       {children}
     </Link>
+  );
+}
+
+function PriceDisclaimer({ publishYear }: { publishYear: number }) {
+  if (publishYear <= COST_BASE_YEAR) return null;
+  return (
+    <div className="border border-gold/30 bg-gold/5 rounded-xl p-4 my-6 flex items-start gap-3">
+      <span className="text-gold-dark text-sm mt-0.5 flex-shrink-0">ⓘ</span>
+      <div>
+        <p className="text-xs font-medium text-gold-dark mb-0.5">
+          Prices estimated for {publishYear}
+        </p>
+        <p className="text-xs text-muted font-light leading-relaxed">
+          Figures are projected from {COST_BASE_YEAR} data with ~{publishYear <= COST_BASE_YEAR + 3 ? "5" : "5"}% annual inflation.
+          Verify current rates on{" "}
+          <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gold-dark">Booking.com</a>
+          {" "}or{" "}
+          <a href="https://www.google.com/travel/hotels" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gold-dark">Google Hotels</a>
+          {" "}before booking.
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -730,6 +793,10 @@ export function generateCostContent(post: GeneratedPost, parent: ParentMeta): JS
 
   const isIndia = country === "India";
 
+  // Inflation adjustment based on publish year
+  const inflationMultiplier = getInflationMultiplier(post.publishDate, isIndia);
+  const publishYear = getPublishYear(post.publishDate);
+
   const genericBudget = isIndia
     ? { accommodation: "₹800–2,500", meal: "₹150–400", transport: "₹200–500/day", total: "₹2,000–5,000/day" }
     : { accommodation: "₹3,000–6,000", meal: "₹400–1,000", transport: "₹500–1,000/day", total: "₹5,000–10,000/day" };
@@ -740,16 +807,19 @@ export function generateCostContent(post: GeneratedPost, parent: ParentMeta): JS
     ? { accommodation: "₹8,000–25,000", meal: "₹1,500–4,000", transport: "₹2,000–4,000/day", total: "₹15,000–40,000/day" }
     : { accommodation: "₹18,000–50,000", meal: "₹2,500–7,000", transport: "₹3,000–8,000/day", total: "₹30,000–80,000/day" };
 
-  const budget = data?.budget ?? genericBudget;
-  const midRange = data?.midRange ?? genericMid;
-  const luxury = data?.luxury ?? genericLuxury;
-  const highlights = data?.highlights ?? [
+  const budget = inflateCostRow(data?.budget ?? genericBudget, inflationMultiplier);
+  const midRange = inflateCostRow(data?.midRange ?? genericMid, inflationMultiplier);
+  const luxury = inflateCostRow(data?.luxury ?? genericLuxury, inflationMultiplier);
+  const highlights = (data?.highlights ?? [
     `${destination} accommodation starts at ${budget.accommodation}/night`,
     "Local meals at recommended restaurants",
     "Day passes for public transport where available",
     "Entry fees for major attractions",
-  ];
-  const flightNote = data?.flightNote ?? (isIndia ? `Domestic flights from major cities: ₹3,000–8,000 one-way.` : `International flights from India: ₹30,000–80,000 round trip depending on routing.`);
+  ]).map((h) => inflatePrice(h, inflationMultiplier));
+  const flightNote = inflatePrice(
+    data?.flightNote ?? (isIndia ? `Domestic flights from major cities: ₹3,000–8,000 one-way.` : `International flights from India: ₹30,000–80,000 round trip depending on routing.`),
+    inflationMultiplier
+  );
 
   // Duration to days
   const numDays = parseInt(duration) || 5;
@@ -785,6 +855,8 @@ export function generateCostContent(post: GeneratedPost, parent: ParentMeta): JS
 
   return (
     <article>
+      <PriceDisclaimer publishYear={publishYear} />
+
       <QuickAnswer>
         A {numDays}-day trip to {destination} costs approximately{" "}
         <strong className="text-ink">{calcTotal(budget.total, numDays)}</strong> on a budget,{" "}
@@ -794,7 +866,7 @@ export function generateCostContent(post: GeneratedPost, parent: ParentMeta): JS
 
       <SectionH2>Daily Cost Breakdown by Travel Style</SectionH2>
       <BodyText>
-        All figures are per person in Indian Rupees (₹), based on double occupancy for accommodation and shared transport where applicable. Solo travellers should add 20–30% for accommodation.
+        All figures are per person in Indian Rupees (₹), estimated for {publishYear}, based on double occupancy for accommodation and shared transport where applicable. Solo travellers should add 20–30% for accommodation.
       </BodyText>
 
       <div className="overflow-x-auto my-6 rounded-xl border border-parchment-2">
