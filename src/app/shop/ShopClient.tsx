@@ -14,22 +14,100 @@ function ProductCard({ product, featured = false }: {
   featured?: boolean;
 }) {
   const [buying, setBuying] = useState(false);
+  const [showEmailPrompt, setShowEmailPrompt] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const handleBuy = () => {
+    // Show email prompt first — we need it to deliver the PDF after payment
+    setShowEmailPrompt(true);
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = email.trim().toLowerCase();
+    if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+      setEmailError("Please enter a valid email address.");
+      return;
+    }
+    setEmailError("");
     setBuying(true);
+    // Store email so /shop/success can retrieve it
+    try { localStorage.setItem("ii_pending_email", trimmed); } catch {}
     trackEvent("shop_product_clicked", { product: product.id, destination: product.destination });
     if (product.razorpayUrl) {
-      window.open(product.razorpayUrl, "_blank");
+      // Razorpay will redirect to /shop/success after payment
+      window.location.href = product.razorpayUrl;
     } else {
       window.location.href = "/unlock";
     }
-    setTimeout(() => setBuying(false), 2000);
   };
 
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
   const hasFreeDownload = !!product.downloadSlug;
 
   return (
+    <>
+    {/* Email prompt modal — shown before redirecting to Razorpay */}
+    {showEmailPrompt && (
+      <div
+        className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4"
+        onClick={(e) => { if (e.target === e.currentTarget) { setShowEmailPrompt(false); setBuying(false); } }}
+      >
+        <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative">
+          <button
+            onClick={() => { setShowEmailPrompt(false); setBuying(false); }}
+            className="absolute top-4 right-4 text-muted hover:text-ink text-xl leading-none"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <div className="text-center mb-6">
+            <div className="text-4xl mb-3">📧</div>
+            <h3 className="font-serif text-xl text-ink mb-2 leading-tight">
+              Where should we send your PDF?
+            </h3>
+            <p className="text-xs text-muted font-light leading-relaxed">
+              Enter your email below. After payment, your download link is ready
+              instantly — we&apos;ll also email a copy so you never lose it.
+            </p>
+          </div>
+          <form onSubmit={handleEmailSubmit} className="space-y-3">
+            <div>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => { setEmail(e.target.value); setEmailError(""); }}
+                placeholder="yourname@gmail.com"
+                className="w-full px-4 py-3 border border-parchment-2 rounded-lg text-sm text-ink placeholder:text-muted/50 focus:outline-none focus:border-gold transition-colors"
+                autoFocus
+                required
+              />
+              {emailError && (
+                <p className="text-xs text-red-500 mt-1.5">{emailError}</p>
+              )}
+            </div>
+            <button
+              type="submit"
+              disabled={buying}
+              className={`w-full py-3.5 rounded-lg text-sm font-semibold tracking-wide transition-all duration-200 ${
+                featured
+                  ? "bg-gold text-ink hover:bg-gold-dark"
+                  : "bg-ink text-white hover:bg-ink-mid"
+              } disabled:opacity-60`}
+            >
+              {buying
+                ? "Redirecting to payment…"
+                : `Pay ${product.currency}${product.price} — Instant Download →`}
+            </button>
+            <p className="text-[0.65rem] text-muted text-center font-light">
+              🔒 Secure payment via Razorpay · UPI · Cards · Net Banking
+            </p>
+          </form>
+        </div>
+      </div>
+    )}
+
     <div className={`bg-white rounded-2xl border-2 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
       featured ? "border-gold shadow-lg" : "border-parchment-2"
     }`}>
@@ -149,12 +227,32 @@ function ProductCard({ product, featured = false }: {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
 // ── MAIN ─────────────────────────────────────────────────────────────────────
 export default function ShopClient() {
   const [modalOpen, setModalOpen] = useState(false);
+
+  // Bundle deal email-first flow
+  const [bundleModal, setBundleModal] = useState<{ url: string; label: string; price: string } | null>(null);
+  const [bundleEmail, setBundleEmail] = useState("");
+  const [bundleEmailError, setBundleEmailError] = useState("");
+  const [bundleGoing, setBundleGoing] = useState(false);
+
+  const handleBundleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = bundleEmail.trim().toLowerCase();
+    if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+      setBundleEmailError("Please enter a valid email address.");
+      return;
+    }
+    setBundleEmailError("");
+    setBundleGoing(true);
+    try { localStorage.setItem("ii_pending_email", trimmed); } catch {}
+    if (bundleModal?.url) window.location.href = bundleModal.url;
+  };
 
   const faqs = [
     { q: "How do I receive the PDF?", a: "Immediately after payment you can download the PDF directly. We also send it to your email. No waiting — it's instant." },
@@ -293,22 +391,18 @@ export default function ShopClient() {
               <span className="text-xs text-gold-light bg-gold/15 px-2 py-1 rounded-full">Lifetime access</span>
             </div>
             <div className="flex gap-3 justify-center flex-wrap">
-              <a
-                href="https://rzp.io/rzp/qhP2iBq"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => { setBundleEmail(""); setBundleEmailError(""); setBundleGoing(false); setBundleModal({ url: "https://rzp.io/rzp/qhP2iBq", label: "All Guides — Lifetime Access", price: "₹499" }); }}
                 className="btn-gold inline-flex"
               >
                 Get Lifetime Access — ₹499 →
-              </a>
-              <a
-                href="https://rzp.io/rzp/SfJqFBV"
-                target="_blank"
-                rel="noopener noreferrer"
+              </button>
+              <button
+                onClick={() => { setBundleEmail(""); setBundleEmailError(""); setBundleGoing(false); setBundleModal({ url: "https://rzp.io/rzp/SfJqFBV", label: "India Pack", price: "₹249" }); }}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 border border-white/20 text-white/70 text-[0.78rem] font-medium tracking-[0.05em] rounded-full hover:bg-white/15 hover:text-white transition-colors"
               >
                 India Pack only — ₹249
-              </a>
+              </button>
             </div>
             <p className="text-xs text-white/30 mt-4">
               UPI · Cards · Net Banking · Wallets via Razorpay
@@ -352,6 +446,62 @@ export default function ShopClient() {
 
       <Footer />
       <InquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
+      {/* Bundle deal email-first modal */}
+      {bundleModal && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4"
+          onClick={(e) => { if (e.target === e.currentTarget) { setBundleModal(null); setBundleGoing(false); } }}
+        >
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative">
+            <button
+              onClick={() => { setBundleModal(null); setBundleGoing(false); }}
+              className="absolute top-4 right-4 text-muted hover:text-ink text-xl leading-none"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+            <div className="text-center mb-6">
+              <div className="text-4xl mb-3">📧</div>
+              <h3 className="font-serif text-xl text-ink mb-2 leading-tight">
+                Where should we send your PDFs?
+              </h3>
+              <p className="text-xs text-muted font-light leading-relaxed">
+                Enter your email to receive your <strong className="text-ink">{bundleModal.label}</strong>.
+                After payment, your download link is ready instantly.
+              </p>
+            </div>
+            <form onSubmit={handleBundleSubmit} className="space-y-3">
+              <div>
+                <input
+                  type="email"
+                  value={bundleEmail}
+                  onChange={(e) => { setBundleEmail(e.target.value); setBundleEmailError(""); }}
+                  placeholder="yourname@gmail.com"
+                  className="w-full px-4 py-3 border border-parchment-2 rounded-lg text-sm text-ink placeholder:text-muted/50 focus:outline-none focus:border-gold transition-colors"
+                  autoFocus
+                  required
+                />
+                {bundleEmailError && (
+                  <p className="text-xs text-red-500 mt-1.5">{bundleEmailError}</p>
+                )}
+              </div>
+              <button
+                type="submit"
+                disabled={bundleGoing}
+                className="w-full bg-gold hover:bg-gold-dark text-ink py-3.5 rounded-lg text-sm font-semibold tracking-wide transition-all duration-200 disabled:opacity-60"
+              >
+                {bundleGoing
+                  ? "Redirecting to payment…"
+                  : `Pay ${bundleModal.price} — Get All Guides →`}
+              </button>
+              <p className="text-[0.65rem] text-muted text-center font-light">
+                🔒 Secure payment via Razorpay · UPI · Cards · Net Banking
+              </p>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }
