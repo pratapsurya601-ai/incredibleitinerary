@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Hampi, Karnataka, India",
+      "description": "A UNESCO World Heritage Site and the ruins of the Vijayanagara Empire, known for its surreal boulder landscape, ancient temples, and one of India's best backpacker scenes.",
+      "url": "https://www.incredibleitinerary.com/blog/hampi-3-days",
+      "touristType": ["Heritage Tourism", "Cultural Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Hampi, Karnataka, India",
-      "description": "A UNESCO World Heritage Site and the ruins of the Vijayanagara Empire, known for its surreal boulder landscape, ancient temples, and one of India's best backpacker scenes.",
-      "url": "https://www.incredibleitinerary.com/blog/hampi-3-days",
-      "touristType": ["Heritage Tourism", "Cultural Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function HampiPage() {
@@ -175,6 +181,11 @@ export default function HampiPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <HampiClient />
     </>

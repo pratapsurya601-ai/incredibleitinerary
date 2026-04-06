@@ -105,7 +105,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Lombok, Indonesia",
+      "description": "Bali's quieter neighbour, known for pristine beaches, the Gili Islands, Mount Rinjani volcano, and a fraction of the tourist crowds.",
+      "url": "https://www.incredibleitinerary.com/blog/lombok-4-days",
+      "touristType": ["Beach Tourism", "Adventure Tourism", "Diving & Snorkelling"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -157,15 +172,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Lombok, Indonesia",
-      "description": "Bali's quieter neighbour, known for pristine beaches, the Gili Islands, Mount Rinjani volcano, and a fraction of the tourist crowds.",
-      "url": "https://www.incredibleitinerary.com/blog/lombok-4-days",
-      "touristType": ["Beach Tourism", "Adventure Tourism", "Diving & Snorkelling"],
-    },
-  ],
 };
 
 export default function LombokBlogPage() {
@@ -174,6 +180,11 @@ export default function LombokBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <LombokClient />
     </>

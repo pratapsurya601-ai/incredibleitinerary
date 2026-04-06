@@ -50,16 +50,7 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Kashmir 6 Days", "item": "https://www.incredibleitinerary.com/blog/kashmir-6-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Is Kashmir safe to visit in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Kashmir has been welcoming tourists in large numbers since 2019. The main tourist areas (Srinagar, Gulmarg, Pahalgam, Sonamarg) are safe and well-patrolled. Over 2 crore tourists visited Kashmir in 2023-24, a record high. Exercise normal travel precautions and stay updated via local advisories." } },
-        { "@type": "Question", "name": "What is the best time to visit Kashmir?", "acceptedAnswer": { "@type": "Answer", "text": "Kashmir has two peak seasons: April-June (spring flowers, green valleys, mild weather 15-25°C) and December-February (snow in Gulmarg and Pahalgam, skiing). September-October is the best overall — post-monsoon clarity, golden chinar trees, fewer crowds. July-August is monsoon season — avoid for outdoor activities." } },
-        { "@type": "Question", "name": "How much does a Dal Lake houseboat cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget houseboats start at Rs.1,500-Rs.2,500/night including breakfast. Mid-range heritage houseboats cost Rs.3,500-Rs.6,000/night with all meals. Luxury category (5-star rated) run Rs.8,000-Rs.20,000/night. Always inspect the houseboat before paying — photos online are often misleading." } },
-        { "@type": "Question", "name": "How do I get to Kashmir?", "acceptedAnswer": { "@type": "Answer", "text": "Fly to Sheikh ul-Alam International Airport, Srinagar (SXR). Direct flights from Delhi (1hr 15min), Mumbai (2hr 30min), Bangalore (3hrs). IndiGo, Air India and SpiceJet all fly there. Book 2-3 weeks ahead — flights fill up fast during peak season. There is no practical road or rail route for most visitors." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       "name": "Kashmir, India",
       "description": "Paradise on Earth — India's northernmost region known for Dal Lake houseboats, snow-covered Gulmarg, the green valleys of Pahalgam and Sonamarg, and Mughal gardens.",
@@ -69,10 +60,30 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is Kashmir safe to visit in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Kashmir has been welcoming tourists in large numbers since 2019. The main tourist areas (Srinagar, Gulmarg, Pahalgam, Sonamarg) are safe and well-patrolled. Over 2 crore tourists visited Kashmir in 2023-24, a record high. Exercise normal travel precautions and stay updated via local advisories." } },
+        { "@type": "Question", "name": "What is the best time to visit Kashmir?", "acceptedAnswer": { "@type": "Answer", "text": "Kashmir has two peak seasons: April-June (spring flowers, green valleys, mild weather 15-25°C) and December-February (snow in Gulmarg and Pahalgam, skiing). September-October is the best overall — post-monsoon clarity, golden chinar trees, fewer crowds. July-August is monsoon season — avoid for outdoor activities." } },
+        { "@type": "Question", "name": "How much does a Dal Lake houseboat cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget houseboats start at Rs.1,500-Rs.2,500/night including breakfast. Mid-range heritage houseboats cost Rs.3,500-Rs.6,000/night with all meals. Luxury category (5-star rated) run Rs.8,000-Rs.20,000/night. Always inspect the houseboat before paying — photos online are often misleading." } },
+        { "@type": "Question", "name": "How do I get to Kashmir?", "acceptedAnswer": { "@type": "Answer", "text": "Fly to Sheikh ul-Alam International Airport, Srinagar (SXR). Direct flights from Delhi (1hr 15min), Mumbai (2hr 30min), Bangalore (3hrs). IndiGo, Air India and SpiceJet all fly there. Book 2-3 weeks ahead — flights fill up fast during peak season. There is no practical road or rail route for most visitors." } },
+      ],
+};
+
 export default function KashmirPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <KashmirClient />
     </>
   );

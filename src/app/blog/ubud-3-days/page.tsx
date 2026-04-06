@@ -105,7 +105,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Ubud, Bali, Indonesia",
+      "description": "The cultural heart of Bali, known for its terraced rice paddies, Hindu temples, traditional arts, yoga retreats and lush jungle valleys.",
+      "url": "https://www.incredibleitinerary.com/blog/ubud-3-days",
+      "touristType": ["Cultural Tourism", "Wellness Tourism", "Eco Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -149,15 +164,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Ubud, Bali, Indonesia",
-      "description": "The cultural heart of Bali, known for its terraced rice paddies, Hindu temples, traditional arts, yoga retreats and lush jungle valleys.",
-      "url": "https://www.incredibleitinerary.com/blog/ubud-3-days",
-      "touristType": ["Cultural Tourism", "Wellness Tourism", "Eco Tourism"],
-    },
-  ],
 };
 
 export default function UbudBlogPage() {
@@ -166,6 +172,11 @@ export default function UbudBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <UbudClient />
     </>

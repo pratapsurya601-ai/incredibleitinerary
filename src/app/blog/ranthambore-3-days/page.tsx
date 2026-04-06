@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Ranthambore National Park, Rajasthan, India",
+      "description": "One of India's most famous tiger reserves, home to the UNESCO-listed Ranthambore Fort and known for bold, vehicle-habituated Bengal tigers.",
+      "url": "https://www.incredibleitinerary.com/blog/ranthambore-3-days",
+      "touristType": ["Wildlife Tourism", "Cultural Tourism", "Nature Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Ranthambore National Park, Rajasthan, India",
-      "description": "One of India's most famous tiger reserves, home to the UNESCO-listed Ranthambore Fort and known for bold, vehicle-habituated Bengal tigers.",
-      "url": "https://www.incredibleitinerary.com/blog/ranthambore-3-days",
-      "touristType": ["Wildlife Tourism", "Cultural Tourism", "Nature Tourism"],
-    },
-  ],
 };
 
 export default function RanthamboreBlogPage() {
@@ -178,6 +183,11 @@ export default function RanthamboreBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <RanthamboreClient />
     </>

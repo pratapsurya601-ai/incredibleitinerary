@@ -105,7 +105,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Osaka, Japan",
+      "description": "Japan's kitchen and comedy capital, known for world-class street food, neon-lit Dotonbori canal, historic castle, and the warmest people in Japan.",
+      "url": "https://www.incredibleitinerary.com/blog/osaka-3-days",
+      "touristType": ["Food Tourism", "City Tourism", "Cultural Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -157,15 +172,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Osaka, Japan",
-      "description": "Japan's kitchen and comedy capital, known for world-class street food, neon-lit Dotonbori canal, historic castle, and the warmest people in Japan.",
-      "url": "https://www.incredibleitinerary.com/blog/osaka-3-days",
-      "touristType": ["Food Tourism", "City Tourism", "Cultural Tourism"],
-    },
-  ],
 };
 
 export default function OsakaBlogPage() {
@@ -174,6 +180,11 @@ export default function OsakaBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <OsakaClient />
     </>

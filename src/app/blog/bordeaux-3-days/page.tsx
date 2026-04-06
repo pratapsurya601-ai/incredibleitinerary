@@ -357,7 +357,23 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      name: "Bordeaux, France",
+      description:
+        "A UNESCO World Heritage city renowned for the world's largest fine wine region, the Miroir d'Eau water mirror, La Cité du Vin museum, the medieval village of Saint-Émilion, and 18th-century golden limestone architecture.",
+      url: "https://www.incredibleitinerary.com/blog/bordeaux-3-days",
+      touristType: ["Wine Tourism", "Cultural Tourism", "Heritage Tourism", "Culinary Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       mainEntity: [
         {
@@ -401,22 +417,17 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      name: "Bordeaux, France",
-      description:
-        "A UNESCO World Heritage city renowned for the world's largest fine wine region, the Miroir d'Eau water mirror, La Cité du Vin museum, the medieval village of Saint-Émilion, and 18th-century golden limestone architecture.",
-      url: "https://www.incredibleitinerary.com/blog/bordeaux-3-days",
-      touristType: ["Wine Tourism", "Cultural Tourism", "Heritage Tourism", "Culinary Tourism"],
-    },
-  ],
 };
 
 export default function BordeauxPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

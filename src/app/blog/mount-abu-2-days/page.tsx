@@ -108,7 +108,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Mount Abu, Rajasthan, India",
+      "description": "Rajasthan's only hill station, home to the extraordinary Dilwara Jain Temples, Nakki Lake, and the highest peak in the Aravalli Range.",
+      "url": "https://www.incredibleitinerary.com/blog/mount-abu-2-days",
+      "touristType": ["Hill Station Tourism", "Cultural Tourism", "Religious Tourism", "Nature Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,15 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Mount Abu, Rajasthan, India",
-      "description": "Rajasthan's only hill station, home to the extraordinary Dilwara Jain Temples, Nakki Lake, and the highest peak in the Aravalli Range.",
-      "url": "https://www.incredibleitinerary.com/blog/mount-abu-2-days",
-      "touristType": ["Hill Station Tourism", "Cultural Tourism", "Religious Tourism", "Nature Tourism"],
-    },
-  ],
 };
 
 export default function MountAbuBlogPage() {
@@ -177,6 +183,11 @@ export default function MountAbuBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <MountAbuClient />
     </>

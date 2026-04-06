@@ -84,7 +84,21 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Gujarat 7 Days", "item": "https://www.incredibleitinerary.com/blog/gujarat-7-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Gujarat, India",
+      "description": "India's westernmost state, home to the only wild Asiatic Lions at Gir, the surreal white salt desert of the Rann of Kutch, UNESCO heritage city of Ahmedabad, sacred temples of Somnath and Dwarka, and arguably the best vegetarian cuisine in the country.",
+      "url": "https://www.incredibleitinerary.com/blog/gujarat-7-days",
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -136,14 +150,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Gujarat, India",
-      "description": "India's westernmost state, home to the only wild Asiatic Lions at Gir, the surreal white salt desert of the Rann of Kutch, UNESCO heritage city of Ahmedabad, sacred temples of Somnath and Dwarka, and arguably the best vegetarian cuisine in the country.",
-      "url": "https://www.incredibleitinerary.com/blog/gujarat-7-days",
-    },
-  ],
 };
 
 export default function GujaratBlogPage() {
@@ -152,6 +158,11 @@ export default function GujaratBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <GujaratClient />
     </>

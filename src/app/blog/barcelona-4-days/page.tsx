@@ -55,17 +55,7 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Barcelona in 4 Days", "item": "https://www.incredibleitinerary.com/blog/barcelona-4-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "How many days are enough for Barcelona?", "acceptedAnswer": { "@type": "Answer", "text": "4 days is ideal. You can cover Sagrada Familia, Park Guell, Gothic Quarter, Barceloneta Beach, and Montjuic plus a day trip. 3 days is possible but rushed. 5+ days lets you explore neighbourhoods deeply." } },
-        { "@type": "Question", "name": "How much does a 4-day Barcelona trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: 50-90 EUR/day ($54-97 USD). Mid-range: 100-180 EUR/day ($108-194 USD). Luxury: 250+ EUR/day ($270+ USD). Includes accommodation, food, transport and activities." } },
-        { "@type": "Question", "name": "Do I need a visa for Spain?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need a Schengen visa (apply at BLS/VFS, EUR 80 fee, 15 working days). US, UK, AU, CA citizens visit visa-free for 90 days within 180 days." } },
-        { "@type": "Question", "name": "Should I book Sagrada Familia tickets in advance?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely non-negotiable. Book 2 months ahead for peak season, minimum 2 weeks in off-season. EUR 26 timed ticket vs 2-3 hour walk-up queue. Book at sagradafamilia.org only." } },
-        { "@type": "Question", "name": "What is the best time to visit Barcelona?", "acceptedAnswer": { "@type": "Answer", "text": "April-June and September-October are ideal. July-August is hot (35C+) and packed with tourists. November-March is mild and cheapest, but some outdoor attractions have reduced hours." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       "name": "Barcelona, Spain",
       "description": "Catalonia's capital, known for Gaudi's architectural masterpieces, vibrant food markets, Mediterranean beaches, and a nightlife that doesn't start until midnight.",
@@ -75,10 +65,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How many days are enough for Barcelona?", "acceptedAnswer": { "@type": "Answer", "text": "4 days is ideal. You can cover Sagrada Familia, Park Guell, Gothic Quarter, Barceloneta Beach, and Montjuic plus a day trip. 3 days is possible but rushed. 5+ days lets you explore neighbourhoods deeply." } },
+        { "@type": "Question", "name": "How much does a 4-day Barcelona trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: 50-90 EUR/day ($54-97 USD). Mid-range: 100-180 EUR/day ($108-194 USD). Luxury: 250+ EUR/day ($270+ USD). Includes accommodation, food, transport and activities." } },
+        { "@type": "Question", "name": "Do I need a visa for Spain?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need a Schengen visa (apply at BLS/VFS, EUR 80 fee, 15 working days). US, UK, AU, CA citizens visit visa-free for 90 days within 180 days." } },
+        { "@type": "Question", "name": "Should I book Sagrada Familia tickets in advance?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely non-negotiable. Book 2 months ahead for peak season, minimum 2 weeks in off-season. EUR 26 timed ticket vs 2-3 hour walk-up queue. Book at sagradafamilia.org only." } },
+        { "@type": "Question", "name": "What is the best time to visit Barcelona?", "acceptedAnswer": { "@type": "Answer", "text": "April-June and September-October are ideal. July-August is hot (35C+) and packed with tourists. November-March is mild and cheapest, but some outdoor attractions have reduced hours." } },
+      ],
+};
+
 export default function BarcelonaBlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <BarcelonaClient />
     </>
   );

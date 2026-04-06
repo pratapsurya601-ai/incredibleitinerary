@@ -90,7 +90,22 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Amalfi Coast in 4 Days", "item": "https://www.incredibleitinerary.com/blog/amalfi-coast-4-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Amalfi Coast, Italy",
+      "description": "A UNESCO World Heritage coastline in southern Italy, famous for its dramatic cliffs, colourful villages, lemon groves, and Mediterranean cuisine.",
+      "url": "https://www.incredibleitinerary.com/blog/amalfi-coast-4-days",
+      "touristType": ["Coastal Tourism", "Hiking Tourism", "Food & Wine Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -142,15 +157,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Amalfi Coast, Italy",
-      "description": "A UNESCO World Heritage coastline in southern Italy, famous for its dramatic cliffs, colourful villages, lemon groves, and Mediterranean cuisine.",
-      "url": "https://www.incredibleitinerary.com/blog/amalfi-coast-4-days",
-      "touristType": ["Coastal Tourism", "Hiking Tourism", "Food & Wine Tourism"],
-    },
-  ],
 };
 
 export default function AmalfiCoastBlogPage() {
@@ -159,6 +165,11 @@ export default function AmalfiCoastBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <AmalfiClient />
     </>

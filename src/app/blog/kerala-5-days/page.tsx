@@ -61,7 +61,21 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Kerala 5 Days", "item": "https://www.incredibleitinerary.com/blog/kerala-5-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Kerala, India",
+      "description": "India's southernmost coastal state — known as God's Own Country — famous for backwaters, tea gardens, spice plantations, Ayurveda and beaches.",
+      "url": "https://www.incredibleitinerary.com/blog/kerala-5-days",
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -85,20 +99,17 @@ const jsonLd = {
           "acceptedAnswer": { "@type": "Answer", "text": "Kerala is famous for its backwater houseboat network (700km of interconnected lakes and canals), Munnar's tea gardens (the best in India), Ayurvedic wellness retreats, Kathakali dance, seafood, and some of India's most beautiful beaches at Varkala and Kovalam." }
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Kerala, India",
-      "description": "India's southernmost coastal state — known as God's Own Country — famous for backwaters, tea gardens, spice plantations, Ayurveda and beaches.",
-      "url": "https://www.incredibleitinerary.com/blog/kerala-5-days",
-    },
-  ],
 };
 
 export default function KeralaPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <KeralaClient />
     </>
   );

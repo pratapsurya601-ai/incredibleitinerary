@@ -105,7 +105,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Bali, Indonesia",
+      "description": "Indonesia's most famous island, known for its terraced rice paddies, ancient Hindu temples, volcanic landscapes, world-class surf breaks and vibrant wellness culture.",
+      "url": "https://www.incredibleitinerary.com/blog/bali-5-days",
+      "touristType": ["Cultural Tourism", "Beach Tourism", "Wellness Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -157,15 +172,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Bali, Indonesia",
-      "description": "Indonesia's most famous island, known for its terraced rice paddies, ancient Hindu temples, volcanic landscapes, world-class surf breaks and vibrant wellness culture.",
-      "url": "https://www.incredibleitinerary.com/blog/bali-5-days",
-      "touristType": ["Cultural Tourism", "Beach Tourism", "Wellness Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function BaliBlogPage() {
@@ -174,6 +180,11 @@ export default function BaliBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <BaliClient />
     </>

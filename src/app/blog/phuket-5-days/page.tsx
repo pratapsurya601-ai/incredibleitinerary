@@ -90,7 +90,22 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Phuket in 5 Days", "item": "https://www.incredibleitinerary.com/blog/phuket-5-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Phuket, Thailand",
+      "description": "Thailand's largest island known for stunning beaches, Phi Phi Island day trips, Phang Nga Bay limestone karsts, vibrant Old Town, and world-class diving.",
+      "url": "https://www.incredibleitinerary.com/blog/phuket-5-days",
+      "touristType": ["Beach Tourism", "Island Tourism", "Adventure Tourism", "Cultural Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -142,15 +157,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Phuket, Thailand",
-      "description": "Thailand's largest island known for stunning beaches, Phi Phi Island day trips, Phang Nga Bay limestone karsts, vibrant Old Town, and world-class diving.",
-      "url": "https://www.incredibleitinerary.com/blog/phuket-5-days",
-      "touristType": ["Beach Tourism", "Island Tourism", "Adventure Tourism", "Cultural Tourism"],
-    },
-  ],
 };
 
 export default function PhuketBlogPage() {
@@ -159,6 +165,11 @@ export default function PhuketBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <PhuketClient />
     </>

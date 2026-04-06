@@ -323,17 +323,7 @@ const jsonLd = {
         { "@type": "ListItem", position: 3, name: "Langkawi in 3 Days", item: "https://www.incredibleitinerary.com/blog/langkawi-3-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        { "@type": "Question", name: "When is the best time to visit Langkawi?", acceptedAnswer: { "@type": "Answer", text: "November to April for dry season and calm seas. December–February is peak season. May–September is monsoon season — rough seas and cancelled boat tours on the west coast." } },
-        { "@type": "Question", name: "Is Langkawi visa-free for Indian passport holders?", acceptedAnswer: { "@type": "Answer", text: "Yes — 30 days visa-free under the 2024 India-Malaysia agreement. Confirm current policy before travel." } },
-        { "@type": "Question", name: "How do I get around Langkawi?", acceptedAnswer: { "@type": "Answer", text: "Rent a motorbike (RM 35/day) or car (RM 70–100/day). Public buses are minimal, taxis expensive. Almost all hotels can direct you to rentals." } },
-        { "@type": "Question", name: "Is Langkawi good for families?", acceptedAnswer: { "@type": "Answer", text: "Yes — cable car, eagle watching, mangrove boat tours, duty-free chocolate, and calm beach swimming in dry season. Underwater World aquarium (RM 38 adults) popular with children." } },
-        { "@type": "Question", name: "Langkawi vs Penang — which is better for 3 days?", acceptedAnswer: { "@type": "Answer", text: "Different destinations. Langkawi for beach and nature. Penang for UNESCO heritage, world-class street food, and culture. Most travellers do both in one Malaysia trip." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       name: "Langkawi, Malaysia",
       description: "Malaysia's duty-free island archipelago, known for the cable car over Mat Cincang mountain, Kilim Geoforest mangrove eagle watching, and Pantai Cenang beach.",
@@ -343,10 +333,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "When is the best time to visit Langkawi?", acceptedAnswer: { "@type": "Answer", text: "November to April for dry season and calm seas. December–February is peak season. May–September is monsoon season — rough seas and cancelled boat tours on the west coast." } },
+        { "@type": "Question", name: "Is Langkawi visa-free for Indian passport holders?", acceptedAnswer: { "@type": "Answer", text: "Yes — 30 days visa-free under the 2024 India-Malaysia agreement. Confirm current policy before travel." } },
+        { "@type": "Question", name: "How do I get around Langkawi?", acceptedAnswer: { "@type": "Answer", text: "Rent a motorbike (RM 35/day) or car (RM 70–100/day). Public buses are minimal, taxis expensive. Almost all hotels can direct you to rentals." } },
+        { "@type": "Question", name: "Is Langkawi good for families?", acceptedAnswer: { "@type": "Answer", text: "Yes — cable car, eagle watching, mangrove boat tours, duty-free chocolate, and calm beach swimming in dry season. Underwater World aquarium (RM 38 adults) popular with children." } },
+        { "@type": "Question", name: "Langkawi vs Penang — which is better for 3 days?", acceptedAnswer: { "@type": "Answer", text: "Different destinations. Langkawi for beach and nature. Penang for UNESCO heritage, world-class street food, and culture. Most travellers do both in one Malaysia trip." } },
+      ],
+};
+
 export default function LangkawiPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

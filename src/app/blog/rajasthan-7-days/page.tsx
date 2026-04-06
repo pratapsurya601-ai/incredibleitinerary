@@ -81,7 +81,21 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Rajasthan 7 Days", "item": "https://www.incredibleitinerary.com/blog/rajasthan-7-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Rajasthan, India",
+      "description": "India's largest state, known as the Land of Kings, famous for its royal heritage, Thar Desert, magnificent forts, lake palaces and vibrant culture.",
+      "url": "https://www.incredibleitinerary.com/blog/rajasthan-7-days",
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -133,14 +147,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Rajasthan, India",
-      "description": "India's largest state, known as the Land of Kings, famous for its royal heritage, Thar Desert, magnificent forts, lake palaces and vibrant culture.",
-      "url": "https://www.incredibleitinerary.com/blog/rajasthan-7-days",
-    },
-  ],
 };
 
 export default function RajasthanBlogPage() {
@@ -149,6 +155,11 @@ export default function RajasthanBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <RajasthanBlogClient />
     </>

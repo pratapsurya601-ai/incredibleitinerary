@@ -57,16 +57,7 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Coorg 3 Days", "item": "https://www.incredibleitinerary.com/blog/coorg-3-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "How far is Coorg from Bangalore?", "acceptedAnswer": { "@type": "Answer", "text": "Coorg (Madikeri) is 265km from Bangalore — approximately 5–6 hours by road via NH275 through Mysuru. The Mysuru–Madikeri stretch is a beautiful drive through coffee and spice plantations. KSRTC buses run daily from Bangalore to Madikeri (6–7hrs, Rs.300–Rs.600). By car is more convenient for exploring the estates." } },
-        { "@type": "Question", "name": "What is the best time to visit Coorg?", "acceptedAnswer": { "@type": "Answer", "text": "October to March is ideal — cool, dry weather (15–25°C), coffee harvest season October–January, excellent visibility for trekking. April to June is hot but manageable. July to September is monsoon — extremely heavy rainfall (Coorg is one of the wettest places in India), leeches on trails, many roads flooded. Beautiful if you like rain but not for sightseeing." } },
-        { "@type": "Question", "name": "Is Coorg good for a 2-day trip from Bangalore?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — 2 days from Bangalore is the most common Coorg trip. Leave Friday night (overnight drive or early Saturday morning), arrive Saturday morning, do Abbey Falls + Raja's Seat + Dubare Elephant Camp, one night on a coffee estate, Sunday morning Namdroling Monastery + coffee estate tour, drive back Sunday evening. 3 days is better and adds Iruppu Falls and a trek." } },
-        { "@type": "Question", "name": "What should I buy in Coorg?", "acceptedAnswer": { "@type": "Answer", "text": "Coorg coffee (whole beans or powder, Rs.200–Rs.500/250g), cardamom (Rs.300–Rs.600/100g), pepper (black and white, Rs.150–Rs.300/100g), Coorg honey (Rs.200–Rs.400/500g), Coorg wine made from local fruits. Buy directly from estate shops or the Madikeri market — significantly cheaper than Bangalore or supermarkets." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       "name": "Coorg (Kodagu), Karnataka, India",
       "description": "The Scotland of India — a lush hill district in Karnataka known for coffee plantations, misty hills, Abbey Falls, Dubare Elephant Camp and Kodava culture.",
@@ -76,10 +67,30 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How far is Coorg from Bangalore?", "acceptedAnswer": { "@type": "Answer", "text": "Coorg (Madikeri) is 265km from Bangalore — approximately 5–6 hours by road via NH275 through Mysuru. The Mysuru–Madikeri stretch is a beautiful drive through coffee and spice plantations. KSRTC buses run daily from Bangalore to Madikeri (6–7hrs, Rs.300–Rs.600). By car is more convenient for exploring the estates." } },
+        { "@type": "Question", "name": "What is the best time to visit Coorg?", "acceptedAnswer": { "@type": "Answer", "text": "October to March is ideal — cool, dry weather (15–25°C), coffee harvest season October–January, excellent visibility for trekking. April to June is hot but manageable. July to September is monsoon — extremely heavy rainfall (Coorg is one of the wettest places in India), leeches on trails, many roads flooded. Beautiful if you like rain but not for sightseeing." } },
+        { "@type": "Question", "name": "Is Coorg good for a 2-day trip from Bangalore?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — 2 days from Bangalore is the most common Coorg trip. Leave Friday night (overnight drive or early Saturday morning), arrive Saturday morning, do Abbey Falls + Raja's Seat + Dubare Elephant Camp, one night on a coffee estate, Sunday morning Namdroling Monastery + coffee estate tour, drive back Sunday evening. 3 days is better and adds Iruppu Falls and a trek." } },
+        { "@type": "Question", "name": "What should I buy in Coorg?", "acceptedAnswer": { "@type": "Answer", "text": "Coorg coffee (whole beans or powder, Rs.200–Rs.500/250g), cardamom (Rs.300–Rs.600/100g), pepper (black and white, Rs.150–Rs.300/100g), Coorg honey (Rs.200–Rs.400/500g), Coorg wine made from local fruits. Buy directly from estate shops or the Madikeri market — significantly cheaper than Bangalore or supermarkets." } },
+      ],
+};
+
 export default function CoorgPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <CoorgClient />
     </>
   );

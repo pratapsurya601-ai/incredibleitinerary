@@ -57,7 +57,22 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Leh Ladakh 7 Days", "item": "https://www.incredibleitinerary.com/blog/leh-ladakh-7-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Leh Ladakh, India",
+      "description": "India's highest plateau region — a cold desert known for stunning high-altitude lakes, ancient Buddhist monasteries, the world's highest motorable passes and epic road trips.",
+      "url": "https://www.incredibleitinerary.com/blog/leh-ladakh-7-days",
+      "touristType": ["Adventure Tourism", "Cultural Tourism", "Road Trip Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -77,21 +92,17 @@ const jsonLd = {
           "acceptedAnswer": { "@type": "Answer", "text": "Very serious if ignored. Leh is at 3,524m. Khardung La is 5,359m. Symptoms: headache, nausea, dizziness, breathlessness. Treatment: rest, hydration, descend if severe. Prevention: fly in, rest Day 1 and Day 2 completely, no alcohol first 48hrs, drink 3–4L water daily. Diamox (acetazolamide) helps but consult a doctor first." }
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Leh Ladakh, India",
-      "description": "India's highest plateau region — a cold desert known for stunning high-altitude lakes, ancient Buddhist monasteries, the world's highest motorable passes and epic road trips.",
-      "url": "https://www.incredibleitinerary.com/blog/leh-ladakh-7-days",
-      "touristType": ["Adventure Tourism", "Cultural Tourism", "Road Trip Tourism"],
-    },
-  ],
 };
 
 export default function LehLadakhPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <LehLadakhClient />
     </>
   );

@@ -353,7 +353,23 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      name: "Lyon, France",
+      description:
+        "France's gastronomic capital, known for the bouchon lyonnais dining tradition, the UNESCO-listed Vieux-Lyon Renaissance old town, the Fourvière Basilica, the Les Halles Paul Bocuse market, and the Beaujolais wine region on its doorstep.",
+      url: "https://www.incredibleitinerary.com/blog/lyon-3-days",
+      touristType: ["Culinary Tourism", "Cultural Tourism", "Heritage Tourism", "Wine Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       mainEntity: [
         {
@@ -397,22 +413,17 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      name: "Lyon, France",
-      description:
-        "France's gastronomic capital, known for the bouchon lyonnais dining tradition, the UNESCO-listed Vieux-Lyon Renaissance old town, the Fourvière Basilica, the Les Halles Paul Bocuse market, and the Beaujolais wine region on its doorstep.",
-      url: "https://www.incredibleitinerary.com/blog/lyon-3-days",
-      touristType: ["Culinary Tourism", "Cultural Tourism", "Heritage Tourism", "Wine Tourism"],
-    },
-  ],
 };
 
 export default function LyonPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

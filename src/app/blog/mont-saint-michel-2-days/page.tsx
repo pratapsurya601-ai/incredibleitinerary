@@ -321,7 +321,23 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      name: "Mont Saint-Michel, Normandy, France",
+      description:
+        "A UNESCO World Heritage Gothic abbey perched on a tidal island in Normandy, rising from the bay twice daily as the sea floods the surrounding flats.",
+      url: "https://www.incredibleitinerary.com/blog/mont-saint-michel-2-days",
+      touristType: ["Cultural Tourism", "Historical Tourism", "Pilgrimage Tourism", "Nature Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       mainEntity: [
         {
@@ -365,22 +381,17 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      name: "Mont Saint-Michel, Normandy, France",
-      description:
-        "A UNESCO World Heritage Gothic abbey perched on a tidal island in Normandy, rising from the bay twice daily as the sea floods the surrounding flats.",
-      url: "https://www.incredibleitinerary.com/blog/mont-saint-michel-2-days",
-      touristType: ["Cultural Tourism", "Historical Tourism", "Pilgrimage Tourism", "Nature Tourism"],
-    },
-  ],
 };
 
 export default function MontSaintMichelPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

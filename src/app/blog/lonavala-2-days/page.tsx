@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Lonavala, Maharashtra, India",
+      "description": "A popular hill station in the Western Ghats of Maharashtra, known for its monsoon beauty, ancient Buddhist caves, Shivaji-era forts, and proximity to Mumbai and Pune.",
+      "url": "https://www.incredibleitinerary.com/blog/lonavala-2-days",
+      "touristType": ["Hill Station Tourism", "Adventure Tourism", "Cultural Tourism", "Weekend Getaway"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Lonavala, Maharashtra, India",
-      "description": "A popular hill station in the Western Ghats of Maharashtra, known for its monsoon beauty, ancient Buddhist caves, Shivaji-era forts, and proximity to Mumbai and Pune.",
-      "url": "https://www.incredibleitinerary.com/blog/lonavala-2-days",
-      "touristType": ["Hill Station Tourism", "Adventure Tourism", "Cultural Tourism", "Weekend Getaway"],
-    },
-  ],
 };
 
 export default function LonavalaBlogPage() {
@@ -178,6 +183,11 @@ export default function LonavalaBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <LonavalaClient />
     </>

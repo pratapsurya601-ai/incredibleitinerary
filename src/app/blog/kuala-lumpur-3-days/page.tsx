@@ -326,17 +326,7 @@ const jsonLd = {
         { "@type": "ListItem", position: 3, name: "Kuala Lumpur in 3 Days", item: "https://www.incredibleitinerary.com/blog/kuala-lumpur-3-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        { "@type": "Question", name: "Is Kuala Lumpur visa-free for Indians?", acceptedAnswer: { "@type": "Answer", text: "Yes — since the 2024 India-Malaysia visa-free agreement, Indian passport holders get 30 days visa-free. No prior application required. Confirm current policy at the Malaysian Immigration Department website." } },
-        { "@type": "Question", name: "What is the best food to try in Kuala Lumpur?", acceptedAnswer: { "@type": "Answer", text: "Nasi lemak, char kway teow, roti canai, laksa, cendol, and satay. Best eaten at hawker stalls and kopitiams, not hotel restaurants." } },
-        { "@type": "Question", name: "What time do Batu Caves open and is it worth going early?", acceptedAnswer: { "@type": "Answer", text: "Open from 6am, free entry. Go at 7–8am for cooler temperatures, golden morning light, and smaller crowds. KTM Komuter from KL Sentral, 30 minutes, RM 2." } },
-        { "@type": "Question", name: "KL vs Singapore — which should I visit?", acceptedAnswer: { "@type": "Answer", text: "Both if possible — 4 hours by train. KL is cheaper, more culturally layered (Malay, Chinese, Indian), with better food value. Singapore is cleaner and more efficient. KL wins on atmosphere and price." } },
-        { "@type": "Question", name: "What is the budget for 3 days in Kuala Lumpur?", acceptedAnswer: { "@type": "Answer", text: "Budget: RM 85–195/day (€17–39). Mid-range: RM 340–710/day. Luxury: RM 1,000+/day. Excellent value compared to Singapore, Bangkok, or Bali." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       name: "Kuala Lumpur, Malaysia",
       description: "Malaysia's capital, home to the Petronas Twin Towers, Batu Caves Hindu temple, and one of the best hawker food scenes in Southeast Asia.",
@@ -346,10 +336,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "Is Kuala Lumpur visa-free for Indians?", acceptedAnswer: { "@type": "Answer", text: "Yes — since the 2024 India-Malaysia visa-free agreement, Indian passport holders get 30 days visa-free. No prior application required. Confirm current policy at the Malaysian Immigration Department website." } },
+        { "@type": "Question", name: "What is the best food to try in Kuala Lumpur?", acceptedAnswer: { "@type": "Answer", text: "Nasi lemak, char kway teow, roti canai, laksa, cendol, and satay. Best eaten at hawker stalls and kopitiams, not hotel restaurants." } },
+        { "@type": "Question", name: "What time do Batu Caves open and is it worth going early?", acceptedAnswer: { "@type": "Answer", text: "Open from 6am, free entry. Go at 7–8am for cooler temperatures, golden morning light, and smaller crowds. KTM Komuter from KL Sentral, 30 minutes, RM 2." } },
+        { "@type": "Question", name: "KL vs Singapore — which should I visit?", acceptedAnswer: { "@type": "Answer", text: "Both if possible — 4 hours by train. KL is cheaper, more culturally layered (Malay, Chinese, Indian), with better food value. Singapore is cleaner and more efficient. KL wins on atmosphere and price." } },
+        { "@type": "Question", name: "What is the budget for 3 days in Kuala Lumpur?", acceptedAnswer: { "@type": "Answer", text: "Budget: RM 85–195/day (€17–39). Mid-range: RM 340–710/day. Luxury: RM 1,000+/day. Excellent value compared to Singapore, Bangkok, or Bali." } },
+      ],
+};
+
 export default function KualaLumpurPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

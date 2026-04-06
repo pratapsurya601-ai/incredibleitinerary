@@ -108,7 +108,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Sikkim, India",
+      "description": "A small Himalayan state in northeast India known for its Buddhist monasteries, Kangchenjunga views, rhododendron forests, and organic farming. India's cleanest and one of its safest states.",
+      "url": "https://www.incredibleitinerary.com/blog/sikkim-6-days",
+      "touristType": ["Mountain Tourism", "Cultural Tourism", "Adventure Tourism", "Eco Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,15 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Sikkim, India",
-      "description": "A small Himalayan state in northeast India known for its Buddhist monasteries, Kangchenjunga views, rhododendron forests, and organic farming. India's cleanest and one of its safest states.",
-      "url": "https://www.incredibleitinerary.com/blog/sikkim-6-days",
-      "touristType": ["Mountain Tourism", "Cultural Tourism", "Adventure Tourism", "Eco Tourism"],
-    },
-  ],
 };
 
 export default function SikkimBlogPage() {
@@ -177,6 +183,11 @@ export default function SikkimBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <SikkimClient />
     </>

@@ -239,15 +239,27 @@ const jsonLd = {
   "@graph": [
     { "@type": "Article", headline: "Hanoi in 3 Days: Complete Itinerary Guide (Budget to Luxury, 2026)", description: "3 complete Hanoi plans with real timings and costs.", datePublished: "2026-04-04T00:00:00Z", dateModified: "2026-04-04T00:00:00Z", author: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" }, publisher: { "@type": "Organization", name: "IncredibleItinerary", logo: { "@type": "ImageObject", url: "https://www.incredibleitinerary.com/logo.png" } } },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://www.incredibleitinerary.com" }, { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.incredibleitinerary.com/blog" }, { "@type": "ListItem", position: 3, name: "Hanoi in 3 Days", item: "https://www.incredibleitinerary.com/blog/hanoi-3-days" }] },
-    { "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "Is Hanoi safe for solo female travellers?", acceptedAnswer: { "@type": "Answer", text: "Yes — Hanoi is one of Southeast Asia's safer capitals. Keep bags on the inside of your body, away from the road to avoid motorbike snatching." } }, { "@type": "Question", name: "How much does a 3-day Hanoi trip cost?", acceptedAnswer: { "@type": "Answer", text: "Budget travellers can manage ₫500,000–800,000 per day ($20–32). Mid-range is ₫1,500,000–2,500,000 ($60–100) per day including accommodation, food, transport and activities." } }] },
-    { "@type": "TouristDestination", name: "Hanoi, Vietnam", description: "Vietnam's capital city known for its centuries-old architecture, Old Quarter streets, Hoan Kiem Lake, and distinctive street food culture.", url: "https://www.incredibleitinerary.com/blog/hanoi-3-days" },
+        { "@type": "TouristDestination", name: "Hanoi, Vietnam", description: "Vietnam's capital city known for its centuries-old architecture, Old Quarter streets, Hoan Kiem Lake, and distinctive street food culture.", url: "https://www.incredibleitinerary.com/blog/hanoi-3-days" },
   ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+   "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "Is Hanoi safe for solo female travellers?", acceptedAnswer: { "@type": "Answer", text: "Yes — Hanoi is one of Southeast Asia's safer capitals. Keep bags on the inside of your body, away from the road to avoid motorbike snatching." } }, { "@type": "Question", name: "How much does a 3-day Hanoi trip cost?", acceptedAnswer: { "@type": "Answer", text: "Budget travellers can manage ₫500,000–800,000 per day ($20–32). Mid-range is ₫1,500,000–2,500,000 ($60–100) per day including accommodation, food, transport and activities." } }]
 };
 
 export default function HanoiPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

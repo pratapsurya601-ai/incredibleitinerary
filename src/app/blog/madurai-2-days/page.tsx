@@ -107,7 +107,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Madurai, Tamil Nadu, India",
+      "description": "One of the oldest continuously inhabited cities in the world, known for the magnificent Meenakshi Amman Temple, vibrant flower markets, and legendary South Indian food.",
+      "url": "https://www.incredibleitinerary.com/blog/madurai-2-days",
+      "touristType": ["Cultural Tourism", "Religious Tourism", "Food Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -159,16 +174,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Madurai, Tamil Nadu, India",
-      "description": "One of the oldest continuously inhabited cities in the world, known for the magnificent Meenakshi Amman Temple, vibrant flower markets, and legendary South Indian food.",
-      "url": "https://www.incredibleitinerary.com/blog/madurai-2-days",
-      "touristType": ["Cultural Tourism", "Religious Tourism", "Food Tourism"],
-    },
-  ],
 };
 
 export default function MaduraiBlogPage() {
@@ -177,6 +182,11 @@ export default function MaduraiBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <MaduraiClient />
     </>

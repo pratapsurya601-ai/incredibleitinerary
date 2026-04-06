@@ -332,17 +332,7 @@ const jsonLd = {
         { "@type": "ListItem", position: 3, name: "Porto in 3 Days", item: "https://www.incredibleitinerary.com/blog/porto-3-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        { "@type": "Question", name: "Porto vs Lisbon — which should I visit?", acceptedAnswer: { "@type": "Answer", text: "Visit both if you can — 3 hours apart by train. Lisbon is larger and more cosmopolitan. Porto is compact with more character and better port wine. Most travellers who visit both say Porto surprised them more." } },
-        { "@type": "Question", name: "Is the Douro Valley day trip worth it?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. The €15 train from Porto follows the Douro River gorge through 2,000-year-old UNESCO terraced vineyards. Add a wine tasting and boat ride for a complete day." } },
-        { "@type": "Question", name: "Which port wine cellar is best?", acceptedAnswer: { "@type": "Answer", text: "Graham's for beautiful gardens. Sandeman for history and the famous logo. Taylor's for the longest tour. Quinta do Crasto for views. All cost €15–20 including tasting." } },
-        { "@type": "Question", name: "How many days do I need in Porto?", acceptedAnswer: { "@type": "Answer", text: "3 days covers Ribeira, the azulejo churches, São Bento station, Livraria Lello, port wine cellars, and a Douro Valley day trip. 4 days adds the Serralves museum and Foz beach." } },
-        { "@type": "Question", name: "What is the best neighborhood to stay in Porto?", acceptedAnswer: { "@type": "Answer", text: "Ribeira for atmosphere (noisy and expensive). Bonfim for local neighbourhood feel and good value. Aliados/Bolhão for central convenience. Cedofeita for bohemian restaurants and bars." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       name: "Porto, Portugal",
       description: "Portugal's second city and the birthplace of port wine, known for the UNESCO Ribeira waterfront, azulejo tiles, Livraria Lello bookshop, and the Douro Valley wine country.",
@@ -352,10 +342,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "Porto vs Lisbon — which should I visit?", acceptedAnswer: { "@type": "Answer", text: "Visit both if you can — 3 hours apart by train. Lisbon is larger and more cosmopolitan. Porto is compact with more character and better port wine. Most travellers who visit both say Porto surprised them more." } },
+        { "@type": "Question", name: "Is the Douro Valley day trip worth it?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. The €15 train from Porto follows the Douro River gorge through 2,000-year-old UNESCO terraced vineyards. Add a wine tasting and boat ride for a complete day." } },
+        { "@type": "Question", name: "Which port wine cellar is best?", acceptedAnswer: { "@type": "Answer", text: "Graham's for beautiful gardens. Sandeman for history and the famous logo. Taylor's for the longest tour. Quinta do Crasto for views. All cost €15–20 including tasting." } },
+        { "@type": "Question", name: "How many days do I need in Porto?", acceptedAnswer: { "@type": "Answer", text: "3 days covers Ribeira, the azulejo churches, São Bento station, Livraria Lello, port wine cellars, and a Douro Valley day trip. 4 days adds the Serralves museum and Foz beach." } },
+        { "@type": "Question", name: "What is the best neighborhood to stay in Porto?", acceptedAnswer: { "@type": "Answer", text: "Ribeira for atmosphere (noisy and expensive). Bonfim for local neighbourhood feel and good value. Aliados/Bolhão for central convenience. Cedofeita for bohemian restaurants and bars." } },
+      ],
+};
+
 export default function PortoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

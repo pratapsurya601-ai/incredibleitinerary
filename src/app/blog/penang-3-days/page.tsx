@@ -327,17 +327,7 @@ const jsonLd = {
         { "@type": "ListItem", position: 3, name: "Penang in 3 Days", item: "https://www.incredibleitinerary.com/blog/penang-3-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        { "@type": "Question", name: "Is Penang visa-free for Indian passport holders?", acceptedAnswer: { "@type": "Answer", text: "Yes — 30 days visa-free under the 2024 India-Malaysia agreement. Direct flights from Chennai and Kolkata, or via KL (55-min domestic flight from RM 60)." } },
-        { "@type": "Question", name: "What is the best time to visit Penang?", acceptedAnswer: { "@type": "Answer", text: "December to February and June to July for dry weather. Avoid October–November (persistent rain). Street art and hawker food are year-round." } },
-        { "@type": "Question", name: "How do I get to Penang from Kuala Lumpur?", acceptedAnswer: { "@type": "Answer", text: "Fly (55 min, from RM 60 on AirAsia), Aeroline coach (4.5 hrs, RM 60 door-to-door), or ETS train to Butterworth then 5-min ferry (3.5 hrs total)." } },
-        { "@type": "Question", name: "Penang vs KL — which is better for food?", acceptedAnswer: { "@type": "Answer", text: "Penang, almost universally. The char kway teow, asam laksa, and cendol are the originals that KL tries to replicate. KL has more variety; Penang has better street food." } },
-        { "@type": "Question", name: "How many days do I need in Penang?", acceptedAnswer: { "@type": "Answer", text: "3 days covers Georgetown heritage, street art, Penang Hill, Kek Lok Si, and the full food pilgrimage. 4 days adds Balik Pulau and more eating time." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       name: "Penang, Malaysia",
       description: "Malaysia's island state with a UNESCO Heritage Georgetown, renowned as the food capital of Asia, famous for street art murals, Peranakan mansions, and clan jetties.",
@@ -347,10 +337,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "Is Penang visa-free for Indian passport holders?", acceptedAnswer: { "@type": "Answer", text: "Yes — 30 days visa-free under the 2024 India-Malaysia agreement. Direct flights from Chennai and Kolkata, or via KL (55-min domestic flight from RM 60)." } },
+        { "@type": "Question", name: "What is the best time to visit Penang?", acceptedAnswer: { "@type": "Answer", text: "December to February and June to July for dry weather. Avoid October–November (persistent rain). Street art and hawker food are year-round." } },
+        { "@type": "Question", name: "How do I get to Penang from Kuala Lumpur?", acceptedAnswer: { "@type": "Answer", text: "Fly (55 min, from RM 60 on AirAsia), Aeroline coach (4.5 hrs, RM 60 door-to-door), or ETS train to Butterworth then 5-min ferry (3.5 hrs total)." } },
+        { "@type": "Question", name: "Penang vs KL — which is better for food?", acceptedAnswer: { "@type": "Answer", text: "Penang, almost universally. The char kway teow, asam laksa, and cendol are the originals that KL tries to replicate. KL has more variety; Penang has better street food." } },
+        { "@type": "Question", name: "How many days do I need in Penang?", acceptedAnswer: { "@type": "Answer", text: "3 days covers Georgetown heritage, street art, Penang Hill, Kek Lok Si, and the full food pilgrimage. 4 days adds Balik Pulau and more eating time." } },
+      ],
+};
+
 export default function PenangPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

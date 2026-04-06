@@ -113,10 +113,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/goa-3-days",
         },
       ],
-    },
-
-    // FAQPage — shows expandable Q&A directly in Google search results
+    },    // TouristAttraction for Goa itself
     {
+      "@type": "TouristDestination",
+      "name": "Goa, India",
+      "description": "India's smallest state and most famous beach destination, known for its Portuguese heritage, beaches, nightlife, and cuisine.",
+      "url": "https://www.incredibleitinerary.com/blog/goa-3-days",
+      "touristType": ["Beach Tourism", "Cultural Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -168,17 +181,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristAttraction for Goa itself
-    {
-      "@type": "TouristDestination",
-      "name": "Goa, India",
-      "description": "India's smallest state and most famous beach destination, known for its Portuguese heritage, beaches, nightlife, and cuisine.",
-      "url": "https://www.incredibleitinerary.com/blog/goa-3-days",
-      "touristType": ["Beach Tourism", "Cultural Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function GoaBlogPage() {
@@ -188,6 +190,11 @@ export default function GoaBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <GoaBlogClient />
     </>

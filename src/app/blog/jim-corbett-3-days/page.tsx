@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Jim Corbett National Park, Uttarakhand, India",
+      "description": "India's oldest national park, established in 1936, known for Bengal tigers, elephants, and diverse wildlife across the Ramganga River valley in the Himalayan foothills.",
+      "url": "https://www.incredibleitinerary.com/blog/jim-corbett-3-days",
+      "touristType": ["Wildlife Tourism", "Nature Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Jim Corbett National Park, Uttarakhand, India",
-      "description": "India's oldest national park, established in 1936, known for Bengal tigers, elephants, and diverse wildlife across the Ramganga River valley in the Himalayan foothills.",
-      "url": "https://www.incredibleitinerary.com/blog/jim-corbett-3-days",
-      "touristType": ["Wildlife Tourism", "Nature Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function CorbettBlogPage() {
@@ -175,6 +181,11 @@ export default function CorbettBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <CorbettClient />
     </>

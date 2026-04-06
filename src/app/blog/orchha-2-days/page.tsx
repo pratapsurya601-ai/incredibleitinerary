@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Orchha, Madhya Pradesh, India",
+      "description": "A medieval Bundela Rajput town on the banks of the Betwa River, known for its fort complex, Jehangir Mahal, riverside cenotaphs, and vulture colonies — one of India's most underrated heritage destinations.",
+      "url": "https://www.incredibleitinerary.com/blog/orchha-2-days",
+      "touristType": ["Heritage Tourism", "Cultural Tourism", "Wildlife Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Orchha, Madhya Pradesh, India",
-      "description": "A medieval Bundela Rajput town on the banks of the Betwa River, known for its fort complex, Jehangir Mahal, riverside cenotaphs, and vulture colonies — one of India's most underrated heritage destinations.",
-      "url": "https://www.incredibleitinerary.com/blog/orchha-2-days",
-      "touristType": ["Heritage Tourism", "Cultural Tourism", "Wildlife Tourism"],
-    },
-  ],
 };
 
 export default function OrchhaPage() {
@@ -175,6 +181,11 @@ export default function OrchhaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <OrchhaClient />
     </>

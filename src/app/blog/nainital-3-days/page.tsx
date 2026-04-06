@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Nainital, Uttarakhand, India",
+      "description": "A stunning lake city nestled in the Kumaon Hills of Uttarakhand, known for Naini Lake, panoramic Himalayan views, and nearby lake districts.",
+      "url": "https://www.incredibleitinerary.com/blog/nainital-3-days",
+      "touristType": ["Hill Station Tourism", "Nature Tourism", "Family Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Nainital, Uttarakhand, India",
-      "description": "A stunning lake city nestled in the Kumaon Hills of Uttarakhand, known for Naini Lake, panoramic Himalayan views, and nearby lake districts.",
-      "url": "https://www.incredibleitinerary.com/blog/nainital-3-days",
-      "touristType": ["Hill Station Tourism", "Nature Tourism", "Family Tourism"],
-    },
-  ],
 };
 
 export default function NainitalBlogPage() {
@@ -175,6 +181,11 @@ export default function NainitalBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <NainitalClient />
     </>

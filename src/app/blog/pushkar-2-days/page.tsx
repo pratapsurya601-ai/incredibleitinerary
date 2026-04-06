@@ -108,7 +108,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Pushkar, Rajasthan, India",
+      "description": "One of the oldest cities in India, home to the world's only Brahma Temple, the sacred Pushkar Lake, and the famous annual Camel Fair.",
+      "url": "https://www.incredibleitinerary.com/blog/pushkar-2-days",
+      "touristType": ["Religious Tourism", "Cultural Tourism", "Heritage Tourism", "Festival Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,15 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Pushkar, Rajasthan, India",
-      "description": "One of the oldest cities in India, home to the world's only Brahma Temple, the sacred Pushkar Lake, and the famous annual Camel Fair.",
-      "url": "https://www.incredibleitinerary.com/blog/pushkar-2-days",
-      "touristType": ["Religious Tourism", "Cultural Tourism", "Heritage Tourism", "Festival Tourism"],
-    },
-  ],
 };
 
 export default function PushkarBlogPage() {
@@ -177,6 +183,11 @@ export default function PushkarBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <PushkarClient />
     </>

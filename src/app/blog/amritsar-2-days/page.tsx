@@ -108,7 +108,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Amritsar, Punjab, India",
+      "description": "The spiritual capital of Sikhism, home to the Golden Temple (Harmandir Sahib), the Wagah Border ceremony, and some of the best street food in India.",
+      "url": "https://www.incredibleitinerary.com/blog/amritsar-2-days",
+      "touristType": ["Religious Tourism", "Cultural Tourism", "Food Tourism", "Heritage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,15 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Amritsar, Punjab, India",
-      "description": "The spiritual capital of Sikhism, home to the Golden Temple (Harmandir Sahib), the Wagah Border ceremony, and some of the best street food in India.",
-      "url": "https://www.incredibleitinerary.com/blog/amritsar-2-days",
-      "touristType": ["Religious Tourism", "Cultural Tourism", "Food Tourism", "Heritage Tourism"],
-    },
-  ],
 };
 
 export default function AmritsarBlogPage() {
@@ -177,6 +183,11 @@ export default function AmritsarBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <AmritsarClient />
     </>

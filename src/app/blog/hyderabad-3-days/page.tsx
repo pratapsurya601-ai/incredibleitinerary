@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Hyderabad, India",
+      "description": "The City of Pearls and Nizams — known for its 400-year-old Charminar, Golconda Fort, legendary biryani, and a unique blend of Deccani, Mughal and modern culture.",
+      "url": "https://www.incredibleitinerary.com/blog/hyderabad-3-days",
+      "touristType": ["Heritage Tourism", "Cultural Tourism", "Culinary Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Hyderabad, India",
-      "description": "The City of Pearls and Nizams — known for its 400-year-old Charminar, Golconda Fort, legendary biryani, and a unique blend of Deccani, Mughal and modern culture.",
-      "url": "https://www.incredibleitinerary.com/blog/hyderabad-3-days",
-      "touristType": ["Heritage Tourism", "Cultural Tourism", "Culinary Tourism"],
-    },
-  ],
 };
 
 export default function HyderabadBlogPage() {
@@ -178,6 +183,11 @@ export default function HyderabadBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <HyderabadClient />
     </>

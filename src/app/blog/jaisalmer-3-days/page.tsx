@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Jaisalmer, Rajasthan, India",
+      "description": "The Golden City of India, known for its massive sandstone fort, ornate havelis, Thar Desert sand dunes, and living Rajasthani culture.",
+      "url": "https://www.incredibleitinerary.com/blog/jaisalmer-3-days",
+      "touristType": ["Desert Tourism", "Cultural Tourism", "Heritage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Jaisalmer, Rajasthan, India",
-      "description": "The Golden City of India, known for its massive sandstone fort, ornate havelis, Thar Desert sand dunes, and living Rajasthani culture.",
-      "url": "https://www.incredibleitinerary.com/blog/jaisalmer-3-days",
-      "touristType": ["Desert Tourism", "Cultural Tourism", "Heritage Tourism"],
-    },
-  ],
 };
 
 export default function JaisalmerBlogPage() {
@@ -178,6 +183,11 @@ export default function JaisalmerBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <JaisalmerClient />
     </>

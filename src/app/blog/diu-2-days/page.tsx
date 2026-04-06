@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Diu, India",
+      "description": "A small island union territory off the coast of Gujarat, known for its Portuguese colonial architecture, pristine beaches, ancient forts, and unique status as a liquor-friendly enclave in dry Gujarat.",
+      "url": "https://www.incredibleitinerary.com/blog/diu-2-days",
+      "touristType": ["Beach Tourism", "Cultural Tourism", "Heritage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Diu, India",
-      "description": "A small island union territory off the coast of Gujarat, known for its Portuguese colonial architecture, pristine beaches, ancient forts, and unique status as a liquor-friendly enclave in dry Gujarat.",
-      "url": "https://www.incredibleitinerary.com/blog/diu-2-days",
-      "touristType": ["Beach Tourism", "Cultural Tourism", "Heritage Tourism"],
-    },
-  ],
 };
 
 export default function DiuBlogPage() {
@@ -175,6 +181,11 @@ export default function DiuBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <DiuClient />
     </>

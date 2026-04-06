@@ -108,10 +108,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/dwarka-2-days",
         },
       ],
-    },
-
-    // FAQPage
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Dwarka, India",
+      "description": "One of the four sacred Char Dham pilgrimage sites and the legendary kingdom of Lord Krishna, located on the western tip of Gujarat where the Gomti River meets the Arabian Sea. Home to the ancient Dwarkadhish Temple and the Nageshwar Jyotirlinga.",
+      "url": "https://www.incredibleitinerary.com/blog/dwarka-2-days",
+      "touristType": ["Pilgrimage Tourism", "Cultural Tourism", "Heritage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -163,17 +176,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Dwarka, India",
-      "description": "One of the four sacred Char Dham pilgrimage sites and the legendary kingdom of Lord Krishna, located on the western tip of Gujarat where the Gomti River meets the Arabian Sea. Home to the ancient Dwarkadhish Temple and the Nageshwar Jyotirlinga.",
-      "url": "https://www.incredibleitinerary.com/blog/dwarka-2-days",
-      "touristType": ["Pilgrimage Tourism", "Cultural Tourism", "Heritage Tourism"],
-    },
-  ],
 };
 
 export default function DwarkaBlogPage() {
@@ -183,6 +185,11 @@ export default function DwarkaBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <DwarkaClient />
     </>

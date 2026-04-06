@@ -110,10 +110,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/valley-of-flowers-4-days",
         },
       ],
-    },
-
-    // FAQPage
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Valley of Flowers National Park, Uttarakhand, India",
+      "description": "UNESCO World Heritage Site in the Nanda Devi Biosphere Reserve, known for its 600+ species of wildflowers, alpine meadows in Bhyundar Valley, and proximity to Hemkund Sahib gurdwara at 4,632m.",
+      "url": "https://www.incredibleitinerary.com/blog/valley-of-flowers-4-days",
+      "touristType": ["Trekking", "Nature Tourism", "Eco Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -165,17 +178,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Valley of Flowers National Park, Uttarakhand, India",
-      "description": "UNESCO World Heritage Site in the Nanda Devi Biosphere Reserve, known for its 600+ species of wildflowers, alpine meadows in Bhyundar Valley, and proximity to Hemkund Sahib gurdwara at 4,632m.",
-      "url": "https://www.incredibleitinerary.com/blog/valley-of-flowers-4-days",
-      "touristType": ["Trekking", "Nature Tourism", "Eco Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function ValleyOfFlowersBlogPage() {
@@ -185,6 +187,11 @@ export default function ValleyOfFlowersBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <ValleyOfFlowersClient />
     </>

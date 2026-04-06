@@ -108,10 +108,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/jaipur-3-days",
         },
       ],
-    },
-
-    // FAQPage
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Jaipur, Rajasthan, India",
+      "description": "The Pink City of India, known for its stunning forts, ornate palaces, vibrant bazaars, and rich Rajasthani heritage. A UNESCO World Heritage City.",
+      "url": "https://www.incredibleitinerary.com/blog/jaipur-3-days",
+      "touristType": ["Cultural Tourism", "Heritage Tourism", "Food Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -163,17 +176,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Jaipur, Rajasthan, India",
-      "description": "The Pink City of India, known for its stunning forts, ornate palaces, vibrant bazaars, and rich Rajasthani heritage. A UNESCO World Heritage City.",
-      "url": "https://www.incredibleitinerary.com/blog/jaipur-3-days",
-      "touristType": ["Cultural Tourism", "Heritage Tourism", "Food Tourism"],
-    },
-  ],
 };
 
 export default function JaipurBlogPage() {
@@ -183,6 +185,11 @@ export default function JaipurBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <JaipurClient />
     </>

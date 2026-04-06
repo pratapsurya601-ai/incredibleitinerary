@@ -105,7 +105,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Rishikesh & Haridwar, Uttarakhand, India",
+      "description": "Twin holy cities on the Ganges in the foothills of the Himalayas — Rishikesh is the Yoga Capital of the World and India's adventure sports hub, while Haridwar is one of the seven holiest cities in Hinduism.",
+      "url": "https://www.incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
+      "touristType": ["Adventure Tourism", "Spiritual Tourism", "Wellness Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -157,15 +172,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Rishikesh & Haridwar, Uttarakhand, India",
-      "description": "Twin holy cities on the Ganges in the foothills of the Himalayas — Rishikesh is the Yoga Capital of the World and India's adventure sports hub, while Haridwar is one of the seven holiest cities in Hinduism.",
-      "url": "https://www.incredibleitinerary.com/blog/rishikesh-haridwar-3-days",
-      "touristType": ["Adventure Tourism", "Spiritual Tourism", "Wellness Tourism"],
-    },
-  ],
 };
 
 export default function RishikeshPage() {
@@ -174,6 +180,11 @@ export default function RishikeshPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <RishikeshClient />
     </>

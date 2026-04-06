@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Mahabaleshwar, Maharashtra, India",
+      "description": "Maharashtra's most popular hill station in the Western Ghats, famous for dramatic cliff viewpoints, strawberry farms, ancient temples, and the historic Pratapgad Fort.",
+      "url": "https://www.incredibleitinerary.com/blog/mahabaleshwar-2-days",
+      "touristType": ["Nature Tourism", "Hill Station", "Weekend Getaway", "Heritage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Mahabaleshwar, Maharashtra, India",
-      "description": "Maharashtra's most popular hill station in the Western Ghats, famous for dramatic cliff viewpoints, strawberry farms, ancient temples, and the historic Pratapgad Fort.",
-      "url": "https://www.incredibleitinerary.com/blog/mahabaleshwar-2-days",
-      "touristType": ["Nature Tourism", "Hill Station", "Weekend Getaway", "Heritage Tourism"],
-    },
-  ],
 };
 
 export default function MahabaleshwarBlogPage() {
@@ -175,6 +181,11 @@ export default function MahabaleshwarBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <MahabaleshwarClient />
     </>

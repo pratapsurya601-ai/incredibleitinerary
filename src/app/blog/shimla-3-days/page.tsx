@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Shimla, Himachal Pradesh, India",
+      "description": "The former summer capital of British India, known for its colonial architecture, Mall Road promenade, snow-covered peaks, and the UNESCO-listed Kalka-Shimla toy train.",
+      "url": "https://www.incredibleitinerary.com/blog/shimla-3-days",
+      "touristType": ["Hill Station Tourism", "Cultural Tourism", "Heritage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Shimla, Himachal Pradesh, India",
-      "description": "The former summer capital of British India, known for its colonial architecture, Mall Road promenade, snow-covered peaks, and the UNESCO-listed Kalka-Shimla toy train.",
-      "url": "https://www.incredibleitinerary.com/blog/shimla-3-days",
-      "touristType": ["Hill Station Tourism", "Cultural Tourism", "Heritage Tourism"],
-    },
-  ],
 };
 
 export default function ShimlaBlogPage() {
@@ -178,6 +183,11 @@ export default function ShimlaBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <ShimlaClient />
     </>

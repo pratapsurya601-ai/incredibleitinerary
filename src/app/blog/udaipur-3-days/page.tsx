@@ -108,10 +108,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/udaipur-3-days",
         },
       ],
-    },
-
-    // FAQPage — 6 FAQs
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Udaipur, Rajasthan, India",
+      "description": "Known as the City of Lakes, Udaipur is India's most romantic city, famous for its ornate palaces, shimmering lakes, Rajput heritage, and rooftop restaurants overlooking Lake Pichola.",
+      "url": "https://www.incredibleitinerary.com/blog/udaipur-3-days",
+      "touristType": ["Cultural Tourism", "Heritage Tourism", "Romantic Tourism", "Lake Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -163,17 +176,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Udaipur, Rajasthan, India",
-      "description": "Known as the City of Lakes, Udaipur is India's most romantic city, famous for its ornate palaces, shimmering lakes, Rajput heritage, and rooftop restaurants overlooking Lake Pichola.",
-      "url": "https://www.incredibleitinerary.com/blog/udaipur-3-days",
-      "touristType": ["Cultural Tourism", "Heritage Tourism", "Romantic Tourism", "Lake Tourism"],
-    },
-  ],
 };
 
 export default function UdaipurBlogPage() {
@@ -183,6 +185,11 @@ export default function UdaipurBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <UdaipurClient />
     </>

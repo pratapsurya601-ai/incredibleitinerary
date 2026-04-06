@@ -55,17 +55,7 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Muscat in 3 Days", "item": "https://www.incredibleitinerary.com/blog/muscat-3-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "How many days are enough for Muscat?", "acceptedAnswer": { "@type": "Answer", "text": "3 days covers the city, a wadi day trip, and the coastline perfectly. 5 days lets you add Nizwa, Jebel Akhdar, and the Wahiba Sands desert." } },
-        { "@type": "Question", "name": "How much does a 3-day Muscat trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: OMR 20-40/day ($52-104 USD). Comfortable: OMR 40-80/day ($104-208 USD). Oman is more affordable than Dubai for most travellers." } },
-        { "@type": "Question", "name": "Do I need a visa for Oman?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need an Oman e-visa (apply online, OMR 20/$52, 1-3 days processing). US, UK, EU citizens can get visa-on-arrival (OMR 20, 30 days). A UAE visa does NOT cover Oman." } },
-        { "@type": "Question", "name": "Is Oman safe?", "acceptedAnswer": { "@type": "Answer", "text": "Extremely safe. Oman consistently ranks as one of the safest countries in the world. Solo female travellers report feeling very comfortable. The culture of hospitality is genuine." } },
-        { "@type": "Question", "name": "What is the best time to visit Muscat?", "acceptedAnswer": { "@type": "Answer", "text": "October to March for comfortable weather (22-30C). November and February are ideal. April-September is extremely hot (40C+). Ramadan dates vary but offer a unique cultural experience." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       "name": "Muscat, Oman",
       "description": "Oman's capital city, known for the Sultan Qaboos Grand Mosque, dramatic mountain-backed coastline, traditional souqs, and an authentic Arabian hospitality that contrasts with Dubai's commercialism.",
@@ -75,10 +65,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How many days are enough for Muscat?", "acceptedAnswer": { "@type": "Answer", "text": "3 days covers the city, a wadi day trip, and the coastline perfectly. 5 days lets you add Nizwa, Jebel Akhdar, and the Wahiba Sands desert." } },
+        { "@type": "Question", "name": "How much does a 3-day Muscat trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: OMR 20-40/day ($52-104 USD). Comfortable: OMR 40-80/day ($104-208 USD). Oman is more affordable than Dubai for most travellers." } },
+        { "@type": "Question", "name": "Do I need a visa for Oman?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need an Oman e-visa (apply online, OMR 20/$52, 1-3 days processing). US, UK, EU citizens can get visa-on-arrival (OMR 20, 30 days). A UAE visa does NOT cover Oman." } },
+        { "@type": "Question", "name": "Is Oman safe?", "acceptedAnswer": { "@type": "Answer", "text": "Extremely safe. Oman consistently ranks as one of the safest countries in the world. Solo female travellers report feeling very comfortable. The culture of hospitality is genuine." } },
+        { "@type": "Question", "name": "What is the best time to visit Muscat?", "acceptedAnswer": { "@type": "Answer", "text": "October to March for comfortable weather (22-30C). November and February are ideal. April-September is extremely hot (40C+). Ramadan dates vary but offer a unique cultural experience." } },
+      ],
+};
+
 export default function MuscatBlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <MuscatClient />
     </>
   );

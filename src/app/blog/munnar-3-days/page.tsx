@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Munnar, Kerala, India",
+      "description": "Kerala's most famous hill station, known for endless tea plantations, endangered Nilgiri Tahr, misty peaks, and the highest tea estate in the world at Kolukkumalai.",
+      "url": "https://www.incredibleitinerary.com/blog/munnar-3-days",
+      "touristType": ["Nature Tourism", "Wildlife Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Munnar, Kerala, India",
-      "description": "Kerala's most famous hill station, known for endless tea plantations, endangered Nilgiri Tahr, misty peaks, and the highest tea estate in the world at Kolukkumalai.",
-      "url": "https://www.incredibleitinerary.com/blog/munnar-3-days",
-      "touristType": ["Nature Tourism", "Wildlife Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function MunnarBlogPage() {
@@ -178,6 +183,11 @@ export default function MunnarBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <MunnarClient />
     </>

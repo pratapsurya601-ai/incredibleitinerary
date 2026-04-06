@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Wayanad, Kerala, India",
+      "description": "A lush hill district in Kerala's Western Ghats known for ancient caves, misty treehouses, wildlife sanctuaries, and some of the best trekking trails in South India.",
+      "url": "https://www.incredibleitinerary.com/blog/wayanad-3-days",
+      "touristType": ["Nature Tourism", "Adventure Tourism", "Wildlife Tourism", "Eco Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Wayanad, Kerala, India",
-      "description": "A lush hill district in Kerala's Western Ghats known for ancient caves, misty treehouses, wildlife sanctuaries, and some of the best trekking trails in South India.",
-      "url": "https://www.incredibleitinerary.com/blog/wayanad-3-days",
-      "touristType": ["Nature Tourism", "Adventure Tourism", "Wildlife Tourism", "Eco Tourism"],
-    },
-  ],
 };
 
 export default function WayanadBlogPage() {
@@ -178,6 +183,11 @@ export default function WayanadBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <WayanadClient />
     </>

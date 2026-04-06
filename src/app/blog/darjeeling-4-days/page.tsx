@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Darjeeling, West Bengal, India",
+      "description": "Queen of the Hills — a colonial-era hill station at 6,710 ft known for tea gardens, Kangchenjunga views, the UNESCO Heritage toy train, and Himalayan culture.",
+      "url": "https://www.incredibleitinerary.com/blog/darjeeling-4-days",
+      "touristType": ["Mountain Tourism", "Cultural Tourism", "Heritage Tourism", "Tea Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Darjeeling, West Bengal, India",
-      "description": "Queen of the Hills — a colonial-era hill station at 6,710 ft known for tea gardens, Kangchenjunga views, the UNESCO Heritage toy train, and Himalayan culture.",
-      "url": "https://www.incredibleitinerary.com/blog/darjeeling-4-days",
-      "touristType": ["Mountain Tourism", "Cultural Tourism", "Heritage Tourism", "Tea Tourism"],
-    },
-  ],
 };
 
 export default function DarjeelingBlogPage() {
@@ -178,6 +183,11 @@ export default function DarjeelingBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <DarjeelingClient />
     </>

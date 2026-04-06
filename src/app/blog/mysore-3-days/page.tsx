@@ -110,7 +110,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Mysore (Mysuru), Karnataka, India",
+      "description": "The City of Palaces — known for its royal heritage, grand Mysore Palace, Chamundi Hills, silk sarees, Mysore Pak sweets, and the spectacular Dasara festival.",
+      "url": "https://www.incredibleitinerary.com/blog/mysore-3-days",
+      "touristType": ["Cultural Tourism", "Heritage Tourism", "Food Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -162,16 +177,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Mysore (Mysuru), Karnataka, India",
-      "description": "The City of Palaces — known for its royal heritage, grand Mysore Palace, Chamundi Hills, silk sarees, Mysore Pak sweets, and the spectacular Dasara festival.",
-      "url": "https://www.incredibleitinerary.com/blog/mysore-3-days",
-      "touristType": ["Cultural Tourism", "Heritage Tourism", "Food Tourism"],
-    },
-  ],
 };
 
 export default function MysoreBlogPage() {
@@ -180,6 +185,11 @@ export default function MysoreBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <MysoreClient />
     </>

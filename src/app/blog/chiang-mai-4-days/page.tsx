@@ -90,7 +90,22 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Chiang Mai in 4 Days", "item": "https://www.incredibleitinerary.com/blog/chiang-mai-4-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Chiang Mai, Thailand",
+      "description": "Thailand's cultural capital in the northern mountains, known for ancient temples, ethical elephant sanctuaries, incredible street food, night markets, and a thriving cafe culture.",
+      "url": "https://www.incredibleitinerary.com/blog/chiang-mai-4-days",
+      "touristType": ["Cultural Tourism", "Food Tourism", "Eco Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -142,15 +157,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Chiang Mai, Thailand",
-      "description": "Thailand's cultural capital in the northern mountains, known for ancient temples, ethical elephant sanctuaries, incredible street food, night markets, and a thriving cafe culture.",
-      "url": "https://www.incredibleitinerary.com/blog/chiang-mai-4-days",
-      "touristType": ["Cultural Tourism", "Food Tourism", "Eco Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function ChiangMaiBlogPage() {
@@ -159,6 +165,11 @@ export default function ChiangMaiBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <ChiangMaiClient />
     </>

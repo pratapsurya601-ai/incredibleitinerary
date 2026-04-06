@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Shillong, Meghalaya, India",
+      "description": "The Scotland of the East and rock music capital of India — a hill station in Northeast India known for its pine forests, sacred groves, waterfalls, and vibrant Khasi culture.",
+      "url": "https://www.incredibleitinerary.com/blog/shillong-3-days",
+      "touristType": ["Cultural Tourism", "Nature Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Shillong, Meghalaya, India",
-      "description": "The Scotland of the East and rock music capital of India — a hill station in Northeast India known for its pine forests, sacred groves, waterfalls, and vibrant Khasi culture.",
-      "url": "https://www.incredibleitinerary.com/blog/shillong-3-days",
-      "touristType": ["Cultural Tourism", "Nature Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function ShillongBlogPage() {
@@ -175,6 +181,11 @@ export default function ShillongBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <ShillongClient />
     </>

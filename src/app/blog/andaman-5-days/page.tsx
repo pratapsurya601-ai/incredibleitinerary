@@ -56,7 +56,21 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Andaman 5 Days", "item": "https://www.incredibleitinerary.com/blog/andaman-5-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Andaman Islands, India",
+      "description": "India's tropical island archipelago in the Bay of Bengal — known for white sand beaches, coral reefs, scuba diving, and the historic Cellular Jail.",
+      "url": "https://www.incredibleitinerary.com/blog/andaman-5-days",
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -76,20 +90,17 @@ const jsonLd = {
           "acceptedAnswer": { "@type": "Answer", "text": "Time magazine named it Asia's Best Beach in 2004 and the title has stuck. It's a 2km crescent of white sand with turquoise water and a forest backdrop — entirely undeveloped. No shacks, no touts, no beach chairs for hire. It's genuinely extraordinary. Arrive by 6am for sunrise and an empty beach." }
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Andaman Islands, India",
-      "description": "India's tropical island archipelago in the Bay of Bengal — known for white sand beaches, coral reefs, scuba diving, and the historic Cellular Jail.",
-      "url": "https://www.incredibleitinerary.com/blog/andaman-5-days",
-    },
-  ],
 };
 
 export default function AndamanPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <AndamanClient />
     </>
   );

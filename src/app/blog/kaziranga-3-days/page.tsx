@@ -107,7 +107,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Kaziranga National Park, Assam, India",
+      "description": "UNESCO World Heritage Site and home to two-thirds of the world's one-horned rhinoceros population, along with tigers, elephants, wild water buffalo, and over 480 bird species.",
+      "url": "https://www.incredibleitinerary.com/blog/kaziranga-3-days",
+      "touristType": ["Wildlife Tourism", "Eco Tourism", "Nature Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -159,16 +174,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Kaziranga National Park, Assam, India",
-      "description": "UNESCO World Heritage Site and home to two-thirds of the world's one-horned rhinoceros population, along with tigers, elephants, wild water buffalo, and over 480 bird species.",
-      "url": "https://www.incredibleitinerary.com/blog/kaziranga-3-days",
-      "touristType": ["Wildlife Tourism", "Eco Tourism", "Nature Tourism"],
-    },
-  ],
 };
 
 export default function KazirangaBlogPage() {
@@ -177,6 +182,11 @@ export default function KazirangaBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <KazirangaClient />
     </>

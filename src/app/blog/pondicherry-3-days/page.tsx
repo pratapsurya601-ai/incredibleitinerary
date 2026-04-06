@@ -108,10 +108,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/pondicherry-3-days",
         },
       ],
-    },
-
-    // FAQPage
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Pondicherry (Puducherry), India",
+      "description": "A former French colonial territory on India's southeast coast, known for its French Quarter, Auroville township, beaches, Sri Aurobindo Ashram, and unique Franco-Tamil cuisine.",
+      "url": "https://www.incredibleitinerary.com/blog/pondicherry-3-days",
+      "touristType": ["Cultural Tourism", "Beach Tourism", "Spiritual Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -163,17 +176,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Pondicherry (Puducherry), India",
-      "description": "A former French colonial territory on India's southeast coast, known for its French Quarter, Auroville township, beaches, Sri Aurobindo Ashram, and unique Franco-Tamil cuisine.",
-      "url": "https://www.incredibleitinerary.com/blog/pondicherry-3-days",
-      "touristType": ["Cultural Tourism", "Beach Tourism", "Spiritual Tourism"],
-    },
-  ],
 };
 
 export default function PondicherryBlogPage() {
@@ -183,6 +185,11 @@ export default function PondicherryBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <PondicherryClient />
     </>

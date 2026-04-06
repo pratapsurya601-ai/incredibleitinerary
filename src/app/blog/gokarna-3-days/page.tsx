@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Gokarna, Karnataka, India",
+      "description": "A laid-back temple town on Karnataka's coast, known for pristine beaches, cliff-top treks, and the ancient Mahabaleshwar Temple. Often called what Goa was 20 years ago.",
+      "url": "https://www.incredibleitinerary.com/blog/gokarna-3-days",
+      "touristType": ["Beach Tourism", "Pilgrimage Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Gokarna, Karnataka, India",
-      "description": "A laid-back temple town on Karnataka's coast, known for pristine beaches, cliff-top treks, and the ancient Mahabaleshwar Temple. Often called what Goa was 20 years ago.",
-      "url": "https://www.incredibleitinerary.com/blog/gokarna-3-days",
-      "touristType": ["Beach Tourism", "Pilgrimage Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function GokarnaBlogPage() {
@@ -178,6 +183,11 @@ export default function GokarnaBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <GokarnaBlogClient />
     </>

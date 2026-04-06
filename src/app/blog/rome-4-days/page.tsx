@@ -90,7 +90,22 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Rome in 4 Days", "item": "https://www.incredibleitinerary.com/blog/rome-4-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Rome, Italy",
+      "description": "Italy's capital and a living museum spanning 2,800 years of history, from the Colosseum to the Vatican, known for its art, architecture, and cuisine.",
+      "url": "https://www.incredibleitinerary.com/blog/rome-4-days",
+      "touristType": ["Cultural Tourism", "Historical Tourism", "Food Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -142,15 +157,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Rome, Italy",
-      "description": "Italy's capital and a living museum spanning 2,800 years of history, from the Colosseum to the Vatican, known for its art, architecture, and cuisine.",
-      "url": "https://www.incredibleitinerary.com/blog/rome-4-days",
-      "touristType": ["Cultural Tourism", "Historical Tourism", "Food Tourism"],
-    },
-  ],
 };
 
 export default function RomeBlogPage() {
@@ -159,6 +165,11 @@ export default function RomeBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <RomeClient />
     </>

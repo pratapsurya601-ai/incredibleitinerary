@@ -110,7 +110,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Ooty (Udhagamandalam), Tamil Nadu, India",
+      "description": "The Queen of Hill Stations in the Nilgiri Mountains, known for the UNESCO Heritage Nilgiri Mountain Railway, tea plantations, botanical gardens and colonial-era charm.",
+      "url": "https://www.incredibleitinerary.com/blog/ooty-3-days",
+      "touristType": ["Hill Station Tourism", "Nature Tourism", "Heritage Tourism", "Family Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -162,16 +177,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Ooty (Udhagamandalam), Tamil Nadu, India",
-      "description": "The Queen of Hill Stations in the Nilgiri Mountains, known for the UNESCO Heritage Nilgiri Mountain Railway, tea plantations, botanical gardens and colonial-era charm.",
-      "url": "https://www.incredibleitinerary.com/blog/ooty-3-days",
-      "touristType": ["Hill Station Tourism", "Nature Tourism", "Heritage Tourism", "Family Tourism"],
-    },
-  ],
 };
 
 export default function OotyBlogPage() {
@@ -180,6 +185,11 @@ export default function OotyBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <OotyBlogClient />
     </>

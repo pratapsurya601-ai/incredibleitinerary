@@ -90,7 +90,22 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Dubai in 4 Days", "item": "https://www.incredibleitinerary.com/blog/dubai-4-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Dubai, United Arab Emirates",
+      "description": "The UAE's most famous city, known for record-breaking architecture, luxury shopping, desert adventures, and a blend of Arabian heritage with futuristic design.",
+      "url": "https://www.incredibleitinerary.com/blog/dubai-4-days",
+      "touristType": ["Urban Tourism", "Luxury Tourism", "Adventure Tourism", "Cultural Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -134,15 +149,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Dubai, United Arab Emirates",
-      "description": "The UAE's most famous city, known for record-breaking architecture, luxury shopping, desert adventures, and a blend of Arabian heritage with futuristic design.",
-      "url": "https://www.incredibleitinerary.com/blog/dubai-4-days",
-      "touristType": ["Urban Tourism", "Luxury Tourism", "Adventure Tourism", "Cultural Tourism"],
-    },
-  ],
 };
 
 export default function DubaiBlogPage() {
@@ -151,6 +157,11 @@ export default function DubaiBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <DubaiClient />
     </>

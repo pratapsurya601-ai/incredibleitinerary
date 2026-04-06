@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Visakhapatnam (Vizag), India",
+      "description": "Andhra Pradesh's coastal jewel — known for its beaches, the Eastern Ghats, Araku Valley coffee plantations, and one of India's best scenic train rides.",
+      "url": "https://www.incredibleitinerary.com/blog/vizag-3-days",
+      "touristType": ["Beach Tourism", "Nature Tourism", "Cultural Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Visakhapatnam (Vizag), India",
-      "description": "Andhra Pradesh's coastal jewel — known for its beaches, the Eastern Ghats, Araku Valley coffee plantations, and one of India's best scenic train rides.",
-      "url": "https://www.incredibleitinerary.com/blog/vizag-3-days",
-      "touristType": ["Beach Tourism", "Nature Tourism", "Cultural Tourism"],
-    },
-  ],
 };
 
 export default function VizagBlogPage() {
@@ -175,6 +181,11 @@ export default function VizagBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <VizagClient />
     </>

@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Mussoorie, Uttarakhand, India",
+      "description": "The Queen of Hills — a charming British-era hill station in the Garhwal Himalayas known for Landour's literary heritage, panoramic Himalayan views, and colonial-era walks.",
+      "url": "https://www.incredibleitinerary.com/blog/mussoorie-3-days",
+      "touristType": ["Hill Station Tourism", "Nature Tourism", "Cultural Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Mussoorie, Uttarakhand, India",
-      "description": "The Queen of Hills — a charming British-era hill station in the Garhwal Himalayas known for Landour's literary heritage, panoramic Himalayan views, and colonial-era walks.",
-      "url": "https://www.incredibleitinerary.com/blog/mussoorie-3-days",
-      "touristType": ["Hill Station Tourism", "Nature Tourism", "Cultural Tourism"],
-    },
-  ],
 };
 
 export default function MussooriesBlogPage() {
@@ -175,6 +181,11 @@ export default function MussooriesBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <MusoorieClient />
     </>

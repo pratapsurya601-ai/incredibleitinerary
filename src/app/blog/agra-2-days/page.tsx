@@ -108,10 +108,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/agra-2-days",
         },
       ],
-    },
-
-    // FAQPage
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Agra, India",
+      "description": "Home to the Taj Mahal, Agra Fort, and Fatehpur Sikri — three UNESCO World Heritage Sites within a single city. The heart of Mughal architecture in India.",
+      "url": "https://www.incredibleitinerary.com/blog/agra-2-days",
+      "touristType": ["Cultural Tourism", "Heritage Tourism", "Historical Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -163,17 +176,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Agra, India",
-      "description": "Home to the Taj Mahal, Agra Fort, and Fatehpur Sikri — three UNESCO World Heritage Sites within a single city. The heart of Mughal architecture in India.",
-      "url": "https://www.incredibleitinerary.com/blog/agra-2-days",
-      "touristType": ["Cultural Tourism", "Heritage Tourism", "Historical Tourism"],
-    },
-  ],
 };
 
 export default function AgraBlogPage() {
@@ -183,6 +185,11 @@ export default function AgraBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <AgraClient />
     </>

@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Jodhpur, Rajasthan, India",
+      "description": "The Blue City of India, known for Mehrangarh Fort, blue-painted old city houses, Umaid Bhawan Palace, vibrant street food and Rajasthani heritage.",
+      "url": "https://www.incredibleitinerary.com/blog/jodhpur-3-days",
+      "touristType": ["Cultural Tourism", "Heritage Tourism", "Adventure Tourism", "Food Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Jodhpur, Rajasthan, India",
-      "description": "The Blue City of India, known for Mehrangarh Fort, blue-painted old city houses, Umaid Bhawan Palace, vibrant street food and Rajasthani heritage.",
-      "url": "https://www.incredibleitinerary.com/blog/jodhpur-3-days",
-      "touristType": ["Cultural Tourism", "Heritage Tourism", "Adventure Tourism", "Food Tourism"],
-    },
-  ],
 };
 
 export default function JodhpurBlogPage() {
@@ -176,6 +182,11 @@ export default function JodhpurBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <JodhpurClient />
     </>

@@ -62,7 +62,21 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Golden Triangle 7 Days", "item": "https://www.incredibleitinerary.com/blog/golden-triangle-7-days" },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Golden Triangle, India",
+      "description": "India's most famous tourist circuit connecting Delhi, Agra and Jaipur — encompassing the Taj Mahal, Amber Fort, Red Fort and some of the world's greatest Mughal and Rajput heritage.",
+      "url": "https://www.incredibleitinerary.com/blog/golden-triangle-7-days",
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -86,20 +100,17 @@ const jsonLd = {
           "acceptedAnswer": { "@type": "Answer", "text": "The Gatimaan Express is the best option — India's fastest train, Delhi to Agra in 1hr 40min (Rs.750 in Chair Car, Rs.1,505 in Executive). Book at irctc.co.in. Alternatively, the Shatabdi Express takes 2hrs. By road it's 3-4hrs depending on traffic. Never take a taxi from Delhi to Agra unless pre-booked — roadside touts will overcharge severely." }
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Golden Triangle, India",
-      "description": "India's most famous tourist circuit connecting Delhi, Agra and Jaipur — encompassing the Taj Mahal, Amber Fort, Red Fort and some of the world's greatest Mughal and Rajput heritage.",
-      "url": "https://www.incredibleitinerary.com/blog/golden-triangle-7-days",
-    },
-  ],
 };
 
 export default function GoldenTrianglePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <GoldenTriangleClient />
     </>
   );

@@ -108,10 +108,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/auli-3-days",
         },
       ],
-    },
-
-    // FAQPage
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Auli, Uttarakhand, India",
+      "description": "Himalayan ski resort town at 2,500-3,050m known for Asia's longest cable car, panoramic Nanda Devi views, alpine meadows (bugyals), and India's best skiing slopes.",
+      "url": "https://www.incredibleitinerary.com/blog/auli-3-days",
+      "touristType": ["Adventure Tourism", "Skiing", "Trekking", "Mountain Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -163,17 +176,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Auli, Uttarakhand, India",
-      "description": "Himalayan ski resort town at 2,500-3,050m known for Asia's longest cable car, panoramic Nanda Devi views, alpine meadows (bugyals), and India's best skiing slopes.",
-      "url": "https://www.incredibleitinerary.com/blog/auli-3-days",
-      "touristType": ["Adventure Tourism", "Skiing", "Trekking", "Mountain Tourism"],
-    },
-  ],
 };
 
 export default function AuliBlogPage() {
@@ -183,6 +185,11 @@ export default function AuliBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <AuliClient />
     </>

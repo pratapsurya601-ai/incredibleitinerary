@@ -75,17 +75,7 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Abu Dhabi in 3 Days", "item": "https://www.incredibleitinerary.com/blog/abu-dhabi-3-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "How many days are enough for Abu Dhabi?", "acceptedAnswer": { "@type": "Answer", "text": "3 days is ideal for Abu Dhabi. You can cover Sheikh Zayed Mosque, Louvre, Yas Island, and the Corniche without rushing. 2 days as a Dubai day-extension is possible but tight." } },
-        { "@type": "Question", "name": "How much does a 3-day Abu Dhabi trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: AED 250-450/day ($68-123 USD). Comfortable: AED 500-1000/day ($136-272 USD). This includes accommodation, food, transport and activities." } },
-        { "@type": "Question", "name": "Do I need a visa for Abu Dhabi?", "acceptedAnswer": { "@type": "Answer", "text": "Same as Dubai. Indian passport holders need a UAE visa (apply online, AED 350-500). US, UK, EU, AU, CA citizens get visa-on-arrival for 30 days free." } },
-        { "@type": "Question", "name": "Is Abu Dhabi worth visiting if I've seen Dubai?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Abu Dhabi is culturally richer with Sheikh Zayed Mosque and Louvre Abu Dhabi. It's less commercial, more spacious, and the Emirati culture is more visible. They're complementary, not redundant." } },
-        { "@type": "Question", "name": "What is the best time to visit Abu Dhabi?", "acceptedAnswer": { "@type": "Answer", "text": "November to March for comfortable outdoor weather (20-28C). December-January is peak season. October and April are shoulder months. May-September is extremely hot (45C+)." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       "name": "Abu Dhabi, United Arab Emirates",
       "description": "The UAE capital, known for Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Yas Island theme parks, and a more culturally authentic Emirati experience than Dubai.",
@@ -95,10 +85,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How many days are enough for Abu Dhabi?", "acceptedAnswer": { "@type": "Answer", "text": "3 days is ideal for Abu Dhabi. You can cover Sheikh Zayed Mosque, Louvre, Yas Island, and the Corniche without rushing. 2 days as a Dubai day-extension is possible but tight." } },
+        { "@type": "Question", "name": "How much does a 3-day Abu Dhabi trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: AED 250-450/day ($68-123 USD). Comfortable: AED 500-1000/day ($136-272 USD). This includes accommodation, food, transport and activities." } },
+        { "@type": "Question", "name": "Do I need a visa for Abu Dhabi?", "acceptedAnswer": { "@type": "Answer", "text": "Same as Dubai. Indian passport holders need a UAE visa (apply online, AED 350-500). US, UK, EU, AU, CA citizens get visa-on-arrival for 30 days free." } },
+        { "@type": "Question", "name": "Is Abu Dhabi worth visiting if I've seen Dubai?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Abu Dhabi is culturally richer with Sheikh Zayed Mosque and Louvre Abu Dhabi. It's less commercial, more spacious, and the Emirati culture is more visible. They're complementary, not redundant." } },
+        { "@type": "Question", "name": "What is the best time to visit Abu Dhabi?", "acceptedAnswer": { "@type": "Answer", "text": "November to March for comfortable outdoor weather (20-28C). December-January is peak season. October and April are shoulder months. May-September is extremely hot (45C+)." } },
+      ],
+};
+
 export default function AbuDhabiBlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <AbuDhabiClient />
     </>
   );

@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Khajuraho, Madhya Pradesh, India",
+      "description": "A UNESCO World Heritage Site famous for its medieval Hindu and Jain temples adorned with intricate sculptures, located in Madhya Pradesh. One of India's most remarkable architectural achievements.",
+      "url": "https://www.incredibleitinerary.com/blog/khajuraho-2-days",
+      "touristType": ["Heritage Tourism", "Cultural Tourism", "Religious Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Khajuraho, Madhya Pradesh, India",
-      "description": "A UNESCO World Heritage Site famous for its medieval Hindu and Jain temples adorned with intricate sculptures, located in Madhya Pradesh. One of India's most remarkable architectural achievements.",
-      "url": "https://www.incredibleitinerary.com/blog/khajuraho-2-days",
-      "touristType": ["Heritage Tourism", "Cultural Tourism", "Religious Tourism"],
-    },
-  ],
 };
 
 export default function KhajurahoPage() {
@@ -175,6 +181,11 @@ export default function KhajurahoPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <KhajurahoClient />
     </>

@@ -55,17 +55,7 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Seville in 3 Days", "item": "https://www.incredibleitinerary.com/blog/seville-3-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "How many days are enough for Seville?", "acceptedAnswer": { "@type": "Answer", "text": "3 days is perfect. Covers the Alcazar, Cathedral, Plaza de Espana, Triana, and a flamenco show. 2 days is rushed. 4+ lets you add Cordoba or Ronda day trips." } },
-        { "@type": "Question", "name": "How much does a 3-day Seville trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: EUR 40-70/day ($43-76 USD). Comfortable: EUR 80-150/day ($86-162 USD). Seville is one of the cheapest major cities in Western Europe." } },
-        { "@type": "Question", "name": "Do I need a visa for Spain?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need a Schengen visa (EUR 80, apply at BLS/VFS 3 months ahead). US, UK, AU, CA citizens visit visa-free for 90 days within 180 days." } },
-        { "@type": "Question", "name": "What is the best time to visit Seville?", "acceptedAnswer": { "@type": "Answer", "text": "March-May (Semana Santa and Feria) and October-November. June-August is brutally hot (40-45C). December-February is mild and cheapest." } },
-        { "@type": "Question", "name": "Should I book Real Alcazar tickets in advance?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book at alcazarsevilla.org for the earliest slot. Walk-up queues can be 1-2 hours in spring. The upstairs Royal Apartments cost EUR 4.50 extra and are worth every cent." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       "name": "Seville, Spain",
       "description": "The capital of Andalusia, known for the Real Alcazar, the Gothic Cathedral, flamenco in Triana, orange-tree-lined streets, and the most stunning plaza in Europe.",
@@ -75,10 +65,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How many days are enough for Seville?", "acceptedAnswer": { "@type": "Answer", "text": "3 days is perfect. Covers the Alcazar, Cathedral, Plaza de Espana, Triana, and a flamenco show. 2 days is rushed. 4+ lets you add Cordoba or Ronda day trips." } },
+        { "@type": "Question", "name": "How much does a 3-day Seville trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: EUR 40-70/day ($43-76 USD). Comfortable: EUR 80-150/day ($86-162 USD). Seville is one of the cheapest major cities in Western Europe." } },
+        { "@type": "Question", "name": "Do I need a visa for Spain?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need a Schengen visa (EUR 80, apply at BLS/VFS 3 months ahead). US, UK, AU, CA citizens visit visa-free for 90 days within 180 days." } },
+        { "@type": "Question", "name": "What is the best time to visit Seville?", "acceptedAnswer": { "@type": "Answer", "text": "March-May (Semana Santa and Feria) and October-November. June-August is brutally hot (40-45C). December-February is mild and cheapest." } },
+        { "@type": "Question", "name": "Should I book Real Alcazar tickets in advance?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book at alcazarsevilla.org for the earliest slot. Walk-up queues can be 1-2 hours in spring. The upstairs Royal Apartments cost EUR 4.50 extra and are worth every cent." } },
+      ],
+};
+
 export default function SevilleBlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <SevilleClient />
     </>
   );

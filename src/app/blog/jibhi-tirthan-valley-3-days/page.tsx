@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Jibhi & Tirthan Valley, Himachal Pradesh, India",
+      "description": "A hidden gem in Himachal Pradesh's Kullu district — a peaceful valley known for traditional wooden homestays, trout-filled rivers, the Great Himalayan National Park, and Jalori Pass treks.",
+      "url": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
+      "touristType": ["Eco Tourism", "Adventure Tourism", "Wellness Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Jibhi & Tirthan Valley, Himachal Pradesh, India",
-      "description": "A hidden gem in Himachal Pradesh's Kullu district — a peaceful valley known for traditional wooden homestays, trout-filled rivers, the Great Himalayan National Park, and Jalori Pass treks.",
-      "url": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
-      "touristType": ["Eco Tourism", "Adventure Tourism", "Wellness Tourism"],
-    },
-  ],
 };
 
 export default function JibhiPage() {
@@ -175,6 +181,11 @@ export default function JibhiPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <JibhiClient />
     </>

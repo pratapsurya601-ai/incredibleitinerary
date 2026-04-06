@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Kodaikanal, Tamil Nadu, India",
+      "description": "The Princess of Hill Stations — a pristine hill town at 2,133m in the Palani Hills of Tamil Nadu, known for its star-shaped lake, shola forests, and misty viewpoints.",
+      "url": "https://www.incredibleitinerary.com/blog/kodaikanal-3-days",
+      "touristType": ["Nature Tourism", "Hill Station Tourism", "Eco Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Kodaikanal, Tamil Nadu, India",
-      "description": "The Princess of Hill Stations — a pristine hill town at 2,133m in the Palani Hills of Tamil Nadu, known for its star-shaped lake, shola forests, and misty viewpoints.",
-      "url": "https://www.incredibleitinerary.com/blog/kodaikanal-3-days",
-      "touristType": ["Nature Tourism", "Hill Station Tourism", "Eco Tourism"],
-    },
-  ],
 };
 
 export default function KodaikanalBlogPage() {
@@ -175,6 +181,11 @@ export default function KodaikanalBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <KodaikanalClient />
     </>

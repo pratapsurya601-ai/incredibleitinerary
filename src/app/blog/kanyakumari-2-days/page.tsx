@@ -107,7 +107,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Kanyakumari, Tamil Nadu, India",
+      "description": "The southernmost tip of mainland India where the Arabian Sea, Bay of Bengal, and Indian Ocean meet — famous for sunrise and sunset views from the same point, Vivekananda Rock Memorial, and Thiruvalluvar Statue.",
+      "url": "https://www.incredibleitinerary.com/blog/kanyakumari-2-days",
+      "touristType": ["Coastal Tourism", "Cultural Tourism", "Pilgrimage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -159,16 +174,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Kanyakumari, Tamil Nadu, India",
-      "description": "The southernmost tip of mainland India where the Arabian Sea, Bay of Bengal, and Indian Ocean meet — famous for sunrise and sunset views from the same point, Vivekananda Rock Memorial, and Thiruvalluvar Statue.",
-      "url": "https://www.incredibleitinerary.com/blog/kanyakumari-2-days",
-      "touristType": ["Coastal Tourism", "Cultural Tourism", "Pilgrimage Tourism"],
-    },
-  ],
 };
 
 export default function KanyakumariBlogPage() {
@@ -177,6 +182,11 @@ export default function KanyakumariBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <KanyakumariClient />
     </>

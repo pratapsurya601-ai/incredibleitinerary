@@ -57,16 +57,7 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Manali 5 Days", "item": "https://www.incredibleitinerary.com/blog/manali-5-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "What is the best time to visit Manali?", "acceptedAnswer": { "@type": "Answer", "text": "December to February for snow (Solang Valley and Rohtang get heavy snowfall). March to June for pleasant weather and Rohtang Pass access. July to September is monsoon — landslides on the highway, Rohtang closed. October to November is off-season but beautiful — golden trees, fewer crowds, cold nights." } },
-        { "@type": "Question", "name": "How do I get to Manali?", "acceptedAnswer": { "@type": "Answer", "text": "By bus: Volvo AC bus from Delhi (14–16hrs, Rs.900–Rs.1,800). Best value option — leaves Kashmere Gate ISBT at 5–7pm, arrives Manali early morning. By car: Delhi to Manali is 540km (10–12hrs). By air: nearest airport is Bhuntar (Kullu), 50km from Manali. Flights from Delhi 1hr but expensive and weather-dependent." } },
-        { "@type": "Question", "name": "Is Rohtang Pass permit required?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — all vehicles need an online permit to cross Rohtang Pass (3,978m). Book at rohtangpermit.com at least 1 day in advance. Only 1,200 vehicles allowed per day. Cost: Rs.550 for petrol vehicles, Rs.650 for diesel. The permit must match your vehicle's registration. Rohtang is closed during heavy snowfall and July–August monsoon." } },
-        { "@type": "Question", "name": "What is Old Manali and why is it better?", "acceptedAnswer": { "@type": "Answer", "text": "Old Manali is the original village, 3km uphill from Mall Road. It has the best cafes (Cafe 1947, Dylan's Toasted and Roasted, The Lazy Dog), a relaxed hippie vibe, the ancient Manu Temple, and much cheaper accommodation than Mall Road. Most experienced travellers stay in Old Manali and use Mall Road only for transport." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       "name": "Manali, Himachal Pradesh, India",
       "description": "A popular hill station in the Kullu Valley — known for snow-covered mountains, Solang Valley adventure sports, Rohtang Pass, Old Manali's backpacker culture and as the gateway to Ladakh and Spiti.",
@@ -76,10 +67,30 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the best time to visit Manali?", "acceptedAnswer": { "@type": "Answer", "text": "December to February for snow (Solang Valley and Rohtang get heavy snowfall). March to June for pleasant weather and Rohtang Pass access. July to September is monsoon — landslides on the highway, Rohtang closed. October to November is off-season but beautiful — golden trees, fewer crowds, cold nights." } },
+        { "@type": "Question", "name": "How do I get to Manali?", "acceptedAnswer": { "@type": "Answer", "text": "By bus: Volvo AC bus from Delhi (14–16hrs, Rs.900–Rs.1,800). Best value option — leaves Kashmere Gate ISBT at 5–7pm, arrives Manali early morning. By car: Delhi to Manali is 540km (10–12hrs). By air: nearest airport is Bhuntar (Kullu), 50km from Manali. Flights from Delhi 1hr but expensive and weather-dependent." } },
+        { "@type": "Question", "name": "Is Rohtang Pass permit required?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — all vehicles need an online permit to cross Rohtang Pass (3,978m). Book at rohtangpermit.com at least 1 day in advance. Only 1,200 vehicles allowed per day. Cost: Rs.550 for petrol vehicles, Rs.650 for diesel. The permit must match your vehicle's registration. Rohtang is closed during heavy snowfall and July–August monsoon." } },
+        { "@type": "Question", "name": "What is Old Manali and why is it better?", "acceptedAnswer": { "@type": "Answer", "text": "Old Manali is the original village, 3km uphill from Mall Road. It has the best cafes (Cafe 1947, Dylan's Toasted and Roasted, The Lazy Dog), a relaxed hippie vibe, the ancient Manu Temple, and much cheaper accommodation than Mall Road. Most experienced travellers stay in Old Manali and use Mall Road only for transport." } },
+      ],
+};
+
 export default function ManaliPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <ManaliClient />
     </>
   );

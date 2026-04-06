@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Sundarbans, West Bengal, India",
+      "description": "The world's largest mangrove forest and a UNESCO World Heritage Site, home to the Royal Bengal Tiger, spanning the delta of the Ganges, Brahmaputra, and Meghna rivers.",
+      "url": "https://www.incredibleitinerary.com/blog/sundarbans-3-days",
+      "touristType": ["Wildlife Tourism", "Eco Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Sundarbans, West Bengal, India",
-      "description": "The world's largest mangrove forest and a UNESCO World Heritage Site, home to the Royal Bengal Tiger, spanning the delta of the Ganges, Brahmaputra, and Meghna rivers.",
-      "url": "https://www.incredibleitinerary.com/blog/sundarbans-3-days",
-      "touristType": ["Wildlife Tourism", "Eco Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function SundarbansBlogPage() {
@@ -178,6 +183,11 @@ export default function SundarbansBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <SundarbansClient />
     </>

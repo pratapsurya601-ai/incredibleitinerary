@@ -359,17 +359,7 @@ const jsonLd = {
         { "@type": "ListItem", position: 3, name: "Algarve in 4 Days", item: "https://www.incredibleitinerary.com/blog/algarve-4-days" },
       ],
     },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        { "@type": "Question", name: "What is the best base for an Algarve trip?", acceptedAnswer: { "@type": "Answer", text: "Lagos for western cliff beaches and Sagres access. Carvoeiro for central coast and Benagil Cave. Tavira for the quieter, more authentic east. Lagos is most popular for 4-day trips." } },
-        { "@type": "Question", name: "Do I need a car in the Algarve?", acceptedAnswer: { "@type": "Answer", text: "Yes for a 4-day trip. Buses connect towns but the best coastline requires a car and cliff-path walks. Rent at Faro Airport — €20–35/day in shoulder season." } },
-        { "@type": "Question", name: "Is Benagil Cave accessible without a tour?", acceptedAnswer: { "@type": "Answer", text: "No safe independent access. Swimming from the beach requires a dangerous 200m open-sea swim in Atlantic swell. Boat tours (€20–35) and guided kayaks (€30) are the correct options." } },
-        { "@type": "Question", name: "What is the best time to visit the Algarve?", acceptedAnswer: { "@type": "Answer", text: "May–June for warm weather, fewer crowds, and wildflowers. September–October for warm sea and lower prices. Avoid July–August — overcrowded and prices double." } },
-        { "@type": "Question", name: "How does the Algarve compare to other European beach destinations?", acceptedAnswer: { "@type": "Answer", text: "The golden limestone cliffs and sea caves are uniquely dramatic — unlike anything in the Mediterranean. Cheaper than Amalfi or Santorini. Water is Atlantic (cooler) but the coastal landscape is more theatrical. Best for active travellers wanting kayaking and cliff walks alongside beaches." } },
-      ],
-    },
-    {
+        {
       "@type": "TouristDestination",
       name: "Algarve, Portugal",
       description: "Southern Portugal's Atlantic coast, famous for golden limestone cliff arches, Benagil Cave, Ponta da Piedade sea grottos, and Sagres at Europe's southwestern tip.",
@@ -379,10 +369,31 @@ const jsonLd = {
   ],
 };
 
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "What is the best base for an Algarve trip?", acceptedAnswer: { "@type": "Answer", text: "Lagos for western cliff beaches and Sagres access. Carvoeiro for central coast and Benagil Cave. Tavira for the quieter, more authentic east. Lagos is most popular for 4-day trips." } },
+        { "@type": "Question", name: "Do I need a car in the Algarve?", acceptedAnswer: { "@type": "Answer", text: "Yes for a 4-day trip. Buses connect towns but the best coastline requires a car and cliff-path walks. Rent at Faro Airport — €20–35/day in shoulder season." } },
+        { "@type": "Question", name: "Is Benagil Cave accessible without a tour?", acceptedAnswer: { "@type": "Answer", text: "No safe independent access. Swimming from the beach requires a dangerous 200m open-sea swim in Atlantic swell. Boat tours (€20–35) and guided kayaks (€30) are the correct options." } },
+        { "@type": "Question", name: "What is the best time to visit the Algarve?", acceptedAnswer: { "@type": "Answer", text: "May–June for warm weather, fewer crowds, and wildflowers. September–October for warm sea and lower prices. Avoid July–August — overcrowded and prices double." } },
+        { "@type": "Question", name: "How does the Algarve compare to other European beach destinations?", acceptedAnswer: { "@type": "Answer", text: "The golden limestone cliffs and sea caves are uniquely dramatic — unlike anything in the Mediterranean. Cheaper than Amalfi or Santorini. Water is Atlantic (cooler) but the coastal landscape is more theatrical. Best for active travellers wanting kayaking and cliff walks alongside beaches." } },
+      ],
+};
+
 export default function AlgarvePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <UniversalBlogClient data={data} />
     </>
   );

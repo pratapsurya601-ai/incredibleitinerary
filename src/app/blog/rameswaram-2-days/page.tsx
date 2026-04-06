@@ -108,10 +108,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/rameswaram-2-days",
         },
       ],
-    },
-
-    // FAQPage
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Rameswaram, India",
+      "description": "A sacred island off the southeastern coast of Tamil Nadu, home to one of the twelve Jyotirlingas, the longest temple corridor in India, the iconic Pamban Bridge over the sea, and the ghost town of Dhanushkodi.",
+      "url": "https://www.incredibleitinerary.com/blog/rameswaram-2-days",
+      "touristType": ["Pilgrimage Tourism", "Cultural Tourism", "Heritage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -163,17 +176,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Rameswaram, India",
-      "description": "A sacred island off the southeastern coast of Tamil Nadu, home to one of the twelve Jyotirlingas, the longest temple corridor in India, the iconic Pamban Bridge over the sea, and the ghost town of Dhanushkodi.",
-      "url": "https://www.incredibleitinerary.com/blog/rameswaram-2-days",
-      "touristType": ["Pilgrimage Tourism", "Cultural Tourism", "Heritage Tourism"],
-    },
-  ],
 };
 
 export default function RameswaramBlogPage() {
@@ -183,6 +185,11 @@ export default function RameswaramBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <RameswaramClient />
     </>

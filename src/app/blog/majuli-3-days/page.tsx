@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Majuli Island, Assam, India",
+      "description": "The world's largest river island in the Brahmaputra, known for its Vaishnavite Satras (monasteries), Mishing tribal culture, mask-making tradition, and pottery villages.",
+      "url": "https://www.incredibleitinerary.com/blog/majuli-3-days",
+      "touristType": ["Cultural Tourism", "Eco Tourism", "Heritage Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Majuli Island, Assam, India",
-      "description": "The world's largest river island in the Brahmaputra, known for its Vaishnavite Satras (monasteries), Mishing tribal culture, mask-making tradition, and pottery villages.",
-      "url": "https://www.incredibleitinerary.com/blog/majuli-3-days",
-      "touristType": ["Cultural Tourism", "Eco Tourism", "Heritage Tourism"],
-    },
-  ],
 };
 
 export default function MajuliBlogPage() {
@@ -178,6 +183,11 @@ export default function MajuliBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <MajuliClient />
     </>

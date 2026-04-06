@@ -108,7 +108,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Kasol, Parvati Valley, Himachal Pradesh",
+      "description": "India's backpacker capital in the Parvati Valley, known for trekking, Israeli cafes, hot springs, and mountain village culture.",
+      "url": "https://www.incredibleitinerary.com/blog/kasol-3-days",
+      "touristType": ["Adventure Tourism", "Trekking", "Backpacking", "Cultural Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,15 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Kasol, Parvati Valley, Himachal Pradesh",
-      "description": "India's backpacker capital in the Parvati Valley, known for trekking, Israeli cafes, hot springs, and mountain village culture.",
-      "url": "https://www.incredibleitinerary.com/blog/kasol-3-days",
-      "touristType": ["Adventure Tourism", "Trekking", "Backpacking", "Cultural Tourism"],
-    },
-  ],
 };
 
 export default function KasolBlogPage() {
@@ -177,6 +183,11 @@ export default function KasolBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <KasolClient />
     </>

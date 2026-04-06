@@ -108,10 +108,23 @@ const jsonLd = {
           "item": "https://www.incredibleitinerary.com/blog/dharamshala-3-days",
         },
       ],
-    },
-
-    // FAQPage
+    },    // TouristDestination
     {
+      "@type": "TouristDestination",
+      "name": "Dharamshala & McLeodGanj, Himachal Pradesh, India",
+      "description": "Hill station in the Kangra Valley known as the residence of the Dalai Lama, Tibetan Buddhist monasteries, Himalayan treks, and a thriving cafe culture blending Indian and Tibetan influences.",
+      "url": "https://www.incredibleitinerary.com/blog/dharamshala-3-days",
+      "touristType": ["Cultural Tourism", "Spiritual Tourism", "Adventure Tourism", "Trekking"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -163,17 +176,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    // TouristDestination
-    {
-      "@type": "TouristDestination",
-      "name": "Dharamshala & McLeodGanj, Himachal Pradesh, India",
-      "description": "Hill station in the Kangra Valley known as the residence of the Dalai Lama, Tibetan Buddhist monasteries, Himalayan treks, and a thriving cafe culture blending Indian and Tibetan influences.",
-      "url": "https://www.incredibleitinerary.com/blog/dharamshala-3-days",
-      "touristType": ["Cultural Tourism", "Spiritual Tourism", "Adventure Tourism", "Trekking"],
-    },
-  ],
 };
 
 export default function DharamshalaPage() {
@@ -183,6 +185,11 @@ export default function DharamshalaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <DharamshalaClient />
     </>

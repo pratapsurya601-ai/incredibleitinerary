@@ -110,7 +110,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Alleppey (Alappuzha), Kerala, India",
+      "description": "Known as the Venice of the East, Alleppey is Kerala's backwater capital famous for houseboat cruises, canoe rides through narrow canals, palm-fringed waterways, and pristine beaches.",
+      "url": "https://www.incredibleitinerary.com/blog/alleppey-3-days",
+      "touristType": ["Backwater Tourism", "Beach Tourism", "Cultural Tourism", "Eco Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -162,16 +177,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Alleppey (Alappuzha), Kerala, India",
-      "description": "Known as the Venice of the East, Alleppey is Kerala's backwater capital famous for houseboat cruises, canoe rides through narrow canals, palm-fringed waterways, and pristine beaches.",
-      "url": "https://www.incredibleitinerary.com/blog/alleppey-3-days",
-      "touristType": ["Backwater Tourism", "Beach Tourism", "Cultural Tourism", "Eco Tourism"],
-    },
-  ],
 };
 
 export default function AlleppeyBlogPage() {
@@ -180,6 +185,11 @@ export default function AlleppeyBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <AlleppeyBlogClient />
     </>

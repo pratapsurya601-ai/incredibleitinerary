@@ -108,7 +108,22 @@ const jsonLd = {
       ],
     },
 
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Tawang, Arunachal Pradesh, India",
+      "description": "Home to India's largest Buddhist monastery, perched at 10,000ft in the eastern Himalayas. Known for Sela Pass, high-altitude lakes, the India-China border at Bumla, and the 1962 war memorial.",
+      "url": "https://www.incredibleitinerary.com/blog/tawang-4-days",
+      "touristType": ["Mountain Tourism", "Cultural Tourism", "Buddhist Tourism", "Adventure Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -160,16 +175,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-
-    {
-      "@type": "TouristDestination",
-      "name": "Tawang, Arunachal Pradesh, India",
-      "description": "Home to India's largest Buddhist monastery, perched at 10,000ft in the eastern Himalayas. Known for Sela Pass, high-altitude lakes, the India-China border at Bumla, and the 1962 war memorial.",
-      "url": "https://www.incredibleitinerary.com/blog/tawang-4-days",
-      "touristType": ["Mountain Tourism", "Cultural Tourism", "Buddhist Tourism", "Adventure Tourism"],
-    },
-  ],
 };
 
 export default function TawangBlogPage() {
@@ -178,6 +183,11 @@ export default function TawangBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <TawangClient />
     </>

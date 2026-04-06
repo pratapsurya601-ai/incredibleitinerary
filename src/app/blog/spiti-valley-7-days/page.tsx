@@ -106,7 +106,22 @@ const jsonLd = {
         },
       ],
     },
-    {
+        {
+      "@type": "TouristDestination",
+      "name": "Spiti Valley, Himachal Pradesh, India",
+      "description": "A remote high-altitude desert valley in the Himalayas, known for ancient Buddhist monasteries, dramatic mountain passes, and some of the most stunning landscapes in India.",
+      "url": "https://www.incredibleitinerary.com/blog/spiti-valley-7-days",
+      "touristType": ["Adventure Tourism", "Cultural Tourism", "Road Trip Tourism"],
+    },
+  ],
+};
+
+
+// FAQPage schema — separate block (must NOT be inside @graph with Article)
+// Google requires FAQPage as standalone script to avoid "Duplicate field" error
+const faqLd = {
+  "@context": "https://schema.org",
+  
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -158,15 +173,6 @@ const jsonLd = {
           },
         },
       ],
-    },
-    {
-      "@type": "TouristDestination",
-      "name": "Spiti Valley, Himachal Pradesh, India",
-      "description": "A remote high-altitude desert valley in the Himalayas, known for ancient Buddhist monasteries, dramatic mountain passes, and some of the most stunning landscapes in India.",
-      "url": "https://www.incredibleitinerary.com/blog/spiti-valley-7-days",
-      "touristType": ["Adventure Tourism", "Cultural Tourism", "Road Trip Tourism"],
-    },
-  ],
 };
 
 export default function SpitiPage() {
@@ -175,6 +181,11 @@ export default function SpitiPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — standalone to avoid duplicate FAQPage error */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <SpitiClient />
     </>
