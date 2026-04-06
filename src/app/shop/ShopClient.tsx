@@ -392,13 +392,13 @@ export default function ShopClient() {
             </div>
             <div className="flex gap-3 justify-center flex-wrap">
               <button
-                onClick={() => { setBundleEmail(""); setBundleEmailError(""); setBundleGoing(false); setBundleModal({ url: "https://rzp.io/rzp/qhP2iBq", label: "All Guides — Lifetime Access", price: "₹499" }); }}
+                onClick={() => { setBundleEmail(""); setBundleEmailError(""); setBundleGoing(false); setBundleModal({ url: "https://rzp.io/rzp/oUANvqjl", label: "All Guides — Lifetime Access", price: "₹499" }); }}
                 className="btn-gold inline-flex"
               >
                 Get Lifetime Access — ₹499 →
               </button>
               <button
-                onClick={() => { setBundleEmail(""); setBundleEmailError(""); setBundleGoing(false); setBundleModal({ url: "https://rzp.io/rzp/SfJqFBV", label: "India Pack", price: "₹249" }); }}
+                onClick={() => { setBundleEmail(""); setBundleEmailError(""); setBundleGoing(false); setBundleModal({ url: "https://rzp.io/rzp/aRVZcSi", label: "India Pack", price: "₹249" }); }}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 border border-white/20 text-white/70 text-[0.78rem] font-medium tracking-[0.05em] rounded-full hover:bg-white/15 hover:text-white transition-colors"
               >
                 India Pack only — ₹249

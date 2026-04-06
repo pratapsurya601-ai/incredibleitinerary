@@ -7,6 +7,7 @@ const KEY_SECRET = process.env.RAZORPAY_KEY_SECRET || "";
 const TIER_SLUGS: Record<string, string[]> = {
   // ₹99 — short India + budget guide
   "II-PDF-99":        ["goa-3-days", "india-budget-guide", "varanasi-3-days"],
+  "II-PDF-99-V2":     ["goa-3-days", "india-budget-guide", "varanasi-3-days"],
   // ₹149 — week-long India
   "II-PDF-149":       ["rajasthan-7-days", "kerala-5-days", "kashmir-6-days", "manali-5-days", "andaman-5-days"],
   // ₹199 — complex India + budget international

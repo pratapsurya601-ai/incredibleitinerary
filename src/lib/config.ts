@@ -70,8 +70,8 @@ export const AFFILIATE = {
 };
 
 // ── SHOP / PDF PRODUCTS ───────────────────────────────────────────────────────
-// razorpayUrl: use the matching tier link from Razorpay dashboard
-// ₹99 → rzp.io/rzp/8rDJsEUZ · ₹149 → rzp.io/rzp/NkTrlcV · ₹199 → rzp.io/rzp/qqRpbf9 · ₹249 → rzp.io/rzp/kU16tbV
+// razorpayUrl: all links have callback_url → /shop/success (set via API)
+// ₹99 → WTKOWl4s · ₹149 → RoiIxCxd · ₹199 → 9BnKKTh · ₹249 → 2kbaaOp · ₹299 → 1qwSYGF
 export const SHOP_PRODUCTS = [
   {
     id: "goa-3-days-pdf",
@@ -95,7 +95,7 @@ export const SHOP_PRODUCTS = [
       "Packing list for Goa",
       "Best time to visit guide",
     ],
-    razorpayUrl: "https://rzp.io/rzp/8rDJsEUZ",
+    razorpayUrl: "https://rzp.io/rzp/WTKOWl4s",
     badge: "Bestseller",
   },
   {
@@ -120,7 +120,7 @@ export const SHOP_PRODUCTS = [
       "Shopping guide — what to buy and where",
       "Packing list for Rajasthan",
     ],
-    razorpayUrl: "https://rzp.io/rzp/NkTrlcV",
+    razorpayUrl: "https://rzp.io/rzp/RoiIxCxd",
     downloadSlug: "rajasthan-7-days",
     badge: "Most Detailed",
   },
@@ -144,7 +144,7 @@ export const SHOP_PRODUCTS = [
       "Apps every India traveller needs",
       "Common scams and how to avoid them",
     ],
-    razorpayUrl: "https://rzp.io/rzp/8rDJsEUZ",
+    razorpayUrl: "https://rzp.io/rzp/WTKOWl4s",
     badge: "New",
   },
   {
@@ -169,7 +169,7 @@ export const SHOP_PRODUCTS = [
       "Monsoon travel tips — what to expect",
       "Packing list for Kerala",
     ],
-    razorpayUrl: "https://rzp.io/rzp/NkTrlcV",
+    razorpayUrl: "https://rzp.io/rzp/RoiIxCxd",
     downloadSlug: "kerala-5-days",
     badge: "New",
   },
@@ -195,7 +195,7 @@ export const SHOP_PRODUCTS = [
       "Emergency contacts + altitude sickness protocol",
       "Packing list for high altitude Ladakh",
     ],
-    razorpayUrl: "https://rzp.io/rzp/qqRpbf9",
+    razorpayUrl: "https://rzp.io/rzp/9BnKKTh",
     badge: "Premium",
   },
   {
@@ -220,7 +220,7 @@ export const SHOP_PRODUCTS = [
       "SIM card + currency exchange guide for Indians",
       "Packing list for Bangkok heat",
     ],
-    razorpayUrl: "https://rzp.io/rzp/qqRpbf9",
+    razorpayUrl: "https://rzp.io/rzp/9BnKKTh",
     badge: "International",
   },
   {
@@ -245,7 +245,7 @@ export const SHOP_PRODUCTS = [
       "Wazwan food guide — what to eat & where",
       "Packing list for Kashmir weather",
     ],
-    razorpayUrl: "https://rzp.io/rzp/NkTrlcV",
+    razorpayUrl: "https://rzp.io/rzp/RoiIxCxd",
     badge: "Popular",
   },
   {
@@ -270,7 +270,7 @@ export const SHOP_PRODUCTS = [
       "Monsoon warning — when NOT to go",
       "Packing list for Himachal weather",
     ],
-    razorpayUrl: "https://rzp.io/rzp/NkTrlcV",
+    razorpayUrl: "https://rzp.io/rzp/RoiIxCxd",
     badge: "New",
   },
   {
@@ -295,7 +295,7 @@ export const SHOP_PRODUCTS = [
       "Budget in ₹ and USD/IDR",
       "Grab app guide — avoid taxi scams",
     ],
-    razorpayUrl: "https://rzp.io/rzp/qqRpbf9",
+    razorpayUrl: "https://rzp.io/rzp/9BnKKTh",
     badge: "International",
   },
   {
@@ -320,7 +320,7 @@ export const SHOP_PRODUCTS = [
       "Budget in ₹ and AED",
       "Ramadan etiquette & cultural tips",
     ],
-    razorpayUrl: "https://rzp.io/rzp/kU16tbV",
+    razorpayUrl: "https://rzp.io/rzp/2kbaaOp",
     badge: "Premium",
   },
   // ── Phase 2 ───────────────────────────────────────────────────────────────
@@ -346,7 +346,7 @@ export const SHOP_PRODUCTS = [
       "Cash & ATM survival guide for outer islands",
       "Packing list for island & beach travel",
     ],
-    razorpayUrl: "https://rzp.io/rzp/NkTrlcV",
+    razorpayUrl: "https://rzp.io/rzp/RoiIxCxd",
     badge: "New",
   },
   {
@@ -371,7 +371,7 @@ export const SHOP_PRODUCTS = [
       "Budget table (₹2,800–₹52,000 for 3 days)",
       "Scam warning + tips for first-timers",
     ],
-    razorpayUrl: "https://rzp.io/rzp/8rDJsEUZ",
+    razorpayUrl: "https://rzp.io/rzp/WTKOWl4s",
     badge: "New",
   },
   {
@@ -396,7 +396,7 @@ export const SHOP_PRODUCTS = [
       "Free things to do (Supertree show, Merlion, Haji Lane)",
       "Changi Airport — Jewel waterfall + transit tips",
     ],
-    razorpayUrl: "https://rzp.io/rzp/qqRpbf9",
+    razorpayUrl: "https://rzp.io/rzp/9BnKKTh",
     badge: "International",
   },
   {
@@ -421,7 +421,7 @@ export const SHOP_PRODUCTS = [
       "PickMe app guide (save 60% on taxis)",
       "Galle Dutch Fort + Mirissa whale watching",
     ],
-    razorpayUrl: "https://rzp.io/rzp/qqRpbf9",
+    razorpayUrl: "https://rzp.io/rzp/9BnKKTh",
     badge: "New",
   },
   {
@@ -446,7 +446,7 @@ export const SHOP_PRODUCTS = [
       "Hawker & convenience store food guide",
       "Day-by-day 10-page reference summary",
     ],
-    razorpayUrl: "https://rzp.io/rzp/kU16tbV",
+    razorpayUrl: "https://rzp.io/rzp/2kbaaOp",
     badge: "Premium",
   },
   // ── Phase 3 ───────────────────────────────────────────────────────────────
@@ -472,7 +472,7 @@ export const SHOP_PRODUCTS = [
       "Street food guide — bánh mì, phở, cơm tấm",
       "Best time to visit each region",
     ],
-    razorpayUrl: "https://rzp.io/rzp/qqRpbf9",
+    razorpayUrl: "https://rzp.io/rzp/9BnKKTh",
     badge: "New",
   },
   {
@@ -497,7 +497,7 @@ export const SHOP_PRODUCTS = [
       "Elephant sanctuary guide (ethical only)",
       "Best time to visit by region",
     ],
-    razorpayUrl: "https://rzp.io/rzp/qqRpbf9",
+    razorpayUrl: "https://rzp.io/rzp/9BnKKTh",
     badge: "New",
   },
   {
@@ -522,7 +522,7 @@ export const SHOP_PRODUCTS = [
       "Bhutanese cuisine guide",
       "Flight + taxi booking guide from India",
     ],
-    razorpayUrl: "https://rzp.io/rzp/qqRpbf9",
+    razorpayUrl: "https://rzp.io/rzp/9BnKKTh",
     badge: "New",
   },
   {
@@ -547,7 +547,7 @@ export const SHOP_PRODUCTS = [
       "TAP Air + train + bus connections",
       "Pastel de nata + bacalhau food guide",
     ],
-    razorpayUrl: "https://rzp.io/rzp/kU16tbV",
+    razorpayUrl: "https://rzp.io/rzp/2kbaaOp",
     badge: "Premium",
   },
   {
@@ -572,7 +572,7 @@ export const SHOP_PRODUCTS = [
       "Acropolis + museum skip-the-line tips",
       "Meze + seafood food guide by island",
     ],
-    razorpayUrl: "https://rzp.io/rzp/kU16tbV",
+    razorpayUrl: "https://rzp.io/rzp/2kbaaOp",
     badge: "Premium",
   },
 ];
