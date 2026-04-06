@@ -39,10 +39,19 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Body scroll lock when mobile menu is open
+  // Body + html scroll lock when mobile menu is open (iOS Safari needs both)
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
   }, [menuOpen]);
 
   // Close mobile menu on Escape key
@@ -217,69 +226,90 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
           ))}
         </button>
 
-        {/* Mobile menu */}
-        <div
-          className={`absolute top-[72px] left-0 right-0 bg-cream/98 backdrop-blur-md shadow-lg border-t border-parchment-2 md:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
-          }`}
-        >
-          <ul className="flex flex-col p-6 gap-4 list-none">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-sm tracking-[0.12em] uppercase text-muted hover:text-gold transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-
-            {/* Tools section in mobile */}
-            <li>
+        {/* Mobile menu — full-screen solid overlay, above everything */}
+        {menuOpen && (
+          <div
+            className="md:hidden fixed inset-0 z-[9999] flex flex-col"
+            style={{ backgroundColor: "#16100A", minHeight: "100dvh" }}
+          >
+            {/* Header row */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-white/10 flex-shrink-0">
+              <Link href="/" onClick={() => setMenuOpen(false)} className="flex flex-col leading-tight">
+                <span className="font-serif text-xl font-light text-white tracking-wide">
+                  Incredible<span className="text-gold">Itinerary</span>
+                </span>
+                <span className="text-[0.6rem] tracking-[0.18em] uppercase text-white/50 mt-0.5">
+                  Curated Travel Guides Worldwide
+                </span>
+              </Link>
               <button
-                onClick={() => setMobileToolsOpen((o) => !o)}
-                className="flex items-center gap-1.5 text-sm tracking-[0.12em] uppercase text-muted hover:text-gold transition-colors w-full text-left"
+                onClick={() => setMenuOpen(false)}
+                aria-label="Close menu"
+                className="w-11 h-11 flex items-center justify-center rounded-full border border-white/20 text-white text-xl hover:border-gold hover:text-gold transition-colors"
               >
-                Tools
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="currentColor"
-                  className={`transition-transform duration-200 ${mobileToolsOpen ? "rotate-180" : ""}`}
-                >
-                  <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                ✕
               </button>
-              {mobileToolsOpen && (
-                <ul className="mt-2 pl-4 flex flex-col gap-3 list-none">
-                  {TOOL_LINKS.map((t) => (
-                    <li key={t.href}>
-                      <Link
-                        href={t.href}
-                        onClick={() => { setMenuOpen(false); setMobileToolsOpen(false); }}
-                        className="text-xs tracking-[0.12em] uppercase text-muted hover:text-gold transition-colors"
-                      >
-                        {t.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
+            </div>
 
-            <li>
+            {/* Nav links — scrollable */}
+            <nav className="flex-1 overflow-y-auto px-6 py-8">
+              <ul className="flex flex-col gap-0 list-none">
+                {NAV_LINKS.map((link) => (
+                  <li key={link.href} className="border-b border-white/8">
+                    <Link
+                      href={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block py-5 text-[1.05rem] tracking-[0.14em] uppercase text-white/90 hover:text-gold transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+
+                {/* Tools sub-section */}
+                <li className="border-b border-white/8">
+                  <button
+                    onClick={() => setMobileToolsOpen((o) => !o)}
+                    className="flex items-center justify-between w-full py-5 text-[1.05rem] tracking-[0.14em] uppercase text-white/90 hover:text-gold transition-colors"
+                  >
+                    Tools
+                    <svg
+                      width="12" height="12" viewBox="0 0 10 10" fill="currentColor"
+                      className={`transition-transform duration-200 text-white/50 ${mobileToolsOpen ? "rotate-180" : ""}`}
+                    >
+                      <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  {mobileToolsOpen && (
+                    <ul className="pb-4 pl-4 flex flex-col gap-4 list-none">
+                      {TOOL_LINKS.map((t) => (
+                        <li key={t.href}>
+                          <Link
+                            href={t.href}
+                            onClick={() => { setMenuOpen(false); setMobileToolsOpen(false); }}
+                            className="text-sm tracking-[0.1em] uppercase text-white/60 hover:text-gold transition-colors"
+                          >
+                            {t.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              </ul>
+            </nav>
+
+            {/* Bottom CTA */}
+            <div className="flex-shrink-0 px-6 pb-10 pt-4 border-t border-white/10">
               <button
                 onClick={() => { onPlanTrip(); setMenuOpen(false); }}
-                className="w-full bg-gold text-ink py-3 text-sm tracking-[0.1em] uppercase font-medium rounded-[1px]"
+                className="w-full bg-gold text-ink py-4 text-sm tracking-[0.12em] uppercase font-semibold rounded-lg hover:bg-gold-dark transition-colors"
               >
                 Plan My Trip ↗
               </button>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </div>
+        )}
       </nav>
     </>
   );
