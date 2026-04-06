@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     title: "Visa-Free Countries for Indian Passport 2026: 60+ Destinations Without Pre-Approval",
     description:
       "Every country Indians can enter without a visa or with visa on arrival in 2026 — grouped by region with stay limits, entry rules, and tips.",
-    images: [{ url: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1200&q=80", width: 1200, height: 630, alt: "Indian passport travel visa free destinations 2026" }],
+    images: [{ url: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80", width: 1200, height: 630, alt: "Indian passport travel visa free destinations 2026" }],
     type: "article", publishedTime: "2026-04-07T00:00:00Z",
   },
   twitter: {
     card: "summary_large_image",
     title: "Visa-Free Countries for Indian Passport 2026",
     description: "60+ countries Indians can visit without pre-approval — full list with stay limits and entry rules.",
-    images: ["https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1200&q=80"],
+    images: ["https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80"],
   },
   alternates: { canonical: "https://www.incredibleitinerary.com/blog/visa-free-countries-indian-passport" },
 };
@@ -38,7 +38,7 @@ const jsonLd = {
       "@type": "Article",
       "headline": "Visa-Free Countries for Indian Passport 2026: Complete List",
       "description": "Complete list of 60+ countries Indians can visit without a visa or with visa on arrival in 2026.",
-      "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1200&q=80" },
+      "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80" },
       "datePublished": "2026-04-07T00:00:00Z",
       "dateModified": "2026-04-07T00:00:00Z",
       "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
