@@ -78,7 +78,7 @@ export default function JibhiClient(){
         <section id="budget" className="mb-14">
           <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💰 Budget Breakdown</h2>
           <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
-            <table className="w-full text-sm"><thead><tr className="bg-parchment"><th className="text-left p-3.5 text-xs font-medium text-muted">Category</th><th className="p-3.5 text-xs font-medium text-amber-700 text-center">Budget</th><th className="p-3.5 text-xs font-medium text-emerald-700 text-center">Comfortable</th></tr></thead>
+            <table className="w-full text-sm"><thead><tr className="bg-ink"><th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th><th className="p-3.5 text-xs font-medium text-amber-300 text-center">Budget</th><th className="p-3.5 text-xs font-medium text-emerald-700 text-center">Comfortable</th></tr></thead>
             <tbody className="divide-y divide-parchment-2">{[["🚗 Transport (Delhi return)","₹1,200–₹2,400","₹5,000–₹8,000"],["🏨 Homestay (2N, meals incl.)","₹2,000–₹4,000","₹4,000–₹8,000"],["🎯 Activities + Entry","₹800–₹1,200","₹1,200–₹2,000"],["🍽 Extra food","₹400–₹800","₹800–₹1,500"],["TOTAL per person","₹5,000–₹9,000","₹10,000–₹18,000"]].map(([cat,...vals])=><tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors"><td className="p-3.5 text-xs text-ink font-medium">{cat}</td>{vals.map((v,i)=><td key={i} className="p-3.5 text-xs text-muted font-light text-center">{v}</td>)}</tr>)}</tbody></table>
           </div>
         </section>

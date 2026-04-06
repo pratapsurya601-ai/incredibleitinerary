@@ -710,7 +710,7 @@ export default function YamunotriClient({ faqData }: Props) {
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse">
                 <thead>
-                  <tr className="bg-parchment">
+                  <tr className="bg-ink">
                     <th className="text-left p-3 font-medium text-ink text-xs">Item</th>
                     <th className="text-left p-3 font-medium text-ink text-xs">Budget</th>
                     <th className="text-left p-3 font-medium text-ink text-xs">Mid-range</th>

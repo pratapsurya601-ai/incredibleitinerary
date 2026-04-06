@@ -78,7 +78,7 @@ export default function HampiClient(){
         <section id="budget" className="mb-14">
           <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💰 Budget Breakdown</h2>
           <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
-            <table className="w-full text-sm"><thead><tr className="bg-parchment"><th className="text-left p-3.5 text-xs font-medium text-muted">Category</th><th className="p-3.5 text-xs font-medium text-amber-700 text-center">Budget</th><th className="p-3.5 text-xs font-medium text-rose-700 text-center">Mid-Range</th></tr></thead>
+            <table className="w-full text-sm"><thead><tr className="bg-ink"><th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th><th className="p-3.5 text-xs font-medium text-amber-300 text-center">Budget</th><th className="p-3.5 text-xs font-medium text-rose-300 text-center">Mid-Range</th></tr></thead>
             <tbody className="divide-y divide-parchment-2">{[["🚂 Transport (Bangalore return)","₹400–₹1,200","₹400–₹1,200"],["🏨 Accommodation (2N)","₹800–₹2,000","₹2,500–₹5,000"],["🚲 Bicycle rental (2 days)","₹200–₹300","₹200–₹300"],["🏛️ Entry fees","₹700–₹1,000","₹700–₹1,000"],["🍽 Food (3 days)","₹600–₹1,000","₹1,500–₹2,500"],["TOTAL","₹3,500–₹6,000","₹6,000–₹11,000"]].map(([cat,...vals])=><tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors"><td className="p-3.5 text-xs text-ink font-medium">{cat}</td>{vals.map((v,i)=><td key={i} className="p-3.5 text-xs text-muted font-light text-center">{v}</td>)}</tr>)}</tbody></table>
           </div>
         </section>

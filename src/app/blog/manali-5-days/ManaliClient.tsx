@@ -445,12 +445,12 @@ export default function ManaliClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💰 Budget Breakdown</h2>
             <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
               <table className="w-full text-sm">
-                <thead><tr className="bg-parchment">
-                  <th className="text-left p-3.5 text-xs font-medium text-muted">Category</th>
-                  <th className="p-3.5 text-xs font-medium text-amber-700 text-center">💰 Budget</th>
-                  <th className="p-3.5 text-xs font-medium text-rose-700 text-center">💑 Couple</th>
-                  <th className="p-3.5 text-xs font-medium text-purple-700 text-center">🎉 Group</th>
-                  <th className="p-3.5 text-xs font-medium text-blue-700 text-center">🏔️ Adventure</th>
+                <thead><tr className="bg-ink">
+                  <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
+                  <th className="p-3.5 text-xs font-medium text-amber-300 text-center">💰 Budget</th>
+                  <th className="p-3.5 text-xs font-medium text-rose-300 text-center">💑 Couple</th>
+                  <th className="p-3.5 text-xs font-medium text-purple-300 text-center">🎉 Group</th>
+                  <th className="p-3.5 text-xs font-medium text-blue-300 text-center">🏔️ Adventure</th>
                 </tr></thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[

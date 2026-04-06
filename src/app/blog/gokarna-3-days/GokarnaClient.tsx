@@ -480,11 +480,11 @@ export default function GokarnaBlogClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-parchment">
-                    <th className="text-left p-3.5 text-xs font-medium text-muted">Category</th>
-                    <th className="p-3.5 text-xs font-medium text-amber-700 text-center">{"\uD83D\uDCB0"} Budget</th>
-                    <th className="p-3.5 text-xs font-medium text-teal-700 text-center">{"\uD83C\uDF92"} Backpacker</th>
-                    <th className="p-3.5 text-xs font-medium text-rose-700 text-center">{"\uD83D\uDECB\uFE0F"} Comfortable</th>
+                  <tr className="bg-ink">
+                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
+                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">{"\uD83D\uDCB0"} Budget</th>
+                    <th className="p-3.5 text-xs font-medium text-teal-300 text-center">{"\uD83C\uDF92"} Backpacker</th>
+                    <th className="p-3.5 text-xs font-medium text-rose-300 text-center">{"\uD83D\uDECB\uFE0F"} Comfortable</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">

@@ -494,11 +494,11 @@ export default function CorbettClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-parchment text-left">
+                  <tr className="bg-ink">
                     <th className="px-4 py-3 font-medium text-ink text-xs uppercase tracking-wide">Expense</th>
-                    <th className="px-4 py-3 font-medium text-amber-700 text-xs uppercase tracking-wide">Budget</th>
-                    <th className="px-4 py-3 font-medium text-emerald-700 text-xs uppercase tracking-wide">Wildlife</th>
-                    <th className="px-4 py-3 font-medium text-purple-700 text-xs uppercase tracking-wide">Premium</th>
+                    <th className="px-4 py-3 font-medium text-amber-300 text-xs uppercase tracking-wide">Budget</th>
+                    <th className="px-4 py-3 font-medium text-emerald-300 text-xs uppercase tracking-wide">Wildlife</th>
+                    <th className="px-4 py-3 font-medium text-purple-300 text-xs uppercase tracking-wide">Premium</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2 bg-white">

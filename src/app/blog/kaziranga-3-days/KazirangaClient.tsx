@@ -544,7 +544,7 @@ export default function KazirangaClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-parchment text-left">
+                  <tr className="bg-ink">
                     <th className="px-5 py-3 font-medium text-ink text-xs uppercase tracking-wide">Category</th>
                     <th className="px-5 py-3 font-medium text-ink text-xs uppercase tracking-wide">Budget (A)</th>
                     <th className="px-5 py-3 font-medium text-ink text-xs uppercase tracking-wide">Safari (B)</th>

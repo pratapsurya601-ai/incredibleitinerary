@@ -396,11 +396,11 @@ export default function MeghalayaClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-parchment border-b border-parchment-2">
+                  <tr className="bg-ink">
                     <th className="text-left px-4 py-3 font-medium text-ink text-xs uppercase tracking-wide">Category</th>
-                    <th className="text-center px-4 py-3 font-medium text-amber-700 text-xs uppercase tracking-wide">💰 Budget</th>
+                    <th className="text-center px-4 py-3 font-medium text-amber-300 text-xs uppercase tracking-wide">💰 Budget</th>
                     <th className="text-center px-4 py-3 font-medium text-teal text-xs uppercase tracking-wide">🎒 Comfortable</th>
-                    <th className="text-center px-4 py-3 font-medium text-purple-700 text-xs uppercase tracking-wide">✨ Premium</th>
+                    <th className="text-center px-4 py-3 font-medium text-purple-300 text-xs uppercase tracking-wide">✨ Premium</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">

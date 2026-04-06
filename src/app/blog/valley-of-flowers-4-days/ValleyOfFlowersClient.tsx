@@ -453,7 +453,7 @@ export default function ValleyOfFlowersClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-parchment">
+                  <tr className="bg-ink">
                     <th className="p-3.5 text-xs font-semibold text-ink tracking-wide">Category</th>
                     <th className="p-3.5 text-xs font-semibold text-ink tracking-wide text-center">{"\uD83E\uDD7E"} Budget</th>
                     <th className="p-3.5 text-xs font-semibold text-ink tracking-wide text-center">{"\uD83C\uDFD5\uFE0F"} Comfortable</th>

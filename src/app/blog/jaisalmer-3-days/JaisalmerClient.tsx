@@ -487,10 +487,10 @@ export default function JaisalmerClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-parchment">
-                    <th className="text-left p-3.5 text-xs font-medium text-muted">Category</th>
-                    <th className="p-3.5 text-xs font-medium text-amber-700 text-center">💰 Budget</th>
-                    <th className="p-3.5 text-xs font-medium text-orange-700 text-center">🏜️ Desert Exp.</th>
+                  <tr className="bg-ink">
+                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
+                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">💰 Budget</th>
+                    <th className="p-3.5 text-xs font-medium text-orange-300 text-center">🏜️ Desert Exp.</th>
                     <th className="p-3.5 text-xs font-medium text-yellow-700 text-center">✨ Luxury</th>
                   </tr>
                 </thead>

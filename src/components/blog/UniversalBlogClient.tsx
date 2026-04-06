@@ -401,9 +401,9 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
             <div className="overflow-x-auto rounded-xl border border-parchment-2">
               <table className="w-full text-xs">
                 <thead>
-                  <tr className="bg-parchment border-b border-parchment-2">
+                  <tr className="bg-ink">
                     {["Tier", "Accommodation", "Food", "Transport", "Activities", "Total/Day"].map((h) => (
-                      <th key={h} className="px-4 py-3 text-left font-medium text-ink/70 tracking-wide">{h}</th>
+                      <th key={h} className="px-4 py-3 text-left font-medium text-white/80 tracking-wide text-xs">{h}</th>
                     ))}
                   </tr>
                 </thead>

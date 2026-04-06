@@ -420,9 +420,9 @@ export default function WayanadClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-parchment">
-                    <th className="text-left p-3.5 text-xs font-medium text-muted">Category</th>
-                    <th className="p-3.5 text-xs font-medium text-amber-700 text-center">{"\uD83D\uDCB0"} Budget</th>
+                  <tr className="bg-ink">
+                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
+                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">{"\uD83D\uDCB0"} Budget</th>
                     <th className="p-3.5 text-xs font-medium text-emerald-700 text-center">{"\uD83C\uDF3F"} Nature</th>
                     <th className="p-3.5 text-xs font-medium text-amber-800 text-center">{"\uD83C\uDF33"} Treehouse</th>
                   </tr>

@@ -480,11 +480,11 @@ export default function MusoorieClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-parchment">
-                    <th className="text-left p-3.5 text-xs font-medium text-muted">Category</th>
-                    <th className="p-3.5 text-xs font-medium text-amber-700 text-center">{"\uD83D\uDCB0"} Budget</th>
+                  <tr className="bg-ink">
+                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
+                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">{"\uD83D\uDCB0"} Budget</th>
                     <th className="p-3.5 text-xs font-medium text-sky-700 text-center">{"\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66"} Family</th>
-                    <th className="p-3.5 text-xs font-medium text-purple-700 text-center">{"✨"} Premium</th>
+                    <th className="p-3.5 text-xs font-medium text-purple-300 text-center">{"✨"} Premium</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">

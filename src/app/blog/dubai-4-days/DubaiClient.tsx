@@ -493,11 +493,11 @@ export default function DubaiClient() {
             <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-parchment">
-                    <th className="text-left p-3.5 text-xs font-medium text-muted">Category</th>
-                    <th className="p-3.5 text-xs font-medium text-amber-700 text-center">{"\uD83D\uDCB0"} Budget</th>
-                    <th className="p-3.5 text-xs font-medium text-blue-700 text-center">{"✨"} Mid-Range</th>
-                    <th className="p-3.5 text-xs font-medium text-purple-700 text-center">{"\uD83D\uDC8E"} Luxury</th>
+                  <tr className="bg-ink">
+                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
+                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">{"\uD83D\uDCB0"} Budget</th>
+                    <th className="p-3.5 text-xs font-medium text-blue-300 text-center">{"✨"} Mid-Range</th>
+                    <th className="p-3.5 text-xs font-medium text-purple-300 text-center">{"\uD83D\uDC8E"} Luxury</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
