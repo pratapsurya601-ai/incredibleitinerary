@@ -25,7 +25,7 @@ const BLOG_TO_PDF: Record<string, { pdfSlug: string; title: string; emoji: strin
   // Phase 2
   "andaman-5-days":          { pdfSlug: "andaman-5-days",      title: "Andaman 5-Day Guide",    emoji: "🏝️", free: false, price: "₹149" },
   "varanasi-3-days":         { pdfSlug: "varanasi-3-days",     title: "Varanasi 3-Day Guide",   emoji: "🕌", free: false, price: "₹99" },
-  "singapore-3-days":        { pdfSlug: "singapore-4-days",    title: "Singapore 4-Day Guide",  emoji: "🇸🇬", free: false, price: "₹199" },
+  "singapore-3-days":        { pdfSlug: "singapore-3-days",    title: "Singapore 3-Day Guide",  emoji: "🇸🇬", free: false, price: "₹199" },
   "sri-lanka-7-days":        { pdfSlug: "sri-lanka-7-days",    title: "Sri Lanka 7-Day Guide",  emoji: "🦁", free: false, price: "₹199" },
   "tokyo-5-days":            { pdfSlug: "japan-10-days",       title: "Japan 10-Day Guide",     emoji: "🗼", free: false, price: "₹299" },
   "kyoto-4-days":            { pdfSlug: "japan-10-days",       title: "Japan 10-Day Guide",     emoji: "🗼", free: false, price: "₹299" },

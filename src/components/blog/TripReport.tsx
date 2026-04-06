@@ -5,14 +5,16 @@ import { trackEvent } from "@/lib/analytics";
 export default function TripReport() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
   const [form, setForm] = useState({ name: "", destination: "", trip: "", highlights: "", saved: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.destination || !form.trip) return;
     setSending(true);
+    setError(false);
     try {
-      await fetch("/api/inquiry", {
+      const res = await fetch("/api/inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -22,10 +24,11 @@ export default function TripReport() {
           message: `TRIP REPORT from ${form.name}\n\nDestination: ${form.destination}\nSaved: ${form.saved}\n\nTrip experience:\n${form.trip}\n\nHighlights:\n${form.highlights}`,
         }),
       });
+      if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
       trackEvent("trip_report_submitted", { destination: form.destination });
     } catch {
-      // fail silently
+      setError(true);
     }
     setSending(false);
   };
@@ -33,7 +36,7 @@ export default function TripReport() {
   if (submitted) {
     return (
       <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center my-10">
-        <p className="text-2xl mb-2">&#x1f64f;</p>
+        <p className="text-2xl mb-2">🙏</p>
         <h3 className="font-serif text-xl text-green-800 mb-2">Thank you!</h3>
         <p className="text-sm text-green-700 font-light">Your trip report helps other travellers plan better trips. We may feature it on the site (with your permission).</p>
       </div>
@@ -51,6 +54,13 @@ export default function TripReport() {
         </h3>
         <p className="text-xs text-muted font-light mt-1">Help other travellers — tell us what worked, what surprised you, and how much you saved.</p>
       </div>
+
+      {error && (
+        <p className="text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3 mb-4 text-center">
+          Something went wrong — please try again or email us at{" "}
+          <a href="mailto:hello@incredibleitinerary.com" className="underline">hello@incredibleitinerary.com</a>
+        </p>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-3 max-w-lg mx-auto">
         <div className="grid grid-cols-2 gap-3">
