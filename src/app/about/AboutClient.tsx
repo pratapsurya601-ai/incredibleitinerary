@@ -103,7 +103,7 @@ export default function AboutClient() {
             <div className="order-1 lg:order-2">
               <span className="section-label">My Story</span>
               <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink mb-6 leading-tight">
-                From solo trips to 305 guides.
+                From solo trips to 307 guides.
                 <em className="italic text-teal"> Here&apos;s the story.</em>
               </h2>
               <div className="space-y-4 text-sm text-muted font-light leading-[1.85]">
@@ -125,7 +125,7 @@ export default function AboutClient() {
                   &ldquo;5 must-see spots!&rdquo; lists with no context.
                 </p>
                 <p>
-                  So I built the guide I wished existed. Then I built 305 of them.
+                  So I built the guide I wished existed. Then I built 307 of them.
                   Every destination I&apos;ve been to, I wrote from personal experience.
                   Every destination I haven&apos;t, I researched obsessively until the
                   guide was good enough to be genuinely useful.
@@ -133,7 +133,7 @@ export default function AboutClient() {
                 <p className="font-medium text-ink">
                   IncredibleItinerary is entirely solo-built — every guide, every tool, every line of code.
                   What started as one guide for a friend planning Kashmir turned into India&apos;s most detailed
-                  free travel planning platform. 305 guides. 5 interactive tools. Zero sponsored content.
+                  free travel planning platform. 307 guides. 5 interactive tools. Zero sponsored content.
                 </p>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function AboutClient() {
                 { icon: "🚫", title: "Zero sponsored picks", desc: "No hotel or tour paid to be in these guides. I recommend based on quality and value only." },
                 { icon: "🧠", title: "Written for your trip type", desc: "Every guide has separate plans for budget travellers, couples, families, and adventure seekers — not one generic route." },
                 { icon: "📍", title: "The mistakes section", desc: "Every guide has a 'common mistakes' section. The traps. The rip-offs. The things I had to learn the hard way." },
-                { icon: "🔓", title: "Completely free", desc: "305 full guides, no email required, no paywall. If I can help someone plan a better trip — that's the point." },
+                { icon: "🔓", title: "Completely free", desc: "307 full guides, no email required, no paywall. If I can help someone plan a better trip — that's the point." },
               ].map((v) => (
                 <div key={v.title}
                   className="bg-white rounded-xl border border-parchment-2 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">

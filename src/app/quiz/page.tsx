@@ -4,7 +4,7 @@ import QuizClient from "./QuizClient";
 export const metadata: Metadata = {
   title: "Destination Matcher — Find Your Perfect Trip",
   description:
-    "Answer 5 questions and get matched with the perfect travel destination from 305+ guides. Personalized match scores, real budgets, free itineraries.",
+    "Answer 5 questions and get matched with the perfect travel destination from 307+ guides. Personalized match scores, real budgets, free itineraries.",
   keywords: [
     "travel destination quiz",
     "where should i travel",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Find Your Perfect Trip — Destination Matcher",
     description:
-      "5 questions → 305+ destinations scored to your exact preferences. Free, instant, no signup required.",
+      "5 questions → 307+ destinations scored to your exact preferences. Free, instant, no signup required.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80",
@@ -39,7 +39,7 @@ const faqSchema = {
       name: "How does the trip matcher work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You answer 5 questions about your preferences — experience type, region, trip duration, budget, and travel style. Our scoring engine rates all 305+ destination guides against your answers and ranks them by match percentage. Everything runs in your browser — no data is sent to a server.",
+        text: "You answer 5 questions about your preferences — experience type, region, trip duration, budget, and travel style. Our scoring engine rates all 307+ destination guides against your answers and ranks them by match percentage. Everything runs in your browser — no data is sent to a server.",
       },
     },
     {
@@ -47,7 +47,7 @@ const faqSchema = {
       name: "Is the quiz free?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, completely free with no signup required. All 305+ travel guides on IncredibleItinerary are free to read.",
+        text: "Yes, completely free with no signup required. All 307+ travel guides on IncredibleItinerary are free to read.",
       },
     },
     {
@@ -55,7 +55,7 @@ const faqSchema = {
       name: "How many destinations does it match against?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The quiz scores all 305+ destination guides on IncredibleItinerary, covering India, Southeast Asia, Japan, Europe, Middle East, Americas, and Africa.",
+        text: "The quiz scores all 307+ destination guides on IncredibleItinerary, covering India, Southeast Asia, Japan, Europe, Middle East, Americas, and Africa.",
       },
     },
     {
