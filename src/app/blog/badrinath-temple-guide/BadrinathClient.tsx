@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
@@ -899,6 +900,15 @@ export default function BadrinathClient({ faqData }: Props) {
           </div>
         </div>
       </main>
+
+                <div className="max-w-[760px] mx-auto px-5 pb-4">
+
+
+                  <RelatedGuides currentSlug="badrinath-temple-guide" />
+
+
+                </div>
+
 
       <Footer />
       {modalOpen && <InquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />}

@@ -7,7 +7,7 @@ import { blogPosts } from "@/data/blog";
 const REGIONS: Record<string, string[]> = {
   rajasthan: ["jaipur-3-days", "jodhpur-3-days", "jaisalmer-3-days", "udaipur-3-days", "pushkar-2-days", "mount-abu-2-days", "rajasthan-7-days", "ranthambore-3-days"],
   himachal: ["shimla-3-days", "kasol-3-days", "dharamshala-3-days", "jibhi-tirthan-valley-3-days", "manali-5-days", "spiti-valley-7-days"],
-  uttarakhand: ["rishikesh-haridwar-3-days", "mussoorie-3-days", "auli-3-days", "nainital-3-days", "jim-corbett-3-days", "valley-of-flowers-4-days"],
+  uttarakhand: ["rishikesh-haridwar-3-days", "mussoorie-3-days", "auli-3-days", "nainital-3-days", "jim-corbett-3-days", "valley-of-flowers-4-days", "kedarnath-trek-guide", "badrinath-temple-guide", "gangotri-glacier-trek", "char-dham-yatra-guide", "yamunotri-temple-guide"],
   kashmir: ["kashmir-6-days", "leh-ladakh-7-days"],
   northeast: ["meghalaya-5-days", "sikkim-6-days", "shillong-3-days", "kaziranga-3-days", "tawang-4-days", "majuli-3-days"],
   kerala: ["kerala-5-days", "alleppey-3-days", "munnar-3-days", "wayanad-3-days"],
@@ -18,7 +18,7 @@ const REGIONS: Record<string, string[]> = {
   gujarat: ["gujarat-7-days", "diu-2-days", "dwarka-2-days"],
   maharashtra: ["lonavala-2-days", "mahabaleshwar-2-days"],
   bengal: ["darjeeling-4-days", "sundarbans-3-days"],
-  spiritual: ["varanasi-3-days", "amritsar-2-days", "rishikesh-haridwar-3-days", "rameswaram-2-days", "dwarka-2-days"],
+  spiritual: ["varanasi-3-days", "amritsar-2-days", "rishikesh-haridwar-3-days", "rameswaram-2-days", "dwarka-2-days", "kedarnath-trek-guide", "badrinath-temple-guide", "gangotri-glacier-trek", "char-dham-yatra-guide", "yamunotri-temple-guide"],
   wildlife: ["jim-corbett-3-days", "ranthambore-3-days", "kaziranga-3-days", "sundarbans-3-days"],
   beach: ["goa-3-days", "gokarna-3-days", "andaman-5-days", "pondicherry-3-days", "diu-2-days"],
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/layout/Footer";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 import BlogSlugNav from "../[slug]/BlogSlugNav";
 import AuthorByline from "@/components/blog/AuthorByline";
 import PhotoCta from "@/components/blog/PhotoCta";
@@ -320,6 +321,12 @@ export default function CharDhamYatraPage() {
           </div>
         </div>
       </main>
+                <div className="max-w-[760px] mx-auto px-5 pb-4">
+
+                  <RelatedGuides currentSlug="char-dham-yatra-guide" />
+
+                </div>
+
       <Footer />
     </>
   );
