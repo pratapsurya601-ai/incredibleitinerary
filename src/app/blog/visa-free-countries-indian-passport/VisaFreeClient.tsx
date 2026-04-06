@@ -68,7 +68,7 @@ const AFRICA: DestEntry[] = [
   { country: "Rwanda", type: "Visa on Arrival", stay: "30 days", fee: "Free", notes: "One of Africa's most welcoming countries. Gorilla trekking. Visas issued on arrival for free." },
   { country: "Ethiopia", type: "Visa on Arrival", stay: "30 days", fee: "USD 52", notes: "Available at Addis Ababa Bole International. Ethiopian Airlines hub — often cheapest Africa connection." },
   { country: "Zimbabwe", type: "Visa on Arrival", stay: "30 days", fee: "USD 30–75", notes: "Victoria Falls VOA. Single-country USD 30, KAZA (multi-park pass) USD 75. Available at Harare and Victoria Falls airports." },
-  { country: "Zambia", type: "Visa on Arrival / e-Visa", stay: "30 days", fee: "USD 50", notes: "Victoria Falls from the Zambian side. Apply online or get on arrival at Lusaka or Livingstone." },
+  { country: "Zambia", type: "e-Visa on Arrival", stay: "30 days", fee: "USD 50", notes: "Victoria Falls from the Zambian side. Apply online or get on arrival at Lusaka or Livingstone." },
   { country: "Madagascar", type: "Visa on Arrival", stay: "30 days", fee: "Free", notes: "Available at Antananarivo Ivato Airport. Extendable for up to 90 days. Incredible biodiversity." },
   { country: "Comoros Islands", type: "Visa on Arrival", stay: "45 days", fee: "Free", notes: "Almost unknown to Indian tourists. Archipelago in Indian Ocean. Excellent diving." },
 ];
