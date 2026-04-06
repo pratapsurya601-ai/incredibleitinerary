@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Rwanda in 5 Days: Gorilla Trekking Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Rwanda 5-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Rwanda 5-day itinerary covering gorilla trekking in Volcanoes National Park, the Kigali Genocide Memorial, Lake Kivu, and Nyungwe Forest. Budget ($150/day) to luxury ($500/day) plans with visa info for Indian and Western passports.",
+    "Plan your Rwanda trip in 5 days. Complete Rwanda 5-day itinerary covering gorilla trekking in Volcanoes National Park, the Kigali Genocide Memorial, Lake.",
   keywords: [
     "Rwanda gorilla trekking",
     "Rwanda 5 day itinerary",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Rwanda luxury safari",
   ],
   openGraph: {
-    title: "Rwanda in 5 Days: Gorilla Trekking Guide (Budget to Luxury, 2026)",
+    title: "Rwanda 5-Day Itinerary 2026: Trip Planner",
     description:
       "Sit 7 metres from a silverback gorilla in the mist-covered forests of Rwanda. Complete 5-day itinerary from $150/day, including gorilla permit strategy and visa info.",
     url: "https://incredibleitinerary.com/blog/rwanda-gorillas-5-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rwanda in 5 Days: Gorilla Trekking Guide (Budget to Luxury, 2026)",
+    title: "Rwanda 5-Day Itinerary 2026: Trip Planner",
     description:
       "Complete Rwanda gorilla trekking itinerary from $150/day. Permits, logistics, visa info, and day-by-day plans.",
     images: ["https://incredibleitinerary.com/og/rwanda-gorillas-5-days.jpg"],

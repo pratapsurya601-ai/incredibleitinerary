@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import JibhiClient from "./JibhiClient";
 
 export const metadata: Metadata = {
-  title: "Jibhi & Tirthan Valley in 3 Days: Himachal's Hidden Gem (2026 Guide)",
+  title: "Jibhi & Tirthan Valley 3-Day Itinerary 2026: Trip Planner"s Hidden Gem (2026 Guide)",
   description:
-    "Complete Jibhi and Tirthan Valley travel guide — Great Himalayan National Park, Jalori Pass, Serolsar Lake, trout fishing, homestays. The most peaceful hidden destination in Himachal Pradesh.",
+    "Plan your Jibhi & Tirthan Valley trip in 3 days. Complete Jibhi and Tirthan Valley travel guide — Great Himalayan National Park, Jalori Pass, Serolsar.",
   keywords: [
     "jibhi travel guide",
     "tirthan valley itinerary",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jibhi & Tirthan Valley in 3 Days (2026)",
+    title: "Jibhi & Tirthan Valley 3-Day Itinerary 2026: Trip Planner",
     description: "Jalori Pass, Serolsar Lake, GHNP — Himachal's hidden gem, real costs.",
     images: ["https://images.unsplash.com/photo-1585087905632-6e3af9e60baf?w=1200&q=80"],
   },

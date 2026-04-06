@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Granada in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Granada 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Granada itinerary with our expert guide. Alhambra Palace, free tapas, Albaicín quarter, Sacromonte flamenco caves — from €45/day budget to luxury. Visa info, day-by-day plans, and insider tips.",
+    "Plan your Granada trip in 4 days. Plan the perfect 4-day Granada itinerary with our expert guide. Alhambra Palace, free tapas, Albaicín quarter,.",
   keywords: [
     "Granada travel guide",
     "Granada itinerary 4 days",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "Andalusia travel guide",
   ],
   openGraph: {
-    title: "Granada in 4 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "Granada 4-Day Itinerary 2026: Trip Planner",
     description:
       "Alhambra at golden hour, free tapas with every drink, flamenco in candlelit caves — Granada is Spain's most romantic city. Full itinerary from €45/day.",
     url: "https://incredibleitinerary.com/blog/granada-4-days",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Granada in 4 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "Granada 4-Day Itinerary 2026: Trip Planner",
     description:
       "Alhambra Palace, free tapas, Sacromonte flamenco caves — Granada's magic captured in a 4-day guide from €45/day.",
   },

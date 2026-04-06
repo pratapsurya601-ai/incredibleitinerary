@@ -42,9 +42,9 @@ const jsonLd = [
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Sarajevo in 3 Days: Complete Travel Guide 2026 (Budget to Luxury) | IncredibleItinerary",
+  title: "Sarajevo 3-Day Itinerary 2026: Trip Planner",
   description:
-    "The ultimate Sarajevo 3-day itinerary — Baščaršija bazaar, Latin Bridge, Tunnel of Hope, War Childhood Museum, and a day trip to Mostar's Stari Most bridge. Budget from €35/day.",
+    "Plan your Sarajevo trip in 3 days. The ultimate Sarajevo 3-day itinerary — Baščaršija bazaar, Latin Bridge, Tunnel of Hope, War Childhood Museum, and a.",
   keywords: [
     "Sarajevo itinerary 3 days",
     "Sarajevo travel guide 2026",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "Balkans travel",
   ],
   openGraph: {
-    title: "Sarajevo in 3 Days: Complete Travel Guide 2026",
+    title: "Sarajevo 3-Day Itinerary 2026: Trip Planner",
     description:
       "Ottoman bazaars, four faiths in 500 metres, the siege tunnel, and Europe's most beautiful bridge one hour away — Sarajevo is the Balkans' most underrated city.",
     url: "https://incredibleitinerary.com/blog/sarajevo-3-days",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarajevo in 3 Days: Complete Travel Guide 2026",
+    title: "Sarajevo 3-Day Itinerary 2026: Trip Planner",
     description:
       "Ottoman bazaars, siege history, Bosnian coffee, and a day trip to Mostar — the most resilient city in Europe from €35/day.",
   },

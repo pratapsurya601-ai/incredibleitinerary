@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Vancouver in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Vancouver 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Vancouver itinerary — Stanley Park, Granville Island, Gastown, Capilano Suspension Bridge, Grouse Mountain, and the best dim sum outside Hong Kong. Budget CAD $85/day to luxury CAD $400/day with visa info for Indian, US, UK, EU & Australian passports.",
+    "Plan your Vancouver trip in 4 days. Plan the perfect 4-day Vancouver itinerary — Stanley Park, Granville Island, Gastown, Capilano Suspension Bridge,.",
   keywords: [
     "Vancouver itinerary",
     "Vancouver 4 days",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "British Columbia tourism",
   ],
   openGraph: {
-    title: "Vancouver in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+    title: "Vancouver 4-Day Itinerary 2026: Trip Planner",
     description:
       "Mountains reflected in the harbour, dim sum better than most of Hong Kong, kayaking with sea otters — your complete 4-day Vancouver guide for every budget.",
     url: "https://incredibleitinerary.com/blog/vancouver-4-days",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vancouver in 4 Days: The Complete Travel Guide (2026)",
+    title: "Vancouver 4-Day Itinerary 2026: Trip Planner",
     description:
       "Pacific wilderness meets cosmopolitan sophistication — your complete 4-day Vancouver travel guide.",
     images: [

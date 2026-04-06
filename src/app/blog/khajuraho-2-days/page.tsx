@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KhajurahoClient from "./KhajurahoClient";
 
 export const metadata: Metadata = {
-  title: "Khajuraho in 2 Days: UNESCO Temples, Raneh Falls & Panna Safari (2026)",
+  title: "Khajuraho 2-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Khajuraho guide — Western, Eastern & Southern temple groups, Raneh Falls canyon, Panna National Park, Sound & Light Show. 2 plans: Budget and Comfortable with real costs.",
+    "Plan your Khajuraho trip in 2 days. Complete Khajuraho guide — Western, Eastern & Southern temple groups, Raneh Falls canyon, Panna National Park, Sound &.",
   keywords: [
     "khajuraho itinerary 2 days",
     "khajuraho travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "khajuraho madhya pradesh",
   ],
   openGraph: {
-    title: "Khajuraho in 2 Days: UNESCO Temples & Hidden Gems (2026)",
+    title: "Khajuraho 2-Day Itinerary 2026: Trip Planner",
     description:
       "Western Group at sunrise, Raneh Falls canyon, Panna safari — real costs, 2 complete plans.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Khajuraho in 2 Days: Complete Guide (2026)",
+    title: "Khajuraho 2-Day Itinerary 2026: Trip Planner",
     description: "UNESCO temples, Raneh Falls, Panna safari — 2 plans, real costs.",
     images: ["https://images.unsplash.com/photo-1592639296346-560c37a0f711?w=1200&q=80"],
   },

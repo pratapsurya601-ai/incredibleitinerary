@@ -4,9 +4,9 @@ import type { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Valencia in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Valencia 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan 3 days in Valencia: City of Arts and Sciences, paella origins, Las Fallas festival, Malvarrosa beach, Central Market, and the Barrio del Carmen. Budget €50–€260/day.",
+    "Plan your Valencia trip in 3 days. Plan 3 days in Valencia: City of Arts and Sciences, paella origins, Las Fallas festival, Malvarrosa beach, Central.",
   keywords: [
     "Valencia travel guide",
     "Valencia 3 days itinerary",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Valencia budget travel",
   ],
   openGraph: {
-    title: "Valencia in 3 Days: The Complete Travel Guide (2026)",
+    title: "Valencia 3-Day Itinerary 2026: Trip Planner",
     description:
       "Birthplace of paella, home of Calatrava's futuristic city, and host to Spain's most spectacular fire festival — your complete 3-day Valencia guide.",
     url: "https://www.incredibleitinerary.com/blog/valencia-3-days",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Valencia in 3 Days: The Complete Travel Guide (2026)",
+    title: "Valencia 3-Day Itinerary 2026: Trip Planner",
     description:
       "Paella birthplace, Calatrava architecture, Las Fallas fire festival — complete 3-day Valencia itinerary.",
     images: ["https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&q=80"],
@@ -383,7 +383,7 @@ const data: UniversalBlogData = {
   tips: [
     {
       icon: "🟠",
-      title: "Valencia has the best fresh orange juice in Europe — drink it everywhere",
+      title: "Valencia 3-Day Itinerary 2026: Trip Planner",
       desc: "Valencia is the heartland of Spanish orange production. Fresh-squeezed zumo de naranja natural is sold at almost every café and market stall for €1.50–2.50 a glass. It is genuinely extraordinary — nothing like supermarket juice. The Central Market has the best value. Drink it every morning.",
       color: "bg-amber-50 border-amber-200",
     },
@@ -401,7 +401,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🎟️",
-      title: "Book GetYourGuide tours for Albufera, paella classes, and Las Fallas",
+      title: "Valencia 3-Day Itinerary 2026: Trip Planner",
       desc: "Some Valencia experiences are genuinely best with a guide — Albufera boat trips with a local ecologist, hands-on paella cooking classes, and Las Fallas guided walking tours that explain the cultural context of the ninot sculptures. Browse options and filter by top-rated for the best value.",
       color: "bg-blue-50 border-blue-200",
     },

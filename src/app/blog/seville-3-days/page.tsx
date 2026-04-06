@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SevilleClient from "./SevilleClient";
 
 export const metadata: Metadata = {
-  title: "Seville in 3 Days: Complete Itinerary Guide (Budget to Comfortable, 2026)",
+  title: "Seville 3-Day Itinerary 2026: Trip Planner",
   description:
     "2 complete Seville plans — Budget, Comfortable — with real timings, costs in EUR/USD, Real Alcazar tips and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "spain travel guide",
   ],
   openGraph: {
-    title: "Seville in 3 Days: Budget to Comfortable Itinerary 2026",
+    title: "Seville 3-Day Itinerary 2026: Trip Planner",
     description: "Real timings, actual budgets in EUR/USD, Alcazar tips. 2 complete plans.",
     images: [{ url: "https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=1200&q=80", width: 1200, height: 630, alt: "Plaza de Espana Seville at sunset" }],
     type: "article", publishedTime: "2026-04-04T00:00:00Z", authors: ["IncredibleItinerary"],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seville in 3 Days: The Only Guide You Need (2026)",
+    title: "Seville 3-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, actual costs, Alcazar booking tips.",
     images: ["https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=1200&q=80"],
   },

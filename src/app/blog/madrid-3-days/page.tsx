@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MadridClient from "./MadridClient";
 
 export const metadata: Metadata = {
-  title: "Madrid in 3 Days: Complete Itinerary Guide (Budget to Comfortable, 2026)",
+  title: "Madrid 3-Day Itinerary 2026: Trip Planner",
   description:
     "2 complete Madrid plans — Budget, Comfortable — with real timings, costs in EUR/USD, Prado Museum tips and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "spain travel guide",
   ],
   openGraph: {
-    title: "Madrid in 3 Days: Budget to Comfortable Itinerary 2026",
+    title: "Madrid 3-Day Itinerary 2026: Trip Planner",
     description: "Real timings, actual budgets in EUR/USD, Prado tips. 2 complete plans.",
     images: [{ url: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&q=80", width: 1200, height: 630, alt: "Madrid Royal Palace" }],
     type: "article", publishedTime: "2026-04-04T00:00:00Z", authors: ["IncredibleItinerary"],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Madrid in 3 Days: The Only Guide You Need (2026)",
+    title: "Madrid 3-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, actual costs, Prado Museum tips.",
     images: ["https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&q=80"],
   },

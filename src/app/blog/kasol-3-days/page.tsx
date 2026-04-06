@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import KasolClient from "./KasolClient";
 
 export const metadata: Metadata = {
-  title: "Kasol & Kheerganga in 3 Days: Complete Parvati Valley Guide (Budget to Comfortable, 2026)",
+  title: "Kasol & Kheerganga 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Kasol plans — Budget, Backpacker, Comfortable — with Kheerganga trek details, real costs, Tosh & Chalal walks, and the cafes worth finding.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "malana village",
   ],
   openGraph: {
-    title: "Kasol & Kheerganga in 3 Days: Parvati Valley Guide 2026",
+    title: "Kasol & Kheerganga 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real trek timings, actual budgets, cafe recommendations. 3 complete plans for every type of traveller.",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kasol & Kheerganga in 3 Days: The Only Guide You Need (2026)",
+    title: "Kasol & Kheerganga 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real trek timings, actual costs, Parvati Valley cafes.",
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },

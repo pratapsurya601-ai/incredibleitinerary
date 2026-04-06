@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WayanadClient from "./WayanadClient";
 
 export const metadata: Metadata = {
-  title: "Wayanad in 3 Days: Treehouses, Treks & Hidden Caves (Budget to Premium, 2026)",
+  title: "Wayanad 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Wayanad plans — Budget, Nature Explorer, Premium Treehouse — with trek timings, real costs, Google Maps routes and the spots most tourists miss.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "wayanad trip planner",
   ],
   openGraph: {
-    title: "Wayanad in 3 Days: Treehouses, Treks & Hidden Caves (2026)",
+    title: "Wayanad 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real trek timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wayanad in 3 Days: The Only Guide You Need (2026)",
+    title: "Wayanad 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },

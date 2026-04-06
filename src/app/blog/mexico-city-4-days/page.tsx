@@ -5,9 +5,9 @@ import UniversalBlogClient, {
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Mexico City in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+  title: "Mexico City 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Mexico City trip — Zócalo, Teotihuacan pyramids, Frida Kahlo Museum, tacos al pastor, and Condesa/Roma. Budget from $50/day. Updated for 2026.",
+    "Plan your Mexico City trip in 4 days. Plan the perfect 4-day Mexico City trip — Zócalo, Teotihuacan pyramids, Frida Kahlo Museum, tacos al pastor, and.",
   keywords: [
     "Mexico City itinerary",
     "Mexico City 4 days",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "North America travel",
   ],
   openGraph: {
-    title: "Mexico City in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Mexico City 4-Day Itinerary 2026: Trip Planner",
     description:
       "22 million people, Diego Rivera murals, the world's best tacos al pastor, and a neighbourhood that out-Brooklyns Brooklyn. Your complete 4-day Mexico City guide.",
     url: "https://incredibleitinerary.com/blog/mexico-city-4-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mexico City in 4 Days: The Complete Guide (2026)",
+    title: "Mexico City 4-Day Itinerary 2026: Trip Planner",
     description:
       "Budget to luxury itineraries, visa info, budget breakdown, and insider tips for Mexico City. From $50/day.",
     images: [

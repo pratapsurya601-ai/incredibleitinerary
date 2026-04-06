@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import DarjeelingClient from "./DarjeelingClient";
 
 export const metadata: Metadata = {
-  title: "Darjeeling in 4 Days: Complete Hill Station Guide (Budget to Premium, 2026)",
+  title: "Darjeeling 4-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Darjeeling plans — Budget, Comfortable, Premium — with Tiger Hill sunrise, toy train, tea estates, real timings and costs.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "darjeeling packages india",
   ],
   openGraph: {
-    title: "Darjeeling in 4 Days: Budget to Premium Itinerary 2026",
+    title: "Darjeeling 4-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Tiger Hill sunrise, toy train, tea estates. 3 complete plans for every budget.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Darjeeling in 4 Days: The Only Guide You Need (2026)",
+    title: "Darjeeling 4-Day Itinerary 2026: Trip Planner",
     description: "3 plans, Tiger Hill sunrise, toy train, tea estates, real costs.",
     images: ["https://images.unsplash.com/photo-1622227056993-6e7f88420855?w=1200&q=80"],
   },

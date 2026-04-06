@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import AlleppeyBlogClient from "./AlleppeyClient";
 
 export const metadata: Metadata = {
-  title: "Alleppey in 3 Days: Houseboats, Backwaters & Beaches (Budget to Luxury, 2026)",
+  title: "Alleppey 3-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Alleppey plans — Budget, Couple, Luxury Houseboat — with real timings, costs, Google Maps routes and insider tips for Kerala's backwater capital.",
+    "Plan your Alleppey trip in 3 days. Budget, Couple, Luxury Houseboat — with real timings, costs, Google Maps routes and insider tips for Kerala's backwater.",
   keywords: [
     "alleppey itinerary 3 days",
     "alleppey houseboat booking",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "kuttanad rice bowl",
   ],
   openGraph: {
-    title: "Alleppey in 3 Days: Houseboats, Backwaters & Beaches 2026",
+    title: "Alleppey 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller exploring Kerala's backwater paradise.",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alleppey in 3 Days: The Only Guide You Need (2026)",
+    title: "Alleppey 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 export const metadata: Metadata = {
-  title: "Jamaica in 5 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Jamaica 5-Day Itinerary 2026: Trip Planner",
   description:
-    "The ultimate Jamaica travel guide — Seven Mile Beach, Rick's Café cliff diving, Blue Mountains coffee, Dunn's River Falls, Bob Marley Museum, jerk chicken, and the best rum bars on the island. Budget ($90/day) to luxury ($400/day) itineraries.",
+    "Plan your Jamaica trip in 5 days. The ultimate Jamaica travel guide — Seven Mile Beach, Rick's Café cliff diving, Blue Mountains coffee, Dunn's River.",
   keywords: [
     "Jamaica travel guide",
     "Jamaica itinerary 5 days",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Rastafarian culture Jamaica",
   ],
   openGraph: {
-    title: "Jamaica in 5 Days: The Complete Travel Guide (2026)",
+    title: "Jamaica 5-Day Itinerary 2026: Trip Planner",
     description:
       "The island that invented cool — cliff diving at Rick's Café, Blue Mountains coffee, jerk chicken that ruins all other jerk chicken, and reggae at noon. Your complete Jamaica itinerary.",
     type: "article",

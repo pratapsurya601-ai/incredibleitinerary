@@ -4,9 +4,9 @@ import type { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 /* ── SEO Metadata ───────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Malta in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Malta 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Malta itinerary — Valletta, Mdina, Blue Lagoon, Gozo, and the Hypogeum. Visa info, budget breakdown, and day-by-day plans for every budget.",
+    "Plan your Malta trip in 4 days. Plan the perfect 4-day Malta itinerary — Valletta, Mdina, Blue Lagoon, Gozo, and the Hypogeum. Visa info, budget.",
   keywords: [
     "Malta travel guide",
     "Malta 4 days itinerary",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Hal Saflieni Hypogeum",
   ],
   openGraph: {
-    title: "Malta in 4 Days: The Complete Travel Guide (2026)",
+    title: "Malta 4-Day Itinerary 2026: Trip Planner",
     description:
       "The world's most concentrated history: Valletta's Baroque grandeur, Mdina's medieval streets, the Blue Lagoon on Comino, and a 5,000-year-old underground temple.",
     url: "https://incredibleitinerary.com/blog/malta-4-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Malta in 4 Days: Complete Guide (2026)",
+    title: "Malta 4-Day Itinerary 2026: Trip Planner",
     description:
       "Day-by-day Malta itinerary — Valletta, Mdina, Blue Lagoon, Gozo, Hypogeum. Budget from €55/day.",
     images: ["https://images.unsplash.com/photo-1555629151-5738e6afe3a7?w=1200&q=80"],
@@ -403,7 +403,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "☀️",
-      title: "Going to the Blue Lagoon in peak summer without arriving early",
+      title: "Malta 4-Day Itinerary 2026: Trip Planner",
       desc: "The Blue Lagoon on Comino is one of the most stunning spots in the Mediterranean, but in July–August the ferries dump thousands of tourists on a small beach. Take the first ferry of the day (usually 9am) and leave by 1pm before the hordes arrive — or visit in May or September when it's a paradise.",
       color: "border-orange-200 bg-orange-50",
     },

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import RameswaramClient from "./RameswaramClient";
 
 export const metadata: Metadata = {
-  title: "Rameswaram in 2 Days: Temple Corridors to Pamban Bridge (Budget to Pilgrimage, 2026)",
+  title: "Rameswaram 2-Day Itinerary 2026: Trip Planner",
   description:
-    "2 complete Rameswaram plans — Budget and Pilgrimage — with real timings, costs, Google Maps routes and the spots most tourists miss at India's sacred island.",
+    "Plan your Rameswaram trip in 2 days. Budget and Pilgrimage — with real timings, costs, Google Maps routes and the spots most tourists miss at India's.",
   keywords: [
     "rameswaram itinerary 2 days",
     "rameswaram travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "rameswaram trip planner",
   ],
   openGraph: {
-    title: "Rameswaram in 2 Days: Temple Corridors to Pamban Bridge (2026)",
+    title: "Rameswaram 2-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 2 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rameswaram in 2 Days: The Only Guide You Need (2026)",
+    title: "Rameswaram 2-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&q=80"],
   },

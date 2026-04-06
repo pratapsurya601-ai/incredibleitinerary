@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import KeralaClient from "./KeralaClient";
 
 export const metadata: Metadata = {
-  title: "Kerala in 5 Days: The Backwaters, Hills & Beach Guide (2026)",
+  title: "Kerala 5-Day Itinerary 2026: Trip Planner",
   description:
     "The only Kerala itinerary you need — Kochi, Munnar, Alleppey backwaters and Varkala beach. 4 plans, real budgets, Google Maps routes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "kerala honeymoon trip",
   ],
   openGraph: {
-    title: "Kerala in 5 Days: Backwaters, Hills & Beach (2026)",
+    title: "Kerala 5-Day Itinerary 2026: Trip Planner",
     description: "Kochi · Munnar · Alleppey · Varkala — 4 plans, real budgets, Google Maps routes.",
     images: [{
       url: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kerala in 5 Days: Backwaters, Hills & Beach (2026)",
+    title: "Kerala 5-Day Itinerary 2026: Trip Planner",
     description: "Kochi, Munnar, Alleppey backwaters, Varkala — 4 plans, real budgets.",
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },

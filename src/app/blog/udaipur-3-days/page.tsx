@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import UdaipurClient from "./UdaipurClient";
 
 export const metadata: Metadata = {
-  title: "Udaipur in 3 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Udaipur 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Udaipur plans — Budget, Couple/Romantic, Luxury — with real timings, costs, Lake Pichola boat rides and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "udaipur trip planner",
   ],
   openGraph: {
-    title: "Udaipur in 3 Days: Budget to Luxury Itinerary 2026",
+    title: "Udaipur 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, rooftop restaurant picks. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Udaipur in 3 Days: The Only Guide You Need (2026)",
+    title: "Udaipur 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, rooftop picks.",
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },

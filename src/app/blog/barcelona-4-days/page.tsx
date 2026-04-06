@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import BarcelonaClient from "./BarcelonaClient";
 
 export const metadata: Metadata = {
-  title: "Barcelona in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Barcelona 4-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Barcelona plans — Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, Sagrada Familia booking tips and the mistakes every first-timer makes.",
+    "Plan your Barcelona trip in 4 days. Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, Sagrada Familia booking tips and the mistakes every.",
   keywords: [
     "barcelona itinerary 4 days",
     "barcelona travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "spain travel guide",
   ],
   openGraph: {
-    title: "Barcelona in 4 Days: Budget to Luxury Itinerary 2026",
+    title: "Barcelona 4-Day Itinerary 2026: Trip Planner",
     description: "Real timings, actual budgets in EUR/USD, Sagrada Familia booking tips. 3 complete plans.",
     images: [{ url: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=1200&q=80", width: 1200, height: 630, alt: "Sagrada Familia Barcelona" }],
     type: "article", publishedTime: "2026-04-04T00:00:00Z", authors: ["IncredibleItinerary"],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Barcelona in 4 Days: The Only Guide You Need (2026)",
+    title: "Barcelona 4-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Sagrada Familia tips.",
     images: ["https://images.unsplash.com/photo-1583422409516-2895a77efded?w=1200&q=80"],
   },

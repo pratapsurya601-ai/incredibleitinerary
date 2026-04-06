@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LonavalaClient from "./LonavalaClient";
 
 export const metadata: Metadata = {
-  title: "Lonavala in 2 Days: Complete Hill Station Guide (Budget & Weekend, 2026)",
+  title: "Lonavala 2-Day Itinerary 2026: Trip Planner",
   description:
     "2 complete Lonavala plans — Budget and Weekend Getaway — with real timings, costs, monsoon tips, trek routes, and the spots most tourists miss.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "lonavala monsoon trip",
   ],
   openGraph: {
-    title: "Lonavala in 2 Days: Budget & Weekend Getaway Guide 2026",
+    title: "Lonavala 2-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, monsoon tips. 2 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lonavala in 2 Days: The Only Guide You Need (2026)",
+    title: "Lonavala 2-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, actual costs, monsoon tips.",
     images: ["https://images.unsplash.com/photo-1600011247426-3bca6e68e678?w=1200&q=80"],
   },

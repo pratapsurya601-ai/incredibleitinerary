@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FlorenceClient from "./FlorenceClient";
 
 export const metadata: Metadata = {
-  title: "Florence in 3 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Florence 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Florence plans — Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, advance booking tips and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "accademia david tickets",
   ],
   openGraph: {
-    title: "Florence in 3 Days: Budget to Luxury Itinerary 2026",
+    title: "Florence 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, advance booking tips. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Florence in 3 Days: The Only Guide You Need (2026)",
+    title: "Florence 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, advance booking tips.",
     images: ["https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?w=1200&q=80"],
   },

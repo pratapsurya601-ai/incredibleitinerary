@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import DharamshalaClient from "./DharamshalaClient";
 
 export const metadata: Metadata = {
-  title: "Dharamshala & McLeodGanj in 3 Days: Budget to Spiritual Retreat Guide (2026)",
+  title: "Dharamshala & McLeodGanj 3-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Dharamshala plans — Budget, Comfortable, Spiritual — with real costs, Triund trek tips, Tibetan food spots, and monastery timings. The only guide that doesn't oversell it.",
+    "Plan your Dharamshala & McLeodGanj trip in 3 days. Budget, Comfortable, Spiritual — with real costs, Triund trek tips, Tibetan food spots, and monastery.",
   keywords: [
     "dharamshala itinerary 3 days",
     "mcleodganj travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "dharamkot cafes",
   ],
   openGraph: {
-    title: "Dharamshala & McLeodGanj in 3 Days: Complete Guide 2026",
+    title: "Dharamshala & McLeodGanj 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real costs, honest trek reviews, Tibetan food spots. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dharamshala & McLeodGanj in 3 Days (2026)",
+    title: "Dharamshala & McLeodGanj 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real costs, honest Triund review, Tibetan food spots.",
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },

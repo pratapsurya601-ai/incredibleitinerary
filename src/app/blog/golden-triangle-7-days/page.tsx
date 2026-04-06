@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import GoldenTriangleClient from "./GoldenTriangleClient";
 
 export const metadata: Metadata = {
-  title: "Golden Triangle in 7 Days: Delhi, Agra & Jaipur (The Only Guide You Need, 2026)",
+  title: "Golden Triangle 7-Day Itinerary 2026: Trip Planner",
   description:
-    "The complete Golden Triangle itinerary — Delhi, Agra Taj Mahal & Jaipur. 4 plans, real budgets, Google Maps routes and the timing mistake that ruins most Taj Mahal visits.",
+    "Plan your Golden Triangle trip in 7 days. The complete Golden Triangle itinerary — Delhi, Agra Taj Mahal & Jaipur. 4 plans, real budgets, Google Maps.",
   keywords: [
     "golden triangle india itinerary",
     "delhi agra jaipur 7 days",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "india first trip itinerary",
   ],
   openGraph: {
-    title: "Golden Triangle in 7 Days: Delhi, Agra & Jaipur (2026)",
+    title: "Golden Triangle 7-Day Itinerary 2026: Trip Planner",
     description: "Delhi · Agra · Jaipur — 4 plans, real budgets, Google Maps routes.",
     images: [{
       url: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Golden Triangle in 7 Days: Delhi, Agra & Jaipur (2026)",
+    title: "Golden Triangle 7-Day Itinerary 2026: Trip Planner",
     description: "Delhi, Agra, Jaipur — 4 plans, real budgets, Taj Mahal timing guide.",
     images: ["https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80"],
   },

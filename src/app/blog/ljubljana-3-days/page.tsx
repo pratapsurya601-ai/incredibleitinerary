@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Ljubljana in 3 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Ljubljana 3-Day Itinerary 2026: Trip Planner",
   description:
-    "The definitive 3-day Ljubljana guide — Ljubljana Castle, Triple Bridge, Dragon Bridge, Old Town cafes, Lake Bled, Postojna Cave, and the most underrated food scene in Europe. Budget €50/day to luxury €260/day.",
+    "Plan your Ljubljana trip in 3 days. The definitive 3-day Ljubljana guide — Ljubljana Castle, Triple Bridge, Dragon Bridge, Old Town cafes, Lake Bled,.",
   keywords: [
     "Ljubljana 3 days itinerary",
     "Ljubljana travel guide 2026",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Ljubljana budget travel",
   ],
   openGraph: {
-    title: "Ljubljana in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Ljubljana 3-Day Itinerary 2026: Trip Planner",
     description:
       "Dragon bridges, a castle on a hill, Lake Bled's island church, and the most sustainable city in Europe — the definitive 3-day Ljubljana guide.",
     url: "https://incredibleitinerary.com/blog/ljubljana-3-days",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ljubljana in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Ljubljana 3-Day Itinerary 2026: Trip Planner",
     description:
       "Dragon bridges, castle on a hill, Lake Bled, and the most sustainable capital in Europe.",
   },

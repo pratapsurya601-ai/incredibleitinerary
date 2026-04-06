@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KanyakumariClient from "./KanyakumariClient";
 
 export const metadata: Metadata = {
-  title: "Kanyakumari in 2 Days: Where Three Oceans Meet — Sunrise, Sunset & Vivekananda Rock (2026)",
+  title: "Kanyakumari 2-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Kanyakumari guide — Vivekananda Rock Memorial, Thiruvalluvar Statue, Triveni Sangam, sunrise and sunset from the same spot, Padmanabhapuram Palace. 2 plans: Budget and Comfortable with real costs.",
+    "Plan your Kanyakumari trip in 2 days. Complete Kanyakumari guide — Vivekananda Rock Memorial, Thiruvalluvar Statue, Triveni Sangam, sunrise and sunset.",
   keywords: [
     "kanyakumari itinerary 2 days",
     "kanyakumari travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "kanyakumari tamil nadu trip",
   ],
   openGraph: {
-    title: "Kanyakumari in 2 Days: Three Oceans, One Sunrise (2026)",
+    title: "Kanyakumari 2-Day Itinerary 2026: Trip Planner",
     description:
       "Vivekananda Rock, Triveni Sangam, sunrise and sunset from the same point — 2 complete plans with real costs.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kanyakumari in 2 Days: Complete Guide (2026)",
+    title: "Kanyakumari 2-Day Itinerary 2026: Trip Planner",
     description: "Vivekananda Rock, three oceans meeting, sunrise & sunset — 2 plans, real costs.",
     images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&q=80"],
   },

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import DiuClient from "./DiuClient";
 
 export const metadata: Metadata = {
-  title: "Diu in 2 Days: Complete Itinerary Guide (Budget & Comfortable, 2026)",
+  title: "Diu 2-Day Itinerary 2026: Trip Planner",
   description:
-    "2 complete Diu plans — Budget and Comfortable — with real timings, costs, Google Maps routes and the things nobody tells you about this hidden union territory.",
+    "Plan your Diu trip in 2 days. Budget and Comfortable — with real timings, costs, Google Maps routes and the things nobody tells you about this hidden.",
   keywords: [
     "diu itinerary 2 days",
     "diu travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "diu gujarat weekend",
   ],
   openGraph: {
-    title: "Diu in 2 Days: Budget to Comfortable Itinerary 2026",
+    title: "Diu 2-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 2 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diu in 2 Days: The Only Guide You Need (2026)",
+    title: "Diu 2-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=1200&q=80"],
   },

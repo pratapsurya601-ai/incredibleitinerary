@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import RomeClient from "./RomeClient";
 
 export const metadata: Metadata = {
-  title: "Rome in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Rome 4-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Rome plans — Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, first-entry Vatican tips and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "rome pass worth it",
   ],
   openGraph: {
-    title: "Rome in 4 Days: Budget to Luxury Itinerary 2026",
+    title: "Rome 4-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, first-entry Vatican tips. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rome in 4 Days: The Only Guide You Need (2026)",
+    title: "Rome 4-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, first-entry Vatican tips.",
     images: ["https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1200&q=80"],
   },

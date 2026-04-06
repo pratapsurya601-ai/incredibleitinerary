@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Busan in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Busan 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Busan itinerary — Gamcheon Culture Village, Jagalchi Fish Market, Haedong Yonggungsa Temple, Haeundae Beach, and more. Budget ₩60,000/day to luxury ₩350,000/day with visa info for Indian, US, UK, EU & Australian passports.",
+    "Plan your Busan trip in 4 days. Plan the perfect 4-day Busan itinerary — Gamcheon Culture Village, Jagalchi Fish Market, Haedong Yonggungsa Temple,.",
   keywords: [
     "Busan itinerary",
     "Busan 4 days",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "BIFF Square",
   ],
   openGraph: {
-    title: "Busan in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+    title: "Busan 4-Day Itinerary 2026: Trip Planner",
     description:
       "Rainbow terraced villages, cliffside temples, and the world's largest fish market. Your complete 4-day Busan guide with day-by-day itineraries for every budget.",
     url: "https://incredibleitinerary.com/blog/busan-4-days",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Busan in 4 Days: The Complete Travel Guide (2026)",
+    title: "Busan 4-Day Itinerary 2026: Trip Planner",
     description:
       "Rainbow villages, cliffside temples, and the best seafood in Korea. Your complete Busan guide.",
     images: [

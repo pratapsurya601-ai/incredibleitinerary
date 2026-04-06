@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "New Orleans in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "New Orleans 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day New Orleans itinerary — French Quarter, Frenchmen Street jazz, beignets at Café Du Monde, swamp tours, Commander's Palace and Mardi Gras. From $80/day budget to full luxury. Visa info included.",
+    "Plan your New Orleans trip in 4 days. Plan the perfect 4-day New Orleans itinerary — French Quarter, Frenchmen Street jazz, beignets at Café Du Monde,.",
   keywords: [
     "New Orleans travel guide",
     "New Orleans itinerary 4 days",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Louisiana travel guide",
   ],
   openGraph: {
-    title: "New Orleans in 4 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "New Orleans 4-Day Itinerary 2026: Trip Planner",
     description:
       "Jazz at 11am, free beignets at Café Du Monde, second-line parades, and ghost tours in America's most haunted city. Full itinerary from $80/day.",
     url: "https://incredibleitinerary.com/blog/new-orleans-4-days",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "New Orleans in 4 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "New Orleans 4-Day Itinerary 2026: Trip Planner",
     description:
       "Bourbon Street, Frenchmen Street jazz, beignets and ghost tours — New Orleans defies every rule of American cities. Full guide from $80/day.",
   },

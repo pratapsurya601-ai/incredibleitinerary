@@ -3,9 +3,9 @@ import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/U
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Nashville in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Nashville 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 3-day Nashville trip. Honky tonk bars on Broadway, the Grand Ole Opry, hot chicken, RCA Studio B where Elvis recorded, and a complete budget breakdown from $85/day.",
+    "Plan your Nashville trip in 3 days. Plan the perfect 3-day Nashville trip. Honky tonk bars on Broadway, the Grand Ole Opry, hot chicken, RCA Studio B.",
   keywords: [
     "Nashville travel guide",
     "Nashville 3 days",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://incredibleitinerary.com/blog/nashville-3-days" },
   openGraph: {
-    title: "Nashville in 3 Days: The Complete Travel Guide (2026)",
+    title: "Nashville 3-Day Itinerary 2026: Trip Planner",
     description:
       "Live country music at noon on Broadway, hot chicken with a spice warning, the Grand Ole Opry, and RCA Studio B where Elvis recorded — your complete 3-day Nashville, Music City USA itinerary.",
     url: "https://incredibleitinerary.com/blog/nashville-3-days",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nashville in 3 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "Nashville 3-Day Itinerary 2026: Trip Planner",
     description:
       "Honky tonk bars, hot chicken, the Grand Ole Opry, and RCA Studio B — your 3-day Music City USA travel guide.",
     images: ["https://incredibleitinerary.com/og/nashville-3-days.jpg"],

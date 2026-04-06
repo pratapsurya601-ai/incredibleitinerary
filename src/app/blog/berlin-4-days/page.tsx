@@ -3,7 +3,7 @@ import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/U
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Berlin in 4 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Berlin 4-Day Itinerary 2026: Trip Planner",
   description:
     "Plan the perfect 4 days in Berlin — the Berlin Wall, Brandenburg Gate, Museum Island, Kreuzberg street food, techno clubs, and budgets from €55/day.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Berlin nightlife Berghain",
   ],
   openGraph: {
-    title: "Berlin in 4 Days: The Complete Travel Guide 2026",
+    title: "Berlin 4-Day Itinerary 2026: Trip Planner",
     description:
       "History, street art, world-class museums and Europe's most creative nightlife — your ultimate 4-day Berlin itinerary from €55/day to luxury.",
     url: "https://incredibleitinerary.com/blog/berlin-4-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Berlin in 4 Days: The Complete Travel Guide 2026",
+    title: "Berlin 4-Day Itinerary 2026: Trip Planner",
     description:
       "History, street art, world-class museums and Europe's most creative nightlife — your ultimate 4-day Berlin itinerary from €55/day to luxury.",
   },

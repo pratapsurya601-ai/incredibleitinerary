@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Page metadata ──────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Seychelles in 5 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Seychelles 5-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 5-day Seychelles itinerary — from Anse Source d'Argent granite boulders to Vallée de Mai's prehistoric palm forest. Budget $200/day to luxury Six Senses. Visa info, day-by-day plans, costs, and insider tips.",
+    "Plan your Seychelles trip in 5 days. Plan the perfect 5-day Seychelles itinerary — from Anse Source d'Argent granite boulders to Vallée de Mai's.",
   keywords: [
     "Seychelles travel guide",
     "Seychelles 5 days itinerary",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Africa travel guide",
   ],
   openGraph: {
-    title: "Seychelles in 5 Days: The Complete Travel Guide (2026)",
+    title: "Seychelles 5-Day Itinerary 2026: Trip Planner",
     description:
       "The most beautiful beaches in the world, full stop — pink-red granite boulders, sea turtles, coco de mer palms, and 115 islands of Indian Ocean perfection. Your complete 2026 Seychelles guide.",
     url: "https://incredibleitinerary.com/blog/seychelles-5-days",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seychelles in 5 Days: The Complete Travel Guide (2026)",
+    title: "Seychelles 5-Day Itinerary 2026: Trip Planner",
     description:
       "Pink-red granite boulders, sea turtles, coco de mer palms — your complete Seychelles itinerary from $200/day budget to Six Senses luxury.",
   },

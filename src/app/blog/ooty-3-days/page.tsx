@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import OotyBlogClient from "./OotyClient";
 
 export const metadata: Metadata = {
-  title: "Ooty in 3 Days: Complete Hill Station Itinerary (Budget to Premium, 2026)",
+  title: "Ooty 3-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Ooty plans — Budget, Family, Premium — with the Nilgiri Mountain Railway, Botanical Gardens, Doddabetta Peak, tea factories and the mistakes every first-timer makes.",
+    "Plan your Ooty trip in 3 days. Budget, Family, Premium — with the Nilgiri Mountain Railway, Botanical Gardens, Doddabetta Peak, tea factories and the.",
   keywords: [
     "ooty itinerary 3 days",
     "ooty travel guide 2026",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "doddabetta peak ooty",
   ],
   openGraph: {
-    title: "Ooty in 3 Days: Budget to Premium Hill Station Itinerary 2026",
+    title: "Ooty 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, the Nilgiri toy train, tea factories and Doddabetta sunrise. 3 complete plans for every type of traveller.",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ooty in 3 Days: The Only Guide You Need (2026)",
+    title: "Ooty 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Nilgiri toy train and tea plantation routes.",
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },

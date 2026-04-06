@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Seattle in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Seattle 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 3-day Seattle itinerary — Pike Place Market, Space Needle, Chihuly Glass, MoPOP, Kerry Park, Bainbridge Island ferry and the original Starbucks. From $75/day budget to luxury. Visa info included.",
+    "Plan your Seattle trip in 3 days. Plan the perfect 3-day Seattle itinerary — Pike Place Market, Space Needle, Chihuly Glass, MoPOP, Kerry Park, Bainbridge.",
   keywords: [
     "Seattle travel guide",
     "Seattle itinerary 3 days",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Seattle coffee culture",
   ],
   openGraph: {
-    title: "Seattle in 3 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "Seattle 3-Day Itinerary 2026: Trip Planner",
     description:
       "Flying fish at Pike Place, coffee from the original Starbucks, Mount Rainier reflected in Lake Union — Seattle is America's most underrated city. Full guide from $75/day.",
     url: "https://incredibleitinerary.com/blog/seattle-3-days",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seattle in 3 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "Seattle 3-Day Itinerary 2026: Trip Planner",
     description:
       "Pike Place fishmongers, the original Starbucks, Space Needle and Mount Rainier — Seattle's magic in 3 days from $75/day.",
   },

@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Quebec City in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Quebec City 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan your perfect Quebec City trip with our 3-day guide covering budget, mid-range, and luxury options. Château Frontenac, Vieux-Québec, Winter Carnival, Montmorency Falls, and maple syrup everything.",
+    "Plan your Quebec City trip in 3 days. Plan your perfect Quebec City trip with our 3-day guide covering budget, mid-range, and luxury options. Château.",
   keywords: [
     "Quebec City travel guide",
     "Quebec City 3 days itinerary",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Canada travel 2026",
   ],
   openGraph: {
-    title: "Quebec City in 3 Days: Complete Travel Guide 2026",
+    title: "Quebec City 3-Day Itinerary 2026: Trip Planner",
     description:
       "North America's only walled city, a fairy-tale castle above the St Lawrence, maple crêpes in 200-year-old lanes — the only Quebec City guide you need.",
     url: "https://incredibleitinerary.com/blog/quebec-city-3-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Quebec City in 3 Days: Complete Travel Guide 2026",
+    title: "Quebec City 3-Day Itinerary 2026: Trip Planner",
     description:
       "Budget to luxury 3-day Quebec City itinerary — Château Frontenac, walled city, Winter Carnival, and maple everything.",
   },

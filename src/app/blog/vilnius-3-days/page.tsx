@@ -37,11 +37,11 @@ const jsonLd = [
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Vilnius in 3 Days: Complete 2026 Travel Guide (Budget to Luxury) | IncredibleItinerary",
-  description: "Plan the perfect 3 days in Vilnius, Lithuania. Detailed itineraries for every budget, the Republic of Užupis, Trakai Island Castle, Jewish heritage, visa info and insider tips for 2026.",
+  title: "Vilnius 3-Day Itinerary 2026: Trip Planner",
+  description: "Plan your Vilnius trip in 3 days. Plan the perfect 3 days in Vilnius, Lithuania. Detailed itineraries for every budget, the Republic of Užupis, Trakai.",
   keywords: ["Vilnius travel guide", "Vilnius 3 days", "Vilnius itinerary 2026", "Vilnius budget", "Lithuania travel", "Trakai Castle", "Užupis Republic", "Vilnius Old Town"],
   openGraph: {
-    title: "Vilnius in 3 Days: The Complete 2026 Travel Guide",
+    title: "Vilnius 3-Day Itinerary 2026: Trip Planner",
     description: "The largest Baroque old town in Northern Europe, an artists' republic, and a medieval island castle — your definitive 3-day Vilnius guide.",
     url: "https://incredibleitinerary.com/blog/vilnius-3-days",
     siteName: "IncredibleItinerary",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vilnius in 3 Days: Complete 2026 Travel Guide",
+    title: "Vilnius 3-Day Itinerary 2026: Trip Planner",
     description: "A Baroque old town, an artists' republic with its own constitution and a medieval island castle — your definitive 3-day Vilnius guide.",
     images: ["https://incredibleitinerary.com/og/vilnius-3-days.jpg"],
   },

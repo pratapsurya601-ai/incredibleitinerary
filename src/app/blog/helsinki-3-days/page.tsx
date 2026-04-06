@@ -42,9 +42,9 @@ const jsonLd = [
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Helsinki in 3 Days: Complete Travel Guide 2026 (Budget to Luxury) | IncredibleItinerary",
+  title: "Helsinki 3-Day Itinerary 2026: Trip Planner",
   description:
-    "The ultimate Helsinki 3-day itinerary — Senate Square, Design District, Temppeliaukio rock church, Suomenlinna fortress, Löyly harbour sauna, and a Tallinn day trip. Budget from €65/day.",
+    "Plan your Helsinki trip in 3 days. The ultimate Helsinki 3-day itinerary — Senate Square, Design District, Temppeliaukio rock church, Suomenlinna.",
   keywords: [
     "Helsinki itinerary 3 days",
     "Helsinki travel guide 2026",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "Tallinn day trip from Helsinki",
   ],
   openGraph: {
-    title: "Helsinki in 3 Days: Complete Travel Guide 2026",
+    title: "Helsinki 3-Day Itinerary 2026: Trip Planner",
     description:
       "Senate Square, Temppeliaukio rock church, Suomenlinna fortress, harbour saunas, Design District, and a ferry to Tallinn — the world's happiest city packed into 3 perfect days.",
     url: "https://incredibleitinerary.com/blog/helsinki-3-days",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Helsinki in 3 Days: Complete Travel Guide 2026",
+    title: "Helsinki 3-Day Itinerary 2026: Trip Planner",
     description:
       "Senate Square, rock church, sea fortress, and the world's happiest city — 3-day Helsinki guide from €65/day.",
   },

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import LombokClient from "./LombokClient";
 
 export const metadata: Metadata = {
-  title: "Lombok in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Lombok 4-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Lombok plans — Budget, Mid-Range, Luxury — with real timings, costs in IDR & USD, Gili Islands route, south coast beaches and the mistakes every first-timer makes.",
+    "Plan your Lombok trip in 4 days. Budget, Mid-Range, Luxury — with real timings, costs in IDR & USD, Gili Islands route, south coast beaches and the.",
   keywords: [
     "lombok itinerary 4 days",
     "lombok travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "gili islands snorkelling",
   ],
   openGraph: {
-    title: "Lombok in 4 Days: Budget to Luxury Itinerary 2026",
+    title: "Lombok 4-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets in IDR & USD, Gili Island routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lombok in 4 Days: The Only Guide You Need (2026)",
+    title: "Lombok 4-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs in IDR & USD.",
     images: ["https://images.unsplash.com/photo-1570789210967-2cac24home73?w=1200&q=80"],
   },

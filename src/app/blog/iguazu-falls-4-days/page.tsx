@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Iguazu Falls in 4 Days: The Complete Guide — Argentine & Brazilian Sides (2026)",
+  title: "Iguazu Falls 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Iguazu Falls trip. Both sides of the falls, Devil's Throat, jungle walks, boat rides, Triple Frontier, and Itaipu Dam — full itineraries from $80/day.",
+    "Plan your Iguazu Falls trip in 4 days. Plan the perfect 4-day Iguazu Falls trip. Both sides of the falls, Devil's Throat, jungle walks, boat rides, Triple.",
   keywords: [
     "Iguazu Falls travel guide",
     "Iguazu Falls 4 days itinerary",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Iguazu budget travel 2026",
   ],
   openGraph: {
-    title: "Iguazu Falls in 4 Days: The Complete Guide (Argentine & Brazilian Sides, 2026)",
+    title: "Iguazu Falls 4-Day Itinerary 2026: Trip Planner",
     description:
       "275 waterfalls, 2.7km wide, and a Devil's Throat that thunders 82m straight down. Our complete 4-day guide to both sides of Iguazu from $80/day.",
     url: "https://www.incredibleitinerary.com/blog/iguazu-falls-4-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Iguazu Falls in 4 Days: The Complete Guide (2026)",
+    title: "Iguazu Falls 4-Day Itinerary 2026: Trip Planner",
     description:
       "Eleanor Roosevelt said 'Poor Niagara' after seeing Iguazu. Our 4-day guide covers both sides, the boat ride, and the Triple Frontier — from $80/day.",
     images: ["https://images.unsplash.com/photo-1544179700-855cb29a2bd8?w=1200&q=80"],

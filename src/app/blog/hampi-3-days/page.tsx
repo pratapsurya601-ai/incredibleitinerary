@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import HampiClient from "./HampiClient";
 
 export const metadata: Metadata = {
-  title: "Hampi in 3 Days: Complete Guide to India's Most Surreal Landscape (2026)",
+  title: "Hampi 3-Day Itinerary 2026: Trip Planner"s Most Surreal Landscape (2026)",
   description:
-    "Complete Hampi travel guide — Virupaksha Temple, Vittala Temple stone chariot, boulder treks, Sanapur Lake, hippie island. 4 plans for budget, solo, couple and group travellers.",
+    "Plan your Hampi trip in 3 days. Complete Hampi travel guide — Virupaksha Temple, Vittala Temple stone chariot, boulder treks, Sanapur Lake, hippie island..",
   keywords: [
     "hampi itinerary 3 days",
     "hampi travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "hampi from bangalore",
   ],
   openGraph: {
-    title: "Hampi in 3 Days: India's Most Surreal Landscape (2026)",
+    title: "Hampi 3-Day Itinerary 2026: Trip Planner"s Most Surreal Landscape (2026)",
     description:
       "Vittala Temple · Boulder Treks · Hippie Island — complete guide with real costs.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hampi in 3 Days: Complete Guide (2026)",
+    title: "Hampi 3-Day Itinerary 2026: Trip Planner",
     description: "Virupaksha Temple, Vittala Temple, boulder treks — 4 plans, real costs.",
     images: ["https://images.unsplash.com/photo-1600100317816-0a8b8a4fba14?w=1200&q=80"],
   },

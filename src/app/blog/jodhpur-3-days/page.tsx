@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import JodhpurClient from "./JodhpurClient";
 
 export const metadata: Metadata = {
-  title: "Jodhpur in 3 Days: Blue City Itinerary Guide (Budget to Royal, 2026)",
+  title: "Jodhpur 3-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Jodhpur plans — Budget, Heritage, Royal — with real timings, costs, Google Maps routes. Mehrangarh Fort, Blue City, Umaid Bhawan, Clock Tower food trail.",
+    "Plan your Jodhpur trip in 3 days. Budget, Heritage, Royal — with real timings, costs, Google Maps routes. Mehrangarh Fort, Blue City, Umaid Bhawan, Clock.",
   keywords: [
     "jodhpur itinerary 3 days",
     "jodhpur travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "jodhpur rajasthan",
   ],
   openGraph: {
-    title: "Jodhpur in 3 Days: Blue City Itinerary (Budget to Royal) 2026",
+    title: "Jodhpur 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller visiting the Blue City.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jodhpur in 3 Days: The Only Guide You Need (2026)",
+    title: "Jodhpur 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&q=80"],
   },

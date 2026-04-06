@@ -45,11 +45,11 @@ const jsonLd = [
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "San Sebastián in 3 Days: Complete Travel Guide 2026 (Budget to Luxury) | IncredibleItinerary",
-  description: "Plan the perfect 3-day San Sebastián trip: pintxos in Parte Vieja, La Concha beach, Monte Urgull, day trips to Biarritz & Bilbao. Budget €60/day to luxury €320/day itineraries.",
+  title: "San Sebastián 3-Day Itinerary 2026: Trip Planner",
+  description: "Plan your San Sebastián trip in 3 days. Plan the perfect 3-day San Sebastián trip: pintxos in Parte Vieja, La Concha beach, Monte Urgull, day trips to.",
   keywords: ["San Sebastián travel guide", "San Sebastian 3 days itinerary", "La Concha beach", "pintxos bars Parte Vieja", "Basque Country Spain", "Monte Urgull", "Guggenheim Bilbao day trip", "San Sebastián food guide"],
   openGraph: {
-    title: "San Sebastián in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "San Sebastián 3-Day Itinerary 2026: Trip Planner",
     description: "More Michelin stars per capita than anywhere on Earth, pintxos at €2 each, La Concha bay curving between two green mountains — 3 days in Spain's gastronomic capital.",
     url: "https://incredibleitinerary.com/blog/san-sebastian-3-days",
     siteName: "IncredibleItinerary",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "San Sebastián in 3 Days: Complete Travel Guide 2026",
+    title: "San Sebastián 3-Day Itinerary 2026: Trip Planner",
     description: "Budget €60/day to luxury €320/day — 3-day San Sebastián itinerary with pintxos crawls, La Concha, Bilbao day trip & more.",
     images: ["https://incredibleitinerary.com/og/san-sebastian-3-days.jpg"],
   },

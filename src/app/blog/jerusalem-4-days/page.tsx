@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 export const metadata: Metadata = {
-  title: "Jerusalem in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Jerusalem 4-Day Itinerary 2026: Trip Planner",
   description:
-    "The ultimate Jerusalem travel guide — Western Wall, Dome of the Rock, Church of the Holy Sepulchre, Via Dolorosa, Yad Vashem, and a Dead Sea day trip. Budget ($60/day) to luxury ($320/day) itineraries for every traveller.",
+    "Plan your Jerusalem trip in 4 days. The ultimate Jerusalem travel guide — Western Wall, Dome of the Rock, Church of the Holy Sepulchre, Via Dolorosa, Yad.",
   keywords: [
     "Jerusalem travel guide",
     "Jerusalem itinerary 4 days",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Armenian Quarter",
   ],
   openGraph: {
-    title: "Jerusalem in 4 Days: The Complete Travel Guide (2026)",
+    title: "Jerusalem 4-Day Itinerary 2026: Trip Planner",
     description:
       "Three Abrahamic faiths, four quarters, and 3,000 years of civilisation in one walled city. Your complete Jerusalem itinerary — budget to luxury.",
     type: "article",
@@ -208,7 +208,7 @@ const data: UniversalBlogData = {
       days: [
         {
           day: "Day 1",
-          title: "The Old City — Private Guide, Four Quarters & Night at the Wall",
+          title: "Jerusalem 4-Day Itinerary 2026: Trip Planner",
           items: [
             "8:00am — Arrive by train from Tel Aviv and check into a 3-star boutique hotel inside or adjacent to the Old City — Harmony Hotel (near Jaffa Gate) or Legacy Hotel are excellent choices. Rooms $120–160/night.",
             "9:30am — Private walking tour of the Old City with a licensed guide (book via GetYourGuide: https://www.getyourguide.com/s/?q=Jerusalem+Old+City+walking+tour&partner_id=PSZA5UI). A half-day guide brings the four quarters alive with context no sign ever provides — the history of why each community settled where they did, the tensions simmering beneath the pilgrim surface, and the hidden courtyards only locals know.",

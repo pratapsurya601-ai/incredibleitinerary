@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MusoorieClient from "./MusoorieClient";
 
 export const metadata: Metadata = {
-  title: "Mussoorie in 3 Days: Complete Hill Station Guide (Budget to Premium, 2026)",
+  title: "Mussoorie 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Mussoorie plans — Budget, Family, Premium — with real timings, costs, Google Maps routes and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "mussoorie trip planner",
   ],
   openGraph: {
-    title: "Mussoorie in 3 Days: Budget to Premium Itinerary 2026",
+    title: "Mussoorie 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mussoorie in 3 Days: The Only Guide You Need (2026)",
+    title: "Mussoorie 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },

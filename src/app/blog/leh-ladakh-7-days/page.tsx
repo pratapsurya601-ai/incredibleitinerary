@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import LehLadakhClient from "./LehLadakhClient";
 
 export const metadata: Metadata = {
-  title: "Leh Ladakh in 7 Days: The Complete Road Trip Guide (2026)",
+  title: "Leh Ladakh 7-Day Itinerary 2026: Trip Planner",
   description:
-    "The complete Leh Ladakh itinerary — Pangong Lake, Nubra Valley, Khardung La, Magnetic Hill. 4 plans, real acclimatisation guide, road trip vs flight, actual costs for 2026.",
+    "Plan your Leh Ladakh trip in 7 days. The complete Leh Ladakh itinerary — Pangong Lake, Nubra Valley, Khardung La, Magnetic Hill. 4 plans, real.",
   keywords: [
     "leh ladakh itinerary 7 days",
     "leh ladakh travel guide 2026",
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     "ladakh honeymoon",
   ],
   openGraph: {
-    title: "Leh Ladakh in 7 Days: Complete Guide (2026)",
+    title: "Leh Ladakh 7-Day Itinerary 2026: Trip Planner",
     description: "Pangong Lake · Nubra Valley · Khardung La — 4 plans, acclimatisation guide, real costs.",
     images: [{ url: "https://images.unsplash.com/photo-1574482620826-903a9948f5cb?w=1200&q=80", width: 1200, height: 630, alt: "Pangong Lake Ladakh blue water mountains" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leh Ladakh in 7 Days: Complete Guide (2026)",
+    title: "Leh Ladakh 7-Day Itinerary 2026: Trip Planner",
     description: "Pangong Lake, Nubra Valley, Khardung La — 4 plans, acclimatisation guide, real costs.",
     images: ["https://images.unsplash.com/photo-1574482620826-903a9948f5cb?w=1200&q=80"],
   },

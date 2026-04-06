@@ -3,9 +3,9 @@ import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/U
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Boston in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Boston 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 3-day Boston trip. Walk the Freedom Trail, eat clam chowder at Faneuil Hall, visit Harvard, and catch the Red Sox at Fenway Park. Complete budget breakdown from $80/day.",
+    "Plan your Boston trip in 3 days. Plan the perfect 3-day Boston trip. Walk the Freedom Trail, eat clam chowder at Faneuil Hall, visit Harvard, and catch.",
   keywords: [
     "Boston travel guide",
     "Boston 3 days",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://incredibleitinerary.com/blog/boston-3-days" },
   openGraph: {
-    title: "Boston in 3 Days: The Complete Travel Guide (2026)",
+    title: "Boston 3-Day Itinerary 2026: Trip Planner",
     description:
       "Walk the 2.5-mile red-brick Freedom Trail, eat clam chowder at Faneuil Hall, catch a Red Sox game at Fenway Park, and punt around Harvard Yard — your complete 3-day Boston itinerary.",
     url: "https://incredibleitinerary.com/blog/boston-3-days",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boston in 3 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "Boston 3-Day Itinerary 2026: Trip Planner",
     description:
       "The Freedom Trail, Fenway Park, Harvard, and the best clam chowder in New England — your 3-day Boston travel guide.",
     images: ["https://incredibleitinerary.com/og/boston-3-days.jpg"],

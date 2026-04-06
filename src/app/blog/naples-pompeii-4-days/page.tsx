@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Naples & Pompeii in 4 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Naples & Pompeii 4-Day Itinerary 2026: Trip Planner",
   description:
-    "The definitive 4-day Naples and Pompeii guide — Pompeii ruins, Mount Vesuvius hike, Amalfi Coast day trip, Capri, and the best pizza on Earth. Budget €50/day to luxury €270/day itineraries.",
+    "Plan your Naples & Pompeii trip in 4 days. The definitive 4-day Naples and Pompeii guide — Pompeii ruins, Mount Vesuvius hike, Amalfi Coast day trip,.",
   keywords: [
     "Naples Pompeii 4 days itinerary",
     "Naples travel guide 2026",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Naples budget travel",
   ],
   openGraph: {
-    title: "Naples & Pompeii in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Naples & Pompeii 4-Day Itinerary 2026: Trip Planner",
     description:
       "Pompeii frozen in time, Vesuvius crater hike, the best pizza on Earth, and the Amalfi Coast — the definitive 4-day Naples guide.",
     url: "https://incredibleitinerary.com/blog/naples-pompeii-4-days",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Naples & Pompeii in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Naples & Pompeii 4-Day Itinerary 2026: Trip Planner",
     description:
       "Pompeii frozen in time, Vesuvius crater hike, the best pizza on Earth, and the Amalfi Coast.",
   },
@@ -404,7 +404,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🍕",
-      title: "Ordering pizza anywhere other than the original Neapolitan style",
+      title: "Naples & Pompeii 4-Day Itinerary 2026: Trip Planner",
       desc: "Naples pizza is a DOC (Denominazione di Origine Controllata) product. The real thing has a soft, slightly charred crust, San Marzano tomatoes, and fior di latte or buffalo mozzarella — it's cooked in a wood-fired oven at 485°C for 60–90 seconds. Tourist traps serve inferior versions. Stick to L'Antica Pizzeria da Michele, Sorbillo, or Pizzeria Starita.",
       color: "border-blue-200 bg-blue-50",
     },

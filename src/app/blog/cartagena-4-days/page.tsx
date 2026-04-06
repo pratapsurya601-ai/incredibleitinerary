@@ -37,11 +37,11 @@ const jsonLd = [
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Cartagena Colombia in 4 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
-  description: "4-day Cartagena Colombia itinerary covering the walled city, Castle of San Felipe, Getsemaní, Rosario Islands, and Caribbean food — from $55/day to $300/day luxury.",
+  title: "Cartagena Colombia 4-Day Itinerary 2026: Trip Planner",
+  description: "Plan your Cartagena Colombia trip in 4 days. 4-day Cartagena Colombia itinerary covering the walled city, Castle of San Felipe, Getsemaní, Rosario.",
   keywords: ["Cartagena Colombia itinerary", "Cartagena 4 days", "Ciudad Amurallada", "Rosario Islands", "Getsemaní", "Castle San Felipe", "Colombia travel guide", "Cartagena walled city"],
   openGraph: {
-    title: "Cartagena Colombia in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Cartagena Colombia 4-Day Itinerary 2026: Trip Planner",
     description: "4-day Cartagena Colombia itinerary — walled city, San Felipe, Rosario Islands — from $55/day to $300/day.",
     url: "https://incredibleitinerary.com/blog/cartagena-4-days",
     siteName: "IncredibleItinerary",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cartagena Colombia in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Cartagena Colombia 4-Day Itinerary 2026: Trip Planner",
     description: "4-day Cartagena Colombia itinerary — walled city, San Felipe, Rosario Islands, $55–$300/day.",
     images: ["https://incredibleitinerary.com/og/cartagena-4-days.jpg"],
   },

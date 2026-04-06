@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Kruger National Park in 5 Days: The Complete Safari Guide (Budget to Luxury, 2026)",
+  title: "Kruger National Park 5-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 5-day Kruger National Park safari. Big Five game drives, best camps, self-drive tips, Sabi Sands, Panorama Route — full itineraries for every budget from $120/day.",
+    "Plan your Kruger National Park trip in 5 days. Plan the perfect 5-day Kruger National Park safari. Big Five game drives, best camps, self-drive tips, Sabi.",
   keywords: [
     "Kruger National Park guide",
     "Kruger 5 days itinerary",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Kruger National Park tips",
   ],
   openGraph: {
-    title: "Kruger National Park in 5 Days: The Complete Safari Guide (2026)",
+    title: "Kruger National Park 5-Day Itinerary 2026: Trip Planner",
     description:
       "Africa's greatest self-drive safari — 20,000 sq km, the Big Five, and lions crossing the road at dawn. Our complete 5-day guide from $120/day.",
     url: "https://www.incredibleitinerary.com/blog/kruger-park-5-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kruger National Park in 5 Days: The Complete Safari Guide (2026)",
+    title: "Kruger National Park 5-Day Itinerary 2026: Trip Planner",
     description:
       "Self-drive the Big Five in Africa's most iconic national park. Complete 5-day itinerary from $120/day.",
     images: ["https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80"],
@@ -174,7 +174,7 @@ const data: UniversalBlogData = {
       days: [
         {
           day: "Day 1",
-          title: "Drive from Johannesburg → Enter Kruger (Numbi Gate or Phabeni Gate)",
+          title: "Kruger National Park 5-Day Itinerary 2026: Trip Planner",
           items: [
             "Rent a budget car in Johannesburg from $35/day (Toyota Corolla — no 4WD needed for tar roads in Kruger)",
             "Drive 5 hrs to Kruger; enter via Numbi Gate (southwest) or Phabeni Gate near Skukuza",

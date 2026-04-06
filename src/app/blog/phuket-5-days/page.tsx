@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PhuketClient from "./PhuketClient";
 
 export const metadata: Metadata = {
-  title: "Phuket in 5 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Phuket 5-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Phuket plans — Budget, Mid-Range, Luxury — with Phi Phi Island, Phang Nga Bay, Old Town, real costs in Thai Baht and the mistakes every first-timer makes.",
+    "Plan your Phuket trip in 5 days. Budget, Mid-Range, Luxury — with Phi Phi Island, Phang Nga Bay, Old Town, real costs in Thai Baht and the mistakes every.",
   keywords: [
     "phuket itinerary 5 days",
     "phuket travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "phuket thailand",
   ],
   openGraph: {
-    title: "Phuket in 5 Days: Budget to Luxury Itinerary 2026",
+    title: "Phuket 5-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets in Thai Baht, island-hopping routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Phuket in 5 Days: The Only Guide You Need (2026)",
+    title: "Phuket 5-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs in Baht, island routes.",
     images: ["https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1200&q=80"],
   },

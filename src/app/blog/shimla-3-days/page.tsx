@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ShimlaClient from "./ShimlaClient";
 
 export const metadata: Metadata = {
-  title: "Shimla in 3 Days: Complete Hill Station Guide (Budget to Premium, 2026)",
+  title: "Shimla 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Shimla plans — Budget, Family, Premium — with real timings, costs, toy train tips and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "shimla trip planner",
   ],
   openGraph: {
-    title: "Shimla in 3 Days: Budget to Premium Itinerary 2026",
+    title: "Shimla 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, toy train logistics. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shimla in 3 Days: The Only Guide You Need (2026)",
+    title: "Shimla 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, toy train logistics.",
     images: ["https://images.unsplash.com/photo-1597074866923-dc0589150e44?w=1200&q=80"],
   },

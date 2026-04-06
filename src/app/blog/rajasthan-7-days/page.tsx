@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import RajasthanBlogClient from "./RajasthanBlogClient";
 
 export const metadata: Metadata = {
-  title: "Rajasthan in 7 Days: The Royal Circuit That Actually Works (2026)",
+  title: "Rajasthan 7-Day Itinerary 2026: Trip Planner",
   description:
     "The only Rajasthan itinerary you need — Jaipur, Jodhpur, Jaisalmer & Udaipur with real timings, budgets, Google Maps routes and mistakes to avoid.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "rajasthan honeymoon trip",
   ],
   openGraph: {
-    title: "Rajasthan in 7 Days: The Royal Circuit That Actually Works (2026)",
+    title: "Rajasthan 7-Day Itinerary 2026: Trip Planner",
     description:
       "Jaipur · Jodhpur · Jaisalmer · Udaipur — 4 plans, real budgets, Google Maps routes.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rajasthan in 7 Days: The Only Guide You Need (2026)",
+    title: "Rajasthan 7-Day Itinerary 2026: Trip Planner",
     description: "4 plans, real timings, actual budgets, Google Maps routes.",
   },
   alternates: {

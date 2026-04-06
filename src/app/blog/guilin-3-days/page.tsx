@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Guilin in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Guilin 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Guilin travel guide: Li River cruise, Longji Rice Terraces, Yangshuo cycling, karst peaks. Budget ¥250/day to luxury ¥1,500/day. Visa info, day-by-day itineraries, insider tips.",
+    "Plan your Guilin trip in 3 days. Complete Guilin travel guide: Li River cruise, Longji Rice Terraces, Yangshuo cycling, karst peaks. Budget ¥250/day to.",
   keywords: [
     "Guilin travel guide",
     "Li River cruise",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Guilin budget travel",
   ],
   openGraph: {
-    title: "Guilin in 3 Days: Li River, Karst Peaks & Longji Rice Terraces",
+    title: "Guilin 3-Day Itinerary 2026: Trip Planner",
     description:
       "The landscape on every Chinese scroll painting and every 20-yuan banknote. Limestone peaks, cormorant fishermen, 2,300-year-old rice terraces and cycling through Yangshuo. The complete Guilin guide.",
     url: "https://www.incredibleitinerary.com/blog/guilin-3-days",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guilin in 3 Days: The Complete Travel Guide 2026",
+    title: "Guilin 3-Day Itinerary 2026: Trip Planner",
     description:
       "Li River cruise, Longji Rice Terraces and Yangshuo karst cycling. Budget to luxury day-by-day itineraries.",
   },

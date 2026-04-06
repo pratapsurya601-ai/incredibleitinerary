@@ -42,9 +42,9 @@ const jsonLd = [
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Belgrade in 3 Days: Complete Travel Guide 2026 (Budget to Luxury) | IncredibleItinerary",
+  title: "Belgrade 3-Day Itinerary 2026: Trip Planner",
   description:
-    "The ultimate Belgrade 3-day itinerary — Kalemegdan Fortress, Skadarlija bohemian quarter, St Sava Temple, splavovi nightlife, and a day trip to Novi Sad. Budget from €35/day.",
+    "Plan your Belgrade trip in 3 days. The ultimate Belgrade 3-day itinerary — Kalemegdan Fortress, Skadarlija bohemian quarter, St Sava Temple, splavovi.",
   keywords: [
     "Belgrade itinerary 3 days",
     "Belgrade travel guide 2026",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "Balkans travel",
   ],
   openGraph: {
-    title: "Belgrade in 3 Days: Complete Travel Guide 2026",
+    title: "Belgrade 3-Day Itinerary 2026: Trip Planner",
     description:
       "A fortress rebuilt 38 times, river-boat clubs that don't open until 1am, and rakija before hello — Belgrade is Europe's most underrated and most alive capital.",
     url: "https://incredibleitinerary.com/blog/belgrade-3-days",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Belgrade in 3 Days: Complete Travel Guide 2026",
+    title: "Belgrade 3-Day Itinerary 2026: Trip Planner",
     description:
       "Kalemegdan, splavovi nightlife, Tesla Museum, bohemian Skadarlija, and a day trip to Novi Sad — Europe's most underrated capital from €35/day.",
   },

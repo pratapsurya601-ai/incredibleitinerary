@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AgraClient from "./AgraClient";
 
 export const metadata: Metadata = {
-  title: "Agra in 2 Days: Taj Mahal Sunrise to Fatehpur Sikri (Budget to Luxury, 2026)",
+  title: "Agra 2-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Agra plans — Budget, Heritage, Luxury — with sunrise timings, real costs, Google Maps routes and the tourist traps every first-timer falls for.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "agra trip planner",
   ],
   openGraph: {
-    title: "Agra in 2 Days: Taj Mahal Sunrise to Fatehpur Sikri (2026)",
+    title: "Agra 2-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agra in 2 Days: The Only Guide You Need (2026)",
+    title: "Agra 2-Day Itinerary 2026: Trip Planner",
     description: "3 plans, sunrise timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80"],
   },

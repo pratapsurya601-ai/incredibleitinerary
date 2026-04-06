@@ -45,11 +45,11 @@ const jsonLd = [
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Mallorca in 4 Days: Complete Travel Guide 2026 (Budget to Luxury) | IncredibleItinerary",
-  description: "Plan the perfect 4-day Mallorca trip: Palma Cathedral, Serra de Tramuntana, Cap de Formentor, Es Trenc beach & Caves of Drach. Budget €55/day to luxury €300/day itineraries.",
+  title: "Mallorca 4-Day Itinerary 2026: Trip Planner",
+  description: "Plan your Mallorca trip in 4 days. Plan the perfect 4-day Mallorca trip: Palma Cathedral, Serra de Tramuntana, Cap de Formentor, Es Trenc beach & Caves of.",
   keywords: ["Mallorca travel guide", "Mallorca 4 days itinerary", "Palma Cathedral", "Serra de Tramuntana", "Cap de Formentor", "Es Trenc beach", "Caves of Drach", "Mallorca budget travel", "Balearic Islands Spain"],
   openGraph: {
-    title: "Mallorca in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Mallorca 4-Day Itinerary 2026: Trip Planner",
     description: "A Gothic cathedral rising from the seafront, limestone cliffs of Tramuntana at dawn, sea caves only accessible by kayak — complete 4-day Mallorca itinerary for every budget.",
     url: "https://incredibleitinerary.com/blog/mallorca-4-days",
     siteName: "IncredibleItinerary",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mallorca in 4 Days: Complete Travel Guide 2026",
+    title: "Mallorca 4-Day Itinerary 2026: Trip Planner",
     description: "Budget €55/day to luxury €300/day — complete Mallorca 4-day itinerary with Palma, Tramuntana, Formentor & more.",
     images: ["https://incredibleitinerary.com/og/mallorca-4-days.jpg"],
   },

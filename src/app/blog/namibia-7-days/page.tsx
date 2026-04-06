@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Namibia in 7 Days: The Complete Self-Drive Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Namibia 7-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Namibia 7-day self-drive itinerary covering Sossusvlei, Deadvlei, Etosha National Park, Swakopmund, Fish River Canyon, and the Namib Desert. Budget ($120/day) to luxury ($500/day) plans with visa info for Indian and Western passports.",
+    "Plan your Namibia trip in 7 days. Complete Namibia 7-day self-drive itinerary covering Sossusvlei, Deadvlei, Etosha National Park, Swakopmund, Fish River.",
   keywords: [
     "Namibia 7 day itinerary",
     "Namibia self-drive guide",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Namibia visa Indian passport",
   ],
   openGraph: {
-    title: "Namibia in 7 Days: The Complete Self-Drive Guide (Budget to Luxury, 2026)",
+    title: "Namibia 7-Day Itinerary 2026: Trip Planner",
     description:
       "Climb the world's tallest sand dunes at dawn, stand among 900-year-old dead trees in Deadvlei, and watch lions at Etosha waterholes. Complete 7-day Namibia itinerary from $120/day.",
     url: "https://incredibleitinerary.com/blog/namibia-7-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Namibia in 7 Days: Complete Self-Drive Guide (Budget to Luxury, 2026)",
+    title: "Namibia 7-Day Itinerary 2026: Trip Planner",
     description:
       "Complete Namibia self-drive itinerary from $120/day. Sossusvlei, Etosha, Swakopmund, Fish River Canyon — day-by-day plans for every budget.",
     images: ["https://incredibleitinerary.com/og/namibia-7-days.jpg"],

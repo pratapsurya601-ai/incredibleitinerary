@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AbuDhabiClient from "./AbuDhabiClient";
 
 export const metadata: Metadata = {
-  title: "Abu Dhabi in 3 Days: Complete Itinerary Guide (Budget to Comfortable, 2026)",
+  title: "Abu Dhabi 3-Day Itinerary 2026: Trip Planner",
   description:
     "2 complete Abu Dhabi plans — Budget, Comfortable — with real timings, costs in AED/USD, Sheikh Zayed Mosque tips and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "yas island abu dhabi",
   ],
   openGraph: {
-    title: "Abu Dhabi in 3 Days: Budget to Comfortable Itinerary 2026",
+    title: "Abu Dhabi 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Sheikh Zayed Mosque golden hour tips. 2 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abu Dhabi in 3 Days: The Only Guide You Need (2026)",
+    title: "Abu Dhabi 3-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, actual costs, Sheikh Zayed Mosque tips.",
     images: ["https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=1200&q=80"],
   },

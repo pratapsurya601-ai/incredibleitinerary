@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Toronto in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Toronto 4-Day Itinerary 2026: Trip Planner",
   description:
-    "The ultimate 4-day Toronto itinerary — CN Tower, Kensington Market, Distillery District, Niagara Falls day trip, and the world's most multicultural food scene. Budget, mid-range & luxury plans.",
+    "Plan your Toronto trip in 4 days. The ultimate 4-day Toronto itinerary — CN Tower, Kensington Market, Distillery District, Niagara Falls day trip, and the.",
   keywords: [
     "Toronto travel guide",
     "Toronto 4 days itinerary",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Canada travel 2026",
   ],
   openGraph: {
-    title: "Toronto in 4 Days: Complete Travel Guide 2026",
+    title: "Toronto 4-Day Itinerary 2026: Trip Planner",
     description:
       "Stand on the CN Tower glass floor 447m up, eat your way through Kensington Market, and day-trip to Niagara Falls. The only Toronto guide you need.",
     url: "https://incredibleitinerary.com/blog/toronto-4-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Toronto in 4 Days: Complete Travel Guide 2026",
+    title: "Toronto 4-Day Itinerary 2026: Trip Planner",
     description:
       "Budget to luxury 4-day Toronto itinerary — CN Tower, Kensington Market, Distillery District, and Niagara Falls.",
   },

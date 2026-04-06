@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import GujaratClient from "./GujaratClient";
 
 export const metadata: Metadata = {
-  title: "Gujarat in 7 Days: India's Most Underrated State (Budget to Premium, 2026)",
+  title: "Gujarat 7-Day Itinerary 2026: Trip Planner"s Most Underrated State (Budget to Premium, 2026)",
   description:
-    "The complete Gujarat itinerary — Ahmedabad, Rann of Kutch, Gir National Park, Somnath & Diu with real budgets, timings, and the best vegetarian food in India.",
+    "Plan your Gujarat trip in 7 days. The complete Gujarat itinerary — Ahmedabad, Rann of Kutch, Gir National Park, Somnath & Diu with real budgets, timings,.",
   keywords: [
     "gujarat itinerary 7 days",
     "gujarat travel guide 2026",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "gujarat budget travel",
   ],
   openGraph: {
-    title: "Gujarat in 7 Days: India's Most Underrated State (Budget to Premium, 2026)",
+    title: "Gujarat 7-Day Itinerary 2026: Trip Planner"s Most Underrated State (Budget to Premium, 2026)",
     description:
       "Ahmedabad · Kutch · Gir · Somnath · Diu — 3 plans, real budgets, day-by-day routes.",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gujarat in 7 Days: The Only Guide You Need (2026)",
+    title: "Gujarat 7-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual budgets, best vegetarian food in India.",
   },
   alternates: {

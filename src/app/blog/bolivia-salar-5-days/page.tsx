@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Salar de Uyuni in 5 Days: The Complete Bolivia Travel Guide (2026) | IncredibleItinerary",
+  title: "Salar de Uyuni 5-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 5 days at Salar de Uyuni, Bolivia — the world's largest salt flat, mirror effect, Isla Incahuasi cactus island, flamingo lagoons, and sleeping in a salt hotel. Budget ($60/day) to luxury ($280/day) itineraries.",
+    "Plan your Salar de Uyuni trip in 5 days. Plan the perfect 5 days at Salar de Uyuni, Bolivia — the world's largest salt flat, mirror effect, Isla Incahuasi.",
   keywords: [
     "Salar de Uyuni itinerary",
     "Bolivia salt flat trip",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Bolivia visa Indian passport",
   ],
   openGraph: {
-    title: "Salar de Uyuni in 5 Days: The Complete Bolivia Travel Guide (2026)",
+    title: "Salar de Uyuni 5-Day Itinerary 2026: Trip Planner",
     description:
       "Driving across the world's largest mirror — 10,582 km² of salt where the sky perfectly reflects and the horizon disappears. Bolivia's greatest wonder.",
     url: "https://incredibleitinerary.com/blog/bolivia-salar-5-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Salar de Uyuni in 5 Days: The Complete Bolivia Travel Guide (2026)",
+    title: "Salar de Uyuni 5-Day Itinerary 2026: Trip Planner",
     description:
       "The world's largest mirror, flamingo lagoons, a cactus island, and a hotel built of salt blocks — Salar de Uyuni is Bolivia's greatest wonder.",
     images: [
@@ -334,7 +334,7 @@ const data: UniversalBlogData = {
         },
         {
           day: "Day 2",
-          title: "Tiwanaku Private Archaeological Tour + Private Flight to Uyuni",
+          title: "Salar de Uyuni 5-Day Itinerary 2026: Trip Planner",
           items: [
             "Private archaeologist-guided morning tour of Tiwanaku UNESCO site ($150) — behind-the-scenes access",
             "Lunch at La Paz fine dining",
@@ -470,7 +470,7 @@ const data: UniversalBlogData = {
   tips: [
     {
       icon: "📷",
-      title: "Bring props for perspective photos — they make the images iconic",
+      title: "Salar de Uyuni 5-Day Itinerary 2026: Trip Planner",
       desc: "The flat, featureless expanse of the Salar makes perspective tricks possible that work nowhere else — tiny humans holding giant objects, people appearing to stand on each other, miniature toy scenes. Bring small toys, figurines, or props from home. Every tour guide will happily set up the shots. These are the photos that go viral.",
       color: "bg-blue-50 border-blue-200",
     },

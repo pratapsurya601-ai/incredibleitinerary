@@ -37,11 +37,11 @@ const jsonLd = [
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Riga in 3 Days: Complete 2026 Travel Guide (Budget to Luxury) | IncredibleItinerary",
-  description: "Plan the perfect 3 days in Riga, Latvia. Detailed itineraries for every budget, visa info for Indian & Western passports, Art Nouveau district guide, costs, mistakes to avoid and insider tips for 2026.",
+  title: "Riga 3-Day Itinerary 2026: Trip Planner",
+  description: "Plan your Riga trip in 3 days. Plan the perfect 3 days in Riga, Latvia. Detailed itineraries for every budget, visa info for Indian & Western passports,.",
   keywords: ["Riga travel guide", "Riga 3 days", "Riga itinerary 2026", "Riga Art Nouveau", "Latvia travel", "Riga Old Town", "Riga Christmas market", "Black Balsam"],
   openGraph: {
-    title: "Riga in 3 Days: The Complete 2026 Travel Guide",
+    title: "Riga 3-Day Itinerary 2026: Trip Planner",
     description: "The world's greatest Art Nouveau city, a market inside Zeppelin hangars and a herbal liqueur that tastes like medicine — your definitive 3-day Riga guide.",
     url: "https://incredibleitinerary.com/blog/riga-3-days",
     siteName: "IncredibleItinerary",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Riga in 3 Days: Complete 2026 Travel Guide",
+    title: "Riga 3-Day Itinerary 2026: Trip Planner",
     description: "The world's greatest Art Nouveau city and a market inside Zeppelin hangars — your definitive 3-day Riga guide.",
     images: ["https://incredibleitinerary.com/og/riga-3-days.jpg"],
   },

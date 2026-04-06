@@ -3,9 +3,9 @@ import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/U
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Washington DC in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Washington DC 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Washington DC trip. Free Smithsonian museums, Lincoln Memorial, cherry blossoms at the Tidal Basin, US Capitol tours, and a complete budget breakdown from $65/day.",
+    "Plan your Washington DC trip in 4 days. Plan the perfect 4-day Washington DC trip. Free Smithsonian museums, Lincoln Memorial, cherry blossoms at the.",
   keywords: [
     "Washington DC travel guide",
     "Washington DC 4 days",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://incredibleitinerary.com/blog/washington-dc-4-days" },
   openGraph: {
-    title: "Washington DC in 4 Days: The Complete Travel Guide (2026)",
+    title: "Washington DC 4-Day Itinerary 2026: Trip Planner",
     description:
       "Almost every major museum and monument in Washington DC is completely free. Here's your complete 4-day itinerary from budget backpacker to luxury traveller.",
     url: "https://incredibleitinerary.com/blog/washington-dc-4-days",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Washington DC in 4 Days: Complete Guide (Budget to Luxury, 2026)",
+    title: "Washington DC 4-Day Itinerary 2026: Trip Planner",
     description:
       "Free museums, cherry blossoms, and 400 years of American democracy — here's your 4-day Washington DC itinerary.",
     images: ["https://incredibleitinerary.com/og/washington-dc-4-days.jpg"],

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import MaduraiClient from "./MaduraiClient";
 
 export const metadata: Metadata = {
-  title: "Madurai in 2 Days: Meenakshi Temple, Flower Market & South Indian Food Trail (2026)",
+  title: "Madurai 2-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Madurai guide — Meenakshi Amman Temple at dawn, Thirumalai Nayakkar Palace, Gandhi Museum, 4am flower market, Jigarthanda trail. 2 plans: Budget and Heritage with real costs.",
+    "Plan your Madurai trip in 2 days. Complete Madurai guide — Meenakshi Amman Temple at dawn, Thirumalai Nayakkar Palace, Gandhi Museum, 4am flower market,.",
   keywords: [
     "madurai itinerary 2 days",
     "madurai travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "madurai tamil nadu trip",
   ],
   openGraph: {
-    title: "Madurai in 2 Days: Temples, Markets & Food Trail (2026)",
+    title: "Madurai 2-Day Itinerary 2026: Trip Planner",
     description:
       "Meenakshi Temple at dawn, 4am flower market, Jigarthanda trail — 2 complete plans with real costs.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Madurai in 2 Days: Complete Guide (2026)",
+    title: "Madurai 2-Day Itinerary 2026: Trip Planner",
     description: "Meenakshi Temple, flower market, food trail — 2 plans, real costs.",
     images: ["https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80"],
   },

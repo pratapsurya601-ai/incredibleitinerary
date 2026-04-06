@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Milan in 3 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Milan 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Everything you need for 3 days in Milan — the Duomo, Leonardo's Last Supper, Galleria Vittorio Emanuele II, Navigli canals and day trips to Lake Como and Verona. Budget €65/day to luxury €350/day itineraries.",
+    "Plan your Milan trip in 3 days. Everything you need for 3 days in Milan — the Duomo, Leonardo's Last Supper, Galleria Vittorio Emanuele II, Navigli canals.",
   keywords: [
     "Milan 3 days itinerary",
     "Milan travel guide 2026",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Milan luxury travel",
   ],
   openGraph: {
-    title: "Milan in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Milan 3-Day Itinerary 2026: Trip Planner",
     description:
       "Duomo rooftop walks, Leonardo's Last Supper, Navigli aperitivo hour, and a day trip to Lake Como — the definitive 3-day Milan itinerary.",
     url: "https://incredibleitinerary.com/blog/milan-3-days",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Milan in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Milan 3-Day Itinerary 2026: Trip Planner",
     description:
       "Duomo rooftop walks, Leonardo's Last Supper, Navigli aperitivo hour, and a day trip to Lake Como.",
   },

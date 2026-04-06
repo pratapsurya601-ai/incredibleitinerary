@@ -45,11 +45,11 @@ const jsonLd = [
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Mykonos in 4 Days: Complete Travel Guide 2026 (Budget to Luxury) | IncredibleItinerary",
-  description: "Plan the perfect 4-day Mykonos trip: windmills, Little Venice, Delos ruins, Paradise beach & Armenistis Lighthouse. Budget €80/day to luxury €500/day itineraries for the Cyclades.",
+  title: "Mykonos 4-Day Itinerary 2026: Trip Planner",
+  description: "Plan your Mykonos trip in 4 days. Plan the perfect 4-day Mykonos trip: windmills, Little Venice, Delos ruins, Paradise beach & Armenistis Lighthouse..",
   keywords: ["Mykonos travel guide", "Mykonos 4 days itinerary", "Mykonos windmills", "Little Venice Mykonos", "Delos day trip", "Paradise beach Mykonos", "Mykonos budget travel", "Cyclades Greece", "Mykonos luxury hotels"],
   openGraph: {
-    title: "Mykonos in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Mykonos 4-Day Itinerary 2026: Trip Planner",
     description: "Windmills above a maze designed to confuse pirates, Little Venice waves lapping at sunset café tables, party beaches with DJs, and a pelican strutting through the square — 4 days in Mykonos.",
     url: "https://incredibleitinerary.com/blog/mykonos-4-days",
     siteName: "IncredibleItinerary",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mykonos in 4 Days: Complete Travel Guide 2026",
+    title: "Mykonos 4-Day Itinerary 2026: Trip Planner",
     description: "Budget €80/day to luxury €500/day — complete Mykonos 4-day itinerary with windmills, Delos, party beaches, and the best sunsets in the Cyclades.",
     images: ["https://incredibleitinerary.com/og/mykonos-4-days.jpg"],
   },

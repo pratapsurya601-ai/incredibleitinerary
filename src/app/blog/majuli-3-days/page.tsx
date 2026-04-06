@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MajuliClient from "./MajuliClient";
 
 export const metadata: Metadata = {
-  title: "Majuli Island in 3 Days: World's Largest River Island Before It Disappears (2026)",
+  title: "Majuli Island 3-Day Itinerary 2026: Trip Planner"s Largest River Island Before It Disappears (2026)",
   description:
     "2 complete Majuli plans — Budget and Cultural Immersion — with ferry timings, Satra visits, Mishing villages, mask-making, pottery and real costs.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "majuli trip planner",
   ],
   openGraph: {
-    title: "Majuli Island in 3 Days: Before It Disappears (2026)",
+    title: "Majuli Island 3-Day Itinerary 2026: Trip Planner",
     description:
       "Ferry timings, Satra visits, mask-making, Mishing villages. 2 complete plans for every budget.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Majuli Island in 3 Days: The Only Guide You Need (2026)",
+    title: "Majuli Island 3-Day Itinerary 2026: Trip Planner",
     description: "2 plans, ferry timings, Satra visits, real costs.",
     images: ["https://images.unsplash.com/photo-1615466459632-4e14e0e2a1f0?w=1200&q=80"],
   },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JaipurClient from "./JaipurClient";
 
 export const metadata: Metadata = {
-  title: "Jaipur in 3 Days: The Only Itinerary Guide You Need (Budget to Royal, 2026)",
+  title: "Jaipur 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Jaipur plans — Budget, Heritage, Royal — with real timings, costs, Google Maps routes and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "jaipur trip planner",
   ],
   openGraph: {
-    title: "Jaipur in 3 Days: Budget to Royal Itinerary 2026",
+    title: "Jaipur 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jaipur in 3 Days: The Only Guide You Need (2026)",
+    title: "Jaipur 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&q=80"],
   },

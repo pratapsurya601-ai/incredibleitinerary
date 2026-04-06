@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Shanghai in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Shanghai 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Shanghai itinerary — The Bund at night, Pudong skyline, French Concession, Yu Garden, Tianzifang, and the world's best xiaolongbao. Budget ¥300/day to luxury ¥2,000/day with visa info for Indian, US, UK, EU & Australian passports.",
+    "Plan your Shanghai trip in 4 days. Plan the perfect 4-day Shanghai itinerary — The Bund at night, Pudong skyline, French Concession, Yu Garden,.",
   keywords: [
     "Shanghai itinerary",
     "Shanghai 4 days",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Shanghai Tower",
   ],
   openGraph: {
-    title: "Shanghai in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+    title: "Shanghai 4-Day Itinerary 2026: Trip Planner",
     description:
       "The Bund blazing at night, art deco streets, soup dumplings that burn your chin — your complete 4-day Shanghai guide for every budget.",
     url: "https://incredibleitinerary.com/blog/shanghai-4-days",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shanghai in 4 Days: The Complete Travel Guide (2026)",
+    title: "Shanghai 4-Day Itinerary 2026: Trip Planner",
     description:
       "The Bund, French Concession, xiaolongbao, and the world's tallest skyline. Your complete Shanghai guide.",
     images: [

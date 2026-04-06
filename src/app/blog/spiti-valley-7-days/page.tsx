@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import SpitiClient from "./SpitiClient";
 
 export const metadata: Metadata = {
-  title: "Spiti Valley in 7 Days: The Complete Road Trip Guide (2026)",
+  title: "Spiti Valley 7-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Spiti Valley travel guide — Key Monastery, Chandratal Lake, Kaza, Pin Valley, Kunzum Pass. Manali to Spiti circuit with real costs, permit guide and acclimatisation tips.",
+    "Plan your Spiti Valley trip in 7 days. Complete Spiti Valley travel guide — Key Monastery, Chandratal Lake, Kaza, Pin Valley, Kunzum Pass. Manali to Spiti.",
   keywords: [
     "spiti valley itinerary 7 days",
     "spiti valley travel guide 2026",

@@ -4,9 +4,9 @@ import type { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Ibiza in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Ibiza 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan 4 days in Ibiza: Dalt Vila UNESCO old town, Café del Mar sunsets, world-famous clubs, hidden coves, Formentera day trips, and hippie markets. Budget €70–€450/day.",
+    "Plan your Ibiza trip in 4 days. Plan 4 days in Ibiza: Dalt Vila UNESCO old town, Café del Mar sunsets, world-famous clubs, hidden coves, Formentera day.",
   keywords: [
     "Ibiza travel guide",
     "Ibiza 4 days itinerary",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Ibiza budget travel",
   ],
   openGraph: {
-    title: "Ibiza in 4 Days: The Complete Travel Guide (2026)",
+    title: "Ibiza 4-Day Itinerary 2026: Trip Planner",
     description:
       "UNESCO fortress town by day, global electronic music capital by night — your complete 4-day Ibiza itinerary covering every budget.",
     url: "https://www.incredibleitinerary.com/blog/ibiza-4-days",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ibiza in 4 Days: The Complete Travel Guide (2026)",
+    title: "Ibiza 4-Day Itinerary 2026: Trip Planner",
     description:
       "Dalt Vila, Café del Mar, hidden coves, Formentera, and the club scene — complete 4-day Ibiza guide.",
     images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80"],

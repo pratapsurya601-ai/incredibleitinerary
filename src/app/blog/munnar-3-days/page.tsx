@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MunnarClient from "./MunnarClient";
 
 export const metadata: Metadata = {
-  title: "Munnar in 3 Days: Tea Hills, Wildlife & Sunrise Itinerary (Budget to Premium, 2026)",
+  title: "Munnar 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Munnar plans — Budget, Couple, Premium — with real timings, costs, Google Maps routes and the spots most tourists walk right past.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "munnar trip planner",
   ],
   openGraph: {
-    title: "Munnar in 3 Days: Budget to Premium Itinerary 2026",
+    title: "Munnar 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Munnar in 3 Days: The Only Guide You Need (2026)",
+    title: "Munnar 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&q=80"],
   },

@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Tbilisi in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Tbilisi 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4 days in Tbilisi, Georgia — Narikala Fortress, sulfur baths, Georgian wine, khinkali dumplings, and Europe's most affordable capital. Budget ($40/day) to luxury ($220/day) itineraries.",
+    "Plan your Tbilisi trip in 4 days. Plan the perfect 4 days in Tbilisi, Georgia — Narikala Fortress, sulfur baths, Georgian wine, khinkali dumplings, and.",
   keywords: [
     "Tbilisi 4 days itinerary",
     "Tbilisi travel guide 2026",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Georgia visa Indian passport",
   ],
   openGraph: {
-    title: "Tbilisi in 4 Days: The Complete Travel Guide (2026)",
+    title: "Tbilisi 4-Day Itinerary 2026: Trip Planner",
     description:
       "Europe's best-kept secret — ancient sulfur baths, 8,000-year-old wine culture, carved wooden balconies, and Narikala Fortress watching over it all.",
     url: "https://incredibleitinerary.com/blog/tbilisi-4-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tbilisi in 4 Days: The Complete Travel Guide (2026)",
+    title: "Tbilisi 4-Day Itinerary 2026: Trip Planner",
     description:
       "Narikala Fortress, sulfur baths, Georgian wine, and khinkali for $5 — Tbilisi is Europe's most underrated capital.",
     images: [
@@ -403,7 +403,7 @@ const data: UniversalBlogData = {
   mistakes: [
     {
       icon: "🍷",
-      title: "Drinking only Saperavi and missing the natural wine revolution",
+      title: "Tbilisi 4-Day Itinerary 2026: Trip Planner",
       desc: "Saperavi is famous but Georgia's real treasure is its ancient qvevri natural wine — amber/orange wines made in clay vessels buried underground. Go to Vino Underground or G.Vino bar to experience 8,000 years of winemaking in a glass. Mind-altering.",
       color: "bg-red-50 border-red-200",
     },

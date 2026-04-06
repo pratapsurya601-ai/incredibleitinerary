@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import GoaBlogClient from "./GoaBlogClient";
 
 export const metadata: Metadata = {
-  title: "Goa in 3 Days: The Only Itinerary Guide You Need (Budget to Luxury, 2026)",
+  title: "Goa 3-Day Itinerary 2026: Trip Planner",
   description:
     "4 complete Goa plans — Budget, Couple, Party, Relaxed — with real timings, costs, Google Maps routes and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "goa trip planner",
   ],
   openGraph: {
-    title: "Goa in 3 Days: Budget to Luxury Itinerary 2026",
+    title: "Goa 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 4 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Goa in 3 Days: The Only Guide You Need (2026)",
+    title: "Goa 3-Day Itinerary 2026: Trip Planner",
     description: "4 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&q=80"],
   },

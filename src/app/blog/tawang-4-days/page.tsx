@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TawangClient from "./TawangClient";
 
 export const metadata: Metadata = {
-  title: "Tawang in 4 Days: Complete Arunachal Pradesh Guide (Budget to Premium, 2026)",
+  title: "Tawang 4-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Tawang plans — Budget, Comfortable, Premium — with Tawang Monastery, Sela Pass, Madhuri Lake, Bumla Pass, real timings and costs.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "tawang trip planner",
   ],
   openGraph: {
-    title: "Tawang in 4 Days: Budget to Premium Itinerary 2026",
+    title: "Tawang 4-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Sela Pass, Tawang Monastery, Madhuri Lake. 3 complete plans for every budget.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tawang in 4 Days: The Only Guide You Need (2026)",
+    title: "Tawang 4-Day Itinerary 2026: Trip Planner",
     description: "3 plans, Tawang Monastery, Sela Pass, Madhuri Lake, Bumla Pass, real costs.",
     images: ["https://images.unsplash.com/photo-1609766857041-2924cf3a8ede?w=1200&q=80"],
   },

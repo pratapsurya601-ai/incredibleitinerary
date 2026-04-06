@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Doha in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Doha 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 3 days in Doha, Qatar — Museum of Islamic Art, Souq Waqif, The Pearl, desert safaris, and the world's fastest-growing skyline. Budget ($90/day) to luxury ($500/day) itineraries inside.",
+    "Plan your Doha trip in 3 days. Plan the perfect 3 days in Doha, Qatar — Museum of Islamic Art, Souq Waqif, The Pearl, desert safaris, and the world's.",
   keywords: [
     "Doha 3 days itinerary",
     "Doha travel guide 2026",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Doha desert safari",
   ],
   openGraph: {
-    title: "Doha in 3 Days: The Complete Travel Guide (2026)",
+    title: "Doha 3-Day Itinerary 2026: Trip Planner",
     description:
       "One of the world's newest mega-cities rising from a desert peninsula — Museum of Islamic Art, Souq Waqif, Corniche, and the fastest-growing skyline on Earth.",
     url: "https://incredibleitinerary.com/blog/doha-3-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Doha in 3 Days: The Complete Travel Guide (2026)",
+    title: "Doha 3-Day Itinerary 2026: Trip Planner",
     description:
       "Museum of Islamic Art, Souq Waqif, The Pearl, and a desert safari — all in 3 days in Doha, Qatar.",
     images: [
@@ -379,7 +379,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "📸",
-      title: "Photographing people or government buildings without permission",
+      title: "Doha 3-Day Itinerary 2026: Trip Planner",
       desc: "Photography is generally fine in tourist areas, but photographing local women without consent or government buildings can cause serious issues. Always ask before photographing people in the souq.",
       color: "bg-red-50 border-red-200",
     },

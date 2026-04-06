@@ -37,11 +37,11 @@ const jsonLd = [
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Costa Rica in 7 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
-  description: "7-day Costa Rica itinerary covering Arenal Volcano, Monteverde Cloud Forest, Manuel Antonio and more — from $75/day backpacker to $380/day eco-lodge luxury.",
+  title: "Costa Rica 7-Day Itinerary 2026: Trip Planner",
+  description: "Plan your Costa Rica trip in 7 days. 7-day Costa Rica itinerary covering Arenal Volcano, Monteverde Cloud Forest, Manuel Antonio and more — from $75/day.",
   keywords: ["Costa Rica itinerary", "Costa Rica 7 days", "Arenal Volcano", "Monteverde Cloud Forest", "Manuel Antonio", "Costa Rica budget travel", "Pura Vida"],
   openGraph: {
-    title: "Costa Rica in 7 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Costa Rica 7-Day Itinerary 2026: Trip Planner",
     description: "7-day Costa Rica itinerary covering Arenal Volcano, Monteverde Cloud Forest, Manuel Antonio — from $75/day to $380/day.",
     url: "https://incredibleitinerary.com/blog/costa-rica-7-days",
     siteName: "IncredibleItinerary",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Costa Rica in 7 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Costa Rica 7-Day Itinerary 2026: Trip Planner",
     description: "7-day Costa Rica itinerary — Arenal, Monteverde, Manuel Antonio, $75–$380/day.",
     images: ["https://incredibleitinerary.com/og/costa-rica-7-days.jpg"],
   },

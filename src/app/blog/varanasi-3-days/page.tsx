@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import VaranasiClient from "./VaranasiClient";
 
 export const metadata: Metadata = {
-  title: "Varanasi in 3 Days: The Complete Guide (Ghats, Ganga Aarti & More, 2026)",
+  title: "Varanasi 3-Day Itinerary 2026: Trip Planner",
   description:
-    "The complete Varanasi travel guide — Ganga Aarti, Kashi Vishwanath Temple, morning boat ride on the Ganges. What to expect, what shocks you and what stays with you forever.",
+    "Plan your Varanasi trip in 3 days. The complete Varanasi travel guide — Ganga Aarti, Kashi Vishwanath Temple, morning boat ride on the Ganges. What to.",
   keywords: [
     "varanasi itinerary 3 days", "varanasi travel guide 2026", "ganga aarti varanasi",
     "kashi vishwanath temple", "varanasi ghats guide", "sarnath day trip",
     "varanasi morning boat ride", "oldest city in world india",
   ],
   openGraph: {
-    title: "Varanasi in 3 Days: Ghats, Ganga Aarti & Ganges Guide (2026)",
+    title: "Varanasi 3-Day Itinerary 2026: Trip Planner",
     description: "The most intense city in India — Dashashwamedh Ghat, Manikarnika, Sarnath, morning Ganges boat ride.",
     images: [{ url: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80", width: 1200, height: 630, alt: "Varanasi ghats Ganges river sunset" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Varanasi in 3 Days: Ghats, Ganga Aarti & More (2026)",
+    title: "Varanasi 3-Day Itinerary 2026: Trip Planner",
     description: "Dashashwamedh Ghat, Manikarnika, Sarnath, morning Ganges boat ride.",
     images: ["https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80"],
   },

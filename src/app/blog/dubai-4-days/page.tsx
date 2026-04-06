@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import DubaiClient from "./DubaiClient";
 
 export const metadata: Metadata = {
-  title: "Dubai in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Dubai 4-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Dubai plans — Budget, Mid-Range, Luxury — with real timings, costs in AED/USD, Burj Khalifa sunrise tips and the mistakes every first-timer makes.",
+    "Plan your Dubai trip in 4 days. Budget, Mid-Range, Luxury — with real timings, costs in AED/USD, Burj Khalifa sunrise tips and the mistakes every.",
   keywords: [
     "dubai itinerary 4 days",
     "dubai travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "dubai mall guide",
   ],
   openGraph: {
-    title: "Dubai in 4 Days: Budget to Luxury Itinerary 2026",
+    title: "Dubai 4-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, desert safari tips. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dubai in 4 Days: The Only Guide You Need (2026)",
+    title: "Dubai 4-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, desert safari tips.",
     images: ["https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80"],
   },

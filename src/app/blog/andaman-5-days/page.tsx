@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import AndamanClient from "./AndamanClient";
 
 export const metadata: Metadata = {
-  title: "Andaman Islands in 5 Days: Havelock, Neil & Port Blair (Complete Guide 2026)",
+  title: "Andaman Islands 5-Day Itinerary 2026: Trip Planner",
   description:
-    "The complete Andaman itinerary — Radhanagar Beach, Havelock Island scuba diving, Neil Island, Cellular Jail. 4 plans, real budgets, ferry guide and the island mistake most tourists make.",
+    "Plan your Andaman Islands trip in 5 days. The complete Andaman itinerary — Radhanagar Beach, Havelock Island scuba diving, Neil Island, Cellular Jail. 4.",
   keywords: [
     "andaman islands itinerary 5 days",
     "andaman travel guide 2026",
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     "andaman nicobar islands guide",
   ],
   openGraph: {
-    title: "Andaman Islands in 5 Days: Havelock, Neil & Port Blair (2026)",
+    title: "Andaman Islands 5-Day Itinerary 2026: Trip Planner",
     description: "Port Blair · Havelock · Neil Island — 4 plans, real budgets, ferry guide.",
     images: [{ url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80", width: 1200, height: 630, alt: "Radhanagar Beach Havelock Island Andaman" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Andaman Islands in 5 Days: Complete Guide (2026)",
+    title: "Andaman Islands 5-Day Itinerary 2026: Trip Planner",
     description: "Havelock, Neil Island, Port Blair — 4 plans, real budgets, ferry guide.",
     images: ["https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80"],
   },

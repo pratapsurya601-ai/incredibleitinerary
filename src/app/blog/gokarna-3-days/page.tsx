@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import GokarnaBlogClient from "./GokarnaClient";
 
 export const metadata: Metadata = {
-  title: "Gokarna in 3 Days: Beach Treks, Temples & Budget Guide (2026)",
+  title: "Gokarna 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Gokarna plans — Budget, Backpacker, Comfortable — with real timings, costs, beach trek routes and the spots most tourists never find.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "gokarna trip planner",
   ],
   openGraph: {
-    title: "Gokarna in 3 Days: Beach Treks, Temples & Budget Guide 2026",
+    title: "Gokarna 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, trek routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gokarna in 3 Days: The Only Guide You Need (2026)",
+    title: "Gokarna 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, beach trek routes.",
     images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&q=80"],
   },

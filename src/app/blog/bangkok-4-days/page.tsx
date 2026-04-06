@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import BangkokClient from "./BangkokClient";
 
 export const metadata: Metadata = {
-  title: "Bangkok in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Bangkok 4-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Bangkok plans — Budget, Mid-Range, Luxury — with real timings, costs in Thai Baht, temple routes, street food spots and the mistakes every first-timer makes.",
+    "Plan your Bangkok trip in 4 days. Budget, Mid-Range, Luxury — with real timings, costs in Thai Baht, temple routes, street food spots and the mistakes.",
   keywords: [
     "bangkok itinerary 4 days",
     "bangkok travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "bangkok trip planner",
   ],
   openGraph: {
-    title: "Bangkok in 4 Days: Budget to Luxury Itinerary 2026",
+    title: "Bangkok 4-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets in Thai Baht, BTS routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bangkok in 4 Days: The Only Guide You Need (2026)",
+    title: "Bangkok 4-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs in Baht, BTS routes.",
     images: ["https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&q=80"],
   },

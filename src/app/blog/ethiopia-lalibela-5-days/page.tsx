@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Lalibela, Ethiopia in 5 Days: The Complete Rock Church Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Lalibela, Ethiopia 5-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Lalibela 5-day itinerary covering the 11 UNESCO rock-hewn churches, Bet Giyorgis, Timkat Festival, Addis Ababa, and Ethiopian culture. Budget ($80/day) to luxury ($350/day) plans with e-visa info for Indian and Western passports.",
+    "Plan your Lalibela, Ethiopia trip in 5 days. Complete Lalibela 5-day itinerary covering the 11 UNESCO rock-hewn churches, Bet Giyorgis, Timkat Festival,.",
   keywords: [
     "Lalibela Ethiopia travel guide",
     "Lalibela rock churches",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Ethiopia UNESCO churches",
   ],
   openGraph: {
-    title: "Lalibela, Ethiopia in 5 Days: The Complete Rock Church Guide (Budget to Luxury, 2026)",
+    title: "Lalibela, Ethiopia 5-Day Itinerary 2026: Trip Planner",
     description:
       "Eleven medieval churches carved from solid volcanic rock 800 years ago by a king who wanted to build a New Jerusalem in Africa. Complete 5-day Ethiopia itinerary from $80/day.",
     url: "https://incredibleitinerary.com/blog/ethiopia-lalibela-5-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lalibela, Ethiopia in 5 Days: Complete Rock Church Guide (Budget to Luxury, 2026)",
+    title: "Lalibela, Ethiopia 5-Day Itinerary 2026: Trip Planner",
     description:
       "Complete Lalibela itinerary from $80/day. 11 rock-hewn churches, Timkat Festival, Addis Ababa — day-by-day plans for every budget.",
     images: ["https://incredibleitinerary.com/og/ethiopia-lalibela-5-days.jpg"],
@@ -468,7 +468,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🧭",
-      title: "Hire a Licensed Guide — The Churches Are Incomprehensible Without One",
+      title: "Lalibela, Ethiopia 5-Day Itinerary 2026: Trip Planner",
       desc: "Without a guide, the rock-hewn churches are impressive stonework. With a licensed guide, they become a 12th-century theological programme carved in rock — every architectural detail, every symbol, every window orientation is intentional. Licensed guides charge $30–50/day and the difference they make to understanding Lalibela is immeasurable.",
       color: "bg-blue-50 border-blue-200",
     },

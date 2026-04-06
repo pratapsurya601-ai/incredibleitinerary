@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ShillongClient from "./ShillongClient";
 
 export const metadata: Metadata = {
-  title: "Shillong in 3 Days: Complete Northeast India Guide (Budget to Premium, 2026)",
+  title: "Shillong 3-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Shillong plans — Budget, Comfortable, Premium — with real timings, costs, and insider tips for Ward's Lake, Elephant Falls, Don Bosco Museum, Laitlum Canyons and more.",
+    "Plan your Shillong trip in 3 days. Budget, Comfortable, Premium — with real timings, costs, and insider tips for Ward's Lake, Elephant Falls, Don Bosco.",
   keywords: [
     "shillong itinerary 3 days",
     "shillong travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "shillong tourism",
   ],
   openGraph: {
-    title: "Shillong in 3 Days: Budget to Premium Itinerary 2026",
+    title: "Shillong 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, insider tips. 3 complete plans for exploring the Scotland of the East.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shillong in 3 Days: The Only Guide You Need (2026)",
+    title: "Shillong 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, insider Northeast India tips.",
     images: ["https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&q=80"],
   },

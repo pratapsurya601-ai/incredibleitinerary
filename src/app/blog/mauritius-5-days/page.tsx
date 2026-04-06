@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Page metadata ──────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Mauritius in 5 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Mauritius 5-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 5-day Mauritius itinerary — from the underwater waterfall illusion to Île aux Cerfs, Black River Gorges, and Seven Coloured Earths. Budget $130/day to luxury One&Only. Visa info, day-by-day plans, and insider tips.",
+    "Plan your Mauritius trip in 5 days. Plan the perfect 5-day Mauritius itinerary — from the underwater waterfall illusion to Île aux Cerfs, Black River.",
   keywords: [
     "Mauritius travel guide",
     "Mauritius 5 days itinerary",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Africa travel guide",
   ],
   openGraph: {
-    title: "Mauritius in 5 Days: The Complete Travel Guide (2026)",
+    title: "Mauritius 5-Day Itinerary 2026: Trip Planner",
     description:
       "An underwater waterfall that isn't really a waterfall, 7 cuisines on one island, and beaches where the ocean gradient goes turquoise to cobalt in 10 metres. Your complete 2026 Mauritius guide.",
     url: "https://incredibleitinerary.com/blog/mauritius-5-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mauritius in 5 Days: The Complete Travel Guide (2026)",
+    title: "Mauritius 5-Day Itinerary 2026: Trip Planner",
     description:
       "Underwater waterfall, 7 cuisines, Île aux Cerfs lagoon — your complete Mauritius itinerary from $130/day budget to One&Only luxury.",
   },
@@ -415,7 +415,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🌧️",
-      title: "Going during cyclone season (December–March) without insurance",
+      title: "Mauritius 5-Day Itinerary 2026: Trip Planner",
       desc: "Mauritius cyclone season runs roughly December to April. A direct hit is rare but possible — cyclone Freddy caused major disruption in 2023. Travel insurance covering weather cancellation is essential if you book December to March. May to November is far safer.",
       color: "bg-orange-50 border-orange-200",
     },

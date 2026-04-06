@@ -5,9 +5,9 @@ import UniversalBlogClient, {
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Tulum in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+  title: "Tulum 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Tulum trip — Mayan ruins on the cliff, cenote swimming, Sian Ka'an, Cobá, and the best beach clubs. Budget from $70/day. Updated for 2026.",
+    "Plan your Tulum trip in 4 days. Plan the perfect 4-day Tulum trip — Mayan ruins on the cliff, cenote swimming, Sian Ka'an, Cobá, and the best beach clubs..",
   keywords: [
     "Tulum itinerary",
     "Tulum 4 days",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "North America travel guide",
   ],
   openGraph: {
-    title: "Tulum in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Tulum 4-Day Itinerary 2026: Trip Planner",
     description:
       "Mayan ruins on a cliff above a Caribbean beach, cenotes so clear you can see 30 metres, and a town that went from backpacker hideout to celebrity wellness retreat while keeping both identities. Your complete 4-day Tulum guide.",
     url: "https://incredibleitinerary.com/blog/tulum-4-days",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tulum in 4 Days: The Complete Guide (2026)",
+    title: "Tulum 4-Day Itinerary 2026: Trip Planner",
     description:
       "Budget to luxury itineraries, cenote guide, visa info, and insider tips for Tulum. From $70/day.",
     images: [

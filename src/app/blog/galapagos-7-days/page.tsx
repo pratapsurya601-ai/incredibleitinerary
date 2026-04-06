@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 export const metadata: Metadata = {
-  title: "Galápagos Islands in 7 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Galápagos Islands 7-Day Itinerary 2026: Trip Planner",
   description:
-    "The ultimate Galápagos Islands travel guide — giant tortoises, marine iguanas, blue-footed boobies, sea lions, and snorkelling with hammerhead sharks. Budget ($180/day) to luxury live-aboard ($600/day) itineraries for every traveller.",
+    "Plan your Galápagos Islands trip in 7 days. The ultimate Galápagos Islands travel guide — giant tortoises, marine iguanas, blue-footed boobies, sea lions,.",
   keywords: [
     "Galapagos Islands travel guide",
     "Galapagos itinerary 7 days",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Galapagos National Park",
   ],
   openGraph: {
-    title: "Galápagos Islands in 7 Days: The Complete Travel Guide (2026)",
+    title: "Galápagos Islands 7-Day Itinerary 2026: Trip Planner",
     description:
       "Where animals never learned to fear humans. Sea lions, giant tortoises, marine iguanas, and blue-footed boobies — your complete Galápagos itinerary from budget to luxury live-aboard.",
     type: "article",

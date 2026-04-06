@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ValleyOfFlowersClient from "./ValleyOfFlowersClient";
 
 export const metadata: Metadata = {
-  title: "Valley of Flowers in 4 Days: Trek Guide, Hemkund Sahib & Wildflower Season (2026)",
+  title: "Valley of Flowers 4-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Valley of Flowers plans — Budget Trek, Comfortable, Guided — with real costs, trek route from Govindghat, 600+ wildflower species, Hemkund Sahib, and Ghangaria base camp tips.",
+    "Plan your Valley of Flowers trip in 4 days. 3 complete Valley of Flowers plans — Budget Trek, Comfortable, Guided — with real costs, trek route from.",
   keywords: [
     "valley of flowers trek",
     "valley of flowers itinerary 4 days",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "bhyundar valley trek",
   ],
   openGraph: {
-    title: "Valley of Flowers in 4 Days: Trek, Wildflowers & Hemkund Sahib (2026)",
+    title: "Valley of Flowers 4-Day Itinerary 2026: Trip Planner",
     description:
       "Real trek costs, route from Govindghat, 600+ wildflower species, Hemkund Sahib guide. 3 complete plans for every budget.",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Valley of Flowers in 4 Days: India's UNESCO Wildflower Trek (2026)",
+    title: "Valley of Flowers 4-Day Itinerary 2026: Trip Planner"s UNESCO Wildflower Trek (2026)",
     description: "3 plans, real costs, Govindghat trek route, Hemkund Sahib, 600+ species guide.",
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },

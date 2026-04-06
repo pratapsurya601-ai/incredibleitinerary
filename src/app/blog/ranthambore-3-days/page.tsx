@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import RanthamboreClient from "./RanthamboreClient";
 
 export const metadata: Metadata = {
-  title: "Ranthambore in 3 Days: Tiger Safari Guide (Budget to Luxury, 2026)",
+  title: "Ranthambore 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Ranthambore plans — Budget, Safari, Luxury Lodge — with zone tips, safari booking strategy, fort visit, and real costs for 2026.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "rajasthan wildlife trip",
   ],
   openGraph: {
-    title: "Ranthambore in 3 Days: Tiger Safari Guide 2026",
+    title: "Ranthambore 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real safari zone tips, actual budgets, booking strategy. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ranthambore in 3 Days: Tiger Safari Guide (2026)",
+    title: "Ranthambore 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, zone strategy, real costs, safari booking tips.",
     images: ["https://images.unsplash.com/photo-1615824996195-f780bba7cfab?w=1200&q=80"],
   },

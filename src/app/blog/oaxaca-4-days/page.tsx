@@ -5,9 +5,9 @@ import UniversalBlogClient, {
 
 /* ── SEO Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Oaxaca in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+  title: "Oaxaca 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Oaxaca trip — Monte Albán ruins, mole negro, mezcal tastings, Día de los Muertos, and Hierve el Agua. Budget from $45/day. Updated for 2026.",
+    "Plan your Oaxaca trip in 4 days. Plan the perfect 4-day Oaxaca trip — Monte Albán ruins, mole negro, mezcal tastings, Día de los Muertos, and Hierve el.",
   keywords: [
     "Oaxaca itinerary",
     "Oaxaca 4 days",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "North America travel",
   ],
   openGraph: {
-    title: "Oaxaca in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Oaxaca 4-Day Itinerary 2026: Trip Planner",
     description:
       "30-ingredient mole negro, Zapotec pyramids on a mountaintop, mezcal that shames tequila, and a Día de los Muertos that will change you. Your complete 4-day Oaxaca guide.",
     url: "https://incredibleitinerary.com/blog/oaxaca-4-days",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oaxaca in 4 Days: The Complete Guide (2026)",
+    title: "Oaxaca 4-Day Itinerary 2026: Trip Planner",
     description:
       "Budget to luxury itineraries, visa info, food guide, and insider tips for Oaxaca, Mexico. From $45/day.",
     images: [

@@ -4,9 +4,9 @@ import type { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 /* ── SEO Metadata ───────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Transylvania in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Transylvania 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Transylvania itinerary — Bran Castle, Peleş Castle, Sighişoara, Braşov, and Sibiu. Budget tips, visa info, and day-by-day plans for every budget.",
+    "Plan your Transylvania trip in 4 days. Plan the perfect 4-day Transylvania itinerary — Bran Castle, Peleş Castle, Sighişoara, Braşov, and Sibiu. Budget.",
   keywords: [
     "Transylvania travel guide",
     "Transylvania 4 days itinerary",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Transylvania 2026",
   ],
   openGraph: {
-    title: "Transylvania in 4 Days: The Complete Travel Guide (2026)",
+    title: "Transylvania 4-Day Itinerary 2026: Trip Planner",
     description:
       "Gothic castles, fortified churches, and medieval Saxon towns. Your complete guide to Transylvania — from Bran Castle to Sighişoara — at every budget.",
     url: "https://incredibleitinerary.com/blog/transylvania-4-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Transylvania in 4 Days: Complete Guide (2026)",
+    title: "Transylvania 4-Day Itinerary 2026: Trip Planner",
     description:
       "Day-by-day itinerary for Transylvania — Bran Castle, Peleş, Sighişoara, Braşov. Budget from €40/day.",
     images: ["https://images.unsplash.com/photo-1589998059171-988d887df646?w=1200&q=80"],

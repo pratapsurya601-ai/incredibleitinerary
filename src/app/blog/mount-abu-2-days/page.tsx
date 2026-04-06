@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import MountAbuClient from "./MountAbuClient";
 
 export const metadata: Metadata = {
-  title: "Mount Abu in 2 Days: Dilwara Temples, Nakki Lake & Guru Shikhar Guide (2026)",
+  title: "Mount Abu 2-Day Itinerary 2026: Trip Planner",
   description:
-    "2 complete Mount Abu plans — Budget and Comfortable — with real timings for Dilwara Jain Temples, Nakki Lake, Sunset Point, Guru Shikhar, Achalgarh Fort, and Wildlife Sanctuary.",
+    "Plan your Mount Abu trip in 2 days. 2 complete Mount Abu plans — Budget and Comfortable — with real timings for Dilwara Jain Temples, Nakki Lake, Sunset.",
   keywords: [
     "mount abu itinerary 2 days",
     "mount abu travel guide 2026",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "mount abu wildlife sanctuary",
   ],
   openGraph: {
-    title: "Mount Abu in 2 Days: Dilwara Temples, Nakki Lake & Guru Shikhar (2026)",
+    title: "Mount Abu 2-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, honest tips. 2 complete plans for Rajasthan's only hill station.",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mount Abu in 2 Days: The Complete Guide (2026)",
+    title: "Mount Abu 2-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, honest tips, actual costs.",
     images: ["https://images.unsplash.com/photo-1609766856923-7e0a7a3b0908?w=1200&q=80"],
   },

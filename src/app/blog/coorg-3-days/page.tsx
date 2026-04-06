@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import CoorgClient from "./CoorgClient";
 
 export const metadata: Metadata = {
-  title: "Coorg in 3 Days: Coffee Estates, Abbey Falls & Raja's Seat (Complete Guide 2026)",
+  title: "Coorg 3-Day Itinerary 2026: Trip Planner"s Seat (Complete Guide 2026)",
   description:
-    "The complete Coorg travel guide — coffee estate stays, Abbey Falls, Dubare Elephant Camp, Namdroling Monastery, Raja's Seat. 4 plans for couples, families, groups and solo. Real costs from Bangalore.",
+    "Plan your Coorg trip in 3 days. The complete Coorg travel guide — coffee estate stays, Abbey Falls, Dubare Elephant Camp, Namdroling Monastery, Raja's.",
   keywords: [
     "coorg itinerary 3 days",
     "coorg travel guide 2026",
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     "namdroling monastery coorg",
   ],
   openGraph: {
-    title: "Coorg in 3 Days: Coffee Estates & Waterfalls (2026)",
+    title: "Coorg 3-Day Itinerary 2026: Trip Planner",
     description: "Abbey Falls · Coffee estates · Dubare Elephant Camp — 4 plans, real costs from Bangalore.",
     images: [{ url: "https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=1200&q=80", width: 1200, height: 630, alt: "Coorg coffee plantation Karnataka misty hills" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Coorg in 3 Days: Coffee Estates & Waterfalls (2026)",
+    title: "Coorg 3-Day Itinerary 2026: Trip Planner",
     description: "Abbey Falls, coffee estates, Dubare Elephant Camp — 4 plans, real costs from Bangalore.",
     images: ["https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=1200&q=80"],
   },

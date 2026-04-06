@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ManaliClient from "./ManaliClient";
 
 export const metadata: Metadata = {
-  title: "Manali in 5 Days: Solang Valley, Rohtang Pass & Old Manali (Complete Guide 2026)",
+  title: "Manali 5-Day Itinerary 2026: Trip Planner",
   description:
-    "The complete Manali travel guide — Solang Valley snow, Rohtang Pass, Old Manali cafes, Kasol day trip, Spiti Valley. 4 plans for budget, couples, groups and adventure. Real costs 2026.",
+    "Plan your Manali trip in 5 days. The complete Manali travel guide — Solang Valley snow, Rohtang Pass, Old Manali cafes, Kasol day trip, Spiti Valley. 4.",
   keywords: [
     "manali itinerary 5 days",
     "manali travel guide 2026",
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     "kasol manali trip",
   ],
   openGraph: {
-    title: "Manali in 5 Days: Complete Guide (2026)",
+    title: "Manali 5-Day Itinerary 2026: Trip Planner",
     description: "Solang Valley · Rohtang Pass · Old Manali — 4 plans, real costs, Rohtang permit guide.",
     images: [{ url: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80", width: 1200, height: 630, alt: "Manali mountains snow Himachal Pradesh" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manali in 5 Days: Complete Guide (2026)",
+    title: "Manali 5-Day Itinerary 2026: Trip Planner",
     description: "Solang Valley, Rohtang Pass, Old Manali — 4 plans, real costs, permit guide.",
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },

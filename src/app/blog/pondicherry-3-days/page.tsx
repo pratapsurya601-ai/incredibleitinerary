@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PondicherryClient from "./PondicherryClient";
 
 export const metadata: Metadata = {
-  title: "Pondicherry in 3 Days: Budget to Relaxed Itinerary Guide (2026)",
+  title: "Pondicherry 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Pondicherry plans — Budget, Couple, Relaxed — with real timings, costs, and the French Quarter tips no travel blog will tell you.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "pondicherry trip planner",
   ],
   openGraph: {
-    title: "Pondicherry in 3 Days: Budget to Relaxed Itinerary 2026",
+    title: "Pondicherry 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, and the honest tips that make a Pondicherry trip actually work.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pondicherry in 3 Days: The Only Guide You Need (2026)",
+    title: "Pondicherry 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, honest opinions.",
     images: ["https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80"],
   },

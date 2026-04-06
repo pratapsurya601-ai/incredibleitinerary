@@ -4,9 +4,9 @@ import type { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Tenerife in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Tenerife 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan 4 days in Tenerife: Teide National Park, Los Gigantes cliffs, Anaga laurel forest, whale watching, and the best beaches in Europe's year-round sun island. Budget €55–€280/day.",
+    "Plan your Tenerife trip in 4 days. Plan 4 days in Tenerife: Teide National Park, Los Gigantes cliffs, Anaga laurel forest, whale watching, and the best.",
   keywords: [
     "Tenerife travel guide",
     "Tenerife 4 days itinerary",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "La Laguna UNESCO",
   ],
   openGraph: {
-    title: "Tenerife in 4 Days: The Complete Travel Guide (2026)",
+    title: "Tenerife 4-Day Itinerary 2026: Trip Planner",
     description:
       "From Teide volcano to Los Gigantes cliffs — your complete 4-day Tenerife itinerary with budget, mid-range, and luxury plans.",
     url: "https://www.incredibleitinerary.com/blog/tenerife-4-days",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tenerife in 4 Days: The Complete Travel Guide (2026)",
+    title: "Tenerife 4-Day Itinerary 2026: Trip Planner",
     description:
       "Teide, Los Gigantes, Anaga forest — complete 4-day itinerary for every budget.",
     images: ["https://images.unsplash.com/photo-1513415756790-2ac1db1297d0?w=1200&q=80"],
@@ -403,7 +403,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🌊",
-      title: "Swimming on unmarked north coast beaches without checking conditions",
+      title: "Tenerife 4-Day Itinerary 2026: Trip Planner",
       desc: "The north coast beaches (including some Anaga beaches) can have serious Atlantic swells and rip currents. The safe swimming beaches are flagged. Never enter the water if there's a red flag — the Atlantic here is not the calm Mediterranean.",
       color: "bg-red-50 border-red-200",
     },

@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Madagascar in 7 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Madagascar 7-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 7-day Madagascar trip. Avenue of the Baobabs, Andasibe lemurs, Tsingy de Bemaraha, Nosy Be beaches — with full day-by-day itineraries for every budget.",
+    "Plan your Madagascar trip in 7 days. Plan the perfect 7-day Madagascar trip. Avenue of the Baobabs, Andasibe lemurs, Tsingy de Bemaraha, Nosy Be beaches —.",
   keywords: [
     "Madagascar travel guide",
     "Madagascar 7 days itinerary",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Nosy Be Madagascar",
   ],
   openGraph: {
-    title: "Madagascar in 7 Days: The Complete Travel Guide (2026)",
+    title: "Madagascar 7-Day Itinerary 2026: Trip Planner",
     description:
       "90% of Madagascar's wildlife exists nowhere else on Earth. Our complete 7-day guide covers lemurs, baobabs, tsingy, and beaches — budget to luxury.",
     url: "https://www.incredibleitinerary.com/blog/madagascar-7-days",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Madagascar in 7 Days: The Complete Travel Guide (2026)",
+    title: "Madagascar 7-Day Itinerary 2026: Trip Planner",
     description:
       "Lemurs, baobabs, tsingy, and pristine beaches — your complete 7-day Madagascar itinerary from $80/day.",
     images: ["https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80"],
@@ -509,7 +509,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🗺️",
-      title: "Trying to Do Too Much in 7 Days",
+      title: "Madagascar 7-Day Itinerary 2026: Trip Planner",
       desc: "Madagascar is the size of France. You cannot see baobabs (west), tsingy (northwest), tsingy (far northwest), rainforest (east), and Nosy Be (northwest) in 7 days overland. Pick 2–3 regions and fly between them.",
       color: "border-yellow-200 bg-yellow-50",
     },

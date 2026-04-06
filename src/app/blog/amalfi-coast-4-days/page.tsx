@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import AmalfiClient from "./AmalfiClient";
 
 export const metadata: Metadata = {
-  title: "Amalfi Coast in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
+  title: "Amalfi Coast 4-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Amalfi Coast plans — Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, Path of the Gods tips and the mistakes every first-timer makes.",
+    "Plan your Amalfi Coast trip in 4 days. 3 complete Amalfi Coast plans — Budget, Mid-Range, Luxury — with real timings, costs in EUR/USD, Path of the Gods.",
   keywords: [
     "amalfi coast itinerary 4 days",
     "amalfi coast travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "amalfi coast trip planner",
   ],
   openGraph: {
-    title: "Amalfi Coast in 4 Days: Budget to Luxury Itinerary 2026",
+    title: "Amalfi Coast 4-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Path of the Gods tips. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amalfi Coast in 4 Days: The Only Guide You Need (2026)",
+    title: "Amalfi Coast 4-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Path of the Gods tips.",
     images: ["https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1200&q=80"],
   },

@@ -37,11 +37,11 @@ const jsonLd = [
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Antigua Guatemala in 4 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
-  description: "4-day Antigua Guatemala itinerary covering colonial ruins, Volcán Pacaya, Lake Atitlán, language schools, and Semana Santa — from $40/day backpacker to $200/day luxury.",
+  title: "Antigua Guatemala 4-Day Itinerary 2026: Trip Planner",
+  description: "Plan your Antigua Guatemala trip in 4 days. 4-day Antigua Guatemala itinerary covering colonial ruins, Volcán Pacaya, Lake Atitlán, language schools, and.",
   keywords: ["Antigua Guatemala itinerary", "Antigua 4 days", "Volcán Pacaya hike", "Lake Atitlán day trip", "Semana Santa Antigua", "Guatemala travel guide", "colonial ruins Guatemala"],
   openGraph: {
-    title: "Antigua Guatemala in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Antigua Guatemala 4-Day Itinerary 2026: Trip Planner",
     description: "4-day Antigua Guatemala itinerary — colonial ruins, volcanoes, Lake Atitlán — from $40/day to $200/day.",
     url: "https://incredibleitinerary.com/blog/antigua-guatemala-4-days",
     siteName: "IncredibleItinerary",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Antigua Guatemala in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
+    title: "Antigua Guatemala 4-Day Itinerary 2026: Trip Planner",
     description: "4-day Antigua Guatemala itinerary — ruins, volcanoes, Lake Atitlán, $40–$200/day.",
     images: ["https://incredibleitinerary.com/og/antigua-guatemala-4-days.jpg"],
   },
@@ -374,7 +374,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "📸",
-      title: "Photograph the Arch of Santa Catalina at sunrise and golden hour",
+      title: "Antigua Guatemala 4-Day Itinerary 2026: Trip Planner",
       desc: "The Arch is on 5ta Avenida Norte (the main pedestrian street). Sunrise gives you warm light on the arch with almost no tourists. By 9am there are tour groups. Golden hour (5–6pm) gives magical soft light with Volcán Agua behind. Both shots are wall-worthy.",
       color: "bg-teal-50 border-teal-200",
     },

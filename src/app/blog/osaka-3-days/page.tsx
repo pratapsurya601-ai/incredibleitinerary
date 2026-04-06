@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import OsakaClient from "./OsakaClient";
 
 export const metadata: Metadata = {
-  title: "Osaka in 3 Days: The Only Itinerary Guide You Need (Budget to Luxury, 2026)",
+  title: "Osaka 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Osaka plans — Budget, Mid-Range, Luxury — with real timings, costs in yen, street food maps and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "osaka trip planner",
   ],
   openGraph: {
-    title: "Osaka in 3 Days: Budget to Luxury Itinerary 2026",
+    title: "Osaka 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, street food crawls. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Osaka in 3 Days: The Only Guide You Need (2026)",
+    title: "Osaka 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, street food maps.",
     images: ["https://images.unsplash.com/photo-1590559899731-a382839e5549?w=1200&q=80"],
   },

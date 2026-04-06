@@ -4,9 +4,9 @@ import type { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
 
 /* ── SEO Metadata ───────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Uzbekistan in 7 Days: The Complete Silk Road Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Uzbekistan 7-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 7-day Uzbekistan itinerary — Samarkand's Registan, Bukhara's madrasas, Khiva's walled city, and Tashkent. Visa info, budget breakdown, and day-by-day plans.",
+    "Plan your Uzbekistan trip in 7 days. Plan the perfect 7-day Uzbekistan itinerary — Samarkand's Registan, Bukhara's madrasas, Khiva's walled city, and.",
   keywords: [
     "Uzbekistan travel guide",
     "Uzbekistan 7 days itinerary",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Tashkent travel guide",
   ],
   openGraph: {
-    title: "Uzbekistan in 7 Days: The Complete Silk Road Guide (2026)",
+    title: "Uzbekistan 7-Day Itinerary 2026: Trip Planner",
     description:
       "Three cities straight from One Thousand and One Nights: Samarkand's Registan, Bukhara's living madrasas, and Khiva's perfectly preserved walled city on the ancient Silk Road.",
     url: "https://incredibleitinerary.com/blog/uzbekistan-7-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Uzbekistan in 7 Days: Complete Silk Road Guide (2026)",
+    title: "Uzbekistan 7-Day Itinerary 2026: Trip Planner",
     description:
       "Day-by-day Uzbekistan itinerary — Samarkand, Bukhara, Khiva, Tashkent. Budget from $50/day.",
     images: ["https://images.unsplash.com/photo-1547489432-cf93fa6c71a2?w=1200&q=80"],
@@ -572,7 +572,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🚉",
-      title: "Use the Afrosiyob and Sharq trains between all three major cities",
+      title: "Uzbekistan 7-Day Itinerary 2026: Trip Planner",
       desc: "Uzbekistan's Chinese-built high-speed rail network (Afrosiyob reaches 250km/h) connects Tashkent–Samarkand in 2 hrs and Tashkent–Bukhara in 3.5 hrs. It's comfortable, fast, cheap, and scenic. For Khiva, take the Sharq train to Urgench then a 30-minute taxi. The train is always preferable to the bus for the main Silk Road circuit.",
       color: "border-indigo-200 bg-indigo-50",
     },

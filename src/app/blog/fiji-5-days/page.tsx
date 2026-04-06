@@ -3,9 +3,9 @@ import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/U
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Fiji in 5 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Fiji 5-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 5 days in Fiji — Yasawa island hopping, Mamanuca resorts, kava ceremonies, coral reef diving, and budgets from $100/day to overwater bungalows.",
+    "Plan your Fiji trip in 5 days. Plan the perfect 5 days in Fiji — Yasawa island hopping, Mamanuca resorts, kava ceremonies, coral reef diving, and budgets.",
   keywords: [
     "Fiji 5 days itinerary",
     "Fiji travel guide 2026",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Fiji budget guide",
   ],
   openGraph: {
-    title: "Fiji in 5 Days: The Complete Travel Guide 2026",
+    title: "Fiji 5-Day Itinerary 2026: Trip Planner",
     description:
       "Coral reefs, kava ceremonies, island hopping and the warmest people on earth — your ultimate 5-day Fiji itinerary from $100/day to overwater luxury.",
     url: "https://incredibleitinerary.com/blog/fiji-5-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fiji in 5 Days: The Complete Travel Guide 2026",
+    title: "Fiji 5-Day Itinerary 2026: Trip Planner",
     description:
       "Coral reefs, kava ceremonies, island hopping and the warmest people on earth — your ultimate 5-day Fiji itinerary from $100/day to overwater luxury.",
   },
@@ -450,7 +450,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🤿",
-      title: "Booking Dive Trips Without Checking Certification Requirements",
+      title: "Fiji 5-Day Itinerary 2026: Trip Planner",
       desc: "Many of Fiji's premier dive sites — including Beqa Lagoon shark dive and the Great White Wall at Taveuni — require an Open Water PADI certification minimum, with some shark dives requiring Advanced certification. The Beqa shark dive requires Advanced OW. Get certified before arrival. Fiji also offers excellent PADI courses if you want to qualify on location (allow 3–4 days).",
       color: "border-purple-200 bg-purple-50",
     },
@@ -459,13 +459,13 @@ const data: UniversalBlogData = {
   tips: [
     {
       icon: "🏝️",
-      title: "The Yasawa Island Pass Is the Best Budget Value in the Pacific",
+      title: "Fiji 5-Day Itinerary 2026: Trip Planner",
       desc: "The Yasawa Flyer offers multi-stop passes — the 8-day Bula Pass ($399 FJD) lets you hop between islands at will, spending as much time as you want on each. Combined with the budget resort network (which the Flyer connects directly), this is genuinely one of the world's great backpacker experiences. Plan loosely — the best islands are the ones you stay on longest.",
       color: "border-green-200 bg-green-50",
     },
     {
       icon: "🌊",
-      title: "Time Your Yasawa Visit With the Tide for the Best Snorkelling",
+      title: "Fiji 5-Day Itinerary 2026: Trip Planner",
       desc: "Reef snorkelling is significantly better at high tide when the water is deeper and clearer over the coral heads. Ask your resort staff for the day's tidal schedule (they know it by heart). Dawn snorkels (first 90 minutes of light) offer the most marine activity as nocturnal fish are still feeding and the water is at its calmest before any boat traffic begins.",
       color: "border-blue-200 bg-blue-50",
     },

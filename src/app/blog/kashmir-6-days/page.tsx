@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import KashmirClient from "./KashmirClient";
 
 export const metadata: Metadata = {
-  title: "Kashmir in 6 Days: Srinagar, Gulmarg & Pahalgam (Complete Guide 2026)",
+  title: "Kashmir 6-Day Itinerary 2026: Trip Planner",
   description:
-    "The complete Kashmir itinerary — Srinagar Dal Lake, Gulmarg snow, Pahalgam valleys. 4 plans including honeymoon, budget and adventure. Real costs, Dal Lake houseboat guide.",
+    "Plan your Kashmir trip in 6 days. The complete Kashmir itinerary — Srinagar Dal Lake, Gulmarg snow, Pahalgam valleys. 4 plans including honeymoon, budget.",
   keywords: [
     "kashmir itinerary 6 days", "kashmir travel guide 2026", "srinagar dal lake houseboat",
     "gulmarg skiing snowfall", "pahalgam betaab valley", "kashmir honeymoon trip",
     "kashmir budget travel", "kashmir tour package",
   ],
   openGraph: {
-    title: "Kashmir in 6 Days: Srinagar, Gulmarg & Pahalgam (2026)",
+    title: "Kashmir 6-Day Itinerary 2026: Trip Planner",
     description: "Srinagar · Gulmarg · Pahalgam · Sonamarg — 4 plans, real budgets, houseboat guide.",
     images: [{ url: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&q=80", width: 1200, height: 630, alt: "Dal Lake Kashmir houseboat" }],
     type: "article", publishedTime: "2026-03-21T00:00:00Z",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kashmir in 6 Days: Srinagar, Gulmarg & Pahalgam (2026)",
+    title: "Kashmir 6-Day Itinerary 2026: Trip Planner",
     description: "Dal Lake houseboat, Gulmarg snow, Pahalgam valleys — 4 plans, real budgets.",
     images: ["https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&q=80"],
   },

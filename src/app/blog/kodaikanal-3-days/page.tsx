@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import KodaikanalClient from "./KodaikanalClient";
 
 export const metadata: Metadata = {
-  title: "Kodaikanal in 3 Days: Complete Hill Station Guide (Budget to Premium, 2026)",
+  title: "Kodaikanal 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Kodaikanal plans — Budget, Couple, Premium — with real timings, costs, Google Maps routes and the insider tips most guides miss.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "kodaikanal trip planner",
   ],
   openGraph: {
-    title: "Kodaikanal in 3 Days: Budget to Premium Itinerary 2026",
+    title: "Kodaikanal 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kodaikanal in 3 Days: The Only Guide You Need (2026)",
+    title: "Kodaikanal 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80"],
   },

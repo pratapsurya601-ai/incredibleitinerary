@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JaisalmerClient from "./JaisalmerClient";
 
 export const metadata: Metadata = {
-  title: "Jaisalmer in 3 Days: Golden City Itinerary (Budget to Luxury Camp, 2026)",
+  title: "Jaisalmer 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Jaisalmer plans — Budget, Desert Experience, Luxury Camp — with real timings, costs, and the insider tips that most guides skip.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "jaisalmer trip planner",
   ],
   openGraph: {
-    title: "Jaisalmer in 3 Days: Budget to Luxury Camp Itinerary 2026",
+    title: "Jaisalmer 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, insider tips. 3 complete plans for every type of traveller to the Golden City.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jaisalmer in 3 Days: The Only Guide You Need (2026)",
+    title: "Jaisalmer 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, desert camp insider tips.",
     images: ["https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80"],
   },

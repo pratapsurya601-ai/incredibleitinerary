@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import SundarbansClient from "./SundarbansClient";
 
 export const metadata: Metadata = {
-  title: "Sundarbans in 3 Days: Complete Safari Guide (Budget to Premium Houseboat, 2026)",
+  title: "Sundarbans 3-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Sundarbans plans — Budget, Safari, Premium Houseboat — with boat routes, tiger reserve permits, best watchtowers and the mangrove experiences most tourists miss.",
+    "Plan your Sundarbans trip in 3 days. Budget, Safari, Premium Houseboat — with boat routes, tiger reserve permits, best watchtowers and the mangrove.",
   keywords: [
     "sundarbans itinerary 3 days",
     "sundarbans travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "sundarbans west bengal",
   ],
   openGraph: {
-    title: "Sundarbans in 3 Days: Budget to Premium Houseboat Guide 2026",
+    title: "Sundarbans 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real boat routes, actual costs, permit details. 3 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sundarbans in 3 Days: The Only Guide You Need (2026)",
+    title: "Sundarbans 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real boat routes, actual costs, permit details.",
     images: ["https://images.unsplash.com/photo-1596587984190-acc4b7257cfc?w=1200&q=80"],
   },

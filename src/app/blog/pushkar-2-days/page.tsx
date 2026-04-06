@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PushkarClient from "./PushkarClient";
 
 export const metadata: Metadata = {
-  title: "Pushkar in 2 Days: Brahma Temple, Lake Ghats & Camel Fair Guide (2026)",
+  title: "Pushkar 2-Day Itinerary 2026: Trip Planner",
   description:
-    "2 complete Pushkar plans — Budget and Comfortable — with real timings for Brahma Temple, Savitri Temple trek, Pushkar Lake, Camel Fair, and a day trip to Ajmer Sharif Dargah.",
+    "Plan your Pushkar trip in 2 days. Budget and Comfortable — with real timings for Brahma Temple, Savitri Temple trek, Pushkar Lake, Camel Fair, and a day.",
   keywords: [
     "pushkar itinerary 2 days",
     "pushkar travel guide 2026",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "pushkar rose garden",
   ],
   openGraph: {
-    title: "Pushkar in 2 Days: Brahma Temple, Lake & Camel Fair (2026)",
+    title: "Pushkar 2-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, honest cafe reviews. 2 complete plans for every type of traveller.",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pushkar in 2 Days: The Complete Guide (2026)",
+    title: "Pushkar 2-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, honest food tips, actual costs.",
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import AuliClient from "./AuliClient";
 
 export const metadata: Metadata = {
-  title: "Auli in 3 Days: Skiing, Snow & Nanda Devi Views (Budget to Premium, 2026)",
+  title: "Auli 3-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Auli plans — Budget, Skiing, Premium — with real costs, cable car timings, Gorson Bugyal trek guide, skiing tips, and the Himalayan views that make Auli India's best-kept winter secret.",
+    "Plan your Auli trip in 3 days. Budget, Skiing, Premium — with real costs, cable car timings, Gorson Bugyal trek guide, skiing tips, and the Himalayan.",
   keywords: [
     "auli itinerary 3 days",
     "auli travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "nanda devi view auli",
   ],
   openGraph: {
-    title: "Auli in 3 Days: Skiing, Snow & Nanda Devi Views (2026)",
+    title: "Auli 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real costs, skiing tips, cable car timings, Gorson Bugyal trek. 3 complete plans for every budget.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Auli in 3 Days: India's Best Skiing Destination (2026)",
+    title: "Auli 3-Day Itinerary 2026: Trip Planner"s Best Skiing Destination (2026)",
     description: "3 plans, real costs, cable car guide, Gorson Bugyal trek, skiing tips.",
     images: ["https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1200&q=80"],
   },

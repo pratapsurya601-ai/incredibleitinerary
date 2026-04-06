@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Page metadata ──────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Victoria Falls in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Victoria Falls 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan the perfect 4-day Victoria Falls itinerary — from Devil's Pool on the lip of the falls to Grade 5 Zambezi rafting, bungee jumping, and Chobe game drives. Budget $100/day to luxury Tongabezi. Zimbabwe visa, day-by-day plans, and insider tips.",
+    "Plan your Victoria Falls trip in 4 days. Plan the perfect 4-day Victoria Falls itinerary — from Devil's Pool on the lip of the falls to Grade 5 Zambezi.",
   keywords: [
     "Victoria Falls travel guide",
     "Victoria Falls 4 days itinerary",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "smoke that thunders",
   ],
   openGraph: {
-    title: "Victoria Falls in 4 Days: The Complete Travel Guide (2026)",
+    title: "Victoria Falls 4-Day Itinerary 2026: Trip Planner",
     description:
       "The largest waterfall on Earth — 1.7km wide, 108m drop, its own permanent rainforest. Devil's Pool on the edge, Grade 5 rafting, and wild elephants an hour away. Your complete 2026 Victoria Falls guide.",
     url: "https://incredibleitinerary.com/blog/victoria-falls-4-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Victoria Falls in 4 Days: The Complete Travel Guide (2026)",
+    title: "Victoria Falls 4-Day Itinerary 2026: Trip Planner",
     description:
       "1.7km wide, 108m drop, Devil's Pool on the lip, Grade 5 rafting, wild elephants — your complete Victoria Falls itinerary from $100/day to Tongabezi luxury.",
   },
@@ -415,7 +415,7 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🏨",
-      title: "Stay in Victoria Falls town rather than Livingstone for logistics",
+      title: "Victoria Falls 4-Day Itinerary 2026: Trip Planner",
       desc: "Victoria Falls town (Zimbabwe) is closer to the main falls entrance, has more accommodation options at every price point, better restaurants, and the bridge bungee jump is walkable. Livingstone (Zambia) is great for Devil's Pool access and a slightly more local feel — but crossing the border daily takes time. Pick your base wisely.",
       color: "bg-green-50 border-green-200",
     },

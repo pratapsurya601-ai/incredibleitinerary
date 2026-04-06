@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import HyderabadClient from "./HyderabadClient";
 
 export const metadata: Metadata = {
-  title: "Hyderabad in 3 Days: Biryani, Forts & Bazaars — Complete Itinerary (2026)",
+  title: "Hyderabad 3-Day Itinerary 2026: Trip Planner",
   description:
-    "3 complete Hyderabad plans — Budget, Heritage, Premium — covering Charminar, Golconda Fort, Hussain Sagar, Ramoji Film City, Salar Jung Museum, Chowmahalla Palace, Laad Bazaar bangles and the legendary biryani trail.",
+    "Plan your Hyderabad trip in 3 days. Budget, Heritage, Premium — covering Charminar, Golconda Fort, Hussain Sagar, Ramoji Film City, Salar Jung Museum,.",
   keywords: [
     "hyderabad itinerary 3 days",
     "hyderabad travel guide 2026",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "hyderabad trip planner",
   ],
   openGraph: {
-    title: "Hyderabad in 3 Days: Biryani, Forts & Bazaars (2026)",
+    title: "Hyderabad 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, biryani trail. 3 complete plans from Budget to Premium.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hyderabad in 3 Days: The Only Guide You Need (2026)",
+    title: "Hyderabad 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, biryani trail, actual costs.",
     images: ["https://images.unsplash.com/photo-1603813507806-0d8e1a22d22c?w=1200&q=80"],
   },

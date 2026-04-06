@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Montreal in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Montreal 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Plan your perfect Montreal trip with our 4-day itinerary covering budget, mid-range, and luxury options. Notre-Dame Basilica, Schwartz's smoked meat, bagels, Old Montreal, and more.",
+    "Plan your Montreal trip in 4 days. Plan your perfect Montreal trip with our 4-day itinerary covering budget, mid-range, and luxury options. Notre-Dame.",
   keywords: [
     "Montreal travel guide",
     "Montreal 4 days itinerary",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Canada travel 2026",
   ],
   openGraph: {
-    title: "Montreal in 4 Days: Complete Travel Guide 2026",
+    title: "Montreal 4-Day Itinerary 2026: Trip Planner",
     description:
       "From Notre-Dame Basilica's 10,000-star ceiling to midnight smoked meat at Schwartz's — the only Montreal guide you need.",
     url: "https://incredibleitinerary.com/blog/montreal-4-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Montreal in 4 Days: Complete Travel Guide 2026",
+    title: "Montreal 4-Day Itinerary 2026: Trip Planner",
     description:
       "Budget to luxury 4-day Montreal itinerary — Old Port, bagels, smoked meat, and bilingual magic.",
   },

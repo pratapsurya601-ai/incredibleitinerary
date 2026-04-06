@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MysoreClient from "./MysoreClient";
 
 export const metadata: Metadata = {
-  title: "Mysore in 3 Days: Palace, Hills & Heritage (Budget to Royal, 2026)",
+  title: "Mysore 3-Day Itinerary 2026: Trip Planner",
   description:
     "3 complete Mysore plans — Budget, Heritage, Royal — with real timings, costs, Google Maps routes and the spots only locals know.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "mysore pak sweets",
   ],
   openGraph: {
-    title: "Mysore in 3 Days: Palace, Hills & Heritage (2026)",
+    title: "Mysore 3-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller.",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mysore in 3 Days: The Only Guide You Need (2026)",
+    title: "Mysore 3-Day Itinerary 2026: Trip Planner",
     description: "3 plans, real timings, actual costs, Google Maps routes.",
     images: ["https://images.unsplash.com/photo-1600112356882-3fef0bb2e495?w=1200&q=80"],
   },

@@ -3,9 +3,9 @@ import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/Univer
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Hong Kong in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Hong Kong 4-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Hong Kong travel guide: Victoria Peak, dim sum, Star Ferry, Kowloon night markets, Lantau Big Buddha, Macau day trip. Budget HKD $450/day to luxury $3,000/day. Visa info, day-by-day itineraries.",
+    "Plan your Hong Kong trip in 4 days. Complete Hong Kong travel guide: Victoria Peak, dim sum, Star Ferry, Kowloon night markets, Lantau Big Buddha, Macau.",
   keywords: [
     "Hong Kong travel guide",
     "Hong Kong itinerary 4 days",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Hong Kong budget travel",
   ],
   openGraph: {
-    title: "Hong Kong in 4 Days: Victoria Peak, Dim Sum & the World's Greatest Skyline",
+    title: "Hong Kong 4-Day Itinerary 2026: Trip Planner"s Greatest Skyline",
     description:
       "The most vertical city on Earth — 8 million people, the highest concentration of skyscrapers in the world, dim sum at 6am, and a harbour skyline that lights up every night. The complete Hong Kong guide.",
     url: "https://www.incredibleitinerary.com/blog/hong-kong-4-days",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hong Kong in 4 Days: The Complete Travel Guide 2026",
+    title: "Hong Kong 4-Day Itinerary 2026: Trip Planner",
     description:
       "Victoria Peak, dim sum, Star Ferry and Symphony of Lights. Budget to luxury day-by-day itineraries.",
   },
@@ -397,13 +397,13 @@ const data: UniversalBlogData = {
     },
     {
       icon: "🍵",
-      title: "Do Proper Dim Sum at a Cantonese Restaurant, Not a Touristy One",
+      title: "Hong Kong 4-Day Itinerary 2026: Trip Planner",
       desc: "Dim sum is Hong Kong's greatest food tradition and done properly is a multi-hour family affair. Go to a crowded local restaurant (not one with English menus at the door) on a Sunday morning before 10am. Point at carts or tick boxes on the paper menu. Order: har gow (shrimp dumplings), siu mai (pork & prawn), cheung fun (rice noodle rolls), char siu bao (BBQ pork buns). Budget HKD $100–150/person.",
       color: "border-green-200 bg-green-50",
     },
     {
       icon: "🌃",
-      title: "Watch Symphony of Lights From Tsim Sha Tsui, Not from Hong Kong Island",
+      title: "Hong Kong 4-Day Itinerary 2026: Trip Planner",
       desc: "The Symphony of Lights (8pm nightly) lights up the Hong Kong Island skyline — so you watch it from the Kowloon side (Tsim Sha Tsui Avenue of Stars waterfront), not from Hong Kong Island itself. The show lasts 13 minutes and is completely free. Arrive by 7:45pm for a good railing spot. The ICC building on the west also participates.",
       color: "border-amber-200 bg-amber-50",
     },

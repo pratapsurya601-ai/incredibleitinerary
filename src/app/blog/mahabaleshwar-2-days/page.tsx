@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MahabaleshwarClient from "./MahabaleshwarClient";
 
 export const metadata: Metadata = {
-  title: "Mahabaleshwar in 2 Days: Hill Station Itinerary with Viewpoints, Forts & Strawberry Farms (2026)",
+  title: "Mahabaleshwar 2-Day Itinerary 2026: Trip Planner",
   description:
     "2 complete Mahabaleshwar plans — Budget and Weekend — with real timings, costs, viewpoint tips and the mistakes every first-timer makes.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "mahabaleshwar viewpoints",
   ],
   openGraph: {
-    title: "Mahabaleshwar in 2 Days: Viewpoints, Forts & Strawberry Farms (2026)",
+    title: "Mahabaleshwar 2-Day Itinerary 2026: Trip Planner",
     description:
       "Real timings, actual budgets, viewpoint tips. 2 complete plans for every type of traveller.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mahabaleshwar in 2 Days: The Only Guide You Need (2026)",
+    title: "Mahabaleshwar 2-Day Itinerary 2026: Trip Planner",
     description: "2 plans, real timings, actual costs, viewpoint tips.",
     images: ["https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?w=1200&q=80"],
   },

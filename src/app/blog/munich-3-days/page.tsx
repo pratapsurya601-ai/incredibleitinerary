@@ -3,7 +3,7 @@ import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/U
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Munich in 3 Days: The Complete Guide (Budget to Luxury, 2026) | IncredibleItinerary",
+  title: "Munich 3-Day Itinerary 2026: Trip Planner",
   description:
     "Plan the perfect 3 days in Munich with our complete 2026 guide — Oktoberfest, Marienplatz, Neuschwanstein day trip, beer gardens, and budgets from €65/day.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Munich budget guide",
   ],
   openGraph: {
-    title: "Munich in 3 Days: The Complete Travel Guide 2026",
+    title: "Munich 3-Day Itinerary 2026: Trip Planner",
     description:
       "Beer halls, baroque palaces, and Bavarian Alps day trips — your ultimate 3-day Munich itinerary from €65/day to luxury.",
     url: "https://incredibleitinerary.com/blog/munich-3-days",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Munich in 3 Days: The Complete Travel Guide 2026",
+    title: "Munich 3-Day Itinerary 2026: Trip Planner",
     description:
       "Beer halls, baroque palaces, and Bavarian Alps day trips — your ultimate 3-day Munich itinerary from €65/day to luxury.",
   },

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import RishikeshClient from "./RishikeshClient";
 
 export const metadata: Metadata = {
-  title: "Rishikesh & Haridwar in 3 Days: Rafting, Yoga & Ganga Aarti (2026 Guide)",
+  title: "Rishikesh & Haridwar 3-Day Itinerary 2026: Trip Planner",
   description:
-    "Complete Rishikesh and Haridwar itinerary — white water rafting, Beatles Ashram, Ganga Aarti at Har Ki Pauri, yoga retreats. 4 plans with real costs from Delhi.",
+    "Plan your Rishikesh & Haridwar trip in 3 days. Complete Rishikesh and Haridwar itinerary — white water rafting, Beatles Ashram, Ganga Aarti at Har Ki.",
   keywords: [
     "rishikesh itinerary 3 days",
     "haridwar travel guide",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "rishikesh from delhi",
   ],
   openGraph: {
-    title: "Rishikesh & Haridwar 3 Days: Rafting, Yoga & Ganga Aarti (2026)",
+    title: "Rishikesh & Haridwar 3-Day Itinerary 2026: Trip Planner",
     description:
       "Rafting · Ganga Aarti · Beatles Ashram — real costs from Delhi, 4 complete plans.",
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rishikesh & Haridwar in 3 Days (2026)",
+    title: "Rishikesh & Haridwar 3-Day Itinerary 2026: Trip Planner",
     description: "Rafting, Beatles Ashram, Ganga Aarti — 4 plans, real costs from Delhi.",
     images: ["https://images.unsplash.com/photo-1593765390540-1c3d1e0a8c3a?w=1200&q=80"],
   },
