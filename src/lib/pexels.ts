@@ -135,7 +135,7 @@ export const IMAGE_QUERIES = {
   varanasi:       "varanasi ghats ganges river sunrise boat india",
   varanasiAarti:  "ganga aarti varanasi dashashwamedh ghat fire ceremony",
   // Andaman blog
-  andaman:        "radhanagar beach havelock andaman turquoise water",
+  andaman:        "andaman islands aerial beach turquoise water palm no people landscape",
   andamanDiving:  "andaman islands scuba diving coral reef underwater",
   andamanNeil:    "neil island andaman natural bridge beach sunset",
   // Ladakh blog
