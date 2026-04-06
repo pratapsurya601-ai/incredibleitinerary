@@ -11,6 +11,8 @@ import AdUnit from "@/components/ads/AdUnit";
 import AutoPdfCta from "@/components/blog/AutoPdfCta";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import AutoTableOfContents from "@/components/blog/AutoTableOfContents";
+import InlineSignup from "@/components/email/InlineSignup";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 
 // ---------------------------------------------------------------------------
 // Type badge config
@@ -191,8 +193,14 @@ export default function GeneratedPostContent({
         {/* Auto PDF CTA — shows if parent slug has a PDF */}
         {post.parentSlug && <AutoPdfCta blogSlug={post.parentSlug} />}
 
+        {/* Email capture */}
+        <InlineSignup />
+
         {/* Affiliate block — hotels + tours for this destination */}
         <AffiliateBlock destination={post.destination} />
+
+        {/* Internal linking to related guides */}
+        <RelatedGuides currentSlug={post.parentSlug || post.slug} />
 
         {/* Mid-article ad */}
         <AdUnit slot="5913027384" format="auto" />
