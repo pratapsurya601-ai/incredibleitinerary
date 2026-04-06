@@ -196,8 +196,10 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
 
         {/* Mobile hamburger */}
         <button
-          className={`md:hidden flex flex-col gap-[5px] p-2.5 rounded-lg transition-colors duration-300 ${
-            !scrolled && !menuOpen ? "bg-black/40 backdrop-blur-sm" : ""
+          className={`md:hidden flex flex-col gap-[5.5px] p-3 rounded-xl transition-all duration-300 ${
+            scrolled || menuOpen
+              ? "bg-ink/8 border border-parchment-2"
+              : "bg-black/55 backdrop-blur-sm border border-white/20"
           }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
@@ -206,11 +208,11 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
           {[0, 1, 2].map((i) => (
             <span
               key={i}
-              className={`block w-5 h-0.5 rounded-full transition-all duration-300 ${
-                scrolled ? "bg-ink" : "bg-white"
-              } ${menuOpen && i === 0 ? "rotate-45 translate-y-[7px]" : ""} ${
+              className={`block w-[22px] h-[2.5px] rounded-full transition-all duration-300 ${
+                scrolled || menuOpen ? "bg-ink" : "bg-white"
+              } ${menuOpen && i === 0 ? "rotate-45 translate-y-[8px]" : ""} ${
                 menuOpen && i === 1 ? "opacity-0 scale-x-0" : ""
-              } ${menuOpen && i === 2 ? "-rotate-45 -translate-y-[7px]" : ""}`}
+              } ${menuOpen && i === 2 ? "-rotate-45 -translate-y-[8px]" : ""}`}
             />
           ))}
         </button>
