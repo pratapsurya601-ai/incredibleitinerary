@@ -3543,6 +3543,43 @@ export const blogPosts: BlogPost[] = [
     destination: "Havana", duration: "4 Days", country: "Cuba",
     pexelsQuery: "havana cuba classic cars malecon old havana colonial architecture salsa",
   },
+  // ── High-Value Evergreen / Diaspora Posts ─────────────────────────────────
+  {
+    slug: "visa-free-countries-indian-passport",
+    title: "Visa-Free Countries for Indian Passport 2026: 60+ Destinations Without Pre-Approval",
+    excerpt: "Complete list of countries Indians can visit without a visa or with visa on arrival in 2026 — Southeast Asia, Middle East, Africa, Caribbean, and Pacific islands. Real entry requirements, maximum stay, and what to carry.",
+    date: "April 7, 2026", readTime: "14 min", category: "Travel Tips",
+    tags: ["Indian Passport", "Visa Free", "Visa on Arrival", "NRI", "Travel Tips", "Passport Power", "International Travel"],
+    image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&q=80",
+    imageAlt: "Indian passport with boarding passes for international travel visa free destinations", featured: true,
+    destination: "International", duration: "Varies",
+    pexelsQuery: "passport visa travel international destinations stamps",
+    country: "International",
+  },
+  {
+    slug: "best-weekend-getaways-from-bangalore",
+    title: "21 Best Weekend Getaways from Bangalore (2026): Hills, Beaches & Heritage Within 500km",
+    excerpt: "The most useful Bangalore getaway guide online — 21 destinations sorted by distance, with drive time, best season, what to skip, and where to stay. From Nandi Hills (1.5hrs) to Gokarna (8hrs), every trip worth making.",
+    date: "April 7, 2026", readTime: "15 min", category: "Weekend Trips",
+    tags: ["Bangalore Getaways", "Weekend Trip", "South India", "Coorg", "Ooty", "Mysore", "Hampi", "Wayanad", "Karnataka"],
+    image: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=80",
+    imageAlt: "Coorg coffee plantation misty hills Karnataka weekend getaway from Bangalore", featured: true,
+    destination: "Bangalore Region", duration: "2–3 Days",
+    pexelsQuery: "coorg coffee plantation karnataka hills misty green",
+    country: "India",
+  },
+  {
+    slug: "best-weekend-getaways-from-delhi",
+    title: "20 Best Weekend Getaways from Delhi (2026): Mountains, Temples & Desert Within 600km",
+    excerpt: "From Agra at 3 hours to Spiti at 14 hours — 20 trips sorted by drive time with honest assessments of what's worth it, when to go, and where to stay. The only Delhi getaway guide that tells you which ones to skip.",
+    date: "April 7, 2026", readTime: "14 min", category: "Weekend Trips",
+    tags: ["Delhi Getaways", "Weekend Trip", "North India", "Agra", "Jaipur", "Rishikesh", "Shimla", "Jim Corbett", "Rajasthan"],
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    imageAlt: "Rishikesh Ganga river suspension bridge Lakshman Jhula Uttarakhand weekend trip from Delhi", featured: true,
+    destination: "Delhi Region", duration: "2–3 Days",
+    pexelsQuery: "rishikesh ganga river bridge yoga uttarakhand himalayas",
+    country: "India",
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

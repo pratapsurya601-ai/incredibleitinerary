@@ -37,6 +37,48 @@ const BEST_TIME_DATA: Record<string, string> = {
   Rome: "Apr-May and Sep-Oct. Spring and autumn — 18-26°C, manageable crowds. Jun-Aug: 35°C heat, very crowded, long queues at Vatican/Colosseum. Book skip-the-line tickets 2-3 months ahead. Dec-Jan: cold (8°C) but Christmas markets and no queues at museums.",
   Dubai:
     "Nov-Mar. Perfect desert winter — 20-28°C. Dubai Shopping Festival: Jan-Feb. Apr and Oct are shoulder months (warm but manageable). May-Sep: 40-48°C, extremely hot. Avoid unless you'll be in air conditioning 90% of the time.",
+  // ── Additional Indian Destinations ──────────────────────────────────────
+  Shimla:
+    "Mar-Jun and Sep-Nov. Spring (Mar-May) is ideal — rhododendrons bloom, 15-25°C. Summer (Apr-Jun) is peak family season. Sep-Nov has cleaner air, Himalayan views, apple harvest. Dec-Jan: 0–5°C nights, possible snow at Kufri — Christmas and New Year hugely crowded and overpriced. Jul-Aug: heavy rain, occasional landslides on mountain roads.",
+  Rishikesh:
+    "Sep-Nov and Feb-Jun. Rafting season: Mar-Jun (good water level and weather) and Sep-Nov (post-monsoon best flow). Feb-Mar: yoga and festival season, comfortable 15-25°C. Avoid Jul-Aug — Ganga in flood, rafting suspended, roads slippery. Dec-Jan: cold (5-10°C nights) but peaceful and spiritual — good for ashram stays.",
+  Varanasi:
+    "Oct-Mar. Perfect winter — 12-22°C days, cool evenings ideal for ghat walks and aarti. Nov has Dev Deepawali (80,000 lamps on the ghats — spectacular). Feb-Mar has Holi preparations and the Mahasivaratri procession. Apr-May: building heat but manageable. Jun-Sep: 35°C+ heat and humidity, pre-monsoon oppressive. The ghats are always alive regardless of season.",
+  Darjeeling:
+    "Apr-May and Oct-Nov. Spring (Apr-May): rhododendrons in bloom, clear Kanchenjunga views. Autumn (Oct-Nov): crystal-clear skies, best mountain views, golden light. Dec-Jan: 0-5°C, possible frost — the toy train steams through misty hills beautifully. Monsoon Jun-Sep: very heavy fog — Kanchenjunga invisible for weeks. The tea estate flush happens Apr-May (first flush) and Oct-Nov (second flush).",
+  Andaman:
+    "Oct-May. The Andaman Sea is at its calmest and clearest Oct-Apr — perfect for snorkeling and diving. Dec-Jan is peak (most expensive, book 3 months ahead). Mar-May: hot (32-34°C) but still excellent for water activities. Jun-Sep: southwest monsoon — rough seas, ferries cancelled regularly, Havelock guesthouses half-closed. Radhanagar Beach's 2am phosphorescent plankton visible Oct-Feb.",
+  Coorg:
+    "Oct-Mar. Best weather and coffee harvest season. Oct-Jan: coffee berries ripen, estate walks through flowering plants, 15-25°C, dry trails. Feb-Mar: Coorg in bloom, warming up. Apr-Jun: pre-monsoon heat, pleasant for water activities at Dubare. Jun-Sep: very heavy monsoon (Coorg gets 2,500mm rain), lush but leeches everywhere on trails — forest walks inadvisable.",
+  Dharamshala:
+    "Mar-Jun and Sep-Nov. Spring (Mar-May): rhododendrons, moderate trekking weather, Tibetan New Year (Losar, Feb-Mar). Summer (Apr-Jun): popular but never overwhelmingly hot (25-30°C) — great for Triund trek. Oct-Nov: crystal-clear post-monsoon views of Dhauladhar range. Dec-Feb: snow at McLeod Ganj above 1,500m — cold (0-10°C) but beautiful. Monsoon Jul-Aug: heavy rain, fog, Triund trail slippery.",
+  Udaipur:
+    "Oct-Mar. Desert winters are ideal — 15-28°C days, clear skies over Lake Pichola. Diwali (Oct-Nov) lights up the city palace and ghats dramatically. Dec-Jan: very pleasant (12-22°C) but accommodations 30-40% pricier. Apr-Jun: summer heat 38-44°C; go early morning or evening. Monsoon Jul-Sep: Pichola and Fateh Sagar Lakes fill up — beautiful blue water framed by Aravalli hills, significantly fewer tourists.",
+  Jaipur:
+    "Oct-Feb. The Pink City is best in winter — 12-25°C, all forts comfortable. Pushkar Camel Fair nearby in Nov. January: hot air balloon festival, Jaipur Literature Festival (Jan-Feb). Mar: Holi celebrations are spectacular at heritage properties. Apr-Jun: 42-45°C heat — Amber Fort at 7am only, rest is indoor shopping. Monsoon: rain cools the city, fewer tourists, green Aravalli hills, some heritage property deals.",
+  Hampi:
+    "Oct-Feb. Cold stone requires cool weather to explore — 15-28°C ideal. Oct: post-monsoon Tungabhadra is full and scenic. Nov-Jan: perfect sightseeing, sunrise over the boulder landscape is extraordinary. Feb-Mar: shoulder season, slightly warmer. Apr-Jun: brutal (40-44°C) on bare granite boulders — avoid. Monsoon: roads to the island (Virupapura Gadde) may flood; the river crossing by coracle becomes dangerous.",
+  Pondicherry:
+    "Nov-Feb. Post-northeast-monsoon Pondicherry is perfect — 22-28°C, dry, French Quarter walking comfortable. Dec-Jan: peak season (30-40% premium), Christmas in the French Quarter is atmospheric. Mar-Apr: warming up but still pleasant. May-Sep: hot 32-36°C. Oct-Nov: northeast monsoon brings heavy rain specifically to Pondy (while Chennai doesn't flood as much) — a week or two of genuine downpours.",
+  Ooty:
+    "Apr-Jun and Sep-Dec. Summer (Apr-Jun) is prime — cool 15-22°C when South India bakes below. Ooty in May is packed with school holidays but the weather is excellent. Sep-Nov: post-monsoon clarity, tea estates look lush. Dec-Mar: 'winter' at 5-10°C nights — very cold, need warm clothes. The Nilgiri Mountain Railway is beautiful year-round; monsoon (Jul-Aug) adds mist to the train journey but the hills are gorgeous.",
+  Mysore:
+    "Oct-Jan. Peak season is Oct-Nov: Dasara (10-day festival, entire city illuminated, procession on Vijayadasami) is Mysore's signature — the palace glows with 97,000 light bulbs. Post-Dasara Nov-Jan: cool (15-28°C), comfortable exploring. Apr-Jun: pleasant hill station weather (Mysore sits at 770m). Monsoon Jul-Sep: light rain, beautiful green — not Goa-level monsoon. Very manageable year-round unlike coastal/mountain destinations.",
+  Spiti:
+    "Jun-Sep ONLY. Spiti is cut off by snow Oct-May. Rohtang Pass opens mid-May, Kunzum La by early June. July-Aug: peak season, all passes open, homestays busy. June and September: fewer tourists, same scenery. Chandratal Lake camping (3-4,500m) is only viable Jun-Sep. Winter (Oct-May): only accessible via Kinnaur (Shimla route stays open longer) — extreme cold (-20 to -30°C), minimal infrastructure, for experienced winter trekkers only.",
+  Amritsar:
+    "Oct-Mar. Golden Temple at dawn year-round is transcendent, but comfort matters. Oct-Feb: crisp 10-22°C days, comfortable for the temple complex and Wagah Border ceremony. Dec-Jan: foggy mornings (the fog is actually beautiful at Har Mandir Sahib). Apr-Jun: heat builds to 42°C but the Golden Temple is open 24 hours — early morning or late evening only. Monsoon Jul-Sep: manageable rain, few tourists, temple less crowded.",
+  Nainital:
+    "Mar-Jun and Sep-Nov. Spring (Mar-May): rhododendrons, pleasant 15-25°C, boating on Naini Lake. May-Jun: peak family season — crowded but all activities open. Sep-Oct: post-monsoon clarity, crystal lake, Himalayan views. Nov: quieter, slightly cold, great value. Dec-Feb: 0-8°C nights, frost possible — tourist facilities partially closed. Monsoon Jul-Aug: frequent landslides on access roads from Kathgodam, heavy rain — the lake fills but access can be dangerous.",
+  Meghalaya:
+    "Oct-May. Cherrapunji and Mawsynram (world's wettest places) are paradoxically best outside monsoon when you can actually see the living root bridges. Oct-Dec: post-monsoon waterfalls still full, lush green, roads clear — ideal. Jan-Feb: cool (10-18°C), misty mornings, great for Dawki river (crystal clear) and Shnongpdeng camping. Mar-May: warming, water activities excellent. Jun-Sep: extreme rain — Cherrapunji records 10m+ rainfall in months; floods, landslides, closed trekking routes.",
+  // ── International additions ───────────────────────────────────────────
+  Singapore:
+    "Feb-Apr and Jun-Aug. Singapore has tropical weather year-round (28-33°C, humidity 70-90%), so season matters less than for other destinations. Feb-Apr: slightly less rain, Chinese New Year festivities (Jan-Feb). Jun-Aug: Great Singapore Sale, slightly drier. Nov-Jan: northeast monsoon — heaviest rainfall, but showers are short and intense (1-2hrs), rarely all-day. Singapore is excellent year-round — indoor attractions mean weather is rarely a trip-ruiner.",
+  Vietnam:
+    "Oct-Apr for most of Vietnam. North Vietnam (Hanoi, Sapa): Oct-Apr is best (18-25°C, some fog in Jan-Feb is atmospheric). South Vietnam (Ho Chi Minh City): Dec-Apr is dry season, 25-35°C. Central (Da Nang, Hoi An): Feb-Jul best (north's rain clears). Note: Vietnam's regions have opposite seasons — it's almost always good somewhere. Jun-Sep: monsoon in central/north but south is fine. Hoi An's river flooding (Oct-Nov) is famous — actually photogenic but affects access.",
+  "Sri Lanka":
+    "Dec-Mar for west/south coast (Colombo, Galle, Mirissa, Yala). East coast (Trincomalee, Arugam Bay): May-Sep. The southwest and northeast coasts have opposite monsoon seasons — Sri Lanka is always good somewhere. Colombo and the hill country: Dec-Apr. Sigiriya (Cultural Triangle): Dec-Apr. Tip: Dec-Jan is the best all-around time to cover the full island — both monsoons have ended.",
 };
 
 // ---------------------------------------------------------------------------
@@ -106,6 +148,70 @@ const COST_DATA: Record<string, CostData> = {
     luxury: { accommodation: "₹25,000–80,000", meal: "₹3,000–8,000", transport: "Private car ₹5,000/day", total: "₹40,000–1,00,000/day" },
     highlights: ["Burj Khalifa (top 2 floors): ₹3,500", "Dubai Frame: ₹1,500", "Desert safari with BBQ dinner: ₹3,000", "Dubai Mall free entry (Aquarium extra ₹2,500)", "Abra (water taxi) across Dubai Creek: ₹25"],
     flightNote: "Very cheap flights — non-stop from Delhi/Mumbai/Bangalore: ₹18,000–35,000 RT. Many airlines. UAE visa required (apply online, ₹3,000–4,500).",
+  },
+  // ── Additional Indian Destinations ──────────────────────────────────────
+  Rishikesh: {
+    budget: { accommodation: "₹500–1,200", meal: "₹150–350", transport: "Auto ₹100–200/trip", total: "₹1,500–3,000/day" },
+    midRange: { accommodation: "₹2,000–4,500", meal: "₹400–800", transport: "Cab ₹800/day", total: "₹4,000–7,500/day" },
+    luxury: { accommodation: "₹7,000–18,000", meal: "₹1,000–2,000", transport: "Private cab ₹1,500/day", total: "₹11,000–24,000/day" },
+    highlights: ["Rafting (16km Shivpuri): ₹600–800/person", "Bungee jumping (83m): ₹3,500", "Yoga drop-in class: ₹400–800", "Beatles Ashram entry: ₹600", "Ganga aarti at Triveni Ghat: Free"],
+    flightNote: "No airport in Rishikesh. Nearest: Jolly Grant Airport, Dehradun (35km, ₹600–900 cab). Flights from Delhi: ₹3,000–6,000 one-way. Train to Haridwar + 20km cab is often best value.",
+  },
+  Varanasi: {
+    budget: { accommodation: "₹500–1,500", meal: "₹150–350", transport: "Auto/rickshaw ₹200/day", total: "₹1,500–3,500/day" },
+    midRange: { accommodation: "₹2,500–5,500", meal: "₹400–900", transport: "Cab ₹1,000/day", total: "₹5,000–9,000/day" },
+    luxury: { accommodation: "₹8,000–20,000", meal: "₹1,200–3,000", transport: "AC cab ₹1,500/day", total: "₹12,000–28,000/day" },
+    highlights: ["Morning boat ride on Ganga (1 hr): ₹400–800", "Ganga Aarti at Dashashwamedh (free, tip optional)", "Silk weaving workshop: ₹500–800", "Vegetarian thali at a dhaba: ₹150–300", "Sarnath (Buddha's first sermon site): ₹30 entry"],
+    flightNote: "Lal Bahadur Shastri Airport (VNS), 26km from city. Flights from Delhi 1hr, Mumbai 1.5hr: ₹3,500–9,000 one-way. Train from Delhi is also excellent (Kashi Express overnight, 10–13hr).",
+  },
+  Andaman: {
+    budget: { accommodation: "₹800–2,000", meal: "₹200–400", transport: "Scooter ₹500/day", total: "₹2,500–5,000/day" },
+    midRange: { accommodation: "₹3,000–7,000", meal: "₹500–1,000", transport: "Cab ₹1,200/day", total: "₹6,000–12,000/day" },
+    luxury: { accommodation: "₹10,000–35,000", meal: "₹1,500–3,500", transport: "Private cab ₹2,000/day", total: "₹16,000–45,000/day" },
+    highlights: ["Cellular Jail light & sound show: ₹300", "Snorkeling at Elephant Beach: ₹600–900 (ferry included)", "Scuba diving (introductory): ₹3,500–5,500", "Radhanagar Beach entry: Free (one of Asia's best)", "Inter-island ferry (Port Blair–Havelock): ₹500–1,500"],
+    flightNote: "Veer Savarkar International Airport, Port Blair. Direct flights from Chennai (2hr), Kolkata (2hr), Delhi (3hr): ₹8,000–22,000 RT. Book 4–8 weeks ahead — prices spike dramatically.",
+  },
+  Shimla: {
+    budget: { accommodation: "₹700–1,800", meal: "₹150–400", transport: "Local bus ₹50–200", total: "₹2,000–4,500/day" },
+    midRange: { accommodation: "₹2,500–6,000", meal: "₹400–900", transport: "Cab ₹1,000/day", total: "₹5,000–10,000/day" },
+    luxury: { accommodation: "₹8,000–25,000", meal: "₹1,000–2,500", transport: "Private cab ₹1,500/day", total: "₹12,000–32,000/day" },
+    highlights: ["Kalka-Shimla UNESCO toy train: ₹330 (2nd class), ₹850 (1st class Vista Dome)", "Jakhu Temple ropeway: ₹500 round trip", "Ice Skating Rink (Dec-Feb): ₹200/session", "The Mall Road walk: Free", "Kufri snow activities (Dec-Feb): ₹500–1,000"],
+    flightNote: "No airport in Shimla (Jubbarhatti is 22km but very limited flights). Best options: Chandigarh airport + 90km cab (₹1,500), or Kalka-Shimla toy train from Delhi via Shatabdi (total 8hrs).",
+  },
+  Coorg: {
+    budget: { accommodation: "₹1,000–2,500", meal: "₹200–400", transport: "Scooter ₹400/day", total: "₹2,500–5,000/day" },
+    midRange: { accommodation: "₹3,000–8,000", meal: "₹500–1,000", transport: "Cab ₹1,200/day", total: "₹6,000–12,000/day" },
+    luxury: { accommodation: "₹8,000–25,000", meal: "₹1,200–3,000", transport: "Private cab ₹2,000/day", total: "₹14,000–35,000/day" },
+    highlights: ["Coffee estate stay with meals: ₹3,500–9,000/night", "Dubare Elephant Camp (bathing session, 7am): ₹250", "Abbey Falls entry: ₹25", "White-water rafting (Barapole river): ₹700–1,200", "Coffee beans (250g premium): ₹200–400"],
+    flightNote: "Nearest airport: Mangaluru (120km, 2.5hr) or Mysuru (95km, 2hr). Flights from Bangalore: ₹3,000–7,000. Direct buses from Bengaluru's Majestic stand (KSRTC) to Madikeri: ₹350–700 (5–7hrs).",
+  },
+  Mysore: {
+    budget: { accommodation: "₹700–1,800", meal: "₹150–350", transport: "Auto ₹150–300/trip", total: "₹2,000–4,500/day" },
+    midRange: { accommodation: "₹2,500–6,000", meal: "₹400–900", transport: "City cab ₹800/day", total: "₹5,000–10,000/day" },
+    luxury: { accommodation: "₹7,000–22,000", meal: "₹1,000–2,500", transport: "Private cab ₹1,500/day", total: "₹12,000–28,000/day" },
+    highlights: ["Mysore Palace entry (Indians): ₹70 (₹200 for illumination on Sun/holidays)", "Chamundeshwari Temple ropeway: ₹70", "Devaraja Market spice shopping: Free to browse", "Mysore Pak sweet from Guru Sweet Mart: ₹250/250g", "Srirangapatna Fort day trip: ₹30 entry"],
+    flightNote: "Mysuru Airport (MYQ) has limited scheduled flights. Best: Bangalore by road (140km, 3hrs via NH275 expressway) or Shatabdi train (2hrs, ₹200–350). From Chennai: 7hrs by road or train.",
+  },
+  Darjeeling: {
+    budget: { accommodation: "₹600–1,800", meal: "₹150–400", transport: "Shared jeep ₹100–300/trip", total: "₹2,000–4,500/day" },
+    midRange: { accommodation: "₹2,500–6,000", meal: "₹400–900", transport: "Cab ₹1,000/day", total: "₹5,000–10,000/day" },
+    luxury: { accommodation: "₹7,000–20,000", meal: "₹1,000–2,500", transport: "Private cab ₹1,500/day", total: "₹12,000–28,000/day" },
+    highlights: ["Darjeeling Himalayan Railway (toy train loop): ₹1,200–2,800", "Tiger Hill sunrise (4am taxi + entry): ₹400–600", "Tea estate tasting tour: ₹500–1,500", "Darjeeling tea (100g premium): ₹400–2,000", "HMI (Himalayan Mountaineering Institute) museum: ₹100"],
+    flightNote: "Bagdogra Airport (IXB), 70km (2.5hrs by shared jeep ₹300 or private cab ₹1,800). Flights from Kolkata 40min, Delhi 1.5hr: ₹3,000–9,000. Train to NJP station then jeep is cheapest option.",
+  },
+  Udaipur: {
+    budget: { accommodation: "₹800–2,000", meal: "₹200–450", transport: "Auto ₹150–300/trip", total: "₹2,500–5,000/day" },
+    midRange: { accommodation: "₹3,000–7,000", meal: "₹500–1,200", transport: "Cab ₹1,000/day", total: "₹6,000–12,000/day" },
+    luxury: { accommodation: "₹10,000–50,000", meal: "₹1,500–4,000", transport: "Private cab ₹2,000/day", total: "₹18,000–60,000/day" },
+    highlights: ["Lake Pichola boat ride (sunset): ₹700–800", "City Palace entry: ₹300 (Indians)", "Fateh Sagar lake pedal boat: ₹200/30min", "Rooftop restaurant dinner with lake view: ₹1,500–3,000/person", "Udaipur sound & light show at City Palace: ₹500"],
+    flightNote: "Maharana Pratap Airport (UDR), 22km from city. Flights from Delhi (1hr), Mumbai (1.5hr), Jaipur (45min): ₹3,500–9,000. Train from Delhi Hazrat Nizamuddin (Chetak Express overnight, 12hrs) is most scenic.",
+  },
+  Singapore: {
+    budget: { accommodation: "₹4,000–7,000 (hostel)", meal: "₹400–700 (hawker centre)", transport: "EZ-Link card MRT ₹600/day", total: "₹7,000–12,000/day" },
+    midRange: { accommodation: "₹9,000–18,000", meal: "₹800–1,800", transport: "Grab ₹1,200/day", total: "₹14,000–24,000/day" },
+    luxury: { accommodation: "₹22,000–80,000", meal: "₹2,500–7,000", transport: "Taxi/Grab ₹3,000/day", total: "₹35,000–1,00,000/day" },
+    highlights: ["Gardens by the Bay (Cloud Forest + Flower Dome): ₹2,800", "Marina Bay Sands SkyPark: ₹2,200", "Universal Studios: ₹6,500", "Hawker centre meal (chicken rice): ₹350–500", "Singapore Zoo: ₹3,200"],
+    flightNote: "Non-stop from Delhi (5.5hr), Mumbai (5.5hr), Chennai (3.5hr), Bangalore (4hr): ₹20,000–45,000 RT. Singapore Airlines, IndiGo, Air India, Scoot. Visa required for Indians — apply at ivisa.ica.gov.sg (3–5 days, ₹3,500–4,500).",
   },
 };
 
@@ -235,6 +341,80 @@ const TRANSPORT_DATA: Record<string, { options: Array<{ mode: string; details: s
     ],
     tips: ["UAE Visa required for Indian passport — apply online at icp.gov.ae or via airlines (₹3,000–4,500, 3–5 days)", "Dubai Metro Gold Line covers all key attractions efficiently", "Download Careem/Uber for taxis — metered, reliable", "Dress modestly at mosques and malls; public displays of affection discouraged"],
   },
+  // ── Additional Indian Destinations ──────────────────────────────────────
+  Rishikesh: {
+    options: [
+      { mode: "By Road from Delhi", details: "NH58 via Meerut, Muzaffarnagar, Haridwar. Well-maintained highway, 240km", duration: "5–6hrs", cost: "Fuel + tolls ₹600–900" },
+      { mode: "Train to Haridwar", details: "Shatabdi from Delhi to Haridwar (4.5hrs), then 20km cab to Rishikesh", duration: "5.5hrs total", cost: "Train ₹600–1,200 + cab ₹400" },
+      { mode: "Volvo Bus from Delhi", details: "GMOU/HRTC/private Volvos from ISBT Kashmiri Gate, Delhi to Rishikesh", duration: "5–7hrs", cost: "₹500–900" },
+    ],
+    tips: ["Auto-rickshaws don't cross Laxman Jhula suspension bridges — walk across or hire a Vikram tempo", "Ram Jhula area is the backpacker hub; Tapovan is quieter and hipper", "Rafting operators cluster along the Haridwar-Rishikesh road — book with operators having safety equipment visible", "Early morning Triveni Ghat aarti (5:30am) is significantly more spiritual than the evening one"],
+  },
+  Varanasi: {
+    options: [
+      { mode: "Flight", details: "Lal Bahadur Shastri Airport (VNS), 26km from ghats. Air India, IndiGo, Vistara from Delhi/Mumbai", duration: "1.5–2hrs from Delhi", cost: "₹3,500–9,000 one-way" },
+      { mode: "Train from Delhi", details: "Kashi Express (overnight, 12–14hrs) or Shiv Ganga Express. Varanasi Junction (BSB) or Manduadih station", duration: "12–14hrs overnight", cost: "₹400–1,500 (sleeper to 3AC)" },
+      { mode: "Train from Mumbai", details: "Mahanagari Express or Kamayani Express. Long journey, consider flying", duration: "22–26hrs", cost: "₹600–2,000" },
+    ],
+    tips: ["Navigate the old city on foot — auto-rickshaws can't enter the narrow ghat lanes", "Dashashwamedh Ghat aarti at 7pm: arrive by 6:30 for a boat view", "Cycle rickshaws between ghats cost ₹50–150 and are far more atmospheric than cabs", "Sarnath is 13km from Varanasi Junction — auto-rickshaw ₹200 one-way; include in your last day itinerary"],
+  },
+  Andaman: {
+    options: [
+      { mode: "Flight from Chennai", details: "Air India, IndiGo from Chennai to Port Blair (IXZ). Most direct and cheapest", duration: "2hrs", cost: "₹5,000–15,000 RT" },
+      { mode: "Flight from Kolkata", details: "IndiGo, Air India from Kolkata to Port Blair. Also direct", duration: "2hrs", cost: "₹5,500–16,000 RT" },
+      { mode: "Flight from Delhi/Mumbai", details: "Usually via Chennai or Kolkata. Direct flights exist on some days", duration: "3.5–4hrs", cost: "₹8,000–22,000 RT" },
+      { mode: "Ship from Chennai (budget option)", details: "Andaman Shipping Corporation, Chennai to Port Blair. Scenic but very slow", duration: "60–65hrs (3 nights)", cost: "₹4,000–7,000 one-way (bunk/cabin)" },
+    ],
+    tips: ["Book flights 6–8 weeks ahead — Andaman flights get expensive fast during Dec-Jan and summer holidays", "Inter-island ferries (Port Blair–Havelock–Neil–Baratang) have fixed government schedules — plan your itinerary around ferry times, not vice versa", "Havelock Island (Swaraj Dweep): book accommodation well in advance during peak season", "Scooter/bike rental at Havelock is the best way to explore (₹400–600/day)"],
+  },
+  Shimla: {
+    options: [
+      { mode: "Kalka–Shimla Toy Train (UNESCO)", details: "Take Shatabdi from Delhi to Kalka, then UNESCO World Heritage narrow-gauge train to Shimla. Book at irctc.co.in", duration: "Delhi to Shimla: 7–8hrs total", cost: "Shatabdi ₹700 + Toy train ₹350–1,000" },
+      { mode: "Volvo Bus from Delhi", details: "HRTC/private Volvos from ISBT Kashmiri Gate overnight", duration: "9–11hrs", cost: "₹700–1,200" },
+      { mode: "Road from Delhi via Chandigarh", details: "NH44 to Ambala, then NH5 to Shimla via Kalka and Solan", duration: "7–9hrs self-drive", cost: "Fuel + tolls ₹1,200–1,800" },
+    ],
+    tips: ["The Mall Road is pedestrian-only — drop bags at your hotel, then explore on foot", "Book the Kalka-Shimla Vista Dome train coach 60 days ahead — sells out immediately at 8am IST", "Jakhu Hill (2,455m) is a 45-min hike from Hotel Combermere — skip the ropeway and walk", "Kufri is 16km from Shimla and best as a morning excursion; tourist season makes it very crowded by 10am"],
+  },
+  Coorg: {
+    options: [
+      { mode: "Road from Bangalore", details: "NH275 to Mysuru, then Hunsur–Madikeri road. Well-maintained via Kushalnagar", duration: "5.5–6hrs, 265km", cost: "Fuel + tolls ₹600–800" },
+      { mode: "KSRTC Bus from Bangalore", details: "Direct KSRTC and private buses from Bangalore's Majestic/Satellite Bus Stand to Madikeri", duration: "6–7hrs", cost: "₹350–700" },
+      { mode: "Road via Mysuru (scenic)", details: "NH275 to Mysuru (3hrs), then Madikeri road via Kushalnagar — coffee plantation landscape", duration: "5.5hrs total", cost: "Fuel ₹700–900" },
+    ],
+    tips: ["Madikeri is the administrative capital — most coffee estates are 10–30km outside town, not in the town itself", "Rent a scooter or bike from your estate/guesthouse to explore independently (₹400–600/day)", "Estate stays include all meals — factor this into budget comparison vs. standalone hotels", "The Cauvery River rafting at Dubare is a different operator from the elephant camp — book both ahead on weekends"],
+  },
+  Darjeeling: {
+    options: [
+      { mode: "Flight to Bagdogra + Shared Jeep", details: "Bagdogra Airport (IXB), 70km. Shared jeep stand at New Jalpaiguri (NJP) station — 3hrs to Darjeeling", duration: "Flight 40min from Kolkata + 2.5hrs jeep", cost: "Flight ₹3,000–9,000 + jeep ₹200–300" },
+      { mode: "Train to NJP + Shared Jeep", details: "Darjeeling Mail or Shatabdi to New Jalpaiguri (NJP), then shared jeep. Very reliable", duration: "Train varies (Delhi: 12hrs, Kolkata: 8hrs) + 2.5hrs jeep", cost: "Train ₹600–2,000 + jeep ₹200–300" },
+      { mode: "Darjeeling Himalayan Railway (UNESCO)", details: "Toy train from NJP station to Darjeeling. Scenic, slow, and iconic", duration: "7–8hrs (slow train) or 4hrs (faster diesel service)", cost: "₹500–1,200 one-way" },
+    ],
+    tips: ["Shared jeeps are the backbone of hill transport — faster than the toy train and how locals actually travel", "Tiger Hill sunrise requires booking through jeep operators — leave Darjeeling at 3:30–4am (Nov–Mar only for clear sky)", "First flush tea (Apr-May): buy directly from estate shops or Nathmulls Tea Room on Laden La Road", "Gangtok (Sikkim) is 3hrs from Darjeeling by shared jeep — easy extension for longer trips"],
+  },
+  Mysore: {
+    options: [
+      { mode: "Road from Bangalore", details: "NH275 Bangalore–Mysuru Expressway (140km). India's most reliable highway", duration: "2.5–3hrs", cost: "Fuel + toll ₹400–600" },
+      { mode: "KSRTC Bus from Bangalore", details: "Frequent every 30 min from Bangalore Majestic. Shatabdi-like comfort on some routes", duration: "3–3.5hrs", cost: "₹180–350" },
+      { mode: "Shatabdi Express Train", details: "Bangalore to Mysuru station — fast and comfortable", duration: "2hrs", cost: "₹200–350" },
+    ],
+    tips: ["Palace illumination (Sunday evenings and public holidays, 7–8pm, 97,000 bulbs) requires planning — check the calendar", "Devaraja Market opposite the palace is the best spice/flower/silk shopping — bargain hard", "Autorickshaws don't use meters — negotiate ₹150 for short trips in advance", "Chamundeshwari Temple is 13km (30min) from city — combined with the palace as an evening trip"],
+  },
+  Udaipur: {
+    options: [
+      { mode: "Flight", details: "Maharana Pratap Airport (UDR), 22km from city. IndiGo, Air India, Vistara from Delhi/Mumbai", duration: "1hr from Delhi / 1.5hr from Mumbai", cost: "₹3,500–9,000 one-way" },
+      { mode: "Train from Delhi", details: "Chetak Express (overnight, 12hrs) or Mewar Express from Hazrat Nizamuddin", duration: "12–14hrs overnight", cost: "₹500–1,800" },
+      { mode: "Road from Jaipur", details: "261km via NH8. Add Udaipur to a Rajasthan circuit (Jaipur–Jodhpur–Udaipur)", duration: "4–5hrs from Jaipur", cost: "Cab ₹2,500–4,000 for full route" },
+    ],
+    tips: ["City Palace and Lake Pichola boat rides are on opposite sides of the same waterfront — plan them together", "Evening boat ride on Lake Pichola (6–7pm) gives the best light on the Lake Palace Hotel", "Ghats near Gangaur Ghat are less crowded than the main touristy stretch — better photography", "Jaisamand Lake (50km): if you have an extra half-day, this 17th-century lake is spectacular and tourist-free"],
+  },
+  Singapore: {
+    options: [
+      { mode: "Flight from Delhi/Mumbai", details: "SIA, IndiGo, Air India, Vistara non-stop to Changi Airport (SIN)", duration: "5.5hrs from Delhi / 5.5hrs from Mumbai", cost: "₹20,000–45,000 RT" },
+      { mode: "Flight from Chennai/Bangalore", details: "SIA, IndiGo, Scoot direct to Changi. Shorter flight time", duration: "3.5–4hrs", cost: "₹18,000–40,000 RT" },
+      { mode: "Via Kuala Lumpur (AirAsia)", details: "Fly to KL Sepang (KLIA2), then budget flight to Singapore Changi. Good for price + Malaysia stopover", duration: "Total 7–9hrs", cost: "₹15,000–30,000 RT" },
+    ],
+    tips: ["Singapore requires a visa for Indian citizens — apply online at ivisa.ica.gov.sg (₹3,500–4,500, 3–5 days)", "Changi MRT (Airport) to city centre takes 30 min (₹250) — don't take taxis from airport", "EZ-Link card for all MRT + bus travel — buy at Changi airport and return for refund at departure", "Singapore is one of the safest cities in the world — no need to worry about safety at night"],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -306,6 +486,43 @@ const TRAVEL_TIPS_DATA: Record<string, Array<{ category: string; tips: string[] 
     { category: "Practical Essentials", tips: ["Download Careem/Uber — metered, transparent pricing (cheaper than regular taxis)", "Dubai Metro covers most major attractions efficiently — buy NOL card", "Friday is weekend — many government services closed; brunch culture on Fri", "Most places accept cards but carry some cash for souks and smaller shops"] },
     { category: "Value for Money", tips: ["Burj Khalifa: book online (₹2,500 off-peak vs ₹5,500 At the Top tickets)", "Free: Dubai Creek, Al Seef Heritage area, Jumeirah Beach, Dubai Frame exterior area", "Dubai Mall food court: ₹300–600/meal vs ₹800–1,500 at restaurants inside", "Dubai Outlet Mall: genuine branded items at 40-70% discount"] },
     { category: "Health & Safety", tips: ["Extreme heat May-Sep: stay hydrated, avoid outdoor activity 12pm-4pm", "Alcohol only in licensed venues (hotels, certain restaurants, bars) — not off-license in dry areas", "Dubai is very safe — petty crime is extremely rare", "Emergency number: 999 (Police), 998 (Ambulance)"] },
+  ],
+  // ── Additional Indian Destinations ──────────────────────────────────────
+  Rishikesh: [
+    { category: "Adventure & Safety", tips: ["Book rafting with operators who provide helmets, life jackets, and a rescue kayak — non-negotiable", "Grade IV rapids (Return to Sender, Golf Course, Three Blind Mice) are for experienced swimmers only", "Avoid solo camping on Ganga river banks — flash floods without warning during monsoon", "Bungee jump at Jumpin Heights (83m) has strict weight limits (45–120kg) — carry ID"] },
+    { category: "Spiritual Etiquette", tips: ["Meat and alcohol are banned in Rishikesh town — don't ask restaurant owners", "Triveni Ghat dawn aarti (5:30am) requires modest dress — dupatta or stole for women", "Photography inside ashrams requires permission — ask before shooting", "The Beatles Ashram (Chaurasi Kutia) is open 9am–5pm; entry ₹600; respects photography"] },
+    { category: "Getting Around", tips: ["Tapovan, Laxman Jhula, Ram Jhula are connected by a 4km walk along the Ganga — do it barefoot at dawn", "Shared autos run between Ram Jhula and Laxman Jhula for ₹20–30", "Haridwar is 20km and easily done as a half-day from Rishikesh (evening aarti + 5am Ganga bath combo)", "Download WhatsApp Mountain Cab contact for reliable cabs to Haridwar/Dehradun"] },
+    { category: "Practical Essentials", tips: ["Cash is king in ghat-side guesthouses — carry ₹2,000–3,000", "Many ayurvedic centres are tourist traps — use certified practitioners for genuine treatment", "Pack warm clothes for evenings (Dec-Mar), even if days are warm", "Mosquitoes at dawn/dusk — carry repellent for riverside walks"] },
+  ],
+  Varanasi: [
+    { category: "Navigating the Old City", tips: ["The old city (ghats area) is a maze — download offline maps or hire a local guide for ₹500/half-day", "Rickshaws and autos can't enter most ghat lanes — 15-min walk from the last auto point is typical", "Color-code your directions: Dashashwamedh is the main/central ghat; Assi Ghat is the southern anchor", "Get deliberately lost in the lanes near Vishwanath Gali — the real Varanasi is in these alleys, not the ghats alone"] },
+    { category: "Religious Respect", tips: ["Vishwanath (Golden) Temple: strict photography ban, bag storage outside, modest dress essential", "Non-Hindus are not permitted inside the inner sanctum of Kashi Vishwanath — the outer courtyard is open", "Don't photograph cremation ceremonies at Manikarnika Ghat — it's a real funeral, not a spectacle", "Touching the bier (funeral pyre) or ashes is deeply offensive — maintain a respectful distance"] },
+    { category: "Health", tips: ["Don't drink or touch Ganga water — despite its spiritual significance, bacterial contamination is high", "Stomach bugs are common — stick to cooked food served hot, avoid raw chutneys at street stalls", "The heat in April-June is intense; schedule all outdoor activity before 10am", "Mosquito net essential in budget guesthouses near the ghats (standing water in old city lanes)"] },
+    { category: "Photography & Ethics", tips: ["Ask before photographing sadhus — 'photo lena hai?' is polite; small tips are appreciated", "The aerial drone above Dashashwamedh aarti needs prior permission from Varanasi police", "Best boat photography: hire a boat at 4:30am (₹800–1,200/hr for private), back to shore by 7am", "Silk-weaving workshops in Adampura welcome visitors — ask for a demonstration, buy directly from weaver"] },
+  ],
+  Andaman: [
+    { category: "Island Logistics", tips: ["All inter-island transport runs on government ferry schedules — plan your itinerary around ferry times", "Havelock to Neil ferry is 1hr; Neil to Port Blair is 1.5hrs — allow 30min buffer for boarding", "Private speedboats (Makruzz, Green Ocean) are more expensive but faster and more reliable", "Book return flights from Port Blair as soon as you book onward — capacity is limited"] },
+    { category: "Water Safety", tips: ["Only swim at beaches with yellow-green flags — red means dangerous currents", "Radhanagar Beach (Beach No. 7) has rip tides — stay between the marked swimming zones", "Scuba certification (PADI Open Water): book with licensed operators only — verify their equipment safety", "Jellyfish are common Oct-Feb at some beaches — water shoes are useful"] },
+    { category: "Restricted Areas & Permits", tips: ["Baratang Island (limestone caves, mangroves) requires Tribal Area Permit from Port Blair (free, same day)", "North Andaman: Diglipur and Ross & Smith Island require prior notice — arrange through Port Blair operators", "Photography near tribal areas (Jarawas) is strictly prohibited — serious legal consequences", "Cellular Jail: book sound & light show tickets in advance during peak season (₹300, book at 6pm)"] },
+    { category: "Practical Essentials", tips: ["Cash is essential — very few ATMs on Havelock and Neil; carry ₹5,000–8,000 in notes", "Mobile data: only BSNL works on outer islands — buy a BSNL SIM or activate BSNL roaming", "Sunscreen and reef-safe versions recommended — standard chemical sunscreens bleach coral", "Bring all medications from mainland — pharmacies on outer islands have limited stock"] },
+  ],
+  Spiti: [
+    { category: "Altitude Acclimatization (Critical)", tips: ["If flying to Manali then driving to Spiti: spend 1 night at Manali (2,050m), then 1 night at Chattru/Batal (4,350m) before Kaza", "If entering via Shimla-Kinnaur route: gradual gain from 1,500m to 3,650m (Kaza) over 2 days — easier on the body", "Headache and slight nausea at Kaza (3,650m) is normal — rest for 24hrs, no strenuous activity", "Descend 300–500m immediately if you experience confusion, difficulty breathing, or inability to walk straight"] },
+    { category: "Permits & Regulations", tips: ["Inner Line Permit required for Kaza subdivision (free, from SDM office Kaza or online at himachal.nic.in)", "Foreign nationals need a separate ILP — carry extra passport photos and copies", "Chandratal Lake camping requires Forest Department permit (obtain in Kaza)", "Photography near military installations (Rohtang, near Kunzum) can attract attention — use judgment"] },
+    { category: "Practical Essentials", tips: ["Petrol stations: Manali, Kaza, Losar — fill up completely before any remote route", "BSNL is the only network that works reliably — no Airtel/Jio beyond Kaza in most areas", "ATMs: one in Kaza (often empty/offline) — carry minimum ₹10,000 cash from Manali/Shimla", "Homestays in Kibber, Langza, Hikkim include all meals — negotiate per-day rates (₹700–1,500/person)"] },
+    { category: "Road & Weather", tips: ["Rohtang Pass opens mid-May, Kunzum La by early June — call district authorities to confirm before travel", "Spiti roads are high-altitude gravel/dirt in sections — 4WD is not necessary but higher ground clearance helps", "Weather changes rapidly at 4,000m+ — warm layers essential even in July", "Night driving is dangerous on mountain switchbacks — always reach accommodation before dark"] },
+  ],
+  Meghalaya: [
+    { category: "Living Root Bridges", tips: ["Double Decker Root Bridge at Nongriat requires 3,500+ steps down and back up — allow 5–6hrs round trip, hire a guide", "Carry trekking shoes (not sandals) for root bridge trails — surfaces are wet and uneven year-round", "Start root bridge treks by 6am to beat the heat and avoid guided group rushes", "Rainbow Falls (2km beyond Nongriat) is worth the extra effort if you have the stamina"] },
+    { category: "Cherrapunji & Mawsynram", tips: ["Even in 'dry' months (Oct-Apr), carry a good raincoat — surprise showers are normal", "Nohkalikai Falls is best Nov-Jan when waterfall is full but roads are safe", "Mawsynram village (wettest place on Earth) is 56km from Shillong — road conditions vary, check ahead", "Stay in eco-homestays for authentic Khasi meals (jadoh, tungrymbai) and cultural experience"] },
+    { category: "Dawki & Northeast Circuit", tips: ["Dawki River (Umngot) crystal-clear water is best Oct-Apr before monsoon silting", "The Bangladesh border at Dawki is open to Indian nationals — interesting but check permits for crossing", "Mawlynnong (Asia's cleanest village): genuine community effort, worth the drive from Shillong", "Shnongpdeng village near Dawki offers kayaking, cliff jumping, and riverside camping (₹500–800/night)"] },
+    { category: "Cultural Sensitivity", tips: ["Meghalaya is a matrilineal society — women own property and family names pass through mothers; interesting to discuss with locals", "Church attendance is very high (Christian-majority state) — Sunday mornings are quiet; respect worship times", "Alcohol is widely available and socially accepted here (unlike some other Northeast states)", "Rice beer (Kyiad) is the traditional drink — try it at a homestay, not from street vendors"] },
+  ],
+  Shimla: [
+    { category: "Getting Around", tips: ["The Mall Road is pedestrian-only from 9am onwards — leave your vehicle at the parking below, walk up", "Lift (elevator) from Cart Road to The Ridge/Mall Road costs ₹20 — use it to save the 300-step climb", "Jakhu Hill temple requires 45min hike up — beware of monkeys, keep snacks hidden", "Local HRTC buses connect Shimla to Kufri (16km), Mashobra, and Chail for ₹40–80"] },
+    { category: "Winter Visits", tips: ["Dec-Feb snowfall possible — check road conditions before traveling (HRTC helpline)", "Kufri and Narkanda (65km) are better for snow activities than Shimla town", "Carry all warm clothing from home — rental quality in Shimla shops is inconsistent", "The Mall Road in snow at night is genuinely magical — plan an evening walk if you're there in January"] },
+    { category: "Dining & Shopping", tips: ["Café Sol (The Mall) has the best views; Ashiana (HPTDC) is reliable for Indian food", "Himachali dham (festive thali) at local restaurants is the must-try — ask specifically", "Best buys: Himachali caps (topi), hand-knit woollens, local apple products (jam, juice, cider)", "Avoid vendors near the main tourist sites — better prices and quality in the lanes behind Mall Road"] },
+    { category: "Practical Tips", tips: ["Weekend crowds (Fri night–Sunday) are intense in summer — visit mid-week if possible", "Viceregal Lodge (now IIAS) requires advance booking for tours — worth doing for colonial history", "Carry cash — small cafes and local shops don't accept cards", "Altitude is 2,200m — first-time visitors from plains may feel slightly breathless; allow 2–3 hours to adjust"] },
   ],
 };
 

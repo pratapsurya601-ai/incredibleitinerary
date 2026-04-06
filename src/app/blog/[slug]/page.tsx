@@ -85,6 +85,44 @@ export default function BlogPostPage({ params }: Props) {
     const parentBlogPost = generatedPost.parentSlug
       ? getPostBySlug(generatedPost.parentSlug) ?? null
       : null;
+
+    // Build FAQ schema based on post type — helps Google show rich FAQ snippets
+    const dest = generatedPost.destination;
+    const dur = parentBlogPost?.duration ?? "a few days";
+    const faqsByType: Record<string, Array<{ q: string; a: string }>> = {
+      "best-time": [
+        { q: `What is the best time to visit ${dest}?`, a: `The best time to visit ${dest} depends on your priorities. Generally Oct–Mar is ideal for most Indian hill and heritage destinations. Check our month-by-month guide above for weather, crowd levels, and pricing by month.` },
+        { q: `Is ${dest} good to visit in monsoon?`, a: `Monsoon (Jun–Sep) brings challenges and beauty in equal measure for most Indian destinations — lush scenery but possible trail closures. The cost-benefit varies strongly by destination type. See the month guide above for specifics on ${dest}.` },
+        { q: `When is ${dest} cheapest to visit?`, a: `Off-peak season (typically Apr–Jun or Jul–Sep for Indian destinations) offers accommodation 30–50% cheaper. You trade peak weather for significant savings. For ${dest} specifically, see the seasonal breakdown above.` },
+      ],
+      "cost-breakdown": [
+        { q: `How much does a trip to ${dest} cost?`, a: `A ${dur} trip to ${dest} costs approximately ₹2,000–5,000/day on a budget, ₹5,000–12,000/day mid-range, or ₹12,000–35,000/day for luxury travel — per person excluding long-distance transport. See the full breakdown above.` },
+        { q: `Is ${dest} expensive for Indian travellers?`, a: `${dest} is generally accessible for Indian travellers with options across all budgets. Accommodation is the biggest variable — choosing wisely between budget guesthouses and mid-range stays can halve your daily cost.` },
+        { q: `What is the budget for ${dur} in ${dest}?`, a: `For ${dur} in ${dest}: budget travellers can manage on ₹2,000–4,000/day including accommodation, food, and local transport. Mid-range travel runs ₹5,000–10,000/day. See the complete breakdown by category above.` },
+      ],
+      "how-to-reach": [
+        { q: `How to reach ${dest} from Delhi?`, a: `${dest} is accessible by flight, train, or road from Delhi depending on location. Flights are fastest; trains offer better value and views; road trips give maximum flexibility. The full route breakdown with costs and durations is listed above.` },
+        { q: `How to reach ${dest} from Mumbai?`, a: `From Mumbai, ${dest} is typically reached by flight (2–3hrs for most Indian destinations) or overnight train. Flight prices from Mumbai tend to be competitive with Delhi fares. See transport options above.` },
+        { q: `What is the nearest airport to ${dest}?`, a: `The nearest airport and transport details for ${dest} are covered in the how-to-reach guide above, including taxi/bus connections from the airport to the destination.` },
+      ],
+      "travel-tips": [
+        { q: `What are the must-know tips for visiting ${dest}?`, a: `Key tips for ${dest}: book accommodation ahead during peak season, carry sufficient cash for areas with limited ATMs, respect local customs and dress codes, and plan activities around weather patterns. The full tips by category are above.` },
+        { q: `Is ${dest} safe for solo travellers?`, a: `${dest} is generally safe for solo travel. Standard precautions apply: share your itinerary, use registered transport, and avoid unmarked trails alone. Women should research destination-specific safety context. Tips for ${dest} are in the guide above.` },
+        { q: `What should I pack for ${dest}?`, a: `Packing for ${dest} depends on season and activities planned. Core items: comfortable walking shoes, sun protection, layers for temperature changes (especially hills), and a small first-aid kit. Destination-specific packing tips are in the guide above.` },
+      ],
+    };
+
+    const faqItems = faqsByType[generatedPost.type] ?? faqsByType["best-time"];
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqItems.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    };
+
     return (
       <>
         <GeneratedPostSchema
@@ -95,6 +133,7 @@ export default function BlogPostPage({ params }: Props) {
           publishDate={generatedPost.publishDate}
           image={generatedPost.image}
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         <BlogSlugNav />
         <GeneratedPostContent post={generatedPost} parent={parentBlogPost} />
         <Footer />
