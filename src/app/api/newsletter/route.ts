@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const YOUR_EMAIL  = "hello@incredibleitinerary.com";
 const RESEND_KEY  = process.env.RESEND_API_KEY || "";
 const BASE        = "https://www.incredibleitinerary.com";
+const GUIDE_COUNT = "313+";
 
 // ── security helpers ────────────────────────────────────────────────────────
 function sanitize(str: string): string {
@@ -42,23 +43,23 @@ function welcomeEmail(email: string, name: string | undefined) {
   const greeting  = firstName ? `Hi ${firstName}` : "Hello";
 
   const blogs = [
-    { emoji: "🏔️", label: "Leh Ladakh 7 Days",       sub: "Pangong Lake · Nubra Valley",       href: `${BASE}/blog/leh-ladakh-7-days` },
-    { emoji: "🏰", label: "Rajasthan 7 Days",          sub: "Jaipur · Jodhpur · Udaipur",         href: `${BASE}/blog/rajasthan-7-days` },
-    { emoji: "🕌", label: "Golden Triangle 7 Days",    sub: "Delhi · Agra · Jaipur",               href: `${BASE}/blog/golden-triangle-7-days` },
-    { emoji: "🏔️", label: "Kashmir 6 Days",            sub: "Dal Lake · Gulmarg · Pahalgam",       href: `${BASE}/blog/kashmir-6-days` },
-    { emoji: "🌿", label: "Kerala 5 Days",              sub: "Backwaters · Munnar · Varkala",       href: `${BASE}/blog/kerala-5-days` },
-    { emoji: "🏖️", label: "Andaman 5 Days",             sub: "Radhanagar · Scuba · Neil Island",   href: `${BASE}/blog/andaman-5-days` },
-    { emoji: "🏖️", label: "Goa 3 Days",                sub: "Beaches · Old Goa · Nightlife",       href: `${BASE}/blog/goa-3-days` },
-    { emoji: "🕯️", label: "Varanasi 3 Days",           sub: "Ghats · Ganga Aarti · Street Food",  href: `${BASE}/blog/varanasi-3-days` },
-    { emoji: "🏔️", label: "Manali 5 Days",              sub: "Rohtang · Solang · Old Manali",      href: `${BASE}/blog/manali-5-days` },
-    { emoji: "☕", label: "Coorg 3 Days",               sub: "Coffee Estates · Abbey Falls",        href: `${BASE}/blog/coorg-3-days` },
+    { emoji: "🏔️", label: "Kashmir 6 Days",            sub: "Dal Lake · Gulmarg · Pahalgam",           href: `${BASE}/blog/kashmir-6-days` },
+    { emoji: "🏰", label: "Rajasthan 7 Days",           sub: "Jaipur · Jodhpur · Udaipur",              href: `${BASE}/blog/rajasthan-7-days` },
+    { emoji: "🌿", label: "Kerala 5 Days",              sub: "Backwaters · Munnar · Varkala",           href: `${BASE}/blog/kerala-5-days` },
+    { emoji: "🏔️", label: "Leh Ladakh 7 Days",         sub: "Pangong · Nubra Valley · Khardung La",    href: `${BASE}/blog/leh-ladakh-7-days` },
+    { emoji: "🕌", label: "Golden Triangle 7 Days",     sub: "Delhi · Agra · Jaipur",                   href: `${BASE}/blog/golden-triangle-7-days` },
+    { emoji: "🏖️", label: "Goa 3 Days",                sub: "Beaches · Old Goa · Nightlife",           href: `${BASE}/blog/goa-3-days` },
+    { emoji: "🌿", label: "Meghalaya 5 Days",           sub: "Living Root Bridges · Dawki · Cherrapunji", href: `${BASE}/blog/meghalaya-5-days` },
+    { emoji: "🏔️", label: "Manali 5 Days",              sub: "Rohtang · Solang · Old Manali",           href: `${BASE}/blog/manali-5-days` },
+    { emoji: "🤿", label: "Andaman 5 Days",             sub: "Radhanagar · Scuba · Neil Island",        href: `${BASE}/blog/andaman-5-days` },
+    { emoji: "🕯️", label: "Varanasi 3 Days",           sub: "Ghats · Ganga Aarti · Street Food",       href: `${BASE}/blog/varanasi-3-days` },
   ];
 
   return {
     from: "IncredibleItinerary <hello@incredibleitinerary.com>",
     to: [email],
     reply_to: YOUR_EMAIL,
-    subject: "Your free India travel guides — all 19 destinations 🧭",
+    subject: `Your free India travel guides are here 🧭`,
     html: `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IncredibleItinerary</title></head>
@@ -86,7 +87,7 @@ function welcomeEmail(email: string, name: string | undefined) {
     <!-- Greeting -->
     <p style="margin:0 0 8px;font-size:22px;font-weight:300;color:#161008;font-family:Georgia,serif;">${greeting},</p>
     <p style="margin:0 0 20px;font-size:14px;color:#5a4a3a;line-height:1.7;">
-      Welcome to IncredibleItinerary — free, handcrafted India itineraries that tell you exactly where you're being overcharged, and the better cheaper alternatives locals actually use.
+      Welcome to IncredibleItinerary — ${GUIDE_COUNT} free, handcrafted travel guides that tell you exactly where you're being overcharged, and the better cheaper alternatives locals actually use.
     </p>
 
     <!-- Savings badge -->
@@ -99,7 +100,7 @@ function welcomeEmail(email: string, name: string | undefined) {
     </div>
 
     <!-- Guides heading -->
-    <p style="margin:0 0 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7a6a;font-weight:600;">Your free guides — all 19 destinations</p>
+    <p style="margin:0 0 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7a6a;font-weight:600;">10 of our most popular free guides</p>
 
     <!-- Blog links -->
     <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
@@ -122,34 +123,35 @@ function welcomeEmail(email: string, name: string | undefined) {
       </tr>`).join("")}
     </table>
 
-    <!-- Quiz CTA -->
+    <!-- View all -->
     <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
-      <tr><td style="background:#161008;border-radius:10px;padding:18px;text-align:center;">
-        <p style="margin:0 0 4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#C9A96E;">Not sure where to go?</p>
-        <a href="${BASE}/quiz" style="display:inline-block;margin-top:8px;background:#C9A96E;color:#161008;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.5px;padding:12px 28px;border-radius:6px;">
-          Take the 60-Second Destination Quiz →
+      <tr><td style="text-align:center;">
+        <a href="${BASE}/blog" style="display:inline-block;background:#161008;color:#C9A96E;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:13px 32px;border-radius:8px;">
+          View All ${GUIDE_COUNT} Free Guides →
         </a>
       </td></tr>
     </table>
+
+    <!-- Quiz CTA -->
+    <div style="background:#f8f2e8;border-radius:10px;padding:18px;margin-bottom:24px;text-align:center;border:1.5px solid #e8dfc8;">
+      <p style="margin:0 0 6px;font-size:12px;color:#8a7a6a;">Not sure where to go next?</p>
+      <a href="${BASE}/quiz" style="display:inline-block;background:#C9A96E;color:#161008;text-decoration:none;font-size:12px;font-weight:700;padding:11px 26px;border-radius:6px;">
+        Take the 60-Second Destination Quiz →
+      </a>
+    </div>
 
     <!-- Plan my trip CTA -->
-    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
-      <tr><td style="border:1.5px solid #C9A96E;border-radius:10px;padding:16px;text-align:center;">
-        <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#161008;">Want a plan built for YOUR trip?</p>
-        <p style="margin:0 0 12px;font-size:12px;color:#8a7a6a;line-height:1.5;">Tell us your dates, group size and budget — we'll send a personalised day-by-day itinerary within 24 hours. Free.</p>
-        <a href="${BASE}/#packages" style="display:inline-block;background:#1E6B5E;color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.5px;padding:10px 24px;border-radius:6px;">
-          Get My Free Custom Itinerary →
-        </a>
-      </td></tr>
-    </table>
+    <div style="border:1.5px solid #C9A96E;border-radius:10px;padding:16px 20px;margin-bottom:28px;text-align:center;">
+      <p style="margin:0 0 5px;font-size:13px;font-weight:600;color:#161008;">Want a plan built just for your trip?</p>
+      <p style="margin:0 0 12px;font-size:12px;color:#8a7a6a;line-height:1.5;">Tell us your dates, group size &amp; budget — personalised day-by-day itinerary in 24 hours. Free.</p>
+      <a href="${BASE}/contact" style="display:inline-block;background:#1E6B5E;color:#fff;text-decoration:none;font-size:12px;font-weight:600;padding:10px 22px;border-radius:6px;">
+        Get My Free Custom Itinerary →
+      </a>
+    </div>
 
     <!-- Sign-off -->
-    <p style="margin:0 0 4px;font-size:13px;color:#5a4a3a;line-height:1.7;">
-      Happy travelling,
-    </p>
-    <p style="margin:0 0 20px;font-size:13px;font-weight:600;color:#161008;">
-      The IncredibleItinerary Team
-    </p>
+    <p style="margin:0 0 4px;font-size:13px;color:#5a4a3a;line-height:1.7;">Happy travelling,</p>
+    <p style="margin:0;font-size:13px;font-weight:600;color:#161008;">Surya · IncredibleItinerary</p>
 
   </td></tr>
 

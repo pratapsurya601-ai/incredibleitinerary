@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/config";
 import { blogPosts } from "@/data/blog";
+import FooterNewsletter from "@/components/layout/FooterNewsletter";
 
 const REGIONS = {
   "Rajasthan": [
@@ -81,6 +82,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#0e0905] text-white/45 pt-16 pb-8 px-6 md:px-12">
       <div className="max-w-[1180px] mx-auto">
+
+        {/* Newsletter strip */}
+        <FooterNewsletter />
 
         {/* Top: Brand + Quick Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
