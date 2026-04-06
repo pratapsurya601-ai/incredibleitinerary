@@ -32,7 +32,7 @@ const PHASES = [
     status: "upcoming",
     goal: "Triple indexed pages to 300+",
     tasks: [
-      { done: false, text: "Generate 'Best Time to Visit X' for all 96 destinations" },
+      { done: false, text: "Generate 'Best Time to Visit X' for all 313+ destinations" },
       { done: false, text: "Generate 'X for Couples' budget guides" },
       { done: false, text: "Generate 'X Packing List' SEO pages" },
       { done: false, text: "Add 20 more India destinations (Northeast, South)" },
@@ -86,11 +86,11 @@ const STREAMS = [
     potential: "₹20K–80K/month",
     potentialNote: "at scale",
     status: "live",
-    statusLabel: "Live on 96 blogs",
+    statusLabel: "Live on 313+ blogs",
     color: "border-blue-300 bg-blue-50",
     accent: "text-blue-700",
     bar: "bg-blue-400",
-    detail: "4–6% commission per booking. Every guide mentions hotels with prices. 96 guides × average 3 hotel links = 288 affiliate touchpoints earning while you sleep.",
+    detail: "4–6% commission per booking. Every guide mentions hotels with prices. 313+ guides × average 3 hotel links = 288 affiliate touchpoints earning while you sleep.",
     action: "Add Stay22 map widget to top 10 India guides for visual bookings.",
   },
   {
@@ -102,7 +102,7 @@ const STREAMS = [
     potential: "₹10K–50K/month",
     potentialNote: "8% per booking",
     status: "live",
-    statusLabel: "Live on 96 blogs",
+    statusLabel: "Live on 313+ blogs",
     color: "border-orange-300 bg-orange-50",
     accent: "text-orange-700",
     bar: "bg-orange-400",
@@ -118,7 +118,7 @@ const STREAMS = [
     potential: "₹5K–30K/month",
     potentialNote: "3 PDFs live",
     status: "partial",
-    statusLabel: "3 of 96 destinations",
+    statusLabel: "3 of 313+ destinations",
     color: "border-teal-300 bg-teal-50",
     accent: "text-teal-700",
     bar: "bg-teal-400",
@@ -160,10 +160,10 @@ const STREAMS = [
 ];
 
 const SEO_OPPORTUNITIES = [
-  { page: "Best time to visit [destination]", volume: "High", pages: 96, effort: "Low" },
-  { page: "[Destination] for couples — budget & itinerary", volume: "High", pages: 96, effort: "Low" },
-  { page: "[Destination] packing list", volume: "Medium", pages: 96, effort: "Low" },
-  { page: "[Destination] budget for family of 4", volume: "Medium", pages: 96, effort: "Low" },
+  { page: "Best time to visit [destination]", volume: "High", pages: 313, effort: "Low" },
+  { page: "[Destination] for couples — budget & itinerary", volume: "High", pages: 313, effort: "Low" },
+  { page: "[Destination] packing list", volume: "Medium", pages: 313, effort: "Low" },
+  { page: "[Destination] budget for family of 4", volume: "Medium", pages: 313, effort: "Low" },
   { page: "How to get from [A] to [B]", volume: "High", pages: 50, effort: "Medium" },
   { page: "[Destination] travel guide in Hindi", volume: "High", pages: 10, effort: "Medium" },
 ];
@@ -206,7 +206,7 @@ export default function RoadmapClient() {
                 The Monetisation Roadmap
               </h1>
               <p className="text-sm text-white/50 font-light max-w-[520px] leading-relaxed">
-                96 guides × smart affiliate placement × SEO scale = ₹2L+/month. Every guide you publish is an asset that earns for 5–10 years.
+                313+ guides × smart affiliate placement × SEO scale = ₹2L+/month. Every guide you publish is an asset that earns for 5–10 years.
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl px-7 py-5 text-center">
@@ -396,7 +396,7 @@ export default function RoadmapClient() {
         <section>
           <span className="section-label">Programmatic SEO</span>
           <h2 className="font-serif text-[clamp(1.6rem,2.5vw,2.2rem)] font-light text-ink mb-3">
-            Triple your pages from 96 → 300+
+            Expand from 313 core guides to 600+ with programmatic SEO
           </h2>
           <p className="text-sm text-muted font-light mb-8 max-w-[560px] leading-relaxed">
             Each destination can generate 5+ SEO-optimised pages with minimal effort. These are templated but highly rankable — each one captures a different search intent.
@@ -479,7 +479,7 @@ export default function RoadmapClient() {
         {/* Summary numbers */}
         <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { num: "96+", label: "Live guides (assets earning now)" },
+            { num: "313+", label: "Live guides (assets earning now)" },
             { num: "288+", label: "Affiliate touchpoints across site" },
             { num: "530+", label: "Programmatic pages to build" },
             { num: "₹2L", label: "Monthly target (6 months)" },

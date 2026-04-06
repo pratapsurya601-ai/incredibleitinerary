@@ -58,7 +58,7 @@ function ShareBar() {
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       {[
         { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Jaipur 3-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://twitter.com/intent/tweet?text=Jaipur in 3 Days guide&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://x.com/intent/tweet?text=Jaipur in 3 Days guide&url=${typeof window !== "undefined" ? window.location.href : ""}` },
       ].map((s) => (
         <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
           className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>

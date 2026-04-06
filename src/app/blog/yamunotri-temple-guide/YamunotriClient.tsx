@@ -63,7 +63,7 @@ function ShareBar() {
         {
           label: "Twitter",
           color: "bg-[#1DA1F2] text-white",
-          href: `https://twitter.com/intent/tweet?text=Yamunotri Temple Guide 2026&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `https://x.com/intent/tweet?text=Yamunotri Temple Guide 2026&url=${typeof window !== "undefined" ? window.location.href : ""}`,
         },
       ].map((s) => (
         <a

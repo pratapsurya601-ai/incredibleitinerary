@@ -432,7 +432,7 @@ function InternalToolsCTA({ destination }: { destination: string }) {
   return (
     <div className="bg-parchment rounded-xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
       <div>
-        <p className="text-sm font-medium text-ink mb-1">Plan smarter with our free tools</p>
+        <p className="text-sm font-medium text-stone-900 mb-1">Plan smarter with our free tools</p>
         <p className="text-xs text-muted font-light">Estimate your exact {destination} budget and check visa requirements before you book.</p>
       </div>
       <div className="flex gap-3 flex-shrink-0">
@@ -767,7 +767,7 @@ export function generateBestTimeContent(post: GeneratedPost, parent: ParentMeta)
       <div className="space-y-4 my-6">
         {faqs.map((faq, i) => (
           <div key={i} className="border border-parchment-2 rounded-xl p-5 bg-white">
-            <p className="text-sm font-medium text-ink mb-2">{faq.q}</p>
+            <p className="text-sm font-medium text-stone-900 mb-2">{faq.q}</p>
             <p className="text-sm text-muted font-light leading-relaxed">{faq.a}</p>
           </div>
         ))}
@@ -775,7 +775,7 @@ export function generateBestTimeContent(post: GeneratedPost, parent: ParentMeta)
 
       <div className="bg-gold/10 border border-gold/20 rounded-xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-ink mb-1">Read the full {destination} itinerary guide</p>
+          <p className="text-sm font-medium text-stone-900 mb-1">Read the full {destination} itinerary guide</p>
           <p className="text-xs text-muted font-light">Our {duration} guide covers routes, budgets, and day-by-day plans.</p>
         </div>
         <CTALink href={`/blog/${parent.slug}`}>View {duration} Guide →</CTALink>
@@ -937,7 +937,7 @@ export function generateCostContent(post: GeneratedPost, parent: ParentMeta): JS
       <div className="space-y-4 my-6">
         {faqs.map((faq, i) => (
           <div key={i} className="border border-parchment-2 rounded-xl p-5 bg-white">
-            <p className="text-sm font-medium text-ink mb-2">{faq.q}</p>
+            <p className="text-sm font-medium text-stone-900 mb-2">{faq.q}</p>
             <p className="text-sm text-muted font-light leading-relaxed">{faq.a}</p>
           </div>
         ))}
@@ -945,7 +945,7 @@ export function generateCostContent(post: GeneratedPost, parent: ParentMeta): JS
 
       <div className="bg-gold/10 border border-gold/20 rounded-xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-ink mb-1">See the full {destination} itinerary</p>
+          <p className="text-sm font-medium text-stone-900 mb-1">See the full {destination} itinerary</p>
           <p className="text-xs text-muted font-light">Our {duration} guide includes day-by-day plans with real costs built in.</p>
         </div>
         <CTALink href={`/blog/${parent.slug}`}>View {duration} Guide →</CTALink>
@@ -1028,7 +1028,7 @@ export function generateHowToReachContent(post: GeneratedPost, parent: ParentMet
           <div key={i} className="bg-white border border-parchment-2 rounded-xl p-5 hover:border-gold/40 transition-colors">
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div className="flex-1">
-                <p className="text-sm font-medium text-ink mb-1.5 flex items-center gap-2">
+                <p className="text-sm font-medium text-stone-900 mb-1.5 flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-gold/10 text-gold-dark text-xs flex items-center justify-center font-bold flex-shrink-0">{i + 1}</span>
                   {opt.mode}
                 </p>
@@ -1080,7 +1080,7 @@ export function generateHowToReachContent(post: GeneratedPost, parent: ParentMet
       <div className="space-y-4 my-6">
         {faqs.map((faq, i) => (
           <div key={i} className="border border-parchment-2 rounded-xl p-5 bg-white">
-            <p className="text-sm font-medium text-ink mb-2">{faq.q}</p>
+            <p className="text-sm font-medium text-stone-900 mb-2">{faq.q}</p>
             <p className="text-sm text-muted font-light leading-relaxed">{faq.a}</p>
           </div>
         ))}
@@ -1088,7 +1088,7 @@ export function generateHowToReachContent(post: GeneratedPost, parent: ParentMet
 
       <div className="bg-gold/10 border border-gold/20 rounded-xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-ink mb-1">See the full {destination} {duration} itinerary</p>
+          <p className="text-sm font-medium text-stone-900 mb-1">See the full {destination} {duration} itinerary</p>
           <p className="text-xs text-muted font-light">Includes accommodation recommendations near transport hubs.</p>
         </div>
         <CTALink href={`/blog/${parent.slug}`}>View {duration} Guide →</CTALink>
@@ -1181,7 +1181,7 @@ export function generateTravelTipsContent(post: GeneratedPost, parent: ParentMet
       <div className="space-y-4 my-6">
         {faqs.map((faq, i) => (
           <div key={i} className="border border-parchment-2 rounded-xl p-5 bg-white">
-            <p className="text-sm font-medium text-ink mb-2">{faq.q}</p>
+            <p className="text-sm font-medium text-stone-900 mb-2">{faq.q}</p>
             <p className="text-sm text-muted font-light leading-relaxed">{faq.a}</p>
           </div>
         ))}
@@ -1189,7 +1189,7 @@ export function generateTravelTipsContent(post: GeneratedPost, parent: ParentMet
 
       <div className="bg-gold/10 border border-gold/20 rounded-xl p-6 my-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-ink mb-1">Read the complete {destination} {duration} itinerary</p>
+          <p className="text-sm font-medium text-stone-900 mb-1">Read the complete {destination} {duration} itinerary</p>
           <p className="text-xs text-muted font-light">Day-by-day plans with accommodation, transport, and real budgets.</p>
         </div>
         <CTALink href={`/blog/${parent.slug}`}>View {duration} Guide →</CTALink>

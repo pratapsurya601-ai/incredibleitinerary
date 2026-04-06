@@ -52,7 +52,7 @@ function ShareBar() {
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       <a href={`mailto:?subject=Kerala 5-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`}
         className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
-      <a href={`https://twitter.com/intent/tweet?text=Kerala%205-Day%20Travel%20Guide&url=${typeof window !== "undefined" ? window.location.href : ""}`}
+      <a href={`https://x.com/intent/tweet?text=Kerala%205-Day%20Travel%20Guide&url=${typeof window !== "undefined" ? window.location.href : ""}`}
         target="_blank" rel="noopener noreferrer"
         className="bg-[#1DA1F2] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
       <button onClick={copy}
