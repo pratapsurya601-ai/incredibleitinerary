@@ -187,6 +187,43 @@ const data: UniversalBlogData = {
         },
       ],
     },
+    {
+      label: "Luxury",
+      sub: "₹15,000–30,000/day",
+      days: [
+        {
+          day: "Days 1–2",
+          title: "Guwahati — Private Guided & Brahmaputra Cruise",
+          items: [
+            "Stay at Vivanta by Taj Guwahati (₹7,000–12,000/night, Brahmaputra-view rooms). Private airport transfer with meet-and-greet.",
+            "Private expert guide for Kamakhya Temple (₹2,000–3,000/day) — priority darshan queue, full tantric history briefing, restricted inner sanctum access arranged through temple trust.",
+            "MV Charaidew luxury Brahmaputra river cruise (Assam Bengal Navigation, ₹12,000–20,000/night all-inclusive) — multi-day cruise option covers Kaziranga and Majuli from the river.",
+            "Private cultural evening: Bihu dance performance arranged at the hotel (₹5,000–8,000 for group performance).",
+          ],
+          cost: "₹12,000–20,000/day",
+        },
+        {
+          day: "Days 3–6",
+          title: "Kaziranga & Meghalaya — Premium Safari & Resort",
+          items: [
+            "Kaziranga: Diphlu River Lodge (₹8,000–14,000/night all-inclusive) — private jeep safaris, expert naturalist, sunrise Brahmaputra photography.",
+            "Meghalaya: Ri Kynjai Resort (Umiam Lake, ₹8,000–14,000/night) — private SUV for root bridge trek, Dawki boat at dawn, Mawlynnong village.",
+            "Helicopter transfer option Guwahati to Tezpur (₹15,000–25,000 charter) to avoid long drives.",
+          ],
+          cost: "₹15,000–25,000/day",
+        },
+        {
+          day: "Days 7–10",
+          title: "Tawang & Majuli — Helicopter & Private Circuit",
+          items: [
+            "Tawang: private SUV with experienced AP driver (₹7,000–10,000/day hire), Hotel Tashi Gang luxury suite (₹4,000–7,000). Private monastery guide.",
+            "Majuli: La Maison de Ananda premium suite (₹5,000–8,000/night, all meals, private Satra tours). Private boat on Brahmaputra at sunset.",
+            "Return Guwahati: business class onward flight, Assam silk and tea shopping at Pragjyotika emporium.",
+          ],
+          cost: "₹18,000–30,000/day",
+        },
+      ],
+    },
   ],
   budgetTable: [
     {
