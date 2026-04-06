@@ -3,6 +3,10 @@
     {
       "path": "/api/cron/email-drip",
       "schedule": "30 3 * * *"
+    },
+    {
+      "path": "/api/cron/indexnow",
+      "schedule": "0 6 * * *"
     }
   ]
 }

@@ -16941,8 +16941,13 @@ export function getGeneratedPostBySlug(slug: string): GeneratedPost | undefined 
 }
 
 export function getPublishedGeneratedPosts(): GeneratedPost[] {
+  // Staggered at 10/day from 2026-03-01 — respects Google crawl budget
+  // All 1208 posts live by ~June 2026 instead of waiting until 2033
+  const START = new Date('2026-03-01T00:00:00Z');
   const now = new Date();
-  return generatedPosts.filter((p) => new Date(p.publishDate) <= now);
+  const daysSinceStart = Math.floor((now.getTime() - START.getTime()) / 86_400_000);
+  const limit = Math.min(Math.max(0, daysSinceStart * 10), generatedPosts.length);
+  return generatedPosts.slice(0, limit);
 }
 
 export function getGeneratedPostsByParent(parentSlug: string): GeneratedPost[] {
