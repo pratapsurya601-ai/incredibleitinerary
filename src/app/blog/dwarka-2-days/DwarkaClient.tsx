@@ -12,13 +12,13 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const DWARKA_TOC = [
-  { id: "plans",      emoji: "\u26A1", label: "Pick Your Plan" },
+  { id: "plans",      emoji: "⚡", label: "Pick Your Plan" },
   { id: "itinerary",  emoji: "\uD83D\uDCC5", label: "Day-by-Day Itinerary" },
   { id: "highlights", emoji: "\uD83C\uDFDB\uFE0F", label: "Must-See Highlights" },
   { id: "budget",     emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-  { id: "mistakes",   emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "mistakes",   emoji: "❌", label: "Mistakes to Avoid" },
   { id: "tips",       emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",        emoji: "\u2753", label: "FAQ" },
+  { id: "faq",        emoji: "❓", label: "FAQ" },
 ];
 
 // ── Reading Progress Bar ──────────────────────────────────────────────────────
@@ -65,7 +65,7 @@ function ShareBar() {
       ))}
       <button onClick={copy}
         className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -102,7 +102,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
                 {item}
               </li>
             ))}
@@ -126,7 +126,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -139,8 +139,8 @@ export default function DwarkaClient() {
   const [activeTab, setActiveTab] = useState<"A" | "B">("A");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under \u20B94k", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\uD83D\uDE4F", label: "Pilgrimage", sub: "\u20B95k\u201312k", color: "border-purple-300 bg-purple-50 text-purple-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under ₹4k", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "\uD83D\uDE4F", label: "Pilgrimage", sub: "₹5k–12k", color: "border-purple-300 bg-purple-50 text-purple-800" },
   ];
 
   return (
@@ -180,9 +180,9 @@ export default function DwarkaClient() {
                   Pilgrimage & Coast
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">12 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -204,10 +204,10 @@ export default function DwarkaClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDEE\uD83C\uDDF3"} India</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDDD3"} 2 Days</span>
-              <span>{"\u00B7"}</span>
-              <span>{"\uD83D\uDCB0"} From {"\u20B9"}3,500</span>
+              <span>{"·"}</span>
+              <span>{"\uD83D\uDCB0"} From {"₹"}3,500</span>
             </div>
           </div>
 
@@ -220,7 +220,7 @@ export default function DwarkaClient() {
 
           {/* ── PICK YOUR PLAN ── */}
           <section id="plans" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Pick Your Plan</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Pick Your Plan</h2>
             <p className="text-sm text-muted font-light mb-6">Two ways to experience Dwarka — pick yours and jump straight to the itinerary.</p>
             <div className="grid grid-cols-2 gap-3">
               {plans.map((p) => (
@@ -229,7 +229,7 @@ export default function DwarkaClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"→"}</p>
                 </button>
               ))}
             </div>
@@ -238,8 +238,8 @@ export default function DwarkaClient() {
           {/* ── STAT CARDS ── */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="2 Days" />
-            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"\u20B93,500"} />
-            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Oct \u2013 Mar" />
+            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"₹3,500"} />
+            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Oct – Mar" />
             <StatCard icon={"\u2708\uFE0F"} label="Nearest Airport" value="Jamnagar" />
           </div>
 
@@ -250,10 +250,10 @@ export default function DwarkaClient() {
               {[
                 { title: "Dwarkadhish Temple", desc: "The 2,200-year-old five-storey temple dedicated to Lord Krishna stands on the banks of the Gomti River where it meets the Arabian Sea. The 78-metre spire (shikhar) is visible from kilometres away. Morning aarti at 6:30am with temple bells echoing over the ocean is the definitive Dwarka experience.", emoji: "\uD83D\uDD49\uFE0F", color: "bg-amber-50 border-amber-200" },
                 { title: "Nageshwar Jyotirlinga", desc: "One of the 12 sacred Jyotirlingas, located 16km from Dwarka. The massive 25-metre Shiva statue outside is the landmark, but the real power is in the underground sanctum. Visit early morning when the temple is quiet and the atmosphere is meditative.", emoji: "\uD83D\uDD31", color: "bg-teal-50 border-teal-200" },
-                { title: "Bet Dwarka Island", desc: "Bet Dwarka island is a 30-minute ferry ride and feels like stepping 200 years back in time \u2014 no cars, no noise, just narrow lanes and ancient temples. The Krishna temple here is believed to be where Krishna actually lived. The Sudama Setu bridge and marine sanctuary add to the experience.", emoji: "\uD83C\uDFDD\uFE0F", color: "bg-rose-50 border-rose-200" },
-                { title: "Rukmini Temple", desc: "Dedicated to Krishna\u2019s queen, this ornately carved temple sits 2km from the main town. The legend says Durvasa\u2019s curse separated Rukmini from Krishna, so her temple had to be built at a distance. The intricate stone carvings on the exterior walls rival any in Gujarat.", emoji: "\uD83C\uDFDB\uFE0F", color: "bg-amber-50 border-amber-200" },
-                { title: "Gomti Ghat & Confluence", desc: "The sacred ghat where the Gomti River meets the Arabian Sea. Pilgrims bathe here before entering Dwarkadhish Temple. Walk down the 56 steps at sunset \u2014 the light over the water with the temple spire behind you is Dwarka\u2019s most photographed moment.", emoji: "\uD83C\uDF05", color: "bg-teal-50 border-teal-200" },
-                { title: "Dwarka Lighthouse", desc: "The lighthouse on the coast near Dwarkadhish Temple offers a panoramic view of the temple complex, the Gomti-sea confluence, and the Arabian Sea stretching to the horizon. Open afternoons only (4\u20135:30pm). Entry is \u20B925. Worth every rupee for the aerial perspective of Dwarka\u2019s sacred geography.", emoji: "\uD83D\uDEA8", color: "bg-rose-50 border-rose-200" },
+                { title: "Bet Dwarka Island", desc: "Bet Dwarka island is a 30-minute ferry ride and feels like stepping 200 years back in time — no cars, no noise, just narrow lanes and ancient temples. The Krishna temple here is believed to be where Krishna actually lived. The Sudama Setu bridge and marine sanctuary add to the experience.", emoji: "\uD83C\uDFDD\uFE0F", color: "bg-rose-50 border-rose-200" },
+                { title: "Rukmini Temple", desc: "Dedicated to Krishna’s queen, this ornately carved temple sits 2km from the main town. The legend says Durvasa’s curse separated Rukmini from Krishna, so her temple had to be built at a distance. The intricate stone carvings on the exterior walls rival any in Gujarat.", emoji: "\uD83C\uDFDB\uFE0F", color: "bg-amber-50 border-amber-200" },
+                { title: "Gomti Ghat & Confluence", desc: "The sacred ghat where the Gomti River meets the Arabian Sea. Pilgrims bathe here before entering Dwarkadhish Temple. Walk down the 56 steps at sunset — the light over the water with the temple spire behind you is Dwarka’s most photographed moment.", emoji: "\uD83C\uDF05", color: "bg-teal-50 border-teal-200" },
+                { title: "Dwarka Lighthouse", desc: "The lighthouse on the coast near Dwarkadhish Temple offers a panoramic view of the temple complex, the Gomti-sea confluence, and the Arabian Sea stretching to the horizon. Open afternoons only (4–5:30pm). Entry is ₹25. Worth every rupee for the aerial perspective of Dwarka’s sacred geography.", emoji: "\uD83D\uDEA8", color: "bg-rose-50 border-rose-200" },
               ].map((h) => (
                 <TipCard key={h.title} icon={h.emoji} title={h.title} desc={h.desc} color={h.color} />
               ))}
@@ -284,39 +284,39 @@ export default function DwarkaClient() {
                   <span className="text-2xl">{"\uD83D\uDCB0"}</span>
                   <div>
                     <p className="text-sm font-medium text-amber-800">Budget Plan — Dwarka Town</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Dharamshala or guesthouse near temple {"\u00B7"} {"\u20B9"}300\u2013{"\u20B9"}800/night {"\u00B7"} Auto: {"\u20B9"}80\u2013150/ride</p>
+                    <p className="text-xs text-amber-600 font-light">Stay: Dharamshala or guesthouse near temple {"·"} {"₹"}300–{"₹"}800/night {"·"} Auto: {"₹"}80–150/ride</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Dwarkadhish Temple, Gomti Ghat & Lighthouse"
                   items={[
-                    "6:00am \u2014 Morning aarti at Dwarkadhish Temple. Reach by 5:45am for a spot near the front. The bells, chanting, and sea breeze through the open temple is unforgettable.",
-                    "7:30am \u2014 Walk down Gomti Ghat\u2019s 56 steps to the river-sea confluence. Pilgrims bathe here \u2014 even if you skip the dip, the morning light on the water is worth the walk.",
-                    "8:30am \u2014 Breakfast at a local dhaba near the temple. Gujarati nashta \u2014 dhokla, jalebi-fafda, chai \u2014 for \u20B950\u201380.",
-                    "10:00am \u2014 Auto to Rukmini Temple (2km, \u20B980). The carved exterior walls tell the entire Rukmini-Krishna story in stone. Budget 45 minutes.",
-                    "11:30am \u2014 Return to town. Walk through the old bazaar lanes for brass items, beadwork, and temple souvenirs.",
-                    "12:30pm \u2014 Lunch at a Gujarati thali restaurant. Unlimited thali with dal, sabzi, roti, rice, and buttermilk for \u20B9100\u2013150.",
-                    "2:30pm \u2014 Swaminarayan Temple \u2014 a peaceful contrast to the main temple\u2019s intensity. Free entry.",
-                    "4:00pm \u2014 Dwarka Lighthouse (open 4\u20135:30pm, \u20B925). The 360-degree view of the temple complex and coastline is the best perspective in Dwarka.",
-                    "5:30pm \u2014 Sunset at Gomti Ghat. The evening light behind the temple spire over the Arabian Sea is spectacular.",
-                    "7:00pm \u2014 Evening aarti at Dwarkadhish Temple. Less crowded than morning but equally powerful.",
-                    "8:00pm \u2014 Dinner at a local restaurant. Gujarati thali or street food for \u20B9100\u2013150.",
+                    "6:00am — Morning aarti at Dwarkadhish Temple. Reach by 5:45am for a spot near the front. The bells, chanting, and sea breeze through the open temple is unforgettable.",
+                    "7:30am — Walk down Gomti Ghat’s 56 steps to the river-sea confluence. Pilgrims bathe here — even if you skip the dip, the morning light on the water is worth the walk.",
+                    "8:30am — Breakfast at a local dhaba near the temple. Gujarati nashta — dhokla, jalebi-fafda, chai — for ₹50–80.",
+                    "10:00am — Auto to Rukmini Temple (2km, ₹80). The carved exterior walls tell the entire Rukmini-Krishna story in stone. Budget 45 minutes.",
+                    "11:30am — Return to town. Walk through the old bazaar lanes for brass items, beadwork, and temple souvenirs.",
+                    "12:30pm — Lunch at a Gujarati thali restaurant. Unlimited thali with dal, sabzi, roti, rice, and buttermilk for ₹100–150.",
+                    "2:30pm — Swaminarayan Temple — a peaceful contrast to the main temple’s intensity. Free entry.",
+                    "4:00pm — Dwarka Lighthouse (open 4–5:30pm, ₹25). The 360-degree view of the temple complex and coastline is the best perspective in Dwarka.",
+                    "5:30pm — Sunset at Gomti Ghat. The evening light behind the temple spire over the Arabian Sea is spectacular.",
+                    "7:00pm — Evening aarti at Dwarkadhish Temple. Less crowded than morning but equally powerful.",
+                    "8:00pm — Dinner at a local restaurant. Gujarati thali or street food for ₹100–150.",
                   ]}
-                  cost={"\u20B9800\u20131,200"}
+                  cost={"₹800–1,200"}
                 />
                 <DayCard day="Day 2" title="Bet Dwarka Island & Nageshwar Jyotirlinga"
                   items={[
-                    "6:00am \u2014 Early bus or shared auto to Okha port (30km, \u20B940\u201360 by bus). First ferries have the shortest queues.",
-                    "7:30am \u2014 Government ferry to Bet Dwarka island (\u20B920\u201350, 30 minutes). The ride across the Gulf of Kutch is beautiful in morning light.",
-                    "8:00am \u2014 Bet Dwarka Krishna Temple \u2014 believed to be Krishna\u2019s actual residence. The island has no cars, just narrow lanes and ancient shrines. Walk everywhere.",
-                    "9:30am \u2014 Explore Hanuman Dandi Temple and the island\u2019s coastal path. The silence here compared to mainland Dwarka is striking.",
-                    "10:30am \u2014 Return ferry to Okha. Pick up fresh fish snacks at the port if you eat seafood.",
-                    "11:30am \u2014 Auto or bus to Nageshwar Jyotirlinga (16km from Dwarka, \u20B9100\u2013150 by shared auto).",
-                    "12:00pm \u2014 Nageshwar Mahadev Temple darshan. The 25-metre Shiva statue is impressive, but spend time in the underground sanctum. Photography is not allowed inside.",
-                    "1:30pm \u2014 Gopi Talav \u2014 a lake nearby with yellow clay banks. Legend says the Gopis\u2019 tears turned the soil golden. Free entry, 20 minutes.",
-                    "2:30pm \u2014 Late lunch back in Dwarka town (\u20B9100\u2013150).",
-                    "4:00pm \u2014 Final visit to Dwarkadhish Temple or depart. Dwarka\u2013Jamnagar bus takes 3 hours (\u20B9150).",
+                    "6:00am — Early bus or shared auto to Okha port (30km, ₹40–60 by bus). First ferries have the shortest queues.",
+                    "7:30am — Government ferry to Bet Dwarka island (₹20–50, 30 minutes). The ride across the Gulf of Kutch is beautiful in morning light.",
+                    "8:00am — Bet Dwarka Krishna Temple — believed to be Krishna’s actual residence. The island has no cars, just narrow lanes and ancient shrines. Walk everywhere.",
+                    "9:30am — Explore Hanuman Dandi Temple and the island’s coastal path. The silence here compared to mainland Dwarka is striking.",
+                    "10:30am — Return ferry to Okha. Pick up fresh fish snacks at the port if you eat seafood.",
+                    "11:30am — Auto or bus to Nageshwar Jyotirlinga (16km from Dwarka, ₹100–150 by shared auto).",
+                    "12:00pm — Nageshwar Mahadev Temple darshan. The 25-metre Shiva statue is impressive, but spend time in the underground sanctum. Photography is not allowed inside.",
+                    "1:30pm — Gopi Talav — a lake nearby with yellow clay banks. Legend says the Gopis’ tears turned the soil golden. Free entry, 20 minutes.",
+                    "2:30pm — Late lunch back in Dwarka town (₹100–150).",
+                    "4:00pm — Final visit to Dwarkadhish Temple or depart. Dwarka–Jamnagar bus takes 3 hours (₹150).",
                   ]}
-                  cost={"\u20B9800\u20131,400"}
+                  cost={"₹800–1,400"}
                 />
               </div>
             )}
@@ -328,40 +328,40 @@ export default function DwarkaClient() {
                   <span className="text-2xl">{"\uD83D\uDE4F"}</span>
                   <div>
                     <p className="text-sm font-medium text-purple-800">Pilgrimage Plan — Complete Sacred Circuit</p>
-                    <p className="text-xs text-purple-600 font-light">Stay: Mid-range hotel or trust guesthouse {"\u00B7"} {"\u20B9"}1,200\u2013{"\u20B9"}3,500/night {"\u00B7"} Private auto for the day: {"\u20B9"}800\u20131,500</p>
+                    <p className="text-xs text-purple-600 font-light">Stay: Mid-range hotel or trust guesthouse {"·"} {"₹"}1,200–{"₹"}3,500/night {"·"} Private auto for the day: {"₹"}800–1,500</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Dwarkadhish Darshan, Rukmini Temple & Sacred Ghats"
                   items={[
-                    "5:30am \u2014 Mangla aarti at Dwarkadhish Temple (first aarti of the day). The temple is nearly empty and the rituals are deeply intimate. A priest guide (\u20B9200\u2013400) explains the significance of each ceremony.",
-                    "7:00am \u2014 Holy dip at Gomti Ghat. The confluence of the Gomti River and Arabian Sea is one of Hinduism\u2019s most sacred bathing spots.",
-                    "8:00am \u2014 Breakfast at your hotel or a quality restaurant like Toran Tourist Bungalow (\u20B9150\u2013250).",
-                    "9:30am \u2014 Private auto for the day (\u20B9800\u20131,200). First stop: Rukmini Temple. The carvings are Gujarat\u2019s finest outside of Modhera and Rani ki Vav.",
-                    "10:30am \u2014 Bhalka Tirth (5km) \u2014 the site where Lord Krishna was struck by a hunter\u2019s arrow, marking the end of the Dwapar Yug. A deeply significant and contemplative spot.",
-                    "11:30am \u2014 Swaminarayan Temple for a peaceful darshan.",
-                    "12:30pm \u2014 Lunch at a quality restaurant. Gujarati thali with extras (\u20B9180\u2013300).",
-                    "2:00pm \u2014 Dwarkadhish Temple revisit for midday darshan. The temple is less crowded now \u2014 spend time studying the carved pillars and the 60-column prayer hall.",
-                    "4:00pm \u2014 Dwarka Lighthouse for the aerial view (\u20B925). Combine with a walk along the coastal path.",
-                    "5:30pm \u2014 Sunset at Gomti Ghat \u2014 the temple silhouette against the orange sky is moving.",
-                    "7:00pm \u2014 Shayan aarti (night aarti) at Dwarkadhish Temple. The temple lit with oil lamps and the deity being put to sleep for the night is a rare and beautiful ritual.",
-                    "8:30pm \u2014 Dinner. Try a Kathiawadi thali at a recommended restaurant (\u20B9200\u2013400).",
+                    "5:30am — Mangla aarti at Dwarkadhish Temple (first aarti of the day). The temple is nearly empty and the rituals are deeply intimate. A priest guide (₹200–400) explains the significance of each ceremony.",
+                    "7:00am — Holy dip at Gomti Ghat. The confluence of the Gomti River and Arabian Sea is one of Hinduism’s most sacred bathing spots.",
+                    "8:00am — Breakfast at your hotel or a quality restaurant like Toran Tourist Bungalow (₹150–250).",
+                    "9:30am — Private auto for the day (₹800–1,200). First stop: Rukmini Temple. The carvings are Gujarat’s finest outside of Modhera and Rani ki Vav.",
+                    "10:30am — Bhalka Tirth (5km) — the site where Lord Krishna was struck by a hunter’s arrow, marking the end of the Dwapar Yug. A deeply significant and contemplative spot.",
+                    "11:30am — Swaminarayan Temple for a peaceful darshan.",
+                    "12:30pm — Lunch at a quality restaurant. Gujarati thali with extras (₹180–300).",
+                    "2:00pm — Dwarkadhish Temple revisit for midday darshan. The temple is less crowded now — spend time studying the carved pillars and the 60-column prayer hall.",
+                    "4:00pm — Dwarka Lighthouse for the aerial view (₹25). Combine with a walk along the coastal path.",
+                    "5:30pm — Sunset at Gomti Ghat — the temple silhouette against the orange sky is moving.",
+                    "7:00pm — Shayan aarti (night aarti) at Dwarkadhish Temple. The temple lit with oil lamps and the deity being put to sleep for the night is a rare and beautiful ritual.",
+                    "8:30pm — Dinner. Try a Kathiawadi thali at a recommended restaurant (₹200–400).",
                   ]}
-                  cost={"\u20B92,500\u20134,500"}
+                  cost={"₹2,500–4,500"}
                 />
                 <DayCard day="Day 2" title="Bet Dwarka, Nageshwar Jyotirlinga & Departure"
                   items={[
-                    "5:30am \u2014 Private vehicle to Okha port (30km, 45 minutes). Your driver will wait while you visit the island.",
-                    "6:30am \u2014 Ferry to Bet Dwarka (\u20B920\u201350). Morning is best \u2014 the island wakes slowly and the temples are peaceful.",
-                    "7:00am \u2014 Bet Dwarka Krishna Temple \u2014 perform a full puja here. This is believed to be where Krishna held court. A local priest can arrange the ritual (\u20B9200\u2013300).",
-                    "8:00am \u2014 Visit Hanuman Dandi, Vishnu Temple, and walk the island\u2019s ancient lanes. Bet Dwarka is a living museum of medieval maritime Gujarat.",
-                    "9:00am \u2014 Return ferry. The morning sun over the Gulf of Kutch on the return ride is golden.",
-                    "10:00am \u2014 Drive to Nageshwar Jyotirlinga (16km from Dwarka). One of the 12 Jyotirlingas \u2014 perform abhishek if possible (\u20B9200\u2013500).",
-                    "11:00am \u2014 Gopi Talav \u2014 the lake with golden-yellow soil. The legend of the Gopis is told beautifully by local guides. Free entry.",
-                    "12:00pm \u2014 Brunch at your hotel or a Dwarka restaurant (\u20B9200\u2013300).",
-                    "1:30pm \u2014 Final Dwarkadhish darshan. Many pilgrims circle the temple 7 times (parikrama) as a farewell ritual.",
-                    "3:00pm \u2014 Depart Dwarka. Bus to Jamnagar (3hrs, \u20B9150) for flights, or overnight train to Ahmedabad.",
+                    "5:30am — Private vehicle to Okha port (30km, 45 minutes). Your driver will wait while you visit the island.",
+                    "6:30am — Ferry to Bet Dwarka (₹20–50). Morning is best — the island wakes slowly and the temples are peaceful.",
+                    "7:00am — Bet Dwarka Krishna Temple — perform a full puja here. This is believed to be where Krishna held court. A local priest can arrange the ritual (₹200–300).",
+                    "8:00am — Visit Hanuman Dandi, Vishnu Temple, and walk the island’s ancient lanes. Bet Dwarka is a living museum of medieval maritime Gujarat.",
+                    "9:00am — Return ferry. The morning sun over the Gulf of Kutch on the return ride is golden.",
+                    "10:00am — Drive to Nageshwar Jyotirlinga (16km from Dwarka). One of the 12 Jyotirlingas — perform abhishek if possible (₹200–500).",
+                    "11:00am — Gopi Talav — the lake with golden-yellow soil. The legend of the Gopis is told beautifully by local guides. Free entry.",
+                    "12:00pm — Brunch at your hotel or a Dwarka restaurant (₹200–300).",
+                    "1:30pm — Final Dwarkadhish darshan. Many pilgrims circle the temple 7 times (parikrama) as a farewell ritual.",
+                    "3:00pm — Depart Dwarka. Bus to Jamnagar (3hrs, ₹150) for flights, or overnight train to Ahmedabad.",
                   ]}
-                  cost={"\u20B93,000\u20135,500"}
+                  cost={"₹3,000–5,500"}
                 />
               </div>
             )}
@@ -395,10 +395,10 @@ export default function DwarkaClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCB0"} Budget Breakdown</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                { plan: "Budget Plan", emoji: "\uD83D\uDCB0", total: "Under \u20B94,000", bg: "bg-amber-50 border-amber-200",
-                  rows: [["Accommodation","2 nights: \u20B9600\u20131,600"],["Food","5\u20136 meals: \u20B9500\u2013700"],["Transport","Bus + autos + ferry: \u20B9400\u2013600"],["Attractions","Temples (free) + lighthouse (\u20B925): \u20B925"],["Extras","Souvenirs, tips: \u20B9200\u2013400"]] },
-                { plan: "Pilgrimage Plan", emoji: "\uD83D\uDE4F", total: "\u20B95,000\u201312,000", bg: "bg-purple-50 border-purple-200",
-                  rows: [["Accommodation","2 nights: \u20B92,400\u20137,000"],["Food","5\u20136 meals: \u20B9800\u20131,500"],["Transport","Private auto + ferry: \u20B91,500\u20132,500"],["Priest & Puja","Temple rituals: \u20B9400\u2013800"],["Extras","Offerings, souvenirs: \u20B9500\u20131,000"]] },
+                { plan: "Budget Plan", emoji: "\uD83D\uDCB0", total: "Under ₹4,000", bg: "bg-amber-50 border-amber-200",
+                  rows: [["Accommodation","2 nights: ₹600–1,600"],["Food","5–6 meals: ₹500–700"],["Transport","Bus + autos + ferry: ₹400–600"],["Attractions","Temples (free) + lighthouse (₹25): ₹25"],["Extras","Souvenirs, tips: ₹200–400"]] },
+                { plan: "Pilgrimage Plan", emoji: "\uD83D\uDE4F", total: "₹5,000–12,000", bg: "bg-purple-50 border-purple-200",
+                  rows: [["Accommodation","2 nights: ₹2,400–7,000"],["Food","5–6 meals: ₹800–1,500"],["Transport","Private auto + ferry: ₹1,500–2,500"],["Priest & Puja","Temple rituals: ₹400–800"],["Extras","Offerings, souvenirs: ₹500–1,000"]] },
               ].map((b) => (
                 <div key={b.plan} className={`rounded-xl border p-5 ${b.bg}`}>
                   <div className="flex items-center gap-2 mb-4">
@@ -439,7 +439,7 @@ export default function DwarkaClient() {
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
                 { title: "Skipping the morning aarti", desc: "The 6:30am aarti at Dwarkadhish is the single most powerful experience in Dwarka. Tour groups arrive by 9am and the temple becomes a queue. Non-negotiable: be there at 6am.", icon: "\u23F0" },
@@ -460,12 +460,12 @@ export default function DwarkaClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { icon: "\uD83C\uDF05", title: "Sunset at Gomti Ghat", desc: "The 56 steps leading down to the confluence are Dwarka\u2019s best sunset spot. Arrive by 5:15pm for a step with a view. The temple spire silhouetted against the orange sky is unforgettable.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83C\uDF05", title: "Sunset at Gomti Ghat", desc: "The 56 steps leading down to the confluence are Dwarka’s best sunset spot. Arrive by 5:15pm for a step with a view. The temple spire silhouetted against the orange sky is unforgettable.", color: "bg-amber-50 border-amber-200" },
                 { icon: "\uD83D\uDEF6", title: "First Ferry to Bet Dwarka", desc: "Take the earliest ferry (around 6:30am). The island is magical before tour groups arrive at 10am. You get quiet temples, friendly locals, and morning light in the narrow lanes.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83E\uDDED", title: "Hire a Priest Guide", desc: "A temple guide (\u20B9200\u2013400) at Dwarkadhish transforms the visit. They explain the mythology of each section, manage darshan flow, and can arrange special puja. Worth every rupee.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83C\uDF7D\uFE0F", title: "Gujarati Thali is King", desc: "Don\u2019t fight the veg-only reality \u2014 embrace it. The unlimited Gujarati thali here (\u20B9100\u2013180) is one of India\u2019s great food bargains: dal, kadhi, 3\u20134 sabzis, rotli, rice, papad, and buttermilk.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83E\uDDED", title: "Hire a Priest Guide", desc: "A temple guide (₹200–400) at Dwarkadhish transforms the visit. They explain the mythology of each section, manage darshan flow, and can arrange special puja. Worth every rupee.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83C\uDF7D\uFE0F", title: "Gujarati Thali is King", desc: "Don’t fight the veg-only reality — embrace it. The unlimited Gujarati thali here (₹100–180) is one of India’s great food bargains: dal, kadhi, 3–4 sabzis, rotli, rice, papad, and buttermilk.", color: "bg-teal-50 border-teal-200" },
                 { icon: "\uD83D\uDCF1", title: "Download Offline Maps", desc: "Mobile signal drops between Dwarka and Okha, and is patchy on Bet Dwarka island. Download Google Maps offline for the entire area before you leave your hotel.", color: "bg-rose-50 border-rose-200" },
-                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct\u2013Nov \u2705 best weather, fewer crowds | Dec\u2013Feb \u2705 peak pilgrimage, pleasant 20\u201330\u00B0C | Mar \u2600\uFE0F warming up | Apr\u2013Jun \u274C extreme heat 40\u00B0C+ | Jul\u2013Sep \uD83C\uDF27\uFE0F monsoon, ferries may stop | Janmashtami (Aug\u2013Sep): spectacular but massively crowded", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct–Nov \u2705 best weather, fewer crowds | Dec–Feb \u2705 peak pilgrimage, pleasant 20–30°C | Mar \u2600\uFE0F warming up | Apr–Jun ❌ extreme heat 40°C+ | Jul–Sep \uD83C\uDF27\uFE0F monsoon, ferries may stop | Janmashtami (Aug–Sep): spectacular but massively crowded", color: "bg-rose-50 border-rose-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
           </section>
@@ -476,28 +476,28 @@ export default function DwarkaClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget — we&apos;ll send a personalised Dwarka itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Dwarka Trip {"\u2192"}
+                Plan My Dwarka Trip {"→"}
               </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
             </div>
           </div>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
                 { q: "How many days are enough for Dwarka?", a: "2 days is the sweet spot. Day 1 covers Dwarkadhish Temple, Gomti Ghat, Rukmini Temple, and the lighthouse. Day 2 covers Bet Dwarka island, Nageshwar Jyotirlinga, and Gopi Talav. 1 day is too rushed if you want the Bet Dwarka ferry trip. 3 days only if you want to include Porbandar, Somnath, or the underwater archaeology sites." },
-                { q: "What is the best time to visit Dwarka?", a: "October to March. October\u2013November offers pleasant weather and fewer crowds. December\u2013February is peak pilgrimage season with comfortable 20\u201330\u00B0C temperatures. Janmashtami (August\u2013September) is spectacular but extremely crowded \u2014 book accommodation months ahead. Avoid April\u2013June when it crosses 40\u00B0C." },
-                { q: "How much does a 2-day Dwarka trip cost?", a: "Budget solo: under \u20B94,000 including accommodation, food, and ferry. Pilgrimage mid-range: \u20B95,000\u201312,000 per person with better hotels, private transport, and priest guides. Temple entry is free everywhere. Bet Dwarka ferry is the cheapest part at \u20B920\u201350." },
-                { q: "How do I reach Bet Dwarka island?", a: "Take a bus or auto from Dwarka to Okha port (30km, 45 minutes). Government ferries run every 30 minutes from Okha to Bet Dwarka. The ride is 30 minutes and costs \u20B920\u201350. Last return ferry is around 5:30pm. Private boats cost \u20B9500\u2013800 for a group. Do not miss the last ferry." },
-                { q: "Is the underwater city of Dwarka real?", a: "Marine archaeological surveys have found submerged structures off the Dwarka coast. Whether it is Krishna\u2019s legendary city is debated, but the archaeological site is real and significant. Scuba diving tours to the underwater ruins are available through authorized operators but must be booked weeks in advance. The visibility window is October\u2013February." },
-                { q: "What food is Dwarka famous for?", a: "Dwarka is a vegetarian pilgrim town. The Gujarati unlimited thali (\u20B9100\u2013180) is the highlight: dal, kadhi, multiple sabzis, rotli, rice, papad, and chaas. Street food standouts are kachori, dabeli, and fresh sugarcane juice. Temple prasadam at Dwarkadhish is available daily. For seafood, head to Okha port area." },
+                { q: "What is the best time to visit Dwarka?", a: "October to March. October–November offers pleasant weather and fewer crowds. December–February is peak pilgrimage season with comfortable 20–30°C temperatures. Janmashtami (August–September) is spectacular but extremely crowded — book accommodation months ahead. Avoid April–June when it crosses 40°C." },
+                { q: "How much does a 2-day Dwarka trip cost?", a: "Budget solo: under ₹4,000 including accommodation, food, and ferry. Pilgrimage mid-range: ₹5,000–12,000 per person with better hotels, private transport, and priest guides. Temple entry is free everywhere. Bet Dwarka ferry is the cheapest part at ₹20–50." },
+                { q: "How do I reach Bet Dwarka island?", a: "Take a bus or auto from Dwarka to Okha port (30km, 45 minutes). Government ferries run every 30 minutes from Okha to Bet Dwarka. The ride is 30 minutes and costs ₹20–50. Last return ferry is around 5:30pm. Private boats cost ₹500–800 for a group. Do not miss the last ferry." },
+                { q: "Is the underwater city of Dwarka real?", a: "Marine archaeological surveys have found submerged structures off the Dwarka coast. Whether it is Krishna’s legendary city is debated, but the archaeological site is real and significant. Scuba diving tours to the underwater ruins are available through authorized operators but must be booked weeks in advance. The visibility window is October–February." },
+                { q: "What food is Dwarka famous for?", a: "Dwarka is a vegetarian pilgrim town. The Gujarati unlimited thali (₹100–180) is the highlight: dal, kadhi, multiple sabzis, rotli, rice, papad, and chaas. Street food standouts are kachori, dabeli, and fresh sugarcane juice. Temple prasadam at Dwarkadhish is available daily. For seafood, head to Okha port area." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
           </section>
@@ -510,15 +510,15 @@ export default function DwarkaClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Exploring More of Gujarat & Western India?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Gujarat \u2014 7 Day Complete Circuit", href: "/blog/gujarat-7-days", soon: false },
-                { label: "Rameswaram \u2014 2 Day Pilgrimage Guide", href: "/blog/rameswaram-2-days", soon: false },
-                { label: "Varanasi \u2014 3 Day Spiritual Guide", href: "/blog/varanasi-3-days", soon: false },
+                { label: "Gujarat — 7 Day Complete Circuit", href: "/blog/gujarat-7-days", soon: false },
+                { label: "Rameswaram — 2 Day Pilgrimage Guide", href: "/blog/rameswaram-2-days", soon: false },
+                { label: "Varanasi — 3 Day Spiritual Guide", href: "/blog/varanasi-3-days", soon: false },
                 { label: "Browse All India Packages", href: "/#packages", soon: false },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">{link.soon ? "Coming Soon \u2192" : "View \u2192"}</span>
+                  <span className="text-xs text-muted">{link.soon ? "Coming Soon →" : "View →"}</span>
                 </Link>
               ))}
             </div>

@@ -82,7 +82,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 function TipBox({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
   return (
     <div className={`rounded-xl p-4 border ${color}`}>
-      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-muted font-light leading-relaxed">{desc}</p></div></div>
+      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div>
     </div>
   );
 }
@@ -176,7 +176,7 @@ export default function KashmirClient() {
                     <h3 className="font-serif text-lg font-normal text-ink">{d.city}</h3>
                     <span className="text-xs font-medium text-teal bg-white px-3 py-1 rounded-full border border-parchment-2">{d.days}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed mb-3">{d.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed mb-3">{d.desc}</p>
                   <div className="flex flex-wrap gap-2">{d.must.map((m) => <span key={m} className="text-[0.65rem] bg-white/80 text-ink px-2.5 py-1 rounded-full border border-white/60 font-light">{m}</span>)}</div>
                 </div>
               ))}
@@ -195,7 +195,7 @@ export default function KashmirClient() {
               ].map((s) => (
                 <div key={s.season} className={`rounded-xl p-4 border ${s.color}`}>
                   <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-ink">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{s.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -409,7 +409,7 @@ export default function KashmirClient() {
               ].map((item) => (
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
                   <div className="flex items-center gap-2 mb-2"><span className="text-lg">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.content}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
             </div>
@@ -485,7 +485,7 @@ export default function KashmirClient() {
                 { icon: "🏔️", title: "Trekking without a guide", desc: "Above 3,000m in Kashmir, weather changes rapidly and paths aren't always marked. Always hire a licensed guide for Tulian Lake, Alpather, Kashmir Great Lakes. Rs.1,500–Rs.2,500/day.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-muted font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -504,7 +504,7 @@ export default function KashmirClient() {
                 { icon: "📱", title: "Download maps offline — connectivity varies", desc: "Mobile signal is excellent in Srinagar and Gulmarg town. On mountain roads to Sonamarg and in Pahalgam valleys, it drops out. Download Google Maps offline before leaving your hotel.", color: "bg-green-50 border-green-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -514,7 +514,7 @@ export default function KashmirClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want Your Kashmir Trip Planned?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we'll send a personalised Kashmir itinerary within 24 hours. Free.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we'll send a personalised Kashmir itinerary within 24 hours. Free.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Kashmir Trip →</button>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold transition-colors">Contact Us</Link>

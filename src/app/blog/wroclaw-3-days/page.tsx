@@ -23,12 +23,12 @@ const data: UniversalBlogData = {
   },
   toc: [
     { id: "visa", emoji: "\uD83D\uDEC2", label: "Visa & Entry" },
-    { id: "plans", emoji: "\u26A1", label: "Which Plan Are You?" },
+    { id: "plans", emoji: "⚡", label: "Which Plan Are You?" },
     { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
     { id: "budget", emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-    { id: "mistakes", emoji: "\u274C", label: "Mistakes to Avoid" },
+    { id: "mistakes", emoji: "❌", label: "Mistakes to Avoid" },
     { id: "tips", emoji: "\uD83D\uDCA1", label: "Local Tips" },
-    { id: "faq", emoji: "\u2753", label: "FAQ" },
+    { id: "faq", emoji: "❓", label: "FAQ" },
     { id: "day1", emoji: "\uD83D\uDCC5", label: "Day 1 — Rynek & Old Town" },
     { id: "day2", emoji: "\uD83D\uDCC5", label: "Day 2 — Cathedral Island & Gnomes" },
     { id: "day3", emoji: "\uD83D\uDCC5", label: "Day 3 — Centennial Hall & Craft Beer" },
@@ -112,7 +112,7 @@ const data: UniversalBlogData = {
       ],
     },
     {
-      label: "\u2728 Mid-Range",
+      label: "✨ Mid-Range",
       sub: "PLN 320–500/day",
       days: [
         {
@@ -205,7 +205,7 @@ const data: UniversalBlogData = {
       total: "PLN 120–180/day",
     },
     {
-      tier: "\u2728 Mid-Range",
+      tier: "✨ Mid-Range",
       accommodation: "PLN 200–350 (boutique hotel near Rynek)",
       food: "PLN 80–130 (restaurants and brewery dinners)",
       transport: "PLN 10–25 (tram and city bike)",

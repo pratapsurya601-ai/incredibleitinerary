@@ -14,14 +14,14 @@ import Breadcrumb from "@/components/blog/Breadcrumb";
 
 
 const MYSORE_TOC = [
-  { id: "decision",    emoji: "\u26A1", label: "Which Plan Are You?" },
+  { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
   { id: "whymysore",   emoji: "\uD83C\uDFF0", label: "Why Mysore?" },
   { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
   { id: "budget",      emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
   { id: "maps",        emoji: "\uD83D\uDDFA\uFE0F", label: "Route Maps" },
-  { id: "mistakes",    emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "mistakes",    emoji: "❌", label: "Mistakes to Avoid" },
   { id: "tips",        emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",         emoji: "\u2753", label: "FAQ" },
+  { id: "faq",         emoji: "❓", label: "FAQ" },
 ];
 
 // ── Reading Progress Bar ──────────────────────────────────────────────────────
@@ -68,7 +68,7 @@ function ShareBar() {
       ))}
       <button onClick={copy}
         className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -105,7 +105,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
                 {item}
               </li>
             ))}
@@ -129,7 +129,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -155,14 +155,14 @@ function RouteCard({ plan, day, stops, distance, url, note, color }: {
         {stops.map((stop, j) => (
           <span key={j} className="flex items-center gap-1">
             <span className="text-xs bg-white/80 px-2.5 py-1 rounded-full border border-white/60 text-ink font-light">{stop}</span>
-            {j < stops.length - 1 && <span className="text-muted/40 text-xs">{"\u2192"}</span>}
+            {j < stops.length - 1 && <span className="text-muted/40 text-xs">{"→"}</span>}
           </span>
         ))}
       </div>
       <p className="text-xs text-muted font-light italic mb-3">{"\uD83D\uDCA1"} {note}</p>
       <a href={url} target="_blank" rel="noopener noreferrer"
         className="inline-flex items-center gap-1.5 text-xs font-medium text-teal hover:underline">
-        {"\uD83D\uDCCD"} Open in Google Maps {"\u2192"}
+        {"\uD83D\uDCCD"} Open in Google Maps {"→"}
       </a>
     </div>
   );
@@ -175,9 +175,9 @@ export default function MysoreClient() {
   const [activeRoute, setActiveRoute] = useState<"A" | "B" | "C">("B");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under \u20B96k", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\uD83C\uDFF0", label: "Heritage", sub: "\u20B98k\u201318k", color: "border-teal-300 bg-teal-50 text-teal-800" },
-    { id: "C" as const, emoji: "\uD83D\uDC51", label: "Royal", sub: "\u20B918k\u201335k", color: "border-purple-300 bg-purple-50 text-purple-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under ₹6k", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "\uD83C\uDFF0", label: "Heritage", sub: "₹8k–18k", color: "border-teal-300 bg-teal-50 text-teal-800" },
+    { id: "C" as const, emoji: "\uD83D\uDC51", label: "Royal", sub: "₹18k–35k", color: "border-purple-300 bg-purple-50 text-purple-800" },
   ];
 
   return (
@@ -216,9 +216,9 @@ export default function MysoreClient() {
                   Heritage & Culture
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">12 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -240,10 +240,10 @@ export default function MysoreClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDEE\uD83C\uDDF3"} India</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDDD3"} 3 Days</span>
-              <span>{"\u00B7"}</span>
-              <span>{"\uD83D\uDCB0"} From \u20B96,000</span>
+              <span>{"·"}</span>
+              <span>{"\uD83D\uDCB0"} From ₹6,000</span>
             </div>
           </div>
 
@@ -256,7 +256,7 @@ export default function MysoreClient() {
 
           {/* ── QUICK DECISION ── */}
           <section id="decision" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Which Plan Are You?</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
             <p className="text-sm text-muted font-light mb-6">Pick your situation — jump straight to your itinerary.</p>
             <div className="grid grid-cols-3 gap-3">
               {plans.map((p) => (
@@ -265,7 +265,7 @@ export default function MysoreClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"→"}</p>
                 </button>
               ))}
             </div>
@@ -280,10 +280,10 @@ export default function MysoreClient() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
               {[
                 { title: "The Heritage Side", emoji: "\uD83C\uDFF0", bg: "bg-amber-50 border-amber-200", th: "text-amber-800",
-                  rows: [["Must-see","Mysore Palace, Chamundi Hills, Srirangapatna"],["Best for","History lovers, photographers, families"],["Budget","\u20B9100\u2013\u20B9500 entry fees"],["Vibe","Grand, walkable, old-world charm"]],
+                  rows: [["Must-see","Mysore Palace, Chamundi Hills, Srirangapatna"],["Best for","History lovers, photographers, families"],["Budget","₹100–₹500 entry fees"],["Vibe","Grand, walkable, old-world charm"]],
                   note: "Mysore Palace is India's second-most-visited monument after the Taj Mahal. Sunday evening illumination is unmissable." },
                 { title: "The Living City", emoji: "\uD83D\uDED2", bg: "bg-teal-50 border-teal-200", th: "text-teal-800",
-                  rows: [["Must-do","Devaraja Market, silk shopping, Mysore Pak tasting"],["Best for","Foodies, shoppers, culture seekers"],["Budget","\u20B9500\u2013\u20B93,000 for shopping"],["Vibe","Buzzing markets, artisan traditions, authentic Karnataka"]],
+                  rows: [["Must-do","Devaraja Market, silk shopping, Mysore Pak tasting"],["Best for","Foodies, shoppers, culture seekers"],["Budget","₹500–₹3,000 for shopping"],["Vibe","Buzzing markets, artisan traditions, authentic Karnataka"]],
                   note: "Devaraja Market has operated continuously for over 400 years. Go early morning for flowers, spices, and zero tourists." },
               ].map((area) => (
                 <div key={area.title} className={`rounded-xl border p-5 ${area.bg}`}>
@@ -293,7 +293,7 @@ export default function MysoreClient() {
                   <div className="space-y-2 mb-4">
                     {area.rows.map(([k, v]) => (
                       <div key={k} className="flex gap-2 text-xs">
-                        <span className="font-medium text-ink/60 w-16 flex-shrink-0">{k}</span>
+                        <span className="font-medium text-ink/80 w-16 flex-shrink-0">{k}</span>
                         <span className="text-muted font-light">{v}</span>
                       </div>
                     ))}
@@ -312,8 +312,8 @@ export default function MysoreClient() {
           {/* ── STAT CARDS ── */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="3 Days" />
-            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value="\u20B96,000" />
-            <StatCard icon={"\uD83C\uDF21"} label="Best Months" value="Oct \u2013 Feb" />
+            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value="₹6,000" />
+            <StatCard icon={"\uD83C\uDF21"} label="Best Months" value="Oct – Feb" />
             <StatCard icon={"\uD83D\uDE82"} label="From Bangalore" value="2hr Train" />
           </div>
 
@@ -341,45 +341,45 @@ export default function MysoreClient() {
                   <span className="text-2xl">{"\uD83D\uDCB0"}</span>
                   <div>
                     <p className="text-sm font-medium text-amber-800">Budget Plan — Central Mysore Base</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Hotel Dasaprakash / budget lodge near palace {"\u00B7"} \u20B9600\u2013\u20B91,200/night {"\u00B7"} Auto: \u20B930\u2013\u20B9150/ride</p>
+                    <p className="text-xs text-amber-600 font-light">Stay: Hotel Dasaprakash / budget lodge near palace {"·"} ₹600–₹1,200/night {"·"} Auto: ₹30–₹150/ride</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Palace, Market & Chamundi Hills"
                   items={[
-                    "8:30am: Mysore Palace \u2014 arrive at opening to beat tour groups. \u20B9100 entry (Indian), \u20B9200 (international). No cameras inside, lockers available. Budget 2 hours.",
-                    "11am: Walk to Devaraja Market (10 min from palace). Flower section is stunning. Buy kumkum, spices, and sandalwood soap. \u20B9100\u2013\u20B9300 total.",
-                    "12:30pm: Lunch at Mylari Hotel \u2014 legendary dosa for \u20B960\u201380. Queue is part of the experience. Cash only.",
-                    "2:30pm: Auto to Chamundi Hills base (\u20B9100\u2013\u20B9150). Walk the 1,000 steps up or ride to the top. Chamundeshwari Temple at summit, free entry.",
+                    "8:30am: Mysore Palace — arrive at opening to beat tour groups. ₹100 entry (Indian), ₹200 (international). No cameras inside, lockers available. Budget 2 hours.",
+                    "11am: Walk to Devaraja Market (10 min from palace). Flower section is stunning. Buy kumkum, spices, and sandalwood soap. ₹100–₹300 total.",
+                    "12:30pm: Lunch at Mylari Hotel — legendary dosa for ₹60–80. Queue is part of the experience. Cash only.",
+                    "2:30pm: Auto to Chamundi Hills base (₹100–₹150). Walk the 1,000 steps up or ride to the top. Chamundeshwari Temple at summit, free entry.",
                     "Chamundi Hills at 6am beats the afternoon tourist rush and the view of Mysore below is stunning. But if you only have today, afternoon works too.",
-                    "5:30pm: If Sunday \u2014 head back to palace for 7pm illumination. 100,000 bulbs, free to watch from outside.",
-                    "Dinner: RRR Restaurant \u2014 best thali in Mysore, \u20B9150\u2013\u20B9200. Near KR Circle."
+                    "5:30pm: If Sunday — head back to palace for 7pm illumination. 100,000 bulbs, free to watch from outside.",
+                    "Dinner: RRR Restaurant — best thali in Mysore, ₹150–₹200. Near KR Circle."
                   ]}
-                  cost="\u20B9800\u2013\u20B91,200 excluding accommodation" />
+                  cost="₹800–₹1,200 excluding accommodation" />
                 <DayCard day="Day 2" title="Srirangapatna Day Trip + Brindavan Gardens"
                   items={[
-                    "7:30am: KSRTC bus to Srirangapatna (\u20B930, 30 min). Or auto for \u20B9300\u2013\u20B9400 round trip.",
-                    "Tipu Sultan's Summer Palace (Daria Daulat Bagh) \u2014 \u20B935 entry. Ornate teak palace with original murals. 45 min.",
-                    "Ranganathaswamy Temple \u2014 one of the largest Vishnu temples in India. Free entry, remove shoes. 30 min.",
-                    "Tipu Sultan's Gumbaz (mausoleum) \u2014 \u20B925 entry. Beautiful Mughal-style tomb set in gardens.",
-                    "12pm: Lunch at a local joint in Srirangapatna town \u2014 meals for \u20B980\u2013\u20B9120.",
-                    "2pm: Auto/bus to Brindavan Gardens (\u20B920 entry). Musical fountain show at 6:30pm is worth waiting for.",
+                    "7:30am: KSRTC bus to Srirangapatna (₹30, 30 min). Or auto for ₹300–₹400 round trip.",
+                    "Tipu Sultan's Summer Palace (Daria Daulat Bagh) — ₹35 entry. Ornate teak palace with original murals. 45 min.",
+                    "Ranganathaswamy Temple — one of the largest Vishnu temples in India. Free entry, remove shoes. 30 min.",
+                    "Tipu Sultan's Gumbaz (mausoleum) — ₹25 entry. Beautiful Mughal-style tomb set in gardens.",
+                    "12pm: Lunch at a local joint in Srirangapatna town — meals for ₹80–₹120.",
+                    "2pm: Auto/bus to Brindavan Gardens (₹20 entry). Musical fountain show at 6:30pm is worth waiting for.",
                     "Return to Mysore by 8pm. Evening walk on Sayyaji Rao Road for street food."
                   ]}
-                  cost="\u20B9600\u2013\u20B91,000 excluding accommodation" />
+                  cost="₹600–₹1,000 excluding accommodation" />
                 <DayCard day="Day 3" title="Zoo, Silk & Sweet Mysore"
                   items={[
-                    "8:30am: Mysore Zoo \u2014 \u20B9100 entry. One of India's oldest and best-maintained zoos. 2 hours minimum.",
-                    "11am: Jaganmohan Palace Art Gallery \u2014 \u20B920 entry. Incredible collection including Raja Ravi Varma paintings.",
-                    "12:30pm: Mysore Pak from Guru Sweet Mart near Devaraja Market \u2014 the original, not the tourist shops. You'll taste the difference. \u20B960\u2013\u20B9100/box.",
-                    "1pm: Lunch at Vinayaka Mylari or Hotel RRR \u2014 \u20B9100\u2013\u20B9180.",
-                    "2:30pm: KSIC Silk showroom on Sayyaji Rao Road \u2014 government-run, fixed prices, guaranteed pure silk. Window shop or buy.",
-                    "4pm: St. Philomena's Church \u2014 one of India's tallest churches, Gothic architecture, free entry. 30 min.",
+                    "8:30am: Mysore Zoo — ₹100 entry. One of India's oldest and best-maintained zoos. 2 hours minimum.",
+                    "11am: Jaganmohan Palace Art Gallery — ₹20 entry. Incredible collection including Raja Ravi Varma paintings.",
+                    "12:30pm: Mysore Pak from Guru Sweet Mart near Devaraja Market — the original, not the tourist shops. You'll taste the difference. ₹60–₹100/box.",
+                    "1pm: Lunch at Vinayaka Mylari or Hotel RRR — ₹100–₹180.",
+                    "2:30pm: KSIC Silk showroom on Sayyaji Rao Road — government-run, fixed prices, guaranteed pure silk. Window shop or buy.",
+                    "4pm: St. Philomena's Church — one of India's tallest churches, Gothic architecture, free entry. 30 min.",
                     "Evening: Final walk through the palace grounds at sunset."
                   ]}
-                  cost="\u20B9600\u2013\u20B9900 excluding accommodation" />
+                  cost="₹600–₹900 excluding accommodation" />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 3-Day Cost (solo) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">\u20B94,500\u2013\u20B96,000 including accommodation</span>
+                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 3-Day Cost (solo) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">₹4,500–₹6,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -391,45 +391,45 @@ export default function MysoreClient() {
                   <span className="text-2xl">{"\uD83C\uDFF0"}</span>
                   <div>
                     <p className="text-sm font-medium text-teal-800">Heritage Plan — Comfortable Mysore Base</p>
-                    <p className="text-xs text-teal-600 font-light">Stay: Windflower Spa & Resort / Hotel Pai Vista {"\u00B7"} \u20B92,500\u2013\u20B95,000/night {"\u00B7"} Hired car: \u20B91,500\u2013\u20B92,000/day</p>
+                    <p className="text-xs text-teal-600 font-light">Stay: Windflower Spa & Resort / Hotel Pai Vista {"·"} ₹2,500–₹5,000/night {"·"} Hired car: ₹1,500–₹2,000/day</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Palace Quarter Deep Dive"
                   items={[
-                    "8am: Chamundi Hills sunrise drive (20 min). Temple opens at 7:30am. Nandi Bull statue halfway down \u2014 stop for photos.",
-                    "10am: Mysore Palace with audio guide (\u20B9150 extra). The Durbar Hall with stained glass ceiling is the highlight. 2.5 hours.",
-                    "12:30pm: Walk the palace gardens, then lunch at Hotel Hanumanthu \u2014 traditional Mysore cuisine, \u20B9300\u2013\u20B9500 for two.",
-                    "2:30pm: Devaraja Market \u2014 spice section and flower market. Buy Mysore sandalwood oil from Cauvery Arts & Crafts (\u20B9200\u2013\u20B91,500).",
-                    "4pm: Jaganmohan Palace Art Gallery \u2014 \u20B920. Raja Ravi Varma collection is exceptional.",
-                    "5:30pm: High tea at Royal Orchid Metropole \u2014 heritage hotel from 1920s, beautiful garden setting. \u20B9500\u2013\u20B9800 for two.",
+                    "8am: Chamundi Hills sunrise drive (20 min). Temple opens at 7:30am. Nandi Bull statue halfway down — stop for photos.",
+                    "10am: Mysore Palace with audio guide (₹150 extra). The Durbar Hall with stained glass ceiling is the highlight. 2.5 hours.",
+                    "12:30pm: Walk the palace gardens, then lunch at Hotel Hanumanthu — traditional Mysore cuisine, ₹300–₹500 for two.",
+                    "2:30pm: Devaraja Market — spice section and flower market. Buy Mysore sandalwood oil from Cauvery Arts & Crafts (₹200–₹1,500).",
+                    "4pm: Jaganmohan Palace Art Gallery — ₹20. Raja Ravi Varma collection is exceptional.",
+                    "5:30pm: High tea at Royal Orchid Metropole — heritage hotel from 1920s, beautiful garden setting. ₹500–₹800 for two.",
                     "If Sunday: Palace illumination at 7pm is non-negotiable. 100,000 golden bulbs transforming the entire facade."
                   ]}
-                  cost="\u20B92,500\u2013\u20B94,000 for two (excl. accommodation)" />
+                  cost="₹2,500–₹4,000 for two (excl. accommodation)" />
                 <DayCard day="Day 2" title="Srirangapatna + Brindavan Gardens"
                   items={[
-                    "8am: Drive to Srirangapatna (16km, 30 min). Hire a local guide at the gate \u2014 \u20B9500\u2013\u20B9800 for the full circuit, worth every rupee for Tipu Sultan history.",
-                    "Daria Daulat Bagh (Summer Palace) \u2014 the murals depicting the Battle of Pollilur are extraordinary. 1 hour.",
-                    "Ranganathaswamy Temple \u2014 ancient island temple. The river views alone justify the visit.",
-                    "Colonel Bailey's Dungeon + Tipu's Gumbaz \u2014 1 hour combined.",
+                    "8am: Drive to Srirangapatna (16km, 30 min). Hire a local guide at the gate — ₹500–₹800 for the full circuit, worth every rupee for Tipu Sultan history.",
+                    "Daria Daulat Bagh (Summer Palace) — the murals depicting the Battle of Pollilur are extraordinary. 1 hour.",
+                    "Ranganathaswamy Temple — ancient island temple. The river views alone justify the visit.",
+                    "Colonel Bailey's Dungeon + Tipu's Gumbaz — 1 hour combined.",
                     "12:30pm: Lunch at a heritage restaurant in Srirangapatna or drive to Brindavan Gardens restaurant.",
-                    "2pm: Brindavan Gardens \u2014 terraced Mughal-style gardens. Best in late afternoon light. Musical fountain at 6:30pm.",
-                    "Return to Mysore by 8pm. Dinner at The Old House \u2014 heritage bungalow turned restaurant, \u20B9800\u2013\u20B91,200 for two."
+                    "2pm: Brindavan Gardens — terraced Mughal-style gardens. Best in late afternoon light. Musical fountain at 6:30pm.",
+                    "Return to Mysore by 8pm. Dinner at The Old House — heritage bungalow turned restaurant, ₹800–₹1,200 for two."
                   ]}
-                  cost="\u20B93,000\u2013\u20B95,000 for two (excl. accommodation)" />
+                  cost="₹3,000–₹5,000 for two (excl. accommodation)" />
                 <DayCard day="Day 3" title="Silk, Sweets & Southern Charm"
                   items={[
-                    "8:30am: Mysore Zoo \u2014 genuinely one of India's best. White tigers, gorillas, walk-through aviary. 2 hours.",
-                    "11am: KSIC Government Silk Factory showroom \u2014 watch weavers at work, buy sarees with purity certification. Prices: \u20B93,000\u2013\u20B925,000+.",
-                    "Mysore Pak from Guru Sweet Mart near Devaraja Market \u2014 the original, not the tourist shops. You'll taste the difference.",
-                    "1pm: Lunch at Depth N Green or Oyster Bay \u2014 \u20B9500\u2013\u20B9800 for two.",
-                    "2:30pm: St. Philomena's Church \u2014 stunning Neo-Gothic architecture modelled on Cologne Cathedral.",
-                    "3:30pm: Karanji Lake Nature Park \u2014 butterfly park and walk-through aviary. \u20B950 entry. Peaceful afternoon spot.",
-                    "5pm: Final shopping on Sayyaji Rao Road \u2014 sandalwood, incense, Mysore paintings."
+                    "8:30am: Mysore Zoo — genuinely one of India's best. White tigers, gorillas, walk-through aviary. 2 hours.",
+                    "11am: KSIC Government Silk Factory showroom — watch weavers at work, buy sarees with purity certification. Prices: ₹3,000–₹25,000+.",
+                    "Mysore Pak from Guru Sweet Mart near Devaraja Market — the original, not the tourist shops. You'll taste the difference.",
+                    "1pm: Lunch at Depth N Green or Oyster Bay — ₹500–₹800 for two.",
+                    "2:30pm: St. Philomena's Church — stunning Neo-Gothic architecture modelled on Cologne Cathedral.",
+                    "3:30pm: Karanji Lake Nature Park — butterfly park and walk-through aviary. ₹50 entry. Peaceful afternoon spot.",
+                    "5pm: Final shopping on Sayyaji Rao Road — sandalwood, incense, Mysore paintings."
                   ]}
-                  cost="\u20B92,500\u2013\u20B94,500 for two (excl. accommodation)" />
+                  cost="₹2,500–₹4,500 for two (excl. accommodation)" />
                 <div className="bg-teal-50 border border-teal-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-teal-700 uppercase tracking-wide">Total 3-Day Cost (for two) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">\u20B98,000\u2013\u20B918,000 including accommodation</span>
+                  <span className="text-xs text-teal-700 uppercase tracking-wide">Total 3-Day Cost (for two) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">₹8,000–₹18,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -441,44 +441,44 @@ export default function MysoreClient() {
                   <span className="text-2xl">{"\uD83D\uDC51"}</span>
                   <div>
                     <p className="text-sm font-medium text-purple-800">Royal Plan — Luxury Heritage Experience</p>
-                    <p className="text-xs text-purple-600 font-light">Stay: Radisson Blu / Lalitha Mahal Palace Hotel {"\u00B7"} \u20B96,000\u2013\u20B912,000/night {"\u00B7"} Private car + guide</p>
+                    <p className="text-xs text-purple-600 font-light">Stay: Radisson Blu / Lalitha Mahal Palace Hotel {"·"} ₹6,000–₹12,000/night {"·"} Private car + guide</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Royal Mysore — The Palace Experience"
                   items={[
                     "7am: Private sunrise visit to Chamundi Hills. Your guide explains the 1,000-step pilgrimage tradition. Temple darshan at 7:30am.",
-                    "9:30am: Mysore Palace with private heritage guide (\u20B92,000\u20133,000). They unlock stories the audio guide cannot \u2014 throne room, private quarters, the Dasara traditions.",
-                    "12pm: Lunch at Lalitha Mahal Palace Hotel \u2014 former Viceroy's guesthouse, now a heritage hotel. Grand dining hall, \u20B91,500\u2013\u20B92,500 for two.",
-                    "2:30pm: Jayalakshmi Vilas Mansion (Folklore Museum) \u2014 inside the university campus. Wodeyar royal artefacts most tourists never see.",
-                    "4pm: Private Mysore painting demonstration at a master artist's studio \u2014 \u20B91,000\u2013\u20B92,000. Arrange through your hotel.",
+                    "9:30am: Mysore Palace with private heritage guide (₹2,000–3,000). They unlock stories the audio guide cannot — throne room, private quarters, the Dasara traditions.",
+                    "12pm: Lunch at Lalitha Mahal Palace Hotel — former Viceroy's guesthouse, now a heritage hotel. Grand dining hall, ₹1,500–₹2,500 for two.",
+                    "2:30pm: Jayalakshmi Vilas Mansion (Folklore Museum) — inside the university campus. Wodeyar royal artefacts most tourists never see.",
+                    "4pm: Private Mysore painting demonstration at a master artist's studio — ₹1,000–₹2,000. Arrange through your hotel.",
                     "6:30pm: Sunset at Lalitha Mahal Palace grounds with views of Chamundi Hills.",
-                    "Dinner: The Quorum at Radisson Blu or Oyster Bay \u2014 \u20B92,000\u2013\u20B93,500 for two."
+                    "Dinner: The Quorum at Radisson Blu or Oyster Bay — ₹2,000–₹3,500 for two."
                   ]}
-                  cost="\u20B98,000\u2013\u20B912,000 for two (excl. accommodation)" />
+                  cost="₹8,000–₹12,000 for two (excl. accommodation)" />
                 <DayCard day="Day 2" title="Srirangapatna + Ranganathittu + Brindavan"
                   items={[
-                    "7:30am: Drive to Ranganathittu Bird Sanctuary (16km). Boat ride through nesting islands \u2014 \u20B9200 + \u20B950 entry. Painted storks, pelicans, crocodiles.",
+                    "7:30am: Drive to Ranganathittu Bird Sanctuary (16km). Boat ride through nesting islands — ₹200 + ₹50 entry. Painted storks, pelicans, crocodiles.",
                     "9:30am: Srirangapatna with private historian guide. The Tipu Sultan circuit takes on new meaning with proper context.",
-                    "Daria Daulat Bagh, Gumbaz, Bailey's Dungeon, Ranganathaswamy Temple \u2014 full 3-hour immersion.",
+                    "Daria Daulat Bagh, Gumbaz, Bailey's Dungeon, Ranganathaswamy Temple — full 3-hour immersion.",
                     "1pm: Lunch at a riverside restaurant near Srirangapatna. Fresh river fish is the speciality.",
-                    "3pm: Brindavan Gardens \u2014 private garden walk. The musical fountain at 6:30pm is best from the upper terrace.",
-                    "8pm: Return to Mysore. Dinner at Tiger Trail (Jungle Lodges) or The Old House \u2014 \u20B92,500\u2013\u20B94,000 for two."
+                    "3pm: Brindavan Gardens — private garden walk. The musical fountain at 6:30pm is best from the upper terrace.",
+                    "8pm: Return to Mysore. Dinner at Tiger Trail (Jungle Lodges) or The Old House — ₹2,500–₹4,000 for two."
                   ]}
-                  cost="\u20B96,000\u2013\u20B910,000 for two (excl. accommodation)" />
+                  cost="₹6,000–₹10,000 for two (excl. accommodation)" />
                 <DayCard day="Day 3" title="Silk, Art & Leisurely Farewell"
                   items={[
                     "8:30am: Breakfast at your heritage hotel. No rush.",
-                    "10am: KSIC Government Silk Factory \u2014 private tour of the weaving floor. Watch master weavers create 9-yard sarees. Purchase with purity certificates.",
-                    "11:30am: Cauvery Arts & Crafts Emporium \u2014 authentic sandalwood, rosewood inlay, Mysore paintings. Government-certified, no fakes.",
-                    "1pm: Farewell lunch at Vinayaka Mylari for the legendary dosas, or Le Olive at Windflower for fine dining (\u20B92,000\u2013\u20B93,000).",
+                    "10am: KSIC Government Silk Factory — private tour of the weaving floor. Watch master weavers create 9-yard sarees. Purchase with purity certificates.",
+                    "11:30am: Cauvery Arts & Crafts Emporium — authentic sandalwood, rosewood inlay, Mysore paintings. Government-certified, no fakes.",
+                    "1pm: Farewell lunch at Vinayaka Mylari for the legendary dosas, or Le Olive at Windflower for fine dining (₹2,000–₹3,000).",
                     "2:30pm: Mysore Zoo if time permits. Or Karanji Lake walk-through aviary for a peaceful finish.",
-                    "4pm: St. Philomena's Church \u2014 soaring Gothic spires, stained glass, rarely crowded.",
+                    "4pm: St. Philomena's Church — soaring Gothic spires, stained glass, rarely crowded.",
                     "Evening: Palace grounds at golden hour. Last photo of the most photogenic building in South India."
                   ]}
-                  cost="\u20B95,000\u2013\u20B98,000 for two (excl. accommodation)" />
+                  cost="₹5,000–₹8,000 for two (excl. accommodation)" />
                 <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-purple-700 uppercase tracking-wide">Total 3-Day Cost (for two) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">\u20B918,000\u2013\u20B935,000 including accommodation</span>
+                  <span className="text-xs text-purple-700 uppercase tracking-wide">Total 3-Day Cost (for two) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">₹18,000–₹35,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -499,11 +499,11 @@ export default function MysoreClient() {
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (3N)", "\u20B91,800\u2013\u20B93,600", "\u20B97,500\u2013\u20B915,000", "\u20B918,000\u2013\u20B936,000"],
-                    ["\uD83C\uDF7D Food & Drinks", "\u20B9900\u2013\u20B91,500", "\u20B93,000\u2013\u20B95,000", "\u20B96,000\u2013\u20B910,000"],
-                    ["\uD83D\uDE95 Transport", "\u20B9400\u2013\u20B9700", "\u20B94,500\u2013\u20B96,000", "\u20B96,000\u2013\u20B99,000"],
-                    ["\uD83C\uDFAF Activities & Entry", "\u20B9400\u2013\u20B9700", "\u20B91,500\u2013\u20B93,000", "\u20B95,000\u2013\u20B98,000"],
-                    ["\uD83D\uDECD Shopping", "\u20B9200\u2013\u20B9500", "\u20B92,000\u2013\u20B95,000", "\u20B95,000\u2013\u20B915,000"],
+                    ["\uD83C\uDFE8 Accommodation (3N)", "₹1,800–₹3,600", "₹7,500–₹15,000", "₹18,000–₹36,000"],
+                    ["\uD83C\uDF7D Food & Drinks", "₹900–₹1,500", "₹3,000–₹5,000", "₹6,000–₹10,000"],
+                    ["\uD83D\uDE95 Transport", "₹400–₹700", "₹4,500–₹6,000", "₹6,000–₹9,000"],
+                    ["\uD83C\uDFAF Activities & Entry", "₹400–₹700", "₹1,500–₹3,000", "₹5,000–₹8,000"],
+                    ["\uD83D\uDECD Shopping", "₹200–₹500", "₹2,000–₹5,000", "₹5,000–₹15,000"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -512,7 +512,7 @@ export default function MysoreClient() {
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total (per person)</td>
-                    {["\u20B94,500\u2013\u20B96,000", "\u20B98,000\u2013\u20B918,000", "\u20B918,000\u2013\u20B935,000"].map((v, i) => (
+                    {["₹4,500–₹6,000", "₹8,000–₹18,000", "₹18,000–₹35,000"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
                     ))}
                   </tr>
@@ -528,15 +528,15 @@ export default function MysoreClient() {
           <AffiliateBlock
             destination="Mysore"
             hotels={[
-              { name: "Hotel Dasaprakash", type: "Budget Heritage \u00B7 Central", price: "From \u20B9800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/dasaprakash-mysore.html?aid=2820480" },
-              { name: "Windflower Spa & Resort", type: "Heritage Resort \u00B7 Mysore", price: "From \u20B94,500/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/windflower-mysore.html?aid=2820480" },
-              { name: "Radisson Blu Plaza Mysore", type: "Luxury \u00B7 Central", price: "From \u20B97,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/radisson-blu-plaza-mysore.html?aid=2820480" },
+              { name: "Hotel Dasaprakash", type: "Budget Heritage · Central", price: "From ₹800/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/dasaprakash-mysore.html?aid=2820480" },
+              { name: "Windflower Spa & Resort", type: "Heritage Resort · Mysore", price: "From ₹4,500/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/windflower-mysore.html?aid=2820480" },
+              { name: "Radisson Blu Plaza Mysore", type: "Luxury · Central", price: "From ₹7,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/radisson-blu-plaza-mysore.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Mysore Palace & Chamundi Hills Tour", duration: "Full day", price: "From \u20B91,200/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
-              { name: "Srirangapatna Heritage Tour", duration: "Half day", price: "From \u20B9800/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
-              { name: "Mysore Silk & Spice Walking Tour", duration: "3 hours", price: "From \u20B9600/person", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
-              { name: "Brindavan Gardens & Musical Fountain", duration: "4 hours", price: "From \u20B9500/person", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
+              { name: "Mysore Palace & Chamundi Hills Tour", duration: "Full day", price: "From ₹1,200/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
+              { name: "Srirangapatna Heritage Tour", duration: "Half day", price: "From ₹800/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
+              { name: "Mysore Silk & Spice Walking Tour", duration: "3 hours", price: "From ₹600/person", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
+              { name: "Brindavan Gardens & Musical Fountain", duration: "4 hours", price: "From ₹500/person", url: "https://www.getyourguide.com/s/?q=mysore&partner_id=PSZA5UI" },
             ]}
             pdfProductId="mysore-3-days-pdf"
           />
@@ -588,14 +588,14 @@ export default function MysoreClient() {
 
             {activeRoute === "A" && (
               <div className="space-y-4">
-                <RouteCard plan="Plan A \u00B7 Day 1" day="Palace + Market + Chamundi Hills"
+                <RouteCard plan="Plan A · Day 1" day="Palace + Market + Chamundi Hills"
                   stops={["Mysore Palace 8:30am","Devaraja Market 11am","Mylari Hotel Lunch","Chamundi Hills 2:30pm","Palace Illumination 7pm"]}
-                  distance="18km \u00B7 ~40min riding" note="Everything on Day 1 is within a 5km radius of the palace. Walk the palace-to-market stretch, auto the rest."
+                  distance="18km · ~40min riding" note="Everything on Day 1 is within a 5km radius of the palace. Walk the palace-to-market stretch, auto the rest."
                   color="border-amber-200 bg-amber-50"
                   url="https://www.google.com/maps/dir/Mysore+Palace/Devaraja+Market+Mysore/Mylari+Hotel+Mysore/Chamundi+Hills+Mysore" />
-                <RouteCard plan="Plan A \u00B7 Day 2" day="Srirangapatna + Brindavan Gardens"
+                <RouteCard plan="Plan A · Day 2" day="Srirangapatna + Brindavan Gardens"
                   stops={["Mysore 7:30am","Srirangapatna 8am","Tipu Palace 8:30am","Gumbaz 10am","Brindavan Gardens 2pm","Mysore 8pm"]}
-                  distance="52km round trip \u00B7 1.5hrs driving" note="Srirangapatna and Brindavan Gardens are on the same road heading north from Mysore. No backtracking needed."
+                  distance="52km round trip · 1.5hrs driving" note="Srirangapatna and Brindavan Gardens are on the same road heading north from Mysore. No backtracking needed."
                   color="border-amber-200 bg-amber-50"
                   url="https://www.google.com/maps/dir/Mysore/Daria+Daulat+Bagh+Srirangapatna/Tipu+Sultan+Gumbaz/Brindavan+Gardens/Mysore" />
               </div>
@@ -603,14 +603,14 @@ export default function MysoreClient() {
 
             {activeRoute === "B" && (
               <div className="space-y-4">
-                <RouteCard plan="Plan B \u00B7 Day 1" day="Chamundi Hills + Palace Quarter"
+                <RouteCard plan="Plan B · Day 1" day="Chamundi Hills + Palace Quarter"
                   stops={["Chamundi Hills 8am","Mysore Palace 10am","Devaraja Market 12:30pm","Jaganmohan Palace 4pm","Royal Orchid 5:30pm"]}
-                  distance="22km \u00B7 ~45min riding" note="Start with Chamundi Hills while it is cool. The rest of the day is a walkable loop around the palace area."
+                  distance="22km · ~45min riding" note="Start with Chamundi Hills while it is cool. The rest of the day is a walkable loop around the palace area."
                   color="border-teal-200 bg-teal-50"
                   url="https://www.google.com/maps/dir/Chamundi+Hills+Mysore/Mysore+Palace/Devaraja+Market+Mysore/Jaganmohan+Palace+Mysore" />
-                <RouteCard plan="Plan B \u00B7 Day 2" day="Srirangapatna + Brindavan Gardens"
+                <RouteCard plan="Plan B · Day 2" day="Srirangapatna + Brindavan Gardens"
                   stops={["Mysore 8am","Srirangapatna 8:30am","Daria Daulat Bagh","Gumbaz","Ranganathaswamy Temple","Brindavan Gardens 3pm","Mysore 8pm"]}
-                  distance="52km round trip \u00B7 1.5hrs driving" note="Hire a local guide at Srirangapatna gate for the full Tipu Sultan story. \u20B9500\u2013\u20B9800 for 3 hours \u2014 transforms the experience."
+                  distance="52km round trip · 1.5hrs driving" note="Hire a local guide at Srirangapatna gate for the full Tipu Sultan story. ₹500–₹800 for 3 hours — transforms the experience."
                   color="border-teal-200 bg-teal-50"
                   url="https://www.google.com/maps/dir/Mysore/Daria+Daulat+Bagh+Srirangapatna/Tipu+Sultan+Gumbaz/Ranganathaswamy+Temple+Srirangapatna/Brindavan+Gardens/Mysore" />
               </div>
@@ -618,14 +618,14 @@ export default function MysoreClient() {
 
             {activeRoute === "C" && (
               <div className="space-y-4">
-                <RouteCard plan="Plan C \u00B7 Day 2" day="Ranganathittu + Srirangapatna + Brindavan"
+                <RouteCard plan="Plan C · Day 2" day="Ranganathittu + Srirangapatna + Brindavan"
                   stops={["Mysore 7:30am","Ranganathittu 8am","Srirangapatna 9:30am","Daria Daulat","Gumbaz","Brindavan Gardens 3pm","Mysore 8pm"]}
-                  distance="58km round trip \u00B7 1.5hrs driving" note="Ranganathittu Bird Sanctuary is 3km before Srirangapatna. Morning boat ride when birds are most active \u2014 pelicans, storks, kingfishers."
+                  distance="58km round trip · 1.5hrs driving" note="Ranganathittu Bird Sanctuary is 3km before Srirangapatna. Morning boat ride when birds are most active — pelicans, storks, kingfishers."
                   color="border-purple-200 bg-purple-50"
                   url="https://www.google.com/maps/dir/Mysore/Ranganathittu+Bird+Sanctuary/Daria+Daulat+Bagh+Srirangapatna/Tipu+Sultan+Gumbaz/Brindavan+Gardens/Mysore" />
-                <RouteCard plan="Plan C \u00B7 Day 3" day="Silk Factory + Zoo + Church"
+                <RouteCard plan="Plan C · Day 3" day="Silk Factory + Zoo + Church"
                   stops={["KSIC Silk Factory 10am","Mysore Zoo 11:30am","Guru Sweet Mart 1:30pm","St Philomena's 2:30pm","Karanji Lake 3:30pm","Palace Grounds 5pm"]}
-                  distance="12km \u00B7 ~30min riding" note="Day 3 is entirely within the city. Everything is a 5\u201310 minute auto ride from each other."
+                  distance="12km · ~30min riding" note="Day 3 is entirely within the city. Everything is a 5–10 minute auto ride from each other."
                   color="border-purple-200 bg-purple-50"
                   url="https://www.google.com/maps/dir/KSIC+Silk+Mysore/Mysore+Zoo/St+Philomenas+Church+Mysore/Karanji+Lake+Mysore/Mysore+Palace" />
               </div>
@@ -649,22 +649,22 @@ export default function MysoreClient() {
             />
             <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
               <p className="text-xs text-muted font-light italic text-center">
-                Mysore Pak from Guru Sweet Mart — ghee-rich, crumbly, and nothing like the packaged versions. Budget \u20B960\u2013\u20B9100 for a box that will not survive the car ride home.
+                Mysore Pak from Guru Sweet Mart — ghee-rich, crumbly, and nothing like the packaged versions. Budget ₹60–₹100 for a box that will not survive the car ride home.
               </p>
             </div>
           </div>
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
-                { title: "Treating Mysore as a day trip from Bangalore", desc: "A day trip means you see the palace and leave. Mysore needs 3 days minimum to experience properly \u2014 the market, the hills, Srirangapatna, the food culture.", icon: "\u23F0" },
-                { title: "Visiting the palace after 11am", desc: "Tour buses arrive between 10:30am and 2pm. Go at 8:30am opening \u2014 you get nearly empty halls and better light through the stained glass.", icon: "\uD83C\uDFF0" },
+                { title: "Treating Mysore as a day trip from Bangalore", desc: "A day trip means you see the palace and leave. Mysore needs 3 days minimum to experience properly — the market, the hills, Srirangapatna, the food culture.", icon: "\u23F0" },
+                { title: "Visiting the palace after 11am", desc: "Tour buses arrive between 10:30am and 2pm. Go at 8:30am opening — you get nearly empty halls and better light through the stained glass.", icon: "\uD83C\uDFF0" },
                 { title: "Buying silk from random shops", desc: "Mysore has hundreds of silk shops. Most sell mixed blends at pure silk prices. Only buy from KSIC Government Showroom or Cauvery Arts & Crafts for certified purity.", icon: "\uD83E\uDDF5" },
                 { title: "Skipping Srirangapatna", desc: "Just 16km away with Tipu Sultan's summer palace, ancient temples, and genuine history. Most visitors skip it because they don't know about it.", icon: "\uD83D\uDEA8" },
-                { title: "Missing Sunday palace illumination", desc: "If your trip includes a Sunday, plan your schedule around the 7\u20138pm illumination. 100,000 bulbs. Free to watch. Genuinely spectacular.", icon: "\uD83D\uDCA1" },
-                { title: "Eating only at tourist restaurants", desc: "Mylari Hotel dosa: \u20B960. RRR thali: \u20B9150. Hotel restaurant dosa: \u20B9250. The local spots are not just cheaper \u2014 they are genuinely better.", icon: "\uD83C\uDF7D" },
+                { title: "Missing Sunday palace illumination", desc: "If your trip includes a Sunday, plan your schedule around the 7–8pm illumination. 100,000 bulbs. Free to watch. Genuinely spectacular.", icon: "\uD83D\uDCA1" },
+                { title: "Eating only at tourist restaurants", desc: "Mylari Hotel dosa: ₹60. RRR thali: ₹150. Hotel restaurant dosa: ₹250. The local spots are not just cheaper — they are genuinely better.", icon: "\uD83C\uDF7D" },
               ].map((m) => (
                 <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
                   color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
@@ -679,9 +679,9 @@ export default function MysoreClient() {
               {[
                 { icon: "\uD83C\uDF05", title: "Chamundi Hills at Dawn", desc: "Chamundi Hills at 6am beats the afternoon tourist rush and the view of Mysore below is stunning. The morning light on the palace from up there is extraordinary.", color: "bg-amber-50 border-amber-200" },
                 { icon: "\uD83C\uDF6C", title: "The Real Mysore Pak", desc: "Guru Sweet Mart near Devaraja Market makes the original ghee-rich version. Soft, crumbly, dissolves on your tongue. The packaged tourist versions are a different food entirely.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83D\uDE82", title: "Take the Shatabdi Express", desc: "Bangalore to Mysore in 2 hours flat. Departs 6am or 11am. Book 2 weeks ahead \u2014 it fills up. \u20B9300\u2013\u20B9700 depending on class. Far better than driving.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83C\uDFA8", title: "Mysore Paintings Are Worth It", desc: "Traditional Mysore paintings use real gold leaf and take months to complete. Prices start at \u20B91,500 for small pieces. Buy from Cauvery Arts or direct from artists near Jaganmohan Palace.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDCF1", title: "Ola and Rapido Work Well", desc: "Auto-rickshaws in Mysore are honest and metered. But Ola and Rapido are even cheaper and more convenient. Minimum fare is about \u20B930.", color: "bg-purple-50 border-purple-200" },
+                { icon: "\uD83D\uDE82", title: "Take the Shatabdi Express", desc: "Bangalore to Mysore in 2 hours flat. Departs 6am or 11am. Book 2 weeks ahead — it fills up. ₹300–₹700 depending on class. Far better than driving.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83C\uDFA8", title: "Mysore Paintings Are Worth It", desc: "Traditional Mysore paintings use real gold leaf and take months to complete. Prices start at ₹1,500 for small pieces. Buy from Cauvery Arts or direct from artists near Jaganmohan Palace.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83D\uDCF1", title: "Ola and Rapido Work Well", desc: "Auto-rickshaws in Mysore are honest and metered. But Ola and Rapido are even cheaper and more convenient. Minimum fare is about ₹30.", color: "bg-purple-50 border-purple-200" },
                 { icon: "\uD83D\uDCC6", title: "Dasara is Magical but Intense", desc: "If visiting during Dasara (Oct), book accommodation 2 months ahead. Prices double but the 10-day festival with the palace procession is genuinely once-in-a-lifetime.", color: "bg-purple-50 border-purple-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
@@ -693,28 +693,28 @@ export default function MysoreClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget — we&apos;ll send a personalised Mysore itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Mysore Trip {"\u2192"}
+                Plan My Mysore Trip {"→"}
               </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
             </div>
           </div>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
-                { q: "How many days are enough for Mysore?", a: "3 days is ideal to cover Mysore Palace, Chamundi Hills, Brindavan Gardens, Devaraja Market, and a day trip to Srirangapatna. 2 days works if you skip Srirangapatna. 4\u20135 days lets you add Coorg or Kabini as an extension." },
-                { q: "What is the best time to visit Mysore?", a: "October to February offers the best weather (18\u201328\u00B0C). October is peak season due to Dasara festival \u2014 spectacular but crowded and expensive. November\u2013February is the sweet spot with pleasant weather and manageable crowds. March\u2013May is hot (35\u00B0C+). June\u2013September brings monsoon rains." },
-                { q: "How much does a 3-day Mysore trip cost?", a: "Budget solo: under \u20B96,000 including accommodation. Heritage couple: \u20B98,000\u2013\u20B918,000 for two. Royal luxury: \u20B918,000\u2013\u20B935,000 for two. All include accommodation, food, transport, activities and some shopping." },
-                { q: "Is Mysore Palace worth visiting?", a: "It is India's second-most-visited monument after the Taj Mahal for good reason. The Durbar Hall, stained glass ceilings, and 280kg gold throne are extraordinary. Visit on a Sunday evening for the illumination \u2014 100,000 bulbs transform the entire facade." },
+                { q: "How many days are enough for Mysore?", a: "3 days is ideal to cover Mysore Palace, Chamundi Hills, Brindavan Gardens, Devaraja Market, and a day trip to Srirangapatna. 2 days works if you skip Srirangapatna. 4–5 days lets you add Coorg or Kabini as an extension." },
+                { q: "What is the best time to visit Mysore?", a: "October to February offers the best weather (18–28°C). October is peak season due to Dasara festival — spectacular but crowded and expensive. November–February is the sweet spot with pleasant weather and manageable crowds. March–May is hot (35°C+). June–September brings monsoon rains." },
+                { q: "How much does a 3-day Mysore trip cost?", a: "Budget solo: under ₹6,000 including accommodation. Heritage couple: ₹8,000–₹18,000 for two. Royal luxury: ₹18,000–₹35,000 for two. All include accommodation, food, transport, activities and some shopping." },
+                { q: "Is Mysore Palace worth visiting?", a: "It is India's second-most-visited monument after the Taj Mahal for good reason. The Durbar Hall, stained glass ceilings, and 280kg gold throne are extraordinary. Visit on a Sunday evening for the illumination — 100,000 bulbs transform the entire facade." },
                 { q: "What should I buy in Mysore?", a: "Mysore silk sarees from KSIC (government-certified purity), Mysore Pak from Guru Sweet Mart, sandalwood products from Cauvery Arts & Crafts, traditional Mysore paintings with real gold leaf, and fresh spices from Devaraja Market." },
-                { q: "How do I get to Mysore from Bangalore?", a: "Shatabdi Express train: 2 hours, \u20B9300\u2013\u20B9700, the best option. KSRTC Airavat bus: every 15 min, 3\u20133.5 hours, \u20B9300\u2013\u20B9500. Driving via Mysore Expressway: 3 hours. Book the train 2 weeks ahead \u2014 it fills up fast." },
+                { q: "How do I get to Mysore from Bangalore?", a: "Shatabdi Express train: 2 hours, ₹300–₹700, the best option. KSRTC Airavat bus: every 15 min, 3–3.5 hours, ₹300–₹500. Driving via Mysore Expressway: 3 hours. Book the train 2 weeks ahead — it fills up fast." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
           </section>
@@ -727,15 +727,15 @@ export default function MysoreClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Planning a Longer India Trip?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Goa \u2014 3 Day Beach Guide", href: "/blog/goa-3-days", soon: false },
-                { label: "Kerala Backwaters \u2014 5 Day Guide", href: "/blog/kerala-5-days", soon: true },
-                { label: "Golden Triangle \u2014 Delhi, Agra, Jaipur", href: "/blog/golden-triangle-7-days", soon: true },
+                { label: "Goa — 3 Day Beach Guide", href: "/blog/goa-3-days", soon: false },
+                { label: "Kerala Backwaters — 5 Day Guide", href: "/blog/kerala-5-days", soon: true },
+                { label: "Golden Triangle — Delhi, Agra, Jaipur", href: "/blog/golden-triangle-7-days", soon: true },
                 { label: "Browse All India Packages", href: "/#packages", soon: false },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">{link.soon ? "Coming Soon \u2192" : "View \u2192"}</span>
+                  <span className="text-xs text-muted">{link.soon ? "Coming Soon →" : "View →"}</span>
                 </Link>
               ))}
             </div>

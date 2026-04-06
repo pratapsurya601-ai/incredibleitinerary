@@ -15,13 +15,13 @@ import Breadcrumb from "@/components/blog/Breadcrumb";
 import InlineCTA from "@/components/blog/InlineCTA";
 
 const UBUD_TOC = [
-  { id: "plans",      emoji: "\u26A1", label: "Which Plan Are You?" },
+  { id: "plans",      emoji: "⚡", label: "Which Plan Are You?" },
   { id: "visa",       emoji: "\uD83D\uDCCB", label: "Visa & Entry" },
   { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
   { id: "budget",     emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-  { id: "mistakes",   emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "mistakes",   emoji: "❌", label: "Mistakes to Avoid" },
   { id: "tips",       emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",        emoji: "\u2753", label: "FAQ" },
+  { id: "faq",        emoji: "❓", label: "FAQ" },
 ];
 
 /* ── Reading-progress bar ─────────────────────────────────────────────── */
@@ -61,7 +61,7 @@ function ShareBar() {
       ))}
       <button onClick={copy}
         className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -98,7 +98,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
                 {item}
               </li>
             ))}
@@ -122,7 +122,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -156,8 +156,8 @@ export default function UbudClient() {
   const [activeTab, setActiveTab] = useState<"A" | "B">("A");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget",      sub: "Rp250k\u2013500k/day (~$16\u201332)", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\u2728",        label: "Comfortable", sub: "Rp600k\u20131.2M/day (~$38\u201376)", color: "border-blue-300 bg-blue-50 text-blue-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget",      sub: "Rp250k–500k/day (~$16–32)", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "✨",        label: "Comfortable", sub: "Rp600k–1.2M/day (~$38–76)", color: "border-blue-300 bg-blue-50 text-blue-800" },
   ];
 
   return (
@@ -195,9 +195,9 @@ export default function UbudClient() {
                   Culture & Wellness
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">12 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -219,9 +219,9 @@ export default function UbudClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDEE\uD83C\uDDE9"} Indonesia</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDDD3"} 3 Days</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDCB0"} From Rp250k/day</span>
             </div>
           </div>
@@ -237,7 +237,7 @@ export default function UbudClient() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="3 Days" />
             <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value="Rp250k/day" />
-            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Apr \u2013 Oct" />
+            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Apr – Oct" />
             <StatCard icon={"\u2708\uFE0F"} label="Nearest Airport" value="DPS (1.5 hrs)" />
           </div>
 
@@ -257,7 +257,7 @@ export default function UbudClient() {
                     ["Documents", "Passport valid 6+ months, return ticket, proof of accommodation."],
                   ].map(([k, v]) => (
                     <div key={k} className="flex gap-2 text-xs">
-                      <span className="font-medium text-ink/60 w-24 flex-shrink-0">{k}</span>
+                      <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
                       <span className="text-muted font-light">{v}</span>
                     </div>
                   ))}
@@ -271,10 +271,10 @@ export default function UbudClient() {
                   {[
                     ["Visa-Free", "30 days visa-free for USA, UK, EU, Australia, Canada and 80+ countries."],
                     ["Extension", "Pay Rp500,000 VOA on arrival if you want to extend. Free entry cannot be extended."],
-                    ["Tip", "Carry a printed return ticket \u2014 airlines sometimes check before boarding."],
+                    ["Tip", "Carry a printed return ticket — airlines sometimes check before boarding."],
                   ].map(([k, v]) => (
                     <div key={k} className="flex gap-2 text-xs">
-                      <span className="font-medium text-ink/60 w-24 flex-shrink-0">{k}</span>
+                      <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
                       <span className="text-muted font-light">{v}</span>
                     </div>
                   ))}
@@ -285,7 +285,7 @@ export default function UbudClient() {
 
           {/* ── WHICH PLAN ── */}
           <section id="plans" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Which Plan Are You?</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
             <p className="text-sm text-muted font-light mb-6">Pick your comfort level &mdash; jump straight to your itinerary.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {plans.map((p) => (
@@ -294,7 +294,7 @@ export default function UbudClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">View Plan {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">View Plan {"→"}</p>
                 </button>
               ))}
             </div>
@@ -329,35 +329,35 @@ export default function UbudClient() {
                 </div>
                 <DayCard day="Day 1" title="Monkey Forest, Ubud Palace & Art Market"
                   items={[
-                    "Airport \u2192 Ubud: pre-book Grab (Rp180k\u2013250k, ~$11\u201316). Takes 1.5 hrs. Airport taxis charge double.",
-                    "Check in, rent a scooter (Rp70k/day, ~$4). Walk to Ubud Monkey Forest (Rp80k entry, ~$5). Spend 1.5 hours. Secure all loose items \u2014 monkeys are fast.",
-                    "3pm: Ubud Royal Palace (free, exterior only). Walk across the road to Ubud Art Market \u2014 bargain hard (start at 30% of asking). Good for silk, incense, wooden carvings.",
+                    "Airport → Ubud: pre-book Grab (Rp180k–250k, ~$11–16). Takes 1.5 hrs. Airport taxis charge double.",
+                    "Check in, rent a scooter (Rp70k/day, ~$4). Walk to Ubud Monkey Forest (Rp80k entry, ~$5). Spend 1.5 hours. Secure all loose items — monkeys are fast.",
+                    "3pm: Ubud Royal Palace (free, exterior only). Walk across the road to Ubud Art Market — bargain hard (start at 30% of asking). Good for silk, incense, wooden carvings.",
                     "5pm: Drop-in yoga class at Yoga Barn (Rp130k, ~$8) or Radiantly Alive (Rp120k). Book online for popular evening sessions.",
-                    "Dinner: Warung Biah Biah \u2014 traditional Balinese set meal, Rp35k\u201350k (~$2\u20133). The real deal.",
+                    "Dinner: Warung Biah Biah — traditional Balinese set meal, Rp35k–50k (~$2–3). The real deal.",
                   ]}
-                  cost="Rp350k\u2013500k (~$22\u201332) excluding accommodation" />
+                  cost="Rp350k–500k (~$22–32) excluding accommodation" />
                 <DayCard day="Day 2" title="Tegallalang, Tirta Empul & Coffee Plantation"
                   items={[
-                    "6:30am: Ride to Tegallalang Rice Terraces (Rp25k entry, ~$1.60). At this hour the mist is still rolling through and you\u2019ll have the paths largely to yourself. By 10am it\u2019s an Instagram photoshoot queue.",
-                    "8:30am: Coffee plantation stop on the way back (free tasting). Buy regular Bali coffee Rp50k\u201380k/pack \u2014 skip the luwak coffee (overpriced, ethically questionable).",
-                    "10am: Tirta Empul Water Temple (Rp50k entry, ~$3). Bring or rent a sarong (Rp10k). Participate in the purification ritual at the 13 fountains \u2014 genuinely moving experience.",
-                    "1pm: Lunch at Warung Tepi Sawah \u2014 rice paddy views, local prices. Nasi goreng Rp30k\u201345k.",
-                    "3pm: Optional \u2014 Tukad Cepung Waterfall (Rp20k entry). Light beams through cave roof, spectacular early afternoon.",
+                    "6:30am: Ride to Tegallalang Rice Terraces (Rp25k entry, ~$1.60). At this hour the mist is still rolling through and you’ll have the paths largely to yourself. By 10am it’s an Instagram photoshoot queue.",
+                    "8:30am: Coffee plantation stop on the way back (free tasting). Buy regular Bali coffee Rp50k–80k/pack — skip the luwak coffee (overpriced, ethically questionable).",
+                    "10am: Tirta Empul Water Temple (Rp50k entry, ~$3). Bring or rent a sarong (Rp10k). Participate in the purification ritual at the 13 fountains — genuinely moving experience.",
+                    "1pm: Lunch at Warung Tepi Sawah — rice paddy views, local prices. Nasi goreng Rp30k–45k.",
+                    "3pm: Optional — Tukad Cepung Waterfall (Rp20k entry). Light beams through cave roof, spectacular early afternoon.",
                     "Evening: Explore Jl. Goutama side streets for cheap warungs and local bars.",
                   ]}
-                  cost="Rp250k\u2013450k (~$16\u201329) excluding accommodation" />
+                  cost="Rp250k–450k (~$16–29) excluding accommodation" />
                 <DayCard day="Day 3" title="Campuhan Ridge Walk at Dawn, Museum & Departure"
                   items={[
                     "5:45am: Walk to Campuhan Ridge Walk trailhead (starts behind Warwick Ibah hotel). The 2km ridge path between two river valleys with mist rolling through is peak Ubud. Back by 7:30am.",
-                    "8am: Breakfast at Alchemy Raw Vegan Caf\u00e9 (Rp40k\u201370k) or local warung.",
-                    "10am: Neka Art Museum (Rp80k, ~$5) or ARMA Museum (Rp80k). Genuinely world-class Balinese and Indonesian art. Most visitors skip these \u2014 don\u2019t.",
+                    "8am: Breakfast at Alchemy Raw Vegan Caf\u00e9 (Rp40k–70k) or local warung.",
+                    "10am: Neka Art Museum (Rp80k, ~$5) or ARMA Museum (Rp80k). Genuinely world-class Balinese and Indonesian art. Most visitors skip these — don’t.",
                     "12pm: Last shopping on Jl. Monkey Forest or Jl. Hanoman. Haggle.",
-                    "2pm: Head to airport or next destination. Ubud to DPS airport is 1.5\u20132 hrs depending on traffic.",
+                    "2pm: Head to airport or next destination. Ubud to DPS airport is 1.5–2 hrs depending on traffic.",
                   ]}
-                  cost="Rp200k\u2013350k (~$13\u201322) excluding accommodation" />
+                  cost="Rp200k–350k (~$13–22) excluding accommodation" />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
                   <span className="text-xs text-amber-700 uppercase tracking-wide">Total 3-Day Cost (solo) &middot; </span>
-                  <span className="font-serif text-base text-ink font-light">Rp1.1M\u20131.8M (~$70\u2013114) including accommodation</span>
+                  <span className="font-serif text-base text-ink font-light">Rp1.1M–1.8M (~$70–114) including accommodation</span>
                 </div>
               </div>
             )}
@@ -366,7 +366,7 @@ export default function UbudClient() {
             {activeTab === "B" && (
               <div className="space-y-4">
                 <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-xl mb-6">
-                  <span className="text-2xl">{"\u2728"}</span>
+                  <span className="text-2xl">{"✨"}</span>
                   <div>
                     <p className="text-sm font-medium text-blue-800">Comfortable Plan &mdash; Boutique Ubud</p>
                     <p className="text-xs text-blue-600 font-light">Stay: Rice-paddy-view villa with pool &middot; Rp400k&ndash;1M/night (~$25&ndash;63) &middot; Private driver: Rp500k/day (~$32)</p>
@@ -374,36 +374,36 @@ export default function UbudClient() {
                 </div>
                 <DayCard day="Day 1" title="Monkey Forest, Royal Palace & Evening Yoga"
                   items={[
-                    "Airport \u2192 Ubud: pre-booked private driver (Rp350k\u2013450k, ~$22\u201328). More comfortable than Grab for 1.5hrs.",
-                    "Check in to a rice-paddy-view villa. Rp500k\u20131M/night gets you a private pool in Ubud \u2014 extraordinary value.",
+                    "Airport → Ubud: pre-booked private driver (Rp350k–450k, ~$22–28). More comfortable than Grab for 1.5hrs.",
+                    "Check in to a rice-paddy-view villa. Rp500k–1M/night gets you a private pool in Ubud — extraordinary value.",
                     "2pm: Ubud Monkey Forest (Rp80k). Hire a local guide (Rp100k) who explains the temple significance.",
-                    "4pm: Ubud Royal Palace (free) + walk through Ubud Art Market with purpose \u2014 buy gifts here, prices are better than the south.",
+                    "4pm: Ubud Royal Palace (free) + walk through Ubud Art Market with purpose — buy gifts here, prices are better than the south.",
                     "5:30pm: Sunset yoga at Yoga Barn (Rp150k, ~$9.50). Book the day before for the popular evening classes.",
-                    "7:30pm: Dinner at Locavore To \u2014 modern Balinese fine dining (Rp200k\u2013350k/person, ~$13\u201322). Reservation recommended.",
+                    "7:30pm: Dinner at Locavore To — modern Balinese fine dining (Rp200k–350k/person, ~$13–22). Reservation recommended.",
                   ]}
-                  cost="Rp600k\u2013950k (~$38\u201360) excluding accommodation" />
+                  cost="Rp600k–950k (~$38–60) excluding accommodation" />
                 <DayCard day="Day 2" title="Tegallalang, Tirta Empul & Kintamani Volcano"
                   items={[
-                    "6:30am: Private driver to Tegallalang Rice Terraces (Rp25k entry). Hire a local guide (Rp100k, ~$6) for the hidden paths \u2014 they know viewpoints that aren\u2019t on any map.",
-                    "9am: Tirta Empul Water Temple (Rp50k). Your guide can arrange a private purification ceremony with a temple priest (Rp200k\u2013300k) \u2014 far more meaningful than the public queue.",
-                    "11am: Drive to Kintamani. Lunch at a restaurant with Mount Batur volcano views (Rp150k\u2013250k/person, ~$9\u201316). Spectacular on a clear day.",
+                    "6:30am: Private driver to Tegallalang Rice Terraces (Rp25k entry). Hire a local guide (Rp100k, ~$6) for the hidden paths — they know viewpoints that aren’t on any map.",
+                    "9am: Tirta Empul Water Temple (Rp50k). Your guide can arrange a private purification ceremony with a temple priest (Rp200k–300k) — far more meaningful than the public queue.",
+                    "11am: Drive to Kintamani. Lunch at a restaurant with Mount Batur volcano views (Rp150k–250k/person, ~$9–16). Spectacular on a clear day.",
                     "1pm: Stop at a coffee plantation (free tasting). Buy Bali coffee, skip the luwak marketing.",
-                    "3pm: Optional \u2014 Tukad Cepung Waterfall (Rp20k). Cave waterfall with light beams, best early afternoon.",
-                    "Evening: Balinese cooking class at Paon Bali (Rp400k\u2013500k, ~$25\u201332). Market visit + 5-course meal you cook yourself. Excellent.",
+                    "3pm: Optional — Tukad Cepung Waterfall (Rp20k). Cave waterfall with light beams, best early afternoon.",
+                    "Evening: Balinese cooking class at Paon Bali (Rp400k–500k, ~$25–32). Market visit + 5-course meal you cook yourself. Excellent.",
                   ]}
-                  cost="Rp800k\u20131.2M (~$50\u201376) excluding accommodation" />
+                  cost="Rp800k–1.2M (~$50–76) excluding accommodation" />
                 <DayCard day="Day 3" title="Campuhan Ridge at Dawn, Museum & Farewell"
                   items={[
                     "5:45am: Campuhan Ridge Walk. The 2km path between river valleys with morning mist is transcendent. Back by 7:30am.",
-                    "8am: Brunch at Sari Organik \u2014 rice paddy walk to get there (15 min). Organic Balinese breakfast with valley views (Rp60k\u2013100k).",
-                    "10am: Neka Art Museum (Rp80k) \u2014 Balinese art from the 1930s to contemporary. Budget 1.5 hours.",
-                    "12pm: Last-minute shopping or spa session. Balinese massage: Rp100k\u2013200k/hour (~$6\u201313) \u2014 fraction of what you\u2019d pay anywhere else.",
+                    "8am: Brunch at Sari Organik — rice paddy walk to get there (15 min). Organic Balinese breakfast with valley views (Rp60k–100k).",
+                    "10am: Neka Art Museum (Rp80k) — Balinese art from the 1930s to contemporary. Budget 1.5 hours.",
+                    "12pm: Last-minute shopping or spa session. Balinese massage: Rp100k–200k/hour (~$6–13) — fraction of what you’d pay anywhere else.",
                     "2pm: Depart for airport or next Bali destination.",
                   ]}
-                  cost="Rp400k\u2013700k (~$25\u201344) excluding accommodation" />
+                  cost="Rp400k–700k (~$25–44) excluding accommodation" />
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
                   <span className="text-xs text-blue-700 uppercase tracking-wide">Total 3-Day Cost (per person) &middot; </span>
-                  <span className="font-serif text-base text-ink font-light">Rp3M\u20135M (~$190\u2013317) including accommodation</span>
+                  <span className="font-serif text-base text-ink font-light">Rp3M–5M (~$190–317) including accommodation</span>
                 </div>
               </div>
             )}
@@ -418,16 +418,16 @@ export default function UbudClient() {
                   <tr className="bg-parchment">
                     <th className="text-left p-3.5 text-xs font-medium text-muted">Category (3 days)</th>
                     <th className="p-3.5 text-xs font-medium text-amber-700 text-center">{"\uD83D\uDCB0"} Budget</th>
-                    <th className="p-3.5 text-xs font-medium text-blue-700 text-center">{"\u2728"} Comfortable</th>
+                    <th className="p-3.5 text-xs font-medium text-blue-700 text-center">{"✨"} Comfortable</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (3N)", "Rp300k\u2013750k ($19\u201347)", "Rp1.2M\u20133M ($76\u2013190)"],
-                    ["\uD83C\uDF5D Food & Drinks", "Rp300k\u2013500k ($19\u201332)", "Rp800k\u20131.5M ($50\u201395)"],
-                    ["\uD83D\uDE97 Transport", "Rp250k\u2013400k ($16\u201325)", "Rp600k\u20131M ($38\u201363)"],
-                    ["\uD83C\uDFAF Activities", "Rp300k\u2013500k ($19\u201332)", "Rp600k\u20131.2M ($38\u201376)"],
-                    ["\uD83E\uDDD8 Yoga / Wellness", "Rp130k\u2013260k ($8\u201316)", "Rp300k\u2013500k ($19\u201332)"],
+                    ["\uD83C\uDFE8 Accommodation (3N)", "Rp300k–750k ($19–47)", "Rp1.2M–3M ($76–190)"],
+                    ["\uD83C\uDF5D Food & Drinks", "Rp300k–500k ($19–32)", "Rp800k–1.5M ($50–95)"],
+                    ["\uD83D\uDE97 Transport", "Rp250k–400k ($16–25)", "Rp600k–1M ($38–63)"],
+                    ["\uD83C\uDFAF Activities", "Rp300k–500k ($19–32)", "Rp600k–1.2M ($38–76)"],
+                    ["\uD83E\uDDD8 Yoga / Wellness", "Rp130k–260k ($8–16)", "Rp300k–500k ($19–32)"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -436,7 +436,7 @@ export default function UbudClient() {
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total (per person)</td>
-                    {["Rp1.1M\u20131.8M ($70\u2013114)", "Rp3M\u20135M ($190\u2013317)"].map((v, i) => (
+                    {["Rp1.1M–1.8M ($70–114)", "Rp3M–5M ($190–317)"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
                     ))}
                   </tr>
@@ -483,8 +483,8 @@ export default function UbudClient() {
           <AffiliateBlock
             destination="Ubud"
             hotels={[
-              { name: "Puri Garden Hotel", type: "Budget Guesthouse \u00B7 Central Ubud", price: "From Rp200k/night (~$13)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/id/puri-garden-ubud.html?aid=2820480" },
-              { name: "Bisma Eight", type: "Boutique Jungle Villa \u00B7 Ubud", price: "From Rp1.2M/night (~$76)", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/id/bisma-eight-ubud.html?aid=2820480" },
+              { name: "Puri Garden Hotel", type: "Budget Guesthouse · Central Ubud", price: "From Rp200k/night (~$13)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/id/puri-garden-ubud.html?aid=2820480" },
+              { name: "Bisma Eight", type: "Boutique Jungle Villa · Ubud", price: "From Rp1.2M/night (~$76)", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/id/bisma-eight-ubud.html?aid=2820480" },
               { name: "Four Seasons Sayan", type: "Luxury Jungle Resort", price: "From Rp5M/night (~$317)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/id/four-seasons-sayan.html?aid=2820480" },
             ]}
             activities={[
@@ -497,14 +497,14 @@ export default function UbudClient() {
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
                 { title: "Visiting Tegallalang after 9am", desc: "The terraces become a photoshoot queue by 10am with swing operators shouting. Arrive at 6:30am for mist, silence and the real Bali.", icon: "\uD83C\uDF3E" },
-                { title: "Eating only on Jl. Monkey Forest", desc: "The main tourist strip charges 3x local prices. Walk 200m off any main road and a full nasi campur is Rp25k\u201340k instead of Rp80k+.", icon: "\uD83C\uDF5C" },
+                { title: "Eating only on Jl. Monkey Forest", desc: "The main tourist strip charges 3x local prices. Walk 200m off any main road and a full nasi campur is Rp25k–40k instead of Rp80k+.", icon: "\uD83C\uDF5C" },
                 { title: "Skipping the museums", desc: "Neka Art Museum and ARMA hold genuinely world-class Balinese art. Most tourists walk right past them. Budget 1.5 hours each.", icon: "\uD83C\uDFA8" },
-                { title: "Booking taxis instead of Grab", desc: "Airport and street taxis charge 2\u20133x Grab/Gojek prices. Download both apps before landing. For day trips, hire a private driver (Rp500k\u2013600k/day).", icon: "\uD83D\uDE95" },
-                { title: "Not bringing a sarong", desc: "Required at every temple. Buy one at any market for Rp30k\u201350k. Renting at temples costs Rp10k\u201320k each time and they're shared.", icon: "\uD83E\uDDF3" },
+                { title: "Booking taxis instead of Grab", desc: "Airport and street taxis charge 2–3x Grab/Gojek prices. Download both apps before landing. For day trips, hire a private driver (Rp500k–600k/day).", icon: "\uD83D\uDE95" },
+                { title: "Not bringing a sarong", desc: "Required at every temple. Buy one at any market for Rp30k–50k. Renting at temples costs Rp10k–20k each time and they're shared.", icon: "\uD83E\uDDF3" },
               ].map((m) => (
                 <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
                   color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
@@ -517,24 +517,24 @@ export default function UbudClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { icon: "\uD83C\uDF05", title: "The 6am Rule", desc: "Campuhan Ridge Walk, Tegallalang, Tirta Empul \u2014 every major Ubud attraction is a completely different (and better) experience before 7am. Set one alarm.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83D\uDCB1", title: "Cash for Warungs", desc: "Most local warungs are cash-only. ATMs in central Ubud charge Rp30k\u201350k fee. Withdraw large amounts or use licensed money changers on Jl. Raya Ubud.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83E\uDDD8", title: "Yoga Drop-ins", desc: "Yoga Barn and Radiantly Alive offer drop-in classes from Rp120k\u2013150k ($8\u201310). Multi-class packages are cheaper. Book online for popular morning/sunset slots.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDC86", title: "Massage Prices", desc: "A 1-hour Balinese massage in Ubud costs Rp80k\u2013200k ($5\u201313). That\u2019s a fraction of what the same quality costs anywhere else in the world. Book a session every day.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83C\uDF27\uFE0F", title: "Wet Season Advantage", desc: "Nov\u2013Mar rain comes in short bursts. Rice terraces are at their greenest, waterfalls at full power, and prices drop 30\u201350%. Pack a light rain jacket.", color: "bg-rose-50 border-rose-200" },
-                { icon: "\uD83D\uDEB2", title: "Cycling Ubud", desc: "Rent a bicycle (Rp40k\u201360k/day) for central Ubud. The town itself is walkable but a bike lets you reach the rice paddies and Campuhan without a scooter.", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83C\uDF05", title: "The 6am Rule", desc: "Campuhan Ridge Walk, Tegallalang, Tirta Empul — every major Ubud attraction is a completely different (and better) experience before 7am. Set one alarm.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83D\uDCB1", title: "Cash for Warungs", desc: "Most local warungs are cash-only. ATMs in central Ubud charge Rp30k–50k fee. Withdraw large amounts or use licensed money changers on Jl. Raya Ubud.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83E\uDDD8", title: "Yoga Drop-ins", desc: "Yoga Barn and Radiantly Alive offer drop-in classes from Rp120k–150k ($8–10). Multi-class packages are cheaper. Book online for popular morning/sunset slots.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83D\uDC86", title: "Massage Prices", desc: "A 1-hour Balinese massage in Ubud costs Rp80k–200k ($5–13). That’s a fraction of what the same quality costs anywhere else in the world. Book a session every day.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83C\uDF27\uFE0F", title: "Wet Season Advantage", desc: "Nov–Mar rain comes in short bursts. Rice terraces are at their greenest, waterfalls at full power, and prices drop 30–50%. Pack a light rain jacket.", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83D\uDEB2", title: "Cycling Ubud", desc: "Rent a bicycle (Rp40k–60k/day) for central Ubud. The town itself is walkable but a bike lets you reach the rice paddies and Campuhan without a scooter.", color: "bg-rose-50 border-rose-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
           </section>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
                 { q: "How many days are enough for Ubud?", a: "3 days covers all the highlights: Monkey Forest, rice terraces, temples, Campuhan Ridge Walk and a museum visit. 5 days lets you add Mount Batur sunrise trek, cooking classes and deeper wellness immersion." },
-                { q: "How much does a 3-day Ubud trip cost?", a: "Budget solo: Rp1.1M\u20131.8M ($70\u2013114). Comfortable: Rp3M\u20135M ($190\u2013317). Both include accommodation, food, transport and activities." },
-                { q: "What is the best time to visit Ubud?", a: "April\u2013October is dry season and best overall. May\u2013June offers best value. Nov\u2013March is wet season but the terraces are greenest and prices drop 30\u201350%." },
+                { q: "How much does a 3-day Ubud trip cost?", a: "Budget solo: Rp1.1M–1.8M ($70–114). Comfortable: Rp3M–5M ($190–317). Both include accommodation, food, transport and activities." },
+                { q: "What is the best time to visit Ubud?", a: "April–October is dry season and best overall. May–June offers best value. Nov–March is wet season but the terraces are greenest and prices drop 30–50%." },
                 { q: "Do I need a visa for Ubud / Bali?", a: "Indian passports: free 30-day visa on arrival. Western passports: 30 days visa-free. Both extendable by 30 days at immigration for Rp500,000." },
                 { q: "Is Ubud safe for solo travellers?", a: "Very safe. Main concerns are scooter accidents (wear a helmet) and monkeys stealing belongings at the Monkey Forest. Crime against tourists is extremely rare." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
@@ -549,15 +549,15 @@ export default function UbudClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Exploring More of Bali &amp; Indonesia?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Bali Complete \u2014 5 Day Guide", href: "/blog/bali-5-days", soon: false },
-                { label: "Lombok \u2014 4 Day Island Guide", href: "/blog/lombok-4-days", soon: false },
-                { label: "Bangkok \u2014 4 Day Guide", href: "/blog/bangkok-4-days", soon: false },
+                { label: "Bali Complete — 5 Day Guide", href: "/blog/bali-5-days", soon: false },
+                { label: "Lombok — 4 Day Island Guide", href: "/blog/lombok-4-days", soon: false },
+                { label: "Bangkok — 4 Day Guide", href: "/blog/bangkok-4-days", soon: false },
                 { label: "Browse All Packages", href: "/#packages", soon: false },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">View {"\u2192"}</span>
+                  <span className="text-xs text-muted">View {"→"}</span>
                 </Link>
               ))}
             </div>

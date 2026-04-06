@@ -127,7 +127,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -272,7 +272,7 @@ export default function AmritsarClient() {
                     <span className="text-xs font-semibold tracking-widest uppercase text-muted">{s.season}</span>
                   </div>
                   <p className="font-serif text-base text-ink mb-2">{s.title}</p>
-                  <p className="text-xs text-muted font-light leading-relaxed">{s.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -404,7 +404,7 @@ export default function AmritsarClient() {
                     <div>
                       <p className="font-medium text-sm text-ink">{f.dish}</p>
                       <p className="text-[0.65rem] text-gold-dark mt-0.5">{f.where} · {f.price}</p>
-                      <p className="text-xs text-muted font-light leading-relaxed mt-2">{f.note}</p>
+                      <p className="text-xs text-gray-700 font-light leading-relaxed mt-2">{f.note}</p>
                     </div>
                   </div>
                 </div>
@@ -502,7 +502,7 @@ export default function AmritsarClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates and group — we&apos;ll send a personalised Amritsar itinerary including trains from Delhi within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">

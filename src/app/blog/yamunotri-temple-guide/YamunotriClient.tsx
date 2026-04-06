@@ -280,7 +280,7 @@ export default function YamunotriClient({ faqData }: Props) {
                 <div key={c.title} className={`rounded-xl border p-5 ${c.color}`}>
                   <div className="text-2xl mb-2">{c.icon}</div>
                   <p className="font-medium text-sm text-ink mb-1">{c.title}</p>
-                  <p className="text-xs text-muted font-light leading-relaxed">{c.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -378,7 +378,7 @@ export default function YamunotriClient({ faqData }: Props) {
                     </span>
                     <span className="font-medium text-sm text-ink">{s.label}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{s.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -797,7 +797,7 @@ export default function YamunotriClient({ faqData }: Props) {
                     <span className="text-xl flex-shrink-0">{t.icon}</span>
                     <div>
                       <p className="font-medium text-sm text-ink mb-1">{t.title}</p>
-                      <p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p>
+                      <p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p>
                     </div>
                   </div>
                 </div>

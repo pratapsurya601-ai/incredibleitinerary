@@ -67,18 +67,18 @@ const INDIA_SUB_OPTS = [
 ];
 
 const DURATION_OPTS = [
-  { id: "weekend",  emoji: "⚡",  label: "Weekend",    desc: "2\u20133 days" },
-  { id: "short",    emoji: "📅",  label: "Short Trip", desc: "4\u20135 days" },
-  { id: "week",     emoji: "🗓️",  label: "One Week",   desc: "6\u20137 days" },
-  { id: "extended", emoji: "📆",  label: "Extended",   desc: "8\u201314 days" },
+  { id: "weekend",  emoji: "⚡",  label: "Weekend",    desc: "2–3 days" },
+  { id: "short",    emoji: "📅",  label: "Short Trip", desc: "4–5 days" },
+  { id: "week",     emoji: "🗓️",  label: "One Week",   desc: "6–7 days" },
+  { id: "extended", emoji: "📆",  label: "Extended",   desc: "8–14 days" },
   { id: "long",     emoji: "🌍",  label: "Long Trip",  desc: "15+ days" },
   { id: "flexible", emoji: "🤷",  label: "Flexible",   desc: "Show me all" },
 ];
 
 const BUDGET_OPTS = [
   { id: "budget",   emoji: "💰", label: "Budget",      desc: "Under \u20b92,000/day or $30/day" },
-  { id: "midrange", emoji: "💳", label: "Mid-range",   desc: "\u20b92,000\u20135,000/day or $30\u201380/day" },
-  { id: "comfort",  emoji: "💎", label: "Comfortable", desc: "\u20b95,000\u201310,000/day or $80\u2013150/day" },
+  { id: "midrange", emoji: "💳", label: "Mid-range",   desc: "\u20b92,000–5,000/day or $30–80/day" },
+  { id: "comfort",  emoji: "💎", label: "Comfortable", desc: "\u20b95,000–10,000/day or $80–150/day" },
   { id: "luxury",   emoji: "👑", label: "Luxury",      desc: "\u20b910,000+/day or $150+/day" },
   { id: "nolimit",  emoji: "🤷", label: "No Limit",    desc: "Money is no object" },
 ];
@@ -755,13 +755,13 @@ export default function QuizClient() {
     "What kind of experience are you looking for?",
     "Which region excites you most?",
     "How many days do you have?",
-    "What\u2019s your budget per person per day?",
+    "What’s your budget per person per day?",
     "Who are you travelling with?",
   ];
   const STEP_SUBS = [
     "",
     "Select up to 3 that excite you most",
-    "Pick one region \u2014 you can adjust after seeing results",
+    "Pick one region — you can adjust after seeing results",
     "How long is your trip?",
     "Per person per day, roughly",
     "This helps us match the right vibe",
@@ -987,7 +987,7 @@ export default function QuizClient() {
                 : "bg-parchment-2 text-muted/40 cursor-not-allowed"
             }`}
           >
-            {step === 5 ? "Find My Matches \u2192" : "Continue \u2192"}
+            {step === 5 ? "Find My Matches →" : "Continue →"}
           </button>
           {step === 1 && prefs.experiences.length === 0 && (
             <p className="text-center text-[0.7rem] text-muted/60 mt-3">

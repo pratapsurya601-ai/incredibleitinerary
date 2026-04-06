@@ -109,7 +109,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -295,7 +295,7 @@ export default function GoldenTriangleClient() {
                     <h3 className="font-serif text-lg font-normal text-ink">{c.city}</h3>
                     <span className="text-xs font-medium text-teal bg-white px-3 py-1 rounded-full border border-parchment-2">{c.days}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed mb-3">{c.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed mb-3">{c.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {c.must.map((m) => (
                       <span key={m} className="text-[0.65rem] bg-white/80 text-ink px-2.5 py-1 rounded-full border border-white/60 font-light">{m}</span>
@@ -576,7 +576,7 @@ export default function GoldenTriangleClient() {
                       <div className="w-2 h-2 rounded-full bg-gold flex-shrink-0 mt-2" />
                       <div>
                         <p className="font-medium text-sm text-ink mb-0.5">{item.city} — {item.hotel}</p>
-                        <p className="text-xs text-muted font-light leading-relaxed">{item.highlight}</p>
+                        <p className="text-xs text-gray-700 font-light leading-relaxed">{item.highlight}</p>
                       </div>
                     </div>
                   </div>
@@ -628,7 +628,7 @@ export default function GoldenTriangleClient() {
                     <span className="text-lg">{item.icon}</span>
                     <p className="font-medium text-sm text-ink">{item.title}</p>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.content}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
             </div>
@@ -783,7 +783,7 @@ export default function GoldenTriangleClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want This Planned for You?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget — we'll send a personalised Golden Triangle itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">

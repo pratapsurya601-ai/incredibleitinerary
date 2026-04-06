@@ -572,7 +572,7 @@ function BlogCard({ post, isNew }: { post: ListingPost; isNew?: boolean }) {
           <h3 className="font-serif text-[1.05rem] font-light text-ink leading-snug mb-2 group-hover:text-teal transition-colors line-clamp-2">
             {post.title}
           </h3>
-          <p className="text-xs text-muted font-light leading-relaxed mb-3 line-clamp-2">
+          <p className="text-xs text-gray-700 font-light leading-relaxed mb-3 line-clamp-2">
             {post.excerpt}
           </p>
           <div className="flex items-center justify-between pt-3 border-t border-parchment-2">

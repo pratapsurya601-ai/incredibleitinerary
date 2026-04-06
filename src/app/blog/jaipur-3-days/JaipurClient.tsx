@@ -14,13 +14,13 @@ import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const JAIPUR_TOC = [
-  { id: "decision",    emoji: "\u26A1", label: "Which Plan Are You?" },
+  { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
   { id: "overview",    emoji: "\uD83D\uDCCD", label: "Jaipur at a Glance" },
   { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
   { id: "budget",      emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-  { id: "mistakes",    emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "mistakes",    emoji: "❌", label: "Mistakes to Avoid" },
   { id: "tips",        emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",         emoji: "\u2753", label: "FAQ" },
+  { id: "faq",         emoji: "❓", label: "FAQ" },
 ];
 
 // ── Reading Progress Bar ──────────────────────────────────────────────────────
@@ -67,7 +67,7 @@ function ShareBar() {
       ))}
       <button onClick={copy}
         className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -104,7 +104,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
                 {item}
               </li>
             ))}
@@ -128,7 +128,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -164,9 +164,9 @@ export default function JaipurClient() {
   const [activeTab, setActiveTab] = useState<"A" | "B" | "C">("B");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under \u20B96k total", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\uD83C\uDFDB\uFE0F", label: "Heritage", sub: "\u20B98k\u201320k total", color: "border-rose-300 bg-rose-50 text-rose-800" },
-    { id: "C" as const, emoji: "\uD83D\uDC51", label: "Royal", sub: "\u20B920k\u201350k total", color: "border-purple-300 bg-purple-50 text-purple-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under ₹6k total", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "\uD83C\uDFDB\uFE0F", label: "Heritage", sub: "₹8k–20k total", color: "border-rose-300 bg-rose-50 text-rose-800" },
+    { id: "C" as const, emoji: "\uD83D\uDC51", label: "Royal", sub: "₹20k–50k total", color: "border-purple-300 bg-purple-50 text-purple-800" },
   ];
 
   return (
@@ -206,9 +206,9 @@ export default function JaipurClient() {
                   Heritage & Culture
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">12 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -230,10 +230,10 @@ export default function JaipurClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDEE\uD83C\uDDF3"} India</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDDD3"} 3 Days</span>
-              <span>{"\u00B7"}</span>
-              <span>{"\uD83D\uDCB0"} From \u20B96,000</span>
+              <span>{"·"}</span>
+              <span>{"\uD83D\uDCB0"} From ₹6,000</span>
             </div>
           </div>
 
@@ -246,7 +246,7 @@ export default function JaipurClient() {
 
           {/* ── QUICK DECISION ── */}
           <section id="decision" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Which Plan Are You?</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
             <p className="text-sm text-muted font-light mb-6">Pick your style — jump straight to your itinerary.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {plans.map((p) => (
@@ -255,7 +255,7 @@ export default function JaipurClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"→"}</p>
                 </button>
               ))}
             </div>
@@ -270,10 +270,10 @@ export default function JaipurClient() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
               {[
                 { title: "Old City (Walled)", emoji: "\uD83C\uDFDB\uFE0F", bg: "bg-rose-50 border-rose-200", th: "text-rose-800",
-                  rows: [["Best for","First-timers, culture, photography"],["Sights","Hawa Mahal, City Palace, Jantar Mantar"],["Budget","Entry fees \u20B950\u2013\u20B9500"],["Vibe","Chaotic, colourful, sensory overload"]],
+                  rows: [["Best for","First-timers, culture, photography"],["Sights","Hawa Mahal, City Palace, Jantar Mantar"],["Budget","Entry fees ₹50–₹500"],["Vibe","Chaotic, colourful, sensory overload"]],
                   note: "Walk the old city before 9am — shops are closed but the pink walls glow in morning light." },
                 { title: "Fort Circuit (Hills)", emoji: "\uD83C\uDFF0", bg: "bg-amber-50 border-amber-200", th: "text-amber-800",
-                  rows: [["Best for","History buffs, photographers, sunset chasers"],["Sights","Amber Fort, Nahargarh Fort, Jaigarh Fort"],["Budget","Cab \u20B91,200\u2013\u20B91,800/day"],["Vibe","Grand, panoramic, less crowded early morning"]],
+                  rows: [["Best for","History buffs, photographers, sunset chasers"],["Sights","Amber Fort, Nahargarh Fort, Jaigarh Fort"],["Budget","Cab ₹1,200–₹1,800/day"],["Vibe","Grand, panoramic, less crowded early morning"]],
                   note: "All three forts connect via a ridge road. Amber at sunrise, Nahargarh at sunset is the perfect bookend." },
               ].map((area) => (
                 <div key={area.title} className={`rounded-xl border p-5 ${area.bg}`}>
@@ -283,7 +283,7 @@ export default function JaipurClient() {
                   <div className="space-y-2 mb-4">
                     {area.rows.map(([k, v]) => (
                       <div key={k} className="flex gap-2 text-xs">
-                        <span className="font-medium text-ink/60 w-16 flex-shrink-0">{k}</span>
+                        <span className="font-medium text-ink/80 w-16 flex-shrink-0">{k}</span>
                         <span className="text-muted font-light">{v}</span>
                       </div>
                     ))}
@@ -302,8 +302,8 @@ export default function JaipurClient() {
           {/* ── STAT CARDS ── */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="3 Days" />
-            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"\u20B96,000"} />
-            <StatCard icon={"\uD83C\uDF21"} label="Best Months" value="Oct \u2013 Mar" />
+            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"₹6,000"} />
+            <StatCard icon={"\uD83C\uDF21"} label="Best Months" value="Oct – Mar" />
             <StatCard icon={"\u2708\uFE0F"} label="Airport" value="JAI (Jaipur)" />
           </div>
 
@@ -346,47 +346,47 @@ export default function JaipurClient() {
                 <div className="flex items-center gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl mb-6">
                   <span className="text-2xl">{"\uD83D\uDCB0"}</span>
                   <div>
-                    <p className="text-sm font-medium text-amber-800">Budget Plan — Under {"\u20B9"}6,000 Total</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Hostel/guesthouse near MI Road {"\u00B7"} {"\u20B9"}400{"\u2013"}{"\u20B9"}800/night {"\u00B7"} Transport: City bus + shared autos</p>
+                    <p className="text-sm font-medium text-amber-800">Budget Plan — Under {"₹"}6,000 Total</p>
+                    <p className="text-xs text-amber-600 font-light">Stay: Hostel/guesthouse near MI Road {"·"} {"₹"}400{"–"}{"₹"}800/night {"·"} Transport: City bus + shared autos</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Amber Fort at Dawn + Old City Immersion"
                   items={[
-                    "5:45am: Cab to Amber Fort (shared auto \u20B930 from Hawa Mahal stop). Arrive for 6am opening \u2014 you\u2019ll share it with maybe 20 people instead of 2,000.",
-                    "Spend 2.5 hours inside. Sheesh Mahal mirror room, Diwan-i-Khas, the step-well. No guide needed \u2014 signboards are excellent.",
-                    "9am: Walk downhill (don\u2019t ride elephants). Stop at Jal Mahal for photos from the road. Free, 5 minutes.",
-                    "10:30am: Hawa Mahal (\u20B950 entry or composite ticket). Go inside \u2014 the rooftop view over the bazaar is the real attraction, not the facade.",
-                    "12pm: Lunch at LMB (Laxmi Mishthan Bhandar) on Johari Bazaar. Dal baati churma is non-negotiable. Don\u2019t leave Jaipur without it. \u20B9200\u2013\u20B9350 for a full thali.",
-                    "2pm: City Palace (\u20B9200 entry or composite). 1.5 hours minimum. Peacock Gate is the highlight.",
-                    "4pm: Jantar Mantar next door (\u20B950 or composite). Giant sundial, surprisingly fascinating. 45 minutes.",
-                    "5pm: Walk Johari Bazaar and Bapu Bazaar. Window shop \u2014 lac bangles from \u20B950, block-print fabric from \u20B9150/metre.",
-                    "Evening: Street food dinner at Rawat Mishthan Bhandar \u2014 pyaaz kachori (\u20B930) that\u2019s been famous for 50 years."
+                    "5:45am: Cab to Amber Fort (shared auto ₹30 from Hawa Mahal stop). Arrive for 6am opening — you’ll share it with maybe 20 people instead of 2,000.",
+                    "Spend 2.5 hours inside. Sheesh Mahal mirror room, Diwan-i-Khas, the step-well. No guide needed — signboards are excellent.",
+                    "9am: Walk downhill (don’t ride elephants). Stop at Jal Mahal for photos from the road. Free, 5 minutes.",
+                    "10:30am: Hawa Mahal (₹50 entry or composite ticket). Go inside — the rooftop view over the bazaar is the real attraction, not the facade.",
+                    "12pm: Lunch at LMB (Laxmi Mishthan Bhandar) on Johari Bazaar. Dal baati churma is non-negotiable. Don’t leave Jaipur without it. ₹200–₹350 for a full thali.",
+                    "2pm: City Palace (₹200 entry or composite). 1.5 hours minimum. Peacock Gate is the highlight.",
+                    "4pm: Jantar Mantar next door (₹50 or composite). Giant sundial, surprisingly fascinating. 45 minutes.",
+                    "5pm: Walk Johari Bazaar and Bapu Bazaar. Window shop — lac bangles from ₹50, block-print fabric from ₹150/metre.",
+                    "Evening: Street food dinner at Rawat Mishthan Bhandar — pyaaz kachori (₹30) that’s been famous for 50 years."
                   ]}
-                  cost={"\u20B9800\u2013\u20B91,200 excluding accommodation"} />
+                  cost={"₹800–₹1,200 excluding accommodation"} />
                 <DayCard day="Day 2" title="Nahargarh Sunrise + Culture Circuit"
                   items={[
-                    "5:30am: Cab to Nahargarh Fort (\u20B9250\u2013\u20B9350 by auto). Watch sunrise over the entire pink city below \u2014 this is the Jaipur photo nobody takes because they\u2019re all at Hawa Mahal.",
-                    "7:30am: Breakfast at the fort\u2019s rooftop cafe. Chai + paratha with a view. \u20B9100\u2013\u20B9150.",
-                    "9:30am: Albert Hall Museum (\u20B940 entry or composite). Indo-Saracenic architecture alone is worth the visit. Egyptian mummy room, Rajasthani folk art. 1.5 hours.",
+                    "5:30am: Cab to Nahargarh Fort (₹250–₹350 by auto). Watch sunrise over the entire pink city below — this is the Jaipur photo nobody takes because they’re all at Hawa Mahal.",
+                    "7:30am: Breakfast at the fort’s rooftop cafe. Chai + paratha with a view. ₹100–₹150.",
+                    "9:30am: Albert Hall Museum (₹40 entry or composite). Indo-Saracenic architecture alone is worth the visit. Egyptian mummy room, Rajasthani folk art. 1.5 hours.",
                     "11:30am: Birla Mandir (free entry). White marble temple with stained glass and mountain views. 30 minutes, remove shoes.",
-                    "1pm: Lunch at a local dhaba near Sindhi Camp. Non-veg thali \u20B9120\u2013\u20B9180.",
+                    "1pm: Lunch at a local dhaba near Sindhi Camp. Non-veg thali ₹120–₹180.",
                     "3pm: Galta Ji (Monkey Temple). 4km east of city centre. Free entry, real pilgrimage site, not a tourist attraction. Water tanks carved into hillside. 1 hour.",
-                    "6pm: Chokhi Dhani for dinner (\u20B9800\u2013\u20B91,000 entry includes buffet). Rajasthani village experience \u2014 folk dancers, puppet shows, camel rides, unlimited food. Touristy? Yes. Worth it on a budget? Absolutely.",
+                    "6pm: Chokhi Dhani for dinner (₹800–₹1,000 entry includes buffet). Rajasthani village experience — folk dancers, puppet shows, camel rides, unlimited food. Touristy? Yes. Worth it on a budget? Absolutely.",
                   ]}
-                  cost={"\u20B91,500\u2013\u20B92,000 excluding accommodation"} />
+                  cost={"₹1,500–₹2,000 excluding accommodation"} />
                 <DayCard day="Day 3" title="Food Walk + Hidden Gems + Departure"
                   items={[
                     "7am: Walk the old city pink walls in morning light. Shops are closed, streets are empty, the city is yours.",
-                    "8:30am: Breakfast kachori run \u2014 Samrat Restaurant near Chand Pole for mirchi vada and lassi. \u20B960\u2013\u20B9100.",
-                    "10am: Anokhi Museum of Hand Printing, Amber (near the fort). \u20B930 entry. Learn how Rajasthani block-printing actually works. Small, beautiful, always empty. 45 minutes.",
-                    "12pm: Final shopping. Bapu Bazaar for textiles, Tripolia Bazaar for bangles. Bargain hard \u2014 first price is always 3x the real price.",
-                    "1:30pm: Farewell lunch. Thali at Santosh Bhojnalaya \u2014 locals-only joint, unlimited refills, \u20B9100.",
+                    "8:30am: Breakfast kachori run — Samrat Restaurant near Chand Pole for mirchi vada and lassi. ₹60–₹100.",
+                    "10am: Anokhi Museum of Hand Printing, Amber (near the fort). ₹30 entry. Learn how Rajasthani block-printing actually works. Small, beautiful, always empty. 45 minutes.",
+                    "12pm: Final shopping. Bapu Bazaar for textiles, Tripolia Bazaar for bangles. Bargain hard — first price is always 3x the real price.",
+                    "1:30pm: Farewell lunch. Thali at Santosh Bhojnalaya — locals-only joint, unlimited refills, ₹100.",
                     "3pm: Depart for airport/station."
                   ]}
-                  cost={"\u20B9500\u2013\u20B9800 excluding accommodation"} />
+                  cost={"₹500–₹800 excluding accommodation"} />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 3-Day Cost (solo) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}4,500{"\u2013"}{"\u20B9"}6,000 including accommodation</span>
+                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 3-Day Cost (solo) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}4,500{"–"}{"₹"}6,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -397,48 +397,48 @@ export default function JaipurClient() {
                 <div className="flex items-center gap-3 p-4 bg-rose-50 border border-rose-200 rounded-xl mb-6">
                   <span className="text-2xl">{"\uD83C\uDFDB\uFE0F"}</span>
                   <div>
-                    <p className="text-sm font-medium text-rose-800">Heritage Plan — {"\u20B9"}8,000{"\u2013"}{"\u20B9"}20,000 Total</p>
-                    <p className="text-xs text-rose-600 font-light">Stay: Heritage haveli or boutique hotel {"\u00B7"} {"\u20B9"}2,000{"\u2013"}{"\u20B9"}5,000/night {"\u00B7"} Transport: Full-day cab</p>
+                    <p className="text-sm font-medium text-rose-800">Heritage Plan — {"₹"}8,000{"–"}{"₹"}20,000 Total</p>
+                    <p className="text-xs text-rose-600 font-light">Stay: Heritage haveli or boutique hotel {"·"} {"₹"}2,000{"–"}{"₹"}5,000/night {"·"} Transport: Full-day cab</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Amber Fort at Dawn + Royal Jaipur"
                   items={[
-                    "5:45am: Private cab to Amber Fort. Arrive 6am opening. The Sheesh Mahal with morning light streaming through \u2014 the mirrors ignite like fireflies. You\u2019ll understand why maharajas built this.",
-                    "Hire a guide at the gate (\u20B9500\u2013\u20B9700 for 2 hours). Unlike most Indian monuments, Amber Fort genuinely benefits from one \u2014 the hidden passages and stories aren\u2019t on any signboard.",
-                    "9am: Drive down. Photo stop at Jal Mahal \u2014 the floating palace is best in morning light with Aravalli reflections.",
-                    "10am: Hawa Mahal. Skip the selfie crowd at the front. Cross the street, go to Wind View Cafe rooftop \u2014 the facade with chai is the real experience.",
+                    "5:45am: Private cab to Amber Fort. Arrive 6am opening. The Sheesh Mahal with morning light streaming through — the mirrors ignite like fireflies. You’ll understand why maharajas built this.",
+                    "Hire a guide at the gate (₹500–₹700 for 2 hours). Unlike most Indian monuments, Amber Fort genuinely benefits from one — the hidden passages and stories aren’t on any signboard.",
+                    "9am: Drive down. Photo stop at Jal Mahal — the floating palace is best in morning light with Aravalli reflections.",
+                    "10am: Hawa Mahal. Skip the selfie crowd at the front. Cross the street, go to Wind View Cafe rooftop — the facade with chai is the real experience.",
                     "11:30am: City Palace. Budget 2 hours. The textile gallery and armoury are undervisited. Peacock Gate is peak Jaipur.",
-                    "1:30pm: Lunch at 1135 AD inside Amber Fort area or Suvarna Mahal at Rambagh Palace (\u20B92,500\u2013\u20B93,500 for two). Once-in-a-lifetime dining in a former maharaja\u2019s banquet hall.",
-                    "3:30pm: Jantar Mantar. Hire the site guide (\u20B9200) \u2014 the instruments are meaningless without explanation. The giant sundial reads time to 2-second accuracy.",
-                    "5pm: Johari Bazaar walk. The \u2018government approved\u2019 gem shops near City Palace are 100% scams \u2014 I\u2019ve seen tourists drop \u20B950k on worthless stones. Buy from established shops with GST bills only.",
-                    "7pm: Dinner at Bar Palladio. Italian food in a Mughal palace. Blue interiors, lanterns, outstanding cocktails. \u20B92,000\u2013\u20B93,000 for two."
+                    "1:30pm: Lunch at 1135 AD inside Amber Fort area or Suvarna Mahal at Rambagh Palace (₹2,500–₹3,500 for two). Once-in-a-lifetime dining in a former maharaja’s banquet hall.",
+                    "3:30pm: Jantar Mantar. Hire the site guide (₹200) — the instruments are meaningless without explanation. The giant sundial reads time to 2-second accuracy.",
+                    "5pm: Johari Bazaar walk. The ‘government approved’ gem shops near City Palace are 100% scams — I’ve seen tourists drop ₹50k on worthless stones. Buy from established shops with GST bills only.",
+                    "7pm: Dinner at Bar Palladio. Italian food in a Mughal palace. Blue interiors, lanterns, outstanding cocktails. ₹2,000–₹3,000 for two."
                   ]}
-                  cost={"\u20B94,000\u2013\u20B97,000 for two excluding accommodation"} />
+                  cost={"₹4,000–₹7,000 for two excluding accommodation"} />
                 <DayCard day="Day 2" title="Nahargarh Sunset + Culture Deep Dive"
                   items={[
-                    "8am: Relaxed breakfast at your haveli. Most heritage hotels include breakfast \u2014 enjoy it on the rooftop.",
-                    "10am: Albert Hall Museum. The building itself is photographed more than the exhibits. Go inside anyway \u2014 the Rajasthani folk gallery and Egyptian mummy are genuinely surprising.",
+                    "8am: Relaxed breakfast at your haveli. Most heritage hotels include breakfast — enjoy it on the rooftop.",
+                    "10am: Albert Hall Museum. The building itself is photographed more than the exhibits. Go inside anyway — the Rajasthani folk gallery and Egyptian mummy are genuinely surprising.",
                     "12pm: Jantar Mantar if you skipped it, or revisit City Palace gardens.",
-                    "1pm: Lunch at Tapri Central \u2014 Jaipur\u2019s best rooftop cafe. Rajasthani food with a modern twist. \u20B9800\u2013\u20B91,200 for two.",
+                    "1pm: Lunch at Tapri Central — Jaipur’s best rooftop cafe. Rajasthani food with a modern twist. ₹800–₹1,200 for two.",
                     "2:30pm: Birla Temple. White marble against the brown Aravalli hills is stunning. Free entry, 30 minutes.",
-                    "3:30pm: Drive to Nahargarh Fort. Take the scenic road through Jaipur\u2019s ridge.",
-                    "4:30pm: Nahargarh Fort at sunset with the entire pink city below you \u2014 this is the Jaipur photo nobody takes because they\u2019re all at Hawa Mahal. Stay until the city lights come on.",
-                    "7:30pm: Chokhi Dhani dinner. \u20B91,200\u2013\u20B91,800/person for the premium experience. Folk dance, puppet shows, traditional Rajasthani thali. It\u2019s touristy and it\u2019s wonderful."
+                    "3:30pm: Drive to Nahargarh Fort. Take the scenic road through Jaipur’s ridge.",
+                    "4:30pm: Nahargarh Fort at sunset with the entire pink city below you — this is the Jaipur photo nobody takes because they’re all at Hawa Mahal. Stay until the city lights come on.",
+                    "7:30pm: Chokhi Dhani dinner. ₹1,200–₹1,800/person for the premium experience. Folk dance, puppet shows, traditional Rajasthani thali. It’s touristy and it’s wonderful."
                   ]}
-                  cost={"\u20B94,000\u2013\u20B96,000 for two excluding accommodation"} />
+                  cost={"₹4,000–₹6,000 for two excluding accommodation"} />
                 <DayCard day="Day 3" title="Local Food Walk + Anokhi Museum + Departure"
                   items={[
                     "7am: Morning walk through the old city. Pink walls, chai stalls, temple bells. This is Jaipur before the tour buses arrive.",
-                    "8:30am: Food walk. Start at Rawat Mishthan Bhandar for pyaaz kachori. Move to LMB for lassi. End at Lassiwala on MI Road \u2014 they\u2019ve been making one product for 80 years and it\u2019s perfect.",
-                    "10:30am: Anokhi Museum of Hand Printing, Amber. A restored haveli showcasing Rajasthani block-printing with live demonstrations. \u20B930 entry. Beautiful gift shop with authentic prints.",
-                    "12pm: Last-minute shopping. Johari Bazaar for silver jewellery (real), Tripolia Bazaar for lac bangles, Bapu Bazaar for textiles. Get GST bills for anything over \u20B9500.",
-                    "1:30pm: Farewell lunch at Niros on MI Road \u2014 Jaipur institution since 1949. \u20B91,000\u2013\u20B91,500 for two.",
+                    "8:30am: Food walk. Start at Rawat Mishthan Bhandar for pyaaz kachori. Move to LMB for lassi. End at Lassiwala on MI Road — they’ve been making one product for 80 years and it’s perfect.",
+                    "10:30am: Anokhi Museum of Hand Printing, Amber. A restored haveli showcasing Rajasthani block-printing with live demonstrations. ₹30 entry. Beautiful gift shop with authentic prints.",
+                    "12pm: Last-minute shopping. Johari Bazaar for silver jewellery (real), Tripolia Bazaar for lac bangles, Bapu Bazaar for textiles. Get GST bills for anything over ₹500.",
+                    "1:30pm: Farewell lunch at Niros on MI Road — Jaipur institution since 1949. ₹1,000–₹1,500 for two.",
                     "3pm: Depart."
                   ]}
-                  cost={"\u20B92,000\u2013\u20B93,500 for two excluding accommodation"} />
+                  cost={"₹2,000–₹3,500 for two excluding accommodation"} />
                 <div className="bg-rose-50 border border-rose-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-rose-700 uppercase tracking-wide">Total 3-Day Cost (for two) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}16,000{"\u2013"}{"\u20B9"}30,000 including accommodation</span>
+                  <span className="text-xs text-rose-700 uppercase tracking-wide">Total 3-Day Cost (for two) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}16,000{"–"}{"₹"}30,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -449,25 +449,25 @@ export default function JaipurClient() {
                 <div className="flex items-center gap-3 p-4 bg-purple-50 border border-purple-200 rounded-xl mb-6">
                   <span className="text-2xl">{"\uD83D\uDC51"}</span>
                   <div>
-                    <p className="text-sm font-medium text-purple-800">Royal Plan — {"\u20B9"}20,000{"\u2013"}{"\u20B9"}50,000 Total</p>
-                    <p className="text-xs text-purple-600 font-light">Stay: Rambagh Palace / Taj Jai Mahal / Samode Haveli {"\u00B7"} {"\u20B9"}8,000{"\u2013"}{"\u20B9"}20,000/night</p>
+                    <p className="text-sm font-medium text-purple-800">Royal Plan — {"₹"}20,000{"–"}{"₹"}50,000 Total</p>
+                    <p className="text-xs text-purple-600 font-light">Stay: Rambagh Palace / Taj Jai Mahal / Samode Haveli {"·"} {"₹"}8,000{"–"}{"₹"}20,000/night</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Private Amber Fort + Royal Dining"
                   items={[
-                    "6am: Private car to Amber Fort. Your hotel concierge arranges this. Private guide waiting at entrance (\u20B91,500\u2013\u20B92,000, hotel-vetted).",
-                    "Amber Fort without crowds is genuinely one of India\u2019s great experiences. The Sheesh Mahal, Diwan-i-Aam, the hidden stepwell \u2014 budget 3 hours.",
-                    "9:30am: Drive to Jaigarh Fort (5 min from Amber). World\u2019s largest cannon on wheels. Almost always empty. Incredible views back over Amber Fort.",
-                    "11am: Photo stop at Jal Mahal, then Hawa Mahal. Skip the inside \u2014 the Wind View Cafe across the street is the move.",
-                    "12:30pm: City Palace. Ask for the Maharaja\u2019s private collection tour (\u20B92,500 extra) \u2014 textiles, weapons, manuscripts not shown to regular visitors.",
-                    "2pm: Lunch at Suvarna Mahal, Rambagh Palace. Gold-leaf ceiling, crystal chandeliers, Rajasthani cuisine. \u20B94,000\u2013\u20B96,000 for two. This is where actual royalty ate.",
-                    "4pm: Jantar Mantar with private guide. Then walk to Johari Bazaar \u2014 your hotel concierge can recommend legitimate jewellers (not the \u2018government approved\u2019 scams).",
-                    "7:30pm: Dinner at Steam, Rambagh Palace or The Verandah at Taj Jai Mahal. \u20B95,000\u2013\u20B98,000 for two with wine."
+                    "6am: Private car to Amber Fort. Your hotel concierge arranges this. Private guide waiting at entrance (₹1,500–₹2,000, hotel-vetted).",
+                    "Amber Fort without crowds is genuinely one of India’s great experiences. The Sheesh Mahal, Diwan-i-Aam, the hidden stepwell — budget 3 hours.",
+                    "9:30am: Drive to Jaigarh Fort (5 min from Amber). World’s largest cannon on wheels. Almost always empty. Incredible views back over Amber Fort.",
+                    "11am: Photo stop at Jal Mahal, then Hawa Mahal. Skip the inside — the Wind View Cafe across the street is the move.",
+                    "12:30pm: City Palace. Ask for the Maharaja’s private collection tour (₹2,500 extra) — textiles, weapons, manuscripts not shown to regular visitors.",
+                    "2pm: Lunch at Suvarna Mahal, Rambagh Palace. Gold-leaf ceiling, crystal chandeliers, Rajasthani cuisine. ₹4,000–₹6,000 for two. This is where actual royalty ate.",
+                    "4pm: Jantar Mantar with private guide. Then walk to Johari Bazaar — your hotel concierge can recommend legitimate jewellers (not the ‘government approved’ scams).",
+                    "7:30pm: Dinner at Steam, Rambagh Palace or The Verandah at Taj Jai Mahal. ₹5,000–₹8,000 for two with wine."
                   ]}
-                  cost={"\u20B912,000\u2013\u20B918,000 for two excluding accommodation"} />
+                  cost={"₹12,000–₹18,000 for two excluding accommodation"} />
                 <DayCard day="Day 2" title="Hot Air Balloon + Nahargarh Private Sunset"
                   items={[
-                    "6am: Hot air balloon ride over Jaipur (\u20B98,000\u2013\u20B912,000/person, Oct\u2013Mar only). Seeing the pink city from above at sunrise is extraordinary. Book via SkyWaltz.",
+                    "6am: Hot air balloon ride over Jaipur (₹8,000–₹12,000/person, Oct–Mar only). Seeing the pink city from above at sunrise is extraordinary. Book via SkyWaltz.",
                     "9:30am: Return to hotel. Leisurely breakfast.",
                     "11am: Albert Hall Museum. The Indo-Saracenic building photographs beautifully from Ram Niwas Garden.",
                     "12:30pm: Birla Temple. White marble Laxmi Narayan temple with mountain backdrop.",
@@ -475,21 +475,21 @@ export default function JaipurClient() {
                     "3pm: Private car to Nahargarh Fort via the scenic ridge road. Stop at viewpoints.",
                     "4:30pm: Nahargarh Fort. Walk the ramparts. The Madhavendra Bhawan inside has rooms that are frozen in time.",
                     "5:30pm: Sunset from the fort walls with pink city panorama below. Padao restaurant at the fort for sundowner drinks.",
-                    "8pm: Chokhi Dhani Royal Experience (\u20B92,000/person). Private table, premium folk performances, unlimited royal Rajasthani thali."
+                    "8pm: Chokhi Dhani Royal Experience (₹2,000/person). Private table, premium folk performances, unlimited royal Rajasthani thali."
                   ]}
-                  cost={"\u20B915,000\u2013\u20B925,000 for two excluding accommodation"} />
+                  cost={"₹15,000–₹25,000 for two excluding accommodation"} />
                 <DayCard day="Day 3" title="Curated Food Tour + Anokhi + Departure"
                   items={[
-                    "7am: Private guided food walk through old city (\u20B92,000\u2013\u20B93,000 for two, book via hotel). Pyaaz kachori, lassi, jalebi, samosa — all from the right stalls, not the tourist ones.",
+                    "7am: Private guided food walk through old city (₹2,000–₹3,000 for two, book via hotel). Pyaaz kachori, lassi, jalebi, samosa — all from the right stalls, not the tourist ones.",
                     "10am: Anokhi Museum of Hand Printing, Amber. Small but exquisite. The gift shop has the most authentic block-print textiles in Jaipur.",
-                    "11:30am: Private shopping tour. Your guide takes you to actual artisan workshops \u2014 where the block-printers, jewellers, and miniature painters actually work. No middlemen, fair prices.",
-                    "1pm: Farewell lunch at The Rajput Room, Taj Jai Mahal Palace. Colonial-era grandeur, Rajasthani and European cuisine. \u20B94,000\u2013\u20B96,000 for two.",
-                    "3pm: Spa at your hotel (most luxury hotels offer 60-min treatments \u20B93,000\u2013\u20B95,000). Or depart for airport."
+                    "11:30am: Private shopping tour. Your guide takes you to actual artisan workshops — where the block-printers, jewellers, and miniature painters actually work. No middlemen, fair prices.",
+                    "1pm: Farewell lunch at The Rajput Room, Taj Jai Mahal Palace. Colonial-era grandeur, Rajasthani and European cuisine. ₹4,000–₹6,000 for two.",
+                    "3pm: Spa at your hotel (most luxury hotels offer 60-min treatments ₹3,000–₹5,000). Or depart for airport."
                   ]}
-                  cost={"\u20B910,000\u2013\u20B916,000 for two excluding accommodation"} />
+                  cost={"₹10,000–₹16,000 for two excluding accommodation"} />
                 <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-purple-700 uppercase tracking-wide">Total 3-Day Cost (for two) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}40,000{"\u2013"}{"\u20B9"}95,000 including accommodation</span>
+                  <span className="text-xs text-purple-700 uppercase tracking-wide">Total 3-Day Cost (for two) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}40,000{"–"}{"₹"}95,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -510,11 +510,11 @@ export default function JaipurClient() {
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (3N)", "\u20B91,200\u2013\u20B92,400", "\u20B96,000\u2013\u20B915,000", "\u20B924,000\u2013\u20B960,000"],
-                    ["\uD83C\uDF7D Food & Drinks", "\u20B9800\u2013\u20B91,200", "\u20B93,000\u2013\u20B96,000", "\u20B98,000\u2013\u20B916,000"],
-                    ["\uD83D\uDE95 Transport", "\u20B9400\u2013\u20B9600", "\u20B91,800\u2013\u20B93,000", "\u20B93,000\u2013\u20B95,000"],
-                    ["\uD83C\uDFAF Entry Fees", "\u20B9200\u2013\u20B9500", "\u20B9500\u2013\u20B92,000", "\u20B92,000\u2013\u20B95,000"],
-                    ["\uD83D\uDECD Shopping", "\u20B9500\u2013\u20B91,000", "\u20B92,000\u2013\u20B95,000", "\u20B95,000\u2013\u20B915,000"],
+                    ["\uD83C\uDFE8 Accommodation (3N)", "₹1,200–₹2,400", "₹6,000–₹15,000", "₹24,000–₹60,000"],
+                    ["\uD83C\uDF7D Food & Drinks", "₹800–₹1,200", "₹3,000–₹6,000", "₹8,000–₹16,000"],
+                    ["\uD83D\uDE95 Transport", "₹400–₹600", "₹1,800–₹3,000", "₹3,000–₹5,000"],
+                    ["\uD83C\uDFAF Entry Fees", "₹200–₹500", "₹500–₹2,000", "₹2,000–₹5,000"],
+                    ["\uD83D\uDECD Shopping", "₹500–₹1,000", "₹2,000–₹5,000", "₹5,000–₹15,000"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -523,7 +523,7 @@ export default function JaipurClient() {
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total (per person)</td>
-                    {["\u20B94,500\u2013\u20B96,000","\u20B98,000\u2013\u20B920,000","\u20B920,000\u2013\u20B950,000"].map((v, i) => (
+                    {["₹4,500–₹6,000","₹8,000–₹20,000","₹20,000–₹50,000"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
                     ))}
                   </tr>
@@ -539,15 +539,15 @@ export default function JaipurClient() {
           <AffiliateBlock
             destination="Jaipur"
             hotels={[
-              { name: "Zostel Jaipur", type: "Budget Hostel \u00B7 MI Road", price: "From \u20B9500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-jaipur.html?aid=2820480" },
-              { name: "Samode Haveli", type: "Heritage Haveli \u00B7 Old City", price: "From \u20B94,500/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/samode-haveli.html?aid=2820480" },
-              { name: "Rambagh Palace", type: "Royal Palace Hotel \u00B7 Taj", price: "From \u20B918,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/rambagh-palace.html?aid=2820480" },
+              { name: "Zostel Jaipur", type: "Budget Hostel · MI Road", price: "From ₹500/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/in/zostel-jaipur.html?aid=2820480" },
+              { name: "Samode Haveli", type: "Heritage Haveli · Old City", price: "From ₹4,500/night", rating: "5", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/samode-haveli.html?aid=2820480" },
+              { name: "Rambagh Palace", type: "Royal Palace Hotel · Taj", price: "From ₹18,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/rambagh-palace.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Amber Fort & Jaipur City Tour", duration: "Full day", price: "From \u20B91,200/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
-              { name: "Hot Air Balloon Ride", duration: "1 hour", price: "From \u20B98,000/person", badge: "Premium", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
-              { name: "Old City Food Walking Tour", duration: "3 hours", price: "From \u20B91,500/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
-              { name: "Block Printing Workshop", duration: "2 hours", price: "From \u20B9800/person", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
+              { name: "Amber Fort & Jaipur City Tour", duration: "Full day", price: "From ₹1,200/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
+              { name: "Hot Air Balloon Ride", duration: "1 hour", price: "From ₹8,000/person", badge: "Premium", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
+              { name: "Old City Food Walking Tour", duration: "3 hours", price: "From ₹1,500/person", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
+              { name: "Block Printing Workshop", duration: "2 hours", price: "From ₹800/person", url: "https://www.getyourguide.com/s/?q=jaipur&partner_id=PSZA5UI" },
             ]}
             pdfProductId="jaipur-3-days-pdf"
           />
@@ -570,15 +570,15 @@ export default function JaipurClient() {
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
-                { title: "Riding elephants at Amber Fort", desc: "Cruel, slow, expensive (\u20B91,200), and there's a well-maintained path that takes 15 minutes on foot. Walk up.", icon: "\uD83D\uDC18" },
-                { title: "Buying gems near City Palace", desc: "The 'government approved' gem shops near City Palace are 100% scams. Tourists routinely lose \u20B950,000+ on worthless stones. If someone approaches you on the street offering gems, walk away.", icon: "\uD83D\uDC8E" },
+                { title: "Riding elephants at Amber Fort", desc: "Cruel, slow, expensive (₹1,200), and there's a well-maintained path that takes 15 minutes on foot. Walk up.", icon: "\uD83D\uDC18" },
+                { title: "Buying gems near City Palace", desc: "The 'government approved' gem shops near City Palace are 100% scams. Tourists routinely lose ₹50,000+ on worthless stones. If someone approaches you on the street offering gems, walk away.", icon: "\uD83D\uDC8E" },
                 { title: "Visiting Amber Fort after 10am", desc: "Tour buses arrive at 10am. By 11am it's shoulder-to-shoulder. Go at 6am opening or skip it entirely.", icon: "\u23F0" },
-                { title: "Skipping the composite ticket", desc: "Individual tickets cost 40-60% more. The composite covers 7 major monuments for \u20B9100 (Indian) or \u20B91,000 (foreign). Buy at Amber Fort on Day 1.", icon: "\uD83C\uDFAB" },
+                { title: "Skipping the composite ticket", desc: "Individual tickets cost 40-60% more. The composite covers 7 major monuments for ₹100 (Indian) or ₹1,000 (foreign). Buy at Amber Fort on Day 1.", icon: "\uD83C\uDFAB" },
                 { title: "Auto-rickshaw without fixing price", desc: "Always agree on price before getting in. Jaipur autos don't use meters. Uber/Ola are more reliable and usually cheaper.", icon: "\uD83D\uDE9C" },
-                { title: "Only seeing Hawa Mahal from outside", desc: "Everyone photographs the facade and leaves. The rooftop view looking OUT over the bazaar is the actual highlight. \u20B950 entry, 20 minutes.", icon: "\uD83D\uDCF7" },
+                { title: "Only seeing Hawa Mahal from outside", desc: "Everyone photographs the facade and leaves. The rooftop view looking OUT over the bazaar is the actual highlight. ₹50 entry, 20 minutes.", icon: "\uD83D\uDCF7" },
               ].map((m) => (
                 <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
                   color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
@@ -597,7 +597,7 @@ export default function JaipurClient() {
             />
             <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
               <p className="text-xs text-muted font-light italic text-center">
-                Dal baati churma at LMB is non-negotiable. Don&apos;t leave Jaipur without it. {"\u20B9"}200 for a meal that defines Rajasthani cuisine.
+                Dal baati churma at LMB is non-negotiable. Don&apos;t leave Jaipur without it. {"₹"}200 for a meal that defines Rajasthani cuisine.
               </p>
             </div>
           </div>
@@ -608,11 +608,11 @@ export default function JaipurClient() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 { icon: "\uD83C\uDF05", title: "The 6am Fort Rule", desc: "Amber Fort at 6am opening with nobody else there is a completely different experience than the 11am tourist crush. Set one alarm. It's worth it.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83C\uDF1F", title: "Nahargarh > Hawa Mahal for Photos", desc: "Nahargarh Fort at sunset with the entire pink city below you \u2014 this is the Jaipur photo nobody takes because they're all at Hawa Mahal fighting for selfies.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83C\uDF1F", title: "Nahargarh > Hawa Mahal for Photos", desc: "Nahargarh Fort at sunset with the entire pink city below you — this is the Jaipur photo nobody takes because they're all at Hawa Mahal fighting for selfies.", color: "bg-amber-50 border-amber-200" },
                 { icon: "\uD83C\uDF7D", title: "LMB is Non-Negotiable", desc: "Dal baati churma at LMB (Laxmi Mishthan Bhandar) on Johari Bazaar. Don't leave Jaipur without eating here. The pyaaz kachori at Rawat is the other must-eat.", color: "bg-teal-50 border-teal-200" },
                 { icon: "\uD83D\uDED2", title: "Shopping Rules", desc: "Never buy from anyone who approaches you on the street. Always ask for GST bill. First quoted price is 3x real price. Bapu Bazaar for textiles, Johari Bazaar for silver.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDCF1", title: "Use Uber/Ola, Not Street Autos", desc: "Jaipur auto-rickshaw drivers are aggressive negotiators. Uber and Ola are cheaper, air-conditioned, and stress-free. Book a full-day cab for Day 1 (\u20B91,200\u2013\u20B91,800).", color: "bg-rose-50 border-rose-200" },
-                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct\u2013Nov \u2705 perfect weather, fewer crowds | Dec\u2013Jan \u2705 cool mornings, peak season | Feb\u2013Mar \u2705 Holi festival | Apr\u2013Jun \u2614 45\u00B0C, avoid | Jul\u2013Sep \uD83C\uDF27\uFE0F monsoon, skip", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83D\uDCF1", title: "Use Uber/Ola, Not Street Autos", desc: "Jaipur auto-rickshaw drivers are aggressive negotiators. Uber and Ola are cheaper, air-conditioned, and stress-free. Book a full-day cab for Day 1 (₹1,200–₹1,800).", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct–Nov \u2705 perfect weather, fewer crowds | Dec–Jan \u2705 cool mornings, peak season | Feb–Mar \u2705 Holi festival | Apr–Jun \u2614 45°C, avoid | Jul–Sep \uD83C\uDF27\uFE0F monsoon, skip", color: "bg-rose-50 border-rose-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
           </section>
@@ -623,28 +623,28 @@ export default function JaipurClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget — we&apos;ll send a personalised Jaipur itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Jaipur Trip {"\u2192"}
+                Plan My Jaipur Trip {"→"}
               </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
             </div>
           </div>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
                 { q: "How many days are enough for Jaipur?", a: "3 days is ideal. Day 1 covers Amber Fort and the old city, Day 2 handles forts and cultural sights, Day 3 allows for food, shopping and hidden gems. If you have 5 days, add day trips to Pushkar and Ranthambore." },
-                { q: "What is the best time to visit Jaipur?", a: "October\u2013March is best. October\u2013November has pleasant weather and fewer crowds. December\u2013January is cool but peak season. February\u2013March brings Holi and ideal temperatures. Avoid April\u2013June when it exceeds 45\u00B0C." },
-                { q: "How much does a 3-day Jaipur trip cost?", a: "Budget solo: \u20B94,500\u2013\u20B96,000 including accommodation. Heritage mid-range for two: \u20B916,000\u2013\u20B930,000. Royal luxury for two: \u20B940,000\u2013\u20B995,000. All include accommodation, food, transport and entry fees." },
-                { q: "Is the composite ticket worth it?", a: "Absolutely. \u20B9100 for Indians, \u20B91,000 for foreigners. Covers Amber Fort, Hawa Mahal, City Palace, Jantar Mantar, Albert Hall Museum, Nahargarh Fort and more. Valid 2 days. Saves 40\u201360% over individual tickets. Buy at Amber Fort on Day 1." },
+                { q: "What is the best time to visit Jaipur?", a: "October–March is best. October–November has pleasant weather and fewer crowds. December–January is cool but peak season. February–March brings Holi and ideal temperatures. Avoid April–June when it exceeds 45°C." },
+                { q: "How much does a 3-day Jaipur trip cost?", a: "Budget solo: ₹4,500–₹6,000 including accommodation. Heritage mid-range for two: ₹16,000–₹30,000. Royal luxury for two: ₹40,000–₹95,000. All include accommodation, food, transport and entry fees." },
+                { q: "Is the composite ticket worth it?", a: "Absolutely. ₹100 for Indians, ₹1,000 for foreigners. Covers Amber Fort, Hawa Mahal, City Palace, Jantar Mantar, Albert Hall Museum, Nahargarh Fort and more. Valid 2 days. Saves 40–60% over individual tickets. Buy at Amber Fort on Day 1." },
                 { q: "Is Jaipur safe for solo female travellers?", a: "Generally yes, especially in tourist areas. Use Uber/Ola instead of random autos, stick to well-lit areas at night, dress modestly at temples. The old city is busiest and safest during morning hours. Many women travel solo here without issues." },
-                { q: "What is the best way to get around Jaipur?", a: "Uber and Ola are most reliable. For Day 1 with Amber Fort, hire a full-day cab (\u20B91,200\u2013\u20B91,800) as sights are spread out. The old city on Day 2 is walkable. Avoid renting a scooter \u2014 Jaipur traffic is genuinely chaotic." },
+                { q: "What is the best way to get around Jaipur?", a: "Uber and Ola are most reliable. For Day 1 with Amber Fort, hire a full-day cab (₹1,200–₹1,800) as sights are spread out. The old city on Day 2 is walkable. Avoid renting a scooter — Jaipur traffic is genuinely chaotic." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
           </section>
@@ -657,15 +657,15 @@ export default function JaipurClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Planning a Longer India Trip?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Goa in 3 Days \u2014 Beach to Luxury", href: "/blog/goa-3-days", soon: false },
-                { label: "Golden Triangle \u2014 Delhi, Agra, Jaipur", href: "/blog/golden-triangle-7-days", soon: true },
-                { label: "Rajasthan \u2014 7 Day Royal Circuit", href: "/blog/rajasthan-7-days", soon: true },
+                { label: "Goa in 3 Days — Beach to Luxury", href: "/blog/goa-3-days", soon: false },
+                { label: "Golden Triangle — Delhi, Agra, Jaipur", href: "/blog/golden-triangle-7-days", soon: true },
+                { label: "Rajasthan — 7 Day Royal Circuit", href: "/blog/rajasthan-7-days", soon: true },
                 { label: "Browse All India Packages", href: "/#packages", soon: false },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">{link.soon ? "Coming Soon \u2192" : "View \u2192"}</span>
+                  <span className="text-xs text-muted">{link.soon ? "Coming Soon →" : "View →"}</span>
                 </Link>
               ))}
             </div>

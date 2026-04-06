@@ -14,13 +14,13 @@ import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const ABU_DHABI_TOC = [
-  { id: "plans",       emoji: "\u26A1", label: "Which Plan Are You?" },
-  { id: "practical",   emoji: "\u2727", label: "Practical Info" },
-  { id: "itineraries", emoji: "\u2727", label: "The Itineraries" },
-  { id: "budget",      emoji: "\u2727", label: "Budget Breakdown" },
-  { id: "mistakes",    emoji: "\u274C", label: "Mistakes to Avoid" },
-  { id: "tips",        emoji: "\u2727", label: "Pro Tips" },
-  { id: "faq",         emoji: "\u2753", label: "FAQ" },
+  { id: "plans",       emoji: "⚡", label: "Which Plan Are You?" },
+  { id: "practical",   emoji: "✧", label: "Practical Info" },
+  { id: "itineraries", emoji: "✧", label: "The Itineraries" },
+  { id: "budget",      emoji: "✧", label: "Budget Breakdown" },
+  { id: "mistakes",    emoji: "❌", label: "Mistakes to Avoid" },
+  { id: "tips",        emoji: "✧", label: "Pro Tips" },
+  { id: "faq",         emoji: "❓", label: "FAQ" },
 ];
 
 function ReadingProgress() {
@@ -55,7 +55,7 @@ function ShareBar() {
           className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>{s.label}</a>
       ))}
       <button onClick={copy} className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -87,7 +87,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>{item}
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>{item}
               </li>
             ))}
           </ul>
@@ -109,7 +109,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -138,8 +138,8 @@ export default function AbuDhabiClient() {
   const [activeTab, setActiveTab] = useState<"A" | "B">("B");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "AED 250\u2013450/day", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\u2728", label: "Comfortable", sub: "AED 500\u20131,000/day", color: "border-blue-300 bg-blue-50 text-blue-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "AED 250–450/day", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "✨", label: "Comfortable", sub: "AED 500–1,000/day", color: "border-blue-300 bg-blue-50 text-blue-800" },
   ];
 
   return (
@@ -173,9 +173,9 @@ export default function AbuDhabiClient() {
               <div className="flex items-center gap-3 mb-4 flex-wrap">
                 <span className="bg-gold text-ink text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">Culture & Architecture</span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">12 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -194,8 +194,8 @@ export default function AbuDhabiClient() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-8 border-b border-parchment-2">
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
-              <span>{"\uD83C\uDDE6\uD83C\uDDEA"} UAE</span><span>{"\u00B7"}</span>
-              <span>{"\uD83D\uDDD3"} 3 Days</span><span>{"\u00B7"}</span>
+              <span>{"\uD83C\uDDE6\uD83C\uDDEA"} UAE</span><span>{"·"}</span>
+              <span>{"\uD83D\uDDD3"} 3 Days</span><span>{"·"}</span>
               <span>{"\uD83D\uDCB0"} From AED 750</span>
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function AbuDhabiClient() {
 
           {/* ── PLANS ── */}
           <section id="plans" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Which Plan Are You?</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
             <p className="text-sm text-muted font-light mb-6">Pick your budget level.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {plans.map((p) => (
@@ -217,7 +217,7 @@ export default function AbuDhabiClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"→"}</p>
                 </button>
               ))}
             </div>
@@ -225,23 +225,23 @@ export default function AbuDhabiClient() {
 
           {/* ── PRACTICAL ── */}
           <section id="practical" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u2727"} Before You Go</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"✧"} Before You Go</h2>
             <p className="text-sm text-muted font-light mb-6 leading-relaxed">Essential info that saves time and money.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
               {[
                 { title: "Visa Requirements", emoji: "\uD83D\uDCC4", bg: "bg-blue-50 border-blue-200", th: "text-blue-800",
-                  rows: [["Indian passport","UAE visa required \u2014 same visa covers Dubai + Abu Dhabi. AED 350\u2013500, 3\u20135 working days online"],["US / UK / EU / AU","Visa-on-arrival for 30 days \u2014 free"],["Dress code","Modest clothing at Sheikh Zayed Mosque: shoulders and knees covered, women need a headscarf (free loaners available)"]],
+                  rows: [["Indian passport","UAE visa required — same visa covers Dubai + Abu Dhabi. AED 350–500, 3–5 working days online"],["US / UK / EU / AU","Visa-on-arrival for 30 days — free"],["Dress code","Modest clothing at Sheikh Zayed Mosque: shoulders and knees covered, women need a headscarf (free loaners available)"]],
                   note: "If you already have a Dubai visa, it covers Abu Dhabi. One UAE visa = full country access." },
                 { title: "Getting Around", emoji: "\uD83D\uDE8C", bg: "bg-amber-50 border-amber-200", th: "text-amber-800",
-                  rows: [["From Dubai","Bus E100/E101: AED 25, 2hrs. Taxi: AED 250\u2013350, 1.5hrs. Better value than renting a car for 3 days."],["Local bus","Darb system, AED 2/ride. Hafilat card (like Dubai Nol) required"],["Taxi","Metered, reliable. Abu Dhabi is spread out \u2014 budget AED 20\u201340 per ride"],["Airport","AUH to downtown: taxi AED 70\u201390, 30 min"]],
-                  note: "Abu Dhabi is more spread out than Dubai. Budget for taxis between major attractions \u2014 they\u2019re 15\u201330 min apart." },
+                  rows: [["From Dubai","Bus E100/E101: AED 25, 2hrs. Taxi: AED 250–350, 1.5hrs. Better value than renting a car for 3 days."],["Local bus","Darb system, AED 2/ride. Hafilat card (like Dubai Nol) required"],["Taxi","Metered, reliable. Abu Dhabi is spread out — budget AED 20–40 per ride"],["Airport","AUH to downtown: taxi AED 70–90, 30 min"]],
+                  note: "Abu Dhabi is more spread out than Dubai. Budget for taxis between major attractions — they’re 15–30 min apart." },
               ].map((area) => (
                 <div key={area.title} className={`rounded-xl border p-5 ${area.bg}`}>
                   <h3 className={`font-serif text-lg font-normal mb-4 flex items-center gap-2 ${area.th}`}><span>{area.emoji}</span>{area.title}</h3>
                   <div className="space-y-2 mb-4">
                     {area.rows.map(([k, v]) => (
                       <div key={k} className="flex gap-2 text-xs">
-                        <span className="font-medium text-ink/60 w-24 flex-shrink-0">{k}</span>
+                        <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
                         <span className="text-muted font-light">{v}</span>
                       </div>
                     ))}
@@ -260,13 +260,13 @@ export default function AbuDhabiClient() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="3 Days" />
             <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value="AED 750" />
-            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Nov \u2013 Mar" />
+            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Nov – Mar" />
             <StatCard icon={"\u2708\uFE0F"} label="Airport" value="AUH" />
           </div>
 
           {/* ── ITINERARIES ── */}
           <section id="itineraries" className="mb-14 scroll-mt-24">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u2727"} The Itineraries</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"✧"} The Itineraries</h2>
             <p className="text-sm text-muted font-light mb-6">Click a plan &mdash; days are expandable/collapsible.</p>
 
             <div className="flex gap-2 flex-wrap mb-8 p-1 bg-parchment rounded-xl">
@@ -290,38 +290,38 @@ export default function AbuDhabiClient() {
                 </div>
                 <DayCard day="Day 1" title="Sheikh Zayed Mosque + Corniche"
                   items={[
-                    "9am: Sheikh Zayed Grand Mosque \u2014 free entry, opens 9am (Fri: 4:30pm). Arrive early for empty courtyards. Dress modestly, free abayas available.",
-                    "Budget 2\u20132.5 hours minimum. The prayer hall, reflective pools, and 82 marble domes deserve slow exploration.",
-                    "12pm: Lunch at Al Mina Fish Market area \u2014 pick your fish, have it cooked for AED 30\u201350 at adjacent restaurants",
-                    "2pm: Corniche Beach \u2014 free public sections with clean white sand, AED 10 entry for the gated beach with facilities",
-                    "5pm: Walk the 8km Corniche promenade \u2014 free, stunning views of the city skyline across the water",
-                    "7pm: Dinner at one of the food trucks at Corniche \u2014 AED 25\u201345 for shawarma, manakeesh, or grilled chicken",
+                    "9am: Sheikh Zayed Grand Mosque — free entry, opens 9am (Fri: 4:30pm). Arrive early for empty courtyards. Dress modestly, free abayas available.",
+                    "Budget 2–2.5 hours minimum. The prayer hall, reflective pools, and 82 marble domes deserve slow exploration.",
+                    "12pm: Lunch at Al Mina Fish Market area — pick your fish, have it cooked for AED 30–50 at adjacent restaurants",
+                    "2pm: Corniche Beach — free public sections with clean white sand, AED 10 entry for the gated beach with facilities",
+                    "5pm: Walk the 8km Corniche promenade — free, stunning views of the city skyline across the water",
+                    "7pm: Dinner at one of the food trucks at Corniche — AED 25–45 for shawarma, manakeesh, or grilled chicken",
                   ]}
-                  cost="AED 80\u2013150 excluding accommodation" />
+                  cost="AED 80–150 excluding accommodation" />
                 <DayCard day="Day 2" title="Louvre Abu Dhabi + Saadiyat Island"
                   items={[
-                    "9am: Bus to Saadiyat Island (AED 2) or taxi (AED 25\u201335)",
-                    "10am: Louvre Abu Dhabi \u2014 AED 63 entry (free under 18). The architecture alone is worth the trip: Jean Nouvel\u2019s rain of light dome.",
+                    "9am: Bus to Saadiyat Island (AED 2) or taxi (AED 25–35)",
+                    "10am: Louvre Abu Dhabi — AED 63 entry (free under 18). The architecture alone is worth the trip: Jean Nouvel’s rain of light dome.",
                     "Budget 3 hours. The collection spans 6,000 years of human history across 12 galleries.",
-                    "1:30pm: Lunch at the Louvre cafe or bring your own \u2014 AED 50\u201380 for cafe lunch",
-                    "3pm: Saadiyat Beach \u2014 AED 25 public beach entry, turquoise water, significantly less crowded than Dubai beaches",
-                    "6pm: Return to city. Dinner at Lebanese restaurant in Tourist Club Area \u2014 AED 30\u201350 for a full mezze spread",
+                    "1:30pm: Lunch at the Louvre cafe or bring your own — AED 50–80 for cafe lunch",
+                    "3pm: Saadiyat Beach — AED 25 public beach entry, turquoise water, significantly less crowded than Dubai beaches",
+                    "6pm: Return to city. Dinner at Lebanese restaurant in Tourist Club Area — AED 30–50 for a full mezze spread",
                   ]}
-                  cost="AED 150\u2013250 excluding accommodation" />
+                  cost="AED 150–250 excluding accommodation" />
                 <DayCard day="Day 3" title="Yas Island + Heritage Village + Departure"
                   items={[
-                    "8am: Bus to Yas Island (AED 2) or taxi (AED 40\u201360)",
-                    "9am: Yas Marina Circuit \u2014 free to walk around, AED 50 for guided tour. If F1 fan, don\u2019t miss the Yas Hotel straddling the track.",
+                    "8am: Bus to Yas Island (AED 2) or taxi (AED 40–60)",
+                    "9am: Yas Marina Circuit — free to walk around, AED 50 for guided tour. If F1 fan, don’t miss the Yas Hotel straddling the track.",
                     "Optional: Ferrari World (AED 310) or Warner Bros World (AED 315) if theme parks are your thing. Pick one, not both.",
-                    "1pm: Lunch at Yas Mall food court \u2014 AED 30\u201350",
-                    "3pm: Heritage Village on the Breakwater \u2014 free entry, recreated traditional Emirati village with pottery, weaving demonstrations",
-                    "5pm: Sunset from the Breakwater with the skyline behind you \u2014 best free photo spot in Abu Dhabi",
-                    "Head to airport. AUH is on Yas Island \u2014 10 min taxi from Yas Mall.",
+                    "1pm: Lunch at Yas Mall food court — AED 30–50",
+                    "3pm: Heritage Village on the Breakwater — free entry, recreated traditional Emirati village with pottery, weaving demonstrations",
+                    "5pm: Sunset from the Breakwater with the skyline behind you — best free photo spot in Abu Dhabi",
+                    "Head to airport. AUH is on Yas Island — 10 min taxi from Yas Mall.",
                   ]}
-                  cost="AED 100\u2013400 excluding accommodation (depends on theme parks)" />
+                  cost="AED 100–400 excluding accommodation (depends on theme parks)" />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
                   <span className="text-xs text-amber-700 uppercase tracking-wide">Total 3-Day Cost (solo) &middot; </span>
-                  <span className="font-serif text-base text-ink font-light">AED 750\u20131,350 ($204\u2013$368 USD) including accommodation</span>
+                  <span className="font-serif text-base text-ink font-light">AED 750–1,350 ($204–$368 USD) including accommodation</span>
                 </div>
               </div>
             )}
@@ -330,7 +330,7 @@ export default function AbuDhabiClient() {
             {activeTab === "B" && (
               <div className="space-y-4">
                 <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-xl mb-6">
-                  <span className="text-2xl">{"\u2728"}</span>
+                  <span className="text-2xl">{"✨"}</span>
                   <div>
                     <p className="text-sm font-medium text-blue-800">Comfortable Plan &mdash; Corniche / Saadiyat Base</p>
                     <p className="text-xs text-blue-600 font-light">Stay: 4-star hotel with breakfast &middot; AED 350&ndash;600/night &middot; Taxi + some tours</p>
@@ -338,35 +338,35 @@ export default function AbuDhabiClient() {
                 </div>
                 <DayCard day="Day 1" title="Sheikh Zayed Mosque Golden Hour + Cultural Dinner"
                   items={[
-                    "4pm: Sheikh Zayed Grand Mosque \u2014 arrive for golden hour. The white marble turns gold as the sun sets. Stay until the lights come on at dusk.",
-                    "The mosque at night is a completely different experience \u2014 illuminated against the dark sky, the reflective pools become mirrors.",
-                    "Budget 2.5\u20133 hours spanning sunset. This is the single best experience in Abu Dhabi.",
-                    "8pm: Dinner at Emirates Palace (now Mandarin Oriental) \u2014 Le Cafe for the famous gold-flake cappuccino (AED 65) and pastries. The lobby is free to walk through.",
-                    "Or: dinner at Li Beirut for Lebanese fine dining \u2014 AED 200\u2013350 for two courses with a view",
+                    "4pm: Sheikh Zayed Grand Mosque — arrive for golden hour. The white marble turns gold as the sun sets. Stay until the lights come on at dusk.",
+                    "The mosque at night is a completely different experience — illuminated against the dark sky, the reflective pools become mirrors.",
+                    "Budget 2.5–3 hours spanning sunset. This is the single best experience in Abu Dhabi.",
+                    "8pm: Dinner at Emirates Palace (now Mandarin Oriental) — Le Cafe for the famous gold-flake cappuccino (AED 65) and pastries. The lobby is free to walk through.",
+                    "Or: dinner at Li Beirut for Lebanese fine dining — AED 200–350 for two courses with a view",
                   ]}
-                  cost="AED 200\u2013400 excluding accommodation" />
+                  cost="AED 200–400 excluding accommodation" />
                 <DayCard day="Day 2" title="Louvre + Saadiyat Beach + Mangrove Kayaking"
                   items={[
-                    "9am: Louvre Abu Dhabi \u2014 AED 63. Book the 9am slot online for the emptiest experience. The dome\u2019s rain of light is best in the morning.",
-                    "12pm: Lunch at the museum restaurant with water views \u2014 AED 80\u2013150",
-                    "2pm: Saadiyat Beach Club \u2014 AED 100\u2013150 day pass includes sunbed, pool, and beach access",
-                    "5pm: Mangrove National Park kayaking \u2014 AED 100\u2013175 for a guided 2-hour kayak through the mangroves. Spot herons, flamingos, and sea turtles.",
-                    "8pm: Dinner at Al Mrzab in the Founders Memorial area \u2014 Emirati fine dining, AED 150\u2013250",
+                    "9am: Louvre Abu Dhabi — AED 63. Book the 9am slot online for the emptiest experience. The dome’s rain of light is best in the morning.",
+                    "12pm: Lunch at the museum restaurant with water views — AED 80–150",
+                    "2pm: Saadiyat Beach Club — AED 100–150 day pass includes sunbed, pool, and beach access",
+                    "5pm: Mangrove National Park kayaking — AED 100–175 for a guided 2-hour kayak through the mangroves. Spot herons, flamingos, and sea turtles.",
+                    "8pm: Dinner at Al Mrzab in the Founders Memorial area — Emirati fine dining, AED 150–250",
                   ]}
-                  cost="AED 400\u2013650 excluding accommodation" />
+                  cost="AED 400–650 excluding accommodation" />
                 <DayCard day="Day 3" title="Qasr Al Watan + Yas Island + Departure"
                   items={[
-                    "9am: Qasr Al Watan (Presidential Palace) \u2014 AED 65 entry. The grand hall, library, and gardens are stunning. Open to public since 2019.",
-                    "11:30am: Drive to Yas Island (30 min). Ferrari World or Warner Bros World \u2014 AED 310\u2013315",
-                    "Or: Yas Links golf course (AED 400\u2013700) or Yas Waterworld (AED 290)",
-                    "2pm: Lunch at Cipriani, Yas Marina \u2014 AED 200\u2013350 for Italian with marina views",
-                    "4pm: Sunset at Yas Beach \u2014 AED 50\u2013100 for a sunbed and the view of the marina",
-                    "Airport is 10 min from Yas \u2014 perfect for a last-day plan",
+                    "9am: Qasr Al Watan (Presidential Palace) — AED 65 entry. The grand hall, library, and gardens are stunning. Open to public since 2019.",
+                    "11:30am: Drive to Yas Island (30 min). Ferrari World or Warner Bros World — AED 310–315",
+                    "Or: Yas Links golf course (AED 400–700) or Yas Waterworld (AED 290)",
+                    "2pm: Lunch at Cipriani, Yas Marina — AED 200–350 for Italian with marina views",
+                    "4pm: Sunset at Yas Beach — AED 50–100 for a sunbed and the view of the marina",
+                    "Airport is 10 min from Yas — perfect for a last-day plan",
                   ]}
-                  cost="AED 450\u2013800 excluding accommodation" />
+                  cost="AED 450–800 excluding accommodation" />
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
                   <span className="text-xs text-blue-700 uppercase tracking-wide">Total 3-Day Cost (solo) &middot; </span>
-                  <span className="font-serif text-base text-ink font-light">AED 2,000\u20134,000 ($545\u2013$1,090 USD) including accommodation</span>
+                  <span className="font-serif text-base text-ink font-light">AED 2,000–4,000 ($545–$1,090 USD) including accommodation</span>
                 </div>
               </div>
             )}
@@ -381,15 +381,15 @@ export default function AbuDhabiClient() {
                   <tr className="bg-parchment">
                     <th className="text-left p-3.5 text-xs font-medium text-muted">Category</th>
                     <th className="p-3.5 text-xs font-medium text-amber-700 text-center">{"\uD83D\uDCB0"} Budget</th>
-                    <th className="p-3.5 text-xs font-medium text-blue-700 text-center">{"\u2728"} Comfortable</th>
+                    <th className="p-3.5 text-xs font-medium text-blue-700 text-center">{"✨"} Comfortable</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (3N)", "AED 360\u2013600", "AED 1,050\u20131,800"],
-                    ["\uD83C\uDF7D Food & Drinks", "AED 180\u2013300", "AED 500\u2013900"],
-                    ["\uD83D\uDE95 Transport", "AED 60\u2013150", "AED 200\u2013400"],
-                    ["\uD83C\uDFAF Activities", "AED 120\u2013350", "AED 400\u2013800"],
+                    ["\uD83C\uDFE8 Accommodation (3N)", "AED 360–600", "AED 1,050–1,800"],
+                    ["\uD83C\uDF7D Food & Drinks", "AED 180–300", "AED 500–900"],
+                    ["\uD83D\uDE95 Transport", "AED 60–150", "AED 200–400"],
+                    ["\uD83C\uDFAF Activities", "AED 120–350", "AED 400–800"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -398,7 +398,7 @@ export default function AbuDhabiClient() {
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total (per person)</td>
-                    {["AED 750\u20131,350\n($204\u2013$368)","AED 2,000\u20134,000\n($545\u2013$1,090)"].map((v, i) => (
+                    {["AED 750–1,350\n($204–$368)","AED 2,000–4,000\n($545–$1,090)"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center whitespace-pre-line">{v}</td>
                     ))}
                   </tr>
@@ -409,7 +409,7 @@ export default function AbuDhabiClient() {
           </section>
 
           <DestinationGallery
-            title="Abu Dhabi \u2014 Must-See Places"
+            title="Abu Dhabi — Must-See Places"
             subtitle="Click each thumbnail to explore Abu Dhabi's most stunning landmarks."
             spots={[
               { name: "Sheikh Zayed Grand Mosque", query: "sheikh zayed grand mosque abu dhabi white marble domes courtyard", desc: "The most beautiful mosque in the UAE. Free entry. Visit at golden hour for the marble reflecting sunset light." },
@@ -438,14 +438,14 @@ export default function AbuDhabiClient() {
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
-                { title: "Visiting the mosque at midday", desc: "The white marble is blinding at noon and the heat is brutal. Visit at 4\u20135pm for golden hour or 9am for empty courtyards.", icon: "\uD83D\uDD4C" },
-                { title: "Only doing Abu Dhabi as a Dubai day trip", desc: "A rushed 6-hour visit misses Louvre, Saadiyat Beach, and the mosque at golden hour. Give it 2\u20133 days minimum.", icon: "\u23F0" },
+                { title: "Visiting the mosque at midday", desc: "The white marble is blinding at noon and the heat is brutal. Visit at 4–5pm for golden hour or 9am for empty courtyards.", icon: "\uD83D\uDD4C" },
+                { title: "Only doing Abu Dhabi as a Dubai day trip", desc: "A rushed 6-hour visit misses Louvre, Saadiyat Beach, and the mosque at golden hour. Give it 2–3 days minimum.", icon: "\u23F0" },
                 { title: "Forgetting the dress code", desc: "Shoulders and knees must be covered at the mosque. Women need a headscarf. Free abayas available but the queue to get one can be 20 minutes.", icon: "\uD83D\uDC57" },
                 { title: "Skipping Louvre Abu Dhabi", desc: "People go to Abu Dhabi for the mosque and leave. The Louvre is a world-class museum with a building that alone justifies the trip.", icon: "\uD83C\uDFDB\uFE0F" },
-                { title: "Not booking theme parks online", desc: "Walk-up prices at Ferrari World and Warner Bros are AED 30\u201350 more than online. Book 1\u20132 days ahead for the best rate.", icon: "\uD83C\uDFA2" },
+                { title: "Not booking theme parks online", desc: "Walk-up prices at Ferrari World and Warner Bros are AED 30–50 more than online. Book 1–2 days ahead for the best rate.", icon: "\uD83C\uDFA2" },
               ].map((m) => (
                 <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
                   color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
@@ -458,12 +458,12 @@ export default function AbuDhabiClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { icon: "\uD83C\uDF05", title: "Mosque Golden Hour", desc: "Arrive at 4\u20134:30pm, stay through sunset and into the illuminated night. You\u2019ll see three completely different versions of the mosque in 2 hours.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83C\uDFDB\uFE0F", title: "Louvre Morning Hack", desc: "Book the 9am slot. By 11am tour groups arrive. The dome\u2019s rain of light effect is strongest in the morning sun.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83C\uDF05", title: "Mosque Golden Hour", desc: "Arrive at 4–4:30pm, stay through sunset and into the illuminated night. You’ll see three completely different versions of the mosque in 2 hours.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83C\uDFDB\uFE0F", title: "Louvre Morning Hack", desc: "Book the 9am slot. By 11am tour groups arrive. The dome’s rain of light effect is strongest in the morning sun.", color: "bg-amber-50 border-amber-200" },
                 { icon: "\uD83D\uDE95", title: "DARB Transport Card", desc: "AED 10 for the card + credit. Works on all Abu Dhabi buses (AED 2/ride). Much cheaper than taxis for budget travellers.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDCB0", title: "Free Things in Abu Dhabi", desc: "Sheikh Zayed Mosque (free), Heritage Village (free), Corniche walk (free), Founders Memorial (free), Mangrove Boardwalk (free). Abu Dhabi\u2019s best experiences cost nothing.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83C\uDF74", title: "Eat at Al Mina", desc: "The fish market area near the port has the best-value seafood in the city. Pick your catch, pay AED 10\u201315 cooking fee at the adjacent restaurant.", color: "bg-rose-50 border-rose-200" },
-                { icon: "\uD83D\uDCC5", title: "Abu Dhabi vs Dubai", desc: "Abu Dhabi for culture, architecture, and a genuine Emirati experience. Dubai for shopping, nightlife, and entertainment. They\u2019re 1.5 hours apart and complement each other perfectly.", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83D\uDCB0", title: "Free Things in Abu Dhabi", desc: "Sheikh Zayed Mosque (free), Heritage Village (free), Corniche walk (free), Founders Memorial (free), Mangrove Boardwalk (free). Abu Dhabi’s best experiences cost nothing.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83C\uDF74", title: "Eat at Al Mina", desc: "The fish market area near the port has the best-value seafood in the city. Pick your catch, pay AED 10–15 cooking fee at the adjacent restaurant.", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83D\uDCC5", title: "Abu Dhabi vs Dubai", desc: "Abu Dhabi for culture, architecture, and a genuine Emirati experience. Dubai for shopping, nightlife, and entertainment. They’re 1.5 hours apart and complement each other perfectly.", color: "bg-rose-50 border-rose-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
           </section>
@@ -472,25 +472,25 @@ export default function AbuDhabiClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want This Planned for You?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget &mdash; we&apos;ll send a personalised Abu Dhabi itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Abu Dhabi Trip {"\u2192"}</button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Abu Dhabi Trip {"→"}</button>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
             </div>
           </div>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
-                { q: "How many days do you need in Abu Dhabi?", a: "3 days is ideal. 2 days works as a Dubai extension but you\u2019ll miss the beaches and Yas Island. 4+ days lets you add a desert trip or Sir Bani Yas Island." },
-                { q: "Is Abu Dhabi worth visiting if I\u2019ve seen Dubai?", a: "Completely different experience. Abu Dhabi is culturally richer (Sheikh Zayed Mosque, Louvre), less commercial, and more spacious. The Emirati heritage is much more visible here." },
-                { q: "How much does a 3-day trip cost?", a: "Budget: AED 750\u20131,350 ($204\u2013$368). Comfortable: AED 2,000\u20134,000 ($545\u2013$1,090). Both include accommodation, food, transport and activities." },
+                { q: "How many days do you need in Abu Dhabi?", a: "3 days is ideal. 2 days works as a Dubai extension but you’ll miss the beaches and Yas Island. 4+ days lets you add a desert trip or Sir Bani Yas Island." },
+                { q: "Is Abu Dhabi worth visiting if I’ve seen Dubai?", a: "Completely different experience. Abu Dhabi is culturally richer (Sheikh Zayed Mosque, Louvre), less commercial, and more spacious. The Emirati heritage is much more visible here." },
+                { q: "How much does a 3-day trip cost?", a: "Budget: AED 750–1,350 ($204–$368). Comfortable: AED 2,000–4,000 ($545–$1,090). Both include accommodation, food, transport and activities." },
                 { q: "Do I need a separate visa for Abu Dhabi?", a: "No. The UAE visa covers all emirates. If you have a Dubai visa, you can visit Abu Dhabi freely. Visa-on-arrival for US, UK, EU, AU, CA citizens (30 days free)." },
-                { q: "What is the best time to visit?", a: "November\u2013March for outdoor comfort (20\u201328\u00B0C). Abu Dhabi Grand Prix in November is exciting but expensive. May\u2013September is 45\u00B0C+ but hotel prices drop 40\u201360%." },
+                { q: "What is the best time to visit?", a: "November–March for outdoor comfort (20–28°C). Abu Dhabi Grand Prix in November is exciting but expensive. May–September is 45°C+ but hotel prices drop 40–60%." },
                 { q: "Can I drink alcohol in Abu Dhabi?", a: "Only in licensed hotels, restaurants, and clubs. You cannot buy alcohol from shops without a liquor license. Public intoxication is a criminal offence." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
@@ -501,9 +501,9 @@ export default function AbuDhabiClient() {
           <AffiliateBlock
             destination="Abu Dhabi"
             hotels={[
-              { name: "Centro Yas Island", type: "Budget Modern \u00B7 Yas Island", price: "From AED 180/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/ae/centro-yas-island.html?aid=2820480" },
-              { name: "Saadiyat Rotana", type: "Beachfront Resort \u00B7 Saadiyat", price: "From AED 500/night", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/ae/saadiyat-rotana.html?aid=2820480" },
-              { name: "Emirates Palace", type: "Ultra-Luxury \u00B7 Corniche", price: "From AED 1,800/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/ae/emirates-palace.html?aid=2820480" },
+              { name: "Centro Yas Island", type: "Budget Modern · Yas Island", price: "From AED 180/night", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/ae/centro-yas-island.html?aid=2820480" },
+              { name: "Saadiyat Rotana", type: "Beachfront Resort · Saadiyat", price: "From AED 500/night", rating: "5", badge: "Best value", url: "https://www.booking.com/hotel/ae/saadiyat-rotana.html?aid=2820480" },
+              { name: "Emirates Palace", type: "Ultra-Luxury · Corniche", price: "From AED 1,800/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/ae/emirates-palace.html?aid=2820480" },
             ]}
             activities={[
               { name: "Louvre Abu Dhabi Skip-the-Line", duration: "3 hours", price: "From AED 63", badge: "Must do", url: "https://www.getyourguide.com/s/?q=abu-dhabi&partner_id=PSZA5UI" },
@@ -517,14 +517,14 @@ export default function AbuDhabiClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Planning a Longer Middle East Trip?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Dubai \u2014 4 Day Guide", href: "/blog/dubai-4-days" },
-                { label: "Muscat, Oman \u2014 3 Day Guide", href: "/blog/muscat-3-days" },
+                { label: "Dubai — 4 Day Guide", href: "/blog/dubai-4-days" },
+                { label: "Muscat, Oman — 3 Day Guide", href: "/blog/muscat-3-days" },
                 { label: "Browse All Itineraries", href: "/blog" },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">View {"\u2192"}</span>
+                  <span className="text-xs text-muted">View {"→"}</span>
                 </Link>
               ))}
             </div>

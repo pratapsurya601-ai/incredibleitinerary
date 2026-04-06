@@ -120,7 +120,7 @@ const faqLd = {
           "name": "How much does a 4-day Amalfi Coast trip cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Budget: \u20ac80-130/day ($86-140 USD). Mid-range: \u20ac150-280/day ($162-302 USD). Luxury: \u20ac400+/day ($432+ USD). Positano is the most expensive base \u2014 staying in Amalfi town or Minori saves 30-50%.",
+            "text": "Budget: \u20ac80-130/day ($86-140 USD). Mid-range: \u20ac150-280/day ($162-302 USD). Luxury: \u20ac400+/day ($432+ USD). Positano is the most expensive base — staying in Amalfi town or Minori saves 30-50%.",
           },
         },
         {
@@ -128,7 +128,7 @@ const faqLd = {
           "name": "Where should I stay on the Amalfi Coast?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Positano is the most photogenic but most expensive. Amalfi town is centrally located with the best ferry connections. Minori and Maiori offer the best value \u2014 half the price, excellent food, local feel. Ravello is peaceful but isolated up in the hills.",
+            "text": "Positano is the most photogenic but most expensive. Amalfi town is centrally located with the best ferry connections. Minori and Maiori offer the best value — half the price, excellent food, local feel. Ravello is peaceful but isolated up in the hills.",
           },
         },
         {
@@ -136,7 +136,7 @@ const faqLd = {
           "name": "How do I get around the Amalfi Coast?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ferries between towns are the fastest and most scenic option (\u20ac8-15 per trip). SITA buses are cheap (\u20ac2-3) but the cliffside road is narrow and terrifying. Private boats are luxury (\u20ac150-300/day). Never rent a car \u2014 the road is single-lane with no parking.",
+            "text": "Ferries between towns are the fastest and most scenic option (\u20ac8-15 per trip). SITA buses are cheap (\u20ac2-3) but the cliffside road is narrow and terrifying. Private boats are luxury (\u20ac150-300/day). Never rent a car — the road is single-lane with no parking.",
           },
         },
         {
@@ -144,7 +144,7 @@ const faqLd = {
           "name": "Is the Path of the Gods hike difficult?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Moderate difficulty. 7km, 4-5 hours, with some steep descents and exposed sections. Start from Bomerano (bus from Amalfi) and hike down to Nocelle/Positano. Bring 2L water, sun protection, and proper shoes. Not suitable for those with vertigo \u2014 some sections have steep cliff drops.",
+            "text": "Moderate difficulty. 7km, 4-5 hours, with some steep descents and exposed sections. Start from Bomerano (bus from Amalfi) and hike down to Nocelle/Positano. Bring 2L water, sun protection, and proper shoes. Not suitable for those with vertigo — some sections have steep cliff drops.",
           },
         },
         {

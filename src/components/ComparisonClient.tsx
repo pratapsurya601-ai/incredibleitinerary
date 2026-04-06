@@ -58,7 +58,7 @@ function ProConList({
   items: string[];
   type: "pro" | "con";
 }) {
-  const icon = type === "pro" ? "\u2713" : "\u2717";
+  const icon = type === "pro" ? "✓" : "\u2717";
   const color = type === "pro" ? "text-teal" : "text-rust";
   return (
     <ul className="space-y-2">

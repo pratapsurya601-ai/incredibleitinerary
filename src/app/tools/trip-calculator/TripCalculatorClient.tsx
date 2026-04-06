@@ -52,10 +52,10 @@ const COUNTRY_META: Record<
   string,
   { currency: string; symbol: string; usdRate: number; costs: Record<Tier, CostRange> }
 > = {
-  India: { currency: "INR", symbol: "\u20B9", usdRate: 0.012, costs: INDIA_COSTS },
+  India: { currency: "INR", symbol: "₹", usdRate: 0.012, costs: INDIA_COSTS },
   Thailand: { currency: "THB", symbol: "\u0E3F", usdRate: 0.028, costs: THAILAND_COSTS },
   Japan: { currency: "JPY", symbol: "\u00A5", usdRate: 0.0067, costs: JAPAN_COSTS },
-  Italy: { currency: "EUR", symbol: "\u20AC", usdRate: 1.08, costs: ITALY_COSTS },
+  Italy: { currency: "EUR", symbol: "€", usdRate: 1.08, costs: ITALY_COSTS },
 };
 
 /* Fine-tuned per-destination multipliers — keeps data realistic */
@@ -392,7 +392,7 @@ export default function TripCalculatorClient() {
                           : "bg-muted/30 text-muted"
                     }`}
                   >
-                    {step > s ? "\u2713" : s}
+                    {step > s ? "✓" : s}
                   </span>
                   {s === 1 ? "Destination" : s === 2 ? "Details" : "Results"}
                 </button>
@@ -590,7 +590,7 @@ export default function TripCalculatorClient() {
                         <span className="block text-[11px] text-muted">
                           {selectedDest.currencySymbol}
                           {cost.min.toLocaleString("en-IN")}
-                          {" \u2013 "}
+                          {" – "}
                           {selectedDest.currencySymbol}
                           {cost.max.toLocaleString("en-IN")}
                           /day

@@ -103,7 +103,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
         <div className="p-5">
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
+              <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700 font-light leading-relaxed">
                 <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">●</span>
                 {item}
               </li>
@@ -128,7 +128,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -275,7 +275,7 @@ export default function SikkimClient() {
                     <span className="text-xs font-semibold tracking-widest uppercase text-muted">{s.season}</span>
                   </div>
                   <p className="font-serif text-base text-ink mb-2">{s.title}</p>
-                  <p className="text-xs text-muted font-light leading-relaxed">{s.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -337,7 +337,7 @@ export default function SikkimClient() {
                     "Processing: 1-2 hours at the counter, instant online (print required)",
                     "Nathula is closed on Mondays and Tuesdays — plan your Tsomgo/Nathula day accordingly",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs text-muted font-light leading-relaxed">
+                    <li key={i} className="flex items-start gap-2.5 text-xs text-gray-700 font-light leading-relaxed">
                       <span className="text-amber-500 mt-0.5 flex-shrink-0">●</span>{item}
                     </li>
                   ))}
@@ -353,7 +353,7 @@ export default function SikkimClient() {
                     "Your agent handles the paperwork. Budget 3-5 working days for processing",
                     "Foreign nationals can visit Tsomgo Lake but Nathula Pass is restricted to Indian nationals only",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs text-muted font-light leading-relaxed">
+                    <li key={i} className="flex items-start gap-2.5 text-xs text-gray-700 font-light leading-relaxed">
                       <span className="text-purple-400 mt-0.5 flex-shrink-0">●</span>{item}
                     </li>
                   ))}
@@ -573,7 +573,7 @@ export default function SikkimClient() {
                     <div>
                       <p className="font-medium text-sm text-ink">{f.dish}</p>
                       <p className="text-[0.65rem] text-gold-dark mt-0.5">{f.where} · {f.price}</p>
-                      <p className="text-xs text-muted font-light leading-relaxed mt-2">{f.note}</p>
+                      <p className="text-xs text-gray-700 font-light leading-relaxed mt-2">{f.note}</p>
                     </div>
                   </div>
                 </div>
@@ -636,7 +636,7 @@ export default function SikkimClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group size and budget — we&apos;ll send a personalised Sikkim itinerary with permits sorted within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">

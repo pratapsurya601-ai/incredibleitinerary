@@ -15,13 +15,13 @@ import Breadcrumb from "@/components/blog/Breadcrumb";
 import InlineCTA from "@/components/blog/InlineCTA";
 
 const BANGKOK_TOC = [
-  { id: "plans",     emoji: "\u26A1", label: "Which Plan Are You?" },
+  { id: "plans",     emoji: "⚡", label: "Which Plan Are You?" },
   { id: "visa",      emoji: "\uD83D\uDCCB", label: "Visa & Entry" },
   { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
   { id: "budget",    emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-  { id: "mistakes",  emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "mistakes",  emoji: "❌", label: "Mistakes to Avoid" },
   { id: "tips",      emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",       emoji: "\u2753", label: "FAQ" },
+  { id: "faq",       emoji: "❓", label: "FAQ" },
 ];
 
 /* ── Reading-progress bar ─────────────────────────────────────────────── */
@@ -61,7 +61,7 @@ function ShareBar() {
       ))}
       <button onClick={copy}
         className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -96,7 +96,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
                 {item}
               </li>
             ))}
@@ -120,7 +120,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -154,8 +154,8 @@ export default function BangkokClient() {
   const [activeTab, setActiveTab] = useState<"A" | "B" | "C">("B");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget",   sub: "\u0E3F800\u20131,500/day", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\u2728",        label: "Mid-Range", sub: "\u0E3F2,000\u20134,000/day", color: "border-blue-300 bg-blue-50 text-blue-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget",   sub: "\u0E3F800–1,500/day", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "✨",        label: "Mid-Range", sub: "\u0E3F2,000–4,000/day", color: "border-blue-300 bg-blue-50 text-blue-800" },
     { id: "C" as const, emoji: "\uD83D\uDC8E",  label: "Luxury",   sub: "\u0E3F6,000+/day", color: "border-purple-300 bg-purple-50 text-purple-800" },
   ];
 
@@ -194,9 +194,9 @@ export default function BangkokClient() {
                   Temples & Street Food
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">16 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -218,9 +218,9 @@ export default function BangkokClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDF9\uD83C\uDDED"} Thailand</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDDD3"} 4 Days</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDCB0"} From \u0E3F800/day</span>
             </div>
           </div>
@@ -236,7 +236,7 @@ export default function BangkokClient() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="4 Days" />
             <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value="\u0E3F800/day" />
-            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Nov \u2013 Feb" />
+            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Nov – Feb" />
             <StatCard icon={"\u2708\uFE0F"} label="Airport" value="BKK / DMK" />
           </div>
 
@@ -251,13 +251,13 @@ export default function BangkokClient() {
                 </h3>
                 <div className="space-y-2">
                   {[
-                    ["eVisa", "Apply online at thaievisa.go.th \u2014 processed in 5\u20137 business days. Single entry, up to 60 days."],
-                    ["Visa on Arrival", "15-day stay, \u0E3F2,000 fee. Queues can be 45\u201390 min at BKK. Carry 10,000 THB cash as proof of funds."],
+                    ["eVisa", "Apply online at thaievisa.go.th — processed in 5–7 business days. Single entry, up to 60 days."],
+                    ["Visa on Arrival", "15-day stay, \u0E3F2,000 fee. Queues can be 45–90 min at BKK. Carry 10,000 THB cash as proof of funds."],
                     ["Tourist Visa", "Apply at Thai embassy for 60-day stay. Extendable by 30 days at immigration office for \u0E3F1,900."],
                     ["Documents", "Passport valid 6+ months, return ticket, hotel booking confirmation, passport-size photos."],
                   ].map(([k, v]) => (
                     <div key={k} className="flex gap-2 text-xs">
-                      <span className="font-medium text-ink/60 w-24 flex-shrink-0">{k}</span>
+                      <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
                       <span className="text-muted font-light">{v}</span>
                     </div>
                   ))}
@@ -269,13 +269,13 @@ export default function BangkokClient() {
                 </h3>
                 <div className="space-y-2">
                   {[
-                    ["Visa-Free", "30\u201360 days depending on nationality. USA, UK, EU, Australia, Canada all get 60 days visa-free."],
+                    ["Visa-Free", "30–60 days depending on nationality. USA, UK, EU, Australia, Canada all get 60 days visa-free."],
                     ["Extension", "Extend by 30 days at any immigration office for \u0E3F1,900. Bangkok Chaeng Wattana office is fastest."],
                     ["Land Border", "Visa-free entries via land crossings may be limited to 30 days depending on nationality."],
-                    ["Tip", "Always carry a printed return ticket and hotel booking \u2014 airlines sometimes check before boarding."],
+                    ["Tip", "Always carry a printed return ticket and hotel booking — airlines sometimes check before boarding."],
                   ].map(([k, v]) => (
                     <div key={k} className="flex gap-2 text-xs">
-                      <span className="font-medium text-ink/60 w-24 flex-shrink-0">{k}</span>
+                      <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
                       <span className="text-muted font-light">{v}</span>
                     </div>
                   ))}
@@ -286,7 +286,7 @@ export default function BangkokClient() {
 
           {/* ── WHICH PLAN ── */}
           <section id="plans" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Which Plan Are You?</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
             <p className="text-sm text-muted font-light mb-6">Pick your budget level &mdash; jump straight to your itinerary.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {plans.map((p) => (
@@ -295,7 +295,7 @@ export default function BangkokClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">View Plan {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">View Plan {"→"}</p>
                 </button>
               ))}
             </div>
@@ -325,52 +325,52 @@ export default function BangkokClient() {
                   <span className="text-2xl">{"\uD83D\uDCB0"}</span>
                   <div>
                     <p className="text-sm font-medium text-amber-800">Budget Plan &mdash; Khao San Road / Banglamphu Base</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Hostels / guesthouses {"\u00B7"} \u0E3F300\u2013\u0E3F800/night {"\u00B7"} Transport: BTS + boats + walking</p>
+                    <p className="text-xs text-amber-600 font-light">Stay: Hostels / guesthouses {"·"} \u0E3F300–\u0E3F800/night {"·"} Transport: BTS + boats + walking</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Grand Palace, Wat Pho, Wat Arun, Khao San Road"
                   items={[
-                    "8am: Grand Palace \u2014 arrive RIGHT when it opens. By 10am the tour-bus crowds arrive and it\u2019s unbearable. Entry \u0E3F500 (~$14). Dress code enforced: cover shoulders and knees.",
-                    "10:30am: Walk to Wat Pho (5 min) \u2014 home of the giant reclining Buddha. Entry \u0E3F200 (~$5.50). Get the \u0E3F300 Thai massage inside \u2014 it\u2019s the original Thai massage school.",
-                    "12:30pm: Cross-river ferry to Wat Arun \u2014 \u0E3F4 ferry. Entry \u0E3F100. Climb the steep central prang for river views. Best photos FROM here looking back at the Grand Palace.",
-                    "2pm: Lunch at Tha Tien area \u2014 pad thai from street carts \u0E3F50\u201380 (~$1.50\u20132.25). The stalls between Wat Pho and the ferry pier are legit.",
-                    "5pm: Tuk-tuk or bus to Khao San Road \u2014 evening walk, mango sticky rice \u0E3F60, pad see ew \u0E3F50. Street food is dinner.",
-                    "BTS Skytrain is king \u2014 never take a tuk-tuk to a \u2018special price\u2019 gem shop. It\u2019s always a scam. Always.",
+                    "8am: Grand Palace — arrive RIGHT when it opens. By 10am the tour-bus crowds arrive and it’s unbearable. Entry \u0E3F500 (~$14). Dress code enforced: cover shoulders and knees.",
+                    "10:30am: Walk to Wat Pho (5 min) — home of the giant reclining Buddha. Entry \u0E3F200 (~$5.50). Get the \u0E3F300 Thai massage inside — it’s the original Thai massage school.",
+                    "12:30pm: Cross-river ferry to Wat Arun — \u0E3F4 ferry. Entry \u0E3F100. Climb the steep central prang for river views. Best photos FROM here looking back at the Grand Palace.",
+                    "2pm: Lunch at Tha Tien area — pad thai from street carts \u0E3F50–80 (~$1.50–2.25). The stalls between Wat Pho and the ferry pier are legit.",
+                    "5pm: Tuk-tuk or bus to Khao San Road — evening walk, mango sticky rice \u0E3F60, pad see ew \u0E3F50. Street food is dinner.",
+                    "BTS Skytrain is king — never take a tuk-tuk to a ‘special price’ gem shop. It’s always a scam. Always.",
                   ]}
-                  cost="\u0E3F900\u20131,200 (~$25\u201334) excl. accommodation" />
+                  cost="\u0E3F900–1,200 (~$25–34) excl. accommodation" />
                 <DayCard day="Day 2" title="Chatuchak Market, Jim Thompson House"
                   items={[
-                    "8am: BTS to Mo Chit \u2014 Chatuchak Weekend Market opens at 9am. Go early before the heat.",
-                    "Chatuchak has 15,000 stalls. You need a strategy or you\u2019ll just walk in circles for 5 hours. Download the Chatuchak Guide app. Sections 2\u20134 for clothes, 7\u20139 for decor, 17\u201319 for art.",
-                    "Lunch inside the market \u2014 coconut ice cream \u0E3F30, pad kra pao \u0E3F50, mango sticky rice \u0E3F40. Bring cash, most stalls don\u2019t take cards.",
-                    "2pm: BTS to National Stadium \u2014 Jim Thompson House. Entry \u0E3F200 (~$5.50). Beautiful teak houses with Thai silk history. Guided tour only, runs every 20 min.",
-                    "Alternative to Chatuchak (if not weekend): Damnoen Saduak or Amphawa floating market \u2014 \u0E3F500\u2013800 for minibus tour. Amphawa is more authentic, less touristy.",
-                    "Evening: Chinatown (Yaowarat) for dinner walk \u2014 grilled seafood stalls fire up at 6pm. Budget \u0E3F200\u2013300 for a feast.",
+                    "8am: BTS to Mo Chit — Chatuchak Weekend Market opens at 9am. Go early before the heat.",
+                    "Chatuchak has 15,000 stalls. You need a strategy or you’ll just walk in circles for 5 hours. Download the Chatuchak Guide app. Sections 2–4 for clothes, 7–9 for decor, 17–19 for art.",
+                    "Lunch inside the market — coconut ice cream \u0E3F30, pad kra pao \u0E3F50, mango sticky rice \u0E3F40. Bring cash, most stalls don’t take cards.",
+                    "2pm: BTS to National Stadium — Jim Thompson House. Entry \u0E3F200 (~$5.50). Beautiful teak houses with Thai silk history. Guided tour only, runs every 20 min.",
+                    "Alternative to Chatuchak (if not weekend): Damnoen Saduak or Amphawa floating market — \u0E3F500–800 for minibus tour. Amphawa is more authentic, less touristy.",
+                    "Evening: Chinatown (Yaowarat) for dinner walk — grilled seafood stalls fire up at 6pm. Budget \u0E3F200–300 for a feast.",
                   ]}
-                  cost="\u0E3F600\u20131,000 (~$17\u201328) excl. accommodation" />
+                  cost="\u0E3F600–1,000 (~$17–28) excl. accommodation" />
                 <DayCard day="Day 3" title="Chinatown Food Walk, Wat Traimit, Rooftop Bar, Asiatique"
                   items={[
-                    "9am: Chinatown morning \u2014 Sampeng Lane for cheap everything. Walk the alleyways \u2014 real Bangkok lives here.",
-                    "10:30am: Wat Traimit (Golden Buddha Temple) \u2014 \u0E3F100 entry. 5.5-tonne solid gold Buddha, accidentally discovered under plaster in 1955.",
-                    "12pm: Chinatown food walk \u2014 ba mee (egg noodles) at Nai Ek Roll Noodles, hoy tod (mussel omelette) from street vendors. Budget \u0E3F150\u2013250.",
-                    "3pm: Rest at hostel \u2014 Bangkok heat peaks 1\u20134pm. This is not laziness, it\u2019s survival.",
-                    "6pm: Rooftop bar sunset \u2014 Above Eleven (budget-friendliest rooftop). Cocktails \u0E3F300\u2013400. One drink for the view, then leave.",
-                    "8pm: Asiatique the Riverfront \u2014 free shuttle boat from Saphan Taksin BTS. Night market + dinner. Budget \u0E3F200\u2013400 for food.",
+                    "9am: Chinatown morning — Sampeng Lane for cheap everything. Walk the alleyways — real Bangkok lives here.",
+                    "10:30am: Wat Traimit (Golden Buddha Temple) — \u0E3F100 entry. 5.5-tonne solid gold Buddha, accidentally discovered under plaster in 1955.",
+                    "12pm: Chinatown food walk — ba mee (egg noodles) at Nai Ek Roll Noodles, hoy tod (mussel omelette) from street vendors. Budget \u0E3F150–250.",
+                    "3pm: Rest at hostel — Bangkok heat peaks 1–4pm. This is not laziness, it’s survival.",
+                    "6pm: Rooftop bar sunset — Above Eleven (budget-friendliest rooftop). Cocktails \u0E3F300–400. One drink for the view, then leave.",
+                    "8pm: Asiatique the Riverfront — free shuttle boat from Saphan Taksin BTS. Night market + dinner. Budget \u0E3F200–400 for food.",
                   ]}
-                  cost="\u0E3F800\u20131,300 (~$23\u201337) excl. accommodation" />
+                  cost="\u0E3F800–1,300 (~$23–37) excl. accommodation" />
                 <DayCard day="Day 4" title="Ayutthaya Day Trip OR MBK/Siam Shopping"
                   items={[
-                    "OPTION A \u2014 Ayutthaya Day Trip (recommended): Train from Hua Lamphong at 6:40am, \u0E3F20 3rd class. 2 hours. Rent bicycle at station \u0E3F50/day.",
+                    "OPTION A — Ayutthaya Day Trip (recommended): Train from Hua Lamphong at 6:40am, \u0E3F20 3rd class. 2 hours. Rent bicycle at station \u0E3F50/day.",
                     "Must-see ruins: Wat Mahathat (Buddha head in tree roots), Wat Phra Si Sanphet, Wat Chaiwatthanaram. Entry \u0E3F50 each or \u0E3F220 day pass.",
-                    "Lunch at Roti Sai Mai market \u2014 famous Ayutthaya dessert, \u0E3F20/bag. Pad thai at the market \u0E3F40.",
-                    "Return train at 3\u20134pm. Total day cost: \u0E3F400\u2013600 (~$11\u201317).",
-                    "OPTION B \u2014 Shopping: MBK Center (budget shopping, bargain hard), then walk to Siam Paragon and CentralWorld. Air-conditioned, free entry, window shopping costs nothing.",
-                    "Last meal: Midnight street food on Sukhumvit Soi 38 \u2014 moo ping (grilled pork skewers) \u0E3F10 each. The perfect Bangkok goodbye.",
+                    "Lunch at Roti Sai Mai market — famous Ayutthaya dessert, \u0E3F20/bag. Pad thai at the market \u0E3F40.",
+                    "Return train at 3–4pm. Total day cost: \u0E3F400–600 (~$11–17).",
+                    "OPTION B — Shopping: MBK Center (budget shopping, bargain hard), then walk to Siam Paragon and CentralWorld. Air-conditioned, free entry, window shopping costs nothing.",
+                    "Last meal: Midnight street food on Sukhumvit Soi 38 — moo ping (grilled pork skewers) \u0E3F10 each. The perfect Bangkok goodbye.",
                   ]}
-                  cost="\u0E3F500\u20131,100 (~$14\u201331) excl. accommodation" />
+                  cost="\u0E3F500–1,100 (~$14–31) excl. accommodation" />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 4-Day Cost (solo) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">\u0E3F3,200\u2013\u0E3F6,000 (~$90\u2013$170) including accommodation</span>
+                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 4-Day Cost (solo) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">\u0E3F3,200–\u0E3F6,000 (~$90–$170) including accommodation</span>
                 </div>
               </div>
             )}
@@ -379,55 +379,55 @@ export default function BangkokClient() {
             {activeTab === "B" && (
               <div className="space-y-4">
                 <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-xl mb-6">
-                  <span className="text-2xl">{"\u2728"}</span>
+                  <span className="text-2xl">{"✨"}</span>
                   <div>
                     <p className="text-sm font-medium text-blue-800">Mid-Range Plan &mdash; Sukhumvit / Silom Base</p>
-                    <p className="text-xs text-blue-600 font-light">Stay: 3-star hotel near BTS {"\u00B7"} \u0E3F1,200\u2013\u0E3F2,500/night {"\u00B7"} Transport: BTS + Grab</p>
+                    <p className="text-xs text-blue-600 font-light">Stay: 3-star hotel near BTS {"·"} \u0E3F1,200–\u0E3F2,500/night {"·"} Transport: BTS + Grab</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Grand Palace, Wat Pho, Wat Arun, Riverside Dinner"
                   items={[
-                    "7:30am: Grab to Grand Palace \u2014 beat the 9am rush. Entry \u0E3F500 (~$14). Hire an audio guide \u0E3F200 inside \u2014 makes the visit 3x more interesting.",
-                    "10am: Wat Pho \u2014 the reclining Buddha is stunning but also get the traditional Thai massage here (\u0E3F300/30min). It\u2019s the birthplace of Thai massage.",
-                    "11:30am: Cross-river ferry (\u0E3F4) to Wat Arun \u2014 \u0E3F100 entry. The riverside cafe opposite has excellent Thai iced tea (\u0E3F60).",
-                    "1pm: Lunch at Supanniga Eating Room, Tha Tien \u2014 modern Thai, \u0E3F250\u2013400/person. Book ahead on weekends.",
-                    "4pm: Khao San Road walk \u2014 don\u2019t eat here, just absorb the chaos. It\u2019s a Bangkok rite of passage.",
-                    "7pm: Dinner at Sala Rattanakosin rooftop \u2014 Wat Arun view at sunset. Mains \u0E3F350\u2013600. Reservation essential.",
+                    "7:30am: Grab to Grand Palace — beat the 9am rush. Entry \u0E3F500 (~$14). Hire an audio guide \u0E3F200 inside — makes the visit 3x more interesting.",
+                    "10am: Wat Pho — the reclining Buddha is stunning but also get the traditional Thai massage here (\u0E3F300/30min). It’s the birthplace of Thai massage.",
+                    "11:30am: Cross-river ferry (\u0E3F4) to Wat Arun — \u0E3F100 entry. The riverside cafe opposite has excellent Thai iced tea (\u0E3F60).",
+                    "1pm: Lunch at Supanniga Eating Room, Tha Tien — modern Thai, \u0E3F250–400/person. Book ahead on weekends.",
+                    "4pm: Khao San Road walk — don’t eat here, just absorb the chaos. It’s a Bangkok rite of passage.",
+                    "7pm: Dinner at Sala Rattanakosin rooftop — Wat Arun view at sunset. Mains \u0E3F350–600. Reservation essential.",
                   ]}
-                  cost="\u0E3F2,000\u20133,200 (~$56\u201390) excl. accommodation" />
+                  cost="\u0E3F2,000–3,200 (~$56–90) excl. accommodation" />
                 <DayCard day="Day 2" title="Chatuchak Market OR Floating Market, Jim Thompson House"
                   items={[
-                    "Weekend: Chatuchak Market via BTS Mo Chit. Arrive 9am. Budget 3\u20134 hours max. Coconut ice cream, handmade crafts, vintage clothing.",
-                    "Weekday alternative: Amphawa Floating Market (Fri\u2013Sun only) or Taling Chan Floating Market (Sat\u2013Sun). If weekday, go to Or Tor Kor market next to Chatuchak \u2014 open daily, best fresh food market in Bangkok.",
-                    "1pm: Grab to Jim Thompson House \u2014 \u0E3F200 entry. Stunning teak architecture and Thai silk collection. Guided tour every 20 min.",
-                    "3pm: Walk to Siam area \u2014 Siam Paragon, CentralWorld for air-conditioned wandering. Good coffee at Roots Coffee.",
-                    "6pm: Dinner at Thipsamai (pad thai institution) on Maha Chai Road \u2014 queue from 5pm, pad thai wrapped in egg \u0E3F80\u2013130. Worth the wait.",
-                    "8pm: Talad Rot Fai (Train Night Market) near Ratchada MRT \u2014 vintage cars, street food, craft beer. Free entry.",
+                    "Weekend: Chatuchak Market via BTS Mo Chit. Arrive 9am. Budget 3–4 hours max. Coconut ice cream, handmade crafts, vintage clothing.",
+                    "Weekday alternative: Amphawa Floating Market (Fri–Sun only) or Taling Chan Floating Market (Sat–Sun). If weekday, go to Or Tor Kor market next to Chatuchak — open daily, best fresh food market in Bangkok.",
+                    "1pm: Grab to Jim Thompson House — \u0E3F200 entry. Stunning teak architecture and Thai silk collection. Guided tour every 20 min.",
+                    "3pm: Walk to Siam area — Siam Paragon, CentralWorld for air-conditioned wandering. Good coffee at Roots Coffee.",
+                    "6pm: Dinner at Thipsamai (pad thai institution) on Maha Chai Road — queue from 5pm, pad thai wrapped in egg \u0E3F80–130. Worth the wait.",
+                    "8pm: Talad Rot Fai (Train Night Market) near Ratchada MRT — vintage cars, street food, craft beer. Free entry.",
                   ]}
-                  cost="\u0E3F1,800\u20132,800 (~$50\u201380) excl. accommodation" />
+                  cost="\u0E3F1,800–2,800 (~$50–80) excl. accommodation" />
                 <DayCard day="Day 3" title="Chinatown, Wat Traimit, Rooftop Bar, Asiatique"
                   items={[
-                    "9am: MRT to Wat Mangkon \u2014 walk through Chinatown\u2019s morning markets. The sights and smells are peak Bangkok.",
-                    "10:30am: Wat Traimit \u2014 \u0E3F100 entry. The world\u2019s largest solid-gold Buddha statue. Museum on lower floors explains the incredible discovery story.",
-                    "12pm: Chinatown food crawl \u2014 hoy tod (crispy mussel omelette) \u0E3F80, guay jab (rolled noodle soup) \u0E3F60, mango sticky rice \u0E3F60.",
-                    "2pm: Back to hotel for the afternoon heat break. Bangkok veterans know: 1\u20134pm is for air conditioning.",
-                    "5:30pm: Octave Rooftop Lounge at Bangkok Marriott Sukhumvit \u2014 cocktails \u0E3F350\u2013500 with 360-degree city views. Dress smart casual.",
-                    "8pm: Asiatique the Riverfront \u2014 free boat from BTS Saphan Taksin. Dinner + shopping. Great for a final Bangkok evening.",
+                    "9am: MRT to Wat Mangkon — walk through Chinatown’s morning markets. The sights and smells are peak Bangkok.",
+                    "10:30am: Wat Traimit — \u0E3F100 entry. The world’s largest solid-gold Buddha statue. Museum on lower floors explains the incredible discovery story.",
+                    "12pm: Chinatown food crawl — hoy tod (crispy mussel omelette) \u0E3F80, guay jab (rolled noodle soup) \u0E3F60, mango sticky rice \u0E3F60.",
+                    "2pm: Back to hotel for the afternoon heat break. Bangkok veterans know: 1–4pm is for air conditioning.",
+                    "5:30pm: Octave Rooftop Lounge at Bangkok Marriott Sukhumvit — cocktails \u0E3F350–500 with 360-degree city views. Dress smart casual.",
+                    "8pm: Asiatique the Riverfront — free boat from BTS Saphan Taksin. Dinner + shopping. Great for a final Bangkok evening.",
                   ]}
-                  cost="\u0E3F2,200\u20133,500 (~$62\u201398) excl. accommodation" />
+                  cost="\u0E3F2,200–3,500 (~$62–98) excl. accommodation" />
                 <DayCard day="Day 4" title="Ayutthaya Day Trip OR MBK/Siam Shopping"
                   items={[
-                    "OPTION A \u2014 Ayutthaya: Book a private minivan tour (\u0E3F1,500\u20132,500/person, includes transport + guide + lunch). Covers Wat Mahathat, Wat Phra Si Sanphet, Wat Chaiwatthanaram, Bang Pa-In Palace.",
+                    "OPTION A — Ayutthaya: Book a private minivan tour (\u0E3F1,500–2,500/person, includes transport + guide + lunch). Covers Wat Mahathat, Wat Phra Si Sanphet, Wat Chaiwatthanaram, Bang Pa-In Palace.",
                     "Or take the train (\u0E3F345 2nd class AC, 1.5hrs) and hire a tuk-tuk at the station (\u0E3F200/hr) for a self-guided temple circuit.",
-                    "OPTION B \u2014 Shopping Day: MBK Center (bargain everything), Siam Discovery (design), Terminal 21 (themed floors, great food court \u0E3F40\u201360/dish).",
-                    "3pm: Traditional Thai massage at Health Land \u2014 \u0E3F600 for 2 hours. Book ahead. Best value quality massage in Bangkok.",
-                    "6pm: Last dinner at Err Urban Rustic Thai near the Grand Palace area \u2014 creative Thai street food done fine-dining style. Mains \u0E3F200\u2013400.",
-                    "Final stop: 7-Eleven run for Thai snacks to take home \u2014 dried mango (\u0E3F35), instant tom yum (\u0E3F12), Lay\u2019s Nori Seaweed chips. The real souvenirs.",
+                    "OPTION B — Shopping Day: MBK Center (bargain everything), Siam Discovery (design), Terminal 21 (themed floors, great food court \u0E3F40–60/dish).",
+                    "3pm: Traditional Thai massage at Health Land — \u0E3F600 for 2 hours. Book ahead. Best value quality massage in Bangkok.",
+                    "6pm: Last dinner at Err Urban Rustic Thai near the Grand Palace area — creative Thai street food done fine-dining style. Mains \u0E3F200–400.",
+                    "Final stop: 7-Eleven run for Thai snacks to take home — dried mango (\u0E3F35), instant tom yum (\u0E3F12), Lay’s Nori Seaweed chips. The real souvenirs.",
                   ]}
-                  cost="\u0E3F2,000\u20134,000 (~$56\u2013$112) excl. accommodation" />
+                  cost="\u0E3F2,000–4,000 (~$56–$112) excl. accommodation" />
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-blue-700 uppercase tracking-wide">Total 4-Day Cost (per person) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">\u0E3F8,000\u2013\u0E3F16,000 (~$225\u2013$450) including accommodation</span>
+                  <span className="text-xs text-blue-700 uppercase tracking-wide">Total 4-Day Cost (per person) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">\u0E3F8,000–\u0E3F16,000 (~$225–$450) including accommodation</span>
                 </div>
               </div>
             )}
@@ -439,47 +439,47 @@ export default function BangkokClient() {
                   <span className="text-2xl">{"\uD83D\uDC8E"}</span>
                   <div>
                     <p className="text-sm font-medium text-purple-800">Luxury Plan &mdash; Riverside / Sathorn Base</p>
-                    <p className="text-xs text-purple-600 font-light">Stay: 5-star riverside hotel {"\u00B7"} \u0E3F6,000\u2013\u0E3F15,000/night {"\u00B7"} Transport: Hotel car + BTS</p>
+                    <p className="text-xs text-purple-600 font-light">Stay: 5-star riverside hotel {"·"} \u0E3F6,000–\u0E3F15,000/night {"·"} Transport: Hotel car + BTS</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Private Temple Tour, Spa, Fine Dining"
                   items={[
-                    "8am: Private guided tour of Grand Palace + Wat Pho + Wat Arun \u2014 \u0E3F3,000\u20135,000/person for guide, skip-the-line knowledge, and context you\u2019d never get alone.",
-                    "12pm: Lunch at Paste Bangkok (1 Michelin star) \u2014 royal Thai cuisine, set lunch \u0E3F1,200\u20131,800. Reservations mandatory.",
-                    "3pm: Oriental Spa at Mandarin Oriental \u2014 2-hour traditional Thai treatment from \u0E3F5,500. Book 2 weeks ahead.",
-                    "7pm: Sunset drinks at Sky Bar (Lebua) \u2014 the Hangover II bar. Cocktails \u0E3F600\u2013900. Dress code enforced. Go at 5:30pm for a table.",
-                    "9pm: Dinner at Gaggan Anand \u2014 progressive Indian, Asia\u2019s most famous restaurant. 25-course menu from \u0E3F9,500. Book 2\u20133 months ahead.",
+                    "8am: Private guided tour of Grand Palace + Wat Pho + Wat Arun — \u0E3F3,000–5,000/person for guide, skip-the-line knowledge, and context you’d never get alone.",
+                    "12pm: Lunch at Paste Bangkok (1 Michelin star) — royal Thai cuisine, set lunch \u0E3F1,200–1,800. Reservations mandatory.",
+                    "3pm: Oriental Spa at Mandarin Oriental — 2-hour traditional Thai treatment from \u0E3F5,500. Book 2 weeks ahead.",
+                    "7pm: Sunset drinks at Sky Bar (Lebua) — the Hangover II bar. Cocktails \u0E3F600–900. Dress code enforced. Go at 5:30pm for a table.",
+                    "9pm: Dinner at Gaggan Anand — progressive Indian, Asia’s most famous restaurant. 25-course menu from \u0E3F9,500. Book 2–3 months ahead.",
                   ]}
-                  cost="\u0E3F8,000\u201315,000 (~$225\u2013$420) excl. accommodation" />
+                  cost="\u0E3F8,000–15,000 (~$225–$420) excl. accommodation" />
                 <DayCard day="Day 2" title="Private Floating Market, Jim Thompson, Rooftop Evening"
                   items={[
-                    "6am: Private longtail boat tour of Damnoen Saduak or Maeklong Railway Market + floating market combo \u2014 \u0E3F3,000\u20135,000/person all-inclusive.",
-                    "12pm: Lunch at Bo.Lan (sustainable Thai fine dining) \u2014 tasting menu \u0E3F2,500\u20133,500. Seasonal ingredients, zero-waste kitchen.",
+                    "6am: Private longtail boat tour of Damnoen Saduak or Maeklong Railway Market + floating market combo — \u0E3F3,000–5,000/person all-inclusive.",
+                    "12pm: Lunch at Bo.Lan (sustainable Thai fine dining) — tasting menu \u0E3F2,500–3,500. Seasonal ingredients, zero-waste kitchen.",
                     "3pm: Jim Thompson House private tour + surrounding Baan Krua silk weaving community walk.",
-                    "5pm: ICONSIAM luxury mall \u2014 SookSiam indoor floating market on ground floor is spectacular even if you don\u2019t buy anything.",
-                    "8pm: Dinner at Le Du (1 Michelin star) \u2014 modern Thai seasonal cuisine. Set menu \u0E3F3,500. Book ahead.",
+                    "5pm: ICONSIAM luxury mall — SookSiam indoor floating market on ground floor is spectacular even if you don’t buy anything.",
+                    "8pm: Dinner at Le Du (1 Michelin star) — modern Thai seasonal cuisine. Set menu \u0E3F3,500. Book ahead.",
                   ]}
-                  cost="\u0E3F10,000\u201318,000 (~$280\u2013$505) excl. accommodation" />
+                  cost="\u0E3F10,000–18,000 (~$280–$505) excl. accommodation" />
                 <DayCard day="Day 3" title="Chinatown Private Food Tour, Golden Buddha, Spa"
                   items={[
-                    "9am: Private Chinatown food tour with a local chef guide \u2014 \u0E3F2,500\u20134,000/person. 3 hours, 10+ tastings. Worth every Baht.",
-                    "12pm: Wat Traimit (Golden Buddha) \u2014 \u0E3F100 entry. Your guide adds context about the discovery story.",
+                    "9am: Private Chinatown food tour with a local chef guide — \u0E3F2,500–4,000/person. 3 hours, 10+ tastings. Worth every Baht.",
+                    "12pm: Wat Traimit (Golden Buddha) — \u0E3F100 entry. Your guide adds context about the discovery story.",
                     "2pm: Return to hotel for pool time. Riverside infinity pools at The Peninsula or Capella are spectacular.",
-                    "5pm: Muay Thai live at Rajadamnern Stadium \u2014 ringside seats \u0E3F2,000. Authentic, not tourist-show. Friday nights are best.",
-                    "8pm: Dinner at Sorn (2 Michelin stars) \u2014 Southern Thai cuisine, only 30 seats. \u0E3F6,000+ per person. Book 1+ month ahead.",
+                    "5pm: Muay Thai live at Rajadamnern Stadium — ringside seats \u0E3F2,000. Authentic, not tourist-show. Friday nights are best.",
+                    "8pm: Dinner at Sorn (2 Michelin stars) — Southern Thai cuisine, only 30 seats. \u0E3F6,000+ per person. Book 1+ month ahead.",
                   ]}
-                  cost="\u0E3F12,000\u201322,000 (~$340\u2013$620) excl. accommodation" />
+                  cost="\u0E3F12,000–22,000 (~$340–$620) excl. accommodation" />
                 <DayCard day="Day 4" title="Ayutthaya Private Tour OR Luxury Shopping"
                   items={[
-                    "OPTION A \u2014 Ayutthaya: Private car + historian guide. Full-day tour with lunch at a heritage restaurant. \u0E3F5,000\u20138,000/person all-inclusive.",
-                    "OPTION B \u2014 Shopping: Siam Paragon (designer brands), Gaysorn Village (luxury Thai designers), then bespoke tailoring fitting at Raja\u2019s Fashions on Sukhumvit.",
-                    "2pm: Traditional Thai cooking class at Blue Elephant \u2014 \u0E3F2,800/person. In a gorgeous 1903 colonial mansion. You keep the recipes and eat everything you cook.",
-                    "5pm: Farewell drinks at Vertigo at Banyan Tree \u2014 61st floor open-air rooftop. Cocktails \u0E3F500\u2013700.",
-                    "8pm: Last dinner at Nahm (Thai fine dining at COMO Metropolitan) \u2014 set menu from \u0E3F2,800.",
+                    "OPTION A — Ayutthaya: Private car + historian guide. Full-day tour with lunch at a heritage restaurant. \u0E3F5,000–8,000/person all-inclusive.",
+                    "OPTION B — Shopping: Siam Paragon (designer brands), Gaysorn Village (luxury Thai designers), then bespoke tailoring fitting at Raja’s Fashions on Sukhumvit.",
+                    "2pm: Traditional Thai cooking class at Blue Elephant — \u0E3F2,800/person. In a gorgeous 1903 colonial mansion. You keep the recipes and eat everything you cook.",
+                    "5pm: Farewell drinks at Vertigo at Banyan Tree — 61st floor open-air rooftop. Cocktails \u0E3F500–700.",
+                    "8pm: Last dinner at Nahm (Thai fine dining at COMO Metropolitan) — set menu from \u0E3F2,800.",
                   ]}
-                  cost="\u0E3F10,000\u201320,000 (~$280\u2013$560) excl. accommodation" />
+                  cost="\u0E3F10,000–20,000 (~$280–$560) excl. accommodation" />
                 <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-purple-700 uppercase tracking-wide">Total 4-Day Cost (per person) {"\u00B7"} </span>
+                  <span className="text-xs text-purple-700 uppercase tracking-wide">Total 4-Day Cost (per person) {"·"} </span>
                   <span className="font-serif text-base text-ink font-light">\u0E3F24,000+ (~$680+) including accommodation</span>
                 </div>
               </div>
@@ -494,10 +494,10 @@ export default function BangkokClient() {
             title="Bangkok &mdash; Must-See Places"
             subtitle="Click each thumbnail to explore Bangkok&apos;s most iconic temples, markets and riverside landmarks."
             spots={[
-              { name: "Grand Palace",       query: "bangkok grand palace ornate architecture golden roof no people",     desc: "Thailand\u2019s most sacred site. Arrive at 8am sharp to beat crowds. Entry \u0E3F500. Strict dress code \u2014 cover shoulders and knees." },
+              { name: "Grand Palace",       query: "bangkok grand palace ornate architecture golden roof no people",     desc: "Thailand’s most sacred site. Arrive at 8am sharp to beat crowds. Entry \u0E3F500. Strict dress code — cover shoulders and knees." },
               { name: "Wat Arun",            query: "wat arun bangkok temple dawn river ceramic spires",                 desc: "The Temple of Dawn on the Chao Phraya River. Best photographed from the opposite bank at sunset. \u0E3F100 entry." },
               { name: "Chatuchak Market",    query: "chatuchak weekend market bangkok stalls colorful overhead",         desc: "15,000 stalls on 35 acres. Open weekends only. Go early, bring cash, download the map app." },
-              { name: "Chinatown Yaowarat",  query: "bangkok chinatown yaowarat neon street food night stalls",         desc: "Bangkok\u2019s oldest neighbourhood transforms at night into the city\u2019s best street food corridor." },
+              { name: "Chinatown Yaowarat",  query: "bangkok chinatown yaowarat neon street food night stalls",         desc: "Bangkok’s oldest neighbourhood transforms at night into the city’s best street food corridor." },
               { name: "Ayutthaya Ruins",     query: "ayutthaya ruins ancient temple buddha head tree roots thailand",    desc: "Former Siamese capital, 80km north of Bangkok. The Buddha head entwined in tree roots at Wat Mahathat is iconic." },
             ]}
           />
@@ -521,9 +521,9 @@ export default function BangkokClient() {
           <AffiliateBlock
             destination="Bangkok"
             hotels={[
-              { name: "NapPark Hostel", type: "Budget Hostel \u00B7 Khao San", price: "From \u0E3F350/night (~$10)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/nappark-hostel.html?aid=2820480" },
-              { name: "Riva Surya Bangkok", type: "Boutique Riverside \u00B7 Old Town", price: "From \u0E3F2,800/night (~$79)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/riva-surya-bangkok.html?aid=2820480" },
-              { name: "Mandarin Oriental", type: "Iconic Luxury \u00B7 Riverside", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/mandarin-oriental-bangkok.html?aid=2820480" },
+              { name: "NapPark Hostel", type: "Budget Hostel · Khao San", price: "From \u0E3F350/night (~$10)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/nappark-hostel.html?aid=2820480" },
+              { name: "Riva Surya Bangkok", type: "Boutique Riverside · Old Town", price: "From \u0E3F2,800/night (~$79)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/riva-surya-bangkok.html?aid=2820480" },
+              { name: "Mandarin Oriental", type: "Iconic Luxury · Riverside", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/mandarin-oriental-bangkok.html?aid=2820480" },
             ]}
             activities={[
               { name: "Grand Palace & Temple Tour", duration: "Half day", price: "From \u0E3F800/person (~$23)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=bangkok&partner_id=PSZA5UI" },
@@ -543,17 +543,17 @@ export default function BangkokClient() {
                   <tr className="bg-parchment">
                     <th className="text-left p-3.5 text-xs font-medium text-muted">Category</th>
                     <th className="p-3.5 text-xs font-medium text-amber-700 text-center">{"\uD83D\uDCB0"} Budget</th>
-                    <th className="p-3.5 text-xs font-medium text-blue-700 text-center">{"\u2728"} Mid-Range</th>
+                    <th className="p-3.5 text-xs font-medium text-blue-700 text-center">{"✨"} Mid-Range</th>
                     <th className="p-3.5 text-xs font-medium text-purple-700 text-center">{"\uD83D\uDC8E"} Luxury</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (4N)",  "\u0E3F1,200\u20133,200",   "\u0E3F4,800\u201310,000",  "\u0E3F24,000\u201360,000"],
-                    ["\uD83C\uDF5C Food & Drinks",        "\u0E3F800\u20131,600",     "\u0E3F3,200\u20136,000",   "\u0E3F12,000\u201328,000"],
-                    ["\uD83D\uDE89 Transport",             "\u0E3F400\u2013800",       "\u0E3F1,200\u20132,400",   "\u0E3F4,000\u201310,000"],
-                    ["\uD83C\uDFAF Activities & Entry",    "\u0E3F800\u20131,400",     "\u0E3F2,000\u20134,000",   "\u0E3F15,000\u201335,000"],
-                    ["\uD83D\uDED2 Shopping",              "\u0E3F0\u20131,000",       "\u0E3F2,000\u20135,000",   "\u0E3F5,000\u201320,000"],
+                    ["\uD83C\uDFE8 Accommodation (4N)",  "\u0E3F1,200–3,200",   "\u0E3F4,800–10,000",  "\u0E3F24,000–60,000"],
+                    ["\uD83C\uDF5C Food & Drinks",        "\u0E3F800–1,600",     "\u0E3F3,200–6,000",   "\u0E3F12,000–28,000"],
+                    ["\uD83D\uDE89 Transport",             "\u0E3F400–800",       "\u0E3F1,200–2,400",   "\u0E3F4,000–10,000"],
+                    ["\uD83C\uDFAF Activities & Entry",    "\u0E3F800–1,400",     "\u0E3F2,000–4,000",   "\u0E3F15,000–35,000"],
+                    ["\uD83D\uDED2 Shopping",              "\u0E3F0–1,000",       "\u0E3F2,000–5,000",   "\u0E3F5,000–20,000"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -562,7 +562,7 @@ export default function BangkokClient() {
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total (per person)</td>
-                    {["\u0E3F3,200\u20136,000 (~$90\u2013170)", "\u0E3F8,000\u201316,000 (~$225\u2013450)", "\u0E3F24,000+ (~$680+)"].map((v, i) => (
+                    {["\u0E3F3,200–6,000 (~$90–170)", "\u0E3F8,000–16,000 (~$225–450)", "\u0E3F24,000+ (~$680+)"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
                     ))}
                   </tr>
@@ -576,15 +576,15 @@ export default function BangkokClient() {
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
-                { title: "Taking a tuk-tuk to a \u2018special price\u2019 gem shop", desc: "The #1 Bangkok scam. Tuk-tuk driver offers a \u0E3F20 ride but stops at a gem shop \u2018on the way.\u2019 The gems are worthless glass. Use BTS, MRT, or Grab instead.", icon: "\uD83D\uDEBA" },
-                { title: "Visiting Grand Palace after 10am", desc: "Tour buses arrive at 10am and it becomes unbearable. Gate opens at 8:30am \u2014 be there at 8:15. You\u2019ll have the place nearly to yourself for 90 minutes.", icon: "\uD83C\uDFDB\uFE0F" },
+                { title: "Taking a tuk-tuk to a ‘special price’ gem shop", desc: "The #1 Bangkok scam. Tuk-tuk driver offers a \u0E3F20 ride but stops at a gem shop ‘on the way.’ The gems are worthless glass. Use BTS, MRT, or Grab instead.", icon: "\uD83D\uDEBA" },
+                { title: "Visiting Grand Palace after 10am", desc: "Tour buses arrive at 10am and it becomes unbearable. Gate opens at 8:30am — be there at 8:15. You’ll have the place nearly to yourself for 90 minutes.", icon: "\uD83C\uDFDB\uFE0F" },
                 { title: "Only eating on Khao San Road", desc: "Khao San food is overpriced and mediocre. Walk 2 blocks in any direction for real Thai food at half the price. Soi Rambuttri (parallel street) is already much better.", icon: "\uD83C\uDF5C" },
-                { title: "Ignoring the dress code at temples", desc: "Grand Palace and Wat Pho enforce dress codes strictly \u2014 no shorts, no sleeveless tops, no flip-flops. They rent cover-ups but the queue wastes 20\u201330 minutes.", icon: "\uD83D\uDC54" },
-                { title: "Taking taxis without the meter", desc: "Always say \u2018meter, krap/ka\u2019 when getting in. If the driver refuses, get out and take the next one. A metered ride from airport to Sukhumvit is ~\u0E3F300\u2013400. Without meter they\u2019ll quote \u0E3F800+.", icon: "\uD83D\uDE95" },
-                { title: "Skipping Ayutthaya", desc: "80km from Bangkok, reachable by \u0E3F20 train. A UNESCO World Heritage Site of ancient Siamese ruins. Budget one full day \u2014 you won\u2019t regret it.", icon: "\uD83C\uDFDB\uFE0F" },
+                { title: "Ignoring the dress code at temples", desc: "Grand Palace and Wat Pho enforce dress codes strictly — no shorts, no sleeveless tops, no flip-flops. They rent cover-ups but the queue wastes 20–30 minutes.", icon: "\uD83D\uDC54" },
+                { title: "Taking taxis without the meter", desc: "Always say ‘meter, krap/ka’ when getting in. If the driver refuses, get out and take the next one. A metered ride from airport to Sukhumvit is ~\u0E3F300–400. Without meter they’ll quote \u0E3F800+.", icon: "\uD83D\uDE95" },
+                { title: "Skipping Ayutthaya", desc: "80km from Bangkok, reachable by \u0E3F20 train. A UNESCO World Heritage Site of ancient Siamese ruins. Budget one full day — you won’t regret it.", icon: "\uD83C\uDFDB\uFE0F" },
               ].map((m) => (
                 <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
                   color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
@@ -597,12 +597,12 @@ export default function BangkokClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { icon: "\uD83D\uDE87", title: "BTS/MRT Is Everything", desc: "Buy a Rabbit Card at any BTS station (\u0E3F200 + top-up). Covers BTS Skytrain, some river boats, and 7-Eleven. Bangkok traffic is brutal \u2014 BTS beats Grab 9 times out of 10.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83D\uDCF1", title: "Get Grab Immediately", desc: "Grab is Southeast Asia\u2019s Uber. Fixed prices, no scams, AC, GPS-tracked. Use for anything the BTS doesn\u2019t cover. Also delivers food.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83C\uDF5C", title: "Follow the Queue", desc: "If there\u2019s a 30-person queue at a street stall, join it. Thais know food. The best pad thai, khao man gai, and som tam are always at stalls with long lines and tiny seats.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83D\uDE87", title: "BTS/MRT Is Everything", desc: "Buy a Rabbit Card at any BTS station (\u0E3F200 + top-up). Covers BTS Skytrain, some river boats, and 7-Eleven. Bangkok traffic is brutal — BTS beats Grab 9 times out of 10.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83D\uDCF1", title: "Get Grab Immediately", desc: "Grab is Southeast Asia’s Uber. Fixed prices, no scams, AC, GPS-tracked. Use for anything the BTS doesn’t cover. Also delivers food.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83C\uDF5C", title: "Follow the Queue", desc: "If there’s a 30-person queue at a street stall, join it. Thais know food. The best pad thai, khao man gai, and som tam are always at stalls with long lines and tiny seats.", color: "bg-teal-50 border-teal-200" },
                 { icon: "\uD83C\uDFE6", title: "ATM Fee Hack", desc: "Thai ATMs charge \u0E3F220/withdrawal. Withdraw \u0E3F10,000+ each time to minimize fees. Better: bring a Wise or Revolut card for zero-fee transactions.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\u2614", title: "Embrace the Afternoon Break", desc: "1\u20134pm is dangerously hot (35\u201340\u00B0C). Plan temples and markets for mornings, air-conditioned malls or spa for afternoons, street food for evenings.", color: "bg-blue-50 border-blue-200" },
-                { icon: "\uD83D\uDE4F", title: "Temple Etiquette", desc: "Remove shoes before entering any temple building. Never point feet at Buddha images. Don\u2019t touch monks (especially women). Small acts of respect go a very long way.", color: "bg-blue-50 border-blue-200" },
+                { icon: "\u2614", title: "Embrace the Afternoon Break", desc: "1–4pm is dangerously hot (35–40°C). Plan temples and markets for mornings, air-conditioned malls or spa for afternoons, street food for evenings.", color: "bg-blue-50 border-blue-200" },
+                { icon: "\uD83D\uDE4F", title: "Temple Etiquette", desc: "Remove shoes before entering any temple building. Never point feet at Buddha images. Don’t touch monks (especially women). Small acts of respect go a very long way.", color: "bg-blue-50 border-blue-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
           </section>
@@ -613,26 +613,26 @@ export default function BangkokClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget &mdash; we&apos;ll send a personalised Bangkok itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Bangkok Trip {"\u2192"}
+                Plan My Bangkok Trip {"→"}
               </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
             </div>
           </div>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
-                { q: "How many days are enough for Bangkok?", a: "4 days is ideal to cover temples, markets, food scene and an Ayutthaya day trip. 2\u20133 days works if you skip Ayutthaya. 5\u20136 days lets you add Kanchanaburi or slow down." },
-                { q: "What is the best time to visit Bangkok?", a: "November\u2013February is the cool dry season (25\u201332\u00B0C). March\u2013May is extremely hot (35\u201340\u00B0C). June\u2013October is monsoon season with afternoon downpours but lower prices and fewer crowds." },
-                { q: "How much does a 4-day Bangkok trip cost?", a: "Budget: \u0E3F3,200\u20136,000 ($90\u2013170) per day including accommodation. Mid-range: \u0E3F8,000\u201316,000 ($225\u2013450). Luxury: \u0E3F24,000+ ($680+). All include accommodation, food, transport and activities. Flights not included." },
-                { q: "Do Indian passport holders need a visa for Thailand?", a: "Yes. Options: eVisa (apply online, 5\u20137 days processing, 60-day stay), Visa on Arrival (15-day stay, \u0E3F2,000 fee, carry \u0E3F10,000 cash proof), or Tourist Visa from Thai embassy (60 days, extendable 30 more)." },
+                { q: "How many days are enough for Bangkok?", a: "4 days is ideal to cover temples, markets, food scene and an Ayutthaya day trip. 2–3 days works if you skip Ayutthaya. 5–6 days lets you add Kanchanaburi or slow down." },
+                { q: "What is the best time to visit Bangkok?", a: "November–February is the cool dry season (25–32°C). March–May is extremely hot (35–40°C). June–October is monsoon season with afternoon downpours but lower prices and fewer crowds." },
+                { q: "How much does a 4-day Bangkok trip cost?", a: "Budget: \u0E3F3,200–6,000 ($90–170) per day including accommodation. Mid-range: \u0E3F8,000–16,000 ($225–450). Luxury: \u0E3F24,000+ ($680+). All include accommodation, food, transport and activities. Flights not included." },
+                { q: "Do Indian passport holders need a visa for Thailand?", a: "Yes. Options: eVisa (apply online, 5–7 days processing, 60-day stay), Visa on Arrival (15-day stay, \u0E3F2,000 fee, carry \u0E3F10,000 cash proof), or Tourist Visa from Thai embassy (60 days, extendable 30 more)." },
                 { q: "Is Bangkok safe for solo travellers?", a: "Very safe. Violent crime against tourists is rare. Main scams: tuk-tuk gem shops, inflated taxi meters, jet ski damage claims. Use BTS/MRT and Grab for safe transport. Khao San area can be chaotic but not dangerous." },
                 { q: "What is the best area to stay in Bangkok?", a: "First-timers: Sukhumvit (BTS Nana to Ekkamai) for convenience. Temples: Khao San Road / Banglamphu. Luxury: Riverside near ICONSIAM. Budget: Khao San Road or Silom. Always stay near a BTS or MRT station." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
@@ -647,14 +647,14 @@ export default function BangkokClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Planning a Longer Thailand Trip?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Phuket \u2014 5 Day Island Guide", href: "/blog/phuket-5-days", soon: false },
-                { label: "Chiang Mai \u2014 4 Day Culture Guide", href: "/blog/chiang-mai-4-days", soon: false },
+                { label: "Phuket — 5 Day Island Guide", href: "/blog/phuket-5-days", soon: false },
+                { label: "Chiang Mai — 4 Day Culture Guide", href: "/blog/chiang-mai-4-days", soon: false },
                 { label: "Browse All Packages", href: "/#packages", soon: false },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">View {"\u2192"}</span>
+                  <span className="text-xs text-muted">View {"→"}</span>
                 </Link>
               ))}
             </div>

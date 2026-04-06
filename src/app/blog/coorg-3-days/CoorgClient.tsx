@@ -184,7 +184,7 @@ export default function CoorgClient() {
               ].map((s) => (
                 <div key={s.season} className={`rounded-xl p-4 border ${s.color}`}>
                   <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-ink">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{s.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -208,7 +208,7 @@ export default function CoorgClient() {
                         <p className="font-semibold text-sm text-ink">{t.title}</p>
                         <span className="text-xs bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.badge}</span>
                       </div>
-                      <p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p>
+                      <p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -382,7 +382,7 @@ export default function CoorgClient() {
               ].map((item) => (
                 <div key={item.name} className={`rounded-xl p-4 border ${item.color}`}>
                   <div className="flex items-center justify-between mb-2"><p className="font-medium text-sm text-ink">{item.name}</p><span className="text-[0.65rem] text-green-700 font-medium">{item.range}</span></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -403,7 +403,7 @@ export default function CoorgClient() {
               ].map((item) => (
                 <div key={item.item} className="bg-white rounded-xl border border-parchment-2 p-4 hover:border-green-300 transition-colors">
                   <div className="flex items-center justify-between mb-1"><div className="flex items-center gap-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.item}</p></div><span className="text-[0.65rem] text-green-700 font-medium">{item.price}</span></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -480,7 +480,7 @@ export default function CoorgClient() {
                 { icon: "🐘", title: "Skipping Dubare for Cauvery Nisargadhama", desc: "Nisargadhama is a popular bamboo island nearby but very crowded. Dubare Elephant Camp (15km further) is far superior — actual elephant interaction, river setting, less tourist-trap feeling. Don't substitute.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-muted font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -499,7 +499,7 @@ export default function CoorgClient() {
                 { icon: "📡", title: "Mobile network: Airtel works everywhere", desc: "Jio has patchy coverage in the estate areas. Airtel is consistent throughout Coorg including remote estates. BSNL is fine in Madikeri town. Download offline maps before entering the estates.", color: "bg-teal-50 border-teal-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -509,7 +509,7 @@ export default function CoorgClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want Your Coorg Trip Planned?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group size and which estate type interests you — we&apos;ll send a personalised Coorg plan in 24 hours. Free.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group size and which estate type interests you — we&apos;ll send a personalised Coorg plan in 24 hours. Free.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Coorg Trip →</button>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold transition-colors">Contact Us</Link>

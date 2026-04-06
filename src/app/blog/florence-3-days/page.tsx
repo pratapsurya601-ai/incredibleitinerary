@@ -144,7 +144,7 @@ const faqLd = {
           "name": "Is Florence walkable?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Florence is one of the most walkable cities in Europe. The historic centre is compact \u2014 you can walk from the Duomo to Pitti Palace in 15 minutes. No metro, no need for taxis within the centre. Comfortable shoes are the only transport you need.",
+            "text": "Florence is one of the most walkable cities in Europe. The historic centre is compact — you can walk from the Duomo to Pitti Palace in 15 minutes. No metro, no need for taxis within the centre. Comfortable shoes are the only transport you need.",
           },
         },
         {

@@ -13,13 +13,13 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const MAHA_TOC = [
-  { id: "decision",    emoji: "\u26A1", label: "Which Plan Are You?" },
+  { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
   { id: "viewpoints",  emoji: "\uD83C\uDFD4\uFE0F", label: "Viewpoints Guide" },
   { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
   { id: "budget",      emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-  { id: "mistakes",    emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "mistakes",    emoji: "❌", label: "Mistakes to Avoid" },
   { id: "tips",        emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",         emoji: "\u2753", label: "FAQ" },
+  { id: "faq",         emoji: "❓", label: "FAQ" },
 ];
 
 // ── Reading Progress Bar ──────────────────────────────────────────────────────
@@ -66,7 +66,7 @@ function ShareBar() {
       ))}
       <button onClick={copy}
         className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -103,7 +103,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
                 {item}
               </li>
             ))}
@@ -127,7 +127,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -163,8 +163,8 @@ export default function MahabaleshwarClient() {
   const [activeTab, setActiveTab] = useState<"A" | "B">("A");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under \u20B95k", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\uD83C\uDF1F", label: "Weekend", sub: "\u20B96k\u201315k", color: "border-emerald-300 bg-emerald-50 text-emerald-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under ₹5k", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "\uD83C\uDF1F", label: "Weekend", sub: "₹6k–15k", color: "border-emerald-300 bg-emerald-50 text-emerald-800" },
   ];
 
   return (
@@ -204,9 +204,9 @@ export default function MahabaleshwarClient() {
                   Hill Station
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">10 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -228,10 +228,10 @@ export default function MahabaleshwarClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDEE\uD83C\uDDF3"} India</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDDD3"} 2 Days</span>
-              <span>{"\u00B7"}</span>
-              <span>{"\uD83D\uDCB0"} From \u20B94,500</span>
+              <span>{"·"}</span>
+              <span>{"\uD83D\uDCB0"} From ₹4,500</span>
             </div>
           </div>
 
@@ -244,7 +244,7 @@ export default function MahabaleshwarClient() {
 
           {/* ── QUICK DECISION ── */}
           <section id="decision" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Which Plan Are You?</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
             <p className="text-sm text-muted font-light mb-6">Pick your situation — jump straight to your itinerary.</p>
             <div className="grid grid-cols-2 gap-3">
               {plans.map((p) => (
@@ -253,7 +253,7 @@ export default function MahabaleshwarClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"→"}</p>
                 </button>
               ))}
             </div>
@@ -267,12 +267,12 @@ export default function MahabaleshwarClient() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
               {[
-                { title: "Arthur\u2019s Seat", emoji: "\uD83E\uDEA8", bg: "bg-amber-50 border-amber-200", th: "text-amber-800",
-                  rows: [["Drop", "600m vertical cliff"], ["Best time", "7am \u2014 before fog"], ["Entry", "Free"], ["Vibe", "Dramatic, terrifying, unforgettable"]],
-                  note: "The most dramatic cliff edge in India. The 600m vertical drop is not a joke. Railing is minimal. Go at 7am \u2014 by 11am it\u2019s socked in with fog and you\u2019ll see nothing." },
-                { title: "Elephant\u2019s Head Point", emoji: "\uD83D\uDC18", bg: "bg-teal-50 border-teal-200", th: "text-teal-800",
-                  rows: [["Known for", "Rock shaped like elephant head"], ["Best time", "Morning, clear day"], ["Entry", "Free"], ["Vibe", "Quieter than Arthur\u2019s Seat"]],
-                  note: "Best combined with Arthur\u2019s Seat in one morning loop. The rock formation is genuinely impressive when the valley below is clear." },
+                { title: "Arthur’s Seat", emoji: "\uD83E\uDEA8", bg: "bg-amber-50 border-amber-200", th: "text-amber-800",
+                  rows: [["Drop", "600m vertical cliff"], ["Best time", "7am — before fog"], ["Entry", "Free"], ["Vibe", "Dramatic, terrifying, unforgettable"]],
+                  note: "The most dramatic cliff edge in India. The 600m vertical drop is not a joke. Railing is minimal. Go at 7am — by 11am it’s socked in with fog and you’ll see nothing." },
+                { title: "Elephant’s Head Point", emoji: "\uD83D\uDC18", bg: "bg-teal-50 border-teal-200", th: "text-teal-800",
+                  rows: [["Known for", "Rock shaped like elephant head"], ["Best time", "Morning, clear day"], ["Entry", "Free"], ["Vibe", "Quieter than Arthur’s Seat"]],
+                  note: "Best combined with Arthur’s Seat in one morning loop. The rock formation is genuinely impressive when the valley below is clear." },
               ].map((area) => (
                 <div key={area.title} className={`rounded-xl border p-5 ${area.bg}`}>
                   <h3 className={`font-serif text-lg font-normal mb-4 flex items-center gap-2 ${area.th}`}>
@@ -281,7 +281,7 @@ export default function MahabaleshwarClient() {
                   <div className="space-y-2 mb-4">
                     {area.rows.map(([k, v]) => (
                       <div key={k} className="flex gap-2 text-xs">
-                        <span className="font-medium text-ink/60 w-16 flex-shrink-0">{k}</span>
+                        <span className="font-medium text-ink/80 w-16 flex-shrink-0">{k}</span>
                         <span className="text-muted font-light">{v}</span>
                       </div>
                     ))}
@@ -300,15 +300,15 @@ export default function MahabaleshwarClient() {
           {/* ── STAT CARDS ── */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="2 Days" />
-            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"\u20B94,500"} />
-            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Oct \u2013 May" />
+            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"₹4,500"} />
+            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Oct – May" />
             <StatCard icon={"\uD83D\uDE97"} label="From Pune" value="120 km" />
           </div>
 
           {/* ── Strawberry quote ── */}
           <blockquote className="border-l-4 border-gold pl-6 mb-14 bg-parchment/60 rounded-r-xl py-4 pr-4">
             <p className="font-serif text-[1.1rem] italic text-ink-mid leading-relaxed">
-              The strawberry picking farms are fun for kids but overpriced for adults — {"\u20B9"}400 to pick {"\u20B9"}100 worth of berries. Buy them at the roadside stalls instead.
+              The strawberry picking farms are fun for kids but overpriced for adults — {"₹"}400 to pick {"₹"}100 worth of berries. Buy them at the roadside stalls instead.
             </p>
           </blockquote>
 
@@ -336,34 +336,34 @@ export default function MahabaleshwarClient() {
                   <span className="text-2xl">{"\uD83D\uDCB0"}</span>
                   <div>
                     <p className="text-sm font-medium text-amber-800">Budget Plan — Mahabaleshwar Town Base</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Budget hotel on Main Rd {"\u00B7"} {"\u20B9"}800{"\u2013"}{"\u20B9"}1,500/night {"\u00B7"} Local transport or shared auto</p>
+                    <p className="text-xs text-amber-600 font-light">Stay: Budget hotel on Main Rd {"·"} {"₹"}800{"–"}{"₹"}1,500/night {"·"} Local transport or shared auto</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Viewpoints Blitz + Pratapgad Fort"
                   items={[
-                    "6:30am: Arthur\u2019s Seat \u2014 the 600m vertical drop is no exaggeration. Railing is minimal, so stay alert. The valley below is crystal clear at this hour.",
-                    "7:30am: Elephant\u2019s Head Point \u2014 5 min drive from Arthur\u2019s Seat, same road. The rock formation is best seen from the left viewing platform.",
-                    "8:30am: Wilson Point for the panoramic Western Ghats view. Breakfast at a dhaba on the way back \u2014 misal pav \u20B960\u201380.",
+                    "6:30am: Arthur’s Seat — the 600m vertical drop is no exaggeration. Railing is minimal, so stay alert. The valley below is crystal clear at this hour.",
+                    "7:30am: Elephant’s Head Point — 5 min drive from Arthur’s Seat, same road. The rock formation is best seen from the left viewing platform.",
+                    "8:30am: Wilson Point for the panoramic Western Ghats view. Breakfast at a dhaba on the way back — misal pav ₹60–80.",
                     "10:30am: Drive to Pratapgad Fort (24km, 45 min). Most tourists skip it. The drive through the Western Ghats alone is worth the detour.",
-                    "Pratapgad Fort \u2014 Shivaji\u2019s masterpiece. Free entry. Budget 1.5\u20132 hours for the climb and exploration. Carry water.",
-                    "2pm: Late lunch at a local dhaba near Mahabaleshwar market \u2014 veg thali \u20B9120\u2013150.",
-                    "4pm: Venna Lake \u2014 boating \u20B9100\u2013200 per person. Skip the horse rides, they\u2019re overpriced.",
-                    "Evening: Walk through the main market. Fresh strawberries \u20B9100\u2013150 per box from roadside stalls."
+                    "Pratapgad Fort — Shivaji’s masterpiece. Free entry. Budget 1.5–2 hours for the climb and exploration. Carry water.",
+                    "2pm: Late lunch at a local dhaba near Mahabaleshwar market — veg thali ₹120–150.",
+                    "4pm: Venna Lake — boating ₹100–200 per person. Skip the horse rides, they’re overpriced.",
+                    "Evening: Walk through the main market. Fresh strawberries ₹100–150 per box from roadside stalls."
                   ]}
-                  cost={"\u20B91,200\u2013\u20B91,800 excluding accommodation"} />
+                  cost={"₹1,200–₹1,800 excluding accommodation"} />
                 <DayCard day="Day 2" title="Old Mahabaleshwar + Mapro + Departure"
                   items={[
-                    "7:30am: Old Mahabaleshwar temples (5km from town). The Mahabaleshwar Temple and Panchganga Temple are genuinely ancient \u2014 not the tourist kind.",
-                    "9am: Three Monkey Point and Bombay Point on the drive back \u2014 quick photo stops, 10 min each.",
-                    "10:30am: Mapro Garden \u2014 free entry, strawberry tastings, chocolate factory. Budget 45 min. Buy Mapro products here, cheaper than market.",
-                    "12pm: Lingmala Waterfall \u2014 a 15 min walk from the road. Best after monsoon (Oct\u2013Nov) but decent year-round. Free entry.",
+                    "7:30am: Old Mahabaleshwar temples (5km from town). The Mahabaleshwar Temple and Panchganga Temple are genuinely ancient — not the tourist kind.",
+                    "9am: Three Monkey Point and Bombay Point on the drive back — quick photo stops, 10 min each.",
+                    "10:30am: Mapro Garden — free entry, strawberry tastings, chocolate factory. Budget 45 min. Buy Mapro products here, cheaper than market.",
+                    "12pm: Lingmala Waterfall — a 15 min walk from the road. Best after monsoon (Oct–Nov) but decent year-round. Free entry.",
                     "1pm: Lunch at the market area. Try the local corn and strawberry cream at street stalls.",
-                    "2:30pm: Head back to Pune/Mumbai. The Wai Ghat descent is scenic \u2014 don\u2019t rush it."
+                    "2:30pm: Head back to Pune/Mumbai. The Wai Ghat descent is scenic — don’t rush it."
                   ]}
-                  cost={"\u20B9800\u2013\u20B91,200 excluding accommodation"} />
+                  cost={"₹800–₹1,200 excluding accommodation"} />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 2-Day Cost (per person) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}4,500{"\u2013"}{"\u20B9"}5,000 including accommodation</span>
+                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 2-Day Cost (per person) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}4,500{"–"}{"₹"}5,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -375,35 +375,35 @@ export default function MahabaleshwarClient() {
                   <span className="text-2xl">{"\uD83C\uDF1F"}</span>
                   <div>
                     <p className="text-sm font-medium text-emerald-800">Weekend Plan — Resort or Heritage Hotel</p>
-                    <p className="text-xs text-emerald-600 font-light">Stay: Brightland Resort or Evershine {"\u00B7"} {"\u20B9"}3,000{"\u2013"}{"\u20B9"}6,000/night {"\u00B7"} Own car recommended</p>
+                    <p className="text-xs text-emerald-600 font-light">Stay: Brightland Resort or Evershine {"·"} {"₹"}3,000{"–"}{"₹"}6,000/night {"·"} Own car recommended</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Viewpoints + Fort + Strawberry Farm"
                   items={[
-                    "6:30am: Arthur\u2019s Seat at dawn \u2014 the 600m cliff is genuinely terrifying but the valley views are India\u2019s best. Clear skies guaranteed at this hour.",
-                    "7:30am: Elephant\u2019s Head Point \u2014 combine with Arthur\u2019s Seat, same road loop.",
-                    "8:30am: Breakfast at your resort. No rush \u2014 this is the weekend plan.",
+                    "6:30am: Arthur’s Seat at dawn — the 600m cliff is genuinely terrifying but the valley views are India’s best. Clear skies guaranteed at this hour.",
+                    "7:30am: Elephant’s Head Point — combine with Arthur’s Seat, same road loop.",
+                    "8:30am: Breakfast at your resort. No rush — this is the weekend plan.",
                     "10am: Drive to Pratapgad Fort (24km). The Western Ghats drive is spectacular. Budget 2 hours for the fort including the climb.",
-                    "1pm: Lunch at Grinning Garden or a quality restaurant in town \u2014 \u20B9500\u2013800 for two.",
-                    "3pm: Strawberry farm visit \u2014 fun for families, skip the pick-your-own (\u20B9400 for a tiny basket) and just buy at the stall. Alternatively, visit the Strawberry Heritage Museum.",
-                    "4:30pm: Venna Lake \u2014 pedal boating \u20B9200\u2013300. The late afternoon light on the lake is beautiful.",
-                    "6pm: Wilson Point for sunset. Carry chai from a stall \u2014 best sunset spot in Mahabaleshwar.",
-                    "8pm: Dinner at The Grapevine or Farmhouse \u2014 \u20B9800\u20131,200 for two."
+                    "1pm: Lunch at Grinning Garden or a quality restaurant in town — ₹500–800 for two.",
+                    "3pm: Strawberry farm visit — fun for families, skip the pick-your-own (₹400 for a tiny basket) and just buy at the stall. Alternatively, visit the Strawberry Heritage Museum.",
+                    "4:30pm: Venna Lake — pedal boating ₹200–300. The late afternoon light on the lake is beautiful.",
+                    "6pm: Wilson Point for sunset. Carry chai from a stall — best sunset spot in Mahabaleshwar.",
+                    "8pm: Dinner at The Grapevine or Farmhouse — ₹800–1,200 for two."
                   ]}
-                  cost={"\u20B93,000\u2013\u20B94,500 for two (excl. accommodation)"} />
+                  cost={"₹3,000–₹4,500 for two (excl. accommodation)"} />
                 <DayCard day="Day 2" title="Old Mahabaleshwar + Mapro + Lingmala"
                   items={[
-                    "7:30am: Old Mahabaleshwar \u2014 visit the ancient Mahabaleshwar Temple (Shiva), Panchganga Temple where five rivers meet, and Krishna Temple. These are 1,200+ year old temples, not replicas.",
-                    "9:30am: Bombay Point \u2014 panoramic view of the Sahyadri range. 10 min stop.",
-                    "10:30am: Mapro Garden \u2014 free tastings, pizza garden, chocolate factory tour. Great for families. Budget 1 hour.",
-                    "12pm: Lingmala Waterfall \u2014 the 500ft cascade is accessible via a short trail. Best Oct\u2013Feb when water flow is strong.",
+                    "7:30am: Old Mahabaleshwar — visit the ancient Mahabaleshwar Temple (Shiva), Panchganga Temple where five rivers meet, and Krishna Temple. These are 1,200+ year old temples, not replicas.",
+                    "9:30am: Bombay Point — panoramic view of the Sahyadri range. 10 min stop.",
+                    "10:30am: Mapro Garden — free tastings, pizza garden, chocolate factory tour. Great for families. Budget 1 hour.",
+                    "12pm: Lingmala Waterfall — the 500ft cascade is accessible via a short trail. Best Oct–Feb when water flow is strong.",
                     "1:30pm: Lunch at a market restaurant. Try the Mahabaleshwar chikki and fudge as takeaway.",
                     "3pm: Depart for Pune/Mumbai. Stop at the roadside stalls at Wai for fresh strawberry cream and local jaggery.",
                   ]}
-                  cost={"\u20B92,000\u2013\u20B93,000 for two (excl. accommodation)"} />
+                  cost={"₹2,000–₹3,000 for two (excl. accommodation)"} />
                 <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-emerald-700 uppercase tracking-wide">Total 2-Day Cost (for two) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}12,000{"\u2013"}{"\u20B9"}18,000 including accommodation</span>
+                  <span className="text-xs text-emerald-700 uppercase tracking-wide">Total 2-Day Cost (for two) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}12,000{"–"}{"₹"}18,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -423,11 +423,11 @@ export default function MahabaleshwarClient() {
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (1N)", "\u20B9800\u2013\u20B91,500", "\u20B93,000\u2013\u20B96,000"],
-                    ["\uD83C\uDF7D Food & Drinks", "\u20B9600\u2013\u20B91,000", "\u20B92,000\u2013\u20B93,500"],
-                    ["\uD83D\uDE97 Transport", "\u20B9800\u2013\u20B91,200", "\u20B91,500\u2013\u20B92,500"],
-                    ["\uD83C\uDFAF Activities", "\u20B9300\u2013\u20B9500", "\u20B9800\u2013\u20B91,500"],
-                    ["\uD83C\uDF53 Shopping/Souvenirs", "\u20B9200\u2013\u20B9400", "\u20B9500\u2013\u20B91,000"],
+                    ["\uD83C\uDFE8 Accommodation (1N)", "₹800–₹1,500", "₹3,000–₹6,000"],
+                    ["\uD83C\uDF7D Food & Drinks", "₹600–₹1,000", "₹2,000–₹3,500"],
+                    ["\uD83D\uDE97 Transport", "₹800–₹1,200", "₹1,500–₹2,500"],
+                    ["\uD83C\uDFAF Activities", "₹300–₹500", "₹800–₹1,500"],
+                    ["\uD83C\uDF53 Shopping/Souvenirs", "₹200–₹400", "₹500–₹1,000"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -436,7 +436,7 @@ export default function MahabaleshwarClient() {
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total (per person)</td>
-                    {["\u20B94,500\u2013\u20B95,000", "\u20B96,000\u2013\u20B915,000"].map((v, i) => (
+                    {["₹4,500–₹5,000", "₹6,000–₹15,000"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
                     ))}
                   </tr>
@@ -444,7 +444,7 @@ export default function MahabaleshwarClient() {
               </table>
             </div>
             <p className="text-xs text-muted font-light mt-3 italic">
-              All prices INR 2026. Weekend prices are higher Oct{"\u2013"}Feb due to peak season demand from Mumbai and Pune.
+              All prices INR 2026. Weekend prices are higher Oct{"–"}Feb due to peak season demand from Mumbai and Pune.
             </p>
           </section>
 
@@ -460,11 +460,11 @@ export default function MahabaleshwarClient() {
             title="Mahabaleshwar — Must-See Places"
             subtitle="Click each thumbnail to explore Mahabaleshwar's most iconic viewpoints, forts and natural wonders."
             spots={[
-              { name: "Arthur\u2019s Seat",         query: "arthurs seat mahabaleshwar cliff valley western ghats viewpoint",  desc: "A 600m vertical drop with minimal railing \u2014 one of India\u2019s most dramatic cliff edges. Visit at 7am for clear valley views before the fog rolls in." },
-              { name: "Pratapgad Fort",            query: "pratapgad fort mahabaleshwar maharashtra hilltop stone fortress",    desc: "Shivaji\u2019s iconic hilltop fortress 24km from town. Free entry, stunning Western Ghats views from the ramparts. Allow 2 hours." },
-              { name: "Lingmala Waterfall",        query: "lingmala waterfall mahabaleshwar cascade green forest nature",       desc: "A 500ft waterfall accessible via a short trail. Best visited Oct\u2013Feb when the water flow is strongest. Free entry." },
-              { name: "Mapro Garden",              query: "mapro garden mahabaleshwar strawberry farm maharashtra colorful",    desc: "Free entry strawberry tastings, chocolate factory, and a pizza garden. Buy Mapro products here \u2014 cheaper than the market." },
-              { name: "Venna Lake",                query: "venna lake mahabaleshwar boating peaceful hills maharashtra",        desc: "Peaceful lake in the heart of town. Pedal boating \u20B9100\u2013300. Best in late afternoon light. Skip the horse rides." },
+              { name: "Arthur’s Seat",         query: "arthurs seat mahabaleshwar cliff valley western ghats viewpoint",  desc: "A 600m vertical drop with minimal railing — one of India’s most dramatic cliff edges. Visit at 7am for clear valley views before the fog rolls in." },
+              { name: "Pratapgad Fort",            query: "pratapgad fort mahabaleshwar maharashtra hilltop stone fortress",    desc: "Shivaji’s iconic hilltop fortress 24km from town. Free entry, stunning Western Ghats views from the ramparts. Allow 2 hours." },
+              { name: "Lingmala Waterfall",        query: "lingmala waterfall mahabaleshwar cascade green forest nature",       desc: "A 500ft waterfall accessible via a short trail. Best visited Oct–Feb when the water flow is strongest. Free entry." },
+              { name: "Mapro Garden",              query: "mapro garden mahabaleshwar strawberry farm maharashtra colorful",    desc: "Free entry strawberry tastings, chocolate factory, and a pizza garden. Buy Mapro products here — cheaper than the market." },
+              { name: "Venna Lake",                query: "venna lake mahabaleshwar boating peaceful hills maharashtra",        desc: "Peaceful lake in the heart of town. Pedal boating ₹100–300. Best in late afternoon light. Skip the horse rides." },
             ]}
           />
 
@@ -486,14 +486,14 @@ export default function MahabaleshwarClient() {
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
-                { title: "Going to viewpoints after 10am", desc: "Fog rolls in by mid-morning most days. Arthur\u2019s Seat at 11am = staring at white nothing. Go at 7am or don\u2019t bother.", icon: "\uD83C\uDF2B\uFE0F" },
-                { title: "Paying \u20B9400 for strawberry picking", desc: "The pick-your-own farms charge \u20B9400 for a small basket worth \u20B9100. Buy fresh strawberries from roadside stalls at the Wai Ghat road for a fraction of the price.", icon: "\uD83C\uDF53" },
-                { title: "Skipping Pratapgad Fort", desc: "24km from town, most tourists don\u2019t bother. It\u2019s Shivaji\u2019s most famous fortress and the Western Ghats drive alone makes it worthwhile.", icon: "\uD83C\uDFF0" },
-                { title: "Spending all day at Venna Lake", desc: "It\u2019s a pleasant lake, but 30 minutes of boating is enough. Don\u2019t waste 3 hours here when Arthur\u2019s Seat and Pratapgad exist.", icon: "\u26F5" },
-                { title: "Visiting during monsoon (Jun\u2013Sep)", desc: "The hill station essentially shuts down. Roads are dangerous, viewpoints are invisible, many hotels close. October post-monsoon greenery is the sweet spot.", icon: "\uD83C\uDF27\uFE0F" },
+                { title: "Going to viewpoints after 10am", desc: "Fog rolls in by mid-morning most days. Arthur’s Seat at 11am = staring at white nothing. Go at 7am or don’t bother.", icon: "\uD83C\uDF2B\uFE0F" },
+                { title: "Paying ₹400 for strawberry picking", desc: "The pick-your-own farms charge ₹400 for a small basket worth ₹100. Buy fresh strawberries from roadside stalls at the Wai Ghat road for a fraction of the price.", icon: "\uD83C\uDF53" },
+                { title: "Skipping Pratapgad Fort", desc: "24km from town, most tourists don’t bother. It’s Shivaji’s most famous fortress and the Western Ghats drive alone makes it worthwhile.", icon: "\uD83C\uDFF0" },
+                { title: "Spending all day at Venna Lake", desc: "It’s a pleasant lake, but 30 minutes of boating is enough. Don’t waste 3 hours here when Arthur’s Seat and Pratapgad exist.", icon: "\u26F5" },
+                { title: "Visiting during monsoon (Jun–Sep)", desc: "The hill station essentially shuts down. Roads are dangerous, viewpoints are invisible, many hotels close. October post-monsoon greenery is the sweet spot.", icon: "\uD83C\uDF27\uFE0F" },
                 { title: "Eating only at hotel restaurants", desc: "The main market has excellent street food — corn, bhel, strawberry cream — at a fraction of hotel prices. Local dhabas serve better misal pav than any resort.", icon: "\uD83C\uDF7D" },
               ].map((m) => (
                 <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
@@ -508,11 +508,11 @@ export default function MahabaleshwarClient() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 { icon: "\uD83C\uDF05", title: "The 7am Rule", desc: "Every viewpoint in Mahabaleshwar is a completely different experience before 8am. Clear skies, no crowds, no corn sellers. Set one early alarm — it changes the entire trip.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83C\uDF53", title: "Strawberry Season", desc: "Peak strawberry season is December\u2013March. Mapro Garden is free and has tastings. For the best fresh berries, buy from the Wai Ghat road stalls, not the town market.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83D\uDEE3\uFE0F", title: "The Pune Route via Wai", desc: "The Wai Ghat road is the most scenic approach. 4 hairpin turns with valley views that rival the viewpoints themselves. Don\u2019t rush the drive \u2014 stop at the lookout points.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\u26EA", title: "Old Mahabaleshwar Temples", desc: "The ancient temples at Old Mahabaleshwar are 1,200+ years old and most tourists skip them for viewpoints. Visit early morning \u2014 the Panchganga Temple where five rivers originate is remarkable.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDCF1", title: "Skip Horse Rides", desc: "Horse rides at every viewpoint are overpriced (\u20B9500\u20131,000) and the animals are often poorly treated. Walk instead \u2014 distances between viewpoints are short.", color: "bg-rose-50 border-rose-200" },
-                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct\u2013Nov \u2705 post-monsoon green, few crowds | Dec\u2013Feb \u26A0\uFE0F peak season, weekend jams | Mar\u2013May \u2705 strawberry season, warm | Jun\u2013Sep \u26D4 closed/dangerous", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83C\uDF53", title: "Strawberry Season", desc: "Peak strawberry season is December–March. Mapro Garden is free and has tastings. For the best fresh berries, buy from the Wai Ghat road stalls, not the town market.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83D\uDEE3\uFE0F", title: "The Pune Route via Wai", desc: "The Wai Ghat road is the most scenic approach. 4 hairpin turns with valley views that rival the viewpoints themselves. Don’t rush the drive — stop at the lookout points.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\u26EA", title: "Old Mahabaleshwar Temples", desc: "The ancient temples at Old Mahabaleshwar are 1,200+ years old and most tourists skip them for viewpoints. Visit early morning — the Panchganga Temple where five rivers originate is remarkable.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83D\uDCF1", title: "Skip Horse Rides", desc: "Horse rides at every viewpoint are overpriced (₹500–1,000) and the animals are often poorly treated. Walk instead — distances between viewpoints are short.", color: "bg-rose-50 border-rose-200" },
+                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct–Nov \u2705 post-monsoon green, few crowds | Dec–Feb \u26A0\uFE0F peak season, weekend jams | Mar–May \u2705 strawberry season, warm | Jun–Sep \u26D4 closed/dangerous", color: "bg-rose-50 border-rose-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
           </section>
@@ -521,14 +521,14 @@ export default function MahabaleshwarClient() {
           <AffiliateBlock
             destination="Mahabaleshwar"
             hotels={[
-              { name: "Hotel Panorama", type: "Budget Hotel \u00B7 Main Road", price: "From \u20B91,200/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/panorama-mahabaleshwar.html?aid=2820480" },
-              { name: "Brightland Resort", type: "Resort \u00B7 Hilltop", price: "From \u20B94,500/night", rating: "4", badge: "Weekend pick", url: "https://www.booking.com/hotel/in/brightland-resort-mahabaleshwar.html?aid=2820480" },
-              { name: "Le Meridien Mahabaleshwar", type: "Luxury Resort", price: "From \u20B98,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/le-meridien-mahabaleshwar.html?aid=2820480" },
+              { name: "Hotel Panorama", type: "Budget Hotel · Main Road", price: "From ₹1,200/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/panorama-mahabaleshwar.html?aid=2820480" },
+              { name: "Brightland Resort", type: "Resort · Hilltop", price: "From ₹4,500/night", rating: "4", badge: "Weekend pick", url: "https://www.booking.com/hotel/in/brightland-resort-mahabaleshwar.html?aid=2820480" },
+              { name: "Le Meridien Mahabaleshwar", type: "Luxury Resort", price: "From ₹8,000/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/le-meridien-mahabaleshwar.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Pratapgad Fort Guided Trek", duration: "Half day", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
+              { name: "Pratapgad Fort Guided Trek", duration: "Half day", price: "From ₹500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
               { name: "Mapro Garden & Strawberry Farm Tour", duration: "2 hours", price: "Free entry", badge: "Family", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
-              { name: "Mahabaleshwar Viewpoints Circuit", duration: "Full day", price: "From \u20B91,200/car", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
+              { name: "Mahabaleshwar Viewpoints Circuit", duration: "Full day", price: "From ₹1,200/car", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
               { name: "Old Mahabaleshwar Temple Walk", duration: "2 hours", price: "Free", url: "https://www.getyourguide.com/s/?q=mahabaleshwar&partner_id=PSZA5UI" },
             ]}
             pdfProductId="mahabaleshwar-2-days-pdf"
@@ -540,28 +540,28 @@ export default function MahabaleshwarClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget — we&apos;ll send a personalised Mahabaleshwar itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Mahabaleshwar Trip {"\u2192"}
+                Plan My Mahabaleshwar Trip {"→"}
               </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
             </div>
           </div>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
                 { q: "How many days are enough for Mahabaleshwar?", a: "2 days is enough to cover all major viewpoints, Pratapgad Fort, Mapro Garden, Venna Lake and strawberry farms. 3 days lets you add Old Mahabaleshwar temples and the Koyna Valley drive at a relaxed pace." },
-                { q: "What is the best time to visit Mahabaleshwar?", a: "October to May is the best window. October\u2013November has stunning post-monsoon greenery with fewer crowds. December\u2013February is peak season with pleasant weather but heavy weekend traffic from Mumbai and Pune. March\u2013May is strawberry season. June\u2013September the hill station is effectively closed due to extreme monsoon rainfall." },
-                { q: "How much does a 2-day Mahabaleshwar trip cost?", a: "Budget: \u20B94,500\u2013\u20B95,000 per person including accommodation. Weekend comfort: \u20B96,000\u2013\u20B915,000 per person with a resort stay, restaurant meals and all activities. Prices rise 30\u201350% on weekends during peak season (Dec\u2013Feb)." },
-                { q: "Is Mahabaleshwar good for a weekend trip from Mumbai or Pune?", a: "It\u2019s one of the best weekend getaways from both cities. Pune is just 120km (2.5\u20133 hours via Wai) and Mumbai is 260km (5\u20136 hours via Expressway + Wai Ghat). Leave Friday evening or early Saturday morning. The Pune route via Wai is the most scenic approach." },
-                { q: "Are strawberry farms worth visiting?", a: "The pick-your-own farms are fun for families with kids but overpriced for adults \u2014 about \u20B9400 for a tiny basket. Buy fresh strawberries at roadside stalls for \u20B9100\u2013150 per box instead. Mapro Garden is free and worth visiting for tastings and the chocolate factory." },
-                { q: "What should I not miss in Mahabaleshwar?", a: "Arthur\u2019s Seat at 7am before fog, Pratapgad Fort (24km from town, most tourists skip it), and the ancient temples at Old Mahabaleshwar. The drive to Pratapgad through the Western Ghats is spectacular on its own." },
+                { q: "What is the best time to visit Mahabaleshwar?", a: "October to May is the best window. October–November has stunning post-monsoon greenery with fewer crowds. December–February is peak season with pleasant weather but heavy weekend traffic from Mumbai and Pune. March–May is strawberry season. June–September the hill station is effectively closed due to extreme monsoon rainfall." },
+                { q: "How much does a 2-day Mahabaleshwar trip cost?", a: "Budget: ₹4,500–₹5,000 per person including accommodation. Weekend comfort: ₹6,000–₹15,000 per person with a resort stay, restaurant meals and all activities. Prices rise 30–50% on weekends during peak season (Dec–Feb)." },
+                { q: "Is Mahabaleshwar good for a weekend trip from Mumbai or Pune?", a: "It’s one of the best weekend getaways from both cities. Pune is just 120km (2.5–3 hours via Wai) and Mumbai is 260km (5–6 hours via Expressway + Wai Ghat). Leave Friday evening or early Saturday morning. The Pune route via Wai is the most scenic approach." },
+                { q: "Are strawberry farms worth visiting?", a: "The pick-your-own farms are fun for families with kids but overpriced for adults — about ₹400 for a tiny basket. Buy fresh strawberries at roadside stalls for ₹100–150 per box instead. Mapro Garden is free and worth visiting for tastings and the chocolate factory." },
+                { q: "What should I not miss in Mahabaleshwar?", a: "Arthur’s Seat at 7am before fog, Pratapgad Fort (24km from town, most tourists skip it), and the ancient temples at Old Mahabaleshwar. The drive to Pratapgad through the Western Ghats is spectacular on its own." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
           </section>
@@ -574,15 +574,15 @@ export default function MahabaleshwarClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Planning More Maharashtra Trips?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Lonavala & Khandala \u2014 Weekend Guide", href: "/blog/lonavala-2-days", soon: true },
-                { label: "Goa \u2014 3 Day Beach Itinerary", href: "/blog/goa-3-days", soon: false },
-                { label: "Hampi \u2014 3 Day Heritage Guide", href: "/blog/hampi-3-days", soon: false },
+                { label: "Lonavala & Khandala — Weekend Guide", href: "/blog/lonavala-2-days", soon: true },
+                { label: "Goa — 3 Day Beach Itinerary", href: "/blog/goa-3-days", soon: false },
+                { label: "Hampi — 3 Day Heritage Guide", href: "/blog/hampi-3-days", soon: false },
                 { label: "Browse All India Packages", href: "/#packages", soon: false },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">{link.soon ? "Coming Soon \u2192" : "View \u2192"}</span>
+                  <span className="text-xs text-muted">{link.soon ? "Coming Soon →" : "View →"}</span>
                 </Link>
               ))}
             </div>

@@ -23,12 +23,12 @@ const data: UniversalBlogData = {
   },
   toc: [
     { id: "visa", emoji: "\uD83D\uDEC2", label: "Visa & Entry" },
-    { id: "plans", emoji: "\u26A1", label: "Which Plan Are You?" },
+    { id: "plans", emoji: "⚡", label: "Which Plan Are You?" },
     { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
     { id: "budget", emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-    { id: "mistakes", emoji: "\u274C", label: "Mistakes to Avoid" },
+    { id: "mistakes", emoji: "❌", label: "Mistakes to Avoid" },
     { id: "tips", emoji: "\uD83D\uDCA1", label: "Local Tips" },
-    { id: "faq", emoji: "\u2753", label: "FAQ" },
+    { id: "faq", emoji: "❓", label: "FAQ" },
     { id: "day1", emoji: "\uD83D\uDCC5", label: "Day 1 — Ballaro & Cappella Palatina" },
     { id: "day2", emoji: "\uD83D\uDCC5", label: "Day 2 — Catacombs & Mondello" },
     { id: "day3", emoji: "\uD83D\uDCC5", label: "Day 3 — Cefalu Day Trip" },
@@ -114,7 +114,7 @@ const data: UniversalBlogData = {
       ],
     },
     {
-      label: "\u2728 Mid-Range",
+      label: "✨ Mid-Range",
       sub: "EUR 130–200/day",
       days: [
         {
@@ -206,7 +206,7 @@ const data: UniversalBlogData = {
       total: "EUR 55–75/day",
     },
     {
-      tier: "\u2728 Mid-Range",
+      tier: "✨ Mid-Range",
       accommodation: "EUR 80–140 (boutique hotel or palazzo B&B)",
       food: "EUR 50–80 (trattorias, wine bars, guided food tour)",
       transport: "EUR 15–30 (private taxi and first-class train)",

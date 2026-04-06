@@ -84,7 +84,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 function TipBox({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
   return (
     <div className={`rounded-xl p-4 border ${color}`}>
-      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-muted font-light leading-relaxed">{desc}</p></div></div>
+      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div>
     </div>
   );
 }
@@ -200,7 +200,7 @@ export default function LehLadakhClient() {
               ].map((item) => (
                 <div key={item.title} className={`rounded-xl p-4 border ${item.color}`}>
                   <div className="flex items-center gap-2 mb-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -224,7 +224,7 @@ export default function LehLadakhClient() {
                         <p className="font-semibold text-sm text-ink">{t.title}</p>
                         <span className="text-xs bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.badge}</span>
                       </div>
-                      <p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p>
+                      <p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -445,7 +445,7 @@ export default function LehLadakhClient() {
                     <h3 className="font-serif text-lg font-normal text-ink">{place.name}</h3>
                     <span className="text-xs font-medium text-teal bg-white px-3 py-1 rounded-full border border-parchment-2">{place.alt}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed mb-3">{place.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed mb-3">{place.desc}</p>
                   <div className="flex flex-wrap gap-2">{place.tips.map((t) => <span key={t} className="text-[0.65rem] bg-white/80 text-ink px-2.5 py-1 rounded-full border border-white/60 font-light">{t}</span>)}</div>
                 </div>
               ))}
@@ -553,7 +553,7 @@ export default function LehLadakhClient() {
                 { icon: "🥾", title: "Underestimating the cold", desc: "Even in July–August, Pangong Lake drops to -5°C at night. Nubra Valley: 30°C day, 0°C night. Bring a proper sleeping bag (rated -10°C) if camping. The cold is sudden and extreme at altitude.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{m.title}</p><p className="text-xs text-muted font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -572,7 +572,7 @@ export default function LehLadakhClient() {
                 { icon: "💧", title: "3–4 litres of water daily, no negotiations", desc: "Dehydration dramatically worsens altitude sickness. At 3,500m+ you lose water faster through breathing. Drink constantly even when not thirsty. Carry a 2L bottle and refill it twice daily.", color: "bg-teal-50 border-teal-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -582,7 +582,7 @@ export default function LehLadakhClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want Your Ladakh Trip Planned?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Ladakh logistics are complex — permits, acclimatisation schedule, shared taxis, remote accommodation. Tell us your dates and group and we&apos;ll sort the whole thing. Free.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Ladakh logistics are complex — permits, acclimatisation schedule, shared taxis, remote accommodation. Tell us your dates and group and we&apos;ll sort the whole thing. Free.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Ladakh Trip →</button>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold transition-colors">Contact Us</Link>

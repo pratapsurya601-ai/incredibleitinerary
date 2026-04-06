@@ -185,7 +185,7 @@ export default function ManaliClient() {
               ].map((s) => (
                 <div key={s.season} className={`rounded-xl p-4 border ${s.color}`}>
                   <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-ink">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{s.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -209,7 +209,7 @@ export default function ManaliClient() {
                         <p className="font-semibold text-sm text-ink">{t.title}</p>
                         <span className="text-xs bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.badge}</span>
                       </div>
-                      <p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p>
+                      <p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -389,7 +389,7 @@ export default function ManaliClient() {
                         <span className="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full border border-green-200">{activity.cost}</span>
                       </div>
                     </div>
-                    <p className="text-xs text-muted font-light leading-relaxed">{activity.desc}</p>
+                    <p className="text-xs text-gray-700 font-light leading-relaxed">{activity.desc}</p>
                   </div>
                 ))}
               </div>
@@ -412,7 +412,7 @@ export default function ManaliClient() {
                 <div key={item.name} className="bg-white rounded-xl border border-parchment-2 p-4 hover:border-green-300 transition-colors">
                   <div className="flex items-center gap-2 mb-1"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.name}</p></div>
                   <p className="text-[0.65rem] text-green-600 font-medium mb-2">{item.type}</p>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -431,7 +431,7 @@ export default function ManaliClient() {
               ].map((item) => (
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
                   <div className="flex items-center gap-2 mb-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.content}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
             </div>
@@ -514,7 +514,7 @@ export default function ManaliClient() {
                 { icon: "🌧️", title: "Visiting July–August", desc: "Manali is prone to flash floods and landslides during peak monsoon. NH3 (the main highway) gets blocked regularly. Rohtang is closed. Not worth the risk — come December–June instead.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-muted font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -533,7 +533,7 @@ export default function ManaliClient() {
                 { icon: "📅", title: "October is underrated", desc: "Off-season October: golden deodar forests, clear mountain views, half the tourists, 20–30% lower prices, no Rohtang crowds. Rohtang closes but everything else is perfect. The best month for photography.", color: "bg-teal-50 border-teal-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -543,7 +543,7 @@ export default function ManaliClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want Your Manali Trip Planned?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and what you want — snow, cafes, treks or all three — and we&apos;ll send a personalised Manali plan in 24 hours. Free.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and what you want — snow, cafes, treks or all three — and we&apos;ll send a personalised Manali plan in 24 hours. Free.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Manali Trip →</button>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold transition-colors">Contact Us</Link>

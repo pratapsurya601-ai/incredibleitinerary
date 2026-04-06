@@ -193,7 +193,7 @@ function TipCard({ icon, title, desc, color }: TipData) {
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -340,7 +340,7 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
                   <div className="space-y-2">
                     {v.items.map(([k, val]) => (
                       <div key={k} className="flex gap-2 text-xs">
-                        <span className="font-medium text-ink/60 w-24 flex-shrink-0">{k}</span>
+                        <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
                         <span className="text-muted font-light">{val}</span>
                       </div>
                     ))}

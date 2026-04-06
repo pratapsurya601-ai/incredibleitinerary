@@ -111,7 +111,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -307,7 +307,7 @@ export default function KeralaClient() {
                     <p className="font-medium text-sm text-ink">{item.city}</p>
                     <span className="text-[0.65rem] font-medium text-teal bg-teal/10 px-2.5 py-1 rounded-full">{item.days}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.why}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.why}</p>
                 </div>
               ))}
             </div>
@@ -731,7 +731,7 @@ export default function KeralaClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want This Planned for You?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget — we'll send a personalised Kerala itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">

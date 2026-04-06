@@ -110,7 +110,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -328,7 +328,7 @@ export default function RajasthanBlogClient() {
                     <p className="font-medium text-sm text-ink">{item.city}</p>
                     <span className="text-[0.65rem] font-medium px-2 py-0.5 rounded-full bg-white/70 text-muted">{item.verdict}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -678,7 +678,7 @@ export default function RajasthanBlogClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want This Planned for You?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we'll send a personalised Rajasthan itinerary within 24 hours. Free.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we'll send a personalised Rajasthan itinerary within 24 hours. Free.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Rajasthan Trip →</button>
               <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip →</a>

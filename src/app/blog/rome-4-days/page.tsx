@@ -152,7 +152,7 @@ const faqLd = {
           "name": "Should I book Vatican tickets in advance?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolutely. The Vatican Museums queue can be 3-4 hours in peak season. Book the 7:30am first entry slot online for \u20ac38 \u2014 you get the Sistine Chapel nearly empty before general admission opens at 9am. Book at least 2-3 weeks ahead.",
+            "text": "Absolutely. The Vatican Museums queue can be 3-4 hours in peak season. Book the 7:30am first entry slot online for \u20ac38 — you get the Sistine Chapel nearly empty before general admission opens at 9am. Book at least 2-3 weeks ahead.",
           },
         },
       ],

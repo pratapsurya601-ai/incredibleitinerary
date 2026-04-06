@@ -13,14 +13,14 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const KANYAKUMARI_TOC = [
-  { id: "decision",    emoji: "\u26A1", label: "Which Plan Are You?" },
+  { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
   { id: "why",         emoji: "\uD83C\uDF0A", label: "Why Kanyakumari Needs 2 Days" },
   { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
   { id: "budget",      emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
   { id: "geography",   emoji: "\uD83E\uDDED", label: "The Three Oceans" },
-  { id: "mistakes",    emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "mistakes",    emoji: "❌", label: "Mistakes to Avoid" },
   { id: "tips",        emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",         emoji: "\u2753", label: "FAQ" },
+  { id: "faq",         emoji: "❓", label: "FAQ" },
 ];
 
 // ── Reading Progress Bar ──────────────────────────────────────────────────────
@@ -67,7 +67,7 @@ function ShareBar() {
       ))}
       <button onClick={copy}
         className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -104,7 +104,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
                 {item}
               </li>
             ))}
@@ -128,7 +128,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -164,8 +164,8 @@ export default function KanyakumariClient() {
   const [activeTab, setActiveTab] = useState<"A" | "B">("A");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under \u20B94k total", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\uD83C\uDF0A", label: "Comfortable", sub: "\u20B95k\u201312k total", color: "border-cyan-300 bg-cyan-50 text-cyan-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under ₹4k total", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "\uD83C\uDF0A", label: "Comfortable", sub: "₹5k–12k total", color: "border-cyan-300 bg-cyan-50 text-cyan-800" },
   ];
 
   return (
@@ -205,9 +205,9 @@ export default function KanyakumariClient() {
                   Coastal & Heritage
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">12 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -229,10 +229,10 @@ export default function KanyakumariClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDEE\uD83C\uDDF3"} India</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDDD3"} 2 Days</span>
-              <span>{"\u00B7"}</span>
-              <span>{"\uD83D\uDCB0"} From {"\u20B9"}3,500</span>
+              <span>{"·"}</span>
+              <span>{"\uD83D\uDCB0"} From {"₹"}3,500</span>
             </div>
           </div>
 
@@ -245,7 +245,7 @@ export default function KanyakumariClient() {
 
           {/* ── QUICK DECISION ── */}
           <section id="decision" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Which Plan Are You?</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
             <p className="text-sm text-muted font-light mb-6">Pick your style &mdash; jump straight to your itinerary.</p>
             <div className="grid grid-cols-2 gap-3">
               {plans.map((p) => (
@@ -254,7 +254,7 @@ export default function KanyakumariClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"→"}</p>
                 </button>
               ))}
             </div>
@@ -268,12 +268,12 @@ export default function KanyakumariClient() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
               {[
-                { title: "Day Trippers Miss", emoji: "\u274C", bg: "bg-red-50 border-red-200", th: "text-red-800",
-                  rows: [["Sunrise","The famous sunrise over Bay of Bengal"],["Sunset","Equally stunning over the Arabian Sea"],["The Rock","Vivekananda Rock without 2-hour queues"],["Palace","Padmanabhapuram \u2014 finest wooden palace in Asia"]],
-                  note: "A day trip gives you a crowded ferry ride and a selfie at the tip. That\u2019s it." },
+                { title: "Day Trippers Miss", emoji: "❌", bg: "bg-red-50 border-red-200", th: "text-red-800",
+                  rows: [["Sunrise","The famous sunrise over Bay of Bengal"],["Sunset","Equally stunning over the Arabian Sea"],["The Rock","Vivekananda Rock without 2-hour queues"],["Palace","Padmanabhapuram — finest wooden palace in Asia"]],
+                  note: "A day trip gives you a crowded ferry ride and a selfie at the tip. That’s it." },
                 { title: "2 Nights Gets You", emoji: "\u2705", bg: "bg-teal-50 border-teal-200", th: "text-teal-800",
-                  rows: [["Dawn","Sunrise from the tip \u2014 three oceans turning gold"],["Heritage","Vivekananda Rock + Thiruvalluvar Statue without rushing"],["Palace","Padmanabhapuram Palace day trip (65 km)"],["Food","Fresh seafood coast, local Tamil cuisine"]],
-                  note: "Two nights means you see both sunrise and sunset \u2014 the entire reason to come here." },
+                  rows: [["Dawn","Sunrise from the tip — three oceans turning gold"],["Heritage","Vivekananda Rock + Thiruvalluvar Statue without rushing"],["Palace","Padmanabhapuram Palace day trip (65 km)"],["Food","Fresh seafood coast, local Tamil cuisine"]],
+                  note: "Two nights means you see both sunrise and sunset — the entire reason to come here." },
               ].map((area) => (
                 <div key={area.title} className={`rounded-xl border p-5 ${area.bg}`}>
                   <h3 className={`font-serif text-lg font-normal mb-4 flex items-center gap-2 ${area.th}`}>
@@ -282,7 +282,7 @@ export default function KanyakumariClient() {
                   <div className="space-y-2 mb-4">
                     {area.rows.map(([k, v]) => (
                       <div key={k} className="flex gap-2 text-xs">
-                        <span className="font-medium text-ink/60 w-24 flex-shrink-0">{k}</span>
+                        <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
                         <span className="text-muted font-light">{v}</span>
                       </div>
                     ))}
@@ -293,7 +293,7 @@ export default function KanyakumariClient() {
             </div>
             <div className="bg-gold/10 border border-gold/30 rounded-xl p-4">
               <p className="text-sm text-ink-mid font-light leading-relaxed">
-                <strong className="font-medium text-ink">The truth:</strong> Come for the geography, stay for the seafood. The fish thali at Hotel Saravana Bhavan is {"\u20B9"}120 and better than most coastal restaurants I&apos;ve tried in Kerala.
+                <strong className="font-medium text-ink">The truth:</strong> Come for the geography, stay for the seafood. The fish thali at Hotel Saravana Bhavan is {"₹"}120 and better than most coastal restaurants I&apos;ve tried in Kerala.
               </p>
             </div>
           </section>
@@ -301,8 +301,8 @@ export default function KanyakumariClient() {
           {/* ── STAT CARDS ── */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="2 Days" />
-            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"\u20B93,500"} />
-            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Oct \u2013 Mar" />
+            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"₹3,500"} />
+            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Oct – Mar" />
             <StatCard icon={"\u2708\uFE0F"} label="Nearest Airport" value="Trivandrum (TRV)" />
           </div>
 
@@ -330,38 +330,38 @@ export default function KanyakumariClient() {
                   <span className="text-2xl">{"\uD83D\uDCB0"}</span>
                   <div>
                     <p className="text-sm font-medium text-amber-800">Budget Plan &mdash; Waterfront Base</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Lodge near the shore {"\u00B7"} {"\u20B9"}500{"\u2013"}{"\u20B9"}1,200/night {"\u00B7"} Walk + auto: {"\u20B9"}150{"\u2013"}{"\u20B9"}300/day</p>
+                    <p className="text-xs text-amber-600 font-light">Stay: Lodge near the shore {"·"} {"₹"}500{"–"}{"₹"}1,200/night {"·"} Walk + auto: {"₹"}150{"–"}{"₹"}300/day</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Sunrise, Vivekananda Rock & Sunset"
                   items={[
-                    "5:30am: Walk to the Sunrise View Point near Gandhi Memorial. Get there 20 minutes before sunrise \u2014 the sky over the Bay of Bengal shifts from violet to gold to orange. Free. This alone justifies staying overnight.",
-                    "7am: Breakfast at a local stall near the waterfront \u2014 idli, vada, filter coffee. \u20B960\u201380.",
-                    "8am: Ferry to Vivekananda Rock Memorial (\u20B969 round trip, departs every 30 min). The ferry to Vivekananda Rock costs \u20B969 and the 5 minutes on the water surrounded by three oceans feels genuinely significant. Spend 1.5 hours exploring the meditation hall and the mandapam where Swami Vivekananda meditated.",
-                    "10am: Thiruvalluvar Statue \u2014 the 133-foot statue of the Tamil poet-saint is on the adjacent island. Same ferry ticket covers both. Walk around the base for panoramic views of the Indian Ocean.",
-                    "11:30am: Return by ferry. Visit the Gandhi Memorial (Mahatma Gandhi\u2019s ashes were kept here before immersion). \u20B95 entry. 30 min.",
-                    "12:30pm: Lunch \u2014 fish thali at Hotel Saravana Bhavan or any waterfront mess. \u20B9100\u2013\u20B9150.",
-                    "2pm: Triveni Sangam viewpoint \u2014 walk along the shore to where you can see the three bodies of water meeting. The colour difference in the water is visible on clear days. Free.",
-                    "3:30pm: Kumari Amman Temple \u2014 one of the 108 Shakti Peethas, right at the tip. No cameras allowed inside. Free entry. 45 min.",
+                    "5:30am: Walk to the Sunrise View Point near Gandhi Memorial. Get there 20 minutes before sunrise — the sky over the Bay of Bengal shifts from violet to gold to orange. Free. This alone justifies staying overnight.",
+                    "7am: Breakfast at a local stall near the waterfront — idli, vada, filter coffee. ₹60–80.",
+                    "8am: Ferry to Vivekananda Rock Memorial (₹69 round trip, departs every 30 min). The ferry to Vivekananda Rock costs ₹69 and the 5 minutes on the water surrounded by three oceans feels genuinely significant. Spend 1.5 hours exploring the meditation hall and the mandapam where Swami Vivekananda meditated.",
+                    "10am: Thiruvalluvar Statue — the 133-foot statue of the Tamil poet-saint is on the adjacent island. Same ferry ticket covers both. Walk around the base for panoramic views of the Indian Ocean.",
+                    "11:30am: Return by ferry. Visit the Gandhi Memorial (Mahatma Gandhi’s ashes were kept here before immersion). ₹5 entry. 30 min.",
+                    "12:30pm: Lunch — fish thali at Hotel Saravana Bhavan or any waterfront mess. ₹100–₹150.",
+                    "2pm: Triveni Sangam viewpoint — walk along the shore to where you can see the three bodies of water meeting. The colour difference in the water is visible on clear days. Free.",
+                    "3:30pm: Kumari Amman Temple — one of the 108 Shakti Peethas, right at the tip. No cameras allowed inside. Free entry. 45 min.",
                     "5:30pm: Sunset from the waterfront promenade. The sun drops into the Arabian Sea to your right while the Rock Memorial silhouettes against the sky. Best free show in Tamil Nadu.",
-                    "7:30pm: Dinner at a local restaurant \u2014 fresh fish fry, parotta, rasam rice. \u20B9120\u2013\u20B9180."
+                    "7:30pm: Dinner at a local restaurant — fresh fish fry, parotta, rasam rice. ₹120–₹180."
                   ]}
-                  cost={"\u20B9600\u2013\u20B9900 excluding accommodation"} />
+                  cost={"₹600–₹900 excluding accommodation"} />
                 <DayCard day="Day 2" title="Church, Temples & Town Heritage"
                   items={[
-                    "6am: Second sunrise if you want it \u2014 or sleep in. The light is different every morning.",
-                    "8am: Breakfast at lodge or local stall. \u20B960\u201380.",
-                    "9am: Our Lady of Ransom Church \u2014 a striking 16th-century Gothic church just 5 minutes from the waterfront. The stained glass catches morning light beautifully. Free entry, 30 min.",
-                    "10am: Bhagavathy Amman Temple and the Suchindram Thanumalayan Temple (12 km, auto \u20B9150\u2013200 one way) \u2014 famous for the musical pillars that produce different notes when tapped. \u20B920 entry. 1.5 hours.",
-                    "12:30pm: Lunch \u2014 banana leaf meal at any local mess. \u20B980\u2013\u20B9120.",
-                    "2pm: Walk through the Kanyakumari town market \u2014 seashell souvenirs, spices, local handicrafts. Good for gifts.",
-                    "3:30pm: Baywatch (the small town beach) for a quiet afternoon by the water. No swimming \u2014 the currents are strong \u2014 but the views are spectacular.",
+                    "6am: Second sunrise if you want it — or sleep in. The light is different every morning.",
+                    "8am: Breakfast at lodge or local stall. ₹60–80.",
+                    "9am: Our Lady of Ransom Church — a striking 16th-century Gothic church just 5 minutes from the waterfront. The stained glass catches morning light beautifully. Free entry, 30 min.",
+                    "10am: Bhagavathy Amman Temple and the Suchindram Thanumalayan Temple (12 km, auto ₹150–200 one way) — famous for the musical pillars that produce different notes when tapped. ₹20 entry. 1.5 hours.",
+                    "12:30pm: Lunch — banana leaf meal at any local mess. ₹80–₹120.",
+                    "2pm: Walk through the Kanyakumari town market — seashell souvenirs, spices, local handicrafts. Good for gifts.",
+                    "3:30pm: Baywatch (the small town beach) for a quiet afternoon by the water. No swimming — the currents are strong — but the views are spectacular.",
                     "Depart by evening. Pick up shell handicrafts and banana chips as souvenirs."
                   ]}
-                  cost={"\u20B9500\u2013\u20B9800 excluding accommodation"} />
+                  cost={"₹500–₹800 excluding accommodation"} />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 2-Day Cost (solo) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}3,500{"\u2013"}{"\u20B9"}4,000 including accommodation</span>
+                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 2-Day Cost (solo) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}3,500{"–"}{"₹"}4,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -373,39 +373,39 @@ export default function KanyakumariClient() {
                   <span className="text-2xl">{"\uD83C\uDF0A"}</span>
                   <div>
                     <p className="text-sm font-medium text-cyan-800">Comfortable Plan &mdash; Sea-View Stay + Palace Day Trip</p>
-                    <p className="text-xs text-cyan-600 font-light">Stay: Hotel Sea View or Sparsa Resort {"\u00B7"} {"\u20B9"}2,500{"\u2013"}{"\u20B9"}5,000/night {"\u00B7"} Cab: {"\u20B9"}800{"\u2013"}{"\u20B9"}1,500/day</p>
+                    <p className="text-xs text-cyan-600 font-light">Stay: Hotel Sea View or Sparsa Resort {"·"} {"₹"}2,500{"–"}{"₹"}5,000/night {"·"} Cab: {"₹"}800{"–"}{"₹"}1,500/day</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Sunrise, Rock Memorial & Sunset Dinner"
                   items={[
                     "5:15am: Sunrise from your hotel rooftop or the Sunrise View Point. A sea-view room means you can watch the Bay of Bengal light up from bed.",
-                    "7:30am: Breakfast at hotel or Sangam Restaurant \u2014 South Indian spread with ocean views. \u20B9200\u2013\u20B9350 for two.",
-                    "8am: Ferry to Vivekananda Rock Memorial (\u20B969 round trip). Go first thing to avoid the tour-bus crowds that arrive by 10am. Explore the meditation hall, the Dhyana Mandapam, and sit on the rocks watching waves crash from three directions.",
-                    "10am: Thiruvalluvar Statue on the adjacent rock \u2014 the 133-foot statue is more impressive up close. The pedestal alone is 38 feet. Walk the full perimeter for ocean views in every direction.",
-                    "11:30am: Return to shore. Gandhi Memorial (\u20B95 entry) and the Kamarajar Mani Mandapam nearby. 45 min for both.",
-                    "12:30pm: Lunch at The Sea View restaurant \u2014 grilled fish, prawn masala, crab curry. \u20B9350\u2013\u20B9600 for two.",
-                    "2:30pm: Kumari Amman Temple \u2014 Shakti Peetha at the very tip of India. Then walk along the Triveni Sangam shore where you can see the three waters merging. Free.",
-                    "4pm: Our Lady of Ransom Church \u2014 beautiful Gothic architecture, stained glass, peaceful interior. 30 min.",
-                    "5:30pm: Sunset from the waterfront promenade or Sunset View Tower (\u20B910 entry for a higher vantage point).",
-                    "7:30pm: Dinner at a seafood restaurant \u2014 fresh catch of the day. \u20B9400\u2013\u20B9700 for two."
+                    "7:30am: Breakfast at hotel or Sangam Restaurant — South Indian spread with ocean views. ₹200–₹350 for two.",
+                    "8am: Ferry to Vivekananda Rock Memorial (₹69 round trip). Go first thing to avoid the tour-bus crowds that arrive by 10am. Explore the meditation hall, the Dhyana Mandapam, and sit on the rocks watching waves crash from three directions.",
+                    "10am: Thiruvalluvar Statue on the adjacent rock — the 133-foot statue is more impressive up close. The pedestal alone is 38 feet. Walk the full perimeter for ocean views in every direction.",
+                    "11:30am: Return to shore. Gandhi Memorial (₹5 entry) and the Kamarajar Mani Mandapam nearby. 45 min for both.",
+                    "12:30pm: Lunch at The Sea View restaurant — grilled fish, prawn masala, crab curry. ₹350–₹600 for two.",
+                    "2:30pm: Kumari Amman Temple — Shakti Peetha at the very tip of India. Then walk along the Triveni Sangam shore where you can see the three waters merging. Free.",
+                    "4pm: Our Lady of Ransom Church — beautiful Gothic architecture, stained glass, peaceful interior. 30 min.",
+                    "5:30pm: Sunset from the waterfront promenade or Sunset View Tower (₹10 entry for a higher vantage point).",
+                    "7:30pm: Dinner at a seafood restaurant — fresh catch of the day. ₹400–₹700 for two."
                   ]}
-                  cost={"\u20B92,000\u2013\u20B93,500 for two (excl. accommodation)"} />
+                  cost={"₹2,000–₹3,500 for two (excl. accommodation)"} />
                 <DayCard day="Day 2" title="Padmanabhapuram Palace & Suchindram Temple"
                   items={[
-                    "6am: Optional second sunrise \u2014 full-moon nights in Kanyakumari are legendary (the moon rises over the Bay of Bengal while the sun sets over the Arabian Sea simultaneously during Chitra Pournami in April).",
+                    "6am: Optional second sunrise — full-moon nights in Kanyakumari are legendary (the moon rises over the Bay of Bengal while the sun sets over the Arabian Sea simultaneously during Chitra Pournami in April).",
                     "7:30am: Breakfast at hotel.",
-                    "8:30am: Drive to Padmanabhapuram Palace (65 km, 1.5 hours by cab). This 16th-century wooden palace is one of the finest in Asia \u2014 original murals, carved rosewood ceilings, granite floors polished with a mix of charcoal and coconut shells. \u20B920 entry for Indians, \u20B9200 for foreigners. Closed Mondays. Budget 2 hours inside.",
-                    "11:30am: Drive to Suchindram Thanumalayan Temple (25 km from palace). Famous for the 18-foot Hanuman statue carved from a single rock and musical pillars that produce different notes. \u20B920 entry. 1 hour.",
-                    "1pm: Lunch en route back \u2014 try a highway dhaba for fresh Kerala-style fish curry. \u20B9200\u2013\u20B9350 for two.",
+                    "8:30am: Drive to Padmanabhapuram Palace (65 km, 1.5 hours by cab). This 16th-century wooden palace is one of the finest in Asia — original murals, carved rosewood ceilings, granite floors polished with a mix of charcoal and coconut shells. ₹20 entry for Indians, ₹200 for foreigners. Closed Mondays. Budget 2 hours inside.",
+                    "11:30am: Drive to Suchindram Thanumalayan Temple (25 km from palace). Famous for the 18-foot Hanuman statue carved from a single rock and musical pillars that produce different notes. ₹20 entry. 1 hour.",
+                    "1pm: Lunch en route back — try a highway dhaba for fresh Kerala-style fish curry. ₹200–₹350 for two.",
                     "3pm: Return to Kanyakumari. Browse the seaside market for seashell crafts, spices, and local handicrafts.",
-                    "4:30pm: Wax Museum or Vivekananda Wandering Monk Exhibition (\u20B950 entry) \u2014 worth 30 minutes if you have time.",
-                    "5:30pm: Final sunset from the promenade. Different spot than yesterday \u2014 try the rocks near the Kumari Amman Temple.",
-                    "Depart evening. Pick up Kanyakumari\u2019s famous multi-coloured sand bottles as souvenirs."
+                    "4:30pm: Wax Museum or Vivekananda Wandering Monk Exhibition (₹50 entry) — worth 30 minutes if you have time.",
+                    "5:30pm: Final sunset from the promenade. Different spot than yesterday — try the rocks near the Kumari Amman Temple.",
+                    "Depart evening. Pick up Kanyakumari’s famous multi-coloured sand bottles as souvenirs."
                   ]}
-                  cost={"\u20B92,500\u2013\u20B94,000 for two (excl. accommodation)"} />
+                  cost={"₹2,500–₹4,000 for two (excl. accommodation)"} />
                 <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-cyan-700 uppercase tracking-wide">Total 2-Day Cost (for two) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}5,000{"\u2013"}{"\u20B9"}12,000 including accommodation</span>
+                  <span className="text-xs text-cyan-700 uppercase tracking-wide">Total 2-Day Cost (for two) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}5,000{"–"}{"₹"}12,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -425,11 +425,11 @@ export default function KanyakumariClient() {
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (2N)", "\u20B91,000\u2013\u20B92,400", "\u20B95,000\u2013\u20B910,000"],
-                    ["\uD83C\uDF5B Food & Drinks", "\u20B9400\u2013\u20B9600", "\u20B91,200\u2013\u20B92,500"],
-                    ["\uD83D\uDE95 Transport", "\u20B9200\u2013\u20B9400", "\u20B91,500\u2013\u20B92,500"],
-                    ["\uD83C\uDFAF Ferry & Entry Fees", "\u20B9100\u2013\u20B9200", "\u20B9300\u2013\u20B9500"],
-                    ["\uD83D\uDECD\uFE0F Souvenirs", "\u20B9100\u2013\u20B9200", "\u20B9300\u2013\u20B9500"],
+                    ["\uD83C\uDFE8 Accommodation (2N)", "₹1,000–₹2,400", "₹5,000–₹10,000"],
+                    ["\uD83C\uDF5B Food & Drinks", "₹400–₹600", "₹1,200–₹2,500"],
+                    ["\uD83D\uDE95 Transport", "₹200–₹400", "₹1,500–₹2,500"],
+                    ["\uD83C\uDFAF Ferry & Entry Fees", "₹100–₹200", "₹300–₹500"],
+                    ["\uD83D\uDECD\uFE0F Souvenirs", "₹100–₹200", "₹300–₹500"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -438,7 +438,7 @@ export default function KanyakumariClient() {
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total</td>
-                    {["\u20B93,500\u2013\u20B94,000 (solo)","\u20B95,000\u2013\u20B912,000 (for two)"].map((v, i) => (
+                    {["₹3,500–₹4,000 (solo)","₹5,000–₹12,000 (for two)"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
                     ))}
                   </tr>
@@ -455,10 +455,10 @@ export default function KanyakumariClient() {
             title="Kanyakumari &mdash; Must-See Places"
             subtitle="Click each thumbnail to explore Kanyakumari&apos;s most iconic landmarks and ocean views."
             spots={[
-              { name: "Vivekananda Rock Memorial",  query: "vivekananda rock memorial kanyakumari ocean waves stone monument india",          desc: "A memorial on the rock where Swami Vivekananda meditated in 1892. Ferry ride (\u20B969) takes 5 minutes. Open 8am\u20134pm, closed Tuesdays." },
+              { name: "Vivekananda Rock Memorial",  query: "vivekananda rock memorial kanyakumari ocean waves stone monument india",          desc: "A memorial on the rock where Swami Vivekananda meditated in 1892. Ferry ride (₹69) takes 5 minutes. Open 8am–4pm, closed Tuesdays." },
               { name: "Thiruvalluvar Statue",       query: "thiruvalluvar statue kanyakumari tall stone sculpture ocean island india",        desc: "A 133-foot statue of the Tamil poet-saint Thiruvalluvar on a rock island. The 38-foot pedestal represents virtue, the statue represents wealth and love." },
-              { name: "Triveni Sangam",             query: "kanyakumari triveni sangam three oceans meeting point coast india",               desc: "The confluence of the Arabian Sea, Bay of Bengal, and Indian Ocean at India\u2019s southernmost tip. On clear days you can see the different water colours merge." },
-              { name: "Padmanabhapuram Palace",     query: "padmanabhapuram palace wooden architecture kerala carved ceiling ancient india",  desc: "A 16th-century wooden palace with original murals, carved rosewood ceilings, and granite floors polished with charcoal and coconut. \u20B920 entry. Closed Mondays." },
+              { name: "Triveni Sangam",             query: "kanyakumari triveni sangam three oceans meeting point coast india",               desc: "The confluence of the Arabian Sea, Bay of Bengal, and Indian Ocean at India’s southernmost tip. On clear days you can see the different water colours merge." },
+              { name: "Padmanabhapuram Palace",     query: "padmanabhapuram palace wooden architecture kerala carved ceiling ancient india",  desc: "A 16th-century wooden palace with original murals, carved rosewood ceilings, and granite floors polished with charcoal and coconut. ₹20 entry. Closed Mondays." },
               { name: "Our Lady of Ransom Church",  query: "our lady of ransom church kanyakumari gothic architecture stained glass india",   desc: "A striking 16th-century Gothic church near the waterfront with beautiful stained glass windows. Free entry, best visited in the morning light." },
             ]}
           />
@@ -505,22 +505,22 @@ export default function KanyakumariClient() {
             />
             <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
               <p className="text-xs text-muted font-light italic text-center">
-                The fish thali at Hotel Saravana Bhavan is {"\u20B9"}120 and better than most coastal restaurants across Kerala &mdash; fresh catch, coconut curry, and rice on a banana leaf.
+                The fish thali at Hotel Saravana Bhavan is {"₹"}120 and better than most coastal restaurants across Kerala &mdash; fresh catch, coconut curry, and rice on a banana leaf.
               </p>
             </div>
           </div>
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
-                { title: "Doing Kanyakumari as a day trip", desc: "You\u2019ll see the tip, take a photo, and leave. You\u2019ll miss both the sunrise and sunset \u2014 which is the entire reason to come. Stay 2 nights minimum.", icon: "\u23F0" },
-                { title: "Taking the ferry at 10am", desc: "Tour buses arrive by 10am. The queue for the Vivekananda Rock ferry can hit 2 hours. Go at 8am when the ferry starts \u2014 you\u2019ll walk straight on.", icon: "\u26F4\uFE0F" },
-                { title: "Skipping Padmanabhapuram Palace", desc: "Most tourists don\u2019t know it exists. It\u2019s 65 km away but it\u2019s one of the finest wooden palaces in Asia. The carved ceilings and 400-year-old murals are extraordinary. Don\u2019t miss it.", icon: "\uD83C\uDFDB\uFE0F" },
+                { title: "Doing Kanyakumari as a day trip", desc: "You’ll see the tip, take a photo, and leave. You’ll miss both the sunrise and sunset — which is the entire reason to come. Stay 2 nights minimum.", icon: "\u23F0" },
+                { title: "Taking the ferry at 10am", desc: "Tour buses arrive by 10am. The queue for the Vivekananda Rock ferry can hit 2 hours. Go at 8am when the ferry starts — you’ll walk straight on.", icon: "\u26F4\uFE0F" },
+                { title: "Skipping Padmanabhapuram Palace", desc: "Most tourists don’t know it exists. It’s 65 km away but it’s one of the finest wooden palaces in Asia. The carved ceilings and 400-year-old murals are extraordinary. Don’t miss it.", icon: "\uD83C\uDFDB\uFE0F" },
                 { title: "Swimming at the tip", desc: "The currents where three oceans meet are dangerously strong. People drown here regularly. Wade ankle-deep at best. The beach north of town is safer but still rough.", icon: "\uD83C\uDF0A" },
-                { title: "Visiting on a Tuesday", desc: "The Vivekananda Rock Memorial and Thiruvalluvar Statue are both closed on Tuesdays. Plan around this or you\u2019ll waste a ferry trip.", icon: "\uD83D\uDCC5" },
-                { title: "Only eating at tourist restaurants", desc: "The waterfront restaurants overcharge by 40\u201360%. Walk one street back for local mess shops serving fish thali for \u20B9100\u2013120 instead of \u20B9250.", icon: "\uD83C\uDF5B" },
+                { title: "Visiting on a Tuesday", desc: "The Vivekananda Rock Memorial and Thiruvalluvar Statue are both closed on Tuesdays. Plan around this or you’ll waste a ferry trip.", icon: "\uD83D\uDCC5" },
+                { title: "Only eating at tourist restaurants", desc: "The waterfront restaurants overcharge by 40–60%. Walk one street back for local mess shops serving fish thali for ₹100–120 instead of ₹250.", icon: "\uD83C\uDF5B" },
               ].map((m) => (
                 <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
                   color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
@@ -533,12 +533,12 @@ export default function KanyakumariClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { icon: "\uD83C\uDF05", title: "The Sunrise Spot", desc: "The best sunrise viewpoint is near Gandhi Memorial at the tip. Get there 20 minutes before sunrise. Bring a light jacket \u2014 the ocean breeze is surprisingly cold at dawn.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83C\uDF15", title: "Full Moon Nights", desc: "During Chitra Pournami (April full moon), you can see the moon rising over the Bay of Bengal while the sun sets over the Arabian Sea simultaneously. It\u2019s a rare astronomical event visible only from Kanyakumari.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83D\uDEA2", title: "Ferry Strategy", desc: "Buy the ferry ticket early and go to Vivekananda Rock first (it\u2019s farther). Walk back to Thiruvalluvar Statue. This way you avoid doubling back. Same ticket covers both stops.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDC5A", title: "Dress Code for Temples", desc: "Kumari Amman Temple and Suchindram Temple require covered shoulders and knees. Carry a light shawl. Shoes must be removed \u2014 the stone gets hot after 10am.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDE95", title: "Getting There", desc: "Trivandrum airport is 85 km (2 hours by cab, \u20B91,500\u20132,000). Train to Kanyakumari station is the most scenic option. Buses from Madurai (6 hours) and Chennai (12 hours) run frequently.", color: "bg-cyan-50 border-cyan-200" },
-                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct\u2013Nov \u2713 best value, clear skies | Dec\u2013Jan \u2713 best weather, festival season | Feb\u2013Mar \u2713 sweet spot | Apr \u26A0\uFE0F hot but Chitra Pournami | May\u2013Sep \uD83C\uDF27\uFE0F monsoon, rough seas, ferry cancellations", color: "bg-cyan-50 border-cyan-200" },
+                { icon: "\uD83C\uDF05", title: "The Sunrise Spot", desc: "The best sunrise viewpoint is near Gandhi Memorial at the tip. Get there 20 minutes before sunrise. Bring a light jacket — the ocean breeze is surprisingly cold at dawn.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83C\uDF15", title: "Full Moon Nights", desc: "During Chitra Pournami (April full moon), you can see the moon rising over the Bay of Bengal while the sun sets over the Arabian Sea simultaneously. It’s a rare astronomical event visible only from Kanyakumari.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83D\uDEA2", title: "Ferry Strategy", desc: "Buy the ferry ticket early and go to Vivekananda Rock first (it’s farther). Walk back to Thiruvalluvar Statue. This way you avoid doubling back. Same ticket covers both stops.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83D\uDC5A", title: "Dress Code for Temples", desc: "Kumari Amman Temple and Suchindram Temple require covered shoulders and knees. Carry a light shawl. Shoes must be removed — the stone gets hot after 10am.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83D\uDE95", title: "Getting There", desc: "Trivandrum airport is 85 km (2 hours by cab, ₹1,500–2,000). Train to Kanyakumari station is the most scenic option. Buses from Madurai (6 hours) and Chennai (12 hours) run frequently.", color: "bg-cyan-50 border-cyan-200" },
+                { icon: "\uD83D\uDCC6", title: "Best Month by Month", desc: "Oct–Nov ✓ best value, clear skies | Dec–Jan ✓ best weather, festival season | Feb–Mar ✓ sweet spot | Apr \u26A0\uFE0F hot but Chitra Pournami | May–Sep \uD83C\uDF27\uFE0F monsoon, rough seas, ferry cancellations", color: "bg-cyan-50 border-cyan-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
           </section>
@@ -547,15 +547,15 @@ export default function KanyakumariClient() {
           <AffiliateBlock
             destination="Kanyakumari"
             hotels={[
-              { name: "Hotel Sea View", type: "Budget \u00B7 Waterfront", price: "From \u20B9800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/sea-view-kanyakumari.html?aid=2820480" },
-              { name: "Sparsa Resort", type: "Comfortable \u00B7 Sea View", price: "From \u20B94,000/night", rating: "4", badge: "Top pick", url: "https://www.booking.com/hotel/in/sparsa-resort-kanyakumari.html?aid=2820480" },
-              { name: "Hotel Tri Sea", type: "Mid-range \u00B7 Central", price: "From \u20B92,000/night", rating: "3", badge: "Value", url: "https://www.booking.com/hotel/in/tri-sea-kanyakumari.html?aid=2820480" },
+              { name: "Hotel Sea View", type: "Budget · Waterfront", price: "From ₹800/night", rating: "3", badge: "Budget pick", url: "https://www.booking.com/hotel/in/sea-view-kanyakumari.html?aid=2820480" },
+              { name: "Sparsa Resort", type: "Comfortable · Sea View", price: "From ₹4,000/night", rating: "4", badge: "Top pick", url: "https://www.booking.com/hotel/in/sparsa-resort-kanyakumari.html?aid=2820480" },
+              { name: "Hotel Tri Sea", type: "Mid-range · Central", price: "From ₹2,000/night", rating: "3", badge: "Value", url: "https://www.booking.com/hotel/in/tri-sea-kanyakumari.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Vivekananda Rock + Thiruvalluvar Ferry", duration: "3 hours", price: "From \u20B969/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
-              { name: "Padmanabhapuram Palace Day Trip", duration: "5 hours", price: "From \u20B91,500/cab", badge: "Heritage", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
-              { name: "Suchindram Temple Visit", duration: "2 hours", price: "From \u20B9500/cab", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
-              { name: "Full Day Kanyakumari Heritage Tour", duration: "8 hours", price: "From \u20B92,000/person", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
+              { name: "Vivekananda Rock + Thiruvalluvar Ferry", duration: "3 hours", price: "From ₹69/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
+              { name: "Padmanabhapuram Palace Day Trip", duration: "5 hours", price: "From ₹1,500/cab", badge: "Heritage", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
+              { name: "Suchindram Temple Visit", duration: "2 hours", price: "From ₹500/cab", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
+              { name: "Full Day Kanyakumari Heritage Tour", duration: "8 hours", price: "From ₹2,000/person", url: "https://www.getyourguide.com/s/?q=kanyakumari&partner_id=PSZA5UI" },
             ]}
             pdfProductId="kanyakumari-2-days-pdf"
           />
@@ -566,28 +566,28 @@ export default function KanyakumariClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget &mdash; we&apos;ll send a personalised Kanyakumari itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Kanyakumari Trip {"\u2192"}
+                Plan My Kanyakumari Trip {"→"}
               </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
             </div>
           </div>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
-                { q: "How many days are enough for Kanyakumari?", a: "2 days is ideal. Day 1 covers the sunrise, Vivekananda Rock Memorial, Thiruvalluvar Statue, Triveni Sangam and sunset. Day 2 covers Padmanabhapuram Palace, Our Lady of Ransom Church, and Suchindram Temple. A single day trip misses the sunrise and sunset \u2014 which is the entire reason to visit." },
-                { q: "What is the best time to visit Kanyakumari?", a: "October to March is best \u2014 pleasant weather (24\u201330\u00B0C), clear skies for sunrise and sunset, and calm seas for the ferry. April has the spectacular Chitra Pournami full-moon event. June\u2013September brings monsoon with rough seas and possible ferry cancellations." },
-                { q: "How much does a 2-day Kanyakumari trip cost?", a: "Budget solo: \u20B93,500\u2013\u20B94,000 including accommodation. Comfortable plan for two: \u20B95,000\u2013\u20B912,000 including sea-view hotel, Padmanabhapuram Palace trip and better restaurants. Kanyakumari is very affordable." },
-                { q: "Can you see sunrise and sunset from the same spot?", a: "Yes \u2014 Kanyakumari is the only place in mainland India where this is possible. The tip faces south, so the sun rises over the Bay of Bengal to your left and sets over the Arabian Sea to your right. The Sunrise View Point near Gandhi Memorial works for both." },
-                { q: "How do I get to Vivekananda Rock Memorial?", a: "Ferry from the Kanyakumari terminal every 30 minutes. \u20B969 round trip, 5 minutes each way. Go at 8am when the ferry starts to avoid tour-bus queues. Closed Tuesdays. Same ticket covers both Vivekananda Rock and Thiruvalluvar Statue." },
-                { q: "Is Padmanabhapuram Palace worth the 65 km trip?", a: "Absolutely. One of the finest wooden palaces in Asia with original 16th-century murals, carved rosewood ceilings, and a medicine room with 400-year-old herbal preparations. \u20B920 entry for Indians. Closed Mondays. Budget 2\u20133 hours including travel." },
+                { q: "How many days are enough for Kanyakumari?", a: "2 days is ideal. Day 1 covers the sunrise, Vivekananda Rock Memorial, Thiruvalluvar Statue, Triveni Sangam and sunset. Day 2 covers Padmanabhapuram Palace, Our Lady of Ransom Church, and Suchindram Temple. A single day trip misses the sunrise and sunset — which is the entire reason to visit." },
+                { q: "What is the best time to visit Kanyakumari?", a: "October to March is best — pleasant weather (24–30°C), clear skies for sunrise and sunset, and calm seas for the ferry. April has the spectacular Chitra Pournami full-moon event. June–September brings monsoon with rough seas and possible ferry cancellations." },
+                { q: "How much does a 2-day Kanyakumari trip cost?", a: "Budget solo: ₹3,500–₹4,000 including accommodation. Comfortable plan for two: ₹5,000–₹12,000 including sea-view hotel, Padmanabhapuram Palace trip and better restaurants. Kanyakumari is very affordable." },
+                { q: "Can you see sunrise and sunset from the same spot?", a: "Yes — Kanyakumari is the only place in mainland India where this is possible. The tip faces south, so the sun rises over the Bay of Bengal to your left and sets over the Arabian Sea to your right. The Sunrise View Point near Gandhi Memorial works for both." },
+                { q: "How do I get to Vivekananda Rock Memorial?", a: "Ferry from the Kanyakumari terminal every 30 minutes. ₹69 round trip, 5 minutes each way. Go at 8am when the ferry starts to avoid tour-bus queues. Closed Tuesdays. Same ticket covers both Vivekananda Rock and Thiruvalluvar Statue." },
+                { q: "Is Padmanabhapuram Palace worth the 65 km trip?", a: "Absolutely. One of the finest wooden palaces in Asia with original 16th-century murals, carved rosewood ceilings, and a medicine room with 400-year-old herbal preparations. ₹20 entry for Indians. Closed Mondays. Budget 2–3 hours including travel." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
           </section>
@@ -600,15 +600,15 @@ export default function KanyakumariClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Exploring More of South India?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Madurai \u2014 2 Day Temple Trail", href: "/blog/madurai-2-days", soon: false },
-                { label: "Pondicherry \u2014 3 Day Guide", href: "/blog/pondicherry-3-days", soon: false },
-                { label: "Kerala Backwaters \u2014 5 Day Guide", href: "/blog/kerala-5-days", soon: false },
+                { label: "Madurai — 2 Day Temple Trail", href: "/blog/madurai-2-days", soon: false },
+                { label: "Pondicherry — 3 Day Guide", href: "/blog/pondicherry-3-days", soon: false },
+                { label: "Kerala Backwaters — 5 Day Guide", href: "/blog/kerala-5-days", soon: false },
                 { label: "Browse All India Packages", href: "/#packages", soon: false },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">{link.soon ? "Coming Soon \u2192" : "View \u2192"}</span>
+                  <span className="text-xs text-muted">{link.soon ? "Coming Soon →" : "View →"}</span>
                 </Link>
               ))}
             </div>

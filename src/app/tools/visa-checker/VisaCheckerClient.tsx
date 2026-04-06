@@ -197,7 +197,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     if (group === "US_UK_CA_AU" || group === "EU") {
       return {
         status: "evisa", label: "eVisa Available", emoji: "\ud83d\udcf1",
-        duration: "30 days", cost: "$25 (approx.)", processing: "3\u20135 business days",
+        duration: "30 days", cost: "$25 (approx.)", processing: "3–5 business days",
         requirements: [
           "Passport valid for 6+ months from arrival",
           "Two recent passport-sized photos",
@@ -211,7 +211,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     if (group === "SG_MY") {
       return {
         status: "evisa", label: "eVisa Available", emoji: "\ud83d\udcf1",
-        duration: "30 days", cost: "$25 (approx.)", processing: "3\u20135 business days",
+        duration: "30 days", cost: "$25 (approx.)", processing: "3–5 business days",
         requirements: [
           "Passport valid for 6+ months from arrival",
           "Two recent passport-sized photos",
@@ -222,7 +222,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     }
     return {
       status: "visa_required", label: "Tourist Visa Required", emoji: "\ud83c\udfe2",
-      duration: "Up to 90 days", cost: "Varies by nationality", processing: "5\u201315 business days",
+      duration: "Up to 90 days", cost: "Varies by nationality", processing: "5–15 business days",
       requirements: [
         "Passport valid for 6+ months from arrival",
         "Completed visa application form",
@@ -230,7 +230,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
         "Proof of accommodation and return flights",
         "Financial proof (bank statements)",
       ],
-      notes: "Apply at the nearest Indian embassy or consulate. Some nationalities may be eligible for eVisa \u2014 check indianvisaonline.gov.in.",
+      notes: "Apply at the nearest Indian embassy or consulate. Some nationalities may be eligible for eVisa — check indianvisaonline.gov.in.",
     };
   }
 
@@ -239,7 +239,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     if (group === "IN") {
       return {
         status: "visa_on_arrival", label: "Visa on Arrival", emoji: "\u2708\ufe0f",
-        duration: "15 days", cost: "\u0e3f2,000 (~$56)", processing: "On arrival (30\u201360 min queue)",
+        duration: "15 days", cost: "\u0e3f2,000 (~$56)", processing: "On arrival (30–60 min queue)",
         requirements: [
           "Passport valid for 6+ months",
           "One recent passport photo (4x6 cm)",
@@ -253,7 +253,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     if (group === "US_UK_CA_AU" || group === "EU" || group === "SG_MY") {
       return {
         status: "visa_free", label: "Visa Free", emoji: "\u2705",
-        duration: "30\u201360 days (varies)", cost: "Free", processing: "N/A",
+        duration: "30–60 days (varies)", cost: "Free", processing: "N/A",
         requirements: [
           "Passport valid for 6+ months",
           "Return flight within exemption period",
@@ -264,7 +264,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     }
     return {
       status: "visa_required", label: "Visa Required", emoji: "\ud83c\udfe2",
-      duration: "Varies", cost: "Varies by nationality", processing: "5\u201310 business days",
+      duration: "Varies", cost: "Varies by nationality", processing: "5–10 business days",
       requirements: [
         "Passport valid for 6+ months",
         "Completed application form",
@@ -280,7 +280,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     if (group === "IN") {
       return {
         status: "visa_required", label: "Visa Required", emoji: "\ud83c\udfe2",
-        duration: "15\u201390 days (single/multiple entry)", cost: "\u00a53,000\u2013\u00a56,000 (~$20\u2013$40)", processing: "15\u201330 business days",
+        duration: "15–90 days (single/multiple entry)", cost: "\u00a53,000–\u00a56,000 (~$20–$40)", processing: "15–30 business days",
         requirements: [
           "Passport valid for duration of stay",
           "Completed visa application form",
@@ -308,7 +308,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     }
     return {
       status: "visa_required", label: "Visa Required", emoji: "\ud83c\udfe2",
-      duration: "15\u201390 days", cost: "Varies", processing: "5\u201330 business days",
+      duration: "15–90 days", cost: "Varies", processing: "5–30 business days",
       requirements: [
         "Passport valid for duration of stay",
         "Completed visa application",
@@ -325,7 +325,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     if (group === "IN") {
       return {
         status: "visa_required", label: "Schengen Visa Required", emoji: "\ud83c\udfe2",
-        duration: "Up to 90 days in 180 days", cost: "\u20ac80 (~$86)", processing: "15\u201330 business days",
+        duration: "Up to 90 days in 180 days", cost: "\u20ac80 (~$86)", processing: "15–30 business days",
         requirements: [
           "Passport valid for 3+ months beyond return date",
           "Completed Schengen visa application form",
@@ -333,11 +333,11 @@ function getVisaResult(passport: string, destination: string): VisaResult {
           "Travel insurance (min. \u20ac30,000 coverage)",
           "Flight reservation (round trip)",
           "Hotel bookings for entire stay",
-          "Bank statements (last 3\u20136 months)",
+          "Bank statements (last 3–6 months)",
           "Employment/income proof or sponsor letter",
           "Cover letter with travel purpose",
         ],
-        notes: "Apply at VFS Global or the Italian embassy at least 3 months before travel. Appointments fill up fast during summer \u2014 book early. The Schengen visa allows you to visit all 27 Schengen countries.",
+        notes: "Apply at VFS Global or the Italian embassy at least 3 months before travel. Appointments fill up fast during summer — book early. The Schengen visa allows you to visit all 27 Schengen countries.",
       };
     }
     if (group === "EU") {
@@ -361,7 +361,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
           "Proof of sufficient funds (may be asked)",
           "Travel insurance (recommended)",
         ],
-        notes: "The 90-day allowance applies across all Schengen countries combined. ETIAS pre-authorization may be required \u2014 check before booking.",
+        notes: "The 90-day allowance applies across all Schengen countries combined. ETIAS pre-authorization may be required — check before booking.",
       };
     }
     if (group === "SG_MY") {
@@ -377,7 +377,7 @@ function getVisaResult(passport: string, destination: string): VisaResult {
     }
     return {
       status: "visa_required", label: "Schengen Visa Required", emoji: "\ud83c\udfe2",
-      duration: "Up to 90 days in 180 days", cost: "\u20ac80 (~$86)", processing: "15\u201330 business days",
+      duration: "Up to 90 days in 180 days", cost: "\u20ac80 (~$86)", processing: "15–30 business days",
       requirements: [
         "Passport valid for 3+ months beyond return date",
         "Schengen visa application form",

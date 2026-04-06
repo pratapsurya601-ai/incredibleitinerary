@@ -281,7 +281,7 @@ export default function BadrinathClient({ faqData }: Props) {
                 <div key={c.title} className={`rounded-xl border p-5 ${c.color}`}>
                   <div className="text-2xl mb-2">{c.icon}</div>
                   <p className="font-medium text-sm text-ink mb-1">{c.title}</p>
-                  <p className="text-xs text-muted font-light leading-relaxed">{c.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -476,7 +476,7 @@ export default function BadrinathClient({ faqData }: Props) {
                     <span className="text-xl">{p.icon}</span>
                     <span className="font-medium text-sm text-ink">{p.name}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{p.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -536,7 +536,7 @@ export default function BadrinathClient({ faqData }: Props) {
                       <p className="text-[0.65rem] text-muted">{p.distance}</p>
                     </div>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed mb-3">{p.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed mb-3">{p.desc}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {p.tags.map((t) => (
                       <span key={t} className="text-[0.6rem] bg-parchment text-muted px-2 py-0.5 rounded-full">
@@ -847,7 +847,7 @@ export default function BadrinathClient({ faqData }: Props) {
                     <span className="text-xl flex-shrink-0">{t.icon}</span>
                     <div>
                       <p className="font-medium text-sm text-ink mb-1">{t.title}</p>
-                      <p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p>
+                      <p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p>
                     </div>
                   </div>
                 </div>

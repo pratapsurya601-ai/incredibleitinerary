@@ -81,7 +81,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 function TipBox({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
   return (
     <div className={`rounded-xl p-4 border ${color}`}>
-      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-muted font-light leading-relaxed">{desc}</p></div></div>
+      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div>
     </div>
   );
 }
@@ -207,7 +207,7 @@ export default function AndamanClient() {
                     <h3 className="font-serif text-lg font-normal text-ink">{island.name}</h3>
                     <span className="text-xs font-medium text-teal bg-white px-3 py-1 rounded-full border border-parchment-2">{island.days}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed mb-3">{island.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed mb-3">{island.desc}</p>
                   <div className="flex flex-wrap gap-2">{island.must.map((m) => <span key={m} className="text-[0.65rem] bg-white/80 text-ink px-2.5 py-1 rounded-full border border-white/60 font-light">{m}</span>)}</div>
                 </div>
               ))}
@@ -420,7 +420,7 @@ export default function AndamanClient() {
               ].map((item) => (
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
                   <div className="flex items-center gap-2 mb-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.content}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
             </div>
@@ -501,7 +501,7 @@ export default function AndamanClient() {
                 { icon: "💸", title: "Flying from Delhi or Mumbai directly", desc: "Direct flights from Delhi to Port Blair cost Rs.8,000–Rs.18,000. Instead: fly Chennai to Port Blair (Rs.2,500–Rs.5,000, 1hr 15min). Add a one-night Chennai stopover if needed — saves Rs.5,000–Rs.10,000 per person.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-muted font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -520,7 +520,7 @@ export default function AndamanClient() {
                 { icon: "🦀", title: "Try the mud crab at Havelock", desc: "The local mud crab (Rs.800–Rs.1,500 per crab) is the best seafood in Andaman. Fat Rock Cafe and Anju-Coco prepare it best. Order in advance — takes 45 minutes to prepare.", color: "bg-red-50 border-red-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-muted font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -530,7 +530,7 @@ export default function AndamanClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want Your Andaman Trip Planned?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we&apos;ll send a personalised Andaman itinerary with ferry bookings and hotel recommendations within 24 hours. Free.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we&apos;ll send a personalised Andaman itinerary with ferry bookings and hotel recommendations within 24 hours. Free.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Andaman Trip →</button>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold transition-colors">Contact Us</Link>

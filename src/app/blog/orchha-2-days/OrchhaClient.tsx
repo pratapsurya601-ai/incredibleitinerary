@@ -13,14 +13,14 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
 const ORCHHA_TOC = [
-  { id: "decision",    emoji: "\u26A1", label: "Which Plan Are You?" },
+  { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
   { id: "why",         emoji: "\uD83C\uDFF0", label: "Why Orchha" },
   { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
   { id: "budget",      emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
   { id: "maps",        emoji: "\uD83D\uDDFA\uFE0F", label: "Route Maps" },
-  { id: "mistakes",    emoji: "\u274C", label: "Mistakes to Avoid" },
+  { id: "mistakes",    emoji: "❌", label: "Mistakes to Avoid" },
   { id: "tips",        emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",         emoji: "\u2753", label: "FAQ" },
+  { id: "faq",         emoji: "❓", label: "FAQ" },
 ];
 
 // ── Reading Progress Bar ──────────────────────────────────────────────────────
@@ -67,7 +67,7 @@ function ShareBar() {
       ))}
       <button onClick={copy}
         className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "\u2713 Copied" : "Copy Link"}
+        {copied ? "✓ Copied" : "Copy Link"}
       </button>
     </div>
   );
@@ -104,7 +104,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
                 {item}
               </li>
             ))}
@@ -128,7 +128,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
           <p className="font-medium text-sm text-ink mb-1">{title}</p>
-          <p className="text-xs text-muted font-light leading-relaxed">{desc}</p>
+          <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
     </div>
@@ -154,14 +154,14 @@ function RouteCard({ plan, day, stops, distance, url, note, color }: {
         {stops.map((stop, j) => (
           <span key={j} className="flex items-center gap-1">
             <span className="text-xs bg-white/80 px-2.5 py-1 rounded-full border border-white/60 text-ink font-light">{stop}</span>
-            {j < stops.length - 1 && <span className="text-muted/40 text-xs">{"\u2192"}</span>}
+            {j < stops.length - 1 && <span className="text-muted/40 text-xs">{"→"}</span>}
           </span>
         ))}
       </div>
       <p className="text-xs text-muted font-light italic mb-3">{"\uD83D\uDCA1"} {note}</p>
       <a href={url} target="_blank" rel="noopener noreferrer"
         className="inline-flex items-center gap-1.5 text-xs font-medium text-teal hover:underline">
-        {"\uD83D\uDCCD"} Open in Google Maps {"\u2192"}
+        {"\uD83D\uDCCD"} Open in Google Maps {"→"}
       </a>
     </div>
   );
@@ -196,8 +196,8 @@ export default function OrchhaClient() {
   const [activeTab, setActiveTab] = useState<"A" | "B">("A");
 
   const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under \u20B94k", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "\uD83C\uDFF0", label: "Heritage", sub: "\u20B95k\u201312k", color: "border-orange-300 bg-orange-50 text-orange-800" },
+    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "Under ₹4k", color: "border-amber-300 bg-amber-50 text-amber-800" },
+    { id: "B" as const, emoji: "\uD83C\uDFF0", label: "Heritage", sub: "₹5k–12k", color: "border-orange-300 bg-orange-50 text-orange-800" },
   ];
 
   return (
@@ -237,9 +237,9 @@ export default function OrchhaClient() {
                   Heritage & Temples
                 </span>
                 <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">10 min read</span>
-                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/50">{"·"}</span>
                 <span className="text-white/60 text-xs">IncredibleItinerary</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
@@ -261,10 +261,10 @@ export default function OrchhaClient() {
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
               <span>{"\uD83C\uDDEE\uD83C\uDDF3"} Madhya Pradesh</span>
-              <span>{"\u00B7"}</span>
+              <span>{"·"}</span>
               <span>{"\uD83D\uDDD3"} 2 Days</span>
-              <span>{"\u00B7"}</span>
-              <span>{"\uD83D\uDCB0"} From {"\u20B9"}3,500</span>
+              <span>{"·"}</span>
+              <span>{"\uD83D\uDCB0"} From {"₹"}3,500</span>
             </div>
           </div>
 
@@ -277,7 +277,7 @@ export default function OrchhaClient() {
 
           {/* ── QUICK DECISION ── */}
           <section id="decision" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\u26A1"} Which Plan Are You?</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
             <p className="text-sm text-muted font-light mb-6">Pick your situation — jump straight to your itinerary.</p>
             <div className="grid grid-cols-2 gap-3">
               {plans.map((p) => (
@@ -286,7 +286,7 @@ export default function OrchhaClient() {
                   <div className="text-2xl mb-2">{p.emoji}</div>
                   <p className="font-medium text-sm text-ink">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"\u2192"}</p>
+                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"→"}</p>
                 </button>
               ))}
             </div>
@@ -301,11 +301,11 @@ export default function OrchhaClient() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
               {[
                 { title: "The Monuments", emoji: "\uD83C\uDFDB\uFE0F", bg: "bg-amber-50 border-amber-200", th: "text-amber-800",
-                  rows: [["Era","16th\u201317th century Bundela Rajput"],["Highlights","Jehangir Mahal, Raja Mahal, Chaturbhuj Temple"],["Entry","Composite ticket \u20B910 (Indian) / \u20B9250 (Foreign)"],["Crowd","Near-zero on weekdays"]],
+                  rows: [["Era","16th–17th century Bundela Rajput"],["Highlights","Jehangir Mahal, Raja Mahal, Chaturbhuj Temple"],["Entry","Composite ticket ₹10 (Indian) / ₹250 (Foreign)"],["Crowd","Near-zero on weekdays"]],
                   note: "The fort complex opens at 6am but ticket counter opens at 8am. Walk in early, buy ticket later from any counter inside." },
                 { title: "The River & Nature", emoji: "\uD83C\uDF05", bg: "bg-teal-50 border-teal-200", th: "text-teal-800",
-                  rows: [["River","Betwa \u2014 granite boulders, shallow rapids"],["Wildlife","Indian vultures, painted storks, kingfishers"],["Best time","Golden hour at the cenotaphs (5\u20136pm)"],["Season","Oct\u2013Mar for comfortable walking"]],
-                  note: "Walk across the old stone bridge to the cenotaphs at golden hour \u2014 you\u2019ll pass through fields and hear nothing but birds. It\u2019s the most peaceful 20 minutes in Madhya Pradesh." },
+                  rows: [["River","Betwa — granite boulders, shallow rapids"],["Wildlife","Indian vultures, painted storks, kingfishers"],["Best time","Golden hour at the cenotaphs (5–6pm)"],["Season","Oct–Mar for comfortable walking"]],
+                  note: "Walk across the old stone bridge to the cenotaphs at golden hour — you’ll pass through fields and hear nothing but birds. It’s the most peaceful 20 minutes in Madhya Pradesh." },
               ].map((area) => (
                 <div key={area.title} className={`rounded-xl border p-5 ${area.bg}`}>
                   <h3 className={`font-serif text-lg font-normal mb-4 flex items-center gap-2 ${area.th}`}>
@@ -314,7 +314,7 @@ export default function OrchhaClient() {
                   <div className="space-y-2 mb-4">
                     {area.rows.map(([k, v]) => (
                       <div key={k} className="flex gap-2 text-xs">
-                        <span className="font-medium text-ink/60 w-16 flex-shrink-0">{k}</span>
+                        <span className="font-medium text-ink/80 w-16 flex-shrink-0">{k}</span>
                         <span className="text-muted font-light">{v}</span>
                       </div>
                     ))}
@@ -333,8 +333,8 @@ export default function OrchhaClient() {
           {/* ── STAT CARDS ── */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
             <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="2 Days" />
-            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"\u20B93,500"} />
-            <StatCard icon={"\uD83C\uDF21"} label="Best Months" value="Oct \u2013 Mar" />
+            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"₹3,500"} />
+            <StatCard icon={"\uD83C\uDF21"} label="Best Months" value="Oct – Mar" />
             <StatCard icon={"\uD83D\uDE82"} label="Nearest Station" value="Jhansi (16km)" />
           </div>
 
@@ -361,36 +361,36 @@ export default function OrchhaClient() {
                 <div className="flex items-center gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl mb-6">
                   <span className="text-2xl">{"\uD83D\uDCB0"}</span>
                   <div>
-                    <p className="text-sm font-medium text-amber-800">Budget Plan — Under {"\u20B9"}4,000 total</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: MP Tourism Sheesh Mahal or guesthouse {"\u00B7"} {"\u20B9"}500\u2013{"\u20B9"}1,200/night {"\u00B7"} Walk + auto-rickshaw</p>
+                    <p className="text-sm font-medium text-amber-800">Budget Plan — Under {"₹"}4,000 total</p>
+                    <p className="text-xs text-amber-600 font-light">Stay: MP Tourism Sheesh Mahal or guesthouse {"·"} {"₹"}500–{"₹"}1,200/night {"·"} Walk + auto-rickshaw</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Fort Complex + Cenotaphs at Sunset"
                   items={[
-                    "Arrive Jhansi by morning train \u2014 auto to Orchha \u20B930\u201350 (shared tempo) or \u20B9150 (private auto). 30 min ride.",
-                    "Check in, drop bags. Lunch at a local dhaba near Ram Raja Temple \u2014 thali \u20B980\u2013\u20B9120.",
-                    "1pm: Buy composite ticket (\u20B910 Indian / \u20B9250 Foreign) at the fort entrance. Covers all monuments.",
-                    "1:30pm: Raja Mahal first \u2014 Bundela murals on every wall, empty rooms with original 400-year-old paintings. 45 min.",
-                    "2:30pm: Jehangir Mahal \u2014 the crown jewel. Climb to the top terrace for the Betwa River panorama. 1 hour.",
-                    "4:30pm: Chaturbhuj Temple \u2014 the tallest structure in Orchha. Climb the narrow staircase to the top for aerial views of the entire town.",
-                    "5:15pm: Walk to the cenotaphs along the Betwa. Cross the old stone bridge \u2014 20 min through fields and birdsong. Golden hour light on the chhatris is the single best sight in Orchha.",
-                    "Evening: Dinner at a dhaba. \u20B9100\u2013\u20B9150. Orchha shuts down by 9pm \u2014 plan accordingly."
+                    "Arrive Jhansi by morning train — auto to Orchha ₹30–50 (shared tempo) or ₹150 (private auto). 30 min ride.",
+                    "Check in, drop bags. Lunch at a local dhaba near Ram Raja Temple — thali ₹80–₹120.",
+                    "1pm: Buy composite ticket (₹10 Indian / ₹250 Foreign) at the fort entrance. Covers all monuments.",
+                    "1:30pm: Raja Mahal first — Bundela murals on every wall, empty rooms with original 400-year-old paintings. 45 min.",
+                    "2:30pm: Jehangir Mahal — the crown jewel. Climb to the top terrace for the Betwa River panorama. 1 hour.",
+                    "4:30pm: Chaturbhuj Temple — the tallest structure in Orchha. Climb the narrow staircase to the top for aerial views of the entire town.",
+                    "5:15pm: Walk to the cenotaphs along the Betwa. Cross the old stone bridge — 20 min through fields and birdsong. Golden hour light on the chhatris is the single best sight in Orchha.",
+                    "Evening: Dinner at a dhaba. ₹100–₹150. Orchha shuts down by 9pm — plan accordingly."
                   ]}
-                  cost={"\u20B9600\u2013\u20B9900 excluding accommodation"} />
+                  cost={"₹600–₹900 excluding accommodation"} />
                 <DayCard day="Day 2" title="Ram Raja Temple + Vultures + Betwa River"
                   items={[
-                    "7am: Ram Raja Temple \u2014 the only temple in India where Ram is worshipped as a king. Morning aarti is worth waking for. Free entry.",
-                    "8:30am: Breakfast at a chai stall near the temple. Poha + chai \u20B930\u201350.",
-                    "9am: Laxminarayan Temple on the hill \u2014 mix of temple and fort architecture. Bundela-era murals inside. Often completely empty. 45 min.",
-                    "10:30am: Walk along the Betwa River downstream from the cenotaphs. Look up \u2014 Indian vultures nest on the cliff faces and circle overhead between 10am\u201312pm. This is one of central India\u2019s most reliable vulture-spotting sites.",
+                    "7am: Ram Raja Temple — the only temple in India where Ram is worshipped as a king. Morning aarti is worth waking for. Free entry.",
+                    "8:30am: Breakfast at a chai stall near the temple. Poha + chai ₹30–50.",
+                    "9am: Laxminarayan Temple on the hill — mix of temple and fort architecture. Bundela-era murals inside. Often completely empty. 45 min.",
+                    "10:30am: Walk along the Betwa River downstream from the cenotaphs. Look up — Indian vultures nest on the cliff faces and circle overhead between 10am–12pm. This is one of central India’s most reliable vulture-spotting sites.",
                     "12pm: Lunch, pack up, check out.",
-                    "1pm: Optional \u2014 rent a bicycle (\u20B950\u2013\u20B9100/day) and ride to Orchha Wildlife Sanctuary entrance (3km). Langurs, peacocks, nilgai on the road itself.",
-                    "3pm: Auto back to Jhansi for onward train, or bus to Khajuraho (3\u20134 hours, \u20B9250\u2013\u20B9350)."
+                    "1pm: Optional — rent a bicycle (₹50–₹100/day) and ride to Orchha Wildlife Sanctuary entrance (3km). Langurs, peacocks, nilgai on the road itself.",
+                    "3pm: Auto back to Jhansi for onward train, or bus to Khajuraho (3–4 hours, ₹250–₹350)."
                   ]}
-                  cost={"\u20B9400\u2013\u20B9700 excluding accommodation"} />
+                  cost={"₹400–₹700 excluding accommodation"} />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 2-Day Cost (solo) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}3,500\u2013{"\u20B9"}4,000 including accommodation</span>
+                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 2-Day Cost (solo) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}3,500–{"₹"}4,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -401,39 +401,39 @@ export default function OrchhaClient() {
                 <div className="flex items-center gap-3 p-4 bg-orange-50 border border-orange-200 rounded-xl mb-6">
                   <span className="text-2xl">{"\uD83C\uDFF0"}</span>
                   <div>
-                    <p className="text-sm font-medium text-orange-800">Heritage Plan — {"\u20B9"}5,000\u2013{"\u20B9"}12,000 total</p>
-                    <p className="text-xs text-orange-600 font-light">Stay: Amar Mahal or Bundelkhand Riverside {"\u00B7"} {"\u20B9"}2,000\u2013{"\u20B9"}5,000/night {"\u00B7"} Guided tours + private transport</p>
+                    <p className="text-sm font-medium text-orange-800">Heritage Plan — {"₹"}5,000–{"₹"}12,000 total</p>
+                    <p className="text-xs text-orange-600 font-light">Stay: Amar Mahal or Bundelkhand Riverside {"·"} {"₹"}2,000–{"₹"}5,000/night {"·"} Guided tours + private transport</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="Guided Fort Complex + Sound & Light Show"
                   items={[
-                    "Arrive Jhansi by train or flight to Gwalior + cab. Private taxi Jhansi\u2013Orchha \u20B9400\u2013\u20B9600.",
-                    "Check into heritage stay. Lunch at the hotel or Rajasthani restaurant near the fort \u2014 \u20B9200\u2013\u20B9400.",
-                    "1pm: Hire a local guide at the fort entrance (\u20B9300\u2013\u20B9500 for 3 hours). The Bundela history is extraordinary and the murals need context.",
-                    "1:30pm: Raja Mahal with guide \u2014 the murals tell specific stories from the Ramayana and Bundela court life. Without a guide you\u2019ll walk past 80% of them.",
-                    "3pm: Jehangir Mahal \u2014 built in a single year to welcome Emperor Jehangir. The symmetry is deliberate and the guide explains the Mughal-Rajput architectural fusion.",
-                    "4:30pm: Chaturbhuj Temple \u2014 climb to the top for sunset views. The guide will point out the vulture nesting sites on the cliff across the river.",
+                    "Arrive Jhansi by train or flight to Gwalior + cab. Private taxi Jhansi–Orchha ₹400–₹600.",
+                    "Check into heritage stay. Lunch at the hotel or Rajasthani restaurant near the fort — ₹200–₹400.",
+                    "1pm: Hire a local guide at the fort entrance (₹300–₹500 for 3 hours). The Bundela history is extraordinary and the murals need context.",
+                    "1:30pm: Raja Mahal with guide — the murals tell specific stories from the Ramayana and Bundela court life. Without a guide you’ll walk past 80% of them.",
+                    "3pm: Jehangir Mahal — built in a single year to welcome Emperor Jehangir. The symmetry is deliberate and the guide explains the Mughal-Rajput architectural fusion.",
+                    "4:30pm: Chaturbhuj Temple — climb to the top for sunset views. The guide will point out the vulture nesting sites on the cliff across the river.",
                     "5:30pm: Walk to cenotaphs for golden hour. Bring a tripod if you have one.",
-                    "7pm: Sound & Light Show at the fort (if running, \u20B9100\u2013\u20B9250). Check timings locally \u2014 seasonal.",
-                    "Dinner at Amar Mahal or a recommended restaurant. \u20B9300\u2013\u20B9600."
+                    "7pm: Sound & Light Show at the fort (if running, ₹100–₹250). Check timings locally — seasonal.",
+                    "Dinner at Amar Mahal or a recommended restaurant. ₹300–₹600."
                   ]}
-                  cost={"\u20B91,500\u2013\u20B92,500 excluding accommodation"} />
+                  cost={"₹1,500–₹2,500 excluding accommodation"} />
                 <DayCard day="Day 2" title="Temples, Vulture Safari + Betwa Rafting"
                   items={[
-                    "6:30am: Sunrise at the cenotaphs \u2014 mist rises off the Betwa and the chhatris glow amber. Best photography of the trip.",
-                    "7:30am: Ram Raja Temple morning aarti. This temple was originally meant to be a palace \u2014 the only temple in India where guards present arms to the deity.",
+                    "6:30am: Sunrise at the cenotaphs — mist rises off the Betwa and the chhatris glow amber. Best photography of the trip.",
+                    "7:30am: Ram Raja Temple morning aarti. This temple was originally meant to be a palace — the only temple in India where guards present arms to the deity.",
                     "9am: Breakfast at your hotel. Pack water for the morning.",
                     "10am: Laxminarayan Temple + Sundar Mahal (ruined palace in the forest, 2km walk). The jungle around Sundar Mahal has langurs and peacocks.",
-                    "11:30am: Betwa River rafting or kayaking (\u20B9500\u2013\u20B91,000/person, seasonal Oct\u2013Feb). Passes directly under the cenotaphs \u2014 the best angle.",
-                    "1pm: Lunch at a riverside cafe or your hotel. \u20B9250\u2013\u20B9500.",
-                    "2:30pm: Orchha Wildlife Sanctuary jeep or walking safari (\u20B9200\u2013\u20B9500). Vultures, nilgai, langur, occasional leopard tracks.",
-                    "4:30pm: Final walk through the town. Pick up miniature paintings from local artists (\u20B9200\u2013\u20B91,500) \u2014 genuine Bundela-style work.",
-                    "5pm: Depart for Jhansi or continue to Khajuraho by cab (\u20B92,500\u2013\u20B93,500, 3.5 hours)."
+                    "11:30am: Betwa River rafting or kayaking (₹500–₹1,000/person, seasonal Oct–Feb). Passes directly under the cenotaphs — the best angle.",
+                    "1pm: Lunch at a riverside cafe or your hotel. ₹250–₹500.",
+                    "2:30pm: Orchha Wildlife Sanctuary jeep or walking safari (₹200–₹500). Vultures, nilgai, langur, occasional leopard tracks.",
+                    "4:30pm: Final walk through the town. Pick up miniature paintings from local artists (₹200–₹1,500) — genuine Bundela-style work.",
+                    "5pm: Depart for Jhansi or continue to Khajuraho by cab (₹2,500–₹3,500, 3.5 hours)."
                   ]}
-                  cost={"\u20B92,000\u2013\u20B94,000 excluding accommodation"} />
+                  cost={"₹2,000–₹4,000 excluding accommodation"} />
                 <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-orange-700 uppercase tracking-wide">Total 2-Day Cost (per person) {"\u00B7"} </span>
-                  <span className="font-serif text-base text-ink font-light">{"\u20B9"}5,000\u2013{"\u20B9"}12,000 including accommodation</span>
+                  <span className="text-xs text-orange-700 uppercase tracking-wide">Total 2-Day Cost (per person) {"·"} </span>
+                  <span className="font-serif text-base text-ink font-light">{"₹"}5,000–{"₹"}12,000 including accommodation</span>
                 </div>
               </div>
             )}
@@ -453,11 +453,11 @@ export default function OrchhaClient() {
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (2N)", "\u20B91,000\u2013\u20B92,400", "\u20B94,000\u2013\u20B910,000"],
-                    ["\uD83C\uDF5D Food & Drinks", "\u20B9400\u2013\u20B9600", "\u20B9800\u2013\u20B91,500"],
-                    ["\uD83D\uDE8C Transport (from Jhansi)", "\u20B9100\u2013\u20B9300", "\u20B9600\u2013\u20B91,200"],
-                    ["\uD83C\uDFAF Entry Tickets", "\u20B910\u2013\u20B9250", "\u20B910\u2013\u20B9250"],
-                    ["\uD83D\uDCF7 Guide + Activities", "\u20B90\u2013\u20B9200", "\u20B9800\u2013\u20B92,000"],
+                    ["\uD83C\uDFE8 Accommodation (2N)", "₹1,000–₹2,400", "₹4,000–₹10,000"],
+                    ["\uD83C\uDF5D Food & Drinks", "₹400–₹600", "₹800–₹1,500"],
+                    ["\uD83D\uDE8C Transport (from Jhansi)", "₹100–₹300", "₹600–₹1,200"],
+                    ["\uD83C\uDFAF Entry Tickets", "₹10–₹250", "₹10–₹250"],
+                    ["\uD83D\uDCF7 Guide + Activities", "₹0–₹200", "₹800–₹2,000"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -466,7 +466,7 @@ export default function OrchhaClient() {
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total (per person)</td>
-                    {["\u20B91,500\u2013\u20B93,750", "\u20B96,200\u2013\u20B914,950"].map((v, i) => (
+                    {["₹1,500–₹3,750", "₹6,200–₹14,950"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
                     ))}
                   </tr>
@@ -482,15 +482,15 @@ export default function OrchhaClient() {
           <AffiliateBlock
             destination="Orchha"
             hotels={[
-              { name: "MP Tourism Sheesh Mahal", type: "Heritage Hotel \u00B7 Inside Fort", price: "From \u20B91,500/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/sheesh-mahal-orchha.html?aid=2820480" },
-              { name: "Amar Mahal", type: "Heritage Resort \u00B7 Riverside", price: "From \u20B93,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/amar-mahal-orchha.html?aid=2820480" },
-              { name: "Bundelkhand Riverside", type: "Boutique \u00B7 River View", price: "From \u20B94,500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/bundelkhand-riverside-orchha.html?aid=2820480" },
+              { name: "MP Tourism Sheesh Mahal", type: "Heritage Hotel · Inside Fort", price: "From ₹1,500/night", rating: "4", badge: "Heritage pick", url: "https://www.booking.com/hotel/in/sheesh-mahal-orchha.html?aid=2820480" },
+              { name: "Amar Mahal", type: "Heritage Resort · Riverside", price: "From ₹3,500/night", rating: "4", badge: "Best value", url: "https://www.booking.com/hotel/in/amar-mahal-orchha.html?aid=2820480" },
+              { name: "Bundelkhand Riverside", type: "Boutique · River View", price: "From ₹4,500/night", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/in/bundelkhand-riverside-orchha.html?aid=2820480" },
             ]}
             activities={[
-              { name: "Orchha Fort Guided Heritage Walk", duration: "3 hours", price: "From \u20B9500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=orchha&partner_id=PSZA5UI" },
-              { name: "Betwa River Rafting", duration: "1.5 hours", price: "From \u20B9700/person", badge: "Adventure", url: "https://www.getyourguide.com/s/?q=orchha&partner_id=PSZA5UI" },
-              { name: "Orchha Wildlife Sanctuary Safari", duration: "2 hours", price: "From \u20B9300/person", url: "https://www.getyourguide.com/s/?q=orchha&partner_id=PSZA5UI" },
-              { name: "Jhansi Fort + Orchha Day Trip", duration: "Full day", price: "From \u20B91,200/person", url: "https://www.getyourguide.com/s/?q=jhansi&partner_id=PSZA5UI" },
+              { name: "Orchha Fort Guided Heritage Walk", duration: "3 hours", price: "From ₹500/person", badge: "Must do", url: "https://www.getyourguide.com/s/?q=orchha&partner_id=PSZA5UI" },
+              { name: "Betwa River Rafting", duration: "1.5 hours", price: "From ₹700/person", badge: "Adventure", url: "https://www.getyourguide.com/s/?q=orchha&partner_id=PSZA5UI" },
+              { name: "Orchha Wildlife Sanctuary Safari", duration: "2 hours", price: "From ₹300/person", url: "https://www.getyourguide.com/s/?q=orchha&partner_id=PSZA5UI" },
+              { name: "Jhansi Fort + Orchha Day Trip", duration: "Full day", price: "From ₹1,200/person", url: "https://www.getyourguide.com/s/?q=jhansi&partner_id=PSZA5UI" },
             ]}
             pdfProductId="orchha-2-days-pdf"
           />
@@ -500,10 +500,10 @@ export default function OrchhaClient() {
             title="Orchha — Must-See Places"
             subtitle="Click each thumbnail to explore Orchha's most iconic monuments, temples and river views."
             spots={[
-              { name: "Jehangir Mahal",       query: "jehangir mahal orchha palace architecture stone carved madhya pradesh",     desc: "The grandest palace in Orchha \u2014 built to welcome Emperor Jehangir for a single visit. Climb to the top terrace for a 360-degree panorama of the Betwa River and surrounding countryside." },
+              { name: "Jehangir Mahal",       query: "jehangir mahal orchha palace architecture stone carved madhya pradesh",     desc: "The grandest palace in Orchha — built to welcome Emperor Jehangir for a single visit. Climb to the top terrace for a 360-degree panorama of the Betwa River and surrounding countryside." },
               { name: "Raja Mahal",            query: "raja mahal orchha bundela palace interior murals paintings",                desc: "The royal residence with original 400-year-old murals covering every wall. Scenes from the Ramayana, court life, and hunting expeditions in vivid colour." },
               { name: "Chaturbhuj Temple",     query: "chaturbhuj temple orchha tall spire stone temple madhya pradesh",           desc: "The tallest structure in Orchha with a narrow internal staircase leading to rooftop views. Originally built to house the Ram idol that ended up in Ram Raja Temple instead." },
-              { name: "Betwa River Cenotaphs", query: "orchha cenotaphs betwa river sunset golden hour chhatri stone",             desc: "Royal cenotaphs (chhatris) along the Betwa River \u2014 best visited at golden hour when the stone glows amber. Walk across the old bridge through fields to reach them." },
+              { name: "Betwa River Cenotaphs", query: "orchha cenotaphs betwa river sunset golden hour chhatri stone",             desc: "Royal cenotaphs (chhatris) along the Betwa River — best visited at golden hour when the stone glows amber. Walk across the old bridge through fields to reach them." },
               { name: "Ram Raja Temple",       query: "ram raja temple orchha madhya pradesh architecture temple town",             desc: "The only temple in India where Lord Ram is worshipped as a king, complete with guards presenting arms. Originally a palace that became a temple by accident." },
             ]}
           />
@@ -534,7 +534,7 @@ export default function OrchhaClient() {
             <div className="space-y-4">
               <RouteCard plan="Day 1" day="Fort Complex + Cenotaphs Loop"
                 stops={["Fort Entrance", "Raja Mahal", "Jehangir Mahal", "Chaturbhuj Temple", "Stone Bridge", "Cenotaphs"]}
-                distance="3.5km \u00B7 all walking"
+                distance="3.5km · all walking"
                 note="Start at the fort, work your way south. The cenotaphs are at the end so you arrive for golden hour naturally."
                 color="border-amber-200 bg-amber-50"
                 url="https://www.google.com/maps/dir/Orchha+Fort+Complex/Raja+Mahal+Orchha/Jehangir+Mahal+Orchha/Chaturbhuj+Temple+Orchha/Orchha+Cenotaphs" />
@@ -565,19 +565,19 @@ export default function OrchhaClient() {
             />
             <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
               <p className="text-xs text-muted font-light italic text-center">
-                Indian vultures nest on the cliff faces along the Betwa. Best spotting: 10am{"\u2013"}12pm from the riverside path downstream of the cenotaphs.
+                Indian vultures nest on the cliff faces along the Betwa. Best spotting: 10am{"–"}12pm from the riverside path downstream of the cenotaphs.
               </p>
             </div>
           </div>
 
           {/* ── MISTAKES ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
-                { title: "Visiting at midday in summer", desc: "Orchha bakes above 45\u00B0C from April\u2013June. The fort has no shade. Visit Oct\u2013Mar or start by 6am in shoulder months.", icon: "\u2600\uFE0F" },
+                { title: "Visiting at midday in summer", desc: "Orchha bakes above 45°C from April–June. The fort has no shade. Visit Oct–Mar or start by 6am in shoulder months.", icon: "\u2600\uFE0F" },
                 { title: "Skipping the cenotaphs at sunset", desc: "Most day-trippers from Jhansi leave by 4pm and miss the single best sight in Orchha. Time your visit so you're at the cenotaphs by 5pm.", icon: "\uD83C\uDF05" },
-                { title: "Not hiring a guide at the fort", desc: "The murals in Raja Mahal tell specific stories. Without context you'll walk past 80% of what makes the palace special. \u20B9300\u2013500 for 3 hours.", icon: "\uD83D\uDCD6" },
+                { title: "Not hiring a guide at the fort", desc: "The murals in Raja Mahal tell specific stories. Without context you'll walk past 80% of what makes the palace special. ₹300–500 for 3 hours.", icon: "\uD83D\uDCD6" },
                 { title: "Expecting Orchha nightlife", desc: "The town shuts down by 9pm. Bring a book, charge your devices, enjoy the silence. That's the point.", icon: "\uD83C\uDF19" },
                 { title: "Only doing a Jhansi day trip", desc: "You need at least one night. Sunrise at the cenotaphs and morning aarti at Ram Raja Temple are worth staying for.", icon: "\uD83D\uDE8C" },
                 { title: "Ignoring the wildlife sanctuary", desc: "3km from town, free to walk the periphery. Langurs, peacocks, nilgai on the road. Budget 1.5 hours minimum.", icon: "\uD83E\uDD85" },
@@ -593,12 +593,12 @@ export default function OrchhaClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { icon: "\uD83C\uDF05", title: "Two Golden Hours", desc: "Sunrise at the cenotaphs (6\u20137am) and sunset (5\u20136pm) are both extraordinary. Don't pick one \u2014 do both. The mist at sunrise and the warm light at sunset are completely different experiences.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83E\uDD85", title: "Vulture Spotting Window", desc: "Indian vultures are most active 10am\u201312pm when thermals develop. Walk downstream from the cenotaphs along the Betwa \u2014 look up at the cliff faces on the opposite bank.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83D\uDEB2", title: "Rent a Bicycle", desc: "Orchha is flat and small. Rent a cycle for \u20B950\u2013\u20B9100/day from shops near Ram Raja Temple. Covers every monument plus the wildlife sanctuary in half a day.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83C\uDFA8", title: "Buy Miniature Paintings", desc: "Local artists sell genuine Bundela-style miniature paintings near the fort entrance. \u20B9200\u2013\u20B91,500. These are hand-painted, not prints. Best souvenirs in Madhya Pradesh.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDE82", title: "Jhansi Connection", desc: "Jhansi is on the Delhi-Mumbai main line. Shatabdi from Delhi takes 4.5 hours. Book Jhansi\u2013Orchha auto in advance if arriving late. Shared tempos stop running after dark.", color: "bg-orange-50 border-orange-200" },
-                { icon: "\uD83D\uDCF1", title: "Connectivity Warning", desc: "Orchha has patchy mobile data. Download offline maps before arriving. ATMs exist but occasionally run dry \u2014 carry cash from Jhansi.", color: "bg-orange-50 border-orange-200" },
+                { icon: "\uD83C\uDF05", title: "Two Golden Hours", desc: "Sunrise at the cenotaphs (6–7am) and sunset (5–6pm) are both extraordinary. Don't pick one — do both. The mist at sunrise and the warm light at sunset are completely different experiences.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83E\uDD85", title: "Vulture Spotting Window", desc: "Indian vultures are most active 10am–12pm when thermals develop. Walk downstream from the cenotaphs along the Betwa — look up at the cliff faces on the opposite bank.", color: "bg-amber-50 border-amber-200" },
+                { icon: "\uD83D\uDEB2", title: "Rent a Bicycle", desc: "Orchha is flat and small. Rent a cycle for ₹50–₹100/day from shops near Ram Raja Temple. Covers every monument plus the wildlife sanctuary in half a day.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83C\uDFA8", title: "Buy Miniature Paintings", desc: "Local artists sell genuine Bundela-style miniature paintings near the fort entrance. ₹200–₹1,500. These are hand-painted, not prints. Best souvenirs in Madhya Pradesh.", color: "bg-teal-50 border-teal-200" },
+                { icon: "\uD83D\uDE82", title: "Jhansi Connection", desc: "Jhansi is on the Delhi-Mumbai main line. Shatabdi from Delhi takes 4.5 hours. Book Jhansi–Orchha auto in advance if arriving late. Shared tempos stop running after dark.", color: "bg-orange-50 border-orange-200" },
+                { icon: "\uD83D\uDCF1", title: "Connectivity Warning", desc: "Orchha has patchy mobile data. Download offline maps before arriving. ATMs exist but occasionally run dry — carry cash from Jhansi.", color: "bg-orange-50 border-orange-200" },
               ].map((t) => <TipCard key={t.title} {...t} />)}
             </div>
           </section>
@@ -609,28 +609,28 @@ export default function OrchhaClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
               Want This Planned for You?
             </h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
               Tell us your dates, group and budget — we&apos;ll send a personalised Orchha + Madhya Pradesh itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Orchha Trip {"\u2192"}
+                Plan My Orchha Trip {"→"}
               </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"\u2192"}</a>
+              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
             </div>
           </div>
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
                 { q: "How many days are enough for Orchha?", a: "2 days is ideal to cover all major monuments, the Betwa River cenotaphs at both sunrise and sunset, and vulture spotting without rushing. A single day works if you arrive early from Jhansi and skip the nature walks, but you will miss the best light." },
-                { q: "What is the best time to visit Orchha?", a: "October to March. October\u2013November has pleasant weather and almost no tourists. December\u2013January is peak with cool mornings ideal for fort walks. February\u2013March is warm but comfortable. Avoid April\u2013June when temperatures cross 45\u00B0C." },
-                { q: "How do I reach Orchha from Delhi or Mumbai?", a: "Take a train to Jhansi \u2014 4\u20135 hours from Delhi (Shatabdi), 10 hours from Mumbai. From Jhansi, shared tempo to Orchha costs \u20B930\u201350 and takes 30 minutes. Private auto is \u20B9150\u2013200." },
-                { q: "How much does a 2-day Orchha trip cost?", a: "Budget solo: \u20B93,500\u2013\u20B94,000 including accommodation. Heritage-focused: \u20B95,000\u2013\u20B912,000 with guided tours and better stays. Orchha is one of the cheapest heritage destinations in India." },
-                { q: "Can I combine Orchha with Khajuraho?", a: "Yes, and you should. Orchha to Khajuraho is 180km, 3\u20134 hours by road. The route is Delhi/Agra \u2192 Jhansi (train) \u2192 Orchha (2 days) \u2192 Khajuraho (bus or cab). Two of MP\u2019s greatest heritage sites in one trip." },
-                { q: "Is Orchha safe for solo and women travellers?", a: "Orchha is a small, quiet temple town and generally very safe. Monuments are well-maintained by ASI and MP Tourism. The town shuts down early \u2014 plan indoor time after dark. MP Tourism hotels offer reliable security." },
+                { q: "What is the best time to visit Orchha?", a: "October to March. October–November has pleasant weather and almost no tourists. December–January is peak with cool mornings ideal for fort walks. February–March is warm but comfortable. Avoid April–June when temperatures cross 45°C." },
+                { q: "How do I reach Orchha from Delhi or Mumbai?", a: "Take a train to Jhansi — 4–5 hours from Delhi (Shatabdi), 10 hours from Mumbai. From Jhansi, shared tempo to Orchha costs ₹30–50 and takes 30 minutes. Private auto is ₹150–200." },
+                { q: "How much does a 2-day Orchha trip cost?", a: "Budget solo: ₹3,500–₹4,000 including accommodation. Heritage-focused: ₹5,000–₹12,000 with guided tours and better stays. Orchha is one of the cheapest heritage destinations in India." },
+                { q: "Can I combine Orchha with Khajuraho?", a: "Yes, and you should. Orchha to Khajuraho is 180km, 3–4 hours by road. The route is Delhi/Agra → Jhansi (train) → Orchha (2 days) → Khajuraho (bus or cab). Two of MP’s greatest heritage sites in one trip." },
+                { q: "Is Orchha safe for solo and women travellers?", a: "Orchha is a small, quiet temple town and generally very safe. Monuments are well-maintained by ASI and MP Tourism. The town shuts down early — plan indoor time after dark. MP Tourism hotels offer reliable security." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>
           </section>
@@ -643,15 +643,15 @@ export default function OrchhaClient() {
             <h3 className="font-serif text-lg font-light text-ink mb-4">Planning a Longer Madhya Pradesh Trip?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Khajuraho \u2014 Temple Art & Architecture", href: "/blog/khajuraho-2-days", soon: true },
-                { label: "Golden Triangle \u2014 Delhi, Agra, Jaipur", href: "/blog/golden-triangle-7-days", soon: true },
-                { label: "Rajasthan \u2014 7 Day Royal Circuit", href: "/blog/rajasthan-7-days", soon: true },
+                { label: "Khajuraho — Temple Art & Architecture", href: "/blog/khajuraho-2-days", soon: true },
+                { label: "Golden Triangle — Delhi, Agra, Jaipur", href: "/blog/golden-triangle-7-days", soon: true },
+                { label: "Rajasthan — 7 Day Royal Circuit", href: "/blog/rajasthan-7-days", soon: true },
                 { label: "Browse All India Packages", href: "/#packages", soon: false },
               ].map((link) => (
                 <Link key={link.label} href={link.href}
                   className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
                   <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">{link.soon ? "Coming Soon \u2192" : "View \u2192"}</span>
+                  <span className="text-xs text-muted">{link.soon ? "Coming Soon →" : "View →"}</span>
                 </Link>
               ))}
             </div>

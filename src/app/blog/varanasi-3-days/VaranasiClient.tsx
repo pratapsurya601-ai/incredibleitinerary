@@ -147,7 +147,7 @@ export default function VaranasiClient() {
                     <p className="font-medium text-sm text-ink">{g.name}</p>
                     <span className="text-[0.65rem] font-medium bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/60">{g.type}</span>
                   </div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{g.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{g.desc}</p>
                 </div>
               ))}
             </div>
@@ -249,7 +249,7 @@ export default function VaranasiClient() {
               ].map((item) => (
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
                   <div className="flex items-center gap-2 mb-2"><span className="text-lg">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
-                  <p className="text-xs text-muted font-light leading-relaxed">{item.content}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
             </div>
@@ -305,7 +305,7 @@ export default function VaranasiClient() {
                     <span className="text-[0.65rem] font-medium text-teal">{f.price}</span>
                   </div>
                   <p className="text-[0.65rem] text-muted mb-2">{f.where}</p>
-                  <p className="text-xs text-muted font-light leading-relaxed">{f.desc}</p>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -352,7 +352,7 @@ export default function VaranasiClient() {
                 { icon: "🌙", title: "Not going to the ghats at dawn", desc: "The ghats at 5:30am are completely different from afternoon and evening. Empty, misty, devotional. The morning boat ride is the single most important thing you can do in Varanasi. Set your alarm.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-muted font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -362,7 +362,7 @@ export default function VaranasiClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Adding Varanasi to Your India Trip?</h2>
-            <p className="text-sm text-white/55 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Varanasi pairs perfectly with the Golden Triangle or Rajasthan. Tell us your full itinerary and we'll help plan the routing.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Varanasi pairs perfectly with the Golden Triangle or Rajasthan. Tell us your full itinerary and we'll help plan the routing.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My India Trip →</button>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold transition-colors">Contact Us</Link>
