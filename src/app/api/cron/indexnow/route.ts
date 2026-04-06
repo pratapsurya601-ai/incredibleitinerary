@@ -3,7 +3,7 @@ import { generatedPosts } from "@/data/generated-posts";
 
 const HOST = "www.incredibleitinerary.com";
 const BASE = `https://${HOST}`;
-const INDEXNOW_KEY = "4e8f1a2c3b5d7906e4f8a1b2c3d5e790";
+const INDEXNOW_KEY = "dca821dbfe47496e8a954260064bd47a";
 
 export async function GET() {
   // Calculate today's batch (10 posts/day from 2026-03-01)
