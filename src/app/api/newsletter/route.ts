@@ -62,7 +62,6 @@ function welcomeEmail(email: string, name: string | undefined) {
     headers: {
       "List-Unsubscribe": `<mailto:hello@incredibleitinerary.com?subject=Unsubscribe&body=Please%20unsubscribe%20${encodeURIComponent(email)}>, <${BASE}/privacy>`,
       "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
-      "Precedence": "bulk",
     },
     subject: `Your free India travel guides are here 🧭`,
     html: `<!DOCTYPE html>
@@ -88,6 +87,11 @@ function welcomeEmail(email: string, name: string | undefined) {
 
   <!-- BODY -->
   <tr><td style="background:#fdf8f2;padding:32px;">
+
+    <!-- Move to Primary nudge -->
+    <p style="margin:0 0 20px;font-size:11px;color:#a09080;line-height:1.6;text-align:center;">
+      📌 Using Gmail? Drag this email to your <strong>Primary</strong> tab so you never miss a guide.
+    </p>
 
     <!-- Greeting -->
     <p style="margin:0 0 8px;font-size:22px;font-weight:300;color:#161008;font-family:Georgia,serif;">${greeting},</p>
