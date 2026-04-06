@@ -67,6 +67,13 @@ function generatedPostToListing(p: GeneratedPost): ListingPost {
   };
 }
 
+// ── Top-level India / International toggle ──
+const MAIN_TABS = [
+  { id: "all",           label: "All",           emoji: "✦" },
+  { id: "india",         label: "India",         emoji: "🇮🇳" },
+  { id: "international", label: "International", emoji: "🌍" },
+];
+
 // ── Region / country filter tabs ──
 const REGION_FILTERS = [
   { id: "all",         label: "All Destinations", emoji: "✦" },
@@ -127,6 +134,7 @@ function matchesDuration(post: ListingPost, dur: string): boolean {
 function matchesRegion(post: ListingPost, region: string): boolean {
   if (region === "all") return true;
   const country = post.country ?? "India";
+  if (region === "international") return !country.toLowerCase().includes("india");
   const countries = REGION_COUNTRIES[region] ?? [];
   return countries.some((c) => country.toLowerCase().includes(c.toLowerCase()));
 }
@@ -140,6 +148,7 @@ export default function BlogClient() {
   const [modalOpen, setModalOpen]       = useState(false);
   const [search, setSearch]             = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [mainTab, setMainTab]           = useState("all");
   const [regionFilter, setRegionFilter] = useState("all");
   const [catFilter, setCatFilter]       = useState("all-cat");
   const [durFilter, setDurFilter]       = useState("all-dur");
@@ -218,8 +227,16 @@ export default function BlogClient() {
       .slice(0, 8);
   }, [query, allPosts]);
 
+  // When mainTab changes, sync regionFilter
+  function handleMainTab(tab: string) {
+    setMainTab(tab);
+    if (tab === "all") setRegionFilter("all");
+    else if (tab === "india") setRegionFilter("india");
+    else if (tab === "international") setRegionFilter("international");
+  }
+
   const hasActiveFilter =
-    query || regionFilter !== "all" || catFilter !== "all-cat" || durFilter !== "all-dur";
+    query || mainTab !== "all" || regionFilter !== "all" || catFilter !== "all-cat" || durFilter !== "all-dur";
 
   const showFeatured = !hasActiveFilter;
   const featured = showFeatured ? allPosts.find((p) => p.featured) : null;
@@ -231,6 +248,7 @@ export default function BlogClient() {
 
   function clearAllFilters() {
     setSearch("");
+    setMainTab("all");
     setRegionFilter("all");
     setCatFilter("all-cat");
     setDurFilter("all-dur");
@@ -320,7 +338,26 @@ export default function BlogClient() {
 
             {/* ── Filters row ── */}
             <div className="space-y-4">
-              {/* Region tabs */}
+              {/* India / International top tabs */}
+              <div className="flex justify-center gap-2">
+                {MAIN_TABS.map((t) => (
+                  <button
+                    key={t.id}
+                    onClick={() => handleMainTab(t.id)}
+                    className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium tracking-wide transition-all duration-200 border-2 ${
+                      mainTab === t.id
+                        ? "bg-ink text-white border-ink shadow-md"
+                        : "bg-white text-muted border-parchment-2 hover:border-ink/40 hover:text-ink"
+                    }`}
+                  >
+                    <span>{t.emoji}</span>
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Region sub-tabs — only show when not on a fixed main tab */}
+              {mainTab === "all" && (
               <div className="flex flex-wrap justify-center gap-2">
                 {REGION_FILTERS.map((f) => (
                   <button
@@ -337,6 +374,7 @@ export default function BlogClient() {
                   </button>
                 ))}
               </div>
+              )}
 
               {/* Category + Duration row */}
               <div className="flex flex-wrap justify-center gap-3">

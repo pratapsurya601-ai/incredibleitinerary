@@ -23,8 +23,10 @@ function FieldError({ message }: { message?: string }) {
 interface FormData {
   name: string;
   email: string;
-  
   destination: string;
+  travelDates: string;
+  groupSize: string;
+  budget: string;
   message: string;
 }
 
@@ -81,23 +83,62 @@ function ContactForm() {
           <FieldError message={errors.email?.message} />
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Where do you want to go?</label>
+        <select {...register("destination")} className="form-field">
+          <option value="">Select destination</option>
+          <optgroup label="India — North">
+            {["Rajasthan", "Kashmir", "Leh Ladakh", "Himachal Pradesh / Manali", "Shimla", "Spiti Valley", "Delhi & Golden Triangle", "Agra", "Varanasi", "Amritsar"].map(d => <option key={d}>{d}</option>)}
+          </optgroup>
+          <optgroup label="India — South">
+            {["Kerala", "Goa", "Coorg", "Ooty & Nilgiris", "Hampi", "Mysore", "Pondicherry", "Andaman Islands", "Tamil Nadu Temples"].map(d => <option key={d}>{d}</option>)}
+          </optgroup>
+          <optgroup label="India — Hills & Wildlife">
+            {["Rishikesh & Haridwar", "Uttarakhand", "Meghalaya", "Sikkim & Darjeeling", "Jim Corbett", "Ranthambore", "Gujarat"].map(d => <option key={d}>{d}</option>)}
+          </optgroup>
+          <optgroup label="Southeast Asia">
+            {["Bali / Indonesia", "Thailand", "Vietnam", "Singapore", "Malaysia", "Philippines", "Cambodia"].map(d => <option key={d}>{d}</option>)}
+          </optgroup>
+          <optgroup label="Middle East">
+            {["Dubai / UAE", "Jordan & Petra", "Oman", "Qatar", "Saudi Arabia"].map(d => <option key={d}>{d}</option>)}
+          </optgroup>
+          <optgroup label="Europe">
+            {["Italy", "Greece", "Spain", "Portugal", "France", "UK & Ireland", "Switzerland & Austria", "Eastern Europe"].map(d => <option key={d}>{d}</option>)}
+          </optgroup>
+          <optgroup label="Other">
+            {["Japan", "South Korea", "Maldives", "Sri Lanka", "Nepal & Bhutan", "Africa Safari", "Australia & NZ", "Americas", "Multiple / Custom"].map(d => <option key={d}>{d}</option>)}
+          </optgroup>
+        </select>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
+          <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">When are you travelling?</label>
+          <select {...register("travelDates")} className="form-field">
+            <option value="">Select month</option>
+            {["January 2025","February 2025","March 2025","April 2025","May 2025","June 2025","July 2025","August 2025","September 2025","October 2025","November 2025","December 2025","January 2026","February 2026","March 2026","April 2026","May 2026","June 2026","July 2026","August 2026","September 2026","October 2026","November 2026","December 2026","Not decided yet"].map(m => <option key={m}>{m}</option>)}
+          </select>
         </div>
         <div>
-          <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Where do you want to go?</label>
-          <select {...register("destination")} className="form-field">
-            <option value="">Select destination</option>
-            {["Rajasthan", "Goa", "Kerala", "Kashmir", "Himalayas", "Golden Triangle", "Bali / Indonesia", "Japan", "Thailand", "Dubai / UAE", "Europe", "Vietnam", "Singapore", "Greece", "Italy", "Spain", "Portugal", "Multiple / Custom"].map(d => (
-              <option key={d} value={d}>{d}</option>
-            ))}
+          <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Group size</label>
+          <select {...register("groupSize")} className="form-field">
+            <option value="">Select</option>
+            {["Solo","2 people (couple)","3–4 people","5–8 people","9+ people / group"].map(g => <option key={g}>{g}</option>)}
+          </select>
+        </div>
+        <div>
+          <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Budget (per person)</label>
+          <select {...register("budget")} className="form-field">
+            <option value="">Select</option>
+            {["Under ₹15,000","₹15,000–30,000","₹30,000–60,000","₹60,000–1,00,000","₹1,00,000–2,00,000","₹2,00,000+","Not sure yet"].map(b => <option key={b}>{b}</option>)}
           </select>
         </div>
       </div>
+
       <div>
-        <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Tell us more</label>
-        <textarea {...register("message")} rows={4}
-          placeholder="Dates, group size, budget, special interests, anything..."
+        <label className="text-[0.68rem] tracking-[0.12em] uppercase text-muted block mb-1.5">Anything else? (optional)</label>
+        <textarea {...register("message")} rows={3}
+          placeholder="Special interests, dietary needs, mobility requirements, must-sees..."
           className="form-field resize-none" />
       </div>
       <button type="submit" disabled={isSubmitting}
@@ -233,7 +274,7 @@ export default function ContactClient() {
               <div className="bg-white rounded-2xl border border-parchment-2 p-7 md:p-9 shadow-sm">
                 <div className="mb-7">
                   <h2 className="font-serif text-2xl font-light text-ink mb-1.5">
-                    Plan My India Trip
+                    Plan My Trip
                   </h2>
                   <p className="text-sm text-muted font-light leading-relaxed">
                     Fill in the details below — the more you tell us, the better
