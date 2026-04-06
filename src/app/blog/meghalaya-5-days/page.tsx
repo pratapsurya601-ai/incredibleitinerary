@@ -114,61 +114,6 @@ const jsonLd = {
       ],
     },
 
-    // FAQPage — 6 FAQs
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How many days are enough for Meghalaya?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "5 days is the sweet spot for Meghalaya. 3 days is too rushed — you'll skip either Cherrapunji or the Jaintia Hills. 5 days lets you cover Shillong, Cherrapunji (with the living root bridges trek), Dawki, Mawlynnong, and Laitlum Canyons without burning out. 7 days is ideal if you want to add Nongriat's double-decker root bridge and the Jaintia Hills caves.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "What is the best time to visit Meghalaya?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "October-November is the best time — post-monsoon waterfalls are still thundering, skies are clear, and the hills are impossibly green. March-May is also excellent for trekking with dry trails and warm days. Avoid June-September unless you want to experience Cherrapunji's legendary rainfall firsthand — roads get washed out and treks become dangerous.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a 5-day Meghalaya trip cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Budget travellers can do 5 days for under ₹15,000 per person using shared transport, homestays, and local dhabas. A comfortable mid-range trip costs ₹15,000-₹30,000 per person with private cabs and 3-star hotels. Premium travellers should budget ₹30,000-₹50,000+ for boutique stays, private guides, and curated experiences.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "Is Meghalaya safe for solo travellers and women?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Meghalaya is one of the safest states in India for solo and women travellers. The Khasi and Jaintia communities are matrilineal — property and surnames pass through women. Locals are genuinely welcoming, violent crime is extremely rare, and the tourist infrastructure in Shillong and Cherrapunji is well-developed. Standard travel precautions apply, especially on remote treks.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "How do I reach Meghalaya from other cities?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Fly into Guwahati (Assam) — it has the nearest major airport with direct flights from Delhi, Mumbai, Kolkata, and Bangalore. From Guwahati, Shillong is a 3-hour drive via NH6. Shared Sumos from Paltan Bazaar cost ₹400-500 per person. Pre-booked cabs cost ₹2,500-3,500. There's no railway station in Meghalaya.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need a guide for the Living Root Bridges trek?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For the single-decker root bridge at Mawlynnong or Riwai, no guide needed — it's a short 10-minute walk. For the double-decker living root bridge at Nongriat, a guide isn't mandatory but is recommended for first-timers. The trail has 3,500+ steps and takes 3-4 hours round trip. Local guides charge ₹500-800 and know the shortcuts. Wear proper trekking shoes — the stone steps get slippery.",
-          },
-        },
-      ],
-    },
-
     // TouristDestination
     {
       "@type": "TouristDestination",
@@ -180,13 +125,33 @@ const jsonLd = {
   ],
 };
 
+// Separate FAQPage schema — must NOT be nested in @graph alongside Article
+// to avoid "Duplicate field FAQPage" in Google Rich Results Test
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How many days are enough for Meghalaya?", "acceptedAnswer": { "@type": "Answer", "text": "5 days is the sweet spot for Meghalaya. 3 days is too rushed — you'll skip either Cherrapunji or the Jaintia Hills. 5 days lets you cover Shillong, Cherrapunji (with the living root bridges trek), Dawki, Mawlynnong, and Laitlum Canyons without burning out. 7 days is ideal if you want to add Nongriat's double-decker root bridge and the Jaintia Hills caves." } },
+    { "@type": "Question", "name": "What is the best time to visit Meghalaya?", "acceptedAnswer": { "@type": "Answer", "text": "October-November is the best time — post-monsoon waterfalls are still thundering, skies are clear, and the hills are impossibly green. March-May is also excellent for trekking with dry trails and warm days. Avoid June-September unless you want to experience Cherrapunji's legendary rainfall firsthand — roads get washed out and treks become dangerous." } },
+    { "@type": "Question", "name": "How much does a 5-day Meghalaya trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget travellers can do 5 days for under ₹15,000 per person using shared transport, homestays, and local dhabas. A comfortable mid-range trip costs ₹15,000-₹30,000 per person with private cabs and 3-star hotels. Premium travellers should budget ₹30,000-₹50,000+ for boutique stays, private guides, and curated experiences." } },
+    { "@type": "Question", "name": "Is Meghalaya safe for solo travellers and women?", "acceptedAnswer": { "@type": "Answer", "text": "Meghalaya is one of the safest states in India for solo and women travellers. The Khasi and Jaintia communities are matrilineal — property and surnames pass through women. Locals are genuinely welcoming, violent crime is extremely rare, and the tourist infrastructure in Shillong and Cherrapunji is well-developed. Standard travel precautions apply, especially on remote treks." } },
+    { "@type": "Question", "name": "How do I reach Meghalaya from other cities?", "acceptedAnswer": { "@type": "Answer", "text": "Fly into Guwahati (Assam) — it has the nearest major airport with direct flights from Delhi, Mumbai, Kolkata, and Bangalore. From Guwahati, Shillong is a 3-hour drive via NH6. Shared Sumos from Paltan Bazaar cost ₹400-500 per person. Pre-booked cabs cost ₹2,500-3,500. There's no railway station in Meghalaya." } },
+    { "@type": "Question", "name": "Do I need a guide for the Living Root Bridges trek?", "acceptedAnswer": { "@type": "Answer", "text": "For the single-decker root bridge at Mawlynnong or Riwai, no guide needed — it's a short 10-minute walk. For the double-decker living root bridge at Nongriat, a guide isn't mandatory but is recommended for first-timers. The trail has 3,500+ steps and takes 3-4 hours round trip. Local guides charge ₹500-800 and know the shortcuts. Wear proper trekking shoes — the stone steps get slippery." } },
+  ],
+};
+
 export default function MeghalayaBlogPage() {
   return (
     <>
-      {/* Inject JSON-LD into page head */}
+      {/* Article + Breadcrumb + TouristDestination schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* FAQPage schema — separate block to avoid duplicate collision */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <MeghalayaClient />
     </>
