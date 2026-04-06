@@ -2,25 +2,26 @@ import type { Metadata } from "next";
 import MeghalayaClient from "./MeghalayaClient";
 
 export const metadata: Metadata = {
-  title: "Meghalaya in 5 Days: Complete Itinerary Guide (Budget to Premium, 2026)",
+  title: "Meghalaya Trip Planner 2026: 5-Day Itinerary + Real Costs",
   description:
-    "3 complete Meghalaya plans — Budget, Comfortable, Premium — with real timings, costs, and the honest advice most travel blogs skip. Shillong, Cherrapunji, Dawki, Living Root Bridges.",
+    "Plan your Meghalaya trip right. 5-day route: Shillong → Cherrapunji → Dawki → Living Root Bridges. Real budgets from ₹8,000. Honest tips, no fluff.",
   keywords: [
+    "planning meghalaya trip",
     "meghalaya itinerary 5 days",
-    "meghalaya travel guide 2026",
+    "meghalaya trip planner 2026",
     "cherrapunji travel guide",
     "living root bridges meghalaya",
     "dawki river meghalaya",
     "shillong travel guide",
     "mawlynnong cleanest village",
-    "meghalaya trip planner",
     "meghalaya budget travel",
     "laitlum canyons meghalaya",
+    "meghalaya travel guide 2026",
   ],
   openGraph: {
-    title: "Meghalaya in 5 Days: Budget to Premium Itinerary 2026",
+    title: "Meghalaya Trip Planner 2026: 5-Day Itinerary + Real Costs",
     description:
-      "Real timings, actual budgets, honest advice. 3 complete plans for the Abode of Clouds — Shillong, Cherrapunji, Dawki, Living Root Bridges.",
+      "Plan your Meghalaya trip right. 5-day route: Shillong → Cherrapunji → Dawki → Living Root Bridges. Real budgets from ₹8,000. Honest tips, no fluff.",
     images: [
       {
         url: "https://images.pexels.com/photos/2104882/pexels-photo-2104882.jpeg?auto=compress&w=1200&q=80",
@@ -36,8 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meghalaya in 5 Days: The Only Guide You Need (2026)",
-    description: "3 plans, real timings, actual costs, honest advice for the Abode of Clouds.",
+    title: "Meghalaya Trip Planner 2026: 5-Day Itinerary + Real Costs",
+    description:
+      "5-day route: Shillong → Cherrapunji → Dawki → Living Root Bridges. Real budgets from ₹8,000. No fluff.",
     images: ["https://images.pexels.com/photos/2104882/pexels-photo-2104882.jpeg?auto=compress&w=1200&q=80"],
   },
   alternates: {
