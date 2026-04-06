@@ -195,10 +195,10 @@ export default function ExitIntentPopup() {
             <div className="flex flex-col items-center text-center">
               <span className="text-5xl mb-4" aria-hidden="true">{pdf.emoji}</span>
 
-              <h2 className="font-serif text-ink font-semibold mb-2 leading-tight" style={{ fontSize: '1.75rem' }}>
+              <h2 className="font-serif text-stone-900 font-semibold mb-2 leading-tight" style={{ fontSize: '1.75rem' }}>
                 {pdf.free ? `Free ${pdf.title}` : `Get the ${pdf.title}`}
               </h2>
-              <p className="text-muted text-sm mb-4 max-w-sm leading-relaxed">
+              <p className="text-stone-600 text-sm mb-4 max-w-sm leading-relaxed">
                 {pdf.free
                   ? "Day-by-day plan · real budgets · packing list · route maps. Download it instantly — opens right now."
                   : `Day-by-day plan · real prices · local tips · offline-ready. ${pdf.price} — instant download.`}
@@ -217,7 +217,7 @@ export default function ExitIntentPopup() {
                   required
                   autoFocus
                   disabled={step === 'loading'}
-                  className="w-full rounded-lg border border-parchment-2 bg-parchment px-4 py-2.5 text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-gold/40 transition disabled:opacity-60"
+                  className="w-full rounded-lg border border-parchment-2 bg-parchment px-4 py-2.5 text-sm text-stone-900 placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-gold/40 transition disabled:opacity-60"
                 />
 
                 {error && <p className="text-red-500 text-xs text-left">{error}</p>}
@@ -231,7 +231,7 @@ export default function ExitIntentPopup() {
                 </button>
               </form>
 
-              <p className="text-muted/60 text-[0.7rem] mt-3">🔒 No spam · Unsubscribe anytime</p>
+              <p className="text-stone-500 text-[0.7rem] mt-3">🔒 No spam · Unsubscribe anytime</p>
 
               <button
                 onClick={handleDismiss}
@@ -246,10 +246,10 @@ export default function ExitIntentPopup() {
           {step === 'success' && (
             <div className="flex flex-col items-center text-center">
               <span className="text-5xl mb-4" aria-hidden="true">✅</span>
-              <h2 className="font-serif text-ink font-semibold mb-2 leading-tight" style={{ fontSize: '1.75rem' }}>
+              <h2 className="font-serif text-stone-900 font-semibold mb-2 leading-tight" style={{ fontSize: '1.75rem' }}>
                 Your guide is open!
               </h2>
-              <p className="text-muted text-sm mb-5 max-w-sm leading-relaxed">
+              <p className="text-stone-600 text-sm mb-5 max-w-sm leading-relaxed">
                 A new tab just opened. Press{' '}
                 <kbd className="bg-parchment-2 border border-parchment-2 px-1.5 py-0.5 rounded text-xs font-mono">Ctrl+P</kbd>
                 {' '}→ <strong>Save as PDF</strong> → tick <strong>Background graphics</strong>.
@@ -294,11 +294,11 @@ export default function ExitIntentPopup() {
           {step === 'paywall' && (
             <div className="flex flex-col items-center text-center">
               <span className="text-5xl mb-4" aria-hidden="true">🔒</span>
-              <h2 className="font-serif text-ink font-semibold mb-2 leading-tight" style={{ fontSize: '1.75rem' }}>
+              <h2 className="font-serif text-stone-900 font-semibold mb-2 leading-tight" style={{ fontSize: '1.75rem' }}>
                 You&apos;ve used 2 free guides
               </h2>
-              <p className="text-muted text-sm mb-5 max-w-xs leading-relaxed">
-                Unlock <strong className="text-ink">all 20+ guides forever</strong> — one-time payment, no subscription.
+              <p className="text-stone-600 text-sm mb-5 max-w-xs leading-relaxed">
+                Unlock <strong className="text-stone-900">all 20+ guides forever</strong> — one-time payment, no subscription.
               </p>
 
               <div className="w-full flex flex-col gap-2 mb-4">
@@ -314,13 +314,13 @@ export default function ExitIntentPopup() {
                   href="https://rzp.io/rzp/aRVZcSi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full block text-center border border-ink/20 hover:border-ink text-ink font-medium text-sm px-6 py-3 rounded-full transition-colors duration-200"
+                  className="w-full block text-center border border-stone-900/20 hover:border-stone-900 text-stone-900 font-medium text-sm px-6 py-3 rounded-full transition-colors duration-200"
                 >
                   India Pack only — ₹249 →
                 </a>
               </div>
 
-              <p className="text-muted/50 text-[0.65rem] mb-4">
+              <p className="text-stone-500 text-[0.65rem] mb-4">
                 UPI · Cards · Net Banking · Wallets via Razorpay
               </p>
 

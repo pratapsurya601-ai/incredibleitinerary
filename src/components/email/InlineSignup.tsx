@@ -57,21 +57,21 @@ function DefaultVariant() {
           {/* Top label */}
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xl" aria-hidden="true">📧</span>
-            <span className="text-xs font-sans font-semibold uppercase tracking-widest text-muted">
+            <span className="text-xs font-sans font-semibold uppercase tracking-widest text-stone-600">
               Never Miss a Free Guide
             </span>
           </div>
 
           {/* Headline */}
           <h3
-            className="font-serif text-ink font-semibold leading-tight mb-3"
+            className="font-serif text-stone-900 font-semibold leading-tight mb-3"
             style={{ fontSize: '1.6rem' }}
           >
             Get weekly itineraries delivered free
           </h3>
 
           {/* Body copy */}
-          <p className="text-muted text-sm font-sans leading-relaxed mb-3">
+          <p className="text-stone-700 text-sm font-sans leading-relaxed mb-3">
             Join 2,400+ travellers. Every week: one destination deep-dive, real costs,
             and local secrets — straight to your inbox.
           </p>
@@ -94,7 +94,7 @@ function DefaultVariant() {
               className="
                 md:w-36 shrink-0
                 rounded-lg border border-parchment-2 bg-[#FAF7F2]
-                px-4 py-2.5 text-sm font-sans text-ink
+                px-4 py-2.5 text-sm font-sans text-stone-900
                 placeholder:text-muted/60
                 focus:outline-none focus:ring-2 focus:ring-gold/40
                 transition
@@ -109,7 +109,7 @@ function DefaultVariant() {
               className="
                 flex-1 min-w-0
                 rounded-lg border border-parchment-2 bg-[#FAF7F2]
-                px-4 py-2.5 text-sm font-sans text-ink
+                px-4 py-2.5 text-sm font-sans text-stone-900
                 placeholder:text-muted/60
                 focus:outline-none focus:ring-2 focus:ring-gold/40
                 transition
@@ -145,7 +145,7 @@ function DefaultVariant() {
           )}
 
           {/* Fine print */}
-          <p className="text-muted/60 text-[0.7rem] font-sans mt-3">
+          <p className="text-stone-500 text-[0.7rem] font-sans mt-3">
             No spam ever. Unsubscribe with one click.
           </p>
         </>
@@ -193,7 +193,7 @@ function CompactVariant() {
         "
       >
         <span className="text-lg" aria-hidden="true">✅</span>
-        <p className="text-sm font-sans text-ink">
+        <p className="text-sm font-sans text-stone-900">
           You&apos;re subscribed! Check your inbox for the free PDF.
         </p>
       </div>
@@ -210,7 +210,7 @@ function CompactVariant() {
       {/* Left label */}
       <div className="flex items-center gap-2 shrink-0">
         <span className="text-lg" aria-hidden="true">📬</span>
-        <span className="text-sm font-sans font-medium text-ink whitespace-nowrap">
+        <span className="text-sm font-sans font-medium text-stone-900 whitespace-nowrap">
           Get free weekly itineraries →
         </span>
       </div>
@@ -229,7 +229,7 @@ function CompactVariant() {
           className="
             flex-1 min-w-0
             rounded-lg border border-parchment-2 bg-[#FAF7F2]
-            px-3 py-2 text-sm font-sans text-ink
+            px-3 py-2 text-sm font-sans text-stone-900
             placeholder:text-muted/60
             focus:outline-none focus:ring-2 focus:ring-gold/40
             transition
@@ -266,7 +266,7 @@ function SuccessBanner() {
   return (
     <div className="flex items-center gap-3 py-2">
       <span className="text-3xl" aria-hidden="true">✅</span>
-      <p className="text-sm font-sans text-ink leading-relaxed">
+      <p className="text-sm font-sans text-stone-900 leading-relaxed">
         <span className="font-semibold text-teal">You&apos;re subscribed!</span>{' '}
         Check your inbox for the free PDF.
       </p>
