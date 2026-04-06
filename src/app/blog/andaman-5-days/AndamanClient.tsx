@@ -81,7 +81,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 function TipBox({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
   return (
     <div className={`rounded-xl p-4 border ${color}`}>
-      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div>
+      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div>
     </div>
   );
 }
@@ -153,7 +153,7 @@ export default function AndamanClient() {
                 <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itinerary")?.scrollIntoView({ behavior: "smooth" }); }}
                   className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-teal hover:shadow-md transition-all duration-200 text-center group">
                   <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-ink">{p.label}</p>
+                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
                   <p className="text-[0.65rem] text-teal mt-2 font-medium group-hover:underline">Plan {p.id} →</p>
                 </button>
@@ -419,7 +419,7 @@ export default function AndamanClient() {
                 { title: "Best operators", icon: "⭐", content: "Barefoot Scuba (Havelock) — most reputable. Dive India (Havelock) — large operation, good for beginners. Ocean Tribe (Port Blair + Havelock). Always check PADI certification of instructors." },
               ].map((item) => (
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
-                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
+                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-stone-900">{item.title}</p></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
@@ -501,7 +501,7 @@ export default function AndamanClient() {
                 { icon: "💸", title: "Flying from Delhi or Mumbai directly", desc: "Direct flights from Delhi to Port Blair cost Rs.8,000–Rs.18,000. Instead: fly Chennai to Port Blair (Rs.2,500–Rs.5,000, 1hr 15min). Add a one-night Chennai stopover if needed — saves Rs.5,000–Rs.10,000 per person.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -520,7 +520,7 @@ export default function AndamanClient() {
                 { icon: "🦀", title: "Try the mud crab at Havelock", desc: "The local mud crab (Rs.800–Rs.1,500 per crab) is the best seafood in Andaman. Fat Rock Cafe and Anju-Coco prepare it best. Order in advance — takes 45 minutes to prepare.", color: "bg-red-50 border-red-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>

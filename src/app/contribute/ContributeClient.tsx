@@ -134,7 +134,7 @@ export default function ContributeClient() {
             ].map((step) => (
               <div key={step.title} className="bg-white rounded-2xl border border-parchment-2 p-5">
                 <div className="text-3xl mb-2">{step.icon}</div>
-                <p className="font-medium text-sm text-ink mb-1">{step.title}</p>
+                <p className="font-medium text-sm text-stone-900 mb-1">{step.title}</p>
                 <p className="text-xs text-muted font-light leading-relaxed">{step.desc}</p>
               </div>
             ))}

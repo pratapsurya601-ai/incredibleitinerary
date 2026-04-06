@@ -118,7 +118,7 @@ export default function GangotriGlacierTrekPage() {
                 <div key={s.stage} className="bg-white rounded-xl border border-parchment-2 p-5">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-[0.65rem] bg-gold/20 text-gold-dark font-medium px-2 py-0.5 rounded-full">{s.stage}</span>
-                    <span className="font-medium text-sm text-ink">{s.title}</span>
+                    <span className="font-medium text-sm text-stone-900">{s.title}</span>
                   </div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
@@ -188,7 +188,7 @@ export default function GangotriGlacierTrekPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl flex-shrink-0">{t.icon}</span>
                     <div>
-                      <p className="font-medium text-sm text-ink mb-1">{t.title}</p>
+                      <p className="font-medium text-sm text-stone-900 mb-1">{t.title}</p>
                       <p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p>
                     </div>
                   </div>

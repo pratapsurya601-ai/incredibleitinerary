@@ -66,7 +66,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
 }
 
 function TipCard({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
-  return (<div className={`rounded-xl p-5 border ${color}`}><div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div></div>);
+  return (<div className={`rounded-xl p-5 border ${color}`}><div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div></div>);
 }
 
 function FaqItem({ q, a }: { q: string; a: string }) {
@@ -158,7 +158,7 @@ export default function BarcelonaClient() {
                 <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itineraries")?.scrollIntoView({ behavior: "smooth" }); }}
                   className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-gold hover:shadow-md transition-all duration-200 text-center group">
                   <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-ink">{p.label}</p>
+                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
                   <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} {"→"}</p>
                 </button>

@@ -180,7 +180,7 @@ export default function DestinationGallery({
       <div className="mt-3 flex items-start gap-3 p-4 bg-parchment rounded-xl border border-parchment-2">
         <span className="text-xl flex-shrink-0">📍</span>
         <div>
-          <p className="font-medium text-sm text-ink">{activeSpot.name}</p>
+          <p className="font-medium text-sm text-stone-900">{activeSpot.name}</p>
           <p className="text-xs text-muted font-light mt-0.5 leading-relaxed">
             {activeSpot.desc}
           </p>

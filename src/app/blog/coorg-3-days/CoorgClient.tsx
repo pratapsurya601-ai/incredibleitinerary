@@ -164,7 +164,7 @@ export default function CoorgClient() {
                 <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itinerary")?.scrollIntoView({ behavior: "smooth" }); }}
                   className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-green-500 hover:shadow-md transition-all duration-200 text-center group">
                   <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-ink">{p.label}</p>
+                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
                   <p className="text-[0.65rem] text-green-700 mt-2 font-medium group-hover:underline">Plan {p.id} →</p>
                 </button>
@@ -183,7 +183,7 @@ export default function CoorgClient() {
                 { season: "Jul–Sep", icon: "🌧️", title: "Monsoon — Spectacular but Difficult", desc: "Coorg receives 2,500–3,000mm rainfall — one of India's wettest places. Waterfalls are full and dramatic. But leeches on every trail, many roads flooded, limited outdoor activities. Only for rain lovers.", best: "Not recommended", color: "bg-blue-50 border-blue-200" },
               ].map((s) => (
                 <div key={s.season} className={`rounded-xl p-4 border ${s.color}`}>
-                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-ink">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
+                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-stone-900">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
@@ -381,7 +381,7 @@ export default function CoorgClient() {
                 { name: "What to ask before booking", range: "Important", desc: "Is it a working estate or just an estate-themed hotel? Can I do a guided walk? Are meals included? Is the estate organic? Can I buy coffee/spices to take home? A genuine working estate matters more than star rating.", color: "bg-parchment border-parchment-2" },
               ].map((item) => (
                 <div key={item.name} className={`rounded-xl p-4 border ${item.color}`}>
-                  <div className="flex items-center justify-between mb-2"><p className="font-medium text-sm text-ink">{item.name}</p><span className="text-[0.65rem] text-green-700 font-medium">{item.range}</span></div>
+                  <div className="flex items-center justify-between mb-2"><p className="font-medium text-sm text-stone-900">{item.name}</p><span className="text-[0.65rem] text-green-700 font-medium">{item.range}</span></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -402,7 +402,7 @@ export default function CoorgClient() {
                 { item: "Kodava Pickle", price: "Rs.100–Rs.200 / jar", desc: "Bamboo shoot pickle (kachampuli) and pork pickle are Coorg specialties. Extraordinary with rice. Buy from the estate kitchen or Madikeri market.", icon: "🫙" },
               ].map((item) => (
                 <div key={item.item} className="bg-white rounded-xl border border-parchment-2 p-4 hover:border-green-300 transition-colors">
-                  <div className="flex items-center justify-between mb-1"><div className="flex items-center gap-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.item}</p></div><span className="text-[0.65rem] text-green-700 font-medium">{item.price}</span></div>
+                  <div className="flex items-center justify-between mb-1"><div className="flex items-center gap-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-stone-900">{item.item}</p></div><span className="text-[0.65rem] text-green-700 font-medium">{item.price}</span></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -480,7 +480,7 @@ export default function CoorgClient() {
                 { icon: "🐘", title: "Skipping Dubare for Cauvery Nisargadhama", desc: "Nisargadhama is a popular bamboo island nearby but very crowded. Dubare Elephant Camp (15km further) is far superior — actual elephant interaction, river setting, less tourist-trap feeling. Don't substitute.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -499,7 +499,7 @@ export default function CoorgClient() {
                 { icon: "📡", title: "Mobile network: Airtel works everywhere", desc: "Jio has patchy coverage in the estate areas. Airtel is consistent throughout Coorg including remote estates. BSNL is fine in Madikeri town. Download offline maps before entering the estates.", color: "bg-teal-50 border-teal-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>

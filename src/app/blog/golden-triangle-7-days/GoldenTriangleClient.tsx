@@ -108,7 +108,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
       <div className="flex items-start gap-3">
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
-          <p className="font-medium text-sm text-ink mb-1">{title}</p>
+          <p className="font-medium text-sm text-stone-900 mb-1">{title}</p>
           <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
@@ -246,7 +246,7 @@ export default function GoldenTriangleClient() {
                 <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itineraries")?.scrollIntoView({ behavior: "smooth" }); }}
                   className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-gold hover:shadow-md transition-all duration-200 text-center group">
                   <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-ink">{p.label}</p>
+                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
                   <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:underline">Plan {p.id} →</p>
                 </button>
@@ -626,7 +626,7 @@ export default function GoldenTriangleClient() {
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-lg">{item.icon}</span>
-                    <p className="font-medium text-sm text-ink">{item.title}</p>
+                    <p className="font-medium text-sm text-stone-900">{item.title}</p>
                   </div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>

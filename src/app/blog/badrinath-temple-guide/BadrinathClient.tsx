@@ -280,7 +280,7 @@ export default function BadrinathClient({ faqData }: Props) {
               ].map((c) => (
                 <div key={c.title} className={`rounded-xl border p-5 ${c.color}`}>
                   <div className="text-2xl mb-2">{c.icon}</div>
-                  <p className="font-medium text-sm text-ink mb-1">{c.title}</p>
+                  <p className="font-medium text-sm text-stone-900 mb-1">{c.title}</p>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{c.desc}</p>
                 </div>
               ))}
@@ -393,7 +393,7 @@ export default function BadrinathClient({ faqData }: Props) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="bg-white border border-parchment-2 rounded-xl p-5 space-y-3">
-                <h3 className="font-medium text-sm text-ink">The Ritual</h3>
+                <h3 className="font-medium text-sm text-stone-900">The Ritual</h3>
                 {[
                   ["When to bathe", "Before entering temple for darshan (early morning preferred)"],
                   ["Entry fee", "Free"],
@@ -474,7 +474,7 @@ export default function BadrinathClient({ faqData }: Props) {
                 <div key={p.name} className="bg-white rounded-xl border border-parchment-2 p-5">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-xl">{p.icon}</span>
-                    <span className="font-medium text-sm text-ink">{p.name}</span>
+                    <span className="font-medium text-sm text-stone-900">{p.name}</span>
                   </div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{p.desc}</p>
                 </div>
@@ -532,7 +532,7 @@ export default function BadrinathClient({ faqData }: Props) {
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-xl">{p.icon}</span>
                     <div>
-                      <p className="font-medium text-sm text-ink">{p.name}</p>
+                      <p className="font-medium text-sm text-stone-900">{p.name}</p>
                       <p className="text-[0.65rem] text-muted">{p.distance}</p>
                     </div>
                   </div>
@@ -599,7 +599,7 @@ export default function BadrinathClient({ faqData }: Props) {
                   className={`bg-white rounded-xl border p-5 ${s.recommended ? "border-gold" : "border-parchment-2"}`}
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <p className="font-medium text-sm text-ink">{s.location}</p>
+                    <p className="font-medium text-sm text-stone-900">{s.location}</p>
                     {s.recommended && (
                       <span className="text-[0.6rem] bg-gold/20 text-gold-dark font-medium px-2 py-0.5 rounded-full">
                         Recommended
@@ -846,7 +846,7 @@ export default function BadrinathClient({ faqData }: Props) {
                   <div className="flex items-start gap-3">
                     <span className="text-xl flex-shrink-0">{t.icon}</span>
                     <div>
-                      <p className="font-medium text-sm text-ink mb-1">{t.title}</p>
+                      <p className="font-medium text-sm text-stone-900 mb-1">{t.title}</p>
                       <p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p>
                     </div>
                   </div>

@@ -110,7 +110,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
       <div className="flex items-start gap-3">
         <span className="text-xl flex-shrink-0">{icon}</span>
         <div>
-          <p className="font-medium text-sm text-ink mb-1">{title}</p>
+          <p className="font-medium text-sm text-stone-900 mb-1">{title}</p>
           <p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p>
         </div>
       </div>
@@ -248,7 +248,7 @@ export default function KeralaClient() {
                 <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itineraries")?.scrollIntoView({ behavior: "smooth" }); }}
                   className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-teal hover:shadow-md transition-all duration-200 text-center group">
                   <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-ink">{p.label}</p>
+                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
                   <p className="text-[0.65rem] text-teal mt-2 font-medium group-hover:underline transition-colors">Plan {p.id} →</p>
                 </button>
@@ -304,7 +304,7 @@ export default function KeralaClient() {
               ].map((item) => (
                 <div key={item.city} className="bg-white rounded-xl border border-parchment-2 p-4">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="font-medium text-sm text-ink">{item.city}</p>
+                    <p className="font-medium text-sm text-stone-900">{item.city}</p>
                     <span className="text-[0.65rem] font-medium text-teal bg-teal/10 px-2.5 py-1 rounded-full">{item.days}</span>
                   </div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.why}</p>

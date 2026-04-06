@@ -279,7 +279,7 @@ export default function YamunotriClient({ faqData }: Props) {
               ].map((c) => (
                 <div key={c.title} className={`rounded-xl border p-5 ${c.color}`}>
                   <div className="text-2xl mb-2">{c.icon}</div>
-                  <p className="font-medium text-sm text-ink mb-1">{c.title}</p>
+                  <p className="font-medium text-sm text-stone-900 mb-1">{c.title}</p>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{c.desc}</p>
                 </div>
               ))}
@@ -376,7 +376,7 @@ export default function YamunotriClient({ faqData }: Props) {
                     <span className="text-[0.65rem] bg-gold/20 text-gold-dark font-medium px-2 py-0.5 rounded-full">
                       {s.km}
                     </span>
-                    <span className="font-medium text-sm text-ink">{s.label}</span>
+                    <span className="font-medium text-sm text-stone-900">{s.label}</span>
                   </div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
@@ -551,7 +551,7 @@ export default function YamunotriClient({ faqData }: Props) {
                   className={`bg-white rounded-xl border p-5 ${s.recommended ? "border-gold" : "border-parchment-2"}`}
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <p className="font-medium text-sm text-ink">{s.location}</p>
+                    <p className="font-medium text-sm text-stone-900">{s.location}</p>
                     {s.recommended && (
                       <span className="text-[0.6rem] bg-gold/20 text-gold-dark font-medium px-2 py-0.5 rounded-full">
                         Recommended
@@ -796,7 +796,7 @@ export default function YamunotriClient({ faqData }: Props) {
                   <div className="flex items-start gap-3">
                     <span className="text-xl flex-shrink-0">{t.icon}</span>
                     <div>
-                      <p className="font-medium text-sm text-ink mb-1">{t.title}</p>
+                      <p className="font-medium text-sm text-stone-900 mb-1">{t.title}</p>
                       <p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p>
                     </div>
                   </div>

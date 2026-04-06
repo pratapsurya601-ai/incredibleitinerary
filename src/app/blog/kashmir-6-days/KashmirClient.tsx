@@ -82,7 +82,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 function TipBox({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
   return (
     <div className={`rounded-xl p-4 border ${color}`}>
-      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-ink mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div>
+      <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">{title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{desc}</p></div></div>
     </div>
   );
 }
@@ -150,7 +150,7 @@ export default function KashmirClient() {
                 <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itinerary")?.scrollIntoView({ behavior: "smooth" }); }}
                   className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-blue-400 hover:shadow-md transition-all duration-200 text-center group">
                   <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-ink">{p.label}</p>
+                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
                   <p className="text-[0.65rem] text-blue-600 mt-2 font-medium group-hover:underline">Plan {p.id} →</p>
                 </button>
@@ -194,7 +194,7 @@ export default function KashmirClient() {
                 { season: "Dec–Feb", icon: "❄️", title: "Winter — Snow Season", desc: "Gulmarg receives 4–8 feet of snow, best skiing in India. Pahalgam also snow-covered. Dal Lake sometimes partially freezes. Very cold (−5 to 8°C) but magical.", best: "Best for snow + skiing", color: "bg-blue-50 border-blue-200" },
               ].map((s) => (
                 <div key={s.season} className={`rounded-xl p-4 border ${s.color}`}>
-                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-ink">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
+                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-stone-900">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
@@ -408,7 +408,7 @@ export default function KashmirClient() {
                 { title: "Best location", icon: "📍", content: "Nagin Lake houseboats are quieter than Dal Lake but less central. Dal Lake Boulevard-side houseboats are convenient. Inner lake houseboats (accessible only by shikara) are the most atmospheric." },
               ].map((item) => (
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
-                  <div className="flex items-center gap-2 mb-2"><span className="text-lg">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
+                  <div className="flex items-center gap-2 mb-2"><span className="text-lg">{item.icon}</span><p className="font-medium text-sm text-stone-900">{item.title}</p></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
@@ -485,7 +485,7 @@ export default function KashmirClient() {
                 { icon: "🏔️", title: "Trekking without a guide", desc: "Above 3,000m in Kashmir, weather changes rapidly and paths aren't always marked. Always hire a licensed guide for Tulian Lake, Alpather, Kashmir Great Lakes. Rs.1,500–Rs.2,500/day.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -504,7 +504,7 @@ export default function KashmirClient() {
                 { icon: "📱", title: "Download maps offline — connectivity varies", desc: "Mobile signal is excellent in Srinagar and Gulmarg town. On mountain roads to Sonamarg and in Pahalgam valleys, it drops out. Download Google Maps offline before leaving your hotel.", color: "bg-green-50 border-green-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>

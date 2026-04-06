@@ -65,7 +65,7 @@ export default function SampleItinerarySection({ onPlanTrip }: { onPlanTrip: () 
                 <button onClick={() => setActive(i)} className={`w-full text-left rounded-2xl border-2 p-5 transition-all duration-200 ${active === i ? "border-teal bg-white shadow-lg" : "border-parchment-2 bg-white/60 hover:border-teal/40"}`}>
                   <div className="flex items-center gap-3 mb-2 flex-wrap">
                     <span className={`text-[0.65rem] font-semibold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full ${active === i ? "bg-teal text-white" : "bg-parchment text-muted"}`}>{d.time}</span>
-                    <span className="font-medium text-sm text-ink">{d.title}</span>
+                    <span className="font-medium text-sm text-stone-900">{d.title}</span>
                   </div>
                   {active === i && (
                     <div className="mt-3 pt-3 border-t border-parchment-2 space-y-3">

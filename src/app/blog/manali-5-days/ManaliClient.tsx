@@ -165,7 +165,7 @@ export default function ManaliClient() {
                 <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itinerary")?.scrollIntoView({ behavior: "smooth" }); }}
                   className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-green-400 hover:shadow-md transition-all duration-200 text-center group">
                   <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-ink">{p.label}</p>
+                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
                   <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
                   <p className="text-[0.65rem] text-green-600 mt-2 font-medium group-hover:underline">Plan {p.id} →</p>
                 </button>
@@ -184,7 +184,7 @@ export default function ManaliClient() {
                 { season: "Oct–Nov", icon: "🍁", title: "Autumn — Hidden Gem", desc: "Golden apple orchards, clear mountain views, very few tourists, cool 5–15°C. Best photography season. Rohtang closes in October — so no snow pass, but everything else is perfect.", best: "Best for fewer crowds", color: "bg-amber-50 border-amber-200" },
               ].map((s) => (
                 <div key={s.season} className={`rounded-xl p-4 border ${s.color}`}>
-                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-ink">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
+                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{s.icon}</span><div><p className="font-medium text-sm text-stone-900">{s.season} — {s.title}</p><p className="text-[0.65rem] font-medium text-teal">{s.best}</p></div></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{s.desc}</p>
                 </div>
               ))}
@@ -383,7 +383,7 @@ export default function ManaliClient() {
                 ].map((activity) => (
                   <div key={activity.name} className="bg-white rounded-xl border border-parchment-2 p-4 mb-3">
                     <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-                      <p className="font-medium text-sm text-ink">{activity.name}</p>
+                      <p className="font-medium text-sm text-stone-900">{activity.name}</p>
                       <div className="flex gap-2">
                         <span className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full border border-blue-200">{activity.level}</span>
                         <span className="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full border border-green-200">{activity.cost}</span>
@@ -410,7 +410,7 @@ export default function ManaliClient() {
                 { name: "Vashisht village", type: "Hot springs + temple", desc: "2km from Old Manali. Natural hot sulfur springs (separate men&apos;s/women&apos;s baths, Rs.20–Rs.50), ancient Vashisht temple, good mountain views. Popular with long-term backpackers.", icon: "♨️" },
               ].map((item) => (
                 <div key={item.name} className="bg-white rounded-xl border border-parchment-2 p-4 hover:border-green-300 transition-colors">
-                  <div className="flex items-center gap-2 mb-1"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.name}</p></div>
+                  <div className="flex items-center gap-2 mb-1"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-stone-900">{item.name}</p></div>
                   <p className="text-[0.65rem] text-green-600 font-medium mb-2">{item.type}</p>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.desc}</p>
                 </div>
@@ -430,7 +430,7 @@ export default function ManaliClient() {
                 { title: "What you see at Rohtang", icon: "🏔️", content: "Snow-covered plateau at 3,978m, surrounded by high Himalayan peaks. The Lahaul valley opens up on the other side. Clear views of Gepan, Shigri and Bara Shigri glaciers on a clear day. The Atal Tunnel (9km) is now an alternative route." },
               ].map((item) => (
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
-                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
+                  <div className="flex items-center gap-2 mb-2"><span className="text-xl">{item.icon}</span><p className="font-medium text-sm text-stone-900">{item.title}</p></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
@@ -514,7 +514,7 @@ export default function ManaliClient() {
                 { icon: "🌧️", title: "Visiting July–August", desc: "Manali is prone to flash floods and landslides during peak monsoon. NH3 (the main highway) gets blocked regularly. Rohtang is closed. Not worth the risk — come December–June instead.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
@@ -533,7 +533,7 @@ export default function ManaliClient() {
                 { icon: "📅", title: "October is underrated", desc: "Off-season October: golden deodar forests, clear mountain views, half the tourists, 20–30% lower prices, no Rohtang crowds. Rohtang closes but everything else is perfect. The best month for photography.", color: "bg-teal-50 border-teal-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-ink mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{t.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">{t.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{t.desc}</p></div></div>
                 </div>
               ))}
             </div>

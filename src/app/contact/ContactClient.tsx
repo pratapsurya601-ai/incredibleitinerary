@@ -196,7 +196,7 @@ export default function ContactClient() {
                       }`}>
                       <span className="text-2xl flex-shrink-0">{m.icon}</span>
                       <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sm text-ink">{m.title}</p>
+                        <p className="font-medium text-sm text-stone-900">{m.title}</p>
                         <p className="text-xs text-muted font-light mt-0.5">{m.desc}</p>
                         <p className={`text-xs font-medium mt-1.5 truncate group-hover:underline ${
                           m.highlight ? "text-gold-dark" : "text-gold-dark"

@@ -144,7 +144,7 @@ export default function VaranasiClient() {
               {ghats.map((g) => (
                 <div key={g.name} className={`rounded-xl p-4 border ${g.color}`}>
                   <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-                    <p className="font-medium text-sm text-ink">{g.name}</p>
+                    <p className="font-medium text-sm text-stone-900">{g.name}</p>
                     <span className="text-[0.65rem] font-medium bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/60">{g.type}</span>
                   </div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{g.desc}</p>
@@ -248,7 +248,7 @@ export default function VaranasiClient() {
                 { title: "Morning aarti", icon: "🌅", content: "A smaller aarti happens at sunrise at Dashashwamedh. Only 50–100 people present. Infinitely more peaceful. If you can wake up at 5am, this is the better aarti." },
               ].map((item) => (
                 <div key={item.title} className="bg-parchment rounded-xl border border-parchment-2 p-4">
-                  <div className="flex items-center gap-2 mb-2"><span className="text-lg">{item.icon}</span><p className="font-medium text-sm text-ink">{item.title}</p></div>
+                  <div className="flex items-center gap-2 mb-2"><span className="text-lg">{item.icon}</span><p className="font-medium text-sm text-stone-900">{item.title}</p></div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed">{item.content}</p>
                 </div>
               ))}
@@ -301,7 +301,7 @@ export default function VaranasiClient() {
               ].map((f) => (
                 <div key={f.dish} className={`rounded-xl p-4 border ${f.color}`}>
                   <div className="flex items-center justify-between mb-1 flex-wrap gap-1">
-                    <p className="font-medium text-sm text-ink">{f.dish}</p>
+                    <p className="font-medium text-sm text-stone-900">{f.dish}</p>
                     <span className="text-[0.65rem] font-medium text-teal">{f.price}</span>
                   </div>
                   <p className="text-[0.65rem] text-muted mb-2">{f.where}</p>
@@ -352,7 +352,7 @@ export default function VaranasiClient() {
                 { icon: "🌙", title: "Not going to the ghats at dawn", desc: "The ghats at 5:30am are completely different from afternoon and evening. Empty, misty, devotional. The morning boat ride is the single most important thing you can do in Varanasi. Set your alarm.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
-                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-ink mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
+                  <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
                 </div>
               ))}
             </div>
