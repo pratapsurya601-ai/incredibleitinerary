@@ -851,7 +851,7 @@ export default function YamunotriClient({ faqData }: Props) {
       </main>
 
       <Footer />
-      {modalOpen && <InquiryModal destination="Yamunotri" onClose={() => setModalOpen(false)} />}
+      {modalOpen && <InquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />}
     </>
   );
 }

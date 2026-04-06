@@ -901,7 +901,7 @@ export default function BadrinathClient({ faqData }: Props) {
       </main>
 
       <Footer />
-      {modalOpen && <InquiryModal destination="Badrinath" onClose={() => setModalOpen(false)} />}
+      {modalOpen && <InquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />}
     </>
   );
 }
