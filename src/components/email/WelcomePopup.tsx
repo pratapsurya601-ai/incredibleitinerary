@@ -126,7 +126,7 @@ export default function WelcomePopup() {
                   placeholder="First name (optional)"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold/60 transition"
+                  className="w-full bg-[#1c1208] border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold/60 transition"
                 />
                 <input
                   type="email"
@@ -136,7 +136,7 @@ export default function WelcomePopup() {
                   required
                   autoFocus
                   disabled={status === 'loading'}
-                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold/60 transition disabled:opacity-60"
+                  className="w-full bg-[#1c1208] border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold/60 transition disabled:opacity-60"
                 />
                 {error && <p className="text-red-400 text-xs">{error}</p>}
                 <button
