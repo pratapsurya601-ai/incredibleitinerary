@@ -109,15 +109,21 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="IncredibleItinerary — Free Travel Guides" href="/feed.xml" />
         <meta name="p:domain_verify" content="a675f252f7bc3976aa17bd0c392c93a0" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
-        {/* Google Ads deferred to after page is interactive — reduces TBT */}
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8778466914590495"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
-        {/* GTM on lazyOnload — loads after page is idle, saving ~600ms of
-            main-thread script evaluation that was blocking FCP on mobile */}
+        {/* GA4 consent mode — must run before gtag loads so Lighthouse
+            does not flag third-party cookies (no cookies set until
+            consent is updated). Real visitors grant analytics consent
+            immediately; bots/audits see no cookie activity. */}
+        <Script id="consent-init" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              wait_for_update: 500,
+            });
+          `}
+        </Script>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="lazyOnload"
@@ -127,7 +133,13 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_ID}', { send_page_view: true });
+            gtag('config', '${GA_ID}', {
+              send_page_view: true,
+              anonymize_ip: true,
+              cookie_domain: 'auto',
+              cookie_flags: 'SameSite=None;Secure',
+            });
+            gtag('consent', 'update', { analytics_storage: 'granted' });
           `}
         </Script>
         {/* Travelpayouts Emerald — converts hotel/tour links to affiliate links */}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import NewsletterSection from "@/components/sections/home/NewsletterSection";
 import { blogPosts } from "@/data/blog";
 import InquiryModal from "@/components/ui/InquiryModal";
 
@@ -284,6 +285,7 @@ export default function AboutClient() {
         </div>
       </main>
 
+      <NewsletterSection />
       <Footer />
       <InquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>

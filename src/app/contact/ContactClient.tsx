@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { blogPosts } from "@/data/blog";
 import Footer from "@/components/layout/Footer";
+import NewsletterSection from "@/components/sections/home/NewsletterSection";
 import InquiryModal from "@/components/ui/InquiryModal";
 import { SITE_CONFIG } from "@/lib/config";
 import { showToast } from "@/components/ui/Toast";
