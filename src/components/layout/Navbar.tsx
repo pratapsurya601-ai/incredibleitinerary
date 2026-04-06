@@ -205,7 +205,11 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-[5.5px] p-3 rounded-lg transition-all duration-300 bg-black border border-white/70"
+          className={`md:hidden flex flex-col gap-[5.5px] p-3 rounded-lg transition-all duration-300 ${
+            scrolled || menuOpen
+              ? "bg-muted/10 border border-muted/50"
+              : "bg-white/10 border border-white/40"
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -213,11 +217,11 @@ export default function Navbar({ onPlanTrip }: NavbarProps) {
           {[0, 1, 2].map((i) => (
             <span
               key={i}
-              className={`block w-[22px] h-[2.5px] rounded-full transition-all duration-300 bg-gold ${
-                menuOpen && i === 0 ? "rotate-45 translate-y-[8px]" : ""
-              } ${menuOpen && i === 1 ? "opacity-0 scale-x-0" : ""} ${
-                menuOpen && i === 2 ? "-rotate-45 -translate-y-[8px]" : ""
-              }`}
+              className={`block w-[22px] h-[2.5px] rounded-full transition-all duration-300 ${
+                scrolled || menuOpen ? "bg-muted" : "bg-white/70"
+              } ${menuOpen && i === 0 ? "rotate-45 translate-y-[8px]" : ""} ${
+                menuOpen && i === 1 ? "opacity-0 scale-x-0" : ""
+              } ${menuOpen && i === 2 ? "-rotate-45 -translate-y-[8px]" : ""}`}
             />
           ))}
         </button>
