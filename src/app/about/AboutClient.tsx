@@ -1,61 +1,30 @@
 "use client";
+
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { blogPosts } from "@/data/blog";
 import InquiryModal from "@/components/ui/InquiryModal";
-import SmartImage from "@/components/ui/SmartImage";
-import { SITE_CONFIG } from "@/lib/config";
+
+const TRIPS = [
+  { place: "Kedarnath",       year: "2022", emoji: "⛰️" },
+  { place: "Gangotri",        year: "2023", emoji: "🏔️" },
+  { place: "Badrinath",       year: "2022", emoji: "🛕" },
+  { place: "Vaishno Devi",    year: "2021", emoji: "🌄" },
+  { place: "Manali",          year: "2023", emoji: "❄️" },
+  { place: "Shimla",          year: "2025", emoji: "🏛️" },
+  { place: "Dharamshala",     year: "2022", emoji: "🌿" },
+  { place: "Rishikesh",       year: "2022", emoji: "🌊" },
+  { place: "Jaipur",          year: "2023", emoji: "🏯" },
+  { place: "Agra",            year: "2021", emoji: "🕌" },
+  { place: "Delhi",           year: "2026", emoji: "🏙️" },
+  { place: "Chakrata",        year: "2022", emoji: "🌲" },
+];
 
 export default function AboutClient() {
   const [modalOpen, setModalOpen] = useState(false);
-
-  const stats = [
-    { num: `${blogPosts.length}+`, label: "Free Guides" },
-    { num: "50+", label: "Countries Covered" },
-    { num: "24hr", label: "Response Time" },
-    { num: "100%", label: "Personalised" },
-  ];
-
-  const values = [
-    {
-      icon: "🗺",
-      title: "No templates. Ever.",
-      desc: "Every itinerary is built from scratch for you — your dates, your interests, your pace. We've never sent the same plan twice.",
-    },
-    {
-      icon: "🤝",
-      title: "Local knowledge, not guidebooks",
-      desc: "We know which dhaba near Jaisalmer Fort serves the best dal baati. We know which Amber Fort guide actually knows the history. This comes from years on the ground.",
-    },
-    {
-      icon: "💬",
-      title: "One real person, not a call centre",
-      desc: "When you WhatsApp us, you talk to the same person who plans your trip. No transfers, no hold music, no 'your call is important to us'.",
-    },
-    {
-      icon: "💰",
-      title: "Honest about money",
-      desc: "We tell you the real prices. The rip-off spots. Where to eat for ₹150 and where spending ₹1,500 is actually worth it. Some links earn us a small commission — that keeps planning free — but we never recommend a place just because it pays us.",
-    },
-    {
-      icon: "🔍",
-      title: "Obsessively detailed",
-      desc: "Our itineraries include timings, entry fees, what to order, which entrance to use at the fort, where to sit for the best sunset view. The details are the product.",
-    },
-    {
-      icon: "🌱",
-      title: "Sustainable travel",
-      desc: "We recommend locally-owned guesthouses over chains, local restaurants over tourist traps, and experiences that put money into the communities you visit.",
-    },
-  ];
-
-  const destinations = [
-    "Rajasthan", "Goa", "Kerala", "Kashmir",
-    "Japan", "Bali", "Thailand", "Dubai",
-    "Italy", "Spain", "Portugal", "Greece",
-  ];
 
   return (
     <>
@@ -64,36 +33,42 @@ export default function AboutClient() {
       <main className="bg-cream min-h-screen pt-[72px]">
 
         {/* ── HERO ── */}
-        <div className="relative h-[50vh] min-h-[360px] overflow-hidden">
-          <SmartImage
-            imageKey="whyUs"
-            fallback="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=1600&q=85"
-            alt="India travel experience"
-            fill className="object-cover" priority sizes="100vw"
+        <div className="relative h-[55vh] min-h-[400px] overflow-hidden">
+          <Image
+            src="/images/surya/blog-kedarnath-temple.jpg"
+            alt="Kedarnath temple with snow peaks — photographed by Surya Pratap"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10 max-w-[860px]">
             <span className="text-[0.65rem] tracking-[0.22em] uppercase text-gold block mb-3">
-              Our Story
+              The Person Behind the Guides
             </span>
             <h1 className="font-serif text-[clamp(2rem,4vw,3.2rem)] font-light text-white leading-tight">
-              We&apos;re Not a Travel Agency.<br />
-              <em className="italic text-gold-light">We&apos;re Your Travel Expert.</em>
+              Hi, I&apos;m Surya.<br />
+              <em className="italic text-gold-light">I built IncredibleItinerary.</em>
             </h1>
           </div>
+          <span className="absolute bottom-2 right-3 text-[10px] text-white/30 font-light">
+            📸 Kedarnath Temple, Oct 2022 — my own photo
+          </span>
         </div>
 
-        {/* ── STATS ── */}
+        {/* ── STATS BAR ── */}
         <div className="bg-ink py-8 px-6 md:px-12">
           <div className="max-w-[1180px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((s) => (
+            {[
+              { num: `${blogPosts.length}+`, label: "Free Guides Written" },
+              { num: "12+",  label: "Places Personally Visited" },
+              { num: "24",   label: "Years Old" },
+              { num: "100%", label: "Solo Built" },
+            ].map((s) => (
               <div key={s.label} className="text-center">
-                <p className="font-serif text-[2.2rem] font-light text-gold leading-none mb-1">
-                  {s.num}
-                </p>
-                <p className="text-[0.72rem] tracking-[0.12em] uppercase text-white/45">
-                  {s.label}
-                </p>
+                <p className="font-serif text-[2.2rem] font-light text-gold leading-none mb-1">{s.num}</p>
+                <p className="text-[0.72rem] tracking-[0.12em] uppercase text-white/45">{s.label}</p>
               </div>
             ))}
           </div>
@@ -101,149 +76,205 @@ export default function AboutClient() {
 
         <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-16">
 
-          {/* ── STORY ── */}
+          {/* ── FOUNDER STORY ── */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 mb-20 items-center">
-            <div>
-              <span className="section-label">How It Started</span>
+
+            {/* Photo */}
+            <div className="relative order-2 lg:order-1">
+              <div className="rounded-2xl overflow-hidden aspect-[3/4] max-w-[420px] mx-auto lg:mx-0">
+                <Image
+                  src="/images/surya/surya-author-primary.jpg"
+                  alt="Surya Pratap — Founder of IncredibleItinerary"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 90vw, 420px"
+                />
+              </div>
+              {/* Quote card */}
+              <div className="absolute -bottom-5 -right-3 lg:-right-6 bg-gold rounded-xl p-4 max-w-[230px] shadow-lg">
+                <p className="font-serif text-xs italic text-ink leading-relaxed">
+                  &ldquo;I couldn&apos;t find a single honest guide when I was planning my own trips. So I built the one I wished existed.&rdquo;
+                </p>
+                <p className="text-[0.65rem] font-semibold text-ink mt-2">— Surya Pratap</p>
+              </div>
+            </div>
+
+            {/* Story */}
+            <div className="order-1 lg:order-2">
+              <span className="section-label">My Story</span>
               <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink mb-6 leading-tight">
-                Born from a frustration with
-                <em className="italic text-teal"> generic travel advice</em>
+                I wasted 4 years on trading.
+                <em className="italic text-teal"> Then I built something real.</em>
               </h2>
               <div className="space-y-4 text-sm text-muted font-light leading-[1.85]">
                 <p>
-                  IncredibleItinerary started when we kept seeing the same problem: travellers arriving in India with a plan downloaded from a travel blog, only to find the timings were wrong, the restaurants had closed, and half the "must-see" attractions weren't worth the detour.
+                  From Delhi. 24 years old. I spent four years trying to make trading work —
+                  options, quant models, all of it. It didn&apos;t. But every time I lost a month
+                  to bad trades, I&apos;d book a solo trip to reset.
                 </p>
                 <p>
-                  Generic itineraries are written for no one in particular. They don't know that you travel slowly and hate crowds. They don't know you'd rather spend ₹3,000 on a great meal than ₹8,000 on a palace hotel. They don't know your trip of a lifetime starts in 6 days.
+                  Kedarnath at 3,583m. Gangotri glacier trek in June. Badrinath at night.
+                  The Bhagirathi valley stretching out below you in silence.
+                  These mountains kept me sane when the markets didn&apos;t.
                 </p>
                 <p>
-                  So we built something different — a personal travel planning service where every itinerary is built from scratch, around the actual human who will be travelling. Not a template. Not an algorithm. A plan made by someone who has been to these places, eaten the food, made the mistakes, and knows what's actually worth your time.
+                  When I was planning those trips, I kept hitting the same wall — every
+                  travel blog was vague, outdated, full of sponsored hotel suggestions and
+                  zero real information. Prices from 2019. Timings that were wrong.
+                  &ldquo;5 must-see spots!&rdquo; lists with no context.
+                </p>
+                <p>
+                  So I built the guide I wished existed. Then I built 302 of them.
+                  Every destination I&apos;ve been to, I wrote from personal experience.
+                  Every destination I haven&apos;t, I researched obsessively until the
+                  guide was good enough to be genuinely useful.
                 </p>
                 <p className="font-medium text-ink">
-                  That&apos;s IncredibleItinerary. The world, planned for you.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden aspect-[4/5]">
-                <SmartImage
-                  imageKey="rajasthan"
-                  fallback="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80"
-                  alt="Rajasthan heritage travel"
-                  fill className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              {/* Quote overlay */}
-              <div className="absolute -bottom-5 -left-5 bg-gold rounded-xl p-5 max-w-[260px] shadow-lg">
-                <p className="font-serif text-sm italic text-ink-mid leading-relaxed">
-                  &ldquo;India rewards the traveller who slows down, asks questions, and gets lost on purpose.&rdquo;
-                </p>
-                <p className="text-xs font-medium text-ink-mid mt-2">
-                  — IncredibleItinerary
+                  IncredibleItinerary is entirely solo-built — every guide, every line of code,
+                  every SEO decision. No team. No funding. Just a laptop and a lot of mountain air.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* ── VALUES ── */}
+          {/* ── TRIP GALLERY ── */}
           <div className="mb-20">
             <div className="text-center mb-10">
-              <span className="section-label">What We Stand For</span>
+              <span className="section-label">Where I&apos;ve Been</span>
               <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink">
-                How We Do Things Differently
+                Personal experience behind the guides
+              </h2>
+              <p className="text-sm text-muted font-light mt-3 max-w-[480px] mx-auto">
+                Every India guide I write is backed by having stood there myself — often alone,
+                often with too little gear and too much optimism.
+              </p>
+            </div>
+
+            {/* 3-photo grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                <Image
+                  src="/images/surya/surya-kedarnath-ridge.jpg"
+                  alt="Surya at Kedarnath ridge, October 2022"
+                  fill className="object-cover hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
+                <p className="absolute bottom-4 left-4 text-white font-serif text-base font-light">Kedarnath, 2022</p>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                <Image
+                  src="/images/surya/surya-gangotri-glacier.jpg"
+                  alt="Surya at Gangotri glacier, June 2023"
+                  fill className="object-cover hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
+                <p className="absolute bottom-4 left-4 text-white font-serif text-base font-light">Gangotri Glacier, 2023</p>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                <Image
+                  src="/images/surya/surya-manali-snowsuit.jpg"
+                  alt="Surya in Manali, December 2023"
+                  fill className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
+                <p className="absolute bottom-4 left-4 text-white font-serif text-base font-light">Manali, 2023</p>
+              </div>
+            </div>
+
+            {/* Visited places pills */}
+            <div className="flex flex-wrap gap-2.5 justify-center">
+              {TRIPS.map((t) => (
+                <span key={t.place}
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-parchment-2 rounded-full text-xs text-muted font-light hover:border-gold transition-colors">
+                  <span>{t.emoji}</span>
+                  <span className="font-medium text-ink">{t.place}</span>
+                  <span className="text-muted/60">{t.year}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* ── WHAT I STAND FOR ── */}
+          <div className="mb-20">
+            <div className="text-center mb-10">
+              <span className="section-label">What This Site Is</span>
+              <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink">
+                What makes these guides different
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {values.map((v) => (
+              {[
+                { icon: "💰", title: "Real prices — verified", desc: "Every price I quote I've personally checked or sourced from people who paid it in 2025–2026. No 2019 prices dressed up as current." },
+                { icon: "🗓️", title: "Actual timings", desc: "Opening hours, trek durations, train timings — all verified. If I couldn't verify it, I say so." },
+                { icon: "🚫", title: "Zero sponsored picks", desc: "No hotel or tour paid to be in these guides. I recommend based on quality and value only." },
+                { icon: "🧠", title: "Written for your trip type", desc: "Every guide has separate plans for budget travellers, couples, families, and adventure seekers — not one generic route." },
+                { icon: "📍", title: "The mistakes section", desc: "Every guide has a 'common mistakes' section. The traps. The rip-offs. The things I had to learn the hard way." },
+                { icon: "🔓", title: "Completely free", desc: "302 full guides, no email required, no paywall. If I can help someone plan a better trip — that's the point." },
+              ].map((v) => (
                 <div key={v.title}
                   className="bg-white rounded-xl border border-parchment-2 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
                   <div className="text-2xl mb-3">{v.icon}</div>
-                  <h3 className="font-serif text-base font-normal text-ink mb-2">
-                    {v.title}
-                  </h3>
-                  <p className="text-xs text-muted font-light leading-[1.75]">
-                    {v.desc}
-                  </p>
+                  <h3 className="font-serif text-base font-normal text-ink mb-2">{v.title}</h3>
+                  <p className="text-xs text-muted font-light leading-[1.75]">{v.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ── DESTINATIONS WE COVER ── */}
-          <div className="mb-20">
-            <div className="text-center mb-8">
-              <span className="section-label">Where We Plan</span>
-              <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink">
-                Across 50+ Countries
-              </h2>
-            </div>
-            <div className="flex flex-wrap gap-3 justify-center">
-              {destinations.map((d) => (
-                <span key={d}
-                  className="px-4 py-2 bg-parchment border border-parchment-2 rounded-full text-sm text-muted font-light hover:border-gold hover:text-ink transition-all duration-200">
-                  {d}
-                </span>
-              ))}
-              <span className="px-4 py-2 bg-gold/10 border border-gold/30 rounded-full text-sm text-gold-dark font-medium">
-                + anywhere you want to go
-              </span>
-            </div>
-          </div>
-
-          {/* ── HOW IT WORKS ── */}
-          <div className="mb-20 bg-parchment rounded-2xl p-8 md:p-12">
-            <div className="text-center mb-10">
-              <span className="section-label">The Process</span>
-              <h2 className="font-serif text-[clamp(1.9rem,3vw,2.6rem)] font-light text-ink">
-                From Idea to Itinerary
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {[
-                { num: "01", title: "You tell us your dream", desc: "Share your destinations, travel style, budget, and dates via WhatsApp or the form." },
-                { num: "02", title: "We build your plan", desc: "Our experts craft a bespoke, day-by-day itinerary matched to your exact preferences." },
-                { num: "03", title: "We refine together", desc: "You give feedback. We revise until every detail — hotels, guides, timings — is perfect." },
-                { num: "04", title: "You travel", desc: "Pack your bags. We stay on WhatsApp through your whole trip, every day, for anything you need." },
-              ].map((step) => (
-                <div key={step.num} className="text-center">
-                  <div className="w-12 h-12 rounded-full border border-gold/40 flex items-center justify-center mx-auto mb-4 bg-cream">
-                    <span className="font-serif text-base text-gold-dark">{step.num}</span>
-                  </div>
-                  <h3 className="font-serif text-base font-normal text-ink mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs text-muted font-light leading-relaxed">{step.desc}</p>
+          {/* ── LINKEDIN / CONTACT ── */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+            <div className="bg-parchment rounded-2xl p-8 border border-parchment-2">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-gold/30">
+                  <Image
+                    src="/images/surya/surya-author-primary.jpg"
+                    alt="Surya Pratap"
+                    fill className="object-cover object-top"
+                    sizes="64px"
+                  />
                 </div>
-              ))}
+                <div>
+                  <p className="font-serif text-lg font-light text-ink">Surya Pratap</p>
+                  <p className="text-xs text-muted font-light">Founder, IncredibleItinerary · Delhi</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted font-light leading-relaxed mb-5">
+                I post about building this site in public — traffic growth, SEO experiments,
+                what&apos;s working and what flopped. Follow along if you&apos;re building something too.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/surya-pratap-singh-490a18320"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#0A66C2] text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-[#0A66C2]/90 transition-colors"
+              >
+                Follow on LinkedIn →
+              </a>
+            </div>
+
+            <div className="bg-ink rounded-2xl p-8 text-center flex flex-col justify-center">
+              <h3 className="font-serif text-xl font-light text-white mb-3">
+                Want a custom itinerary?
+              </h3>
+              <p className="text-sm text-white/55 font-light mb-6 leading-relaxed">
+                Tell me where you want to go — I&apos;ll build a personalised day-by-day plan
+                around your exact dates and budget. Free, always.
+              </p>
+              <div className="flex gap-3 justify-center flex-wrap">
+                <button onClick={() => setModalOpen(true)} className="btn-gold">
+                  Plan My Trip →
+                </button>
+                <Link href="/blog"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white text-sm font-light rounded-xl hover:border-gold transition-colors">
+                  Browse Guides
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* ── CTA ── */}
-          <div className="bg-ink rounded-2xl p-10 md:p-14 text-center">
-            <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">
-              Start Planning
-            </span>
-            <h2 className="font-serif text-[clamp(1.8rem,3vw,2.8rem)] font-light text-white mb-4">
-              Ready to See India Properly?
-            </h2>
-            <p className="text-sm text-white/55 font-light mb-8 max-w-[440px] mx-auto leading-relaxed">
-              Tell us where you want to go and we&apos;ll send a personalised
-              itinerary within 24 hours. No templates. No upsells. Just a great
-              plan.
-            </p>
-            <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Trip — Free →
-              </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip →</a>
-              <Link href="/blog"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold-light transition-colors">
-                Read Our Guides
-              </Link>
-            </div>
-          </div>
         </div>
       </main>
 

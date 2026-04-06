@@ -126,6 +126,7 @@ export default function Footer() {
               {[
                 { label: "About Us", href: "/about" },
                 { label: "Contact", href: "/contact" },
+                { label: "Share Your Photos", href: "/contribute" },
                 { label: "Privacy Policy", href: "/privacy" },
                 { label: "Terms of Use", href: "/terms" },
               ].map((item) => (

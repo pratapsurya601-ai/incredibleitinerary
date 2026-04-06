@@ -14,6 +14,8 @@ import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 import InlineCTA from "@/components/blog/InlineCTA";
 import InlineSignup from "@/components/email/InlineSignup";
+import PhotoCta from "@/components/blog/PhotoCta";
+import AuthorByline from "@/components/blog/AuthorByline";
 import { AFFILIATE } from "@/lib/config";
 
 /* ── Types ─────────────────────────────────────────────────────────────── */
@@ -279,10 +281,21 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
               </p>
             </div>
           </div>
+
+          {/* Hero photo credit */}
+          <span className="absolute bottom-2 right-3 text-[10px] text-white/35 font-light">
+            📸 Photo via Pexels ·{" "}
+            <a href="/contribute" className="underline hover:text-white/60 transition-colors">
+              Share yours
+            </a>
+          </span>
         </div>
 
         {/* ── ARTICLE BODY ── */}
         <div className="max-w-[860px] mx-auto px-6 md:px-8 pt-10 pb-20">
+
+          {/* Author byline */}
+          <AuthorByline date={data.date} readTime={data.readTime} />
 
           {/* Share + meta row */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-8 border-b border-parchment-2">
@@ -478,6 +491,7 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
           />
           <CombineWith currentSlug={data.slug} />
           <RelatedGuides currentSlug={data.slug} />
+          <PhotoCta destination={data.destination} />
           <Comments />
         </div>
       </main>
