@@ -70,9 +70,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         { "@type": "Question", "name": "How many days are enough for Seville?", "acceptedAnswer": { "@type": "Answer", "text": "3 days is perfect. Covers the Alcazar, Cathedral, Plaza de Espana, Triana, and a flamenco show. 2 days is rushed. 4+ lets you add Cordoba or Ronda day trips." } },
         { "@type": "Question", "name": "How much does a 3-day Seville trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: EUR 40-70/day ($43-76 USD). Comfortable: EUR 80-150/day ($86-162 USD). Seville is one of the cheapest major cities in Western Europe." } },
         { "@type": "Question", "name": "Do I need a visa for Spain?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need a Schengen visa (EUR 80, apply at BLS/VFS 3 months ahead). US, UK, AU, CA citizens visit visa-free for 90 days within 180 days." } },

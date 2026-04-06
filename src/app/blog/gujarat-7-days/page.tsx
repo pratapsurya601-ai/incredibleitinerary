@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import GujaratClient from "./GujaratClient";
 
 export const metadata: Metadata = {
-  title: "Gujarat 7-Day Itinerary 2026: Trip Planner"s Most Underrated State (Budget to Premium, 2026)",
+  title: "Gujarat 7-Day Itinerary 2026: India's Most Underrated State (Budget to Premium, 2026)",
   description:
     "Plan your Gujarat trip in 7 days. The complete Gujarat itinerary — Ahmedabad, Rann of Kutch, Gir National Park, Somnath & Diu with real budgets, timings,.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "gujarat budget travel",
   ],
   openGraph: {
-    title: "Gujarat 7-Day Itinerary 2026: Trip Planner"s Most Underrated State (Budget to Premium, 2026)",
+    title: "Gujarat 7-Day Itinerary 2026: India's Most Underrated State (Budget to Premium, 2026)",
     description:
       "Ahmedabad · Kutch · Gir · Somnath · Diu — 3 plans, real budgets, day-by-day routes.",
     images: [
@@ -98,9 +98,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question",
           "name": "How many days are enough for Gujarat?",

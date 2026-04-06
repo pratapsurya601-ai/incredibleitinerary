@@ -70,9 +70,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         { "@type": "Question", "name": "How many days are enough for Muscat?", "acceptedAnswer": { "@type": "Answer", "text": "3 days covers the city, a wadi day trip, and the coastline perfectly. 5 days lets you add Nizwa, Jebel Akhdar, and the Wahiba Sands desert." } },
         { "@type": "Question", "name": "How much does a 3-day Muscat trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: OMR 20-40/day ($52-104 USD). Comfortable: OMR 40-80/day ($104-208 USD). Oman is more affordable than Dubai for most travellers." } },
         { "@type": "Question", "name": "Do I need a visa for Oman?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need an Oman e-visa (apply online, OMR 20/$52, 1-3 days processing). US, UK, EU citizens can get visa-on-arrival (OMR 20, 30 days). A UAE visa does NOT cover Oman." } },

@@ -65,9 +65,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         { "@type": "Question", "name": "Is Kashmir safe to visit in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Kashmir has been welcoming tourists in large numbers since 2019. The main tourist areas (Srinagar, Gulmarg, Pahalgam, Sonamarg) are safe and well-patrolled. Over 2 crore tourists visited Kashmir in 2023-24, a record high. Exercise normal travel precautions and stay updated via local advisories." } },
         { "@type": "Question", "name": "What is the best time to visit Kashmir?", "acceptedAnswer": { "@type": "Answer", "text": "Kashmir has two peak seasons: April-June (spring flowers, green valleys, mild weather 15-25°C) and December-February (snow in Gulmarg and Pahalgam, skiing). September-October is the best overall — post-monsoon clarity, golden chinar trees, fewer crowds. July-August is monsoon season — avoid for outdoor activities." } },
         { "@type": "Question", "name": "How much does a Dal Lake houseboat cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget houseboats start at Rs.1,500-Rs.2,500/night including breakfast. Mid-range heritage houseboats cost Rs.3,500-Rs.6,000/night with all meals. Luxury category (5-star rated) run Rs.8,000-Rs.20,000/night. Always inspect the houseboat before paying — photos online are often misleading." } },

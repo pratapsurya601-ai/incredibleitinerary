@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MajuliClient from "./MajuliClient";
 
 export const metadata: Metadata = {
-  title: "Majuli Island 3-Day Itinerary 2026: Trip Planner"s Largest River Island Before It Disappears (2026)",
+  title: "Majuli Island 3-Day Itinerary 2026: World's Largest River Island Before It Disappears (2026)",
   description:
     "2 complete Majuli plans — Budget and Cultural Immersion — with ferry timings, Satra visits, Mishing villages, mask-making, pottery and real costs.",
   keywords: [
@@ -123,9 +123,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question",
           "name": "How do I reach Majuli Island?",

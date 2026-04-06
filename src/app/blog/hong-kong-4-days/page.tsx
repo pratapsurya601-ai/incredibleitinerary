@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Hong Kong budget travel",
   ],
   openGraph: {
-    title: "Hong Kong 4-Day Itinerary 2026: Trip Planner"s Greatest Skyline",
+    title: "Hong Kong 4-Day Itinerary 2026: Asia's Greatest Skyline",
     description:
       "The most vertical city on Earth — 8 million people, the highest concentration of skyscrapers in the world, dim sum at 6am, and a harbour skyline that lights up every night. The complete Hong Kong guide.",
     url: "https://www.incredibleitinerary.com/blog/hong-kong-4-days",

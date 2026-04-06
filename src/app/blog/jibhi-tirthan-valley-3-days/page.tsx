@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JibhiClient from "./JibhiClient";
 
 export const metadata: Metadata = {
-  title: "Jibhi & Tirthan Valley 3-Day Itinerary 2026: Trip Planner"s Hidden Gem (2026 Guide)",
+  title: "Jibhi & Tirthan Valley 3-Day Itinerary 2026: Himachal's Hidden Gem (2026 Guide)",
   description:
     "Plan your Jibhi & Tirthan Valley trip in 3 days. Complete Jibhi and Tirthan Valley travel guide — Great Himalayan National Park, Jalori Pass, Serolsar.",
   keywords: [
@@ -121,9 +121,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question",
           "name": "How to reach Jibhi from Delhi?",

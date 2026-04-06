@@ -72,9 +72,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         { "@type": "Question", "name": "What is the best time to visit Manali?", "acceptedAnswer": { "@type": "Answer", "text": "December to February for snow (Solang Valley and Rohtang get heavy snowfall). March to June for pleasant weather and Rohtang Pass access. July to September is monsoon — landslides on the highway, Rohtang closed. October to November is off-season but beautiful — golden trees, fewer crowds, cold nights." } },
         { "@type": "Question", "name": "How do I get to Manali?", "acceptedAnswer": { "@type": "Answer", "text": "By bus: Volvo AC bus from Delhi (14–16hrs, Rs.900–Rs.1,800). Best value option — leaves Kashmere Gate ISBT at 5–7pm, arrives Manali early morning. By car: Delhi to Manali is 540km (10–12hrs). By air: nearest airport is Bhuntar (Kullu), 50km from Manali. Flights from Delhi 1hr but expensive and weather-dependent." } },
         { "@type": "Question", "name": "Is Rohtang Pass permit required?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — all vehicles need an online permit to cross Rohtang Pass (3,978m). Book at rohtangpermit.com at least 1 day in advance. Only 1,200 vehicles allowed per day. Cost: Rs.550 for petrol vehicles, Rs.650 for diesel. The permit must match your vehicle's registration. Rohtang is closed during heavy snowfall and July–August monsoon." } },

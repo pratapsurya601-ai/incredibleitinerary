@@ -70,9 +70,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         { "@type": "Question", "name": "How many days are enough for Madrid?", "acceptedAnswer": { "@type": "Answer", "text": "3 days is ideal. Covers the Prado, Royal Palace, Retiro Park, and neighbourhood exploration. 4-5 days lets you add Toledo and deeper museum visits." } },
         { "@type": "Question", "name": "How much does a 3-day Madrid trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: EUR 45-80/day ($49-86 USD). Comfortable: EUR 90-170/day ($97-184 USD). Madrid is one of the most affordable Western European capitals." } },
         { "@type": "Question", "name": "Do I need a visa for Spain?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need a Schengen visa (EUR 80 fee, apply at BLS/VFS 3 months ahead). US, UK, AU, CA citizens visit visa-free for 90 days within 180 days." } },

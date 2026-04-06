@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Auli 3-Day Itinerary 2026: Trip Planner"s Best Skiing Destination (2026)",
+    title: "Auli 3-Day Itinerary 2026: India's Best Skiing Destination (2026)",
     description: "3 plans, real costs, cable car guide, Gorson Bugyal trek, skiing tips.",
     images: ["https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1200&q=80"],
   },
@@ -124,9 +124,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question",
           "name": "What is the best time to visit Auli?",

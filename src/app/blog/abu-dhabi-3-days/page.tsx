@@ -90,9 +90,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         { "@type": "Question", "name": "How many days are enough for Abu Dhabi?", "acceptedAnswer": { "@type": "Answer", "text": "3 days is ideal for Abu Dhabi. You can cover Sheikh Zayed Mosque, Louvre, Yas Island, and the Corniche without rushing. 2 days as a Dubai day-extension is possible but tight." } },
         { "@type": "Question", "name": "How much does a 3-day Abu Dhabi trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: AED 250-450/day ($68-123 USD). Comfortable: AED 500-1000/day ($136-272 USD). This includes accommodation, food, transport and activities." } },
         { "@type": "Question", "name": "Do I need a visa for Abu Dhabi?", "acceptedAnswer": { "@type": "Answer", "text": "Same as Dubai. Indian passport holders need a UAE visa (apply online, AED 350-500). US, UK, EU, AU, CA citizens get visa-on-arrival for 30 days free." } },

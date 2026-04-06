@@ -128,8 +128,9 @@ export default function Comments() {
 
     ref.current.appendChild(script);
 
+    const container = ref.current;
     return () => {
-      if (ref.current) ref.current.innerHTML = "";
+      if (container) container.innerHTML = "";
     };
   }, [pathname]);
 

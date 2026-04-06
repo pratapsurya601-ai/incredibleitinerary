@@ -88,6 +88,7 @@ export default function DestinationGallery({
             </div>
           ) : activePhoto ? (
             <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={activePhoto.url}
                 alt={activePhoto.alt}
@@ -146,6 +147,7 @@ export default function DestinationGallery({
               style={{ width: "120px", height: "80px" }}
             >
               {photo ? (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={photo.url}
                   alt={spot.name}

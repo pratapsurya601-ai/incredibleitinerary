@@ -70,9 +70,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question", "name": "How many days are enough for Andaman?",
           "acceptedAnswer": { "@type": "Answer", "text": "5 days is ideal — 1 day Port Blair, 2 days Havelock, 1 day Neil Island, 1 day return via Port Blair. 7 days lets you add Baratang Island (limestone caves) or do more diving. 3 days is the absolute minimum but very rushed." }

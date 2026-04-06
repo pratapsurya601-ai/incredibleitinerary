@@ -76,9 +76,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question", "name": "How many days for the Golden Triangle?",
           "acceptedAnswer": { "@type": "Answer", "text": "7 days is ideal for the Golden Triangle — 2-3 days in Delhi, 1-2 days in Agra, and 2-3 days in Jaipur. 5 days is the minimum if you're short on time. 10 days lets you add Fatehpur Sikri, Mathura, Pushkar and a slower pace." }

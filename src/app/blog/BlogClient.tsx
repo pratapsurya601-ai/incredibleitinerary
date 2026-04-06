@@ -292,6 +292,7 @@ export default function BlogClient() {
                       className="flex items-center gap-3 px-4 py-2.5 hover:bg-parchment transition-colors group"
                     >
                       <div className="relative w-11 h-11 rounded-xl overflow-hidden flex-shrink-0 bg-parchment-2">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={`${post.image.split("?")[0]}?w=100&q=60`}
                           alt={post.destination}

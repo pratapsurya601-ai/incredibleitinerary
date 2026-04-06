@@ -337,9 +337,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      mainEntity: [
+  "@type": "FAQPage",
+  mainEntity: [
         {
           "@type": "Question",
           name: "Is Mont Saint-Michel worth visiting?",

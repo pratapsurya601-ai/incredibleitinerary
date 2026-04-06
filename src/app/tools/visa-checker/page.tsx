@@ -3,7 +3,7 @@ import VisaCheckerClient from "./VisaCheckerClient";
 
 export const metadata: Metadata = {
   title:
-    "Visa Checker — Check Visa Requirements for Any Country | IncredibleItinerary",
+    "Visa Requirements Checker — Any Passport, Any Country",
   description:
     "Instantly check visa requirements for any destination. Find out if you need a visa, eVisa, or can travel visa-free — with cost estimates, processing times and key requirements.",
   keywords: [

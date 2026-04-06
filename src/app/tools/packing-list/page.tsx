@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PackingListClient from "./PackingListClient";
 
 export const metadata: Metadata = {
-  title: "Free Packing List Generator 2026 — Customize for Any Trip | IncredibleItinerary",
+  title: "Free Packing List Generator 2026 — Any Trip, Any Style",
   description:
     "Generate a customized travel packing list for any destination, duration, and travel style. Printable, checkable, and completely free.",
   keywords: [

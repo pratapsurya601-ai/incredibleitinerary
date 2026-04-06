@@ -124,7 +124,7 @@ export default function AboutClient() {
                   &ldquo;5 must-see spots!&rdquo; lists with no context.
                 </p>
                 <p>
-                  So I built the guide I wished existed. Then I built 302 of them.
+                  So I built the guide I wished existed. Then I built 305 of them.
                   Every destination I&apos;ve been to, I wrote from personal experience.
                   Every destination I haven&apos;t, I researched obsessively until the
                   guide was good enough to be genuinely useful.
@@ -212,7 +212,7 @@ export default function AboutClient() {
                 { icon: "🚫", title: "Zero sponsored picks", desc: "No hotel or tour paid to be in these guides. I recommend based on quality and value only." },
                 { icon: "🧠", title: "Written for your trip type", desc: "Every guide has separate plans for budget travellers, couples, families, and adventure seekers — not one generic route." },
                 { icon: "📍", title: "The mistakes section", desc: "Every guide has a 'common mistakes' section. The traps. The rip-offs. The things I had to learn the hard way." },
-                { icon: "🔓", title: "Completely free", desc: "302 full guides, no email required, no paywall. If I can help someone plan a better trip — that's the point." },
+                { icon: "🔓", title: "Completely free", desc: "305 full guides, no email required, no paywall. If I can help someone plan a better trip — that's the point." },
               ].map((v) => (
                 <div key={v.title}
                   className="bg-white rounded-xl border border-parchment-2 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">

@@ -75,9 +75,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question", "name": "How many days are enough for Kerala?",
           "acceptedAnswer": { "@type": "Answer", "text": "5 days is the minimum to cover the best of Kerala — Kochi, Munnar, and the Alleppey backwaters. 7 days lets you add Varkala beach. 10 days allows for Thekkady wildlife, Kovalam and a truly relaxed pace." }

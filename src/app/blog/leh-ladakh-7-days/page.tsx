@@ -72,9 +72,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question", "name": "How many days do you need for Leh Ladakh?",
           "acceptedAnswer": { "@type": "Answer", "text": "7 days minimum — 2 days acclimatisation in Leh, 2 days Nubra Valley, 2 days Pangong Lake, 1 day return. 10 days is ideal and lets you add Tso Moriri, Zanskar Valley or the Sham Valley trek. Never rush acclimatisation — altitude sickness at 3,500m is serious." }

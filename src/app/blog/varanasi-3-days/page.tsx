@@ -65,9 +65,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         { "@type": "Question", "name": "Is Varanasi safe for tourists?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Varanasi is safe for tourists with normal precautions. The ghats are busy and well-populated at all hours. Watch your belongings in crowded areas. Avoid isolated alleys at night. The main tourist areas (ghats, Vishwanath Gali, Assi Ghat) are safe and well-patrolled." } },
         { "@type": "Question", "name": "What time is the Ganga Aarti in Varanasi?", "acceptedAnswer": { "@type": "Answer", "text": "The evening Ganga Aarti at Dashashwamedh Ghat happens at sunset — approximately 6:30pm in winter and 7pm in summer. Arrive 30–45 minutes early for a good spot. The ceremony lasts 45 minutes. There is also a smaller morning aarti at sunrise which is far less crowded." } },
         { "@type": "Question", "name": "How do I get to Varanasi?", "acceptedAnswer": { "@type": "Answer", "text": "By train: Varanasi Junction (BSB) has direct trains from Delhi (8–12hrs, Rs.500–Rs.1,500), Mumbai (22hrs) and Kolkata (12hrs). The Vande Bharat Express from Delhi is the fastest (8hrs). By air: Lal Bahadur Shastri International Airport (VNS) has flights from Delhi (1hr 20min), Mumbai (2hrs), Bangalore (2.5hrs)." } },

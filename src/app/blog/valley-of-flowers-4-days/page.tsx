@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Valley of Flowers 4-Day Itinerary 2026: Trip Planner"s UNESCO Wildflower Trek (2026)",
+    title: "Valley of Flowers 4-Day Itinerary 2026: Uttarakhand's UNESCO Wildflower Trek (2026)",
     description: "3 plans, real costs, Govindghat trek route, Hemkund Sahib, 600+ species guide.",
     images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"],
   },
@@ -126,9 +126,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         {
           "@type": "Question",
           "name": "What is the best time to visit Valley of Flowers?",

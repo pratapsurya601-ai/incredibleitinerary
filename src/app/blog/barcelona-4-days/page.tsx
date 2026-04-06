@@ -70,9 +70,8 @@ const jsonLd = {
 // Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
-  
-      "@type": "FAQPage",
-      "mainEntity": [
+  "@type": "FAQPage",
+  "mainEntity": [
         { "@type": "Question", "name": "How many days are enough for Barcelona?", "acceptedAnswer": { "@type": "Answer", "text": "4 days is ideal. You can cover Sagrada Familia, Park Guell, Gothic Quarter, Barceloneta Beach, and Montjuic plus a day trip. 3 days is possible but rushed. 5+ days lets you explore neighbourhoods deeply." } },
         { "@type": "Question", "name": "How much does a 4-day Barcelona trip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Budget: 50-90 EUR/day ($54-97 USD). Mid-range: 100-180 EUR/day ($108-194 USD). Luxury: 250+ EUR/day ($270+ USD). Includes accommodation, food, transport and activities." } },
         { "@type": "Question", "name": "Do I need a visa for Spain?", "acceptedAnswer": { "@type": "Answer", "text": "Indian passport holders need a Schengen visa (apply at BLS/VFS, EUR 80 fee, 15 working days). US, UK, AU, CA citizens visit visa-free for 90 days within 180 days." } },

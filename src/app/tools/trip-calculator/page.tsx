@@ -3,7 +3,7 @@ import TripCalculatorClient from "./TripCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Trip Cost Calculator — Estimate Your Travel Budget | IncredibleItinerary",
+    "Trip Cost Calculator — Estimate Your Travel Budget",
   description:
     "Free trip cost calculator for India, Thailand, Japan & Italy. Instantly estimate accommodation, food, transport & activity costs across Budget, Mid-Range and Luxury tiers.",
   keywords: [
