@@ -59,6 +59,11 @@ function welcomeEmail(email: string, name: string | undefined) {
     from: "IncredibleItinerary <hello@incredibleitinerary.com>",
     to: [email],
     reply_to: YOUR_EMAIL,
+    headers: {
+      "List-Unsubscribe": `<mailto:hello@incredibleitinerary.com?subject=Unsubscribe&body=Please%20unsubscribe%20${encodeURIComponent(email)}>, <${BASE}/privacy>`,
+      "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      "Precedence": "bulk",
+    },
     subject: `Your free India travel guides are here 🧭`,
     html: `<!DOCTYPE html>
 <html lang="en">
