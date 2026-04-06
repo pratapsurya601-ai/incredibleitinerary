@@ -114,7 +114,7 @@ export default function ExitIntentPopup() {
     };
     document.addEventListener('mouseleave', onMouseLeave);
     window.addEventListener('scroll', onScroll, { passive: true });
-    const timer = setTimeout(openPopup, 45_000);
+    const timer = setTimeout(openPopup, 20_000);
     return () => {
       document.removeEventListener('mouseleave', onMouseLeave);
       window.removeEventListener('scroll', onScroll);
