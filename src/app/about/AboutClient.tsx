@@ -62,7 +62,7 @@ export default function AboutClient() {
           <div className="max-w-[1180px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { num: `${blogPosts.length}+`, label: "Free Guides Written" },
-              { num: "12+",  label: "Places Personally Visited" },
+              { num: "20+",  label: "Places Personally Visited" },
               { num: "24",   label: "Years Old" },
               { num: "100%", label: "Solo Built" },
             ].map((s) => (
@@ -146,9 +146,10 @@ export default function AboutClient() {
               <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink">
                 Personal experience behind the guides
               </h2>
-              <p className="text-sm text-muted font-light mt-3 max-w-[480px] mx-auto">
-                Every India guide I write is backed by having stood there myself — often alone,
-                often with too little gear and too much optimism.
+              <p className="text-sm text-muted font-light mt-3 max-w-[520px] mx-auto leading-relaxed">
+                The India guides are rooted in personal visits — often solo, often underprepared, always memorable.
+                For the 307 guides total, deep research and AI-assisted structuring fills the gaps
+                so every itinerary is just as detailed, whether I&apos;ve been there or not.
               </p>
             </div>
 
@@ -196,7 +197,16 @@ export default function AboutClient() {
                   <span className="text-muted/60">{t.year}</span>
                 </span>
               ))}
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-gold/10 border border-gold/40 rounded-full text-xs font-medium text-gold-dark hover:border-gold transition-colors">
+                <span>🗺️</span>
+                <span>& many more across India</span>
+              </span>
             </div>
+            <p className="text-center text-xs text-muted/60 font-light mt-5 max-w-[520px] mx-auto leading-relaxed">
+              The India guides are built from personal visits. For international destinations — Japan, Paris, Dubai, New York —
+              I combine deep research, local sources, and AI-assisted structuring to create guides that are just as detailed.
+              Every fact is verified. Every price is current.
+            </p>
           </div>
 
           {/* ── WHAT I STAND FOR ── */}
