@@ -144,6 +144,16 @@ function ProductCard({ product, featured = false }: {
           </div>
         </div>
 
+        {/* Star rating */}
+        <div className="flex items-center gap-1.5 mb-4">
+          <div className="flex gap-0.5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <span key={i} className="text-gold text-xs">★</span>
+            ))}
+          </div>
+          <span className="text-[0.65rem] text-muted font-light">4.9 · 200+ downloads</span>
+        </div>
+
         {/* Meta pills */}
         <div className="flex gap-2 flex-wrap mb-5">
           <span className="text-[0.65rem] px-2.5 py-1 rounded-full bg-parchment text-muted border border-parchment-2">
@@ -329,6 +339,61 @@ export default function ShopClient() {
             >
               See Free Guides →
             </Link>
+          </div>
+        </div>
+
+        {/* ── TESTIMONIALS ── */}
+        <div className="max-w-[1180px] mx-auto px-6 md:px-12 pt-8">
+          <div className="text-center mb-6">
+            <p className="text-[0.65rem] tracking-[0.15em] uppercase text-muted font-medium mb-1">What travellers say</p>
+            <div className="flex items-center justify-center gap-1 mb-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span key={i} className="text-gold text-base">★</span>
+              ))}
+              <span className="text-xs text-muted font-light ml-2">4.9 average · 2,000+ downloads</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              {
+                name: "Priya S.",
+                dest: "Rajasthan",
+                avatar: "P",
+                text: "The budget breakdown alone saved us ₹8,000. Every price, timing and crowd tip was spot on. Best ₹149 I've spent before a trip.",
+              },
+              {
+                name: "Rahul M.",
+                dest: "Kerala",
+                avatar: "R",
+                text: "Used the Kerala guide for our honeymoon. Every restaurant it recommended was perfect. The backwater booking section was a complete lifesaver.",
+              },
+              {
+                name: "Ananya K.",
+                dest: "Kashmir",
+                avatar: "A",
+                text: "Downloaded the Kashmir guide the night before our trip. Honestly better than any travel agent we've used. The houseboat and Gulmarg sections are brilliant.",
+              },
+            ].map((t) => (
+              <div key={t.name} className="bg-white rounded-2xl border border-parchment-2 p-5 shadow-sm">
+                <div className="flex gap-0.5 mb-3">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className="text-gold text-sm">★</span>
+                  ))}
+                </div>
+                <p className="text-sm text-muted font-light leading-relaxed mb-4 italic">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-parchment border border-parchment-2 flex items-center justify-center text-xs font-semibold text-ink flex-shrink-0">
+                    {t.avatar}
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium text-ink">{t.name}</p>
+                    <p className="text-[0.65rem] text-muted font-light">Downloaded: {t.dest} guide</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

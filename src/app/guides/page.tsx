@@ -60,7 +60,7 @@ const AVAILABLE = [
     emoji: "🇮🇳",
     pages: 11,
     includes: ["₹3k/day formula", "8-city budget table", "Scam guide", "Best apps & transport tips"],
-    href: "/blog",
+    href: "/blog/india-budget-guide",
     country: "India",
     price: "₹99",
   },

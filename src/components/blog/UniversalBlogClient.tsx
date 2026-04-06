@@ -125,6 +125,7 @@ function ShareBar({ title }: { title: string }) {
       {[
         { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=${encodeURIComponent(title)}&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
         { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+        { label: "WhatsApp", color: "bg-[#25D366] text-white", href: `https://wa.me/?text=${encodeURIComponent(title + " — " + (typeof window !== "undefined" ? window.location.href : ""))}` },
       ].map((s) => (
         <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
           className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>
