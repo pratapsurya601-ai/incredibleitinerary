@@ -74,9 +74,7 @@ const REGIONS = {
 };
 
 const SOCIAL_LINKS = [
-  { icon: "📷", href: SITE_CONFIG.instagram, label: "Instagram" },
-  { icon: "f",  href: SITE_CONFIG.facebook,  label: "Facebook" },
-  { icon: "▶",  href: SITE_CONFIG.youtube,   label: "YouTube" },
+  { icon: "in", href: SITE_CONFIG.linkedin, label: "LinkedIn" },
 ];
 
 export default function Footer() {

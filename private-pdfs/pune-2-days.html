@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pune 2 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0f766e;--primary-light:#0d9488;--primary-dark:#115e59;
+  --accent:#2dd4bf;--accent-light:#99f6e4;
+  --ink:#042f2e;--cream:#f0fdfa;--parchment:#ccfbf1;
+  --white:#ffffff;--muted:#0f5450;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,47,46,0.97) 0%,rgba(4,47,46,0.6) 50%,rgba(4,47,46,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#2dd4bf;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(15,118,110,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(15,118,110,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(15,118,110,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(15,118,110,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(45,212,191,0.08),rgba(45,212,191,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#2dd4bf;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#2dd4bf;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(15,118,110,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.teal{background:rgba(45,212,191,0.08);border:1px solid rgba(45,212,191,0.25);color:#115e59}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(15,118,110,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(15,118,110,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(15,118,110,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(15,118,110,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(15,118,110,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/2808440/pexels-photo-2808440.jpeg?w=1200&q=80" alt="Pune city Maharashtra"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Pune<br/><em>in 2 Days</em></h1>
+    <p class="cover-sub">The Oxford of the East — Peshwa palaces, Sinhagad's sunrise trek, Kayani's shrewsbury biscuits, and one of India's most vibrant cities</p>
+    <div class="cover-pills">
+      <span class="pill">🏛️ 2 Days</span>
+      <span class="pill">📚 Oxford of the East</span>
+      <span class="pill">💰 ₹3,000–₹10,000</span>
+      <span class="pill">🌤️ Oct–Feb</span>
+      <span class="pill">🏯 Shaniwar Wada</span>
+      <span class="pill">🌙 Pune Nightlife</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(15,118,110,0.3);border:1px solid rgba(45,212,191,0.4);color:#2dd4bf;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Pune 2-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Peshwa History, Student Culture &amp; Weekend Escapes</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">2 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏯</div><span class="stat-val">1736 CE</span><span class="stat-label">Shaniwar Wada Built</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹3k–10k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Feb</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop light">Pune Station / Airport</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Shaniwar Wada</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Sinhagad Fort</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Aga Khan Palace</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Koregaon Park</span>
+    <span class="route-sub">Fly into Pune (PNQ) · 2hrs from Mumbai by road · Shatabdi train from Mumbai</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 Morning</div>
+      <div class="city-name">🏯 Shaniwar Wada</div>
+      <div class="city-desc">The seat of the Peshwa (Prime Ministers of the Maratha Empire) from 1732. The original seven-storey palace burned down in 1828 — only the massive fortification walls and towers remain. But the scale is extraordinary — the Dilli Darwaza (main gate) is fitted with iron spikes to prevent elephant attacks. Evening Sound and Light Show (₹50) dramatically narrates Peshwa history.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 1 Evening</div>
+      <div class="city-name">🍪 Koregaon Park &amp; Kayani Bakery</div>
+      <div class="city-desc">Koregaon Park is Pune's hippest neighbourhood — tree-lined streets, boutique restaurants, expat cafes, and the Osho International Meditation Resort (formerly Rajneesh Ashram). Kayani Bakery (established 1955) is an Irani cafe on MG Road — the queue for their shrewsbury biscuits (buttery, crumbly, legendary) begins before the shop opens. Arrive 15 minutes before opening time.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 Dawn</div>
+      <div class="city-name">🌅 Sinhagad Fort</div>
+      <div class="city-desc">Sinhagad (Lion's Fort, 25km from Pune) — the site of the Battle of Sinhagad (1670) where Tanaji Malusare scaled the cliff face at night to capture the fort from the Mughal garrison (sacrificing his life in the process). One of the most important battles in Maratha history. The sunrise trek (5am jeep + 30-min walk) is magnificent. Free entry. Famous for the bhakri, pithla, and zunka local food served at the fort.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 Afternoon</div>
+      <div class="city-name">🕊️ Aga Khan Palace</div>
+      <div class="city-desc">Built by Sultan Muhammad Shah Aga Khan III in 1892. Gandhi, Kasturba Gandhi, and Sarojini Naidu were imprisoned here by the British from 1942–44 during the Quit India Movement. Kasturba Gandhi died here. Her samadhi (memorial) and Mahadev Desai's (Gandhi's secretary) are in the garden. The palace is one of the most emotionally significant freedom struggle sites in Maharashtra. ₹300 entry.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Pune has been the intellectual capital of Maharashtra for 300 years. The Peshwas built it. The British educated it. The students own it. The food is extraordinary."</p>
+  </div>
+
+  <div class="highlight-box teal">
+    <strong>How to Reach:</strong> From Mumbai — Deccan Queen / Shatabdi Express (2hrs, ₹150–₹600 depending on class, runs daily) or Pune Expressway by road (2–2.5hrs). Pune Airport (PNQ) has direct flights from Delhi, Bengaluru, Hyderabad, Chennai, Kolkata. The city is very well connected. Pune has its own Metro but it's still being expanded — Ola/Uber or autorickshaws for most sights.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Pune 2-Day Itinerary</span>
+    <span class="page-header-right">Day-by-Day Plan</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Peshwa History &amp; City Life</div>
+      <div class="day-title">Shaniwar Wada, Dagdusheth &amp; Koregaon Park</div>
+      <div class="day-sub">Shaniwar Wada · Dagdusheth Ganpati · Laxmi Road shopping · Kayani Bakery · Koregaon Park cafes · Evening Sound &amp; Light</div>
+      <div class="day-cost">💰 Shaniwar Wada: ₹25 · Kayani biscuits: ₹200–₹400 box · Sound &amp; Light: ₹50</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Shaniwar Wada — The Peshwa Palace</div>
+        <div class="time-desc">Shaniwar Wada (₹25 entry) is the physical embodiment of Maratha power. The massive fortified walls (built 1736 CE) survive in remarkable condition — the Dilli Darwaza (main gate, iron-spiked for elephant-resistance), Mastani Darwaza (named after Peshwa Bajirao I's legendary lover Mastani — their tragic love story is well-known), and the Khidki Darwaza (window gate). Inside the walls, only foundations remain of the original palace, but the space is enormous — 625,000 sq ft. A guide (₹100–₹150) helps bring the history to life.</div>
+        <div class="time-price">Entry: ₹25 · Guide: ₹100–₹150 · Sound &amp; Light Show (evening): ₹50 · Open 8am–6:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Dagdusheth Halwai Ganpati Temple</div>
+        <div class="time-desc">One of the most famous Ganesh temples in India — the idol is believed to be over 125 years old. Dagdusheth was a famous halwai (sweet maker) who built this temple after losing his child to plague. The temple now runs extensive charitable activities. The Ganesh idol is adorned with gold and silver ornaments worth crores. During Ganesh Chaturthi (August–September), this temple draws millions. Year-round, it's a living, breathing devotional space in the heart of old Pune.</div>
+        <div class="time-price">Entry: free · Prasad: ₹20–₹50 · Morning and evening aartis are most atmospheric</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Misal Pav — The Ultimate Pune Breakfast/Lunch</div>
+        <div class="time-desc">Misal pav is Pune's signature dish — a spicy sprouted moth bean curry with crispy farsan (crunchy toppings), served with pav (dinner rolls). Every Puneri has their favourite misal spot. The most famous: Bedekar Misal (Narayan Peth — they've been making it since 1923, very spicy), Ramnath (Gokhale Nagar — milder, family friendly). The level of spice is genuinely fierce — ask for "medium" if you're heat-sensitive. Cost: ₹80–₹120 for a full meal with chai.</div>
+        <div class="time-price">Misal pav: ₹80–₹120 · Full meal with chai · Bedekar (Narayan Peth) or Ramnath (Gokhale Nagar)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Laxmi Road — Traditional Pune Shopping</div>
+        <div class="time-desc">Laxmi Road (near Shaniwar Wada) is Pune's traditional shopping district — Paithani sarees (silk with zari borders, ₹3,000–₹50,000), Kolhapuri chappals (hand-stitched leather sandals, ₹500–₹2,000, unique to Maharashtra — best bought in Pune), traditional jewellery, bangles, and Punekar speciality foods. The street becomes particularly vibrant in the evening with hawkers and streetfood stalls. Also try Chitale Bandhu's kharvas (a traditional milk sweet, ₹40/piece) — an institution since 1950.</div>
+        <div class="time-price">Paithani sarees: ₹3,000–₹50,000 · Kolhapuri chappals: ₹500–₹2,000 · Kharvas: ₹40</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">4:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Kayani Bakery — Shrewsbury Biscuits &amp; Mawa Cakes</div>
+        <div class="time-desc">Kayani Bakery (MG Road, Est. 1955) is a Pune institution. The famous shrewsbury biscuits (large, buttery, crumbly cookies with a slight vanilla-lemon flavour) have a queue that starts before the shop opens. Limit of 1–2 boxes per person during busy periods. Also: mawa cakes (small sponge cakes with dried milk base — rich and moist), raspberry cream rolls, and Irani chai (brewed in the back). This is one of India's genuinely legendary bakeries.</div>
+        <div class="time-price">Shrewsbury biscuits: ₹400–₹600/box · Mawa cakes: ₹50 each · Queue before 4pm or 9am opening</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Koregaon Park — Cafe Culture &amp; Nightlife</div>
+        <div class="time-desc">Koregaon Park is Pune's most cosmopolitan neighbourhood — wide tree-lined streets (a rarity in Indian cities), excellent restaurants (Malaka Spice, Little Italy, BBC — Barista Brewhouse Cafe), wine bars, live music venues, and the Osho International Meditation Resort campus (visit during the day — meditation centre, bookshop, and pleasant grounds). This is where Pune's enormous student and young professional population spends its evenings. Pune nightlife is genuine and vibrant — this is the starting point.</div>
+        <div class="time-price">Dinner in Koregaon Park: ₹400–₹1,200 · Drinks: ₹200–₹500 · Osho campus tour: ₹50 (daytime)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Sunrise Fort &amp; Freedom History</div>
+      <div class="day-title">Sinhagad Sunrise, Aga Khan Palace &amp; Departure</div>
+      <div class="day-sub">5am sunrise Sinhagad trek · Maratha history · Aga Khan Palace (Gandhi imprisonment) · Departure or day trips</div>
+      <div class="day-cost">💰 Sinhagad: free · Aga Khan Palace: ₹300 · Fort food: ₹100–₹200</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Sinhagad Fort Sunrise Trek (25km from Pune)</div>
+        <div class="time-desc">Book a shared jeep or Ola to Sinhagad Fort the evening before — jeeps depart from Sinhagad Phata (base) for the last 5km when road opens (usually 5:30am). Walk or jeep the final climb. Sinhagad (Lion's Fort, 1,312m) rises dramatically from the Deccan plateau — the sunrise from the ramparts, with the valley below bathed in golden light and Pune in the distance, is one of the finest views in Maharashtra. The fort's history is extraordinary: in 1670, Tanaji Malusare's night raid using a trained lizard (ghoral) to scale the cliff — one of the great stories of Maratha military history.</div>
+        <div class="time-price">Entry: free · Jeep from Sinhagad Phata: ₹100–₹150 return · Trek from base: 30min · Allow 3hrs total</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Fort Food — Pithla Bhakri &amp; Tak (Buttermilk)</div>
+        <div class="time-desc">Sinhagad Fort is famous for its simple local food stalls at the summit — bhakri (thick jowar/bajra flatbread), pithla (chickpea flour curry), zunka (dry chickpea curry), and fresh tak (spiced buttermilk). This is the most authentic Maharashtrian village food available at any tourist site in India. Eat with your hands, sitting on the fort wall. ₹80–₹120 for a full meal. The view while eating is complimentary. Many Pune residents make this trek specifically for the sunrise + food combination.</div>
+        <div class="time-price">Bhakri + pithla: ₹80–₹120 · Tak: ₹20 · Best consumed with fort views as backdrop</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Aga Khan Palace — Where Gandhi Was Imprisoned</div>
+        <div class="time-desc">Aga Khan Palace (₹300) was built by Sultan Muhammad Shah Aga Khan III in 1892 as relief work for a famine. In 1942, the British government imprisoned Mahatma Gandhi, Kasturba Gandhi (his wife), Sarojini Naidu, and Gandhi's secretary Mahadev Desai here during the Quit India Movement. Kasturba Gandhi died here in February 1944. Her samadhi is in the garden — a simple, moving memorial. Gandhi's spinning wheel (charkha) and personal belongings are displayed inside. A deeply significant freedom struggle site, largely undervisited relative to its importance.</div>
+        <div class="time-price">Aga Khan Palace: ₹300 · Open 9am–5:30pm · Photography permitted outside · 1.5hrs recommended</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Day Trips from Pune — Lonavala or Alibag</div>
+        <div class="time-desc">If time permits: Lonavala (65km, 1.5hrs) — Bhushi Dam (seasonal waterfall), Tiger's Leap viewpoint, Karla and Bhaja Buddhist rock-cut caves (1st century BCE, extraordinary). The chikki (peanut brittle) from Lonavala is famous across Maharashtra. OR: Alibag (2hrs by road, or 1hr ferry from Mumbai's Gateway of India) — coastal fort, beach, simpler pace than Mumbai. Kolaba Fort accessible on foot at low tide from Alibag beach.</div>
+        <div class="time-price">Lonavala by road: ₹1,500–₹2,000 cab return · Karla Caves entry: ₹25 · Alibag ferry from Mumbai: ₹120</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 2 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (1 night)</td><td>800</td><td>2,500</td><td>7,000</td></tr>
+      <tr><td>Food (2 days)</td><td>700</td><td>2,000</td><td>5,000</td></tr>
+      <tr><td>Transport (Ola/auto)</td><td>400</td><td>1,200</td><td>3,000</td></tr>
+      <tr><td>Entry fees (all sites)</td><td>400</td><td>400</td><td>400</td></tr>
+      <tr><td>Shopping (biscuits, chappals)</td><td>600</td><td>3,000</td><td>10,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹2,900</strong></td><td><strong>~₹9,100</strong></td><td><strong>~₹25,400</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Excludes Mumbai–Pune or flight to Pune. Budget stays at backpacker hostels in Camp area. Premium includes boutique hotels in Koregaon Park. Pune has very competitive hotel prices relative to Mumbai.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Pune 2-Day Itinerary</span>
+    <span class="page-header-right">Tips, Food Guide &amp; Day Trips</span>
+  </div>
+
+  <div class="label">Insider Tips — Know Pune Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Puneri Pride — Tips from Locals</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🍪</div>
+      <div class="tip-title">Kayani Bakery — Arrive Before Opening</div>
+      <div class="tip-desc">Kayani Bakery (MG Road) opens at 9am and 4pm. Arrive 15 minutes before either opening time — the queue starts before the shutters go up. Once they sell out of shrewsbury biscuits (usually within 2 hours of opening), they're gone for the day. The limit is often 2 boxes per person when demand is high. Mawa cakes are also extraordinary — don't miss them. The biscuits travel well — they last 2–3 weeks at room temperature.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌅</div>
+      <div class="tip-title">Sinhagad — Sunrise Is Non-Negotiable</div>
+      <div class="tip-desc">Sinhagad at noon is just a hot fort with tourists. Sinhagad at sunrise — with mist in the valley below, the Purandar Fort visible in the distance, golden light hitting the ancient walls, and the smell of bhakri cooking at the summit stalls — is one of the most atmospheric experiences in Maharashtra. Wake at 4:30am. It's worth every minute of lost sleep.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">When to Visit Pune</div>
+      <div class="tip-desc">October to February: ideal (22–30°C daytime, 12–18°C nights). Pleasantly cool relative to Mumbai. August–September: Ganesh Chaturthi festival — 11 days of extraordinary celebrations centred on Dagdusheth Ganpati and Kesariwada. The city becomes one enormous celebration — if you can handle the crowds, unforgettable. March–May: hot but manageable (32–38°C). Monsoon (June–July): dramatic Western Ghat waterfalls, all forts look incredible in mist.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎓</div>
+      <div class="tip-title">The Student City Vibe</div>
+      <div class="tip-desc">Pune has 4 major universities and hundreds of colleges — over 500,000 students. This creates a permanently young, educated, cosmopolitan energy unlike most Indian cities. The restaurant scene, cafes, live music, and nightlife reflect this. FC Road (Fergusson College Road) and Koregaon Park are the best areas for the student city vibe — excellent cafes, bookshops, street food, and people-watching.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-title">Pune Food — Essential Eating List</div>
+      <div class="tip-desc">Must-eat: Misal pav (Bedekar, Ramnath), shrewsbury biscuits (Kayani), vada pav (street stalls everywhere), kothimbir vadi (coriander fritters — uniquely Maharashtrian, best at Chitale), Poha (flattened rice with vegetables, standard Pune breakfast), Mastani (Pune's signature thick milkshake with ice cream — Sujata Mastani, Swargate). Pune's cafe culture (European-style cafes) is excellent — Good Luck Cafe (MG Road, 1935) for bun maska and Irani chai.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏯</div>
+      <div class="tip-title">Maratha History Context</div>
+      <div class="tip-desc">Pune was the de facto capital of the Maratha Empire during the Peshwa period (1713–1818). At their peak, the Marathas controlled most of the Indian subcontinent. The Peshwas (Bajirao I in particular) were among the most brilliant military commanders in Indian history. The Shaniwar Wada, Sinhagad, Raigad (near Mumbai), and the fort circuit of Maharashtra all tell this story. Understanding Maratha history makes every Pune sight significantly more meaningful.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚗</div>
+      <div name="tip-icon">🚗</div>
+      <div class="tip-title">Getting Around Pune</div>
+      <div class="tip-desc">Pune traffic is bad but manageable with Ola/Uber. Autorickshaws are available but not always willing to go long distances. For Sinhagad Fort (25km), book an Ola or hire a private auto from your hotel (₹800–₹1,200 return with waiting time). The Pune Metro is expanding but doesn't yet cover most tourist sites effectively. Car rentals available for Lonavala day trips.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌿</div>
+      <div class="tip-title">Osho Ashram — What to Expect</div>
+      <div class="tip-desc">The Osho International Meditation Resort in Koregaon Park is Rajneesh/Osho's legacy institution — still actively functioning. The grounds are beautiful (17 acres, marble paths, gardens). Visitors can take day passes (₹200–₹400) for the meditation centre and gardens. The Osho Bookshop is exceptional. The resort is genuinely open to curious visitors. Dress code: maroon robes (available at entry for rent). An unusual, peaceful, and thought-provoking place regardless of your views on Osho.</div>
+    </div>
+  </div>
+
+  <div class="label">Day Trips from Pune — Worth Knowing</div>
+  <div class="pack-list">
+    <div class="pack-item">🗻 <strong>Lonavala (65km)</strong> — Bhushi Dam, Tiger's Leap, Karla Caves. 1.5hrs drive. Budget ₹2,500 for a full day.</div>
+    <div class="pack-item">🏖️ <strong>Alibag (110km)</strong> — Beach, Kolaba Fort, slower pace. Or: ferry from Mumbai Gateway to Alibag (1hr, ₹120).</div>
+    <div class="pack-item">🏯 <strong>Raigad Fort (110km)</strong> — Chhatrapati Shivaji's capital fort. Ropeway ₹180. Maratha Empire heart.</div>
+    <div class="pack-item">🍷 <strong>Nashik Vineyards (180km)</strong> — India's wine country. Sula, Grover, Soma vineyards do tours and tastings.</div>
+    <div class="pack-item">🕌 <strong>Pandharpur (230km)</strong> — Most sacred Vithoba temple. Major Maharashtra pilgrimage. Wari festival spectacular.</div>
+    <div class="pack-item">🌊 <strong>Mahabaleshwar (110km)</strong> — Hill station, strawberry farms, Arthur's Seat viewpoint. 2.5hrs drive.</div>
+    <div class="pack-item">🛖 <strong>Kolhapuri Chappals</strong> — Buy directly in Pune at Laxmi Road (better prices than tourist shops). Genuine handstitched leather.</div>
+    <div class="pack-item">🧁 <strong>Chitale Bandhu</strong> — Multiple Pune locations. Bakarwadi (spicy flaky rolls), chivda, kharvas. Best food gift from Pune.</div>
+    <div class="pack-item">📚 <strong>FC Road Bookshops</strong> — Fergusson College Road has India's best density of secondhand and student bookshops. Excellent browsing.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More Maharashtra<br/>Awaits</h2>
+  <p>From Mumbai's iconic energy to Ajanta and Ellora's cave temples, from the beaches of Goa to Hyderabad's biryani — IncredibleItinerary has a complete guide for every great journey in the Deccan and beyond.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Hyderabad · Goa · Gujarat · Rajasthan · Kerala · Ooty · Varanasi · Andaman · Maldives</p>
+  <div class="back-legal">This guide is for personal use only. Entry fees, transport times and bakery availability subject to change — verify before travel. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

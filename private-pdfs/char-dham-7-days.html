@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Char Dham Yatra 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b45309;--primary-light:#f59e0b;--primary-dark:#92400e;
+  --accent:#d97706;--accent-light:#fde68a;
+  --ink:#1a0800;--cream:#fffbf5;--parchment:#fef3c7;
+  --white:#ffffff;--muted:#6b4c2a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,8,0,0.97) 0%,rgba(26,8,0,0.6) 50%,rgba(26,8,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#f59e0b;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(180,83,9,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(180,83,9,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--primary-light);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(180,83,9,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(245,158,11,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#f59e0b;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#f59e0b;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:var(--primary-dark)}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(180,83,9,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(180,83,9,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(180,83,9,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/1659437/pexels-photo-1659437.jpeg?w=1200&q=80" alt="Himalayan temple in Uttarakhand — Char Dham Yatra"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Char Dham<br/><em>Yatra</em></h1>
+    <p class="cover-sub">The four sacred dhams of Uttarakhand — Yamunotri, Gangotri, Kedarnath and Badrinath — India's most revered pilgrimage circuit</p>
+    <div class="cover-pills">
+      <span class="pill">🕉️ 7+ Days</span>
+      <span class="pill">⛪ 4 Sacred Dhams</span>
+      <span class="pill">💰 ₹15,000–₹60,000</span>
+      <span class="pill">🌤️ May–Jun &amp; Sep–Oct</span>
+      <span class="pill">🏔️ Uttarakhand</span>
+      <span class="pill">🙏 Pilgrimage</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(180,83,9,0.3);border:1px solid rgba(245,158,11,0.4);color:#f59e0b;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Char Dham Yatra — 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Four Dhams, One Sacred Journey</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">7+ Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">⛪</div><span class="stat-val">4 Dhams</span><span class="stat-label">Yamunotri to Badrinath</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹15k–60k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">May–Oct</span><span class="stat-label">Season Only</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop saffron">Rishikesh</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Yamunotri</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Gangotri</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Kedarnath</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">Badrinath</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Rishikesh</span>
+    <span class="route-sub">~950km circuit · Start &amp; end Haridwar / Rishikesh</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1–2</div>
+      <div class="city-name">🌊 Yamunotri</div>
+      <div class="city-desc">Source of the Yamuna river. A 6km trek from Janki Chatti (1,400m) to the temple (3,293m). The Divya Shila rock pillar and the hot springs (Surya Kund) where pilgrims cook rice. One of the least crowded of the four dhams. Truly remote and spiritually powerful.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🏔️ Gangotri</div>
+      <div class="city-desc">Origin of the Ganga river. The temple sits at 3,048m on the banks of the Bhagirathi river. Option to trek 19km (return) to Gaumukh — the glacier snout where the Ganga actually emerges. The landscape here is extraordinary — high Himalayan drama with the snow-covered Bhagirathi peaks towering above.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4–5</div>
+      <div class="city-name">⛰️ Kedarnath</div>
+      <div class="city-desc">One of the 12 Jyotirlinga shrines of Lord Shiva, at 3,583m. Reached by a 16km trek from Gaurikund. The stone temple survived the 2013 floods that killed thousands — the Shiva lingam considered miraculous. The landscape is dramatic Himalayan tundra. Optional helicopter (₹5,000–₹8,000 one way).</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 6–7</div>
+      <div class="city-name">🙏 Badrinath</div>
+      <div class="city-desc">Dedicated to Lord Vishnu, at 3,133m. One of the Char Dham of all India (the others being Dwarka, Puri, Rameswaram). Tapt Kund — hot spring for ritual bathing. The colourful temple facade is instantly recognisable. Nearby: Mana village (last Indian village before Tibet), Vasudhara Falls.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"The Char Dham is not a trek — it is a transformation. The roads test you. The altitude humbles you. The temples receive you exactly as you are."</p>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>Registration is MANDATORY:</strong> Register free at devasthanam.uk.gov.in before departure. Carry a government photo ID. Fill the health declaration form. Registration points also available at Haridwar and Rishikesh for those without internet access. Do NOT attempt to enter without registration — checkposts verify documents.
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Season Warning:</strong> Roads open May–June and September–October ONLY. They close during monsoon (July–August — landslides) and winter (November–April — snow). Confirm current road/temple status before departure at uttarakhandtourism.gov.in. Weather can change without warning.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–4 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Char Dham Yatra — 7-Day Itinerary</span>
+    <span class="page-header-right">Days 1–4 — Yamunotri, Gangotri, Kedarnath Approach</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Rishikesh to Barkot</div>
+      <div class="day-title">The Journey Begins — Into Uttarakhand</div>
+      <div class="day-sub">Haridwar/Rishikesh → Barkot (210km, 6–7hrs) · Register on Char Dham portal · Rest and acclimatise</div>
+      <div class="day-cost">💰 Shared vehicle: ₹400–600 · Private car: ₹3,000–4,000 · Stay Barkot: ₹600–2,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Rishikesh/Haridwar → Barkot via Mussoorie and Purola</div>
+        <div class="time-desc">The drive from Rishikesh to Barkot (base camp for Yamunotri) takes 6–7 hours through beautiful Garhwal hill country. The road climbs steadily into the mountains with views of the Himalayan foothills opening up. Stop at Mussoorie (90km) for chai and mountain views if time allows. Barkot sits at ~1,200m — altitude is manageable. Register on devasthanam.uk.gov.in if not already done. Carry all documents.</div>
+        <div class="time-price">Distance: 210km · Time: 6–7hrs · Shared SUV from Rishikesh: ₹400–600/seat</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Barkot — Rest, Prepare, Acclimatise</div>
+        <div class="time-desc">Barkot is a small hill town with adequate guesthouses and dharamshalas. Eat a light meal — high altitude pilgrimages require staying hydrated and not overeating. Avoid alcohol completely during the yatra — altitude and alcohol are a dangerous combination. Pack your day bag for tomorrow's trek: water, glucose biscuits, light snacks, warm layer (temperature at Yamunotri temple can drop to 5°C even in June), rain poncho, sturdy walking shoes.</div>
+        <div class="time-price">Dharamshalas: ₹200–₹500 · Budget guesthouses: ₹600–₹1,200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · First Dham</div>
+      <div class="day-title">Yamunotri — Source of the Sacred Yamuna</div>
+      <div class="day-sub">Barkot → Janki Chatti (30km) → Trek 6km to Yamunotri temple → return → drive to Uttarkashi</div>
+      <div class="day-cost">💰 Pony: ₹600–₹800 one way · Doli: ₹1,200–₹1,500 · Pooja at temple: ₹100–₹500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Drive to Janki Chatti — Trek Base</div>
+        <div class="time-desc">Janki Chatti (1,400m) is where the motorable road ends. From here it's a 6km trek (mostly gradual climb) through beautiful forest and beside a stream to the Yamunotri temple (3,293m). The walk takes 2–3 hours one way. Pony and doli (palanquin) services are available at Janki Chatti for those who need them. The trail is well-marked and used by thousands of pilgrims daily during season. The last 1km is steeper.</div>
+        <div class="time-price">Trek: 6km one way · Time: 2–3hrs up · Pony: ₹600–₹800 one way · Doli: ₹1,200–₹1,500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Yamunotri Temple — Darshan &amp; Hot Springs</div>
+        <div class="time-desc">The Yamunotri temple houses an idol of Goddess Yamuna in black marble. Before entering, pilgrims bathe in the Surya Kund — a boiling hot spring where you can cook rice (bring raw rice, it will cook in 10 minutes, this is then prasad). The Divya Shila — a sacred rock pillar — receives puja before temple entry. Darshan queues are manageable compared to Kedarnath or Badrinath. The setting — surrounded by high mountains — is magnificent.</div>
+        <div class="time-price">Temple entry: free · Pooja: ₹100–₹500 · Bring raw rice for Surya Kund cooking</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Trek Back + Drive to Uttarkashi</div>
+        <div class="time-desc">Return trek to Janki Chatti (2hrs), then drive 100km to Uttarkashi — a larger town on the Bhagirathi river with better accommodation options than Barkot. Uttarkashi is itself a pilgrimage town with the Vishwanath Temple and the Nehru Institute of Mountaineering. Overnight here.</div>
+        <div class="time-price">Distance Janki Chatti to Uttarkashi: 100km · 3hrs</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Second Dham</div>
+      <div class="day-title">Gangotri — Where the Ganga Descends</div>
+      <div class="day-sub">Uttarkashi → Gangotri (100km, 3hrs) · Temple darshan · Option: Gaumukh glacier trek (19km return)</div>
+      <div class="day-cost">💰 Gaumukh trek permit: ₹200 · Overnight tent at Bhojbasa: ₹500–₹800</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Uttarkashi → Gangotri — Mountain Road</div>
+        <div class="time-desc">The 100km drive to Gangotri (3,048m) takes 3 hours on a winding road through increasingly dramatic Himalayan terrain. The Bhagirathi river accompanies the road. Pass through Harsil — a stunning village often called the most beautiful in Uttarakhand, surrounded by apple orchards and deodar cedar forests. Gangotri town is compact — a few hundred metres of dharamshalas and shops leading to the temple.</div>
+        <div class="time-price">Distance: 100km · 3hrs drive · Harsil stop recommended (30 min)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Gangotri Temple Darshan</div>
+        <div class="time-desc">The bright white temple dedicated to Goddess Ganga sits directly on the banks of the Bhagirathi. Pilgrims take a ritual dip in the icy Bhagirathi waters (18°C) before darshan — the cold is intense but the experience is transcendental. The temple sanctum is relatively small — morning queues can be long in peak season (June, September). The confluence of ice-cold mountain air, river sound, chanting and incense creates an atmosphere unlike anywhere else in India.</div>
+        <div class="time-price">Temple: free · Ritual dip in Bhagirathi: free · Pooja: ₹50–₹500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Gaumukh Trek Option — The Glacier Snout (19km Return)</div>
+        <div class="time-desc">For the physically fit and adventurous: the Gaumukh trek (19km return from Gangotri) leads to the actual snout of the Gangotri Glacier — where the Bhagirathi/Ganga physically emerges from the ice. Permit required (₹200). The trek takes 6–7 hours return through alpine meadows and moraines. Overnight at Bhojbasa ashram/tents is possible. This is one of the finest high-altitude treks in India. Not required for darshan — optional extension for trekkers.</div>
+        <div class="time-price">Gaumukh permit: ₹200 · Time: 6–7hrs return · Bhojbasa tent: ₹500–₹800/night</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Long Drive</div>
+      <div class="day-title">Gangotri to Guptkashi — The Road to Kedarnath</div>
+      <div class="day-sub">220km drive (7–8hrs) via Uttarkashi and Tehri · Arrive Guptkashi or Sonprayag · Rest</div>
+      <div class="day-cost">💰 Longest driving day · Private car strongly recommended · Stay Guptkashi: ₹800–₹3,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Full Day</div>
+      <div class="time-content">
+        <div class="time-title">The Long Drive — Gangotri to Guptkashi (220km, 7–8hrs)</div>
+        <div class="time-desc">This is the longest driving day of the yatra, crossing from one Himalayan valley to another. The route passes through Uttarkashi, then descends to Tehri Dam (one of Asia's tallest dams, visible from the road — reservoir stretches for miles), then climbs again through Srinagar Garhwal (not to be confused with Kashmir's Srinagar) and up to Guptkashi or Sonprayag. Very scenic but exhausting. Depart by 6am. Take breaks but don't dawdle — mountain roads close at dusk in poor weather.</div>
+        <div class="time-price">Distance: 220km · Time: 7–8hrs · Dehri Dam view: noteworthy stop</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Guptkashi — Vishwanath Temple &amp; Registration for Kedarnath</div>
+        <div class="time-desc">Guptkashi has a small Vishwanath temple and the Ardh-Narishwar temple worth visiting. Confirm Kedarnath registration is complete. Check weather and route conditions for tomorrow — the Sonprayag–Gaurikund road and trek conditions can change overnight due to weather. Eat well tonight; tomorrow's trek is demanding. Organise porter or horse booking through your accommodation if needed.</div>
+        <div class="time-price">Guptkashi guesthouses: ₹800–₹2,500 · Dharamshalas: ₹200–₹500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 5–7 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Char Dham Yatra — 7-Day Itinerary</span>
+    <span class="page-header-right">Days 5–7 — Kedarnath, Badrinath &amp; Return</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Third Dham</div>
+      <div class="day-title">Kedarnath — The Jyotirlinga at 3,583m</div>
+      <div class="day-sub">Sonprayag → Gaurikund jeep → 16km trek → Kedarnath darshan · Overnight or return to valley</div>
+      <div class="day-cost">💰 Trek: free · Helicopter: ₹5,000–₹8,000 one way · Temple pooja: ₹500–₹1,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Sonprayag → Gaurikund (5km by Shared Jeep)</div>
+        <div class="time-desc">Private vehicles cannot proceed beyond Sonprayag — shared jeeps (₹30–₹50) take you the final 5km to Gaurikund (1,982m), where the trek begins. Gaurikund has a hot spring where pilgrims take a ritual dip before the trek. Cloakroom facilities available — leave heavy bags here. The trek begins at the checkpost where your registration is verified. Have all documents ready.</div>
+        <div class="time-price">Sonprayag to Gaurikund: ₹30–₹50 shared jeep · Gaurikund hot spring: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Trek: Gaurikund to Kedarnath — 16km, 5–7 Hours</div>
+        <div class="time-desc">The trek route: Gaurikund (1,982m) → Jungle Chatti (4km) → Bheembali (7km) → Linchauri (10km) → Kedarnath (3,583m, 16km). The gradient is consistent but not extreme — the altitude gain of 1,600m is what makes it challenging. Pony: ₹2,500–₹3,500 one way. Doli/palanquin: ₹5,000–₹6,000. Helicopter from Phata/Sirsi: ₹5,000–₹8,000 one way (book on the official Uttarakhand helicopter booking portal — fills up fast in season). First-time trekkers should pace themselves — do not rush.</div>
+        <div class="time-price">Pony: ₹2,500–₹3,500 · Doli: ₹5,000–₹6,000 · Helicopter: ₹5,000–₹8,000 · Trek: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Kedarnath Temple Darshan — The Shiva Lingam</div>
+        <div class="time-desc">The Kedarnath temple is one of India's most extraordinary religious structures — an ancient stone temple at 3,583m, surrounded by the Kedarnath, Kedar Dome and Bharatekuntha peaks. The temple survived the catastrophic 2013 flood that killed 5,000+ people, considered miraculous. The massive Shiva lingam inside is a naturally occurring rock formation — pilgrims pour milk, water and flowers on it. An early morning Abhishek darshan (5am, limited seats, ₹1,500) is the most powerful way to experience the temple.</div>
+        <div class="time-price">Temple: free · Abhishek darshan: ₹1,500 (5am, book ahead) · Bhairon Temple: 500m further, worth visiting</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">06</div>
+    <div class="day-info">
+      <div class="day-tag">Day Six · Fourth Dham</div>
+      <div class="day-title">Badrinath — Lord Vishnu's Abode</div>
+      <div class="day-sub">Return to valley → Drive to Badrinath (200km, 5–6hrs via Joshimath) · Tapt Kund · Darshan</div>
+      <div class="day-cost">💰 Tapt Kund: free · Temple: free · Accommodation Badrinath: ₹500–₹3,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Trek Down and Drive to Badrinath</div>
+        <div class="time-desc">Return trek from Kedarnath (3–4hrs) or helicopter back to Phata/Sirsi. Then drive to Badrinath (200km, 5–6hrs) via Guptkashi → Rudraprayag → Joshimath. The route is spectacular — the Alaknanda river gorge, the confluence at Rudraprayag (where Alaknanda meets Mandakini), the old town of Joshimath (important base for the Nanda Devi zone). Arrive Badrinath by evening.</div>
+        <div class="time-price">Distance: 200km via Joshimath · 5–6hrs · Stop at Joshimath for fuel/food</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Tapt Kund Hot Spring + Badrinath Temple Darshan</div>
+        <div class="time-desc">Tapt Kund is the hot sulphur spring at Badrinath where pilgrims bathe before entering the temple — it is genuinely hot (45°C) and luxurious after days of cold mountain travel. The Badrinath temple itself is colourfully painted (unlike most North Indian temples) — red, yellow and grey — and lit dramatically at night. Evening darshan (Sandhya Aarti at 8:30pm) is particularly beautiful. The presiding deity is Lord Vishnu in a meditating posture (Shri Badrinarayan).</div>
+        <div class="time-price">Tapt Kund: free · Temple: free · Sandhya Aarti: 8:30pm daily · Arrive by 6pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">07</div>
+    <div class="day-info">
+      <div class="day-tag">Day Seven · Last India Before Tibet</div>
+      <div class="day-title">Mana Village, Vasudhara &amp; the Return Journey</div>
+      <div class="day-sub">Mana village (3km from Badrinath) · Vasudhara Falls · Drive back to Rishikesh (300km)</div>
+      <div class="day-cost">💰 Mana village: free · Vasudhara Falls: 5km trek · Return drive: 6–8hrs</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Mana Village — The Last Indian Village</div>
+        <div class="time-desc">Mana (3,200m), just 3km from Badrinath, is traditionally considered the last Indian village before the Tibet border. It is inhabited by the Bhotiya tribe — their homes, temples, and way of life have barely changed for centuries. Vyasa Gufa (the cave where sage Vyasa wrote the Mahabharata — mythologically significant), Ganesh Gufa, and the roaring Saraswati river that disappears underground. Local women sell woollen items and Tibetan goods. One of the most atmospheric small villages in the Himalayas.</div>
+        <div class="time-price">Mana Village: 3km from Badrinath · Free · Local woolens and handicrafts to buy</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Vasudhara Falls — 122m Waterfall in the Alpine Zone</div>
+        <div class="time-desc">A 5km trek from Mana village to Vasudhara Falls — a stunning 122-metre waterfall in a high alpine meadow setting. The water is icy cold. Legend says the water falls only on the pure-hearted — it curves around sinners (which is of course not literally true, but the saying creates a wonderful atmosphere of reflection). The landscape beyond Mana into the alpine zone is extraordinary. Return to Mana and begin the long drive back to Rishikesh.</div>
+        <div class="time-price">Vasudhara Falls: 5km trek one way · Free · 3hrs round trip</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Drive Back to Rishikesh (300km, 7–8hrs)</div>
+        <div class="time-desc">The return drive from Badrinath to Rishikesh (300km) takes 7–8 hours. Stop at Devprayag — the confluence of the Bhagirathi and Alaknanda rivers where the Ganga is officially named. The point where two rivers meet, visibly different in colour (grey and green), is one of the most beautiful natural sights in Uttarakhand. Arrive Rishikesh by evening. The Ganga Aarti at Haridwar or Rishikesh — a fitting conclusion to the yatra.</div>
+        <div class="time-price">Distance: 300km · 7–8hrs · Stop at Devprayag (30min) · Triveni Ghat Aarti: 6pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 7 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Transport (shared/private car)</td><td>3,000</td><td>8,000</td><td>15,000</td></tr>
+      <tr><td>Accommodation (6 nights)</td><td>3,600</td><td>9,000</td><td>18,000</td></tr>
+      <tr><td>Food (7 days)</td><td>2,800</td><td>7,000</td><td>12,000</td></tr>
+      <tr><td>Treks/Ponies/Helicopter</td><td>2,000</td><td>8,000</td><td>20,000</td></tr>
+      <tr><td>Pooja, permits, entry</td><td>1,000</td><td>2,500</td><td>5,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹12,400</strong></td><td><strong>~₹34,500</strong></td><td><strong>~₹70,000</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Excludes train/flight to Haridwar or Rishikesh. Budget uses dharamshalas, shared vehicles and trekking on foot. Premium includes helicopter at Kedarnath, private car throughout, and good hotel stays. Mid-range is the most common option.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Char Dham Yatra — 7-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Essential Information</span>
+  </div>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Know Before You Begin the Yatra</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">📋</div>
+      <div class="tip-title">Registration Is Non-Negotiable</div>
+      <div class="tip-desc">Register at devasthanam.uk.gov.in before departing. Free, takes 10 minutes. You need Aadhaar or passport details, a photo, and a health declaration. Checkposts at multiple points on the route verify this — you cannot enter without it. Children under 12 and seniors over 75 need a medical clearance certificate from a government hospital.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏥</div>
+      <div class="tip-title">Altitude Sickness — Take It Seriously</div>
+      <div class="tip-desc">Kedarnath (3,583m) and Badrinath (3,133m) are high altitude. Acclimatise 1 night in Rishikesh or Haridwar before ascending rapidly. Symptoms: headache, nausea, dizziness, shortness of breath. Descend immediately if symptoms worsen. Diamox (acetazolamide) can help — consult your doctor before travel. Stay well-hydrated. Never rush ascent. Deaths occur on the Char Dham every season from cardiac events and altitude sickness.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">Helicopter Booking — Book Weeks Ahead</div>
+      <div class="tip-desc">Kedarnath helicopter bookings open months before the season on the official IRCTC/Uttarakhand helicopter portal. Seats sell out within days of booking opening. If you plan to use helicopter service, set a calendar reminder and book the moment booking opens. Prices: ₹5,000–₹8,000 per person one way from Phata, Sirsi or Guptkashi helipads. Helicopters don't fly in bad weather.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌧️</div>
+      <div class="tip-title">Monsoon Roads — Genuinely Dangerous</div>
+      <div class="tip-desc">Do NOT travel the Char Dham circuit in July–August. Landslides block roads, sometimes for days. Flash floods occur without warning. The 2013 Kedarnath disaster (5,000+ deaths) happened in June during early monsoon. The governments now close roads proactively during heavy rain. Check uttarakhandtourism.gov.in and local news daily during your trip even in the official open season.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Cash is King on This Circuit</div>
+      <div class="tip-desc">Beyond Uttarkashi and Guptkashi, ATMs are rare and often out of service. Carry sufficient cash (at least ₹10,000 per person) before entering the circuit. Cards are accepted at few places beyond major town hotels. Pony operators, dhaba food stalls, portage, and most local services are cash-only.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🐴</div>
+      <div class="tip-title">Ponies — Book at Trek Start, Not Before</div>
+      <div class="tip-desc">Don't book ponies through advance agents — rates are fixed at the official counters at Janki Chatti (Yamunotri) and Gaurikund (Kedarnath). The government sets rates. Anyone offering advance bookings in Rishikesh or online is likely adding a middleman commission. Book at the official counters on the day.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">What to Wear</div>
+      <div class="tip-desc">Even in May and June, temperatures at Kedarnath and Badrinath drop to 2–8°C at night. It can snow in June. Carry thermals, a warm mid-layer, a windproof/waterproof outer jacket, and wool socks. Many pilgrims underestimate the cold and suffer. A ₹300 rain poncho from any mountain town is essential.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🙏</div>
+      <div class="tip-title">Temple Etiquette</div>
+      <div class="tip-desc">Dress modestly — traditional Indian attire preferred but clean western clothes are acceptable if covering shoulders and legs. Remove footwear at the temple entrance. Do not carry leather items inside. Photography restricted or prohibited inside all four temple sanctums. Avoid eating non-vegetarian food during the yatra — the dhams are sattvic zones and it is respectful to the pilgrimage tradition.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Char Dham</div>
+  <div class="pack-list">
+    <div class="pack-item">🧥 <strong>Thermal inner layers</strong> — top and bottom. Even in June, nights are 2–8°C at altitude.</div>
+    <div class="pack-item">🌧️ <strong>Rain poncho</strong> — ₹200–300 from any hill station. Non-negotiable.</div>
+    <div class="pack-item">👟 <strong>Trek shoes</strong> — waterproof sole, ankle support. No sandals for the treks.</div>
+    <div class="pack-item">💊 <strong>Basic medical kit</strong> — ORS, paracetamol, antacid, glucose biscuits, Diamox (consult doctor).</div>
+    <div class="pack-item">💧 <strong>Water bottle 1L+</strong> — refill at mountain streams/taps. Stay hydrated at altitude.</div>
+    <div class="pack-item">📄 <strong>ID copies x3</strong> — Aadhaar/passport. Keep originals and copies separately.</div>
+    <div class="pack-item">🔦 <strong>Headlamp with batteries</strong> — early morning starts. Power cuts common in remote areas.</div>
+    <div class="pack-item">💰 <strong>Cash ₹10,000+</strong> — ATMs rare. Bring from city before entering circuit.</div>
+    <div class="pack-item">🧻 <strong>Dry fruits &amp; energy bars</strong> — nutrition on long trek days. Local trail mix available too.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More Sacred<br/>India Awaits</h2>
+  <p>From Kedarnath's sacred peaks to Varanasi's eternal ghats, from Kerala's backwaters to the golden deserts of Rajasthan — IncredibleItinerary has a complete guide for every journey across this extraordinary country.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Kedarnath Trek · Varanasi · Kashmir · Leh-Ladakh · Spiti Valley · Rajasthan · Kerala · Goa · Andaman · Maldives</p>
+  <div class="back-legal">This guide is for personal use only. Prices, temple schedules, road conditions and helicopter availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

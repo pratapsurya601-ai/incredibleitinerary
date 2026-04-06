@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Amsterdam in 4 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b45309;--primary-light:#fbbf24;--primary-dark:#92400e;
+  --accent:#d97706;--accent-light:#fcd34d;
+  --ink:#1a0f00;--cream:#fffdf5;--parchment:#fef3c7;
+  --white:#ffffff;--muted:#6b5a2a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,15,0,0.97) 0%,rgba(26,15,0,0.6) 50%,rgba(26,15,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fbbf24;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(180,83,9,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(180,83,9,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.gold{background:var(--primary-light);color:var(--ink)}
+.route-stop.amber{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(180,83,9,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(251,191,36,0.08),rgba(251,191,36,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fbbf24;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fbbf24;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.amber{background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.25);color:#78350f}
+.highlight-box.warn{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.highlight-box.green{background:#f0fdf4;border:1px solid #86efac;color:#14532d}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(180,83,9,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(180,83,9,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(180,83,9,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/1796736/pexels-photo-1796736.jpeg?w=1200&q=80" alt="Amsterdam canals"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Amsterdam<br/><em>in 4 Days</em></h1>
+    <p class="cover-sub">Golden Age canals, world-class museums, tulip fields, bicycles &amp; the Netherlands at its most beautiful</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 4 Days</span>
+      <span class="pill">🛂 Schengen Visa</span>
+      <span class="pill">💰 ₹65,000–₹1,60,000</span>
+      <span class="pill">🌷 Apr–Sep</span>
+      <span class="pill">🚲 Canals &amp; Tulips</span>
+      <span class="pill">🌉 Bicycles</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(180,83,9,0.3);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Amsterdam 4-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Canals, Rembrandts &amp; Tulips — Four Days in Amsterdam</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">4 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">Schengen</span><span class="stat-label">Visa Required</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹65k–1.6L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌷</div><span class="stat-val">Apr–Sep</span><span class="stat-label">Best Season</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">AMS Airport</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Anne Frank</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Rijksmuseum</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Zaanse Schans</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop amber">De Pijp</span>
+    <span class="route-sub">1 city · Train from Schiphol to Centraal 17 min · ₹300</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">📖 Anne Frank House &amp; Jordaan</div>
+      <div class="city-desc">Anne Frank's secret annex where she wrote her diary for 2 years during WWII is one of the most moving historical sites in the world. MUST book online months ahead — often sold out completely. The Jordaan neighbourhood surrounding it is Amsterdam's most charming: narrow canals, independent galleries, traditional brown cafés.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🎨 Museum Square &amp; Vondelpark</div>
+      <div class="city-desc">The Rijksmuseum (Rembrandt's Night Watch, Vermeer's The Milkmaid) and Van Gogh Museum (the largest collection of Van Gogh works in the world) face each other across Museum Square. Both require advance booking. Vondelpark adjacent — Amsterdam's equivalent of Central Park, free and beautiful.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🌷 Zaanse Schans or Keukenhof</div>
+      <div class="city-desc">Zaanse Schans: 20 minutes from Amsterdam — working windmills, traditional wooden houses, cheese farms and clog workshops. April only: Keukenhof Gardens (Lisse, 1hr by bus) — 7 million tulips in 800 varieties across 32 hectares. The most spectacular flower display in the world. Book ahead — both are extremely popular.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4</div>
+      <div class="city-name">🚲 De Pijp &amp; NEMO</div>
+      <div class="city-desc">De Pijp neighbourhood with Albert Cuyp Market (Amsterdam's largest outdoor market, free entry, ₹200–₹500 for Dutch stroopwafels and cheese). NEMO Science Museum with remarkable rooftop terrace views over the IJ harbour. Stedelijk Museum for modern design. Evening canal walk at dusk.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"Amsterdam is a city that has never fully decided whether it's in the Middle Ages or the future — and that is precisely its charm." Every canal reflects 400 years of history.</p>
+  </div>
+  <div class="highlight-box amber">
+    <strong>Visa &amp; Flights:</strong> Schengen visa required — apply at Netherlands Consulate/VFS Global (₹7,000 approx). Flights: Delhi/Mumbai to Amsterdam Schiphol (AMS) — ₹38,000–₹68,000 return via Middle Eastern hubs or KLM via Istanbul/Dubai. Train from Schiphol Airport to Amsterdam Centraal: 17 minutes, ₹300 — most efficient option. Amsterdam OV-chip card for trams and buses (₹200 card + top-up). Alternatively, rent a bicycle from Centraal station (₹1,200/day) and cycle everywhere — the authentic Amsterdam experience.
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–4 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Amsterdam 4-Day Itinerary</span>
+    <span class="page-header-right">Day 1–4 Full Itinerary</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · History &amp; Canals</div>
+      <div class="day-title">Anne Frank House, Jordaan &amp; Canal Cruise</div>
+      <div class="day-sub">Morning Anne Frank House · Jordaan neighbourhood walk · Westerkerk · Afternoon canal cruise · Herengracht evening</div>
+      <div class="day-cost">💰 Anne Frank: ₹2,200 · Canal cruise: ₹1,200 · Rijsttafel dinner: ₹2,500</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Anne Frank House — Book Online Months in Advance</div>
+        <div class="time-desc">Anne Frank and her family hid in the secret annex of this canal house for 761 days between 1942 and 1944. She was 13 when she went into hiding and began her diary. The diary is among the most widely read books in history. The house is preserved exactly as it was found — empty, as the occupants were arrested and the furniture confiscated. The experience is deeply moving and unlike any other historical site. Tickets at annefrank.org sell out weeks or months ahead — book as soon as your dates are confirmed. Evening tickets (after 6pm) are sometimes available on a rolling 6-week basis.</div>
+        <div class="time-price">Entry: ₹2,200 · Book at annefrank.org · Evening tickets slightly easier to get · Allow 90 min</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Jordaan Neighbourhood — Amsterdam's Most Charming Quarter</div>
+        <div class="time-desc">The Jordaan (from "jardin" — French garden) was built in the 17th century as a working-class district and is now Amsterdam's most desirable and charming neighbourhood. Narrow canals (Prinsengracht, Keizersgracht, Herengracht — the three main canal rings are UNESCO World Heritage), houseboats, independent art galleries, antique shops, and traditional Dutch brown cafés (bruine kroegen) where locals drink jenever (Dutch gin) and beer since the 17th century. The Noordermarkt on Saturdays has excellent organic produce and antiques.</div>
+        <div class="time-price">Jordaan: free to wander · Bruine kroeg beer: ₹300 · Jenever (Dutch gin) shot: ₹250</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Canal Cruise — The Best Way to See Amsterdam</div>
+        <div class="time-desc">Amsterdam's canal ring — 165 canals, 1,281 bridges, 2,500 houseboats — is best understood from the water. Rederij Lovers and Blue Boat Company operate regular 1-hour cruises (₹1,200/person) with commentary on the Golden Age merchant houses, the narrowest house in Amsterdam (2.44 metres wide), and the architecture that has barely changed in 400 years. Alternatively, rent a small electric canal boat (₹4,000/hour, seats 6) and navigate yourself — Mokum Boats and Boaty are popular options. The glass-top boats let you see the gabled rooflines reflected in the water.</div>
+        <div class="time-price">Regular cruise: ₹1,200/person · Private electric boat: ₹4,000/hr (up to 6 people) · Book ahead</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · World-Class Art</div>
+      <div class="day-title">Rijksmuseum, Van Gogh Museum &amp; Vondelpark</div>
+      <div class="day-sub">9am Rijksmuseum (Night Watch) · Van Gogh Museum · Vondelpark lunch · Heineken Experience or I Amsterdam sign area</div>
+      <div class="day-cost">💰 Rijksmuseum: ₹2,500 · Van Gogh: ₹2,800 · Both require advance booking</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Rijksmuseum — Rembrandt's Night Watch &amp; Vermeer's Milkmaid</div>
+        <div class="time-desc">The national museum of the Netherlands holds the finest collection of Dutch Golden Age painting in the world. The Night Watch (Rembrandt van Rijn, 1642) — the largest and most celebrated painting in the collection — is displayed in a dedicated room designed specifically for it. Vermeer's The Milkmaid, The Love Letter, and Woman Reading a Letter. Jan Steen's The Merry Family. The museum building itself — a neo-Gothic palace with bicycle lane running through it — is extraordinary. Book at rijksmuseum.nl. 2–3 hours minimum. The museum café serves excellent Dutch stamppot (mashed potato with vegetables, ₹800).</div>
+        <div class="time-price">Entry: ₹2,500 · Book at rijksmuseum.nl · Closed Mondays · Allow 2–3 hours</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Van Gogh Museum — The Largest Van Gogh Collection in the World</div>
+        <div class="time-desc">The Van Gogh Museum holds 200 paintings and 500 drawings by Vincent van Gogh — more than any other museum. The Bedroom at Arles, The Potato Eaters, Almond Blossom, Skull with Burning Cigarette, and self-portraits spanning his career. The chronological display traces his development from dark Dutch realism to the explosive colour of his Provence years. Van Gogh painted 900 works in his 10-year career before dying at 37. Book at vangoghmuseum.nl — tickets often sell out 2 weeks ahead in peak season. The museum café has good sandwiches.</div>
+        <div class="time-price">Entry: ₹2,800 · Book at vangoghmuseum.nl · Allow 2 hours · Closed Mondays (occasionally)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Heineken Experience — Optional But Fun</div>
+        <div class="time-desc">The original Heineken brewery (closed 1988) is now an interactive brand experience — the brewing process, a simulated bottling experience, and 2 free beers at the end (₹2,500/person). It's touristy but well-produced. Alternatively, skip it and instead spend the evening in the Leidseplein — Amsterdam's entertainment square — with its outdoor café terraces, street performers, and the Paradiso music venue (a deconsecrated church turned concert hall). Indonesian food (rijsttafel — rice table feast, 20+ dishes) is Amsterdam's classic dinner: try Sampurna near the Jordaan (₹2,000/person).</div>
+        <div class="time-price">Heineken Experience: ₹2,500 · Rijsttafel dinner: ₹2,000–₹3,000/person · Leidseplein: free</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Dutch Countryside</div>
+      <div class="day-title">Zaanse Schans or Keukenhof Gardens</div>
+      <div class="day-sub">Train to Zaanse Schans (windmills, 20 min) OR Keukenhof tulip gardens (April only, 1hr bus) · Return afternoon · Evening canal</div>
+      <div class="day-cost">💰 Zaanse Schans: ₹2,000 entry + ₹400 train · Keukenhof (April): ₹2,200 + bus ₹600</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Zaanse Schans — Working Windmills 20 Minutes from Amsterdam</div>
+        <div class="time-desc">Zaanse Schans is an open-air museum village on the Zaan River — working windmills (saw mills, oil mills, paint mills), traditional Dutch wooden houses painted in green (Zaans groen), cheese farms (free samples of young, aged and truffle Gouda — buy directly), wooden clog workshops, and a traditional herring cart (fresh herring eaten Dutch-style, with onions, ₹400). Train from Centraal to Koog-Zaandijk (17 minutes). Walk 10 minutes to the site. Entry to the village is free; individual windmill interiors: ₹400–₹600 each. Allow 3–4 hours. Go on a weekday morning if possible — weekends are very crowded.</div>
+        <div class="time-price">Village entry: free · Windmill interior: ₹400–₹600 · Train return: ₹400 · Gouda samples: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">April Only</div>
+      <div class="time-content">
+        <div class="time-title">Keukenhof Gardens — 7 Million Tulips (April Only)</div>
+        <div class="time-desc">If visiting in April, Keukenhof is mandatory. The gardens at Lisse open for only 8 weeks per year (late March – mid May) and display 7 million bulbs in over 800 varieties. It's the most spectacular flower display in the world. Book tickets online (keukenhof.nl — ₹2,200) and the combination ticket with the bus from Amsterdam (₹600 extra). Peak bloom for tulips is typically mid-April. Daffodils peak in late March, hyacinths in early April. The park also has greenhouses with tender species and a windmill. Allow 3–4 hours.</div>
+        <div class="time-price">Entry: ₹2,200 · Book at keukenhof.nl · Combo with bus: extra ₹600 · April only · Sell out quickly</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Local Amsterdam</div>
+      <div class="day-title">De Pijp Market, NEMO &amp; Farewell Canals</div>
+      <div class="day-sub">Albert Cuyp Market · De Pijp neighbourhood · NEMO Science Museum rooftop · Final canal walk at dusk</div>
+      <div class="day-cost">💰 NEMO: ₹1,800 · Albert Cuyp: free · Stroopwafel: ₹150</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 4 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (4 nights)</td><td>14,000</td><td>32,000</td><td>65,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>5,000</td><td>14,000</td><td>25,000</td></tr>
+      <tr><td>Transport (tram/train)</td><td>2,000</td><td>3,500</td><td>6,000</td></tr>
+      <tr><td>Attractions &amp; Museums</td><td>8,000</td><td>14,000</td><td>20,000</td></tr>
+      <tr><td>Shopping &amp; Souvenirs</td><td>1,000</td><td>4,000</td><td>15,000</td></tr>
+      <tr><td>Flights (Delhi/Mumbai–AMS)</td><td>38,000</td><td>50,000</td><td>80,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹68,000</strong></td><td><strong>~₹1,17,500</strong></td><td><strong>₹2,11,000+</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🚲</div>
+      <div class="tip-title">Rent a Bicycle — This Is How Amsterdam Works</div>
+      <div class="tip-desc">Amsterdam has more bicycles (881,000) than residents (821,000). Renting a bicycle (₹1,200/day from MacBike or Starbikes) is the single most authentic Amsterdam experience. Cycle the canal rings, Vondelpark, and through neighbourhoods. Rules: stay in bike lanes (red paths), don't walk in them, give way to trams. Helmets not standard here — locals don't wear them.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌷</div>
+      <div class="tip-title">Best Time to Visit — Tulip Season in April</div>
+      <div class="tip-desc">April is the best month — tulips in bloom, Keukenhof open, relatively mild weather (12–18°C). Summer (June–August) is warm (20–25°C) and very crowded. Shoulder season May, September, October: good weather, fewer crowds, lower hotel prices. Winter (November–March) has beautiful light on the canals but cold (2–8°C). King's Day (April 27) — the city turns entirely orange, street markets everywhere.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🧀</div>
+      <div class="tip-title">Dutch Food Worth Trying</div>
+      <div class="tip-desc">Stroopwafel (syrup waffle, ₹150) — place it over your hot coffee cup for 30 seconds, then eat. Bitterballen (fried beef ragout balls, pub snack, ₹400). Haring (raw herring with onions, ₹400). Poffertjes (mini fluffy pancakes, ₹500). Dutch fries (patat) with mayonnaise (frikadel) — eaten from paper cones at street stands. Gouda cheese direct from Zaanse Schans farms.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📋</div>
+      <div class="tip-title">Cannabis Laws — Know Before You Go</div>
+      <div class="tip-desc">Cannabis is tolerated (not technically legal) in licensed coffee shops for adults over 18 with ID. As of 2024, Amsterdam has banned tourist access to coffee shops in some areas. Rules change frequently — check current local laws before visiting. Soft drugs are tolerated; hard drugs are absolutely not. This is a personal choice — be aware of the laws and stay safe.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More of Europe<br/>Awaits You</h2>
+  <p>From the tulip fields of the Netherlands to the fjords of Norway, from Belgium's chocolate cities to Germany's castles — IncredibleItinerary covers every European adventure for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · London · Rome · Barcelona · Switzerland · New York · Turkey · Malaysia · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

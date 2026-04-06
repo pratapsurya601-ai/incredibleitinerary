@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Rishikesh in 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#059669;--primary-light:#6ee7b7;--primary-dark:#065f46;
+  --accent:#d97706;--accent-light:#fde68a;
+  --ink:#001a0f;--cream:#f0fdf4;--parchment:#d1fae5;
+  --white:#ffffff;--muted:#2d6a4f;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,26,15,0.97) 0%,rgba(0,26,15,0.6) 50%,rgba(0,26,15,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#6ee7b7;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(5,150,105,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(5,150,105,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(5,150,105,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(5,150,105,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(110,231,183,0.08),rgba(110,231,183,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#6ee7b7;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#6ee7b7;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(5,150,105,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.green{background:#f0fdf4;border:1px solid #bbf7d0;color:#065f46}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(5,150,105,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(5,150,105,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(5,150,105,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(5,150,105,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(5,150,105,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/2582818/pexels-photo-2582818.jpeg?w=1200&q=80" alt="Rishikesh Ganga river and suspension bridge"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Rishikesh<br/><em>in 3 Days</em></h1>
+    <p class="cover-sub">Yoga capital of the world — where the Ganges emerges from the Himalayas, adventure sports meet ancient ashrams, and the Beatles came to meditate</p>
+    <div class="cover-pills">
+      <span class="pill">🧘 3 Days</span>
+      <span class="pill">🏄 Yoga Capital</span>
+      <span class="pill">💰 ₹4,000–₹18,000</span>
+      <span class="pill">📅 Sep–Nov &amp; Feb–May</span>
+      <span class="pill">🤸 Bungee Jumping</span>
+      <span class="pill">🌊 Ganga Rafting</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(5,150,105,0.3);border:1px solid rgba(110,231,183,0.4);color:#6ee7b7;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Rishikesh 3-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Ganges, the Heights &amp; Inner Silence</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🌊</div><span class="stat-val">Ganga Rafting</span><span class="stat-label">16km Shivpuri Route</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹4k–18k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Sep–May</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Ram Jhula</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">Aarti</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Rafting</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Bungee</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Yoga</span>
+    <span class="route-sub">All within Rishikesh · Haridwar (24km) is nearest major railway station</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 — Spiritual</div>
+      <div class="city-name">🌉 Ram Jhula &amp; Ganga Aarti</div>
+      <div class="city-desc">Ram Jhula (suspension bridge) and Laxman Jhula are the icons of Rishikesh. Triveni Ghat's Ganga Aarti at 6pm is the most moving fire ceremony in Uttarakhand. The Beatles Ashram (officially Chaurasi Kutia) where John, Paul, George and Ringo spent February–April 1968 and wrote most of the White Album — now reopened with graffiti murals.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Adventure</div>
+      <div class="city-name">🤸 Rafting &amp; Bungee</div>
+      <div class="city-desc">White water rafting on the Ganga: the 16km Shivpuri to Rishikesh route navigates 13 rapids including the famous Roller Coaster and Golf Course rapids (Grade III–IV). Then Jumping Heights at Mohanchatti: India's highest bungee jump at 83 metres — one of Asia's best. Giant Swing (55 metres) and Flying Fox (a zipline) also available if budget allows.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3 — Inner</div>
+      <div class="city-name">🧘 Yoga &amp; Waterfall Hike</div>
+      <div class="city-desc">Drop-in yoga at Parmarth Niketan (the largest ashram on the Ganga, morning classes ₹200–₹500) or Sivananda Ashram. Then a half-day hike to Neer Garh Waterfall (7km round trip, gentle trail). Optional drive to Neelkanth Mahadev Temple — one of Shiva's most sacred spots, 32km through forest.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Throughout</div>
+      <div class="city-name">☕ Cafe Culture</div>
+      <div class="city-desc">Rishikesh has excellent cafe culture — mainly vegetarian (alcohol is prohibited in the town). Little Buddha Cafe in Tapovan for views over the Ganga. Madras Cafe near Laxman Jhula for South Indian food. Chotiwala: tourist trap, but the costumed mascots and chaotic atmosphere are part of the Rishikesh experience. The German bakeries near Ram Jhula serve excellent coffee and banana bread.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"The Ganga enters the plains here — cold, clear, Himalayan. You can drink it directly at the source, above Rishikesh. The Beatles sat on these same banks and heard the same river. It hasn't changed."</p>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>Best Time to Visit:</strong> September–November (post-monsoon, river is high and powerful for rafting — Grade IV+ rapids, ideal for experienced rafters) and February–May (calmer water, warmer days, better for beginners and yoga retreats). June–August: monsoon closes all rafting and many trekking routes. December–January: cold (2–12°C) but the ashrams are quieter and meditation retreats are excellent.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAY 1 & 2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Rishikesh 3-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Spiritual &amp; Adventure</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · The River &amp; Fire</div>
+      <div class="day-title">Ram Jhula, Ganga Aarti &amp; Beatles Ashram</div>
+      <div class="day-sub">Arrive · Ram Jhula walk · Triveni Ghat Aarti at 6pm · Beatles Ashram · Tapovan café evening</div>
+      <div class="day-cost">💰 Aarti: free · Beatles Ashram: ₹150 · Dinner: ₹200–₹500 · Budget day: ₹500–₹800</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Ram Jhula &amp; Laxman Jhula — The Suspension Bridges</div>
+        <div class="time-desc">Ram Jhula and Laxman Jhula are Rishikesh's defining landmarks — hanging bridges over the Ganga with extraordinary views of the river, ashrams and forested hills behind. Laxman Jhula (the older, more famous bridge) was closed to vehicles in 2019 after structural concerns — you can still cross on foot. Ram Jhula further south is structurally sound and carries pedestrian and cycle traffic. Cross both, walk the ghats between them. The early morning, with mist on the Ganga and the first pilgrims bathing, is meditative beyond description.</div>
+        <div class="time-price">Both bridges: free · Morning mist on the Ganga: September–November is the most atmospheric</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Beatles Ashram (Chaurasi Kutia) — Where the White Album Was Written</div>
+        <div class="time-desc">In February 1968, John Lennon, Paul McCartney, George Harrison and Ringo Starr came to study Transcendental Meditation with Maharishi Mahesh Yogi at the Chaurasi Kutia ashram on the east bank of the Ganga. They stayed for weeks (Ringo left after 10 days — he brought baked beans from England; Paul left after a month; John and George stayed longest). They wrote 48 songs here, including Dear Prudence, Blackbird, Back in the USSR and most of the White Album. The ashram was abandoned in the 1990s and reopened in 2015. The meditation huts, murals and graffiti tribute art make it deeply atmospheric.</div>
+        <div class="time-price">Entry: ₹150 · Cross Laxman Jhula to east bank · Open 8am–5pm · Photography permitted</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Triveni Ghat Ganga Aarti — Rishikesh's Most Sacred Moment</div>
+        <div class="time-desc">Triveni Ghat is the main bathing ghat in Rishikesh, where three rivers are said to meet (Ganga, Yamuna, and the mythical underground Saraswati). Every evening at 6pm (5:30pm in winter), priests perform the Ganga Aarti — a ceremony of fire, flowers, conches and mantras. Unlike Varanasi's grand theatrical version, the Rishikesh aarti is more intimate and participatory — visitors are welcome to release small flower-and-candle boats (diyas) on the Ganga. The Ganga here is cold, swift and transparent green — a world away from the grey Ganga at Varanasi. Arrive 20 minutes early for the front rows.</div>
+        <div class="time-price">Free · Diya for the river: ₹20 · Arrive 20 mins early · Photography respectfully permitted</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Tapovan — Rishikesh's Café &amp; Yoga Neighbourhood</div>
+        <div class="time-desc">Tapovan, on the east bank above Laxman Jhula, is where the yoga teachers, long-term meditators and international travellers concentrate. The cafes here have river views, serve excellent filter coffee, Israeli food (shakshuka, hummus), and have notice boards for ashram events and yoga classes. Little Buddha Cafe has arguably the best Ganga view in Rishikesh from its open terrace. 60 Beat is a good spot for live Indian classical music on weekends. Alcohol is not available anywhere in Rishikesh — this is a sober city.</div>
+        <div class="time-price">Little Buddha Cafe dinner: ₹300–₹500 · The vegetarian thali at any local dhaba: ₹100–₹150</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Adrenaline</div>
+      <div class="day-title">White Water Rafting &amp; India's Highest Bungee Jump</div>
+      <div class="day-sub">Morning rafting from Shivpuri (16km) · Afternoon bungee at Jumping Heights · Evening recovery</div>
+      <div class="day-cost">💰 Rafting: ₹700–₹1,200 · Bungee: ₹3,550 · Giant Swing: ₹3,250 · Flying Fox: ₹2,550</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">White Water Rafting — Shivpuri to Rishikesh (16km)</div>
+        <div class="time-desc">Book with a registered operator the evening before — Aquaterra Adventures, Red Chilli Adventure or Ganga Kinare are reliable. The 16km Shivpuri route takes 2–3 hours and navigates 13 rapids including Roller Coaster (Grade IV) and Golf Course (Grade IV). Equipment includes life jacket, helmet and paddle — all provided. The rafting guide's safety briefing is thorough and mandatory — first-timers need not worry. No experience required, minimum age 14. The river views of the forested Himalayan foothills from water level are extraordinary. September–November water levels are highest — most powerful rapids. February–May is calmer, better for beginners.</div>
+        <div class="time-price">Rafting: ₹700–₹1,200 including equipment and transport back · Book the night before · 9am departure from operators near Ram Jhula</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Jumping Heights — India's Highest Bungee Jump (83 metres)</div>
+        <div class="time-desc">Jumping Heights at Mohanchatti (16km from Rishikesh on the Badrinath Highway) operates India's highest fixed-platform bungee at 83 metres — one of the highest in Asia. The platform is a cantilever over the Hyul River gorge in dense forest. The company also operates the Giant Swing (55 metres — like a massive pendulum over the gorge, maximum speed 150km/h) and the Flying Fox (1km zipline over the gorge). Bungee minimum weight 40kg, maximum 110kg. Book online at jumpingheights.com — weekends sell out. Medical conditions: consult the company before booking.</div>
+        <div class="time-price">Bungee: ₹3,550 · Giant Swing: ₹3,250 · Flying Fox: ₹2,550 · Combo: ₹6,500 · Taxi from Rishikesh: ₹400 return</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Recovery — Hot Chai, Madras Cafe &amp; Sore Muscles</div>
+        <div class="time-desc">After a full day of rafting and bungee, you will be hungry and physically worked. Madras Cafe near Laxman Jhula serves South Indian food (masala dosa ₹120, idli-sambar ₹90, filter coffee ₹60) and is one of the best-value meals in Rishikesh. The café has been here for decades and the dosas are genuinely excellent. Alternatively: any dhaba near Ram Jhula for dal, rice, sabzi thali (₹100–₹150). Legs will ache from the rafting paddle. An Ayurvedic massage is available at many Tapovan ashrams for ₹600–₹1,200/hour.</div>
+        <div class="time-price">Madras Cafe dinner: ₹200–₹350 · Ayurvedic massage: ₹600–₹1,200 · Sleep early for Day 3 yoga</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAY 3 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Rishikesh 3-Day Itinerary</span>
+    <span class="page-header-right">Day 3 · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Yoga &amp; Mountains</div>
+      <div class="day-title">Morning Yoga, Neer Garh Waterfall &amp; Neelkanth Temple</div>
+      <div class="day-sub">6am yoga at Parmarth Niketan · Neer Garh waterfall hike (7km round trip) · Optional drive to Neelkanth Temple</div>
+      <div class="day-cost">💰 Yoga: ₹200–₹500 · Hike: free · Neelkanth taxi: ₹600 return · Total: ₹800–₹1,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Yoga at Parmarth Niketan — On the Banks of the Ganga</div>
+        <div class="time-desc">Parmarth Niketan is the largest ashram on the Ganga and one of the world's most famous yoga centres. Drop-in classes begin at 6am on the ghat facing the river. The morning Ganga Aarti is incorporated into the yoga session — a completely unique experience. Classes are conducted by qualified teachers in Hatha, Ashtanga and Iyengar traditions. No prior experience needed. The ashram also runs the famous Triveni Ghat evening aarti. Alternatively: Sivananda Ashram (more rigorous, 6am drop-in ₹300), or dozens of independent yoga studios in Tapovan for personalised instruction (₹400–₹600/class).</div>
+        <div class="time-price">Parmarth Niketan morning yoga: ₹200–₹500 · Sivananda Ashram: ₹300 · Independent Tapovan studio: ₹400–₹600</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Neer Garh Waterfall — 7km Round Trip Hike Through Forest</div>
+        <div class="time-desc">The trail to Neer Garh Waterfall starts near Laxman Jhula on the east bank and follows a forest path along the Neer Garh stream for 3.5km to a 10-metre waterfall with a natural pool. The hike is gentle (no technical climbing), through oak and rhododendron forest, with views over the Ganga valley. Allow 3 hours return at a leisurely pace. The pool at the base is swimmable in summer but cold — refreshing after the yoga morning. Wear proper shoes and carry water. The upper waterfall is an additional 2km further on a steeper path.</div>
+        <div class="time-price">Hike: free · No guide needed · Start from Laxman Jhula east bank road · Allow 3 hours · Bring 1.5L water</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Neelkanth Mahadev Temple — Shiva's Sacred Forest Shrine</div>
+        <div class="time-desc">32km from Rishikesh through dense sal forest, Neelkanth Mahadev Temple sits at 1,330 metres where Shiva is believed to have consumed the poison that emerged from the churning of the cosmic ocean (his throat turned blue — "neelkanth" means "blue throat"). The forest drive is beautiful. Pilgrims come year-round. The temple architecture is intricately carved and the mountain setting is dramatic. The road up involves a series of hairpin bends — hire a taxi (₹600–₹800 return) rather than attempting on a bike without experience. Allow 3–4 hours including drive.</div>
+        <div class="time-price">Temple: free · Taxi return from Rishikesh: ₹600–₹800 · Open all day · Prasad available at the temple</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 3 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (3 nights)</td><td>1,800</td><td>5,000</td><td>12,000</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>900</td><td>2,000</td><td>4,500</td></tr>
+      <tr><td>Rafting (Shivpuri 16km)</td><td>700</td><td>1,000</td><td>1,200</td></tr>
+      <tr><td>Bungee + Giant Swing</td><td>3,550</td><td>6,800</td><td>6,800</td></tr>
+      <tr><td>Yoga Classes (2 sessions)</td><td>400</td><td>800</td><td>1,500</td></tr>
+      <tr><td>Local Transport</td><td>600</td><td>1,200</td><td>2,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹7,950</strong></td><td><strong>~₹16,800</strong></td><td><strong>₹28,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Budget without bungee: ₹4,400. Bus from Delhi: 5–6 hours, ₹400–₹700. Train to Haridwar (24km away), then shared taxi to Rishikesh: ₹50–₹100. Budget guesthouses near Ram Jhula: ₹500–₹800/night. Mid-range: Tapovan guesthouses with river views ₹1,500–₹3,000/night.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Rishikesh 3-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Packing List</span>
+  </div>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Know Before You Go</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🚫</div>
+      <div class="tip-title">No Alcohol in Rishikesh</div>
+      <div class="tip-desc">Rishikesh is a dry town — alcohol is strictly prohibited. The nearest place to buy alcohol is Haridwar (technically also dry) or Dehradun (30km). This is not a limitation for most visitors — the town's energy is already naturally heightened. The cafes compensate with excellent herbal teas, lassi and fresh juices. Respect the prohibition.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌊</div>
+      <div class="tip-title">Rafting Season &amp; Safety</div>
+      <div class="tip-desc">Rafting season: September–June (monsoon closes it June–August). September–November has highest water levels — powerful Grade IV rapids for experienced rafters. February–May has gentler flow, better for first-timers. Always choose RAFT (River Adventure Federation Tours) registered operators — they have mandatory safety equipment. Never raft without a life jacket and helmet. Avoid the very cheapest operators — ₹500 packages often cut safety corners.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🧘</div>
+      <div class="tip-title">Choosing an Ashram</div>
+      <div class="tip-desc">Parmarth Niketan: largest, most international, excellent for drop-in visitors, famous aarti. Sivananda Ashram: serious yoga tradition, more disciplined, strict schedules. Omkarananda Ashram: quieter, meditation-focused. Yoga Niketan: for residential stays (minimum 1 week). All ashrams require modest dress. Genuine ashrams don't charge for accommodation in the traditional sense — they ask for "donation." If quoted a fixed hotel-style price, it's a commercial yoga centre, not a traditional ashram.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏔️</div>
+      <div class="tip-title">Beyond 3 Days — Extending Your Trip</div>
+      <div class="tip-desc">If you have more time: Haridwar (24km, 1 day — the biggest Ganga Aarti in India at Har Ki Pauri ghat). Devprayag (70km, half day — the dramatic confluence where the Alaknanda and Bhagirathi rivers merge to form the Ganga). Chopta and Tungnath Temple (90km, 2 days — highest Shiva temple in the world at 3,680m). Auli (230km, 3 days — skiing in winter, meadow trek in summer).</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Weather &amp; Seasons</div>
+      <div class="tip-desc">February–April: warm days (20–28°C), cold nights (8–12°C), ideal for yoga and trekking. September–November: post-monsoon, fresh and green, 15–25°C, best for rafting. December–January: cold (3–15°C), excellent for meditation retreats with fewer tourists. Monsoon (June–August): very heavy rainfall, landslides close mountain roads, rafting prohibited. Do not attempt the Neelkanth drive in monsoon — road conditions are dangerous.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚲</div>
+      <div class="tip-title">Getting Around Rishikesh</div>
+      <div class="tip-desc">The area around Ram Jhula and Laxman Jhula is best navigated on foot — no vehicles cross the suspension bridges. Rent a bicycle (₹150–₹200/day) to cover the main ghat areas comfortably. Autos serve the main road. Shared taxis run between Ram Jhula, Laxman Jhula, Rishikesh main bus stand and Haridwar. Motorbike rental is available (₹400–₹700/day) for day trips to Neelkanth and Jumping Heights — only rent if you have mountain driving experience.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍃</div>
+      <div class="tip-title">Chotiwala — Tourist Trap or Rite of Passage?</div>
+      <div class="tip-desc">Chotiwala near Laxman Jhula is Rishikesh's most famous (and most tourist-trappy) restaurant — two branches face each other, both claiming to be the original, each with a rotund costumed mascot out front. The food is decent (thali ₹200, raita, dal, subzi) and the chaos is entertaining. Every traveller to Rishikesh ends up here at least once. Go with low food expectations and high anthropological curiosity. It's a genuine institution despite everything.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">Booking Bungee in Advance</div>
+      <div class="tip-desc">Jumping Heights sells out on weekends, particularly in October–November and February–March. Book at jumpingheights.com at least 3 days in advance. If you're visiting on a weekday, walk-ins are usually fine. The facility is professional and internationally certified — the safety record is excellent. Age minimum: 12 years. Weight: 40–110kg. Medical conditions (heart problems, pregnancy, back/neck injuries) are disqualifying. Be honest on the health declaration form.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Rishikesh</div>
+  <div class="pack-list">
+    <div class="pack-item">🩱 <strong>Quick-dry clothes</strong> — essential for rafting day. Cotton takes hours to dry; synthetic athletic wear dries in 30 minutes.</div>
+    <div class="pack-item">👟 <strong>Water shoes or old sports shoes</strong> — for rafting. Sandals wash off in rapids. Bring one pair you don't mind soaking.</div>
+    <div class="pack-item">🧘 <strong>Yoga mat (lightweight)</strong> — or confirm your ashram/studio provides one. A travel mat (1.5mm) weighs under 500g.</div>
+    <div class="pack-item">🧥 <strong>Warm layer</strong> — evenings by the Ganga are cool even in summer. Winter visits need a proper down jacket.</div>
+    <div class="pack-item">🌞 <strong>Sunscreen SPF 50</strong> — mountain UV is intense even in winter. Reapply after rafting.</div>
+    <div class="pack-item">💧 <strong>Reusable water bottle</strong> — Rishikesh is environmentally conscious. Most cafes refill bottles free. Ganga water above Devprayag is drinkable after filtering.</div>
+    <div class="pack-item">📚 <strong>A light book</strong> — evenings in Rishikesh (no alcohol, cafes close by 10pm) are quiet. This is reading time.</div>
+    <div class="pack-item">🩺 <strong>Basic first aid kit</strong> — rafting scrapes, hiking blisters. Antiseptic, bandages, blister plasters.</div>
+    <div class="pack-item">💊 <strong>Altitude precautions</strong> — Rishikesh is only 356m. Neelkanth Temple is 1,330m. No altitude sickness expected, but stay hydrated on the drive.</div>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>Honest advice:</strong> Rishikesh has two identities that coexist comfortably — intense adventure sports and deep spiritual practice. You can jump off India's highest bungee platform at noon and sit in silent meditation by the Ganga at sunset. The river connects both. Let it.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the royal forts of Rajasthan to the coffee estates of Coorg, from the tea gardens of Darjeeling to the beaches of the Andamans — IncredibleItinerary has a complete guide for every journey.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Delhi · Mumbai · Jaipur · Varanasi · Coorg · Darjeeling · Hampi · Kerala · Goa · Leh-Ladakh</p>
+  <div class="back-legal">This guide is for personal use only. Prices, adventure sport rates and availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

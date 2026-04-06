@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Turkey in 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b91c1c;--primary-light:#f87171;--primary-dark:#7f1d1d;
+  --accent:#d97706;--accent-light:#fcd34d;
+  --ink:#1a0000;--cream:#fff8f8;--parchment:#fee2e2;
+  --white:#ffffff;--muted:#6b3333;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,0,0,0.97) 0%,rgba(26,0,0,0.6) 50%,rgba(26,0,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fcd34d;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(185,28,28,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(185,28,28,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.gold{background:var(--accent-light);color:var(--ink)}
+.route-stop.amber{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(185,28,28,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(252,211,77,0.08),rgba(252,211,77,0.02));border-left:3px solid var(--accent-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fcd34d;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fcd34d;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.red{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);color:#7f1d1d}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.green{background:#f0fdf4;border:1px solid #86efac;color:#14532d}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(185,28,28,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(185,28,28,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(185,28,28,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--accent-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg?w=1200&q=80" alt="Cappadocia hot air balloons"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Turkey<br/><em>in 7 Days</em></h1>
+    <p class="cover-sub">Istanbul's Blue Mosque &amp; Grand Bazaar, Cappadocia's hot air balloons at sunrise &amp; Pamukkale's white terraces</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 7 Days</span>
+      <span class="pill">🛂 e-Visa ₹1,500</span>
+      <span class="pill">💰 ₹55,000–₹1,40,000</span>
+      <span class="pill">🌸 Apr–Jun &amp; Sep–Nov</span>
+      <span class="pill">🎈 Cappadocia</span>
+      <span class="pill">🕌 Blue Mosque</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(185,28,28,0.3);border:1px solid rgba(252,211,77,0.4);color:#fcd34d;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Turkey 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Istanbul, Cappadocia &amp; Pamukkale — Seven Days in Turkey</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">7 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">e-Visa</span><span class="stat-label">₹1,500 Easy</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹55k–1.4L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌸</div><span class="stat-val">Apr–Nov</span><span class="stat-label">Best Season</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">Istanbul</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Blue Mosque</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop amber">Cappadocia</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Hot Air Balloon</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Pamukkale</span>
+    <span class="route-sub">3 regions · Domestic flights Istanbul–Cappadocia (1hr) · IST or SAW airport</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Days 1–3</div>
+      <div class="city-name">🕌 Istanbul</div>
+      <div class="city-desc">The only city on two continents — straddling Europe and Asia across the Bosphorus. Blue Mosque (Sultanahmet Mosque), Hagia Sophia, Topkapi Palace, Grand Bazaar (4,000 shops), Galata Tower, Bosphorus cruise. The most historically layered city in the world — Byzantine, Ottoman, and modern all coexisting.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 4–6</div>
+      <div class="city-name">🎈 Cappadocia</div>
+      <div class="city-desc">The extraordinary landscape of volcanic "fairy chimneys" — ancient rock-cut churches, underground cities, cave hotels, and the most famous hot air balloon experience in the world. Göreme is the base. The sunrise balloon flight over the valleys is genuinely one of the world's great travel experiences — worth every rupee.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 7 Option</div>
+      <div class="city-name">🏊 Pamukkale</div>
+      <div class="city-desc">Pamukkale (Cotton Castle) — dazzling white calcium carbonate terraces cascading down a hillside, formed by hot spring water over millennia. The ancient Greco-Roman spa city of Hierapolis sits on top. Can be done as a 1-hour domestic flight + half day from Istanbul, or incorporated into an Istanbul–Pamukkale–Cappadocia circuit with domestic flights.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Throughout</div>
+      <div class="city-name">🥙 Turkish Food &amp; Culture</div>
+      <div class="city-desc">Turkish breakfast (serpme kahvaltı) is a feast — 20+ small dishes of cheeses, olives, eggs, jams, tomatoes, cucumbers, bread. Iskender kebab (sliced lamb on bread with tomato sauce and yogurt). Baklava from Güllüoğlu. Turkish tea (çay) in tiny tulip glasses, everywhere, constantly.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"Istanbul is not a place where you simply visit — it is a place where centuries of civilisation wash over you. You leave different." Every mosque dome, every bazaar alley carries 2,000 years of history.</p>
+  </div>
+  <div class="highlight-box green">
+    <strong>Turkey e-Visa for Indians — The Easiest Tourist Visa in the World:</strong> Apply at evisa.gov.tr — takes 5 minutes, costs approximately ₹1,500, approved instantly (usually within minutes). Upload your passport photo and details online, pay by card, and receive the e-visa by email. Print it or show on phone at immigration. Valid for 30 days from arrival. Turkey is one of the most Indian-friendly visa processes of any international destination.
+  </div>
+  <div class="highlight-box amber">
+    <strong>Flights:</strong> Delhi/Mumbai to Istanbul (IST or SAW) — ₹25,000–₹55,000 return. Turkish Airlines flies direct from Delhi and Mumbai (~7–8 hrs) and is one of the best airlines in Europe. IndiGo codeshare options available. Domestic Turkey flights (Istanbul to Kayseri/Nevşehir for Cappadocia): ₹3,000–₹6,000. Book Turkish Airlines domestic flights for best reliability.
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–4 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Turkey 7-Day Itinerary</span>
+    <span class="page-header-right">Days 1–4 — Istanbul &amp; Cappadocia</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">1–3</div>
+    <div class="day-info">
+      <div class="day-tag">Days One to Three · Two Continents, One City</div>
+      <div class="day-title">Istanbul — Blue Mosque, Hagia Sophia &amp; Grand Bazaar</div>
+      <div class="day-sub">Sultanahmet historic district · Hagia Sophia · Topkapi Palace · Grand Bazaar · Galata Tower · Bosphorus cruise · Asian side</div>
+      <div class="day-cost">💰 Hagia Sophia: ₹1,500 · Topkapi: ₹2,500 · Grand Bazaar: free entry · Bosphorus cruise: ₹500–₹1,500</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 1</div>
+      <div class="time-content">
+        <div class="time-title">Sultanahmet — Blue Mosque, Hagia Sophia &amp; Topkapi Palace</div>
+        <div class="time-desc">The Sultanahmet district contains the highest concentration of historic monuments in Istanbul — all within 500 metres of each other. Blue Mosque (Sultan Ahmed Mosque, 1616): free entry, cover shoulders and remove shoes, not open during prayer times (5 prayer times daily — check schedule). Hagia Sophia: built in 537 AD as a Christian church, converted to a mosque in 1453 after Ottoman conquest, museum 1934–2020, and mosque again since 2020 — free entry, modest dress required, Mina available. Topkapi Palace: the administrative heart of the Ottoman Empire for 400 years — Harem (₹2,500 for combined), Treasure House with an emerald as big as a fist, the famous Topkapi Dagger.</div>
+        <div class="time-price">Blue Mosque: free · Hagia Sophia: ₹1,500 · Topkapi: ₹2,500 · Harem extra ₹800 · Allow full day</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 2</div>
+      <div class="time-content">
+        <div class="time-title">Grand Bazaar, Spice Bazaar &amp; Galata Tower</div>
+        <div class="time-desc">The Grand Bazaar (Kapalı Çarşı) is one of the world's oldest and largest covered markets — 4,000 shops across 61 streets, operating since 1461. Open Monday–Saturday, 9am–7pm. Best buys: Turkish carpets (handmade, takes 1 year — a good carpet is worth ₹30,000–₹3,00,000), evil eye (nazar boncuğu — the blue glass amulet), spices, Turkish delight (lokum), ceramics, leather goods, gold jewellery. Bargaining is expected — start at 40% of the asking price. The Spice Bazaar (Mısır Çarşısı) near Eminönü has 100 spice stalls and excellent dried figs and apricots. Galata Tower (1348, Genoese watchtower): ₹1,000 entry, 360° Istanbul views.</div>
+        <div class="time-price">Grand Bazaar: free entry · Galata Tower: ₹1,000 · Turkish carpet: ₹30,000–₹3,00,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 3</div>
+      <div class="time-content">
+        <div class="time-title">Bosphorus Cruise, Dolmabahçe Palace &amp; Asian Side</div>
+        <div class="time-desc">Take the public Bosphorus ferry (Şehir Hatları — ₹500, much better than tourist boats) from Eminönü north through the Bosphorus. The strait separates Europe from Asia — the Bosphorus Bridge visible from the water. Dolmabahçe Palace (19th century, 285 rooms, ₹2,200) was the last Ottoman palace, built in European Baroque style — the crystal staircase and 4.5-tonne chandelier are extraordinary. Afternoon: cross to the Asian side via Üsküdar ferry (₹100) — the Kadıköy neighbourhood has excellent street food, the best baklava (try Güllüoğlu ₹500/box), and a very different, more local atmosphere than tourist-heavy Sultanahmet.</div>
+        <div class="time-price">Bosphorus ferry: ₹500 · Dolmabahçe: ₹2,200 · Kadıköy to Asian side ferry: ₹100 · Baklava: ₹500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">4–6</div>
+    <div class="day-info">
+      <div class="day-tag">Days Four to Six · Fairy Chimneys &amp; Balloons</div>
+      <div class="day-title">Cappadocia — Hot Air Balloon, Rock Churches &amp; Underground Cities</div>
+      <div class="day-sub">Fly Istanbul to Kayseri · Hot air balloon at sunrise (MUST pre-book) · Göreme Open Air Museum · Derinkuyu underground city · ATV valleys</div>
+      <div class="day-cost">💰 Balloon: ₹18,000–₹25,000 · Göreme Museum: ₹1,000 · ATV: ₹2,500 · Underground city: ₹600</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 4 PM</div>
+      <div class="time-content">
+        <div class="time-title">Arrive Cappadocia — Check in to a Cave Hotel</div>
+        <div class="time-desc">Fly from Istanbul to Kayseri (1hr, ₹3,000–₹5,000) or Nevşehir (closer). Transfer to Göreme (30–45 minutes, usually included by cave hotel). Cappadocia's cave hotels — literally carved into the volcanic rock — are one of the world's great accommodation experiences. Rooms have carved stone walls, barrel-vaulted ceilings, and in-room fireplaces. Mid-range cave hotels: ₹6,000–₹10,000/night. Panoramic rooftop terrace views over the "fairy chimney" landscape at sunset. Spend your first afternoon exploring Göreme's lanes and the nearby valley overlooks.</div>
+        <div class="time-price">Domestic flight: ₹3,000–₹5,000 · Cave hotel: ₹6,000–₹10,000/night · Book 3–4 weeks ahead</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 5 Dawn</div>
+      <div class="time-content">
+        <div class="time-title">Hot Air Balloon at Sunrise — A Bucket List Experience</div>
+        <div class="time-desc">Wake at 4:30am. Transfer to the launch site. Watch 100+ balloons slowly inflate and rise as the sun breaks over the horizon — Cappadocia's balloon launches are the densest in the world and create a spectacular visual. Your balloon flies for 1 hour over the fairy chimneys, valleys, and ancient cave dwellings. The silence at 300 metres, the landscape below, the other balloons around you — this is one of the most extraordinary experiences in travel. MUST pre-book: Royal Balloon, Butterfly Balloons, and Kapadokya Balloons are reputable operators. Cost: ₹18,000–₹25,000/person depending on operator and season. Includes champagne breakfast on landing.</div>
+        <div class="time-price">Hot air balloon: ₹18,000–₹25,000 · Book at least 3 weeks ahead · May cancel for wind — refund given</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Days 5–6</div>
+      <div class="time-content">
+        <div class="time-title">Göreme Museum, Underground Cities &amp; ATV Adventures</div>
+        <div class="time-desc">Göreme Open Air Museum (₹1,000): a UNESCO World Heritage Site — Byzantine cave churches carved into the tufa rock between the 9th–12th centuries, with extraordinary frescoes still largely intact. The Dark Church (karanlık kilise) has the finest frescoes — extra ₹500. Derinkuyu Underground City (₹600): an 8-level underground city carved 85 metres below ground, housing 20,000 people. ATV (quad bike) ride through Pigeon Valley, Love Valley and Devrent Valley (₹2,500, 2 hours) — the best way to experience the fairy chimney landscape. Sunset at the Sunset Point in Göreme or Uçhisar Castle for panoramic views over the whole valley.</div>
+        <div class="time-price">Göreme Museum: ₹1,000 · Dark Church extra: ₹500 · Derinkuyu: ₹600 · ATV: ₹2,500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAY 7 + BUDGET + TIPS -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Turkey 7-Day Itinerary</span>
+    <span class="page-header-right">Day 7 · Pamukkale · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">07</div>
+    <div class="day-info">
+      <div class="day-tag">Day Seven · Cotton Castle</div>
+      <div class="day-title">Pamukkale — White Terraces &amp; Hierapolis Ruins</div>
+      <div class="day-sub">Fly or day trip to Pamukkale · White calcium terraces (swim in pools) · Hierapolis Roman ruins · Antique Pool with submerged columns</div>
+      <div class="day-cost">💰 Pamukkale entry: ₹1,200 · Antique Pool swim: ₹1,800 · Domestic flight: ₹3,000–₹5,000</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">All Day</div>
+      <div class="time-content">
+        <div class="time-title">Pamukkale — Calcium Terraces &amp; Hierapolis Ancient City</div>
+        <div class="time-desc">Pamukkale (Cotton Castle in Turkish) is a natural wonder — white calcium carbonate terraces built by mineral-rich hot spring water cascading down a hillside over thousands of years. The result: brilliant white pools at different levels, filled with warm blue-white water. Walking barefoot on the terraces is required (shoes must be removed at the entrance). The pools are shallow — you can paddle or lie in the warm mineral water. The ancient Greco-Roman city of Hierapolis sits on top of the terraces — theatre, necropolis (one of the largest Roman cemeteries), and the Antique Pool where you swim among submerged 2,000-year-old marble columns (₹1,800 extra).</div>
+        <div class="time-price">Pamukkale + Hierapolis entry: ₹1,200 · Antique Pool swim: ₹1,800 · Remove shoes at entrance</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:3mm">Budget Breakdown — Per Person, 7 Days (Excluding Flights from India)</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (7 nights)</td><td>14,000</td><td>28,000</td><td>60,000+</td></tr>
+      <tr><td>Food (Turkey is affordable)</td><td>6,000</td><td>14,000</td><td>28,000</td></tr>
+      <tr><td>Domestic flights + transport</td><td>8,000</td><td>12,000</td><td>18,000</td></tr>
+      <tr><td>Attractions &amp; Activities</td><td>12,000</td><td>30,000</td><td>40,000</td></tr>
+      <tr><td>Shopping (Bazaars!)</td><td>2,000</td><td>8,000</td><td>30,000+</td></tr>
+      <tr><td>Intl. Flights (Delhi/Mumbai–IST)</td><td>25,000</td><td>38,000</td><td>60,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹67,000</strong></td><td><strong>~₹1,30,000</strong></td><td><strong>₹2,36,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Turkey is exceptional value — the Turkish Lira has depreciated significantly, making it one of the most affordable European/Middle Eastern destinations for Indian travellers. A full restaurant meal costs ₹400–₹800. Accommodation in Istanbul near Sultanahmet: ₹2,000–₹4,000/night for good guesthouses.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🎈</div>
+      <div class="tip-title">Cappadocia Balloon — Book 3+ Weeks Ahead</div>
+      <div class="tip-desc">Hot air balloon companies fill up quickly in April–June and September–October. Book at least 3 weeks ahead. Reliable operators: Royal Balloon (oldest, most reputable), Butterfly Balloons, Kapadokya Balloons. If wind is too strong on your booked day, the flight is cancelled — get a full refund and rebook. Budget ₹18,000–₹25,000 — the cheaper operators cut corners on safety and service.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🕌</div>
+      <div class="tip-title">Mosque Etiquette — Essential Knowledge</div>
+      <div class="tip-desc">Both the Blue Mosque and Hagia Sophia are functioning mosques — prayer times are 5 times daily and the mosque is closed to tourists during prayers (30 minutes each time). Check prayer times at the tourist office or mosque entrance. Remove shoes before entering, cover your head (women — scarves provided at entrance), cover shoulders and knees. No photography during prayer. Be respectful and quiet.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🥙</div>
+      <div class="tip-title">Turkish Food — Must-Eats</div>
+      <div class="tip-desc">Kebab: iskender (döner lamb on bread with tomato sauce and yogurt — Bursa origin), Adana (spicy minced lamb), and shish (skewered). Turkish breakfast (serpme kahvaltı): 20-dish spread, the world's finest breakfast — order at a breakfast restaurant, ₹800/person. Baklava from Güllüoğlu (Karaköy, Istanbul — pilgrimage-worthy). Simit (sesame bread ring, ₹30) — street breakfast of Istanbul. Turkish ice cream (dondurma) performer show on İstiklal Caddesi.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛍️</div>
+      <div class="tip-title">Grand Bazaar Shopping — What to Buy</div>
+      <div class="tip-desc">Turkish carpets: handmade kilims and pile carpets are extraordinary — if buying, ask to see the carpet backed in sunlight to check for repairs. Turkish delight (lokum): buy from Hafız Mustafa or Ali Muhiddin Hacı Bekir — not tourist stalls. Evil eye (nazar): beautiful glass, excellent gifts at ₹100–₹2,000. Spices: sumac, isot (dried chilli), Turkish saffron. Leather: Istanbul makes excellent leather jackets (₹8,000–₹25,000).</div>
+    </div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Istanbul Transport Tips:</strong> The Istanbulkart (₹150 card + ₹500 top-up) covers all Metro, tram, ferry, and bus in Istanbul — far cheaper than single tickets. The Tünel funicular (world's second oldest underground railway, 1875) connects Karaköy to Beyoğlu (₹100). Walk the Galata Bridge across the Golden Horn — fishermen line both sides day and night. The T1 tram line from Sultanahmet to Kabataş covers all major tourist sites for ₹100/trip.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More of the World<br/>Awaits You</h2>
+  <p>From Jordan's Petra to Greece's Santorini, from Egypt's Pyramids to Morocco's Marrakech — IncredibleItinerary covers every destination around the Mediterranean and Middle East for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · London · Rome · Barcelona · Amsterdam · Switzerland · New York · Malaysia · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

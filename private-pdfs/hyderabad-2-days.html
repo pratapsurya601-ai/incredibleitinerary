@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Hyderabad 2 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#92400e;--primary-light:#d97706;--primary-dark:#78350f;
+  --accent:#f59e0b;--accent-light:#fde68a;
+  --ink:#1c0a00;--cream:#fffbf5;--parchment:#fef3c7;
+  --white:#ffffff;--muted:#6b4c2a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,10,0,0.97) 0%,rgba(28,10,0,0.6) 50%,rgba(28,10,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#f59e0b;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(146,64,14,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(146,64,14,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.amber{background:var(--primary-light);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(146,64,14,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(146,64,14,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(245,158,11,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#f59e0b;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#f59e0b;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(146,64,14,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.amber{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:#78350f}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.highlight-box.green{background:#f0fdf4;border:1px solid #bbf7d0;color:#065f46}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(146,64,14,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(146,64,14,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(146,64,14,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(146,64,14,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(146,64,14,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?w=1200&q=80" alt="Hyderabad Charminar"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Hyderabad<br/><em>in 2 Days</em></h1>
+    <p class="cover-sub">Biryani, pearls and the Nizam's grandeur — Golconda Fort, Charminar, Irani chai, and the City of Pearls in two perfectly packed days</p>
+    <div class="cover-pills">
+      <span class="pill">🏰 2 Days</span>
+      <span class="pill">💎 City of Pearls</span>
+      <span class="pill">💰 ₹3,000–₹12,000</span>
+      <span class="pill">🌤️ Oct–Feb</span>
+      <span class="pill">🍛 Biryani</span>
+      <span class="pill">🕌 Charminar</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(146,64,14,0.3);border:1px solid rgba(245,158,11,0.4);color:#f59e0b;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Hyderabad 2-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The City of Nizams, Biryani &amp; Pearls</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">2 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🕌</div><span class="stat-val">Charminar</span><span class="stat-label">1591 CE Landmark</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹3k–12k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Feb</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop amber">Golconda Fort</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Charminar</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Laad Bazaar</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Ramoji Film City</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Hussain Sagar</span>
+    <span class="route-sub">Fly into Rajiv Gandhi International Airport (HYD) · Metro connects most sights</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 Morning</div>
+      <div class="city-name">🏯 Golconda Fort</div>
+      <div class="city-desc">16th-century Qutb Shahi fortress famous for its acoustic system — a hand clap at the main entrance is audible at the top (1km away). Remarkable defensive engineering: interlocking walls, hidden passages, a granite hill base. The diamonds of the Nizam's treasury (including the Koh-i-Noor) once stored here. Sound and Light Show evenings: ₹250, highly recommended.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 1 Afternoon</div>
+      <div class="city-name">🕌 Charminar &amp; Laad Bazaar</div>
+      <div class="city-desc">Built in 1591 by Muhammad Quli Qutb Shah — four minarets, 56 metres tall, the icon of Hyderabad. Climb to the top (₹25) for views over the old city. Laad Bazaar (Choodi Bazaar) adjacent is famous for its lustrous glass bangles, pearl jewellery, itr (attar perfumes), and traditional wedding attire. One of the best bazaar experiences in South India.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 Morning</div>
+      <div class="city-name">🎬 Ramoji Film City</div>
+      <div class="city-desc">The world's largest integrated film studio complex (Guinness World Record) at 1,666 acres. Sets for Bollywood, Telugu, Tamil films. Film exhibits, rides, street performances, gardens, and live film productions in progress. A full-day experience (₹1,200 entry + internal transport). Not for cinema purists but an extraordinary spectacle of Indian film culture's industrial scale.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 Evening</div>
+      <div class="city-name">🌊 Hussain Sagar Lake</div>
+      <div class="city-desc">The 16 sq km artificial lake built in 1563 has a 17.5-metre Buddha statue on a rocky island at its centre (reached by boat, ₹100). Tank Bund, the embankment road circling the lake, has statues of 33 famous Telugus and is a pleasant walk at dusk. Birla Mandir — white marble Vaishnava temple on a rocky hillock above the lake — has stunning sunset city views.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Hyderabad is where the Mughal empire's last great cultural flowering happened — in the biryani, the architecture, the perfumes, the pearls, and the Irani chai."</p>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Pearls:</strong> Hyderabad is the pearl capital of India — 95% of India's pearl jewellery trade passes through here. Natural sea pearls (from Persian Gulf, South Sea) are significantly cheaper here than in Mumbai or Delhi. Certified natural pearls from established dealers: Mangatrai (Abids), GRT Jewellers (multiple locations). Synthetic/fake pearls are unfortunately also common — buy only from certified dealers. Ask for a GIA or independent lab certificate for any significant purchase.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Hyderabad 2-Day Itinerary</span>
+    <span class="page-header-right">Day-by-Day Plan</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · The Old City</div>
+      <div class="day-title">Golconda, Charminar &amp; Laad Bazaar</div>
+      <div class="day-sub">Golconda Fort acoustic demo · Afternoon Charminar climb · Laad Bazaar bangles · Paradise Biryani dinner · Evening Sound &amp; Light Show</div>
+      <div class="day-cost">💰 Golconda: ₹200 · Charminar: ₹25 · Sound &amp; Light: ₹250 · Paradise Biryani: ₹250–₹400</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Golconda Fort — The Acoustic Demonstration</div>
+        <div class="time-desc">Golconda Fort (₹200 Indians) was the seat of the Qutb Shahi dynasty for nearly a century. The fort's most famous feature: stand at the Fateh Darwaza (main entrance) and clap your hands once — the clap echoes and reaches the throne room at the very top of the hill (1km away). This was the alarm system — guards at the entrance could signal the king instantly. This acoustic feat, demonstrated by the guides (or do it yourself), is genuinely extraordinary engineering for the 16th century. The fort also has elaborate water supply systems, a mosque, the royal tombs nearby, and sweeping views of Hyderabad.</div>
+        <div class="time-price">Golconda Fort entry: ₹200 Indians · ₹300 foreigners · Guide: ₹200–₹300 · 2–3hrs to explore</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Nimrah Cafe — Irani Chai &amp; Osmania Biscuits</div>
+        <div class="time-desc">Before heading to Charminar, stop at Nimrah Cafe (directly adjacent to the Charminar's northwest minaret) for the single best cultural food experience in Hyderabad. Irani chai (strong, sweetened tea brewed in the Irani tradition, served in thick ceramic cups) with Osmania biscuits (butter cookies made with a slight saltiness — a Hyderabadi invention, named after the last Nizam, Mir Osman Ali Khan). The cafe has been here for decades. Total cost: ₹40. These are flavours that define the city.</div>
+        <div class="time-price">Irani chai: ₹15–₹20 · Osmania biscuits: ₹5–₹10 each · Nimrah Cafe: at Charminar north gate</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Charminar — Climb to the Top</div>
+        <div class="time-desc">The Charminar (Four Minarets, 1591 CE, ₹25) has a mosque on the top floor and a narrow staircase spiralling up each of the four minarets. The view from the top — over the old city, the minarets of Mecca Masjid, the chaos of Laad Bazaar below — is the authentic Hyderabad panorama. The structure is 56 metres tall. Modest dress required. The entrance queue can be 30–45 minutes on weekends. Go on a weekday if possible.</div>
+        <div class="time-price">Charminar entry: ₹25 Indians · Climb to top included · No separate fee</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Laad Bazaar &amp; Mecca Masjid</div>
+        <div class="time-desc">Laad Bazaar (Choodi Bazaar) is the lane immediately adjacent to Charminar — 300 metres of shops selling hand-crafted glass bangles (in every colour, lacquer, gold and silver inlay), pearl strands, itr (perfume) in tiny crystal bottles, hand-embroidered fabric, and traditional Hyderabadi accessories. Buy a set of glass bangles (₹50–₹200 for a set). The Mecca Masjid (100m west of Charminar) is one of the oldest and largest mosques in India — built 1693 CE — and the soil of its mihrab is from Mecca. Entry free, dress modestly.</div>
+        <div class="time-price">Laad Bazaar: glass bangles ₹50–₹200 · Itr perfumes: ₹100–₹1,000 · Mecca Masjid: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">7:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Paradise Biryani — Mandatory</div>
+        <div class="time-desc">No visit to Hyderabad is complete without Paradise Biryani. The original Paradise restaurant (Secunderabad) has been serving Hyderabadi dum biryani since 1953. Dum biryani: basmati rice and mutton/chicken cooked together sealed in a handi (pot) over low heat — the flavours meld for hours before serving. Order the mutton biryani (₹350–₹400 per plate) with mirchi ka salan (green chilli curry) and raita. Multiple Paradise outlets across the city. The Secunderabad and Banjara Hills branches are the most reliable.</div>
+        <div class="time-price">Mutton biryani: ₹350–₹400 · Chicken: ₹250–₹300 · Mirchi salan: ₹80 · Dessert: double ka meetha ₹100</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">8:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Golconda Sound &amp; Light Show</div>
+        <div class="time-desc">The evening Sound and Light Show at Golconda Fort (₹250, 7pm onwards) narrates the history of the Qutb Shahis through illuminated fort walls, dramatic light effects, and a narrated audio story. The 45-minute show dramatically transforms the fort from a daytime archaeological site into a theatrical spectacle. Book in advance or arrive early — popular show. English language show available.</div>
+        <div class="time-price">Sound &amp; Light Show: ₹250 · Duration: 45min · Telugu show at 6:45pm · English at 8pm · Book ahead</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Modern Hyderabad</div>
+      <div class="day-title">Ramoji Film City, Hussain Sagar &amp; Birla Mandir</div>
+      <div class="day-sub">Ramoji Film City all-morning · Hussain Sagar Buddha boat · Birla Mandir sunset · Pearl shopping</div>
+      <div class="day-cost">💰 Ramoji: ₹1,200 · Buddha boat: ₹100 · Birla Mandir: free · Pearl shopping: your choice</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Ramoji Film City — World's Largest Film Studio Complex</div>
+        <div class="time-desc">Ramoji Film City (₹1,200 entry, includes internal transport) is a Guinness World Record holder — the world's largest integrated film studio at 1,666 acres. Sets range from European villages to traditional Indian streets to airport sets and a Japanese garden. Live dance shows, stunt performances, and rides are scheduled throughout the day. You may see actual film shoots in progress. The experience is part theme park, part film history, part cinematic spectacle — enormous fun even if you don't follow Bollywood or Telugu cinema. Allow 4–5 hours minimum.</div>
+        <div class="time-price">Entry: ₹1,200 (includes bus tour and shows) · 25km from city · Metro + taxi or tour bus from city</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Pearl Shopping — Buy Right</div>
+        <div class="time-desc">Hyderabad is where 95% of India's pearl jewellery is traded. The best dealers are in the Abids and Nampally areas. Mangatrai Pearls (Abids) is the oldest and most trusted — natural saltwater pearls (Akoya, South Sea, freshwater) certified and priced transparently. GRT Jewellers also reliable. What to ask: natural vs cultured (cultured = nucleus insertion, still genuine pearls). Natural saltwater pearls: ₹5,000–₹50,000+ per strand. Cultured Akoya: ₹1,500–₹8,000/strand. Freshwater cultured: ₹500–₹3,000. Do NOT buy "pearls" from footpath vendors near Charminar — they are almost certainly synthetic.</div>
+        <div class="time-price">Natural saltwater pearl strand: ₹5,000–₹50,000+ · Cultured freshwater: ₹500–₹3,000 · Ask for certificate</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">4:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Hussain Sagar Lake — Buddha Island &amp; Tank Bund</div>
+        <div class="time-desc">Hussain Sagar is a 16 sq km lake built in 1563. The iconic 17.5-metre monolithic Buddha statue on Rock of Gibraltar island in the lake's centre is one of the world's largest. Boats (₹100, 30 minutes return) run from multiple jetties on the Tank Bund. The Tank Bund road itself — with statues of famous Telugu personalities and the Lumbini Park fountain garden — is a pleasant evening walk. The lake at dusk with the Buddha silhouetted against the sky is classically Hyderabad.</div>
+        <div class="time-price">Hussain Sagar: free · Buddha boat: ₹100 return · Lumbini Park boat rides: ₹50</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Birla Mandir — White Marble Temple at Dusk</div>
+        <div class="time-desc">Birla Mandir (free entry, built 1976) is a white Rajasthani marble Vaishnava temple perched on a 120-foot granite hill above Hussain Sagar. The sunset from the temple premises — with the lake below, the city skyline, and the western sky turning amber — is spectacular. The temple itself has fine Rajasthani jali (lattice) marble work and detailed sculptural programme. No photography inside. Best visited in the last 90 minutes of daylight.</div>
+        <div class="time-price">Birla Mandir: free · No photography inside · Modest dress required · Sunset timing ideal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 2 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (1 night)</td><td>800</td><td>2,500</td><td>7,000</td></tr>
+      <tr><td>Food (2 days)</td><td>700</td><td>2,000</td><td>4,000</td></tr>
+      <tr><td>Transport (Uber/Metro)</td><td>500</td><td>1,200</td><td>2,500</td></tr>
+      <tr><td>Golconda + Charminar + Shows</td><td>500</td><td>800</td><td>800</td></tr>
+      <tr><td>Ramoji Film City</td><td>1,200</td><td>1,200</td><td>1,200</td></tr>
+      <tr><td>Shopping (pearls, bangles)</td><td>500</td><td>3,000</td><td>20,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹4,200</strong></td><td><strong>~₹10,700</strong></td><td><strong>₹35,500+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Budget excludes flights to Hyderabad (HYD). Hyderabad has excellent flight connectivity from all major Indian cities. Metro connects Hitech City to the Old City area — use it for afternoon/evening visits to avoid traffic.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Hyderabad 2-Day Itinerary</span>
+    <span class="page-header-right">Food Guide, Tips &amp; Essentials</span>
+  </div>
+
+  <div class="label">Hyderabad Food Guide — Eat Your Way Through the City</div>
+  <h2 class="section-title" style="margin-bottom:4mm">The Nizam's Table</h2>
+
+  <div class="highlight-box amber">
+    <strong>The Biryani Debate:</strong> Hyderabadi biryani is different from Lucknowi (Awadhi) biryani. Hyderabadi uses the "kachchi" method — raw marinated meat and rice are cooked together sealed in a pot. Lucknowi uses "pakki" method — meat is cooked first, then layered with rice. Both are extraordinary but distinct. Hyderabadi biryani has a more intense meat flavour. Paradise, Bawarchi, and Shah Ghouse are the biryani institutions. Locals swear by different favourites — ask your hotel staff.
+  </div>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🍛</div>
+      <div class="tip-title">Where to Eat — The Essentials</div>
+      <div class="tip-desc">Biryani: Paradise (Secunderabad), Bawarchi (RTC X Roads), Shah Ghouse (Toli Chowki). Irani chai + Osmania biscuits: Nimrah Cafe (Charminar), Cafe Bahar (Basheerbagh). Haleem (during Ramadan — but available year-round at Pista House): ₹150–₹200. Qubani ka meetha (apricot dessert with cream): at most traditional biryani restaurants. Double ka meetha (bread-and-milk pudding): excellent at Cafe Bahar.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚇</div>
+      <div class="tip-title">Getting Around — Metro is Your Friend</div>
+      <div class="tip-desc">Hyderabad Metro (HMRL) is one of India's best urban metros — clean, air-conditioned, punctual. Blue Line connects Hitech City/BHEL to Ameerpet, connecting to the Charminar area. Use Uber or Ola for Ramoji Film City (25km from city — no metro). Peak hour traffic in Hyderabad is severe — budget extra time by road in evenings. Metro token: ₹20–₹40 depending on distance.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Season — October to February is Ideal</div>
+      <div class="tip-desc">Hyderabad at 500m altitude has a generally pleasant climate but hot summers (March–June reach 40–42°C). October to February: 20–30°C daytime, 14–18°C nights — ideal. The Old City sightseeing in 42°C is genuinely unpleasant. Golconda Fort is a large open site — in summer, visit before 9am or after 4pm. Monsoon (June–September): Hussain Sagar fills up and is beautiful, the Fort is dramatic in rain.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💎</div>
+      <div class="tip-title">Pearl Buying — The Complete Guide</div>
+      <div class="tip-desc">Three categories of pearls in Hyderabad. 1) Natural (uncultered): formed entirely without human intervention — extremely rare, very expensive. 2) Cultured saltwater (Akoya, South Sea): nucleus inserted, pearl forms around it — still genuine, very beautiful, the most popular. 3) Freshwater cultured: less lustrous but affordable. Ask the dealer clearly: "Is this natural or cultured? What is the origin?" Reputable dealers answer without hesitation. Get a written receipt specifying pearl type and grade.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎬</div>
+      <div class="tip-title">Ramoji Film City — Tips</div>
+      <div class="tip-desc">Buy tickets online to avoid queues. The entry package includes a bus tour, all shows, and rides — worth ₹1,200 if you stay 5+ hours. The Filmnagar area with its recreated world sets is the highlight. Live stunt shows run at specific times — collect a schedule on entry. Best days: Monday–Thursday (fewer crowds). Avoid school holidays and weekends. Bring comfortable shoes — it's 1,666 acres of walking.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🕌</div>
+      <div class="tip-title">Old City Etiquette</div>
+      <div class="tip-desc">The Charminar area and Laad Bazaar are predominantly Muslim neighbourhoods. Dress conservatively (women: covered arms and legs; men: no shorts). Remove footwear at mosque entrances. Friday afternoon — Jumu'ah prayers at Mecca Masjid attract thousands; the area around the Charminar becomes very crowded and vehicle traffic stops 12–2pm. Either plan around this or join the crowd — Friday prayers are themselves a cultural spectacle.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏛️</div>
+      <div class="tip-title">Additional Sights If You Have More Time</div>
+      <div class="tip-desc">Salar Jung Museum (one of the largest single-person collections in the world — Mir Yusuf Ali Khan's extraordinary hoard of international art, textiles, weapons, manuscripts — ₹50, closed Friday). Chowmahalla Palace (Nizam's residence, ₹80, excellent). Qutb Shahi Tombs (magnificent domed tombs of the Qutb Shahi dynasty near Golconda — ₹200, often empty, beautiful). All three are excellent but require a third day.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌙</div>
+      <div class="tip-title">Haleem — The Dish Worth Planning Around</div>
+      <div class="tip-desc">Haleem is Hyderabad's extraordinary slow-cooked meat and wheat porridge — cooked for 10–12 hours until the meat completely dissolves into a velvety, intensely flavoured paste. It's primarily associated with Ramadan (when it's sold everywhere at sunset) but Pista House sells it year-round. The Hyderabadi haleem received GI (Geographical Indication) status — the first meat product in India to do so. Try it at Pista House (multiple branches): ₹150–₹200 per bowl.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing &amp; Practical Notes</div>
+  <div class="pack-list">
+    <div class="pack-item">👗 <strong>Modest clothing</strong> — for Charminar, Mecca Masjid, Birla Mandir. Cover arms and legs.</div>
+    <div class="pack-item">👟 <strong>Comfortable walking shoes</strong> — Golconda Fort is large and uneven terrain.</div>
+    <div class="pack-item">☀️ <strong>Sunscreen &amp; hat</strong> — Oct–Feb: mild. March–Sep: very hot. Golconda in sun is intense.</div>
+    <div class="pack-item">💧 <strong>Water bottle</strong> — stay hydrated especially at outdoor sites. Carry 1.5L minimum.</div>
+    <div class="pack-item">💳 <strong>Cards + some cash</strong> — Ramoji Film City and most restaurants accept cards. Old City bazaars prefer cash.</div>
+    <div class="pack-item">📱 <strong>Uber/Ola app</strong> — much better than autorickshaws for getting around. Fair metered prices.</div>
+    <div class="pack-item">📸 <strong>Camera</strong> — Golconda fort architecture, Charminar views, Sound &amp; Light Show are all photogenic.</div>
+    <div class="pack-item">🛍️ <strong>Extra bag</strong> — for pearl and bangle shopping. Both are small but you may buy more than planned.</div>
+    <div class="pack-item">🍛 <strong>Empty stomach</strong> — leave room for biryani, haleem, Irani chai, Osmania biscuits, and qubani ka meetha.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More South<br/>India Awaits</h2>
+  <p>From the temples of Hampi to Kerala's backwaters, from the beaches of Goa to Ooty's tea gardens — IncredibleItinerary has a complete guide for every journey across this extraordinary country.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Pune · Gujarat · Rajasthan · Varanasi · Kerala · Goa · Ooty · Andaman · Maldives · Spiti Valley</p>
+  <div class="back-legal">This guide is for personal use only. Entry fees, restaurant quality and availability are subject to change — verify before travel. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

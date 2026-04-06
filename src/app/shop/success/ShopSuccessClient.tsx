@@ -295,21 +295,12 @@ export default function ShopSuccessClient() {
             </p>
             <div className="flex gap-3 justify-center">
               <a
-                href="https://www.instagram.com/incredibleitinerary"
+                href="https://www.linkedin.com/in/surya-pratap-singh-490a18320"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-muted hover:text-gold transition-colors"
               >
-                📸 Instagram
-              </a>
-              <span className="text-parchment-2">·</span>
-              <a
-                href="https://www.youtube.com/@incredibleitinerary"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-muted hover:text-gold transition-colors"
-              >
-                🎥 YouTube
+                LinkedIn
               </a>
             </div>
           </div>

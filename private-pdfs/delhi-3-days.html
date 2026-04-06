@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Delhi in 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b91c1c;--primary-light:#f87171;--primary-dark:#7f1d1d;
+  --accent:#d97706;--accent-light:#fde68a;
+  --ink:#1a0505;--cream:#fff5f5;--parchment:#fee2e2;
+  --white:#ffffff;--muted:#6b3535;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,5,5,0.97) 0%,rgba(26,5,5,0.6) 50%,rgba(26,5,5,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#f87171;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(185,28,28,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(185,28,28,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--accent);color:#fff}
+.route-stop.green{background:#15803d;color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(185,28,28,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(248,113,113,0.08),rgba(248,113,113,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#f87171;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#f87171;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(185,28,28,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(185,28,28,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(185,28,28,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/1007427/pexels-photo-1007427.jpeg?w=1200&q=80" alt="Red Fort Delhi"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Delhi<br/><em>in 3 Days</em></h1>
+    <p class="cover-sub">Eight cities layered in one — Mughal grandeur, colonial avenues, ancient tombs and the most chaotic, delicious food street in India</p>
+    <div class="cover-pills">
+      <span class="pill">🏯 3 Days</span>
+      <span class="pill">🕌 Old &amp; New Delhi</span>
+      <span class="pill">💰 ₹4,000–₹20,000</span>
+      <span class="pill">🌤️ Oct–Mar Best</span>
+      <span class="pill">🔴 Red Fort</span>
+      <span class="pill">🇮🇳 India Gate</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(185,28,28,0.3);border:1px solid rgba(248,113,113,0.4);color:#f87171;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Delhi 3-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Eight Empires, Three Days</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏯</div><span class="stat-val">8 Cities</span><span class="stat-label">Beneath Modern Delhi</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹4k–20k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Mar</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Old Delhi</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">New Delhi</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop green">Humayun's</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Qutub Minar</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Akshardham</span>
+    <span class="route-sub">Metro connects all major sites · DMRC Purple &amp; Blue lines for monuments</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🕌 Old Delhi — Mughal Heart</div>
+      <div class="city-desc">Shahjahanabad — the walled city built by Emperor Shah Jahan in 1639. Red Fort, the colossal Jama Masjid, the magnificent chaos of Chandni Chowk, paranthe wali gali (the lane of parathas), and Karim's — which has been feeding Delhi since 1913.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🏛️ New Delhi — Colonial &amp; Classical</div>
+      <div class="city-desc">Lutyens' Delhi: India Gate, Rajpath (now Kartavya Path), Humayun's Tomb (the prototype for the Taj Mahal), Qutub Minar (1193 AD, 72.5 metres), and Hauz Khas Village for the evening — ruins, a lake, cafes and boutiques in medieval walls.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">⛩️ Akshardham &amp; Lodi Garden</div>
+      <div class="city-desc">Akshardham Temple — opened 2005, built without modern machinery, claims to be the world's largest Hindu temple complex (Guinness record). No phones permitted. Then Lodi Garden: 90 acres of manicured gardens around 15th-century tombs. Delhi's most beautiful park.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Throughout</div>
+      <div class="city-name">🍽️ The Food Capital of India</div>
+      <div class="city-desc">Delhi debates with Mumbai for India's food crown — and wins on sheer variety. Old Delhi's Mughal-lineage kebabs and biryanis. Paranthe wali gali since the 1870s. CP's dhaba culture. South Delhi's café scene. Every cuisine of India is represented and done well.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Delhi is not one city. It is eight cities stacked on top of each other, each empire leaving its ruins for the next to build upon. It is the most historically dense capital on earth."</p>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>Best Time to Visit:</strong> October to March. December and January are cool (8–20°C) and smoggy — the famous Delhi winter fog (and AQI above 300) is real; pack a mask if you're sensitive. February to March is perfect: clear, 18–28°C, gardens in bloom. April onwards gets brutal, topping 45°C in May–June. Monsoon (July–September) is hot and humid but clears the air significantly.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAY 1 & 2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Delhi 3-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Old Delhi &amp; New Delhi</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Old Delhi</div>
+      <div class="day-title">Red Fort, Jama Masjid &amp; Chandni Chowk</div>
+      <div class="day-sub">Red Fort · Jama Masjid · Chandni Chowk food walk · Karim's for lunch · Spice market · Evening at Connaught Place</div>
+      <div class="day-cost">💰 Entries: ₹500 · Food: ₹300–₹600 · Transport: ₹100 metro</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Red Fort — Shah Jahan's Red Sandstone Masterpiece</div>
+        <div class="time-desc">Built in 1639–48, the Red Fort (Lal Qila) was the ceremonial and political heart of the Mughal Empire for 200 years. The two main palaces — Diwan-i-Aam (Hall of Public Audience) and Diwan-i-Khas (Hall of Private Audience) — are the finest surviving examples of Mughal palatial architecture. The famous Peacock Throne once stood in the Diwan-i-Khas, stolen by Nadir Shah in 1739. Prime Minister delivers Independence Day speech here every 15 August. Morning light on the red sandstone is spectacular.</div>
+        <div class="time-price">Entry: ₹35 Indians · ₹500 foreigners · Metro to Chandni Chowk station (Yellow line) · Open 9am–5pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Jama Masjid — The Largest Mosque in India</div>
+        <div class="time-desc">Built by Shah Jahan between 1644–1656, Jama Masjid can accommodate 25,000 worshippers in its courtyard. The mosque is active — non-Muslims are welcome outside prayer times. The view from the south minaret (₹100) over Old Delhi and across to the Red Fort is one of Delhi's finest. Cover head and remove shoes (free to borrow at entrance). The mosque sits at the edge of Chandni Chowk market — leave immediately after visiting to start the food walk.</div>
+        <div class="time-price">Entry: free · Minaret climb: ₹100 · Cover head — scarves available at entrance · Prayer times: avoid 12:30–1:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Chandni Chowk Food Walk — Paranthe Wali Gali &amp; Jalebis</div>
+        <div class="time-desc">The main Chandni Chowk bazaar dates to the 17th century. Start at Paranthe Wali Gali (the lane of parathas) — three family-run shops (Pandit Gaya Prasad Shiv Charan and rivals) have served stuffed parathas since the 1870s. ₹80–₹120 for a full plate with curds and chutneys. Then walk to the jalebi vendor near Dariba Kalan for fresh jalebis in ghee (₹50/100g). The Spice Market (Khari Baoli — Asia's largest wholesale spice market) is nearby: the smell of cumin, turmeric and cardamom is overwhelming and magnificent.</div>
+        <div class="time-price">Parathas: ₹80–₹120 · Jalebis: ₹50/100g · Spice market: free to browse</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Karim's — Feeding Delhi Since 1913</div>
+        <div class="time-desc">Tucked in a lane near Jama Masjid, Karim's was established in 1913 by the descendants of chefs from the Mughal imperial kitchen. The mutton burra kebab, seekh kebab and mutton nahari (slow-cooked overnight broth) are among the finest examples of Mughal cooking in India. It's not fancy — plastic chairs, fluorescent lights — but the food is historically significant and genuinely extraordinary. Vegetarians: the dal and paratha are excellent.</div>
+        <div class="time-price">Meal per person: ₹300–₹500 · Address: 16 Jama Masjid Lane · Open for lunch and dinner</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · New Delhi</div>
+      <div class="day-title">India Gate, Humayun's Tomb &amp; Qutub Minar</div>
+      <div class="day-sub">India Gate · Rashtrapati Bhavan · Humayun's Tomb · Qutub Minar · Hauz Khas Village evening</div>
+      <div class="day-cost">💰 Entries: ₹850 total · Hauz Khas dinner: ₹600–₹1,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">India Gate &amp; Kartavya Path — The Imperial Axis</div>
+        <div class="time-desc">India Gate, built in 1931, commemorates 82,000 Indian soldiers who died in World War I. The eternal flame (Amar Jawan Jyoti) burns beneath it. The tree-lined Kartavya Path (formerly Rajpath) runs from India Gate to Rashtrapati Bhavan — the grandest ceremonial avenue in any capital. Walk the 2km to Rashtrapati Bhavan — the President's residence is visible from the road. The Changing of the Guard ceremony is on Saturdays at 8am. Early morning is best; crowds build after 10am.</div>
+        <div class="time-price">India Gate: free · Metro to Central Secretariat (Yellow/Violet line) · Bring water, very little shade</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Humayun's Tomb — The Prototype for the Taj Mahal</div>
+        <div class="time-desc">Built in 1572 by Humayun's widow, this was the first garden-tomb in the Indian subcontinent and directly inspired the Taj Mahal (built 73 years later). The geometry is perfect: a central tomb set in a Persian char-bagh (four-quadrant garden). The Aga Khan Trust's restoration work has been so thorough that the garden now looks as it did in the 16th century. Quieter and more contemplative than the Taj — and arguably more historically significant. Allow 1.5–2 hours.</div>
+        <div class="time-price">Entry: ₹35 Indians · ₹550 foreigners · Metro to JLN Stadium · Open 6am–6pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Qutub Minar — India's Tallest Minaret, Built in 1193</div>
+        <div class="time-desc">At 72.5 metres, the Qutub Minar is the tallest brick minaret in the world, built by Qutb ud-Din Aibak after the defeat of the last Hindu kingdom of Delhi in 1193. The complex also contains the Quwwat-ul-Islam mosque — the first mosque built in India — and the Iron Pillar, a 7-metre column from the 4th–5th century AD that has not rusted in 1,600 years (the metallurgical sophistication of ancient India still puzzles scientists). No longer possible to climb the minaret (closed since 1981 due to a stampede), but the complex is extraordinary from ground level.</div>
+        <div class="time-price">Entry: ₹35 Indians · ₹600 foreigners · Metro to Qutub Minar · 1–1.5 hours sufficient</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Hauz Khas Village — Medieval Ruins Meet Rooftop Bars</div>
+        <div class="time-desc">One of Delhi's most unusual neighbourhoods: a 14th-century madrasa and royal tomb complex on the banks of a medieval reservoir, now surrounded by boutiques, cafes, galleries and rooftop restaurants. Walk through the ruins at sunset (free, accessible from the village lanes), then choose from dozens of restaurants. Social (₹600/person), Hauz Khas Social Bar (₹800/person with drinks), or the local dhabas on the street for ₹200 per person.</div>
+        <div class="time-price">Ruins: free · Dinner: ₹400–₹1,500 · Auto or Uber from Qutub Minar: ₹150–₹200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAY 3 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Delhi 3-Day Itinerary</span>
+    <span class="page-header-right">Day 3 · Akshardham · Budget</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Temples &amp; Gardens</div>
+      <div class="day-title">Akshardham, Lotus Temple &amp; Lodi Garden</div>
+      <div class="day-sub">Akshardham complex · Lotus Temple · Lodi Garden · Connaught Place shopping · Departure</div>
+      <div class="day-cost">💰 All entries free or low cost · Total day: ₹300–₹500 excluding shopping</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Akshardham Temple — No Phones, Pure Architecture</div>
+        <div class="time-desc">Opened in 2005 and holding a Guinness World Record for the world's largest comprehensive Hindu temple complex, Akshardham was built by 11,000 artisans and volunteers, using traditional methods without steel. The central monument in pink Rajasthani sandstone and white Carrara marble features 234 carved pillars, 9 ornate domes and 20,000 murti statues. No phones, cameras, bags, leather or food are permitted inside (all deposited in free lockers). The boat ride narrating 10,000 years of Indian history (₹173) and the IMAX show are excellent. Allow 3–4 hours.</div>
+        <div class="time-price">Temple: free · Boat ride: ₹173 · IMAX: ₹80 · Metro to Akshardham (Blue line) · Open 9:30am–6:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Lotus Temple — Bahai House of Worship</div>
+        <div class="time-desc">The Lotus Temple, built in 1986, is one of the most visited buildings in the world — receiving more visitors annually than the Eiffel Tower. It belongs to the Bahai faith, which accepts all religions equally. The flower-shaped white marble structure with 27 petals arranged in clusters of three is architecturally extraordinary. Inside: silence, cool air, and a feeling of extraordinary calm. No religious ceremonies, no idols, no rituals — just meditation and silence. All faiths welcome. Metro to Kalkaji Mandir (Violet line).</div>
+        <div class="time-price">Entry: free · Metro to Kalkaji Mandir · 30–45 minutes · Dress modestly</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Lodi Garden — 90 Acres of Tombs and Tranquility</div>
+        <div class="time-desc">Lodi Garden is Delhi's most beautiful park: 90 acres of manicured grounds containing 15th-century Sayyid and Lodi dynasty tombs, rose gardens and a bonsai park. In the morning and evening it fills with Delhi's joggers, meditators and families. The octagonal tomb of Muhammad Shah (1444) and the round-domed Sheesh Gundj are the most impressive structures. In February, the entire garden is in bloom. Virtually unknown to international tourists but beloved by Delhiites. 1 hour is sufficient.</div>
+        <div class="time-price">Entry: free · Open sunrise to sunset · Metro to JLN Stadium or auto from Lotus Temple</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Connaught Place — Shopping, Coffee &amp; Last Delhi Bites</div>
+        <div class="time-desc">Connaught Place (CP) — Delhi's circular Georgian-style commercial hub from the 1930s — is still the city's social centre. The colonnaded inner and outer circles house bookshops, state emporiums (fixed-price handicrafts from every Indian state), restaurants and the famous Wenger's bakery (est. 1926 — try the chocolate pastry). For dinner, Pandara Road (a 5-minute auto) has Delhi's most reliable restaurant row: Ichiban for butter chicken, Havemore for kebabs. Close the evening with a chai at any street stall on CP's outer circle.</div>
+        <div class="time-price">Shopping: free to browse · State emporiums for fixed-price handicrafts · Dinner at Pandara Road: ₹500–₹1,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 3 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Luxury (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (3 nights)</td><td>2,100</td><td>7,500</td><td>22,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>900</td><td>2,500</td><td>6,000</td></tr>
+      <tr><td>Metro &amp; Local Transport</td><td>300</td><td>800</td><td>2,500</td></tr>
+      <tr><td>Monument Entries</td><td>1,200</td><td>1,200</td><td>1,200</td></tr>
+      <tr><td>Shopping &amp; Misc</td><td>0</td><td>2,000</td><td>15,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹4,500</strong></td><td><strong>~₹14,000</strong></td><td><strong>₹46,700+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Excludes flights/trains to Delhi. Train from Mumbai: ₹500–₹3,000 depending on class. Flight from Bangalore: ₹1,800–₹4,500. Budget stays: Paharganj guesthouses ₹600–₹1,000/night. Mid-range: Karol Bagh or CP area ₹2,000–₹4,000/night.</p>
+
+  <div class="highlight-box saffron">
+    <strong>Delhi Metro Guide:</strong> Yellow Line (Line 2): Airport Express to New Delhi Station, then Yellow to Chandni Chowk (Old Delhi) and Hauz Khas. Blue Line (Line 3): CP/Barakhamba to Dwarka — useful for Akshardham. Violet Line (Line 7): Kashmere Gate to Faridabad, stops at Jangpura (for Humayun's Tomb), Kalkaji (Lotus Temple). Token fare: ₹10–₹60. Get a tourist card (₹150 deposit, unlimited rides for 1 day ₹100 or 3 days ₹250).
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Delhi 3-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Packing List</span>
+  </div>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Know Before You Go</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🚇</div>
+      <div class="tip-title">Delhi Metro — Use It Religiously</div>
+      <div class="tip-desc">Delhi's metro network is extensive, cheap (₹10–₹60), air-conditioned and punctual. It connects every major tourist site. The Airport Express Line (orange) goes from IGI Airport to New Delhi station in 19 minutes (₹60). Buy a stored-value smart card on arrival — no queue at token machines. Ladies-only coach is the first coach from the engine — enforce your right to it.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-title">Where to Eat — Beyond Karim's</div>
+      <div class="tip-desc">Al Jawahar (next to Karim's, slightly cheaper, equally good). Natraj Dahi Bhalla at Chandni Chowk for the best dahi bhalla in India. Roshan Di Kulfi (Karol Bagh) for malai kulfi. Indian Coffee House at CP for cheap South Indian food in a heritage setting. Saravana Bhavan in CP for reliable South Indian. Kake Da Hotel (CP area) for butter chicken at ₹350.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌫️</div>
+      <div class="tip-title">Delhi AQI — Be Prepared</div>
+      <div class="tip-desc">October to February, Delhi's air quality can reach "severe" (AQI 400+). This is a real health concern, especially for children, elderly and those with respiratory conditions. Pack N95 masks (not surgical masks — they don't filter PM2.5). The AQI app or IQAir website gives real-time readings. Outdoor exercise is inadvisable when AQI exceeds 300. Indoor sites (Red Fort, Qutub, Humayun's Tomb) are fine as they're open-air but have trees.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚫</div>
+      <div class="tip-title">Tourist Traps to Avoid</div>
+      <div class="tip-desc">Auto and taxi drivers near Connaught Place who offer "free tours" that end at gem shops. Overpriced restaurants on the inner circle of CP (check the menu prices outside before entering). Fake government tourist offices near major hotels — only the India Tourism office at 88 Janpath is genuine. "Gem export business" — a classic Delhi scam. If anyone says you can make money reselling gems abroad: walk away.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛍️</div>
+      <div class="tip-title">Shopping — What &amp; Where</div>
+      <div class="tip-desc">State Emporiums on Baba Kharak Singh Marg (near CP): fixed-price, quality-guaranteed handicrafts from every state. Dilli Haat (INA): open-air market of crafts from across India, ₹30 entry. Chandni Chowk for wholesale fabric, spices, silver. Lajpat Nagar for inexpensive ethnic clothing and jewellery. Avoid Kashmir "government-approved" shops that claim special deals — they are commission traps.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🕌</div>
+      <div class="tip-title">Mosque Etiquette — Jama Masjid</div>
+      <div class="tip-desc">Jama Masjid is an active mosque. Non-Muslims are welcome outside the five daily prayer times (Fajr at dawn, Dhuhr 12:30pm, Asr 3:30pm, Maghrib at sunset, Isha at night). Remove shoes at the entrance (free to leave, or carry in a bag provided). Women must cover head and wear a long skirt or abaya (available to borrow free at the gate). Photography of worshippers without permission is disrespectful — don't do it.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Seasons &amp; When to Go</div>
+      <div class="tip-desc">October–November: post-monsoon, pleasant, Diwali (festivals, lights, but also smoke). December–January: cold (5–18°C), fog, smog — carry a warm layer for mornings. February–March: perfect (18–28°C), clear skies, Holi in March. April onwards: increasingly hot. May–June: 42–48°C — visiting historic sites at noon is genuinely dangerous. Monsoon (July–September): humid but the gardens are magnificent and AQI drops dramatically.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚕</div>
+      <div class="tip-title">Getting Around</div>
+      <div class="tip-desc">Metro is cheapest and fastest for most tourist routes. Uber and Ola are reliable and metered app-based. Pre-paid auto counters at major metro stations give fixed-rate autos — use these instead of negotiating. Shared autos run fixed routes in residential areas — very cheap but confusing without Hindi. Cycle rickshaws are best for Old Delhi's narrow lanes where cars can't go.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Delhi</div>
+  <div class="pack-list">
+    <div class="pack-item">😷 <strong>N95 masks</strong> — non-negotiable in winter. Delhi's AQI regularly exceeds 300 in Dec–Jan. Pack at least 6.</div>
+    <div class="pack-item">🕌 <strong>Scarf/stole</strong> — for mosque visits, also doubles as a sun shield on Kartavya Path.</div>
+    <div class="pack-item">👟 <strong>Walking shoes</strong> — Qutub Minar, Humayun's Tomb and Lodi Garden involve extensive walking on uneven ground.</div>
+    <div class="pack-item">🧥 <strong>Warm layer</strong> — December/January mornings in Delhi are genuinely cold. 8°C at dawn is possible.</div>
+    <div class="pack-item">🔋 <strong>Power bank</strong> — a full day of metro navigation and Google Maps will drain any phone.</div>
+    <div class="pack-item">💊 <strong>Stomach meds</strong> — even veteran India travellers get Delhi Belly. Norfloxacin + Metronidazole, prescribed by a doctor before travel.</div>
+    <div class="pack-item">💵 <strong>Mixed cash</strong> — entry fees at monuments are cash-only at some counters. Keep ₹2,000 in small notes.</div>
+    <div class="pack-item">📱 <strong>Offline Google Maps</strong> — download Delhi offline before arriving. Metro routes, monuments, restaurants — all accessible without data.</div>
+    <div class="pack-item">🧴 <strong>Sunscreen + lip balm</strong> — the Delhi sun and dry air are both harsh. Even in winter the UV index is high.</div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>One last thing:</strong> Delhi is overwhelming on Day 1. The traffic, the smog, the noise, the scale. Push through it. By Day 2 it begins to reveal its extraordinary layers — Mughal, British, modern — all simultaneously present in the same street. There is no city in India where you can stand in a 16th-century tomb, see a British colonial building, and hear a Bollywood ringtone — all at the same time.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the backwaters of Kerala to the peaks of Ladakh, from Mumbai's seafront to Varanasi's burning ghats — IncredibleItinerary has a complete guide for every journey across this extraordinary country.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Mumbai · Jaipur · Agra · Varanasi · Rishikesh · Kerala · Goa · Leh-Ladakh · Hampi · Darjeeling</p>
+  <div class="back-legal">This guide is for personal use only. Prices, monument schedules and availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

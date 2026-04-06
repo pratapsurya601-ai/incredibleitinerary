@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Northeast India 10 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#7c3aed;--primary-light:#a78bfa;--primary-dark:#6d28d9;
+  --accent:#8b5cf6;--accent-light:#ddd6fe;
+  --ink:#1e1033;--cream:#faf5ff;--parchment:#ede9fe;
+  --white:#ffffff;--muted:#5b21b6;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,16,51,0.97) 0%,rgba(30,16,51,0.6) 50%,rgba(30,16,51,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:40pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#a78bfa;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(124,58,237,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(124,58,237,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(124,58,237,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(124,58,237,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(167,139,250,0.08),rgba(167,139,250,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#a78bfa;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#a78bfa;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(124,58,237,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.purple{background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.25);color:#5b21b6}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.green{background:#f0fdf4;border:1px solid #bbf7d0;color:#065f46}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(124,58,237,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(124,58,237,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(124,58,237,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(124,58,237,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(124,58,237,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/1659437/pexels-photo-1659437.jpeg?w=1200&q=80" alt="Northeast India tribal landscape"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Northeast<br/>India<br/><em>10 Days</em></h1>
+    <p class="cover-sub">Kaziranga's one-horned rhinos, Meghalaya's root bridges, Majuli river island, and the extraordinary biodiversity of India's forgotten northeast</p>
+    <div class="cover-pills">
+      <span class="pill">🗺️ 10 Days</span>
+      <span class="pill">🏛️ 4 States</span>
+      <span class="pill">💰 ₹20,000–₹60,000</span>
+      <span class="pill">🌤️ Oct–Apr</span>
+      <span class="pill">🦏 Kaziranga Rhinos</span>
+      <span class="pill">🌉 Living Root Bridges</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(124,58,237,0.3);border:1px solid rgba(167,139,250,0.4);color:#a78bfa;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Northeast India 10-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Seven Sisters — India's Most Extraordinary Region</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">10 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏛️</div><span class="stat-val">4 States</span><span class="stat-label">Assam, Meghalaya, Assam, Assam</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹20k–60k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Apr</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop light">Guwahati</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Kaziranga</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Meghalaya</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Majuli Island</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Dibrugarh</span>
+    <span class="route-sub">Fly into Guwahati (GUW) · Fly out Dibrugarh (DIB) · One-way circuit</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1–2</div>
+      <div class="city-name">🛕 Guwahati</div>
+      <div class="city-desc">Gateway to Northeast India. Kamakhya Temple (one of 51 Shakti Peethas, atop Nilachal Hill — enormous religious significance), Brahmaputra river cruise, Umananda Island temple (on a Brahmaputra river island, reached by boat). Guwahati is a large, busy city — treat it as a base and transit point rather than a primary destination.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3–4</div>
+      <div class="city-name">🦏 Kaziranga National Park</div>
+      <div class="city-desc">UNESCO World Heritage Site with the world's highest density of one-horned rhinoceroses. Also home to wild Asian elephants, water buffalo, swamp deer, Bengal tigers (hard to spot), and 480+ bird species. Three safari zones (Central, Western, Eastern). Dawn jeep safaris give the best wildlife encounters. Book safaris in advance during peak season (Nov–Mar).</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 5–7</div>
+      <div class="city-name">🌿 Meghalaya</div>
+      <div class="city-desc">Shillong, Cherrapunji, Mawlynnong, Dawki, living root bridges, Laitlum Canyons. See the dedicated Meghalaya 5-day guide for comprehensive coverage. Three nights minimum to cover the highlights. The Khasi matrilineal culture, extraordinary waterfalls, and Asia's cleanest village are unmissable.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 8–9</div>
+      <div class="city-name">🏝️ Majuli River Island</div>
+      <div class="city-desc">Majuli (Assam) was the world's largest river island — the Brahmaputra surrounds it on all sides. Famous as the centre of the Vaishnavite Satra culture (neo-Vaishnava monasteries with mask-making, classical Sattriya dance, and spiritual tradition). The rural Assam life on the island — rice fields, bamboo houses, fishermen, weaving — is deeply peaceful and entirely tourism-free.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Northeast India is what the rest of India was before Instagram. The rhinos are real. The root bridges are alive. The river island has 22 monasteries and no mobile signal."</p>
+  </div>
+
+  <div class="highlight-box purple">
+    <strong>ILP Requirements:</strong> For Indian citizens — NO ILP required for Assam, Meghalaya, Tripura, Mizoram. ILP IS required for Arunachal Pradesh, Nagaland, and Manipur — apply online on each state's official ILP portal (usually processed in 2–3 days). Foreign nationals require permits for most Northeast states — check current regulations as these change. This 10-day itinerary covers Assam and Meghalaya only — no ILP needed for Indian passport holders.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–5 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Northeast India 10-Day Itinerary</span>
+    <span class="page-header-right">Days 1–5 — Guwahati, Kaziranga &amp; Meghalaya Entry</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">1–2</div>
+    <div class="day-info">
+      <div class="day-tag">Days One &amp; Two · Guwahati</div>
+      <div class="day-title">Gateway City — Kamakhya &amp; the Brahmaputra</div>
+      <div class="day-sub">Kamakhya Temple · Brahmaputra river cruise · Umananda Island · Assamese food</div>
+      <div class="day-cost">💰 Kamakhya: free · Umananda boat: ₹50 · River cruise: ₹200–₹500 · Stay: ₹800–₹3,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 1</div>
+      <div class="time-content">
+        <div class="time-title">Kamakhya Temple — Shakti Peetha on Nilachal Hill</div>
+        <div class="time-desc">Kamakhya (dedicated to Goddess Kamakhya — a form of Devi) is one of the most significant Shakti Peethas in Hinduism, atop Nilachal Hill with views over the Brahmaputra. The temple is unusual: there is no image of the goddess inside — the sanctum contains a naturally occurring rock crevice representing the yoni, kept perpetually wet by an underground spring. The rituals here are ancient and powerful. The queue can be 2–3 hours — arrive early or pay for special darshan.</div>
+        <div class="time-price">Kamakhya: free · Special darshan: ₹500 · Taxi from city: ₹200 return</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 2</div>
+      <div class="time-content">
+        <div class="time-title">Brahmaputra River Cruise + Umananda Island Temple</div>
+        <div class="time-desc">The Brahmaputra is one of the world's great rivers — 3km wide at Guwahati, its banks lined with ghats and temples. Morning ferry to Umananda Island — a small river island with a Shiva temple, monkeys, and excellent city views. Evening river cruise (₹200–₹500) at sunset. The Brahmaputra at dusk, wide and silver, with the hills on both banks — one of India's most underrated visual experiences. Also: Assam State Museum (₹25) has excellent ethnography and history of the Northeast.</div>
+        <div class="time-price">Umananda ferry: ₹50 return · Assam Museum: ₹25 · Evening cruise: ₹200–₹500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">3–4</div>
+    <div class="day-info">
+      <div class="day-tag">Days Three &amp; Four · Kaziranga</div>
+      <div class="day-title">The One-Horned Rhinoceros — Dawn Safaris</div>
+      <div class="day-sub">Kaziranga National Park · Jeep and elephant safaris · Three zones · Wild elephants · Tigers (rare)</div>
+      <div class="day-cost">💰 Jeep safari: ₹2,500/jeep (6 people) · Elephant safari: ₹1,500/person · Stay near park: ₹1,500–₹5,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Dawn Jeep Safari — Central Zone (Best Zone)</div>
+        <div class="time-desc">Kaziranga has three safari zones — Central, Western and Eastern. Central Zone (also called Kohora Zone) has the highest concentration of rhinos and is the most rewarding. Dawn safaris (5:30am–8:30am) are when animals are most active, light is golden, and temperatures are cool. A single 3-hour jeep safari in Central Zone will almost certainly result in multiple one-horned rhino sightings at close range. Elephants, water buffalo, and swamp deer are guaranteed. Tiger sightings are rare but happen in the Central and Eastern zones.</div>
+        <div class="time-price">Jeep safari: ₹2,500/jeep (6 people max) + ₹250 entry each · Book day before at gate</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">8:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Elephant Safari — Face to Face with the Grasslands</div>
+        <div class="time-desc">The elephant safari (₹1,500/person, 1 hour) takes you through the tall elephant grass on the back of a trained elephant — reaching areas a jeep cannot access. You may encounter rhinos at literally 5-metre range. The perspective of sitting on an elephant as a wild one-horned rhinoceros looks up at you — massive, prehistoric, utterly unbothered — is one of the most memorable wildlife moments in India. Elephant safaris must be booked at the forest department counter from 5am — they fill up fast.</div>
+        <div class="time-price">Elephant safari: ₹1,500/person · Limited to 4 per elephant · Book at 5am counter</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 4</div>
+      <div class="time-content">
+        <div class="time-title">Western Zone + Eastern Zone — Variety of Habitats</div>
+        <div class="time-desc">Day 4: explore the Western Zone (Bagori — good for elephants and water buffalo, less crowded) and if time/energy allows, the Eastern Zone (Agoratoli — good for elephants and birds, fewer rhinos). Kaziranga has 481 bird species — bring binoculars. The park's forest lodge (ATDC) inside the park boundary offers unique stays with animals visible from the lodge.</div>
+        <div class="time-price">Western Zone entry: ₹250 + jeep cost · Birding guide available from lodges: ₹500–₹1,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">5–7</div>
+    <div class="day-info">
+      <div class="day-tag">Days Five, Six &amp; Seven · Meghalaya</div>
+      <div class="day-title">Root Bridges, Waterfalls &amp; Asia's Cleanest Village</div>
+      <div class="day-sub">See Meghalaya 5-day guide for full coverage · Shillong · Cherrapunji · Mawlynnong · Dawki · Root Bridges</div>
+      <div class="day-cost">💰 See dedicated Meghalaya guide for detailed budget breakdown</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 5</div>
+      <div class="time-content">
+        <div class="time-title">Kaziranga → Shillong (Assam to Meghalaya, 250km, 5hrs)</div>
+        <div class="time-desc">Drive or bus from Kaziranga to Guwahati (80km) then onward to Shillong (100km, 3hrs). Arrive Shillong by afternoon. Don Bosco Museum, Ward's Lake, Laitumkhrah cafe district for the evening. Shillong is the base for the next three days of Meghalaya exploration.</div>
+        <div class="time-price">Kaziranga–Guwahati: bus ₹200 or taxi ₹2,000 · Guwahati–Shillong Sumo: ₹400–₹500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 6</div>
+      <div class="time-content">
+        <div class="time-title">Cherrapunji — Nohkalikai Falls, Mawsmai Cave, Bangladesh Views</div>
+        <div class="time-desc">Full day at Cherrapunji (Sohra) — Nohkalikai Falls (340m plunge waterfall, India's highest), Mawsmai Cave limestone caverns (₹50), Eco Park with Bangladesh panoramic views, Thangkharang Park. See Meghalaya 5-day guide for detailed coverage of this extraordinary area.</div>
+        <div class="time-price">Day taxi Shillong–Cherrapunji: ₹2,000–₹2,500 · Cave entry: ₹50</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 7</div>
+      <div class="time-content">
+        <div class="time-title">Mawlynnong + Dawki + Living Root Bridge</div>
+        <div class="time-desc">Full day: Mawlynnong (Asia's cleanest village, single-deck root bridge, bamboo sky-walk) + Dawki (crystal-clear Umngot river boat ride, Bangladesh border views). Or alternatively: Nongriat double-decker root bridge trek (3,500 steps, 5–6hrs — see Meghalaya guide). Laitlum Canyons for sunset. Return to Shillong.</div>
+        <div class="time-price">Full day taxi: ₹3,000–₹3,500 · Dawki boat: ₹600–₹800/boat</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 8–10 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Northeast India 10-Day Itinerary</span>
+    <span class="page-header-right">Days 8–10 · Majuli · Dibrugarh · Budget</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">8–9</div>
+    <div class="day-info">
+      <div class="day-tag">Days Eight &amp; Nine · Majuli Island</div>
+      <div class="day-title">World's Largest River Island — the Satra Culture</div>
+      <div class="day-sub">Guwahati → Jorhat (5hrs) → Ferry to Majuli → Satras · Mask-making · Rural Assam</div>
+      <div class="day-cost">💰 Ferry: ₹50 · Jorhat–Guwahati bus: ₹300 · Stay Majuli: ₹500–₹2,000/homestay</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 8 Morning</div>
+      <div class="time-content">
+        <div class="time-title">Shillong → Guwahati → Jorhat (Train or Bus, 300km total)</div>
+        <div class="time-desc">From Shillong, return to Guwahati (3hrs) then take a train or bus to Jorhat (5hrs, 200km). Train from Guwahati to Jorhat (Jorhat Town station): ₹150–₹400 depending on class. Bus: ₹300. Jorhat is the gateway to Majuli — Assam's second-largest city, with a historic British-era town centre and the famous Jorhat tea district.</div>
+        <div class="time-price">Train Guwahati–Jorhat: ₹150–₹400 · Bus: ₹300 · 5hrs · Book train ahead in high season</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 8 Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Ferry to Majuli Island (₹50, 1 Hour)</div>
+        <div class="time-desc">From Neematighat (15km from Jorhat), regular ferries cross to Majuli island (₹50, 1 hour). The ferry ride itself is magical — crossing one of the world's great rivers, watching river dolphins, fishermen in wooden boats, and the vast sandbanks of the Brahmaputra. Majuli was the world's largest river island for much of the 20th century — it has shrunk due to erosion but remains enormous at 350 sq km. The island has no traffic lights, minimal vehicles, and a pace of life measured in seasons, not minutes.</div>
+        <div class="time-price">Ferry Neematighat–Majuli: ₹50 · Departure times vary seasonally · 1hr crossing</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 9</div>
+      <div class="time-content">
+        <div class="time-title">Satras — Vaishnavite Monasteries &amp; Living Culture</div>
+        <div class="time-desc">Majuli has 22 Satras — neo-Vaishnavite monasteries established by the 15th-century saint Srimanta Sankardev. The most important are Auniati Satra (famous for mask-making — the craftsmen here create the extraordinary dance masks for Sattriya classical dance performances), Kamalabari Satra (the most architecturally impressive), and Garamur Satra (oldest, with a museum of antique crafts). The monks practice traditional mask-making, weaving, music and dance. Watch the Sattriya dance rehearsals (ask the Satra manager — usually welcoming to visitors).</div>
+        <div class="time-price">Satra visits: free (donation welcome) · Mask workshop: observe for free or buy from ₹500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 9 Evening</div>
+      <div class="time-content">
+        <div class="time-title">Village Life — Cycling, Weaving, Rice Paddies</div>
+        <div class="time-desc">Rent a bicycle from your homestay (₹100–₹200/day) and explore the island roads — no trucks, minimal traffic, rice paddy fields on both sides, villages of thatched bamboo houses, women weaving Assamese silk on handlooms, children playing in the water. The Mishing tribe's stilt houses are unique architecture. Sunsets over the Brahmaputra from Majuli's sandy shores are among the most beautiful in India.</div>
+        <div class="time-price">Bicycle rental: ₹100–₹200/day · Homespun Assam silk from weavers: ₹500–₹3,000/piece</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">10</div>
+    <div class="day-info">
+      <div class="day-tag">Day Ten · Departure</div>
+      <div class="day-title">Dibrugarh Tea Estates → Flight Home</div>
+      <div class="day-sub">Ferry back to Jorhat → Dibrugarh (75km) → Tea estate visit → Fly home from DIB</div>
+      <div class="day-cost">💰 Tea estate tour: free–₹200 · Taxi Jorhat–Dibrugarh: ₹1,500 · Flight from DIB</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Dibrugarh — Tea Capital of India</div>
+        <div class="time-desc">Dibrugarh (75km from Jorhat, 2hrs drive) is in the heart of the Assam tea belt — the world's largest tea growing region. The Assam tea estates here are vast (some over 5,000 hectares), managed by British-era bungalows now converted to heritage stays. Many estates welcome visitors for a tour: watch plucking, see the rolling and fermenting process, taste straight-from-source Assam CTC and orthodox teas. Manjushree Tea Estate and Tocklai Tea Research Institute are visitor-friendly. Tea shop purchases direct from estate: ₹200–₹500/250g.</div>
+        <div class="time-price">Tea estate tour: free–₹200 · Tocklai Research Institute: small fee · Buy tea direct from estate</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Fly Home from Dibrugarh Airport (DIB)</div>
+        <div class="time-desc">Dibrugarh Airport (DIB) has direct flights to Delhi, Mumbai, Kolkata and Guwahati. Check in 2 hours before departure. The return flight to Delhi takes approximately 2.5 hours. IndiGo, Air India and SpiceJet all operate on this route. Prices ₹4,000–₹10,000 one way depending on advance booking.</div>
+        <div class="time-price">Dibrugarh to Delhi: ₹4,000–₹10,000 · 2.5hrs flight · 2hrs before check-in</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 10 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Segment</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Flights (Delhi–GUW + DIB–Delhi)</td><td>8,000</td><td>14,000</td><td>22,000</td></tr>
+      <tr><td>Accommodation (9 nights)</td><td>7,200</td><td>18,000</td><td>36,000</td></tr>
+      <tr><td>Transport (inter-city)</td><td>4,000</td><td>8,000</td><td>15,000</td></tr>
+      <tr><td>Food (10 days)</td><td>3,000</td><td>8,000</td><td>15,000</td></tr>
+      <tr><td>Safaris &amp; Activities</td><td>3,500</td><td>8,000</td><td>14,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹25,700</strong></td><td><strong>~₹56,000</strong></td><td><strong>~₹1,02,000</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Budget uses hostels/guesthouses, shared transport, and government safari rates. Premium includes resort stays near Kaziranga, private vehicles, and ATDC lodge inside the park. Kaziranga safari booking ahead is essential Nov–Mar.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Northeast India 10-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Essential Knowledge</span>
+  </div>
+
+  <div class="label">Insider Tips — Know the Northeast Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Northeast Is Different — In the Best Ways</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🦏</div>
+      <div class="tip-title">Kaziranga Safari Booking</div>
+      <div class="tip-desc">Jeep safaris do NOT require advance booking from outside — just arrive at the gate 30 minutes before the opening time (5:30am) and buy on the spot. However, elephant safaris are limited and go fast — be at the counter at 5am. Resorts near the park can arrange both for a modest fee. Dec–Feb is peak season with guaranteed rhino sightings in morning mist. Monsoon (June–Oct): park partially closed for flooding, rhinos swim to higher ground.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎭</div>
+      <div class="tip-title">Sattriya Dance — Ask to Watch Rehearsals</div>
+      <div class="tip-desc">The Sattriya classical dance of Assam (one of India's 8 classical dance forms) is still actively practiced in the Majuli Satras. Rehearsals happen most mornings — approach the Satra manager respectfully and ask permission to observe. Most Satras welcome curious visitors. The combination of elaborate costumes, classical music, ancient storytelling, and the monastery setting makes this one of the most extraordinary cultural experiences in India. Performances during festivals (Raas in November) are extraordinary.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌧️</div>
+      <div class="tip-title">Season and Flooding</div>
+      <div class="tip-desc">Oct–Apr is the best period. The entire Northeast including Kaziranga and Majuli floods significantly in the monsoon (June–October). Kaziranga partially closes (rhinos migrate to higher ground — some are visible roadside, outside the park boundary). Majuli island shrinks dramatically. Roads in Meghalaya can wash out. If planning a monsoon trip, only Meghalaya (for waterfalls) makes sense — all others are significantly impacted.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-title">Food — Some of India's Most Unique Cuisine</div>
+      <div class="tip-desc">Assamese cuisine: rice-based, mustard-heavy, famous for fish curries, duck meat (duck with lauki/ash gourd), and the unique khar (cooked with alkaline banana peel extract — uniquely Assamese). Khasi cuisine: jadoh (red rice and pork), dohneiiong (black sesame pork). Try Assam tea directly from tea estates. Don't leave without Assam silk, Muga silk (golden silk, unique to Assam) or handloom mekhela chador (traditional Assamese dress).</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📱</div>
+      <div class="tip-title">Connectivity — Patchy but Improving</div>
+      <div class="tip-desc">Guwahati has excellent 4G (all networks). Kaziranga has moderate coverage (Jio/Airtel). Majuli has very limited signal — BSNL pockets. Meghalaya: Shillong is good; remote areas near Dawki and Mawlynnong have limited signal. Download Maps.me offline for the entire Northeast before departing. WhatsApp calling works on WiFi at most hotels even when data signal is poor.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Cash — Withdraw in Guwahati and Jorhat</div>
+      <div class="tip-desc">Guwahati has plentiful ATMs. Jorhat is the last reliable ATM town before Majuli. Majuli island itself has no ATMs. Kaziranga area ATMs are available but can run low in peak season. Meghalaya: Shillong has good ATMs, outside Shillong is cash-only. Carry ₹8,000–₹10,000 cash before boarding the Majuli ferry.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌿</div>
+      <div class="tip-title">Northeast India Is Safe</div>
+      <div class="tip-desc">Despite decades of negative press coverage of separatist conflicts, Northeast India is now very safe for tourists. The states on this itinerary (Assam and Meghalaya) have had no significant security incidents affecting tourists in many years. The people are exceptionally warm and welcoming to visitors. Solo travel, including solo female travel, is comfortable. The "off-the-beaten-track" nature of the region means fewer scams and touts than tourist-heavy regions of India.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎋</div>
+      <div class="tip-title">What to Buy in the Northeast</div>
+      <div class="tip-desc">Assam Muga silk (golden silk, unique globally) — expensive but extraordinary. Endi silk (peace silk, very soft). Majuli handloom mekhela chador. Sattriya dance masks (Auniati Satra). Assam tea direct from estates (CTC and orthodox). Meghalaya smoked pork and bamboo shoots (excellent gifts). Khasi tribal bamboo crafts. All available in local markets without touristy markup.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Northeast India</div>
+  <div class="pack-list">
+    <div class="pack-item">🌧️ <strong>Rain jacket</strong> — essential even in dry season in Meghalaya. Rain can appear suddenly.</div>
+    <div class="pack-item">👟 <strong>Comfortable walking shoes</strong> — root bridge treks are wet and rocky.</div>
+    <div class="pack-item">🦟 <strong>DEET insect repellent</strong> — mosquitoes in Kaziranga grasslands and Majuli. Malaria precautions advisable.</div>
+    <div class="pack-item">🔭 <strong>Binoculars</strong> — for Kaziranga birdwatching. 8x42 minimum. Adds enormously to safari.</div>
+    <div class="pack-item">💊 <strong>Malaria prophylaxis</strong> — consult doctor. Kaziranga and Majuli are malarial zones.</div>
+    <div class="pack-item">💰 <strong>Cash ₹10,000+</strong> — Majuli has zero ATMs. Withdraw in Jorhat before ferry.</div>
+    <div class="pack-item">📵 <strong>Offline maps</strong> — Maps.me Northeast India. Critical for Majuli and Meghalaya remote areas.</div>
+    <div class="pack-item">📸 <strong>Camera + extra card</strong> — Kaziranga rhinos at dawn, Brahmaputra sunsets, root bridges. Don't run out of space.</div>
+    <div class="pack-item">🧺 <strong>Light layers</strong> — Shillong and Cherrapunji can be cool evenings; Kaziranga mornings cold in winter.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More<br/>Northeast India</h2>
+  <p>Arunachal Pradesh's Tawang Monastery, Nagaland's Hornbill Festival, Manipur's floating lakes — the Northeast has infinite depth beyond this 10-day introduction. IncredibleItinerary has guides for every extraordinary corner of India.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Meghalaya 5-Day · Spiti Valley · Leh-Ladakh · Kashmir · Kerala · Andaman · Maldives · Rajasthan</p>
+  <div class="back-legal">This guide is for personal use only. Safari availability, ILP rules, and entry regulations are subject to change — verify before travel. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

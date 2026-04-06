@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Malaysia in 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#166534;--primary-light:#4ade80;--primary-dark:#14532d;
+  --accent:#d97706;--accent-light:#fcd34d;
+  --ink:#0a1a0a;--cream:#f5fff5;--parchment:#dcfce7;
+  --white:#ffffff;--muted:#3d6b3d;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,10,0.97) 0%,rgba(10,26,10,0.6) 50%,rgba(10,26,10,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#4ade80;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(22,101,52,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(22,101,52,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:var(--ink)}
+.route-stop.amber{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(22,101,52,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(74,222,128,0.08),rgba(74,222,128,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#4ade80;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#4ade80;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.green{background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.25);color:#14532d}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.india{background:#fef3f2;border:1px solid #fecaca;color:#7f1d1d}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(22,101,52,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(22,101,52,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(22,101,52,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3186955/pexels-photo-3186955.jpeg?w=1200&q=80" alt="Kuala Lumpur Petronas Towers"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Malaysia<br/><em>in 7 Days</em></h1>
+    <p class="cover-sub">Petronas Towers, Batu Caves, Penang's UNESCO food culture, Langkawi beaches — visa free for Indians</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 7 Days</span>
+      <span class="pill">✅ Visa Free for Indians</span>
+      <span class="pill">💰 ₹45,000–₹1,10,000</span>
+      <span class="pill">☀️ Mar–Sep</span>
+      <span class="pill">🏙️ Petronas Towers</span>
+      <span class="pill">🌴 Rainforest</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(22,101,52,0.3);border:1px solid rgba(74,222,128,0.4);color:#4ade80;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Malaysia 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">KL, Penang &amp; Langkawi — Seven Days in Malaysia</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">7 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">✅</div><span class="stat-val">Visa Free</span><span class="stat-label">Indian Passport</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹45k–1.1L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">☀️</div><span class="stat-val">Mar–Sep</span><span class="stat-label">Best Season</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">KLIA Airport</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop light">Petronas</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Batu Caves</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Penang</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop amber">Langkawi</span>
+    <span class="route-sub">3 regions · KLIA Express 28 min to KL Sentral · Domestic flights KL–Penang (1hr) · KL–Langkawi (1hr)</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Days 1–3</div>
+      <div class="city-name">🏙️ Kuala Lumpur</div>
+      <div class="city-desc">Malaysia's capital — the Petronas Twin Towers (tallest twin towers in the world), Batu Caves (Hindu temple complex inside a limestone hill, 272 steps to the cave temple, free entry, Lord Murugan's 43-metre gilded statue), Central Market, Petaling Street Chinatown, KL Tower with revolving restaurant. Multicultural, vibrant and easy to navigate.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 4–5</div>
+      <div class="city-name">🍜 Penang</div>
+      <div class="city-desc">George Town — UNESCO World Heritage city and the food capital of Southeast Asia. Laksa, char kway teow (stir-fried flat noodles), nasi kandar (rice with Indian-Muslim curries), Penang Hill funicular, clan jetties (Chinese sea villages), Ernest Zacharevic street art murals. Tamil signboards and Hindu temples reflect the strong Indian community.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 6–7</div>
+      <div class="city-name">🏝️ Langkawi</div>
+      <div class="city-desc">The duty-free island group — cable car to the peak of Mat Cincang mountain, the Sky Bridge (100m suspended bridge), Pantai Cenang beach, island hopping (Eagles Nest, Dayang Bunting island), duty-free shopping for chocolates and alcohol, and some of Malaysia's finest resort hotels at excellent prices.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Bonus</div>
+      <div class="city-name">🐒 Indian Culture in Malaysia</div>
+      <div class="city-desc">Malaysia is home to 1.8 million Tamils and is deeply Indian-friendly. Batu Caves is a major Hindu pilgrimage site. Thaipusam festival (January/February) draws 1.5 million worshippers. Tamil is an official language in Penang. The nasi kandar and banana leaf rice culture is directly Indian-derived — you will feel culturally at home while experiencing something genuinely different.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"Malaysia is where Indian culture, Chinese enterprise and Malay warmth meet the equatorial rainforest — and somehow create the best food in Asia." The Penang laksa alone is worth the flight.</p>
+  </div>
+  <div class="highlight-box green">
+    <strong>Visa-Free for Indian Passport Holders:</strong> Malaysia is VISA FREE for Indian passport holders for up to 30 days (as of 2024). Simply arrive with your Indian passport — no prior application required. Immigration at KLIA is usually quick. Keep your return or onward flight ticket ready to show. This makes Malaysia one of the most accessible international destinations for Indian travellers. Indian rupees are NOT accepted — exchange to Malaysian Ringgit (MYR) at KLIA or use your forex card. ₹1 = approximately MYR 0.054.
+  </div>
+  <div class="highlight-box amber">
+    <strong>Flights:</strong> Delhi/Mumbai to Kuala Lumpur (KLIA) — ₹18,000–₹35,000 return (one of the cheapest international routes from India). AirAsia, IndiGo, Batik Air, Malaysia Airlines all operate the route. KLIA Express train to KL Sentral: ₹1,600, 28 minutes — the fastest option. Budget ~₹3,000–₹5,000 per domestic flight within Malaysia (KL to Penang, KL to Langkawi).
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–5 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Malaysia 7-Day Itinerary</span>
+    <span class="page-header-right">Days 1–5 — KL &amp; Penang</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">1–3</div>
+    <div class="day-info">
+      <div class="day-tag">Days One to Three · Capital City</div>
+      <div class="day-title">Kuala Lumpur — Petronas, Batu Caves &amp; Street Food</div>
+      <div class="day-sub">Petronas Twin Towers sky bridge · KLCC Park · Batu Caves Hindu temple · Petaling Street · KL Tower · Jalan Alor food street</div>
+      <div class="day-cost">💰 Petronas sky bridge: ₹1,800 · Batu Caves: FREE · Jalan Alor dinner: ₹600–₹1,200</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 1</div>
+      <div class="time-content">
+        <div class="time-title">Petronas Twin Towers — The World's Tallest Twin Towers</div>
+        <div class="time-desc">The Petronas Twin Towers (452m, 88 floors each) were the world's tallest buildings 1998–2004 and remain the world's tallest twin towers. Three options for visiting: walk around the base (free — the fountain light show at night is excellent), the Sky Bridge on floor 41 (connecting both towers — ₹1,800, book online at petronastwintowers.com.my, limited daily slots), and the Observation Deck on floor 86 (₹2,500, best views). KLCC Park directly below has free fountains and a walking path with the towers rising above — beautiful in the evening. The Suria KLCC mall at the base has good food courts.</div>
+        <div class="time-price">Base: free · Sky Bridge: ₹1,800 · Observation Deck: ₹2,500 · Book online in advance</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 2 AM</div>
+      <div class="time-content">
+        <div class="time-title">Batu Caves — 272 Steps to Lord Murugan</div>
+        <div class="time-desc">Batu Caves is a Hindu temple complex inside a massive limestone hill 13km north of KL. The 43-metre gilded statue of Lord Murugan (Kartikeya) at the base is the tallest statue of the deity in the world. Climb 272 rainbow-painted steps to the main Cathedral Cave — a series of caves containing Hindu shrines, with macaques everywhere. Entry is free. The annual Thaipusam festival (January/February) draws 1.5 million Hindu pilgrims — one of Malaysia's most spectacular events. Allow 2 hours. Take the KTM Komuter train from KL Sentral to Batu Caves station (20 min, ₹150) — easiest way.</div>
+        <div class="time-price">Batu Caves: FREE · KTM train return: ₹150 · Allow 2 hours · Macaques: keep bags closed!</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 2 PM</div>
+      <div class="time-content">
+        <div class="time-title">Central Market, Petaling Street &amp; Merdeka Square</div>
+        <div class="time-desc">Central Market (Pasar Seni) is a 1930s building now selling Malaysian handicrafts, batik, silver jewellery, and Peranakan ceramics — good for gifts (₹200–₹2,000). Petaling Street (Chinatown) with its covered market — the original Kuala Lumpur bazaar, selling watches, bags, street food stalls, durian (the notorious spiky fruit with extraordinarily pungent smell — extraordinary flavour, try it). Merdeka Square (Independence Square): where Malaysia's independence flag was raised in 1957, surrounded by British colonial-era architecture including the Royal Selangor Club and the Sultan Abdul Samad Building.</div>
+        <div class="time-price">Central Market: free entry · Petaling Street: free · Durian from street stall: ₹300–₹800</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 3</div>
+      <div class="time-content">
+        <div class="time-title">KL Tower &amp; Jalan Alor — Views &amp; Street Food Paradise</div>
+        <div class="time-desc">KL Tower (421m, telecommunication tower) has an observation deck (₹1,500) with panoramic 360° views of KL — the Petronas Towers visible from above their base level. The Glass Floor experience (₹2,000) is terrifying and photogenic. Evening: Jalan Alor in Bukit Bintang is KL's most famous street food area — 100+ hawker stalls open from 5pm to 3am. Char kway teow (₹200), satay (₹200/10 sticks), grilled seafood, dim sum, nasi lemak, fresh sugarcane juice (₹100), durian desserts. Budget ₹500–₹1,000 for a full Jalan Alor dinner crawl. Bukit Bintang walking street for nightlife and shopping after.</div>
+        <div class="time-price">KL Tower: ₹1,500 · Jalan Alor dinner: ₹500–₹1,000 · Char kway teow: ₹200 · Satay: ₹200/10 sticks</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">4–5</div>
+    <div class="day-info">
+      <div class="day-tag">Days Four &amp; Five · Food Capital of Asia</div>
+      <div class="day-title">Penang — George Town, Street Art &amp; Iconic Food</div>
+      <div class="day-sub">Fly to Penang · George Town UNESCO heritage walk · Laksa &amp; char kway teow · Penang Hill · Clan jetties · Ernest Zacharevic murals</div>
+      <div class="day-cost">💰 Penang Hill funicular: ₹600 · George Town: free to walk · Food budget: ₹400–₹800/day</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 4</div>
+      <div class="time-content">
+        <div class="time-title">George Town — UNESCO Food Capital &amp; Heritage Streets</div>
+        <div class="time-desc">Fly from KL to Penang (1hr, ₹3,000). George Town is a UNESCO World Heritage City and Asia's undisputed food capital — Time Magazine, CNN Travel and Lonely Planet all rank its street food among the world's best. The 19th-century shophouse architecture — Malay, Chinese, British colonial and Indian influences combined — is extraordinary. Chulia Street and Armenian Street are the most atmospheric. The Penang state museum (₹200) covers the city's multicultural history. In Penang you will find: Tamil temples next to Chinese clan houses next to British mansions next to mosques — all within 100 metres of each other.</div>
+        <div class="time-price">George Town: free to walk · Museum: ₹200 · Shophouse hotel: ₹2,500–₹6,000/night</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 4 Food</div>
+      <div class="time-content">
+        <div class="time-title">Penang Street Food — Eat Everything</div>
+        <div class="time-desc">Penang is famous for: Asam Laksa (sour fish-based noodle soup — UNESCO recognised, ₹150 at Lorong Selamat), Char Kway Teow (flat rice noodles stir-fried in wok with prawns, Chinese sausage, bean sprouts — ₹200 at Lorong Selamat hawker centre), Nasi Kandar (rice with Indian-Muslim curries — originally sold by Tamil Muslim street vendors carrying rice on the head — ₹250 at Line Clear, open 24 hours), Cendol (green noodle dessert with coconut milk, shaved ice and palm sugar — ₹100). Penang Road Famous Teochew Chendol on Penang Road is the most popular spot (₹120). Budget ₹400–₹800 for all your meals in Penang — everything is cheap and extraordinary.</div>
+        <div class="time-price">Laksa: ₹150 · Char kway teow: ₹200 · Nasi kandar: ₹250 · Cendol: ₹100 · Total day food: ₹600</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 5</div>
+      <div class="time-content">
+        <div class="time-title">Penang Hill, Clan Jetties &amp; Zacharevic Street Art</div>
+        <div class="time-desc">Penang Hill (830m): take the funicular (₹600 return) to the summit for panoramic views of George Town, the Penang Bridge, and the mainland. The 1923 funicular is the oldest in Southeast Asia. Clan Jetties: wooden stilted villages over the water, built by Chinese clans (Chew Jetty is largest and most atmospheric — free). Ernest Zacharevic's street murals: the Lithuanian artist painted interactive murals around George Town in 2012 — the famous "Children on Bicycles" and "Little Children on a Chair" are on Armenian Street (free). Little India in George Town: Tamil temples, Indian textile shops, banana leaf rice restaurants and the smell of jasmine garlands.</div>
+        <div class="time-price">Penang Hill funicular: ₹600 return · Clan Jetties: free · Zacharevic murals: free · Little India: free</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 6–7 + BUDGET + TIPS -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Malaysia 7-Day Itinerary</span>
+    <span class="page-header-right">Days 6–7 · Langkawi · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">6–7</div>
+    <div class="day-info">
+      <div class="day-tag">Days Six &amp; Seven · Island Paradise</div>
+      <div class="day-title">Langkawi — Cable Car, Sky Bridge &amp; Beach</div>
+      <div class="day-sub">Fly Penang to Langkawi (45 min) · Langkawi Cable Car · Sky Bridge · Pantai Cenang beach · Island hopping · Duty-free shopping</div>
+      <div class="day-cost">💰 Cable car: ₹1,500 · Sky Bridge: ₹500 · Island hopping: ₹800 · Beach: free</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 6</div>
+      <div class="time-content">
+        <div class="time-title">Langkawi Cable Car &amp; Sky Bridge</div>
+        <div class="time-desc">Fly from Penang to Langkawi (45 minutes, ₹2,500). Langkawi is an archipelago of 99 islands declared duty-free in 1987. The Langkawi Cable Car (Oriental Village, Burau Bay) rises 708 metres to the peak of Mat Cincang mountain — the second oldest mountain range in the world. The views over the Andaman Sea, neighbouring islands, and the Malaysian mainland are extraordinary. The Sky Bridge (100m curved suspension bridge at the summit) costs extra ₹500 but the vertiginous views are worth it. Book tickets online or queue at the cable car station (can be 45 minutes in peak season). Afternoon: explore Kuah town and duty-free shopping.</div>
+        <div class="time-price">Cable car: ₹1,500 return · Sky Bridge: ₹500 extra · Duty-free chocolate &amp; liquor shopping</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 7</div>
+      <div class="time-content">
+        <div class="time-title">Pantai Cenang Beach &amp; Island Hopping</div>
+        <div class="time-desc">Pantai Cenang is Langkawi's most popular beach — clear turquoise water, white sand, water sports, beach restaurants and coconut vendors. The Underwater World Langkawi (₹1,500) has over 5,000 species of marine life. Island hopping tour (₹800–₹1,200/person, departs from Pantai Kok): Pulau Dayang Bunting (Island of the Pregnant Maiden Lake — freshwater lake in the middle of the island), Eagle Nest at Pulau Singa Besar (dozens of sea eagles), snorkelling at coral islands. Evening: sunset dinner at Pantai Cenang beach restaurant with fresh seafood (grilled barramundi, tiger prawns, squid — ₹1,500/person). Langkawi has the most spectacular sunsets in Malaysia — the sky turns crimson and gold over the Andaman Sea.</div>
+        <div class="time-price">Pantai Cenang: free · Island hopping: ₹800–₹1,200 · Underwater World: ₹1,500 · Seafood dinner: ₹1,500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 7 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (7 nights)</td><td>10,000</td><td>25,000</td><td>55,000+</td></tr>
+      <tr><td>Food (very affordable!)</td><td>4,000</td><td>10,000</td><td>20,000</td></tr>
+      <tr><td>Domestic flights (KL–Penang–Langkawi)</td><td>6,000</td><td>9,000</td><td>15,000</td></tr>
+      <tr><td>Attractions &amp; Activities</td><td>5,000</td><td>10,000</td><td>18,000</td></tr>
+      <tr><td>Shopping &amp; Duty-Free</td><td>1,500</td><td>5,000</td><td>20,000+</td></tr>
+      <tr><td>Flights (Delhi/Mumbai–KL return)</td><td>18,000</td><td>28,000</td><td>45,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹44,500</strong></td><td><strong>~₹87,000</strong></td><td><strong>₹1,73,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Malaysia is one of the best value destinations for Indian travellers — superb food, excellent infrastructure, visa-free entry, Indian-friendly culture, and flights from India as low as ₹18,000 return. A full hawker centre meal costs ₹150–₹250.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🕌</div>
+      <div class="tip-title">Dress Modestly in Mosques &amp; Temples</div>
+      <div class="tip-desc">Malaysia is predominantly Muslim — mosques require modest dress (shoulders and knees covered, women must cover hair). The Federal Territory Mosque in KL provides robes at the entrance (free). Hindu temples: remove shoes, no leather items inside sacred areas. Batu Caves: shorts allowed but a sarong at the entrance costs ₹100 if needed. Generally Malaysians are very welcoming and will guide you politely.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Heat &amp; Rain — Tropical Climate Tips</div>
+      <div class="tip-desc">Malaysia is hot and humid year-round (28–33°C). Rain is frequent but usually brief intense showers — always carry a compact umbrella or poncho. March–September is drier on the west coast (KL, Penang, Langkawi). November–January is wetter. Start outdoor activities early (before 11am) and rest indoors during the hot midday hours. Stay hydrated — coconut water from street vendors (₹100) is the best rehydration.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍛</div>
+      <div class="tip-title">Halal Food — No Worries for Indian Vegetarians</div>
+      <div class="tip-desc">Malaysia is a largely halal food country — no pork in Muslim restaurants. Hindu vegetarians will find excellent pure veg options in Little India areas (KL's Brickfields, Penang's Little India) and Indian restaurants throughout. Most hawker centres have separate vegetarian stalls. The Indian-Muslim nasi kandar and banana leaf rice culture means familiar flavours everywhere for Indian travellers.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛺</div>
+      <div class="tip-title">Getting Around Malaysia</div>
+      <div class="tip-desc">KL: KLIA Express train (KLIA to KL Sentral 28 min), then KTM Komuter, MRT and LRT within the city — comprehensive and cheap. Grab (Southeast Asia's Uber equivalent) is excellent and cheap (₹200–₹500 most KL journeys). In Penang: Grab or rent a bicycle/scooter. In Langkawi: rent a car or motorbike (₹1,500/day) — the island is spread out and public transport limited.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More of Southeast<br/>Asia Awaits</h2>
+  <p>From Bali's temples to Thailand's islands, from Vietnam's ancient towns to Singapore's futuristic gardens — IncredibleItinerary covers every Southeast Asian adventure for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · London · Rome · Barcelona · Amsterdam · Switzerland · New York · Turkey · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

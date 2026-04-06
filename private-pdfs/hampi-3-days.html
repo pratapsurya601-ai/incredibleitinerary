@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Hampi in 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b45309;--primary-light:#fbbf24;--primary-dark:#78350f;
+  --accent:#92400e;--accent-light:#fde68a;
+  --ink:#1a0800;--cream:#fffbf5;--parchment:#fef3c7;
+  --white:#ffffff;--muted:#6b3f1a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,8,0,0.97) 0%,rgba(26,8,0,0.6) 50%,rgba(26,8,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fbbf24;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(180,83,9,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(180,83,9,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--primary-light);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(180,83,9,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(251,191,36,0.08),rgba(251,191,36,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fbbf24;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fbbf24;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(180,83,9,0.08);border:1px solid rgba(180,83,9,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.boulder{background:#fef9f0;border:1px solid #fde68a;color:#6b3f1a}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(180,83,9,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(180,83,9,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(180,83,9,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3580040/pexels-photo-3580040.jpeg?w=1200&q=80" alt="Hampi ruins and boulders Vijayanagara"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Hampi<br/><em>in 3 Days</em></h1>
+    <p class="cover-sub">The ruins of the Vijayanagara Empire — a medieval city of 500,000 people, scattered across a surreal boulder landscape on the banks of the Tungabhadra river</p>
+    <div class="cover-pills">
+      <span class="pill">🏛️ 3 Days</span>
+      <span class="pill">🪨 UNESCO Ruins</span>
+      <span class="pill">💰 ₹5,000–₹20,000</span>
+      <span class="pill">📅 Oct–Feb</span>
+      <span class="pill">🧗 Bouldering</span>
+      <span class="pill">👑 Vijayanagara Empire</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(180,83,9,0.3);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Hampi 3-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Empire in the Boulders</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏛️</div><span class="stat-val">UNESCO</span><span class="stat-label">World Heritage Site</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹5k–20k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Feb</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Virupaksha</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">Vittala Temple</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Royal Enclosure</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Hippie Island</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Anegundi</span>
+    <span class="route-sub">All within Hampi & surrounds · Hospet Junction (13km) is nearest railway station</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 — Sacred City</div>
+      <div class="city-name">🛕 Virupaksha &amp; Matanga Hill</div>
+      <div class="city-desc">Virupaksha Temple — active since the 7th century AD, still functioning during the Vijayanagara Empire's peak (14th–16th centuries) and today. The 52-metre gopuram (tower) is the landmark of Hampi. Hemakuta Hill sunrise over the ruins. Royal Enclosure (Mahanavami Dibba, Elephant Stables). Sunset from Matanga Hill — the finest view in Hampi.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Architecture</div>
+      <div class="city-name">🏛️ Vittala Temple</div>
+      <div class="city-desc">The jewel of Vijayanagara architecture: the Stone Chariot (one of India's most photographed monuments) and the 56 musical pillars that produce different tones when struck. The outer mandapa is one of the finest examples of Deccan Hindu temple architecture. Entry ₹40 Indians, ₹600 foreigners — the discrepancy reflects how few Indians visit compared to international tourists. Should be reversed.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Leisure</div>
+      <div class="city-name">⛵ Hippie Island</div>
+      <div class="city-desc">Virupapur Gadde (universally called "Hippie Island" since the 1990s) is the village on the north bank of the Tungabhadra — accessible only by coracle (round wicker boat, ₹30–₹50 per person). Budget guesthouses (₹400–₹800/night), cafes with hammocks and rooftop views over the river, banana plantations and complete quiet. No vehicles. The true Hampi backpacker experience.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3 — Ancient</div>
+      <div class="city-name">🌺 Zenana &amp; Anegundi</div>
+      <div class="city-desc">Lotus Mahal and Zenana Enclosure (the royal women's quarters), Queen's Bath, Hazara Rama Temple with its extraordinary narrative relief carvings depicting the Ramayana. Then across the river to Anegundi — the oldest settlement, believed to be Kishkindha from the Ramayana where Ram met Hanuman (the monkey god). The Anjaneya Hill above Anegundi is where some traditions say Hanuman was born.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"In 1565, the Vijayanagara Empire — the largest Hindu kingdom in Indian history — was destroyed in a single battle. What remains is a 25 sq km field of ruins among the most extraordinary boulders on earth."</p>
+  </div>
+
+  <div class="highlight-box saffron">
+    <strong>Best Time to Visit:</strong> October to February — 22–32°C, clear skies, the boulders radiant in winter light. March–May gets very hot (38–42°C) — monument exploration by 9am only. Monsoon (June–September): the Tungabhadra floods, some areas inaccessible, but the landscape turns green and the ruins are atmospheric. The river crossing to Hippie Island is suspended during high flood — check locally.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1 & 2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Hampi 3-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Sacred City &amp; Vittala Temple</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · The Living Temple</div>
+      <div class="day-title">Virupaksha, Hemakuta Hill &amp; Matanga Sunset</div>
+      <div class="day-sub">Sunrise at Hemakuta · Virupaksha Temple · Royal Enclosure &amp; Elephant Stables · Krishna Market ruins · Matanga Hill sunset</div>
+      <div class="day-cost">💰 Virupaksha: ₹50 · Royal Enclosure: ₹40 · Total: ₹90 + bicycle/auto hire</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Hemakuta Hill Sunrise — Ruins in Golden Light</div>
+        <div class="time-desc">Hemakuta Hill, just south of the Virupaksha Temple gopuram, is studded with early Vijayanagara-era temples (9th–15th centuries) — small, intact shrines in the pre-Dravidian style, with carved Nandi bulls and Ganeshas. In the pre-dawn silence, with the banana plantations and boulders below, and the Virupaksha gopuram catching the first light — this is Hampi at its most cinematic. No entry charge, no guide needed, just climb carefully on the rock. Allow 1 hour.</div>
+        <div class="time-price">Free · 5-minute walk from Hampi Bazaar · Best 6–7am for light · Wear shoes with grip on rock</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Virupaksha Temple — Still Active After 1,300 Years</div>
+        <div class="time-desc">The Virupaksha Temple is the most important functioning Hindu temple in Hampi — it has been active since the 7th century and was the state deity of the Vijayanagara Empire. The main hall (mandapa) and inner sanctum (garbhagriha) dedicated to Shiva are full of daily ritual. The temple elephant Lakshmi blesses visitors (gives a trunk tap on the head) every morning. The temple's "pinhole camera" effect — an inverted image of the gopuram projected naturally onto the inner wall through a small hole in the roof — is a remarkable optical phenomenon and worth finding. Ask a temple priest to show you. Temple dress code: remove shoes, cover shoulders and knees.</div>
+        <div class="time-price">Entry: ₹50 · Open 6am–1pm, 4pm–8pm · Photography permitted outside inner sanctum · Dress modestly</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Royal Enclosure — Mahanavami Dibba &amp; Elephant Stables</div>
+        <div class="time-desc">The Royal Enclosure (₹40) contains the ceremonial core of the Vijayanagara capital: the Mahanavami Dibba (a 12-metre stone platform where the king reviewed his army during the Dasara festival — the bas-relief carvings around its base show court scenes, warfare, hunting and festival activities of the 15th century), the Underground Shiva Temple (half-submerged, used in monsoon), and the King's Audience Hall foundations. The Elephant Stables (11 domed enclosures in alternating Hindu and Islamic architectural styles) is nearby — built to house the royal war elephants, one of the most elegant utilitarian buildings in medieval India.</div>
+        <div class="time-price">Royal Enclosure: ₹40 · Elephant Stables included in same ticket area · Bicycle from Hampi Bazaar: ₹100/day</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Matanga Hill — The Best Sunset View in Hampi</div>
+        <div class="time-desc">Matanga Hill is the highest point in Hampi (a 20-minute steep climb from the Virupaksha Temple). The summit has a small Virupaksha Temple and provides a 360-degree panorama: the Tungabhadra river, Hippie Island's banana groves, the scattered ruins among boulders stretching to the horizon, and the extraordinary boulder landscape in every direction. At sunset, the orange-red light on the orange-red boulders creates a landscape that appears otherworldly. The climb is steep — begin 45 minutes before sunset for a comfortable ascent.</div>
+        <div class="time-price">Free · 20-minute climb from Hampi Bazaar · Begin 45 mins before sunset · Bring water · Don't descend after dark</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · The Great Temple</div>
+      <div class="day-title">Vittala Temple, Coracle Ride &amp; Hippie Island</div>
+      <div class="day-sub">Morning Vittala Temple complex · Stone Chariot · Musical pillars · Coracle across to Hippie Island afternoon</div>
+      <div class="day-cost">💰 Vittala: ₹40 Indians · Coracle: ₹30–₹50 · Hippie Island café: ₹200–₹400</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Vittala Temple — The Stone Chariot &amp; Musical Pillars</div>
+        <div class="time-desc">The Vittala Temple complex (3km east of Hampi Bazaar — take the electric bus/cart, ₹15, or walk 40 minutes) is the masterpiece of Vijayanagara architecture, built primarily in the 15th–16th centuries. The stone chariot in the main courtyard (one of India's most-reproduced images) is built from a single piece of granite in the form of Garuda's chariot. The 56 pillars of the main mandapa produce musical tones when struck — the acoustic property is inherent to the granite and the hollow column construction. Each pillar cluster represents a different raga (musical scale). Hire a guide here (₹400–₹600, ASI licensed) — the temple's iconographic program is dense and fascinating. Allow 2.5 hours.</div>
+        <div class="time-price">Entry: ₹40 Indians · ₹600 foreigners · Electric cart from Hampi Bazaar: ₹15 · Open 8am–5:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Achyutaraya Temple &amp; Sule Bazaar</div>
+        <div class="time-desc">Between the Vittala Temple and Hampi Bazaar, the Achyutaraya Temple complex (also called Tiruvengalanatha) is large, atmospheric and receives far fewer visitors than Vittala — yet its courtyard colonnades and carved mandapas are equally fine. The adjacent Sule Bazaar (Courtesan's Quarter) is the best-preserved market street in Hampi — a long arcade of double-storeyed shops that once formed the city's commercial heart. Walking through it gives the clearest sense of what the living city looked like. Nearly deserted today, the scale reveals the extent of what was lost in 1565.</div>
+        <div class="time-price">Achyutaraya: ₹40 · 30-minute walk from Vittala or bicycle · Allow 1 hour combined</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Coracle Ride to Hippie Island</div>
+        <div class="time-desc">The coracle — a perfectly circular wicker-and-tar boat, 1.5 metres in diameter, with a single oarsman — is how the north bank (Virupapur Gadde/Hippie Island) has been accessed for centuries. The crossing takes 5 minutes and costs ₹30–₹50. The island has banana and coconut plantations, guesthouses (₹400–₹800/night — basic, no vehicles, no noise), and several excellent cafes with hammocks and river views. Mango Tree Restaurant (on the Hampi side of the river) and Gopi Guesthouse on the island are both institutions. Spend the afternoon in a hammock. Swim in the river only in designated safe areas — currents can be dangerous mid-stream.</div>
+        <div class="time-price">Coracle: ₹30–₹50 each way · Guesthouses on island: ₹400–₹800 · Café lunch: ₹150–₹300</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAY 3 + BUDGET + TIPS -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Hampi 3-Day Itinerary</span>
+    <span class="page-header-right">Day 3 · Budget · Tips &amp; Packing</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Royal &amp; Sacred</div>
+      <div class="day-title">Lotus Mahal, Zenana Enclosure &amp; Anegundi Village</div>
+      <div class="day-sub">Lotus Mahal · Zenana Enclosure · Queen's Bath · Hazara Rama Temple · Anegundi village across the river</div>
+      <div class="day-cost">💰 Lotus Mahal complex: ₹30 · Hazara Rama: ₹40 · Anegundi coracle: ₹30 · Total: ₹150–₹300</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Lotus Mahal &amp; Zenana Enclosure</div>
+        <div class="time-desc">The Lotus Mahal (Kamal Mahal) is a double-storeyed pavilion within the Zenana Enclosure (the walled compound of the royal women and their attendants). The architecture is a remarkable blend: Hindu lotus-bud arches in the Dravidian tradition combined with Islamic foliated arch designs — a visual expression of the Vijayanagara Empire's syncretic court culture. The Zenana Enclosure's high walls, watchtowers and underground passages were a self-contained world. Entry includes both the Lotus Mahal and the watch tower access. Best photographed in morning side-light (the building faces east). Allow 45 minutes.</div>
+        <div class="time-price">Entry: ₹30 · Open 8am–5:30pm · Photography permitted · 15-minute bicycle ride from Hampi Bazaar</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Queen's Bath &amp; Hazara Rama Temple</div>
+        <div class="time-desc">Queen's Bath is a large roofless swimming enclosure with projecting balconies over the water and elaborate stucco plasterwork — built for the royal women. The combination of the open sky above, the carved arches and the empty pool creates an eerie beauty. Hazara Rama Temple (the royal chapel, reserved for the king's personal worship) has the most complete narrative sculptural programme in Hampi: the outer walls are carved with four continuous friezes depicting the entire Ramayana story in sequential bas-reliefs — horses, elephants, armies, the battle of Lanka. The inner walls show court scenes. Allow 1.5 hours total for both.</div>
+        <div class="time-price">Queen's Bath: ₹40 · Hazara Rama: ₹40 · Near the Royal Enclosure area · Quiet in morning</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Anegundi Village — Ancient Kishkindha from the Ramayana</div>
+        <div class="time-desc">Anegundi, across the Tungabhadra from Hampi (coracle from the Hampi side near Virupaksha, ₹30), is believed in Hindu tradition to be Kishkindha — the monkey kingdom where Lord Ram met Hanuman and Sugriva in the Ramayana. The Anjaneya Hill (4km from the village, 570 steps) is where Hanuman is said to have been born — a small temple at the summit, panoramic views. Anegundi village itself is a living settlement predating the Vijayanagara Empire — its inhabitants are descendants of the royal family's original subjects. The village produces excellent ikat textiles (Kishkindha Trust sells them at fixed prices in the village).</div>
+        <div class="time-price">Coracle from Hampi: ₹30 · Anjaneya Hill: free · Ikat textiles: ₹500–₹3,000 · Allow half day</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 3 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (3 nights)</td><td>1,200</td><td>4,500</td><td>12,000</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>900</td><td>2,000</td><td>4,500</td></tr>
+      <tr><td>Bicycle Hire (3 days)</td><td>300</td><td>300</td><td>0</td></tr>
+      <tr><td>All Monument Entries</td><td>500</td><td>500</td><td>500</td></tr>
+      <tr><td>Auto/Coracle Transport</td><td>300</td><td>600</td><td>1,500</td></tr>
+      <tr><td>Shopping (ikat, souvenirs)</td><td>500</td><td>2,000</td><td>6,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹3,700</strong></td><td><strong>~₹9,900</strong></td><td><strong>₹24,500+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Hampi is one of India's best-value destinations. Budget guesthouses near Hampi Bazaar: ₹300–₹600/night. Hippie Island guesthouses: ₹400–₹800. Mid-range: ₹1,500–₹2,500. How to reach: Train to Hospet Junction (13km from Hampi) — from Bangalore (Hampi Express, 9 hours, ₹200–₹800 AC). From Hospet, auto to Hampi ₹150–₹200. Direct buses from Hyderabad (8 hours) and Goa (9 hours) also available.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🚲</div>
+      <div class="tip-title">Bicycle — The Best Way Around</div>
+      <div class="tip-desc">Hampi's main monuments are spread over 25 sq km, but the terrain is relatively flat (away from the hills). A bicycle (₹100/day from Hampi Bazaar shops) is the ideal transport — faster than walking, slower than auto, and you can stop whenever a ruin catches your eye. The Vittala Temple is 3km from the Bazaar (or take the electric cart for ₹15). Hippie Island requires a coracle, but bicycle can be left on the south bank. Go clockwise from Hampi Bazaar for the most logical site sequence.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Heat Warning — Hampi Can Kill</div>
+      <div class="tip-desc">The boulder landscape in May–June reaches 42°C with zero shade. The granite boulders radiate heat long after the sun sets. In peak summer, monument visiting after 9am is genuinely dangerous — people have suffered heat stroke. October–February is ideal. March is warm but manageable. April–September: if you must visit, operate strictly 6–9am and 4–7pm only. Carry 3L of water per person. The Vittala Temple electric cart stops running in extreme heat — be prepared to walk back.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏞️</div>
+      <div class="tip-title">Bouldering — Hampi is World-Class</div>
+      <div class="tip-desc">Hampi is a world-famous bouldering destination — the Deccan Plateau's ancient granite formations create problems of every grade. The best bouldering areas: around Hippie Island (accessible, easy problems for beginners), Hampi Bazaar surrounds, and the area towards the Vittala Temple. Several guest houses on Hippie Island cater specifically to climbers and know the best current problems. No gear needed for beginners — just approach shoes and a crash pad (available for rent on the island at ₹200/day).</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-title">Where to Eat</div>
+      <div class="tip-desc">Mango Tree Restaurant (Hampi south bank, near Virupaksha): the most atmospheric café in Hampi — riverfront seating under a mango tree, excellent thali and Israeli food (₹150–₹300). Gopi Guesthouse (Hippie Island): good banana pancakes and filter coffee. Laughing Buddha (Hippie Island): rooftop views, pizza and pasta (₹200–₹400). Hampi Bazaar dhabas for basic thali (₹80–₹120). Avoid the most tourist-facing restaurants in Hampi Bazaar — quality varies and prices are higher than the island.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Hampi</div>
+  <div class="pack-list">
+    <div class="pack-item">🧴 <strong>SPF 50+ sunscreen</strong> — the granite reflects heat and UV mercilessly. Reapply every 2 hours outdoors.</div>
+    <div class="pack-item">👟 <strong>Rubber-soled walking shoes</strong> — the granite boulders are smooth and slippery. Grip is essential, especially on Matanga Hill.</div>
+    <div class="pack-item">💧 <strong>3L water capacity</strong> — there are no shops or water points between most monuments. Carry more than you think you need.</div>
+    <div class="pack-item">🕌 <strong>Temple-appropriate clothes</strong> — Virupaksha is active. Remove shoes, cover up. A thin cotton scarf for women.</div>
+    <div class="pack-item">💵 <strong>Cash only</strong> — Hampi has ATMs (1–2 in the Bazaar) but they sometimes run dry. Carry ₹3,000–₹5,000 in notes from Hospet.</div>
+    <div class="pack-item">🔦 <strong>Headlamp or torch</strong> — power cuts are regular in Hampi Bazaar and Hippie Island. Essential for evening navigation.</div>
+    <div class="pack-item">📵 <strong>Offline maps downloaded</strong> — mobile signal is weak on the island and between monuments. Download Hampi offline maps before arriving.</div>
+    <div class="pack-item">📚 <strong>Book on Vijayanagara history</strong> — "A Forgotten Empire" by Robert Sewell (1900, still the definitive popular account) transforms the experience. Available on Kindle.</div>
+    <div class="pack-item">🦟 <strong>Insect repellent</strong> — river breezes bring mosquitoes at dusk on Hippie Island. Apply before sunset.</div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>The scale of Hampi:</strong> At its height in 1500 AD, Vijayanagara had a population of 500,000 — larger than contemporary London or Paris. The empire stretched across the entire southern Deccan. When it was sacked in 1565, the city burned for six months. What remains today is 25 square kilometres of ruins — one of the largest archaeological zones in Asia. Give it three slow days and let its extraordinary, melancholy grandeur wash over you.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the royal city of Mysore to the coffee hills of Coorg, from the Mughal grandeur of Agra to the ashrams of Rishikesh — IncredibleItinerary has a complete guide for every extraordinary journey across India.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Mysore · Coorg · Kerala · Goa · Delhi · Mumbai · Jaipur · Varanasi · Rishikesh · Darjeeling</p>
+  <div class="back-legal">This guide is for personal use only. Prices, monument entry fees and transport availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

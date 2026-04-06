@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Spiti Valley 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#475569;--primary-light:#64748b;--primary-dark:#334155;
+  --accent:#94a3b8;--accent-light:#cbd5e1;
+  --ink:#0f172a;--cream:#f8fafc;--parchment:#f1f5f9;
+  --white:#ffffff;--muted:#475569;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,23,42,0.97) 0%,rgba(15,23,42,0.6) 50%,rgba(15,23,42,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#94a3b8;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(71,85,105,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(71,85,105,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--accent);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(71,85,105,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(71,85,105,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(148,163,184,0.08),rgba(148,163,184,0.02));border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#94a3b8;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#94a3b8;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(71,85,105,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.slate{background:rgba(148,163,184,0.1);border:1px solid rgba(148,163,184,0.3);color:#334155}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(71,85,105,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(71,85,105,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(71,85,105,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(71,85,105,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(71,85,105,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--accent);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3820943/pexels-photo-3820943.jpeg?w=1200&q=80" alt="Spiti Valley cold desert high-altitude landscape"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Spiti<br/><em>Valley</em></h1>
+    <p class="cover-sub">India's cold desert — 4,500m monasteries, fossils in moonscapes, the world's highest post office, and a turquoise moon lake</p>
+    <div class="cover-pills">
+      <span class="pill">🏔️ 7 Days</span>
+      <span class="pill">🌵 Cold Desert</span>
+      <span class="pill">💰 ₹15,000–₹45,000</span>
+      <span class="pill">☀️ Jun–Sep Only</span>
+      <span class="pill">🕌 Key Monastery</span>
+      <span class="pill">⛰️ 4,500m+</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(71,85,105,0.3);border:1px solid rgba(148,163,184,0.4);color:#94a3b8;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Spiti Valley 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The High-Altitude Cold Desert of Himachal Pradesh</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">7 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">⛰️</div><span class="stat-val">4,587m</span><span class="stat-label">Highest Point (Komic)</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹15k–45k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">☀️</div><span class="stat-val">Jun–Sep</span><span class="stat-label">Only Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop light">Shimla</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Reckong Peo</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Tabo</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Kaza</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Chandratal</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Manali</span>
+    <span class="route-sub">Shimla entry / Manali exit · One-way circuit · ~800km total</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 3 · 3,800m</div>
+      <div class="city-name">🕌 Kaza — Spiti's Capital</div>
+      <div class="city-desc">The main town of Spiti at 3,800m. Small but has ATMs, phone signal (BSNL only), petrol pump (FILL UP HERE — no fuel for 200km), basic supplies. Base for day trips to Key Monastery, Kibber, Hikkim, Langza, and Komic. Good homestays and simple hotels. The town has a Buddhist monastery and a vibrant local market.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3 · 4,166m</div>
+      <div class="city-name">🏯 Key Monastery</div>
+      <div class="city-desc">The most photogenic monastery in Himachal Pradesh — an ancient multi-storey gompa stacked on a conical hill at 4,166m with 360° views of the Spiti river valley. Founded in the 11th century, repeatedly destroyed and rebuilt. Houses over 300 monks. The murals inside are extraordinary. Morning prayer sessions (6am) are open to respectful visitors.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4 · 4,587m</div>
+      <div class="city-name">📮 Hikkim &amp; Komic</div>
+      <div class="city-desc">Hikkim Post Office (4,440m) — the world's highest post office. Send a postcard home with an extraordinary postmark. Komic Village (4,587m) — claimed to be the world's highest motorable village. The landscapes at this altitude are pure moonscape — bare rock, high passes, occasional snow, yaks. Langza has a giant seated Buddha and marine fossils (ammonites) in the rocks — this was the Tethys Sea floor 50 million years ago.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 5 · 4,250m</div>
+      <div class="city-name">🌊 Chandratal Lake</div>
+      <div class="city-desc">The "Moon Lake" — a perfect crescent of impossible turquoise at 4,250m. Surrounded by barren mountains and meadows of high-altitude wildflowers. One of the most beautiful lakes in the Himalayas. 70km from Kaza on a rough mountain track (high-clearance vehicle essential). Camp overnight in tented accommodation at the lake for the most magical experience.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"At 4,500 metres, in a landscape so bare and still that it could be Mars, a 1,000-year-old monastery sits on a cliff — and monks inside recite sutras written before Europe had a middle age."</p>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>Critical Warning:</strong> NO petrol stations exist between Kaza and Manali (200km+) and between Reckong Peo and Kaza (very limited). Fill your fuel tank completely in Kaza. Carry 5–10L extra in a jerry can. Many vehicles have been stranded in Spiti due to running out of fuel. BSNL network is the only mobile provider — Jio, Airtel and Vi have no coverage. Download offline maps before entering Spiti.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–4 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Spiti Valley 7-Day Itinerary</span>
+    <span class="page-header-right">Days 1–4 — Shimla to Kaza Circuit</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Entry via Shimla</div>
+      <div class="day-title">Shimla → Reckong Peo — Inner Line Permit</div>
+      <div class="day-sub">Shimla → Narkanda → Reckong Peo (210km, 7hrs) · Get Inner Line Permit · Acclimatise</div>
+      <div class="day-cost">💰 ILP: ₹200 · Shared bus Shimla–Reckong Peo: ₹350 · Private taxi: ₹4,000–₹5,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Shimla → Narkanda → Reckong Peo (210km, 7hrs)</div>
+        <div class="time-desc">The drive from Shimla through Narkanda (apple orchards, pine forests) to Reckong Peo (Kinnaur district headquarters) is the gateway to Spiti. The road is scenic but winding. Narkanda (2,700m) is a good breakfast stop. The route enters the dramatic Sutlej river gorge as you approach Reckong Peo — steep canyon walls, hanging villages, ancient Kinnauri architecture. Reckong Peo sits at 2,670m and is the last town of consequence before entering the higher reaches.</div>
+        <div class="time-price">Distance: 210km · 7hrs · HRTC bus: ₹350 · Private: ₹4,000–₹5,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Inner Line Permit — Mandatory for Spiti</div>
+        <div class="time-desc">The Inner Line Permit (ILP) for Spiti Valley is obtained in Reckong Peo from the Sub-Divisional Magistrate (SDM) office. Cost: ₹200. Required documents: ID proof (Aadhaar/passport), a passport photo, and a copy of your ID. The process takes 30–45 minutes. The permit covers the Spiti Valley area. Without this permit, you cannot proceed past Sumdo checkpost. The SDM office is on the main road in Reckong Peo — ask any local.</div>
+        <div class="time-price">ILP cost: ₹200 · SDM office Reckong Peo · Open 10am–5pm weekdays · Photo + ID copy needed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Nako, Tabo &amp; Kaza</div>
+      <div class="day-title">The 1,000-Year Monastery &amp; High-Altitude Lake</div>
+      <div class="day-sub">Reckong Peo → Nako Lake (4,000m) → Tabo Monastery → Kaza (3,800m)</div>
+      <div class="day-cost">💰 Nako Lake: free · Tabo Monastery: ₹50 · Accommodation Kaza: ₹500–₹2,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Nako Lake — High-Altitude Jewel (4,000m)</div>
+        <div class="time-desc">Nako village (4,000m) sits above a small sacred lake ringed by willow trees — a remarkable sight in the otherwise barren Spiti landscape. The village has a 1,000-year-old Buddhist monastery with ancient frescoes. The reflections of the surrounding peaks in the lake at dawn are extraordinary. At 4,000m you will feel the altitude — walk slowly, breathe deeply. Altitude headaches are normal here; they pass after acclimatisation.</div>
+        <div class="time-price">Nako village and lake: free · Monastery entry: ₹30–₹50 donation · 2hrs stop</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Tabo Monastery — The Ajanta of the Himalayas</div>
+        <div class="time-desc">Tabo Monastery (3,050m) is one of the most important Tibetan Buddhist monasteries outside Tibet — established in 996 CE, making it over 1,000 years old. The Dalai Lama has stated his wish to retire here. The ancient mud-constructed temples contain the finest surviving collection of Himalayan Buddhist murals and stucco sculptures in India. Nine temples, 23 chortens, and a series of caves used by monks for meditation for centuries. UNESCO is involved in preservation. Allow 2 hours minimum.</div>
+        <div class="time-price">Tabo Monastery: ₹50 entry · Photography: permitted with respect · 2hrs recommended</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Arrive Kaza — Spiti's Capital (3,800m)</div>
+        <div class="time-desc">Kaza is the administrative centre of Spiti — population around 3,000. It has the district's only reliable ATMs (withdraw cash here — last chance for a long time), the only petrol pump for hundreds of kilometres (fill up completely), a few decent restaurants, and multiple guesthouses/homestays. BSNL SIM cards can be obtained here if you don't have BSNL coverage. The town has an unexpectedly vibrant young traveller community in season.</div>
+        <div class="time-price">ATM in Kaza — withdraw ₹10,000 minimum · FILL PETROL TANK COMPLETELY · Guesthouse: ₹500–₹2,500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Kaza Base Day</div>
+      <div class="day-title">Key Monastery, Kibber &amp; Chicham Bridge</div>
+      <div class="day-sub">Kaza base · Key Monastery (4,166m) · Kibber Village (4,270m) · Chicham Bridge (Asia's highest)</div>
+      <div class="day-cost">💰 Key Monastery: ₹50 · Local taxi day trip: ₹1,500–₹2,000 · Homestay in Kibber: ₹800</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Key Monastery Morning Prayer (Optional but Unmissable)</div>
+        <div class="time-desc">Key Monastery (Ki Gompa, 4,166m) is 12km from Kaza. The 6am morning prayer session fills the assembly hall with monks in deep maroon robes chanting in low, resonant tones, accompanied by horns, drums and cymbals. The hall is lit by butter lamps. Visitors are welcome but must sit quietly at the back and remove footwear. This is one of the most atmospheric religious experiences in India. Afterwards, watch the monks having breakfast and going about their day.</div>
+        <div class="time-price">Key Monastery: ₹50 entry · Morning prayer: free · 12km from Kaza · Taxi: ₹300 shared</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Kibber Village (4,270m) — One of the World's Highest Motorable Villages</div>
+        <div class="time-desc">Kibber sits at 4,270m with views of snow peaks in every direction, yaks grazing, and flat-roofed houses stacked up the hillside. The village is home to the snow leopard conservation project — ask locals about sightings (winter is snow leopard season, but camera traps catch them year-round). The Kibber Wildlife Sanctuary surrounding the village is habitat for ibex, Tibetan wolf, bharal (blue sheep) and occasionally snow leopards.</div>
+        <div class="time-price">Kibber: free · Snow leopard conservation info at local NGO · Homestay available: ₹800</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Chicham Bridge — Asia's Highest Motorable Bridge</div>
+        <div class="time-desc">The Chicham Bridge, built in 2017, spans a dramatic gorge at 4,270m — considered Asia's highest motorable bridge. The gorge drops hundreds of metres below. Before the bridge, Chicham village was cut off from the road for months every year — residents had to use a trolley cable to cross. Stand on the bridge and look down. The drama of the landscape is vertigo-inducing in the best way.</div>
+        <div class="time-price">Chicham Bridge: free · 15min drive from Kibber</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Fossil Villages</div>
+      <div class="day-title">Langza, Hikkim &amp; Komic — Top of the World</div>
+      <div class="day-sub">Langza fossils &amp; giant Buddha · Hikkim world's highest post office · Komic highest motorable village</div>
+      <div class="day-cost">💰 Postcard at Hikkim: ₹30–₹50 · Full day taxi: ₹2,000–₹2,500 · Langza homestay: ₹700</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Langza (4,400m) — Fossils &amp; Giant Buddha</div>
+        <div class="time-desc">Langza village sits at 4,400m beneath a giant seated Buddha statue overlooking the valley. The most unusual feature of Langza: the rocks and fields around the village contain marine fossils — ammonites, crinoids and shell impressions from 50 million years ago when this region was the floor of the Tethys Sea (before the Himalayan uplift). Local children sell small ammonite fossils (₹100–₹500). These are legally collectible if purchased from locals as souvenirs.</div>
+        <div class="time-price">Langza: free · Fossils from locals: ₹100–₹500 · Giant Buddha viewpoint: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Hikkim (4,440m) — The World's Highest Post Office</div>
+        <div class="time-desc">Hikkim Post Office holds the Guinness World Record for the world's highest post office at 4,440m. Buy a postcard (available at the post office), write your message, and have it stamped with the official Hikkim Post Office stamp — dated from 4,440m. The postmark is a conversation piece for decades. The postmaster, Mr. Rinchen Chhering, has been running this post office for decades and is a minor celebrity among India travellers. Postcards take 2–4 weeks to arrive.</div>
+        <div class="time-price">Postcard: ₹30–₹50 · Stamp: normal postage · World record stamp included · Open daily</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Komic (4,587m) — The Highest Motorable Village in the World</div>
+        <div class="time-desc">Komic claims to be the world's highest motorable village at 4,587m. The landscape here is extreme high altitude tundra — bare rock, scant vegetation, the sky a deeper blue than anywhere at lower altitude, the horizon impossibly wide. A small monastery in the village has prayer flags strung between buildings. The air at this altitude has 40% less oxygen than at sea level. Walk slowly. Breathe. Marvel at the humans who live here year-round.</div>
+        <div class="time-price">Komic: free · Highest motorable village · Drive carefully on unpaved sections</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 5–7 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Spiti Valley 7-Day Itinerary</span>
+    <span class="page-header-right">Days 5–7 · Chandratal · Manali · Budget</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · The Moon Lake</div>
+      <div class="day-title">Chandratal — The Most Beautiful Lake in the Himalayas</div>
+      <div class="day-sub">Kaza → Chandratal Lake (70km, rough road) · 4,250m · Camp overnight under a billion stars</div>
+      <div class="day-cost">💰 Camp at Chandratal: ₹500–₹1,000 · Rough road requires SUV/4WD · 3–4hrs from Kaza</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Kaza → Chandratal (70km, 3–4hrs on Mountain Track)</div>
+        <div class="time-desc">The road to Chandratal from Kaza is 70km but takes 3–4 hours due to the rough, unpaved mountain track. A high-clearance vehicle (SUV or 4WD) is essential — standard cars cannot manage this road. The route passes through the upper Spiti Valley, crosses the Pin-Spiti divide, and reaches the Chandratal area. Hire a local Kaza taxi (₹4,000–₹5,000 return) or join a shared trip from Kaza town. The track is memorably rough but the destination is worth every pothole.</div>
+        <div class="time-price">Kaza → Chandratal return taxi: ₹4,000–₹5,000 · SUV only · Check road conditions locally first</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Chandratal Lake — The Crescent Moon at 4,250m</div>
+        <div class="time-desc">Chandratal (Moon Lake) is a crescent-shaped glacial lake at 4,250m — the water an astonishing turquoise-blue from glacial minerals, surrounded by barren brown-grey mountains. Walking around the lake (circumambulation is traditional) takes 45 minutes. The water changes colour through the day — turquoise to deep blue to silver at dusk. Motor vehicles stop 1km from the lake — you walk the final stretch. No camping on the lakeshore (protected area); tented camps are 2km away.</div>
+        <div class="time-price">Chandratal: free · Walk 1km from parking · Lake circuit: 45min · No litter permitted</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Night</div>
+      <div class="time-content">
+        <div class="time-title">Overnight Camp at Chandratal — Stars at 4,250m</div>
+        <div class="time-desc">Tented camps operate near Chandratal from June to September (₹500–₹1,000/person in twin tents with meals). At 4,250m with zero light pollution, the night sky is extraordinary — the Milky Way visible as a dense band across the sky. Temperatures drop to -5°C or below even in July and August — dress in your warmest layers. This is the most memorable overnight stop of the entire Spiti circuit.</div>
+        <div class="time-price">Tented camp: ₹500–₹1,000/person · Includes dinner and breakfast · Extreme cold at night · Bring thermals</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">06</div>
+    <div class="day-info">
+      <div class="day-tag">Day Six · Crossing to Manali</div>
+      <div class="day-title">Chandratal → Manali via Rohtang Pass</div>
+      <div class="day-sub">Chandratal → Batal → Rohtang Pass (3,978m) → Manali (150km, 5–6hrs)</div>
+      <div class="day-cost">💰 Rohtang Pass permit: ₹550 (private vehicles, book online) · Manali hotel: ₹800–₹4,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Chandratal → Batal → Rohtang Pass (150km, 5–6hrs)</div>
+        <div class="time-desc">The exit from Spiti to Manali goes via Batal (a tiny settlement at the Chandra river confluence, famous for Chacha-Chachi dhaba — the highest dhaba in India), then climbs to Rohtang Pass (3,978m). Rohtang requires a separate permit for private vehicles (₹550 — book on the Himachal online portal the day before; only 1,200 vehicles allowed per day). Past Rohtang, the landscape changes dramatically — suddenly lush green forest replaces the brown desert. Manali feels like a different planet.</div>
+        <div class="time-price">Rohtang permit: ₹550 private vehicles · Book online day before · 150km · 5–6hrs · All in one day</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Arrive Manali — Hot Shower, Warm Bed</div>
+        <div class="time-desc">After 5–6 days in Spiti's cold desert, Manali feels almost tropically lush. The Beas river, deodar cedar forests, apple orchards, and a warm guesthouse with a hot shower. Manali Old Town (Vashisht area) has excellent guesthouses, restaurants, and the famous Vashisht hot springs (natural sulphur thermal bath, ₹50). Celebrate with a hot thali and a deep sleep.</div>
+        <div class="time-price">Vashisht hot spring: ₹50 · Old Manali guesthouses: ₹800–₹2,500 · Dinner in Old Manali: ₹200–₹400</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">07</div>
+    <div class="day-info">
+      <div class="day-tag">Day Seven · Manali Rest or Departure</div>
+      <div class="day-title">Rest Day or Explore Manali Before Heading Home</div>
+      <div class="day-sub">Hadimba Temple · Old Manali · Solang Valley · Bus or fly home from Bhuntar airport (50km)</div>
+      <div class="day-cost">💰 Hadimba Temple: ₹0 · Bhuntar airport taxi: ₹800 · Volvo bus Manali–Delhi: ₹800–₹1,200</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Hadimba Temple + Old Manali Walk</div>
+        <div class="time-desc">Hadimba Devi Temple (1553 CE) is a stunning pagoda-style wooden temple in a deodar cedar forest — remarkable architecture and a peaceful forest setting. Old Manali has excellent cafes, secondhand book shops, Tibetan crafts, and the hippy trail legacy of the 1970s when Manali was the last stop on the overland route from Europe. Naggar Castle (20km) is a beautiful hill fort worth visiting if time allows. Then: Volvo overnight bus to Delhi (₹800–₹1,200) or taxi to Bhuntar airport (50km, ₹800) for flights.</div>
+        <div class="time-price">Hadimba Temple: free · Volvo Delhi bus: ₹800–₹1,200 · Bhuntar airport: 50km, ₹800 taxi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 7 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Transport (Shimla–Manali circuit)</td><td>4,000</td><td>9,000</td><td>18,000</td></tr>
+      <tr><td>Accommodation (6 nights)</td><td>3,600</td><td>9,000</td><td>18,000</td></tr>
+      <tr><td>Food (7 days)</td><td>2,800</td><td>6,000</td><td>10,000</td></tr>
+      <tr><td>Permits &amp; Entry Fees</td><td>800</td><td>1,500</td><td>1,500</td></tr>
+      <tr><td>Fuel (if own vehicle)</td><td>5,000</td><td>5,000</td><td>5,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹16,200</strong></td><td><strong>~₹30,500</strong></td><td><strong>~₹52,500</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Own vehicle costs include fuel estimation for ~800km Shimla-Manali circuit. Budget uses guesthouses, homestays and shared taxis. Premium uses private vehicle, good hotels in Kaza and Manali. Flights to Shimla (SLV) or Manali (BHU) not included.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Spiti Valley 7-Day Itinerary</span>
+    <span class="page-header-right">Survival Tips, Warnings &amp; Packing</span>
+  </div>
+
+  <div class="label">Critical Information — Read Before Entering Spiti</div>
+  <h2 class="section-title" style="margin-bottom:4mm">Spiti Is Not Forgiving — Prepare Properly</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">⛽</div>
+      <div class="tip-title">Fuel — The Most Important Warning</div>
+      <div class="tip-desc">The Kaza petrol pump is the ONLY reliable fuel source for hundreds of kilometres in all directions. Fill your tank completely in Kaza. Carry 5–10L extra fuel in a sealed jerry can. This is not a recommendation — it is a requirement. Vehicles have been stranded in Spiti, sometimes for days. Diesel vehicles need extra planning — diesel availability even in Kaza can be intermittent.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📵</div>
+      <div class="tip-title">No Network — Digital Detox by Force</div>
+      <div class="tip-desc">Jio, Airtel, and Vi have zero coverage in most of Spiti. Only BSNL works — and only in some areas. Download offline maps (Maps.me with Himachal Pradesh downloaded), offline Wikipedia, your route notes, emergency contacts, and accommodation details before entering Spiti. WhatsApp your family your route plan before losing signal. Carry an emergency satellite communicator if doing any high-altitude solo activity.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏥</div>
+      <div class="tip-title">Medical Facilities Are Minimal</div>
+      <div class="tip-desc">The Kaza Civil Hospital is the only medical facility in Spiti valley. For serious emergencies, evacuation requires helicopter (weather permitting) or a 7-hour drive to Manali or Shimla. Carry a comprehensive medical kit. Know the signs of altitude sickness — if severe, begin descent immediately. Diamox can help prevent AMS (consult doctor). Acclimatise properly: do not rush from Shimla (2,000m) to Kaza (3,800m) in one day.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌊</div>
+      <div class="tip-title">Season: June–September ONLY</div>
+      <div class="tip-desc">Roads into Spiti (Shimla route via Kinnaur, and Manali route via Rohtang) are closed by snow from November to May. The Shimla route typically opens first (mid-May). The Manali-Rohtang route opens June. Roads can close again temporarily in August–September if exceptional rain causes landslides. Check current road status on the Himachal Pradesh Public Works Department website or call Kaza police station before departure.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Cash — Withdraw Everything in Kaza</div>
+      <div class="tip-desc">Kaza has the only ATMs in Spiti valley — and they sometimes run out of cash or are offline. Withdraw a generous amount (₹10,000–₹15,000 per person) in Kaza. All accommodation, food, fuel, and activities in the remote villages are cash-only. There are no ATMs at Kibber, Langza, Hikkim, Komic, or Chandratal. Shimla and Reckong Peo also have ATMs — withdraw there as backup.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-title">Vehicle Requirements</div>
+      <div class="tip-desc">High-clearance SUV or 4WD strongly recommended for the Chandratal road and several other Spiti tracks. Small hatchbacks or sedans can manage the main Kaza–Tabo–Nako road but will struggle on rocky tracks to remote villages. If renting, choose a Bolero, Scorpio, Fortuner, or similar. Ask the rental agency specifically: "Can this vehicle manage the Chandratal road?" Know how to change a tyre before entering Spiti — punctures are common on rocky tracks.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌿</div>
+      <div class="tip-title">Leave No Trace — Fragile Ecosystem</div>
+      <div class="tip-desc">Spiti is a cold desert ecosystem of extreme fragility. Whatever you bring in, carry out. Do not litter at Chandratal — it is a protected area and fines apply. Do not pick wildflowers or fossils without purchasing from locals. The monasteries are living religious sites — photograph respectfully, dress appropriately, make a donation. The over-tourism of Spiti in recent years has already caused environmental strain. Be a responsible visitor.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌙</div>
+      <div class="tip-title">Night Temperatures are Extreme</div>
+      <div class="tip-desc">Even in July and August, night temperatures at Kaza (3,800m) drop to 0–5°C and at Chandratal (4,250m) to -5 to -10°C. Sleeping bag rated to -10°C minimum for Chandratal camping. Thermals essential. Many travellers are unprepared for how cold the nights are. The days can reach 20–25°C, making the 30-degree temperature swing through the day a challenge to dress for.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Spiti Valley</div>
+  <div class="pack-list">
+    <div class="pack-item">🧥 <strong>Heavy down jacket</strong> — -10°C rating. For Chandratal overnight and morning cold.</div>
+    <div class="pack-item">🧤 <strong>Gloves &amp; thermal hat</strong> — wind chill at 4,500m is severe. Non-negotiable.</div>
+    <div class="pack-item">🌬️ <strong>Windproof outer layer</strong> — Spiti is extremely windy. Fleece alone is not enough.</div>
+    <div class="pack-item">⛽ <strong>Jerry can + fuel</strong> — 5–10L extra. Could save your trip or your life.</div>
+    <div class="pack-item">💊 <strong>Altitude medicine</strong> — Diamox (doctor's prescription), ORS, paracetamol, antacid.</div>
+    <div class="pack-item">💧 <strong>Water purification</strong> — tablets or filter. Streams are clean but carry backup.</div>
+    <div class="pack-item">🔦 <strong>Headlamp + spare batteries</strong> — power cuts nightly in most villages.</div>
+    <div class="pack-item">📵 <strong>Offline maps downloaded</strong> — Maps.me Himachal Pradesh. No mobile data in Spiti.</div>
+    <div class="pack-item">💰 <strong>Cash ₹15,000+</strong> — withdraw in Shimla, Reckong Peo, and Kaza. Cards useless here.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More High<br/>India Awaits</h2>
+  <p>From Spiti's moonscapes to Leh-Ladakh's monasteries, from Kashmir's valleys to Kedarnath's sacred heights — IncredibleItinerary has a complete guide for every extraordinary Himalayan journey.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Leh-Ladakh · Kashmir · Manali · Kedarnath Trek · Char Dham · Northeast India · Rajasthan · Kerala</p>
+  <div class="back-legal">This guide is for personal use only. Road conditions, permits and accessibility change seasonally — verify before travel. Travel at your own risk in high-altitude terrain. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

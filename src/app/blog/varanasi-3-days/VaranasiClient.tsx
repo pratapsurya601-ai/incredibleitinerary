@@ -53,7 +53,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div className="border border-parchment-2 rounded-xl overflow-hidden bg-white">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-parchment transition-colors">
         <span className="font-medium text-sm text-ink pr-4">{q}</span>
-        <span className={`text-gold text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
+        <span className={`text-amber-800 text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
       </button>
       {open && <div className="px-5 pb-5 pt-1 border-t border-parchment-2"><p className="text-sm text-muted font-light leading-relaxed">{a}</p></div>}
     </div>
@@ -163,7 +163,7 @@ export default function VaranasiClient() {
             {/* Day 1 */}
             <div className="bg-white rounded-xl border border-parchment-2 overflow-hidden mb-4">
               <div className="bg-parchment px-5 py-4 flex items-center gap-3">
-                <span className="font-serif text-xl text-gold-dark font-light">Day 1</span>
+                <span className="font-serif text-xl text-amber-900 font-light">Day 1</span>
                 <span className="text-sm text-ink font-medium">Arrive + Evening Ganga Aarti</span>
               </div>
               <div className="p-5 space-y-3">
@@ -187,7 +187,7 @@ export default function VaranasiClient() {
             {/* Day 2 */}
             <div className="bg-white rounded-xl border border-parchment-2 overflow-hidden mb-4">
               <div className="bg-parchment px-5 py-4 flex items-center gap-3">
-                <span className="font-serif text-xl text-gold-dark font-light">Day 2</span>
+                <span className="font-serif text-xl text-amber-900 font-light">Day 2</span>
                 <span className="text-sm text-ink font-medium">Morning Ganges Boat + Kashi Vishwanath Temple</span>
               </div>
               <div className="p-5 space-y-3">
@@ -213,7 +213,7 @@ export default function VaranasiClient() {
             {/* Day 3 */}
             <div className="bg-white rounded-xl border border-parchment-2 overflow-hidden mb-4">
               <div className="bg-parchment px-5 py-4 flex items-center gap-3">
-                <span className="font-serif text-xl text-gold-dark font-light">Day 3</span>
+                <span className="font-serif text-xl text-amber-900 font-light">Day 3</span>
                 <span className="text-sm text-ink font-medium">Sarnath Day Trip + Departure</span>
               </div>
               <div className="p-5 space-y-3">

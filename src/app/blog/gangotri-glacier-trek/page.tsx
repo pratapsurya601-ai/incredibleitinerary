@@ -209,7 +209,7 @@ export default function GangotriGlacierTrekPage() {
               ].map(f => (
                 <details key={f.q} className="border border-parchment-2 rounded-xl overflow-hidden bg-white group">
                   <summary className="px-5 py-4 text-sm font-medium text-ink cursor-pointer hover:bg-parchment transition-colors list-none flex justify-between items-center">
-                    {f.q}<span className="text-gold text-lg group-open:rotate-45 transition-transform">+</span>
+                    {f.q}<span className="text-amber-800 text-lg group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <div className="px-5 pb-4 pt-1 border-t border-parchment-2">
                     <p className="text-sm text-muted font-light leading-relaxed">{f.a}</p>

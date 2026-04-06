@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ooty 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#166534;--primary-light:#16a34a;--primary-dark:#14532d;
+  --accent:#4ade80;--accent-light:#bbf7d0;
+  --ink:#052e16;--cream:#f0fdf4;--parchment:#dcfce7;
+  --white:#ffffff;--muted:#166534;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,46,22,0.97) 0%,rgba(5,46,22,0.6) 50%,rgba(5,46,22,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#4ade80;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(22,101,52,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(22,101,52,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(22,101,52,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(74,222,128,0.08),rgba(74,222,128,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#4ade80;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#4ade80;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.green{background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.25);color:#14532d}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(22,101,52,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(22,101,52,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(22,101,52,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3974417/pexels-photo-3974417.jpeg?w=1200&q=80" alt="Ooty tea gardens Nilgiris"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Ooty<br/><em>in 3 Days</em></h1>
+    <p class="cover-sub">The Queen of Hill Stations — toy trains through tea gardens, rolling meadows, wildlife sanctuary, and fresh Nilgiri air at 2,240 metres</p>
+    <div class="cover-pills">
+      <span class="pill">🌿 3 Days</span>
+      <span class="pill">🏔️ Nilgiris</span>
+      <span class="pill">💰 ₹6,000–₹20,000</span>
+      <span class="pill">🌤️ Mar–Jun &amp; Sep–Nov</span>
+      <span class="pill">🚂 Toy Train</span>
+      <span class="pill">🍵 Tea Gardens</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(22,101,52,0.3);border:1px solid rgba(74,222,128,0.4);color:#4ade80;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Ooty 3-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Nilgiris — Blue Mountains of Tamil Nadu</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">⛰️</div><span class="stat-val">2,240m</span><span class="stat-label">Ooty Altitude</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹6k–20k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Mar–Jun</span><span class="stat-label">Peak Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop light">Coimbatore / Mysore</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Toy Train</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Ooty</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Doddabetta</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Mudumalai</span>
+    <span class="route-sub">Nearest airport: Coimbatore (CJB, 88km) · Or road from Mysore (128km)</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 · UNESCO Train</div>
+      <div class="city-name">🚂 Nilgiri Mountain Railway</div>
+      <div class="city-desc">The Nilgiri Mountain Railway (UNESCO World Heritage Site since 2005) runs from Mettupalayam (base) to Ooty via Coonoor — 46km over 5 hours, climbing 1,713m. Switzerland's Rigi line is a modern copy of this. The rack-and-pinion steam locomotive chugs through 16 tunnels, across 250 bridges, and through cloud forests. Book weeks ahead on IRCTC. Train code: 56136 (Mettupalayam to Ooty).</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 · 2,637m</div>
+      <div class="city-name">⛰️ Doddabetta Peak</div>
+      <div class="city-desc">Doddabetta (2,637m) is the highest peak in the Nilgiris and the second highest in South India. A road leads almost to the top — walk the final 500m. Views on clear mornings extend across the entire Nilgiri plateau with sea-of-clouds below. A telescope house at the summit (₹10) offers close-up views of the valleys on both sides. Best in the early morning before clouds arrive.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🍵 Tea Estate Visit</div>
+      <div class="city-desc">Nilgiri tea is among India's finest — characterised by its brisk, fragrant, light character. Hindustan Unilever's Glendale Estate near Ooty offers guided tours (₹50) of their factory — watch the withering, rolling, oxidising and drying process. Buy tea directly from the estate shop. Other estates: Kil Kotagiri, Nonsuch Tea Estate. The visual of acres of tea garden on rolling hillsides is the defining Ooty image.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🐘 Mudumalai Wildlife Sanctuary</div>
+      <div class="city-desc">Mudumalai (40km from Ooty, Project Tiger reserve) is one of South India's finest wildlife areas — home to Indian elephants, leopards, Bengal tigers, gaur (Indian bison), spotted deer, sambar, and 270+ bird species. Bus safari (₹350) or jeep safari (₹1,200). Dawn safaris give the best elephant encounters. The forest here is dry deciduous, transitioning to semi-evergreen — beautiful and biodiverse.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Ooty doesn't try to be glamorous. It's tea, mist, rhododendrons, a toy train, and a temperature that makes you remember what cool air feels like."</p>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Toy Train Booking:</strong> The Nilgiri Mountain Railway from Mettupalayam to Ooty is genuinely extraordinary — but the morning departure (7:10am from Mettupalayam) has only a few dozen seats and sells out weeks or months ahead in peak season (April–June, October). Book on IRCTC well in advance. Quota class (search for NMR or Nilgiri Express train 56136). If the train is full, take the bus to Ooty but do the Ooty–Coonoor section by train instead (shorter, also beautiful, easier to book).
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–3 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Ooty 3-Day Itinerary</span>
+    <span class="page-header-right">Day-by-Day Plan</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Arrival &amp; Exploration</div>
+      <div class="day-title">Toy Train, Botanical Gardens &amp; Ooty Lake</div>
+      <div class="day-sub">Arrive via toy train or road · Botanical Gardens · Ooty Lake boating · Rose Garden · Charring Cross chocolate</div>
+      <div class="day-cost">💰 Toy train: ₹205 2nd class · Botanical Gardens: ₹30 · Boating: ₹100 · Rose Garden: ₹30</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Nilgiri Mountain Railway — The Journey IS the Destination</div>
+        <div class="time-desc">The 7:10am train from Mettupalayam arrives in Ooty at approximately 12:30pm — 5 hours through one of the most spectacular railway journeys in Asia. The rack-and-pinion mechanism (where a toothed wheel engages with a toothed rail) allows the train to climb gradients impossible for ordinary trains. Steam locomotive on the lower section, diesel above Coonoor. Open windows, mist through the carriage, tea estates on both sides, 16 tunnels, the sound of the engine straining uphill. Book 2nd class (₹205) — the most authentic experience. If the train is full, an alternative is to take a bus to Ooty and book the Ooty–Coonoor segment (2hrs, also beautiful, easier to get seats).</div>
+        <div class="time-price">2nd Class: ₹205 · 1st Class: ₹450 · Book on IRCTC (train 56136) · Seats: limited</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Government Botanical Gardens — 22 Hectares of Nilgiri Flora</div>
+        <div class="time-desc">The Ooty Botanical Gardens (₹30) were established by the British in 1848 and spread across 22 hectares of terraced hillside. 650 varieties of plants including a 20-million-year-old fossilised tree trunk in the lower terrace. The Italian garden, fern house, and tree fern grove are highlights. The gardens are most spectacular March–May when rhododendrons, dahlias and exotic flowers are in bloom. The Flower Show held here every May draws thousands.</div>
+        <div class="time-price">Botanical Gardens: ₹30 · Hours: 7am–6:30pm · Photography: extra ₹50</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Ooty Lake + Rose Garden</div>
+        <div class="time-desc">Ooty Lake (₹10 entry) is an artificial lake created by the British in 1824 with pedal boats and rowboats (₹100 for 30 minutes). Not the most spectacular of Ooty's attractions but pleasant, especially in the afternoon light. The Government Rose Garden (₹30) nearby has 20,000+ varieties of roses across 4 hectares — best in April–May when most roses are in bloom. The steep terraced garden design makes every turn a different view.</div>
+        <div class="time-price">Ooty Lake: ₹10 · Boating: ₹100 · Rose Garden: ₹30 · Best: April-May bloom</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Charring Cross — Ooty Chocolate &amp; Shopping</div>
+        <div class="time-desc">Charring Cross is Ooty's commercial centre. The homemade chocolates available here are genuinely exceptional — Ooty chocolate (made with locally sourced milk and cocoa) is famous across South India. Every shop on the main street sells them; quality is consistently high. Also buy Nilgiri tea (estate-fresh), homemade squashes (raspberry, plum), and Toda tribal embroidery — a distinctive red-and-black needlework pattern unique to the Toda tribe of the Nilgiris.</div>
+        <div class="time-price">Ooty chocolate: ₹200–₹600/box · Nilgiri tea: ₹200–₹500/250g · Toda embroidery: ₹500–₹2,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Heights &amp; Tea</div>
+      <div class="day-title">Doddabetta, Wenlock Downs &amp; Tea Factory</div>
+      <div class="day-sub">Doddabetta Peak (2,637m) · Wenlock Downs rolling meadows · Tea factory visit · Emerald Lake</div>
+      <div class="day-cost">💰 Doddabetta: ₹30 · Tea factory tour: ₹50 · Emerald Lake: free · Taxi day: ₹1,500–₹2,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Doddabetta Peak — Nilgiris from the Top</div>
+        <div class="time-desc">Doddabetta (2,637m, ₹30 entry) is 8km from Ooty on a good road. Arrive before 9am for the best chance of clear views — clouds typically roll in by 10am. From the observation deck and the telescope house (₹10), on clear days you can see across to Ooty town, the Mudumalai forests below, and the plains of Tamil Nadu and Karnataka stretching to the horizon. The rhododendron-covered slopes on the drive up bloom dramatically in April.</div>
+        <div class="time-price">Doddabetta entry: ₹30 · Telescope: ₹10 · 8km from Ooty · Best views before 9am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Wenlock Downs — Rolling Green Meadows</div>
+        <div class="time-desc">Wenlock Downs (9th mile) is a stretch of open rolling grassland that feels more like the Scottish Highlands than South India. Horse riding is available (₹150–₹300). The meadows are most beautiful in the golden morning light. This is the Ooty of film songs — countless Bollywood and Tamil movies have been shot here. Walk, breathe the cold air, watch mist move across the hills. Government Film Institute (FTII) is nearby if you're interested in the history of South Indian cinema.</div>
+        <div class="time-price">Horse riding: ₹150–₹300 · Wenlock Downs entry: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Tea Factory Visit — From Leaf to Cup</div>
+        <div class="time-desc">The Hindustan Unilever Glendale Estate or any number of smaller estates near Ooty offer factory tours (₹50). The process: freshly plucked leaves are spread in withering troughs (losing 40% moisture), then rolled, oxidised (fermented — this is where black tea gets its colour), fired in ovens, graded and sorted. The smell of fresh Nilgiri tea being processed is extraordinary. Buy orthodox leaf tea directly from the factory shop — significantly fresher and cheaper than Ooty town shops.</div>
+        <div class="time-price">Tea factory tour: ₹50 · Estate tea: ₹200–₹400/250g · Better quality than town shops</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Emerald Lake — Hidden Valley Gem</div>
+        <div class="time-desc">Emerald Lake (25km from Ooty in the Nilgiri slopes) is a quiet, beautiful reservoir surrounded by tea estates and shola forest — dramatically less visited than Ooty Lake. The shola forests here (dense, mossy, dwarf subtropical forests found only in the Western Ghats above 1,500m) are globally unique. Boating at Emerald is possible and serene. The drive to Emerald through tea gardens is itself worth the trip.</div>
+        <div class="time-price">Emerald Lake: free · 25km from Ooty · Boating: ₹80–₹100 if available · Very quiet</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Wildlife &amp; Departure</div>
+      <div class="day-title">Mudumalai Wildlife Sanctuary &amp; Pykara</div>
+      <div class="day-sub">Mudumalai Safari (40km) · Elephant encounters · Pykara Lake and Falls · Departure</div>
+      <div class="day-cost">💰 Bus safari: ₹350 · Jeep safari: ₹1,200 · Pykara boat: ₹100 · Total day: ₹1,500–₹2,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Mudumalai Dawn Safari — Elephants &amp; Tigers</div>
+        <div class="time-desc">Mudumalai National Park (40km from Ooty, 30 min drive) is Project Tiger reserve number 1 in India. Dawn safari (6–7am) in government bus (₹350) or private jeep (₹1,200, 6-person max) through the dry deciduous forest. Wild elephants in herds of 20–50 are commonly seen — particularly at dawn near the Moyar river. Gaur (Indian bison), sambar, spotted deer, and langur monkeys are standard sightings. Tigers and leopards are present but rarely seen. Bird list is exceptional — malabar pied hornbills, Nilgiri flycatcher, grey junglefowl.</div>
+        <div class="time-price">Bus safari: ₹350 · Jeep: ₹1,200 (max 6) · Dawn best: 6am–8am · Book at Theppakadu gate</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Pykara Lake &amp; Waterfalls (20km from Ooty)</div>
+        <div class="time-desc">Pykara Lake (20km from Ooty) is a serene reservoir with TNDC boat rides (₹100, 30 minutes) surrounded by shola forest and grassland. The Pykara Dam and adjacent Pykara Falls (seasonal — best Jul–Sep) are nearby. The entire Pykara area is excellent for birdwatching — Nilgiri Laughingthrush, Nilgiri Blue Robin, and other endemic birds. Have a light lunch at the TNDC restaurant by the lake.</div>
+        <div class="time-price">Pykara Lake: ₹30 entry · Boat: ₹100 · 20km from Ooty · 1.5hrs stop</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Return Coimbatore or Continue to Kerala/Mysore</div>
+        <div class="time-desc">From Ooty: bus/taxi to Coimbatore (2hrs, 88km) for flights or train. Or: continue into Kerala via Gudalur and Wayanad (3hrs to Kozhikode) — the Western Ghat forests between Ooty and Kerala are extraordinary. Mysore is 128km (3hrs) — an excellent extension. If returning to Ooty railway station: the evening train to Mettupalayam departs 2pm (train 56137) — equally scenic in reverse.</div>
+        <div class="time-price">Ooty–Coimbatore bus: ₹80–₹150 · Taxi: ₹1,500 · Return toy train: ₹205 (departs 2pm)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 3 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (2 nights)</td><td>1,200</td><td>4,000</td><td>12,000</td></tr>
+      <tr><td>Food (3 days)</td><td>900</td><td>2,500</td><td>5,000</td></tr>
+      <tr><td>Transport (local taxis, days)</td><td>1,000</td><td>3,500</td><td>6,000</td></tr>
+      <tr><td>Toy train (return)</td><td>410</td><td>900</td><td>900</td></tr>
+      <tr><td>Activities &amp; Entry Fees</td><td>700</td><td>1,500</td><td>3,000</td></tr>
+      <tr><td>Shopping (chocolate, tea)</td><td>500</td><td>2,000</td><td>5,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹4,710</strong></td><td><strong>~₹14,400</strong></td><td><strong>~₹31,900</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Excludes flights/trains to Coimbatore or road to Ooty. Premium includes heritage British bungalow stays (₹5,000–₹8,000/night) which Ooty offers in abundance. Budget uses TNDC hotel or basic guesthouses.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Ooty 3-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips, Food &amp; Packing</span>
+  </div>
+
+  <div class="label">Insider Tips — Know Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Ooty Tips, Food &amp; Seasonal Advice</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🚂</div>
+      <div class="tip-title">Toy Train Booking — Critical Advice</div>
+      <div class="tip-desc">Train 56136 (Mettupalayam–Ooty, departs 7:10am) is the most sought-after. Book on IRCTC 90+ days ahead if travelling in peak season (April–June, October). The quota is tiny — ~30 seats in each class. If full: consider the Ooty–Coonoor section only (shorter, 2hrs, beautiful, easier to get seats). Also: the steam engine only runs on the lower Mettupalayam–Coonoor section; diesel from Coonoor to Ooty.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Seasons — When Ooty Shines</div>
+      <div class="tip-desc">March–June: warm in South India but pleasantly cool in Ooty (18–22°C). Peak tourist season — crowded but lively. April–May: flower shows, botanical garden bloom. September–November: post-monsoon, crisp air, moderate crowds, excellent visibility. December–February: cold nights (3–5°C), frost sometimes, misty mornings — very atmospheric. Avoid weekends and public holidays year-round — the toy train fills up and roads are congested.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍫</div>
+      <div class="tip-title">Ooty Chocolate — Buy at Source</div>
+      <div class="tip-desc">Ooty's homemade chocolates (Nilgiri chocolate) are made with fresh Nilgiri milk and without preservatives — they have a 2–3 week shelf life, meaning they're genuinely fresh unlike commercial brands. The best shops are at Charring Cross: King Star Bakery, Nilgiris Natural Ice Cream (also excellent), and smaller home operations. Flavours: dark, milk, coffee, cardamom, cashew, orange. Buy vacuum-packed versions for travelling.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍵</div>
+      <div class="tip-title">Nilgiri Tea — How to Buy Well</div>
+      <div class="tip-desc">Nilgiri tea is brisk and fragrant — best as an afternoon brew with milk. "Orthodox" leaf tea (whole or broken leaf) is superior to CTC (dust) for flavour complexity. Buy directly from estate shops near Doddabetta or Glendale Estate for best freshness and price. Labels to look for: Nilgiris First Flush (January–March — most prized), FBOP (Flowery Broken Orange Pekoe), or any whole-leaf orthodox. The Nilgiri tea sold in Ooty tourist shops is fine but markup is 20–30% over estate prices.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🐘</div>
+      <div class="tip-title">Mudumalai — Wildlife Tips</div>
+      <div class="tip-desc">Dawn safaris (6am departure) are when animals are active and temperature is cool. The 8am bus safari is the most reliable for elephant sightings — herds move toward the river in the morning. Tiger sightings are rare (maybe 10% of visits) but if you do a second safari in the evening (3:30pm start), your chances improve slightly. Don't go expecting tigers — go expecting elephants, gaur and great birds. You will not be disappointed.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏔️</div>
+      <div class="tip-title">Avoid Weekends — Seriously</div>
+      <div class="tip-desc">Ooty is the nearest major hill station to both Chennai (500km) and Bengaluru (280km). On weekends (Friday night–Sunday), the town is completely overrun with domestic tourists — roads gridlocked, toy train fully booked, hotels doubling prices. If at all possible, visit on weekdays (Monday–Thursday). A midweek visit to Ooty is a completely different and dramatically more enjoyable experience than a weekend visit.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛕</div>
+      <div class="tip-title">Toda Tribal Culture</div>
+      <div class="tip-desc">The Toda are the indigenous people of the Nilgiris — a small pastoral tribe (fewer than 2,000 people) known for their unique barrel-shaped stone-and-thatch houses, their embroidered shawls (pukhoor), and their sacred dairy tradition. Toda settlements (munds) can be visited respectfully near Ooty — ask at the District Museum or contact the Nilgiris Tribal Association. Buy authentic Toda embroidery only from tribal cooperative outlets, not from middlemen in town.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌿</div>
+      <div class="tip-title">Coonoor — Better Base Than Ooty?</div>
+      <div class="tip-desc">Coonoor (12km from Ooty, on the toy train route) is smaller, quieter, and has some of the finest colonial-era bungalow stays in the Nilgiris. Sim's Park (beautiful botanical garden, ₹30), Lamb's Rock viewpoint, and the tea gardens around Coonoor are excellent. Many experienced travellers prefer to stay in Coonoor and day-trip to Ooty — avoiding the congestion while still being on the toy train route. YWCA guesthouse Coonoor is legendary for its heritage value and price.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Ooty</div>
+  <div class="pack-list">
+    <div class="pack-item">🧥 <strong>Warm jacket</strong> — nights 5–12°C year round. Mornings cold. A fleece minimum.</div>
+    <div class="pack-item">🌧️ <strong>Light rain jacket</strong> — afternoon showers possible March–November.</div>
+    <div class="pack-item">👟 <strong>Comfortable walking shoes</strong> — Botanical Gardens, Doddabetta, Mudumalai are all walking terrain.</div>
+    <div class="pack-item">🔭 <strong>Binoculars</strong> — for Mudumalai birdwatching and Doddabetta peak views.</div>
+    <div class="pack-item">📸 <strong>Camera</strong> — toy train photography is extraordinary. Carry extra batteries (cold drains batteries faster).</div>
+    <div class="pack-item">💊 <strong>Motion sickness tablets</strong> — mountain roads to Ooty from Coimbatore/Mysore are very winding.</div>
+    <div class="pack-item">🎒 <strong>Extra bag for shopping</strong> — chocolate, tea, Toda embroidery add up quickly.</div>
+    <div class="pack-item">💵 <strong>Small cash</strong> — most Ooty shops and the toy train accept cards; smaller stalls and wildlife parks are cash only.</div>
+    <div class="pack-item">🌿 <strong>Insect repellent</strong> — for Mudumalai forest safari. DEET-based for jungle zones.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More South<br/>India Awaits</h2>
+  <p>From Kerala's backwaters to the temples of Hampi, from Coorg's coffee estates to the ancient cave temples of Ajanta and Ellora — IncredibleItinerary has a complete guide for every South Indian journey.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Kerala 5-Day · Goa · Hyderabad · Rajasthan · Kashmir · Leh-Ladakh · Andaman · Maldives</p>
+  <div class="back-legal">This guide is for personal use only. Toy train availability, safari timings and entry fees subject to change — verify before travel. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

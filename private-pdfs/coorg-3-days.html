@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Coorg in 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#166534;--primary-light:#86efac;--primary-dark:#14532d;
+  --accent:#92400e;--accent-light:#fde68a;
+  --ink:#071a0e;--cream:#f0fdf4;--parchment:#dcfce7;
+  --white:#ffffff;--muted:#166534;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,26,14,0.97) 0%,rgba(7,26,14,0.6) 50%,rgba(7,26,14,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#86efac;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(22,101,52,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(22,101,52,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(22,101,52,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(134,239,172,0.08),rgba(134,239,172,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#86efac;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#86efac;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(146,64,14,0.08);border:1px solid rgba(146,64,14,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.green{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(22,101,52,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(22,101,52,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(22,101,52,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(22,101,52,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3974417/pexels-photo-3974417.jpeg?w=1200&q=80" alt="Coorg coffee plantation misty hills"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Coorg<br/><em>in 3 Days</em></h1>
+    <p class="cover-sub">Karnataka's hill station jewel — misty coffee estates, the source of the Cauvery, elephant encounters and a warrior culture unlike any other in India</p>
+    <div class="cover-pills">
+      <span class="pill">☕ 3 Days</span>
+      <span class="pill">🌿 Coffee Country</span>
+      <span class="pill">💰 ₹8,000–₹30,000</span>
+      <span class="pill">📅 Oct–May</span>
+      <span class="pill">🌫️ Misty Hills</span>
+      <span class="pill">🏔️ Coorg Culture</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(22,101,52,0.3);border:1px solid rgba(134,239,172,0.4);color:#86efac;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Coorg 3-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Coffee, Mist &amp; the Warrior Hills of Kodagu</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">☕</div><span class="stat-val">Coffee Est.</span><span class="stat-label">Homestay Recommended</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹8k–30k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–May</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Madikeri</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">Abbey Falls</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Dubare Camp</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Nagarhole</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Talacauvery</span>
+    <span class="route-sub">All within Kodagu district · Nearest city: Mysore 120km · Bangalore 250km</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 — Town</div>
+      <div class="city-name">🏘️ Madikeri Town</div>
+      <div class="city-desc">Madikeri (the district headquarters) sits at 1,525 metres with year-round cool weather and mist. Raja's Seat — the garden where Coorg kings watched sunsets over the valley. Madikeri Fort (rebuilt 1812), Omkareshwar Temple with its unique Islamic-influenced dome (built by a Coorg king after a bet). Evening coffee estate walk from your homestay.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Wildlife</div>
+      <div class="city-name">🐘 Dubare &amp; River</div>
+      <div class="city-desc">Dubare Elephant Camp on the Cauvery river — morning elephant bathing experience (7–9am, ₹150). The elephants wade into the Cauvery and visitors wade in with them — one of the most extraordinary wildlife encounters in South India. Then Cauvery river rafting (₹500–₹800, Grade II–III rapids). Abbey Falls afternoon.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3 — Nature</div>
+      <div class="city-name">🌿 Nagarhole or Talacauvery</div>
+      <div class="city-desc">Nagarhole National Park (30km): morning jeep safari for tigers, leopards, elephants, gaur (Indian bison) and over 270 bird species. Or: Talacauvery (48km), the sacred source of the Cauvery river high in the Western Ghats, with Bhagamandala temple at the river confluence below. Both offer exceptional natural beauty.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Key Advice</div>
+      <div class="city-name">🏡 Stay in a Homestay</div>
+      <div class="city-desc">Coorg's most distinctive accommodation is the coffee estate homestay — rooms inside working estates, where the owners cook Kodava food (pandi curry, kadambuttu, Coorg honey) and give guided walks through the coffee, pepper and cardamom plantations. ₹2,500–₹6,000/night including breakfast and dinner. This is the experience that makes Coorg different from any other hill station.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Coorg is the only district in India where every family is required by tradition to own a sword. The Kodava people are warriors — and they grow the finest coffee in Asia."</p>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>Best Time to Visit:</strong> October–May. October–February: cool (12–22°C), misty mornings, coffee harvest season (November–January) — the estates are at their most fragrant and active. March–May: warmer, wildlife easier to spot in Nagarhole. Avoid June–September: Coorg receives some of India's heaviest rainfall (over 4,000mm annually). Landslides are common and many roads close.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAY 1 & 2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Coorg 3-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Madikeri &amp; Dubare</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Madikeri Town</div>
+      <div class="day-title">Raja's Seat, Madikeri Fort &amp; Coffee Estate Walk</div>
+      <div class="day-sub">Arrive · Madikeri town · Raja's Seat sunset · Omkareshwar Temple · Evening coffee estate walk with homestay hosts</div>
+      <div class="day-cost">💰 Town sightseeing: ₹200–₹400 · Homestay dinner included · Budget day: ₹300–₹600 excluding stay</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrive</div>
+      <div class="time-content">
+        <div class="time-title">Getting to Madikeri — Your Options</div>
+        <div class="time-desc">From Bangalore: 5–6 hours by road (KSRTC AC Volvo buses from Majestic Bus Stand, ₹400–₹600, depart frequently from 6am; taxis ₹2,500–₹3,500). From Mysore: 120km, 3 hours by bus (₹120–₹200) or taxi (₹1,500–₹2,000). There is no railway station in Coorg — the district is entirely road-served. The NH275 highway from Bangalore is excellent; the final 30km on mountain roads is winding but well-maintained. Arrange for your homestay to pick you up from Madikeri town — most do this complimentary within 10km.</div>
+        <div class="time-price">KSRTC bus from Bangalore: ₹400–₹600 · Taxi: ₹2,500–₹3,500 · No train to Coorg</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Madikeri Fort &amp; Omkareshwar Temple</div>
+        <div class="time-desc">Madikeri Fort (originally mud, rebuilt in stone by Tipu Sultan, restored by the British in 1812) now houses a museum, a church (built by the British inside the fort) and excellent valley views. The combination of Hindu, Muslim, Coorg and British architectural elements in one small fort complex says everything about Coorg's turbulent history. Omkareshwar Temple nearby is architecturally unique — built by Lingarajendra II in 1820 after a bet with a Muslim suitor, its dome combines Dravidian and Islamic elements. Surrounded by a small lake with goldfish. Entry free.</div>
+        <div class="time-price">Fort: ₹20 · Omkareshwar: free · 1.5 hours combined · Auto from town centre: ₹60</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Raja's Seat — Valley Views at Golden Hour</div>
+        <div class="time-desc">Raja's Seat (King's Seat) is the garden where the rajas of Coorg reportedly sat to watch the sun set over their kingdom. The view west over the deep valleys and coffee-covered hills is magnificent — on clear days you can see the Karnataka plains far below the ghats. A small light-and-music fountain show runs evenings. The garden has benches, a toy train for children and the best sunset viewpoint in Madikeri. Arrive 30 minutes before sunset for the best position. On misty evenings, the clouds rolling up from the valleys are spectacular in their own right.</div>
+        <div class="time-price">Entry: ₹30 · Fountain show: ₹20 extra · 500m from town centre · Best Oct–Feb for clearest views</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Coffee Estate Walk with Homestay Hosts</div>
+        <div class="time-desc">The defining Coorg experience — walking through the coffee plantation at dusk with your homestay owners. Coffee (arabica and robusta both grown here), pepper vines climbing the silver oak trees, cardamom in the shade below, the scent of soil and rain on leaves. Harvest season (November–January): you can pick coffee cherries alongside the workers. Your host explains the processing — the wet method (washed), the dry method, pulping, fermenting, drying. Then: dinner in the homestay kitchen. Kodava food: kadambuttu (rice dumplings), pandi curry (Coorg pork), koli curry (country chicken), puttu (steamed rice cake), payasam. This meal alone is worth the trip.</div>
+        <div class="time-price">Included in homestay package · Estate walk with host: free · Homestay dinner included in stay price</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Wildlife &amp; Water</div>
+      <div class="day-title">Dubare Elephant Camp, Cauvery Rafting &amp; Abbey Falls</div>
+      <div class="day-sub">7am elephant bathing at Dubare · Cauvery rafting · Abbey Falls · Raja's Tomb afternoon</div>
+      <div class="day-cost">💰 Dubare: ₹150 · Rafting: ₹500–₹800 · Total activities: ₹700–₹1,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Dubare Elephant Camp — Morning Bathing in the Cauvery</div>
+        <div class="time-desc">Dubare Elephant Camp (35km from Madikeri on the Kushalnagar road) is where the Karnataka Forest Department's working elephants are bathed every morning in the Cauvery river. The experience (7am–9am) allows visitors to wade into the shallow, clear river alongside the elephants as mahouts scrub them with coconut husk brushes. The elephants are working animals in the forestry service — this is not a tourist attraction per se but a maintenance routine that visitors are permitted to observe and participate in. Extremely special. Book at the Karnataka Forest Department counter at Kushalnagar or through your homestay. Limited daily capacity.</div>
+        <div class="time-price">Entry: ₹150 · Elephant bathing: 7–9am only · Taxi from Madikeri: ₹600 return · Book through homestay</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Cauvery River Rafting — Grade II–III in Forest</div>
+        <div class="time-desc">The Cauvery river at Nisargadhama (near Kushalnagar, 5km from Dubare) offers a gentle rafting experience through forested banks — suitable for families and first-timers. The section here is Grade II–III, with fun rapids but nothing dangerous. The river is clear green-blue, cold and surrounded by jungle — completely different from the Himalayan rafting experience but equally beautiful. Several operators at Kushalnagar offer this; book on arrival. October–March is best — highest water and coolest weather. Nisargadhama island (bamboo forest, deer park) nearby makes a good stop before or after.</div>
+        <div class="time-price">Rafting: ₹500–₹800 including equipment · Nisargadhama Island entry: ₹60 · 2–3 hour activity</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Abbey Falls — Forest Cascade 30 Minutes from Madikeri</div>
+        <div class="time-desc">Abbey Falls (8km from Madikeri) is a 70-foot cascade surrounded by coffee estates and spice plantations. The viewing platform gives a good perspective but the waterfall itself is at its most powerful in October–November when post-monsoon water is still high. The walk through the private coffee estate to reach the falls (a 200m path from the parking area) passes through cardamom and pepper plantations. Entry is managed by private estate owners. The falls are photogenic but modest — treat as a pleasant hour's detour, not a major destination in itself.</div>
+        <div class="time-price">Entry: ₹100 · 30 minutes from Madikeri · Taxi: ₹300 return · Best Oct–Feb for water volume</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAY 3 + BUDGET + TIPS -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Coorg 3-Day Itinerary</span>
+    <span class="page-header-right">Day 3 · Budget · Tips &amp; Packing</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · National Park or Sacred Source</div>
+      <div class="day-title">Nagarhole Safari or Talacauvery &amp; Bhagamandala</div>
+      <div class="day-sub">Option A: Nagarhole jeep safari (₹400–₹600) · Option B: Talacauvery source + Bhagamandala temple confluence · Departure</div>
+      <div class="day-cost">💰 Nagarhole: ₹600–₹1,200 · Talacauvery day trip: ₹500–₹800 taxi · Full day</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Option A</div>
+      <div class="time-content">
+        <div class="time-title">Nagarhole National Park — Tiger Reserve Safari</div>
+        <div class="time-desc">Nagarhole (Rajiv Gandhi National Park) is one of India's best wildlife reserves and part of the Nilgiri Biosphere Reserve — the world's largest protected wildlife corridor, connecting Nagarhole, Bandipur, Mudumalai and Wayanad. Tiger sightings are relatively frequent (the reserve has a high density). Also: leopards, Asian elephants, wild dogs (dholes), gaur (Indian bison), sambhar deer and the spectacular Malabar giant squirrel. Morning jeep safari (6–9am) is significantly better than afternoon for wildlife. Nagarhole village is 30km from Madikeri. Online booking: karnatakaforests.gov.in.</div>
+        <div class="time-price">Safari entry: ₹400–₹600 per person · Jeep rental (6 seats): ₹1,200–₹1,800 · Morning safari 6–9am is best · Book online</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Option B</div>
+      <div class="time-content">
+        <div class="time-title">Talacauvery — The Sacred Source of the Cauvery River</div>
+        <div class="time-desc">Talacauvery (48km from Madikeri, 1,280m altitude) is the source of the Cauvery river — one of South India's most sacred rivers, on which the cities of Mysore, Srirangapatna and Tiruchirapalli all depend. A small tank marks the spring, and Brahmagiri hill above (2km trek, 1.5 hours) gives views across the Western Ghats into Kerala. Bhagamandala (30km from Madikeri, on the way) is where the Cauvery and Kannike rivers visibly meet and the mythical Sujyothi joins underground. The Bhagandeshwara temple complex at the confluence is architecturally fine and spiritually significant.</div>
+        <div class="time-price">Talacauvery: free · Taxi from Madikeri: ₹800–₹1,000 return (covers both Bhagamandala and Talacauvery) · Full day</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 3 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Homestay (3 nights, incl. meals)</td><td>7,500</td><td>12,000</td><td>20,000</td></tr>
+      <tr><td>Taxi (local, all 3 days)</td><td>2,500</td><td>3,500</td><td>5,000</td></tr>
+      <tr><td>Activities (elephant, rafting, safari)</td><td>1,500</td><td>2,500</td><td>4,000</td></tr>
+      <tr><td>Misc food &amp; drinks outside homestay</td><td>600</td><td>1,200</td><td>2,500</td></tr>
+      <tr><td>Coorg coffee &amp; spices to take home</td><td>500</td><td>1,500</td><td>4,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹12,600</strong></td><td><strong>~₹20,700</strong></td><td><strong>₹35,500+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Homestay prices typically include breakfast and dinner, which reduces food costs. Budget homestays (₹2,500/night) are basic but clean — mid-range coffee estates (₹3,500–₹6,000/night) are more comfortable with better food. Note: you need a taxi for almost all sightseeing — negotiate a full-day rate (₹2,500–₹3,500/day) rather than paying per trip.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">☕</div>
+      <div class="tip-title">Coorg Coffee — What to Buy</div>
+      <div class="tip-desc">Coorg arabica is India's finest — nutty, low-acid, mild. Buy directly from the estate (your homestay likely sells it) — 250g fresh-roasted beans: ₹200–₹400. Estate-brand cardamom and pepper are also excellent value. Avoid pre-packaged "Coorg coffee" from Bangalore airport gift shops — it's usually blended with robusta and marked up 300%. The estate-fresh version is incomparably better.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍖</div>
+      <div class="tip-title">Kodava Food — What to Order</div>
+      <div class="tip-desc">Pandi curry (Coorg pork in a black vinegar called kachampuli — utterly unique and unavailable outside Kodagu). Kadambuttu (steamed rice balls). Koli curry (country chicken). Akki ottis (rice rotis). Puttu with coconut milk for breakfast. Coorg honey (dark, intensely flavoured from bees that feed on coffee flowers) — buy 500g for ₹200–₹400. Most homestay meals include all of these — this is one of India's least-known but finest regional cuisines.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-title">Getting Around — You Need a Taxi</div>
+      <div class="tip-desc">Coorg has no public bus network connecting its attractions. A rental car or taxi is essential. Negotiate a full-day rate with a driver (₹2,500–₹3,500/day, 250km included). Your homestay owners almost always know a reliable driver. Self-drive on a motorbike is possible for experienced riders — the mountain roads are beautiful but require skill. Avoid driving after dark on mountain roads.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌧️</div>
+      <div class="tip-title">Monsoon — When Not to Go</div>
+      <div class="tip-desc">June–September in Coorg is extreme. The district receives over 4,000mm of rain annually, mostly in these months. Landslides close roads regularly, including NH275 from Bangalore. Dubare elephant experiences and rafting are cancelled. Abbey Falls is spectacular but access is dangerous. Most homestays close or are at drastically reduced occupancy. If you must visit in monsoon: confirm all activities and roads in advance, carry waterproof everything, and consider Madikeri as a base only.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Coorg</div>
+  <div class="pack-list">
+    <div class="pack-item">🧥 <strong>Light jacket or fleece</strong> — evenings at 1,500m are cool year-round. December–January mornings can be 8°C.</div>
+    <div class="pack-item">🥾 <strong>Trekking shoes</strong> — coffee estate paths and the Brahmagiri trek are muddy. Proper grip essential.</div>
+    <div class="pack-item">🌧️ <strong>Raincoat</strong> — even in the dry season, brief showers are possible. A packable waterproof is smart.</div>
+    <div class="pack-item">🦟 <strong>Strong insect repellent</strong> — the coffee estates are beautiful but mosquito-rich. DEET 30%+ works best.</div>
+    <div class="pack-item">📦 <strong>Extra luggage space</strong> — you will buy coffee, pepper, cardamom and honey. Pack an expandable bag or extra duffel.</div>
+    <div class="pack-item">💊 <strong>Motion sickness tablets</strong> — if you're sensitive. The mountain roads from Bangalore have 200+ curves. Take before the journey.</div>
+    <div class="pack-item">🔦 <strong>Torch/flashlight</strong> — homestays in the coffee estates often have no streetlights. Power cuts are occasional.</div>
+    <div class="pack-item">💵 <strong>Cash</strong> — Coorg's village homestays and market stalls are cash-only. Carry ₹5,000–₹8,000 in notes.</div>
+    <div class="pack-item">🩱 <strong>Quick-dry clothes</strong> — for the elephant bathing and rafting. Plan to get completely wet at Dubare.</div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>The best Coorg experience:</strong> Wake at 6am in your homestay. The mist is still in the valleys. Coffee-scented air. Walk into the estate alone with a cup of just-brewed Coorg arabica. The whole valley is silent. No phones, no traffic. Just the sound of the Western Ghats in the morning. This is why you came.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the temples of Hampi to the royal city of Mysore, from Darjeeling's tea gardens to the beaches of Kerala — IncredibleItinerary has a complete guide for every journey across this extraordinary country.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Mysore · Hampi · Kerala · Goa · Rishikesh · Darjeeling · Delhi · Mumbai · Jaipur · Varanasi</p>
+  <div class="back-legal">This guide is for personal use only. Prices, activity availability and road conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

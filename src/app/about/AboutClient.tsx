@@ -103,19 +103,20 @@ export default function AboutClient() {
             <div className="order-1 lg:order-2">
               <span className="section-label">My Story</span>
               <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink mb-6 leading-tight">
-                I wasted 4 years on trading.
-                <em className="italic text-teal"> Then I built something real.</em>
+                From solo trips to 305 guides.
+                <em className="italic text-teal"> Here&apos;s the story.</em>
               </h2>
               <div className="space-y-4 text-sm text-muted font-light leading-[1.85]">
                 <p>
-                  From Delhi. 24 years old. I spent four years trying to make trading work —
-                  options, quant models, all of it. It didn&apos;t. But every time I lost a month
-                  to bad trades, I&apos;d book a solo trip to reset.
+                  From Delhi. 24 years old. I&apos;ve always been obsessed with two things — building digital products
+                  and travelling solo through India&apos;s wildest places. Before IncredibleItinerary, I built trading
+                  systems, data tools, and finance apps. That background in systems thinking and data analysis is exactly
+                  what makes these guides different — every itinerary is structured like a product, not a blog post.
                 </p>
                 <p>
                   Kedarnath at 3,583m. Gangotri glacier trek in June. Badrinath at night.
                   The Bhagirathi valley stretching out below you in silence.
-                  These mountains kept me sane when the markets didn&apos;t.
+                  These mountains shaped how I think about travel — every trip should be planned with precision but experienced with wonder.
                 </p>
                 <p>
                   When I was planning those trips, I kept hitting the same wall — every
@@ -130,8 +131,9 @@ export default function AboutClient() {
                   guide was good enough to be genuinely useful.
                 </p>
                 <p className="font-medium text-ink">
-                  IncredibleItinerary is entirely solo-built — every guide, every line of code,
-                  every SEO decision. No team. No funding. Just a laptop and a lot of mountain air.
+                  IncredibleItinerary is entirely solo-built — every guide, every tool, every line of code.
+                  What started as one guide for a friend planning Kashmir turned into India&apos;s most detailed
+                  free travel planning platform. 305 guides. 5 interactive tools. Zero sponsored content.
                 </p>
               </div>
             </div>

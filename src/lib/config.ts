@@ -13,9 +13,7 @@ export const SITE_CONFIG = {
   siteUrl: "https://www.incredibleitinerary.com",
 
   // ── Social ─────────────────────────────────────────────────────────────────
-  instagram: "https://instagram.com/incredibleitinerary",
-  facebook:  "https://facebook.com/incredibleitinerary",
-  youtube:   "https://youtube.com/@incredibleitinerary",
+  linkedin: "https://www.linkedin.com/in/surya-pratap-singh-490a18320",
 
   // ── Business ───────────────────────────────────────────────────────────────
   foundedYear: "2024",

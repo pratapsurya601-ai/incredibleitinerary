@@ -57,10 +57,10 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
   return (
     <div className="bg-white rounded-xl border border-parchment-2 overflow-hidden">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-5 py-4 bg-parchment hover:bg-parchment-2 transition-colors">
-        <div className="flex items-center gap-3 text-left"><span className="font-serif text-xl text-gold-dark font-light">{day}</span><span className="text-sm text-ink font-medium">{title}</span></div>
+        <div className="flex items-center gap-3 text-left"><span className="font-serif text-xl text-amber-900 font-light">{day}</span><span className="text-sm text-ink font-medium">{title}</span></div>
         <span className="text-muted text-lg">{open ? "\u2212" : "+"}</span>
       </button>
-      {open && (<div className="p-5"><ul className="space-y-2.5 mb-4">{items.map((item, i) => (<li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed"><span className="text-gold mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>{item}</li>))}</ul><div className="pt-3 border-t border-parchment-2 flex items-center gap-2"><span className="text-lg">{"\uD83D\uDCB0"}</span><span className="text-xs text-muted font-light">Est. cost: </span><span className="text-xs font-medium text-ink">{cost}</span></div></div>)}
+      {open && (<div className="p-5"><ul className="space-y-2.5 mb-4">{items.map((item, i) => (<li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed"><span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>{item}</li>))}</ul><div className="pt-3 border-t border-parchment-2 flex items-center gap-2"><span className="text-lg">{"\uD83D\uDCB0"}</span><span className="text-xs text-muted font-light">Est. cost: </span><span className="text-xs font-medium text-ink">{cost}</span></div></div>)}
     </div>
   );
 }
@@ -75,7 +75,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div className="border border-parchment-2 rounded-xl overflow-hidden bg-white">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-parchment transition-colors">
         <span className="font-medium text-sm text-ink pr-4">{q}</span>
-        <span className={`text-gold text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
+        <span className={`text-amber-800 text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
       </button>
       {open && (<div className="px-5 pb-5 pt-1 border-t border-parchment-2"><p className="text-sm text-muted font-light leading-relaxed">{a}</p></div>)}
     </div>

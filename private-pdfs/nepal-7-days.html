@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Nepal in 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#dc2626;--primary-light:#f87171;--primary-dark:#991b1b;
+  --accent:#d97706;--accent-light:#fbbf24;
+  --ink:#1a0000;--cream:#fff8f8;--parchment:#fee2e2;
+  --white:#ffffff;--muted:#6b3333;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,0,0,0.97) 0%,rgba(26,0,0,0.6) 50%,rgba(26,0,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fbbf24;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(220,38,38,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(220,38,38,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.gold{background:var(--accent-light);color:var(--ink)}
+.route-stop.amber{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(220,38,38,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(220,38,38,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(251,191,36,0.08),rgba(251,191,36,0.02));border-left:3px solid var(--accent-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fbbf24;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fbbf24;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(220,38,38,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.red{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);color:#991b1b}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.green{background:#f0fdf4;border:1px solid #86efac;color:#14532d}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(220,38,38,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(220,38,38,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(220,38,38,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(220,38,38,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(220,38,38,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--accent-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/2832082/pexels-photo-2832082.jpeg?w=1200&q=80" alt="Nepal Himalayas"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Nepal<br/><em>in 7 Days</em></h1>
+    <p class="cover-sub">Spiritual Kathmandu, Everest panoramas at Nagarkot, Pokhara's paragliding &amp; Annapurna range at sunrise</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 7 Days</span>
+      <span class="pill">✅ No Visa for Indians</span>
+      <span class="pill">💰 ₹30,000–₹85,000</span>
+      <span class="pill">🍂 Oct–Nov &amp; Mar–Apr</span>
+      <span class="pill">🏔️ Everest Views</span>
+      <span class="pill">🙏 Spiritual Kathmandu</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(220,38,38,0.3);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Nepal 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Kathmandu, Pokhara &amp; the Himalayas — Seven Days in Nepal</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">7 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">✅</div><span class="stat-val">No Visa</span><span class="stat-label">Indian Citizens</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹30k–85k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🏔️</div><span class="stat-val">8,849m</span><span class="stat-label">Mt. Everest</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">Kathmandu</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Pashupatinath</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop amber">Boudhanath</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Pokhara</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Nagarkot</span>
+    <span class="route-sub">2 main cities + day trips · No visa for Indian passport · Indian Rupees accepted</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Days 1–3</div>
+      <div class="city-name">🙏 Kathmandu Valley</div>
+      <div class="city-desc">Pashupatinath Temple (one of the most sacred Shiva temples in the world — Hindu cremations at the Bagmati River ghats, free for Indians), Boudhanath Stupa (UNESCO, the largest stupa in the world and the most important Tibetan Buddhist site outside Tibet), Swayambhunath Monkey Temple, three Durbar Squares.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 4–5</div>
+      <div class="city-name">🏔️ Pokhara</div>
+      <div class="city-desc">Nepal's most beautiful city — Phewa Lake, the Annapurna and Machhapuchhre (Fishtail Mountain) range reflecting in the water, Sarangkot sunrise for the most spectacular Himalayan panorama accessible without trekking, Peace Pagoda, Davis Falls and Gupteshwor Cave, and one of the world's best paragliding destinations.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 6</div>
+      <div class="city-name">🌄 Nagarkot — Everest Panorama</div>
+      <div class="city-desc">Nagarkot village (2,100m, 30km from Kathmandu) is the closest point to Kathmandu from which you can see Mount Everest on a clear day. The sunrise panorama — Everest, Lhotse, Cho Oyu, Langtang range and dozens of Himalayan peaks — is one of Nepal's most spectacular views. Stay overnight for the sunrise experience.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 7 Option</div>
+      <div class="city-name">🐘 Chitwan National Park</div>
+      <div class="city-desc">Nepal's premier wildlife destination — UNESCO World Heritage jungle at the base of the Himalayas. One-horned rhinoceroses, Bengal tigers, gharial crocodiles, sloth bears, over 500 bird species. Jeep safari and elephant observation platforms (note: ethical elephant interactions only — no elephant riding). Entry ₹2,500 + jeep rental ₹3,000.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"Nepal is not a place where you go to see things — it's a place where you go to become something. The mountains have a way of clarifying everything that matters." Every peak visible from Kathmandu is among the world's highest.</p>
+  </div>
+  <div class="highlight-box green">
+    <strong>No Visa Required for Indian Citizens:</strong> Indian passport holders do NOT need a visa for Nepal — simply carry your Indian passport (or voter ID card, but passport is recommended). There is no immigration stamp fee, no prior application. Indians are treated as virtually domestic visitors. Indian Rupees are accepted throughout Nepal — 100 INR = approximately 160 NPR. Keep some NPR for remote areas. Indian SIM cards with international roaming work in Nepal; alternatively, a Nepali SIM at Tribhuvan Airport costs ₹300 with 3GB data.
+  </div>
+  <div class="highlight-box amber">
+    <strong>Flights:</strong> Delhi/Mumbai/Kolkata to Kathmandu (KTM) — ₹8,000–₹22,000 return (IndiGo, Air India, SpiceJet). One of the cheapest international routes from India. The 1-hour flight from Delhi is shorter than many domestic Indian routes. Alternatively: overland crossing at Sunauli (UP border) — tourist bus from Varanasi or Gorakhpur, but the journey takes 8–10 hours. For most travellers, flying is the clear choice.
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–5 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Nepal 7-Day Itinerary</span>
+    <span class="page-header-right">Days 1–5 — Kathmandu &amp; Pokhara</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">1–3</div>
+    <div class="day-info">
+      <div class="day-tag">Days One to Three · Spiritual Valley</div>
+      <div class="day-title">Kathmandu — Pashupatinath, Boudhanath &amp; Durbar Squares</div>
+      <div class="day-sub">Pashupatinath ghats · Boudhanath circumambulation · Swayambhunath sunrise · Patan Durbar Square · Bhaktapur old city</div>
+      <div class="day-cost">💰 Pashupatinath: free for Indians · Boudhanath: ₹250 (foreigners) · Bhaktapur: ₹1,200</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 1</div>
+      <div class="time-content">
+        <div class="time-title">Pashupatinath Temple — Sacred Shiva Shrine on the Bagmati</div>
+        <div class="time-desc">Pashupatinath is one of the most sacred Shiva temples in the world and a UNESCO World Heritage Site. The main temple complex is free for Indian and South Asian Hindus (the inner sanctum is restricted to Hindus only — non-Hindus view from across the Bagmati River). The ghats along the Bagmati are where Hindu cremations take place continuously — sacred, solemn, and open to respectful observers (maintain distance and silence, no photography of cremations). Sadhus (Hindu holy men) in saffron robes sit along the ghats. The evening aarti at Pashupatinath is smaller and more intimate than Varanasi but equally profound. Dress modestly, remove shoes in temple areas.</div>
+        <div class="time-price">Entry for Indians: free · Non-Indians: ₹1,200 · Aarti: free · Dress modestly, no photography of cremations</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 1 PM</div>
+      <div class="time-content">
+        <div class="time-title">Boudhanath Stupa — The Largest Stupa in the World</div>
+        <div class="time-desc">The Boudha stupa (Boudhanath or Bodhnath) is the largest stupa in the world — 36 metres high, with a base circumference of 100 metres. The famous painted eyes of the Buddha gaze out from the four sides of the tower. The stupa is the most important Tibetan Buddhist site outside Tibet — scores of monasteries surround it, and Tibetan monks in maroon robes circumambulate the stupa constantly at dawn and dusk. The evening circumambulation (pradakshina) with butter lamps lit and monks chanting is one of Nepal's most moving rituals. Entry: ₹250 for foreigners (Indians may be charged the foreigner rate — carry change). The surrounding market has excellent thangka paintings and singing bowls.</div>
+        <div class="time-price">Entry: ₹250 · Best at dawn (5:30am) or dusk · Butter lamp offering: ₹50 · Thangka paintings: ₹800–₹15,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 2 AM</div>
+      <div class="time-content">
+        <div class="time-title">Swayambhunath — The Monkey Temple at Sunrise</div>
+        <div class="time-desc">Swayambhunath (Monkey Temple) sits on a hilltop 2km west of Kathmandu — 365 steps to the top (one for each day of the year). Visit at sunrise (6am) for the golden light on the stupa, the city spread below, and the hundreds of macaque monkeys that live here (don't carry food visibly). The stupa is one of Nepal's oldest religious sites — estimated to be 2,500 years old, though the current structure dates to the 15th century. The hilltop has a cluster of temples, shrines, and vajras. Entry: ₹250 for foreigners. Indians may be admitted free as Hindus — ask at the gate politely.</div>
+        <div class="time-price">Entry: ₹250 · Go at sunrise 6am for best light · Keep food hidden from macaques · 365 steps</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Days 2–3</div>
+      <div class="time-content">
+        <div class="time-title">Three Durbar Squares — Medieval Nepal Preserved</div>
+        <div class="time-desc">The Kathmandu Valley has three historic Durbar Squares (royal palace squares) — Kathmandu, Patan, and Bhaktapur — each a UNESCO World Heritage Site. Bhaktapur is the most intact and the most beautiful: the 55-Window Palace, the Nyatapola pagoda (Nepal's tallest, 5 storeys), pottery square, and traditional Newari architecture largely unaffected by the 2015 earthquake. Entry to Bhaktapur: ₹1,200 (mandatory tourist fee collected at city entrance). Patan (Lalitpur) Durbar Square: ₹600, magnificent stone sculptures, the Krishna temple. Kathmandu Durbar Square: ₹600, Kumari Ghar (home of the Living Goddess — the Kumari may appear at the window).</div>
+        <div class="time-price">Bhaktapur: ₹1,200 · Patan: ₹600 · Kathmandu Durbar: ₹600 · Combined valley day: ₹2,400</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">4–5</div>
+    <div class="day-info">
+      <div class="day-tag">Days Four &amp; Five · Lake &amp; Mountains</div>
+      <div class="day-title">Pokhara — Phewa Lake, Sarangkot &amp; Paragliding</div>
+      <div class="day-sub">Bus or fly to Pokhara · Sarangkot 4am jeep for Annapurna sunrise · Phewa Lake boat · Peace Pagoda · Paragliding over the Himalayas</div>
+      <div class="day-cost">💰 Sarangkot jeep: ₹400 · Rowing boat: ₹500/hr · Paragliding: ₹8,000–₹12,000</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 4</div>
+      <div class="time-content">
+        <div class="time-title">Pokhara — Nepal's Most Beautiful City</div>
+        <div class="time-desc">Pokhara sits at 800m in a valley beside Phewa Lake with the Annapurna range directly behind — Machhapuchhre (Fishtail Mountain, 6,993m) is visible from the lakeside. Travel from Kathmandu: tourist bus (8 hours, ₹800) or domestic flight (25 minutes, ₹4,000 — highly recommended). The lakeside (Lakeside area) is Pokhara's tourist hub — guest houses, cafés, boat rental, and the starting point for trekking and paragliding. Rent a rowing boat on Phewa Lake (₹500/hour) and row to Tal Barahi temple on the island. The reflection of the snow peaks in the lake at dawn is extraordinarily beautiful.</div>
+        <div class="time-price">Flight KTM–Pokhara: ₹4,000 · Tourist bus: ₹800 · Rowing boat: ₹500/hr · Lakeside guest house: ₹800–₹3,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 5 4AM</div>
+      <div class="time-content">
+        <div class="time-title">Sarangkot Sunrise — The Annapurna Range Revealed</div>
+        <div class="time-desc">Sarangkot (1,600m) is a viewpoint 12km from Pokhara reachable by jeep (₹400, takes 30 minutes — the road is rough). Leave by 4:30am to reach the summit before dawn. As the sky brightens, the entire Annapurna range — Dhaulagiri (8,167m), Annapurna I (8,091m), Annapurna South, Machhapuchhre (Fishtail, 6,993m), Annapurna III, Annapurna IV — lights up gold and pink in sequence as the sun rises. This is the most accessible Himalayan sunrise panorama in the world — no trekking required. Many visitors say it's the most beautiful thing they've ever seen. In the afternoon, paraglide from Sarangkot down to the lakeside (landing on the beach at Phewa Lake).</div>
+        <div class="time-price">Jeep to Sarangkot: ₹400 · Viewpoint: free · Paragliding from Sarangkot: ₹8,000–₹12,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 5 PM</div>
+      <div class="time-content">
+        <div class="time-title">Paragliding Over the Himalayas — World Class Experience</div>
+        <div class="time-desc">Pokhara is consistently rated one of the top 5 paragliding destinations in the world — the thermal updrafts from the Himalayas create ideal conditions. Paragliding companies operate from Sarangkot (launch) to Phewa Lake (landing), flying over the lake with the Annapurna range ahead of you. Flight duration: 20–40 minutes. Tandem flights with an experienced pilot (₹8,000–₹12,000 depending on duration). Reputable companies: Blue Sky Paragliding, Sunrise Paragliding, High Ground Adventures. The GoPro video package (₹2,000 extra) is worth getting — you'll want to share this. Age limit: 5–80 years, weight limit typically 120kg.</div>
+        <div class="time-price">Tandem paragliding: ₹8,000–₹12,000 · GoPro video: ₹2,000 extra · Book evening before or same morning</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 6–7 + BUDGET + TIPS -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Nepal 7-Day Itinerary</span>
+    <span class="page-header-right">Days 6–7 · Nagarkot · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">6–7</div>
+    <div class="day-info">
+      <div class="day-tag">Days Six &amp; Seven · Himalayan Panorama</div>
+      <div class="day-title">Nagarkot Sunrise &amp; Chitwan Option</div>
+      <div class="day-sub">Nagarkot overnight (Everest panorama at sunrise) · Return to Kathmandu · OR Chitwan National Park jungle safari (rhinos, tigers)</div>
+      <div class="day-cost">💰 Nagarkot: ₹2,000–₹4,000 overnight · Chitwan: ₹2,500 entry + ₹3,000 jeep</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 6</div>
+      <div class="time-content">
+        <div class="time-title">Nagarkot — Where You Can See Everest from Your Hotel Window</div>
+        <div class="time-desc">Nagarkot village sits at 2,100m, 30km east of Kathmandu on a ridge with sweeping Himalayan views. On a clear day (October–November and March–April are clearest), the panorama includes Mount Everest (8,849m), Lhotse, Cho Oyu, Makalu, and dozens of other peaks across 150km of Himalayan horizon. Stay overnight at one of the ridge-top hotels (₹2,000–₹5,000/night for hotel with mountain view rooms). Watch the sunset over the Himalayas in the evening, then wake before dawn for the spectacular sunrise when the peaks glow pink and gold. The Hotel at the End of the Universe and Club Himalaya are popular choices.</div>
+        <div class="time-price">Taxi from Kathmandu to Nagarkot: ₹1,500 · Hotel with mountain view: ₹2,000–₹5,000/night</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 7 Option A</div>
+      <div class="time-content">
+        <div class="time-title">Chitwan National Park — Rhinos, Tigers &amp; Jungle</div>
+        <div class="time-desc">Chitwan National Park is a 5-hour drive or 25-minute flight from Kathmandu/Pokhara. Nepal's premier wildlife reserve holds one-horned rhinoceroses (the park's reintroduction program has been a global conservation success), Bengal tigers, gharial and mugger crocodiles, Ganges river dolphins, Asian elephants, sloth bears, leopards and over 500 bird species. Jeep safari (half day: ₹3,000/jeep) and guided jungle walks are the best ways to see wildlife. The best time for wildlife: early morning safaris. Rhinos are commonly seen. Tigers are present but elusive. Entry fee: ₹2,500 (Nepalese charge; Indians and foreigners pay the same rate).</div>
+        <div class="time-price">Park entry: ₹2,500 · Jeep safari (half day): ₹3,000/jeep (4 people) · Canoe safari: ₹800/person</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 7 Option B</div>
+      <div class="time-content">
+        <div class="time-title">Final Kathmandu — Thamel Shopping &amp; Departure</div>
+        <div class="time-desc">Thamel is Kathmandu's tourist hub — a grid of narrow lanes packed with trekking gear shops, handicraft stores, pashmina, Thangka paintings, singing bowls, yak wool products, and restaurants. Excellent buys: genuine cashmere and pashmina (₹1,000–₹5,000 — feel the softness, not all advertised pashmina is real), Thangka paintings (detailed Tibetan Buddhist paintings on cotton, ₹2,000–₹30,000), singing bowls (₹500–₹3,000), brass deity figurines, trekking equipment. The Garden of Dreams (₹200) near Thamel is a restored Edwardian neoclassical garden — peaceful contrast to Thamel chaos. Pashupatinath for a final visit before evening flight.</div>
+        <div class="time-price">Thamel: free to browse · Garden of Dreams: ₹200 · Pashmina: ₹1,000–₹5,000 · Thangka: ₹2,000–₹30,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 7 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (7 nights)</td><td>5,600</td><td>16,000</td><td>35,000+</td></tr>
+      <tr><td>Food (very affordable!)</td><td>3,000</td><td>8,000</td><td>18,000</td></tr>
+      <tr><td>Transport (local taxis/bus)</td><td>3,000</td><td>7,000</td><td>15,000</td></tr>
+      <tr><td>Attractions &amp; Experiences</td><td>5,000</td><td>14,000</td><td>25,000</td></tr>
+      <tr><td>Shopping &amp; Souvenirs</td><td>1,000</td><td>4,000</td><td>15,000</td></tr>
+      <tr><td>Flights (Delhi–KTM return)</td><td>8,000</td><td>15,000</td><td>25,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹25,600</strong></td><td><strong>~₹64,000</strong></td><td><strong>₹1,33,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Nepal is the most affordable international destination from India — a full dal bhat meal (Nepal's national dish: lentil soup, rice, vegetable curries, pickle) costs ₹300–₹500 and is filling and nutritious. Trekking gear in Thamel is 50–70% cheaper than in India or Europe.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🏔️</div>
+      <div class="tip-title">Best Season — October &amp; March Are Magic</div>
+      <div class="tip-desc">October and November (post-monsoon): crystal clear skies, perfect Himalayan views, moderate temperatures. March and April: spring flowers, slightly hazier skies but warmer. December–February: cold in Kathmandu (2–10°C), but clear mountain views — worth it. Monsoon (June–September): trekking difficult, Kathmandu valley green and lush, mountain views obscured. Avoid June–August for mountain photography.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Indian Rupees Work in Nepal</div>
+      <div class="tip-desc">100 Indian Rupees = approximately 160 Nepali Rupees — carry some INR and exchange at official money changers in Kathmandu (Thamel has many). Indian currency is accepted in most tourist shops and restaurants in Kathmandu and Pokhara. However, avoid ₹2,000 notes — they are often refused. Use ₹500 and smaller notes. ATMs in Kathmandu dispense NPR — most accept Indian debit cards.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🥾</div>
+      <div class="tip-title">Trekking — Even a Half Day Changes Everything</div>
+      <div class="tip-desc">You don't need to do the famous 14-day Everest Base Camp or Annapurna Circuit treks to experience Nepal's mountains. The Annapurna Panorama Trek (3–5 days) starting from Pokhara offers extraordinary views with limited effort. The World Peace Stupa hike from Pokhara lakeside (2 hours return) gives Annapurna range views. Even a 1-hour walk above Nagarkot feels like the world's rooftop.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🙏</div>
+      <div class="tip-title">Hindu Temple Etiquette in Nepal</div>
+      <div class="tip-desc">Remove shoes before entering any temple complex. Non-Hindus are restricted from entering the inner sanctum of Pashupatinath — respect this boundary. Circumambulate stupas and mani walls clockwise (keep them on your right). Never step over offerings. Photography inside temples may be restricted — ask first. Dress modestly: cover shoulders and knees at all religious sites.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>Altitude Note:</strong> Kathmandu is at 1,400m and Pokhara at 800m — no serious altitude problems expected for most visitors. Nagarkot at 2,100m is still well within safe range. If you plan to trek above 3,000m (such as Poon Hill at 3,210m or Jomsom), acclimatise gradually, stay hydrated, and do not ascend more than 300–400m per day above 3,000m. Symptoms of altitude sickness: headache, nausea, dizziness — descend immediately if symptoms worsen.
+  </div>
+
+  <div class="pack-list">
+    <div class="pack-item">👟 <strong>Comfortable walking shoes</strong> — Kathmandu's streets are uneven and dusty. Good grip important for temple steps.</div>
+    <div class="pack-item">🧥 <strong>Warm layer for mornings</strong> — Nagarkot and Sarangkot sunrises are cold (5–10°C Oct–Mar). Fleece essential.</div>
+    <div class="pack-item">💊 <strong>Altitude tablets (Diamox)</strong> — only if trekking above 3,000m. Consult your doctor before taking preventatively.</div>
+    <div class="pack-item">📷 <strong>Good camera with telephoto</strong> — Himalayan peaks are distant even from viewpoints. A 200mm zoom captures Everest well from Nagarkot.</div>
+    <div class="pack-item">💧 <strong>Water purification tablets</strong> — tap water in Nepal is not safe to drink. Boil, filter or use tablets. Buy bottled water throughout.</div>
+    <div class="pack-item">🦟 <strong>Mosquito repellent (Chitwan)</strong> — malaria risk in Chitwan area, especially at dusk. DEET-based repellent essential.</div>
+    <div class="pack-item">💰 <strong>Small denomination cash</strong> — ₹100 and ₹50 Indian notes, or NPR for temple entry, taxis and tips. Many small vendors don't take cards.</div>
+    <div class="pack-item">🎒 <strong>Daypack (20–30L)</strong> — for Sarangkot hike/jeep, Boudhanath circumambulation, trekking. Keep it light.</div>
+    <div class="pack-item">📋 <strong>Passport (not voter ID)</strong> — voter ID technically works for Indian citizens but passport is recommended. Always carry a photocopy too.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More of the<br/>Himalayas Await</h2>
+  <p>From Bhutan's Paro Taktsang monastery to Sri Lanka's ancient temples, from the Maldives' coral atolls to India's own Spiti Valley and Ladakh — IncredibleItinerary covers every South Asian adventure.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · London · Rome · Barcelona · Amsterdam · Switzerland · New York · Turkey · Malaysia</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

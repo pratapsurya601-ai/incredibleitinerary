@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Jaipur in 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#be185d;--primary-light:#f9a8d4;--primary-dark:#831843;
+  --accent:#d97706;--accent-light:#fde68a;
+  --ink:#1a0510;--cream:#fff0f6;--parchment:#fce7f3;
+  --white:#ffffff;--muted:#6b3550;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,5,16,0.97) 0%,rgba(26,5,16,0.6) 50%,rgba(26,5,16,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#f9a8d4;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(190,24,93,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(190,24,93,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(190,24,93,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(190,24,93,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(249,168,212,0.08),rgba(249,168,212,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#f9a8d4;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#f9a8d4;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(190,24,93,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.pink{background:#fdf2f8;border:1px solid #fbcfe8;color:#831843}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(190,24,93,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(190,24,93,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(190,24,93,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(190,24,93,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(190,24,93,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3581369/pexels-photo-3581369.jpeg?w=1200&q=80" alt="Hawa Mahal Jaipur Pink City"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Jaipur<br/><em>in 3 Days</em></h1>
+    <p class="cover-sub">The Pink City — Amber Fort's hilltop grandeur, the Maharaja's opulent City Palace, Jantar Mantar and Rajasthan's most vivid bazaars</p>
+    <div class="cover-pills">
+      <span class="pill">🌸 3 Days</span>
+      <span class="pill">🏯 Pink City</span>
+      <span class="pill">💰 ₹5,000–₹20,000</span>
+      <span class="pill">🌤️ Oct–Mar</span>
+      <span class="pill">🐘 Amber Fort</span>
+      <span class="pill">👑 Royal Experience</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(190,24,93,0.3);border:1px solid rgba(249,168,212,0.4);color:#f9a8d4;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Jaipur 3-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Pink City — Three Days of Royal Rajasthan</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏯</div><span class="stat-val">Amber Fort</span><span class="stat-label">Hilltop Masterpiece</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹5k–20k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Mar</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Amber Fort</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">City Palace</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Hawa Mahal</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Nahargarh</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Chokhi Dhani</span>
+    <span class="route-sub">All within Jaipur city + 11km to Amber Fort · Jaipur Junction (JAI) main station</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 — Forts</div>
+      <div class="city-name">🏯 Amber Fort &amp; Hill Forts</div>
+      <div class="city-desc">Amber Fort is Rajasthan's finest fort-palace — its Sheesh Mahal (Hall of Mirrors) interior, where thousands of glass fragments create a starlit effect by candlelight, is among the most beautiful interiors in India. Jaigarh Fort houses Asia's largest cannon on wheels. Nahargarh provides the city's best sunset panorama.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Old City</div>
+      <div class="city-name">🏛️ City Palace &amp; Walled City</div>
+      <div class="city-desc">City Palace (still partially inhabited by the royal family) and its extraordinary museum of royal weapons, textiles and palanquins. The astronomical observatory Jantar Mantar (UNESCO) with 19 instruments, including the world's largest stone sundial accurate to 2 seconds. Hawa Mahal's 953 windows and Johari Bazaar's gem traders.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3 — Leisure</div>
+      <div class="city-name">🌊 Jal Mahal &amp; Chokhi Dhani</div>
+      <div class="city-desc">Jal Mahal — the five-storey palace rising from the middle of Man Sagar Lake, with four storeys submerged below water. Best photographed from the road at sunrise or sunset. Then Chokhi Dhani village resort in the evening — a recreated Rajasthani village with folk performances, puppet shows, camel rides and a traditional thali dinner.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Throughout</div>
+      <div class="city-name">🍽️ Royal Rajasthani Food</div>
+      <div class="city-desc">Dal baati churma — wheat dumplings baked over wood fire, dipped in dal and ghee with churma (sweetened crushed wheat). Laal maas — fiery mutton curry in Mathania red chillies. Ghewar — crisp disc-shaped sweet in sugar syrup. Lassiwala on MI Road (the most famous lassi in Rajasthan). Rawat Mishtan Bhandar for kachori.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Jaipur was painted pink in 1876 to welcome Prince Albert, and never changed back. It is the only city in India that chose its own colour — and chose perfectly."</p>
+  </div>
+
+  <div class="highlight-box pink">
+    <strong>Best Time to Visit:</strong> October to March. November and February are ideal — 18–28°C, clear skies, the pink sandstone glowing in winter light. December and January are cooler (8–20°C) but beautifully clear. The Elephant Festival during Holi (March) is spectacular. Avoid April to September — temperatures reach 45°C and the forts are brutal by midday.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1 & 2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Jaipur 3-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Forts &amp; Old City</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · The Hill Forts</div>
+      <div class="day-title">Amber Fort, Jaigarh &amp; Nahargarh Sunset</div>
+      <div class="day-sub">Morning Amber Fort · Sheesh Mahal · Jaigarh Fort · Nahargarh for sunset panorama of Jaipur</div>
+      <div class="day-cost">💰 Amber: ₹550 · Jaigarh: ₹200 · Nahargarh: ₹200 · Jeep up to Amber: ₹300 return</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Amber Fort — The Sheesh Mahal &amp; Ganesh Pole</div>
+        <div class="time-desc">Amber Fort (11km from Jaipur city) is best visited in the early morning before tour groups arrive. Take a jeep from the base (₹300 return shared, or ₹150 one way) rather than elephant — see the ethics note below. The Diwan-i-Aam, Diwan-i-Khas and Jai Mandir are magnificent, but the Sheesh Mahal (Hall of Mirrors) is the centrepiece: a room entirely clad in small convex mirrors set in plaster, so that a single candle is reflected thousands of times, filling the space with stars. The Ganesh Pole gateway is the most photographed entrance in Rajasthan. Allow 2–2.5 hours.</div>
+        <div class="time-price">Entry: ₹550 Indians · ₹200 foreigners · Audio guide: ₹150 (recommended) · Open 8am–5:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Jaigarh Fort — Asia's Largest Cannon on Wheels</div>
+        <div class="time-desc">Jaigarh Fort sits on the ridge above Amber — walk up from Amber (15 minutes uphill) or take a shared jeep (₹50). The fort contains Jai Vana, the world's largest cannon on wheels, cast in 1720 — 6 metres long, never fired in war. The fort also has a stepwell, a weapons museum and one of the best views over the Amber valley. The royal treasury was reportedly discovered here in the 1970s during searches ordered by Indira Gandhi's government — its existence and contents remain a state secret to this day.</div>
+        <div class="time-price">Entry: ₹200 (ticket also covers Nahargarh on the same day) · Jaigarh ticket is separate from Amber ticket</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Nahargarh Fort — Best Sunset Panorama in Jaipur</div>
+        <div class="time-desc">Nahargarh (Tiger Fort), on the Aravalli ridge northwest of the city, has Jaipur's finest sunset viewpoint. The view sweeps over the entire pink city, the lakes, and on clear days to the horizon. There are several rooftop cafes inside the fort walls (Padao Restaurant and Cafe Nahargarh) where you can drink chai while watching the sun go down. In the evenings, the city lights below compete with the orange sky above. Auto from city: ₹150–₹200 return. The road up is steep and narrow.</div>
+        <div class="time-price">Entry: ₹200 (or included if you visited Jaigarh same day) · Arrive 45 mins before sunset · Café chai: ₹60</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Old City &amp; Bazaars</div>
+      <div class="day-title">City Palace, Jantar Mantar &amp; Johari Bazaar</div>
+      <div class="day-sub">City Palace museum · Jantar Mantar · Hawa Mahal exterior · Johari Bazaar gems · Albert Hall Museum evening</div>
+      <div class="day-cost">💰 City Palace: ₹700 · Jantar Mantar: ₹200 · Hawa Mahal: ₹50 · Albert Hall: ₹150</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">City Palace — Still a Royal Residence</div>
+        <div class="time-desc">The Jaipur royal family (the Kachwaha dynasty) still lives in part of City Palace. The museum section includes the Chandra Mahal, Mubarak Mahal, Diwan-i-Khas and the armoury. The most extraordinary display: two silver urns in the Diwan-i-Khas, each weighing 340kg — the largest silver objects in the world. Made by the Maharaja to carry Ganges water to England (he refused to drink non-Ganga water). The royal costumes gallery shows garments of absurd size — Maharaja Sawai Madho Singh I was reportedly 1.2m wide.</div>
+        <div class="time-price">Entry: ₹700 Indians · Camera: ₹200 extra · Allow 2 hours · Audio guide available at entrance</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Jantar Mantar — 19 Instruments, World's Largest Sundial</div>
+        <div class="time-desc">Built by Maharaja Jai Singh II between 1727–1734, Jantar Mantar contains 19 fixed astronomical instruments used to track celestial bodies, predict eclipses and calculate the Hindu calendar. The Samrat Yantra — a 27-metre sundial — is accurate to 2 seconds and can track the sun's movement in real time (the shadow moves 1mm per second). UNESCO World Heritage Site since 2010. Hire a guide at the entrance (₹200–₹300) — without explanation, the instruments appear as abstract sculptures; with explanation, they become breathtaking acts of intellect.</div>
+        <div class="time-price">Entry: ₹200 · Guide: ₹200–₹300 (essential) · Located next to City Palace · 45 minutes to 1 hour</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Hawa Mahal — The Palace of Winds Exterior</div>
+        <div class="time-desc">The Hawa Mahal's iconic facade of 953 small windows (jharokhas) was built in 1799 to allow royal women — who observed purdah and could not appear in public — to watch street festivals below. The facade is only one room deep. Entry gives access to a small museum and the upper floors (₹50), but the most celebrated view is of the exterior from the street. Cross to the tea stall on the opposite side of the road for the classic photograph. Best photographed in morning light (it faces east). The Old City bazaar around it is excellent for browsing.</div>
+        <div class="time-price">Entry: ₹50 · Best photographed from outside · Morning light on facade is best · Closed on public holidays</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Johari Bazaar — Gems, Bangles &amp; Rajasthani Textiles</div>
+        <div class="time-desc">Jaipur is India's gem capital — the city processes 80% of the world's coloured gemstones. Johari Bazaar (Jewellers' Market) has family-run gem traders who have dealt here for generations. Genuine stones are sold by weight (carats), certified by hallmark. Avoid anyone who approaches you on the street offering "special prices" on gems for resale abroad — this is a nationwide scam. For textiles: Bapu Bazaar for Rajasthani block-print cotton and bandhani (tie-dye). Nehru Bazaar for bangles and lac jewellery (₹50–₹500/set).</div>
+        <div class="time-price">Johari Bazaar: free to browse · Bangles: ₹50–₹500 · Block-print dupatta: ₹300–₹1,500 · Gems: get certified dealers only</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAY 3 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Jaipur 3-Day Itinerary</span>
+    <span class="page-header-right">Day 3 · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Leisure &amp; Culture</div>
+      <div class="day-title">Jal Mahal, Sisodia Rani Garden &amp; Chokhi Dhani</div>
+      <div class="day-sub">Jal Mahal morning · Sisodia garden · Albert Hall Museum · Chokhi Dhani cultural village evening</div>
+      <div class="day-cost">💰 Chokhi Dhani: ₹800–₹1,200 · Albert Hall: ₹150 · Total day: ₹1,200–₹2,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Jal Mahal — The Water Palace at Sunrise</div>
+        <div class="time-desc">Jal Mahal (Water Palace) rises from the middle of Man Sagar Lake — five storeys tall, with four below the waterline. The palace itself is closed to visitors (it's under renovation and protection), but the view from the lakeside road is extraordinary, especially at golden hour. Migratory birds roost in the trees around the lake from October to March — in November it becomes a bird photographer's paradise with pelicans, painted storks and spoonbills. The best vantage point is from the road to Amber (NH11), north of the city, where the road runs alongside the lake. Free to view from the road.</div>
+        <div class="time-price">Free to view from road · Boats available seasonally: ₹50–₹100 · Best at sunrise or just before sunset · No entry to palace</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Sisodia Rani Garden &amp; Vidyadhar Garden</div>
+        <div class="time-desc">8km east of the city, Sisodia Rani Garden was built in 1728 by Maharaja Jai Singh II for his second wife. A sequence of terraced gardens with painted pavilions, fountains and murals depicting the Radha-Krishna story — one of the loveliest and quietest spots in Jaipur. Vidyadhar Garden (nearby) is a formal Mughal-style garden built for the city's original planner, Vidyadhar Bhattacharya. Both are uncrowded and beautifully maintained. Good picnic spot. Auto from city: ₹120 return.</div>
+        <div class="time-price">Sisodia Rani Garden: ₹50 · Vidyadhar Garden: ₹50 · Auto return from city: ₹120 · Allow 1.5 hours combined</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Albert Hall Museum — Rajasthan's Finest Collection</div>
+        <div class="time-desc">Built in 1887 in Indo-Saracenic style, Albert Hall Museum houses Rajasthan's most comprehensive collection of decorative arts: miniature paintings, weapons, textiles, Rajasthani pottery, natural history displays and the famous 4,000-year-old Egyptian mummy in the basement. The building itself — illuminated at night — is a magnificent example of Victorian-era architecture in India. Evenings (after 6pm) the museum is lit up beautifully. Best visited in the afternoon before heading to Chokhi Dhani.</div>
+        <div class="time-price">Entry: ₹150 Indians · Camera: ₹50 · Open 9am–5pm (closed on national holidays) · Allow 1.5 hours</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Chokhi Dhani — Rajasthani Cultural Village</div>
+        <div class="time-desc">Chokhi Dhani (20km south of city) is a recreated Rajasthani village resort — kitsch in concept but genuinely enjoyable in execution. Folk musicians and dancers, puppet shows, camel rides, magic performers, fortune tellers, boat rides and a traditional Rajasthani thali dinner (dal baati churma, laal maas, ker sangri, bajra roti, multiple chutneys and sweets) served on a patal (leaf plate) while sitting cross-legged. Entry includes all performances and the dinner. Takes 3–4 hours to experience fully. Book through your hotel or at the gate.</div>
+        <div class="time-price">Entry + dinner: ₹800–₹1,200/person · Taxi return from city: ₹400–₹500 · Opens 5pm · Bookings recommended in peak season</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 3 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Luxury (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (3 nights)</td><td>2,400</td><td>7,500</td><td>20,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>1,200</td><td>3,000</td><td>7,000</td></tr>
+      <tr><td>Local Transport</td><td>600</td><td>1,500</td><td>3,000</td></tr>
+      <tr><td>Monument Entries</td><td>2,050</td><td>2,050</td><td>2,050</td></tr>
+      <tr><td>Chokhi Dhani</td><td>800</td><td>1,000</td><td>1,200</td></tr>
+      <tr><td>Shopping</td><td>500</td><td>2,000</td><td>12,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹7,550</strong></td><td><strong>~₹17,050</strong></td><td><strong>₹45,250+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Budget stays: Old City guesthouses ₹700–₹1,200/night. Mid-range: Bani Park area ₹2,000–₹3,500/night. Luxury: Heritage palace hotels (Jai Mahal Palace, Rambagh Palace) ₹8,000–₹25,000/night. Train from Delhi: Pink City Express 5 hours, ₹300–₹1,800. From Agra: 4 hours by Intercity Express.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Jaipur 3-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Packing List</span>
+  </div>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Know Before You Go</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🐘</div>
+      <div class="tip-title">Elephant Rides at Amber — The Ethics</div>
+      <div class="tip-desc">Elephant rides at Amber Fort are controversial. The animals are often kept in poor conditions and the work is physically damaging for them on the steep cobbled ascent. Wildlife groups recommend against it. The alternative — jeep rides (₹300 shared return) — reaches the fort just as quickly. If you choose the elephant, select operators who show welfare certificates. A third option: walk up (1.5km), which takes 20 minutes and gives better views of the fort walls.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💎</div>
+      <div class="tip-title">Blue Pottery — The Real Thing</div>
+      <div class="tip-desc">Jaipur's famous blue pottery (made with a quartz paste, not clay) is sold widely but fake versions abound. The real thing: made by registered artisans in Sanganer (10km from city) or from Kripal Kumbh in Bani Park (the original family workshop). Look for the typical cobalt-blue and white patterns with Persian motifs. Plates ₹200–₹500, vases ₹500–₹3,000. Avoid roadside shops near forts — their "blue pottery" is usually Chinese-painted ceramic.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-title">Where to Eat — Real Jaipur Food</div>
+      <div class="tip-desc">Lassiwala (MI Road) — the most famous lassi shop in Rajasthan. Opens at 8am, often sells out by noon. Thick, creamy, topped with malai — ₹80. Rawat Mishtan Bhandar (Station Road) for Jaipur kachori, pyaaz kachori and mirchi vada. Suvarna Mahal at Rambagh Palace for a splurge dal baati churma with live folk music (₹2,000+/person). LMB (Laxmi Misthan Bhandar) in Johari Bazaar for raj kachori and sweets since 1954.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-title">Getting Around Jaipur</div>
+      <div class="tip-desc">Jaipur has a new metro but it doesn't serve the major tourist sites well. Autos are the best option — negotiate a price before getting in (roughly ₹15/km, minimum ₹80). Many hotels offer bicycle rental (₹150–₹200/day) which is the best way to explore the Old City lanes. Taxis (booked via hotels or Uber) are best for the day trip to Amber (₹800–₹1,200 return including wait time). Auto drivers near Amber aggressively approach tourists — only use government-registered taxis from the fort parking area.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎭</div>
+      <div class="tip-title">Jaipur Literature Festival (January)</div>
+      <div class="tip-desc">The Jaipur Literature Festival (usually last week of January) is the world's largest free literary festival — 250+ authors from 40+ countries over 5 days at Diggi Palace. Attendance is free, registration online required. If your visit coincides, it's a remarkable experience. The city fills up during the festival — book accommodation 2–3 months in advance and expect higher prices.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🧵</div>
+      <div class="tip-title">Shopping — What &amp; Where</div>
+      <div class="tip-desc">Block-print fabric: Anokhi Museum of Hand Printing (Amber Road) has a fixed-price shop and shows the process. Rajasthani quilts (rezai): Bapu Bazaar, ₹800–₹3,000. Miniature paintings: look for artists who will do them in front of you on Hawa Mahal road. Lac bangles: any old city shop, ₹50–₹500/set. Avoid the "government export approved" shops near forts — they are commission traps and 50–100% overpriced compared to the bazaar.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Seasons — Jaipur Weather Guide</div>
+      <div class="tip-desc">October–November: post-monsoon, pleasant, the city freshly washed. December–January: cold at night (4–8°C), warm days (20–25°C), clear skies — pack a jacket for evenings and early mornings at Nahargarh. February–March: best weather, Holi in March transforms the city. April: already 38°C. May–June: 45°C+ — forts retain heat and are genuinely punishing after 9am. Monsoon (July–September): dramatic skies, occasional flooding, but the Amber moat fills and the countryside turns green.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏛️</div>
+      <div class="tip-title">Jaipur City Palace — Guided vs Self Visit</div>
+      <div class="tip-desc">The City Palace is significantly better with a guide — the historical context of the silver urns, the royal garments display and the architectural layers requires explanation. Guides at the gate charge ₹400–₹600 for 2 hours; government-licensed guides show ID. The premium ticket (₹2,500) includes a heritage walk, private museum section access and a welcome drink — worth it for history enthusiasts. The regular ticket (₹700) covers all the major sections adequately.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Jaipur</div>
+  <div class="pack-list">
+    <div class="pack-item">🧥 <strong>Warm layer for evenings</strong> — Nahargarh at sunset in December is cold. A light fleece or shawl is essential.</div>
+    <div class="pack-item">👟 <strong>Comfortable walking shoes</strong> — Amber Fort's cobbled ascent and the Old City bazaars involve hours on uneven surfaces.</div>
+    <div class="pack-item">🕌 <strong>Full-coverage clothing</strong> — Rajasthan is more conservative than Mumbai or Goa. Cover shoulders and knees in the old city.</div>
+    <div class="pack-item">🧴 <strong>SPF 50 sunscreen</strong> — the Rajasthani sun is powerful even in winter. Amber Fort's open courtyards have minimal shade.</div>
+    <div class="pack-item">💧 <strong>2L water bottle</strong> — rehydration is critical. Jaipur's dry heat causes dehydration fast even in winter months.</div>
+    <div class="pack-item">💵 <strong>Cash in mixed notes</strong> — bazaars, autos, auto guides and entry fee windows are all cash. Keep ₹3,000 in small notes.</div>
+    <div class="pack-item">📷 <strong>Camera card</strong> — Amber Fort photography surcharge is ₹200. Budget for it upfront.</div>
+    <div class="pack-item">🎒 <strong>Tote bag</strong> — for bazaar shopping. You will buy things you did not plan to buy. An extra folding tote prevents panic.</div>
+    <div class="pack-item">🦟 <strong>Insect repellent</strong> — evenings at Man Sagar Lake (Jal Mahal area) and Chokhi Dhani's outdoor area have mosquitoes.</div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>One last thing:</strong> Jaipur rewards wandering. Between the planned stops, get lost in the old city lanes — discover the neighbourhood temple, the chai shop with a 50-year-old proprietor, the family selling block-print fabric from their living room. The famous sights are genuinely wonderful. But the city between them is extraordinary too.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the backwaters of Kerala to the snow peaks of Ladakh, from Mumbai's seafront to Varanasi's burning ghats — IncredibleItinerary has a complete guide for every extraordinary journey across this remarkable country.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Delhi · Mumbai · Agra · Varanasi · Rishikesh · Kerala · Goa · Leh-Ladakh · Hampi · Darjeeling</p>
+  <div class="back-legal">This guide is for personal use only. Prices, monument schedules and availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

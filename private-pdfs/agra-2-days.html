@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Agra in 2 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#d97706;--primary-light:#fbbf24;--primary-dark:#92400e;
+  --accent:#b45309;--accent-light:#fde68a;
+  --ink:#1a0f00;--cream:#fffbf0;--parchment:#fef3c7;
+  --white:#ffffff;--muted:#6b5028;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,15,0,0.97) 0%,rgba(26,15,0,0.6) 50%,rgba(26,15,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fbbf24;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(217,119,6,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(217,119,6,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--primary-light);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(217,119,6,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(217,119,6,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(251,191,36,0.08),rgba(251,191,36,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fbbf24;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fbbf24;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(217,119,6,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(217,119,6,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(217,119,6,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(217,119,6,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(217,119,6,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(217,119,6,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg?w=1200&q=80" alt="Taj Mahal at sunrise"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Agra<br/><em>in 2 Days</em></h1>
+    <p class="cover-sub">Sunrise at the Taj Mahal, Mughal imperial architecture and the ghost city of Fatehpur Sikri — the peak of 16th-century civilisation</p>
+    <div class="cover-pills">
+      <span class="pill">🕌 2 Days</span>
+      <span class="pill">🌅 Taj Mahal</span>
+      <span class="pill">💰 ₹3,000–₹15,000</span>
+      <span class="pill">🌤️ Oct–Mar</span>
+      <span class="pill">🌄 Sunrise Essential</span>
+      <span class="pill">🏯 Mughal Heritage</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(217,119,6,0.3);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Agra 2-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Taj, the Fort &amp; the Ghost City</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">2 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🕌</div><span class="stat-val">Taj Mahal</span><span class="stat-label">Wonder of the World</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹3k–15k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Mar</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Arrival</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">Taj Sunrise</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Agra Fort</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Fatehpur Sikri</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Baby Taj</span>
+    <span class="route-sub">All in Agra + 40km day trip · Agra Cantt station is closest railway station</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 — Must Do</div>
+      <div class="city-name">🌅 Taj Mahal at Sunrise</div>
+      <div class="city-desc">Gates open 30 minutes before sunrise (check online for exact time by date). The pale pink pre-dawn light on white marble is unlike any other hour at the Taj. By 8am, tour groups arrive and the atmosphere changes. Book tickets online at asi.payumoney.com to skip the queue entirely — a crucial time-saver on Day 1.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 1 — Afternoon</div>
+      <div class="city-name">🏯 Agra Fort</div>
+      <div class="city-desc">The massive red sandstone fort built by Akbar in 1565, expanded by Jahangir and Shah Jahan. From the Musamman Burj tower, Shah Jahan — imprisoned here by his own son Aurangzeb for his final 8 years — could see the Taj Mahal, his wife's tomb, across the river. This heartbreaking context transforms the view.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Morning</div>
+      <div class="city-name">🏙️ Fatehpur Sikri</div>
+      <div class="city-desc">Akbar's masterwork: a complete Mughal capital city built in 1571, abandoned just 14 years later (possibly due to water shortage). Remarkably preserved. The Buland Darwaza (Victory Gate, 1601) at 54 metres is the tallest gateway in the world. The Panch Mahal, Diwan-i-Khas and Jodha Bai's palace are extraordinary examples of Mughal spatial planning.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Afternoon</div>
+      <div class="city-name">💎 Itmad-ud-Daulah &amp; Kinari Bazaar</div>
+      <div class="city-desc">The "Baby Taj" — built in 1628 by Nur Jahan for her father. The first Mughal monument built entirely of marble (the Taj came 15 years later), and the first to use pietra dura (inlaid gemstone work). Then Kinari Bazaar for Agra's famous petha (crystallised pumpkin sweet, ₹150/kg) and leather goods before evening departure.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Shah Jahan spent the last 8 years of his life imprisoned in Agra Fort, looking across the Yamuna at the monument he built for his wife. The Taj Mahal is the most expensive love letter ever written."</p>
+  </div>
+
+  <div class="highlight-box saffron">
+    <strong>Best Time to Visit:</strong> October to March. The Taj in winter fog (November–January mornings) can be spectacular — or the monument can disappear entirely into white mist. Full moon nights: the Taj is open for 5 nights around each full moon (₹750 extra, evening ticket, book separately at asi.payumoney.com). If visiting in summer, arrive at Taj gates at exactly 6am — by 9am it is too hot to walk comfortably.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1 & 2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Agra 2-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Taj Mahal, Agra Fort &amp; Fatehpur Sikri</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · The Wonder of the World</div>
+      <div class="day-title">Taj Mahal at Sunrise, Agra Fort &amp; Mehtab Bagh</div>
+      <div class="day-sub">5am wake · Taj sunrise gates · Agra Fort afternoon · Mehtab Bagh for sunset view of Taj from across Yamuna</div>
+      <div class="day-cost">💰 Taj: ₹1,100 · Agra Fort: ₹650 · Mehtab Bagh: ₹300 · Total entries: ₹2,050</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Taj Mahal — Sunrise Entry (Gates Open 30 Min Before Sunrise)</div>
+        <div class="time-desc">Book tickets in advance at asi.payumoney.com — the online ticket line at the East or South Gate is completely separate from the cash queue and moves in minutes. Bring your booking confirmation (phone screenshot is fine) and government ID. Ticket includes booties for your shoes (mandatory on white marble plinth). Enter from the East Gate for the classic first view down the reflecting pool. The pale dawn light on white marble for the first 45 minutes is the reward for the early wake. By 7:30am, guided groups begin arriving; by 9am, the crowds are substantial. Spend 2–2.5 hours. No tripods, no food, no tobacco inside.</div>
+        <div class="time-price">Entry: ₹1,100 Indians (incl. marble complex + main mausoleum) · Book online to avoid 45-min cash queue · Open Sat–Thu (closed Friday)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Inside Taj</div>
+      <div class="time-content">
+        <div class="time-title">The Main Mausoleum — What Most Visitors Miss</div>
+        <div class="time-desc">The exterior draws all eyes, but the interior of the main mausoleum is extraordinary: the octagonal inner chamber with its carved marble screen (jali) surrounding the cenotaphs, the walls inlaid with 28 types of semiprecious stone in floral patterns. The light inside is dim and cool. The cenotaphs are decorative — the actual graves of Shah Jahan and Mumtaz Mahal are in a plain crypt directly below, at garden level. The four corner minarets lean slightly outward — intentionally, so that in an earthquake they would fall away from the main structure.</div>
+        <div class="time-price">Main mausoleum entry included in ₹1,100 ticket · Queue at the south entrance of the main dome · Remove shoes</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Agra Fort — Where Shah Jahan Spent His Last Years</div>
+        <div class="time-desc">Built by Akbar in 1565 using local red sandstone, the fort was progressively marbled by Shah Jahan, who added the Khas Mahal and Musamman Burj. The Musamman Burj — the octagonal tower from which Shah Jahan is said to have gazed at the Taj — has a view directly across the Yamuna to the distant white dome. This sight, with the knowledge of his eight years of imprisonment here, is one of the most moving experiences in India. The Diwan-i-Khas marble hall has a couplet from the 14th century Sufi poet Amir Khusro: "If there be paradise on earth, it is this, it is this, it is this."</div>
+        <div class="time-price">Entry: ₹650 · Auto from Taj: ₹60 · Allow 2 hours · Guides available at gate: ₹400–₹600</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Mehtab Bagh — Sunset View of Taj from the North Bank</div>
+        <div class="time-desc">Mehtab Bagh (Moonlight Garden) is on the opposite bank of the Yamuna from the Taj — the location where Shah Jahan reputedly planned to build a "Black Taj" as his own tomb (historians debate this). The view of the Taj from here at sunset, with the dome reflected in the Yamuna during monsoon season, is considered by many photographers to be superior to any angle inside the complex itself. Fewer tourists, better light. Auto from Agra Fort: ₹80.</div>
+        <div class="time-price">Entry: ₹300 · Auto from Agra Fort: ₹80 · Best light: 45 minutes before sunset · Bring telephoto lens or zoom</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Mughal Ghost City</div>
+      <div class="day-title">Fatehpur Sikri, Baby Taj &amp; Kinari Bazaar</div>
+      <div class="day-sub">Morning drive to Fatehpur Sikri (40km) · Itmad-ud-Daulah afternoon · Kinari Bazaar · Evening departure</div>
+      <div class="day-cost">💰 Auto/taxi to Fatehpur Sikri: ₹600–₹1,200 return · Entries: ₹610 + ₹310 · Total day: ₹1,500–₹2,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Fatehpur Sikri — Akbar's Abandoned Capital</div>
+        <div class="time-desc">Hire a taxi or auto for the day (₹1,200 including Fatehpur Sikri and return). The drive is 40km on a single road, 1 hour. Fatehpur Sikri was built by Emperor Akbar between 1571–1585 as his new capital — an attempt to blend Hindu, Jain and Islamic architectural traditions. It was abandoned possibly due to water scarcity, leaving a remarkably intact ghost city. The Buland Darwaza (Victory Gate, 54 metres tall), built to celebrate Akbar's conquest of Gujarat, is the tallest gateway in Asia. Dargah of Salim Chishti inside — still an active Sufi shrine where people tie threads and make wishes.</div>
+        <div class="time-price">Entry: ₹610 · Taxi for the day: ₹1,200 · Allow 2.5–3 hours · Guides at gate: ₹300–₹500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Itmad-ud-Daulah — The Baby Taj, First in Marble</div>
+        <div class="time-desc">Often overlooked by visitors rushing to the Taj, Itmad-ud-Daulah is historically more significant than it appears. Built in 1628 by Empress Nur Jahan for her father Mirza Ghiyas Beg, it was the first Mughal monument built entirely of white marble (the Taj came 15 years later), and the first to use pietra dura — the technique of inlaying semiprecious stones into marble that would define the Taj. The smaller scale makes the intricate inlay work more visible and accessible. The garden setting is beautifully maintained. Far fewer tourists than the Taj.</div>
+        <div class="time-price">Entry: ₹310 · Auto from Fatehpur Sikri or city: ₹80 · 1 hour is sufficient · Closed Friday</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Kinari Bazaar — Petha, Leather &amp; Marble Inlay Souvenirs</div>
+        <div class="time-desc">Agra's old bazaar near Jama Masjid. Agra petha is the city's most famous export — a crystallised pumpkin sweet in dozens of varieties (plain, kesar, angoori) sold in 250g to 1kg boxes (₹80–₹200). Try before buying — Panchhi Petha near Taj is the most reliable brand. Agra leather: shoes, bags, belts from the city's famous tanneries — negotiate firmly (start at 50% of asking price). Marble inlay work (pietra dura) souvenirs range from ₹200 coasters to ₹5,000 table tops — verify the marble is genuine (cold to touch, slightly heavy).</div>
+        <div class="time-price">Petha: ₹80–₹200 per box · Leather goods: ₹300–₹3,000 · Marble souvenirs: ₹200–₹5,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — BUDGET + TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Agra 2-Day Itinerary</span>
+    <span class="page-header-right">Budget · Tips · Packing</span>
+  </div>
+
+  <div class="label">Budget Breakdown — Per Person, 2 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Luxury (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (2 nights)</td><td>1,200</td><td>4,000</td><td>15,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>600</td><td>1,500</td><td>4,000</td></tr>
+      <tr><td>Local Transport (auto/taxi)</td><td>600</td><td>1,500</td><td>3,000</td></tr>
+      <tr><td>Monument Entries</td><td>2,670</td><td>2,670</td><td>2,670</td></tr>
+      <tr><td>Shopping (petha + souvenirs)</td><td>300</td><td>1,000</td><td>5,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹5,370</strong></td><td><strong>~₹10,670</strong></td><td><strong>₹29,670+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Entry fees: Taj Mahal ₹1,100 + Agra Fort ₹650 + Mehtab Bagh ₹300 + Fatehpur Sikri ₹610 + Itmad-ud-Daulah ₹310 = ₹2,970 total monument entries for 2 days. Budget stays near Taj: ₹500–₹800/night. Mid-range: ₹1,500–₹3,000. Train from Delhi: Gatimaan Express 1hr 40min, ₹755 AC Chair Car.</p>
+
+  <div class="label" style="margin-top:3mm">Insider Tips — Read Before You Go</div>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🎟️</div>
+      <div class="tip-title">Book Taj Tickets Online — Non-Negotiable</div>
+      <div class="tip-desc">Book at asi.payumoney.com. The walk-up cash queue can be 45–90 minutes during peak season (Oct–Feb). Online booking takes 5 minutes and you collect from a separate, fast counter. You need your booking reference and government-issued ID. The ticket includes entry to the main mausoleum — a separate inner gate requires showing the ticket again. Keep both the email confirmation and government ID accessible throughout your visit.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌅</div>
+      <div class="tip-title">Sunrise vs Sunset — The Real Debate</div>
+      <div class="tip-desc">Sunrise wins for photography: the light is softer and the crowds are minimal for the first 90 minutes. The pre-dawn pink on white marble cannot be replicated at any other time. Sunset has the golden hour warm light but is crowded. Full moon nights (₹750 surcharge) offer a completely different experience — the marble glows eerily silver, crowds are limited to 400 people per slot. If you can arrange only one visit: sunrise. If you can arrange two: sunrise plus a full moon night.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📸</div>
+      <div class="tip-title">Photography Rules Inside Taj</div>
+      <div class="tip-desc">Phone photography is permitted everywhere in the complex. Tripods are not permitted. No photography inside the main mausoleum (some guards enforce this, some don't — respect the rule). The best photographs: (1) Classic pool reflection from entrance gate; (2) Frame the Taj between cypress trees on the side path; (3) From Mehtab Bagh across the river; (4) Close-up pietra dura inlay work on the tomb plinth. Drone photography is strictly prohibited and results in confiscation and fine.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚫</div>
+      <div class="tip-title">Avoid Touts — Specific Agra Scams</div>
+      <div class="tip-desc">Auto drivers who offer "free city tour" — they earn commission from carpet and marble shops. The "government marble emporium" near the Taj that is actually private and overpriced. "Marble inlay" souvenirs made of resin painted white (test: it will be warm to touch and very light). Guides outside the Taj who claim to be "official ASI guides" without showing an ID card issued by the Archaeological Survey of India. The genuine ASI guide service is at the main ticket counter.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">👟</div>
+      <div class="tip-title">Footwear Inside the Taj Complex</div>
+      <div class="time-desc" style="font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300">You cannot take any vehicle past the outer gate — it's a 10-minute walk from the ticket counter to the inner gate. On the white marble plinth, booties (overshoes) are provided and mandatory to protect the marble. Slip-on shoes are much easier to manage than laced shoes since you remove shoes at multiple temples throughout the day. Inside Itmad-ud-Daulah and Agra Fort, you also remove footwear at several points.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚂</div>
+      <div class="tip-title">Getting to Agra — Best Options</div>
+      <div class="tip-desc">From Delhi: Gatimaan Express (Delhi Hazrat Nizamuddin to Agra Cantt, departs 8:10am, arrives 9:50am, ₹755 Executive Chair Car or ₹505 AC Chair Car — the fastest and most comfortable option). Shatabdi Express also available. Bus from Delhi: 3–4 hours, ₹200–₹400. Avoid night trains unless in sleeper class — arrive fresh for the early Taj visit. From Jaipur: 4 hours by train or taxi — natural Golden Triangle stop.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Agra</div>
+  <div class="pack-list">
+    <div class="pack-item">👟 <strong>Slip-on shoes</strong> — you remove footwear at multiple points. Slip-on sandals save enormous time and frustration.</div>
+    <div class="pack-item">🧴 <strong>SPF 50 sunscreen</strong> — the Taj complex has minimal shade. The white marble reflects UV intensely.</div>
+    <div class="pack-item">💧 <strong>2L water bottle</strong> — no water inside the Taj complex except a small cafe. Carry your own, especially in summer.</div>
+    <div class="pack-item">🕌 <strong>Modest clothing</strong> — for Jama Masjid and the Fatehpur Sikri dargah. Shoulders and knees covered.</div>
+    <div class="pack-item">🎟️</td><strong>Downloaded booking confirmation</strong> — save the Taj booking email as a screenshot for offline access.</div>
+    <div class="pack-item">💵 <strong>Cash for autos</strong> — auto drivers in Agra may not accept apps. Keep ₹1,000 in small notes for day transport.</div>
+    <div class="pack-item">📱 <strong>Offline maps</strong> — Agra's auto drivers are notorious for taking "scenic routes." Google Maps prevents this.</div>
+    <div class="pack-item">🧊 <strong>Small cooler bag</strong> — for day 2's petha purchases, especially in summer. Petha softens in heat.</div>
+    <div class="pack-item">🌂 <strong>Small umbrella/hat</strong> — Mehtab Bagh and Fatehpur Sikri have no shade in afternoon. Essential in summer.</div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Honest advice:</strong> The Taj Mahal will exceed your expectations. Every photograph you have seen fails to prepare you for the actual scale and perfection of the proportions. Go at sunrise. Stand in front of it in silence before reaching for your phone. Give it 5 minutes of undistracted attention. This is arguably the finest building human beings have ever constructed.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the backwaters of Kerala to the sand dunes of Rajasthan, from Varanasi's eternal ghats to Hampi's boulder-strewn ruins — IncredibleItinerary has a complete guide for every extraordinary journey across India.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Delhi · Mumbai · Jaipur · Varanasi · Kerala · Goa · Rishikesh · Leh-Ladakh · Darjeeling · Hampi</p>
+  <div class="back-legal">This guide is for personal use only. Prices, monument schedules and ticket availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

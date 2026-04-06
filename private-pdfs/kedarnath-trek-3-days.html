@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Kedarnath Trek 3 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#1e3a8a;--primary-light:#3b82f6;--primary-dark:#1e40af;
+  --accent:#60a5fa;--accent-light:#bfdbfe;
+  --ink:#0a1628;--cream:#f0f4ff;--parchment:#dbeafe;
+  --white:#ffffff;--muted:#3d5a8a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.97) 0%,rgba(10,22,40,0.6) 50%,rgba(10,22,40,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#60a5fa;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(30,58,138,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(30,58,138,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(30,58,138,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(30,58,138,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(96,165,250,0.08),rgba(96,165,250,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#60a5fa;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#60a5fa;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(30,58,138,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.blue{background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.25);color:#1e3a8a}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(30,58,138,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(30,58,138,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(30,58,138,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(30,58,138,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(30,58,138,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/2104882/pexels-photo-2104882.jpeg?w=1200&q=80" alt="Kedarnath temple in the Himalayas"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Kedarnath<br/><em>Trek</em></h1>
+    <p class="cover-sub">16km through the Himalayas to one of Shiva's most sacred shrines — the Jyotirlinga at 3,583 metres</p>
+    <div class="cover-pills">
+      <span class="pill">🥾 3 Days</span>
+      <span class="pill">🏔️ 16km Trek</span>
+      <span class="pill">💰 ₹8,000–₹35,000</span>
+      <span class="pill">🌤️ May–Jun &amp; Sep–Oct</span>
+      <span class="pill">🕉️ Jyotirlinga</span>
+      <span class="pill">⛰️ 3,583m</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(30,58,138,0.3);border:1px solid rgba(96,165,250,0.4);color:#60a5fa;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kedarnath Trek — 3-Day Guide</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trek Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Most Sacred Trek in India</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">3 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🥾</div><span class="stat-val">16km</span><span class="stat-label">One-Way Trek</span></div>
+    <div class="stat-box"><div class="stat-icon">⛰️</div><span class="stat-val">3,583m</span><span class="stat-label">Temple Altitude</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">May–Oct</span><span class="stat-label">Open Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Rishikesh</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop light">Sonprayag</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Gaurikund 1,982m</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Kedarnath 3,583m</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Return</span>
+    <span class="route-sub">220km Rishikesh to Sonprayag · 16km trek from Gaurikund</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Trek Route</div>
+      <div class="city-name">🥾 Gaurikund to Kedarnath</div>
+      <div class="city-desc">Gaurikund (1,982m) → Jungle Chatti (4km, 2,700m) → Bheembali (7km, 3,100m) → Linchauri (10km, 3,250m) → Kedarnath (16km, 3,583m). Total ascent: 1,601m. Trail is paved in lower sections, rocky above Bheembali. Allow 5–7 hours for ascent.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Non-Trek Options</div>
+      <div class="city-name">🚁 Helicopter &amp; Pony</div>
+      <div class="city-desc">Helicopter from Phata, Sirsi or Guptkashi helipads: ₹5,000–₹8,000 one way. Book on official Uttarakhand helicopter portal — fills up weeks ahead in season. Pony: ₹2,500–₹3,500 one way from Gaurikund. Doli (palanquin, 4 bearers): ₹5,000–₹6,000 one way. These options serve those with mobility constraints or health conditions.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">At the Temple</div>
+      <div class="city-name">🕉️ The Jyotirlinga</div>
+      <div class="city-desc">One of 12 Jyotirlinga shrines — among the most sacred places in Hinduism. The stone temple dates to the 8th century (rebuilt multiple times). A large naturally occurring rock forms the Shiva lingam. The 2013 floods destroyed everything around the temple but the structure stood — the massive boulder behind it deflected the glacier outburst. The spiritual atmosphere is profound.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Beyond the Temple</div>
+      <div class="city-name">🏔️ Bhairon Temple &amp; Scenery</div>
+      <div class="city-desc">Bhairon Nath Temple sits 500m above Kedarnath temple — a 30-minute uphill walk. The views from here of the entire Kedarnath valley, the temple below, and the ring of Himalayan peaks (Kedarnath, Kedar Dome, Bharatekuntha) are extraordinary. Many pilgrims miss this. Do not miss this.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"At 3,583 metres, with snow on the ground in June, looking at a stone temple that has stood for 1,200 years — you understand why people walk 16km to stand here."</p>
+  </div>
+
+  <div class="highlight-box red">
+    <strong>Altitude Sickness Warning:</strong> Kedarnath at 3,583m is genuinely high altitude. Do NOT arrive from Rishikesh and trek the same day. Spend at least one night at Sonprayag or Gaurikund (below 2,000m) to acclimatise. Symptoms: headache, nausea, dizziness — descend immediately if severe. Deaths occur every season. Cardiac patients, those with lung conditions, or poorly acclimatised trekkers are at serious risk.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–3 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kedarnath Trek — 3-Day Guide</span>
+    <span class="page-header-right">Day-by-Day Trek Plan</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Acclimatisation</div>
+      <div class="day-title">Reach Sonprayag — The Essential Rest Day</div>
+      <div class="day-sub">Rishikesh → Sonprayag/Gaurikund (220km, 6–7hrs) · Register at checkpost · Rest and prepare</div>
+      <div class="day-cost">💰 Shared taxi from Rishikesh: ₹400–₹600 · Private car: ₹3,500–₹5,000 · Stay: ₹500–₹2,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Rishikesh/Haridwar → Sonprayag (220km, 6–7hrs)</div>
+        <div class="time-desc">Depart early from Rishikesh — shared taxis and SUVs leave from the main bus stand from 5am. The route climbs through Devprayag (beautiful Ganga confluence viewpoint, stop for 20 minutes), Srinagar Garhwal (fuel stop), Rudraprayag (another major Himalayan confluence), then up to Sonprayag. The last section beyond Rudraprayag is mountain road with views of the Mandakini river gorge. Sonprayag sits at 1,800m. Some travellers push on to Gaurikund (1,982m) for a slightly better acclimatisation altitude and to be at the trek start.</div>
+        <div class="time-price">Shared taxi Rishikesh → Sonprayag: ₹400–₹600 · Private car: ₹3,500–₹5,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Registration Checkpost + Gaurikund Hot Spring</div>
+        <div class="time-desc">At Sonprayag, your Char Dham registration is verified at the official checkpost — have your registration printout/SMS and photo ID ready. Shared jeeps then transport you the final 5km to Gaurikund (₹30–50). Gaurikund has the Gauri hot spring — Goddess Parvati is said to have meditated here. Bathing in the warm sulphur spring is traditional before beginning the trek. The water is genuinely warm and therapeutic. Organise your pony or porter for tomorrow if needed.</div>
+        <div class="time-price">Checkpost: registration verification · Gaurikund jeep: ₹30–₹50 · Hot spring: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Preparation Evening — Critical for Success</div>
+        <div class="time-desc">This evening matters for tomorrow's success. Eat a proper carbohydrate-rich dinner. Hydrate heavily. Pack your day bag: 1.5L water, glucose biscuits, energy bars, warm layer (it will be cold at 3,583m even in June), rain poncho, headlamp, medications. Carry no unnecessary weight — every extra kilo costs you on the final climb. Cash only beyond Gaurikund. Boots should be broken in — blisters at altitude are miserable. Sleep by 9pm.</div>
+        <div class="time-price">Accommodation Gaurikund: ₹500–₹1,500 · GMVN dormitory: ₹300 · Day bag: 5–7kg max</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · The Sacred Trek</div>
+      <div class="day-title">Gaurikund to Kedarnath — 16km, 1,600m Climb</div>
+      <div class="day-sub">5am start · Gaurikund → Jungle Chatti → Bheembali → Linchauri → Kedarnath · Evening darshan</div>
+      <div class="day-cost">💰 Trek: free · Pony: ₹2,500–₹3,500 · Lunch en route: ₹100–₹200 · Camp at Kedarnath: ₹500–₹1,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Trek Begins — Gaurikund to Jungle Chatti (4km)</div>
+        <div class="time-desc">Start at dawn — the trail gets extremely crowded midday. The first 4km to Jungle Chatti (2,700m) is a gradual climb through rhododendron and oak forest. This section is the easiest and most beautiful. The sound of the Mandakini river, mist in the trees, other pilgrims with their morning energy — this initial section is joyful. Jungle Chatti has tea stalls and rest points. Take a break, drink fluids, don't rush.</div>
+        <div class="time-price">4km · 1.5hrs at moderate pace · Jungle Chatti tea: ₹20</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Jungle Chatti to Bheembali (3km more, 7km total)</div>
+        <div class="time-desc">The gradient increases steadily. Bheembali (3,100m) is the midway meal point — a cluster of tea stalls and basic food stalls serve Maggi noodles, tea, poori-sabzi, and energy drinks. Stop here for a proper meal and a 20-minute rest. Your body needs fuel for the final climb. The views of the Kedarnath valley begin opening up from here. If you've hired a pony, the pony route overlaps the trekking route — walk to one side to avoid the animals.</div>
+        <div class="time-price">3km · 1.5hrs · Bheembali meal: ₹60–₹150 · Rest 20 min mandatory</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Bheembali to Linchauri to Kedarnath (9km more)</div>
+        <div class="time-desc">The final 9km is the most demanding — altitude is taking effect, the trail is rockier, the air is thinner. Linchauri (10km, 3,250m) has a checkpoint and rest area. Above Linchauri, the forest gives way to alpine meadow. You begin seeing snowfields. The Kedarnath temple appears as you round the final ridge — a small stone structure dwarfed by enormous snow-covered peaks on three sides. The moment of first sighting is genuinely moving for most trekkers regardless of religious affiliation.</div>
+        <div class="time-price">9km · 3–4hrs · Altitude: 3,583m · Take it slow above Linchauri</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Rest, Acclimatise, Then Darshan</div>
+        <div class="time-desc">Arrive at Kedarnath, check into your tent/GMVN accommodation (₹500–₹1,000/night, book ahead), eat and rest for 2 hours. Your body needs recovery time after a 1,600m climb. Then join the darshan queue — afternoon queues are manageable (1–2 hours). The temple interior is cool and dark; the Shiva lingam is touched by thousands of hands daily. The evening aarti (around 7pm) performed by the priests with the glacial landscape as backdrop is extraordinary.</div>
+        <div class="time-price">GMVN tent: ₹500–₹800 · Private tent: ₹800–₹1,200 · Darshan: free · Abhishek pooja: ₹500–₹1,500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Dusk</div>
+      <div class="time-content">
+        <div class="time-title">Bhairon Nath Temple — 500m Above, Worth Every Step</div>
+        <div class="time-desc">Above the main temple complex, a 30-minute steep climb leads to the Bhairon Nath Temple. Bhairon (a form of Shiva) is considered the guardian deity of Kedarnath. The temple is small but the views from up here — the entire bowl of the Kedarnath valley, the temple at your feet, glacial peaks in a semicircle — are among the finest mountain views in India. Many pilgrims skip this. Go.</div>
+        <div class="time-price">500m above main temple · 30min climb · Free · Best at dusk before it gets dark</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Dawn Darshan &amp; Return</div>
+      <div class="day-title">5am Abhishek, Trek Down, Depart</div>
+      <div class="day-sub">4:30am wake · 5am Abhishek darshan · 7am begin descent · 16km back down · Depart valley</div>
+      <div class="day-cost">💰 Abhishek darshan: ₹1,500 · Descent: free · Return taxi from Sonprayag: ₹400–₹600</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">4:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Early Morning — The Temple at Dawn</div>
+        <div class="time-desc">Wake in the dark at Kedarnath. Step outside — stars, silence, the outline of glacial peaks against the pre-dawn sky, and the temple lit by flickering lamps. This is what 3,583m feels like before the world wakes. If you've booked the Abhishek darshan (₹1,500, extremely limited seats — book through the Kedarnath Trust at the temple the previous evening), you will be inside the temple at 5am watching priests perform the personal ritual bath of the Shiva lingam with milk, honey, flowers, and water. An intensely private and spiritual experience unavailable during regular darshan hours.</div>
+        <div class="time-price">Abhishek darshan: ₹1,500 · Limited to ~50 people · Book evening before at trust office</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">The Descent — Easier but Watch Your Knees</div>
+        <div class="time-desc">The return trek to Gaurikund (16km) takes 3–5 hours descending. The descent is harder on knees than the ascent — trekking poles are invaluable here. Pace yourself on the rocky sections. Stop at Bheembali for lunch. The forest sections on the lower half are beautiful in the morning light. Arrive Gaurikund by noon-1pm. Take the jeep back to Sonprayag, then a taxi back to Rishikesh. You will sleep well tonight.</div>
+        <div class="time-price">Descent: 3–5hrs · Trekking poles essential · Gaurikund-Sonprayag jeep: ₹30–₹50</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 3 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Transport (Rishikesh return)</td><td>1,000</td><td>2,000</td><td>6,000</td></tr>
+      <tr><td>Accommodation (2 nights)</td><td>800</td><td>2,500</td><td>6,000</td></tr>
+      <tr><td>Trek (on foot)</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td>Pony / Helicopter</td><td>0</td><td>3,500</td><td>16,000</td></tr>
+      <tr><td>Food (3 days)</td><td>900</td><td>2,000</td><td>4,000</td></tr>
+      <tr><td>Pooja &amp; Darshan</td><td>500</td><td>1,500</td><td>3,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹3,200</strong></td><td><strong>~₹11,500</strong></td><td><strong>~₹35,000</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Budget uses dharamshalas and treks on foot. Premium includes helicopter both ways, private car throughout, and GMVN or private accommodation. Flights/trains to Rishikesh not included.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Kedarnath Trek — 3-Day Guide</span>
+    <span class="page-header-right">Altitude Safety, Tips &amp; Packing</span>
+  </div>
+
+  <div class="label">Altitude Safety — Read This Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:4mm">Know Before You Climb</h2>
+
+  <div class="highlight-box red">
+    <strong>Altitude Sickness Protocol:</strong> Acclimatise at least one night below 2,000m (Rishikesh or Rudraprayag) before ascending to Kedarnath. Do NOT rush the ascent. Symptoms of Acute Mountain Sickness (AMS): persistent headache, nausea, vomiting, extreme fatigue, loss of coordination, confusion. If symptoms appear above Linchauri — descend immediately. Do not sleep it off at altitude. Diamox (acetazolamide 250mg twice daily) helps prevent AMS — start 24 hours before ascent, consult your doctor. Stay hydrated (3L+ water per day). Avoid alcohol. Cardiac patients should consult a physician before undertaking this trek.
+  </div>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">📋</div>
+      <div class="tip-title">Registration is Mandatory — Do It Before Arriving</div>
+      <div class="tip-desc">Register on devasthanam.uk.gov.in. Free, takes 10 minutes with Aadhaar details. Carry printout + original ID. Checkpost at Sonprayag verifies this before allowing you to proceed. Without registration you will be turned back regardless of how far you've travelled. Also: no entry for those with uncontrolled diabetes, hypertension or cardiac conditions per government guidelines.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌦️</div>
+      <div class="tip-title">Weather Changes in Minutes at Altitude</div>
+      <div class="tip-desc">A clear morning at Gaurikund can become a snowstorm at Kedarnath by afternoon. This is not an exaggeration — it has happened in June. Always carry a rain poncho and warm layer regardless of morning weather. Check local weather via the official Kedarnath weather service. If warned of bad weather, do not attempt the trek — the consequences can be fatal.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💊</div>
+      <div class="tip-title">Medical Facilities on the Route</div>
+      <div class="tip-desc">Basic first aid posts exist at Jungle Chatti, Bheembali, Linchauri, and at Kedarnath itself. A government medical camp at Kedarnath handles altitude-related emergencies. However, evacuation from Kedarnath in an emergency requires helicopter (weather permitting) or a long carry down the mountain. Prevention is everything — do not ignore warning signs.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🐴</div>
+      <div class="tip-title">Pony and Doli — Official Rates Only</div>
+      <div class="tip-desc">Pony and doli rates are government-fixed and posted at the official booking counters at Gaurikund. Book only at official counters — do not book through agents in Rishikesh who charge commissions. Pony operators are not permitted to overcharge. If quoted above official rates, report to the checkpost. Ponies are mule-type animals (not horses) and are extremely sure-footed on mountain trails.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💸</div>
+      <div class="tip-title">Cash Only Beyond Gaurikund</div>
+      <div class="tip-desc">No ATMs exist at Kedarnath. The nearest working ATM is in Sonprayag. Carry at least ₹3,000–₹5,000 cash for food, accommodation, porter tips, and pooja at the temple. Card machines exist at GMVN counter at Kedarnath but connectivity is unreliable. Don't count on it.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📵</div>
+      <div class="tip-title">No Network Above Sonprayag</div>
+      <div class="tip-desc">BSNL has some coverage in patches but most private networks (Jio, Airtel, Vi) have no signal above Sonprayag. Download offline maps of the route on Google Maps or Maps.me before departing Rishikesh. Inform your family/friends of your plan and check in when you return to Sonprayag. WhatsApp a location before you lose signal.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🕉️</div>
+      <div class="tip-title">Temple Etiquette</div>
+      <div class="tip-desc">Remove footwear before the temple complex. No leather items permitted inside. No photography inside the sanctum — strictly enforced. Dress modestly. The queue can be 1–3 hours long at peak times (10am–2pm). For a calmer experience, join the Abhishek morning darshan (5am, limited tickets) or arrive for last darshan before the temple closes (9pm).</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">❄️</div>
+      <div class="tip-title">Snow in June — Yes, Really</div>
+      <div class="tip-desc">Kedarnath opens in late April/early May and the surrounding terrain is often snow-covered until mid-June. Snow on the trail makes it slippery — microspikes or careful footwork required. After the season's first heavy snow, the trail can be closed for 1–2 days. Check conditions on the official Uttarakhand tourism portal before departing. September–October is often the most stable weather window.</div>
+    </div>
+  </div>
+
+  <div class="label">What to Carry — Kedarnath Trek</div>
+  <div class="pack-list">
+    <div class="pack-item">🧥 <strong>Warm jacket</strong> — down or heavy fleece. Temperatures at 3,583m: 2–10°C even in June.</div>
+    <div class="pack-item">🌧️ <strong>Rain poncho</strong> — sudden rain/snow above Linchauri. ₹200 from any hill town.</div>
+    <div class="pack-item">👟 <strong>Trekking shoes</strong> — waterproof, ankle support. Non-negotiable on rocky terrain.</div>
+    <div class="pack-item">🏑 <strong>Trekking poles</strong> — essential for the descent. Saves knees on 16km downhill.</div>
+    <div class="pack-item">💧 <strong>2L water bottle</strong> — fill at Bheembali. Stay hydrated — 3L+ per day at altitude.</div>
+    <div class="pack-item">🍫 <strong>Energy food</strong> — glucose biscuits, dry fruits, energy bars, ORS sachets.</div>
+    <div class="pack-item">💊 <strong>Medical kit</strong> — paracetamol, ORS, Diamox (doctor-prescribed), antacid, bandages.</div>
+    <div class="pack-item">🔦 <strong>Headlamp</strong> — 5am start in the dark. Spare batteries essential.</div>
+    <div class="pack-item">💰 <strong>Cash ₹3,000–₹5,000</strong> — no ATMs at Kedarnath. Carry in waterproof bag.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More Sacred<br/>Peaks Await</h2>
+  <p>From the Char Dham Yatra to the frozen lakes of Spiti, from Kashmir's alpine meadows to Leh-Ladakh's moonscapes — IncredibleItinerary has a complete guide for every Himalayan journey and beyond.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Char Dham Yatra · Spiti Valley · Leh-Ladakh · Kashmir · Manali · Varanasi · Meghalaya · Northeast India</p>
+  <div class="back-legal">This guide is for personal use only. Trek conditions, weather, temple timings and helicopter availability change without notice — verify before travel. Trek at your own risk. IncredibleItinerary.com is not responsible for any inaccuracies. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

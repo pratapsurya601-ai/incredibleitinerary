@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Amritsar in 2 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#d97706;--primary-light:#fbbf24;--primary-dark:#92400e;
+  --accent:#b45309;--accent-light:#fde68a;
+  --ink:#1a0f00;--cream:#fffbf0;--parchment:#fef3c7;
+  --white:#ffffff;--muted:#6b5028;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,15,0,0.97) 0%,rgba(26,15,0,0.6) 50%,rgba(26,15,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fbbf24;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(217,119,6,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(217,119,6,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--primary-light);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(217,119,6,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(217,119,6,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(251,191,36,0.08),rgba(251,191,36,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fbbf24;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fbbf24;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(217,119,6,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(217,119,6,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(217,119,6,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(217,119,6,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(217,119,6,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(217,119,6,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?w=1200&q=80" alt="Golden Temple Amritsar"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Amritsar<br/><em>in 2 Days</em></h1>
+    <p class="cover-sub">The holiest city of Sikhism — the Golden Temple's 24-hour langar, Jallianwala Bagh's haunting history, the world's most theatrical border ceremony, and the finest kulcha in Punjab</p>
+    <div class="cover-pills">
+      <span class="pill">🪯 2 Days</span>
+      <span class="pill">🏛️ Golden Temple</span>
+      <span class="pill">💰 ₹3,000–₹12,000</span>
+      <span class="pill">📅 All Year</span>
+      <span class="pill">🚩 Wagah Border</span>
+      <span class="pill">🍽️ Langar</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(217,119,6,0.3);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Amritsar 2-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Faith, History &amp; the Finest Food in Punjab</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">2 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏛️</div><span class="stat-val">Golden Temple</span><span class="stat-label">Harmandir Sahib</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹3k–12k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">All Year</span><span class="stat-label">Best: Oct–Mar</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Golden Temple</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">Jallianwala</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Partition Museum</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Wagah Border</span>
+    <span class="route-sub">All within Amritsar + 30km to Wagah · Amritsar Railway Station 5 mins from Golden Temple</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 — Sacred</div>
+      <div class="city-name">🪙 Golden Temple</div>
+      <div class="city-desc">Harmandir Sahib (the Golden Temple) is the spiritual and temporal centre of Sikhism. The temple itself is covered in 750kg of gold leaf. The surrounding Amrit Sarovar (Pool of Nectar) reflects the golden structure, most spectacularly at night. The langar (communal kitchen) serves free meals 24 hours a day, 365 days a year — 100,000 meals daily. This is both spiritual practice and the world's largest feeding programme.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 1 — History</div>
+      <div class="city-name">🌺 Jallianwala Bagh</div>
+      <div class="city-desc">On 13 April 1919, British Brigadier General Dyer ordered troops to fire on an unarmed crowd of around 15,000 people gathered at Jallianwala Bagh — killing at least 379 (estimates range to over 1,000). The bullet holes are still visible in the walls. The event transformed the Indian independence movement. Walking these grounds is one of the most sobering historical experiences in India.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Ceremony</div>
+      <div class="city-name">🚩 Wagah Border Ceremony</div>
+      <div class="city-desc">Every evening at sunset, India's Border Security Force and Pakistan's Rangers perform the Beating Retreat ceremony at the Wagah–Attari border — an elaborately choreographed and intensely patriotic lowering of the flags with high-stepping marches and crowd participation. Free, but arrive 2 hours early for seating. The ceremony is genuinely theatrical, the crowd energy extraordinary, and the India-Pakistan tension tangible even in this coordinated spectacle.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 1–2 Food</div>
+      <div class="city-name">🍞 Punjab Food Capital</div>
+      <div class="city-desc">Amritsar kulcha (stuffed bread baked in a tandoor, served with chole) is Punjab's finest contribution to Indian food. Bharawan Da Dhaba for kulcha since 1912. Kesar Da Dhaba for dal makhani (voted among the best in India). Famous lassi shops near the Golden Temple. Lawrence Road area for fish tikka. Makki di roti and sarson da saag (only in winter, November–February) at any authentic Punjabi dhaba.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"In the langar of the Golden Temple, a billionaire and a rickshaw driver sit on the same mat and eat the same meal. Sikhism calls this seva — selfless service. It feeds 100,000 people a day without asking their name."</p>
+  </div>
+
+  <div class="highlight-box saffron">
+    <strong>Best Time to Visit:</strong> All year round — the Golden Temple is magnificent in every season. October–March is most comfortable (15–25°C). Summer (April–June) can reach 45°C but the temple is air-conditioned in its inner halls. During Baisakhi (13 April, the Sikh harvest festival and anniversary of the Khalsa founding) the entire city celebrates — extraordinary but very crowded. Golden Temple is open 24 hours and is most magical between 4–6am when few tourists are present.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1 & 2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Amritsar 2-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Golden Temple, Jallianwala &amp; Wagah</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Faith &amp; History</div>
+      <div class="day-title">Golden Temple, Jallianwala Bagh &amp; Partition Museum</div>
+      <div class="day-sub">5am Golden Temple · Langar meal · Jallianwala Bagh · Partition Museum · Hall Bazaar · Kulcha dinner</div>
+      <div class="day-cost">💰 Golden Temple: free · Langar: free · Jallianwala: free · Partition Museum: ₹200 · Total day: ₹300–₹600</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Golden Temple at Dawn — The Most Spiritual Hour</div>
+        <div class="time-desc">The Golden Temple (Harmandir Sahib, literally "abode of God") is open 24 hours, but the pre-dawn hours (4–6am) offer an experience unlike any other time. The golden structure illuminated against the dark sky, reflected perfectly in the Amrit Sarovar, with kirtan (sacred hymns) broadcast from loudspeakers filling the air — and far fewer people than midday. The Palki Sahib ceremony at 4am brings the Guru Granth Sahib (the Sikh holy scripture) from its overnight resting place to the temple — witnessing this procession is extraordinary. Dress code mandatory: head covered (scarves available free at all entrances), shoes removed, feet washed in the shallow pool at the entrance. No leather inside the complex.</div>
+        <div class="time-price">Entry: free, always · Head scarves: free at entrance · Shoe check: ₹5 · Locker: ₹10 · Open 24 hours · Best before 7am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Langar — 100,000 Free Meals a Day</div>
+        <div class="time-desc">The langar hall at the Golden Temple serves free meals to everyone, regardless of religion, caste, gender or nationality, 24 hours a day, 365 days a year. Currently feeding approximately 100,000 people daily (up to 200,000 on special days). Sit cross-legged in rows on the floor. Volunteers serve dal, sabzi, roti (chapati or puri), rice and a sweet — always wholesome and nourishing. You can volunteer to help in the langar — washing dishes is the most common seva. The experience of eating in complete equality with strangers of every background is uniquely moving. This is Sikhism's most visible and extraordinary expression.</div>
+        <div class="time-price">Completely free · No booking · Sit wherever there is space · Vegetarian only · Volunteers always welcome to help</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Jallianwala Bagh — The Massacre Garden</div>
+        <div class="time-desc">A 5-minute walk from the Golden Temple. On the afternoon of 13 April 1919 (Baisakhi day), Brigadier General Reginald Dyer ordered 50 soldiers to fire without warning on a crowd of approximately 15,000 at this enclosed garden — killing at minimum 379 people (British official figure; Indian figures estimate over 1,000). The crowd could not flee — the only entrance was narrow and troops were stationed there. The bullet holes in the walls remain preserved. The well into which people jumped to escape is marked. This event, more than almost any other, radicalised Mahatma Gandhi and directly accelerated the independence movement. Walk slowly. Read every plaque.</div>
+        <div class="time-price">Entry: free · 5-minute walk from Golden Temple · Allow 45 minutes · Photography is appropriate</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Partition Museum — India's Most Important New Museum</div>
+        <div class="time-desc">Opened in 2017 in the historic Town Hall, the Partition Museum is the world's first museum dedicated to the 1947 Partition of India — the largest mass migration in human history, displacing 14–17 million people and killing between 200,000 and 2 million (estimates vary). The museum is extraordinarily designed: oral histories from survivors, personal objects, photographs, maps and letters. It is deeply moving and essential for understanding modern India and Pakistan. The collection of survivor testimonies is in multiple languages including Punjabi, Hindi, Urdu and English. Allow 2–2.5 hours — this museum deserves unhurried attention.</div>
+        <div class="time-price">Entry: ₹200 adults · ₹100 students · Town Hall Building, Hall Bazaar · Open 10am–6pm, closed Monday</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Hall Bazaar &amp; Bharawan Da Dhaba for Kulcha</div>
+        <div class="time-desc">Hall Bazaar is Amritsar's main traditional market — famous for phulkari dupattas (hand-embroidered shawls in vibrant geometric patterns, ₹500–₹3,000), juttis (traditional Punjabi embroidered shoes, ₹200–₹1,000), and silver jewellery. For dinner: Bharawan Da Dhaba near the Golden Temple has served amritsari kulcha (stuffed bread with aloo/paneer/onion fillings, baked in tandoor, served with chole and butter) since 1912 — considered the finest kulcha in India. A meal here (₹150–₹250/person) is a pilgrimage in its own right.</div>
+        <div class="time-price">Hall Bazaar: free to browse · Bharawan Da Dhaba kulcha meal: ₹150–₹250 · Juttis: ₹200–₹1,000 · Phulkari: ₹500–₹3,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Border &amp; Fort</div>
+      <div class="day-title">Wagah Border Ceremony, Gobindgarh Fort &amp; Kesar Da Dhaba</div>
+      <div class="day-sub">Durgiana Temple morning · Gobindgarh Fort afternoon · Wagah Border (leave by 3pm) · Kesar Da Dhaba dinner</div>
+      <div class="day-cost">💰 Wagah: free · Gobindgarh: ₹200 · Total day: ₹500–₹1,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Durgiana Temple — The "Silver Temple" of Amritsar</div>
+        <div class="time-desc">The Durgiana Temple is Amritsar's most important Hindu temple — a smaller version of the Golden Temple (silver-plated doors, a central island temple in a sacred lake) dedicated to the goddess Durga. Often overlooked by tourists focussed entirely on the Golden Temple, it is architecturally beautiful and spiritually rich. The morning is peaceful, with local devotees rather than tourists. The temple dates to the 16th century and the silver doors were gifted by the Maharaja of Patiala in the 19th century. Free entry, remove shoes at entrance, head covering required for women.</div>
+        <div class="time-price">Entry: free · 5 minutes from Golden Temple area · Morning is quiet and best · 30–45 minutes</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Gobindgarh Fort — The Historic Garrison of Amritsar</div>
+        <div class="time-desc">Gobindgarh Fort, built in the 18th century by the Bhangi Misl Sikh confederation, was later taken over by Maharaja Ranjit Singh and then the British. It is the fort where the legendary Koh-i-Noor diamond was kept before it was taken by the British to Queen Victoria in 1849. The fort has been restored and opened as a heritage complex with a sound-and-light show, weapons museum, folk performances and re-enactments of Sikh history. A full-day attraction — 3–4 hours. Shows run at different times; check schedule at the entrance.</div>
+        <div class="time-price">Entry: ₹200 · Evening light-and-sound show: ₹100 extra · Tuk-tuk from Golden Temple: ₹60 · Open 10am onwards</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Leave for Wagah Border — Arrive 2 Hours Early</div>
+        <div class="time-desc">The Wagah-Attari border post is 30km from Amritsar (45 minutes by auto or taxi, ₹400–₹600 return). The Beating Retreat ceremony happens at exactly sunset — arrive at least 2 hours early for seated positions in the grandstand. The ceremony begins when crowds are still filling in — the BSF soldiers perform high-stepping marches, the crowd chants "Jai Hind," women are invited to do a short run with the Indian flag. The simultaneous lowering of the Indian and Pakistani flags, coordinated to the second, is the emotional culmination. The Pakistan side's crowd is visible across the gate. This ceremony, which began in 1959, is simultaneously absurd, theatrical and genuinely moving — a daily reminder of partition's legacy.</div>
+        <div class="time-price">Ceremony: free · Taxi return: ₹400–₹600 · Check official sunset time for ceremony timing · Bring government ID</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Kesar Da Dhaba — Dal Makhani Since 1916</div>
+        <div class="time-desc">Kesar Da Dhaba (est. 1916, Shastri Market) is considered by many food writers to serve the finest dal makhani in India. The black urad lentils are slow-cooked overnight in butter and cream, then simmered for hours on a wood fire — the result is a dal of extraordinary depth and smokiness. The dhabas paneer dishes, rajma and lassi are equally celebrated. No reservations, expect queues in the evening. Meal per person: ₹200–₹400. The restaurant is clean and unpretentious — the focus is entirely on the food, as it should be.</div>
+        <div class="time-price">Kesar Da Dhaba: ₹200–₹400/person · Shastri Market, 5 mins from Golden Temple · Queue expected evenings</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — BUDGET + TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Amritsar 2-Day Itinerary</span>
+    <span class="page-header-right">Budget · Tips · Packing</span>
+  </div>
+
+  <div class="label">Budget Breakdown — Per Person, 2 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (2 nights)</td><td>1,200</td><td>3,500</td><td>10,000</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>600</td><td>1,500</td><td>4,000</td></tr>
+      <tr><td>Wagah Border taxi return</td><td>500</td><td>500</td><td>800</td></tr>
+      <tr><td>Museum &amp; Fort Entries</td><td>400</td><td>400</td><td>400</td></tr>
+      <tr><td>Local Transport (autos)</td><td>300</td><td>600</td><td>1,200</td></tr>
+      <tr><td>Shopping (phulkari, juttis)</td><td>500</td><td>2,000</td><td>8,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹3,500</strong></td><td><strong>~₹8,500</strong></td><td><strong>₹24,400+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Flights from Delhi to Amritsar: ₹1,500–₹4,000 one way (1 hour). Train from Delhi: Shatabdi Express 6 hours, ₹700–₹1,500. Budget stays near Golden Temple: ₹500–₹700/night. Mid-range: ₹1,500–₹3,000 near the temple. Golden Temple offers free accommodation (sarai) for pilgrims.</p>
+
+  <div class="label" style="margin-top:3mm">Insider Tips</div>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🪯</div>
+      <div class="tip-title">Golden Temple — The Dawn Experience</div>
+      <div class="tip-desc">Visit twice: once at 4–6am (the Palki Sahib procession, almost no tourists, the golden reflection in the dark pool) and once in the evening after 8pm when the temple is fully lit and the kirtan reaches its most intense. If you can only visit once: make it dawn. The 5am experience at the Golden Temple is among the most spiritually powerful of any sacred site in India, for believers and non-believers alike.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍞</div>
+      <div class="tip-title">Food Guide — Beyond the Famous Names</div>
+      <div class="tip-desc">Lawrence Road for fish tikka (the amritsari fish fry — batter-fried basa fish with ajwain and gram flour — is addictive, ₹150–₹250). Makhan Fish &amp; Chicken Corner (near Lawrence Road) — open since 1945. Famous lassi shops near the Golden Temple: Ahuja Milk House and Gian di Lassi serve a thick malai lassi in terracotta cups (₹80). Amritsari papad (sun-dried lentil crackers) make excellent cheap gifts — sold at all provision stores.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚩</div>
+      <div class="tip-title">Wagah Ceremony — What to Expect</div>
+      <div class="tip-desc">Arrive 2 hours before sunset. Seating is segregated — men left, women right, VIP section straight ahead (requires separate pass, not worth it). The ceremony begins with BSF soldiers marching from the gate at high-step — boots aimed above head level. Crowd participation is loudest during "Bharat Mata Ki Jai" chants. The Pakistan side responds with their own chants. The flags are lowered simultaneously to the second. Duration: 45–60 minutes. Photography is permitted from the stands. No bags inside the ceremony area — leave in the paid cloakroom outside.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">👗</div>
+      <div class="tip-title">Golden Temple Dress Code</div>
+      <div class="tip-desc">Head must be covered — free fabric scarves are available at all four entrances. Shoes must be removed and feet washed in the shallow footbath before entering. Leather is not permitted inside the complex (belts and bags included — leave at the free locker). Modesty is expected: cover shoulders and knees. Men should not wear shorts. The rules are strictly enforced at the entrance. Visitors who fail to comply are asked to change or leave — the rules exist for good reason and are universally applied.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏛️</div>
+      <div class="tip-title">Partition Museum — Why It Matters</div>
+      <div class="tip-desc">The Partition Museum (Town Hall, Hall Bazaar) is one of India's best museums opened in the 21st century. The 1947 Partition displaced 14–17 million people in weeks — the largest forced migration in human history. The museum's oral history collection is remarkable. Allocate 2–2.5 hours. The museum is staffed by trained guides who are often descendants of Partition survivors themselves. The gift shop sells excellent books on Partition history. It is closed on Mondays.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛍️</div>
+      <div class="tip-title">Shopping Guide</div>
+      <div class="tip-desc">Phulkari dupattas (hand-embroidered, the original geometric pattern is on a terracotta or black background) — genuine handloom from Hall Bazaar: ₹500–₹3,000. Machine-embroidered versions are sold everywhere for ₹150 — they look similar but are not the same. Juttis (pointed leather shoes with embroidery): Katra Jaimal Singh market for the best selection. Sikh religious items (khanda medallions, steel kada bangles): near the Golden Temple; buy only from the Gurdwara's official shops for authenticity.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Amritsar</div>
+  <div class="pack-list">
+    <div class="pack-item">🧣 <strong>Head scarf or bandana</strong> — multiple visits to the Golden Temple require head covering every time. Pack 2–3 lightweight scarves.</div>
+    <div class="pack-item">👟 <strong>Slip-on shoes</strong> — you remove footwear at the Golden Temple, Jallianwala Bagh and Durgiana Temple. Slip-ons save minutes each time.</div>
+    <div class="pack-item">👗 <strong>Modest, full-coverage clothing</strong> — shoulders and knees covered at all religious sites. Amritsar is more conservative than Delhi or Mumbai.</div>
+    <div class="pack-item">🔋 <strong>Power bank</strong> — Wagah Border + full day itinerary drains phones. A fully charged bank covers both days.</div>
+    <div class="pack-item">💊 <strong>Stomach medicine</strong> — Amritsari kulcha is rich, the dal is buttery, the lassi is thick. Digestive aids help first-timers.</div>
+    <div class="pack-item">💵 <strong>Cash in mixed notes</strong> — dhabas, Hall Bazaar stalls and autos are cash-only. Keep ₹2,000 in ₹100 notes.</div>
+    <div class="pack-item">📱 <strong>Wagah ceremony timing</strong> — check the exact sunset time for your visit date. Ceremony timing changes monthly. Search "Wagah Border timings [month]" online.</div>
+    <div class="pack-item">🧴 <strong>Sunscreen</strong> — Amritsar in summer reaches 45°C. The marble causeways at the Golden Temple reflect heat intensely.</div>
+    <div class="pack-item">🌿 <strong>Anti-bacterial wipes</strong> — for before the langar meal (no utensils provided — the roti is used to scoop the dal).</div>
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>One last thing:</strong> Sit by the Sarovar (the sacred pool) at the Golden Temple after the morning rush. Watch the reflections shift as the light changes. The kirtan plays continuously. People of every background sit beside you. The building has stood here since 1589, rebuilt and plated with gold in 1830. Five times it has been attacked and destroyed. Five times it has been rebuilt. Amritsar's faith is not passive. It is foundational.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the Himalayan yoga retreats of Rishikesh to the coffee estates of Coorg, from the Mughal grandeur of Agra to the ancient ruins of Hampi — IncredibleItinerary has a complete guide for every journey.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Delhi · Mumbai · Jaipur · Agra · Varanasi · Rishikesh · Darjeeling · Hampi · Coorg · Mysore</p>
+  <div class="back-legal">This guide is for personal use only. Prices, ceremony times and availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>London in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#1e3a8a;--primary-light:#93c5fd;--primary-dark:#172554;
+  --accent:#dc2626;--accent-light:#fca5a5;
+  --ink:#0a0f1e;--cream:#f8f9ff;--parchment:#dbeafe;
+  --white:#ffffff;--muted:#4a5568;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,30,0.97) 0%,rgba(10,15,30,0.6) 50%,rgba(10,15,30,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#93c5fd;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(30,58,138,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(30,58,138,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:var(--ink)}
+.route-stop.red{background:var(--accent)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(30,58,138,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(30,58,138,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(147,197,253,0.08),rgba(147,197,253,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#93c5fd;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#93c5fd;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(30,58,138,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.navy{background:rgba(147,197,253,0.08);border:1px solid rgba(147,197,253,0.25);color:#172554}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(30,58,138,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(30,58,138,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(30,58,138,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(30,58,138,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(30,58,138,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?w=1200&q=80" alt="London Big Ben"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">London<br/><em>in 5 Days</em></h1>
+    <p class="cover-sub">The world's most storied city — Big Ben, Buckingham Palace, the British Museum, Greenwich &amp; the Thames</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 5 Days</span>
+      <span class="pill">🛂 UK Visa</span>
+      <span class="pill">💰 ₹90,000–₹2,20,000</span>
+      <span class="pill">☀️ May–Sep</span>
+      <span class="pill">🔔 Big Ben</span>
+      <span class="pill">🏛️ Free Museums</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(30,58,138,0.3);border:1px solid rgba(147,197,253,0.4);color:#93c5fd;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">London 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Royal, Historic &amp; Utterly Captivating — Five Days in London</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">UK Visa</span><span class="stat-label">Required</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹90k–2.2L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">☀️</div><span class="stat-val">May–Sep</span><span class="stat-label">Best Season</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">Heathrow</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop light">Tower Bridge</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">British Museum</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Westminster</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop red">Greenwich</span>
+    <span class="route-sub">1 city · Tube + bus · Heathrow to central London 50 min on Tube</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🏰 Tower of London &amp; South Bank</div>
+      <div class="city-desc">The 1,000-year-old Tower of London holds the Crown Jewels — the most valuable jewellery collection in the world. Tower Bridge opens for tall ships. Borough Market is London's finest food market. The Tate Modern is one of the world's great contemporary art galleries — free entry.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🏛️ British Museum &amp; West End</div>
+      <div class="city-desc">Completely free, the British Museum holds 8 million objects — the Rosetta Stone, Elgin Marbles, Egyptian mummies, Lewis chessmen. Allow 4 hours. Then Covent Garden's street performers, the National Gallery, and Trafalgar Square. Dinner in Soho.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">👑 Westminster &amp; Royal London</div>
+      <div class="city-desc">Big Ben, Parliament, Westminster Abbey, Buckingham Palace (Changing of Guard at 11am on alternating days). Hyde Park's Serpentine Gallery, the Diana Memorial. Evening in Notting Hill — pastel townhouses, Portobello Road market, excellent neighbourhood restaurants.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4</div>
+      <div class="city-name">🌍 Greenwich &amp; East London</div>
+      <div class="city-desc">Sail from Westminster pier to Greenwich — Royal Observatory, the Prime Meridian line (stand in two hemispheres at once!), Cutty Sark clipper ship. Evening: Brick Lane for the best Indian food outside India, London's largest Bengali community and legendary curry houses.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"When a man is tired of London, he is tired of life; for there is in London all that life can afford." — Samuel Johnson, 1777. Still entirely true.</p>
+  </div>
+  <div class="highlight-box navy">
+    <strong>UK Visa for Indian Travellers:</strong> UK Standard Visitor Visa — apply online at gov.uk. Fee: approximately ₹11,000. Processing: 3 weeks standard (6-week service available). Required: 3-month bank statement, employment letter, hotel bookings, return flight tickets, ITR last 2 years. The UK visa is separate from Schengen — you need both if combining UK + Europe. Apply 6–8 weeks ahead in peak season.
+  </div>
+  <div class="highlight-box amber">
+    <strong>Flights from India:</strong> Delhi/Mumbai to London Heathrow (LHR) — ₹50,000–₹90,000 return. Air India flies direct from Delhi (~9 hrs). British Airways, Virgin Atlantic, and Vistara operate the route. Indirect flights via Middle East (Emirates/Etihad/Qatar) and Doha are often cheaper. Check Skyscanner 2–3 months ahead.
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">London 5-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Tower of London &amp; British Museum</span>
+  </div>
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Historic East London</div>
+      <div class="day-title">Tower of London, Tower Bridge &amp; Tate Modern</div>
+      <div class="day-sub">Tower of London (Crown Jewels) · Borough Market lunch · Shakespeare's Globe · Tate Modern · South Bank evening walk</div>
+      <div class="day-cost">💰 Tower of London: ₹3,500 · Tate Modern: FREE · Borough Market: ₹600–₹1,200</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Heathrow to Central London — Tube is the Best Option</div>
+        <div class="time-desc">Take the Piccadilly Line from Heathrow to central London (50–60 minutes, ₹700). The Elizabeth Line (Crossrail) is faster and more comfortable — runs to Paddington and Bond Street (30 minutes, ₹800). The Heathrow Express train (15 minutes to Paddington) costs ₹2,000 — only worth it if you're in a rush. Buy an Oyster card or contactless pay with your debit/credit card directly on the Tube (better rates than cash). London hotels are expensive — Travelodge and Premier Inn offer budget options from ₹6,000/night.</div>
+        <div class="time-price">Tube from Heathrow: ₹700 · Budget hotel: ₹6,000–₹10,000/night · Mid: ₹12,000–₹22,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Tower of London — Crown Jewels &amp; 1,000 Years of History</div>
+        <div class="time-desc">The Tower of London has been a royal palace, prison, treasury and zoo over its 1,000-year history. Anne Boleyn was beheaded here. The Crown Jewels are kept in the Jewel House — the Imperial State Crown (2,868 diamonds), the Sceptre with the Cross, and the Sovereign's Orb. The Yeoman Warder (Beefeater) tours are hilarious and historically rich — join one at the gate. Book online to save ₹400 and time at the ticket desk. Allow 2.5–3 hours.</div>
+        <div class="time-price">Entry: ₹3,500 adults (book online) · Beefeater tours: included · Open 9am–5:30pm (Sun/Mon from 10am)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Borough Market — London's Greatest Food Market</div>
+        <div class="time-desc">Walk across Tower Bridge (free, extraordinary views) and south to Borough Market — London's oldest and most celebrated food market, operating since the 12th century. Open Monday–Saturday. Vendors include: Raclette and cheese stalls, Spanish jamón, Ethiopian injera, Indian street food, freshly shucked oysters, wild mushrooms. Perfect for lunch — budget ₹600–₹1,200 for a full lunch from multiple vendors. Never buy food directly across from any vendor without tasting first — samples are freely offered.</div>
+        <div class="time-price">Borough Market entry: free · Lunch: ₹600–₹1,200 · Closed Sundays</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Shakespeare's Globe Theatre &amp; Tate Modern</div>
+        <div class="time-desc">The reconstructed Globe Theatre stands 200 metres from the original site where Shakespeare's plays premiered in 1599. Guided tours run daily (₹1,800) or see an evening performance (₹1,200 standing yard tickets — authentic, atmospheric, brilliant). Adjacent is the Tate Modern — housed in a converted Bankside Power Station, it's one of the world's finest collections of modern and contemporary art, completely FREE. The Turbine Hall permanent installation is a spectacular space. The Switch House building has a free rooftop terrace with panoramic Thames views.</div>
+        <div class="time-price">Globe tour: ₹1,800 · Tate Modern: FREE · Rooftop terrace: free</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Free Museums Day</div>
+      <div class="day-title">British Museum, National Gallery &amp; Covent Garden</div>
+      <div class="day-sub">British Museum (Rosetta Stone) · Covent Garden street performers · National Gallery (Van Eyck, Turner) · Trafalgar Square · Piccadilly Circus</div>
+      <div class="day-cost">💰 British Museum: FREE · National Gallery: FREE · Lunch: ₹800–₹1,500</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">British Museum — 8 Million Objects, Zero Entry Fee</div>
+        <div class="time-desc">One of the greatest museums in the world and completely free. The Rosetta Stone (196 BC — the key to deciphering Egyptian hieroglyphics) is in Room 4. The Elgin Marbles (Greek Parthenon sculptures) in Room 18 are extraordinary. The Egyptian mummies in Rooms 62–63 include artefacts 3,000 years old. The Lewis Chessmen (Room 40) are the most famous medieval chess pieces in existence. Arrive at 10am when it opens — the Great Court fills with visitors by noon. Buy the museum map for £2. Allow 3–4 hours minimum.</div>
+        <div class="time-price">Entry: FREE · Great Russell Street, Bloomsbury · Café inside · Map: ₹200</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">Covent Garden — Street Performance Capital of London</div>
+        <div class="time-desc">The covered market piazza of Covent Garden is London's premier street performance venue — circus acts, opera singers, comedians and living statues perform in the central space. The Apple Market inside sells handmade jewellery, crafts and antiques. Lunch options: Flat Iron steak (₹2,000), Dishoom restaurant (excellent, queue outside — Bombay café food — expect 30 min wait), or grab a falafel wrap from one of the market vendors. The area connects to the Seven Dials neighbourhood — independent shops and excellent coffee.</div>
+        <div class="time-price">Covent Garden: free to wander · Dishoom: ₹2,000/person · Seven Dials: great coffee spots</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:30 PM</div>
+      <div class="time-content">
+        <div class="time-title">National Gallery — Free European Masterpieces from 1200–1900</div>
+        <div class="time-desc">On the north side of Trafalgar Square, the National Gallery is completely free and holds 2,300 paintings. Highlights: Van Eyck's Arnolfini Portrait (Room 56), Vermeer's Young Woman Standing at a Virginal, Monet's Water Lilies at Twilight, Turner's The Fighting Temeraire (voted the greatest painting in Britain in 2005), Velázquez's The Rokeby Venus, da Vinci's The Virgin of the Rocks. The café on the lower level does excellent afternoon tea (₹1,800/person).</div>
+        <div class="time-price">Entry: FREE · Trafalgar Square, WC2N · Audio guide: ₹400 · Café: ₹1,800 afternoon tea</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Trafalgar Square, Piccadilly Circus &amp; Soho Dinner</div>
+        <div class="time-desc">Trafalgar Square with Nelson's Column and the four lions is free and photogenic at any hour. Walk down to Piccadilly Circus — London's Times Square equivalent, neon signs and crowds. Continue into Soho for dinner — one of London's most diverse dining areas. Dishoom (Carnaby Street) has a 1940s Bombay café feel and is enormously popular with Londoners for its black dal, bacon naan roll and Irani chai. Alternatively, Chinatown Gerrard Street is 2 minutes away for excellent dim sum.</div>
+        <div class="time-price">Piccadilly Circus: free · Soho dinner: ₹1,500–₹3,000/person · Dishoom: book ahead online</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 3–5 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">London 5-Day Itinerary</span>
+    <span class="page-header-right">Day 3–5 · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Royal London</div>
+      <div class="day-title">Westminster, Buckingham Palace &amp; Notting Hill</div>
+      <div class="day-sub">Big Ben · Westminster Abbey · Buckingham Palace (Changing of Guard 11am) · Hyde Park · Notting Hill evening</div>
+      <div class="day-cost">💰 Westminster Abbey: ₹3,000 · Hyde Park: free · Notting Hill dinner: ₹2,500</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Big Ben &amp; Houses of Parliament — Britain's Most Iconic Image</div>
+        <div class="time-desc">The Elizabeth Tower (universally called Big Ben, which is actually the bell inside) underwent a major restoration completed in 2022. The Gothic Revival Houses of Parliament are among the finest Victorian buildings in the world. Free external viewing from Westminster Bridge — best views are from the South Bank (Lambeth Bridge side). Interior tours of Parliament are available when Parliament is in recess (check parliament.uk — guided tours ₹2,500). The Victoria Tower Gardens has a replica of Rodin's Burghers of Calais statue.</div>
+        <div class="time-price">Exterior: free · Parliament tours (recess only): ₹2,500 · Westminster Bridge: best photo spot</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Westminster Abbey — 1,000 Years of English History</div>
+        <div class="time-desc">The gothic abbey where every English and British monarch since 1066 has been crowned, and where 17 monarchs are buried. The Poets' Corner has memorials to Chaucer, Shakespeare, Dickens, Darwin. The recently added grave of the Unknown Warrior. The 13th century Cosmati pavement. The Henry VII Lady Chapel — one of the finest examples of English Gothic architecture. Book online (₹3,000, slightly cheaper than at door). The multimedia guide included in the ticket is excellent. Allow 2 hours.</div>
+        <div class="time-price">Entry: ₹3,000 · Book at westminster-abbey.org · Audio guide included · Closed Sundays to tourists</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Buckingham Palace — Changing of the Guard</div>
+        <div class="time-desc">The Changing of the Guard ceremony (when the New Guard takes over from the Old Guard) happens at Buckingham Palace at 11am. It runs daily April–July and on alternate days August–March — check the Royal website before going. Arrive 30–45 minutes early for a good viewing spot by the palace gates. Free to watch. The palace interior opens for summer tours August–September (₹3,500) when the King is in Scotland. The Queen's Gallery, St James's Park, and the Royal Mews are all adjacent.</div>
+        <div class="time-price">Changing of Guard: FREE · Palace summer tour: ₹3,500 · St James's Park: free (flamingos!)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Maritime &amp; East London</div>
+      <div class="day-title">Greenwich, the Meridian &amp; Brick Lane Curry</div>
+      <div class="day-sub">River ferry from Westminster Pier · Royal Observatory · Prime Meridian · Cutty Sark · Brick Lane evening for Indian food</div>
+      <div class="day-cost">💰 Ferry: ₹1,200 return · Observatory: ₹1,500 · Brick Lane curry: ₹1,500–₹2,500</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">River Thames Ferry to Greenwich — Best Way to Arrive</div>
+        <div class="time-desc">Take the Thames Clipper river ferry from Westminster Pier (or Embankment) to Greenwich — 45 minutes on the Thames, passing the South Bank, Canary Wharf financial district, and the O2. Far more atmospheric than the Tube. Use your Oyster card for discounted fares. Greenwich itself is a UNESCO World Heritage Site — the Royal Naval College (Christopher Wren's masterpiece), the Painted Hall (Britain's Sistine Chapel), the National Maritime Museum (free), and the Royal Observatory on the hill above.</div>
+        <div class="time-price">Thames Clipper: ₹600 single · Observatory: ₹1,500 · Painted Hall: ₹600 · Maritime Museum: FREE</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Royal Observatory &amp; Prime Meridian — Stand in Two Hemispheres</div>
+        <div class="time-desc">The Royal Observatory Greenwich is where Greenwich Mean Time (GMT) originates and where the Prime Meridian of the world — 0° longitude — is marked by a brass line in the courtyard. Stand with one foot in the Eastern Hemisphere and one in the Western. The Observatory houses John Harrison's revolutionary maritime chronometers (H1–H4) that solved the longitude problem and saved thousands of ships from wreck. The camera obscura provides a live view over the Thames. The view from the hill over Canary Wharf and the City of London is spectacular.</div>
+        <div class="time-price">Observatory entry: ₹1,500 · Prime Meridian courtyard: included · Hill: free access</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Brick Lane — Indian Food Capital of London</div>
+        <div class="time-desc">Brick Lane in East London is home to London's largest Bengali community and the highest concentration of Indian and Bangladeshi restaurants in Britain. Dozens of curry houses compete for business — restaurant hosts will tout from the doorstep. Ignore them and look for restaurants that are full of families and locals, not tourist groups. The best restaurants: Tayyabs (Punjabi — famous lamb chops, queue expected), Café Spice Namaste (Parsee food, more upscale), or simply choose a packed-looking curry house on Brick Lane itself. Budget: ₹1,500–₹2,500/person including rice, naan and drinks.</div>
+        <div class="time-price">Brick Lane curry dinner: ₹1,500–₹2,500 · Bagel shops open 24hrs for late night snacks (₹150)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Shopping &amp; Departure</div>
+      <div class="day-title">Oxford Street, Camden Market &amp; Farewell</div>
+      <div class="day-sub">Oxford Street flagship stores · Selfridges · Camden Market · departure</div>
+      <div class="day-cost">💰 Shopping: budget as desired · Camden Market: free to browse</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:3mm">Budget Breakdown — Per Person, 5 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (5 nights)</td><td>30,000</td><td>60,000</td><td>1,20,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>8,000</td><td>20,000</td><td>45,000</td></tr>
+      <tr><td>Transport (Oyster card)</td><td>3,000</td><td>5,000</td><td>10,000</td></tr>
+      <tr><td>Paid Attractions</td><td>7,000</td><td>12,000</td><td>18,000</td></tr>
+      <tr><td>Shopping &amp; Souvenirs</td><td>2,000</td><td>8,000</td><td>30,000+</td></tr>
+      <tr><td>Flights (Delhi/Mumbai–LHR)</td><td>50,000</td><td>65,000</td><td>1,00,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹1,00,000</strong></td><td><strong>~₹1,70,000</strong></td><td><strong>₹3,23,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">London tip: British Museum, National Gallery, Tate Modern, Natural History Museum, Science Museum, V&amp;A Museum are ALL completely FREE — London's cultural offering is extraordinary and largely at no cost.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🃏</div>
+      <div class="tip-title">Oyster Card — Essential from Day One</div>
+      <div class="tip-desc">Buy an Oyster card at Heathrow station (₹500 deposit, refundable). Load credit and tap in/out on Tube, bus and river ferry. Daily fare capping means you never overpay — after 3–4 journeys per day, you pay nothing more. Contactless bank cards work equally well. Never buy paper tickets — they cost 3x more.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌧️</div>
+      <div class="tip-title">Always Carry an Umbrella</div>
+      <div class="tip-desc">London weather is famously unpredictable — a sunny morning can turn to heavy rain within an hour. A compact fold-flat umbrella is essential. Don't rely on weather forecasts beyond 2 hours. The saying is true: there is no bad weather in London, only inappropriate clothing.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏛️</div>
+      <div class="tip-title">London's Free Museums Are World Class</div>
+      <div class="tip-desc">The British Museum, National Gallery, Natural History Museum, Science Museum, V&amp;A, Tate Modern — all completely free. This is genuinely unusual globally. Plan your paid attractions (Tower of London, Westminster Abbey, Royal Observatory) and fill the rest with free museums — you could spend 10 days in London's free museums alone.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎭</div>
+      <div class="tip-title">West End Theatre — London at Its Best</div>
+      <div class="tip-desc">A West End show is one of London's great experiences. Check tkts.co.uk (official discounted tickets) for same-day half-price seats. The shows: Hamilton, Les Misérables, The Phantom of the Opera, Mamma Mia. Day seats for many shows are sold from 10am on the day at the box office — cheaper than online.</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More of Europe<br/>Awaits You</h2>
+  <p>From the romance of Paris to the ruins of Rome, from Barcelona's beaches to Switzerland's Alps — IncredibleItinerary has a complete guide for every destination, written specifically for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · Rome · Barcelona · Amsterdam · Switzerland · New York · Turkey · Malaysia · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

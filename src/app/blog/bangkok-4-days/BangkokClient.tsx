@@ -86,7 +86,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
       <button onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-5 py-4 bg-parchment hover:bg-parchment-2 transition-colors">
         <div className="flex items-center gap-3 text-left">
-          <span className="font-serif text-xl text-gold-dark font-light">{day}</span>
+          <span className="font-serif text-xl text-amber-900 font-light">{day}</span>
           <span className="text-sm text-ink font-medium">{title}</span>
         </div>
         <span className="text-muted text-lg">{open ? "\u2212" : "+"}</span>
@@ -96,7 +96,7 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-gold mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
+                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
                 {item}
               </li>
             ))}
@@ -135,7 +135,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       <button onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-parchment transition-colors">
         <span className="font-medium text-sm text-ink pr-4">{q}</span>
-        <span className={`text-gold text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
+        <span className={`text-amber-800 text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
       </button>
       {open && (
         <div className="px-5 pb-5 pt-1 border-t border-parchment-2">

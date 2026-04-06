@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Barcelona in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b91c1c;--primary-light:#f87171;--primary-dark:#7f1d1d;
+  --accent:#d97706;--accent-light:#fcd34d;
+  --ink:#1a0000;--cream:#fff8f8;--parchment:#fee2e2;
+  --white:#ffffff;--muted:#6b3333;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,0,0,0.97) 0%,rgba(26,0,0,0.6) 50%,rgba(26,0,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#f87171;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(185,28,28,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(185,28,28,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.gold{background:var(--accent-light);color:var(--ink)}
+.route-stop.amber{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(185,28,28,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(248,113,113,0.08),rgba(248,113,113,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#f87171;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#f87171;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.red{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);color:#7f1d1d}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.warn{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(185,28,28,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(185,28,28,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(185,28,28,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(185,28,28,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/819764/pexels-photo-819764.jpeg?w=1200&q=80" alt="Barcelona Sagrada Familia"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Barcelona<br/><em>in 5 Days</em></h1>
+    <p class="cover-sub">Gaudí's living cathedral, Gothic Quarter alleys, Barceloneta beach &amp; tapas culture — Catalonia at its finest</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 5 Days</span>
+      <span class="pill">🛂 Schengen Visa</span>
+      <span class="pill">💰 ₹70,000–₹1,80,000</span>
+      <span class="pill">☀️ May–Jun &amp; Sep–Oct</span>
+      <span class="pill">⛪ Gaudí</span>
+      <span class="pill">🏖️ Beach &amp; Architecture</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(185,28,28,0.3);border:1px solid rgba(248,113,113,0.4);color:#f87171;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Barcelona 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Gaudí, Beaches &amp; Tapas — Five Days in Barcelona</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">Schengen</span><span class="stat-label">Visa Required</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹70k–1.8L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">☀️</div><span class="stat-val">May–Oct</span><span class="stat-label">Best Season</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">BCN Airport</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Sagrada Família</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Park Güell</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Gothic Quarter</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop amber">Montjuïc</span>
+    <span class="route-sub">1 city · Aerobus from airport to city centre 35 min · ₹500</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">⛪ Sagrada Família</div>
+      <div class="city-desc">Antoni Gaudí's unfinished masterpiece — under construction since 1882 and still not complete. The most visited monument in Spain. Towers soaring 172m high, facades covered in organic stone carvings, an interior that looks like a stone forest. Book tickets months ahead — they regularly sell out. Add the tower access for extraordinary city views.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🌿 Park Güell &amp; El Born</div>
+      <div class="city-desc">Gaudí's otherworldly public park — mosaic benches, gingerbread gatehouses, colonnaded hall and terrace with panoramic city views. Timed entry required. Afternoon in El Born — Barcelona's most fashionable neighbourhood, with Picasso Museum, boutiques and the magnificent 19th-century Boqueria-style iron market El Mercat del Born.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🏘️ Gothic Quarter &amp; Beach</div>
+      <div class="city-desc">The Barri Gòtic — 2,000 years of Roman walls, medieval lanes, Barcelona Cathedral and the Jewish quarter — is one of Europe's most atmospheric old cities. Las Ramblas (watch for pickpockets), the legendary Boqueria market, and Barceloneta beach — the Mediterranean at its most beautiful in the afternoon light.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4–5</div>
+      <div class="city-name">⚽ Camp Nou &amp; Day Trips</div>
+      <div class="city-desc">Day 4: Camp Nou stadium tour (FC Barcelona), Montjuïc hill (castle, Olympic stadium, MNAC museum). Day 5: Sitges day trip (40min by train — charming coastal town with beautiful beach) or Montserrat (1hr — serrated mountain monastery with extraordinary views, cable car up).</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"Barcelona is a city that has everything: sea, architecture, food, nightlife, culture. It is perhaps the most complete city in Europe." — Anonymous traveller, and entirely correct.</p>
+  </div>
+  <div class="highlight-box red">
+    <strong>Visa &amp; Flights:</strong> Schengen visa required — apply at Spanish Consulate/VFS Global (₹7,000 approx, 3–4 weeks). Flights: Delhi/Mumbai to Barcelona (BCN) — ₹40,000–₹72,000 return via Middle Eastern hubs. Aerobus from airport to Plaça Catalunya: ₹500, 35 minutes. The T-Casual Metro card (10 trips, ₹1,200) covers all Metro and bus travel in central Barcelona.
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–3 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Barcelona 5-Day Itinerary</span>
+    <span class="page-header-right">Day 1–3 — Gaudí, Gothic Quarter &amp; Beach</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Gaudí's Masterpiece</div>
+      <div class="day-title">Sagrada Família &amp; Gaudí Houses</div>
+      <div class="day-sub">Morning Sagrada Família · Towers · Gaudí houses walking route · Passeig de Gràcia · Tapas evening</div>
+      <div class="day-cost">💰 Sagrada Família: ₹2,800 · Towers: ₹3,500 (book months ahead) · Metro: ₹1,200 10-trip card</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Sagrada Família — Book Months Ahead, Arrive at Opening</div>
+        <div class="time-desc">The Basílica de la Sagrada Família is the most visited site in Spain — over 4.5 million visitors per year. Antoni Gaudí devoted the last 43 years of his life to this project (he is buried in the crypt). Book tickets at sagradafamilia.org — they regularly sell out weeks ahead in peak season. The Nativity facade (Gaudí's original) faces northeast, the Passion facade faces southwest. The interior — designed to replicate a forest of stone columns branching into a canopy — is unlike any church interior in the world. The stained glass on the Nativity side creates warm golden light in the morning. Tower access (extra ₹700) gives the finest city view.</div>
+        <div class="time-price">Basic entry: ₹2,800 · With towers: ₹3,500 · Book at sagradafamilia.org · Allow 2–3 hours</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Gaudí Houses Walking Route — Passeig de Gràcia</div>
+        <div class="time-desc">The Block of Discord (Manzana de la Discordia) on Passeig de Gràcia has three competing modernista buildings on the same block: Casa Batlló (Gaudí — dragon scale roof, ₹3,500 entry), Casa Amatller (Puig i Cadafalch), and Casa Lleó Morera (Domènech i Montaner). Casa Milà (La Pedrera) is 2 blocks away — Gaudí's undulating stone apartment building with rooftop warrior chimneys (₹2,800). Passeig de Gràcia is Barcelona's most elegant boulevard — the luxury shopping equivalent of Paris's Champs-Élysées.</div>
+        <div class="time-price">Casa Batlló: ₹3,500 · Casa Milà: ₹2,800 · Outside photo: free · Tapas lunch: ₹800–₹1,500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Park &amp; Neighbourhood</div>
+      <div class="day-title">Park Güell, Gràcia &amp; Palau de la Música</div>
+      <div class="day-sub">Morning Park Güell (timed entry) · Gràcia neighbourhood lunch · Palau de la Música Catalana · El Born evening</div>
+      <div class="day-cost">💰 Park Güell: ₹1,200 · Palau de la Música: ₹2,000 · El Born dinner: ₹1,500–₹3,000</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Park Güell — Gaudí's Mosaic Fantasy in the Hills</div>
+        <div class="time-desc">Originally commissioned as a residential park that never sold, Park Güell is now one of Barcelona's most popular sites. The monumental zone (ticketed area — ₹1,200, buy online at parkguell.barcelona) includes the Dragon Staircase, the Hall of a Hundred Columns (actually 86), and the Great Terrace with its famous dragon mosaic bench and panoramic views over the city and Mediterranean. The free park surrounding the monumental zone is lovely for walking. Go early — the terrace gets very crowded by 11am. The park is in the Gràcia neighbourhood — explore its charming plazas after.</div>
+        <div class="time-price">Monumental zone: ₹1,200 · Book at parkguell.barcelona · Free areas: always open · Go at 9:30am</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Palau de la Música Catalana — The Most Beautiful Concert Hall in Europe</div>
+        <div class="time-desc">Designed by Lluís Domènech i Montaner (Gaudí's great rival), the Palau de la Música Catalana (1908) is a UNESCO World Heritage Site and arguably the most beautiful concert hall in the world. The stained glass ceiling — an inverted dome of blue, green and amber glass — floods the auditorium with natural light during daytime concerts. Guided tours available (₹2,000, highly recommended). Evening concerts (check palaumusica.cat) — attending an actual concert here is an extraordinary experience (₹2,500–₹5,000 for tickets).</div>
+        <div class="time-price">Guided tour: ₹2,000 · Concert tickets: ₹2,500–₹5,000 · Book at palaumusica.cat</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Old City &amp; Sea</div>
+      <div class="day-title">Gothic Quarter, Boqueria Market &amp; Barceloneta</div>
+      <div class="day-sub">Gothic Quarter walking · Barcelona Cathedral · Boqueria lunch · Las Ramblas · Barceloneta beach afternoon</div>
+      <div class="day-cost">💰 Cathedral: free (entrance fee at certain hours) · Boqueria lunch: ₹600–₹1,200 · Beach: free</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Gothic Quarter — 2,000 Years of Barcelona</div>
+        <div class="time-desc">The Barri Gòtic (Gothic Quarter) is built on and around a 1st century BC Roman settlement — you can still see sections of the original Roman wall. Carrer del Bisbe with its neo-Gothic bridge, Plaça de Sant Jaume (city government square), Plaça del Rei (the medieval royal palace — one of the finest Gothic secular spaces in Europe), and the Jewish quarter (El Call) with its dark, narrow lanes and medieval synagogue. Barcelona Cathedral — free entry, with 13 white geese living in the cloister (city tradition, 600 years old). The best way: wander without a map and let the quarter reveal itself.</div>
+        <div class="time-price">Gothic Quarter: free to wander · Barcelona Cathedral: free (cloister €3 / ₹280) · 2 hours minimum</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Mercat de la Boqueria — But Watch the Pickpockets on Las Ramblas</div>
+        <div class="time-desc">La Boqueria is Barcelona's most famous covered market — extraordinary produce stalls, seafood, jamón ibérico, fresh juice (₹200), chocolate, dried fruits. It's beautiful but extremely crowded and tourist-priced — eat at the market bars at the back (counter seating, locals eat here). Las Ramblas is the famous tree-lined pedestrian boulevard connecting the city to the sea — it's lovely but has the highest concentration of pickpockets in Barcelona. Keep your bag in front. Do not accept free flowers (they charge you). Do not use the casas de cambio (exchange bureaux) on the Ramblas — rates are terrible.</div>
+        <div class="time-price">Boqueria entry: free · Fresh juice: ₹200 · Lunch at market bar: ₹600–₹1,000 · Watch your belongings!</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Barceloneta Beach — The Mediterranean at Its Most Glorious</div>
+        <div class="time-desc">Barcelona's city beach — 1.1km of sand directly accessible from the Gothic Quarter by a 15-minute walk. The Mediterranean here is cleaner than you might expect — clear blue-green water, gentle waves, excellent for swimming May–October. Rent a lounger and umbrella (₹500) or bring your own towel. The Barceloneta neighbourhood behind the beach has excellent seafood restaurants on its grid of narrow streets. Paella (fideuà — made with noodles instead of rice is the local version) is best eaten at lunch, not dinner — restaurants cook it fresh at midday. El Chiringuito (beach bars) serve cold beer and snacks.</div>
+        <div class="time-price">Beach: free · Lounger &amp; umbrella: ₹500 · Barceloneta fideuà lunch: ₹1,200–₹2,000/person</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 4–5 + BUDGET + TIPS -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Barcelona 5-Day Itinerary</span>
+    <span class="page-header-right">Day 4–5 · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Football &amp; Mountain</div>
+      <div class="day-title">Camp Nou, Montjuïc &amp; Tapas in Poble Sec</div>
+      <div class="day-sub">Camp Nou museum · Montjuïc cable car · Castell de Montjuïc · MNAC art museum · Poble Sec tapas evening</div>
+      <div class="day-cost">💰 Camp Nou: ₹2,500 · Montjuïc cable car: ₹1,800 · MNAC: ₹1,200</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Camp Nou — The Cathedral of Football</div>
+        <div class="time-desc">FC Barcelona's stadium (capacity: 99,354 — Europe's largest) underwent a major renovation in 2023–2026. The Barça Experience museum tour (₹2,500) takes you through the dressing rooms, the dugout, the press box, and the pitch-side tunnels. The club's history — Messi, Cruyff, Ronaldinho — is told through extraordinary memorabilia. Football lovers should try to book an actual match ticket (FCB vs. any La Liga opponent) — the atmosphere is electrifying. Check fcbarcelona.com for fixtures and tickets 6–8 weeks ahead.</div>
+        <div class="time-price">Museum tour: ₹2,500 · Match tickets: ₹4,000–₹18,000 · Book at fcbarcelona.com</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Montjuïc — Castle, Cable Car &amp; MNAC Museum</div>
+        <div class="time-desc">Take the Montjuïc cable car (Teleféric de Montjuïc — ₹1,800 return) to the hilltop. The Castell de Montjuïc (17th-century fortress) has panoramic views over the port and city. The MNAC (Museu Nacional d'Art de Catalunya) in the magnificent Palau Nacional has the world's finest collection of Romanesque art — 11th-13th century frescoes transferred from Pyrenean churches in the early 20th century, uniquely spectacular. The view from the MNAC's esplanade down the Avinguda de la Reina Maria Cristina to the sea is another of Barcelona's great vistas.</div>
+        <div class="time-price">Cable car: ₹1,800 return · Castell: ₹800 · MNAC: ₹1,200 · Free first Sunday each month</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Coast or Mountains</div>
+      <div class="day-title">Sitges Day Trip or Montserrat Monastery</div>
+      <div class="day-sub">Sitges (40 min train, charming coastal town) OR Montserrat (1hr train + cable car, mountain monastery with Himalayan-scale views)</div>
+      <div class="day-cost">💰 Sitges return train: ₹700 · Montserrat: ₹2,500 (train + cable car combined)</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:3mm">Budget Breakdown — Per Person, 5 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (5 nights)</td><td>16,000</td><td>38,000</td><td>75,000+</td></tr>
+      <tr><td>Food &amp; Tapas</td><td>6,000</td><td>15,000</td><td>28,000</td></tr>
+      <tr><td>Transport (Metro/bus)</td><td>2,000</td><td>3,500</td><td>7,000</td></tr>
+      <tr><td>Attractions</td><td>8,000</td><td>14,000</td><td>22,000</td></tr>
+      <tr><td>Shopping &amp; Souvenirs</td><td>1,500</td><td>6,000</td><td>25,000</td></tr>
+      <tr><td>Flights (Delhi/Mumbai–BCN)</td><td>40,000</td><td>55,000</td><td>85,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹73,500</strong></td><td><strong>~₹1,31,500</strong></td><td><strong>₹2,42,000+</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🍅</div>
+      <div class="tip-title">Barcelona Food Culture — Essential Knowledge</div>
+      <div class="tip-desc">Pan con tomate (bread rubbed with tomato and olive oil) comes with everything — and should. Patatas bravas (fried potatoes with spicy sauce) are the definitive tapas. Jamón ibérico bellota (acorn-fed ham) is extraordinary. Eat paella at LUNCH not dinner — it's cooked fresh midday only. Vermouth (vermut) before lunch is the Catalan aperitivo tradition — try it at a traditional bar.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎫</div>
+      <div class="tip-title">Sagrada Família — Book Months, Not Weeks Ahead</div>
+      <div class="tip-desc">In July and August, Sagrada Família tickets sell out 6–8 weeks ahead. In May, June, September and October, book 3–4 weeks ahead. The website is sagradafamilia.org. Pre-booked tickets always include skip-the-queue entry — without a pre-booked ticket you join a long standby queue and may not get in at all on busy days.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Best Months — Avoid July–August</div>
+      <div class="tip-desc">July and August: 30–35°C, extremely crowded, beaches are packed. May–June and September–October: 22–27°C, manageable crowds, beautiful light. October is the secret best month — warm enough for the beach, empty museums, lower prices. March–April: 15–20°C, excellent for sightseeing.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🦺</div>
+      <div class="tip-title">Pickpockets — A Real Issue in Barcelona</div>
+      <div class="tip-desc">Barcelona has one of Europe's highest pickpocket rates, concentrated on Las Ramblas, La Boqueria, Metro Line 3, and Barceloneta beach. Use a cross-body bag worn in front. Keep phones in front pockets. Avoid sitting near doors on the Metro. Never put down a bag on a restaurant chair. Distraction scams: someone spills something on you while an accomplice picks your pocket.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More of Spain<br/>&amp; Europe Awaits</h2>
+  <p>From Madrid's Prado Museum to Seville's Alhambra, from the vineyards of the Douro Valley to the white villages of Andalusia — IncredibleItinerary covers every European adventure for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · London · Rome · Amsterdam · Switzerland · New York · Turkey · Malaysia · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Maldives in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0891b2;--primary-light:#22d3ee;--primary-dark:#0e7490;
+  --accent:#06b6d4;--accent-light:#a5f3fc;
+  --ink:#0c1a2e;--cream:#f0f9ff;--parchment:#e0f2fe;
+  --white:#ffffff;--muted:#4a6580;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,26,46,0.97) 0%,rgba(12,26,46,0.6) 50%,rgba(12,26,46,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#22d3ee;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(8,145,178,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(8,145,178,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(8,145,178,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(8,145,178,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(34,211,238,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#22d3ee;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#22d3ee;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(8,145,178,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.cyan{background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.25);color:#0e7490}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(8,145,178,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(8,145,178,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(8,145,178,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(8,145,178,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(8,145,178,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?w=1200&q=80" alt="Maldives overwater bungalow and turquoise lagoon"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Maldives<br/><em>in 5 Days</em></h1>
+    <p class="cover-sub">Overwater bungalows, house reefs, whale sharks, bioluminescent nights — and yes, budget Maldives IS possible</p>
+    <div class="cover-pills">
+      <span class="pill">🏝️ 5 Days</span>
+      <span class="pill">✈️ On-Arrival Visa Free</span>
+      <span class="pill">💰 ₹60,000–₹2,50,000</span>
+      <span class="pill">🌤️ Nov–Apr</span>
+      <span class="pill">🛖 Overwater Bungalow</span>
+      <span class="pill">🤿 Snorkelling</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(8,145,178,0.3);border:1px solid rgba(34,211,238,0.4);color:#22d3ee;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Maldives 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Ocean Paradise — Budget to Luxury</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">Free Visa</span><span class="stat-label">On Arrival · 30 Days</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹60k–2.5L</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Nov–Apr</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Malé (MLE)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop light">Speedboat Transfer</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Local Island / Resort</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Snorkelling &amp; Dives</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Sandbank &amp; Departure</span>
+    <span class="route-sub">Fly Mumbai/Delhi → Malé · IndiGo · Air India · Maldivian</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Budget Option</div>
+      <div class="city-name">🏡 Local Islands (Maafushi)</div>
+      <div class="city-desc">Maafushi is the original budget Maldives. Guesthouses with beachfront access, licensed restaurants, and local excursion operators at a fraction of resort prices. You share the island with locals — which is a feature, not a bug. ₹5,000–₹8,000/night for a solid guesthouse room.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Mid-Range Option</div>
+      <div class="city-name">🌊 Mid-Range Resorts</div>
+      <div class="city-desc">Private island resorts with beach bungalows, house reefs, restaurants and activities included or packaged. No locals visible, perfectly manicured, water bungalows may be available. ₹18,000–₹30,000/night all-inclusive or room-only. Seaplane transfer sometimes required.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Luxury Option</div>
+      <div class="city-name">🛖 Overwater Bungalows</div>
+      <div class="city-desc">The iconic experience — a villa on stilts over the Indian Ocean with a glass floor panel, private deck, ladder directly into the lagoon. Brands like Six Senses, Soneva, One&amp;Only, Coco Bodu Hithi. ₹50,000–₹1,50,000+/night. Worth saving up for at least 2 nights of the trip.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">All Budgets</div>
+      <div class="city-name">🤿 Marine Life</div>
+      <div class="city-desc">Maldives has some of the best marine biodiversity on the planet. Manta rays, whale sharks (seasonal — best May–November at South Ari Atoll), hawksbill turtles, black-tip reef sharks, Napoleon wrasse, vibrant coral gardens. Almost every island has excellent snorkelling directly off the beach.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"The Maldives is not one place — it's 1,200 coral islands, 26 atolls, and a decision: which version of paradise do you want to afford?"</p>
+  </div>
+
+  <div class="highlight-box cyan">
+    <strong>Visa:</strong> Maldives grants a free 30-day visa on arrival to all nationalities, including Indians. No prior application needed. Just a valid passport, onward ticket, and proof of accommodation. Extensions available. Tourist visa: completely free.
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>Flights from India:</strong> Mumbai (BOM) or Delhi (DEL) to Malé (MLE) — ₹25,000–₹45,000 return. IndiGo, Air India, and Maldivian all operate this route. Book 2–3 months ahead for best prices. Flight time: approximately 3.5 hours from Mumbai, 4.5 hours from Delhi.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–3 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Maldives 5-Day Itinerary</span>
+    <span class="page-header-right">Days 1–3 — Arrival, Snorkelling &amp; Diving</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Arrival &amp; First Dip</div>
+      <div class="day-title">Landing in Paradise</div>
+      <div class="day-sub">Fly into Malé · Speedboat or seaplane to island · Check in · First snorkel off the house reef</div>
+      <div class="day-cost">💰 Speedboat transfer: ₹2,000–₹5,000 return · Seaplane: ₹15,000–₹25,000 return</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Malé International Airport (MLE) — Transfer Immediately</div>
+        <div class="time-desc">Malé airport sits on its own island — Hulhulé. You cannot stay here; you need to transfer to your accommodation island. Budget travellers heading to Maafushi take a public ferry from the nearby jetty (₹150, 1.5hrs) or a speedboat (₹2,000–₹3,000 one way, 45 minutes). Resort guests are met by resort staff and whisked to a speedboat or a seaplane. Seaplanes are only available from 6am–4pm — if your flight arrives late, you may overnight in Malé first.</div>
+        <div class="time-price">Public ferry to Maafushi: ₹150 · Speedboat: ₹2,000–₹3,000 · Seaplane: ₹15,000–₹25,000 one way</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Check In — and Walk Into the Ocean</div>
+        <div class="time-desc">Drop your bags and walk straight to the beach. The Maldives house reef — the coral reef immediately surrounding your island — is usually snorkellable without a boat. Rent fins and a mask from the dive centre (₹500–₹800/day) or bring your own. The water is 28–30°C year-round, crystal clear, with visibility often exceeding 20 metres. Your first snorkel will likely be the best you've ever had. Turtles are commonly spotted within 50 metres of shore.</div>
+        <div class="time-price">Snorkel equipment rental: ₹500–₹800/day · Water shoes recommended for reef entry</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Sunset on the Sandbank — Your First Maldives Moment</div>
+        <div class="time-desc">Every island has a sandbank nearby — a pure white strip of sand rising just above the water, ringed by turquoise. Many guesthouses offer a sunset sandbank trip (₹1,500–₹2,500). You wade out, stand on the sandbank, watch the sun drop into the Indian Ocean. No boats, no buildings, no people — just you and the ocean. This is the quintessential image of the Maldives and it's as extraordinary in reality as it looks in photographs.</div>
+        <div class="time-price">Sandbank sunset trip: ₹1,500–₹2,500/person · Usually 1 hour · Book with guesthouse</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Guided Snorkelling</div>
+      <div class="day-title">Manta Rays, Turtles &amp; Sunset Cruise</div>
+      <div class="day-sub">Guided snorkel trip · Manta rays · Whale sharks (seasonal) · Sunset dhoni cruise</div>
+      <div class="day-cost">💰 Guided snorkel trip: ₹1,500–₹2,500 · Sunset cruise: ₹1,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Guided Snorkelling Trip — Manta Rays &amp; Whale Sharks</div>
+        <div class="time-desc">Book a morning guided snorkelling excursion (₹1,500–₹2,500/person) through your guesthouse or a local operator. A traditional dhoni wooden boat takes you to 3–4 snorkel spots including channels known for manta ray cleaning stations and areas where whale sharks congregate. Whale shark sightings depend on season — South Ari Atoll is the most reliable year-round spot. Hawksbill sea turtles, black-tip reef sharks, and Napoleon wrasse are commonly seen on most trips. The guides know the best spots.</div>
+        <div class="time-price">Guided snorkel trip: ₹1,500–₹2,500/person · 3–4hrs · Life jackets provided · Non-swimmer friendly</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Beach Time — Do Absolutely Nothing</div>
+        <div class="time-desc">This is the Maldives. Permission granted to lie on a beach and stare at turquoise water for three hours. Read a book. Float in the lagoon. Watch the colourful parrotfish nibbling coral directly below your feet. This is the correct way to spend a Maldives afternoon. Resist the urge to optimise.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Sunset Dhoni Cruise</div>
+        <div class="time-desc">A traditional Maldivian dhoni boat cruise at sunset — ₹1,500/person, usually 1.5 hours. You drift across the lagoon as the sky turns pink and orange, watching for dolphins (spinner dolphins are common in the Maldives and often approach the bow). The crew serve fresh watermelon or fresh coconut. This is one of the most beautiful evenings you will have in your life.</div>
+        <div class="time-price">Sunset cruise: ₹1,500/person · Dolphin sighting likely but not guaranteed · 1.5 hours</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Go Deeper</div>
+      <div class="day-title">Diving &amp; Dolphin Cruise at Dusk</div>
+      <div class="day-sub">PADI intro dive or certified dive · Coral gardens · Dolphin cruise at sunset</div>
+      <div class="day-cost">💰 Intro dive: ₹5,000 · PADI Open Water course: ₹25,000 · Dolphin cruise: ₹1,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Scuba Diving — The Underwater World in Full</div>
+        <div class="time-desc">Every guesthouse island and resort has a dive centre. For non-certified divers: a Discover Scuba Diving experience (₹5,000–₹7,000) takes you 5–10 metres deep with a divemaster by your side — no experience needed, 2 hours total. Certified divers: a single fun dive costs ₹5,000–₹8,000. Dive packages of 5 dives: ₹18,000–₹25,000. The PADI Open Water Diver certification course takes 3–4 days and costs ₹25,000–₹35,000 — the Maldives is one of the best places in the world to get certified due to visibility and marine life density.</div>
+        <div class="time-price">Intro Scuba: ₹5,000–₹7,000 · Single fun dive: ₹5,000–₹8,000 · PADI OWD course: ₹25,000–₹35,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Dolphin Cruise — Spinner Dolphins at Golden Hour</div>
+        <div class="time-desc">A second evening boat trip, specifically to find spinner dolphin pods. Spinner dolphins are abundant in the Maldives and frequently come within metres of boats, leaping and spinning in the bow wave. The sight of 50+ dolphins in formation against a setting sun is extraordinary. ₹1,500/person, 1.5 hours. Some operators combine this with a night snorkel (with underwater torch — octopus, lobster and moray eels are nocturnal).</div>
+        <div class="time-price">Dolphin cruise: ₹1,500/person · Night snorkel add-on: ₹800 · Best season: Nov–Apr</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 4–5 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Maldives 5-Day Itinerary</span>
+    <span class="page-header-right">Days 4–5 · Sandbank · Budget Breakdown</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Sandbank &amp; Bioluminescence</div>
+      <div class="day-title">Deserted Islands &amp; the Glowing Ocean</div>
+      <div class="day-sub">Day trip to private sandbank · Picnic lunch · Deserted island · Bioluminescent beach at night (seasonal)</div>
+      <div class="day-cost">💰 Sandbank picnic trip: ₹3,000–₹5,000 · Bioluminescence: free (Jun–Oct, select islands)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Sandbank Picnic Day Trip — The Perfect Maldives Day</div>
+        <div class="time-desc">A full-day excursion (₹3,000–₹5,000/person, usually with lunch) takes you to a remote sandbank for 3–4 hours. You are completely alone on a strip of white sand in the middle of the Indian Ocean. The operator brings a barbecue lunch — fresh grilled fish, salads, fresh coconuts. Swimming all around. This is one of the most memorable experiences the Maldives offers and is available to both budget and luxury travellers.</div>
+        <div class="time-price">Full-day sandbank picnic: ₹3,000–₹5,000/person · Includes lunch · BBQ fish · Book ahead</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Deserted Island Exploration</div>
+        <div class="time-desc">Many day trips also include a visit to an uninhabited island covered in vegetation — you can explore the interior, walk along beaches with no footprints, find hermit crabs, and watch nesting sea birds. These islands feel like they're from another time. The contrast between the resort-polished Maldives experience and this raw, wild version of the same place is striking.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Night</div>
+      <div class="time-content">
+        <div class="time-title">Bioluminescent Beach — The Ocean Glows Blue</div>
+        <div class="time-desc">Certain Maldives islands experience bioluminescence — caused by phytoplankton (Noctiluca scintillans) that emit blue light when disturbed. The beach and shallows appear to glow electric blue as waves break. The phenomenon is most reliable June to October (monsoon season) on specific islands including Vaadhoo Island and some Raa Atoll beaches. Walk into the water and watch your hands glow. It is genuinely one of the most surreal natural phenomena on Earth. Check current conditions with your operator.</div>
+        <div class="time-price">Free — occurs naturally · Best: Jun–Oct · Some resorts organise dedicated viewing excursions</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Final Morning &amp; Departure</div>
+      <div class="day-title">One Last Snorkel, Then Goodbye</div>
+      <div class="day-sub">Early morning house reef snorkel · Pack up · Transfer to Malé · Departure flight</div>
+      <div class="day-cost">💰 Transfer back: ₹2,000–₹5,000 · Allow 3hrs before international flight</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">6:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Dawn Snorkel — The Reef Waking Up</div>
+        <div class="time-desc">The first light of dawn over the Indian Ocean, alone in the water with fish. The Maldivian house reef at dawn is peaceful and less visited than midday. Parrotfish, clownfish in their anemones, sleeping reef sharks. Float and watch. This is your last morning in the Maldives — make it count. Then pack, check out, and take your transfer back to Malé.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Transfer</div>
+      <div class="time-content">
+        <div class="time-title">Return to Malé — Allow Plenty of Time</div>
+        <div class="time-desc">International flights from Malé typically depart in the late afternoon or evening. Allow at least 3 hours before your flight from when you arrive at Malé airport. If you have time in Malé city, cross to the island by local ferry (₹10) and explore the colourful painted streets, the Friday Mosque (old coral stone mosque, one of the finest in the Indian Ocean), and the fish market at the harbour — one of the world's busiest tuna trading spots.</div>
+        <div class="time-price">Malé local ferry: ₹10 · Fish market: free · Friday Mosque: free · Respectful dress required</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Comparison: Local Island vs Resort</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item (5 Days)</th><th>Local Island Budget (₹)</th><th>Mid-Range Resort (₹)</th><th>Luxury Overwater (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Flights (return from India)</td><td>25,000–35,000</td><td>25,000–35,000</td><td>35,000–45,000</td></tr>
+      <tr><td>Accommodation (4 nights)</td><td>20,000–32,000</td><td>72,000–1,20,000</td><td>2,00,000–6,00,000</td></tr>
+      <tr><td>Transfers (speedboat/seaplane)</td><td>3,000–6,000</td><td>6,000–12,000</td><td>20,000–50,000</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>8,000–14,000</td><td>20,000–40,000</td><td>Included or 40,000+</td></tr>
+      <tr><td>Excursions &amp; Diving</td><td>8,000–15,000</td><td>12,000–20,000</td><td>15,000–30,000</td></tr>
+      <tr><td><strong>TOTAL PER PERSON</strong></td><td><strong>~₹64,000–1,02,000</strong></td><td><strong>~₹1,35,000–2,27,000</strong></td><td><strong>₹3,10,000–7,25,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Local island option includes Maafushi or similar guesthouses. All prices approximate and subject to season/availability. High season (Dec–Jan) is 20–40% more expensive. Alcohol is only available at resort islands — local islands are dry by law.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Maldives 5-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Packing List</span>
+  </div>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Know Before You Go</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Budget Maldives IS Real — Maafushi Is Your Base</div>
+      <div class="tip-desc">Maafushi island (45 minutes by speedboat from Malé) has over 50 guesthouses, licensed restaurants serving alcohol in designated areas, a beautiful beach, and every excursion a resort offers at 30–50% lower prices. You do not need to spend ₹2L+ per night to experience the Maldives. The marine life is identical regardless of your accommodation category.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🦈</div>
+      <div class="tip-title">Whale Shark Season — Plan Around It</div>
+      <div class="tip-desc">Whale sharks are present year-round in South Ari Atoll but peak May–November. For guaranteed sightings, choose a guesthouse in South Ari Atoll (Dhigurah island is excellent). Manta rays peak November–April at North Malé Atoll and Baa Atoll (UNESCO Biosphere Reserve — magnificent manta feeding aggregations). Ask operators for current conditions.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍺</div>
+      <div class="tip-title">Alcohol Rules on Local Islands</div>
+      <div class="tip-desc">The Maldives is a Muslim country. Local inhabited islands are completely dry — no alcohol permitted anywhere except in the resort's designated "tourist beach" area. Resorts are private islands where alcohol flows freely. If alcohol is important to you, choose a resort over a guesthouse. Guesthouses designate a "bikini beach" area where swimwear is acceptable — follow local dress guidelines elsewhere on the island.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌊</div>
+      <div class="tip-title">Reef-Safe Sunscreen Only</div>
+      <div class="tip-desc">Chemical sunscreens (oxybenzone, octinoxate) are devastating to coral reefs. Use only mineral sunscreen (zinc oxide or titanium dioxide) in the water. Some resorts now prohibit chemical sunscreen entirely. Reef damage in the Maldives is a real and urgent environmental issue — your choices matter. Alternatively, wear a UV rashguard in the water instead of sunscreen.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛥️</div>
+      <div class="tip-title">Book Transfers Before You Arrive</div>
+      <div class="tip-desc">Speedboat transfers must be booked in advance — especially during peak season (Dec–Jan). Your guesthouse or hotel will arrange this, but confirm it. Seaplanes only fly in daylight hours (6am–4pm) — if you arrive after 4pm at Malé, you'll need to overnight at a Malé airport hotel before continuing. Factor this into your planning.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💳</div>
+      <div class="tip-title">Cash vs Card on Local Islands</div>
+      <div class="tip-desc">Resorts accept cards for everything. Local island guesthouses increasingly accept cards but many excursion operators and restaurants are cash-only. Maldivian Rufiyaa (MVR) is the local currency but USD is universally accepted. Bring USD cash. Carry ₹500 USD equivalent — more if diving or buying multiple excursions. ATMs exist in Malé and Maafushi but can be out of service.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">⛵</div>
+      <div class="tip-title">Best Value: Combine Local Island + 2 Resort Nights</div>
+      <div class="tip-desc">For the best of both worlds: spend 3 nights on a local island like Maafushi (snorkelling, excursions, local food) and 2 nights in an overwater bungalow resort. This way you get the iconic Instagram overwater bungalow experience without paying resort prices for all 5 nights. Many budget travellers do this split successfully.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Seasons: When to Go and What to Expect</div>
+      <div class="tip-desc">Dry season (Nov–Apr): calm seas, clear skies, best visibility, best snorkelling. Peak Dec–Jan — most expensive. Wet season (May–Oct): afternoon rain showers, rougher seas some days, cheaper rates, bioluminescence possible, whale shark season peaks. The "wet" season is not bad — most days are still sunny. Avoid April (transition season — hot and humid).</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Maldives</div>
+  <div class="pack-list">
+    <div class="pack-item">🤿 <strong>Snorkel &amp; mask</strong> — own mask fits better than rental. Essential if snorkelling daily.</div>
+    <div class="pack-item">🩱 <strong>Multiple swimsuits</strong> — you'll wear them constantly. 3+ recommended.</div>
+    <div class="pack-item">☀️ <strong>Mineral sunscreen only</strong> — reef-safe zinc oxide SPF 50. Protect coral.</div>
+    <div class="pack-item">👙 <strong>Rashguard / UV top</strong> — best sun protection while snorkelling. No sunscreen needed.</div>
+    <div class="pack-item">💊 <strong>Seasickness tablets</strong> — speedboat rides can be choppy in wet season.</div>
+    <div class="pack-item">🔋 <strong>Waterproof phone case</strong> — or underwater camera for reef photos.</div>
+    <div class="pack-item">👗 <strong>Modest cover-up</strong> — required on local islands away from the tourist beach.</div>
+    <div class="pack-item">💵 <strong>USD cash</strong> — universal. Carry $100–200 for excursions and tips.</div>
+    <div class="pack-item">💧 <strong>Reusable water bottle</strong> — single-use plastic is an island ecosystem problem.</div>
+  </div>
+
+  <div class="highlight-box cyan">
+    <strong>Honest take:</strong> The Maldives is real at every price point. A guesthouse in Maafushi with a house reef snorkel, a whale shark excursion, and a sunset dhoni cruise is genuinely extraordinary — and costs less than one night at a luxury resort. The fish don't care what your room costs.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the Himalayan peaks of Leh-Ladakh to Kerala's backwaters, from Rajasthan's golden forts to the temples of Varanasi — IncredibleItinerary has a complete guide for every journey across this extraordinary country and beyond.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Kashmir · Kerala · Rajasthan · Leh-Ladakh · Goa · Andaman · Varanasi · Char Dham · Spiti Valley · Northeast India</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa rules and availability are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

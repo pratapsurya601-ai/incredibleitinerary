@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Switzerland in 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#1d4ed8;--primary-light:#60a5fa;--primary-dark:#1e3a8a;
+  --accent:#0ea5e9;--accent-light:#bae6fd;
+  --ink:#0a0f1e;--cream:#f8faff;--parchment:#dbeafe;
+  --white:#ffffff;--muted:#4a5568;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,30,0.97) 0%,rgba(10,15,30,0.6) 50%,rgba(10,15,30,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#60a5fa;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(29,78,216,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(29,78,216,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:var(--ink)}
+.route-stop.sky{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(29,78,216,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(29,78,216,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(96,165,250,0.08),rgba(96,165,250,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#60a5fa;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#60a5fa;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(29,78,216,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.blue{background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.25);color:#1e3a8a}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(29,78,216,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(29,78,216,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(29,78,216,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(29,78,216,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(29,78,216,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?w=1200&q=80" alt="Swiss Alps"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Switzerland<br/><em>in 7 Days</em></h1>
+    <p class="cover-sub">The Alps, Jungfraujoch (Top of Europe), Lucerne's chapel bridge, Zurich's old town &amp; Swiss chocolate</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 7 Days</span>
+      <span class="pill">🛂 Schengen Visa</span>
+      <span class="pill">💰 ₹1,50,000–₹3,50,000</span>
+      <span class="pill">☀️ Jun–Sep &amp; Dec–Feb</span>
+      <span class="pill">🏔️ Jungfraujoch</span>
+      <span class="pill">🍫 Alps &amp; Chocolates</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(29,78,216,0.3);border:1px solid rgba(96,165,250,0.4);color:#60a5fa;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Switzerland 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Zurich, Interlaken, Lucerne &amp; Geneva — Seven Days in Switzerland</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">7 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏔️</div><span class="stat-val">3,454m</span><span class="stat-label">Jungfraujoch</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹1.5L–3.5L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🚂</div><span class="stat-val">Swiss Pass</span><span class="stat-label">Travel Card</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">Zurich</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop light">Interlaken</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop sky">Jungfraujoch</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Lucerne</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Geneva</span>
+    <span class="route-sub">7 days · Swiss Travel Pass covers all trains · Fly into Zurich, out of Geneva</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Days 1–2</div>
+      <div class="city-name">🏙️ Zurich</div>
+      <div class="city-desc">Switzerland's largest city — Lake Zurich promenade, the medieval Altstadt (Old Town), Grossmünster cathedral (1100s), the Swiss National Museum, Bahnhofstrasse (world's most expensive shopping street), Kunsthaus art museum (Monet, Picasso). Clean, efficient, expensive and beautiful.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 3–4</div>
+      <div class="city-name">🏔️ Interlaken &amp; Jungfraujoch</div>
+      <div class="city-desc">Interlaken sits between two lakes at the foot of the Bernese Oberland. Jungfraujoch — Top of Europe — at 3,454m is the highest railway station in Europe, accessible by the cog railway via Kleine Scheidegg. Ice Palace, Sphinx Observatory, Aletsch Glacier view. One of the great mountain experiences in the world.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Days 5–6</div>
+      <div class="city-name">🌉 Lucerne</div>
+      <div class="city-desc">The most picturesque Swiss city — medieval walls, the 14th-century Chapel Bridge (Kapellbrücke), the Lion Monument (carved into a rock face, Mark Twain called it "the most mournful and moving piece of stone in the world"), Lake Lucerne boat cruises, and Mt. Pilatus cable car.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 7</div>
+      <div class="city-name">🌐 Geneva &amp; Departure</div>
+      <div class="city-desc">Fly out of Geneva (GVA). Morning in Geneva: Lake Geneva and the iconic Jet d'Eau fountain (140m water jet), the old town (Vieille Ville), St. Pierre Cathedral, and the United Nations Palais des Nations (exterior — interior tours available with ID). The watchmaking and luxury goods capital of the world.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"Switzerland is simply a large, lumpy, solid rock, with a thin skin of grass stretched over it." — Mark Twain. An understatement. The Alps are among the most breathtaking landscapes on earth.</p>
+  </div>
+  <div class="highlight-box blue">
+    <strong>Swiss Travel Pass — Essential for India Travellers:</strong> The Swiss Travel Pass covers all SBB trains, buses, boats, and many mountain railways in Switzerland — ₹20,000–₹22,000 for 7 consecutive days (1st class ₹31,000). Buy online at swisstravelpass.com before leaving India (available to non-Swiss residents only). Many mountain railways give 25–50% discounts with the pass. Jungfraujoch still costs extra (₹12,000) but with the pass you get a significant reduction. This is the single best investment for Swiss travel.
+  </div>
+  <div class="highlight-box amber">
+    <strong>Flights:</strong> Delhi/Mumbai to Zurich (ZRH) — ₹55,000–₹90,000 return. Swiss International Air Lines flies direct from Mumbai and Delhi (8–9 hrs). Book the fly-in ZRH, fly-out GVA route to avoid backtracking. Switzerland uses Swiss Franc (CHF) — ₹1 = approx CHF 0.011. Everything is expensive — budget carefully.
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–4 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Switzerland 7-Day Itinerary</span>
+    <span class="page-header-right">Days 1–4 — Zurich &amp; Interlaken</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">1–2</div>
+    <div class="day-info">
+      <div class="day-tag">Days One &amp; Two · Swiss Beginning</div>
+      <div class="day-title">Zurich — Lake, Old Town &amp; Swiss Life</div>
+      <div class="day-sub">Lake Zurich promenade · Altstadt walk · Grossmünster · Swiss National Museum · Bahnhofstrasse · Lindenhügel hill view</div>
+      <div class="day-cost">💰 Swiss National Museum: ₹1,400 · Kunsthaus: ₹2,000 · Fondue dinner: ₹2,500–₹4,000</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 1</div>
+      <div class="time-content">
+        <div class="time-title">Zurich Old Town (Altstadt) &amp; the Limmat River</div>
+        <div class="time-desc">The Altstadt on both sides of the Limmat River is Zurich's medieval heart — guild houses from the 13th–18th centuries, cobbled Niederdorf (low village), and the Grossmünster cathedral where Zwingli launched the Swiss Protestant Reformation in 1519. Climb the Grossmünster tower (₹500) for panoramic views. The Fraumünster across the river has Chagall stained glass windows (5 windows, 1970) — extraordinary. Walk the Niederdorf in the evening for Swiss cuisine: fondue (₹2,500/person), raclette, Zürcher Geschnetzeltes (veal in cream sauce). The Augustiner and Lindenhof neighbourhoods are the most atmospheric.</div>
+        <div class="time-price">Grossmünster tower: ₹500 · Fraumünster: free · Fondue dinner: ₹2,500–₹4,000/person</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 2</div>
+      <div class="time-content">
+        <div class="time-title">Lake Zurich Promenade &amp; Swiss National Museum</div>
+        <div class="time-desc">Lake Zurich is 40km long — the promenade along the lakefront is beautiful, with views of the Alps on a clear day. Bürkliplatz is the main gathering point — boat trips available (₹1,200). The Swiss National Museum (adjacent to the Hauptbahnhof) is housed in a neo-Gothic castle and covers Swiss history from prehistory to the present day — excellent, manageable size (₹1,400). Bahnhofstrasse — 1.4km from the Hauptbahnhof to the lake — is lined with luxury watch boutiques (Patek Philippe, Rolex, IWC), luxury brands, and the Sprüngli chocolate shop (world-famous Luxemburgerli macarons — ₹800/box).</div>
+        <div class="time-price">Swiss National Museum: ₹1,400 · Boat trip: ₹1,200 · Luxemburgerli from Sprüngli: ₹800</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">3–4</div>
+    <div class="day-info">
+      <div class="day-tag">Days Three &amp; Four · Top of Europe</div>
+      <div class="day-title">Interlaken, Jungfraujoch &amp; Alpine Adventures</div>
+      <div class="day-sub">Train from Zurich to Interlaken · Day trip to Jungfraujoch (3,454m) · Schilthorn or Harder Kulm · Paragliding option</div>
+      <div class="day-cost">💰 Jungfraujoch: ₹12,000 (with Swiss Pass discount) · Paragliding: ₹8,000–₹12,000</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 3</div>
+      <div class="time-content">
+        <div class="time-title">Interlaken Arrival &amp; Harder Kulm — Alpine Panorama</div>
+        <div class="time-desc">Train from Zurich to Interlaken Ost (2 hours, covered by Swiss Travel Pass). Interlaken (literally "between the lakes") sits between Lake Thun and Lake Brienz with the Jungfrau massif rising dramatically to the south. Check in to your hotel and take the funicular to Harder Kulm (1,322m, ₹2,800 return) for the famous Two Lakes Bridge view — Lake Thun and Lake Brienz visible simultaneously, the Eiger, Mönch and Jungfrau peaks behind. The sunset from Harder Kulm on a clear day is one of Switzerland's finest views. Dinner in Interlaken — try the Schuh Restaurant for outdoor terrace dining with mountain views.</div>
+        <div class="time-price">Harder Kulm funicular: ₹2,800 return (Swiss Pass 50% discount) · Dinner with mountain view: ₹3,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 4</div>
+      <div class="time-content">
+        <div class="time-title">Jungfraujoch — Top of Europe at 3,454 Metres</div>
+        <div class="time-desc">The Jungfraujoch excursion is Switzerland's most famous and spectacular — the highest railway station in Europe, reached by the 1912 cog railway. Start early from Interlaken (8am departure recommended). Train to Grindelwald or Lauterbrunnen, then cog railway via Kleine Scheidegg to the Jungfraujoch station, 3,454m above sea level. Attractions at the top: Sphinx Observatory (360° Alpine views), Ice Palace (carved ice tunnels and sculptures), the Aletsch Glacier (23km long, largest glacier in the Alps). Allow 4–5 hours at the top — altitude may cause mild headache. The Swiss Travel Pass reduces the ticket price significantly — full price is ₹18,000.</div>
+        <div class="time-price">With Swiss Pass: ₹12,000 · Without pass: ₹18,000 · Book at jungfrau.ch · Leave early from Interlaken</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 4 PM</div>
+      <div class="time-content">
+        <div class="time-title">Schilthorn (Piz Gloria) — James Bond's Mountain</div>
+        <div class="time-desc">The Schilthorn (2,970m) above Mürren village was the filming location for the 1969 James Bond film On Her Majesty's Secret Service. The rotating restaurant at the top (Piz Gloria — the name from the Bond film) offers a 360° Alpine panorama. The Bondbyrne exhibition tells the story of the filming. Reach by gondola from Stechelberg (₹5,500 return, Swiss Pass discount applies). Alternatively: first-time visitors with limited time can substitute Schilthorn with another afternoon in Interlaken for paragliding over the Bernese Oberland — bookable on arrival (₹8,000–₹12,000).</div>
+        <div class="time-price">Schilthorn gondola: ₹5,500 return (with Swiss Pass) · Paragliding Interlaken: ₹8,000–₹12,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 5–7 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Switzerland 7-Day Itinerary</span>
+    <span class="page-header-right">Days 5–7 · Lucerne · Geneva · Budget</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">5–6</div>
+    <div class="day-info">
+      <div class="day-tag">Days Five &amp; Six · Medieval &amp; Majestic</div>
+      <div class="day-title">Lucerne — Chapel Bridge, Lion &amp; Mt. Pilatus</div>
+      <div class="day-sub">Train Interlaken to Lucerne · Chapel Bridge walk · Lion Monument · Lake cruise · Mt. Pilatus cable car day trip</div>
+      <div class="day-cost">💰 Mt. Pilatus cable car: ₹5,000 return · Lake cruise: ₹1,200 · Swiss Travel Pass discounts apply</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 5</div>
+      <div class="time-content">
+        <div class="time-title">Chapel Bridge &amp; Lion Monument — Lucerne's Two Icons</div>
+        <div class="time-desc">The Kapellbrücke (Chapel Bridge) was built in 1333 — a 170-metre wooden covered bridge over the Reuss River, the oldest surviving wooden bridge in Europe (partially rebuilt after a 1993 fire). The triangular roof panels inside display 17th-century paintings of Lucerne's history. Cross at the octagonal Water Tower (originally a torture chamber and prison). Then walk 10 minutes to the Löwendenkmal (Lion Monument) — a 10-metre figure of a dying lion carved directly into a cliff face in 1821, commemorating the Swiss Guards who died defending Louis XVI in 1792. Mark Twain called it "the most mournful and moving piece of stone in the world."</div>
+        <div class="time-price">Chapel Bridge: free to walk · Lion Monument: free · Old Town: free · Allow 3 hours</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 5 PM</div>
+      <div class="time-content">
+        <div class="time-title">Lake Lucerne Cruise &amp; Old Town Exploration</div>
+        <div class="time-desc">Lake Lucerne (Vierwaldstättersee — Lake of Four Forest Cantons) is one of Switzerland's most beautiful lakes, surrounded by mountains. Steamer cruises run from the main pier (₹1,200/hour, Swiss Travel Pass: free on standard boats). The short cruise to Weggis or Vitznau provides spectacular mountain scenery. Back in the old town: the medieval walls (with nine towers still standing), Weinmarkt square, Kornmarkt. Swiss chocolate shops in the old town — Bachmann and Heini are excellent for regional specialities. The Rosengart Collection museum (Picasso and Klee, ₹2,200) is a highlight.</div>
+        <div class="time-price">Lake cruise: free with Swiss Travel Pass · Rosengart Museum: ₹2,200 · Swiss chocolate: ₹500–₹2,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 6</div>
+      <div class="time-content">
+        <div class="time-title">Mt. Pilatus — Dragon Mountain by Cable Car</div>
+        <div class="time-desc">Mount Pilatus (2,132m) looms over Lucerne and according to legend was haunted by the ghost of Pontius Pilate. The cable car from Kriens (₹5,000 return from Lucerne including bus to base; Swiss Travel Pass gives 50% discount) reaches the summit in 30 minutes. The views from the summit plateau over Lake Lucerne, Lucerne city, and the Alps are extraordinary. The "Golden Round Trip" is the classic way: cable car up, cogwheel railway down to Alpnachstad, boat back to Lucerne across the lake (₹7,500 total — covered mostly by Swiss Travel Pass). The cogwheel railway (1889) has the steepest rack railway gradient in the world.</div>
+        <div class="time-price">Golden Round Trip: ₹7,500 (Swiss Pass discounts apply) · Cable car alone: ₹5,000 return</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">07</div>
+    <div class="day-info">
+      <div class="day-tag">Day Seven · Departure Day</div>
+      <div class="day-title">Geneva — Jet d'Eau, Old Town &amp; UN Palace</div>
+      <div class="day-sub">Train Lucerne to Geneva (2.5 hrs) · Lake Geneva &amp; Jet d'Eau · St. Pierre Cathedral · UN Palace exterior · Flight home</div>
+      <div class="day-cost">💰 Train Lucerne–Geneva: ₹3,500 (Swiss Pass: free) · UN tour: ₹1,200</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Geneva — Jet d'Eau &amp; Lake Geneva</div>
+        <div class="time-desc">Geneva sits at the south-western tip of Lake Geneva — the largest lake in Western Europe. The Jet d'Eau (Water Jet) shoots 140 metres into the air at 200 km/h — one of the world's tallest fountains, visible from across the city. Walk along the Quai du Mont-Blanc for views of the Alps. The Bains des Pâquis jetty pier (₹100 entry) has excellent lake swimming in summer and fondue in winter — a favourite of locals. The Flower Clock (Horloge Fleurie) in the Jardin Anglais is one of Switzerland's most photographed spots.</div>
+        <div class="time-price">Jet d'Eau: free · Bains des Pâquis: ₹100 · Flower Clock: free · Lake walk: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Midday</div>
+      <div class="time-content">
+        <div class="time-title">UN Palais des Nations &amp; Vieille Ville</div>
+        <div class="time-desc">The Palais des Nations is the European headquarters of the United Nations — the world's second largest UN office. Guided tours available on weekdays (₹1,200, bring passport ID). The Broken Chair sculpture outside (11m tall, with one broken leg — symbolising the campaign against landmines) is iconic. Walk up to Geneva's Vieille Ville (Old Town) for the St. Pierre Cathedral (Calvin's Reformed church, 1150 — free, climb the tower for ₹600 for city views) and the Maison Tavel (oldest house in Geneva, free museum). Grab fondue or raclette one last time before your evening flight from Geneva Airport (GVA) — 7 minutes from the city by train.</div>
+        <div class="time-price">UN tour: ₹1,200 (bring passport) · Cathedral tower: ₹600 · Maison Tavel: free · Airport train: ₹250</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 7 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (7 nights)</td><td>35,000</td><td>70,000</td><td>1,40,000+</td></tr>
+      <tr><td>Food (expensive country!)</td><td>15,000</td><td>30,000</td><td>55,000</td></tr>
+      <tr><td>Swiss Travel Pass (7 days)</td><td>20,000</td><td>20,000</td><td>31,000</td></tr>
+      <tr><td>Mountain attractions</td><td>18,000</td><td>28,000</td><td>40,000</td></tr>
+      <tr><td>Shopping &amp; Chocolate</td><td>2,000</td><td>8,000</td><td>30,000+</td></tr>
+      <tr><td>Flights (Delhi/Mumbai–ZRH)</td><td>55,000</td><td>70,000</td><td>1,10,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹1,45,000</strong></td><td><strong>~₹2,26,000</strong></td><td><strong>₹4,06,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Switzerland is one of the most expensive countries in the world — budget carefully. Save money by: buying food at Migros or Coop supermarkets (excellent quality, ₹400–₹600/meal), picnicking with Swiss cheese and bread from the market, choosing hostels in Interlaken (excellent options from ₹2,500/night).</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🚂</div>
+      <div class="tip-title">Swiss Travel Pass — Buy Before You Leave India</div>
+      <div class="tip-desc">The Swiss Travel Pass is only sold to non-residents outside Switzerland. Buy online at swisstravelpass.com before departure. It covers all trains, buses, boats, and gives free entry to 500+ museums. The 7-day pass at ₹20,000 pays for itself quickly — a single return Jungfraujoch journey without the pass costs ₹18,000.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌤️</div>
+      <div class="tip-title">Mountain Weather — Always Check Before Going Up</div>
+      <div class="tip-desc">Jungfraujoch and other mountain excursions are only worth doing in clear weather — clouds at altitude mean zero visibility. Check mountain weather at meteoswiss.ch and jungfrau.ch the evening before. If weather is poor on planned Jungfraujoch day, swap with a city day and go to the mountain on the better weather day. Cloud-free mornings are most common.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🧥</div>
+      <div class="tip-title">Layering for Alpine Altitudes</div>
+      <div class="tip-desc">Even in summer, Jungfraujoch is -5°C to -10°C with strong winds. Wear thermal base layer + fleece + windproof jacket. Altitude above 3,000m can cause mild headache — drink water, move slowly on arrival, descend if you feel nauseous. The Ice Palace at Jungfraujoch is slippery — wear closed shoes with grip.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍫</div>
+      <div class="tip-title">Swiss Chocolate — What to Buy</div>
+      <div class="tip-desc">Lindt, Toblerone, Camille Bloch (Ragusa), Frey, and Cailler are Swiss supermarket brands — excellent quality, buy at Migros/Coop. Premium artisanal: Läderach (from Glarus), Sprüngli (Zurich), Neuhaus, Bachmann (Lucerne). A 1kg box of Läderach chocolate (₹4,000) makes an extraordinary gift. Buy at the factory outlet near Glarus for half price.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More Alpine<br/>Europe Awaits</h2>
+  <p>From Austria's Vienna to France's Chamonix, from Germany's Black Forest to Italy's Dolomites — IncredibleItinerary covers every European mountain adventure written for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · London · Rome · Barcelona · Amsterdam · New York · Turkey · Malaysia · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

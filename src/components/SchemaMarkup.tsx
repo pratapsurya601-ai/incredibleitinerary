@@ -10,8 +10,7 @@ const AUTHOR_ENTITY = {
     "Travel writers with first-hand experience across India, Southeast Asia, Europe, and the Middle East. Every guide is researched on the ground.",
   url: `${BASE_URL}/about`,
   sameAs: [
-    "https://instagram.com/incredibleitinerary",
-    "https://facebook.com/incredibleitinerary",
+    "https://www.linkedin.com/in/surya-pratap-singh-490a18320",
   ],
 };
 

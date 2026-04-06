@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Rome in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#9a3412;--primary-light:#fb923c;--primary-dark:#7c2d12;
+  --accent:#b91c1c;--accent-light:#fca5a5;
+  --ink:#1a0800;--cream:#fff8f5;--parchment:#ffedd5;
+  --white:#ffffff;--muted:#6b4c2a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,8,0,0.97) 0%,rgba(26,8,0,0.6) 50%,rgba(26,8,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fb923c;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(154,52,18,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(154,52,18,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:var(--ink)}
+.route-stop.red{background:var(--accent)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(154,52,18,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(154,52,18,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(251,146,60,0.08),rgba(251,146,60,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fb923c;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fb923c;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(154,52,18,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.terra{background:rgba(251,146,60,0.08);border:1px solid rgba(251,146,60,0.25);color:#7c2d12}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(154,52,18,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(154,52,18,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(154,52,18,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(154,52,18,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(154,52,18,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/2064827/pexels-photo-2064827.jpeg?w=1200&q=80" alt="Rome Colosseum"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Rome<br/><em>in 5 Days</em></h1>
+    <p class="cover-sub">The Eternal City — Colosseum, Vatican, Trevi Fountain, Pantheon &amp; la dolce vita</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 5 Days</span>
+      <span class="pill">🛂 Schengen Visa</span>
+      <span class="pill">💰 ₹75,000–₹1,80,000</span>
+      <span class="pill">🌸 Apr–Jun &amp; Sep–Oct</span>
+      <span class="pill">🏛️ Colosseum</span>
+      <span class="pill">🍝 La Dolce Vita</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(154,52,18,0.3);border:1px solid rgba(251,146,60,0.4);color:#fb923c;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Rome 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Eternal City — Five Days in Rome</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">Schengen</span><span class="stat-label">Visa Required</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹75k–1.8L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌸</div><span class="stat-val">Apr–Oct</span><span class="stat-label">Best Season</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">FCO Airport</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop light">Colosseum</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Vatican</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Trevi</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop red">Borghese</span>
+    <span class="route-sub">1 city · Leonardo Express or bus · Fiumicino to Termini 32 min</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🏛️ Colosseum &amp; Roman Forum</div>
+      <div class="city-desc">The 2,000-year-old Colosseum held 50,000–80,000 spectators for gladiatorial combat. MUST book online — without a pre-booked ticket the queue is 2+ hours. The combined ticket includes the Roman Forum and Palatine Hill — the very hill where Rome was founded and where emperors lived. Allow a full morning here.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">⛪ Vatican City</div>
+      <div class="city-desc">The world's smallest sovereign state packs in St. Peter's Basilica (Michelangelo's dome), the Vatican Museums (12km of galleries), and the Sistine Chapel ceiling — one of the greatest achievements in art history. Book online weeks ahead. Arrive at 8am when the museums open.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">⛲ Trevi &amp; Piazze</div>
+      <div class="city-desc">Trevi Fountain before 9am (before tourists arrive), Spanish Steps, the Pantheon (2,000-year-old concrete dome, still the world's largest unreinforced concrete dome), Piazza Navona with Bernini's Fountain of the Four Rivers, Campo de' Fiori morning market.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4–5</div>
+      <div class="city-name">🌿 Borghese &amp; Trastevere</div>
+      <div class="city-desc">Borghese Gallery — the most important private art collection in Rome (Bernini sculptures, Caravaggio paintings) — MUST pre-book, capacity strictly limited to 360 people per 2-hour slot. Day 5: day trip to Ostia Antica, Rome's remarkably preserved ancient port city.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"I am in Rome. The city is more beautiful than I expected, and I expected a great deal." — Percy Bysshe Shelley, 1818. Still the same. Still magnificent.</p>
+  </div>
+  <div class="highlight-box terra">
+    <strong>Visa:</strong> Schengen visa required — apply at the Italian Consulate (VFS Global) 3–4 weeks in advance. Fee: ₹7,000 approx + VFS charges. Italy is often the most straightforward Schengen visa — good bank statements (3 months), hotel bookings, travel insurance (€30,000 minimum), and return flight tickets are the core requirements. If visiting Italy as part of a multi-country European trip, apply at the consulate of the country where you spend the most nights.
+  </div>
+  <div class="highlight-box amber">
+    <strong>Flights from India:</strong> Delhi/Mumbai to Rome Fiumicino (FCO) or Ciampino (CIA) — ₹42,000–₹75,000 return. IndiGo, Air India, and Vistara connect via Middle Eastern hubs. Leonardo Express train from Fiumicino to Roma Termini: ₹2,800, 32 minutes. Buy the train ticket from the machine inside the terminal — avoid touts.
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–3 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Rome 5-Day Itinerary</span>
+    <span class="page-header-right">Day 1–3 — Colosseum, Vatican &amp; Trevi</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Ancient Rome</div>
+      <div class="day-title">Colosseum, Roman Forum &amp; Palatine Hill</div>
+      <div class="day-sub">Morning Colosseum · Roman Forum walk · Palatine Hill · Circus Maximus · Aventine Hill keyhole view · Trastevere evening</div>
+      <div class="day-cost">💰 Combined ticket (Colosseum + Forum + Palatine): ₹2,200 · Book at coopculture.it</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Colosseum — Book Online, Arrive at Opening Time</div>
+        <div class="time-desc">The Colosseum (Flavian Amphitheatre) was completed in 80 AD and hosted gladiatorial combat, animal hunts, and public spectacles for 400 years. Without a pre-booked ticket, the queue at the gate is typically 1.5–2.5 hours. Book at coopculture.it (₹2,200, combined with Forum and Palatine Hill). The combined ticket is valid for 1 full day — start with the Colosseum, then walk to the Forum and Palatine. The arena floor experience (extra ₹1,500) lets you stand in the arena itself — worth it. The underground experience (extra ₹1,500) shows the hypogeum — the subterranean world of cages and ramps where animals and fighters waited.</div>
+        <div class="time-price">Combined ticket: ₹2,200 · Arena floor: extra ₹1,500 · Underground: extra ₹1,500 · Book: coopculture.it</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Roman Forum &amp; Palatine Hill — Walking Through History</div>
+        <div class="time-desc">The Roman Forum was the heart of ancient Rome — market, courts, temples, political centre — for over 1,000 years. The Via Sacra (Sacred Way) runs through it. The Temple of Saturn (497 BC), the Arch of Septimius Severus, the Basilica of Maxentius, the Temple of Vesta. Palatine Hill above the Forum is where Rome was legendarily founded in 753 BC, and where the emperors built their palaces. The view from Palatine Hill over the Forum with the Colosseum behind is the most evocative sight in Rome.</div>
+        <div class="time-price">Included in combined ticket · Audio guide recommended (₹500) · Allow 2–3 hours</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Aventine Hill — The Knights of Malta Keyhole</div>
+        <div class="time-desc">Walk up the Aventine Hill (10 minutes from Circus Maximus) to the Piazza dei Cavalieri di Malta — the priory of the Knights of Malta. The famous keyhole in the gate perfectly frames the dome of St. Peter's Basilica across the city — one of Rome's great secrets. Queue is usually short (10 minutes maximum). The Orange Garden (Giardino degli Aranci) on the Aventine has panoramic views over the Tiber and Trastevere. This is where Romans come to be away from tourists.</div>
+        <div class="time-price">Keyhole view: free · Orange Garden: free · Best in late afternoon golden light</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · The Vatican</div>
+      <div class="day-title">St. Peter's, Vatican Museums &amp; Sistine Chapel</div>
+      <div class="day-sub">8am Vatican Museums · Sistine Chapel · St. Peter's Basilica · Dome climb · Castel Sant'Angelo walk</div>
+      <div class="day-cost">💰 Vatican Museums + Sistine: ₹2,500 · St. Peter's: free · Dome climb: ₹1,000</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Vatican Museums — Book Online, Arrive at Opening</div>
+        <div class="time-desc">The Vatican Museums contain 12km of galleries and over 54 collections. Pope Julius II began collecting in 1503 — every pope since has added to the collection. Book tickets online (museivaticani.va — ₹2,500) — the walk-in queue regularly reaches 3–4 hours. Highlights: the Gallery of Maps (40 painted topographical maps of Italian regions), the Raphael Rooms (entirely painted by Raphael in the 1510s), and the Sistine Chapel. The Sistine Chapel ceiling (Michelangelo, 1508–1512) and The Last Judgment (Michelangelo, 1534–1541) must be seen in person — no reproduction does justice to their scale.</div>
+        <div class="time-price">Entry: ₹2,500 (book online) · Early Friday mornings less crowded · Allow 3–4 hours</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">St. Peter's Basilica — Michelangelo's Dome</div>
+        <div class="time-desc">Entry to St. Peter's Basilica is free but the queue can be 45 minutes — it moves quickly. The interior is staggering in scale — the baldachin (Bernini's bronze canopy over the altar) alone is 29 metres tall. Michelangelo's Pietà (1499) is in the first chapel on the right. Climb the dome (Michelangelo designed it, completed 1590) for the finest view in Rome — 136 metres above ground, stairs or lift option (₹1,000). St. Peter's Square holds 400,000 people and the Bernini colonnades embrace visitors as the Pope described — "the arms of the church reaching out to the world."</div>
+        <div class="time-price">Basilica: free · Dome climb: ₹1,000 · Dress code strictly enforced: cover knees &amp; shoulders</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Baroque Rome</div>
+      <div class="day-title">Trevi Fountain, Pantheon &amp; Piazza Navona</div>
+      <div class="day-sub">Early Trevi Fountain · Spanish Steps · Pantheon · Piazza Navona · Campo de' Fiori evening</div>
+      <div class="day-cost">💰 Pantheon: ₹500 · Trevi/Steps/Navona: free · Lunch: ₹700–₹1,500</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Trevi Fountain — Go Early to Beat the Crowds</div>
+        <div class="time-desc">By 10am, the Trevi Fountain is surrounded by thousands of tourists. By 8am, you might have it nearly to yourself. The Trevi is Rome's largest baroque fountain — 26 metres high — and the most famous fountain in the world. The tradition: throw a coin over your left shoulder with your right hand to ensure a return to Rome (€1.5 million is collected annually and donated to a food bank). The fountain's water comes from the ancient Acqua Vergine aqueduct, built in 19 BC. The surrounding neighbourhood (Trevi rione) has excellent traditional restaurants.</div>
+        <div class="time-price">Entry: free · Go before 9am for small crowds · Coin toss: ₹80 (€1) goes to charity</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Pantheon — The Most Perfect Building Ever Constructed</div>
+        <div class="time-desc">Built in 125 AD under Emperor Hadrian, the Pantheon has been in continuous use for nearly 1,900 years — the best preserved ancient building in the world. The concrete dome (43.3 metres diameter) has an oculus (open hole) at the top that illuminates the interior and lets rain fall through — the floor drains it away. Entry now costs ₹500 (introduced in 2023 to manage overcrowding). The tombs of Raphael and two Italian kings are inside. The square outside (Piazza della Rotonda) is perfect for coffee at Tazza d'Oro — Rome's most celebrated espresso bar (₹250).</div>
+        <div class="time-price">Entry: ₹500 · Tazza d'Oro espresso outside: ₹250 · Open Mon–Sat 9am–7pm, Sun 9am–6pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Piazza Navona, Campo de' Fiori &amp; Roman Food</div>
+        <div class="time-desc">Piazza Navona was built on the site of Domitian's stadium (1st century AD) — you can see the oval shape in the piazza. Bernini's Fountain of the Four Rivers (1651) depicts rivers from four continents supporting an Egyptian obelisk. Gelato nearby: look for artisanal gelaterias (gelato that is heaped in metal containers with lids, not piled high in pyramids — the pyramid style is a tourist trap). Campo de' Fiori morning flower market becomes an evening aperitivo square. Suppli (fried rice balls with tomato and mozzarella) from Supplì Roma on Via di San Francesco a Ripa: ₹250 each. Try cacio e pepe pasta — Rome's signature dish — at any local trattoria.</div>
+        <div class="time-price">Piazza Navona: free · Suppli: ₹250 · Cacio e pepe at trattoria: ₹700–₹1,200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 4–5 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Rome 5-Day Itinerary</span>
+    <span class="page-header-right">Day 4–5 · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Art &amp; Trastevere</div>
+      <div class="day-title">Borghese Gallery, Villa Gardens &amp; Trastevere</div>
+      <div class="day-sub">9am Borghese Gallery (MUST pre-book) · Villa Borghese gardens · Trastevere evening neighbourhood</div>
+      <div class="day-cost">💰 Borghese: ₹1,800 (pre-book mandatory) · Trastevere dinner: ₹2,000–₹4,000</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Borghese Gallery — Pre-Book or You Cannot Enter</div>
+        <div class="time-desc">The Borghese Gallery is unique — entry is strictly limited to 360 visitors per 2-hour time slot, and pre-booking is not optional, it is mandatory. Book at galleriaborghese.it. The gallery holds Cardinal Borghese's extraordinary 17th-century collection: six Bernini sculptures that redefined what marble could do (Pluto and Proserpina, Apollo and Daphne, David), six Caravaggio paintings (including Boy with a Basket of Fruit, 1593). Raphael's Deposition of Christ. The building itself — a 17th-century villa — is as impressive as the collection. You are given exactly 2 hours inside.</div>
+        <div class="time-price">Entry: ₹1,800 · MUST book at galleriaborghese.it · 2hr time slot only · Book weeks ahead</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Villa Borghese Gardens — Rome's Central Park</div>
+        <div class="time-desc">After the gallery, walk through the 80-hectare Villa Borghese gardens — Rome's equivalent of Central Park, free and beautiful. The Pincian Hill terrace has one of Rome's finest views over Piazza del Popolo and the city. Rent rowboats on the small lake (₹700/30 min) or bicycle/electric scooters (₹600/hour). Explore the Bioparco zoo if travelling with children (₹1,500). The gardens connect to the Galleria Nazionale d'Arte Moderna (free on first Sunday of month).</div>
+        <div class="time-price">Gardens: free · Rowboat: ₹700/30 min · Bicycle hire: ₹600/hr · Pincian Hill terrace: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Trastevere — Rome's Most Romantic Neighbourhood</div>
+        <div class="time-desc">Trastevere (literally "across the Tiber") is Rome's most characterful neighbourhood — medieval cobbled streets, ivy-draped buildings, laundry hanging between windows, neighbourhood trattorie with outdoor tables. The Basilica di Santa Maria in Trastevere (12th-century mosaics, completely free) is one of Rome's oldest churches. Walk Piazza Santa Maria and the surrounding streets from 7pm when the restaurants fill. Dinner in Trastevere is a Rome essential — pasta alla carbonara (genuine Roman carbonara: egg yolk, guanciale, pecorino, black pepper — NO cream, ever), and house red wine in a carafe (₹300).</div>
+        <div class="time-price">Basilica: free · Trastevere dinner: ₹2,000–₹4,000 for two · House wine carafe: ₹300</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Ancient Port City</div>
+      <div class="day-title">Ostia Antica Day Trip — Ancient Rome Preserved</div>
+      <div class="day-sub">Metro + train to Ostia (30 min) · Ancient streets, theatre, baths, temples · Return for farewell dinner · Departure</div>
+      <div class="day-cost">💰 Ostia Antica entry: ₹1,200 · Train: ₹350 return · Allow full morning</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Ostia Antica — Better Than Pompeii, Virtually Unknown</div>
+        <div class="time-desc">Ostia Antica was Rome's ancient harbour city — where grain and goods from across the empire arrived. It was inhabited for 600 years and slowly abandoned as the harbour silted up. Today it is the best-preserved ancient Roman city in the world, arguably more accessible than Pompeii — the streets, apartment blocks (insulae), temples, baths, theatre and taverns are all walkable. Take Metro B to Laurentina, then a regional train to Ostia Antica station (30 minutes total, ₹350 return). Entry: ₹1,200. The site covers 1.5km — comfortable shoes essential. Allow 3–4 hours.</div>
+        <div class="time-price">Entry: ₹1,200 · Metro B + train return: ₹350 · Allow 3–4 hours · Open 9am–5pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 5 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (5 nights)</td><td>18,000</td><td>40,000</td><td>80,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>6,000</td><td>15,000</td><td>30,000</td></tr>
+      <tr><td>Transport (Metro/train)</td><td>2,000</td><td>4,000</td><td>8,000</td></tr>
+      <tr><td>Attractions &amp; Museums</td><td>7,000</td><td>12,000</td><td>18,000</td></tr>
+      <tr><td>Shopping &amp; Souvenirs</td><td>1,000</td><td>5,000</td><td>20,000</td></tr>
+      <tr><td>Flights (Delhi/Mumbai–FCO)</td><td>42,000</td><td>58,000</td><td>90,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹76,000</strong></td><td><strong>~₹1,34,000</strong></td><td><strong>₹2,46,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Rome tip: eat lunch at local tavole calde (hot table — self-serve trattoria) for ₹500–₹800. Never eat at a restaurant directly facing a major tourist sight — quality drops and prices double. Walk one street back.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🎫</div>
+      <div class="tip-title">Book Everything Online — Queues Are Brutal</div>
+      <div class="tip-desc">Colosseum, Vatican Museums, Borghese Gallery — all require pre-booking. The Borghese is mandatory (no walk-ins). For Vatican, book at museivaticani.va 2+ weeks ahead. For Colosseum, book at coopculture.it. Same-day tickets are sold occasionally but don't rely on it in peak season.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍕</div>
+      <div class="tip-title">Roman Food Rules</div>
+      <div class="tip-desc">Roman carbonara has NO cream — just egg yolk, guanciale, pecorino, black pepper. Cacio e pepe: cheese and pepper only. Supplì: fried rice balls. Artichoke (carciofo alla giudea: fried Jewish style) is a Roman speciality. Gelato at artisanal gelaterie only — not tourist pyramid-shaped displays. Espresso standing at the bar costs ₹120; seated costs ₹500.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">👗</div>
+      <div class="tip-title">Dress Code — Churches Are Strict</div>
+      <div class="tip-desc">Vatican, St. Peter's, and all major churches have strict dress codes: cover shoulders and knees. Keep a scarf or light jacket in your bag. Anyone in shorts at the Vatican entry will be turned away. Women should carry a scarf for shoulder covering — you'll use it multiple times per day.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚍</div>
+      <div class="tip-title">Transport — Walk, Bus, Metro</div>
+      <div class="tip-desc">Rome's Metro has only 3 lines — bus and walking are how Italians navigate. Buy a 48-hour transport pass (₹1,200) covering Metro and buses. Central Rome is extremely walkable — Colosseum to Trevi Fountain is 2km. Taxis are metered — fixed rate from Fiumicino to centre is €50 (₹4,500).</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More of Europe<br/>Awaits You</h2>
+  <p>From the canals of Venice to the beaches of the Amalfi Coast, from Paris's art galleries to Spain's Gaudí masterpieces — IncredibleItinerary has complete guides for every destination, written for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · London · Barcelona · Amsterdam · Switzerland · New York · Turkey · Malaysia · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

@@ -836,7 +836,7 @@ export default function VisaCheckerClient() {
                     {PASSPORTS.find((p) => p.id === passport)?.flag}{" "}
                     {PASSPORTS.find((p) => p.id === passport)?.label} passport
                   </span>
-                  <span className="text-parchment-2">\u2192</span>
+                  <span className="text-parchment-2">→</span>
                   <span>
                     {selectedDest?.flag} {selectedDest?.label}
                   </span>
@@ -872,7 +872,7 @@ export default function VisaCheckerClient() {
                   <ul className="space-y-2">
                     {result.requirements.map((req, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-ink/80 font-light leading-relaxed">
-                        <span className="text-gold mt-0.5 shrink-0">\u2022</span>
+                        <span className="text-gold mt-0.5 shrink-0">•</span>
                         {req}
                       </li>
                     ))}
@@ -895,7 +895,7 @@ export default function VisaCheckerClient() {
                     href={selectedDest.cities[0].href}
                     className="block text-center text-sm text-gold-dark hover:text-gold font-medium mb-4 transition-colors"
                   >
-                    Read our full {selectedDest.label} guide for travel tips \u2192
+                    Read our full {selectedDest.label} guide for travel tips →
                   </Link>
                 )}
 
@@ -912,7 +912,7 @@ export default function VisaCheckerClient() {
                   onClick={handleReset}
                   className="w-full text-center text-sm text-muted hover:text-gold-dark transition-colors py-2"
                 >
-                  \u2190 Check another destination
+                  ← Check another destination
                 </button>
               </div>
             )}

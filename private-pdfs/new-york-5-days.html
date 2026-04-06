@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>New York in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#1e293b;--primary-light:#64748b;--primary-dark:#0f172a;
+  --accent:#f59e0b;--accent-light:#fcd34d;
+  --ink:#0a0f1e;--cream:#f8f9fa;--parchment:#e2e8f0;
+  --white:#ffffff;--muted:#4a5568;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,30,0.97) 0%,rgba(10,15,30,0.6) 50%,rgba(10,15,30,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fcd34d;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(30,41,59,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(30,41,59,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.gold{background:var(--accent-light);color:var(--ink)}
+.route-stop.amber{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(30,41,59,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(30,41,59,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(100,116,139,0.08),rgba(100,116,139,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fcd34d;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fcd34d;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(30,41,59,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.slate{background:rgba(100,116,139,0.08);border:1px solid rgba(100,116,139,0.25);color:#0f172a}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(30,41,59,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(30,41,59,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(30,41,59,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(30,41,59,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(30,41,59,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--accent-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/802024/pexels-photo-802024.jpeg?w=1200&q=80" alt="New York City skyline"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">New York<br/><em>in 5 Days</em></h1>
+    <p class="cover-sub">The city that never sleeps — Manhattan skyline, Central Park, Brooklyn Bridge, MoMA &amp; the High Line</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 5 Days</span>
+      <span class="pill">🛂 B1/B2 Visa</span>
+      <span class="pill">💰 ₹1,00,000–₹2,80,000</span>
+      <span class="pill">🍂 Sep–Nov &amp; Apr–Jun</span>
+      <span class="pill">🏙️ Manhattan</span>
+      <span class="pill">🗽 Iconic Skyline</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(30,41,59,0.3);border:1px solid rgba(252,211,77,0.4);color:#fcd34d;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">New York 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Greatest City on Earth — Five Days in New York</h2>
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">B1/B2 Visa</span><span class="stat-label">Required</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹1L–2.8L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🍂</div><span class="stat-val">Sep–Nov</span><span class="stat-label">Best Season</span></div>
+  </div>
+  <div class="route-bar">
+    <span class="route-stop">JFK/EWR</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop gold">Manhattan</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Central Park</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Brooklyn</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop amber">High Line</span>
+    <span class="route-sub">1 city · Subway + walking · AirTrain + E train from JFK ~50 min · $19 / ₹1,600</span>
+  </div>
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🗽 Staten Island Ferry &amp; Brooklyn</div>
+      <div class="city-desc">The Staten Island Ferry is FREE and gives the closest views of the Statue of Liberty and Lower Manhattan skyline from the water — the best free activity in NYC. Brooklyn Bridge walk, DUMBO neighbourhood with cobblestones and bridge framing the Manhattan skyline for the perfect photograph.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🏙️ Central Park &amp; Met Museum</div>
+      <div class="city-desc">Central Park — 341 hectares in the middle of Manhattan — is one of the world's great urban parks. The Metropolitan Museum of Art (The Met) is the largest art museum in the Western Hemisphere with 1.5 million objects — Egyptian Temple of Dendur, European masters, Arms and Armour. Times Square at night for the full sensory assault.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🏛️ Lower Manhattan &amp; Grand Central</div>
+      <div class="city-desc">9/11 Memorial reflecting pools (free) and One World Trade Observatory. Wall Street, the New York Public Library (read room free), Grand Central Terminal (free to walk — the celestial ceiling is extraordinary). This is the original Manhattan that built the world.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4–5</div>
+      <div class="city-name">🎨 Brooklyn &amp; MoMA</div>
+      <div class="city-desc">Brooklyn: Smorgasburg food market (weekends), Prospect Park or Brooklyn Botanic Garden, Williamsburg for indie culture and street art. Day 5: MoMA (Warhol, Picasso, Frida Kahlo), the High Line elevated park (free), Chelsea Market, Governors Island ferry.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p>"New York is not a city — it's the world." — Vin Diesel. Eight million people, 800 languages, every cuisine, culture and ambition on earth, compressed into 783 square kilometres.</p>
+  </div>
+  <div class="highlight-box slate">
+    <strong>US B1/B2 Visa for Indians:</strong> Apply at usembassy.gov — visa fee ₹12,000 (non-refundable). In-person interview required. Processing: 3–6 months for first-time applicants — apply early. Required documents: bank statements (6 months), employment letter, property proof, ITR, strong ties to India (job, family, property). The US visa is the most difficult and expensive tourist visa for Indian passport holders — apply at least 6 months ahead for peak travel seasons.
+  </div>
+  <div class="highlight-box amber">
+    <strong>Flights:</strong> Delhi/Mumbai to JFK (New York) — ₹60,000–₹1,10,000 return. Air India direct from Delhi (~15hrs). Emirates via Dubai, Etihad via Abu Dhabi, Qatar via Doha are all popular. Newark (EWR) is sometimes cheaper than JFK. AirTrain + NYC Subway from JFK: ₹1,600 (50 min). Buy a 7-day unlimited Metro card (₹2,200) on arrival.
+  </div>
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–3 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">New York 5-Day Itinerary</span>
+    <span class="page-header-right">Day 1–3 — Manhattan, Brooklyn &amp; Skyline</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Iconic New York</div>
+      <div class="day-title">Staten Island Ferry, Brooklyn Bridge &amp; DUMBO</div>
+      <div class="day-sub">Free Staten Island Ferry (Statue of Liberty views) · Brooklyn Bridge walk · DUMBO photo spot · Brooklyn Heights Promenade</div>
+      <div class="day-cost">💰 Staten Island Ferry: FREE · Bridge walk: FREE · Budget well for NYC food (₹800–₹2,000/meal)</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">JFK to Manhattan — AirTrain + Subway</div>
+        <div class="time-desc">From JFK: take the AirTrain to Jamaica station, then the A or E subway to Midtown (50 minutes total, ₹1,600). From Newark (EWR): NJ Transit train to Penn Station (30 minutes, ₹1,800). Taxis from JFK to Manhattan are fixed rate at $70 (₹5,800) — only worthwhile with heavy luggage and multiple people. Uber/Lyft are often cheaper. Buy a 7-day unlimited subway MetroCard (₹2,200) or use contactless bank card (works on all NYC subway and buses). Do NOT exchange currency at airport booths — terrible rates. Use a zero-forex card or ATM in the city.</div>
+        <div class="time-price">AirTrain + subway: ₹1,600 · 7-day MetroCard: ₹2,200 · Hotel in Midtown: ₹9,000–₹20,000/night</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Staten Island Ferry — Free Statue of Liberty Views</div>
+        <div class="time-desc">The Staten Island Ferry is one of New York's great free experiences — a 25-minute ferry ride from Whitehall Terminal (lower Manhattan) to St. George Terminal, Staten Island, passing the Statue of Liberty at close range. Completely free, runs 24 hours, 7 days a week. Take the right side of the ferry going out (downtown-facing) for the best Statue of Liberty views. No need to get off at Staten Island — just turn around and take the next ferry back. Pair this with views of the Manhattan skyline from the water — you'll see why this is on every best-free-NYC-activities list.</div>
+        <div class="time-price">Ferry: COMPLETELY FREE · Nearest subway: Whitehall St (R/W) or South Ferry (1) · Best in late afternoon light</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Brooklyn Bridge Walk &amp; DUMBO</div>
+        <div class="time-desc">Walk the Brooklyn Bridge from Manhattan (start at the City Hall Park entrance) to Brooklyn — 1.1km, 20 minutes. The pedestrian walkway is elevated above the car traffic — you walk through the gothic stone towers with Manhattan behind you and Brooklyn ahead. DUMBO (Down Under the Manhattan Bridge Overpass) is Brooklyn's most photogenic neighbourhood — the view of Manhattan Bridge framing the Manhattan skyline from Washington Street is the most photographed spot in Brooklyn. The Jane's Carousel on the waterfront is beautiful. Have pizza at Juliana's (cash only, best pizza in NYC by many accounts) or Grimaldi's next door.</div>
+        <div class="time-price">Bridge walk: free · DUMBO: free · Juliana's pizza: ₹1,200–₹1,800 (cash only)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Park &amp; Art</div>
+      <div class="day-title">Central Park, The Met &amp; Times Square</div>
+      <div class="day-sub">Central Park morning walk · The Metropolitan Museum · Upper East Side · Times Square evening — the full Manhattan sensory experience</div>
+      <div class="day-cost">💰 Central Park: FREE · The Met: ₹2,500 (suggested donation) · Times Square: FREE</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Central Park — 341 Hectares of Urban Sanctuary</div>
+        <div class="time-desc">Enter at 59th Street and Fifth Avenue. Central Park was designed by Frederick Law Olmsted (1858) and is one of the world's greatest landscape architecture achievements — entirely artificial, built on what was rocky scrubland. Highlights: the Bethesda Fountain and Terrace, Strawberry Fields (John Lennon memorial opposite the Dakota building where he lived), the Reservoir, Bow Bridge, and Belvedere Castle. In autumn (October–November), the deciduous trees turn red and gold — among the most beautiful urban landscapes in the world. Rent a bike (₹700/hour) to cover more ground.</div>
+        <div class="time-price">Central Park: FREE · Bike rental: ₹700/hour · Strawberry Fields: free · Bow Bridge: free</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">The Metropolitan Museum of Art — The Greatest Art Museum in America</div>
+        <div class="time-desc">The Met is on the eastern edge of Central Park (Fifth Avenue) — the world's largest art museum by gallery space. Highlights: The Temple of Dendur (an actual Egyptian temple, 15 BC, inside a glass-enclosed wing), European Paintings (Vermeer, Raphael, Rembrandt, Van Eyck), Arms and Armour, ancient Greek and Roman sculpture, Costume Institute. The recommended donation is ₹2,500 — you can technically pay less but it funds the museum. The rooftop sculpture garden (open May–October) has extraordinary Central Park and skyline views. Allow 3–4 hours minimum.</div>
+        <div class="time-price">Suggested donation: ₹2,500 · Rooftop: included · Open Fri–Sat until 9pm · Closed Wednesdays</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Times Square — Overwhelming, Unmissable, Entirely New York</div>
+        <div class="time-desc">Times Square is not subtle. 40 million visitors per year, 1,500+ LED displays, 24-hour activity, characters in costume for paid photos. Go in the evening (9pm+) for the full light show effect. It's crowded and commercial — but there's genuinely nothing else like it on earth. Walk through rather than lingering. The adjacent Theater District has Broadway shows (tkts.co.uk for same-day half-price tickets). Two Boots Pizza near Times Square: New York pizza slice ₹250 — the city's classic cheap meal.</div>
+        <div class="time-price">Times Square: free · Broadway show: ₹4,000–₹12,000 · Half-price at TKTS booth: ₹2,000–₹6,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · History &amp; Architecture</div>
+      <div class="day-title">9/11 Memorial, Wall Street &amp; Grand Central</div>
+      <div class="day-sub">9/11 Memorial reflecting pools · One World Observatory · Wall Street · New York Public Library · Grand Central Terminal</div>
+      <div class="day-cost">💰 9/11 Memorial: free · One World Observatory: ₹3,500 · Grand Central: free</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">9/11 Memorial — Where the Twin Towers Stood</div>
+        <div class="time-desc">The 9/11 Memorial consists of two enormous reflecting pools set in the exact footprints of the World Trade Center towers that collapsed on September 11, 2001. The names of all 2,977 victims are inscribed on the bronze parapets surrounding the pools. Water falls 9 metres down the sides into a second basin below — a profoundly simple and moving design. Entry to the memorial plaza is free. The 9/11 Museum (₹2,500) below ground contains artefacts, survivor testimonies, and the preserved slurry wall. The museum is extraordinary but emotionally intense — allow 2–3 hours and prepare yourself.</div>
+        <div class="time-price">Memorial: FREE · Museum: ₹2,500 · Book museum at 911memorial.org · Allow 2–3 hours minimum</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">One World Trade — Highest Observatory in the Western Hemisphere</div>
+        <div class="time-desc">One World Trade Center (Freedom Tower) at 541 metres is the tallest building in the Western Hemisphere. The One World Observatory on floors 100–102 (₹3,500) has a spectacular sky-rise elevator with a time-lapse of Manhattan's growth, and panoramic 360° views from the top. On a clear day you can see 80km in every direction — New Jersey, Connecticut, Long Island. Buy tickets online (oneworldobservatory.com) to skip the queue. The building's design — a 1,776-foot tower (the year of US independence) — makes it both beautiful and symbolic.</div>
+        <div class="time-price">Observatory: ₹3,500 · Book at oneworldobservatory.com · Allow 1.5 hours · Best on clear days</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Grand Central Terminal — The World's Most Beautiful Train Station</div>
+        <div class="time-desc">Grand Central Terminal (not "station" — locals will correct you) is a working commuter rail terminal and one of the world's great public spaces. The Main Concourse ceiling — a painted mural of the night sky (2,500 stars, in reverse, based on a medieval manuscript — the "mistake" in the stars' positions was intentional) — is extraordinary. Free guided tours on Fridays at 12:30pm. The Whispering Gallery: stand in opposite corners of the Vanderbilt Hall arched corridor and whisper — the curved ceiling carries your voice across the room. The Grand Central Market has exceptional food vendors (New York Public Library is nearby — the Rose Main Reading Room is free and spectacular).</div>
+        <div class="time-price">Grand Central: FREE to enter · Tours: FREE Fridays 12:30pm · Whispering Gallery: free · NYPL: free</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 4–5 + BUDGET + TIPS -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">New York 5-Day Itinerary</span>
+    <span class="page-header-right">Day 4–5 · Budget · Tips</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Brooklyn Culture</div>
+      <div class="day-title">Smorgasburg, Brooklyn Botanic Garden &amp; Williamsburg</div>
+      <div class="day-sub">Smorgasburg food market (weekends) · Brooklyn Botanic Garden · Prospect Park · Williamsburg indie culture &amp; street art</div>
+      <div class="day-cost">💰 Smorgasburg: free entry · Botanic Garden: ₹1,200 · Williamsburg: free to walk</div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Weekends</div>
+      <div class="time-content">
+        <div class="time-title">Smorgasburg — New York's Greatest Food Market</div>
+        <div class="time-desc">Smorgasburg runs every Saturday at Prospect Park and Sunday at the Brooklyn Waterfront (Williamsburg) April–November. Over 100 food vendors from NYC's most creative food entrepreneurs — ramen burgers, lobster rolls, Korean BBQ, birria tacos, Japanese karaage, matcha desserts, Filipino lechon. Entry is free. Budget ₹1,500–₹3,000 for a glorious food crawl through everything. The Sunday waterfront location has extraordinary Manhattan skyline views while you eat. Arrive at 11am when it opens — runs until 6pm.</div>
+        <div class="time-price">Entry: free · Budget ₹1,500–₹3,000 for food · Sat: Prospect Park · Sun: Williamsburg waterfront</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Williamsburg — Brooklyn's Creative Neighbourhood</div>
+        <div class="time-desc">Williamsburg is Brooklyn's most vibrant creative neighbourhood — independent record stores, vintage clothing, street murals by major artists (the Bushwick Collective murals in adjacent Bushwick are worth a visit), artisanal coffee shops, excellent ramen and pizza. The Bedford Avenue strip is the main drag. The neighbourhood that spawned the modern indie music scene, artisanal food culture, and the "Brooklyn aesthetic" that has now spread globally. Walk north toward Greenpoint for Polish food and a more neighbourhood feel. Domino Park on the waterfront has lawn space and excellent Manhattan skyline views.</div>
+        <div class="time-price">Williamsburg: free · Domino Park: free · Coffee at artisanal café: ₹400 · Vintage shopping: budget as desired</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Art &amp; Architecture</div>
+      <div class="day-title">MoMA, The High Line &amp; Chelsea Market</div>
+      <div class="day-sub">MoMA (Warhol's Campbell's Soup, Picasso's Demoiselles) · High Line elevated park · Chelsea Market food hall · Governors Island ferry (seasonal)</div>
+      <div class="day-cost">💰 MoMA: ₹2,500 · High Line: FREE · Chelsea Market: free entry · Governors Island ferry: ₹500</div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:3mm">Budget Breakdown — Per Person, 5 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (5 nights)</td><td>35,000</td><td>70,000</td><td>1,50,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>10,000</td><td>25,000</td><td>55,000</td></tr>
+      <tr><td>Subway (7-day pass)</td><td>2,200</td><td>2,200</td><td>5,000</td></tr>
+      <tr><td>Attractions &amp; Experiences</td><td>8,000</td><td>15,000</td><td>30,000</td></tr>
+      <tr><td>Shopping (5th Ave, SoHo)</td><td>2,000</td><td>12,000</td><td>60,000+</td></tr>
+      <tr><td>Flights (Delhi/Mumbai–JFK)</td><td>60,000</td><td>80,000</td><td>1,20,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹1,17,200</strong></td><td><strong>~₹2,04,200</strong></td><td><strong>₹4,20,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">NYC budget tips: dollar pizza slice (₹250) at any pizza-by-the-slice shop — genuine New York meal. Dollar dumplings in Chinatown (Mott Street — ₹250 for 5 dumplings). Bagel with cream cheese from any deli (₹300). Pretzels from street carts (₹150). NYC is expensive for hotels but has excellent cheap food if you know where to look.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🚇</div>
+      <div class="tip-title">The Subway — New York's Greatest Equaliser</div>
+      <div class="tip-desc">The NYC subway runs 24 hours every day — the only major metro system in the world that does. The 7-day unlimited MetroCard (₹2,200) is the best value for 5+ days. Use maps.me or the MTA app for real-time maps. Avoid the A express train at night (the local C or 2/3 trains are safer). Sit in the middle cars of trains — more people present.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍕</div>
+      <div class="tip-title">The NYC Food Rules</div>
+      <div class="tip-desc">New York bagel: must be from H&H Bagels or Ess-a-Bagel — thick, chewy, with cream cheese (₹300). NYC pizza: thin crust, fold it in half lengthwise, eat while walking (₹250/slice). Chinatown dumplings: Mott Street, ₹250 for 5. Hot dog from street cart: ₹200. Halal cart chicken over rice: ₹400 — beloved by New Yorkers at 53rd &amp; 6th Ave ("Halal Guys").</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏙️</div>
+      <div class="tip-title">Best NYC Viewpoints — Free vs Paid</div>
+      <div class="tip-desc">Free views: Brooklyn Bridge Park, Top of the Rock viewing deck from Staten Island Ferry, Roosevelt Island tramway (₹250 — same as subway fare). Paid: One World Observatory (₹3,500), Top of the Rock at Rockefeller Center (₹3,000 — includes Empire State Building in the view), Edge at Hudson Yards (₹3,500). The Edge has an outdoor glass floor section — terrifying and spectacular.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📅</div>
+      <div class="tip-title">Best Time to Visit NYC</div>
+      <div class="tip-desc">September–November: perfect — warm days, cool evenings, autumn foliage in Central Park (mid-October is peak). April–June: spring flowers, pleasant temperatures, less crowded than summer. July–August: hot and very crowded (35°C+, 80% humidity) but peak energy. December–February: cold (-5 to 5°C) but NYC in snow is magical — and hotel prices drop 30–40%.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More of America<br/>Awaits You</h2>
+  <p>From the Grand Canyon to the streets of San Francisco, from the jazz clubs of New Orleans to the art deco of Miami — IncredibleItinerary covers every North American adventure for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Paris · London · Rome · Barcelona · Amsterdam · Switzerland · Turkey · Malaysia · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

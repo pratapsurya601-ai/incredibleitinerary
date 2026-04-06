@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mysore in 2 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#7c2d12;--primary-light:#fb923c;--primary-dark:#431407;
+  --accent:#d97706;--accent-light:#fde68a;
+  --ink:#1a0800;--cream:#fff8f5;--parchment:#ffedd5;
+  --white:#ffffff;--muted:#6b3015;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,8,0,0.97) 0%,rgba(26,8,0,0.6) 50%,rgba(26,8,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#fb923c;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(124,45,18,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(124,45,18,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.saffron{background:var(--accent);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(124,45,18,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(124,45,18,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(251,146,60,0.08),rgba(251,146,60,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#fb923c;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#fb923c;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(124,45,18,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.saffron{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);color:#78350f}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.highlight-box.maroon{background:#fff8f5;border:1px solid #fed7aa;color:#431407}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(124,45,18,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(124,45,18,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(124,45,18,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(124,45,18,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(124,45,18,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/4116600/pexels-photo-4116600.jpeg?w=1200&q=80" alt="Mysore Palace illuminated"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Mysore<br/><em>in 2 Days</em></h1>
+    <p class="cover-sub">India's most livable city — the Wodeyar maharajas' illuminated palace, the sacred hill of Chamundi, Brindavan's musical fountains and the world's finest sandalwood</p>
+    <div class="cover-pills">
+      <span class="pill">👑 2 Days</span>
+      <span class="pill">🏯 Royal City</span>
+      <span class="pill">💰 ₹4,000–₹15,000</span>
+      <span class="pill">📅 Oct–Jun</span>
+      <span class="pill">🏛️ Mysore Palace</span>
+      <span class="pill">🎉 Dasara Festival</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(124,45,18,0.3);border:1px solid rgba(251,146,60,0.4);color:#fb923c;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Mysore 2-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The City of Palaces — In Two Royal Days</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">2 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🏯</div><span class="stat-val">Mysore Palace</span><span class="stat-label">97,000 Light Bulbs</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹4k–15k</span><span class="stat-label">Per Person Budget</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Jun</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">Mysore Palace</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop saffron">Chamundi Hill</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Brindavan Gardens</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Srirangapatna</span>
+    <span class="route-sub">All within Mysore + 18km for Brindavan + 16km for Srirangapatna · City centre is compact</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1 — Royal</div>
+      <div class="city-name">🏯 Mysore Palace</div>
+      <div class="city-desc">The Mysore Palace (Amba Vilas Palace) was built in 1912 for the Wodeyar dynasty after the original wooden palace burned down in 1897. It is the most visited monument in India after the Taj Mahal, receiving 6 million visitors annually. On Sunday evenings (7–7:45pm), the palace is illuminated by 97,000 light bulbs — one of India's most spectacular sights, free to view from outside.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 1 — Sacred</div>
+      <div class="city-name">🙏 Chamundi Hill</div>
+      <div class="city-desc">Chamundeshwari Temple sits atop Chamundi Hill (13km from the palace, 1,062m altitude) — the goddess after whom Mysore (Mahishasura + uru = city of the demon Mahisha) was named. The 1,000 steps down (from the temple parking area) pass the massive Nandi bull carved in 1659 — 4.8 metres tall, considered one of India's finest. The drive up is equally good for views over Mysore city.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — Gardens</div>
+      <div class="city-name">🌿 Brindavan Gardens</div>
+      <div class="city-desc">Brindavan Gardens (18km from Mysore city, at the base of the KRS Dam on the Cauvery river) is a formal terraced garden with illuminated musical fountains every evening (6:30–8pm, ₹30). The garden was laid out in 1932 and filmed in countless Bollywood movies. The fountain show — coloured lights synchronized to classical Kannada and Hindi music — is genuinely enjoyable rather than merely kitsch.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2 — History</div>
+      <div class="city-name">⚔️ Srirangapatna</div>
+      <div class="city-desc">Srirangapatna (16km from Mysore), the island fortress from which Tipu Sultan (the Tiger of Mysore) defied British colonialism until his death in 1799. The Gumbaz (his tomb, beautifully designed with tiger-stripe columns), the Ranganathaswamy Temple on the island, and the breach in the fort walls through which British troops entered on May 4, 1799 — the day Tipu Sultan was killed in battle, defending his territory to the last.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"On Sunday evenings, 97,000 light bulbs illuminate the Mysore Palace for 45 minutes. The crowd that gathers — free, outdoors, thousands of people — contains every class and every language of Karnataka. It is a democracy of wonder."</p>
+  </div>
+
+  <div class="highlight-box maroon">
+    <strong>Best Time to Visit:</strong> October to June. October to February is best (20–28°C). Dasara (September–October, exact dates vary by lunar calendar): the 10-day festival culminates in a royal procession of decorated elephants with the golden Mysore idol — the most spectacular festival procession in South India. Book accommodation 3 months in advance for Dasara. The palace is specially illuminated nightly during Dasara. Monsoon (July–August) is heavy — Brindavan Gardens and Chamundi Hill views are often mist-covered.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1 & 2 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Mysore 2-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Palace, Temple &amp; Gardens</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Royal Mysore</div>
+      <div class="day-title">Mysore Palace, Chamundi Hill &amp; Sunday Illumination</div>
+      <div class="day-sub">Morning Mysore Palace interior · Chamundi Hill afternoon · St. Philomena's Church · Palace illumination 7pm Sunday</div>
+      <div class="day-cost">💰 Palace: ₹200 · Chamundi: free · Total day: ₹400–₹800 · Illumination viewing: free</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Mysore Palace — Indo-Saracenic Masterpiece</div>
+        <div class="time-desc">The Mysore Palace (officially Amba Vilas Palace) was designed by British architect Henry Irwin in Indo-Saracenic style — a hybrid of Hindu, Islamic and Gothic elements that became the signature of late 19th and early 20th century Indian royal commissions. The interior includes the Diwan-i-Am (public audience hall) with its stained glass ceiling, the Kalyana Mantapa (marriage hall) with its remarkable cast-iron peacock ornaments, the royal armoury and the Ambavilasa (private chambers). No photography inside the main palace building. The palace grounds include multiple smaller buildings — allow 2–2.5 hours. Guided audio tour (₹70 in Kannada, Hindi, English) is excellent.</div>
+        <div class="time-price">Entry: ₹200 Indians · Audio guide: ₹70 · Open 10am–5:30pm daily · No photography inside main building</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunday 7pm</div>
+      <div class="time-content">
+        <div class="time-title">Palace Illumination — 97,000 Light Bulbs, Free to View</div>
+        <div class="time-desc">Every Sunday evening from 7pm to 7:45pm (and all evenings during Dasara), the Mysore Palace is illuminated by 97,000 incandescent bulbs set along its domes, towers and cornices. The effect is breathtaking — the palace appears as a golden apparition against the dark sky. This viewing is free from the public garden surrounding the palace. Arrive by 6:30pm for a good position. The crowd of thousands is in itself an experience — Mysore families, out-of-town visitors, chai vendors, flower sellers. If you are visiting on a non-Sunday, the palace interior during the day is still magnificent.</div>
+        <div class="time-price">Free to view from outside · Every Sunday 7–7:45pm · Also illuminated during Dasara (all evenings) · Arrive by 6:30pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Chamundeshwari Temple — The Goddess of Mysore</div>
+        <div class="time-desc">Chamundeshwari Temple on Chamundi Hill is the most important temple in Mysore — the Wodeyar maharajas worshipped the goddess here and their dynasty's power was symbolically linked to her blessings. The temple dates to the 12th century with major rebuildings; the current 7-tier gopuram was built in 1827. Drive or take an auto (₹300–₹400 return including wait) to the top. On the way down, walk the 1,000 steps to encounter the enormous Nandi bull (1659, carved from a single granite boulder, 4.8 metres high) — one of India's finest animal sculptures. The steps continue for another 800 steps to the base.</div>
+        <div class="time-price">Temple: free · Auto return: ₹300–₹400 · 1,000 steps walk down: 40 minutes · Open 7:30am–2pm, 3:30–6pm, 7:30–9pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">St. Philomena's Cathedral — One of India's Largest Churches</div>
+        <div class="time-desc">Built by the Wodeyar maharajas for the Catholic community in 1936 in Neo-Gothic style (inspired by Cologne Cathedral), St. Philomena's is one of Asia's largest churches — 175 feet tall with twin spires visible across the city. The interior has stained glass windows depicting the life of St. Philomena, an early Christian martyr. The basement contains a replica of the Lourdes grotto. Unusually in India, a Hindu royal family funded the construction of a Catholic cathedral — a testament to Mysore's historically pluralistic culture. Entry free, respectful dress required.</div>
+        <div class="time-price">Entry: free · Open 5am–6pm · Dress modestly · 1km from palace · Auto: ₹40</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Gardens &amp; History</div>
+      <div class="day-title">Brindavan Gardens, Srirangapatna &amp; Silk Weaving</div>
+      <div class="day-sub">Srirangapatna morning · Brindavan Gardens afternoon · Musical fountains 6:30pm · Silk weaving centre · Mysore pak</div>
+      <div class="day-cost">💰 Brindavan: ₹30 · Srirangapatna: ₹50 · Taxi: ₹1,200–₹1,500 for day · Total: ₹1,500–₹2,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Srirangapatna — Tipu Sultan's Last Stand</div>
+        <div class="time-desc">Srirangapatna is a small island in the Cauvery river, 16km from Mysore. The Gumbaz is the most important monument: the double-domed mausoleum of Tipu Sultan (1799), his father Hyder Ali, and his mother — built in Islamic style with remarkably detailed woodcarving. Tipu Sultan — "the Tiger of Mysore" who twice defeated the British — died defending his capital's breach on May 4, 1799. The breach in the northern fort wall is still visible and marked. The Ranganathaswamy Temple (one of the 108 Divya Desam Vishnu temples, historically important since the Vijayanagara period) is also on the island. Allow 2 hours.</div>
+        <div class="time-price">Gumbaz: ₹50 · Ranganathaswamy: free · Taxi from Mysore: ₹600–₹800 including wait · 16km, 30 minutes</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Mysore Silk Weaving Centre &amp; Sandalwood</div>
+        <div class="time-desc">The Government Silk Weaving Factory (Mananthody Road) is the Karnataka state silk factory where Mysore silk sarees have been produced since 1912 — using pure mulberry silk and real zari (gold-silver thread). Guided tours of the factory are available (free, 10am–12pm, 2–4pm on weekdays). The factory showroom sells certified Mysore silk at government-fixed prices (sarees ₹3,000–₹25,000) — the only place to guarantee authenticity. Mysore is also famous for sandalwood products: Government Sandalwood Oil Factory on Nazarbad Road sells certified pure sandalwood oil (₹400–₹1,500/bottle) and carved sandalwood items.</div>
+        <div class="time-price">Factory tour: free · Silk sarees: ₹3,000–₹25,000 (certified authentic) · Sandalwood oil: ₹400–₹1,500 · Weekdays only</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Brindavan Gardens — Musical Fountains at Dusk</div>
+        <div class="time-desc">Brindavan Gardens (18km, 30 minutes by taxi) is the formal garden on the north bank of the KRS Dam across the Cauvery. Terraced in three levels with rose gardens, topiary, a canal and a central boating lake. The evening Musical Fountain show (6:30pm, 7pm and 8pm, ₹30 entry) illuminates the fountains in coloured lights synchronized to Carnatic and Bollywood music. The crowds on weekends are large and enthusiastic — this is genuinely a Karnataka family holiday staple rather than a tourist attraction. The dam and reservoir views in the golden hour before the fountains are beautiful.</div>
+        <div class="time-price">Garden entry: ₹30 · Musical fountain show: included or ₹10 extra · Taxi from Mysore: ₹600 return · Open 6am–8pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Mysore Pak &amp; Masala Dosa — A Food Farewell</div>
+        <div class="time-desc">Mysore pak — the fudge-like sweet of pure ghee, besan (chickpea flour) and sugar — was invented in the Mysore Palace kitchens in the early 20th century. GRS Sweet Mart and Guru Sweet Mart (both on Sayyaji Rao Road, near the palace) are the most reliable, with the traditional soft version (not the hard modern version) available fresh in the evenings (₹400–₹600/kg). For dinner: Mylari Hotel (Nazarbad, est. 1936) for the thinnest, crispest Mysore masala dosa in the city — the dosa here is legendary, the coconut chutney is exceptional, and the place is packed every evening. Order early — they close when the batter runs out, often by 9pm.</div>
+        <div class="time-price">Mysore pak (soft): ₹400–₹600/kg · Mylari masala dosa: ₹60–₹80 · Arrive before 8:30pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — BUDGET + TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Mysore 2-Day Itinerary</span>
+    <span class="page-header-right">Budget · Tips · Packing</span>
+  </div>
+
+  <div class="label">Budget Breakdown — Per Person, 2 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (2 nights)</td><td>1,200</td><td>4,000</td><td>12,000</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>600</td><td>1,500</td><td>4,000</td></tr>
+      <tr><td>Auto/Taxi (all sights)</td><td>800</td><td>1,500</td><td>3,000</td></tr>
+      <tr><td>Entries (Palace, gardens etc)</td><td>500</td><td>500</td><td>500</td></tr>
+      <tr><td>Shopping (silk, sandalwood, pak)</td><td>600</td><td>2,500</td><td>10,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹3,700</strong></td><td><strong>~₹10,000</strong></td><td><strong>₹29,500+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Mysore is excellent value. Budget guesthouses: ₹500–₹700/night. Mid-range near palace: ₹2,000–₹3,500. Heritage/luxury (Green Hotel, Royal Orchid Metropole): ₹5,000–₹12,000. How to reach: Train from Bangalore — 8 daily trains, 2.5–3 hours, ₹100–₹600. Bus from Bangalore (Majestic) — KSRTC Volvo ₹300, 3 hours. Flight to Bangalore, then train/bus to Mysore.</p>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">👑</div>
+      <div class="tip-title">Dasara — Plan 3 Months Ahead</div>
+      <div class="tip-desc">Mysore Dasara (Navratri, September–October, 10 days) is the most spectacular festival in South India. The final day features a royal elephant procession from the palace to Bannimantap ground — the idol of Chamundeshwari is carried on the lead elephant, escorted by 11 more decorated elephants, a cavalry, a brass band and thousands of spectators. The palace is illuminated every night during Dasara. Hotel rooms within 5km of the palace are booked 2–3 months in advance and cost 2–3x normal rates. Worth every rupee.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏯</div>
+      <div class="tip-title">Palace Photography Rules</div>
+      <div class="tip-desc">No cameras inside the main palace building (the Amba Vilas sections). Photography is permitted in the palace grounds, gardens and outer buildings. Camera fee: ₹200. Leave cameras and bags in the free locker at the entrance. The Sunday evening illumination can be photographed freely from the grounds outside. A tripod or at least image stabilization is needed for the illumination photography — 1–2 second exposures required in the evening light.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🧵</div>
+      <div class="tip-title">Mysore Silk — Authenticity Guide</div>
+      <div class="tip-desc">Only buy Mysore silk from the Government Silk Factory showroom or shops displaying the "Karnataka Silk Industries Corporation" sign. The hallmark on genuine Mysore silk is a silk mark label sewn onto the saree. The burn test: genuine silk burns like hair (self-extinguishing, smells like burning hair) not like plastic. Prices at street shops near the palace for "Mysore silk" are often for polyester imitations. The factory prices seem high (₹3,000+) but are actually lower than most legitimate shops.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-title">Mysore Food Beyond Pak &amp; Dosa</div>
+      <div class="tip-desc">Hotel Dasaprakash (Gandhi Square) for traditional Karnataka thali — unlimited, vegetarian, on banana leaf, ₹150–₹200. Vinayaka Mylari (near Devaraja Market) for the second-best dosa in Mysore (ask locals which is better — Mylari Hotel vs Vinayaka Mylari — and enjoy the passionate debate). Devaraja Market itself: one of Karnataka's most atmospheric covered markets with flowers, spices, incense and fresh produce — visit for the sights, not specifically to buy. Holige (sweet stuffed flatbread) from any traditional sweet shop during festival season.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-title">Getting Around Mysore</div>
+      <div class="tip-desc">Mysore city is compact — Mysore Palace, St. Philomena's and the main market are within 2km of each other and walkable. Autos are metered and honest (rarer than in most cities — thank Mysore's civil culture). For Chamundi Hill, Brindavan Gardens and Srirangapatna: hire an auto for the morning (₹800–₹1,000 for 4–5 hours) or use a city taxi (₹1,200–₹1,500 for a full day). KRide (Karnataka's official cab service) and Ola are available and priced fairly.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌿</div>
+      <div class="tip-title">Extending Your Visit — Day Trips</div>
+      <div class="tip-desc">Nagarhole National Park (90km, 2.5 hours): tiger reserve, morning safari. Coorg (Madikeri, 120km, 3 hours): coffee estate and hill station country. Somnathpur Chennakeshava Temple (38km): the finest Hoysala temple architecture in Karnataka — intricate star-plan temple with 200 panels of 13th-century sculpture. Belur and Halebidu (150km, 3.5 hours): the greatest Hoysala temples, almost every surface carved with narrative reliefs and deity sculptures — genuinely extraordinary.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Mysore</div>
+  <div class="pack-list">
+    <div class="pack-item">👟 <strong>Comfortable walking shoes</strong> — palace grounds, Chamundi Hill steps and Brindavan terraces all involve extensive walking.</div>
+    <div class="pack-item">🕌 <strong>Temple clothing</strong> — cover shoulders and knees for Chamundeshwari and Ranganathaswamy temples. Carry a scarf.</div>
+    <div class="pack-item">📦 <strong>Extra bag for shopping</strong> — you will return with silk, sandalwood, Mysore pak and possibly agarbatti (incense). Pack a foldable bag.</div>
+    <div class="pack-item">💵 <strong>Cash</strong> — dosas at Mylari are cash only. Auto fares, market purchases and factory showrooms accept cards, but keep ₹2,000 in notes.</div>
+    <div class="pack-item">📸 <strong>Camera (not inside palace)</strong> — the Sunday palace illumination requires a camera. Phones work well with Night Mode.</div>
+    <div class="pack-item">🧴 <strong>Sunscreen</strong> — the KRS Dam and Brindavan Gardens have minimal shade. The Chamundi Hill summit in summer is intense.</div>
+    <div class="pack-item">💊 <strong>Antacid</strong> — the masala dosa at Mylari uses a generous amount of butter. Enjoy freely and prepare accordingly.</div>
+    <div class="pack-item">🌡️ <strong>Light cardigan</strong> — Mysore evenings are cooler than Bangalore (higher altitude) — 18–22°C even in summer. Useful for the 7pm illumination watch.</div>
+    <div class="pack-item">🔋 <strong>Power bank</strong> — the Brindavan fountain show runs late and the return journey to Mysore is 30–40 minutes. Keep your phone charged for maps.</div>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>One last thing:</strong> Mysore is considered by many Indians to be the most livable city in the country — clean, orderly, historically cultured, its people unhurried and hospitable. It is a reminder that India's cities can be beautiful when well-governed and when a culture of civic pride takes root. The Wodeyar maharajas' legacy is everywhere, and it is largely a good one.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More India<br/>Awaits You</h2>
+  <p>From the boulder-strewn ruins of Hampi to the coffee estates of Coorg, from the backwaters of Kerala to the temples of Varanasi — IncredibleItinerary has a complete guide for every extraordinary journey across India.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Hampi · Coorg · Kerala · Goa · Delhi · Mumbai · Jaipur · Agra · Amritsar · Darjeeling</p>
+  <div class="back-legal">This guide is for personal use only. Prices, illumination schedules and Dasara dates are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

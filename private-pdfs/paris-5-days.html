@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Paris in 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#1e40af;--primary-light:#60a5fa;--primary-dark:#1e3a8a;
+  --accent:#dc2626;--accent-light:#fca5a5;
+  --ink:#0a0f1e;--cream:#f8f9ff;--parchment:#dbeafe;
+  --white:#ffffff;--muted:#4a5568;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{page-break-after:always}
+}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,30,0.97) 0%,rgba(10,15,30,0.6) 50%,rgba(10,15,30,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#60a5fa;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(30,64,175,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:var(--ink);margin-bottom:3mm}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(30,64,175,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:var(--ink)}
+.route-stop.red{background:var(--accent)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(30,64,175,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(30,64,175,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(96,165,250,0.08),rgba(96,165,250,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#60a5fa;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#60a5fa;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(30,64,175,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.blue{background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.25);color:#1e3a8a}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(30,64,175,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(30,64,175,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(30,64,175,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(30,64,175,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(30,64,175,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PAGE 1 — COVER ═══════════════════════════════════ -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?w=1200&q=80" alt="Paris Eiffel Tower"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Paris<br/><em>in 5 Days</em></h1>
+    <p class="cover-sub">The City of Light — Eiffel Tower, the Louvre, Versailles, Montmartre &amp; the art of French living</p>
+    <div class="cover-pills">
+      <span class="pill">🗓️ 5 Days</span>
+      <span class="pill">🛂 Schengen Visa</span>
+      <span class="pill">💰 ₹80,000–₹2,00,000</span>
+      <span class="pill">🌸 Apr–Jun &amp; Sep–Oct</span>
+      <span class="pill">🗼 Eiffel Tower</span>
+      <span class="pill">🎨 Art &amp; Romance</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(30,64,175,0.3);border:1px solid rgba(96,165,250,0.4);color:#60a5fa;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 2 — OVERVIEW ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Paris 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">La Ville Lumière — Five Days in Paris</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🛂</div><span class="stat-val">Schengen</span><span class="stat-label">Visa Required</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹80k–2L</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌸</div><span class="stat-val">Apr–Oct</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop">CDG Airport</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop light">Eiffel Tower</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Louvre</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Montmartre</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop red">Versailles</span>
+    <span class="route-sub">1 city · RER B from CDG to central Paris ~45 min</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🗼 Eiffel Tower &amp; Seine</div>
+      <div class="city-desc">The Iron Lady — constructed for the 1889 World Fair and now the world's most visited monument. Book tickets online (summit ₹3,000/person) to skip queues. The Seine river cruise at dusk with the tower glittering is unmatched. End on Champs-Élysées, the grand avenue.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🖼️ Louvre &amp; Notre Dame</div>
+      <div class="city-desc">The world's largest art museum with 35,000 works. Arrive at 9am on weekdays — Mona Lisa crowds peak after 11am. Book skip-the-line tickets online (₹2,200). Notre Dame Cathedral, under restoration after the 2019 fire, reopened in December 2024 — check access times before visiting.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🎨 Montmartre &amp; Orsay</div>
+      <div class="city-desc">The hilltop village where Picasso, Monet and Renoir lived and painted. Sacré-Cœur basilica at sunrise offers the best view over all Paris. Then descend to the Musée d'Orsay — the world's finest Impressionist collection including Van Gogh, Monet and Renoir originals.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4</div>
+      <div class="city-name">🏰 Palace of Versailles</div>
+      <div class="city-desc">Louis XIV's extraordinary palace — 700 rooms, the Hall of Mirrors (357 mirrors, 30,000 candles), and 800 hectares of formal gardens. Take RER C from Paris (45 min, ₹400 return). Book palace entry online (₹3,500) to skip the often 2-hour queue at the gate.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"To know Paris is to know a great deal." — Henry Miller. Come for the art, stay for the baguettes, leave with a lifetime of memories and an irrational desire to return immediately.</p>
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>Visa for Indian Travellers:</strong> Schengen visa required — apply at the French Consulate (VFS Global) at least 3–4 weeks in advance. Fee: approximately ₹7,000 + VFS service charges. Required documents: bank statement (3 months), hotel bookings, travel insurance (minimum €30,000 cover), ITR, leave letter. Apply in person at the VFS centre in your city. Multiple-entry Schengen visas are sometimes granted — request one if you plan future European travel.
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Flights from India:</strong> Delhi/Mumbai to Paris CDG — ₹45,000–₹80,000 return. Air France flies direct from Delhi (~8.5 hrs). Connecting options via Dubai/Abu Dhabi (Emirates, Etihad) or via Istanbul (Turkish Airlines) can be cheaper. Book 2–3 months ahead for best prices.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 3 — DAYS 1–2 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Paris 5-Day Itinerary</span>
+    <span class="page-header-right">Day 1–2 — Eiffel Tower, Louvre &amp; Notre Dame</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Arrival &amp; Iconic Paris</div>
+      <div class="day-title">The Eiffel Tower, Seine &amp; Champs-Élysées</div>
+      <div class="day-sub">Arrive CDG · RER B to city · Eiffel Tower summit · Bateaux Mouches Seine cruise · Champs-Élysées evening walk</div>
+      <div class="day-cost">💰 Budget: ₹3,500–₹5,000 · Mid: ₹8,000–₹12,000 (excl. accommodation)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Arrival</div>
+      <div class="time-content">
+        <div class="time-title">Charles de Gaulle Airport (CDG) — Getting to the City</div>
+        <div class="time-desc">Take RER B train from CDG Terminal 2 directly to central Paris (Châtelet-Les Halles or Saint-Michel). Journey: 45 minutes, ₹400. A taxi costs approximately ₹3,000–₹4,500 — only worth it if you have heavy bags. The RER B is safe, fast and used by Parisians daily. Buy tickets at the station machines (select "Paris zone 1-5"). Check into your hotel and freshen up — most hotels allow early luggage storage if your room isn't ready.</div>
+        <div class="time-price">RER B train: ₹400 · Taxi: ₹3,000–₹4,500 · Budget hotels: ₹4,000–₹7,000/night · Mid: ₹9,000–₹16,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Eiffel Tower — Book Online, Avoid the Queue</div>
+        <div class="time-desc">The symbol of France and one of the most recognised structures on earth. Book tickets at tour-eiffel.fr at least 2 weeks ahead — summit tickets (₹3,000/person) are the best experience. The 2nd floor (₹1,800) has the famous glass floor and is less crowded. Arrive exactly at your booked time — late arrivals are turned away. The tower is most beautiful at dusk when the city turns golden, and at night when the sparkle lights run for 5 minutes every hour from dusk to 1am.</div>
+        <div class="time-price">Summit: ₹3,000/person · 2nd floor: ₹1,800 · Gardens (ground): free · Book online — sells out weeks ahead</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">6:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Bateaux Mouches Seine River Cruise — Paris from the Water</div>
+        <div class="time-desc">A 1-hour cruise along the Seine passing Notre Dame, the Louvre, Musée d'Orsay and the Eiffel Tower from the water. Bateaux Mouches departs from Pont de l'Alma (near the Eiffel Tower). The evening cruise with the city lit up is genuinely magical. Bring a jacket — it's cold on the water. Book online: ₹1,800/person. Alternatively, hop-on-hop-off Batobus day passes let you use the boat as transport (₹3,500 for full day).</div>
+        <div class="time-price">Bateaux Mouches: ₹1,800/person · Evening cruise is more atmospheric · Book at bateaux-mouches.fr</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Champs-Élysées — The Most Famous Avenue in the World</div>
+        <div class="time-desc">Walk the 1.9km boulevard from Place de la Concorde to the Arc de Triomphe. The arc itself is worth climbing (₹1,200 — fantastic 360° city views). The avenue is lined with flagship stores — Louis Vuitton, Cartier, Ladurée (the famous pink macaron shop — get a box, worth every rupee). Evening is best — the avenue is lit and Parisians are out. Dinner options on side streets: brasseries serving steak-frites, French onion soup, crêpes.</div>
+        <div class="time-price">Arc de Triomphe summit: ₹1,200 · Laduree macarons: ₹400/box · Brasserie dinner: ₹2,500–₹5,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Art &amp; History</div>
+      <div class="day-title">The Louvre, Tuileries &amp; Sainte-Chapelle</div>
+      <div class="day-sub">9am Louvre opening · Mona Lisa · Tuileries Garden stroll · Notre Dame exterior · Sainte-Chapelle stained glass</div>
+      <div class="day-cost">💰 Louvre: ₹2,200 · Sainte-Chapelle: ₹1,500 · Metro pass: ₹250/day</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Louvre Museum — Arrive at Opening, Head Straight to Mona Lisa</div>
+        <div class="time-desc">The world's most visited museum holds 35,000 works across 3 wings. Buy skip-the-line tickets online (louvre.fr) — ₹2,200. Arrive at 9am (Wednesdays and Fridays the museum stays open until 9:45pm — slightly less crowded). The Mona Lisa is in the Denon Wing, Salle 711. It's smaller than you expect (77cm × 53cm) but the room and the experience are extraordinary. Also: Venus de Milo, Winged Victory of Samothrace, Vermeer's The Lacemaker. Allow 3–4 hours minimum.</div>
+        <div class="time-price">Entry: ₹2,200 (online, includes same-day re-entry) · Free for under-18 · Closed Tuesdays</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Tuileries Garden &amp; Lunch — Paris in the Open Air</div>
+        <div class="time-desc">Exit the Louvre into the Tuileries Garden — the formal French garden between the Louvre and Place de la Concorde, free to walk through. Grab a crêpe or sandwich from one of the garden kiosks (₹400–₹700) and eat on a chair by the central pond. This is what Parisians do on lunch breaks. The garden connects directly to the Orangerie museum (Day 5) and offers views down to the Eiffel Tower on a clear day.</div>
+        <div class="time-price">Garden: free · Crêpe/sandwich: ₹400–₹700 · Sit on the iconic green metal chairs</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">3:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Notre Dame Cathedral — Paris's Heart, Reopened 2024</div>
+        <div class="time-desc">Notre Dame Cathedral, devastated by fire in April 2019, completed a miraculous restoration and reopened in December 2024 — more beautiful than ever. Queue to enter (free, timed entry slots available online). The Gothic interior — the rose windows, flying buttresses, the nave — is astonishing. Even if interior access is limited, the exterior on the Île de la Cité island is one of the great architectural experiences in Europe. Walk to the back (apse) for the best view of the flying buttresses.</div>
+        <div class="time-price">Entry: free · Timed entry booking recommended · Tower access: ₹1,200 when available</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">5:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Sainte-Chapelle — The Most Beautiful Gothic Chapel in the World</div>
+        <div class="time-desc">Five minutes' walk from Notre Dame on the Île de la Cité, Sainte-Chapelle is arguably the most beautiful interior in Paris — some say in Europe. Built in the 1240s for King Louis IX to house Christ's Crown of Thorns, its upper chapel is entirely walls of stained glass — 1,113 individual panes, 15 metres tall. On a sunny afternoon, the interior glows like a jewel box. Worth every rupee. Book online to skip the security queue.</div>
+        <div class="time-price">Entry: ₹1,500 · Buy online at sainte-chapelle.fr · Combined ticket with Conciergerie: ₹2,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 4 — DAYS 3–5 ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Paris 5-Day Itinerary</span>
+    <span class="page-header-right">Day 3–5 — Montmartre, Versailles &amp; Farewell</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Artistic Heart of Paris</div>
+      <div class="day-title">Montmartre, Sacré-Cœur &amp; Musée d'Orsay</div>
+      <div class="day-sub">Morning Montmartre village · Sacré-Cœur views · Artist squares · Musée d'Orsay Impressionists · Saint-Germain evening</div>
+      <div class="day-cost">💰 Orsay: ₹2,000 · Sacré-Cœur free · Metro: ₹250/day Navigo pass</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Montmartre — The Artist Village on the Hill</div>
+        <div class="time-desc">Take Metro line 2 to Abbesses station — the deepest station in Paris, with a beautiful Art Nouveau entrance. Montmartre is the hill where Renoir, Monet, Picasso, Toulouse-Lautrec and Van Gogh all lived and painted. The neighbourhood retains its village character — cobbled lanes, ivy-covered walls, tiny bakeries. Wander without a map. Le Consulat café (one of Paris's most photographed facades) is on Rue Norvins. The windmill Moulin de la Galette featured in Renoir's famous painting.</div>
+        <div class="time-price">Metro: ₹250/day Navigo pass · Croissant breakfast at local boulangerie: ₹150</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Sacré-Cœur Basilica — Paris at Your Feet</div>
+        <div class="time-desc">The white Romano-Byzantine basilica at the top of Montmartre hill is free to enter. Climb the dome for the city panorama (₹700) or simply sit on the front steps — the view over all of Paris is extraordinary, especially in morning light. The interior has perpetual adoration (prayer in progress 24 hours a day). Place du Tertre next door is the famous artist square — portrait painters, caricaturists, oil paintings. Charming and touristy in equal measure.</div>
+        <div class="time-price">Basilica: free · Dome: ₹700 · Place du Tertre portrait: ₹1,500–₹3,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">2:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Musée d'Orsay — The World's Greatest Impressionist Collection</div>
+        <div class="time-desc">Housed in a converted Beaux-Arts railway station on the Seine, the Orsay contains the finest collection of Impressionist and Post-Impressionist art in the world — more Van Gogh than any museum outside the Netherlands, Monet's cathedrals and haystacks, Renoir's Bal du moulin de la Galette, Seurat's pointillism, Degas's dancers. Arrive before 2pm to avoid afternoon tour groups. Book online (₹2,000) and enter via the right-side pre-booked entrance. Allow 2–3 hours.</div>
+        <div class="time-price">Entry: ₹2,000 · Book at musee-orsay.fr · Closed Mondays · Top floor café has Seine views</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Saint-Germain-des-Prés — Left Bank Literary Paris</div>
+        <div class="time-desc">The Left Bank neighbourhood of Sartre, Hemingway, Simone de Beauvoir and James Baldwin. Café de Flore and Les Deux Magots are the legendary literary cafés — expensive (€8/coffee) but historic. Walk along Boulevard Saint-Germain and Rue de Buci market street. Browse Shakespeare and Company bookshop (on the Right Bank near Notre Dame — the most famous English-language bookshop in the world, free to browse). Dinner in Saint-Germain: French bistro with duck confit or bouillabaisse.</div>
+        <div class="time-price">Café de Flore coffee: ₹700 · Bistro dinner: ₹3,000–₹6,000 · Shakespeare &amp; Co: free entry</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Royal Excess</div>
+      <div class="day-title">Palace of Versailles — The Sun King's Dream</div>
+      <div class="day-sub">RER C to Versailles · Hall of Mirrors · Grand Trianon · Marie Antoinette's Estate · Gardens</div>
+      <div class="day-cost">💰 Palace entry: ₹3,500 · RER C return: ₹400 · Gardens: free (fountain shows extra)</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">RER C to Versailles — Leave Paris Early to Beat Crowds</div>
+        <div class="time-desc">Take RER C from any central Paris station to Versailles-Château-Rive Gauche (45 minutes, ₹400 return). BUY YOUR PALACE TICKET ONLINE BEFORE LEAVING PARIS — the ticket queue at the gate regularly reaches 2 hours in peak season. Without a pre-booked ticket, you may not get in. Book at chateauversailles.fr. Arrive at the palace by 9:30am when it opens. The palace gets very crowded after 11am. Wear comfortable shoes — the gardens alone cover 800 hectares.</div>
+        <div class="time-price">Palace entry: ₹3,500 · RER C return ticket: ₹400 · Book palace tickets at chateauversailles.fr</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Hall of Mirrors &amp; Royal Apartments — 700 Rooms, One King</div>
+        <div class="time-desc">The Hall of Mirrors is the centrepiece — 73 metres long, 357 mirrors reflecting 17 large windows overlooking the gardens. Built to intimidate visiting heads of state and reflect Louis XIV's absolute power. The King's Grand Apartments have painted ceilings, marble floors and furniture that was melted down to fund wars. The Queen's apartments where Marie Antoinette lived until the Revolution. The Versailles audio guide (₹500, available at palace) is excellent — use it.</div>
+        <div class="time-price">Included in palace ticket · Audio guide: ₹500 · Photography allowed inside (no flash)</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Gardens, Grand Trianon &amp; Marie Antoinette's Estate</div>
+        <div class="time-desc">The formal French gardens (free to walk in) with perfectly geometric parterres, fountains and the Grand Canal are stunning. Rent a rowboat on the Grand Canal (₹1,500/hour) for a memorable experience. The Grand Trianon was Louis XIV's private escape from palace protocol — beautifully proportioned. The Petit Trianon was Marie Antoinette's private retreat, and her Hameau de la Reine (her fake peasant village where she played at rustic life) is adjacent. The fountain shows (weekends, ₹1,200 extra) are worth seeing if visiting on a Saturday or Sunday.</div>
+        <div class="time-price">Gardens: free · Trianon domain: ₹1,500 · Rowboat: ₹1,500/hr · Fountain shows (Sat/Sun): ₹1,200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:1mm">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Final Paris Moments</div>
+      <div class="day-title">Orangerie, Le Marais &amp; Farewell Dinner</div>
+      <div class="day-sub">Musée de l'Orangerie (Monet's Water Lilies) · Le Marais neighbourhood · Picasso Museum · Farewell dinner</div>
+      <div class="day-cost">💰 Orangerie: ₹1,600 · Le Marais shopping: budget as desired · Final dinner: ₹3,000–₹8,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Musée de l'Orangerie — Monet's Water Lilies</div>
+        <div class="time-desc">One of the most moving art experiences in the world. Claude Monet painted his monumental Water Lilies series in the last years of his life, nearly blind, and donated them to France on one condition — that they be displayed in oval rooms with natural light. The Orangerie in the Tuileries Garden was built specifically for these paintings. The two oval rooms contain eight enormous canvases — you sit in the centre and are completely surrounded. Arrive when it opens (9:30am) for a meditative experience before the tour groups arrive.</div>
+        <div class="time-price">Entry: ₹1,600 · Buy online at musee-orangerie.fr · Closed Tuesdays · Combined ticket with Orsay available</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Le Marais — Medieval Streets, Falafel &amp; High Fashion</div>
+        <div class="time-desc">The historic Jewish quarter turned art gallery district turned trendy neighbourhood. The best shopping in Paris for independent designers, vintage clothing and concept stores. Place des Vosges — the oldest planned square in Paris, built in 1612, with red brick arcades — is the most beautiful square in the city. Stop at L'As du Fallafel on Rue des Rosiers for the best falafel sandwich in Paris (₹500, cash only, queue outside). The Picasso Museum (₹1,800) is here — worth a visit if you have time.</div>
+        <div class="time-price">Picasso Museum: ₹1,800 · Place des Vosges: free · Best falafel: L'As du Fallafel ₹500</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Farewell Dinner — Paris Deserves a Proper Last Meal</div>
+        <div class="time-desc">For a true Paris evening: book a table at a traditional Parisian bistro serving set menus (formule — starter, main, dessert) for ₹3,000–₹5,000. Order the house wine (carafe). Begin with French onion soup (soupe à l'oignon) or escargots if you're adventurous. Main: duck confit (confit de canard), steak-frites, or sole meunière. Dessert: crème brûlée or tarte tatin. If budget allows, a final evening Seine promenade to watch the Eiffel Tower sparkle at 10pm is the perfect Paris farewell.</div>
+        <div class="time-price">Set menu bistro dinner: ₹3,000–₹5,000 · Wine (carafe): ₹800–₹1,500 · Seine promenade: free</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 5 — BUDGET + TIPS ═══════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Paris 5-Day Itinerary</span>
+    <span class="page-header-right">Budget · Tips · Packing</span>
+  </div>
+
+  <div class="label">Budget Breakdown — Per Person, 5 Days (Excluding Flights)</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Accommodation (5 nights)</td><td>20,000</td><td>45,000</td><td>90,000+</td></tr>
+      <tr><td>Food &amp; Drinks</td><td>7,000</td><td>18,000</td><td>35,000</td></tr>
+      <tr><td>Transport (Metro/RER)</td><td>2,500</td><td>4,000</td><td>8,000</td></tr>
+      <tr><td>Attractions &amp; Museums</td><td>8,000</td><td>14,000</td><td>20,000</td></tr>
+      <tr><td>Shopping &amp; Souvenirs</td><td>2,000</td><td>10,000</td><td>40,000+</td></tr>
+      <tr><td>Flights (Delhi/Mumbai–CDG return)</td><td>45,000</td><td>60,000</td><td>1,20,000+</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹84,500</strong></td><td><strong>~₹1,51,000</strong></td><td><strong>₹3,13,000+</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Budget = hostels/budget hotels, boulangerie meals, free museums on Sundays (1st Sunday of month — Louvre &amp; Orsay free). Mid = 3-star hotels, regular restaurant meals. Premium = boutique hotels, fine dining.</p>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🎫</div>
+      <div class="tip-title">Book Everything Online — Paris Rewards the Prepared</div>
+      <div class="tip-desc">Eiffel Tower, Louvre, Versailles, Sainte-Chapelle, Orsay — all sell out. Book 2–4 weeks ahead. On the 1st Sunday of each month, national museums (Louvre, Orsay, Orangerie) are FREE — still book a free time slot online.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚇</div>
+      <div class="tip-title">Navigo Easy Pass — Your Paris Transport Card</div>
+      <div class="tip-desc">Buy a Navigo Easy card at any Metro station (₹150 card deposit) and load t+ tickets (₹250 each) or a weekly Navigo pass (₹2,500, valid Mon–Sun). The Metro goes virtually everywhere in central Paris. Walk when you can — central Paris is compact and beautiful on foot.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🥐</div>
+      <div class="tip-title">Eat at a Boulangerie — Paris's Secret Weapon</div>
+      <div class="tip-desc">The Parisian boulangerie (bakery) offers breakfast and lunch at a fraction of café prices: croissant ₹120, baguette sandwich ₹350, pain au chocolat ₹150. Look for "Boulangerie" signs — they're everywhere. This is how Parisians eat every day. The best croissant you will ever eat costs less than ₹200.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💳</div>
+      <div class="tip-title">Cards Everywhere — Carry Some Cash Too</div>
+      <div class="tip-desc">Paris is largely cashless — restaurants, shops and museums accept Visa/Mastercard. But keep €50–100 cash for small cafés, street markets and tips. Use a zero-forex card (Niyo, ICICI Sapphiro) to avoid conversion fees. Inform your bank about international travel before departing India.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Paris Weather — Layer Up</div>
+      <div class="tip-desc">April–June: 12–22°C, occasional rain. July–August: 20–30°C, hot and crowded. September–October: 12–20°C, beautiful golden light, fewer tourists. Bring a light jacket at all times of year — Paris evenings are cool. A packable rain jacket is essential April–May.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛡️</div>
+      <div class="tip-title">Pickpockets — Stay Alert in Tourist Areas</div>
+      <div class="tip-desc">Paris has persistent pickpocket issues around Eiffel Tower, Louvre entrance, Metro Line 1, and Montmartre steps. Keep your bag in front of your body. Never leave a bag on the back of a chair in restaurants. The "petition" scam near Sacré-Cœur: decline firmly and walk away without engaging.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🗣️</div>
+      <div class="tip-title">Learn 5 French Phrases</div>
+      <div class="tip-desc">Parisians respond dramatically better when you attempt French: Bonjour (good day — ALWAYS say this when entering a shop), Merci (thank you), S'il vous plaît (please), Excusez-moi (excuse me), Parlez-vous anglais? (do you speak English?). Starting with Bonjour before any request is non-negotiable etiquette.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏥</div>
+      <div class="tip-title">Travel Insurance — Mandatory for Schengen</div>
+      <div class="tip-desc">Schengen visa requires proof of travel insurance with minimum €30,000 medical cover. Buy from Indian providers (Tata AIG, Bajaj Allianz) for ₹1,500–₹2,500 for 5–7 days. Keep hard copy of the policy document with your passport throughout Europe.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Paris</div>
+  <div class="pack-list">
+    <div class="pack-item">👗 <strong>Smart casual clothing</strong> — Paris is stylish. Avoid overtly touristy outfits. A simple outfit + scarf = instant chic.</div>
+    <div class="pack-item">👟 <strong>Comfortable walking shoes</strong> — you will walk 12–18km daily on cobblestones. Break them in before you go.</div>
+    <div class="pack-item">🌂 <strong>Compact umbrella</strong> — Paris rain is light but frequent April–May. A fold-flat umbrella lives in your bag.</div>
+    <div class="pack-item">🔌 <strong>EU Type C adapter</strong> — French plugs are Type E/F round 2-pin. One universal adapter covers all Europe.</div>
+    <div class="pack-item">📱 <strong>Google Maps offline</strong> — download Paris offline before leaving India. WiFi is available in most cafés.</div>
+    <div class="pack-item">💊 <strong>Prescription medicines</strong> — carry extra supply. French pharmacies (green cross) are excellent but prescriptions are needed.</div>
+    <div class="pack-item">📋 <strong>Printed bookings</strong> — Eiffel Tower, Louvre, Versailles, and your hotel confirmations printed. Some attractions require print confirmation.</div>
+    <div class="pack-item">💶 <strong>€50–100 cash</strong> — for small cafés, markets, tips. Withdraw from airport ATM on arrival rather than exchanging in India.</div>
+    <div class="pack-item">🌐 <strong>International SIM or eSIM</strong> — Airtel/Jio international plan or Airalo eSIM for Europe. Data is essential for navigation.</div>
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>One last thing:</strong> Paris is best experienced slowly. Don't try to see everything. Sit in a café for an hour. Get lost in an arrondissement you don't know. Buy a baguette and eat it while walking. The city rewards those who wander without agenda as much as those with a full itinerary.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PAGE 6 — BACK COVER ═══════════════════════════════════ -->
+<div class="page back-cover">
+  <h2 class="serif">More Europe<br/>Awaits You</h2>
+  <p>From the canals of Amsterdam to the ruins of Rome, from Barcelona's Gaudí to Switzerland's Alps — IncredibleItinerary has a complete guide for every European adventure, written for Indian travellers.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: London · Rome · Barcelona · Amsterdam · Switzerland · New York · Turkey · Malaysia · Nepal</p>
+  <div class="back-legal">This guide is for personal use only. Prices, visa requirements and entry conditions are subject to change — verify before travel. IncredibleItinerary.com is not responsible for inaccuracies arising from changed conditions. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

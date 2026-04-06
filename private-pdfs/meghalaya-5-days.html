@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Meghalaya 5 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#059669;--primary-light:#10b981;--primary-dark:#047857;
+  --accent:#34d399;--accent-light:#a7f3d0;
+  --ink:#052e16;--cream:#f0fdf4;--parchment:#dcfce7;
+  --white:#ffffff;--muted:#1a5c3a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,46,22,0.97) 0%,rgba(5,46,22,0.6) 50%,rgba(5,46,22,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#34d399;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(5,150,105,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(5,150,105,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.light{background:var(--primary-light);color:#fff}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(5,150,105,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(5,150,105,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(52,211,153,0.08),rgba(52,211,153,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#34d399;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#34d399;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(5,150,105,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.green{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.25);color:#047857}
+.highlight-box.amber{background:#fffbeb;border:1px solid #fde68a;color:#78350f}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(5,150,105,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(5,150,105,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(5,150,105,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(5,150,105,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(5,150,105,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:#fff;font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/2104882/pexels-photo-2104882.jpeg?w=1200&q=80" alt="Meghalaya living root bridge and waterfalls"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Meghalaya<br/><em>in 5 Days</em></h1>
+    <p class="cover-sub">Living root bridges, Asia's cleanest village, the wettest place on Earth, crystal-clear Dawki river, and cloud-drowned canyons</p>
+    <div class="cover-pills">
+      <span class="pill">🌿 5 Days</span>
+      <span class="pill">🗺️ Northeast India</span>
+      <span class="pill">💰 ₹12,000–₹35,000</span>
+      <span class="pill">🌤️ Oct–Nov &amp; Mar–May</span>
+      <span class="pill">🌉 Living Root Bridges</span>
+      <span class="pill">🌧️ Wettest Place</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(5,150,105,0.3);border:1px solid rgba(52,211,153,0.4);color:#34d399;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Meghalaya 5-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Abode of Clouds — India's Most Lush State</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">5 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🌉</div><span class="stat-val">Root Bridges</span><span class="stat-label">Living Architecture</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹12k–35k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–May</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop light">Guwahati</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Shillong</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Cherrapunji</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Mawlynnong + Dawki</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Root Bridge Trek</span>
+    <span class="route-sub">Fly to Guwahati (GUW) · 3hrs drive to Shillong</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1</div>
+      <div class="city-name">🏙️ Shillong</div>
+      <div class="city-desc">The "Scotland of the East" — India's only rock and roll city. Colonial-era architecture, Ward's Lake, the vibrant Laitumkhrah cafe district, Don Bosco Museum (exceptional tribal culture collection), Police Bazaar. Laid-back, cosmopolitan for a hill station, excellent food and music scene.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 2</div>
+      <div class="city-name">🌊 Cherrapunji (Sohra)</div>
+      <div class="city-desc">Cherrapunji receives 12,000mm of rainfall annually — one of the wettest places on Earth. Nohkalikai Falls (340m — India's highest plunge waterfall), Seven Sisters Falls, limestone caves, and valleys of perpetual mist and waterfalls. Even in the dry season the landscape here feels like another world.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🌿 Mawlynnong &amp; Dawki</div>
+      <div class="city-desc">Mawlynnong — declared Asia's cleanest village, living root bridge walk, bamboo sky-walk with views into Bangladesh. Dawki — the Umngot river is so transparent the boats appear to float on air. Bangladesh border visible from the bridge. One of the most photogenic river scenes in India.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4</div>
+      <div class="city-name">🌉 Living Root Bridges</div>
+      <div class="city-desc">The Khasi tribe has trained the roots of rubber fig trees across streams for 500+ years, creating living bridges that grow stronger over time. The double-decker root bridge at Nongriat (3,500 steps each way) is the most famous. A single-deck bridge at Mawlynnong is accessible in 10 minutes. The Laitlum Canyons (Meghalaya's Grand Canyon) at sunset are free and extraordinary.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Meghalaya is what happens when a cloud decides to stay — 5,000 years of rain, moss, and roots growing into living architecture across rushing streams."</p>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>How to Reach:</strong> Fly to Guwahati (GUW) — direct flights from Delhi, Mumbai, Kolkata (₹3,000–₹8,000 one way). From Guwahati airport, take a shared Sumo/taxi to Shillong (3hrs, 100km). Shared Sumo: ₹400–₹500 from Paltan Bazaar stand. Private taxi: ₹2,000–₹2,500. No ILP required for Indian citizens in Meghalaya.
+  </div>
+
+  <div class="highlight-box blue">
+    <strong>Cultural Note:</strong> Meghalaya has three main tribes — Khasi, Jaintia, and Garo. The Khasi and Jaintia are matrilineal — property, surname and inheritance pass through the mother. Women hold significant social and economic power here. This makes Meghalaya notably safe for solo female travel. Respect local customs; dress modestly in villages away from tourist areas.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–3 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Meghalaya 5-Day Itinerary</span>
+    <span class="page-header-right">Days 1–3 — Shillong, Cherrapunji &amp; Mawlynnong</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-tag">Day One · Guwahati to Shillong</div>
+      <div class="day-title">The Scotland of the East</div>
+      <div class="day-sub">Fly to Guwahati → 3hr drive to Shillong · Ward's Lake · Don Bosco Museum · Laitumkhrah cafe district</div>
+      <div class="day-cost">💰 Guwahati–Shillong Sumo: ₹400–₹500 · Don Bosco Museum: ₹100 · Food: ₹300–₹600</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Guwahati → Shillong (100km, 3hrs)</div>
+        <div class="time-desc">From Guwahati airport or railway station, shared Sumos (large shared taxis) leave for Shillong from Paltan Bazaar and ISBT bus stand. ₹400–₹500 per seat. The route climbs through the Meghalaya hills — a dramatic transition from the Brahmaputra plains to the cloud-draped highlands. Views begin opening up after Jorabat. Arrive Shillong (1,500m) by noon if departing early.</div>
+        <div class="time-price">Shared Sumo: ₹400–₹500 · Private taxi: ₹2,000–₹2,500 · 3hrs</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Don Bosco Museum — The Best Tribal Culture Museum in Northeast India</div>
+        <div class="time-desc">Seven floors of meticulously curated exhibits on the cultures, traditions, textiles, weapons, music, religious practices and history of the tribes of Northeast India. The rooftop Sky Walk has panoramic views of Shillong. This is genuinely one of the finest ethnographic museums in Asia — give it 2–3 hours. Entry ₹100. Photography permitted. The gift shop has authentic northeast tribal crafts.</div>
+        <div class="time-price">Entry: ₹100 · Hours: 9am–5:30pm · 2–3hrs recommended</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Evening</div>
+      <div class="time-content">
+        <div class="time-title">Ward's Lake + Laitumkhrah Cafe District</div>
+        <div class="time-desc">Ward's Lake is a colonial-era artificial lake in the centre of Shillong — pleasant walking paths, pedal boats, willow trees. More interesting is the Laitumkhrah area — Shillong's hip neighbourhood with independent cafes, live music venues, bookshops, and incredible food. Try jadoh (Khasi red rice with pork), dohneiiong (pork with black sesame), and tungtap fish chutney at any local eatery. Shillong is exceptional for food.</div>
+        <div class="time-price">Ward's Lake: ₹10 entry · Cafe dinner: ₹200–₹500 · Live music venues: ₹0–₹200 cover</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-tag">Day Two · Cherrapunji (Sohra)</div>
+      <div class="day-title">Waterfalls, Caves &amp; the Wettest Place on Earth</div>
+      <div class="day-sub">Shillong → Cherrapunji (54km) · Nohkalikai Falls · Mawsmai Cave · Eco Park · Seven Sisters Falls</div>
+      <div class="day-cost">💰 Mawsmai Cave: ₹50 · Eco Park: ₹20 · Nohkalikai viewpoint: ₹50 · Taxi day: ₹2,000–₹2,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">9:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Shillong → Cherrapunji (54km, 1.5hrs)</div>
+        <div class="time-desc">Hire a local taxi for the day from Shillong to cover Cherrapunji and return (₹2,000–₹2,500). The road to Cherrapunji is extraordinarily scenic — the plateau edge with views 2,000m down into Bangladesh, mist rolling up from below, sudden patches of dense forest. Cherrapunji (now officially Sohra) sits at 1,430m. The landscape feels perpetually damp and deeply lush even in the dry season.</div>
+        <div class="time-price">Day taxi Shillong–Cherrapunji circuit: ₹2,000–₹2,500 · Distance 54km</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">10:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Nohkalikai Falls — India's Highest Plunge Waterfall (340m)</div>
+        <div class="time-desc">The most dramatic waterfall in India. Nohkalikai drops 340 metres off the plateau edge into a brilliant green pool below. In monsoon it becomes a roaring white curtain visible for kilometres. Even in dry season the volume is significant. The name comes from a tragic local legend (Ka Likai was a woman — the falls mark her fate). The viewpoint (₹50) gives you a dramatic edge-of-the-world perspective. Do not skip this.</div>
+        <div class="time-price">Viewpoint entry: ₹50 · Best in monsoon (off-season for tourism) · 20-min walk from road</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">12:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Mawsmai Cave — Limestone Cavern Walk</div>
+        <div class="time-desc">Mawsmai Cave (₹50) is a 150-metre-long limestone cave with stalactites, stalagmites, and formations illuminated by path lighting. It's narrow in sections — not suitable for claustrophobics — but well-maintained and genuinely beautiful. The cave is one of hundreds in the Cherrapunji area; the heavy rainfall over millennia has created extraordinary cave systems throughout this limestone plateau.</div>
+        <div class="time-price">Entry: ₹50 · 30min walk-through · Narrow sections — wear comfortable clothes</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Eco Park + Thangkharang Park — Bangladesh Views</div>
+        <div class="time-desc">Eco Park (₹20) has viewpoints over the Bangladesh plains 1,500m below — on clear days you can see for 100km into the flat green expanse of Bangladesh. Seven Sisters Falls is visible from here when water flow is good (monsoon season is best). Thangkharang Park has similar Bangladesh panoramic views. Both are quiet and undervisited — take your time here.</div>
+        <div class="time-price">Eco Park: ₹20 · Thangkharang: ₹30 · Seven Sisters Falls: best in monsoon</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Mawlynnong &amp; Dawki</div>
+      <div class="day-title">Asia's Cleanest Village &amp; the Invisible River</div>
+      <div class="day-sub">Shillong → Mawlynnong (90km) · Root bridge · Sky Walk → Dawki river boat ride · Bangladesh border</div>
+      <div class="day-cost">💰 Mawlynnong entry: ₹50 · Dawki boat: ₹600–₹800 · Full day taxi: ₹3,000–₹3,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">8:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Mawlynnong Village — Asia's Cleanest Village</div>
+        <div class="time-desc">Mawlynnong, 90km from Shillong, was awarded "Asia's Cleanest Village" by Discover India magazine. The village is genuinely immaculate — bamboo dustbins, swept paths, flowers everywhere, no litter in sight. The Khasi tribe here practices a 100% literacy rate and a strong community cleanliness ethic. Walking through the village is a meditative experience. The single-deck living root bridge is a 10-minute walk from the village — ancient, mossy, beautiful and walkable.</div>
+        <div class="time-price">Mawlynnong entry: ₹50 · Root bridge walk: free · Village bamboo sky-walk: ₹30</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">11:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Mawlynnong Bamboo Sky-Walk — Bangladesh Views</div>
+        <div class="time-desc">A bamboo viewing platform rises above the jungle canopy adjacent to Mawlynnong. On clear days you can see the flat plains of Bangladesh stretching to the horizon. The platform sways slightly in the wind — not for the faint-hearted, but entirely stable. The surrounding jungle from above, with clouds drifting through, is memorable.</div>
+        <div class="time-price">Sky-walk: ₹30 · 10min climb · View extends into Bangladesh on clear days</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">1:00 PM</div>
+      <div class="time-content">
+        <div class="time-title">Dawki — The River That Isn't There</div>
+        <div class="time-desc">Dawki, 16km from Mawlynnong, sits on the Umngot river — arguably the clearest river in India and one of the clearest in Asia. The water is so transparent that boats appear to float on air, their shadows visible on the riverbed below. Boat rides (₹600–₹800, 30–45 minutes) let you float over multicoloured pebbles in 4 metres of perfectly clear water. The suspension bridge over the Umngot is the India–Bangladesh border crossing. A surreal and beautiful place.</div>
+        <div class="time-price">Boat ride: ₹600–₹800/boat (4–6 people) · 30–45min · Best Oct–Nov and Feb–Mar</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 4–5 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Meghalaya 5-Day Itinerary</span>
+    <span class="page-header-right">Days 4–5 · Root Bridges · Budget</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · The Living Root Bridge Trek</div>
+      <div class="day-title">Nongriat Double-Decker Root Bridge</div>
+      <div class="day-sub">3,500 stone steps down into a jungle valley · Double-decker root bridge · Swim in natural pools · Laitlum Canyon sunset</div>
+      <div class="day-cost">💰 Nongriat trek: free · Guide: ₹500–₹800 · Laitlum Canyons: free</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">7:00 AM</div>
+      <div class="time-content">
+        <div class="time-title">Tyrna Village → Nongriat Root Bridge Trek (3,500 Steps)</div>
+        <div class="time-desc">The trek to Nongriat's double-decker root bridge is one of the most unique and rewarding walks in India. From Tyrna village (12km from Cherrapunji — day taxi needed, overnight in Cherrapunji makes sense), 3,500 stone steps descend steeply into a jungle valley — waterfalls, dense ferns, the sound of rushing streams, living root bridges across every water crossing. The double-decker bridge at the bottom has two layers of living root architecture trained over 200+ years. Swim in the Rainbow Falls natural pool nearby. Return is 3,500 steps back up. Allow 5–6 hours for the complete round trip. Hire a guide from Tyrna (₹500–₹800) — they know the path well and can point out biodiversity.</div>
+        <div class="time-price">Trek: free · Guide: ₹500–₹800 · Round trip: 5–6hrs · Bring lunch and 2L water</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Easier Alternative: Mawlynnong Single-Deck Root Bridge</div>
+        <div class="time-desc">For those who prefer not to tackle 3,500 steps, the single-deck living root bridge at Mawlynnong is a 10-minute walk from the village — fully accessible, equally ancient, still growing. The bridge carries a person's weight easily — walk across, feel the roots and bark beneath your feet, watch the clear stream below. The smaller scale makes it no less miraculous.</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Sunset</div>
+      <div class="time-content">
+        <div class="time-title">Laitlum Canyons — Meghalaya's Grand Canyon at Dusk</div>
+        <div class="time-desc">Laitlum Canyons (40km from Shillong, free entry) is the most underrated place in Meghalaya. The Khasi Hills drop dramatically into deep gorges here — a sweeping canyon landscape draped in cloud and jungle. At sunset, the mist rises from below, turning golden in the slanted light. Almost no tourists visit this relative to its extraordinary visual drama. Drive here for the last 2 hours of daylight.</div>
+        <div class="time-price">Laitlum Canyons: free · 40km from Shillong · Sunset timing essential · Drive access</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Return or Extend</div>
+      <div class="day-title">Shillong Morning, Then Guwahati</div>
+      <div class="day-sub">Morning Shillong — Police Bazaar market · Drive back to Guwahati (3hrs) · Or extend to Kaziranga rhino safari</div>
+      <div class="day-cost">💰 Police Bazaar shopping · Return Sumo: ₹400–₹500 · Kaziranga extension: see NE India guide</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Shillong Police Bazaar — Last Shopping and Food</div>
+        <div class="time-desc">Police Bazaar is Shillong's main market — excellent for Khasi handicrafts (bamboo products, handwoven textiles, beaded jewellery), Meghalaya honey, dried shiitake mushrooms, and smoked meats. Try a last bowl of jadoh (red rice with pork) at any local eatery. The Bara Bazaar area has wholesale northeast handicrafts at very reasonable prices. Buy cinnamon and black pepper from the Northeast spice stalls — some of the best in India.</div>
+        <div class="time-price">Police Bazaar shopping: budget as desired · Northeast handicrafts from ₹200 · Jadoh meal: ₹80–₹150</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Noon</div>
+      <div class="time-content">
+        <div class="time-title">Drive Back to Guwahati or Extend to Kaziranga</div>
+        <div class="time-desc">Return shared Sumo to Guwahati (₹400–₹500, 3hrs) for your flight. OR — highly recommended extension — continue 4 hours from Shillong to Kaziranga National Park (Assam) for 2 nights of one-horned rhinoceros and elephant safaris. Kaziranga is a UNESCO World Heritage Site with the highest density of one-horned rhinos anywhere on Earth. See the full Northeast India 10-day guide for details on combining Meghalaya and Kaziranga.</div>
+        <div class="time-price">Sumo back to Guwahati: ₹400–₹500 · Kaziranga extension: 2 extra days</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 5 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Flights (return to Guwahati)</td><td>6,000</td><td>10,000</td><td>16,000</td></tr>
+      <tr><td>Accommodation (4 nights)</td><td>3,200</td><td>8,000</td><td>18,000</td></tr>
+      <tr><td>Local Transport (taxis)</td><td>2,500</td><td>5,000</td><td>8,000</td></tr>
+      <tr><td>Food (5 days)</td><td>2,000</td><td>5,000</td><td>8,000</td></tr>
+      <tr><td>Entry fees &amp; activities</td><td>800</td><td>2,000</td><td>4,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹14,500</strong></td><td><strong>~₹30,000</strong></td><td><strong>~₹54,000</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Budget uses hostels/cheap guesthouses and shared transport. Mid-range uses comfortable hotels and private taxis for day trips. Bring cash — few ATMs in remote areas like Mawlynnong and Dawki.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Meghalaya 5-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips &amp; Packing</span>
+  </div>
+
+  <div class="label">Insider Tips — Read Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Know Before You Go</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🌧️</div>
+      <div class="tip-title">Season Matters Enormously</div>
+      <div class="tip-desc">Oct–Nov: post-monsoon, everything lush and green, waterfalls still full, roads clear, excellent weather. Mar–May: before monsoon, pleasant temperatures, Dawki river at its clearest. June–Sep: monsoon season — Cherrapunji receives 12m of rain, roads become treacherous, some roads close. Nohkalikai Falls is most dramatic in monsoon but travel is difficult. Avoid June–September unless you're specifically chasing waterfalls and accept the access challenges.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Cash is Essential — ATMs Are Rare</div>
+      <div class="tip-desc">Shillong has good ATMs. Beyond Shillong — at Cherrapunji, Mawlynnong, Dawki — there are very few working ATMs. Most guesthouses, taxis and activity operators outside Shillong are cash-only. Carry at least ₹5,000–₹8,000 cash before leaving Shillong for the day trips. Withdraw from multiple ATMs in Shillong to be safe.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🎵</div>
+      <div class="tip-title">Shillong's Music Scene</div>
+      <div class="tip-desc">Shillong is India's rock and roll capital — genuinely. Live music venues in Laitumkhrah play original rock, blues and jazz most evenings. Lou Majaw (India's Bob Dylan equivalent) is from Shillong. Check what's on at local venues when you arrive — a live music evening in a Shillong cafe is one of those unexpectedly brilliant travel moments.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍖</div>
+      <div class="tip-title">Food — Pork is King Here</div>
+      <div class="tip-desc">Northeast India is predominantly pork-eating territory. Jadoh (red rice with pork), dohneiiong (pork with black sesame), and tungrymbai (fermented soybean) are Khasi staples. Excellent for non-vegetarians — one of India's most unique regional cuisines. Vegetarians will find options but must ask specifically. The smoked meats and dried fish available in markets are excellent gifts to bring back.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🛡️</div>
+      <div class="tip-title">Safety for Solo Female Travellers</div>
+      <div class="tip-desc">Meghalaya is widely considered among the safest states in India for solo female travel — a direct result of the matrilineal culture. Women hold social authority, incidents of harassment are significantly rarer than in North India, and locals are generally respectful and helpful. This is not to say normal precautions don't apply — but solo women consistently report feeling more at ease here than almost anywhere else in India.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">📋</div>
+      <div class="tip-title">No ILP Required for Indians in Meghalaya</div>
+      <div class="tip-desc">Inner Line Permit (ILP) is not required for Indian citizens visiting Meghalaya, Assam, Tripura or Mizoram. ILP IS required for Indians visiting Arunachal Pradesh, Nagaland, and Manipur — apply online through those states' official portals. Foreign nationals require permits for most Northeast states — check current regulations before travel.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚌</div>
+      <div class="tip-title">Shared Sumos — How They Work</div>
+      <div class="tip-desc">The primary transport between towns in Northeast India is the shared Sumo (Tata Sumo SUV) with 8–10 passengers. They depart when full from specific stands. Morning departures are most frequent. For more flexibility, book the entire vehicle for 1.5–2x the shared price. Sumos are faster than buses on mountain roads. On busy tourist routes (Guwahati–Shillong), they depart very frequently throughout the day.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🥾</div>
+      <div class="tip-title">Nongriat Trek — What to Know</div>
+      <div class="tip-desc">The 3,500-step descent to the double-decker root bridge is steep — worn stone steps, often wet and slippery. Wear closed-toe shoes with grip (not sandals). The descent takes 1.5hrs, the climb back up 2hrs. Carrying a walking stick helps (available to borrow at Tyrna). Start early (7am) to avoid the midday heat and have the bridge to yourself before tour groups arrive. Bring a waterproof bag — it is usually misting or raining.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Meghalaya</div>
+  <div class="pack-list">
+    <div class="pack-item">🌧️ <strong>Rain jacket</strong> — not optional. It can rain any time, any season in Meghalaya.</div>
+    <div class="pack-item">👟 <strong>Grippy trekking shoes</strong> — wet stone steps are very slippery. No sandals for root bridge.</div>
+    <div class="pack-item">💧 <strong>Reusable water bottle</strong> — fill at guesthouses. Stay hydrated on trek days.</div>
+    <div class="pack-item">💰 <strong>Cash ₹5,000–₹8,000</strong> — ATMs scarce outside Shillong. Essential.</div>
+    <div class="pack-item">📵 <strong>Offline maps</strong> — download Maps.me offline for Meghalaya before arriving.</div>
+    <div class="pack-item">🦟 <strong>Insect repellent</strong> — jungle areas have mosquitoes. DEET-based recommended.</div>
+    <div class="pack-item">🧴 <strong>Waterproof bag/cover</strong> — for camera and phone at Dawki boat and root bridge.</div>
+    <div class="pack-item">🎽 <strong>Quick-dry clothing</strong> — you will get wet. Avoid cotton, which stays wet and cold.</div>
+    <div class="pack-item">🔋 <strong>Power bank 10,000mAh</strong> — power cuts common in hill stations. Essential.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More Northeast<br/>India Awaits</h2>
+  <p>From Meghalaya's living root bridges to Kaziranga's rhinos, from Majuli's river island monasteries to Arunachal Pradesh's ancient tribal traditions — IncredibleItinerary has guides for every extraordinary corner of India.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Northeast India 10-Day · Kashmir · Leh-Ladakh · Spiti Valley · Kerala · Maldives · Andaman · Goa</p>
+  <div class="back-legal">This guide is for personal use only. Entry fees, road conditions and seasonal accessibility are subject to change — verify before travel. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>
