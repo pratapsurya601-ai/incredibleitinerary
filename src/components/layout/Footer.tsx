@@ -3,76 +3,6 @@ import { SITE_CONFIG } from "@/lib/config";
 import { blogPosts } from "@/data/blog";
 import FooterNewsletter from "@/components/layout/FooterNewsletter";
 
-const REGIONS = {
-  "Rajasthan": [
-    { label: "Rajasthan 7 Days", href: "/blog/rajasthan-7-days" },
-    { label: "Jaipur", href: "/blog/jaipur-3-days" },
-    { label: "Jodhpur", href: "/blog/jodhpur-3-days" },
-    { label: "Jaisalmer", href: "/blog/jaisalmer-3-days" },
-    { label: "Udaipur", href: "/blog/udaipur-3-days" },
-    { label: "Pushkar", href: "/blog/pushkar-2-days" },
-    { label: "Mount Abu", href: "/blog/mount-abu-2-days" },
-    { label: "Ranthambore", href: "/blog/ranthambore-3-days" },
-  ],
-  "Himachal": [
-    { label: "Manali", href: "/blog/manali-5-days" },
-    { label: "Shimla", href: "/blog/shimla-3-days" },
-    { label: "Dharamshala", href: "/blog/dharamshala-3-days" },
-    { label: "Kasol", href: "/blog/kasol-3-days" },
-    { label: "Spiti Valley", href: "/blog/spiti-valley-7-days" },
-    { label: "Jibhi", href: "/blog/jibhi-tirthan-valley-3-days" },
-  ],
-  "Uttarakhand": [
-    { label: "Rishikesh", href: "/blog/rishikesh-haridwar-3-days" },
-    { label: "Mussoorie", href: "/blog/mussoorie-3-days" },
-    { label: "Nainital", href: "/blog/nainital-3-days" },
-    { label: "Auli", href: "/blog/auli-3-days" },
-    { label: "Jim Corbett", href: "/blog/jim-corbett-3-days" },
-    { label: "Valley of Flowers", href: "/blog/valley-of-flowers-4-days" },
-  ],
-  "South India": [
-    { label: "Kerala 5 Days", href: "/blog/kerala-5-days" },
-    { label: "Goa", href: "/blog/goa-3-days" },
-    { label: "Ooty", href: "/blog/ooty-3-days" },
-    { label: "Coorg", href: "/blog/coorg-3-days" },
-    { label: "Hampi", href: "/blog/hampi-3-days" },
-    { label: "Mysore", href: "/blog/mysore-3-days" },
-    { label: "Gokarna", href: "/blog/gokarna-3-days" },
-    { label: "Pondicherry", href: "/blog/pondicherry-3-days" },
-    { label: "Kodaikanal", href: "/blog/kodaikanal-3-days" },
-    { label: "Madurai", href: "/blog/madurai-2-days" },
-    { label: "Rameswaram", href: "/blog/rameswaram-2-days" },
-    { label: "Kanyakumari", href: "/blog/kanyakumari-2-days" },
-  ],
-  "Northeast": [
-    { label: "Meghalaya", href: "/blog/meghalaya-5-days" },
-    { label: "Sikkim", href: "/blog/sikkim-6-days" },
-    { label: "Shillong", href: "/blog/shillong-3-days" },
-    { label: "Tawang", href: "/blog/tawang-4-days" },
-    { label: "Kaziranga", href: "/blog/kaziranga-3-days" },
-    { label: "Majuli", href: "/blog/majuli-3-days" },
-    { label: "Darjeeling", href: "/blog/darjeeling-4-days" },
-    { label: "Sundarbans", href: "/blog/sundarbans-3-days" },
-  ],
-  "More": [
-    { label: "Golden Triangle", href: "/blog/golden-triangle-7-days" },
-    { label: "Kashmir", href: "/blog/kashmir-6-days" },
-    { label: "Leh Ladakh", href: "/blog/leh-ladakh-7-days" },
-    { label: "Varanasi", href: "/blog/varanasi-3-days" },
-    { label: "Amritsar", href: "/blog/amritsar-2-days" },
-    { label: "Agra", href: "/blog/agra-2-days" },
-    { label: "Andaman", href: "/blog/andaman-5-days" },
-    { label: "Hyderabad", href: "/blog/hyderabad-3-days" },
-    { label: "Gujarat 7 Days", href: "/blog/gujarat-7-days" },
-    { label: "Lonavala", href: "/blog/lonavala-2-days" },
-    { label: "Vizag", href: "/blog/vizag-3-days" },
-    { label: "Khajuraho", href: "/blog/khajuraho-2-days" },
-    { label: "Orchha", href: "/blog/orchha-2-days" },
-    { label: "Diu", href: "/blog/diu-2-days" },
-    { label: "Dwarka", href: "/blog/dwarka-2-days" },
-    { label: "Mahabaleshwar", href: "/blog/mahabaleshwar-2-days" },
-  ],
-};
 
 const SOCIAL_LINKS = [
   { icon: "in", href: SITE_CONFIG.linkedin, label: "LinkedIn" },
@@ -154,28 +84,18 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Destination mega-menu */}
-        <div className="border-t border-white/[0.06] pt-10 mb-10">
-          <p className="text-xs tracking-[0.22em] uppercase text-gold mb-6 text-center">
-            {blogPosts.length}+ Free Destination Guides — 50+ Countries
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {Object.entries(REGIONS).map(([region, links]) => (
-              <div key={region}>
-                <p className="text-xs tracking-[0.15em] uppercase text-white/55 mb-2.5 font-medium">
-                  {region}
-                </p>
-                <ul className="flex flex-col gap-1.5">
-                  {links.map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href} className="text-xs text-white/65 hover:text-gold transition-colors leading-relaxed">
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        {/* Destination browse strip */}
+        <div className="border-t border-white/[0.06] pt-8 mb-10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs tracking-[0.18em] uppercase text-gold">
+              {blogPosts.length}+ Free Guides — India, Europe, Southeast Asia, Middle East &amp; More
+            </p>
+            <Link
+              href="/blog"
+              className="text-xs text-white/55 hover:text-gold border border-white/10 hover:border-gold/40 px-5 py-2 rounded-full transition-all duration-200 whitespace-nowrap"
+            >
+              Browse all guides →
+            </Link>
           </div>
         </div>
 

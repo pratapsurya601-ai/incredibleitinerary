@@ -319,7 +319,7 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/20 to-cream" />
         <div className="absolute bottom-6 left-0 right-0 text-center px-4">
           <span className="inline-block text-xs tracking-[0.18em] uppercase text-gold font-medium bg-ink/50 backdrop-blur-sm px-4 py-1.5 rounded-full">
-            Free &middot; 307+ destinations &middot; No signup required
+            Free &middot; {blogPosts.length}+ destinations &middot; No signup required
           </span>
         </div>
       </div>
@@ -330,15 +330,15 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
         </h1>
         <p className="text-base text-muted font-light leading-relaxed mb-3 max-w-md">
           Answer 5 questions. We&apos;ll match you with the best guides from{" "}
-          <strong className="text-ink font-medium">307+ destinations worldwide</strong>{" "}
+          <strong className="text-ink font-medium">{blogPosts.length}+ destinations worldwide</strong>{" "}
           — scored to your exact preferences.
         </p>
         <p className="text-xs text-muted/60 font-light mb-8">
-          307+ destinations &middot; Personalized match scores &middot; No signup required &middot; Free forever
+          {blogPosts.length}+ destinations &middot; Personalized match scores &middot; No signup required &middot; Free forever
         </p>
 
         <div className="grid grid-cols-4 gap-4 mb-10 w-full max-w-xs">
-          {([["307+", "Destinations"], ["5", "Questions"], ["<1min", "Takes"], ["Free", "Forever"]] as [string, string][]).map(
+          {([[`${blogPosts.length}+`, "Destinations"], ["5", "Questions"], ["<1min", "Takes"], ["Free", "Forever"]] as [string, string][]).map(
             ([val, lbl]) => (
               <div key={lbl} className="text-center">
                 <p className="font-serif text-xl font-light text-ink">{val}</p>

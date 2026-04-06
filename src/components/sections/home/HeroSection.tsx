@@ -39,18 +39,6 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
           {blogPosts.length} free travel guides across 50+ countries. Real prices. Local tips.
         </p>
 
-        {/* PDF pill */}
-        <div className="flex justify-center mb-8" style={{ animation: "fadeUp .8s .38s both" }}>
-          <a
-            href="/guides"
-            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-gold/60 text-white/80 hover:text-white text-xs font-medium px-5 py-2 rounded-full transition-all duration-200"
-          >
-            <span>📄</span>
-            <span>10 free PDF guides — download offline</span>
-            <span className="text-gold">→</span>
-          </a>
-        </div>
-
         {/* Search bar — large, prominent */}
         <div className="max-w-xl mx-auto mb-14" style={{ animation: "fadeUp .8s .45s both" }}>
           <div className="relative">
