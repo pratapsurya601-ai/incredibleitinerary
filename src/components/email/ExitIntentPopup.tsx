@@ -271,7 +271,7 @@ export default function ExitIntentPopup() {
                 <div className="w-full bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4 text-left">
                   <p className="text-amber-800 text-xs font-medium mb-1">⚠️ That was your last free guide</p>
                   <a
-                    href="https://rzp.io/rzp/qhP2iBq"
+                    href="https://rzp.io/rzp/oUANvqjl"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-2 bg-gold text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-gold-dark transition-colors"
@@ -303,7 +303,7 @@ export default function ExitIntentPopup() {
 
               <div className="w-full flex flex-col gap-2 mb-4">
                 <a
-                  href="https://rzp.io/rzp/qhP2iBq"
+                  href="https://rzp.io/rzp/oUANvqjl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full block text-center bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-colors duration-200"
@@ -311,7 +311,7 @@ export default function ExitIntentPopup() {
                   All 20+ Guides — ₹499 one-time →
                 </a>
                 <a
-                  href="https://rzp.io/rzp/SfJqFBV"
+                  href="https://rzp.io/rzp/aRVZcSi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full block text-center border border-ink/20 hover:border-ink text-ink font-medium text-sm px-6 py-3 rounded-full transition-colors duration-200"

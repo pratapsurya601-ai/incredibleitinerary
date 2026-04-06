@@ -82,7 +82,7 @@ export default function UnlockPage() {
 
             <div className="px-7 pb-7">
               <a
-                href="https://rzp.io/rzp/SfJqFBV"
+                href="https://rzp.io/rzp/aRVZcSi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full block text-center border-2 border-ink hover:bg-ink text-ink hover:text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-200"
@@ -129,7 +129,7 @@ export default function UnlockPage() {
 
             <div className="px-7 pb-7">
               <a
-                href="https://rzp.io/rzp/qhP2iBq"
+                href="https://rzp.io/rzp/oUANvqjl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full block text-center bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-200 shadow-lg"
@@ -242,7 +242,7 @@ export default function UnlockPage() {
         <p className="text-muted text-sm mb-5 font-light">Still deciding?</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="https://rzp.io/rzp/SfJqFBV"
+            href="https://rzp.io/rzp/aRVZcSi"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-ink hover:bg-ink text-ink hover:text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200"
@@ -250,7 +250,7 @@ export default function UnlockPage() {
             India Pack — ₹249
           </a>
           <a
-            href="https://rzp.io/rzp/qhP2iBq"
+            href="https://rzp.io/rzp/oUANvqjl"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200"

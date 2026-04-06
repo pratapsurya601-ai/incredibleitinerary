@@ -113,7 +113,7 @@ export default function LinkPage() {
       {/* ── ALL ACCESS BUNDLE ── */}
       <section className="px-4 max-w-md mx-auto mb-5">
         <a
-          href="https://rzp.io/rzp/qhP2iBq"
+          href="https://rzp.io/rzp/oUANvqjl"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-between bg-gold hover:bg-gold-dark text-[#0d0a04] font-semibold rounded-2xl px-5 py-4 transition-colors duration-200 shadow-lg"
@@ -130,7 +130,7 @@ export default function LinkPage() {
       {/* ── INDIA PACK ── */}
       <section className="px-4 max-w-md mx-auto mb-5">
         <a
-          href="https://rzp.io/rzp/SfJqFBV"
+          href="https://rzp.io/rzp/aRVZcSi"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-between border border-white/20 hover:border-white/40 text-white rounded-2xl px-5 py-4 transition-colors duration-200"

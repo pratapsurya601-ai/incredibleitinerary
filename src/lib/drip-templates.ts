@@ -204,7 +204,7 @@ export const DRIP_STEPS: DripStep[] = [
           Rajasthan · Kerala · Goa · India Budget Guide<br/>
           Leh Ladakh · Bangkok · Kashmir · Manali · Bali · Dubai
         </p>
-        <a href="https://rzp.io/rzp/qhP2iBq" style="display:inline-block;background:#c9a96e;color:#0d0a04;font-family:Arial,sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:14px 32px;border-radius:4px;text-decoration:none;">
+        <a href="https://rzp.io/rzp/oUANvqjl" style="display:inline-block;background:#c9a96e;color:#0d0a04;font-family:Arial,sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:14px 32px;border-radius:4px;text-decoration:none;">
           Get All 10 Guides for ₹499 →
         </a>
       </div>
@@ -223,7 +223,7 @@ export const DRIP_STEPS: DripStep[] = [
       ${p(`Just a quick nudge — the All Access bundle at ₹499 is still available.`)}
       ${p(`If you're planning multiple trips, or just want offline guides for whenever you travel next, this is the easiest way to get everything in one go:`)}
       <div style="text-align:center;margin:28px 0;">
-        <a href="https://rzp.io/rzp/qhP2iBq" style="display:inline-block;background:#c9a96e;color:#0d0a04;font-family:Arial,sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:14px 32px;border-radius:4px;text-decoration:none;">
+        <a href="https://rzp.io/rzp/oUANvqjl" style="display:inline-block;background:#c9a96e;color:#0d0a04;font-family:Arial,sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:14px 32px;border-radius:4px;text-decoration:none;">
           Get All 10 Guides — ₹499 →
         </a>
       </div>

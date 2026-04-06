@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import DownloadButton from "@/components/pdf/DownloadButton";
+import ComingSoonSection from "@/components/pdf/ComingSoonSection";
 
 export const metadata: Metadata = {
   title: "Free Travel Guide PDFs — IncredibleItinerary",
@@ -647,12 +648,14 @@ export default function GuidesPage() {
 
                 <div className="flex flex-col gap-2">
                   <DownloadButton slug={g.slug} title={g.title} variant="primary" className="w-full justify-center" />
-                  <Link
-                    href={g.href}
-                    className="block text-center text-xs text-muted hover:text-ink underline underline-offset-2 transition-colors"
-                  >
-                    Read the full guide online →
-                  </Link>
+                  {g.href !== "/blog" && (
+                    <Link
+                      href={g.href}
+                      className="block text-center text-xs text-muted hover:text-ink underline underline-offset-2 transition-colors"
+                    >
+                      Read the full guide online →
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
@@ -661,28 +664,7 @@ export default function GuidesPage() {
       </section>
 
       {/* ── COMING SOON ── */}
-      <section className="max-w-5xl mx-auto px-6 py-10">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="font-serif text-2xl text-ink font-light">Coming Soon</h2>
-          <span className="text-xs text-muted">Added weekly</span>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-          {COMING_SOON.map((g) => (
-            <div
-              key={g.title}
-              className="bg-white rounded-xl border border-parchment-2 p-4 opacity-70 hover:opacity-90 transition-opacity"
-            >
-              <span className="text-2xl block mb-2">{g.emoji}</span>
-              <p className="text-sm font-medium text-ink leading-tight">{g.title}</p>
-              <p className="text-[0.62rem] text-muted mt-0.5 leading-snug">{g.sub}</p>
-              <span className="inline-block mt-2 text-[0.6rem] bg-parchment-2 text-muted px-2 py-0.5 rounded-full">
-                {g.country}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ComingSoonSection items={COMING_SOON} />
 
       {/* ── UNLOCK CTA ── */}
       <section className="max-w-5xl mx-auto px-6 pb-16">

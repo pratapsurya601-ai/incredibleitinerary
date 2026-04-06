@@ -1,8 +1,11 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 
-type Step = "email" | "loading" | "success" | "paywall";
+// ── Razorpay URLs (always use the new links with callback) ───────────────────
+const RZP_ALL    = "https://rzp.io/rzp/oUANvqjl"; // All 50+ guides — ₹499
+const RZP_INDIA  = "https://rzp.io/rzp/aRVZcSi";  // India Pack — ₹249
+
+type Step = "email" | "loading" | "success" | "paywall" | "already_owned";
 
 interface DownloadModalProps {
   slug: string;
@@ -26,11 +29,12 @@ function Spinner() {
 }
 
 export default function DownloadModal({ slug, title, onClose }: DownloadModalProps) {
-  const [step, setStep] = useState<Step>("email");
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [step, setStep]           = useState<Step>("email");
+  const [email, setEmail]         = useState("");
+  const [error, setError]         = useState("");
   const [remaining, setRemaining] = useState<number | null>(null);
-  const [isLast, setIsLast] = useState(false);
+  const [isLast, setIsLast]       = useState(false);
+  const [pdfToken, setPdfToken]   = useState("");
 
   async function handleDownload(e: React.FormEvent) {
     e.preventDefault();
@@ -47,7 +51,6 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
       const data = await res.json();
 
       if (res.status === 402 || data.paywall) {
-        // Save email to localStorage so paywall page can use it
         try { localStorage.setItem("ii_email", email.toLowerCase().trim()); } catch {}
         setStep("paywall");
         return;
@@ -59,11 +62,18 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
         return;
       }
 
-      // Save email so ExitIntentPopup knows user is subscribed
+      // Save email for other components
       try {
         localStorage.setItem("ii_subscribed", "true");
         localStorage.setItem("ii_email", email.toLowerCase().trim());
       } catch {}
+
+      // If user already owned this guide, show a friendly "re-open" step
+      if (data.alreadyOwned) {
+        setPdfToken(data.token);
+        setStep("already_owned");
+        return;
+      }
 
       // Open guide in new tab
       const url = `/api/serve-pdf?slug=${encodeURIComponent(slug)}&token=${encodeURIComponent(data.token)}`;
@@ -76,6 +86,11 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
       setError("Network error. Please check your connection and try again.");
       setStep("email");
     }
+  }
+
+  function openPdf(token: string) {
+    const url = `/api/serve-pdf?slug=${encodeURIComponent(slug)}&token=${encodeURIComponent(token)}`;
+    window.open(url, "_blank", "noopener");
   }
 
   return (
@@ -100,7 +115,7 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
             ✕
           </button>
 
-          {/* ── STEP: email form ────────────────────────────────────────── */}
+          {/* ── STEP: email form ──────────────────────────────────────────── */}
           {step === "email" && (
             <div className="flex flex-col items-center text-center">
               <span className="text-4xl mb-4" aria-hidden="true">📄</span>
@@ -111,10 +126,9 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
                 <span className="font-medium text-ink">{title}</span>
               </p>
               <p className="text-muted text-sm mb-5 max-w-xs leading-relaxed">
-                Enter your email — we'll send you this guide and any updates for free.
+                Enter your email — your guide opens instantly in a new tab.
               </p>
 
-              {/* Free counter badge */}
               <span className="inline-flex items-center gap-1.5 border border-gold/30 bg-gold/10 text-gold-dark text-xs rounded-full px-3 py-1 mb-5 font-medium">
                 🎁 2 guides free · No credit card needed
               </span>
@@ -148,7 +162,7 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
             </div>
           )}
 
-          {/* ── STEP: loading ───────────────────────────────────────────── */}
+          {/* ── STEP: loading ─────────────────────────────────────────────── */}
           {step === "loading" && (
             <div className="flex flex-col items-center text-center py-6">
               <Spinner />
@@ -156,7 +170,33 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
             </div>
           )}
 
-          {/* ── STEP: success ───────────────────────────────────────────── */}
+          {/* ── STEP: already owned ───────────────────────────────────────── */}
+          {step === "already_owned" && (
+            <div className="flex flex-col items-center text-center">
+              <span className="text-4xl mb-4" aria-hidden="true">📂</span>
+              <h2 className="font-serif text-ink text-2xl font-semibold mb-2 leading-tight">
+                You already have this!
+              </h2>
+              <p className="text-muted text-sm mb-5 max-w-xs leading-relaxed">
+                <strong className="text-ink">{title}</strong> is already in your library.
+                Click below to open it again — no re-download needed.
+              </p>
+              <button
+                onClick={() => { openPdf(pdfToken); onClose(); }}
+                className="w-full rounded-lg bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3 transition-colors duration-200 mb-3"
+              >
+                Open Guide Again →
+              </button>
+              <button
+                onClick={onClose}
+                className="text-muted/60 hover:text-muted text-xs underline underline-offset-2 transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          )}
+
+          {/* ── STEP: success ─────────────────────────────────────────────── */}
           {step === "success" && (
             <div className="flex flex-col items-center text-center">
               <span className="text-4xl mb-4" aria-hidden="true">✅</span>
@@ -173,11 +213,11 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
                 <div className="w-full bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4 text-left">
                   <p className="text-amber-800 text-xs font-medium mb-1">⚠️ That was your last free guide</p>
                   <p className="text-amber-700 text-xs leading-relaxed">
-                    You've used both free downloads. Unlock all{" "}
+                    You&apos;ve used both free downloads. Unlock all{" "}
                     <strong>50+ guides forever</strong> for a one-time payment.
                   </p>
                   <a
-                    href="https://rzp.io/rzp/qhP2iBq"
+                    href={RZP_ALL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-3 bg-gold text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-gold-dark transition-colors"
@@ -202,19 +242,18 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
             </div>
           )}
 
-          {/* ── STEP: paywall ───────────────────────────────────────────── */}
+          {/* ── STEP: paywall ─────────────────────────────────────────────── */}
           {step === "paywall" && (
             <div className="flex flex-col items-center text-center">
               <span className="text-4xl mb-4" aria-hidden="true">🔒</span>
               <h2 className="font-serif text-ink text-2xl font-semibold mb-2 leading-tight">
-                You've used 2 free guides
+                You&apos;ve used 2 free guides
               </h2>
               <p className="text-muted text-sm mb-5 max-w-xs leading-relaxed">
                 Unlock <strong className="text-ink">all 50+ guides forever</strong> with a
                 single one-time payment. No subscription. No renewals.
               </p>
 
-              {/* Value list */}
               <ul className="w-full text-left space-y-2 mb-6">
                 {[
                   "50+ destination PDF guides",
@@ -231,7 +270,7 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
               </ul>
 
               <a
-                href="https://rzp.io/rzp/qhP2iBq"
+                href={RZP_ALL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full block text-center bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors duration-200 mb-2"
@@ -239,7 +278,7 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
                 All 50+ Guides — ₹499 one-time →
               </a>
               <a
-                href="https://rzp.io/rzp/SfJqFBV"
+                href={RZP_INDIA}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full block text-center border border-ink/20 hover:border-ink text-ink font-medium text-sm px-6 py-3 rounded-lg transition-colors duration-200 mb-3"

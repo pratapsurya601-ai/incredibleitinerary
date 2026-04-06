@@ -324,12 +324,27 @@ export default function ShopSuccessClient() {
             </Link>
           </div>
 
+          {/* Support strip */}
+          <div className="mt-6 bg-parchment border border-parchment-2 rounded-xl px-5 py-4 flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+            <span className="text-2xl">🙋</span>
+            <div className="flex-1">
+              <p className="text-xs font-medium text-ink mb-0.5">Need help accessing your guides?</p>
+              <p className="text-xs text-muted font-light">Email us with your payment ID and we&apos;ll sort it within 1 hour.</p>
+            </div>
+            <a
+              href={`mailto:hello@incredibleitinerary.com?subject=Guide access help&body=Payment ID: ${paymentId}`}
+              className="text-xs bg-ink text-white px-4 py-2 rounded-lg hover:bg-ink/80 transition-colors whitespace-nowrap"
+            >
+              Email Support →
+            </a>
+          </div>
+
           {/* Share */}
-          <div className="mt-8 pt-6 border-t border-parchment-2 text-center">
+          <div className="mt-6 pt-6 border-t border-parchment-2 text-center">
             <p className="text-xs text-muted font-light mb-3">
-              Loved the guide? Share IncredibleItinerary with fellow travellers!
+              Loved it? Tell a fellow traveller 🙏
             </p>
-            <div className="flex gap-3 justify-center">
+            <div className="flex gap-4 justify-center">
               <a
                 href="https://www.linkedin.com/in/surya-pratap-singh-490a18320"
                 target="_blank"
@@ -337,6 +352,14 @@ export default function ShopSuccessClient() {
                 className="text-xs text-muted hover:text-gold transition-colors"
               >
                 LinkedIn
+              </a>
+              <a
+                href={`https://wa.me/?text=Just%20bought%20a%20travel%20guide%20from%20IncredibleItinerary%20%E2%80%94%20best%20₹199%20I've%20spent.%20incredibleitinerary.com/shop`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-muted hover:text-green-600 transition-colors"
+              >
+                Share on WhatsApp
               </a>
             </div>
           </div>

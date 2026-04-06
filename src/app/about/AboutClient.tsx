@@ -62,7 +62,7 @@ export default function AboutClient() {
           <div className="max-w-[1180px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { num: `${blogPosts.length}+`, label: "Free Guides Written" },
-              { num: "∞",    label: "Solo Trips Across India" },
+              { num: "Countless", label: "Solo Trips Across India" },
               { num: "24",   label: "Years Old" },
               { num: "100%", label: "Solo Built" },
             ].map((s) => (

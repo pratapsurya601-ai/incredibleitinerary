@@ -285,6 +285,17 @@ export default function ShopClient() {
               private trip planning clients — day-by-day plans, real budgets,
               Google Maps routes, restaurant picks and insider tips.
             </p>
+            {/* Social proof pill */}
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 mb-6">
+              <span className="flex -space-x-1.5">
+                {["🧑‍💼","👩‍🦱","🧔","👩"].map((a) => (
+                  <span key={a} className="w-6 h-6 rounded-full bg-gold/30 border border-white/20 flex items-center justify-center text-xs">{a}</span>
+                ))}
+              </span>
+              <span className="text-xs text-white/70 font-light">
+                <strong className="text-white font-medium">2,000+</strong> travellers have downloaded our guides
+              </span>
+            </div>
             {/* Trust row */}
             <div className="flex items-center justify-center gap-5 flex-wrap">
               {[

@@ -85,7 +85,7 @@ export async function GET(req: NextRequest) {
           slug: entry.slug,
           destination,
           pdfUrl: `${SITE}/thank-you?flow=lookup`,
-          allAccessUrl: "https://rzp.io/rzp/qhP2iBq",
+          allAccessUrl: "https://rzp.io/rzp/oUANvqjl",
           guidesUrl: `${SITE}/guides`,
         };
 
