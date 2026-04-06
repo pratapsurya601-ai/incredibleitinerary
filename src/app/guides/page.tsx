@@ -365,7 +365,7 @@ export default function GuidesPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://rzp.io/rzp/qhP2iBq"
+              href="https://rzp.io/rzp/oUANvqjl"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-8 py-4 rounded-full shadow-lg transition-all duration-200"
@@ -373,7 +373,7 @@ export default function GuidesPage() {
               Get Lifetime Access — ₹499 →
             </a>
             <a
-              href="https://rzp.io/rzp/SfJqFBV"
+              href="https://rzp.io/rzp/aRVZcSi"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block border border-white/20 hover:border-white/40 text-white/70 hover:text-white font-medium text-sm px-6 py-3.5 rounded-full transition-all duration-200"
