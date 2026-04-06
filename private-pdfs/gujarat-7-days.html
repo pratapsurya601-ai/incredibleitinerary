@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Gujarat 7 Days — IncredibleItinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#b45309;--primary-light:#d97706;--primary-dark:#92400e;
+  --accent:#f59e0b;--accent-light:#fde68a;
+  --ink:#1a0800;--cream:#fffbf5;--parchment:#fef3c7;
+  --white:#ffffff;--muted:#6b4c2a;
+}
+body{font-family:'Jost',sans-serif;background:#fff;color:var(--ink);font-size:10pt;line-height:1.6}
+.serif{font-family:'Cormorant Garamond',serif}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;page-break-after:always;position:relative;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always}}
+.cover{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:0}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.40}
+.cover-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,8,0,0.97) 0%,rgba(26,8,0,0.6) 50%,rgba(26,8,0,0.25) 100%)}
+.cover-content{position:relative;z-index:2;padding:14mm 14mm 16mm}
+.cover-tag{display:inline-block;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:8mm;font-family:'Jost',sans-serif;font-weight:400}
+.cover h1{font-family:'Cormorant Garamond',serif;font-size:46pt;font-weight:300;color:#fff;line-height:1.05;margin-bottom:5mm}
+.cover h1 em{color:#f59e0b;font-style:italic}
+.cover-sub{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;margin-bottom:8mm;max-width:130mm}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10mm}
+.pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);font-size:7.5pt;padding:4px 12px;border-radius:20px}
+.cover-brand{display:flex;align-items:center;gap:8px;padding-top:8mm;border-top:1px solid rgba(255,255,255,0.1)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.inner{background:var(--cream);padding:12mm 13mm}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid rgba(180,83,9,0.12)}
+.page-header-left{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--muted);font-weight:300}
+.page-header-right{font-size:7pt;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase}
+.page-footer{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;align-items:center;justify-content:space-between}
+.page-footer-text{font-size:7pt;color:var(--muted);letter-spacing:0.1em}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:26pt;font-weight:300;color:var(--ink);margin-bottom:2mm;line-height:1.1}
+.label{font-size:7pt;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:2mm}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:7mm}
+.stat-box{background:#fff;border:1px solid rgba(180,83,9,0.1);border-radius:10px;padding:4mm;text-align:center}
+.stat-icon{font-size:18pt;margin-bottom:1mm}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:14pt;font-weight:300;color:var(--ink);display:block}
+.stat-label{font-size:6.5pt;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
+.route-bar{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:6mm;display:flex;align-items:center;gap:3mm;flex-wrap:wrap}
+.route-stop{background:var(--primary);color:#fff;font-size:7.5pt;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.route-stop.dark{background:var(--primary-dark)}
+.route-stop.amber{background:var(--primary-light);color:var(--ink)}
+.route-arrow{color:rgba(255,255,255,0.3);font-size:10pt}
+.route-sub{color:rgba(255,255,255,0.45);font-size:7pt;margin-left:auto}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:6mm}
+.city-card{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:10px;padding:4mm}
+.city-name{font-size:9pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.city-days{display:inline-block;font-size:7pt;background:rgba(180,83,9,0.1);color:var(--primary);padding:2px 8px;border-radius:20px;margin-bottom:2mm;font-weight:500}
+.city-desc{font-size:7.5pt;color:var(--muted);line-height:1.5;font-weight:300}
+.callout{background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(245,158,11,0.02));border-left:3px solid var(--primary-light);border-radius:0 10px 10px 0;padding:4mm 5mm;margin-bottom:6mm}
+.callout p{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.5;font-weight:300}
+.day-hero{background:var(--ink);border-radius:12px;padding:5mm 6mm;margin-bottom:5mm;display:flex;align-items:flex-start;justify-content:space-between;gap:4mm}
+.day-number{font-family:'Cormorant Garamond',serif;font-size:38pt;font-weight:300;color:rgba(255,255,255,0.12);line-height:1;flex-shrink:0}
+.day-info{flex:1}
+.day-tag{font-size:7pt;letter-spacing:0.18em;text-transform:uppercase;color:#f59e0b;margin-bottom:1mm;font-weight:500}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:300;color:#fff;line-height:1.1;margin-bottom:1mm}
+.day-sub{font-size:8pt;color:rgba(255,255,255,0.45);font-weight:300}
+.day-cost{font-size:8pt;color:#f59e0b;font-weight:500;margin-top:1mm}
+.timeline{margin-bottom:5mm}
+.time-slot{display:flex;gap:4mm;margin-bottom:4mm}
+.time-label{font-size:7pt;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;min-width:18mm;padding-top:1px;flex-shrink:0}
+.time-content{flex:1;background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3mm 4mm}
+.time-title{font-size:8.5pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.time-desc{font-size:7.5pt;color:var(--muted);line-height:1.55;font-weight:300}
+.time-price{font-size:7pt;color:var(--primary);font-weight:500;margin-top:1.5mm}
+.highlight-box{border-radius:8px;padding:3mm 4mm;margin-bottom:4mm;font-size:7.5pt;line-height:1.5}
+.highlight-box.amber{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:#78350f}
+.highlight-box.blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.highlight-box.green{background:#f0fdf4;border:1px solid #bbf7d0;color:#065f46}
+.budget-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid rgba(180,83,9,0.1);margin-bottom:5mm}
+.budget-table th{background:var(--ink);color:#fff;font-size:7.5pt;font-weight:500;padding:3mm 4mm;text-align:center;letter-spacing:0.05em}
+.budget-table th:first-child{text-align:left}
+.budget-table td{padding:3mm 4mm;font-size:7.5pt;text-align:center;border-bottom:1px solid rgba(180,83,9,0.07);color:var(--muted);font-weight:300}
+.budget-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.budget-table tr:last-child td{font-weight:600;color:var(--ink);background:rgba(180,83,9,0.06);border-bottom:none}
+.budget-table tr:nth-child(even) td{background:rgba(255,255,255,0.7)}
+.budget-note{font-size:7pt;color:var(--muted);font-style:italic;margin-bottom:4mm}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm}
+.tip-box{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3.5mm}
+.tip-icon{font-size:14pt;margin-bottom:1.5mm}
+.tip-title{font-size:8pt;font-weight:500;color:var(--ink);margin-bottom:1mm}
+.tip-desc{font-size:7pt;color:var(--muted);line-height:1.5;font-weight:300}
+.pack-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin-bottom:5mm}
+.pack-item{background:#fff;border:1px solid rgba(180,83,9,0.09);border-radius:8px;padding:3mm;font-size:7.5pt;color:var(--muted);font-weight:300;line-height:1.4}
+.back-cover{background:var(--primary-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20mm}
+.back-cover h2{font-family:'Cormorant Garamond',serif;font-size:36pt;font-weight:300;color:#fff;margin-bottom:4mm;line-height:1.1}
+.back-cover p{color:rgba(255,255,255,0.55);font-size:10pt;font-weight:300;max-width:120mm;margin:0 auto 8mm;line-height:1.6}
+.back-cta{background:var(--primary-light);color:var(--ink);font-size:10pt;font-weight:600;padding:4mm 10mm;border-radius:30px;display:inline-block;margin-bottom:10mm;letter-spacing:0.05em}
+.back-url{font-family:'Cormorant Garamond',serif;font-size:16pt;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:8mm}
+.back-legal{font-size:6.5pt;color:rgba(255,255,255,0.2);line-height:1.6;max-width:130mm;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page cover">
+  <img class="cover-img" src="https://images.pexels.com/photos/3581369/pexels-photo-3581369.jpeg?w=1200&q=80" alt="Gujarat Rann of Kutch white salt desert"/>
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-tag">IncredibleItinerary · 2026 Edition</div>
+    <h1 class="serif">Gujarat<br/><em>in 7 Days</em></h1>
+    <p class="cover-sub">Asiatic lions, Gandhi's ashram, Somnath's Arabian Sea temple, Dwaraka's holy city, and the vast white moonscape of the Rann of Kutch</p>
+    <div class="cover-pills">
+      <span class="pill">🗺️ 7 Days</span>
+      <span class="pill">✨ Vibrant Gujarat</span>
+      <span class="pill">💰 ₹12,000–₹40,000</span>
+      <span class="pill">🌤️ Oct–Mar</span>
+      <span class="pill">🦁 Gir Lions</span>
+      <span class="pill">🏜️ Rann of Kutch</span>
+    </div>
+    <div class="cover-brand">
+      <span class="brand-name">IncredibleItinerary.com</span>
+      <span style="margin-left:auto;background:rgba(180,83,9,0.3);border:1px solid rgba(245,158,11,0.4);color:#f59e0b;font-size:7.5pt;padding:4px 14px;border-radius:20px;font-weight:500">₹99 Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — OVERVIEW -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Gujarat 7-Day Itinerary</span>
+    <span class="page-header-right">IncredibleItinerary.com</span>
+  </div>
+
+  <div class="label">Trip Overview</div>
+  <h2 class="section-title" style="margin-bottom:5mm">The Most Diverse State in India — Heritage, Wildlife &amp; Desert</h2>
+
+  <div class="stats-bar">
+    <div class="stat-box"><div class="stat-icon">🗓</div><span class="stat-val">7 Days</span><span class="stat-label">Duration</span></div>
+    <div class="stat-box"><div class="stat-icon">🦁</div><span class="stat-val">Gir Lions</span><span class="stat-label">Only Wild Asiatic Lions</span></div>
+    <div class="stat-box"><div class="stat-icon">💰</div><span class="stat-val">₹12k–40k</span><span class="stat-label">Per Person</span></div>
+    <div class="stat-box"><div class="stat-icon">🌤️</div><span class="stat-val">Oct–Mar</span><span class="stat-label">Best Season</span></div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-stop amber">Ahmedabad</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Sasan Gir</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Somnath</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop dark">Dwaraka</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">Rann of Kutch</span>
+    <span class="route-sub">Fly into Ahmedabad (AMD) · Loop circuit returning to Ahmedabad</span>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-days">Day 1–2</div>
+      <div class="city-name">🏙️ Ahmedabad</div>
+      <div class="city-desc">India's first UNESCO World Heritage City (2017). Sabarmati Ashram — Gandhi's home and the launch site of the Salt March. Adalaj Stepwell — 15th-century Indo-Islamic geometric architecture. Akshardham temple complex (free, extraordinary). Calico Museum of Textiles (appointment required, world's finest collection of Indian textiles). Manek Chowk night market for Gujarati thali and street food.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 3</div>
+      <div class="city-name">🦁 Sasan Gir National Park</div>
+      <div class="city-desc">The last natural habitat of the Asiatic lion — found nowhere else in the wild. 500+ lions in the Gir forest. Jeep safaris (₹2,500–₹3,500/jeep, max 6 people) give excellent lion sightings — success rate is very high (80%+) with experienced guides. Also: leopards, hyenas, nilgai, sambar, marsh crocodiles. The Gir landscape — dry deciduous teak forest on Gujarat's Saurashtra coast — is itself beautiful.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 4–5</div>
+      <div class="city-name">🕉️ Somnath &amp; Dwaraka</div>
+      <div class="city-desc">Somnath — one of the 12 Jyotirlingas, rebuilt multiple times after repeated Mughal invasions, now standing defiantly on the Arabian Sea coast. Dwaraka — the mythological city of Lord Krishna, mentioned in the Mahabharata. Dwarkadhish Temple is one of the Char Dham. Bet Dwarka island offshore has additional temples and is reached by boat (₹30). A profound Vaishnava pilgrimage circuit.</div>
+    </div>
+    <div class="city-card">
+      <div class="city-days">Day 6–7</div>
+      <div class="city-name">🏜️ Rann of Kutch</div>
+      <div class="city-desc">The Great Rann of Kutch is the largest salt desert in the world — 30,000 sq km of flat white salt crust stretching to the horizon. During Rann Utsav (November–February), a festival tent city is set up with cultural performances, local food, and camel rides under a full moon on the salt flats. Outside the festival: drive independently to the white Rann viewpoint (Dhordo village, free). The visual is unlike anywhere else on Earth.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Gujarat is where Gandhi was born, where lions still roam wild, where a 1,000-year-old temple faces the Arabian Sea, and where the ground turns white and infinite at the world's edge."</p>
+  </div>
+
+  <div class="highlight-box amber">
+    <strong>Note on Alcohol:</strong> Gujarat is a dry state — alcohol is prohibited by law. No alcohol available anywhere in Gujarat except through a liquor permit for non-residents (obtainable at the airport on arrival — free, covers the duration of your stay). Fine dining restaurants sometimes serve to permit holders. Most travellers find this a non-issue for a 7-day trip focused on heritage, wildlife, and pilgrimage.
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — DAYS 1–4 -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Gujarat 7-Day Itinerary</span>
+    <span class="page-header-right">Days 1–4 — Ahmedabad, Gir &amp; Somnath</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">1–2</div>
+    <div class="day-info">
+      <div class="day-tag">Days One &amp; Two · Ahmedabad</div>
+      <div class="day-title">Gandhi's City — Heritage, Stepwells &amp; Night Markets</div>
+      <div class="day-sub">Sabarmati Ashram · Adalaj Stepwell · Akshardham · Calico Museum · Manek Chowk night market</div>
+      <div class="day-cost">💰 Ashram: free · Akshardham: free · Calico Museum: free (appointment) · Manek Chowk dinner: ₹150–₹300</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 1 AM</div>
+      <div class="time-content">
+        <div class="time-title">Sabarmati Ashram — Gandhi's Home &amp; the Salt March Origin</div>
+        <div class="time-desc">Sabarmati Ashram (free) was Gandhi's home from 1917–1930. From here he led the Dandi Salt March (240 miles, 1930) — the act that galvanised the independence movement. The ashram preserves his living quarters (Hriday Kunj), spinning wheel, sandals, and correspondence exactly as he left them. The exhibition hall has an excellent chronological history of Gandhi's life and the independence struggle. Deeply moving. One of the most important historical sites in modern India. Allow 2 hours.</div>
+        <div class="time-price">Sabarmati Ashram: free · Open 8:30am–6:30pm · 2hrs recommended · No photography inside Hriday Kunj</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 1 PM</div>
+      <div class="time-content">
+        <div class="time-title">Adalaj Stepwell — 15th-Century Geometric Masterpiece</div>
+        <div class="time-desc">Adalaj Vav (20km from Ahmedabad) is a five-storey octagonal stepwell built in 1498 CE. The entire structure below ground level is carved with extraordinary detail — decorative niches, intricate geometric and floral patterns, miniature pavilions, erotic sculpture (minor but present), and columns descending into the water below. The architecture blends Hindu and Islamic elements seamlessly. The structure was designed so that each landing received cooling shade at a different time of day. One of the finest examples of stepwell architecture in India. Free entry.</div>
+        <div class="time-price">Adalaj Stepwell: free · 20km from Ahmedabad · 1hr visit · Best in morning light</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 2 AM</div>
+      <div class="time-content">
+        <div class="time-title">Akshardham Temple &amp; Calico Museum</div>
+        <div class="time-desc">Akshardham Ahmedabad (free, BAPS Swaminarayan) is even more spectacular than the Delhi version — the original 1992 complex with extraordinary pink sandstone and white marble carving, a miniature Nilkanth Varni statue at the centre, and extensive grounds. Allow 3 hours. Calico Museum of Textiles (free, appointment required — call ahead to Shahibaug: 079-2286-8172) is arguably the world's finest collection of Indian historic textiles — Mughal brocades, temple hangings, royal costumes. Morning session only (10am–12:30pm). Book the appointment a day ahead.</div>
+        <div class="time-price">Akshardham: free · No photography allowed · Calico Museum: free but appointment essential · Call ahead</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 2 Night</div>
+      <div class="time-content">
+        <div class="time-title">Manek Chowk — Night Market &amp; Gujarati Street Food</div>
+        <div class="time-desc">Manek Chowk is a remarkable Ahmedabad institution — during the day, a jewellery market (one of India's largest wholesale gold and silver trading areas). At night (from 9pm), the same space transforms into a street food paradise. Dozens of stalls serve sev puri, dabeli (the Kutchi burger — spiced potato, pomegranate, peanuts in a bun), Gujarati thali, bhelpuri, corn, and the famous Ahmedabad pav bhaji. The Gujarati thali at any of the fixed restaurants nearby (Agashiye on Lal Darwaja, HBC on Relief Road) is also extraordinary — 15+ dishes, unlimited servings, ₹300–₹600.</div>
+        <div class="time-price">Manek Chowk street food: ₹100–₹200 · Gujarati thali restaurant: ₹300–₹600 · Night market from 9pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-tag">Day Three · Sasan Gir</div>
+      <div class="day-title">The Only Wild Asiatic Lions on Earth</div>
+      <div class="day-sub">Ahmedabad → Sasan Gir (360km, 5hrs) · Dawn and afternoon jeep safaris · Lion sighting near certain</div>
+      <div class="day-cost">💰 Jeep safari: ₹2,500–₹3,500/jeep (6 people) · Forest entry: ₹100 each · Stay near park: ₹1,500–₹4,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">5:30 AM</div>
+      <div class="time-content">
+        <div class="time-title">Dawn Jeep Safari — Asiatic Lions at Dawn</div>
+        <div class="time-desc">Book your Gir National Park jeep safari in advance on the official Gujarat forest department portal (girlion.gujarat.gov.in) — slots fill quickly in peak season (November–February). The dawn safari (5:30–9am) gives the best light, most active animals, and coolest temperatures. Asiatic lions are the main attraction — smaller than African lions, with a distinctive belly fold and a single main mane. They are usually found in prides of 2–4. The success rate for lion sightings at Gir is among the highest of any wildlife safari in India — 80–90% with knowledgeable guides. Also watch for: spotted deer, sambar, nilgai, wild boar, langur monkeys, Indian pythons, marsh crocodiles.</div>
+        <div class="time-price">Safari: ₹2,500–₹3,500/jeep (max 6) · Forest entry: ₹100 each · Book online at girlion.gujarat.gov.in</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Second Safari + Devaniya Leopard Territory</div>
+        <div class="time-desc">The Devaniya zone of Gir (slightly separate from the main lion zone) is excellent for leopard sightings — which are rarer and more exciting than lions for most wildlife photographers. An afternoon safari (3–6:30pm) through the dry teak forest is very different from the dawn experience — the light is golden and dramatic, and nocturnal animals begin stirring. Book both zones to maximise the wildlife experience.</div>
+        <div class="time-price">Afternoon safari: same rates · Devaniya zone: slightly different booking · Ask hotel to arrange</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-tag">Day Four · Somnath</div>
+      <div class="day-title">One of the 12 Jyotirlingas — On the Arabian Sea</div>
+      <div class="day-sub">Sasan Gir → Somnath (85km) · Jyotirlinga darshan · Veraval fishing harbour · Sound &amp; Light Show evening</div>
+      <div class="day-cost">💰 Somnath Temple: free · Evening aarti: free · Sound &amp; Light: ₹50 · Stay Somnath: ₹800–₹2,500</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Somnath Temple — Rebuilt Seven Times, Still Standing</div>
+        <div class="time-desc">The Somnath Jyotirlinga temple has been destroyed and rebuilt at least 7 times in its history — by Mahmud of Ghazni (1026, famously looting its legendary wealth), by subsequent rulers, and most recently rebuilt in 1951 after Independence by Sardar Vallabhbhai Patel as a symbol of national resurrection. The current temple stands directly on the Prabhasa Patan coast with the Arabian Sea visible behind it. A unique pillar (Baan Stambh) points to Antarctica — the inscription states that no land exists between Somnath and the South Pole in this direction. Evening aarti (7pm) is extraordinary — waves, chanting, fire, the Arabian Sea.</div>
+        <div class="time-price">Somnath Temple: free · No photography inside · Sound &amp; Light Show: ₹50 at 8pm · Aarti: 7pm</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Veraval Fishing Harbour — One of India's Largest</div>
+        <div class="time-desc">Veraval (5km from Somnath) is Gujarat's largest fishing harbour — thousands of boats, the smell of brine and catch, colourful painted boats in every direction, women mending nets on the quay, the fish auction at dawn. It's chaotic, vivid, and entirely un-touristy. The contrast between the sacred Somnath just down the road and the earthy, working life of Veraval harbour is very Gujarat. Watch the boats return in late afternoon with their catch.</div>
+        <div class="time-price">Veraval: free · Best activity: observe the fish auction (4–6am) or afternoon boat return</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — DAYS 5–7 + BUDGET -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Gujarat 7-Day Itinerary</span>
+    <span class="page-header-right">Days 5–7 · Dwaraka · Rann of Kutch · Budget</span>
+  </div>
+
+  <div class="day-hero">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-tag">Day Five · Krishna's City</div>
+      <div class="day-title">Dwaraka — Lord Krishna's Legendary City</div>
+      <div class="day-sub">Somnath → Dwaraka (230km, 4hrs) · Dwarkadhish Temple · Bet Dwarka Island · Nageshwar Jyotirlinga</div>
+      <div class="day-cost">💰 Dwarkadhish Temple: free · Bet Dwarka boat: ₹30 · Nageshwar Jyotirlinga: free</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Morning</div>
+      <div class="time-content">
+        <div class="time-title">Dwarkadhish Temple — One of the Char Dham</div>
+        <div class="time-desc">Dwaraka is one of the four sacred Char Dham pilgrimage sites of all India (with Badrinath, Puri and Rameswaram). The Dwarkadhish Temple (dedicated to Lord Krishna as the King of Dwarka) dates to the 16th century but stands on much older foundations — submarine archaeological surveys have found submerged structures in the Gulf of Khambhat dating to 7,000+ years ago, associated with the ancient city of Dwarka mentioned in the Mahabharata. The five-storey temple has elaborate carving and a 78-metre spire. Morning darshan (6:30am–12:30pm) before the massive midday crowds.</div>
+        <div class="time-price">Dwarkadhish Temple: free · No photography inside · Morning darshan less crowded · Modest dress required</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Afternoon</div>
+      <div class="time-content">
+        <div class="time-title">Bet Dwarka Island — The Island Where Krishna Lived</div>
+        <div class="time-desc">Bet Dwarka (also called Shankhodhar) is a small island 30km from Dwaraka, accessible by boat (₹30, 15 minutes). According to tradition, this is where Krishna actually lived — while Dwarkadhish is where he ruled. The island has the Dwarkadhish temple with a black stone idol, several other smaller temples, and a peaceful, pilgrimage atmosphere. The boat crossing across the Gulf of Khambhat is itself pleasant. Walking the island takes 1.5 hours.</div>
+        <div class="time-price">Bet Dwarka boat: ₹30 return · Island walk: 1.5hrs · Multiple small temples · Very peaceful</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">En Route</div>
+      <div class="time-content">
+        <div class="time-title">Nageshwar Jyotirlinga (16km from Dwaraka)</div>
+        <div class="time-desc">Nageshwar is one of the 12 Jyotirlinga shrines — if you're already doing the Gujarat circuit, visiting a third Jyotirlinga (Somnath and Nageshwar are both in Gujarat) is a remarkable devotional bonus. The Nageshwar temple has a massive (25-metre) statue of sitting Shiva visible from the road. Free entry. The temple complex is spacious and less crowded than Somnath.</div>
+        <div class="time-price">Nageshwar Jyotirlinga: free · 16km from Dwaraka · Easy road detour</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-hero" style="margin-top:2mm">
+    <div class="day-number">6–7</div>
+    <div class="day-info">
+      <div class="day-tag">Days Six &amp; Seven · Rann of Kutch</div>
+      <div class="day-title">The White Salt Desert &amp; Kutch Handicrafts</div>
+      <div class="day-sub">Dwaraka → Bhuj (260km, 5hrs) → White Rann → Rann Utsav (Nov–Feb) · Kutch handicrafts from Bhuj</div>
+      <div class="day-cost">💰 White Rann entry: ₹100 · Rann Utsav tent city: ₹15,000–₹30,000/night · Bhuj hotel: ₹800–₹3,000</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-slot">
+      <div class="time-label">Day 6</div>
+      <div class="time-content">
+        <div class="time-title">Dwaraka → Bhuj (260km, 5hrs) — Gateway to Kutch</div>
+        <div class="time-desc">The drive from Dwaraka to Bhuj (district headquarters of Kutch) crosses the flat, scrubby terrain of the Saurashtra peninsula. Bhuj is a fascinating town — heavily rebuilt after the devastating 2001 earthquake (26,000 killed) with the old city walls partially preserved. The Prag Mahal palace (₹50, Victorian-Italianate architecture built 1865), Aina Mahal (₹50, mirror palace), and the Kutch Museum (₹10, excellent regional culture) are all in Bhuj. More importantly, Bhuj is the gateway to the Rann and to the world-famous Kutch handicraft villages.</div>
+        <div class="time-price">Bhuj Prag Mahal: ₹50 · Aina Mahal: ₹50 · Kutch Museum: ₹10 · Bhuj hotel: ₹800–₹3,000</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 6 Evening</div>
+      <div class="time-content">
+        <div class="time-title">White Rann at Sunset — The Earth's Edge</div>
+        <div class="time-desc">The White Rann viewpoint at Dhordo village (80km from Bhuj) is the most accessible entry point to the Great Rann of Kutch. Entry: ₹100. At sunset and under a full moon, the white salt crust extends to every horizon — pure, blinding white against a darkening sky. The effect is genuinely disorienting — it feels like the end of the world, or the beginning. Walk onto the salt crust (firm in dry season, soft after monsoon). The silence and scale are extraordinary.</div>
+        <div class="time-price">White Rann entry: ₹100 · Dhordo village: 80km from Bhuj · 1.5hrs drive · Sunset timing ideal</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 7 AM</div>
+      <div class="time-content">
+        <div class="time-title">Rann Utsav — The Festival of the Rann (Nov–Feb)</div>
+        <div class="time-desc">The Rann Utsav festival (November to February) is Gujarat Tourism's extraordinary tent city on the edge of the White Rann. Air-conditioned Swiss-tent villages, cultural performances (garba, folk music, puppet shows), camel rides on the salt flat under a full moon, and local food. Package rates: ₹15,000–₹30,000/night per couple, all-inclusive. You can also visit the Rann Utsav grounds on a day ticket (₹800) without staying. Outside festival season: visit the White Rann independently through Dhordo village (₹100 entry) for the same extraordinary landscape without the festival crowd.</div>
+        <div class="time-price">Rann Utsav package: ₹15,000–₹30,000/night couple · Day visit: ₹800 · Independent visit year-round: ₹100</div>
+      </div>
+    </div>
+    <div class="time-slot">
+      <div class="time-label">Day 7 PM</div>
+      <div class="time-content">
+        <div class="time-title">Kutch Handicraft Villages — Ajrakh, Bandhani, Embroidery</div>
+        <div class="time-desc">Kutch produces some of the finest textile crafts in India. The craft villages near Bhuj are accessible by day trip: Ajrakhpur (Ajrakh block printing — indigo and madder natural dyes, geometric Islamic patterns), Dhamadka (second Ajrakh centre), Nirona (Rogan art — a rare metallic paint on fabric, practiced by one family in the world), Bhujodi (Kutchi weaving), and the villages of the Rabari tribe (extraordinary embroidery and mirror work). Buy directly from artisans at source — no middlemen, better prices, and you see the craft being made. A Kutchi embroidered blouse: ₹500–₹3,000. Ajrakh cotton: ₹400–₹2,000 per metre.</div>
+        <div class="time-price">Craft villages: free to visit · Ajrakh fabric: ₹400–₹2,000/metre · Kutchi embroidery: ₹500–₹5,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top:2mm">Budget Breakdown — Per Person, 7 Days</div>
+  <table class="budget-table">
+    <thead>
+      <tr><th>Item</th><th>Budget (₹)</th><th>Mid-Range (₹)</th><th>Premium (₹)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Flights (return to Ahmedabad)</td><td>6,000</td><td>10,000</td><td>16,000</td></tr>
+      <tr><td>Accommodation (6 nights)</td><td>4,800</td><td>12,000</td><td>30,000</td></tr>
+      <tr><td>Transport (private car circuit)</td><td>6,000</td><td>10,000</td><td>16,000</td></tr>
+      <tr><td>Food (7 days · Gujarat is vegetarian)</td><td>2,800</td><td>6,000</td><td>10,000</td></tr>
+      <tr><td>Gir Safaris &amp; Entry Fees</td><td>2,500</td><td>5,000</td><td>7,000</td></tr>
+      <tr><td>Rann Utsav / Handicraft Shopping</td><td>1,000</td><td>5,000</td><td>30,000</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~₹23,100</strong></td><td><strong>~₹48,000</strong></td><td><strong>~₹1,09,000</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="budget-note">Gujarat is best explored by private hired car (the circuit covers 1,200km). Budget ₹8,000–₹12,000 for a 7-day car hire with driver. Gir safari bookings must be done online in advance — don't wait until arrival. Gujarat is predominantly vegetarian and the food is outstanding.</p>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIPS + PACKING -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="page-header-left">Gujarat 7-Day Itinerary</span>
+    <span class="page-header-right">Insider Tips, Food &amp; Handicraft Guide</span>
+  </div>
+
+  <div class="label">Insider Tips — Know Gujarat Before You Go</div>
+  <h2 class="section-title" style="margin-bottom:5mm">Vibrant Gujarat — What to Know</h2>
+
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-icon">🦁</div>
+      <div class="tip-title">Gir Safari Booking — Must Book Online</div>
+      <div class="tip-desc">Gir National Park safari slots MUST be booked online at girlion.gujarat.gov.in. The quota is limited and fills up weeks ahead in November–February peak season. You cannot just show up at the gate. Book at least 2–4 weeks ahead for peak season, or 1 week ahead for shoulder months. The online system requires Indian mobile number for OTP. If you can't book online, some travel agents in Sasan Gir town can arrange slots through quota — at a commission.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-title">Gujarati Food — The Thali Culture</div>
+      <div class="tip-desc">Gujarati thali is one of India's greatest culinary experiences — 15+ small portions of vegetarian dishes served on a large plate, all unlimited refills, ₹200–₹600 depending on the restaurant. Standard components: dal (sweet Gujarati variety), kadhi (yoghurt curry), vegetables (dry and wet preparations), roti, rice, papad, pickles, dessert, buttermilk. Must-try: fafda-jalebi (fried chickpea flour strips with syrup, classic Gujarat breakfast), undhiyo (seasonal root vegetable curry), thepla (spiced flatbread), and Gujarati mithai (sweet shops everywhere).</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏺</div>
+      <div class="tip-title">Kutch Crafts — Buy Authentically</div>
+      <div class="tip-desc">The best way to buy Kutch handicrafts is directly from the artisan villages (Ajrakhpur, Bhujodi, Nirona) — you see the craft being made, prices are fair, and the money goes directly to the craftspeople. Bhuj's main market has craft shops but with significant markup. The Dastkar Bazaar craft fair (usually November–January during Rann Utsav) brings all major artisans together. Kutch craft cooperatives: Shrujan in Bhuj (women's embroidery collective, highest quality, fair-trade priced).</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-title">Car Hire Is Essential for This Circuit</div>
+      <div class="tip-desc">The Gujarat circuit (Ahmedabad–Gir–Somnath–Dwaraka–Rann–Ahmedabad = 1,200km) requires a private hired car. Public buses exist but are slow and don't connect the less-visited sites. A 7-day car hire with driver (standard Indica/Swift) costs ₹8,000–₹12,000 depending on vehicle. Negotiate for a fixed rate covering all kilometres. Hire from reputable Ahmedabad-based travel agencies. Your hotel can usually arrange this.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-title">Season — October to March Only</div>
+      <div class="tip-desc">Gujarat in summer (April–June) reaches 45°C+ in Kutch and 42°C elsewhere — genuinely dangerous for outdoor activities. Monsoon (July–September): Gir is closed (animals dispersed), Rann is flooded, roads to Kutch problematic. Best period: October–March — Gir safaris excellent, Rann Utsav festival in full swing (November–February), pleasant temperatures (22–32°C daytime, 12–18°C nights in Kutch). Navratri festival (October) in Ahmedabad — the garba dancing is extraordinary.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🕉️</div>
+      <div class="tip-title">Temple Dress Code</div>
+      <div class="tip-desc">All three temples on this circuit (Somnath, Dwarkadhish, Nageshwar) have strict dress codes. Cover shoulders and knees. No shorts. No sleeveless tops. No leather items inside the sanctum. Photography prohibited inside all three. Cloakrooms available for bags and footwear. Evening aartis at Somnath (7pm) and Dwarkadhish (early morning) are the most powerful times to visit. Arrive 20 minutes early for good viewing position.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">🏛️</div>
+      <div class="tip-title">Ahmedabad — UNESCO World Heritage City</div>
+      <div class="tip-desc">Ahmedabad is India's first (and so far only) UNESCO World Heritage City (2017). The old city (Walled City) area east of the river has extraordinary Indo-Islamic architecture — the Sidi Saiyyed Mosque (1573) with its famous intricate stone jali tree-of-life window, the Jama Masjid, the Swaminarayan Temple, and hundreds of havelis with wooden carved facades. The Heritage Walk organized by Ahmedabad Municipal Corporation (7:30am daily, free) covers these in 2 hours with knowledgeable guides.</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💃</div>
+      <div class="tip-title">Navratri in Ahmedabad — World's Largest Garba</div>
+      <div class="tip-desc">Navratri (nine nights of dance, October) in Ahmedabad has been called the world's largest dance festival — hundreds of thousands of people dance garba (circular folk dance in concentric circles) simultaneously across the city. The Gymkhana Ground event is the most spectacular. Wear traditional chaniya choli (women) or kediyum (men) to participate. The energy, colour, and music are overwhelming in the best possible way. If your Gujarat trip overlaps with Navratri — stay for it.</div>
+    </div>
+  </div>
+
+  <div class="label">Packing for Gujarat</div>
+  <div class="pack-list">
+    <div class="pack-item">👗 <strong>Temple-appropriate clothing</strong> — cover shoulders and knees for all three Jyotirlinga temples.</div>
+    <div class="pack-item">☀️ <strong>Sunscreen SPF 50+</strong> — Rann of Kutch salt flat reflection is intense. Burn risk high even in winter.</div>
+    <div class="pack-item">🕶️ <strong>Sunglasses</strong> — the white Rann is blinding in daylight. Polarised preferred.</div>
+    <div class="pack-item">💧 <strong>1.5L water bottle</strong> — Gujarat is hot even in winter. Kutch is particularly dry and arid.</div>
+    <div class="pack-item">🎒 <strong>Extra bag for shopping</strong> — Kutch crafts and Gujarati textiles are bulky. Pack light going in.</div>
+    <div class="pack-item">💊 <strong>Motion sickness tabs</strong> — Saurashtra roads to Gir and Dwaraka are winding in sections.</div>
+    <div class="pack-item">📱 <strong>Uber/Ola in Ahmedabad</strong> — works well. Outside Ahmedabad: rely on your hired car driver.</div>
+    <div class="pack-item">💰 <strong>Cash for craft villages</strong> — Kutch artisan villages are cash-only. Carry ₹5,000–₹8,000 in small notes.</div>
+    <div class="pack-item">🔭 <strong>Binoculars</strong> — essential for Gir safari. 8x42 minimum for bird and wildlife identification.</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer-text">incredibleitinerary.com</span>
+    <span class="page-footer-text">Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — BACK COVER -->
+<div class="page back-cover">
+  <h2 class="serif">More Incredible<br/>India Awaits</h2>
+  <p>From the Rann of Kutch to the ghats of Varanasi, from Rajasthan's desert forts to the backwaters of Kerala — IncredibleItinerary has a complete guide for every extraordinary journey across this vast and astonishing country.</p>
+  <div class="back-cta">Explore all guides at IncredibleItinerary.com</div>
+  <div class="back-url">incredibleitinerary.com</div>
+  <p style="color:rgba(255,255,255,0.35);font-size:8pt;margin-bottom:6mm">Also available: Rajasthan · Varanasi · Kerala · Goa · Hyderabad · Pune · Spiti Valley · Kashmir · Leh-Ladakh · Maldives</p>
+  <div class="back-legal">This guide is for personal use only. Safari availability, festival dates and entry fees are subject to change — verify before travel. © 2026 IncredibleItinerary. All rights reserved.</div>
+</div>
+
+</body>
+</html>

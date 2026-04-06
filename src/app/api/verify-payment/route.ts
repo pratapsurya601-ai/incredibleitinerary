@@ -5,26 +5,42 @@ const KEY_SECRET = process.env.RAZORPAY_KEY_SECRET || "";
 
 // ── Which slugs each payment tier unlocks ─────────────────────────────────────
 const TIER_SLUGS: Record<string, string[]> = {
-  // ₹99 — short India + budget guide
-  "II-PDF-99":        ["goa-3-days", "india-budget-guide", "varanasi-3-days"],
-  "II-PDF-99-V2":     ["goa-3-days", "india-budget-guide", "varanasi-3-days"],
-  // ₹149 — week-long India
-  "II-PDF-149":       ["rajasthan-7-days", "kerala-5-days", "kashmir-6-days", "manali-5-days", "andaman-5-days"],
-  // ₹199 — complex India + budget international
-  "II-PDF-199":       ["leh-ladakh-7-days", "bangkok-4-days", "bali-5-days", "singapore-4-days", "sri-lanka-7-days"],
-  // ₹249 — premium international
-  "II-PDF-249":       ["dubai-4-days", "portugal-7-days"],
-  // ₹299 — Japan + Greece premium
-  "II-PDF-299":       ["japan-10-days", "greece-10-days"],
+  // ₹99 — short India city breaks
+  "II-PDF-99":    ["goa-3-days", "india-budget-guide", "varanasi-3-days",
+                   "mumbai-3-days", "delhi-3-days", "agra-2-days",
+                   "amritsar-2-days", "hyderabad-2-days", "pune-2-days", "mysore-2-days"],
+  "II-PDF-99-V2": ["goa-3-days", "india-budget-guide", "varanasi-3-days",
+                   "mumbai-3-days", "delhi-3-days", "agra-2-days",
+                   "amritsar-2-days", "hyderabad-2-days", "pune-2-days", "mysore-2-days"],
+  // ₹149 — week-long India + hill stations
+  "II-PDF-149":   ["rajasthan-7-days", "kerala-5-days", "kashmir-6-days", "manali-5-days", "andaman-5-days",
+                   "jaipur-3-days", "rishikesh-3-days", "coorg-3-days",
+                   "darjeeling-3-days", "hampi-3-days", "ooty-3-days",
+                   "meghalaya-5-days", "north-east-india-10-days"],
+  // ₹199 — complex India + SE Asia + budget Europe
+  "II-PDF-199":   ["leh-ladakh-7-days", "bangkok-4-days", "bali-5-days", "singapore-4-days", "sri-lanka-7-days",
+                   "spiti-valley-7-days", "char-dham-7-days", "kedarnath-trek-3-days", "gujarat-7-days",
+                   "malaysia-7-days", "nepal-7-days", "turkey-7-days", "amsterdam-4-days"],
   // ₹199 Phase 3
-  "II-PDF-199-P3":    ["vietnam-10-days", "thailand-10-days", "bhutan-5-days"],
-  // India Pack — all India guides
+  "II-PDF-199-P3": ["vietnam-10-days", "thailand-10-days", "bhutan-5-days"],
+  // ₹249 — premium international + Europe capitals
+  "II-PDF-249":   ["dubai-4-days", "portugal-7-days",
+                   "paris-5-days", "barcelona-5-days", "rome-5-days",
+                   "london-5-days", "maldives-5-days", "new-york-5-days"],
+  // ₹299 — ultra-premium long-haul
+  "II-PDF-299":   ["japan-10-days", "greece-10-days", "switzerland-7-days"],
+  // India Pack — ALL India guides
   "II-INDIAPACK-001": [
     "rajasthan-7-days", "kerala-5-days", "goa-3-days", "india-budget-guide",
-    "leh-ladakh-7-days", "kashmir-6-days", "manali-5-days", "andaman-5-days", "varanasi-3-days",
-    "bhutan-5-days",
+    "leh-ladakh-7-days", "kashmir-6-days", "manali-5-days", "andaman-5-days",
+    "varanasi-3-days", "bhutan-5-days",
+    "mumbai-3-days", "delhi-3-days", "agra-2-days", "jaipur-3-days",
+    "rishikesh-3-days", "coorg-3-days", "darjeeling-3-days", "amritsar-2-days",
+    "hampi-3-days", "mysore-2-days", "spiti-valley-7-days", "char-dham-7-days",
+    "kedarnath-trek-3-days", "meghalaya-5-days", "north-east-india-10-days",
+    "ooty-3-days", "hyderabad-2-days", "pune-2-days", "gujarat-7-days",
   ],
-  // All Access — handled separately → premium: true (covers all 15 slugs)
+  // All Access — premium: true covers every slug
   "II-ALLGUIDES-001": [],
 };
 
@@ -147,9 +163,11 @@ export async function POST(req: NextRequest) {
   } catch { /* ignore */ }
 
   // ── Build download tokens for unlocked guides ────────────────────────────────
-  const allUnlocked = isAllAccess
-    ? ["rajasthan-7-days", "kerala-5-days", "goa-3-days", "india-budget-guide", "leh-ladakh-7-days", "bangkok-4-days"]
-    : Array.from(new Set(data.slugs));
+  // For All Access, return every slug across all tiers
+  const ALL_SLUGS = Array.from(
+    new Set(Object.values(TIER_SLUGS).flat())
+  );
+  const allUnlocked = isAllAccess ? ALL_SLUGS : Array.from(new Set(data.slugs));
 
   const tokens: Record<string, string> = {};
   for (const slug of allUnlocked) {
