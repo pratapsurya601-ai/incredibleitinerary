@@ -21,7 +21,7 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const nearBottom =
-        scrolled + window.innerHeight > document.body.scrollHeight - 500;
+        scrolled + window.innerHeight > document.body.scrollHeight - 1400;
       setVisible(scrolled > 400 && !nearBottom);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
