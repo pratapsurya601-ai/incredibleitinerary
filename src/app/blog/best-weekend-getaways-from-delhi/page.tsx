@@ -57,44 +57,30 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Weekend Getaways from Delhi", "item": "https://www.incredibleitinerary.com/blog/best-weekend-getaways-from-delhi" },
       ],
     },
-  ],
-};
-
-const faqLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
     {
-      "@type": "Question",
-      "name": "What is the best weekend trip from Delhi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For history: Agra (3hrs, Taj Mahal). For royalty: Jaipur (4.5hrs). For nature + yoga: Rishikesh (5hrs). For mountains: Shimla (7hrs). The best all-round weekend trip from Delhi is Rishikesh — river rafting, yoga, evening aarti at Triveni Ghat, and genuinely beautiful Ganga scenery. For a purely historical trip, Agra + Mathura as a loop is the most efficient.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Can I do Agra as a day trip from Delhi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — Agra is the classic Delhi day trip. Yamuna Expressway is 165km, takes 2.5–3 hours. Leave by 5:30am, be at Taj Mahal for sunrise, see Agra Fort by 11am, have lunch at Pind Baluchi, and be back in Delhi by 7pm. Train option: Gatimaan Express from Hazrat Nizamuddin (100 min), book 4–6 weeks ahead.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "How far is Rishikesh from Delhi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Rishikesh is 240km from Delhi — approximately 5–6 hours by road via NH58 through Haridwar. The road is well-maintained through Meerut and Muzaffarnagar, then winds along the Ganga foothills. Volvo buses from ISBT Kashmiri Gate run nightly (₹500–900). Train: Delhi to Haridwar (then 20km cab to Rishikesh) — Shatabdi is fastest at 4.5 hours.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "What is the best hill station near Delhi for a weekend trip?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For a proper weekend: Shimla (380km, 7hrs) is the classic but can be crowded. Mussoorie (290km, 5.5hrs) is less commercial and easier from Delhi. Lansdowne (250km, 5hrs) is underrated — very quiet army cantonment town with good views and almost no tourist infrastructure. Chakrata (330km, 6hrs) is for serious trekkers. Kasol (520km, 10hrs) is best as an overnight bus trip.",
-      },
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best weekend trip from Delhi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For history: Agra (3hrs, Taj Mahal). For royalty: Jaipur (4.5hrs). For nature + yoga: Rishikesh (5hrs). For mountains: Shimla (7hrs). The best all-round weekend trip from Delhi is Rishikesh — river rafting, yoga, evening aarti at Triveni Ghat, and genuinely beautiful Ganga scenery. For a purely historical trip, Agra + Mathura as a loop is the most efficient." },
+        },
+        {
+          "@type": "Question",
+          "name": "Can I do Agra as a day trip from Delhi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — Agra is the classic Delhi day trip. Yamuna Expressway is 165km, takes 2.5–3 hours. Leave by 5:30am, be at Taj Mahal for sunrise, see Agra Fort by 11am, have lunch at Pind Baluchi, and be back in Delhi by 7pm. Train option: Gatimaan Express from Hazrat Nizamuddin (100 min), book 4–6 weeks ahead." },
+        },
+        {
+          "@type": "Question",
+          "name": "How far is Rishikesh from Delhi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rishikesh is 240km from Delhi — approximately 5–6 hours by road via NH58 through Haridwar. The road is well-maintained through Meerut and Muzaffarnagar, then winds along the Ganga foothills. Volvo buses from ISBT Kashmiri Gate run nightly (₹500–900). Train: Delhi to Haridwar (then 20km cab to Rishikesh) — Shatabdi is fastest at 4.5 hours." },
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best hill station near Delhi for a weekend trip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For a proper weekend: Shimla (380km, 7hrs) is the classic but can be crowded. Mussoorie (290km, 5.5hrs) is less commercial and easier from Delhi. Lansdowne (250km, 5hrs) is underrated — very quiet army cantonment town with good views and almost no tourist infrastructure. Chakrata (330km, 6hrs) is for serious trekkers. Kasol (520km, 10hrs) is best as an overnight bus trip." },
+        },
+      ],
     },
   ],
 };
@@ -103,7 +89,6 @@ export default function DelhiGetawaysPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <DelhiGetawaysClient />
     </>
   );

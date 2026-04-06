@@ -57,44 +57,30 @@ const jsonLd = {
         { "@type": "ListItem", "position": 3, "name": "Weekend Getaways from Bangalore", "item": "https://www.incredibleitinerary.com/blog/best-weekend-getaways-from-bangalore" },
       ],
     },
-  ],
-};
-
-const faqLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
     {
-      "@type": "Question",
-      "name": "What is the best weekend getaway from Bangalore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For a 2-day trip, Coorg (265km, 5–6hrs) is the most popular — coffee estates, Abbey Falls, Dubare Elephant Camp, and misty hills. Mysore (140km, 3hrs) is the best short trip for heritage. For beaches, Gokarna (480km, 8hrs) is better value than Goa for a quick visit. For trekking, Chikmagalur (240km, 4hrs) or Kudremukh offer the best trails.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "How far is Coorg from Bangalore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Coorg (Madikeri) is 265km from Bangalore — about 5–6 hours via NH275 through Mysuru. The Mysuru–Madikeri stretch passes through coffee and cardamom plantations and is one of Karnataka's most scenic drives. Leave Friday night or very early Saturday to make the most of the weekend. KSRTC buses run daily from Bangalore's Majestic bus stand to Madikeri.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Which Bangalore getaway is best in monsoon (June–September)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Monsoon is actually the best time for some Bangalore getaways: Agumbe (Western Ghats, 360km) gets India's second-highest rainfall and is spectacular; Coorg turns intensely green but leeches are on trails; Dudhsagar Falls (350km, Goa border) is only accessible in monsoon; Wayanad (280km) has misty tea estates. Avoid Hampi in monsoon — roads to Tungabhadra can flood.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "What are the best one-day trips from Bangalore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Best one-day trips: Nandi Hills (60km, 1.5hrs) for sunrise; Mysore (140km, 3hrs) for Mysore Palace and Chamundeshwari Temple; Shivanasamudra Falls (130km, 2.5hrs) for waterfall picnic; Ramanagara (50km, 1hr) for rock climbing (Sholay filming location); Lepakshi (120km, 2hrs) for Vijayanagara era temples; Bheemeshwari (100km, 2hrs) for mahseer fishing and nature camp.",
-      },
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best weekend getaway from Bangalore?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For a 2-day trip, Coorg (265km, 5–6hrs) is the most popular — coffee estates, Abbey Falls, Dubare Elephant Camp, and misty hills. Mysore (140km, 3hrs) is the best short trip for heritage. For beaches, Gokarna (480km, 8hrs) is better value than Goa for a quick visit. For trekking, Chikmagalur (240km, 4hrs) or Kudremukh offer the best trails." },
+        },
+        {
+          "@type": "Question",
+          "name": "How far is Coorg from Bangalore?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Coorg (Madikeri) is 265km from Bangalore — about 5–6 hours via NH275 through Mysuru. The Mysuru–Madikeri stretch passes through coffee and cardamom plantations and is one of Karnataka's most scenic drives. Leave Friday night or very early Saturday to make the most of the weekend. KSRTC buses run daily from Bangalore's Majestic bus stand to Madikeri." },
+        },
+        {
+          "@type": "Question",
+          "name": "Which Bangalore getaway is best in monsoon (June–September)?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Monsoon is actually the best time for some Bangalore getaways: Agumbe (Western Ghats, 360km) gets India's second-highest rainfall and is spectacular; Coorg turns intensely green but leeches are on trails; Dudhsagar Falls (350km, Goa border) is only accessible in monsoon; Wayanad (280km) has misty tea estates. Avoid Hampi in monsoon — roads to Tungabhadra can flood." },
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best one-day trips from Bangalore?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Best one-day trips: Nandi Hills (60km, 1.5hrs) for sunrise; Mysore (140km, 3hrs) for Mysore Palace and Chamundeshwari Temple; Shivanasamudra Falls (130km, 2.5hrs) for waterfall picnic; Ramanagara (50km, 1hr) for rock climbing (Sholay filming location); Lepakshi (120km, 2hrs) for Vijayanagara era temples; Bheemeshwari (100km, 2hrs) for mahseer fishing and nature camp." },
+        },
+      ],
     },
   ],
 };
@@ -103,7 +89,6 @@ export default function BangaloreGetawaysPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <BangaloreGetawaysClient />
     </>
   );
