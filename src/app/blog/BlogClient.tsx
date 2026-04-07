@@ -116,23 +116,22 @@ const CATEGORY_FILTERS = [
   { id: "adventure",  label: "Adventure" },
 ];
 
-// ── Duration filters ──
-const DURATION_FILTERS = [
-  { id: "all-dur", label: "Any Length" },
-  { id: "2",       label: "2 Days" },
-  { id: "3",       label: "3 Days" },
-  { id: "4",       label: "4 Days" },
-  { id: "5",       label: "5 Days" },
-  { id: "6",       label: "6 Days" },
-  { id: "7+",      label: "7+ Days" },
+// ── Duration chips ──
+const DURATION_CHIPS = [
+  { id: "all-dur",  label: "Any Length",  sublabel: "" },
+  { id: "weekend",  label: "Weekend",     sublabel: "1–3 days" },
+  { id: "week",     label: "One Week",    sublabel: "4–7 days" },
+  { id: "long",     label: "10+ Days",    sublabel: "8+ days" },
 ];
 
 function matchesDuration(post: ListingPost, dur: string): boolean {
   if (dur === "all-dur") return true;
   const n = parseInt(post.duration);
   if (isNaN(n)) return false;
-  if (dur === "7+") return n >= 7;
-  return n === parseInt(dur);
+  if (dur === "weekend") return n >= 1 && n <= 3;
+  if (dur === "week") return n >= 4 && n <= 7;
+  if (dur === "long") return n >= 8;
+  return false;
 }
 
 function matchesRegion(post: ListingPost, region: string): boolean {
@@ -444,20 +443,25 @@ export default function BlogClient() {
                   ))}
                 </select>
 
-                {/* Duration select */}
-                <select
-                  value={durFilter}
-                  onChange={(e) => setDurFilter(e.target.value)}
-                  className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide border cursor-pointer transition-all duration-200 bg-white outline-none ${
-                    durFilter !== "all-dur"
-                      ? "border-gold text-gold-dark shadow-sm"
-                      : "border-parchment-2 text-muted hover:border-gold"
-                  }`}
-                >
-                  {DURATION_FILTERS.map((d) => (
-                    <option key={d.id} value={d.id}>{d.label}</option>
-                  ))}
-                </select>
+                {/* Duration chips */}
+                {DURATION_CHIPS.map((chip) => (
+                  <button
+                    key={chip.id}
+                    onClick={() => setDurFilter(chip.id)}
+                    className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium tracking-wide border transition-all duration-200 ${
+                      durFilter === chip.id
+                        ? "bg-gold text-ink border-gold shadow-sm"
+                        : "bg-white text-muted border-parchment-2 hover:border-gold hover:text-gold-dark"
+                    }`}
+                  >
+                    {chip.label}
+                    {chip.sublabel && (
+                      <span className={`text-[0.6rem] ${durFilter === chip.id ? "text-ink/70" : "text-muted/60"}`}>
+                        {chip.sublabel}
+                      </span>
+                    )}
+                  </button>
+                ))}
 
                 {/* Clear filters */}
                 {hasActiveFilter && (
@@ -671,6 +675,13 @@ function BlogCard({ post, isNew }: { post: ListingPost; isNew?: boolean }) {
           <p className="text-xs text-gray-700 font-light leading-relaxed mb-3 line-clamp-2">
             {post.excerpt}
           </p>
+          <div className="flex items-center gap-1.5 mb-3 flex-wrap">
+            {["Day plan", "Budget", "Packing list"].map((tag) => (
+              <span key={tag} className="text-[0.6rem] tracking-wide text-muted/70 bg-parchment px-2 py-0.5 rounded-full border border-parchment-2">
+                {tag}
+              </span>
+            ))}
+          </div>
           <div className="flex items-center justify-between pt-3 border-t border-parchment-2">
             <span className="text-xs text-muted">{post.date}</span>
             <span className="text-xs font-medium text-gold-dark group-hover:text-teal transition-colors">

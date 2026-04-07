@@ -18,7 +18,7 @@ import AffiliateDisclosure from "@/components/blog/AffiliateDisclosure";
 import AuthorBio from "@/components/blog/AuthorBio";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import { getGeneratedPostDescription } from "@/lib/generated-meta";
-import { Calendar, Clock, MapPin } from "lucide-react";
+import { Calendar, Clock, MapPin, RefreshCw } from "lucide-react";
 
 interface Props {
   params: { slug: string };
@@ -220,6 +220,10 @@ export default function BlogPostPage({ params }: Props) {
                   <span className="flex items-center gap-1.5 text-white/65 text-xs">
                     <MapPin size={12} strokeWidth={1.75} />
                     {post!.destination}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-white/65 text-xs">
+                    <RefreshCw size={12} strokeWidth={1.75} />
+                    Verified Apr 2026
                   </span>
                 </div>
               </div>

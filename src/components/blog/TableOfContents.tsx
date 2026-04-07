@@ -16,14 +16,15 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  // Show TOC only after scrolling past hero, hide near footer
+  // Show TOC immediately, hide only near footer
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const nearBottom =
         scrolled + window.innerHeight > document.body.scrollHeight - 1400;
-      setVisible(scrolled > 400 && !nearBottom);
+      setVisible(!nearBottom);
     };
+    setVisible(true);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);

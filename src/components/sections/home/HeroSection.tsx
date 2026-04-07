@@ -81,7 +81,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search any destination — Goa, Bali, Tokyo, Dubai..."
+              placeholder="Search any destination — Kashmir, Rajasthan, Kerala, Goa..."
               className="w-full py-4 pl-12 pr-24 md:pr-32 rounded-full bg-white text-ink text-sm outline-none shadow-[0_8px_32px_rgba(0,0,0,0.30)] focus:ring-2 focus:ring-gold placeholder:text-muted/50 font-light"
               onKeyDown={(e) => {
                 if (e.key === "Enter" && search.trim()) {

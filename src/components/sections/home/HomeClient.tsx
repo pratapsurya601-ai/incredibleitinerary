@@ -91,6 +91,37 @@ export default function HomeClient() {
 
         <TrustStripSection />
         <PopularDestinations />
+
+        {/* ── EXPLORE BY REGION ── */}
+        <div className="bg-cream py-12 px-6 md:px-12 border-b border-parchment-2">
+          <div className="max-w-[1180px] mx-auto">
+            <p className="text-[0.65rem] tracking-[0.22em] uppercase text-gold font-medium text-center mb-3">
+              Explore by Region
+            </p>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {[
+                { label: "🇮🇳 India",        href: "/blog?mainTab=india" },
+                { label: "🏖️ Beaches",       href: "/blog?filter=beach" },
+                { label: "🏔️ Mountains",     href: "/blog?filter=mountains" },
+                { label: "🌏 SE Asia",        href: "/blog?region=southeast" },
+                { label: "🕌 Middle East",    href: "/blog?region=middleeast" },
+                { label: "🏰 Europe",         href: "/blog?region=europe" },
+                { label: "💑 Honeymoon",      href: "/honeymoon" },
+                { label: "🦁 Africa",         href: "/blog?region=africa" },
+                { label: "🗺️ All Guides",    href: "/blog" },
+              ].map((r) => (
+                <Link
+                  key={r.href}
+                  href={r.href}
+                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-light tracking-wide border border-parchment-2 bg-white text-muted hover:border-gold hover:text-gold-dark hover:shadow-sm transition-all duration-200"
+                >
+                  {r.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <HowItWorksSection onPlanTrip={open} />
         <IndiaMapSection />
         <Testimonials />
