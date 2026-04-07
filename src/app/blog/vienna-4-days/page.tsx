@@ -276,7 +276,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Vienna in 4 Days: Palaces, Opera, Coffee Houses & a Salzburg Day Trip (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=1200&q=80",
       description: "4 complete Vienna itineraries — budget to luxury — with State Opera standing tickets, Schönbrunn strategy, Klimt's The Kiss, and the Salzburg day trip.",

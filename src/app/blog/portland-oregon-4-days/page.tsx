@@ -392,7 +392,7 @@ const jsonLd = {
       headline: "Portland Oregon in 4 Days: Complete 2026 Itinerary (Budget to Luxury)",
       datePublished: "2026-04-05",
       dateModified: "2026-04-05",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

@@ -298,7 +298,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Bagan in 4 Days: 2,000 Temples, Hot Air Balloons & Myanmar's Ancient Capital (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&q=80",
       description: "4 complete Bagan itineraries with e-bike sunrise secrets, hot air balloon booking tips, Popa Mountain guide, and real USD costs.",

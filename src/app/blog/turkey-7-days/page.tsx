@@ -280,7 +280,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Turkey in 7 Days: Istanbul & Cappadocia Complete Itinerary for Indian Travellers 2026",
       datePublished: "2026-04-06T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       url: "https://www.incredibleitinerary.com/blog/turkey-7-days",
     },
     {

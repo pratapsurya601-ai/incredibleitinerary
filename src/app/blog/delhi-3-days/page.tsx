@@ -235,7 +235,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Delhi in 3 Days: Complete 2026 Itinerary for Indian Travellers (Budget to Luxury)",
       datePublished: "2026-04-06T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&q=80",
       description: "3 complete Delhi itinerary plans with Red Fort, Qutub Minar, Humayun's Tomb, Chandni Chowk, and real rupee costs for budget, mid-range, and luxury travellers.",

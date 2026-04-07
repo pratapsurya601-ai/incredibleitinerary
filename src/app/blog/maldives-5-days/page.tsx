@@ -247,7 +247,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Maldives in 5 Days: Complete Guide (Local Islands vs Resorts, Budget to Luxury, 2026)",
       datePublished: "2026-04-04T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     },
     {
       "@type": "BreadcrumbList",

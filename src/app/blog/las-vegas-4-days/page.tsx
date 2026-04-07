@@ -388,7 +388,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Las Vegas in 4 Days: The Strip, Grand Canyon & What to Actually Spend (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

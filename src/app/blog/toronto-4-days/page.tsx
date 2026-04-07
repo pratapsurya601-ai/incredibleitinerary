@@ -54,7 +54,7 @@ const jsonLd = [
     description:
       "A complete 4-day Toronto travel guide covering budget, mid-range, and luxury itineraries, visa requirements, Niagara Falls day trip, and insider food tips.",
     image: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=1200",
-    author: { "@type": "Organization", name: "IncredibleItinerary" },
+    author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     publisher: {
       "@type": "Organization",
       name: "IncredibleItinerary",

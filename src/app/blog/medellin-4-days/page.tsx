@@ -12,7 +12,7 @@ const jsonLd = {
       "description":
         "Complete 4-day Medellín itinerary covering budget, mid-range and luxury options — El Poblado, Guatapé, Comuna 13, Botero Plaza, Metrocable views, visa info and insider tips.",
       "image": "https://incredibleitinerary.com/og/medellin-4-days.jpg",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+      "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",

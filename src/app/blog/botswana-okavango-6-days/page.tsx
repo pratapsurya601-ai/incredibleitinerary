@@ -12,7 +12,7 @@ const jsonLd = {
       "description":
         "Complete 6-day Botswana Okavango Delta itinerary covering mokoro canoe safaris, Chobe elephants, Moremi Game Reserve, Victoria Falls, visa info, and luxury camp vs. budget options.",
       "image": "https://incredibleitinerary.com/og/botswana-okavango-6-days.jpg",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+      "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",

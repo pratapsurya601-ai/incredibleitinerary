@@ -201,7 +201,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Cappadocia in 3 Days: Complete Guide (2026)",
       datePublished: "2026-04-04T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     },
     {
       "@type": "BreadcrumbList",

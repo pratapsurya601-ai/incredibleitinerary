@@ -403,7 +403,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Cape Town in 5 Days: Table Mountain, Penguins, Winelands & Robben Island (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

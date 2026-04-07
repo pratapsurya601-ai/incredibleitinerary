@@ -12,7 +12,7 @@ const jsonLd = {
       "description":
         "Complete 3-day Panama City itinerary covering budget, mid-range and luxury options — Panama Canal, Casco Viejo, Soberanía birding, San Blas Islands, visa info and insider tips.",
       "image": "https://incredibleitinerary.com/og/panama-city-3-days.jpg",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+      "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
       "publisher": {
         "@type": "Organization",
         "name": "IncredibleItinerary",

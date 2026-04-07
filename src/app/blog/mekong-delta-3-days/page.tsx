@@ -264,7 +264,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Mekong Delta in 3 Days: Floating Markets, River Villages & Can Tho (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1200&q=80",
       description: "3 complete Mekong Delta plans with Cai Rang floating market secrets, Ben Tre coconut canals, and real USD costs for every budget.",

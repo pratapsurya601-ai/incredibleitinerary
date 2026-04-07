@@ -421,7 +421,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Kenya Safari in 7 Days: Masai Mara, Amboseli & the Great Migration (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

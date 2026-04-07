@@ -343,7 +343,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "San Francisco in 4 Days: Golden Gate, Alcatraz, Wine Country & Burritos (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

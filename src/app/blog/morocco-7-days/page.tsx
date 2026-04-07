@@ -453,7 +453,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Morocco in 7 Days: Marrakech, Fes, Sahara Desert & Chefchaouen (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

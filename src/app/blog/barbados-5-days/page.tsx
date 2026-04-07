@@ -453,7 +453,7 @@ const jsonLd = {
       image: "https://images.unsplash.com/photo-1548574505-5e239809f769?w=1200&h=630&fit=crop",
       datePublished: "2026-04-05",
       dateModified: "2026-04-05",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

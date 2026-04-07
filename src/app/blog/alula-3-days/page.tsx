@@ -389,7 +389,7 @@ export default function AlulaPage() {
       description:
         "Complete 3-day AlUla itinerary: Hegra UNESCO tombs, Elephant Rock, Dadan, Jabal Ikmah and Maraya Concert Hall for every budget.",
       image: "https://incredibleitinerary.com/og/alula-3-days.jpg",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

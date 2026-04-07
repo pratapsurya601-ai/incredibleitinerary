@@ -300,7 +300,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Beijing in 5 Days: Great Wall, Forbidden City, Hutongs & Peking Duck (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1200&q=80",
       description: "Complete Beijing 5-day itinerary with Great Wall, Forbidden City, hutong tours, and Peking duck guide for every budget.",

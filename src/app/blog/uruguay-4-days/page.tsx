@@ -427,7 +427,7 @@ export default function UruguayPage() {
       description:
         "Complete 4-day Uruguay itinerary covering Montevideo, Colonia del Sacramento, Punta del Este and José Ignacio for every budget.",
       image: "https://incredibleitinerary.com/og/uruguay-4-days.jpg",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

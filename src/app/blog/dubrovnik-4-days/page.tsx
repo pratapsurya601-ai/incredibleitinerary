@@ -400,7 +400,7 @@ const jsonLd = {
       headline: "Dubrovnik in 4 Days: City Walls, Game of Thrones, Elaphiti Islands & Nishta (2026)",
       datePublished: "2026-04-05",
       dateModified: "2026-04-05",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

@@ -48,27 +48,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  // ── Programmatic sub-pages (best-time / couples-guide / packing-list) ────────
-  const subPages: MetadataRoute.Sitemap = blogPosts.flatMap((post) => [
-    {
-      url: `${base}/blog/${post.slug}/best-time`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    },
-    {
-      url: `${base}/blog/${post.slug}/couples-guide`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.72,
-    },
-    {
-      url: `${base}/blog/${post.slug}/packing-list`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.72,
-    },
-  ]);
+  // ── Programmatic sub-pages — only include slugs that have published generated content
+  const publishedParentSlugs = new Set(
+    getPublishedGeneratedPosts().map((p) => p.parentSlug)
+  );
+  const subPages: MetadataRoute.Sitemap = blogPosts
+    .filter((post) => publishedParentSlugs.has(post.slug))
+    .flatMap((post) => [
+      {
+        url: `${base}/blog/${post.slug}/best-time`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.75,
+      },
+      {
+        url: `${base}/blog/${post.slug}/couples-guide`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.72,
+      },
+      {
+        url: `${base}/blog/${post.slug}/packing-list`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.72,
+      },
+    ]);
 
   // ── Generated posts — published programmatic content ──────────────────────
   const generatedPages: MetadataRoute.Sitemap = getPublishedGeneratedPosts().map((post) => ({

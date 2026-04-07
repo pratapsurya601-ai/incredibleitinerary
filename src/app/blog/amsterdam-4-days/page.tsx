@@ -323,7 +323,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Amsterdam in 4 Days: Anne Frank, Rijksmuseum, Tulips & Canal Life (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=1200&q=80",
       description: "4 complete Amsterdam itineraries with Anne Frank booking secrets, Rijksmuseum strategy, Keukenhof tulip gardens, and real euro costs.",

@@ -54,7 +54,7 @@ const jsonLd = {
       headline: "Mauritius in 5 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
       description:
         "A complete 5-day Mauritius itinerary covering Île aux Cerfs, Black River Gorges, the underwater waterfall, Chamarel, Port Louis, and Blue Bay Marine Park — with budget plans from $130 to $700/day.",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

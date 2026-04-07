@@ -54,7 +54,7 @@ const jsonLd = {
       headline: "Victoria Falls in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
       description:
         "A complete 4-day Victoria Falls itinerary covering the falls from both Zambia and Zimbabwe sides, Devil's Pool, Zambezi white water rafting, bungee jumping, helicopter flights, and Chobe National Park day trips.",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

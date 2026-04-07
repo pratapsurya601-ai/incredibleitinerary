@@ -321,7 +321,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Nusa Penida in 3 Days: Kelingking Beach, Manta Rays & Indonesia's Best Views (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

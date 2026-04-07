@@ -297,7 +297,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Banff in 5 Days: Lake Louise, Moraine Lake, Icefields Parkway & Wildlife (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1200&q=80",
       description: "Complete Banff 5-day itinerary with Moraine Lake shuttle guide, Lake Louise hikes, Icefields Parkway, and wildlife safety for every budget.",

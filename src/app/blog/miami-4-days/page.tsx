@@ -264,7 +264,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Miami in 4 Days: South Beach, Little Havana, Wynwood & Everglades (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1200&q=80",
       description: "Complete 4-day Miami itinerary from South Beach Art Deco and Wynwood Walls to Little Havana and the Everglades National Park.",

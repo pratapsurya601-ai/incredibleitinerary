@@ -289,7 +289,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Colombia in 7 Days: Bogotá, Medellín, Cartagena & the Caribbean Coast (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=1200&q=80",
       description: "7-day Colombia itinerary covering Bogotá, Medellín, and Cartagena with safety advice, real costs, and cultural context.",

@@ -359,7 +359,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Switzerland in 5 Days: Jungfrau, Interlaken, Lucerne & Alps on a Budget (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=1200&q=80",
       description: "Complete 5-day Switzerland guide with Half Fare Card strategy, Jungfraujoch, Lauterbrunnen, Mürren, Zermatt, and real CHF costs for every budget.",

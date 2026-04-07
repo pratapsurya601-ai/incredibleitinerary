@@ -329,7 +329,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Edinburgh in 4 Days: Castle, Arthur's Seat, Loch Ness Day Trip & Whisky (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1562767166-63a5e3a63a1d?w=1200&q=80",
       description: "4-day Edinburgh itinerary covering Edinburgh Castle, Arthur's Seat hike, Loch Ness day trip, Royal Mile Old Town, Palace of Holyroodhouse, whisky tastings, and the Edinburgh Fringe Festival — all three budget tiers.",

@@ -51,7 +51,7 @@ const jsonLd = {
       headline: "Jamaica in 5 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
       description:
         "Seven Mile Beach, Rick's Café, Blue Mountains, Dunn's River Falls, and the best jerk chicken you'll ever eat. Complete Jamaica itinerary from $90/day to $400/day.",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

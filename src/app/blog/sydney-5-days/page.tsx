@@ -365,7 +365,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Sydney in 5 Days: Opera House, Bondi Beach, Blue Mountains & Harbour Ferry (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1200&q=80",
       description: "5 complete Sydney plans from budget to luxury with Bondi, Blue Mountains, Opera House, and Manly ferry.",

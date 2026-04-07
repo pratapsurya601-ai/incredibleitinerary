@@ -201,7 +201,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Article", headline: "Crete in 5 Days: Complete Itinerary Guide (Budget to Luxury, 2026)", datePublished: "2026-04-04T00:00:00Z", author: { "@type": "Organization", name: "IncredibleItinerary" } },
+    { "@type": "Article", headline: "Crete in 5 Days: Complete Itinerary Guide (Budget to Luxury, 2026)", datePublished: "2026-04-04T00:00:00Z", author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" } },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://www.incredibleitinerary.com" }, { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.incredibleitinerary.com/blog" }, { "@type": "ListItem", position: 3, name: "Crete 5 Days", item: "https://www.incredibleitinerary.com/blog/crete-5-days" }] },
     { "@type": "TouristDestination", name: "Crete, Greece", description: "Greece's largest island with Minoan ruins at Knossos, Europe's longest gorge at Samaria, and the pink sand lagoon at Balos." },
   ],

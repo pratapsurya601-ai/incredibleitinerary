@@ -333,7 +333,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Melbourne in 4 Days: Great Ocean Road, Street Art, Coffee & Culture (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1545044846-351ba102b6d5?w=1200&q=80",
       description: "4 complete Melbourne plans from budget to luxury with Great Ocean Road, street art, coffee culture, and NGV galleries.",

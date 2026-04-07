@@ -50,7 +50,7 @@ const jsonLd = {
       headline: "Galápagos Islands in 7 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
       description:
         "Swimming with sea lions, giant tortoises, marine iguanas, and blue-footed boobies — complete Galápagos itinerary from $180/day to $600/day.",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

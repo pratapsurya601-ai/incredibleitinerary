@@ -58,7 +58,7 @@ const jsonLd = [
     image: "https://incredibleitinerary.com/og/namibia-7-days.jpg",
     datePublished: "2026-01-20",
     dateModified: "2026-04-01",
-    author: { "@type": "Organization", name: "IncredibleItinerary" },
+    author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     publisher: {
       "@type": "Organization",
       name: "IncredibleItinerary",

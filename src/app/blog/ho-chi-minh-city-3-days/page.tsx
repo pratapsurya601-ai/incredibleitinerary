@@ -226,7 +226,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Article", headline: "Ho Chi Minh City in 3 Days: Complete Itinerary Guide (Budget to Luxury, 2026)", datePublished: "2026-04-04T00:00:00Z", author: { "@type": "Organization", name: "IncredibleItinerary" } },
+    { "@type": "Article", headline: "Ho Chi Minh City in 3 Days: Complete Itinerary Guide (Budget to Luxury, 2026)", datePublished: "2026-04-04T00:00:00Z", author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" } },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://www.incredibleitinerary.com" }, { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.incredibleitinerary.com/blog" }, { "@type": "ListItem", position: 3, name: "Ho Chi Minh City", item: "https://www.incredibleitinerary.com/blog/ho-chi-minh-city-3-days" }] },
     { "@type": "TouristDestination", name: "Ho Chi Minh City, Vietnam", description: "Vietnam's largest city and economic hub, known as Saigon, with French colonial architecture, Cu Chi Tunnels, and world-famous street food." },
   ],

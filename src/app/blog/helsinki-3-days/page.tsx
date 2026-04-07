@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Helsinki in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
     "description":
       "Plan the perfect 3 days in Helsinki, Finland — from the iconic white Cathedral to harbour saunas, Design District, Suomenlinna fortress, and the midnight sun. Budget from €65/day.",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": {
       "@type": "Organization",
       "name": "IncredibleItinerary",

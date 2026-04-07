@@ -66,7 +66,7 @@ const jsonLd = {
         "A complete 4-day Vancouver itinerary covering Stanley Park, Granville Island Market, Gastown, Capilano Suspension Bridge, Grouse Mountain, and a Whistler day trip for every budget.",
       datePublished: "2026-01-25",
       dateModified: "2026-04-05",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

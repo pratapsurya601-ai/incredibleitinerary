@@ -55,7 +55,7 @@ const jsonLd = [
       "A complete 3-day Boston itinerary covering the Freedom Trail, Faneuil Hall, Fenway Park, Harvard University, the North End, Boston Common, and everything from budget hostels to luxury hotels.",
     datePublished: "2026-04-05T00:00:00Z",
     dateModified: "2026-04-05T00:00:00Z",
-    author: { "@type": "Organization", name: "IncredibleItinerary" },
+    author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     publisher: {
       "@type": "Organization",
       name: "IncredibleItinerary",

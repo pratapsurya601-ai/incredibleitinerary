@@ -55,7 +55,7 @@ const jsonLd = [
       "A complete 3-day Nashville itinerary covering Broadway honky tonk bars, the Grand Ole Opry, Country Music Hall of Fame, RCA Studio B, Ryman Auditorium, the Bluebird Cafe, hot chicken, and the Jack Daniel's Distillery day trip.",
     datePublished: "2026-04-05T00:00:00Z",
     dateModified: "2026-04-05T00:00:00Z",
-    author: { "@type": "Organization", name: "IncredibleItinerary" },
+    author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     publisher: {
       "@type": "Organization",
       name: "IncredibleItinerary",

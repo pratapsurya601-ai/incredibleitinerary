@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "San Sebastián in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
     "description": "Your complete San Sebastián 3-day itinerary covering La Concha beach, pintxos bars in Parte Vieja, Monte Urgull, Monte Igueldo, and day trips to Biarritz and the Guggenheim Bilbao.",
     "image": "https://incredibleitinerary.com/og/san-sebastian-3-days.jpg",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "logo": { "@type": "ImageObject", "url": "https://incredibleitinerary.com/logo.png" } },
     "datePublished": "2026-01-15",
     "dateModified": "2026-04-01",

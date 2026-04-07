@@ -378,7 +378,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Norway in 6 Days: Bergen, Geirangerfjord, Flåm Railway & Fjords (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=1200&q=80",
       description: "The complete Norway fjords itinerary covering Bergen, Nærøyfjord, Flåm Railway, Geirangerfjord, and Oslo in 6 days.",

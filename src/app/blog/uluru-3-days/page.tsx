@@ -337,7 +337,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Uluru in 3 Days: Sacred Red Rock, Kata Tjuta & Outback Stargazing (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

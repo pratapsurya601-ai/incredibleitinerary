@@ -205,7 +205,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Antalya in 3 Days: Complete Guide (Kaleiçi, Aspendos & Turkish Riviera, 2026)",
       datePublished: "2026-04-04T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     },
     {
       "@type": "BreadcrumbList",

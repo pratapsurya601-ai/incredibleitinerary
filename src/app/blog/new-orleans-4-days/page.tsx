@@ -61,7 +61,7 @@ const jsonLd = {
       image: "https://source.unsplash.com/1200x630/?new-orleans,french-quarter,jazz",
       datePublished: "2026-01-20",
       dateModified: "2026-04-05",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

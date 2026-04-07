@@ -547,7 +547,7 @@ const jsonLd = {
       headline: "Hawaii in 7 Days: Oahu, Maui & Big Island Complete 2026 Itinerary",
       datePublished: "2026-04-05T00:00:00Z",
       dateModified: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

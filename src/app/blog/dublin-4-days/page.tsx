@@ -338,7 +338,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Dublin in 4 Days: Guinness, Temple Bar, Cliffs of Moher & Irish Culture (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1548533893-59c99f22c3b2?w=1200&q=80",
       description: "4 complete Dublin plans with Guinness Storehouse tips, Kilmainham Gaol booking secrets, Howth cliff walk details, and Irish visa advice for every passport.",

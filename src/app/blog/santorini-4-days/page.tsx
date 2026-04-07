@@ -233,7 +233,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Article", headline: "Santorini in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)", datePublished: "2026-04-04T00:00:00Z", author: { "@type": "Organization", name: "IncredibleItinerary" } },
+    { "@type": "Article", headline: "Santorini in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)", datePublished: "2026-04-04T00:00:00Z", author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" } },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://www.incredibleitinerary.com" }, { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.incredibleitinerary.com/blog" }, { "@type": "ListItem", position: 3, name: "Santorini 4 Days", item: "https://www.incredibleitinerary.com/blog/santorini-4-days" }] },
     { "@type": "TouristDestination", name: "Santorini, Greece", description: "Greek island in the Cyclades known for its white cubic architecture, blue-domed churches, caldera views, and volcanic black sand beaches." },
   ],

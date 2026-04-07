@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Antigua Guatemala in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
     "description": "A complete 4-day Antigua Guatemala travel guide covering colonial ruins, volcanic hikes, Lake Atitlán day trips, language schools, and Semana Santa — from $40/day to $200/day.",
     "image": "https://incredibleitinerary.com/og/antigua-guatemala-4-days.jpg",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "logo": { "@type": "ImageObject", "url": "https://incredibleitinerary.com/logo.png" } },
     "datePublished": "2026-01-20",
     "dateModified": "2026-04-01",

@@ -310,7 +310,7 @@ const jsonLd = {
       image: { "@type": "ImageObject", url: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&q=80", width: 1200, height: 630 },
       datePublished: "2026-04-04T00:00:00Z",
       dateModified: "2026-04-04T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com", logo: { "@type": "ImageObject", url: "https://www.incredibleitinerary.com/logo.png" } },
       mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.incredibleitinerary.com/blog/kuala-lumpur-3-days" },
       keywords: "kuala lumpur itinerary, petronas towers, batu caves, jalan alor, nasi lemak, malaysia visa india, grab kl",

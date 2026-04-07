@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Cartagena Colombia in 4 Days: The Complete Guide (Budget to Luxury, 2026)",
     "description": "A complete 4-day Cartagena Colombia travel guide covering the walled city, San Felipe fort, Getsemaní, Rosario Islands, and Caribbean food — from $55/day to $300/day.",
     "image": "https://incredibleitinerary.com/og/cartagena-4-days.jpg",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "logo": { "@type": "ImageObject", "url": "https://incredibleitinerary.com/logo.png" } },
     "datePublished": "2026-02-01",
     "dateModified": "2026-04-01",

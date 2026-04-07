@@ -54,7 +54,7 @@ const jsonLd = [
     description:
       "A complete 3-day Quebec City travel guide covering budget, mid-range, and luxury itineraries, visa requirements, Winter Carnival, and insider tips for North America's most European city.",
     image: "https://images.unsplash.com/photo-1558618047-3c4e4a81f20b?w=1200",
-    author: { "@type": "Organization", name: "IncredibleItinerary" },
+    author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     publisher: {
       "@type": "Organization",
       name: "IncredibleItinerary",

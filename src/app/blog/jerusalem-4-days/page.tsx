@@ -53,7 +53,7 @@ const jsonLd = {
       headline: "Jerusalem in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
       description:
         "Three Abrahamic faiths, four quarters, and 3,000 years of civilisation. Complete Jerusalem itinerary from $60/day to $320/day.",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

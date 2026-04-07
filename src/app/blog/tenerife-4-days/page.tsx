@@ -57,7 +57,7 @@ const jsonLd = {
       headline: "Tenerife in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
       description:
         "Plan 4 days in Tenerife with day-by-day itineraries for budget, mid-range, and luxury travellers. Covers Teide, Los Gigantes, Anaga, whale watching, and more.",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

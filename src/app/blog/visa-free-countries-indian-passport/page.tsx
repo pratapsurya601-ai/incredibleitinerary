@@ -41,7 +41,7 @@ const jsonLd = {
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80" },
       "datePublished": "2026-04-07T00:00:00Z",
       "dateModified": "2026-04-07T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
       "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "indian passport visa free, visa on arrival india, where can indians travel 2026",
       "wordCount": 3200,

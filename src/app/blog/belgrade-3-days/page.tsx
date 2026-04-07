@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Belgrade in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
     "description":
       "Plan the perfect 3 days in Belgrade, Serbia — from Kalemegdan Fortress and Skadarlija to the legendary splavovi river-boat nightlife and a day trip to Novi Sad. Budget from €35/day.",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": {
       "@type": "Organization",
       "name": "IncredibleItinerary",

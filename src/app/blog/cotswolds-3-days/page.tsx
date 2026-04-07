@@ -225,7 +225,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Cotswolds in 3 Days: The Best Villages, Drives & Walks (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1509822929464-92b27e59a4e7?w=1200&q=80",
       description: "The complete 3-day guide to the Cotswolds covering the best villages, essential driving routes, Bibury early morning tips, Snowshill lavender, and Cotswold Way walks.",

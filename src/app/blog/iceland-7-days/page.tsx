@@ -431,7 +431,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Iceland in 7 Days: Northern Lights, Ring Road, Glaciers & Waterfalls (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80",
       description: "The complete Iceland Ring Road itinerary — 7 days from Reykjavík to glaciers, waterfalls, and the northern lights.",

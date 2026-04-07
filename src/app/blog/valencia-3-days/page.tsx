@@ -57,7 +57,7 @@ const jsonLd = {
       headline: "Valencia in 3 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
       description:
         "Plan 3 days in Valencia with itineraries for every budget. Covers City of Arts and Sciences, paella, Las Fallas, Barrio del Carmen, Albufera lagoon, and the best markets.",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

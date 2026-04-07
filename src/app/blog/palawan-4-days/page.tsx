@@ -356,7 +356,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Palawan in 4 Days: El Nido Island Hopping, Underground River & Coron (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

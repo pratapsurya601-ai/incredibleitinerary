@@ -54,7 +54,7 @@ const jsonLd = [
     description:
       "A complete 4-day Montreal travel guide covering budget, mid-range, and luxury itineraries, visa requirements, budget breakdown, and insider tips.",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200",
-    author: { "@type": "Organization", name: "IncredibleItinerary" },
+    author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     publisher: {
       "@type": "Organization",
       name: "IncredibleItinerary",

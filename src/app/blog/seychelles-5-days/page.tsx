@@ -53,7 +53,7 @@ const jsonLd = {
       headline: "Seychelles in 5 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
       description:
         "A complete 5-day Seychelles itinerary covering Anse Source d'Argent, Vallée de Mai, La Digue, Praslin, and Mahé — with budget plans from $200 to $900/day.",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

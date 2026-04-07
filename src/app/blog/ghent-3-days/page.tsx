@@ -359,7 +359,7 @@ const jsonLd = {
       headline: "Ghent in 3 Days: Gravensteen, Ghent Altarpiece, Graslei & Belgian Food (2026)",
       datePublished: "2026-04-05",
       dateModified: "2026-04-05",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

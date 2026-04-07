@@ -58,7 +58,7 @@ const jsonLd = {
       description:
         "A complete 4-day Iguazu Falls guide covering both the Argentine and Brazilian sides, Devil's Throat, boat rides, Triple Frontier, and Itaipu Dam — for every budget.",
       image: "https://images.unsplash.com/photo-1544179700-855cb29a2bd8?w=1200&q=80",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

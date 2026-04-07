@@ -341,7 +341,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Bhutan in 5 Days: Tiger's Nest, Punakha Dzong & Himalayan Kingdom (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1559564927-f35eae3e4a23?w=1200&q=80",
       description: "5 complete Bhutan itineraries with Tiger's Nest hike secrets, Indian vs international SDF costs, Punakha sunrise tips, and complete planning guide.",

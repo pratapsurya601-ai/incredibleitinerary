@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Mykonos in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
     "description": "Your complete Mykonos 4-day itinerary covering Mykonos Town, Little Venice, the famous windmills, Paradise beach, the Delos day trip, and the Armenistis Lighthouse — across budget, mid-range, and luxury plans.",
     "image": "https://incredibleitinerary.com/og/mykonos-4-days.jpg",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "logo": { "@type": "ImageObject", "url": "https://incredibleitinerary.com/logo.png" } },
     "datePublished": "2026-01-20",
     "dateModified": "2026-04-01",

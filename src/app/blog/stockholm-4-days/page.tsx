@@ -343,7 +343,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Stockholm in 4 Days: Gamla Stan, Vasa Museum, ABBA & the Archipelago (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=1200&q=80",
       description: "4 complete Stockholm plans with Vasa Museum tips, Gamla Stan morning walk advice, archipelago ferry guide, and Swedish visa information for every passport.",

@@ -308,7 +308,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Pune in 2 Days: Shaniwar Wada, Sinhagad Fort & FC Road Cafés (2026)",
       datePublished: "2026-04-06T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

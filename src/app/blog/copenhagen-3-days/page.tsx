@@ -275,7 +275,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Copenhagen in 3 Days: Nyhavn, Tivoli, Freetown & Danish Design (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=1200&q=80",
       description: "The complete Copenhagen 3-day itinerary covering Nyhavn, Rosenborg, Tivoli, Christiania, Louisiana Museum, and Danish design.",

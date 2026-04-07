@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Riga in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
     "description": "The definitive 3-day Riga itinerary covering budget, mid-range and luxury plans, visa info for Indian and Western passports, costs, top mistakes and insider tips for 2026.",
     "image": "https://incredibleitinerary.com/og/riga-3-days.jpg",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "logo": { "@type": "ImageObject", "url": "https://incredibleitinerary.com/logo.png" } },
     "datePublished": "2026-01-10",
     "dateModified": "2026-04-05",

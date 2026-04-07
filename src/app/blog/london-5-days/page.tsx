@@ -379,7 +379,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "London in 5 Days: Free Museums, The Tube & What to Actually Spend (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&q=80",
       description: "5-day London itinerary covering free world-class museums, contactless Oyster card tips, Tower of London, Borough Market, and day trips to Windsor or Greenwich — all three budget tiers.",

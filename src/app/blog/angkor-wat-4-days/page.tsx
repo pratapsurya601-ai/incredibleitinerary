@@ -318,7 +318,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Angkor Wat in 4 Days: Sunrise, Bayon, Ta Prohm & Siem Reap (2026)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=1200&q=80",
       description: "4 complete Angkor Wat itineraries with sunrise reflection secrets, Bayon face-tower strategy, Ta Prohm timing tips, and real USD costs.",

@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Vilnius in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
     "description": "The definitive 3-day Vilnius itinerary covering budget, mid-range and luxury plans, the Republic of Užupis, Jewish heritage, Trakai Castle, visa info and costs for 2026.",
     "image": "https://incredibleitinerary.com/og/vilnius-3-days.jpg",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "logo": { "@type": "ImageObject", "url": "https://incredibleitinerary.com/logo.png" } },
     "datePublished": "2026-01-10",
     "dateModified": "2026-04-05",

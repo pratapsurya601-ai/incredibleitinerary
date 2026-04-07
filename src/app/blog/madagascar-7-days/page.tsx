@@ -57,7 +57,7 @@ const jsonLd = {
       description:
         "A complete 7-day Madagascar travel guide covering the Avenue of the Baobabs, lemur parks, Tsingy de Bemaraha, Nosy Be, and full itineraries for every budget.",
       image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

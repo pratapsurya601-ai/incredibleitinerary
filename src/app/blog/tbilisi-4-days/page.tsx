@@ -61,7 +61,7 @@ const jsonLd = [
       "https://source.unsplash.com/1200x630/?tbilisi+georgia+old+town+narikala+fortress+sulfur+baths",
     datePublished: "2026-04-05T00:00:00Z",
     dateModified: "2026-04-05T00:00:00Z",
-    author: { "@type": "Organization", name: "IncredibleItinerary" },
+    author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
     publisher: {
       "@type": "Organization",
       name: "IncredibleItinerary",

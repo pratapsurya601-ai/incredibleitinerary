@@ -59,7 +59,7 @@ const jsonLd = {
       },
       "datePublished": "2026-04-04T00:00:00Z",
       "dateModified": "2026-04-04T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
       "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com", "logo": { "@type": "ImageObject", "url": "https://www.incredibleitinerary.com/logo.png" } },
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.incredibleitinerary.com/blog/abu-dhabi-3-days" },
       "keywords": "abu dhabi itinerary, abu dhabi 3 days, sheikh zayed mosque, louvre abu dhabi, yas island",

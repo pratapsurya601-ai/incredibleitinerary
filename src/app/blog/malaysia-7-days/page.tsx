@@ -283,7 +283,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Malaysia in 7 Days: Complete Itinerary for Indian Travellers — KL, Penang & Langkawi 2026",
       datePublished: "2026-04-06T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       url: "https://www.incredibleitinerary.com/blog/malaysia-7-days",
     },
     {

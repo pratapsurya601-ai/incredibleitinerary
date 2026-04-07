@@ -234,7 +234,7 @@ const jsonLd = {
       "@type": "Article",
       headline: "Nice in 3 Days: French Riviera Itinerary 2026 (Budget to Luxury)",
       datePublished: "2026-04-05T00:00:00Z",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: { "@type": "Organization", name: "IncredibleItinerary", url: "https://www.incredibleitinerary.com" },
       image: "https://images.unsplash.com/photo-1491166617655-0723a0567989?w=1200&q=80",
       description: "3 days in Nice with the French Riviera's best day trips — Monaco, Èze, Antibes. Real costs, socca spots, and beach guide.",

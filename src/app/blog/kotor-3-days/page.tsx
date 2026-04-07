@@ -397,7 +397,7 @@ export default function KotorPage() {
       description:
         "Complete 3-day Kotor itinerary covering the UNESCO Old Town, City Walls hike, Perast, Sveti Stefan and Budva for every budget.",
       image: "https://incredibleitinerary.com/og/kotor-3-days.jpg",
-      author: { "@type": "Organization", name: "IncredibleItinerary" },
+      author: { "@type": "Person", name: "Surya Pratap", url: "https://www.incredibleitinerary.com/about" },
       publisher: {
         "@type": "Organization",
         name: "IncredibleItinerary",

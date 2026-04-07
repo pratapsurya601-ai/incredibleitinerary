@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Mallorca in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
     "description": "Your complete Mallorca 4-day itinerary covering Palma Cathedral, Serra de Tramuntana, Cap de Formentor, Es Trenc beach, and the Caves of Drach — across budget, mid-range, and luxury plans.",
     "image": "https://incredibleitinerary.com/og/mallorca-4-days.jpg",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "logo": { "@type": "ImageObject", "url": "https://incredibleitinerary.com/logo.png" } },
     "datePublished": "2026-01-10",
     "dateModified": "2026-04-01",

@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Costa Rica in 7 Days: The Complete Guide (Budget to Luxury, 2026)",
     "description": "A complete 7-day Costa Rica travel guide covering Arenal Volcano, Monteverde Cloud Forest, Manuel Antonio, surfing and wildlife — for every budget from $75/day to $380/day.",
     "image": "https://incredibleitinerary.com/og/costa-rica-7-days.jpg",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "logo": { "@type": "ImageObject", "url": "https://incredibleitinerary.com/logo.png" } },
     "datePublished": "2026-01-15",
     "dateModified": "2026-04-01",

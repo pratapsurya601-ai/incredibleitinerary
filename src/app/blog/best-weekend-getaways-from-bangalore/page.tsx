@@ -42,7 +42,7 @@ const jsonLd = {
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=1200&q=80" },
       "datePublished": "2026-04-07T00:00:00Z",
       "dateModified": "2026-04-07T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
       "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
       "keywords": "bangalore weekend trips, getaways from bangalore, coorg ooty mysore hampi wayanad",
       "wordCount": 3800,

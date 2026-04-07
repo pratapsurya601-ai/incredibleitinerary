@@ -41,7 +41,7 @@ const jsonLd = {
       "description": "2 complete Seville plans with real timings, costs in EUR/USD, Real Alcazar tips.",
       "image": { "@type": "ImageObject", "url": "https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=1200&q=80", "width": 1200, "height": 630 },
       "datePublished": "2026-04-04T00:00:00Z", "dateModified": "2026-04-04T00:00:00Z",
-      "author": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com" },
+      "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
       "publisher": { "@type": "Organization", "name": "IncredibleItinerary", "url": "https://www.incredibleitinerary.com", "logo": { "@type": "ImageObject", "url": "https://www.incredibleitinerary.com/logo.png" } },
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.incredibleitinerary.com/blog/seville-3-days" },
       "keywords": "seville itinerary, seville 3 days, real alcazar, plaza de espana, flamenco, seville cathedral",

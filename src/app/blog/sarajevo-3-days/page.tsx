@@ -9,7 +9,7 @@ const jsonLd = [
     "headline": "Sarajevo in 3 Days: The Complete Guide (Budget to Luxury, 2026)",
     "description":
       "Plan the perfect 3 days in Sarajevo, Bosnia & Herzegovina — from the Ottoman Baščaršija bazaar and Latin Bridge to the Tunnel of Hope and a day trip to Mostar. Budget from €35/day.",
-    "author": { "@type": "Organization", "name": "IncredibleItinerary" },
+    "author": { "@type": "Person", "name": "Surya Pratap", "url": "https://www.incredibleitinerary.com/about" },
     "publisher": {
       "@type": "Organization",
       "name": "IncredibleItinerary",
