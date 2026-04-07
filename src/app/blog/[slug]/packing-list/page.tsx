@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.destination} Packing List (${year}) — What to Pack & What to Leave`,
     description: `Complete packing list for ${post.destination}. Everything you need for a ${post.duration} trip — by season, clothing, gear, and destination-specific essentials.`,
+    robots: { index: false, follow: true },
     openGraph: {
       title: `${post.destination} Packing List — What to Pack for ${post.duration}`,
       description: `Season-by-season packing guide for ${post.destination}.`,

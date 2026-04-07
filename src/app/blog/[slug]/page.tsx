@@ -14,7 +14,6 @@ import AdUnit from "@/components/ads/AdUnit";
 import AutoPdfCta from "@/components/blog/AutoPdfCta";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import AutoTableOfContents from "@/components/blog/AutoTableOfContents";
-import { INDEXED_INTERNATIONAL_DESTINATIONS } from "@/lib/indexable-destinations";
 import { getGeneratedPostDescription } from "@/lib/generated-meta";
 
 interface Props {
@@ -54,23 +53,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const generatedPost = getGeneratedPostBySlug(params.slug);
   if (generatedPost) {
-    // Determine whether this generated post should be indexed.
-    //
-    // Indexing rules (in priority order):
-    //   1. If the destination has full hardcoded data in content-generators.tsx
-    //      (the INDEXED_INTERNATIONAL_DESTINATIONS set) → always index.
-    //      This covers Bali, Bangkok, Tokyo, Rome, Dubai, Singapore, Vietnam,
-    //      Sri Lanka regardless of what country field says (the country field is
-    //      corrupted for many international entries in generated-posts.ts).
-    //   2. If post.country === "India" → always index. India destinations have
-    //      real hardcoded data and score 4.4/5 on content quality.
-    //   3. Everything else → noindex + follow. These are international
-    //      destinations without hardcoded data that fall back to generic
-    //      regional defaults (audit score 1.0–1.5/5), wasting crawl budget.
-    const isIndexedInternational = INDEXED_INTERNATIONAL_DESTINATIONS.has(generatedPost.destination);
-    const isIndiaPost = generatedPost.country === "India";
-    const shouldIndex = isIndexedInternational || isIndiaPost;
-
+    // All generated posts (from generated-posts.ts) are noindexed.
+    // Only hand-written posts from blog.ts should be indexed.
     const metaDescription = getGeneratedPostDescription(generatedPost);
 
     return {
@@ -78,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: metaDescription,
       authors: AUTHORS,
       alternates: { canonical: `${SITE}/blog/${generatedPost.slug}` },
-      ...(shouldIndex ? {} : { robots: { index: false, follow: true } }),
+      robots: { index: false, follow: true },
       openGraph: {
         title: generatedPost.title,
         description: metaDescription,

@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.destination} for Couples: Romantic Travel Guide (${year})`,
     description: `Planning a romantic trip to ${post.destination}? Discover the best romantic spots, couples activities, budget breakdown, and honeymoon tips for ${year}.`,
+    robots: { index: false, follow: true },
     openGraph: {
       title: `${post.destination} for Couples — Romantic Travel Guide`,
       description: `Romantic spots, couples activities, and honeymoon tips for ${post.destination}.`,

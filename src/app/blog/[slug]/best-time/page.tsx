@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Best Time to Visit ${post.destination} (${year}) — Month-by-Month Guide`,
     description: `When is the best time to visit ${post.destination}? Complete month-by-month weather guide, season breakdown, and travel tips for ${year}.`,
+    robots: { index: false, follow: true },
     openGraph: {
       title: `Best Time to Visit ${post.destination} — Month-by-Month Guide`,
       description: `Month-by-month weather, seasons, and travel tips for ${post.destination}.`,

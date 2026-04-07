@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/data/blog";
-import { getPublishedGeneratedPosts } from "@/data/generated-posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.incredibleitinerary.com";
@@ -48,40 +47,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  // ── Programmatic sub-pages — only include slugs that have published generated content
-  const publishedParentSlugs = new Set(
-    getPublishedGeneratedPosts().map((p) => p.parentSlug)
-  );
-  const subPages: MetadataRoute.Sitemap = blogPosts
-    .filter((post) => publishedParentSlugs.has(post.slug))
-    .flatMap((post) => [
-      {
-        url: `${base}/blog/${post.slug}/best-time`,
-        lastModified: now,
-        changeFrequency: "monthly" as const,
-        priority: 0.75,
-      },
-      {
-        url: `${base}/blog/${post.slug}/couples-guide`,
-        lastModified: now,
-        changeFrequency: "monthly" as const,
-        priority: 0.72,
-      },
-      {
-        url: `${base}/blog/${post.slug}/packing-list`,
-        lastModified: now,
-        changeFrequency: "monthly" as const,
-        priority: 0.72,
-      },
-    ]);
+  // Note: generated posts (/blog/[slug] from generated-posts.ts) are excluded —
+  // they are noindexed via robots metadata and should not be submitted to search engines.
+  // Sub-pages (/best-time, /couples-guide, /packing-list) are also excluded for
+  // the same reason — they are template-generated and noindexed.
 
-  // ── Generated posts — published programmatic content ──────────────────────
-  const generatedPages: MetadataRoute.Sitemap = getPublishedGeneratedPosts().map((post) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastModified: new Date(post.publishDate),
-    changeFrequency: "monthly" as const,
-    priority: 0.72,
-  }));
-
-  return [...staticPages, ...comparePages, ...blogPages, ...subPages, ...generatedPages];
+  return [...staticPages, ...comparePages, ...blogPages];
 }
