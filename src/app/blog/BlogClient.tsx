@@ -144,7 +144,10 @@ function matchesRegion(post: ListingPost, region: string): boolean {
 
 function matchesCategory(post: ListingPost, cat: string): boolean {
   if (cat === "all-cat") return true;
-  return post.category?.toLowerCase().includes(cat.toLowerCase());
+  // Normalize both sides: remove spaces, &, punctuation for reliable matching
+  // e.g. "Hill Station & Nature" → "hillstationnature" still matches filter "hillstation"
+  const normalize = (s: string) => s.toLowerCase().replace(/[\s&_,+()/-]/g, "");
+  return normalize(post.category ?? "").includes(normalize(cat));
 }
 
 function matchesHoneymoon(post: ListingPost): boolean {

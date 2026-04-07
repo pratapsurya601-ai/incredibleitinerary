@@ -39,6 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.excerpt,
       authors: AUTHORS,
       alternates: { canonical: `${SITE}/blog/${post.slug}` },
+      // Noindex shell posts until dedicated pages with full content are built
+      ...(SHELL_SLUGS.has(params.slug) ? { robots: { index: false, follow: true } } : {}),
       openGraph: {
         title: post.title,
         description: post.excerpt,
@@ -275,6 +277,11 @@ export default function BlogPostPage({ params }: Props) {
     </>
   );
 }
+
+// Slugs that use the fallback template (no dedicated folder yet)
+// These are noindexed in generateMetadata until dedicated pages are built
+// NOTE: All 14 original shells now have dedicated pages — set is empty
+const SHELL_SLUGS = new Set<string>();
 
 // Map slug → dedicated post component
 // Add new posts here as you create them
