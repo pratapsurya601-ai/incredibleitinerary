@@ -276,6 +276,121 @@ export default function HoneymoonPage() {
           </div>
         </section>
 
+        {/* ── BOOK ROMANTIC EXPERIENCES ── */}
+        <section className="bg-parchment border-y border-parchment-2 py-16 px-6">
+          <div className="max-w-[1100px] mx-auto">
+            <div className="text-center mb-12">
+              <span className="section-label">Book Directly</span>
+              <h2 className="serif-title text-[clamp(1.8rem,3vw,2.6rem)] text-ink">
+                Romantic Experiences Worth Booking
+              </h2>
+              <p className="text-sm text-muted font-light mt-2 max-w-[520px] mx-auto">
+                Handpicked honeymoon experiences — instant confirmation, free cancellation on most.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                {
+                  dest: "Kashmir",
+                  emoji: "🏔️",
+                  color: "from-blue-50 to-indigo-50",
+                  border: "border-blue-100",
+                  experiences: ["Shikara ride on Dal Lake", "Gulmarg gondola & snow experience"],
+                  gygUrl: "https://www.getyourguide.com/s/?q=Kashmir+romantic+tour&partner_id=PSZA5UI",
+                  viatorUrl: "https://www.viator.com/search/Kashmir?pid=P00295956&mcid=42383&medium=link",
+                },
+                {
+                  dest: "Kerala",
+                  emoji: "🌴",
+                  color: "from-green-50 to-emerald-50",
+                  border: "border-green-100",
+                  experiences: ["Private backwater houseboat cruise", "Ayurveda couple spa session"],
+                  gygUrl: "https://www.getyourguide.com/s/?q=Kerala+backwater+houseboat+couple&partner_id=PSZA5UI",
+                  viatorUrl: "https://www.viator.com/search/Kerala?pid=P00295956&mcid=42383&medium=link",
+                },
+                {
+                  dest: "Goa",
+                  emoji: "🌅",
+                  color: "from-orange-50 to-amber-50",
+                  border: "border-orange-100",
+                  experiences: ["Sunset dolphin cruise for couples", "South Goa heritage village tour"],
+                  gygUrl: "https://www.getyourguide.com/s/?q=Goa+sunset+cruise+couple&partner_id=PSZA5UI",
+                  viatorUrl: "https://www.viator.com/search/Goa?pid=P00295956&mcid=42383&medium=link",
+                },
+                {
+                  dest: "Rajasthan",
+                  emoji: "🏯",
+                  color: "from-yellow-50 to-amber-50",
+                  border: "border-yellow-100",
+                  experiences: ["Desert camp camel safari at sunset", "Udaipur Lake Pichola boat ride"],
+                  gygUrl: "https://www.getyourguide.com/s/?q=Rajasthan+romantic+couple+tour&partner_id=PSZA5UI",
+                  viatorUrl: "https://www.viator.com/search/Rajasthan?pid=P00295956&mcid=42383&medium=link",
+                },
+                {
+                  dest: "Maldives",
+                  emoji: "🐠",
+                  color: "from-cyan-50 to-teal-50",
+                  border: "border-cyan-100",
+                  experiences: ["Private snorkelling & reef excursion", "Sunset catamaran cruise for two"],
+                  gygUrl: "https://www.getyourguide.com/s/?q=Maldives+couple+snorkelling+sunset+cruise&partner_id=PSZA5UI",
+                  viatorUrl: "https://www.viator.com/search/Maldives?pid=P00295956&mcid=42383&medium=link",
+                },
+                {
+                  dest: "Andaman",
+                  emoji: "🤿",
+                  color: "from-teal-50 to-blue-50",
+                  border: "border-teal-100",
+                  experiences: ["Couple scuba diving at Havelock", "Glass-bottom boat at Radhanagar Beach"],
+                  gygUrl: "https://www.getyourguide.com/s/?q=Andaman+scuba+diving+couple&partner_id=PSZA5UI",
+                  viatorUrl: "https://www.viator.com/search/Andaman+Islands?pid=P00295956&mcid=42383&medium=link",
+                },
+              ].map(({ dest, emoji, color, border, experiences, gygUrl, viatorUrl }) => (
+                <div
+                  key={dest}
+                  className={`bg-gradient-to-br ${color} border ${border} rounded-2xl p-5 flex flex-col gap-4`}
+                >
+                  <div>
+                    <p className="font-serif text-lg font-light text-ink mb-3">
+                      {emoji} {dest}
+                    </p>
+                    <ul className="space-y-1.5">
+                      {experiences.map((exp) => (
+                        <li key={exp} className="flex items-start gap-2 text-xs text-muted font-light">
+                          <span className="text-gold mt-0.5 flex-shrink-0">✦</span>
+                          {exp}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex gap-2 mt-auto">
+                    <a
+                      href={gygUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="flex-1 text-center text-xs font-semibold text-white bg-[#FF5533] hover:bg-[#cc4429] px-3 py-2.5 rounded-xl transition-colors"
+                    >
+                      GetYourGuide
+                    </a>
+                    <a
+                      href={viatorUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="flex-1 text-center text-xs font-semibold text-white bg-[#1A1A2E] hover:bg-black px-3 py-2.5 rounded-xl transition-colors"
+                    >
+                      Viator
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center text-[0.65rem] text-muted/50 font-light mt-6">
+              Affiliate links — we earn a small commission at no extra cost to you. Helps keep all guides free.
+            </p>
+          </div>
+        </section>
+
         {/* ── WHY PLAN WITH US ── */}
         <section className="bg-parchment border-y border-parchment-2 py-16 px-6">
           <div className="max-w-[900px] mx-auto text-center mb-10">
