@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
 
 interface NavbarProps {
-  onPlanTrip: () => void;
+  onPlanTrip?: () => void;
 }
 
 const TOOL_LINKS = [
@@ -22,7 +22,7 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
 ];
 
-export default function Navbar({ onPlanTrip }: NavbarProps) {
+export default function Navbar({ onPlanTrip = () => {} }: NavbarProps) {
   const pathname = usePathname();
   const [scrolled, setScrolled]       = useState(false);
   const [menuOpen, setMenuOpen]       = useState(false);
