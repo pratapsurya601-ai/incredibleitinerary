@@ -176,6 +176,7 @@ export default function BlogPostPage({ params }: Props) {
                 src={post!.image}
                 alt={post!.imageAlt}
                 fill
+                unoptimized
                 className="object-cover"
                 priority
               />

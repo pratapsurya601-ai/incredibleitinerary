@@ -203,6 +203,7 @@ export default function ContactClient() {
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
             alt="Plan your perfect trip — mountain landscape"
             fill
+            unoptimized
             className="object-cover"
             priority
           />
