@@ -22,7 +22,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       {/* Background image — static, no zoom animation (removes non-composited animation + 122ms forced reflow) */}
       <div className="absolute inset-0 -z-10">
-        <Image src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1080&q=55&auto=format&fit=crop" alt="World travel destinations" fill priority quality={55} className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 100vw, 100vw" />
+        <Image src="/images/surya/surya-manali-snowsuit.jpg" alt="Surya Pratap in Manali — founder of IncredibleItinerary" fill priority quality={85} className="object-cover object-top" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 100vw, 100vw" />
       </div>
       {/* Overlay — lighter than before for more photo visibility */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,6,2,0.55) 0%, rgba(10,6,2,0.35) 35%, rgba(10,6,2,0.40) 60%, rgba(10,6,2,0.85) 100%)" }} />
@@ -31,12 +31,12 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
         {/* Headline — large, cinematic */}
         <h1 className="font-serif text-[clamp(3rem,7vw,5.5rem)] font-light text-white leading-[1.05] mb-5" style={{ animation: "fadeUp .8s .15s both" }}>
-          Travel Smarter.<br />
-          <em className="italic text-gold-light">Skip the Tourist Traps.</em>
+          India, planned properly.<br />
+          <em className="italic text-gold-light">By someone who&apos;s actually been.</em>
         </h1>
 
         <p className="text-lg text-white/60 font-light max-w-lg mx-auto mb-5 leading-relaxed" style={{ animation: "fadeUp .8s .3s both" }}>
-          {blogPosts.length} free travel guides across 50+ countries. Real prices. Local tips.
+          60+ India guides written from real trips. Honest prices. No sponsored picks.
         </p>
 
         {/* Search bar — large, prominent */}
@@ -88,7 +88,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
         {/* Minimal trust line */}
         <p className="text-xs text-white/55 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
-          {blogPosts.length} FREE GUIDES &nbsp;&middot;&nbsp; 10 PDF DOWNLOADS &nbsp;&middot;&nbsp; 50+ COUNTRIES &nbsp;&middot;&nbsp; 24HR REPLY
+          60+ FREE INDIA GUIDES &nbsp;&middot;&nbsp; 10 PDF DOWNLOADS &nbsp;&middot;&nbsp; REAL TRIPS &nbsp;&middot;&nbsp; 24HR REPLY
         </p>
       </div>
 

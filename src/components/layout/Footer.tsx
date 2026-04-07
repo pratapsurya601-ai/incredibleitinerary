@@ -45,8 +45,7 @@ export default function Footer() {
                 { label: "Custom Itinerary (Free)", href: "/contact" },
                 { label: "Destination Quiz", href: "/quiz" },
                 { label: "Trip Cost Calculator", href: "/tools/trip-calculator" },
-                { label: "Visa Checker", href: "/tools/visa-checker" },
-                { label: "All Travel Guides", href: "/blog" },
+{ label: "All Travel Guides", href: "/blog" },
                 { label: "PDF Shop", href: "/shop" },
               ].map((item) => (
                 <li key={item.label}><Link href={item.href} className="text-sm text-white/55 hover:text-gold transition-colors">{item.label}</Link></li>

@@ -50,8 +50,7 @@ export default function NewsletterSection() {
                 <em className="italic text-gold">straight to your inbox</em>
               </h2>
               <p className="text-sm text-white/60 font-light mb-8 leading-relaxed max-w-md">
-                Join 2,400+ travellers getting weekly destination deep-dives, real budgets,
-                and local secrets — the stuff that doesn&apos;t make it onto generic travel blogs.
+                Join the newsletter — real itineraries, honest costs, no fluff. One email a week.
               </p>
               <ul className="space-y-3">
                 {PERKS.map((p) => (

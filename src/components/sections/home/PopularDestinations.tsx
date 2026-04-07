@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
@@ -35,34 +34,38 @@ const ALL_DESTINATIONS = [
   { name: "Cappadocia", duration: "3 Days", budget: "From $55/day", tag: "🇹🇷 Turkey", img: "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=600&q=75", href: "/blog/cappadocia-3-days" },
 ];
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
+// ── Hardcoded best 12 India destinations — shown always, no randomisation ───
+const BEST_INDIA_SLUGS = [
+  "/blog/kashmir-6-days",
+  "/blog/rajasthan-7-days",
+  "/blog/goa-3-days",
+  "/blog/kerala-5-days",
+  "/blog/meghalaya-5-days",
+  "/blog/hampi-3-days",
+  "/blog/spiti-valley-7-days",
+  "/blog/manali-5-days",
+  "/blog/wayanad-3-days",
+  "/blog/coorg-3-days",
+  "/blog/leh-ladakh-7-days",
+  "/blog/varanasi-3-days",
+];
 
-const SHOW = 8;
+// Build the static display list from ALL_DESTINATIONS where possible,
+// falling back to a minimal stub for slugs not in the pool (hampi, wayanad, coorg).
+const SLUG_FALLBACKS: Record<string, { name: string; duration: string; budget: string; tag: string; img: string }> = {
+  "/blog/hampi-3-days":   { name: "Hampi",   duration: "3 Days", budget: "From ₹6k",  tag: "🇮🇳 Heritage",  img: "https://images.unsplash.com/photo-1580181735843-cd86c3d29a2b?w=600&q=75" },
+  "/blog/wayanad-3-days": { name: "Wayanad", duration: "3 Days", budget: "From ₹8k",  tag: "🇮🇳 Nature",    img: "https://images.unsplash.com/photo-1626016220220-eacf90e94b76?w=600&q=75" },
+  "/blog/coorg-3-days":   { name: "Coorg",   duration: "3 Days", budget: "From ₹7k",  tag: "🇮🇳 Hills",     img: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=600&q=75" },
+};
+
+const SHOWN_DESTINATIONS = BEST_INDIA_SLUGS.map((slug) => {
+  const found = ALL_DESTINATIONS.find((d) => d.href === slug);
+  if (found) return found;
+  const fallback = SLUG_FALLBACKS[slug];
+  return fallback ? { ...fallback, href: slug } : null;
+}).filter(Boolean) as typeof ALL_DESTINATIONS;
 
 export default function PopularDestinations() {
-  const [pool, setPool] = useState(ALL_DESTINATIONS.slice(0, SHOW));
-  const [isShuffling, setIsShuffling] = useState(false);
-
-  // Shuffle on first mount
-  useEffect(() => {
-    setPool(shuffle(ALL_DESTINATIONS).slice(0, SHOW));
-  }, []);
-
-  function reshuffle() {
-    setIsShuffling(true);
-    setTimeout(() => {
-      setPool(shuffle(ALL_DESTINATIONS).slice(0, SHOW));
-      setIsShuffling(false);
-    }, 200);
-  }
-
   return (
     <section className="bg-cream py-20 px-6 md:px-12">
       <div className="max-w-[1180px] mx-auto">
@@ -74,24 +77,15 @@ export default function PopularDestinations() {
             </h2>
           </div>
           <div className="flex items-center gap-4">
-            <button
-              onClick={reshuffle}
-              className="inline-flex items-center gap-1.5 text-[0.72rem] tracking-[0.12em] uppercase text-muted border border-parchment-2 px-3.5 py-1.5 rounded-full hover:border-gold hover:text-gold transition-all duration-200"
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={isShuffling ? "animate-spin" : ""}>
-                <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-              </svg>
-              Shuffle
-            </button>
             <Link href="/blog" className="text-[0.72rem] tracking-[0.12em] uppercase text-gold-dark border-b border-gold-dark pb-0.5 hover:text-ink transition-colors">
               View All {blogPosts.length}+ Guides &rarr;
             </Link>
           </div>
         </FadeIn>
 
-        <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 transition-opacity duration-200 ${isShuffling ? "opacity-0" : "opacity-100"}`}>
-          {pool.map((d, i) => (
-            <FadeIn key={`${d.href}-${i}`} delay={i * 40}>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {SHOWN_DESTINATIONS.map((d, i) => (
+            <FadeIn key={d.href} delay={i * 40}>
               <Link
                 href={d.href}
                 className="group block rounded-2xl overflow-hidden border border-parchment-2 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white"
