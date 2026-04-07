@@ -6,6 +6,7 @@ import FooterNewsletter from "@/components/layout/FooterNewsletter";
 
 const SOCIAL_LINKS = [
   { icon: "in", href: SITE_CONFIG.linkedin, label: "LinkedIn" },
+  { icon: "𝐏", href: SITE_CONFIG.pinterest, label: "Pinterest" },
 ];
 
 export default function Footer() {

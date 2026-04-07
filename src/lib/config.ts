@@ -14,6 +14,7 @@ export const SITE_CONFIG = {
 
   // ── Social ─────────────────────────────────────────────────────────────────
   linkedin: "https://www.linkedin.com/in/surya-pratap-singh-490a18320",
+  pinterest: "https://in.pinterest.com/incredibleitinerary/",
 
   // ── Business ───────────────────────────────────────────────────────────────
   foundedYear: "2024",

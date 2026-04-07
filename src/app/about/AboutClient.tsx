@@ -252,14 +252,24 @@ export default function AboutClient() {
                 I post about building this site in public — traffic growth, SEO experiments,
                 what&apos;s working and what flopped. Follow along if you&apos;re building something too.
               </p>
-              <a
-                href="https://www.linkedin.com/in/surya-pratap-singh-490a18320"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#0A66C2] text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-[#0A66C2]/90 transition-colors"
-              >
-                Follow on LinkedIn →
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://www.linkedin.com/in/surya-pratap-singh-490a18320"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#0A66C2] text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-[#0A66C2]/90 transition-colors"
+                >
+                  Follow on LinkedIn →
+                </a>
+                <a
+                  href="https://in.pinterest.com/incredibleitinerary/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#E60023] text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-[#E60023]/90 transition-colors"
+                >
+                  Follow on Pinterest →
+                </a>
+              </div>
             </div>
 
             <div className="bg-ink rounded-2xl p-8 text-center flex flex-col justify-center">
