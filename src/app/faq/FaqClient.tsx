@@ -44,7 +44,7 @@ const FAQ_CATEGORIES = [
     label: "Free Guides",
     items: [
       {
-        question: "Are all 307 guides really free?",
+        question: "Are all the guides really free?",
         answer:
           "Yes. Every blog guide on incredibleitinerary.com is completely free to read online. No account, no email, no paywall. Just go to /blog and find any destination.",
       },

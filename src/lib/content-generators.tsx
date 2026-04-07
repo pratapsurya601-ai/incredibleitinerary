@@ -236,12 +236,15 @@ function inflatePrice(priceStr: string, multiplier: number): string {
   });
 }
 
-/** India ~5%/yr, international ~4%/yr from base year 2026 */
-function getInflationMultiplier(publishDate: string, isIndia: boolean): number {
-  const years = getPublishYear(publishDate) - COST_BASE_YEAR;
-  if (years <= 0) return 1;
-  const rate = isIndia ? 0.05 : 0.04;
-  return Math.pow(1 + rate, years);
+/** Always returns 1 — inflation projection disabled.
+ *  Generated posts carry future publish dates from the content pipeline, but
+ *  price data is sourced from 2026.  Projecting prices forward while hiding
+ *  the disclaimer produces misleading figures, so we serve unadjusted 2026
+ *  prices instead.
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function getInflationMultiplier(_publishDate: string, _isIndia: boolean): number {
+  return 1;
 }
 
 function inflateCostRow(
@@ -623,26 +626,13 @@ function CTALink({ href, children, external = false }: { href: string; children:
   );
 }
 
-function PriceDisclaimer({ publishYear }: { publishYear: number }) {
-  if (publishYear <= COST_BASE_YEAR) return null;
-  return (
-    <div className="border border-gold/30 bg-gold/5 rounded-xl p-4 my-6 flex items-start gap-3">
-      <span className="text-gold-dark text-sm mt-0.5 flex-shrink-0">ⓘ</span>
-      <div>
-        <p className="text-xs font-medium text-gold-dark mb-0.5">
-          Prices estimated for {publishYear}
-        </p>
-        <p className="text-xs text-muted font-light leading-relaxed">
-          Figures are projected from {COST_BASE_YEAR} data with ~{publishYear <= COST_BASE_YEAR + 3 ? "5" : "5"}% annual inflation.
-          Verify current rates on{" "}
-          <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gold-dark">Booking.com</a>
-          {" "}or{" "}
-          <a href="https://www.google.com/travel/hotels" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gold-dark">Google Hotels</a>
-          {" "}before booking.
-        </p>
-      </div>
-    </div>
-  );
+// PriceDisclaimer intentionally removed — the "Prices estimated for 20XX /
+// projected from 2026 data with ~5% annual inflation" note undermined the
+// site's "real prices" positioning.  Generated posts use future publish dates
+// from the content pipeline, but all price data is sourced from 2026 and
+// displayed as current figures.  No disclaimer is shown.
+function PriceDisclaimer(_props: { publishYear: number }) {
+  return null;
 }
 
 function InternalToolsCTA({ destination }: { destination: string }) {
@@ -1083,7 +1073,7 @@ export function generateCostContent(post: GeneratedPost, parent: ParentMeta): JS
 
       <SectionH2>Daily Cost Breakdown by Travel Style</SectionH2>
       <BodyText>
-        All figures are per person in Indian Rupees (₹), estimated for {publishYear}, based on double occupancy for accommodation and shared transport where applicable. Solo travellers should add 20–30% for accommodation.
+        All figures are per person in Indian Rupees (₹), based on 2026 pricing, double occupancy for accommodation and shared transport where applicable. Solo travellers should add 20–30% for accommodation.
       </BodyText>
 
       <div className="overflow-x-auto my-6 rounded-xl border border-parchment-2">

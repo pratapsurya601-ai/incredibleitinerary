@@ -89,18 +89,10 @@ export default function GeneratedPostContent({
     };
   });
 
-  // Format publish date nicely
-  const formattedDate = (() => {
-    try {
-      return new Date(post.publishDate).toLocaleDateString("en-IN", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-    } catch {
-      return post.publishDate;
-    }
-  })();
+  // Always show "Updated April 2026" — generated posts carry future-projected
+  // publish dates from the content pipeline; we override them here so visitors
+  // never see a 2027/2028/2033 date on a live page.
+  const formattedDate = "Updated April 2026";
 
   const content = generateContent(post, parentMeta);
 

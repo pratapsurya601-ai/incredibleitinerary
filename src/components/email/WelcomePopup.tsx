@@ -112,7 +112,7 @@ export default function WelcomePopup() {
 
               <h2 className="font-serif text-[1.7rem] font-light text-white mb-3 leading-tight">
                 Planning a trip to India?<br />
-                <em className="italic text-gold">Get 313+ free guides</em>
+                <em className="italic text-gold">Get 300+ free guides</em>
               </h2>
 
               <p className="text-sm text-white/55 font-light mb-6 leading-relaxed">

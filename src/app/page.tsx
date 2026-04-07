@@ -14,7 +14,7 @@ export default function Home() {
             "@type": "WebSite",
             name: "IncredibleItinerary",
             url: "https://www.incredibleitinerary.com",
-            description: `${_count} free travel guides across 50+ countries — India, Japan, Thailand, Italy, Bali, Dubai, Greece & more. Real prices, local tips, day-by-day itineraries.`,
+            description: `${_count} free travel guides across 30+ countries — India, Japan, Thailand, Italy, Bali, Dubai, Greece & more. Real prices, local tips, day-by-day itineraries.`,
             potentialAction: {
               "@type": "SearchAction",
               target: "https://www.incredibleitinerary.com/blog?q={search_term_string}",

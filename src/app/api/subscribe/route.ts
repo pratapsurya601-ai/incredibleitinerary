@@ -79,7 +79,7 @@ function buildWelcomeEmail(email: string, firstName: string | undefined) {
   <!-- GOLD BAND -->
   <tr><td style="background:#C9A96E;padding:14px 32px;text-align:center;">
     <p style="margin:0;font-size:12px;font-weight:700;color:#161008;letter-spacing:.5px;">
-      313+ FREE GUIDES · REAL BUDGETS · ZERO TOURIST TRAPS
+      300+ FREE GUIDES · REAL BUDGETS · ZERO TOURIST TRAPS
     </p>
   </td></tr>
 
@@ -107,7 +107,7 @@ function buildWelcomeEmail(email: string, firstName: string | undefined) {
     <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:26px;">
       <tr><td style="text-align:center;">
         <a href="${BASE}/blog" style="display:inline-block;background:#161008;color:#C9A96E;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:13px 32px;border-radius:8px;">
-          View All 313+ Free Guides →
+          View All 300+ Free Guides →
         </a>
       </td></tr>
     </table>

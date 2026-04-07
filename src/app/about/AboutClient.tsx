@@ -104,7 +104,7 @@ export default function AboutClient() {
             <div className="order-1 lg:order-2">
               <span className="section-label">My Story</span>
               <h2 className="font-serif text-[clamp(1.9rem,3vw,2.7rem)] font-light text-ink mb-6 leading-tight">
-                From solo trips to {blogPosts.length} guides.
+                From solo trips to 300+ guides.
                 <em className="italic text-teal"> Here&apos;s the story.</em>
               </h2>
               <div className="space-y-4 text-sm text-muted font-light leading-[1.85]">
@@ -126,7 +126,7 @@ export default function AboutClient() {
                   &ldquo;5 must-see spots!&rdquo; lists with no context.
                 </p>
                 <p>
-                  So I built the guide I wished existed. Then I built {blogPosts.length} of them.
+                  So I built the guide I wished existed. Then I built over 300 of them.
                   Every destination I&apos;ve been to, I wrote from personal experience.
                   Every destination I haven&apos;t, I researched obsessively until the
                   guide was good enough to be genuinely useful.
@@ -134,7 +134,7 @@ export default function AboutClient() {
                 <p className="font-medium text-ink">
                   IncredibleItinerary is entirely solo-built — every guide, every tool, every line of code.
                   What started as one guide for a friend planning Kashmir turned into India&apos;s most detailed
-                  free travel planning platform. {blogPosts.length} guides. 5 interactive tools. Zero sponsored content.
+                  free travel planning platform. {blogPosts.length}+ guides. 2 working tools. Zero sponsored content.
                 </p>
               </div>
             </div>

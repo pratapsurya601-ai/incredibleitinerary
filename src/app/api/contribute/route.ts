@@ -101,7 +101,7 @@ export async function POST(req: NextRequest) {
             View ${destination} Guide →
           </a>
           <p style="font-size: 12px; color: #a0916e; margin-top: 28px; line-height: 1.6;">
-            IncredibleItinerary.com — Free travel guides for 302+ destinations.<br>
+            IncredibleItinerary.com — Free travel guides for 300+ destinations.<br>
             Questions? Just reply to this email.
           </p>
         </div>

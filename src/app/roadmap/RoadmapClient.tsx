@@ -13,7 +13,7 @@ const PHASES = [
     status: "active",
     goal: "Make every page earn",
     tasks: [
-      { done: true,  text: "Replace all YOUR_AFFILIATE_ID → real Booking.com aid=2820480" },
+      { done: true,  text: "Replace all 2820480 → real Booking.com aid=2820480" },
       { done: true,  text: "Fix GetYourGuide 404 links → search URL format" },
       { done: true,  text: "Add exit-intent email popup + Mailchimp integration" },
       { done: true,  text: "Build Currency Converter + Packing List tools" },
@@ -32,7 +32,7 @@ const PHASES = [
     status: "upcoming",
     goal: "Triple indexed pages to 300+",
     tasks: [
-      { done: false, text: "Generate 'Best Time to Visit X' for all 313+ destinations" },
+      { done: false, text: "Generate 'Best Time to Visit X' for all 300+ destinations" },
       { done: false, text: "Generate 'X for Couples' budget guides" },
       { done: false, text: "Generate 'X Packing List' SEO pages" },
       { done: false, text: "Add 20 more India destinations (Northeast, South)" },
@@ -86,11 +86,11 @@ const STREAMS = [
     potential: "₹20K–80K/month",
     potentialNote: "at scale",
     status: "live",
-    statusLabel: "Live on 313+ blogs",
+    statusLabel: "Live on 300+ blogs",
     color: "border-blue-300 bg-blue-50",
     accent: "text-blue-700",
     bar: "bg-blue-400",
-    detail: "4–6% commission per booking. Every guide mentions hotels with prices. 313+ guides × average 3 hotel links = 288 affiliate touchpoints earning while you sleep.",
+    detail: "4–6% commission per booking. Every guide mentions hotels with prices. 300+ guides × average 3 hotel links = 288 affiliate touchpoints earning while you sleep.",
     action: "Add Stay22 map widget to top 10 India guides for visual bookings.",
   },
   {
@@ -102,7 +102,7 @@ const STREAMS = [
     potential: "₹10K–50K/month",
     potentialNote: "8% per booking",
     status: "live",
-    statusLabel: "Live on 313+ blogs",
+    statusLabel: "Live on 300+ blogs",
     color: "border-orange-300 bg-orange-50",
     accent: "text-orange-700",
     bar: "bg-orange-400",
@@ -118,7 +118,7 @@ const STREAMS = [
     potential: "₹5K–30K/month",
     potentialNote: "3 PDFs live",
     status: "partial",
-    statusLabel: "3 of 313+ destinations",
+    statusLabel: "3 of 300+ destinations",
     color: "border-teal-300 bg-teal-50",
     accent: "text-teal-700",
     bar: "bg-teal-400",
@@ -206,7 +206,7 @@ export default function RoadmapClient() {
                 The Monetisation Roadmap
               </h1>
               <p className="text-sm text-white/50 font-light max-w-[520px] leading-relaxed">
-                313+ guides × smart affiliate placement × SEO scale = ₹2L+/month. Every guide you publish is an asset that earns for 5–10 years.
+                300+ guides × smart affiliate placement × SEO scale = ₹2L+/month. Every guide you publish is an asset that earns for 5–10 years.
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl px-7 py-5 text-center">
@@ -479,7 +479,7 @@ export default function RoadmapClient() {
         {/* Summary numbers */}
         <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { num: "313+", label: "Live guides (assets earning now)" },
+            { num: "300+", label: "Live guides (assets earning now)" },
             { num: "288+", label: "Affiliate touchpoints across site" },
             { num: "530+", label: "Programmatic pages to build" },
             { num: "₹2L", label: "Monthly target (6 months)" },

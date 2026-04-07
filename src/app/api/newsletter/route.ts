@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const YOUR_EMAIL  = "hello@incredibleitinerary.com";
 const RESEND_KEY  = process.env.RESEND_API_KEY || "";
 const BASE        = "https://www.incredibleitinerary.com";
-const GUIDE_COUNT = "313+";
+const GUIDE_COUNT = "300+";
 
 // ── security helpers ────────────────────────────────────────────────────────
 function sanitize(str: string): string {

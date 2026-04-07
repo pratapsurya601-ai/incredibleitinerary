@@ -165,7 +165,7 @@ export default function RootLayout({
               name: "IncredibleItinerary",
               url: "https://www.incredibleitinerary.com",
               logo: "https://www.incredibleitinerary.com/logo.png",
-              description: `${_count} free travel guides across India, Japan, Thailand, Italy, Bali, Dubai, Greece & 50+ countries. Real prices, day-by-day itineraries, local tips.`,
+              description: `${_count} free travel guides across India, Japan, Thailand, Italy, Bali, Dubai, Greece & 30+ countries. Real prices, day-by-day itineraries, local tips.`,
               sameAs: [
                 "https://www.linkedin.com/in/surya-pratap-singh-490a18320",
               ],

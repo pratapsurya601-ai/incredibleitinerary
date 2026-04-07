@@ -88,7 +88,7 @@ export default function IndiaMapSection() {
             Explore by region
           </span>
           <h2 className="font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-light text-white mb-3">
-            {blogPosts.length}+ guides across <em className="italic text-gold-light">50+ countries</em>
+            {blogPosts.length}+ guides across <em className="italic text-gold-light">30+ countries</em>
           </h2>
           <p className="text-sm text-white/40 font-light max-w-md mx-auto">
             India, Japan, Thailand, Europe, SE Asia, Middle East &amp; more. Pick a region to start exploring.

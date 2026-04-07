@@ -71,7 +71,7 @@ export async function GET() {
   <channel>
     <title>IncredibleItinerary — Free Travel Guides</title>
     <link>${BASE}</link>
-    <description>302+ free travel guides with real budgets, real routes, and local tips across 50+ countries.</description>
+    <description>300+ free travel guides with real budgets, real routes, and local tips across 30+ countries.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <image>
