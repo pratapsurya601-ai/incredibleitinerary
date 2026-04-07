@@ -184,15 +184,26 @@ export default function AffiliateBlock({
                 <p className="text-[0.65rem] text-muted font-light">Skip the queue · Instant confirmation · Free cancellation</p>
               </div>
             </div>
-            <a
-              href={AFFILIATE.getYourGuide(destination)}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block w-full text-center text-sm text-white bg-[#FF5533] hover:bg-[#cc4429] px-4 py-3 rounded-xl font-medium transition-colors"
-              onClick={() => trackEvent("affiliate_clicked", { destination, provider: "getyourguide" })}
-            >
-              Find Top Tours in {destination} on GetYourGuide →
-            </a>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <a
+                href={AFFILIATE.getYourGuide(destination)}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="flex-1 block text-center text-sm text-white bg-[#FF5533] hover:bg-[#cc4429] px-4 py-3 rounded-xl font-medium transition-colors"
+                onClick={() => trackEvent("affiliate_clicked", { destination, provider: "getyourguide" })}
+              >
+                GetYourGuide →
+              </a>
+              <a
+                href={AFFILIATE.viator(destination)}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="flex-1 block text-center text-sm text-white bg-[#1A1A2E] hover:bg-black px-4 py-3 rounded-xl font-medium transition-colors"
+                onClick={() => trackEvent("affiliate_clicked", { destination, provider: "viator" })}
+              >
+                Viator →
+              </a>
+            </div>
           </div>
           <div className="bg-white px-5 py-2">
             <p className="text-xs text-muted/60 font-light">

@@ -34,11 +34,14 @@ export const AFFILIATE = {
   getYourGuide: (destination: string) =>
     `https://www.getyourguide.com/s/?q=${encodeURIComponent(destination)}&partner_id=PSZA5UI`,
 
-  // Viator — uses env var if set
+  // Viator — pid=P00295956 (fixed), mcid from env var ✅ LIVE
   viator: (destination: string) => {
-    const vid = process.env.NEXT_PUBLIC_VIATOR_ID;
+    const mcid = process.env.NEXT_PUBLIC_VIATOR_ID;
     const base = `https://www.viator.com/search/${encodeURIComponent(destination)}`;
-    return vid ? `${base}?mcid=${vid}` : base;
+    const params = mcid
+      ? `?pid=P00295956&mcid=${mcid}&medium=link`
+      : `?pid=P00295956&medium=link`;
+    return `${base}${params}`;
   },
 
   // Direct hotel links — set NEXT_PUBLIC_BOOKING_AID in Vercel env vars
