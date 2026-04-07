@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { blogPosts } from "@/data/blog";
+import { GUIDES_DISPLAY, PDF_DISPLAY } from "@/lib/siteStats";
 
 export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) {
   const [search, setSearch] = useState("");
@@ -88,7 +89,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
 
         {/* Minimal trust line */}
         <p className="text-xs text-white/55 font-light tracking-[0.1em] mt-10" style={{ animation: "fadeUp .8s .8s both" }}>
-          60+ FREE INDIA GUIDES &nbsp;&middot;&nbsp; 10 PDF DOWNLOADS &nbsp;&middot;&nbsp; REAL TRIPS &nbsp;&middot;&nbsp; 24HR REPLY
+          {GUIDES_DISPLAY} FREE GUIDES &nbsp;&middot;&nbsp; {PDF_DISPLAY} PDF DOWNLOADS &nbsp;&middot;&nbsp; REAL TRIPS &nbsp;&middot;&nbsp; 24HR REPLY
         </p>
       </div>
 

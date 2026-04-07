@@ -41,6 +41,7 @@ export default function AboutClient() {
             fill
             className="object-cover"
             priority
+            unoptimized
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
@@ -88,6 +89,7 @@ export default function AboutClient() {
                   alt="Surya Pratap — Founder of IncredibleItinerary"
                   fill
                   className="object-cover object-top"
+                  unoptimized
                   sizes="(max-width: 1024px) 90vw, 420px"
                 />
               </div>
@@ -160,6 +162,7 @@ export default function AboutClient() {
                   src="/images/surya/surya-kedarnath-ridge.jpg"
                   alt="Surya at Kedarnath ridge, October 2022"
                   fill className="object-cover hover:scale-105 transition-transform duration-500"
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
@@ -170,6 +173,7 @@ export default function AboutClient() {
                   src="/images/surya/surya-gangotri-national-park.jpg"
                   alt="Surya at Gangotri National Park entrance, June 2023"
                   fill className="object-cover hover:scale-105 transition-transform duration-500"
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
@@ -180,6 +184,7 @@ export default function AboutClient() {
                   src="/images/surya/surya-manali-snowsuit.jpg"
                   alt="Surya in Manali, December 2023"
                   fill className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
