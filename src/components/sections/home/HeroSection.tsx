@@ -37,7 +37,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
         </h1>
 
         <p className="text-lg text-white/60 font-light max-w-lg mx-auto mb-5 leading-relaxed" style={{ animation: "fadeUp .8s .3s both" }}>
-          60+ India guides written from real trips. Honest prices. No sponsored picks.
+          {GUIDES_DISPLAY} guides written from real trips. Honest prices. No sponsored picks.
         </p>
 
         {/* Search bar — large, prominent */}
