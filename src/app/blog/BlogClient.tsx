@@ -72,6 +72,7 @@ const MAIN_TABS = [
   { id: "all",           label: "All",           emoji: "✦" },
   { id: "india",         label: "India",         emoji: "🇮🇳" },
   { id: "international", label: "International", emoji: "🌍" },
+  { id: "honeymoon",     label: "Honeymoon",     emoji: "💑" },
 ];
 
 // ── Region / country filter tabs ──
@@ -144,6 +145,17 @@ function matchesCategory(post: ListingPost, cat: string): boolean {
   return post.category?.toLowerCase().includes(cat.toLowerCase());
 }
 
+function matchesHoneymoon(post: ListingPost): boolean {
+  const HONEYMOON_KEYWORDS = ["couple", "honeymoon", "romantic"];
+  const check = (s: string) => HONEYMOON_KEYWORDS.some((k) => s.toLowerCase().includes(k));
+  return (
+    check(post.slug) ||
+    check(post.title) ||
+    check(post.category) ||
+    post.tags.some((t) => check(t))
+  );
+}
+
 export default function BlogClient() {
   const [modalOpen, setModalOpen]       = useState(false);
   const [search, setSearch]             = useState("");
@@ -198,7 +210,11 @@ export default function BlogClient() {
 
   const filtered = useMemo(() => {
     return allPosts.filter((p) => {
-      if (!matchesRegion(p, regionFilter)) return false;
+      if (mainTab === "honeymoon") {
+        if (!matchesHoneymoon(p)) return false;
+      } else {
+        if (!matchesRegion(p, regionFilter)) return false;
+      }
       if (!matchesCategory(p, catFilter)) return false;
       if (!matchesDuration(p, durFilter)) return false;
       if (query) {
@@ -212,7 +228,7 @@ export default function BlogClient() {
       }
       return true;
     });
-  }, [query, regionFilter, catFilter, durFilter, allPosts]);
+  }, [query, mainTab, regionFilter, catFilter, durFilter, allPosts]);
 
   // Autocomplete suggestions
   const suggestions = useMemo(() => {
@@ -233,6 +249,7 @@ export default function BlogClient() {
     if (tab === "all") setRegionFilter("all");
     else if (tab === "india") setRegionFilter("india");
     else if (tab === "international") setRegionFilter("international");
+    else if (tab === "honeymoon") setRegionFilter("all");
   }
 
   const hasActiveFilter =
@@ -356,7 +373,7 @@ export default function BlogClient() {
                 ))}
               </div>
 
-              {/* Region sub-tabs — only show when not on a fixed main tab */}
+              {/* Region sub-tabs — only show on All tab */}
               {mainTab === "all" && (
               <div className="flex flex-wrap justify-center gap-2">
                 {REGION_FILTERS.map((f) => (
