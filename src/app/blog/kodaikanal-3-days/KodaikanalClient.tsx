@@ -747,6 +747,25 @@ export default function KodaikanalClient() {
             </div>
           </section>
 
+          {/* ── MORE RESOURCES ── */}
+          <div className="max-w-[860px] mx-auto px-6 md:px-8 mb-12">
+            <h2 className="font-serif text-xl font-light text-ink mb-4">Plan your Kodaikanal trip</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { href: "/blog/best-time-to-visit-kodaikanal", label: "Best time to visit", icon: "🗓️" },
+                { href: "/blog/kodaikanal-trip-cost-couple", label: "Trip cost breakdown", icon: "💰" },
+                { href: "/blog/how-to-reach-kodaikanal", label: "How to get there", icon: "✈️" },
+                { href: "/blog/kodaikanal-travel-tips", label: "Travel tips", icon: "📋" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href}
+                  className="flex flex-col items-center gap-2 p-4 bg-parchment border border-parchment-2 rounded-xl hover:border-gold hover:shadow-sm transition-all text-center">
+                  <span className="text-2xl">{item.icon}</span>
+                  <span className="text-xs font-medium text-ink leading-tight">{item.label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <RelatedGuides currentSlug="kodaikanal-3-days" />
         </div>
       </main>

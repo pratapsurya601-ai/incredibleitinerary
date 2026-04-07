@@ -15,6 +15,7 @@ import AutoPdfCta from "@/components/blog/AutoPdfCta";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import AutoTableOfContents from "@/components/blog/AutoTableOfContents";
 import { INDEXED_INTERNATIONAL_DESTINATIONS } from "@/lib/indexable-destinations";
+import { getGeneratedPostDescription } from "@/lib/generated-meta";
 
 interface Props {
   params: { slug: string };
@@ -70,15 +71,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const isIndiaPost = generatedPost.country === "India";
     const shouldIndex = isIndexedInternational || isIndiaPost;
 
+    const metaDescription = getGeneratedPostDescription(generatedPost);
+
     return {
       title: `${generatedPost.title} — IncredibleItinerary`,
-      description: generatedPost.description,
+      description: metaDescription,
       authors: AUTHORS,
       alternates: { canonical: `${SITE}/blog/${generatedPost.slug}` },
       ...(shouldIndex ? {} : { robots: { index: false, follow: true } }),
       openGraph: {
         title: generatedPost.title,
-        description: generatedPost.description,
+        description: metaDescription,
         url: `${SITE}/blog/${generatedPost.slug}`,
         type: "article",
         publishedTime: generatedPost.publishDate,
