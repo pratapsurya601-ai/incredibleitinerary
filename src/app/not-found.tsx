@@ -9,7 +9,7 @@ const SUGGESTED = [
   { label: "Kashmir 6 Days", href: "/blog/kashmir-6-days", image: "https://images.unsplash.com/photo-1570804783228-ae5d52b07025?w=400&q=70" },
   { label: "Kerala 5 Days", href: "/blog/kerala-5-days", image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400&q=70" },
   { label: "Goa 3 Days", href: "/blog/goa-3-days", image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&q=70" },
-  { label: "Meghalaya 5 Days", href: "/blog/meghalaya-5-days", image: "https://images.unsplash.com/photo-1598394997709-a3d1d0f08e29?w=400&q=70" },
+  { label: "Meghalaya 5 Days", href: "/blog/meghalaya-5-days", image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=400&q=70" },
   { label: "Spiti Valley 7 Days", href: "/blog/spiti-valley-7-days", image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=400&q=70" },
 ];
 
