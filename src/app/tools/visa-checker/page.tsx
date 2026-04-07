@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "Visa Requirements Checker — Any Passport, Any Country",
   description:
     "Instantly check visa requirements for any destination. Find out if you need a visa, eVisa, or can travel visa-free — with cost estimates, processing times and key requirements.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   keywords: [
     "visa checker",
     "visa requirements",

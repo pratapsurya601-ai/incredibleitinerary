@@ -5,22 +5,117 @@ import { blogPosts } from "@/data/blog";
 
 // Region mapping for smart interlinking
 const REGIONS: Record<string, string[]> = {
-  rajasthan: ["jaipur-3-days", "jodhpur-3-days", "jaisalmer-3-days", "udaipur-3-days", "pushkar-2-days", "mount-abu-2-days", "rajasthan-7-days", "ranthambore-3-days"],
-  himachal: ["shimla-3-days", "kasol-3-days", "dharamshala-3-days", "jibhi-tirthan-valley-3-days", "manali-5-days", "spiti-valley-7-days"],
-  uttarakhand: ["rishikesh-haridwar-3-days", "mussoorie-3-days", "auli-3-days", "nainital-3-days", "jim-corbett-3-days", "valley-of-flowers-4-days", "kedarnath-trek-guide", "badrinath-temple-guide", "gangotri-glacier-trek", "char-dham-yatra-guide", "yamunotri-temple-guide"],
-  kashmir: ["kashmir-6-days", "leh-ladakh-7-days"],
-  northeast: ["meghalaya-5-days", "sikkim-6-days", "shillong-3-days", "kaziranga-3-days", "tawang-4-days", "majuli-3-days"],
-  kerala: ["kerala-5-days", "alleppey-3-days", "munnar-3-days", "wayanad-3-days"],
-  tamilnadu: ["ooty-3-days", "kodaikanal-3-days", "pondicherry-3-days", "madurai-2-days", "rameswaram-2-days", "kanyakumari-2-days"],
-  karnataka: ["coorg-3-days", "hampi-3-days", "gokarna-3-days", "mysore-3-days"],
-  golden: ["golden-triangle-7-days", "agra-2-days", "jaipur-3-days"],
-  mp: ["khajuraho-2-days", "orchha-2-days"],
-  gujarat: ["gujarat-7-days", "diu-2-days", "dwarka-2-days"],
-  maharashtra: ["lonavala-2-days", "mahabaleshwar-2-days"],
-  bengal: ["darjeeling-4-days", "sundarbans-3-days"],
-  spiritual: ["varanasi-3-days", "amritsar-2-days", "rishikesh-haridwar-3-days", "rameswaram-2-days", "dwarka-2-days", "kedarnath-trek-guide", "badrinath-temple-guide", "gangotri-glacier-trek", "char-dham-yatra-guide", "yamunotri-temple-guide"],
-  wildlife: ["jim-corbett-3-days", "ranthambore-3-days", "kaziranga-3-days", "sundarbans-3-days"],
-  beach: ["goa-3-days", "gokarna-3-days", "andaman-5-days", "pondicherry-3-days", "diu-2-days"],
+  rajasthan: [
+    "jaipur-3-days", "jodhpur-3-days", "jaisalmer-3-days", "udaipur-3-days",
+    "pushkar-2-days", "mount-abu-2-days", "rajasthan-7-days", "ranthambore-3-days",
+    "bikaner-2-days", "ranakpur-1-day",
+  ],
+  himachal: [
+    "shimla-3-days", "kasol-3-days", "dharamshala-3-days", "jibhi-tirthan-valley-3-days",
+    "manali-5-days", "spiti-valley-7-days", "bir-billing-3-days",
+  ],
+  uttarakhand: [
+    "rishikesh-haridwar-3-days", "mussoorie-3-days", "auli-3-days", "nainital-3-days",
+    "jim-corbett-3-days", "valley-of-flowers-4-days", "kedarnath-trek-guide",
+    "badrinath-temple-guide", "gangotri-glacier-trek", "char-dham-yatra-guide",
+    "yamunotri-temple-guide", "chopta-tungnath-3-days", "mukteshwar-2-days",
+    "almora-3-days", "ranikhet-2-days", "landour-2-days", "dhanaulti-2-days",
+  ],
+  kashmir: [
+    "kashmir-6-days", "leh-ladakh-7-days", "vaishno-devi-3-days", "amarnath-3-days",
+  ],
+  northeast: [
+    "meghalaya-5-days", "sikkim-6-days", "shillong-3-days", "kaziranga-3-days",
+    "tawang-4-days", "majuli-3-days", "north-east-india-10-days", "gangtok-3-days",
+    "cherrapunji-2-days", "mawlynnong-2-days", "kohima-3-days", "imphal-3-days",
+    "assam-tea-garden-3-days", "dibrugarh-3-days", "guwahati-2-days",
+  ],
+  kerala: [
+    "kerala-5-days", "alleppey-3-days", "munnar-3-days", "wayanad-3-days",
+    "varkala-3-days", "thekkady-3-days", "kochi-3-days", "trivandrum-2-days",
+    "periyar-wildlife-3-days",
+  ],
+  tamilnadu: [
+    "ooty-3-days", "kodaikanal-3-days", "pondicherry-3-days", "madurai-2-days",
+    "rameswaram-2-days", "kanyakumari-2-days", "trichy-2-days", "chennai-2-days",
+    "mahabalipuram-2-days", "tirupati-2-days", "kodaikanal-2-days", "coimbatore-2-days",
+    "coonoor-2-days", "meenakshi-temple-2-days",
+  ],
+  karnataka: [
+    "coorg-3-days", "hampi-3-days", "gokarna-3-days", "mysore-3-days",
+    "bangalore-3-days", "chikmagalur-3-days", "mangalore-2-days",
+    "nagarhole-3-days", "best-weekend-getaways-from-bangalore",
+  ],
+  golden: [
+    "golden-triangle-7-days", "agra-2-days", "jaipur-3-days", "delhi-3-days",
+  ],
+  mp: [
+    "khajuraho-2-days", "orchha-2-days", "pachmarhi-3-days", "ujjain-2-days",
+    "kanha-national-park-3-days", "bandhavgarh-3-days", "pench-3-days",
+    "indore-2-days", "sanchi-2-days",
+  ],
+  gujarat: [
+    "gujarat-7-days", "diu-2-days", "dwarka-2-days", "kutch-3-days",
+    "gir-national-park-3-days", "ahmedabad-3-days",
+  ],
+  maharashtra: [
+    "lonavala-2-days", "mahabaleshwar-2-days", "mumbai-3-days", "pune-2-days",
+    "nashik-2-days", "shirdi-2-days", "alibaug-2-days", "tarkarli-2-days",
+    "tadoba-3-days",
+  ],
+  bengal: [
+    "darjeeling-4-days", "sundarbans-3-days", "kolkata-3-days",
+  ],
+  odisha: [
+    "puri-3-days", "bhubaneswar-3-days", "konark-2-days",
+  ],
+  andaman: [
+    "andaman-5-days",
+  ],
+  spiritual: [
+    "varanasi-3-days", "amritsar-2-days", "rishikesh-haridwar-3-days",
+    "rameswaram-2-days", "dwarka-2-days", "kedarnath-trek-guide",
+    "badrinath-temple-guide", "gangotri-glacier-trek", "char-dham-yatra-guide",
+    "yamunotri-temple-guide", "ayodhya-3-days", "mathura-vrindavan-2-days",
+    "vaishno-devi-3-days", "shirdi-2-days", "ujjain-2-days", "tirupati-2-days",
+    "bodh-gaya-2-days", "amarnath-3-days",
+  ],
+  wildlife: [
+    "jim-corbett-3-days", "ranthambore-3-days", "kaziranga-3-days", "sundarbans-3-days",
+    "kanha-national-park-3-days", "bandhavgarh-3-days", "gir-national-park-3-days",
+    "nagarhole-3-days", "periyar-wildlife-3-days", "tadoba-3-days", "pench-3-days",
+    "thekkady-3-days",
+  ],
+  beach: [
+    "goa-3-days", "gokarna-3-days", "andaman-5-days", "pondicherry-3-days",
+    "diu-2-days", "varkala-3-days", "alibaug-2-days", "tarkarli-2-days",
+    "puri-3-days", "mahabalipuram-2-days",
+  ],
+  delhi: [
+    "delhi-3-days", "agra-2-days", "golden-triangle-7-days",
+    "best-weekend-getaways-from-delhi",
+  ],
+  upbihar: [
+    "varanasi-3-days", "lucknow-3-days", "ayodhya-3-days",
+    "mathura-vrindavan-2-days", "bodh-gaya-2-days",
+  ],
+  telangana: [
+    "hyderabad-3-days",
+  ],
+  andhra: [
+    "vizag-3-days", "tirupati-2-days",
+  ],
+  punjab: [
+    "amritsar-2-days", "chandigarh-2-days",
+  ],
+  honeymoon: [
+    "honeymoon-under-50000", "maldives-trip-cost-couple",
+  ],
+  indiatravel: [
+    "best-places-india-may", "best-places-india-monsoon",
+    "visa-free-countries-indian-passport", "first-solo-trip-india",
+    "best-surfing-in-india",
+  ],
 };
 
 function getRegion(slug: string): string | null {

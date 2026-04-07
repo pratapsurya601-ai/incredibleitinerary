@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Currency Converter for Travelers 2026 — IncredibleItinerary",
   description:
     "Free travel currency converter for INR, USD, EUR, GBP, JPY, THB, AED, SGD and more. Instantly convert between 17 major travel currencies with approximate exchange rates.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   keywords: [
     "currency converter",
     "travel currency converter",

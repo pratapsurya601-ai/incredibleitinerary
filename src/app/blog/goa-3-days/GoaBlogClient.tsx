@@ -705,6 +705,25 @@ export default function GoaBlogClient() {
             </div>
           </section>
 
+          {/* ── MORE RESOURCES ── */}
+          <div className="max-w-[860px] mx-auto px-6 md:px-8 mb-12">
+            <h2 className="font-serif text-xl font-light text-ink mb-4">Plan your Goa trip</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { href: "/blog/best-time-to-visit-goa", label: "Best time to visit", icon: "🗓️" },
+                { href: "/blog/goa-trip-cost-couple", label: "Trip cost breakdown", icon: "💰" },
+                { href: "/blog/how-to-reach-goa", label: "How to get there", icon: "✈️" },
+                { href: "/blog/goa-travel-tips", label: "Travel tips", icon: "📋" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href}
+                  className="flex flex-col items-center gap-2 p-4 bg-parchment border border-parchment-2 rounded-xl hover:border-gold hover:shadow-sm transition-all text-center">
+                  <span className="text-2xl">{item.icon}</span>
+                  <span className="text-xs font-medium text-ink leading-tight">{item.label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <CombineWith currentSlug="goa-3-days" />
           <RelatedGuides currentSlug="goa-3-days" />
         </div>

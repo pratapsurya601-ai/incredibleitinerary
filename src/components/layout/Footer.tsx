@@ -78,6 +78,12 @@ export default function Footer() {
                 { label: "Kerala 5 Days", href: "/blog/kerala-5-days" },
                 { label: "Meghalaya 5 Days", href: "/blog/meghalaya-5-days" },
                 { label: "Golden Triangle", href: "/blog/golden-triangle-7-days" },
+                { label: "Hampi 3-Day Guide", href: "/blog/hampi-3-days" },
+                { label: "Wayanad 3-Day Guide", href: "/blog/wayanad-3-days" },
+                { label: "Coorg 3-Day Guide", href: "/blog/coorg-3-days" },
+                { label: "Rishikesh Guide", href: "/blog/rishikesh-haridwar-3-days" },
+                { label: "Spiti Valley Guide", href: "/blog/spiti-valley-7-days" },
+                { label: "Jibhi Valley Guide", href: "/blog/jibhi-tirthan-valley-3-days" },
               ].map((item) => (
                 <li key={item.label}><Link href={item.href} className="text-sm text-white/55 hover:text-gold transition-colors">{item.label}</Link></li>
               ))}

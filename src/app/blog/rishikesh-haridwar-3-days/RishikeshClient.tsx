@@ -125,6 +125,26 @@ export default function RishikeshClient(){
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{[{label:"Manali 5 Days — Snow & Cafes",href:"/blog/manali-5-days"},{label:"Leh Ladakh 7 Days — Bucket List",href:"/blog/leh-ladakh-7-days"},{label:"Varanasi 3 Days — India's Sacred City",href:"/blog/varanasi-3-days"},{label:"Golden Triangle 7 Days",href:"/blog/golden-triangle-7-days"}].map(link=><Link key={link.label} href={link.href} className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group"><span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span><span className="text-xs text-muted">Read →</span></Link>)}</div>
         </section>
         <CombineWith currentSlug="rishikesh-haridwar-3-days" />
+
+        {/* ── MORE RESOURCES ── */}
+        <div className="max-w-[860px] mx-auto px-6 md:px-8 mb-12">
+          <h2 className="font-serif text-xl font-light text-ink mb-4">Plan your Rishikesh & Haridwar trip</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { href: "/blog/best-time-to-visit-rishikesh-haridwar", label: "Best time to visit", icon: "🗓️" },
+              { href: "/blog/rishikesh-haridwar-trip-cost-couple", label: "Trip cost breakdown", icon: "💰" },
+              { href: "/blog/how-to-reach-rishikesh-haridwar", label: "How to get there", icon: "✈️" },
+              { href: "/blog/rishikesh-haridwar-travel-tips", label: "Travel tips", icon: "📋" },
+            ].map((item) => (
+              <Link key={item.href} href={item.href}
+                className="flex flex-col items-center gap-2 p-4 bg-parchment border border-parchment-2 rounded-xl hover:border-gold hover:shadow-sm transition-all text-center">
+                <span className="text-2xl">{item.icon}</span>
+                <span className="text-xs font-medium text-ink leading-tight">{item.label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <RelatedGuides currentSlug="rishikesh-haridwar-3-days" />
       </div>
     </main>
