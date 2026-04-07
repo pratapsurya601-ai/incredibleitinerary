@@ -16,10 +16,11 @@ const TOOL_LINKS = [
 ];
 
 const NAV_LINKS = [
-  { href: "/blog",  label: "Destinations" },
-  { href: "/quiz",  label: "Find My Trip" },
-  { href: "/shop",  label: "Shop" },
-  { href: "/about", label: "About" },
+  { href: "/blog",      label: "Destinations" },
+  { href: "/honeymoon", label: "💑 Honeymoon" },
+  { href: "/quiz",      label: "Find My Trip" },
+  { href: "/shop",      label: "Shop" },
+  { href: "/about",     label: "About" },
 ];
 
 export default function Navbar({ onPlanTrip = () => {} }: NavbarProps) {

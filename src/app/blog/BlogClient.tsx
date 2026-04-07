@@ -185,8 +185,15 @@ export default function BlogClient() {
     const params = new URLSearchParams(window.location.search);
     const q = params.get("q");
     const r = params.get("region");
+    const mt = params.get("mainTab");
     if (q) setSearch(q);
     if (r) setRegionFilter(r);
+    if (mt) {
+      setMainTab(mt);
+      if (mt === "india") setRegionFilter("india");
+      else if (mt === "international") setRegionFilter("international");
+      else setRegionFilter("all");
+    }
   }, []);
 
   // Close autocomplete on outside click
@@ -356,7 +363,7 @@ export default function BlogClient() {
             {/* ── Filters row ── */}
             <div className="space-y-4">
               {/* India / International top tabs */}
-              <div className="flex justify-center gap-2">
+              <div className="flex flex-wrap justify-center gap-2">
                 {MAIN_TABS.map((t) => (
                   <button
                     key={t.id}

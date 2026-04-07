@@ -142,6 +142,13 @@ export default function RootLayout({
             gtag('consent', 'update', { analytics_storage: 'granted' });
           `}
         </Script>
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8778466914590495"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
         {/* Travelpayouts Emerald — converts hotel/tour links to affiliate links */}
         <Script src="https://emrld.ltd/NTE1MTIx.js?t=515121" strategy="afterInteractive" />
         <script dangerouslySetInnerHTML={{ __html: `
