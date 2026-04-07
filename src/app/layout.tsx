@@ -6,6 +6,7 @@ import BackToTop from "@/components/ui/BackToTop";
 import PageProgress from "@/components/ui/PageProgress";
 import Toast from "@/components/ui/Toast";
 import EmailCaptureWrapper from "@/components/email/EmailCaptureWrapper";
+import CookieBanner from "@/components/ui/CookieBanner";
 import { blogPosts } from "@/data/blog";
 import "./globals.css";
 
@@ -183,6 +184,7 @@ export default function RootLayout({
         <BackToTop />
         <Toast />
         <EmailCaptureWrapper />
+        <CookieBanner />
       </body>
     </html>
   );

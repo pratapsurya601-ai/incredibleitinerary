@@ -14,7 +14,11 @@ import AdUnit from "@/components/ads/AdUnit";
 import AutoPdfCta from "@/components/blog/AutoPdfCta";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import AutoTableOfContents from "@/components/blog/AutoTableOfContents";
+import AffiliateDisclosure from "@/components/blog/AffiliateDisclosure";
+import AuthorBio from "@/components/blog/AuthorBio";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 import { getGeneratedPostDescription } from "@/lib/generated-meta";
+import { Calendar, Clock, MapPin } from "lucide-react";
 
 interface Props {
   params: { slug: string };
@@ -166,7 +170,8 @@ export default function BlogPostPage({ params }: Props) {
         ) : (
           // Fallback for future posts not yet built
           <>
-            <div className="relative h-[420px] overflow-hidden">
+            {/* ── HERO ── 60vh, dark overlay, breadcrumb + meta row */}
+            <div className="relative min-h-[60vh] flex flex-col justify-end overflow-hidden">
               <Image
                 src={post!.image}
                 alt={post!.imageAlt}
@@ -174,103 +179,123 @@ export default function BlogPostPage({ params }: Props) {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 max-w-[860px]">
-                <span className="inline-block bg-gold text-ink text-xs tracking-[0.12em] uppercase font-medium px-2.5 py-1 rounded-[1px] mb-4">
+              {/* Multi-stop gradient: readable top (breadcrumb) + dark bottom (title) */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, rgba(10,6,2,0.55) 0%, rgba(10,6,2,0.18) 35%, rgba(10,6,2,0.55) 65%, rgba(10,6,2,0.92) 100%)",
+                }}
+              />
+
+              {/* Breadcrumb — top left */}
+              <div className="absolute top-[80px] left-0 right-0 px-6 md:px-12">
+                <nav className="text-[0.7rem] text-white/60 flex items-center gap-1.5 max-w-[860px]">
+                  <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                  <span>/</span>
+                  <Link href="/blog" className="hover:text-white transition-colors">Guides</Link>
+                  <span>/</span>
+                  <span className="text-white/40 truncate max-w-[200px]">{post!.destination}</span>
+                </nav>
+              </div>
+
+              {/* Title block — bottom */}
+              <div className="relative z-10 px-6 md:px-12 pb-10 pt-8 max-w-[860px]">
+                <span className="inline-block bg-gold text-ink text-[0.65rem] tracking-[0.15em] uppercase font-semibold px-2.5 py-1 rounded-[1px] mb-4">
                   {post!.category}
                 </span>
-                <h1 className="font-serif text-[clamp(1.8rem,4vw,3rem)] font-light text-white leading-tight">
+                <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.18] mb-5">
                   {post!.title}
                 </h1>
-                <p className="text-white/60 text-sm mt-3">
-                  {post!.date} · {post!.readTime} read
-                </p>
+                {/* Meta row */}
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                  <span className="flex items-center gap-1.5 text-white/65 text-xs">
+                    <Calendar size={12} strokeWidth={1.75} />
+                    {post!.date}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-white/65 text-xs">
+                    <Clock size={12} strokeWidth={1.75} />
+                    {post!.readTime} read
+                  </span>
+                  <span className="flex items-center gap-1.5 text-white/65 text-xs">
+                    <MapPin size={12} strokeWidth={1.75} />
+                    {post!.destination}
+                  </span>
+                </div>
               </div>
             </div>
 
-            <div className="max-w-[780px] mx-auto px-6 py-16 text-center">
-              {/* Auto Table of Contents — sticky sidebar on desktop, pill on mobile */}
+            {/* ── ARTICLE BODY ── */}
+            <div className="max-w-[720px] mx-auto px-6 py-12">
+              {/* Auto TOC — sticky sidebar desktop, pill mobile */}
               <AutoTableOfContents />
-              <p className="font-serif text-xl text-muted font-light italic mb-8">
+
+              {/* Excerpt / intro */}
+              <p className="font-serif text-[1.15rem] text-muted font-light italic leading-[1.75] mb-8 border-l-2 border-gold/40 pl-5">
                 {post!.excerpt}
               </p>
+
+              {/* Affiliate disclosure */}
+              <AffiliateDisclosure />
+
               {/* Auto PDF CTA — shows only if this destination has a PDF */}
               <AutoPdfCta blogSlug={post!.slug} />
+
               {/* Affiliate block — hotels + tours */}
               <AffiliateBlock destination={post!.destination} />
+
               {/* Mid-article AdSense */}
               <AdUnit slot="2847391056" format="auto" />
-              <Link href="/blog" className="btn-gold inline-flex">
-                ← Back to Blog
-              </Link>
+
+              {/* Author bio */}
+              <AuthorBio date={post!.date} readTime={post!.readTime} />
+
+              {/* Related guides */}
+              <RelatedGuides currentSlug={post!.slug} />
+
+              <div className="mt-10 pt-6 border-t border-parchment-2">
+                <Link href="/blog" className="text-sm text-muted hover:text-gold transition-colors font-light">
+                  ← Back to all guides
+                </Link>
+              </div>
             </div>
           </>
         )}
 
-        {/* Related Guides */}
-        {!PostContent && (() => {
-          const related = getRelatedPosts(post!.slug, post!);
-          if (!related.length) return null;
-          return (
-            <div className="bg-parchment border-t border-parchment-2 py-14 px-6 md:px-12">
-              <div className="max-w-[860px] mx-auto">
-                <p className="text-[0.65rem] tracking-[0.18em] uppercase text-gold font-medium mb-2">You Might Also Like</p>
-                <h2 className="font-serif text-xl font-light text-ink mb-6">Related Destination Guides</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {related.map((r) => (
-                    <Link
-                      key={r.slug}
-                      href={`/blog/${r.slug}`}
-                      className="group block rounded-xl overflow-hidden border border-parchment-2 hover:border-gold hover:shadow-md transition-all duration-300 bg-white"
-                    >
-                      <div className="relative h-28 overflow-hidden">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={r.image} alt={r.imageAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
-                        <p className="absolute bottom-2 left-3 font-serif text-sm text-white font-light">{r.destination}</p>
-                      </div>
-                      <div className="p-3">
-                        <p className="text-[0.65rem] text-muted font-light">{r.duration} · {r.category}</p>
-                        <p className="text-xs text-gold-dark font-medium mt-1 group-hover:text-teal transition-colors">Read guide →</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })()}
-
         {/* Share bar */}
-        <div className="border-t border-parchment-2 bg-white py-5 px-6 md:px-12">
-          <div className="max-w-[780px] mx-auto flex items-center justify-between flex-wrap gap-4">
-            <p className="text-sm text-muted font-light">Enjoyed this guide? Share it with fellow travellers.</p>
-            <ShareButton title={post!.title} slug={post!.slug} />
+        {!PostContent && (
+          <div className="border-t border-parchment-2 bg-white py-5 px-6 md:px-12">
+            <div className="max-w-[720px] mx-auto flex items-center justify-between flex-wrap gap-4">
+              <p className="text-sm text-muted font-light">Enjoyed this guide? Share it with fellow travellers.</p>
+              <ShareButton title={post!.title} slug={post!.slug} />
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Bottom CTA */}
-        <div className="bg-parchment border-t border-parchment-2 py-16 px-6 md:px-12 text-center">
-          <div className="max-w-[520px] mx-auto">
-            <h2 className="font-serif text-[clamp(1.8rem,3vw,2.4rem)] font-light text-ink mb-3">
-              Ready to Visit {post!.destination}?
-            </h2>
-            <p className="text-sm text-muted font-light mb-7 leading-[1.8]">
-              We&apos;ll build a personalised itinerary around your exact dates, group size, and budget — completely free.
-            </p>
-            <div className="flex gap-3 justify-center flex-wrap">
-              <Link href="/" className="btn-gold inline-flex">
-                Plan My Free Trip →
-              </Link>
-              <Link
-                href="/blog"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-parchment-2 text-muted text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold hover:text-gold transition-all duration-200"
-              >
-                More Guides
-              </Link>
+        {!PostContent && (
+          <div className="bg-ink py-16 px-6 md:px-12 text-center">
+            <div className="max-w-[520px] mx-auto">
+              <h2 className="font-serif text-[clamp(1.8rem,3vw,2.4rem)] font-light text-white mb-3">
+                Ready to Visit {post!.destination}?
+              </h2>
+              <p className="text-sm text-white/55 font-light mb-7 leading-[1.8]">
+                We&apos;ll build a personalised itinerary around your exact dates, group size, and budget — completely free.
+              </p>
+              <div className="flex gap-3 justify-center flex-wrap">
+                <Link href="/contact" className="btn-gold inline-flex">
+                  Plan My Free Trip →
+                </Link>
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white/60 text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold/60 hover:text-gold transition-all duration-200"
+                >
+                  More Guides
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </main>
 
       <Footer />
@@ -295,21 +320,3 @@ function getPostContent(slug: string): (() => React.JSX.Element) | null {
 
 // React import needed for JSX.Element type
 import React from "react";
-import type { BlogPost } from "@/data/blog";
-
-/** Score-based related post finder — same country > same category > shared tags */
-function getRelatedPosts(currentSlug: string, current: BlogPost, count = 4): BlogPost[] {
-  return blogPosts
-    .filter((p) => p.slug !== currentSlug)
-    .map((p) => {
-      let score = 0;
-      if (p.country === current.country) score += 3;
-      if (p.category === current.category) score += 2;
-      const sharedTags = p.tags.filter((t) => current.tags.includes(t)).length;
-      score += sharedTags;
-      return { post: p, score };
-    })
-    .sort((a, b) => b.score - a.score)
-    .slice(0, count)
-    .map((x) => x.post);
-}
