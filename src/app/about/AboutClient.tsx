@@ -36,8 +36,8 @@ export default function AboutClient() {
         {/* ── HERO ── */}
         <div className="relative h-[55vh] min-h-[400px] overflow-hidden">
           <Image
-            src="/images/surya/blog-kedarnath-temple.jpg"
-            alt="Kedarnath temple with snow peaks — photographed by Surya Pratap"
+            src="/images/surya/surya-kedarnath-valley.jpg"
+            alt="Kedarnath valley trek — photographed by Surya Pratap"
             fill
             className="object-cover"
             priority
@@ -54,7 +54,7 @@ export default function AboutClient() {
             </h1>
           </div>
           <span className="absolute bottom-2 right-3 text-[10px] text-white/30 font-light">
-            📸 Kedarnath Temple, Oct 2022 — my own photo
+            📸 Kedarnath Valley, Oct 2022 — my own photo
           </span>
         </div>
 
@@ -167,13 +167,13 @@ export default function AboutClient() {
               </div>
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                 <Image
-                  src="/images/surya/surya-gangotri-glacier.jpg"
-                  alt="Surya at Gangotri glacier, June 2023"
+                  src="/images/surya/surya-gangotri-national-park.jpg"
+                  alt="Surya at Gangotri National Park entrance, June 2023"
                   fill className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-                <p className="absolute bottom-4 left-4 text-white font-serif text-base font-light">Gangotri Glacier, 2023</p>
+                <p className="absolute bottom-4 left-4 text-white font-serif text-base font-light">Gangotri National Park, 2023</p>
               </div>
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                 <Image
