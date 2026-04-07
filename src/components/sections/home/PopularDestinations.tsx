@@ -53,9 +53,9 @@ const BEST_INDIA_SLUGS = [
 // Build the static display list from ALL_DESTINATIONS where possible,
 // falling back to a minimal stub for slugs not in the pool (hampi, wayanad, coorg).
 const SLUG_FALLBACKS: Record<string, { name: string; duration: string; budget: string; tag: string; img: string }> = {
-  "/blog/hampi-3-days":   { name: "Hampi",   duration: "3 Days", budget: "From ₹6k",  tag: "🇮🇳 Heritage",  img: "https://images.unsplash.com/photo-1580181735843-cd86c3d29a2b?w=600&q=75" },
-  "/blog/wayanad-3-days": { name: "Wayanad", duration: "3 Days", budget: "From ₹8k",  tag: "🇮🇳 Nature",    img: "https://images.unsplash.com/photo-1626016220220-eacf90e94b76?w=600&q=75" },
-  "/blog/coorg-3-days":   { name: "Coorg",   duration: "3 Days", budget: "From ₹7k",  tag: "🇮🇳 Hills",     img: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=600&q=75" },
+  "/blog/hampi-3-days":   { name: "Hampi",   duration: "3 Days", budget: "From ₹6k",  tag: "🇮🇳 Heritage",  img: "https://images.unsplash.com/photo-1651569213711-b29d1fc3f995?w=600&q=75" },
+  "/blog/wayanad-3-days": { name: "Wayanad", duration: "3 Days", budget: "From ₹8k",  tag: "🇮🇳 Nature",    img: "https://images.unsplash.com/photo-1617140237554-df6a1b7c7c9c?w=600&q=75" },
+  "/blog/coorg-3-days":   { name: "Coorg",   duration: "3 Days", budget: "From ₹7k",  tag: "🇮🇳 Hills",     img: "https://images.unsplash.com/photo-1572968685644-5f3fb2b0c4e5?w=600&q=75" },
 };
 
 const SHOWN_DESTINATIONS = BEST_INDIA_SLUGS.map((slug) => {
