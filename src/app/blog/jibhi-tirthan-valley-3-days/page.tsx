@@ -2,41 +2,43 @@ import type { Metadata } from "next";
 import JibhiClient from "./JibhiClient";
 
 export const metadata: Metadata = {
-  title: "Jibhi & Tirthan Valley 3-Day Itinerary 2026: Himachal's Hidden Gem (2026 Guide)",
+  title: "Jibhi & Tirthan Valley 3 Days: The Himachal Trip Nobody Talks About",
   description:
-    "Plan your Jibhi & Tirthan Valley trip in 3 days. Complete Jibhi and Tirthan Valley travel guide — Great Himalayan National Park, Jalori Pass, Serolsar.",
+    "Complete 3-day Jibhi and Tirthan Valley itinerary — Jalori Pass, Serolsar Lake, Raghupur Fort, GHNP trout stream walks, waterfalls, budget ₹3,000/day. The peaceful Himachal alternative to crowded Manali.",
   keywords: [
-    "jibhi travel guide",
-    "tirthan valley itinerary",
-    "jibhi himachal pradesh",
-    "jalori pass trek",
-    "serolsar lake jibhi",
-    "great himalayan national park",
-    "jibhi homestay",
-    "hidden himachal destination",
+    "Jibhi travel guide",
+    "Tirthan Valley itinerary",
+    "Jibhi 3 days",
+    "Jalori Pass trek",
+    "Serolsar Lake",
+    "Raghupur Fort trek",
+    "GHNP Tirthan Valley",
+    "Himachal Pradesh hidden gem",
   ],
   openGraph: {
-    title: "Jibhi & Tirthan Valley 3 Days: Himachal's Hidden Gem (2026)",
+    title: "Jibhi & Tirthan Valley 3 Days: The Himachal Trip Nobody Talks About",
     description:
-      "Jalori Pass · Serolsar Lake · GHNP — Himachal's best kept secret with real costs.",
+      "Jalori Pass · Serolsar Lake · Raghupur Fort · GHNP — Himachal&apos;s best-kept secret with real costs and day-by-day itinerary.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1585087905632-6e3af9e60baf?w=1200&q=80",
+        url: "https://www.incredibleitinerary.com/images/blog/jibhi-valley.jpg",
         width: 1200,
         height: 630,
-        alt: "Jibhi Tirthan Valley Himachal Pradesh mountains",
+        alt: "Jibhi Tirthan Valley Himachal Pradesh wooden cottages mountains",
       },
     ],
     type: "article",
-    publishedTime: "2026-03-21T00:00:00Z",
-    authors: ["IncredibleItinerary"],
-    tags: ["Jibhi", "Tirthan Valley", "India", "Travel", "Himachal Pradesh"],
+    publishedTime: "2026-03-10T00:00:00Z",
+    modifiedTime: "2026-04-07T00:00:00Z",
+    authors: ["https://www.incredibleitinerary.com/about"],
+    tags: ["Jibhi", "Tirthan Valley", "Himachal Pradesh", "India", "Travel", "Jalori Pass"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jibhi & Tirthan Valley 3-Day Itinerary 2026: Trip Planner",
-    description: "Jalori Pass, Serolsar Lake, GHNP — Himachal's hidden gem, real costs.",
-    images: ["https://images.unsplash.com/photo-1585087905632-6e3af9e60baf?w=1200&q=80"],
+    title: "Jibhi & Tirthan Valley 3 Days: The Himachal Trip Nobody Talks About",
+    description:
+      "Jalori Pass, Serolsar Lake, Raghupur Fort, GHNP — Himachal hidden gem, real costs and itinerary.",
+    images: ["https://www.incredibleitinerary.com/images/blog/jibhi-valley.jpg"],
   },
   alternates: {
     canonical: "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
@@ -49,21 +51,21 @@ const jsonLd = {
     {
       "@type": "Article",
       "@id": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days#article",
-      "headline": "Jibhi & Tirthan Valley in 3 Days: Himachal's Hidden Gem (2026)",
+      "headline": "Jibhi & Tirthan Valley 3 Days: The Himachal Trip Nobody Talks About",
       "description":
-        "Complete Jibhi and Tirthan Valley travel guide with Great Himalayan National Park, Jalori Pass, Serolsar Lake, trout fishing and authentic Himachali homestays.",
+        "Complete 3-day Jibhi and Tirthan Valley itinerary — Jalori Pass, Serolsar Lake, Raghupur Fort, GHNP trout stream walks, waterfalls, budget ₹3,000/day. The peaceful Himachal alternative to crowded Manali.",
       "image": {
         "@type": "ImageObject",
-        "url": "https://images.unsplash.com/photo-1585087905632-6e3af9e60baf?w=1200&q=80",
+        "url": "https://www.incredibleitinerary.com/images/blog/jibhi-valley.jpg",
         "width": 1200,
         "height": 630,
       },
-      "datePublished": "2026-03-21T00:00:00Z",
-      "dateModified": "2026-03-21T00:00:00Z",
+      "datePublished": "2026-03-10T00:00:00Z",
+      "dateModified": "2026-04-07T00:00:00Z",
       "author": {
-        "@type": "Organization",
-        "name": "IncredibleItinerary",
-        "url": "https://www.incredibleitinerary.com",
+        "@type": "Person",
+        "name": "Surya Pratap",
+        "url": "https://www.incredibleitinerary.com/about",
       },
       "publisher": {
         "@type": "Organization",
@@ -78,10 +80,11 @@ const jsonLd = {
         "@type": "WebPage",
         "@id": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
       },
-      "keywords": "jibhi, tirthan valley, jalori pass, serolsar lake, great himalayan national park, himachal hidden gem",
+      "keywords":
+        "Jibhi travel guide, Tirthan Valley itinerary, Jibhi 3 days, Jalori Pass trek, Serolsar Lake, Raghupur Fort trek, GHNP Tirthan Valley, Himachal Pradesh hidden gem",
       "articleSection": "Travel Guides",
       "inLanguage": "en-IN",
-      "wordCount": 5000,
+      "wordCount": 5500,
     },
     {
       "@type": "BreadcrumbList",
@@ -101,77 +104,75 @@ const jsonLd = {
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Jibhi & Tirthan Valley in 3 Days",
+          "name": "Jibhi & Tirthan Valley 3 Days",
           "item": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
         },
       ],
     },
-        {
+    {
       "@type": "TouristDestination",
       "name": "Jibhi & Tirthan Valley, Himachal Pradesh, India",
-      "description": "A hidden gem in Himachal Pradesh's Kullu district — a peaceful valley known for traditional wooden homestays, trout-filled rivers, the Great Himalayan National Park, and Jalori Pass treks.",
+      "description":
+        "A hidden gem in the Banjar Valley, Kullu district — peaceful wooden cottages, trout-filled rivers, Jalori Pass, Serolsar Lake, Raghupur Fort and the Great Himalayan National Park UNESCO buffer zone.",
       "url": "https://www.incredibleitinerary.com/blog/jibhi-tirthan-valley-3-days",
-      "touristType": ["Eco Tourism", "Adventure Tourism", "Wellness Tourism"],
+      "touristType": ["Eco Tourism", "Adventure Tourism", "Nature Tourism"],
     },
   ],
 };
 
-
-// FAQPage schema — separate block (must NOT be inside @graph with Article)
-// Google requires FAQPage as standalone script to avoid "Duplicate field" error
 const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How to reach Jibhi from Delhi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Delhi to Jibhi: 510km, 10-12 hours by road via Chandigarh-Shimla-Aut-Banjar. Overnight bus from Delhi to Kullu/Bhuntar (Rs.600-Rs.1,200), then local taxi to Jibhi (Rs.800-Rs.1,200, 1.5hrs). Best to drive.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "What is Jibhi known for?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Jibhi is a small village in the Tirthan Valley, known for its extreme peace and quiet, traditional Himachali wooden houses, the Tirthan River for trout fishing, Jalori Pass (3,120m) just 8km away, and the Great Himalayan National Park buffer zone. Very few tourists compared to Manali or Shimla.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "What is the best time to visit Jibhi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "March to June for pleasant weather (15-25°C) and clear views. September to November for post-monsoon clarity and golden autumn leaves. December to February for snowfall — Jalori Pass is snow-covered and stunning but the road may be closed. Avoid July-August — heavy monsoon rains, leeches on trails, landslides on the road.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "Is Jibhi better than Manali?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Jibhi is better if you want peace, nature and authenticity. Manali is better for adventure sports, nightlife and more tourist infrastructure. Jibhi has no Mall Road crowds, no traffic jams, and almost no commercialisation. It is what Manali was 20 years ago. If you want a quiet mountain retreat with riverside homestays, choose Jibhi.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "What are the best treks near Jibhi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Jalori Pass to Serolsar Lake (5km one way, easy, 2-3 hours) is the most popular. Raghupur Fort trek from Jalori Pass (3km, easy, 1.5 hours) offers panoramic views. The Great Himalayan National Park has multi-day treks starting from Gushaini (permits required). Chehni Kothi trek (7km from Jibhi, moderate) leads to a 1,500-year-old tower temple.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a 3-day Jibhi trip cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A budget trip costs Rs.4,000-Rs.7,000 per person (homestay Rs.500-Rs.800/night, meals included). A mid-range trip costs Rs.8,000-Rs.15,000 per person (riverside cottage, guided treks). Transport from Delhi adds Rs.600-Rs.1,500 each way by bus, or Rs.3,000-Rs.5,000 per person if sharing a taxi.",
-          },
-        },
-      ],
+    {
+      "@type": "Question",
+      "name": "How do I reach Jibhi from Delhi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From Delhi, take an overnight HRTC bus to Aut (12 hrs, Rs.700–Rs.1,000), then a local cab to Jibhi (45 min, Rs.500–Rs.600). Total cost: Rs.1,200–Rs.1,500. Alternatively fly to Bhuntar (Kullu) and take a taxi to Jibhi (1 hr, Rs.1,200–Rs.1,500). Driving is also popular — 500km via Chandigarh, 10–12 hrs.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best time to visit Jibhi and Tirthan Valley?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "April to June (18–22°C, snow patches at Jalori Pass, apple blossoms, clear skies) and September to November (golden foliage, fewer tourists, sharp mountain views) are ideal. Avoid July–August — heavy monsoon rains bring landslide risk on the valley roads and leeches on every forest trail.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Is Jibhi better than Manali?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jibhi is better if you want peace, authentic Himachali homestays, and nature without crowds. It costs 30–40% less than Manali, treks are accessible without tour operators, and there is zero Rohtang Pass tourist circus. Manali wins for adventure sports, nightlife and better transport connectivity. Jibhi is what Manali was 20 years ago.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What are the best treks near Jibhi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jalori Pass to Serolsar Lake (5km one-way, easy, 2.5–3 hrs through deodar forest) is the most popular. Raghupur Fort from Jalori Pass (4km, easy, 2 hrs, fewer crowds and extraordinary meadow views) is equally worthwhile. Both start from Jalori Pass, which is 10km from Jibhi by road.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What is the budget for a 3-day Jibhi trip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Budget travellers can manage Rs.2,500–Rs.3,500/day (homestay with meals Rs.800–Rs.1,500, local transport Rs.500, food Rs.300). Mid-range travellers spending Rs.5,000–Rs.7,000/day get a wooden cottage with mountain views and a private cab. Delhi to Jibhi transport adds Rs.1,200–Rs.1,500 per person one way by bus + cab.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an ATM in Jibhi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No ATM in Jibhi village. The nearest ATM is in Banjar town (15km away) or Aut (12km on the other side). Carry enough cash before entering the valley — UPI works at some homestays but do not rely on it.",
+      },
+    },
+  ],
 };
 
 export default function JibhiPage() {
