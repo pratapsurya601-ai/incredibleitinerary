@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/config";
-import { blogPosts } from "@/data/blog";
+import { GUIDES_DISPLAY } from "@/lib/siteStats";
 import FooterNewsletter from "@/components/layout/FooterNewsletter";
 
 
@@ -25,7 +25,7 @@ export default function Footer() {
               Incredible<span className="text-gold">Itinerary</span>
             </p>
             <p className="text-sm font-light leading-7 max-w-[240px] mb-5">
-              {blogPosts.length} free travel guides across India, Europe, Southeast Asia, Middle East, Americas, Africa &amp; Oceania. Real budgets. Real routes. No tourist traps.
+              {GUIDES_DISPLAY} free travel guides across India, Europe, Southeast Asia, Middle East, Americas, Africa &amp; Oceania. Real budgets. Real routes. No tourist traps.
             </p>
             <div className="flex gap-3 mb-4">
               {SOCIAL_LINKS.map((s) => (
@@ -62,6 +62,7 @@ export default function Footer() {
                 { label: "Share Your Photos", href: "/contribute" },
                 { label: "Privacy Policy", href: "/privacy" },
                 { label: "Terms of Use", href: "/terms" },
+                { label: "Affiliate Disclosure", href: "/disclosure" },
               ].map((item) => (
                 <li key={item.label}><Link href={item.href} className="text-sm text-white/55 hover:text-gold transition-colors">{item.label}</Link></li>
               ))}
@@ -94,7 +95,7 @@ export default function Footer() {
         <div className="border-t border-white/[0.06] pt-8 mb-10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs tracking-[0.18em] uppercase text-gold">
-              {blogPosts.length}+ Free Guides — India, Europe, Southeast Asia, Middle East &amp; More
+              {GUIDES_DISPLAY} Free Guides — India, Europe, Southeast Asia, Middle East &amp; More
             </p>
             <Link
               href="/blog"

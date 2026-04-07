@@ -77,7 +77,7 @@ export default function Navbar({ onPlanTrip = () => {} }: NavbarProps) {
 
   const linkClass = (href: string) => {
     const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
-    return `nav-link text-[0.73rem] tracking-[0.13em] uppercase transition-colors duration-300 hover:text-gold ${
+    return `nav-link text-[0.82rem] tracking-[0.04em] transition-colors duration-300 hover:text-gold ${
       isActive ? "active" : scrolled ? "text-muted" : "text-white"
     }`;
   };
@@ -138,7 +138,7 @@ export default function Navbar({ onPlanTrip = () => {} }: NavbarProps) {
           <li ref={toolsRef} className="relative">
             <button
               onClick={() => setToolsOpen((o) => !o)}
-              className={`flex items-center gap-1 text-[0.73rem] tracking-[0.13em] uppercase transition-colors duration-300 hover:text-gold ${
+              className={`flex items-center gap-1 text-[0.82rem] tracking-[0.04em] transition-colors duration-300 hover:text-gold ${
                 scrolled ? "text-muted" : "text-white"
               }`}
               aria-expanded={toolsOpen}
@@ -210,7 +210,7 @@ export default function Navbar({ onPlanTrip = () => {} }: NavbarProps) {
           <li>
             <button
               onClick={onPlanTrip}
-              className="bg-gold text-ink px-5 py-2.5 text-[0.73rem] tracking-[0.1em] uppercase font-medium rounded-[1px] transition-all duration-300 hover:bg-gold-dark hover:text-white hover:-translate-y-px"
+              className="bg-gold text-ink px-5 py-2.5 text-[0.82rem] tracking-[0.04em] font-medium rounded-[1px] transition-all duration-300 hover:bg-gold-dark hover:text-white hover:-translate-y-px"
             >
               Plan My Trip ↗
             </button>

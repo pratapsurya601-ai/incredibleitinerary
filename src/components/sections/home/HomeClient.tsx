@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { trackEvent } from "@/lib/analytics";
 import HeroSection from "./HeroSection";
+import AboveFoldTrustBar from "./AboveFoldTrustBar";
 import TrustStripSection from "./TrustStripSection";
 import PopularDestinations from "./PopularDestinations";
 import HowItWorksSection from "./HowItWorksSection";
@@ -35,6 +36,7 @@ export default function HomeClient() {
       <Navbar onPlanTrip={open} />
       <main id="main-content">
         <HeroSection onPlanTrip={open} />
+        <AboveFoldTrustBar />
 
         {/* ── SEASONAL STRIP ── */}
         <div className="bg-gold/10 border-y border-gold/20 py-3 px-6">
