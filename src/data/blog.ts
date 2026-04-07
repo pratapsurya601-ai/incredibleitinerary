@@ -368,6 +368,18 @@ export const blogPosts: BlogPost[] = [
     pexelsQuery: "ooty nilgiri tea plantation hills tamil nadu india",
   },
   {
+    slug: "chennai-2-days",
+    title: "Chennai 2 Days: The Real City Guide (Temples, Marina Beach & Food)",
+    excerpt: "Marina Beach at sunrise, Kapaleeshwarar Temple, Mylapore streets, Chola bronzes, and South India's best filter coffee. Complete 2-day Chennai guide with real costs.",
+    date: "April 1, 2026", readTime: "10 min read", category: "South India",
+    tags: ["Tamil Nadu", "City Guide", "Food", "History", "Temples"],
+    image: "/images/blog/chennai-marina-beach.jpg",
+    imageAlt: "Marina Beach Chennai sunrise fishing boats Tamil Nadu", featured: false,
+    destination: "Chennai", duration: "2 Days",
+    pexelsQuery: "marina beach chennai sunrise fishing boats tamil nadu india",
+    country: "India",
+  },
+  {
     slug: "darjeeling-4-days",
     title: "Darjeeling in 4 Days: Tiger Hill, Toy Train & Tea Estates (2026)",
     excerpt: "Kangchenjunga at sunrise from Tiger Hill, the world-famous toy train, Happy Valley Tea Estate, and momos that put Delhi to shame. The original Indian hill station.",
