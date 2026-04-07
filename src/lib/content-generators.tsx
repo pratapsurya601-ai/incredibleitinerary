@@ -242,7 +242,6 @@ function inflatePrice(priceStr: string, multiplier: number): string {
  *  the disclaimer produces misleading figures, so we serve unadjusted 2026
  *  prices instead.
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getInflationMultiplier(_publishDate: string, _isIndia: boolean): number {
   return 1;
 }

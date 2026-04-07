@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import NewsletterSection from "@/components/sections/home/NewsletterSection";
-import { blogPosts } from "@/data/blog";
+import { DESTINATIONS_DISPLAY } from "@/lib/siteStats";
 import InquiryModal from "@/components/ui/InquiryModal";
 
 const TRIPS = [
@@ -62,7 +62,7 @@ export default function AboutClient() {
         <div className="bg-ink py-8 px-6 md:px-12">
           <div className="max-w-[1180px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { num: `${blogPosts.length}+`, label: "Free Guides Written" },
+              { num: DESTINATIONS_DISPLAY, label: "Free Guides Written" },
               { num: "Countless", label: "Solo Trips Across India" },
               { num: "24",   label: "Years Old" },
               { num: "100%", label: "Solo Built" },
@@ -82,7 +82,7 @@ export default function AboutClient() {
 
             {/* Photo */}
             <div className="relative order-2 lg:order-1">
-              <div className="rounded-2xl overflow-hidden aspect-[3/4] max-w-[420px] mx-auto lg:mx-0">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-w-[420px] mx-auto lg:mx-0">
                 <Image
                   src="/images/surya/surya-author-primary.jpg"
                   alt="Surya Pratap — Founder of IncredibleItinerary"
@@ -134,7 +134,7 @@ export default function AboutClient() {
                 <p className="font-medium text-ink">
                   IncredibleItinerary is entirely solo-built — every guide, every tool, every line of code.
                   What started as one guide for a friend planning Kashmir turned into India&apos;s most detailed
-                  free travel planning platform. {blogPosts.length}+ guides. 2 working tools. Zero sponsored content.
+                  free travel planning platform. {DESTINATIONS_DISPLAY} guides. 2 working tools. Zero sponsored content.
                 </p>
               </div>
             </div>
@@ -219,7 +219,7 @@ export default function AboutClient() {
                 { icon: "🚫", title: "Zero sponsored picks", desc: "No hotel or tour paid to be in these guides. I recommend based on quality and value only." },
                 { icon: "🧠", title: "Written for your trip type", desc: "Every guide has separate plans for budget travellers, couples, families, and adventure seekers — not one generic route." },
                 { icon: "📍", title: "The mistakes section", desc: "Every guide has a 'common mistakes' section. The traps. The rip-offs. The things I had to learn the hard way." },
-                { icon: "🔓", title: "Completely free", desc: `${blogPosts.length} full guides, no email required, no paywall. If I can help someone plan a better trip — that's the point.` },
+                { icon: "🔓", title: "Completely free", desc: `${DESTINATIONS_DISPLAY} guides, no email required, no paywall. If I can help someone plan a better trip — that's the point.` },
               ].map((v) => (
                 <div key={v.title}
                   className="bg-white rounded-xl border border-parchment-2 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
@@ -254,7 +254,7 @@ export default function AboutClient() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://www.linkedin.com/in/surya-pratap-singh-490a18320"
+                  href="https://www.linkedin.com/in/surya-pratap-601"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#0A66C2] text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-[#0A66C2]/90 transition-colors"

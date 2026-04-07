@@ -8,6 +8,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import ShareButton from "@/components/ui/ShareButton";
 import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
 import { blogPosts, type BlogPost } from "@/data/blog";
+import { HAND_WRITTEN_COUNT } from "@/lib/siteStats";
 import { getPublishedGeneratedPosts, type GeneratedPost } from "@/data/generated-posts";
 
 const PAGE_SIZE = 24;
@@ -171,14 +172,15 @@ export default function BlogClient() {
 
   // Combine regular blog posts with published generated posts
   const allPosts = useMemo<ListingPost[]>(() => {
-    const regular = blogPosts.map(blogPostToListing);
-    const generated = getPublishedGeneratedPosts().map(generatedPostToListing);
-    // Sort by date descending so newest appear first
-    return [...regular, ...generated].sort((a, b) => {
-      const da = new Date(a.date).getTime();
-      const db = new Date(b.date).getTime();
-      return db - da;
-    });
+    // Hand-written posts sorted by date descending
+    const regular = blogPosts
+      .map(blogPostToListing)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    // Generated posts sorted by date descending — always appear after hand-written
+    const generated = getPublishedGeneratedPosts()
+      .map(generatedPostToListing)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    return [...regular, ...generated];
   }, []);
 
   // Read URL params on mount
@@ -289,7 +291,7 @@ export default function BlogClient() {
             <h1 className="serif-title text-[clamp(2.2rem,4vw,3.5rem)] text-ink mb-2">
               {filtered.length > 0 && hasActiveFilter
                 ? `${filtered.length} Guides Found`
-                : `${allPosts.length} Free Travel Guides`}
+                : `${HAND_WRITTEN_COUNT}+ Free Travel Guides`}
             </h1>
             <p className="text-sm text-muted font-light max-w-[480px] mx-auto leading-relaxed mb-8">
               Real budgets. Real timings. Real routes. No filler. Pick a destination or browse by category.

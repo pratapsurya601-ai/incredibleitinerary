@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "@/data/blog";
 import type { BlogPost } from "@/data/blog";
+import { DESTINATIONS_DISPLAY } from "@/lib/siteStats";
 
 /* ═══════════════════════════════════════════════════
    TYPES
@@ -330,15 +331,15 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
         </h1>
         <p className="text-base text-muted font-light leading-relaxed mb-3 max-w-md">
           Answer 5 questions. We&apos;ll match you with the best guides from{" "}
-          <strong className="text-ink font-medium">{blogPosts.length}+ destinations worldwide</strong>{" "}
+          <strong className="text-ink font-medium">{DESTINATIONS_DISPLAY} destinations</strong>{" "}
           — scored to your exact preferences.
         </p>
         <p className="text-xs text-muted/60 font-light mb-8">
-          {blogPosts.length}+ destinations &middot; Personalized match scores &middot; No signup required &middot; Free forever
+          {DESTINATIONS_DISPLAY} destinations &middot; Personalized match scores &middot; No signup required &middot; Free forever
         </p>
 
         <div className="grid grid-cols-4 gap-4 mb-10 w-full max-w-xs">
-          {([[`${blogPosts.length}+`, "Destinations"], ["5", "Questions"], ["<1min", "Takes"], ["Free", "Forever"]] as [string, string][]).map(
+          {([[DESTINATIONS_DISPLAY, "Destinations"], ["5", "Questions"], ["<1min", "Takes"], ["Free", "Forever"]] as [string, string][]).map(
             ([val, lbl]) => (
               <div key={lbl} className="text-center">
                 <p className="font-serif text-xl font-light text-ink">{val}</p>
