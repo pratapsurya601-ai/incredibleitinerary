@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import NewsletterSection from "@/components/sections/home/NewsletterSection";
-import { DESTINATIONS_DISPLAY } from "@/lib/siteStats";
+import { DESTINATIONS_DISPLAY, GUIDES_DISPLAY } from "@/lib/siteStats";
 import InquiryModal from "@/components/ui/InquiryModal";
 
 const TRIPS = [
@@ -63,7 +63,7 @@ export default function AboutClient() {
         <div className="bg-ink py-8 px-6 md:px-12">
           <div className="max-w-[1180px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { num: DESTINATIONS_DISPLAY, label: "Free Guides Written" },
+              { num: GUIDES_DISPLAY, label: "Free Guides Written" },
               { num: "Countless", label: "Solo Trips Across India" },
               { num: "24",   label: "Years Old" },
               { num: "100%", label: "Solo Built" },

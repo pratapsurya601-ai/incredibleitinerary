@@ -47,7 +47,7 @@ const EXP_OPTS = [
 ];
 
 const REGION_OPTS = [
-  { id: "india",       emoji: "🇮🇳", label: "India",         desc: "60+ guides across all regions" },
+  { id: "india",       emoji: "🇮🇳", label: "India",         desc: "362+ guides across all regions" },
   { id: "sea",         emoji: "🌏", label: "Southeast Asia", desc: "Bali, Thailand, Vietnam, Malaysia" },
   { id: "east-asia",   emoji: "🗾",  label: "East Asia",      desc: "Japan, Korea" },
   { id: "europe",      emoji: "🏰", label: "Europe",         desc: "Italy, Spain, Portugal, Greece" },
