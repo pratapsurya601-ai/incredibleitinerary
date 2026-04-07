@@ -247,10 +247,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "hampi-3-days",
-    title: "Hampi in 3 Days: Vijayanagara Ruins, Boulders & Hippie Island (2026)",
+    title: "Hampi in 3 Days: Ruins, Sunrises & the Vijayanagara Empire (2026)",
     excerpt: "India's most dramatic ruin landscape — 1,600 monuments, world-class bouldering, and the most laid-back island café scene in South India.",
-    date: "March 21, 2026", readTime: "13 min", category: "Heritage",
-    tags: ["Hampi", "3 Days", "Karnataka", "Ruins", "Bouldering", "Hippie Island"],
+    date: "March 21, 2026", readTime: "13 min", category: "Heritage & Culture",
+    tags: ["Hampi", "3 Days", "Karnataka", "Ruins", "UNESCO", "Heritage", "Budget"],
     image: "https://images.unsplash.com/photo-1651569213711-b29d1fc3f995?w=800&q=80",
     imageAlt: "Hampi Vijayanagara ruins boulders Karnataka", featured: false,
     destination: "Hampi", duration: "3 Days",

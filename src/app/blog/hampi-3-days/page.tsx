@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import HampiClient from "./HampiClient";
 
 export const metadata: Metadata = {
-  title: "Hampi 3-Day Itinerary 2026: India's Most Surreal Landscape (2026)",
+  title: "Hampi in 3 Days: Complete Ruins Guide + Itinerary & Budget (2026)",
   description:
-    "Plan your Hampi trip in 3 days. Complete Hampi travel guide — Virupaksha Temple, Vittala Temple stone chariot, boulder treks, Sanapur Lake, hippie island..",
+    "Complete Hampi travel guide — Vittala Temple, Stone Chariot, Matanga Hill sunrise, Anegundi village. 3-day itinerary with budget breakdown from ₹1,500/day.",
   keywords: [
     "hampi itinerary 3 days",
     "hampi travel guide 2026",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     "hampi from bangalore",
   ],
   openGraph: {
-    title: "Hampi 3-Day Itinerary 2026: India's Most Surreal Landscape (2026)",
+    title: "Hampi in 3 Days: Complete Ruins Guide + Itinerary & Budget (2026)",
     description:
-      "Vittala Temple · Boulder Treks · Hippie Island — complete guide with real costs.",
+      "Vittala Temple · Stone Chariot · Matanga Hill sunrise · Anegundi village — complete guide with budget from ₹1,500/day.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1600100317816-0a8b8a4fba14?w=1200&q=80",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hampi 3-Day Itinerary 2026: Trip Planner",
-    description: "Virupaksha Temple, Vittala Temple, boulder treks — 4 plans, real costs.",
+    title: "Hampi in 3 Days: Complete Ruins Guide + Itinerary & Budget (2026)",
+    description: "Vittala Temple, Stone Chariot, Matanga Hill sunrise — 3-day itinerary with budget from ₹1,500/day.",
     images: ["https://images.unsplash.com/photo-1600100317816-0a8b8a4fba14?w=1200&q=80"],
   },
   alternates: {
@@ -61,9 +61,9 @@ const jsonLd = {
       "datePublished": "2026-03-21T00:00:00Z",
       "dateModified": "2026-03-21T00:00:00Z",
       "author": {
-        "@type": "Organization",
-        "name": "IncredibleItinerary",
-        "url": "https://www.incredibleitinerary.com",
+        "@type": "Person",
+        "name": "Surya Pratap",
+        "url": "https://www.incredibleitinerary.com/about",
       },
       "publisher": {
         "@type": "Organization",
