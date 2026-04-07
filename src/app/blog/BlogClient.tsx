@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
 import ShareButton from "@/components/ui/ShareButton";
+import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
 import { blogPosts, type BlogPost } from "@/data/blog";
 import { getPublishedGeneratedPosts, type GeneratedPost } from "@/data/generated-posts";
 
@@ -618,6 +619,13 @@ function BlogCard({ post, isNew }: { post: ListingPost; isNew?: boolean }) {
           <span className="absolute top-2.5 right-2.5 text-xs font-semibold tracking-wider uppercase bg-gold text-ink px-2 py-0.5 rounded-full">
             {post.duration}
           </span>
+          <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <PinterestSaveButton
+              pageUrl={`https://www.incredibleitinerary.com/blog/${post.slug}`}
+              imageUrl={post.image}
+              description={`${post.title} — Free day-by-day itinerary on IncredibleItinerary.com`}
+            />
+          </div>
           {hasPdf && (
             <span className="absolute top-2.5 left-2.5 flex items-center gap-1 bg-ink/80 backdrop-blur-sm text-white text-[0.6rem] font-medium px-2 py-1 rounded-full border border-white/10">
               📄 PDF Guide

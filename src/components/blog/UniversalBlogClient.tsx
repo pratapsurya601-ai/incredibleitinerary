@@ -16,6 +16,7 @@ import InlineCTA from "@/components/blog/InlineCTA";
 import InlineSignup from "@/components/email/InlineSignup";
 import PhotoCta from "@/components/blog/PhotoCta";
 import AuthorByline from "@/components/blog/AuthorByline";
+import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
 import { AFFILIATE } from "@/lib/config";
 
 /* ── Types ─────────────────────────────────────────────────────────────── */
@@ -252,12 +253,19 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
 
           <div className="absolute top-24 left-0 right-0 px-6 md:px-14">
-            <div className="max-w-[860px] mx-auto flex items-center gap-2 text-white/50 text-xs">
-              <Link href="/" className="hover:text-gold transition-colors">Home</Link>
-              <span>/</span>
-              <Link href="/blog" className="hover:text-gold transition-colors">Blog</Link>
-              <span>/</span>
-              <span className="text-white/70">{data.destination}</span>
+            <div className="max-w-[860px] mx-auto flex items-center justify-between">
+              <div className="flex items-center gap-2 text-white/50 text-xs">
+                <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+                <span>/</span>
+                <Link href="/blog" className="hover:text-gold transition-colors">Blog</Link>
+                <span>/</span>
+                <span className="text-white/70">{data.destination}</span>
+              </div>
+              <PinterestSaveButton
+                pageUrl={`https://www.incredibleitinerary.com/blog/${data.slug}`}
+                imageUrl={`https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`}
+                description={`${data.destination} Travel Guide — Free day-by-day itinerary on IncredibleItinerary.com`}
+              />
             </div>
           </div>
 
