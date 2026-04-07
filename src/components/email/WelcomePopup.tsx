@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 const STORAGE_SUBSCRIBED = 'ii_subscribed';
 const STORAGE_DISMISSED  = 'ii_welcome_dismissed';
 const DISMISS_TTL_MS     = 7 * 24 * 60 * 60 * 1000; // 7 days
-const DELAY_MS           = 5_000; // 5 seconds after page load
+const DELAY_MS           = 40_000; // 40 seconds — enough time to read content before prompting
 
 function shouldSuppress(): boolean {
   try {

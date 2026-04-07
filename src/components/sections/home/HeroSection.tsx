@@ -43,7 +43,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
           className="font-serif text-[clamp(2rem,4vw,4rem)] font-light text-white leading-[1.08] mb-4"
           style={{ animation: "fadeUp .8s .15s both" }}
         >
-          India, planned properly.<br />
+          The world, planned properly.<br />
           <em className="italic text-gold-light">By someone who&apos;s actually been.</em>
         </h1>
 

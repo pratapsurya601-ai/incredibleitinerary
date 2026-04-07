@@ -592,7 +592,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Kerala's most underrated hill district — Chembra Peak heart lake, neolithic caves, jungle safari, and waterfalls. Complete 3-day Wayanad guide with real costs.",
     date: "April 7, 2026", readTime: "10 min", category: "South India",
     tags: ["Kerala", "Hill Station", "Wildlife", "Trekking", "Nature"],
-    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80",
     imageAlt: "Chembra Peak heart-shaped lake Wayanad Kerala Western Ghats", featured: false,
     destination: "Wayanad", duration: "3 Days",
     country: "India",

@@ -8,6 +8,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import ShareButton from "@/components/ui/ShareButton";
 import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
 import { blogPosts, type BlogPost } from "@/data/blog";
+import Image from "next/image";
 import { HAND_WRITTEN_COUNT } from "@/lib/siteStats";
 import { getPublishedGeneratedPosts, type GeneratedPost } from "@/data/generated-posts";
 
@@ -288,17 +289,37 @@ export default function BlogClient() {
     <>
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <main className="min-h-screen bg-cream pt-[72px]">
-        <div className="bg-parchment py-16 px-6 md:px-12 text-center">
-          <div className="max-w-[1180px] mx-auto">
-            <span className="section-label">Travel Guides & Itineraries</span>
-            <h1 className="serif-title text-[clamp(2.2rem,4vw,3.5rem)] text-ink mb-2">
+        {/* ── HERO ── */}
+        <div className="relative h-[44vh] min-h-[280px] overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&q=80"
+            alt="Travel guides — India and worldwide destinations"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to bottom, rgba(10,6,2,0.35) 0%, rgba(10,6,2,0.55) 60%, rgba(10,6,2,0.88) 100%)" }}
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-end pb-10 px-6 text-center">
+            <span className="text-[0.65rem] tracking-[0.22em] uppercase text-gold font-medium mb-3">
+              Travel Guides &amp; Itineraries
+            </span>
+            <h1 className="font-serif text-[clamp(2rem,5vw,3.4rem)] font-light text-white leading-tight mb-2">
               {filtered.length > 0 && hasActiveFilter
                 ? `${filtered.length} Guides Found`
                 : `${HAND_WRITTEN_COUNT}+ Free Travel Guides`}
             </h1>
-            <p className="text-sm text-muted font-light max-w-[480px] mx-auto leading-relaxed mb-8">
-              Real budgets. Real timings. Real routes. No filler. Pick a destination or browse by category.
+            <p className="text-sm text-white/60 font-light max-w-[420px] leading-relaxed">
+              Real budgets. Real timings. Real routes. No filler.
             </p>
+          </div>
+        </div>
+
+        {/* ── SEARCH + FILTERS ── */}
+        <div className="bg-parchment py-8 px-6 md:px-12 text-center">
+          <div className="max-w-[1180px] mx-auto">
 
             {/* Search */}
             <div ref={searchRef} className="max-w-xl mx-auto relative mb-8">

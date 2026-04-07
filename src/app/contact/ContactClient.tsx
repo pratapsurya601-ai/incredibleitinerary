@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import { blogPosts } from "@/data/blog";
 import Footer from "@/components/layout/Footer";
@@ -197,19 +198,29 @@ export default function ContactClient() {
       <main className="bg-cream min-h-screen pt-[72px]">
 
         {/* Hero */}
-        <div className="bg-parchment py-16 px-6 md:px-12 text-center border-b border-parchment-2">
-          <div className="max-w-[640px] mx-auto">
-            <span className="section-label">Get in Touch</span>
-            <h1 className="font-serif text-[clamp(2.2rem,4vw,3.2rem)] font-light text-ink mb-4 leading-tight">
-              Let&apos;s Plan Your<br />
-              <em className="italic text-teal">Perfect Trip</em>
+        <div className="relative h-[46vh] min-h-[300px] overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
+            alt="Plan your perfect trip — mountain landscape"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to bottom, rgba(10,6,2,0.25) 0%, rgba(10,6,2,0.5) 55%, rgba(10,6,2,0.90) 100%)" }}
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-end pb-10 px-6 text-center">
+            <span className="text-[0.65rem] tracking-[0.22em] uppercase text-gold font-medium mb-3">
+              Get in Touch
+            </span>
+            <h1 className="font-serif text-[clamp(2rem,5vw,3.2rem)] font-light text-white leading-tight mb-3">
+              Let&apos;s Plan Your <em className="italic text-gold">Perfect Trip</em>
             </h1>
-            <p className="text-sm text-muted font-light leading-relaxed mb-8 max-w-[480px] mx-auto">
-              Tell us where you want to go, your travel dates, and your budget.
-              We&apos;ll send you a personalised day-by-day itinerary within 24 hours — completely free.
+            <p className="text-sm text-white/60 font-light max-w-[400px] leading-relaxed mb-5">
+              Tell us where you want to go — we&apos;ll build a day-by-day itinerary within 24 hours, free.
             </p>
-            {/* Trust bar */}
-            <div className="flex items-center justify-center gap-6 flex-wrap text-xs text-muted">
+            <div className="flex items-center justify-center gap-5 flex-wrap text-xs text-white/50">
               {["✦ Free service", "⚡ 24hr response", "🌍 30+ countries", `${blogPosts.length}+ free guides`].map(t => (
                 <span key={t}>{t}</span>
               ))}

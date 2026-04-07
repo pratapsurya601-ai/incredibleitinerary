@@ -20,7 +20,7 @@ const NAV_LINKS = [
   { href: "/honeymoon", label: "💑 Honeymoon" },
   { href: "/quiz",      label: "Find My Trip" },
   { href: "/shop",      label: "Shop" },
-  { href: "/about",     label: "About" },
+  { href: "/about",     label: "My Story" },
 ];
 
 export default function Navbar({ onPlanTrip = () => {} }: NavbarProps) {
@@ -186,10 +186,10 @@ export default function Navbar({ onPlanTrip = () => {} }: NavbarProps) {
             </Link>
           </li>
 
-          {/* About */}
+          {/* My Story */}
           <li>
             <Link href="/about" className={linkClass("/about")}>
-              About
+              My Story
             </Link>
           </li>
 
