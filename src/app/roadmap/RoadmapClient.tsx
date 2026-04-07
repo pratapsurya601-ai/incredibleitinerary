@@ -1,1084 +1,887 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import {
+  AlertTriangle,
+  TrendingUp,
+  Link2,
+  Globe,
+  Calendar,
+  XCircle,
+  ChevronDown,
+  ChevronUp,
+  ExternalLink,
+} from "lucide-react";
 
-// ─── MONTHLY GOALS ────────────────────────────────────────────────────────────
+// ─── TYPES ────────────────────────────────────────────────────────────────────
 
-const MONTHLY_GOALS = [
-  {
-    month: "Apr 2026", phase: 1, posts: 12, cumPosts: 374,
-    traffic: "0 → 500", backlinks: 12, revenue: "₹0",
-    milestones: ["Submit all 362 posts to GSC", "First 12 Reddit answers live", "First GSC impressions appear"],
-    strategy: "Foundation — submit, answer Reddit, publish aggressively",
-  },
-  {
-    month: "May 2026", phase: 1, posts: 12, cumPosts: 386,
-    traffic: "500 → 2K", backlinks: 36, revenue: "₹500–2K",
-    milestones: ["First affiliate click tracked", "50 total backlinks", "Newsletter signup form live"],
-    strategy: "Double down on whatever posts get first impressions",
-  },
-  {
-    month: "Jun 2026", phase: 1, posts: 12, cumPosts: 398,
-    traffic: "2K → 6K", backlinks: 60, revenue: "₹2K–8K",
-    milestones: ["First ₹1K affiliate commission", "5K monthly visits milestone", "PDF #11 and #12 published"],
-    strategy: "Identify top 10 performing posts — update them first",
-  },
-  {
-    month: "Jul 2026", phase: 1, posts: 10, cumPosts: 408,
-    traffic: "6K → 12K", backlinks: 85, revenue: "₹5K–15K",
-    milestones: ["10K monthly visits", "Media kit page live", "Apply to Google AdSense"],
-    strategy: "Focus SEO on posts getting 50+ impressions but not clicking",
-  },
-  {
-    month: "Aug 2026", phase: 1, posts: 10, cumPosts: 418,
-    traffic: "12K → 20K", backlinks: 110, revenue: "₹10K–25K",
-    milestones: ["AdSense live", "20K monthly visits", "Email list: 200 subscribers"],
-    strategy: "Internal linking audit — every new post links to 5 existing posts",
-  },
-  {
-    month: "Sep 2026", phase: 1, posts: 10, cumPosts: 428,
-    traffic: "20K → 30K", backlinks: 140, revenue: "₹15K–35K",
-    milestones: ["25K monthly visits (Phase 1 goal)", "Evaluate Mediavine eligibility", "Start writing SE Asia posts"],
-    strategy: "Begin Phase 2 prep — 2 SE Asia posts alongside India work",
-  },
-  {
-    month: "Oct 2026", phase: 2, posts: 12, cumPosts: 440,
-    traffic: "30K → 40K", backlinks: 170, revenue: "₹20K–50K",
-    milestones: ["Start Bali/Thailand guides", "Brand positioning update", "Custom itinerary service launches at ₹1,499"],
-    strategy: "SE Asia pivot — 50% India, 50% SE Asia posts",
-  },
-  {
-    month: "Nov 2026", phase: 2, posts: 12, cumPosts: 452,
-    traffic: "40K → 55K", backlinks: 200, revenue: "₹35K–80K",
-    milestones: ["50K sessions — Mediavine application", "Japan guides complete", "Display ads live"],
-    strategy: "Traffic compounding — old posts now ranking, focus on CTR optimization",
-  },
-  {
-    month: "Dec 2026", phase: 2, posts: 10, cumPosts: 462,
-    traffic: "55K → 70K", backlinks: 235, revenue: "₹60K–1.2L",
-    milestones: ["₹1L/month first time", "Mediavine approved and live", "200 email subscribers"],
-    strategy: "Peak travel season — update all India winter posts with 2026–27 prices",
-  },
-  {
-    month: "Jan 2027", phase: 2, posts: 10, cumPosts: 472,
-    traffic: "70K → 90K", backlinks: 270, revenue: "₹80K–1.5L",
-    milestones: ["Europe research begins", "Hire first freelance researcher", "Pinterest account active"],
-    strategy: "Diversify traffic sources — Pinterest for visual destination content",
-  },
-  {
-    month: "Feb 2027", phase: 2, posts: 10, cumPosts: 482,
-    traffic: "90K → 120K", backlinks: 310, revenue: "₹1L–2L",
-    milestones: ["100K monthly visits milestone", "First sponsorship inquiry", "PDF bundle launched"],
-    strategy: "Content upgrades — add video embeds to top 20 posts",
-  },
-  {
-    month: "Mar 2027", phase: 2, posts: 10, cumPosts: 492,
-    traffic: "120K → 150K", backlinks: 350, revenue: "₹1.5L–3L",
-    milestones: ["Phase 2 complete: 50+ country coverage", "Apply to Raptive premium", "Hire second researcher"],
-    strategy: "Prepare Phase 3 — selective global expansion with quality bar",
-  },
-];
-
-// ─── WEEKLY SCHEDULE ─────────────────────────────────────────────────────────
-
-const WEEKLY_SCHEDULE = [
-  // MONTH 1 — APRIL 2026
-  {
-    week: "Week 1 — Apr 7–13",
-    month: "April 2026",
-    theme: "Northeast India begins + submit all to GSC",
-    posts: [
-      { dest: "Tawang, Arunachal Pradesh — 4 Days", type: "India", why: "Highest-altitude monastery, zero good guides online" },
-      { dest: "Valley of Flowers Trek — 3 Days", type: "India", why: "UNESCO, huge search volume, seasonal (Jul–Sep best time)" },
-      { dest: "Jim Corbett National Park — 2 Days", type: "India", why: "Most famous wildlife reserve, massive search volume" },
-    ],
-    nonContent: ["Submit 15 posts/day to GSC (days 1–15 of month)", "Answer 3 Reddit travel questions linking to your guides"],
-  },
-  {
-    week: "Week 2 — Apr 14–20",
-    month: "April 2026",
-    theme: "Northeast India + Assam wildlife",
-    posts: [
-      { dest: "Kaziranga National Park — 2 Days", type: "India", why: "One-horned rhino, UNESCO, underwritten online" },
-      { dest: "Majuli Island, Assam — 2 Days", type: "India", why: "World's largest river island, unique Vaishnavite culture" },
-      { dest: "Ziro Valley, Arunachal — 3 Days", type: "India", why: "Hidden gem, UNESCO tentative list, zero competition" },
-    ],
-    nonContent: ["Continue GSC submissions (15/day)", "Answer 3 more Reddit questions", "Set up Google AdSense account"],
-  },
-  {
-    week: "Week 3 — Apr 21–27",
-    month: "April 2026",
-    theme: "South India gaps — Tamil Nadu hills",
-    posts: [
-      { dest: "Ooty — 3 Days", type: "India", why: "One of India's most searched hill stations — you're missing it" },
-      { dest: "Mysore — 2 Days", type: "India", why: "Dasara capital, palace, huge search volume, palace is spectacular" },
-      { dest: "Coonoor — 2 Days", type: "India", why: "Quieter alternative to Ooty, tea estates, Nilgiris rail" },
-    ],
-    nonContent: ["First audit: which posts appear in GSC at all", "Update siteStats.ts if guide count changes"],
-  },
-  {
-    week: "Week 4 — Apr 28–May 4",
-    month: "April 2026",
-    theme: "Maharashtra heritage",
-    posts: [
-      { dest: "Ajanta & Ellora Caves, Aurangabad — 3 Days", type: "India", why: "UNESCO, #1 Maharashtra attraction after Mumbai, no quality guide exists" },
-      { dest: "Lonavala & Khandala — 1 Day", type: "India", why: "Highest searched Maharashtra weekend from Mumbai/Pune" },
-      { dest: "Mahabaleshwar — 2 Days", type: "India", why: "Maharashtra's most visited hill station, strawberry farms" },
-    ],
-    nonContent: ["Month 1 review: count total GSC impressions", "Answer 3 Reddit questions", "Email: set up signup with Mailchimp + free PDF offer"],
-  },
-  // MONTH 2 — MAY 2026
-  {
-    week: "Week 5 — May 5–11",
-    month: "May 2026",
-    theme: "Northeast India — remaining states",
-    posts: [
-      { dest: "Dzukou Valley Trek, Nagaland — 3 Days", type: "India", why: "Valley of flowers of Northeast, almost zero coverage" },
-      { dest: "Aizawl, Mizoram — 2 Days", type: "India", why: "Most underwritten northeast state, unique Mizo culture" },
-      { dest: "Imphal & Loktak Lake, Manipur — 2 Days", type: "India", why: "Floating island lake — Keibul Lamjao National Park is unique" },
-    ],
-    nonContent: ["Guest post pitch: email 5 Indian travel blogs for guest post collaboration", "Reddit: answer 3 more questions"],
-  },
-  {
-    week: "Week 6 — May 12–18",
-    month: "May 2026",
-    theme: "Rajasthan deep dives — missing cities",
-    posts: [
-      { dest: "Bundi — 2 Days", type: "India", why: "Kipling's Rajasthan, step wells, blue-painted streets — criminally unknown" },
-      { dest: "Chittorgarh — 1 Day", type: "India", why: "Largest fort in India, Rani Padmavati history, high search" },
-      { dest: "Pushkar — 2 Days", type: "India", why: "Only Brahma temple in world, camel fair, backpacker circuit" },
-    ],
-    nonContent: ["PDF #11: Kerala Full Extended Guide (build this week)", "Check affiliate clicks in Booking.com dashboard"],
-  },
-  {
-    week: "Week 7 — May 19–25",
-    month: "May 2026",
-    theme: "Himalayan treks — summer season push",
-    posts: [
-      { dest: "Kedarkantha Trek — 4 Days", type: "India", why: "Most popular winter trek, huge search volume Nov–Feb" },
-      { dest: "Har Ki Dun Trek — 5 Days", type: "India", why: "Remote Garhwal valley, good summer (May–Jun) guide needed" },
-      { dest: "Brahmatal Trek — 4 Days", type: "India", why: "Best winter Uttarakhand trek, no quality guide at this detail" },
-    ],
-    nonContent: ["Reddit: 3 answers specifically on trekking questions", "Update: add first-person voice to Delhi post (you've been there)"],
-  },
-  {
-    week: "Week 8 — May 26–Jun 1",
-    month: "May 2026",
-    theme: "South India backwaters and coast",
-    posts: [
-      { dest: "Alleppey Houseboat — 2 Days", type: "India", why: "Highest searched Kerala experience, houseboat booking guide needed" },
-      { dest: "Kochi Extended Guide — 3 Days", type: "India", why: "Fort Kochi, Jewish Synagogue, Chinese fishing nets — unique content" },
-      { dest: "Gokarna — 3 Days", type: "India", why: "Alternative to Goa, growing fast, backpacker and spiritual crowd" },
-    ],
-    nonContent: ["Month 2 review: target 500 organic visits", "PDF #12: Leh Ladakh Complete Guide"],
-  },
-  // MONTH 3 — JUNE 2026
-  {
-    week: "Week 9 — Jun 2–8",
-    month: "June 2026",
-    theme: "Himachal hidden gems",
-    posts: [
-      { dest: "Kasol & Kheerganga — 3 Days", type: "India", why: "Backpacker capital of India, Parvati Valley, huge search" },
-      { dest: "Tirthan Valley — 3 Days", type: "India", why: "Quiet alternative to Kasol, Great Himalayan National Park" },
-      { dest: "Dalhousie & Khajjiar — 2 Days", type: "India", why: "'Mini Switzerland of India', very high search, weak competition" },
-    ],
-    nonContent: ["HARO signup: answer 2 journalist queries about India travel", "Reddit: 3 more answers"],
-  },
-  {
-    week: "Week 10 — Jun 9–15",
-    month: "June 2026",
-    theme: "Uttarakhand summer — quiet hill stations",
-    posts: [
-      { dest: "Auli — 2 Days", type: "India", why: "India's best ski resort (Jan–Mar) + summer meadows" },
-      { dest: "Binsar — 2 Days", type: "India", why: "Wildlife sanctuary, Himalaya viewpoint, Kumaon gem" },
-      { dest: "Lansdowne — 2 Days", type: "India", why: "Peaceful cantonment town, 5 hours from Delhi, zero good guide" },
-    ],
-    nonContent: ["Internal link audit: every post from month 1 should link to 5 other posts", "Set up Pinterest account with 20 pins"],
-  },
-  {
-    week: "Week 11 — Jun 16–22",
-    month: "June 2026",
-    theme: "Karnataka ancient heritage",
-    posts: [
-      { dest: "Badami, Aihole & Pattadakal — 2 Days", type: "India", why: "UNESCO Chalukya temples, almost zero competition in English" },
-      { dest: "Kabini Wildlife Reserve — 2 Days", type: "India", why: "Best wildlife resort in South India, growing fast" },
-      { dest: "Coorg Extended — 4 Days", type: "India", why: "You have 3-day guide — extend to 4-day, add coffee estate detail" },
-    ],
-    nonContent: ["Rajasthan Tourism Board outreach — ask for press resources/collaboration", "3 Reddit answers on South India"],
-  },
-  {
-    week: "Week 12 — Jun 23–29",
-    month: "June 2026",
-    theme: "Madhya Pradesh heritage & wildlife",
-    posts: [
-      { dest: "Khajuraho — 2 Days", type: "India", why: "UNESCO, erotic temples, #1 MP attraction, weak competition" },
-      { dest: "Orchha — 2 Days", type: "India", why: "Cenotaphs, Betwa river, underrated Bundelkhand history" },
-      { dest: "Bandhavgarh National Park — 2 Days", type: "India", why: "Highest tiger density in India, strong affiliate potential" },
-    ],
-    nonContent: ["Month 3 review: target 5K organic visits", "PDF #13: Northeast India Bundle (Meghalaya + Assam)"],
-  },
-  // MONTH 4 — JULY 2026
-  {
-    week: "Week 13 — Jul 1–7",
-    month: "July 2026",
-    theme: "Gujarat pilgrimage & culture",
-    posts: [
-      { dest: "Ahmedabad City Guide — 3 Days", type: "India", why: "UNESCO World Heritage City, fastest growing Indian city tourism" },
-      { dest: "Sasan Gir — 2 Days", type: "India", why: "Last Asiatic lions in the world — unique wildlife experience" },
-      { dest: "Dwarka & Somnath — 2 Days", type: "India", why: "Major pilgrimage circuit, high intent traffic" },
-    ],
-    nonContent: ["Check: which 10 posts have most impressions in GSC — update them with better titles/content", "Reddit: 3 answers"],
-  },
-  {
-    week: "Week 14 — Jul 8–14",
-    month: "July 2026",
-    theme: "Odisha coast & temple circuit",
-    posts: [
-      { dest: "Konark Sun Temple Day Trip — 1 Day", type: "India", why: "UNESCO, 35km from Puri — standalone guide needed" },
-      { dest: "Chilika Lake — 2 Days", type: "India", why: "India's largest lake, Irrawaddy dolphins, flamingoes" },
-      { dest: "Bhitarkanika Mangroves — 2 Days", type: "India", why: "Saltwater crocodiles, rare waterway safari, zero guides" },
-    ],
-    nonContent: ["Guest post: submit 2 completed guest posts to target blogs", "Pinterest: 10 pins from best performing posts"],
-  },
-  {
-    week: "Week 15 — Jul 15–21",
-    month: "July 2026",
-    theme: "Rajasthan final gaps",
-    posts: [
-      { dest: "Bikaner — 2 Days", type: "India", why: "Junagarh Fort, camel research station, off the tourist trail" },
-      { dest: "Mount Abu — 2 Days", type: "India", why: "Rajasthan's only hill station, Dilwara Jain temples" },
-      { dest: "Shekhawati — 2 Days", type: "India", why: "Open air art gallery — painted havelis, completely unique" },
-    ],
-    nonContent: ["Apply to Google AdSense if 5K+ monthly visits reached", "Email list: first newsletter sent"],
-  },
-  {
-    week: "Week 16 — Jul 22–28",
-    month: "July 2026",
-    theme: "Monsoon specials — India's best wet season spots",
-    posts: [
-      { dest: "Cherrapunji & Mawsynram — 2 Days", type: "India", why: "Wettest place on earth — living root bridges, unique monsoon" },
-      { dest: "Coorg in Monsoon — Guide", type: "India", why: "Different angle on existing post — update or new companion" },
-      { dest: "Meghalaya Caves — 2 Days", type: "India", why: "Krem Puri (longest sandstone cave in world) — no guide exists" },
-    ],
-    nonContent: ["Month 4 review: target 10K organic visits", "Media kit page live if 5K+ visits reached"],
-  },
-  // MONTH 5 — AUGUST 2026
-  {
-    week: "Week 17 — Aug 4–10",
-    month: "August 2026",
-    theme: "Delhi extended + day trips",
-    posts: [
-      { dest: "Delhi Hidden Gems — Beyond the Tourist Trail", type: "India", why: "You've been — add real first-person voice. Hauz Khas, Mehrauli, Lodi Colony murals" },
-      { dest: "Agra Day Trip from Delhi — 1 Day", type: "India", why: "Most searched India day trip. Need a tight, specific guide." },
-      { dest: "Mathura & Vrindavan — 1 Day", type: "India", why: "Major religious circuit, Holi destination, huge search" },
-    ],
-    nonContent: ["Update top 5 posts based on GSC CTR data (add better meta titles)", "Reddit: 3 answers — now focus on answers that rank on Google too"],
-  },
-  {
-    week: "Week 18 — Aug 11–17",
-    month: "August 2026",
-    theme: "Maharashtra coast & wine country",
-    posts: [
-      { dest: "Tarkarli Beach — 2 Days", type: "India", why: "SCUBA diving in India, Maharashtra's best beach, no good guide" },
-      { dest: "Nashik Wine Country — 2 Days", type: "India", why: "India's Napa Valley, growing fast, unique category" },
-      { dest: "Panchgani & Mahabaleshwar Extended", type: "India", why: "Most visited Maharashtra hill area — update existing with detail" },
-    ],
-    nonContent: ["PDF #14: Rajasthan Complete 10-Day Circuit PDF", "Pinterest: 10 new pins, check analytics"],
-  },
-  {
-    week: "Week 19 — Aug 18–24",
-    month: "August 2026",
-    theme: "Rishikesh extended — you've been here",
-    posts: [
-      { dest: "Rishikesh Beyond Bungee — 4 Days", type: "India", why: "You've been — ADD PERSONAL VOICE. Cover ashrams, Beatles, white water grades, specific ghats." },
-      { dest: "Rishikesh to Kedarnath Road Trip", type: "India", why: "High intent route guide — you know this road personally" },
-      { dest: "Haridwar — 1 Day", type: "India", why: "Ganga Aarti at Har Ki Pauri — specific timings, crowd guide" },
-    ],
-    nonContent: ["HARO: 2 more journalist query responses", "Internal linking: map all Uttarakhand posts to each other"],
-  },
-  {
-    week: "Week 20 — Aug 25–31",
-    month: "August 2026",
-    theme: "Budget travel guides — high intent different angle",
-    posts: [
-      { dest: "India Under ₹5,000 — 5 Days Budget Itinerary", type: "India", why: "Ultra high search volume, unique format, great for backlinkers" },
-      { dest: "Best Solo Trip India for First Timers", type: "India", why: "Pillar content, will get shared constantly" },
-      { dest: "India Monsoon Travel Guide — Which States to Visit", type: "India", why: "Seasonal guide, ranks every year Jun–Sep" },
-    ],
-    nonContent: ["Month 5 review: target 18K organic visits", "Email newsletter: 100+ subscribers check"],
-  },
-  // MONTH 6 — SEPTEMBER 2026
-  {
-    week: "Week 21 — Sep 1–7",
-    month: "September 2026",
-    theme: "SE Asia prep — Bali first",
-    posts: [
-      { dest: "Bali 7-Day Itinerary — Complete Guide", type: "International", why: "7 days is the most searched Bali duration. Go deep." },
-      { dest: "Ubud 3 Days — Rice Terraces, Temples & Silence", type: "International", why: "Most searched Bali sub-destination" },
-      { dest: "Nusa Penida Day Trip from Bali", type: "International", why: "Broken Beach, Angel's Billabong — #1 Bali day trip search" },
-    ],
-    nonContent: ["Phase 1 review: are we at 25K visits? If yes, pivot to Phase 2. If no, extend.", "Update brand: consider adding tagline evolution"],
-  },
-  {
-    week: "Week 22 — Sep 8–14",
-    month: "September 2026",
-    theme: "Bali complete + begin Thailand",
-    posts: [
-      { dest: "Seminyak & Canggu — 2 Days", type: "International", why: "Beach clubs, digital nomad area, high search" },
-      { dest: "Bali for Couples — Honeymoon Guide", type: "International", why: "High-value affiliate bookings for couple travel" },
-      { dest: "Bangkok 5 Days — Beyond Khao San Road", type: "International", why: "Extend existing Bangkok guide with more depth" },
-    ],
-    nonContent: ["Klook affiliate signup — for all SE Asia posts", "Reddit: answer Bali questions now, link to your new guides"],
-  },
-  {
-    week: "Week 23 — Sep 15–21",
-    month: "September 2026",
-    theme: "Thailand islands",
-    posts: [
-      { dest: "Chiang Mai — 3 Days", type: "International", why: "Most searched Thailand city after Bangkok" },
-      { dest: "Phuket — 4 Days", type: "International", why: "Most searched Thailand beach" },
-      { dest: "Krabi — 3 Days (Railay Beach, 4 Islands)", type: "International", why: "Fastest growing Thailand search, stunning" },
-    ],
-    nonContent: ["Custom itinerary service: set pricing page live (₹1,499 for 5-day plan)", "Pinterest: Bali content performs extremely well here"],
-  },
-  {
-    week: "Week 24 — Sep 22–28",
-    month: "September 2026",
-    theme: "Japan begins",
-    posts: [
-      { dest: "Kyoto — 3 Days (temples, geisha, bamboo)", type: "International", why: "Most searched Japan city after Tokyo" },
-      { dest: "Osaka — 2 Days (food, Dotonbori, castle)", type: "International", why: "Food capital of Japan, rapid growth in search" },
-      { dest: "Japan 2-Week Itinerary from India", type: "International", why: "Pillar content — ranks for 100+ Japan keywords" },
-    ],
-    nonContent: ["Month 6 review: target 25K visits (Phase 1 goal)", "Apply to Mediavine if 50K sessions reached (cumulative)"],
-  },
-];
-
-// ─── GROWTH STRATEGIES ────────────────────────────────────────────────────────
-
-const STRATEGIES = [
-  {
-    id: "reddit",
-    title: "Reddit & Quora — Your #1 backlink engine",
-    emoji: "💬",
-    priority: "DO THIS NOW",
-    color: "border-rose-300 bg-rose-50",
-    accent: "text-rose-700",
-    badge: "bg-rose-100 text-rose-600",
-    detail: "3 answers per week × 52 weeks = 156 backlinks/year. Each Reddit answer on r/india, r/IndiaTravel, r/solotravel, r/travel should naturally mention your guide. A 300-word genuine answer with a relevant link gets upvoted, stays live for years, sends constant traffic, AND is a backlink Google counts.",
-    steps: [
-      "Search Reddit weekly: '[destination] travel advice', 'planning trip to [India city]', 'best time to visit [state]'",
-      "Write a genuine 200–400 word answer — not promotional. The link is 1 sentence at the end: 'I wrote a detailed guide here if useful'",
-      "Best subreddits: r/india, r/IndiaTravel, r/solotravel, r/travel, r/Thrilling_Stories_India, r/Uttarakhand, r/rajasthan",
-      "Quora: same strategy. Quora answers rank on Google directly — a good Quora answer for 'best time Ladakh' gets 10K+ views organically",
-      "Target: 3/week minimum. Never miss a week. This is your most important non-writing activity.",
-    ],
-    metric: "Goal: 150+ quality backlinks by Month 6",
-  },
-  {
-    id: "gsc",
-    title: "Google Search Console — Your weekly intelligence report",
-    emoji: "📊",
-    priority: "WEEKLY RITUAL",
-    color: "border-blue-300 bg-blue-50",
-    accent: "text-blue-700",
-    badge: "bg-blue-100 text-blue-600",
-    detail: "GSC tells you exactly which posts Google is trying to rank, what keywords they're appearing for, and why people aren't clicking. This is free data most bloggers ignore. Check it every Monday morning.",
-    steps: [
-      "Monday ritual: open GSC → Performance → Last 28 days → sort by Impressions descending",
-      "Find posts with 100+ impressions but under 2% CTR — these are ranking but not clicked. Fix the title and meta description.",
-      "Find posts with 500+ impressions but position 11–20 — one good internal link from a DA post could push to page 1",
-      "Find keywords you rank for that you haven't written dedicated posts about — write those posts next week",
-      "Submit new posts manually: URL Inspection → Request Indexing (15/day limit)",
-    ],
-    metric: "Weekly: 30-minute GSC check every Monday",
-  },
-  {
-    id: "internal",
-    title: "Internal Linking — The free SEO multiplier you're not using",
-    emoji: "🔗",
-    priority: "EVERY NEW POST",
-    color: "border-purple-300 bg-purple-50",
-    accent: "text-purple-700",
-    badge: "bg-purple-100 text-purple-600",
-    detail: "Every new post you write should link to 5 existing posts. Every existing post that's related should link to the new post. This distributes PageRank through your site and helps Google understand which posts matter most. Currently your 362 posts are poorly connected.",
-    steps: [
-      "Rule: every new post links to minimum 5 older posts (contextually, not forced)",
-      "Create topic clusters: all Uttarakhand posts link to each other; all Rajasthan posts link to each other; etc.",
-      "Your highest-traffic post (when you identify it) should link to your 10 most important posts",
-      "Add a 'More from [Region]' section at the bottom of every guide — you already have RelatedGuides but make it editorial, not algorithmic",
-      "Run a monthly internal link audit: check if new posts have been linked from old ones",
-    ],
-    metric: "Every post: minimum 5 outbound + 3 inbound internal links",
-  },
-  {
-    id: "content-update",
-    title: "Content Refreshing — Old posts can rank better than new ones",
-    emoji: "♻️",
-    priority: "MONTHLY",
-    color: "border-teal-300 bg-teal-50",
-    accent: "text-teal-700",
-    badge: "bg-teal-100 text-teal-600",
-    detail: "Once posts start ranking (Month 3+), you'll find that updating existing posts beats writing new ones for traffic growth. A post on position 8 updated with fresh info, better structure, and more links can jump to position 3. Google loves freshness.",
-    steps: [
-      "Monthly: identify your top 10 posts by impressions — update each with new info, current prices, and 200 more words",
-      "Add the current year to titles: 'Kashmir 6 Days Guide (2026)' → update to '(2027)' when appropriate",
-      "Add FAQ sections to top posts — FAQs unlock Google's 'People Also Ask' feature which drives massive CTR",
-      "Update seasonal pricing every November for peak season posts (December–February)",
-      "Add your own voice to any post that feels generic — one personal anecdote makes a huge difference",
-    ],
-    metric: "Monthly: update top 10 posts with fresh content",
-  },
-  {
-    id: "pinterest",
-    title: "Pinterest — Underrated traffic source for travel",
-    emoji: "📌",
-    priority: "START MONTH 3",
-    color: "border-rose-200 bg-rose-50",
-    accent: "text-rose-600",
-    badge: "bg-rose-50 text-rose-500",
-    detail: "Pinterest is a search engine, not social media. A well-made pin about 'Rajasthan 7-day itinerary' gets clicked for 3–5 years. Travel content performs extremely well. 10 pins/day takes 30 minutes and compounds massively over time.",
-    steps: [
-      "Create a business Pinterest account: incredibleitinerary",
-      "Design pins using Canva: vertical (1000×1500px), title on image, your URL at bottom",
-      "Each blog post gets 3 different pin designs (different images, same link)",
-      "10 new pins per day — takes 30 minutes once you have a template",
-      "Boards to create: India Travel, Rajasthan, Kerala, Himalaya, Budget India Travel, Southeast Asia, Bali, Thailand, Japan",
-      "Pinterest SEO: put exact search terms in pin description ('rajasthan 7 day itinerary from delhi 2026 budget')",
-    ],
-    metric: "Goal: 100K monthly Pinterest views by Month 6",
-  },
-  {
-    id: "email",
-    title: "Email List — The only traffic you actually own",
-    emoji: "📧",
-    priority: "START NOW",
-    color: "border-amber-300 bg-amber-50",
-    accent: "text-amber-700",
-    badge: "bg-amber-100 text-amber-600",
-    detail: "Google can change its algorithm tomorrow and destroy your traffic overnight. Your email list cannot be taken away. Every subscriber is worth ₹50–200/month in future revenue (affiliate clicks, PDF sales, custom itinerary bookings). Start building it day one.",
-    steps: [
-      "Signup incentive: 'Get the Free India Budget Mastersheet' — a one-page PDF of average costs per city (make this in 2 hours)",
-      "Signup form: every blog post has a mid-content email form (not just footer)",
-      "Welcome sequence: Email 1 (immediate) → free PDF delivered. Email 2 (day 3) → 'Most popular India guide'. Email 3 (day 7) → one personal story from your Kedarnath trek. Email 4 (day 14) → 'Planning a trip? I'll help free.'",
-      "Weekly newsletter: one India tip, one guide recommendation, one practical travel hack. 200 words max. Consistent.",
-      "Platform: Mailchimp (free to 500 subscribers), then ConvertKit or Beehiiv for monetization",
-    ],
-    metric: "Goal: 500 subscribers by Month 6",
-  },
-  {
-    id: "seo-technical",
-    title: "Technical SEO — The invisible foundation",
-    emoji: "⚙️",
-    priority: "ONE-TIME + MONTHLY CHECK",
-    color: "border-gray-300 bg-gray-50",
-    accent: "text-gray-700",
-    badge: "bg-gray-100 text-gray-600",
-    detail: "Most of this is already done (sitemap, IndexNow, structured data). These are the remaining items and ongoing checks.",
-    steps: [
-      "Page speed: run PageSpeed Insights on your homepage monthly — score should be 85+ mobile",
-      "Core Web Vitals: check in GSC → Experience → Core Web Vitals monthly",
-      "Schema markup: every guide has Article + BreadcrumbList + FAQPage schema (check the 14 new pages have this)",
-      "Canonical tags: every page has a self-referencing canonical (already set up)",
-      "Image alt text: every image needs descriptive alt text (audit quarterly)",
-      "Broken links: run Screaming Frog or Ahrefs free tier monthly to catch broken links",
-    ],
-    metric: "Monthly 30-min technical audit",
-  },
-  {
-    id: "affiliate",
-    title: "Affiliate Optimization — Earn more from existing traffic",
-    emoji: "💰",
-    priority: "ONCE TRAFFIC STARTS",
-    color: "border-green-300 bg-green-50",
-    accent: "text-green-700",
-    badge: "bg-green-100 text-green-600",
-    detail: "Once you have traffic (Month 3+), optimize how affiliate links are placed. The difference between 0.5% and 2% conversion rate on 20K monthly visits is ₹15K vs ₹60K/month.",
-    steps: [
-      "Booking.com links: place in the natural flow — 'Hotels in [destination]: I recommend checking [Booking.com] for live prices, typically ₹X–Y for [category]' with direct link",
-      "Viator/GYG: for every activity you mention, link to the bookable version — 'Book the official Periyar boat safari here (₹300)'",
-      "PDF CTAs: each top-10 post should have a prominent mid-article CTA for your PDF guide",
-      "Custom itinerary CTA: end every post with 'Planning this trip? I'll build your personal itinerary free.'",
-      "Add Klook for SE Asia posts — their India affiliate links also convert well for Agra, Jaipur, Kerala tours",
-      "Track what converts: check affiliate dashboards weekly, double down on what earns",
-    ],
-    metric: "Target: 2–4% affiliate CTR on top posts",
-  },
-];
-
-// ─── PHASE OVERVIEW ───────────────────────────────────────────────────────────
-
-const PHASE_OVERVIEW = [
-  { id: 1, emoji: "🇮🇳", title: "Own India", range: "Apr–Sep 2026", posts: "66 new posts", visits: "0 → 25K/month", revenue: "₹0 → ₹35K/month", focus: "India authority, first backlinks, first revenue" },
-  { id: 2, emoji: "🌏", title: "SE Asia + Ads", range: "Oct 2026–Mar 2027", posts: "64 new posts", visits: "25K → 150K/month", revenue: "₹35K → ₹3L/month", focus: "Bali, Thailand, Japan, Dubai, display ads live" },
-  { id: 3, emoji: "🌍", title: "Global Selective", range: "Apr–Dec 2027", posts: "120+ posts/researcher", visits: "150K → 500K/month", revenue: "₹3L → ₹10L/month", focus: "Europe, Americas, hire researcher, itinerary builder" },
-  { id: 4, emoji: "🚀", title: "Platform", range: "2028", posts: "500+ total", visits: "500K → 1M/month", revenue: "₹10L → ₹50L/month", focus: "SaaS tool, team of 5, app, B2B" },
-];
-
-// ─── COMPONENTS ──────────────────────────────────────────────────────────────
-
-function Tag({ label, color }: { label: string; color: string }) {
-  return <span className={`text-[0.55rem] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide ${color}`}>{label}</span>;
+interface Phase {
+  id: number;
+  label: string;
+  period: string;
+  months: string;
+  visitGoal: string;
+  revenueGoal: string;
+  focus: string;
+  deliverables: string[];
+  posts: number;
+  backlinks: number;
 }
 
-// ─── MAIN ─────────────────────────────────────────────────────────────────────
+interface BacklinkTactic {
+  name: string;
+  effort: "Low" | "Medium" | "High";
+  linksPerMonth: string;
+  hoursPerWeek: string;
+  how: string;
+}
+
+interface GlobalTier {
+  tier: number;
+  label: string;
+  period: string;
+  countries: string[];
+  why: string;
+  audience: string;
+  contentAngle: string;
+  rpmRange: string;
+  affiliates: string;
+}
+
+interface FailureMode {
+  risk: string;
+  mitigation: string;
+}
+
+// ─── DATA ─────────────────────────────────────────────────────────────────────
+
+const PHASES: Phase[] = [
+  {
+    id: 1,
+    label: "Phase 1 — Foundation",
+    period: "Apr–Sep 2026",
+    months: "Months 1–6",
+    visitGoal: "0 → 5,000/month",
+    revenueGoal: "₹0–3,000/month",
+    focus: "India only. Survive the Google sandbox. Build topical authority on one region before expanding.",
+    deliverables: [
+      "72 new hand-written India posts (3 posts/week, every week)",
+      "All 362 existing posts submitted to Google Search Console",
+      "50+ quality backlinks via Reddit, Quora, HARO, and guest posts",
+      "AdSense application submitted once 90+ days of content exist",
+      "Email signup form live with a free India itinerary PDF as incentive",
+      "Internal linking audit: every new post links to 5 existing posts",
+      "First-person voice added to Delhi and Rishikesh posts",
+    ],
+    posts: 72,
+    backlinks: 50,
+  },
+  {
+    id: 2,
+    label: "Phase 2 — India Authority + First Income",
+    period: "Oct 2026–Mar 2027",
+    months: "Months 7–12",
+    visitGoal: "5,000 → 20,000/month",
+    revenueGoal: "₹3,000–15,000/month",
+    focus: "80% India (consolidate rankings), 20% SE Asia testing — Bali, Phuket, Bangkok, Singapore, Kuala Lumpur.",
+    deliverables: [
+      "72 new posts (India + first SE Asia guides)",
+      "100+ total backlinks",
+      "AdSense live and optimised",
+      "Custom itinerary service launched at ₹1,499 via Razorpay",
+      "First ₹10,000 month (realistic by Month 10–11)",
+      "Email list: 100+ subscribers",
+      "Media kit page live once traffic crosses 5K/month",
+    ],
+    posts: 72,
+    backlinks: 100,
+  },
+  {
+    id: 3,
+    label: "Phase 3 — Regional Expansion",
+    period: "Apr–Sep 2027",
+    months: "Months 13–18",
+    visitGoal: "20,000 → 60,000/month",
+    revenueGoal: "₹15,000–50,000/month",
+    focus: "50% India, 50% SE Asia. Add Vietnam, Cambodia, Sri Lanka, Nepal, Bhutan. Apply to Mediavine at 50K sessions.",
+    deliverables: [
+      "72 new posts across India and SE Asia",
+      "200+ total backlinks",
+      "Mediavine application submitted at 50K sessions milestone",
+      "First freelance writer hired at ₹500–800/post for India top-10 posts",
+      "Pinterest account active with 3 pins/week from existing content",
+      "5 PDF itinerary products for sale on site",
+    ],
+    posts: 72,
+    backlinks: 200,
+  },
+  {
+    id: 4,
+    label: "Phase 4 — High-RPM Global Markets",
+    period: "Oct 2027–Mar 2028",
+    months: "Months 19–24",
+    visitGoal: "60,000 → 150,000/month",
+    revenueGoal: "₹50,000–1,50,000/month",
+    focus: "Add high-RPM English-speaking markets: Dubai, Turkey, Egypt, Morocco, Eastern Europe (Prague, Budapest, Krakow). Skip US/Western Europe — too competitive.",
+    deliverables: [
+      "90 new posts targeting Tier 3 global markets",
+      "350+ total backlinks",
+      "Mediavine live (or Raptive as fallback)",
+      "Second writer hired",
+      "Email list: 1,000+ subscribers",
+      "Sponsorship / brand deals for travel products",
+    ],
+    posts: 90,
+    backlinks: 350,
+  },
+];
+
+const BACKLINK_TACTICS: BacklinkTactic[] = [
+  {
+    name: "Reddit (r/IndiaTravel, r/solotravel, r/backpacking)",
+    effort: "Low",
+    linksPerMonth: "2–5 referral links",
+    hoursPerWeek: "1 hr",
+    how: "Answer 3 genuine questions per week. Only link when it directly answers the question. Build karma first — no spam. r/IndiaTravel alone can drive hundreds of visits per post.",
+  },
+  {
+    name: "Quora",
+    effort: "Low",
+    linksPerMonth: "2–4 referral links",
+    hoursPerWeek: "1 hr",
+    how: "Build a travel expert profile. Answer 3 India travel questions/week. Link to specific guides only when answering the exact question. Quora answers rank on Google themselves.",
+  },
+  {
+    name: "HARO / Qwoted / Featured.com",
+    effort: "Medium",
+    linksPerMonth: "1–2 DA 60+ links",
+    hoursPerWeek: "30 min/day",
+    how: "Sign up for HARO (free). Check journalist queries 3x/week. Respond within 2 hours to travel/India/tourism queries with a clear, quotable paragraph. These are the highest-quality links you can get for free.",
+  },
+  {
+    name: "Guest posts on Indian travel blogs",
+    effort: "High",
+    linksPerMonth: "1–2 do-follow links",
+    hoursPerWeek: "3 hrs",
+    how: "Pitch 5 blogs/month via email. Target DA 20–40 Indian travel blogs first (Holidify, Thrillophilia contributors, smaller personal travel blogs). Offer a unique 1,200-word post they can't easily write themselves.",
+  },
+  {
+    name: "Resource page link building",
+    effort: "Medium",
+    linksPerMonth: "1–3 links",
+    hoursPerWeek: "1 hr",
+    how: "Google: 'best India travel resources' OR 'india travel links' intitle:resources. Email site owners: 'I noticed you link to X — I've built a more comprehensive guide on [destination], would you consider adding it?' Keep email under 5 lines.",
+  },
+  {
+    name: "Broken link building",
+    effort: "High",
+    linksPerMonth: "2–4 links",
+    hoursPerWeek: "2 hrs",
+    how: "Use Ahrefs free trial or Check My Links Chrome extension. Find broken outbound links on India travel pages. Email the owner: 'Hey, your link to [X] is broken — my guide on [destination] covers the same topic if you want a working replacement.'",
+  },
+  {
+    name: "Indian state tourism boards",
+    effort: "Medium",
+    linksPerMonth: "0–1 links (slow burn)",
+    hoursPerWeek: "30 min",
+    how: "Contact Kerala Tourism, Rajasthan Tourism, Himachal Pradesh Tourism digital teams via their contact pages. Offer your detailed guide for their 'travel resources' section. Requires follow-up — treat as a 3-month project per board.",
+  },
+  {
+    name: "Travel forums (IndiaMike, TripAdvisor, LP Thorn Tree)",
+    effort: "Low",
+    linksPerMonth: "1–3 referral links",
+    hoursPerWeek: "30 min",
+    how: "Build profiles and answer questions that match your content. These forums are mostly nofollow but drive real referral traffic that Google notices. Post signature links only where forum rules allow.",
+  },
+  {
+    name: "Wikipedia citations",
+    effort: "Low",
+    linksPerMonth: "1–5 nofollow links",
+    hoursPerWeek: "30 min",
+    how: "Find Wikipedia pages for destinations you've covered. Look for [citation needed] tags or outdated references. Add your guide as a citation where it genuinely adds verifiable detail. Nofollow but signals authority to Google.",
+  },
+  {
+    name: "Skyscraper technique",
+    effort: "High",
+    linksPerMonth: "2–5 links (batched)",
+    hoursPerWeek: "4 hrs (one-time per post)",
+    how: "Find a top-ranking India travel guide (e.g., 'best time to visit Rajasthan' on a DA 50 site). Build a measurably better version: more detail, photos, updated prices. Use Ahrefs/Ubersuggest to find who links to the original. Email them: 'I built a better version of [article they link to].'",
+  },
+  {
+    name: "Pinterest",
+    effort: "Low",
+    linksPerMonth: "Not a backlink — referral traffic",
+    hoursPerWeek: "30 min",
+    how: "Create tall pins (1000x1500px) for every destination guide. Pin 3/week. Pinterest drives referral traffic that signals real visitors to Google. Particularly strong for 'itinerary' and 'best places' content. Use Canva for free templates.",
+  },
+  {
+    name: "Reciprocal links (non-competing niches)",
+    effort: "Low",
+    linksPerMonth: "2–4 links",
+    hoursPerWeek: "30 min",
+    how: "Partner with food blogs, photography blogs, expat blogs in India. 'I link to your Rajasthan food guide from my Jaipur itinerary, you link to my Jaipur guide from your food post.' Only do this with relevant, quality sites.",
+  },
+  {
+    name: "Press releases (milestones only)",
+    effort: "Low",
+    linksPerMonth: "5–15 nofollow links",
+    hoursPerWeek: "1 hr (occasional)",
+    how: "When you hit real milestones (1,000 guides, partnership with tourism board), submit to free PR sites: PRLog, OpenPR, 24-7PressRelease. Low-quality links but builds citation footprint. Only use for genuine news.",
+  },
+  {
+    name: "YouTube video descriptions",
+    effort: "Medium",
+    linksPerMonth: "Referral traffic",
+    hoursPerWeek: "1 hr",
+    how: "If/when you make Hindi Shorts or destination videos, link to your written guides in the description. Video search traffic is different from text search — cross-pollinate audiences. Even 1 viral Short can send 10K visits.",
+  },
+  {
+    name: "Local Indian travel directories",
+    effort: "Low",
+    linksPerMonth: "3–5 mostly nofollow",
+    hoursPerWeek: "30 min",
+    how: "Submit to: TraveList, TripHobo, HolidayIQ, Justdial travel section, Sulekha travel. These are low DA but build citation signals and send occasional referral traffic from Indian users.",
+  },
+];
+
+const GLOBAL_TIERS: GlobalTier[] = [
+  {
+    tier: 1,
+    label: "Launch First",
+    period: "Months 7–12 (Oct 2026–Mar 2027)",
+    countries: ["Bali (Indonesia)", "Phuket & Bangkok (Thailand)", "Singapore", "Kuala Lumpur (Malaysia)"],
+    why: "Highest Indian outbound tourist interest. Your affiliate networks (Booking.com, Viator, GetYourGuide) cover all these destinations. Content gap exists — most India travel sites don't cover SE Asia.",
+    audience: "Indian travellers planning their first international trip",
+    contentAngle: "Indian-specific: visa on arrival guide, halal/vegetarian food spots, direct flight costs from major Indian cities, budget breakdown in INR",
+    rpmRange: "$3–6 RPM (mixed Indian + international audience)",
+    affiliates: "Booking.com, Agoda, Klook, Viator, GetYourGuide",
+  },
+  {
+    tier: 2,
+    label: "Expand",
+    period: "Months 13–18 (Apr–Sep 2027)",
+    countries: ["Vietnam (Hanoi, Ho Chi Minh, Da Nang)", "Cambodia (Siem Reap, Phnom Penh)", "Sri Lanka", "Nepal", "Bhutan"],
+    why: "Top Indian outbound bucket list destinations. High search volume from Indian travellers. Lower content competition than Bali/Thailand. Bhutan and Nepal have unique permit systems — perfect for detailed guides.",
+    audience: "Indian travellers seeking adventure, culture, and value",
+    contentAngle: "Permit logistics (Bhutan), circuit routes (Vietnam), Indian embassy contacts, INR-to-local-currency guidance, vegetarian restaurant lists",
+    rpmRange: "$4–8 RPM (better English-language searchers mixed in)",
+    affiliates: "Booking.com, Viator, local tour operators, Bhutan certified agents",
+  },
+  {
+    tier: 3,
+    label: "High-RPM Markets",
+    period: "Months 19–24 (Oct 2027–Mar 2028)",
+    countries: ["Dubai (UAE)", "Istanbul & Cappadocia (Turkey)", "Egypt (Cairo, Luxor)", "Morocco (Marrakech, Fes)", "Prague, Budapest, Krakow (Eastern Europe)"],
+    why: "English-speaking global traffic with $8–15 RPM vs Indian traffic at $1–2 RPM. Indians increasingly visit all these destinations. Eastern Europe is underserved compared to Western Europe but growing fast.",
+    audience: "International English-speaking travellers + ambitious Indian travellers",
+    contentAngle: "Best neighbourhoods to stay, safety for solo travellers, day trip itineraries, off-season travel, budget vs luxury breakdowns",
+    rpmRange: "$8–15 RPM — highest income per 1,000 visitors",
+    affiliates: "Booking.com, GetYourGuide (dominant in Europe), Airbnb, Rentalcars.com",
+  },
+  {
+    tier: 4,
+    label: "Avoid Initially",
+    period: "Skip until Year 3+",
+    countries: ["USA (NYC, LA, national parks)", "UK domestic", "Paris, Rome, Barcelona, Amsterdam"],
+    why: "These markets are dominated by sites with 10+ years of backlinks and domain authority. Lonely Planet, TripAdvisor, Condé Nast Traveler, and thousands of English-speaking travel bloggers have saturated every keyword. You will not rank in months 1–24.",
+    audience: "Not your audience yet",
+    contentAngle: "Not applicable — revisit after you have 200+ backlinks and DA 30+",
+    rpmRange: "$15–25 RPM but near-zero traffic for a new site",
+    affiliates: "Not relevant yet",
+  },
+];
+
+const WEEKLY_RHYTHM = [
+  { day: "Monday", tasks: ["Write Post 1 (2 hrs)"], hours: 2 },
+  { day: "Tuesday", tasks: ["Reddit + Quora answers — 3 genuine replies (1 hr)"], hours: 1 },
+  { day: "Wednesday", tasks: ["Write Post 2 (2 hrs)", "1 backlink outreach email (15 min)"], hours: 2.25 },
+  { day: "Thursday", tasks: ["HARO/Qwoted responses (30 min)", "Pinterest — create 2 pins (30 min)"], hours: 1 },
+  { day: "Friday", tasks: ["Write Post 3 (2 hrs)"], hours: 2 },
+  { day: "Saturday", tasks: ["Update 1 old post with new prices/info (45 min)", "Internal linking check on new posts (30 min)"], hours: 1.25 },
+  { day: "Sunday", tasks: ["GSC review — which posts got impressions this week (20 min)", "Plan next week's 3 posts (20 min)"], hours: 0.67 },
+];
+
+const FAILURE_MODES: FailureMode[] = [
+  {
+    risk: "Google algorithm update wipes early rankings",
+    mitigation: "Diversify traffic sources from Day 1 — Reddit, Pinterest, email list. Never rely 100% on Google.",
+  },
+  {
+    risk: "AdSense rejected (common for new sites with thin pages)",
+    mitigation: "Apply only after 6+ months and 50+ substantial posts. Use Ezoic as a lower-barrier fallback while building toward Mediavine.",
+  },
+  {
+    risk: "Mediavine rejects at 50K sessions (happens — quality standards vary)",
+    mitigation: "Apply to Raptive as alternative. Both have similar income potential. Don't treat Mediavine as the only path.",
+  },
+  {
+    risk: "Solo founder burnout at Month 9–12 when results are slow",
+    mitigation: "Schedule one 'no publish' week every 2 months. Track leading indicators (impressions, clicks) not just revenue. Slow is normal — the compounding hasn't started yet.",
+  },
+  {
+    risk: "AI-generated content floods the niche and outranks you",
+    mitigation: "Your moat is personal experience and local knowledge. Add first-person detail, real photos, and current on-the-ground accuracy that AI cannot replicate.",
+  },
+  {
+    risk: "Affiliate programs change commission rates or close (happened with Amazon Associates)",
+    mitigation: "Never rely on a single affiliate partner. Maintain accounts with Travelpayouts, Booking.com (Awin), Viator, GetYourGuide, and Klook simultaneously.",
+  },
+];
+
+// ─── SUBCOMPONENTS ────────────────────────────────────────────────────────────
+
+function SectionAnchor({ id }: { id: string }) {
+  return <span id={id} className="block" style={{ scrollMarginTop: "80px" }} />;
+}
+
+function SectionHeading({
+  icon: Icon,
+  title,
+  subtitle,
+}: {
+  icon: React.ElementType;
+  title: string;
+  subtitle?: string;
+}) {
+  return (
+    <div className="mb-10">
+      <div className="flex items-center gap-3 mb-2">
+        <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-teal/10 text-teal">
+          <Icon size={18} />
+        </div>
+        <h2 className="font-serif text-2xl md:text-3xl font-light text-ink">{title}</h2>
+      </div>
+      {subtitle && <p className="text-sm text-muted font-light ml-12 leading-relaxed">{subtitle}</p>}
+    </div>
+  );
+}
+
+function EffortBadge({ effort }: { effort: BacklinkTactic["effort"] }) {
+  const map = {
+    Low: "bg-teal/10 text-teal",
+    Medium: "bg-gold/20 text-gold-dark",
+    High: "bg-rust/10 text-rust",
+  };
+  return (
+    <span className={`inline-block text-2xs tracking-[0.1em] uppercase font-medium px-2 py-0.5 rounded-sm ${map[effort]}`}>
+      {effort} effort
+    </span>
+  );
+}
+
+function PhaseCard({ phase }: { phase: Phase }) {
+  const [open, setOpen] = useState(false);
+  const phaseColors: Record<number, string> = {
+    1: "border-l-teal",
+    2: "border-l-gold",
+    3: "border-l-rust",
+    4: "border-l-ink-mid",
+  };
+  return (
+    <div className={`border border-parchment-2 border-l-4 ${phaseColors[phase.id]} bg-white rounded-xl overflow-hidden`}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left px-6 py-5 flex items-start justify-between gap-4 hover:bg-parchment/40 transition-colors"
+      >
+        <div className="flex-1">
+          <p className="text-2xs tracking-[0.15em] uppercase text-muted font-medium mb-1">
+            {phase.months} · {phase.period}
+          </p>
+          <h3 className="font-serif text-xl font-light text-ink">{phase.label}</h3>
+          <div className="flex flex-wrap gap-4 mt-3">
+            <span className="text-xs text-muted">
+              <span className="text-ink font-medium">{phase.visitGoal}</span> visits
+            </span>
+            <span className="text-xs text-muted">
+              <span className="text-ink font-medium">{phase.revenueGoal}</span> revenue
+            </span>
+            <span className="text-xs text-muted">
+              <span className="text-teal font-medium">{phase.posts} posts</span> to write
+            </span>
+            <span className="text-xs text-muted">
+              <span className="text-teal font-medium">{phase.backlinks}+ backlinks</span> target
+            </span>
+          </div>
+        </div>
+        <div className="mt-1 text-muted flex-shrink-0">
+          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        </div>
+      </button>
+      {open && (
+        <div className="px-6 pb-6 border-t border-parchment-2 pt-5">
+          <p className="text-sm text-muted font-light leading-relaxed mb-4">
+            <span className="text-ink font-medium">Focus: </span>{phase.focus}
+          </p>
+          <p className="text-2xs tracking-[0.12em] uppercase text-muted mb-3">Deliverables</p>
+          <ul className="space-y-2">
+            {phase.deliverables.map((d, i) => (
+              <li key={i} className="flex items-start gap-2.5 text-sm text-ink-mid font-light">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal mt-1.5 flex-shrink-0" />
+                {d}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function BacklinkRow({ tactic, idx }: { tactic: BacklinkTactic; idx: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`border-b border-parchment-2 last:border-0 ${idx % 2 === 0 ? "bg-white" : "bg-parchment/30"}`}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left px-4 py-4 flex items-center justify-between gap-4 hover:bg-parchment/60 transition-colors"
+      >
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <span className="text-sm font-medium text-ink">{tactic.name}</span>
+            <EffortBadge effort={tactic.effort} />
+          </div>
+          <div className="flex flex-wrap gap-4 text-xs text-muted">
+            <span>{tactic.linksPerMonth}</span>
+            <span>{tactic.hoursPerWeek}/week</span>
+          </div>
+        </div>
+        <div className="text-muted flex-shrink-0">
+          {open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+        </div>
+      </button>
+      {open && (
+        <div className="px-4 pb-4">
+          <p className="text-sm text-muted font-light leading-relaxed border-l-2 border-teal pl-3">
+            {tactic.how}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function TierCard({ tier }: { tier: GlobalTier }) {
+  const [open, setOpen] = useState(false);
+  const colors: Record<number, { border: string; label: string }> = {
+    1: { border: "border-l-teal", label: "bg-teal/10 text-teal" },
+    2: { border: "border-l-gold", label: "bg-gold/20 text-gold-dark" },
+    3: { border: "border-l-rust", label: "bg-rust/10 text-rust" },
+    4: { border: "border-l-muted", label: "bg-muted/10 text-muted" },
+  };
+  const c = colors[tier.tier];
+  return (
+    <div className={`border border-parchment-2 border-l-4 ${c.border} bg-white rounded-xl overflow-hidden`}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left px-6 py-5 flex items-start justify-between gap-4 hover:bg-parchment/40 transition-colors"
+      >
+        <div className="flex-1">
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className={`text-2xs tracking-[0.1em] uppercase font-medium px-2 py-0.5 rounded-sm ${c.label}`}>
+              Tier {tier.tier}
+            </span>
+            <span className="text-2xs text-muted tracking-wide">{tier.period}</span>
+          </div>
+          <h3 className="font-serif text-lg font-light text-ink mb-2">{tier.label}</h3>
+          <div className="flex flex-wrap gap-2">
+            {tier.countries.map((country) => (
+              <span key={country} className="text-xs bg-parchment text-ink-mid px-2 py-0.5 rounded">
+                {country}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="text-muted flex-shrink-0 mt-1">
+          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        </div>
+      </button>
+      {open && (
+        <div className="px-6 pb-6 border-t border-parchment-2 pt-5 space-y-4">
+          <div>
+            <p className="text-2xs tracking-[0.12em] uppercase text-muted mb-1">Why this region</p>
+            <p className="text-sm text-muted font-light leading-relaxed">{tier.why}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p className="text-2xs tracking-[0.12em] uppercase text-muted mb-1">Target audience</p>
+              <p className="text-sm text-muted font-light">{tier.audience}</p>
+            </div>
+            <div>
+              <p className="text-2xs tracking-[0.12em] uppercase text-muted mb-1">Expected RPM</p>
+              <p className="text-sm font-medium text-ink">{tier.rpmRange}</p>
+            </div>
+          </div>
+          <div>
+            <p className="text-2xs tracking-[0.12em] uppercase text-muted mb-1">Content angle</p>
+            <p className="text-sm text-muted font-light leading-relaxed">{tier.contentAngle}</p>
+          </div>
+          <div>
+            <p className="text-2xs tracking-[0.12em] uppercase text-muted mb-1">Affiliate partners</p>
+            <p className="text-sm text-muted font-light">{tier.affiliates}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── STICKY NAV ───────────────────────────────────────────────────────────────
+
+const NAV_ITEMS = [
+  { label: "Reality Check", href: "#reality" },
+  { label: "24-Month Plan", href: "#phases" },
+  { label: "Backlink Playbook", href: "#backlinks" },
+  { label: "Global Strategy", href: "#global" },
+  { label: "Weekly Rhythm", href: "#rhythm" },
+  { label: "Failure Modes", href: "#failure" },
+];
+
+// ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
 export default function RoadmapClient() {
-  const [activeTab, setActiveTab] = useState<"schedule" | "strategies" | "phases" | "goals">("goals");
-  const [expandedStrategy, setExpandedStrategy] = useState<string | null>(null);
-  const [expandedWeek, setExpandedWeek] = useState<number | null>(0);
-
   return (
-    <main className="bg-cream min-h-screen">
-
-      {/* ── HERO ── */}
-      <div className="bg-ink pt-16 pb-14 px-6 md:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <Link href="/" className="text-white/40 text-xs hover:text-gold transition-colors mb-8 block">← Back to site</Link>
-          <span className="text-[0.65rem] tracking-[0.22em] uppercase text-gold block mb-4">Master Growth Plan — April 2026</span>
-          <h1 className="font-serif text-[clamp(2rem,4.5vw,3.6rem)] font-light text-white leading-[1.08] mb-5 max-w-[760px]">
-            IncredibleItinerary: The complete roadmap<br />
-            <em className="italic text-gold-light">from 362 India guides to global standard.</em>
+    <div className="bg-cream min-h-screen pt-[72px]">
+      {/* Hero */}
+      <div className="bg-ink text-white px-6 py-14 md:py-20">
+        <div className="max-w-[820px] mx-auto">
+          <p className="text-2xs tracking-[0.2em] uppercase text-gold mb-3">Public Accountability Document</p>
+          <h1 className="font-serif text-[clamp(2rem,5vw,3.5rem)] font-light leading-tight mb-4">
+            IncredibleItinerary Growth Roadmap
           </h1>
-          <p className="text-sm text-white/55 font-light max-w-[580px] leading-relaxed mb-10">
-            Week-by-week publishing schedule. Destination names. Monthly traffic and revenue targets.
-            Growth strategies. Everything you need to grow from 0 to 1M monthly visitors.
+          <p className="text-white/70 font-light leading-relaxed max-w-[600px]">
+            A 24-month execution plan to build a sustainable travel media business from India to global scale.
+            The numbers here are honest — not aspirational. Revenue projections are based on what affiliate
+            travel sites actually earn at each traffic milestone.
           </p>
-          {/* Phase summary strip */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {PHASE_OVERVIEW.map((p) => (
-              <div key={p.id} className="bg-white/5 border border-white/10 rounded-xl p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">{p.emoji}</span>
-                  <span className="text-[0.6rem] text-white/40 uppercase tracking-widest">{p.range}</span>
-                </div>
-                <p className="text-white text-sm font-medium mb-1">{p.title}</p>
-                <p className="text-gold text-xs font-light">{p.visits}</p>
-                <p className="text-white/40 text-[0.65rem] mt-1">{p.posts}</p>
-              </div>
-            ))}
+          <div className="mt-6 flex flex-wrap gap-4 text-sm text-white/60 font-light">
+            <span>Started: April 2026</span>
+            <span>·</span>
+            <span>362 live guides</span>
+            <span>·</span>
+            <span>Solo founder</span>
+            <span>·</span>
+            <span>Zero paid ads</span>
           </div>
         </div>
       </div>
 
-      {/* ── NAV TABS ── */}
-      <div className="sticky top-0 z-50 bg-white border-b border-parchment-2 shadow-sm">
-        <div className="max-w-[1180px] mx-auto px-6 md:px-12">
-          <div className="flex gap-1 py-3 overflow-x-auto">
-            {([
-              { id: "goals", label: "📅 Monthly Goals" },
-              { id: "schedule", label: "📋 Week-by-Week Posts" },
-              { id: "strategies", label: "🎯 Growth Strategies" },
-              { id: "phases", label: "🗺️ Phase Deep Dive" },
-            ] as const).map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-200 ${
-                  activeTab === tab.id
-                    ? "bg-ink text-white"
-                    : "text-muted hover:text-ink hover:bg-parchment"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+      {/* Sticky sub-nav */}
+      <nav className="sticky top-[64px] z-30 bg-white border-b border-parchment-2 shadow-sm overflow-x-auto">
+        <div className="max-w-[820px] mx-auto px-6 flex gap-0">
+          {NAV_ITEMS.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="flex-shrink-0 px-4 py-3.5 text-xs text-muted font-medium tracking-wide hover:text-teal hover:bg-parchment/60 transition-colors border-b-2 border-transparent hover:border-teal whitespace-nowrap"
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
-      </div>
+      </nav>
 
-      <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-12">
+      <div className="max-w-[820px] mx-auto px-6 py-14 space-y-20">
 
-        {/* ══════════════════════════════════════════════════════
-            TAB 1: MONTHLY GOALS
-        ══════════════════════════════════════════════════════ */}
-        {activeTab === "goals" && (
-          <section className="space-y-6">
-            <div>
-              <span className="section-label">Month-by-Month</span>
-              <h2 className="font-serif text-[clamp(1.6rem,2.5vw,2.2rem)] font-light text-ink mb-2">
-                12-month detailed targets
-              </h2>
-              <p className="text-sm text-muted font-light mb-8 max-w-[580px]">
-                3 posts per week. 3 Reddit answers per week. Every month has specific milestones.
-                These numbers are realistic — not optimistic, not pessimistic.
-              </p>
+        {/* ── SECTION 1: REALITY CHECK ── */}
+        <section>
+          <SectionAnchor id="reality" />
+          <SectionHeading
+            icon={AlertTriangle}
+            title="Honest Revenue Expectations"
+            subtitle="Based on real affiliate site income data — not best-case scenarios. Anyone promising faster results is selling a course."
+          />
+
+          {/* Warning callout */}
+          <div className="bg-rust/8 border border-rust/20 rounded-xl p-6 mb-8">
+            <p className="text-sm font-medium text-rust mb-2">The Google Sandbox is Real</p>
+            <p className="text-sm text-muted font-light leading-relaxed">
+              New domains typically take 6–12 months before Google trusts them enough to rank for competitive
+              keywords. During this period, you can publish consistently, build backlinks, and do everything
+              right — and still see near-zero organic traffic. This is normal. The work you do in months 1–6
+              pays off in months 9–18. Do not judge the strategy by Month 3 results.
+            </p>
+          </div>
+
+          {/* Revenue timeline table */}
+          <div className="border border-parchment-2 rounded-xl overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-parchment border-b border-parchment-2">
+                    <th className="text-left px-5 py-3.5 text-2xs tracking-[0.12em] uppercase text-muted font-medium">Period</th>
+                    <th className="text-left px-5 py-3.5 text-2xs tracking-[0.12em] uppercase text-muted font-medium">Monthly Traffic</th>
+                    <th className="text-left px-5 py-3.5 text-2xs tracking-[0.12em] uppercase text-muted font-medium">Realistic Revenue</th>
+                    <th className="text-left px-5 py-3.5 text-2xs tracking-[0.12em] uppercase text-muted font-medium hidden md:table-cell">Primary Source</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { period: "Months 1–6", label: "Apr–Sep 2026", traffic: "0 – 5,000", revenue: "₹0 – 3,000", source: "Possible first affiliate clicks only" },
+                    { period: "Months 7–12", label: "Oct 2026–Mar 2027", traffic: "5,000 – 20,000", revenue: "₹3,000 – 15,000", source: "Affiliate + AdSense if approved" },
+                    { period: "Months 13–18", label: "Apr–Sep 2027", traffic: "20,000 – 60,000", revenue: "₹15,000 – 50,000", source: "AdSense + affiliate + itinerary service" },
+                    { period: "Months 19–24", label: "Oct 2027–Mar 2028", traffic: "60,000 – 150,000", revenue: "₹50,000 – 1,50,000", source: "Mediavine/Raptive + multiple affiliate programs" },
+                    { period: "Year 3+", label: "Apr 2028 onwards", traffic: "150,000+", revenue: "₹1,50,000 – 5,00,000", source: "Display ads + affiliate + sponsored + products" },
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-b border-parchment-2 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-parchment/20"}`}>
+                      <td className="px-5 py-4">
+                        <p className="font-medium text-ink">{row.period}</p>
+                        <p className="text-xs text-muted mt-0.5">{row.label}</p>
+                      </td>
+                      <td className="px-5 py-4 text-muted font-light">{row.traffic}</td>
+                      <td className="px-5 py-4">
+                        <span className={`font-medium ${i >= 2 ? "text-teal" : "text-muted"}`}>{row.revenue}</span>
+                      </td>
+                      <td className="px-5 py-4 text-muted font-light hidden md:table-cell text-xs">{row.source}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+          </div>
 
-            {/* Summary bar */}
-            <div className="bg-white rounded-2xl border border-parchment-2 overflow-hidden">
-              <div className="grid grid-cols-7 gap-2 px-5 py-3 bg-parchment border-b border-parchment-2 text-[0.6rem] uppercase tracking-widest text-muted font-medium">
-                <div className="col-span-1">Month</div>
-                <div className="col-span-1 text-center">New Posts</div>
-                <div className="col-span-1 text-center">Total Posts</div>
-                <div className="col-span-1 text-center">Traffic</div>
-                <div className="col-span-1 text-center">Backlinks</div>
-                <div className="col-span-1 text-center">Revenue</div>
-                <div className="col-span-1">Strategy</div>
+          <p className="text-xs text-muted font-light mt-4 leading-relaxed">
+            These ranges assume consistent 3 posts/week, active backlink building, and no major Google penalties.
+            Upper-range revenue requires successful Mediavine approval and high-RPM global traffic — not guaranteed.
+            Most new travel sites earn ₹0 for the first 6 months even with good content.
+          </p>
+        </section>
+
+        {/* ── SECTION 2: 24-MONTH PLAN ── */}
+        <section>
+          <SectionAnchor id="phases" />
+          <SectionHeading
+            icon={TrendingUp}
+            title="24-Month Phased Plan"
+            subtitle="Four phases from India-only foundation to global high-RPM markets. Click each phase for full deliverables."
+          />
+
+          {/* Visual timeline */}
+          <div className="grid grid-cols-4 gap-0 mb-8 overflow-hidden rounded-xl border border-parchment-2">
+            {[
+              { num: 1, label: "Foundation", period: "M1–6", color: "bg-teal" },
+              { num: 2, label: "First Income", period: "M7–12", color: "bg-gold" },
+              { num: 3, label: "Regional", period: "M13–18", color: "bg-rust" },
+              { num: 4, label: "Global", period: "M19–24", color: "bg-ink-mid" },
+            ].map((p, i) => (
+              <div key={i} className={`${p.color} text-white text-center py-4 px-2`}>
+                <p className="text-xs font-medium opacity-80">{p.period}</p>
+                <p className="text-sm font-medium mt-1">{p.label}</p>
               </div>
-              {MONTHLY_GOALS.map((m, i) => (
-                <div
-                  key={i}
-                  className={`grid grid-cols-7 gap-2 px-5 py-4 items-start border-b border-parchment-2/60 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-parchment/30"}`}
-                >
-                  <div className="col-span-1">
-                    <p className="text-xs font-semibold text-ink">{m.month}</p>
-                    <span className={`text-[0.55rem] px-1.5 py-0.5 rounded font-medium ${m.phase === 1 ? "bg-teal/10 text-teal" : m.phase === 2 ? "bg-gold/15 text-gold-dark" : "bg-ink/10 text-ink"}`}>
-                      Phase {m.phase}
-                    </span>
-                  </div>
-                  <div className="col-span-1 text-center">
-                    <p className="font-serif text-xl font-light text-ink">{m.posts}</p>
-                  </div>
-                  <div className="col-span-1 text-center">
-                    <p className="text-sm font-semibold text-ink">{m.cumPosts}</p>
-                  </div>
-                  <div className="col-span-1 text-center">
-                    <p className="text-xs text-muted font-light">{m.traffic}</p>
-                  </div>
-                  <div className="col-span-1 text-center">
-                    <p className="text-xs font-semibold text-ink">{m.backlinks}+</p>
-                  </div>
-                  <div className="col-span-1 text-center">
-                    <p className="text-xs font-semibold text-teal">{m.revenue}</p>
-                  </div>
-                  <div className="col-span-1">
-                    <p className="text-[0.65rem] text-muted font-light leading-relaxed">{m.strategy}</p>
-                  </div>
+            ))}
+          </div>
+
+          <div className="space-y-4">
+            {PHASES.map((phase) => (
+              <PhaseCard key={phase.id} phase={phase} />
+            ))}
+          </div>
+        </section>
+
+        {/* ── SECTION 3: BACKLINK PLAYBOOK ── */}
+        <section>
+          <SectionAnchor id="backlinks" />
+          <SectionHeading
+            icon={Link2}
+            title="Backlink Playbook"
+            subtitle="The most underestimated part of SEO. Backlinks are votes of trust — Google uses them to decide whether to rank you above competitors with the same content quality. Click each tactic for the exact how-to."
+          />
+
+          {/* Priority callout */}
+          <div className="bg-teal/8 border border-teal/20 rounded-xl p-5 mb-6 grid grid-cols-3 gap-4 text-center">
+            <div>
+              <p className="font-serif text-xl text-teal">HARO</p>
+              <p className="text-xs text-muted mt-1">Highest quality links. Do this first.</p>
+            </div>
+            <div>
+              <p className="font-serif text-xl text-teal">Reddit/Quora</p>
+              <p className="text-xs text-muted mt-1">Referral traffic + community trust.</p>
+            </div>
+            <div>
+              <p className="font-serif text-xl text-teal">Guest Posts</p>
+              <p className="text-xs text-muted mt-1">Best do-follow links from DA 20–40 sites.</p>
+            </div>
+          </div>
+
+          {/* Summary stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            {[
+              { label: "Tactics listed", value: "15" },
+              { label: "Target Month 6", value: "50+ links" },
+              { label: "Target Month 12", value: "100+ links" },
+              { label: "Weekly time needed", value: "~3 hrs" },
+            ].map((s, i) => (
+              <div key={i} className="bg-white border border-parchment-2 rounded-lg p-4 text-center">
+                <p className="font-serif text-xl text-ink">{s.value}</p>
+                <p className="text-xs text-muted mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="border border-parchment-2 rounded-xl overflow-hidden">
+            {BACKLINK_TACTICS.map((tactic, idx) => (
+              <BacklinkRow key={idx} tactic={tactic} idx={idx} />
+            ))}
+          </div>
+        </section>
+
+        {/* ── SECTION 4: GLOBAL STRATEGY ── */}
+        <section>
+          <SectionAnchor id="global" />
+          <SectionHeading
+            icon={Globe}
+            title="Global Expansion Strategy"
+            subtitle="Country-by-country expansion in 4 tiers. The order matters — getting Tier 1 wrong wastes 6 months on markets that won't convert."
+          />
+
+          <div className="space-y-4">
+            {GLOBAL_TIERS.map((tier) => (
+              <TierCard key={tier.tier} tier={tier} />
+            ))}
+          </div>
+
+          {/* RPM context */}
+          <div className="mt-6 bg-parchment border border-parchment-2 rounded-xl p-5">
+            <p className="text-xs font-medium text-ink mb-3">What RPM means for income</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              {[
+                { audience: "Indian traffic", rpm: "$1–2 RPM", income: "10,000 visits = ₹800–1,600/month from ads" },
+                { audience: "SE Asia mix", rpm: "$3–6 RPM", income: "10,000 visits = ₹2,500–5,000/month from ads" },
+                { audience: "European/English", rpm: "$8–15 RPM", income: "10,000 visits = ₹6,500–12,500/month from ads" },
+              ].map((row, i) => (
+                <div key={i} className="bg-white rounded-lg p-3 border border-parchment-2">
+                  <p className="font-medium text-ink text-xs">{row.audience}</p>
+                  <p className="text-teal font-medium mt-1">{row.rpm}</p>
+                  <p className="text-xs text-muted font-light mt-1">{row.income}</p>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
 
-            {/* Milestones */}
-            <div>
-              <h3 className="font-serif text-xl font-light text-ink mb-4">Key milestones by month</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {MONTHLY_GOALS.map((m, i) => (
-                  <div key={i} className="bg-white rounded-2xl border border-parchment-2 p-5">
-                    <div className="flex items-center justify-between mb-3">
-                      <p className="font-semibold text-ink text-sm">{m.month}</p>
-                      <span className={`text-[0.55rem] px-2 py-0.5 rounded-full font-semibold ${m.phase === 1 ? "bg-teal/10 text-teal" : "bg-gold/15 text-gold-dark"}`}>
-                        Phase {m.phase}
-                      </span>
-                    </div>
-                    <div className="space-y-2">
-                      {m.milestones.map((ms, j) => (
-                        <div key={j} className="flex items-start gap-2">
-                          <span className="text-gold text-xs mt-0.5 flex-shrink-0">✦</span>
-                          <p className="text-xs text-muted font-light leading-relaxed">{ms}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+        {/* ── SECTION 5: WEEKLY RHYTHM ── */}
+        <section>
+          <SectionAnchor id="rhythm" />
+          <SectionHeading
+            icon={Calendar}
+            title="Weekly Execution Rhythm"
+            subtitle="10 hours/week total. Sustainable for a solo founder with a day job. Consistency over 24 months beats intensity over 3 months every time."
+          />
 
-        {/* ══════════════════════════════════════════════════════
-            TAB 2: WEEK-BY-WEEK SCHEDULE
-        ══════════════════════════════════════════════════════ */}
-        {activeTab === "schedule" && (
-          <section className="space-y-6">
-            <div>
-              <span className="section-label">Publishing Calendar</span>
-              <h2 className="font-serif text-[clamp(1.6rem,2.5vw,2.2rem)] font-light text-ink mb-2">
-                Exact destination names, week by week
-              </h2>
-              <p className="text-sm text-muted font-light mb-8 max-w-[560px]">
-                3 posts per week. Each post takes 4–6 hours of solid research and writing.
-                Every week also includes 3 Reddit/Quora answers. Click any week to expand.
-              </p>
-            </div>
-
-            {/* Legend */}
-            <div className="flex gap-3 flex-wrap mb-6">
-              <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-teal" /><span className="text-xs text-muted">India</span></div>
-              <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-gold-dark" /><span className="text-xs text-muted">International</span></div>
-            </div>
-
-            <div className="space-y-3">
-              {WEEKLY_SCHEDULE.map((week, i) => (
-                <div key={i} className="bg-white rounded-2xl border border-parchment-2 overflow-hidden">
-                  {/* Week header */}
-                  <button
-                    className="w-full flex items-center justify-between px-6 py-4 hover:bg-parchment/50 transition-colors text-left"
-                    onClick={() => setExpandedWeek(expandedWeek === i ? null : i)}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div>
-                        <p className="font-semibold text-ink text-sm">{week.week}</p>
-                        <p className="text-[0.65rem] text-muted">{week.month} · {week.theme}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-[0.65rem] bg-parchment text-muted px-2 py-1 rounded-full">{week.posts.length} posts</span>
-                      <span className="text-muted">{expandedWeek === i ? "▲" : "▼"}</span>
-                    </div>
-                  </button>
-
-                  {/* Expanded content */}
-                  {expandedWeek === i && (
-                    <div className="px-6 pb-6 border-t border-parchment-2">
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4 mb-5">
-                        {week.posts.map((post, j) => (
-                          <div key={j} className={`rounded-xl p-4 border ${post.type === "India" ? "border-teal/20 bg-teal/5" : "border-gold/20 bg-gold/5"}`}>
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className={`text-[0.55rem] px-2 py-0.5 rounded-full font-semibold ${post.type === "India" ? "bg-teal/15 text-teal" : "bg-gold/20 text-gold-dark"}`}>
-                                {post.type}
-                              </span>
-                            </div>
-                            <p className="text-sm font-semibold text-ink mb-1.5 leading-snug">{post.dest}</p>
-                            <p className="text-xs text-muted font-light leading-relaxed">{post.why}</p>
-                          </div>
-                        ))}
-                      </div>
-                      {/* Non-content tasks */}
-                      <div className="bg-parchment rounded-xl p-4">
-                        <p className="text-[0.65rem] text-muted uppercase tracking-widest mb-2 font-medium">Also this week (non-writing)</p>
-                        <div className="space-y-1.5">
-                          {week.nonContent.map((task, k) => (
-                            <div key={k} className="flex items-start gap-2">
-                              <span className="text-gold text-xs mt-0.5">→</span>
-                              <p className="text-xs text-muted font-light">{task}</p>
-                            </div>
+          <div className="border border-parchment-2 rounded-xl overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-parchment border-b border-parchment-2">
+                    <th className="text-left px-5 py-3.5 text-2xs tracking-[0.12em] uppercase text-muted font-medium w-28">Day</th>
+                    <th className="text-left px-5 py-3.5 text-2xs tracking-[0.12em] uppercase text-muted font-medium">Tasks</th>
+                    <th className="text-right px-5 py-3.5 text-2xs tracking-[0.12em] uppercase text-muted font-medium w-20">Hours</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {WEEKLY_RHYTHM.map((row, i) => (
+                    <tr key={i} className={`border-b border-parchment-2 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-parchment/20"}`}>
+                      <td className="px-5 py-4 font-medium text-sm text-ink align-top">{row.day}</td>
+                      <td className="px-5 py-4 align-top">
+                        <ul className="space-y-1">
+                          {row.tasks.map((t, j) => (
+                            <li key={j} className="text-sm text-muted font-light">{t}</li>
                           ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                        </ul>
+                      </td>
+                      <td className="px-5 py-4 text-right text-sm text-teal font-medium align-top">{row.hours}h</td>
+                    </tr>
+                  ))}
+                  <tr className="bg-ink text-white">
+                    <td className="px-5 py-3 font-medium text-sm">Total</td>
+                    <td className="px-5 py-3 text-sm text-white/70">3 posts published · 6 backlink actions · analytics reviewed</td>
+                    <td className="px-5 py-3 text-right font-medium text-gold">~10h</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </section>
-        )}
+          </div>
 
-        {/* ══════════════════════════════════════════════════════
-            TAB 3: GROWTH STRATEGIES
-        ══════════════════════════════════════════════════════ */}
-        {activeTab === "strategies" && (
-          <section className="space-y-6">
-            <div>
-              <span className="section-label">Growth Playbook</span>
-              <h2 className="font-serif text-[clamp(1.6rem,2.5vw,2.2rem)] font-light text-ink mb-2">
-                8 strategies that actually move the needle
-              </h2>
-              <p className="text-sm text-muted font-light mb-8 max-w-[580px]">
-                Most travel blogs fail because they write content and wait. These are the active strategies
-                that separate sites that grow from sites that sit. Click any strategy for the full playbook.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              {STRATEGIES.map((s) => (
-                <div key={s.id} className={`rounded-2xl border-2 overflow-hidden transition-all duration-300 ${s.color}`}>
-                  <button
-                    className="w-full flex items-start gap-4 px-6 py-5 text-left"
-                    onClick={() => setExpandedStrategy(expandedStrategy === s.id ? null : s.id)}
-                  >
-                    <span className="text-3xl flex-shrink-0">{s.emoji}</span>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 flex-wrap mb-1">
-                        <p className="font-semibold text-ink text-sm">{s.title}</p>
-                        <span className={`text-[0.55rem] px-2 py-0.5 rounded-full font-bold ${s.badge}`}>{s.priority}</span>
-                      </div>
-                      <p className="text-xs text-muted font-light">{s.metric}</p>
-                    </div>
-                    <span className="text-muted text-sm flex-shrink-0 mt-1">{expandedStrategy === s.id ? "▲" : "▼"}</span>
-                  </button>
-
-                  {expandedStrategy === s.id && (
-                    <div className="px-6 pb-6 border-t border-black/[0.08]">
-                      <p className={`text-sm font-light leading-relaxed mb-5 mt-4 ${s.accent}`}>{s.detail}</p>
-                      <div className="space-y-3">
-                        {s.steps.map((step, i) => (
-                          <div key={i} className="flex items-start gap-3 bg-white/60 rounded-xl p-3.5">
-                            <span className="w-5 h-5 rounded-full bg-white border border-parchment-2 text-xs flex items-center justify-center text-muted flex-shrink-0 mt-0.5 font-medium">{i + 1}</span>
-                            <p className="text-sm text-muted font-light leading-relaxed">{step}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ══════════════════════════════════════════════════════
-            TAB 4: PHASE DEEP DIVE
-        ══════════════════════════════════════════════════════ */}
-        {activeTab === "phases" && (
-          <section className="space-y-10">
-            <div>
-              <span className="section-label">Phase-by-Phase</span>
-              <h2 className="font-serif text-[clamp(1.6rem,2.5vw,2.2rem)] font-light text-ink mb-2">
-                From India-first to global platform
-              </h2>
-            </div>
-
-            {/* Phase 1 */}
-            <div className="bg-white rounded-2xl border-2 border-teal/25 overflow-hidden">
-              <div className="bg-teal/5 px-7 py-6 border-b border-teal/15">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl">🇮🇳</span>
-                  <div>
-                    <span className="text-[0.6rem] tracking-[0.18em] uppercase text-teal font-medium">Phase 1 · Apr–Sep 2026</span>
-                    <h3 className="font-serif text-xl font-light text-ink">Own India</h3>
-                  </div>
-                </div>
-                <p className="text-sm text-muted font-light leading-relaxed max-w-[680px]">
-                  You already have 362 India posts. This phase adds 66 more, fixes gaps in Northeast and South India,
-                  builds the first backlinks, and gets you to 25K monthly visitors and ₹35K/month in revenue.
-                  Do NOT start international in this phase. India is your unfair advantage — use it fully.
-                </p>
+          <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { title: "Non-negotiables", items: ["3 posts every single week", "3 Reddit/Quora answers every week", "1 backlink outreach action every week"] },
+              { title: "Monthly additions", items: ["1 old post updated with new prices", "1 GSC review of top/bottom performers", "5 new Pinterest pins from existing content"] },
+              { title: "Quarterly reviews", items: ["Which keywords are gaining impressions", "Top 5 affiliate earners — expand those", "Lowest traffic posts — update or delete"] },
+            ].map((col, i) => (
+              <div key={i} className="bg-white border border-parchment-2 rounded-lg p-4">
+                <p className="text-2xs tracking-[0.12em] uppercase text-muted font-medium mb-3">{col.title}</p>
+                <ul className="space-y-2">
+                  {col.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm text-ink-mid font-light">
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal mt-1.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="p-7 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                  <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">India destinations to add</p>
-                  <div className="space-y-1.5 text-xs text-muted font-light">
-                    {[
-                      "Tawang, Arunachal Pradesh", "Valley of Flowers", "Jim Corbett", "Kaziranga NP", "Majuli Island",
-                      "Ziro Valley", "Ooty", "Mysore", "Coonoor", "Ajanta & Ellora",
-                      "Lonavala", "Mahabaleshwar", "Dzukou Valley, Nagaland", "Aizawl, Mizoram", "Loktak Lake, Manipur",
-                      "Bundi, Rajasthan", "Chittorgarh", "Pushkar", "Kedarkantha Trek", "Har Ki Dun Trek",
-                      "Brahmatal Trek", "Alleppey Houseboat", "Kochi Extended", "Gokarna", "Kasol & Kheerganga",
-                      "Tirthan Valley", "Dalhousie & Khajjiar", "Auli", "Binsar", "Lansdowne",
-                      "Badami & Pattadakal", "Kabini", "Khajuraho", "Orchha", "Bandhavgarh NP",
-                      "Ahmedabad", "Sasan Gir", "Dwarka & Somnath", "Konark Sun Temple", "Chilika Lake",
-                      "Bhitarkanika", "Bikaner", "Mount Abu", "Shekhawati", "Cherrapunji & Mawsynram",
-                      "Meghalaya Caves", "Delhi Hidden Gems", "Mathura & Vrindavan", "Tarkarli Beach", "Nashik Wine",
-                      "Rishikesh Extended (first-person)", "Haridwar", "India Budget 5-Day Pillar", "Monsoon India Guide", "Best Solo Trip India",
-                      "Agra Day Trip", "Kabini Wildlife", "Ranikhet", "Sattal", "Prashar Lake",
-                      "Kinnaur Valley", "Sangla Valley", "Chitkul", "Nag Tibba Trek", "Chopta Deoria Tal",
-                      "Bhimtal", "Munsiyari", "Chail, Himachal", "Barot Valley Extended", "Jim Corbett Budget",
-                    ].map((d) => <div key={d} className="flex items-center gap-1.5"><span className="text-teal text-[0.6rem]">✦</span>{d}</div>)}
+            ))}
+          </div>
+        </section>
+
+        {/* ── SECTION 6: FAILURE MODES ── */}
+        <section>
+          <SectionAnchor id="failure" />
+          <SectionHeading
+            icon={XCircle}
+            title="What Can Go Wrong"
+            subtitle="Every business plan has failure modes. These are the specific risks for a new travel affiliate site in 2026."
+          />
+
+          <div className="space-y-3">
+            {FAILURE_MODES.map((item, i) => (
+              <div key={i} className="bg-white border border-parchment-2 rounded-xl p-5">
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-rust/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <XCircle size={12} className="text-rust" />
                   </div>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">Metrics to hit</p>
-                  <div className="space-y-3">
-                    {[
-                      { label: "New posts written", val: "66" },
-                      { label: "Total indexed posts", val: "428" },
-                      { label: "Monthly organic visits", val: "25K" },
-                      { label: "Total backlinks", val: "140+" },
-                      { label: "Email subscribers", val: "200+" },
-                      { label: "Monthly revenue", val: "₹35K" },
-                      { label: "PDFs published", val: "15+" },
-                    ].map((m) => (
-                      <div key={m.label} className="flex items-center justify-between border-b border-parchment-2 pb-2">
-                        <span className="text-xs text-muted">{m.label}</span>
-                        <span className="text-xs font-semibold text-ink">{m.val}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">Phase 1 don&apos;ts</p>
-                  <div className="space-y-2">
-                    {[
-                      "Don't start Europe or Americas posts — you have zero DA to rank for these",
-                      "Don't spend money on paid ads — SEO compounds, ads don't",
-                      "Don't write posts under 2,000 words — thin content won't rank",
-                      "Don't skip the Reddit strategy — it's your fastest backlink source",
-                      "Don't miss a week of publishing — consistency beats perfection",
-                    ].map((d) => (
-                      <div key={d} className="flex items-start gap-2 bg-rose-50 rounded-lg p-2.5">
-                        <span className="text-rose-400 flex-shrink-0 text-xs">✗</span>
-                        <p className="text-xs text-rose-700 font-light leading-relaxed">{d}</p>
-                      </div>
-                    ))}
+                  <div>
+                    <p className="text-sm font-medium text-ink mb-1">{item.risk}</p>
+                    <p className="text-sm text-muted font-light leading-relaxed">
+                      <span className="text-teal font-medium">Mitigation: </span>
+                      {item.mitigation}
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </section>
 
-            {/* Phase 2 */}
-            <div className="bg-white rounded-2xl border-2 border-gold/25 overflow-hidden">
-              <div className="bg-gold/5 px-7 py-6 border-b border-gold/15">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl">🌏</span>
-                  <div>
-                    <span className="text-[0.6rem] tracking-[0.18em] uppercase text-gold-dark font-medium">Phase 2 · Oct 2026–Mar 2027</span>
-                    <h3 className="font-serif text-xl font-light text-ink">Southeast Asia + Display Ads</h3>
-                  </div>
-                </div>
-                <p className="text-sm text-muted font-light leading-relaxed max-w-[680px]">
-                  By now you have 25K+ monthly visitors and real domain authority from Phase 1.
-                  Bali, Thailand, Japan, Dubai and Singapore are the top 6 international destinations
-                  searched by Indians — and they have massive affiliate conversion. Display ads go live
-                  when you hit 50K sessions.
-                </p>
-              </div>
-              <div className="p-7 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">International destinations — phase 2</p>
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs text-muted font-light">
-                    {[
-                      "Bali 7 Days Complete", "Ubud 3 Days", "Nusa Penida Day Trip", "Seminyak & Canggu",
-                      "Bali for Couples", "Bali Budget Guide", "Bali Hidden Beaches", "Bali Temples Circuit",
-                      "Lombok 4 Days", "Bali vs Lombok",
-                      "Bangkok 5 Days Extended", "Chiang Mai 3 Days", "Phuket 4 Days", "Krabi 3 Days",
-                      "Koh Samui 3 Days", "Thailand 2 Weeks", "Pai 2 Days", "Kanchanaburi Day Trip",
-                      "Kyoto 3 Days", "Osaka 2 Days", "Japan 2 Weeks", "Japan Cherry Blossom",
-                      "Mt Fuji Day Trip", "Nara Day Trip", "Hiroshima 1 Day", "Japan Budget Guide",
-                      "Japan for Indians", "Hakone Onsen",
-                      "Dubai Extended (Families)", "Abu Dhabi Day Trip", "Oman 5 Days", "Jordan 5 Days",
-                      "Singapore 3 Days", "Singapore Budget", "Kuala Lumpur 3 Days", "Penang 2 Days",
-                      "Langkawi 3 Days", "Vietnam 2 Weeks", "Hanoi 3 Days", "Hoi An 2 Days",
-                      "Ha Long Bay Cruise Guide", "Ho Chi Minh 2 Days",
-                      "Maldives on a Budget", "Sri Lanka 10 Days", "Nepal 7 Days (Kathmandu + Trek)",
-                    ].map((d) => <div key={d} className="flex items-center gap-1.5"><span className="text-gold text-[0.6rem]">✦</span>{d}</div>)}
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div>
-                    <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">Revenue streams activated</p>
-                    <div className="space-y-2">
-                      {[
-                        { name: "Mediavine display ads", val: "₹75K–2L/month", when: "At 50K sessions" },
-                        { name: "Booking.com affiliate", val: "₹25K–60K/month", when: "Scaling with traffic" },
-                        { name: "Klook (SE Asia)", val: "₹10K–30K/month", when: "SE Asia posts live" },
-                        { name: "Custom itinerary service", val: "₹15K–40K/month", when: "₹1,499/plan" },
-                        { name: "PDF bundle sales", val: "₹8K–20K/month", when: "15+ PDFs live" },
-                      ].map((r) => (
-                        <div key={r.name} className="flex items-start justify-between gap-4 bg-parchment rounded-lg p-3">
-                          <div>
-                            <p className="text-xs font-medium text-ink">{r.name}</p>
-                            <p className="text-[0.6rem] text-muted">{r.when}</p>
-                          </div>
-                          <p className="text-xs font-semibold text-gold-dark flex-shrink-0">{r.val}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">Brand evolution in Phase 2</p>
-                    <div className="bg-ink rounded-xl p-4">
-                      <p className="text-[0.65rem] text-white/40 mb-2">Tagline change</p>
-                      <p className="text-white/50 text-xs line-through mb-1">&ldquo;India, planned properly.&rdquo;</p>
-                      <p className="text-gold text-sm font-serif">&ldquo;Travel, planned properly.&rdquo;</p>
-                      <p className="text-white/40 text-xs mt-2 font-light">Keep Surya&apos;s India trips as the credibility anchor. International = obsessively researched from primary sources.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        {/* ── FINAL CTA ── */}
+        <section className="border-t border-parchment-2 pt-10">
+          <div className="bg-ink text-white rounded-2xl p-8 md:p-10 text-center">
+            <p className="text-2xs tracking-[0.2em] uppercase text-gold mb-3">Public Accountability</p>
+            <h2 className="font-serif text-2xl md:text-3xl font-light mb-4">
+              This roadmap is public so I can be held to it.
+            </h2>
+            <p className="text-white/70 font-light leading-relaxed max-w-[480px] mx-auto mb-6 text-sm">
+              If the milestones are wrong, if I miss targets, or if I discover better strategies — this page
+              will be updated. No hidden pivots. If you are building a similar site and want to compare notes,
+              email me.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-gold text-ink text-xs tracking-[0.1em] uppercase font-medium px-6 py-3 rounded-sm hover:bg-gold-light transition-colors"
+              >
+                <ExternalLink size={13} />
+                Email if I&apos;m off-track
+              </Link>
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 border border-white/20 text-white/80 text-xs tracking-[0.1em] uppercase font-medium px-6 py-3 rounded-sm hover:border-white/50 hover:text-white transition-colors"
+              >
+                Read the guides
+              </Link>
             </div>
-
-            {/* Phase 3 */}
-            <div className="bg-white rounded-2xl border-2 border-ink/15 overflow-hidden">
-              <div className="bg-ink/3 px-7 py-6 border-b border-ink/10">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl">🌍</span>
-                  <div>
-                    <span className="text-[0.6rem] tracking-[0.18em] uppercase text-ink font-medium">Phase 3 · Apr 2027–Jan 2028</span>
-                    <h3 className="font-serif text-xl font-light text-ink">Go Global — Selective</h3>
-                  </div>
-                </div>
-                <p className="text-sm text-muted font-light leading-relaxed max-w-[680px]">
-                  Europe, Americas, Africa. Hire a researcher. 200K monthly visitors. Itinerary builder launches.
-                  You are no longer a one-person blog — you&apos;re building infrastructure for a platform.
-                </p>
-              </div>
-              <div className="p-7">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div>
-                    <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">Europe (50+ guides)</p>
-                    <div className="space-y-1 text-xs text-muted font-light">
-                      {["Paris 5 Days", "Rome 4 Days", "Barcelona 4 Days", "Amsterdam 3 Days", "Prague 3 Days",
-                        "Vienna 3 Days", "Santorini 3 Days", "Amalfi Coast 3 Days", "Switzerland 7 Days",
-                        "London 5 Days", "Lisbon 3 Days", "Istanbul 4 Days", "Dubrovnik 2 Days", "Athens 3 Days",
-                        "Florence 3 Days", "Venice 2 Days", "Budapest 3 Days", "Kyoto sister: Bruges 2 Days",
-                        "Edinburgh 2 Days", "Porto 2 Days"].map((d) => (
-                          <div key={d} className="flex items-center gap-1.5"><span className="text-ink/30 text-[0.6rem]">✦</span>{d}</div>
-                        ))}
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">Americas (30+ guides)</p>
-                    <div className="space-y-1 text-xs text-muted font-light">
-                      {["New York 5 Days", "Los Angeles 4 Days", "Miami 3 Days", "San Francisco 3 Days",
-                        "Las Vegas 2 Days", "Grand Canyon Day Trip", "Yellowstone 3 Days", "Hawaii 7 Days",
-                        "Canada Rockies 7 Days", "Toronto 3 Days", "Vancouver 3 Days",
-                        "Machu Picchu 3 Days", "Peru 10 Days", "Amazon 4 Days",
-                        "Patagonia 7 Days", "Rio de Janeiro 3 Days", "Buenos Aires 3 Days",
-                        "Mexico City 3 Days", "Cancun 4 Days", "Cuba 7 Days"].map((d) => (
-                          <div key={d} className="flex items-center gap-1.5"><span className="text-ink/30 text-[0.6rem]">✦</span>{d}</div>
-                        ))}
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">Africa + Oceania (20+ guides)</p>
-                    <div className="space-y-1 text-xs text-muted font-light">
-                      {["Kenya Safari 7 Days", "Tanzania Safari 5 Days", "South Africa 10 Days",
-                        "Morocco 7 Days", "Egypt 7 Days", "Rwanda Gorillas 3 Days",
-                        "Namibia 10 Days", "Zanzibar 5 Days",
-                        "Sydney 5 Days", "Melbourne 3 Days", "Great Barrier Reef",
-                        "New Zealand 10 Days", "Fiji 5 Days"].map((d) => (
-                          <div key={d} className="flex items-center gap-1.5"><span className="text-ink/30 text-[0.6rem]">✦</span>{d}</div>
-                        ))}
-                    </div>
-                    <div className="mt-5 bg-gold/10 border border-gold/20 rounded-xl p-4">
-                      <p className="text-xs font-semibold text-ink mb-2">🚀 Itinerary Builder v1 launches</p>
-                      <p className="text-xs text-muted font-light leading-relaxed">Interactive day-by-day planner. Free to use. Hotel + activity affiliate links embedded in results. Built into existing site — no separate app needed.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Phase 4 & 5 summary */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-purple-50 border-2 border-purple-200 rounded-2xl p-7">
-                <span className="text-3xl block mb-3">🚀</span>
-                <span className="text-[0.6rem] tracking-[0.18em] uppercase text-purple-600 font-medium">Phase 4 · 2028</span>
-                <h3 className="font-serif text-xl font-light text-ink mb-3">Platform</h3>
-                <div className="space-y-2 text-sm text-muted font-light">
-                  <p>→ Itinerary builder becomes paid SaaS (₹199/month)</p>
-                  <p>→ Android + iOS app (₹499 one-time)</p>
-                  <p>→ Team of 5: 2 researchers, 1 SEO, 1 social</p>
-                  <p>→ B2B: white-label tool for travel agencies</p>
-                  <p>→ 500K monthly visitors, ₹10L+/month</p>
-                </div>
-              </div>
-              <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-7">
-                <span className="text-3xl block mb-3">🌐</span>
-                <span className="text-[0.6rem] tracking-[0.18em] uppercase text-amber-600 font-medium">Phase 5 · 2029+</span>
-                <h3 className="font-serif text-xl font-light text-ink mb-3">Global Authority</h3>
-                <div className="space-y-2 text-sm text-muted font-light">
-                  <p>→ Every country on earth covered (3+ guides each)</p>
-                  <p>→ 1M+ monthly visitors</p>
-                  <p>→ ₹50L+/month from all streams combined</p>
-                  <p>→ &ldquo;Just use IncredibleItinerary&rdquo; is the standard answer</p>
-                  <p>→ Acquisition interest or seed funding round</p>
-                </div>
-              </div>
-            </div>
-
-          </section>
-        )}
+          </div>
+        </section>
 
       </div>
-
-      {/* ── BOTTOM CTA ── */}
-      <div className="bg-ink py-14 px-6 md:px-12 text-center mt-8">
-        <div className="max-w-[520px] mx-auto">
-          <h2 className="font-serif text-[clamp(1.8rem,3vw,2.4rem)] font-light text-white mb-4">
-            The plan is clear.<br />
-            <em className="italic text-gold-light">Execution is everything.</em>
-          </h2>
-          <p className="text-sm text-white/50 font-light mb-7 leading-relaxed">
-            3 posts per week. 3 Reddit answers per week. Every single week for 2 years.
-            That&apos;s the whole secret.
-          </p>
-          <Link href="/blog" className="btn-gold inline-flex">
-            Back to the guides →
-          </Link>
-        </div>
-      </div>
-    </main>
+    </div>
   );
 }
