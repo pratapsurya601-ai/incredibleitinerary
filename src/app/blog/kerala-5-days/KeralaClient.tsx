@@ -235,7 +235,7 @@ export default function KeralaClient() {
           {/* Honest intro */}
           <blockquote className="border-l-4 border-teal pl-6 mb-10 bg-teal/5 rounded-r-xl py-4 pr-4">
             <p className="font-serif text-[1.1rem] italic text-ink-mid leading-relaxed">
-              Kerala doesn't reward rushing. The travellers who try to see everything in 5 days — Kochi, Munnar, Thekkady, Alleppey, Varkala, Kovalam — end up exhausted on buses and missing the whole point. This guide picks the four places that matter most and gives you enough time in each to actually feel something.
+              Kerala doesn&apos;t reward rushing. The travellers who try to see everything in 5 days — Kochi, Munnar, Thekkady, Alleppey, Varkala, Kovalam — end up exhausted on buses and missing the whole point. This guide picks the four places that matter most and gives you enough time in each to actually feel something.
             </p>
           </blockquote>
 
@@ -732,7 +732,7 @@ export default function KeralaClient() {
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want This Planned for You?</h2>
             <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
-              Tell us your dates, group and budget — we'll send a personalised Kerala itinerary within 24 hours. Free.
+              Tell us your dates, group and budget — we&apos;ll send a personalised Kerala itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">

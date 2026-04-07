@@ -74,14 +74,14 @@ export default function ContributeClient() {
               Thanks, {form.name}!
             </h1>
             <p className="text-muted font-light leading-relaxed mb-6">
-              We've received your {form.photoCount} photo{Number(form.photoCount) > 1 ? "s" : ""} of{" "}
-              <strong className="text-ink">{form.destination}</strong>. We'll review them and email
-              you within 48 hours if they're featured.
+              We&apos;ve received your {form.photoCount} photo{Number(form.photoCount) > 1 ? "s" : ""} of{" "}
+              <strong className="text-ink">{form.destination}</strong>. We&apos;ll review them and email
+              you within 48 hours if they&apos;re featured.
             </p>
             <div className="bg-parchment border border-parchment-2 rounded-2xl p-6 mb-8 text-left">
               <p className="text-xs text-muted uppercase tracking-widest mb-3 font-medium">While you wait</p>
               <p className="text-sm text-muted font-light mb-4">
-                Check out our {form.destination} travel guide — it's free, no email required.
+                Check out our {form.destination} travel guide — it&apos;s free, no email required.
               </p>
               <Link
                 href={`/blog/${destinationSlug}`}
@@ -191,7 +191,7 @@ export default function ContributeClient() {
                 className="w-full border border-parchment-2 rounded-xl px-4 py-3 text-sm text-ink bg-white focus:outline-none focus:border-gold transition-colors placeholder:text-muted/40"
               />
               <p className="text-[11px] text-muted/60 mt-1 font-light">
-                We'll only use this to notify you if your photo is featured. No marketing emails.
+                We&apos;ll only use this to notify you if your photo is featured. No marketing emails.
               </p>
             </div>
 

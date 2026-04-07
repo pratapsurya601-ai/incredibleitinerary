@@ -894,7 +894,7 @@ export function generateBestTimeContent(post: GeneratedPost, parent: ParentMeta)
         {rawData
           ? rawData.split(".")[0] + "."
           : `The best time to visit ${destination} is during the dry season when weather is most predictable and outdoor activities are fully accessible.`}{" "}
-        The table below breaks down every month so you can match your travel dates to your priorities — whether that's weather, crowds, or cost.
+        The table below breaks down every month so you can match your travel dates to your priorities — whether that&apos;s weather, crowds, or cost.
       </QuickAnswer>
 
       <SectionH2>Month-by-Month Guide to {destination}</SectionH2>

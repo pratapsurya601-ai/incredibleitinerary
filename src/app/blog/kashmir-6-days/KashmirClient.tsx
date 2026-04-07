@@ -139,7 +139,7 @@ export default function KashmirClient() {
           </div>
 
           <blockquote className="border-l-4 border-blue-400 pl-6 mb-10 bg-blue-50 rounded-r-xl py-4 pr-4">
-            <p className="font-serif text-[1.1rem] italic text-ink-mid leading-relaxed">"Gar firdaus bar-rue zamin ast, hamin ast o hamin ast o hamin ast." — If there is heaven on earth, it is here, it is here, it is here. Persian inscription at the Mughal court, describing Kashmir.</p>
+            <p className="font-serif text-[1.1rem] italic text-ink-mid leading-relaxed">&quot;Gar firdaus bar-rue zamin ast, hamin ast o hamin ast o hamin ast.&quot; — If there is heaven on earth, it is here, it is here, it is here. Persian inscription at the Mughal court, describing Kashmir.</p>
           </blockquote>
 
           {/* PICK PLAN */}
@@ -157,7 +157,7 @@ export default function KashmirClient() {
               ))}
             </div>
             <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl">
-              <p className="text-sm text-blue-900 font-light leading-relaxed"><strong className="font-medium">Best for most people: Plan B (Honeymoon).</strong> Kashmir is India's #1 honeymoon destination for good reason — the combination of Dal Lake at dawn, Gulmarg's snow meadows, and Pahalgam's pine forests is unlike anywhere else in India. Even if you're not honeymooning, this plan gives you the best version of Kashmir.</p>
+              <p className="text-sm text-blue-900 font-light leading-relaxed"><strong className="font-medium">Best for most people: Plan B (Honeymoon).</strong> Kashmir is India&apos;s #1 honeymoon destination for good reason — the combination of Dal Lake at dawn, Gulmarg&apos;s snow meadows, and Pahalgam&apos;s pine forests is unlike anywhere else in India. Even if you&apos;re not honeymooning, this plan gives you the best version of Kashmir.</p>
             </div>
           </section>
 
@@ -399,7 +399,7 @@ export default function KashmirClient() {
           {/* HOUSEBOAT GUIDE */}
           <section id="houseboat" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🛶 Dal Lake Houseboat Guide</h2>
-            <p className="text-sm text-muted font-light mb-6">The houseboat experience is what makes Kashmir unique. Here's how to do it right.</p>
+            <p className="text-sm text-muted font-light mb-6">The houseboat experience is what makes Kashmir unique. Here&apos;s how to do it right.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {[
                 { title: "Categories", icon: "⭐", content: "D-class (budget): Rs.1,500–Rs.2,500/night. C-class: Rs.2,500–Rs.4,000. B-class: Rs.4,000–Rs.6,000. A-class (deluxe): Rs.6,000–Rs.12,000. Prices include breakfast and usually dinner. Always inspect before paying." },
@@ -514,7 +514,7 @@ export default function KashmirClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want Your Kashmir Trip Planned?</h2>
-            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we'll send a personalised Kashmir itinerary within 24 hours. Free.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we&apos;ll send a personalised Kashmir itinerary within 24 hours. Free.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Kashmir Trip →</button>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold transition-colors">Contact Us</Link>

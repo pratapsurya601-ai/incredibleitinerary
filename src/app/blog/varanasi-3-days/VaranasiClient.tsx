@@ -118,7 +118,7 @@ export default function VaranasiClient() {
             <blockquote className="border-l-4 border-amber-500 pl-6 mb-6 bg-amber-50 rounded-r-xl py-4 pr-4">
               <p className="font-serif text-[1.05rem] italic text-ink-mid leading-relaxed">Varanasi is older than history, older than tradition, older even than legend, and looks twice as old as all of them put together. — Mark Twain</p>
             </blockquote>
-            <p className="text-sm text-muted font-light leading-relaxed mb-4">Varanasi is not a comfortable city. It will overwhelm you — the noise, the crowds, the smoke from the burning ghats, the smell, the cows, the narrow lanes. Most visitors arrive feeling shocked and leave feeling they've experienced something they can't quite explain.</p>
+            <p className="text-sm text-muted font-light leading-relaxed mb-4">Varanasi is not a comfortable city. It will overwhelm you — the noise, the crowds, the smoke from the burning ghats, the smell, the cows, the narrow lanes. Most visitors arrive feeling shocked and leave feeling they&apos;ve experienced something they can&apos;t quite explain.</p>
             <p className="text-sm text-muted font-light leading-relaxed mb-6">It is also one of the oldest continuously inhabited cities on earth — over 3,000 years old. Every major Indian religion has roots here. The Ganges is both a river and a living deity. Death happens publicly. Life happens loudly. It is the most intensely alive place in India.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
@@ -139,7 +139,7 @@ export default function VaranasiClient() {
           {/* GHATS GUIDE */}
           <section id="ghats" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🏛️ The Ghats — What to Know</h2>
-            <p className="text-sm text-muted font-light mb-6 leading-relaxed">Varanasi has 84 ghats stretching 7km along the Ganges. You can't see all of them — and you shouldn't try. Here are the ones that matter and why.</p>
+            <p className="text-sm text-muted font-light mb-6 leading-relaxed">Varanasi has 84 ghats stretching 7km along the Ganges. You can&apos;t see all of them — and you shouldn&apos;t try. Here are the ones that matter and why.</p>
             <div className="space-y-3">
               {ghats.map((g) => (
                 <div key={g.name} className={`rounded-xl p-4 border ${g.color}`}>
@@ -239,7 +239,7 @@ export default function VaranasiClient() {
           {/* GANGA AARTI GUIDE */}
           <section id="aarti" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🔥 Ganga Aarti — The Complete Guide</h2>
-            <p className="text-sm text-muted font-light mb-6">The evening Ganga Aarti is the reason most people come to Varanasi. Here's everything you need to know.</p>
+            <p className="text-sm text-muted font-light mb-6">The evening Ganga Aarti is the reason most people come to Varanasi. Here&apos;s everything you need to know.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {[
                 { title: "Timing", icon: "⏰", content: "Sunset — approximately 6:30pm (winter) to 7:15pm (summer). Check sunset time for your date. Arrive 30–45 minutes early. The ceremony lasts 45 minutes." },
@@ -283,7 +283,7 @@ export default function VaranasiClient() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-muted font-light mt-3 italic">Varanasi is one of India's cheapest major cities. Most of the best experiences — Ganga Aarti, ghat walks, temple visits — are free.</p>
+            <p className="text-xs text-muted font-light mt-3 italic">Varanasi is one of India&apos;s cheapest major cities. Most of the best experiences — Ganga Aarti, ghat walks, temple visits — are free.</p>
           </section>
 
           {/* FOOD */}
@@ -362,7 +362,7 @@ export default function VaranasiClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Adding Varanasi to Your India Trip?</h2>
-            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Varanasi pairs perfectly with the Golden Triangle or Rajasthan. Tell us your full itinerary and we'll help plan the routing.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Varanasi pairs perfectly with the Golden Triangle or Rajasthan. Tell us your full itinerary and we&apos;ll help plan the routing.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My India Trip →</button>
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-[0.78rem] font-light tracking-[0.1em] uppercase rounded-[1px] hover:border-gold transition-colors">Contact Us</Link>

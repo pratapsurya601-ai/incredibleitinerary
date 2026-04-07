@@ -142,7 +142,7 @@ export default function AndamanClient() {
           </div>
 
           <blockquote className="border-l-4 border-teal pl-6 mb-10 bg-teal/5 rounded-r-xl py-4 pr-4">
-            <p className="font-serif text-[1.05rem] italic text-ink-mid leading-relaxed">The Andaman Islands are India's best-kept secret — a tropical archipelago in the Bay of Bengal with water clearer than Thailand, beaches emptier than Maldives, and prices that make both look absurd. Most Indians have never been. Most who go can't believe it's part of India.</p>
+            <p className="font-serif text-[1.05rem] italic text-ink-mid leading-relaxed">The Andaman Islands are India&apos;s best-kept secret — a tropical archipelago in the Bay of Bengal with water clearer than Thailand, beaches emptier than Maldives, and prices that make both look absurd. Most Indians have never been. Most who go can&apos;t believe it&apos;s part of India.</p>
           </blockquote>
 
           {/* PICK PLAN */}
@@ -160,7 +160,7 @@ export default function AndamanClient() {
               ))}
             </div>
             <div className="p-4 bg-teal/8 border border-teal/30 rounded-xl">
-              <p className="text-sm text-ink font-light leading-relaxed"><strong className="font-medium">Best for most people: Plan B (Couple).</strong> The Andamans are India's #1 honeymoon destination after Kashmir — turquoise water, empty beaches, candlelit dinners at sunset. Even if you&apos;re not honeymooning, this plan gives you the best version of the islands.</p>
+              <p className="text-sm text-ink font-light leading-relaxed"><strong className="font-medium">Best for most people: Plan B (Couple).</strong> The Andamans are India&apos;s #1 honeymoon destination after Kashmir — turquoise water, empty beaches, candlelit dinners at sunset. Even if you&apos;re not honeymooning, this plan gives you the best version of the islands.</p>
             </div>
           </section>
 

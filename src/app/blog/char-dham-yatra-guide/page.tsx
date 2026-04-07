@@ -128,7 +128,7 @@ export default function CharDhamYatraPage() {
 
           <blockquote className="border-l-4 border-gold pl-6 mb-10 bg-parchment/60 rounded-r-xl py-4 pr-4">
             <p className="font-serif text-[1.05rem] italic text-ink-mid leading-relaxed">
-              I've visited three of the four dhams personally — Kedarnath on a solo trek in October 2022, Badrinath the same trip, and Gangotri with the Gaumukh glacier trek in June 2023. This guide is built from those experiences, not from aggregating other blogs.
+              I&apos;ve visited three of the four dhams personally — Kedarnath on a solo trek in October 2022, Badrinath the same trip, and Gangotri with the Gaumukh glacier trek in June 2023. This guide is built from those experiences, not from aggregating other blogs.
             </p>
             <p className="text-xs text-muted mt-3 font-light">— Surya Pratap</p>
           </blockquote>
@@ -137,7 +137,7 @@ export default function CharDhamYatraPage() {
           <section className="mb-12">
             <h2 className="font-serif text-[1.8rem] font-light text-ink mb-4">📋 Char Dham Registration — Do This First</h2>
             <p className="text-sm text-muted font-light leading-relaxed mb-5">
-              Mandatory registration for all four dhams at <strong className="text-ink">registrationandtouristcare.uk.gov.in</strong>. Free, takes 5 minutes. You will be checked at multiple points — don't skip this.
+              Mandatory registration for all four dhams at <strong className="text-ink">registrationandtouristcare.uk.gov.in</strong>. Free, takes 5 minutes. You will be checked at multiple points — don&apos;t skip this.
             </p>
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
               <p className="text-sm font-medium text-amber-800 mb-3">⚠️ What you need:</p>

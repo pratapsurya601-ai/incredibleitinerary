@@ -480,7 +480,7 @@ export default function GoaBlogClient() {
               </table>
             </div>
             <p className="text-xs text-muted font-light mt-3 italic">
-              All prices INR 2026. International visitors: a "luxury" Goa day costs what a budget day costs in Thailand.
+              All prices INR 2026. International visitors: a &quot;luxury&quot; Goa day costs what a budget day costs in Thailand.
             </p>
           </section>
 

@@ -425,7 +425,7 @@ export default function AssamTeaClient() {
             />
             <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
               <p className="text-xs text-muted font-light italic text-center">
-                Two leaves and a bud: the universal standard for quality tea plucking. Assam's 800 estates produce half of India's tea — the Brahmaputra Valley's lowland heat and monsoon rainfall create the world's boldest black tea.
+                Two leaves and a bud: the universal standard for quality tea plucking. Assam&apos;s 800 estates produce half of India&apos;s tea — the Brahmaputra Valley&apos;s lowland heat and monsoon rainfall create the world&apos;s boldest black tea.
               </p>
             </div>
           </div>

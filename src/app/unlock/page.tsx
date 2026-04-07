@@ -41,7 +41,7 @@ export default function UnlockPage() {
           One-Time · No Subscription · Instant Access
         </p>
         <h1 className="font-serif text-[clamp(2rem,5vw,3.2rem)] font-light leading-tight mb-3">
-          You've used your 2 free guides
+          You&apos;ve used your 2 free guides
         </h1>
         <p className="text-white/60 text-base max-w-md mx-auto font-light leading-relaxed">
           Unlock premium PDF guides — day-by-day itineraries, real budgets,
@@ -153,7 +153,7 @@ export default function UnlockPage() {
       {/* ── INDIA PACK GUIDES ── */}
       <section className="max-w-4xl mx-auto px-6 pb-10">
         <h2 className="font-serif text-xl text-ink text-center font-light mb-6">
-          What's in the India Pack
+          What&apos;s in the India Pack
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-4">
           {INDIA_GUIDES.map((g) => (

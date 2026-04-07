@@ -280,7 +280,7 @@ export default function RajasthanBlogClient() {
           {/* City decision */}
           <section id="cities" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">📍 The City Decision Guide</h2>
-            <p className="text-sm text-muted font-light mb-6 leading-relaxed">Rajasthan is India's largest state. Cities are 250–380km apart. Understand this before booking anything.</p>
+            <p className="text-sm text-muted font-light mb-6 leading-relaxed">Rajasthan is India&apos;s largest state. Cities are 250–380km apart. Understand this before booking anything.</p>
 
             <div className="overflow-x-auto rounded-xl border border-parchment-2 mb-5">
               <table className="w-full text-sm">
@@ -337,7 +337,7 @@ export default function RajasthanBlogClient() {
           {/* Transport */}
           <section id="transport" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🚗 How to Get Around</h2>
-            <p className="text-sm text-muted font-light mb-6">Rajasthan is NOT a scooter destination. Cities are 250–380km apart. Here's what actually works.</p>
+            <p className="text-sm text-muted font-light mb-6">Rajasthan is NOT a scooter destination. Cities are 250–380km apart. Here&apos;s what actually works.</p>
             <div className="space-y-3">
               {[
                 { icon: "🚗", title: "Private car + driver for 7 days (recommended)", desc: "₹12,000–₹18,000 total for the car. Driver handles routes, waits at sights. Ask your hotel to arrange — avoid touts at bus stands. Split cost between 2+ people.", color: "bg-green-50 border-green-200" },
@@ -585,7 +585,7 @@ export default function RajasthanBlogClient() {
           <div className="mb-14 rounded-2xl overflow-hidden shadow-md">
             <SmartImage imageKey="rajasthanFort" fallback="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=900&q=80" alt="Mehrangarh Fort rising above the blue city of Jodhpur" width={860} height={440} className="w-full object-cover h-72 md:h-[380px]" />
             <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
-              <p className="text-xs text-muted font-light italic text-center">Mehrangarh Fort, Jodhpur — rising 125 metres above the Blue City. The best fort in India, and it's not close.</p>
+              <p className="text-xs text-muted font-light italic text-center">Mehrangarh Fort, Jodhpur — rising 125 metres above the Blue City. The best fort in India, and it&apos;s not close.</p>
             </div>
           </div>
 
@@ -661,7 +661,7 @@ export default function RajasthanBlogClient() {
 
           {/* Pro Tips */}
           <section id="tips" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💡 Pro Tips — What the Guidebooks Don't Say</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💡 Pro Tips — What the Guidebooks Don&apos;t Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 { icon: "👑", title: "The Mehrangarh audio guide is narrated by Prince Charles", desc: "45 minutes of genuine royal history, not tourist-brochure content. ₹200. The best money you'll spend in Jodhpur.", color: "bg-amber-50 border-amber-200" },
@@ -678,7 +678,7 @@ export default function RajasthanBlogClient() {
           <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want This Planned for You?</h2>
-            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we'll send a personalised Rajasthan itinerary within 24 hours. Free.</p>
+            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">Tell us your dates, group and budget — we&apos;ll send a personalised Rajasthan itinerary within 24 hours. Free.</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">Plan My Rajasthan Trip →</button>
               <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip →</a>

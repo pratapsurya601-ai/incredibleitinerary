@@ -55,7 +55,7 @@ function ContactForm() {
         </div>
         <h3 className="font-serif text-2xl font-light text-ink mb-2">Message Received!</h3>
         <p className="text-sm text-muted font-light mb-6 max-w-sm mx-auto leading-relaxed">
-          We'll get back to you with a personalised itinerary within 24 hours.
+          We&apos;ll get back to you with a personalised itinerary within 24 hours.
           Keep an eye on your email for our response.
         </p>
         <button onClick={() => reset()} className="text-sm text-gold-dark underline underline-offset-2">

@@ -210,7 +210,7 @@ export default function ThankYouClient() {
           <div className="bg-white border border-parchment-2 rounded-2xl p-6 mb-6">
             <p className="font-medium text-sm text-ink mb-3">📌 How to save your PDF</p>
             <ol className="space-y-1.5 text-xs text-muted font-light list-decimal list-inside leading-relaxed">
-              <li>Click "Open PDF" — it opens in a new browser tab</li>
+              <li>Click &quot;Open PDF&quot; — it opens in a new browser tab</li>
               <li>Press <kbd className="bg-parchment px-1.5 py-0.5 rounded text-ink font-mono">Ctrl+P</kbd> (Windows) or <kbd className="bg-parchment px-1.5 py-0.5 rounded text-ink font-mono">⌘+P</kbd> (Mac)</li>
               <li>Set destination to <strong>Save as PDF</strong> → click Save</li>
               <li>Works offline forever — take it on your trip ✈️</li>
@@ -235,7 +235,7 @@ export default function ThankYouClient() {
               <p className="text-gold text-xs tracking-[0.18em] uppercase font-medium mb-2">Want all 50+ guides?</p>
               <h3 className="font-serif text-white text-xl font-light mb-2">Unlock Everything — ₹499</h3>
               <p className="text-white/50 text-xs font-light mb-5 max-w-xs mx-auto leading-relaxed">
-                Every guide we've made + every guide we ever will make. Pay once, download forever.
+                Every guide we&apos;ve made + every guide we ever will make. Pay once, download forever.
               </p>
               <a
                 href="https://rzp.io/rzp/oUANvqjl"
@@ -260,7 +260,7 @@ export default function ThankYouClient() {
           <p className="text-4xl mb-4">🔍</p>
           <h2 className="font-serif text-2xl text-ink font-light mb-3">No guides found for this email</h2>
           <p className="text-muted text-sm font-light mb-6 leading-relaxed">
-            We couldn't find any purchases linked to <strong>{email}</strong>. Try the email you used during payment, or contact us.
+            We couldn&apos;t find any purchases linked to <strong>{email}</strong>. Try the email you used during payment, or contact us.
           </p>
           <div className="flex flex-col gap-3">
             <button

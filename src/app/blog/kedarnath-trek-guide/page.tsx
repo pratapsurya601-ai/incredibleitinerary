@@ -176,7 +176,7 @@ export default function KedarnathTrekPage() {
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
                 <h3 className="font-medium text-sm text-amber-800 mb-3">🥾 Trek (recommended)</h3>
                 <ul className="space-y-2 text-xs text-amber-700 font-light">
-                  <li>✓ The journey is the experience — don't skip it</li>
+                  <li>✓ The journey is the experience — don&apos;t skip it</li>
                   <li>✓ ₹0 extra cost beyond basics</li>
                   <li>✓ You earn the arrival</li>
                   <li>✗ 6–8 hours of hard walking</li>

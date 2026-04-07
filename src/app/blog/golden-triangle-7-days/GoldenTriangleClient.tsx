@@ -213,7 +213,7 @@ export default function GoldenTriangleClient() {
                 <em className="italic text-gold-light"> Delhi, Agra & Jaipur</em>
               </h1>
               <p className="text-white/65 text-sm font-light max-w-[560px] leading-relaxed">
-                The Taj Mahal, Red Fort, Amber Fort — India's most iconic circuit. 4 complete plans, real budgets, Google Maps routes and the Taj Mahal timing secret most visitors never know.
+                The Taj Mahal, Red Fort, Amber Fort — India&apos;s most iconic circuit. 4 complete plans, real budgets, Google Maps routes and the Taj Mahal timing secret most visitors never know.
               </p>
             </div>
           </div>
@@ -233,7 +233,7 @@ export default function GoldenTriangleClient() {
           {/* Honest intro */}
           <blockquote className="border-l-4 border-gold pl-6 mb-10 bg-gold/5 rounded-r-xl py-4 pr-4">
             <p className="font-serif text-[1.1rem] italic text-ink-mid leading-relaxed">
-              The Golden Triangle is India's most visited tourist circuit — and the most mishandled. Most visitors rush through Delhi in a day, arrive at the Taj Mahal at 10am (worst possible time), and leave Jaipur without seeing the best parts. This guide fixes all three problems.
+              The Golden Triangle is India&apos;s most visited tourist circuit — and the most mishandled. Most visitors rush through Delhi in a day, arrive at the Taj Mahal at 10am (worst possible time), and leave Jaipur without seeing the best parts. This guide fixes all three problems.
             </p>
           </blockquote>
 
@@ -254,7 +254,7 @@ export default function GoldenTriangleClient() {
             </div>
             <div className="mt-6 p-4 bg-gold/10 border border-gold/30 rounded-xl">
               <p className="text-sm text-ink font-light leading-relaxed">
-                <strong className="font-medium">Best for most people: Plan B (Couple) or Plan C (International first-timers).</strong> The Golden Triangle is India's most accessible circuit — well-signed, English-speaking, great tourist infrastructure. Plan C is specifically designed for first-time India visitors.
+                <strong className="font-medium">Best for most people: Plan B (Couple) or Plan C (International first-timers).</strong> The Golden Triangle is India&apos;s most accessible circuit — well-signed, English-speaking, great tourist infrastructure. Plan C is specifically designed for first-time India visitors.
               </p>
             </div>
           </section>
@@ -270,7 +270,7 @@ export default function GoldenTriangleClient() {
           {/* The 3 Cities */}
           <section id="cities" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🏙️ The 3 Cities — What to Expect</h2>
-            <p className="text-sm text-muted font-light mb-6">Each city is completely different. Here's what you're actually getting into.</p>
+            <p className="text-sm text-muted font-light mb-6">Each city is completely different. Here&apos;s what you&apos;re actually getting into.</p>
 
             <div className="space-y-4">
               {[
@@ -309,7 +309,7 @@ export default function GoldenTriangleClient() {
           {/* Transport */}
           <section id="transport" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🚆 Getting Between Cities</h2>
-            <p className="text-sm text-muted font-light mb-6">The right transport makes or breaks the Golden Triangle. Here's exactly what to take.</p>
+            <p className="text-sm text-muted font-light mb-6">The right transport makes or breaks the Golden Triangle. Here&apos;s exactly what to take.</p>
 
             <div className="space-y-3 mb-6">
               {[
@@ -611,7 +611,7 @@ export default function GoldenTriangleClient() {
           <section id="taj" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🕌 The Complete Taj Mahal Guide</h2>
             <p className="text-sm text-muted font-light mb-6 leading-relaxed">
-              The Taj Mahal is the reason most people visit the Golden Triangle. Here's everything you need to know to experience it properly.
+              The Taj Mahal is the reason most people visit the Golden Triangle. Here&apos;s everything you need to know to experience it properly.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -784,7 +784,7 @@ export default function GoldenTriangleClient() {
             <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
             <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">Want This Planned for You?</h2>
             <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
-              Tell us your dates, group and budget — we'll send a personalised Golden Triangle itinerary within 24 hours. Free.
+              Tell us your dates, group and budget — we&apos;ll send a personalised Golden Triangle itinerary within 24 hours. Free.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button onClick={() => setModalOpen(true)} className="btn-gold">

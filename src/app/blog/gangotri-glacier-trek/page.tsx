@@ -81,7 +81,7 @@ export default function GangotriGlacierTrekPage() {
 
           <blockquote className="border-l-4 border-gold pl-6 mb-10 bg-parchment/60 rounded-r-xl py-4 pr-4">
             <p className="font-serif text-[1.05rem] italic text-ink-mid leading-relaxed">
-              The Bhagirathi valley opens up suddenly after the treeline ends — grey rock, white ice, and a sky so blue it looks edited. Standing at the glacier snout where the Ganga begins, with no other sound except water, was the most quietly powerful moment I've had in the mountains.
+              The Bhagirathi valley opens up suddenly after the treeline ends — grey rock, white ice, and a sky so blue it looks edited. Standing at the glacier snout where the Ganga begins, with no other sound except water, was the most quietly powerful moment I&apos;ve had in the mountains.
             </p>
             <p className="text-xs text-muted mt-3 font-light">— Surya Pratap, trekked June 2023</p>
           </blockquote>
