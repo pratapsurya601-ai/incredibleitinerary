@@ -315,7 +315,7 @@ const AVAILABLE = [
     emoji: "🙏",
     pages: 6,
     includes: ["16km trek route breakdown", "Pony & helicopter options", "Budget (₹3k–₹15k)", "Packing list for cold"],
-    href: "/blog/kedarnath-yatra-guide",
+    href: "/blog/kedarnath-trek-guide",
     country: "India",
     price: "₹199",
   },

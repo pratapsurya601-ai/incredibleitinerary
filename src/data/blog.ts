@@ -17,6 +17,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "india-budget-guide",
+    title: "India Budget Travel Guide: ₹3,000/Day Formula for Backpackers (2026)",
+    excerpt: "How to travel India on ₹1,500–3,000 per day — budget breakdown for accommodation, food, transport and activities across 8 major cities. Scam alerts, best apps and money-saving hacks included.",
+    date: "April 2026",
+    readTime: "18 min",
+    category: "Budget Travel",
+    tags: ["India", "Budget", "Backpacker", "Travel Guide", "Money Saving", "Solo Travel"],
+    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80",
+    imageAlt: "India budget travel backpacker Rajasthan market train",
+    featured: false,
+    destination: "India",
+    duration: "Flexible",
+    country: "India",
+    pexelsQuery: "india travel backpacker rajasthan market train varanasi ghat",
+  },
+  {
     slug: "honeymoon-under-50000",
     title: "Best Honeymoon Destinations Under ₹50,000 in India (2026)",
     excerpt: "8 stunning honeymoon destinations in India under ₹50,000 per couple — with real costs, romantic stays, and day-by-day plans for every budget.",

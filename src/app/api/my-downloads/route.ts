@@ -2,28 +2,27 @@ import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 
 const ALL_SLUGS = [
-  "rajasthan-7-days",
-  "kerala-5-days",
-  "goa-3-days",
-  "india-budget-guide",
-  "leh-ladakh-7-days",
-  "bangkok-4-days",
-  "kashmir-6-days",
-  "manali-5-days",
-  "bali-5-days",
-  "dubai-4-days",
-  // Phase 2
-  "andaman-5-days",
-  "varanasi-3-days",
-  "singapore-4-days",
-  "sri-lanka-7-days",
-  "japan-10-days",
-  // Phase 3
-  "vietnam-10-days",
-  "thailand-10-days",
-  "bhutan-5-days",
-  "portugal-7-days",
-  "greece-10-days",
+  // ₹99
+  "goa-3-days", "india-budget-guide", "varanasi-3-days",
+  "mumbai-3-days", "delhi-3-days", "agra-2-days",
+  "amritsar-2-days", "hyderabad-2-days", "pune-2-days", "mysore-2-days",
+  // ₹149
+  "rajasthan-7-days", "kerala-5-days", "kashmir-6-days", "manali-5-days", "andaman-5-days",
+  "jaipur-3-days", "rishikesh-3-days", "coorg-3-days",
+  "darjeeling-3-days", "hampi-3-days", "ooty-3-days",
+  "meghalaya-5-days", "northeast-india-10-days",
+  // ₹199
+  "leh-ladakh-7-days", "bangkok-4-days", "bali-5-days", "singapore-4-days", "sri-lanka-7-days",
+  "spiti-valley-7-days", "char-dham-7-days", "kedarnath-trek-3-days", "gujarat-7-days",
+  "malaysia-7-days", "nepal-7-days", "turkey-7-days", "amsterdam-4-days",
+  // ₹199 P3
+  "vietnam-10-days", "thailand-10-days", "bhutan-5-days",
+  // ₹249
+  "dubai-4-days", "portugal-7-days",
+  "paris-5-days", "barcelona-5-days", "rome-5-days",
+  "london-5-days", "maldives-5-days", "new-york-5-days",
+  // ₹299
+  "japan-10-days", "greece-10-days", "switzerland-7-days",
 ];
 
 function generateToken(slug: string): string {

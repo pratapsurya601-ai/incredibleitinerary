@@ -8,17 +8,42 @@ const YOUR_EMAIL      = "hello@incredibleitinerary.com";
 
 // ── Tier → slugs map ──────────────────────────────────────────────────────────
 const TIER_SLUGS: Record<string, string[]> = {
-  "II-PDF-99":        ["goa-3-days", "india-budget-guide", "varanasi-3-days"],
-  "II-PDF-149":       ["rajasthan-7-days", "kerala-5-days", "kashmir-6-days", "manali-5-days", "andaman-5-days"],
-  "II-PDF-199":       ["leh-ladakh-7-days", "bangkok-4-days", "bali-5-days", "singapore-4-days", "sri-lanka-7-days"],
-  "II-PDF-249":       ["dubai-4-days", "portugal-7-days"],
-  "II-PDF-299":       ["japan-10-days", "greece-10-days"],
-  "II-PDF-199-P3":    ["vietnam-10-days", "thailand-10-days", "bhutan-5-days"],
+  // ₹99 — short India city breaks
+  "II-PDF-99":    ["goa-3-days", "india-budget-guide", "varanasi-3-days",
+                   "mumbai-3-days", "delhi-3-days", "agra-2-days",
+                   "amritsar-2-days", "hyderabad-2-days", "pune-2-days", "mysore-2-days"],
+  "II-PDF-99-V2": ["goa-3-days", "india-budget-guide", "varanasi-3-days",
+                   "mumbai-3-days", "delhi-3-days", "agra-2-days",
+                   "amritsar-2-days", "hyderabad-2-days", "pune-2-days", "mysore-2-days"],
+  // ₹149 — week-long India + hill stations
+  "II-PDF-149":   ["rajasthan-7-days", "kerala-5-days", "kashmir-6-days", "manali-5-days", "andaman-5-days",
+                   "jaipur-3-days", "rishikesh-3-days", "coorg-3-days",
+                   "darjeeling-3-days", "hampi-3-days", "ooty-3-days",
+                   "meghalaya-5-days", "northeast-india-10-days"],
+  // ₹199 — complex India + SE Asia + budget Europe
+  "II-PDF-199":   ["leh-ladakh-7-days", "bangkok-4-days", "bali-5-days", "singapore-4-days", "sri-lanka-7-days",
+                   "spiti-valley-7-days", "char-dham-7-days", "kedarnath-trek-3-days", "gujarat-7-days",
+                   "malaysia-7-days", "nepal-7-days", "turkey-7-days", "amsterdam-4-days"],
+  // ₹199 Phase 3
+  "II-PDF-199-P3": ["vietnam-10-days", "thailand-10-days", "bhutan-5-days"],
+  // ₹249 — premium international + Europe capitals
+  "II-PDF-249":   ["dubai-4-days", "portugal-7-days",
+                   "paris-5-days", "barcelona-5-days", "rome-5-days",
+                   "london-5-days", "maldives-5-days", "new-york-5-days"],
+  // ₹299 — ultra-premium long-haul
+  "II-PDF-299":   ["japan-10-days", "greece-10-days", "switzerland-7-days"],
+  // India Pack — ALL India guides
   "II-INDIAPACK-001": [
     "rajasthan-7-days", "kerala-5-days", "goa-3-days", "india-budget-guide",
-    "leh-ladakh-7-days", "kashmir-6-days", "manali-5-days", "andaman-5-days", "varanasi-3-days",
-    "bhutan-5-days",
+    "leh-ladakh-7-days", "kashmir-6-days", "manali-5-days", "andaman-5-days",
+    "varanasi-3-days", "bhutan-5-days",
+    "mumbai-3-days", "delhi-3-days", "agra-2-days", "jaipur-3-days",
+    "rishikesh-3-days", "coorg-3-days", "darjeeling-3-days", "amritsar-2-days",
+    "hampi-3-days", "mysore-2-days", "spiti-valley-7-days", "char-dham-7-days",
+    "kedarnath-trek-3-days", "meghalaya-5-days", "northeast-india-10-days",
+    "ooty-3-days", "hyderabad-2-days", "pune-2-days", "gujarat-7-days",
   ],
+  // All Access — premium: true covers every slug
   "II-ALLGUIDES-001": [],
 };
 
@@ -35,26 +60,62 @@ const TIER_NAMES: Record<string, string> = {
 
 // slug → { title, emoji }
 const SLUG_INFO: Record<string, { title: string; emoji: string }> = {
+  // ₹99
   "goa-3-days":           { title: "Goa 3-Day Guide",            emoji: "🏖️" },
   "india-budget-guide":   { title: "India Budget Guide",          emoji: "🇮🇳" },
   "varanasi-3-days":      { title: "Varanasi 3-Day Guide",        emoji: "🕯️" },
+  "mumbai-3-days":        { title: "Mumbai 3-Day Guide",          emoji: "🌆" },
+  "delhi-3-days":         { title: "Delhi 3-Day Guide",           emoji: "🕌" },
+  "agra-2-days":          { title: "Agra 2-Day Guide",            emoji: "🕋" },
+  "amritsar-2-days":      { title: "Amritsar 2-Day Guide",        emoji: "🛕" },
+  "hyderabad-2-days":     { title: "Hyderabad 2-Day Guide",       emoji: "🍗" },
+  "pune-2-days":          { title: "Pune 2-Day Guide",            emoji: "🏰" },
+  "mysore-2-days":        { title: "Mysore 2-Day Guide",          emoji: "👑" },
+  // ₹149
   "rajasthan-7-days":     { title: "Rajasthan 7-Day Guide",       emoji: "🏰" },
   "kerala-5-days":        { title: "Kerala 5-Day Guide",          emoji: "🌿" },
   "kashmir-6-days":       { title: "Kashmir 6-Day Guide",         emoji: "❄️" },
   "manali-5-days":        { title: "Manali 5-Day Guide",          emoji: "⛰️" },
   "andaman-5-days":       { title: "Andaman 5-Day Guide",         emoji: "🏝️" },
+  "jaipur-3-days":        { title: "Jaipur 3-Day Guide",          emoji: "🏰" },
+  "rishikesh-3-days":     { title: "Rishikesh 3-Day Guide",       emoji: "🧘" },
+  "coorg-3-days":         { title: "Coorg 3-Day Guide",           emoji: "☕" },
+  "darjeeling-3-days":    { title: "Darjeeling 3-Day Guide",      emoji: "🚂" },
+  "hampi-3-days":         { title: "Hampi 3-Day Guide",           emoji: "🏛️" },
+  "ooty-3-days":          { title: "Ooty 3-Day Guide",            emoji: "🌸" },
+  "meghalaya-5-days":     { title: "Meghalaya 5-Day Guide",       emoji: "🌿" },
+  "northeast-india-10-days": { title: "Northeast India 10-Day Guide", emoji: "🌄" },
+  // ₹199
   "leh-ladakh-7-days":    { title: "Leh Ladakh 7-Day Guide",      emoji: "🏔️" },
   "bangkok-4-days":       { title: "Bangkok 4-Day Guide",         emoji: "🇹🇭" },
   "bali-5-days":          { title: "Bali 5-Day Guide",            emoji: "🌴" },
   "singapore-4-days":     { title: "Singapore 4-Day Guide",       emoji: "🇸🇬" },
   "sri-lanka-7-days":     { title: "Sri Lanka 7-Day Guide",       emoji: "🦁" },
-  "dubai-4-days":         { title: "Dubai 4-Day Guide",           emoji: "🏙️" },
-  "portugal-7-days":      { title: "Portugal 7-Day Guide",        emoji: "🇵🇹" },
-  "japan-10-days":        { title: "Japan 10-Day Guide",          emoji: "🗼" },
-  "greece-10-days":       { title: "Greece 10-Day Guide",         emoji: "🇬🇷" },
+  "spiti-valley-7-days":  { title: "Spiti Valley 7-Day Guide",    emoji: "🏔️" },
+  "char-dham-7-days":     { title: "Char Dham 7-Day Guide",       emoji: "🙏" },
+  "kedarnath-trek-3-days":{ title: "Kedarnath Trek 3-Day Guide",  emoji: "⛰️" },
+  "gujarat-7-days":       { title: "Gujarat 7-Day Guide",         emoji: "🦁" },
+  "malaysia-7-days":      { title: "Malaysia 7-Day Guide",        emoji: "🇲🇾" },
+  "nepal-7-days":         { title: "Nepal 7-Day Guide",           emoji: "🇳🇵" },
+  "turkey-7-days":        { title: "Turkey 7-Day Guide",          emoji: "🇹🇷" },
+  "amsterdam-4-days":     { title: "Amsterdam 4-Day Guide",       emoji: "🇳🇱" },
+  // ₹199 P3
   "vietnam-10-days":      { title: "Vietnam 10-Day Guide",        emoji: "🇻🇳" },
   "thailand-10-days":     { title: "Thailand 10-Day Guide",       emoji: "🌴" },
   "bhutan-5-days":        { title: "Bhutan 5-Day Guide",          emoji: "🏯" },
+  // ₹249
+  "dubai-4-days":         { title: "Dubai 4-Day Guide",           emoji: "🏙️" },
+  "portugal-7-days":      { title: "Portugal 7-Day Guide",        emoji: "🇵🇹" },
+  "paris-5-days":         { title: "Paris 5-Day Guide",           emoji: "🇫🇷" },
+  "barcelona-5-days":     { title: "Barcelona 5-Day Guide",       emoji: "🇪🇸" },
+  "rome-5-days":          { title: "Rome 5-Day Guide",            emoji: "🇮🇹" },
+  "london-5-days":        { title: "London 5-Day Guide",          emoji: "🇬🇧" },
+  "maldives-5-days":      { title: "Maldives 5-Day Guide",        emoji: "🏝️" },
+  "new-york-5-days":      { title: "New York 5-Day Guide",        emoji: "🗽" },
+  // ₹299
+  "japan-10-days":        { title: "Japan 10-Day Guide",          emoji: "🗼" },
+  "greece-10-days":       { title: "Greece 10-Day Guide",         emoji: "🇬🇷" },
+  "switzerland-7-days":   { title: "Switzerland 7-Day Guide",     emoji: "🇨🇭" },
 };
 
 // ── Redis helpers ─────────────────────────────────────────────────────────────

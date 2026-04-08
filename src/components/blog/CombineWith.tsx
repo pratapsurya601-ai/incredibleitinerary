@@ -87,7 +87,7 @@ const PAIRINGS: Record<string, { slug: string; why: string; travel: string }[]> 
   ],
   "thanjavur-2-days": [
     { slug: "trichy-2-days", why: "Srirangam Temple, 55km east", travel: "1hr drive" },
-    { slug: "madurai-3-days", why: "Meenakshi Temple, continue south", travel: "3.5hr drive" },
+    { slug: "madurai-2-days", why: "Meenakshi Temple, continue south", travel: "3.5hr drive" },
     { slug: "kanchipuram-2-days", why: "Start the temple circuit from the north", travel: "4hr drive" },
   ],
   "tamil-nadu-temple-circuit-7-days": [
