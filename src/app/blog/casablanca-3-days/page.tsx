@@ -276,7 +276,7 @@ const data: UniversalBlogData = {
     {
       icon: "🐟",
       title: "Eat at the Central Market for the freshest Atlantic seafood",
-      desc: "Morocco's Atlantic coast produces exceptional fish — sardines, sea bass, sole, and red mullet arrive fresh daily at the Marche Central. The adjacent restaurants will cook your market purchase for a small fee (MAD 30–40). This is the best-value seafood lunch in North Africa. Book accommodation in Casablanca at https://www.booking.com/city/ma/casablanca.html?aid=" + process.env.NEXT_PUBLIC_BOOKING_AID,
+      desc: "Morocco's Atlantic coast produces exceptional fish — sardines, sea bass, sole, and red mullet arrive fresh daily at the Marche Central. The adjacent restaurants will cook your market purchase for a small fee (MAD 30–40). This is the best-value seafood lunch in North Africa. Book accommodation in Casablanca at https://www.booking.com/city/ma/casablanca.html?aid=2820480",
       color: "bg-amber-50 border-amber-200",
     },
     {

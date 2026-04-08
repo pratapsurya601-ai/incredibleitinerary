@@ -315,7 +315,7 @@ const data: UniversalBlogData = {
     {
       icon: "🏨",
       title: "Stay in Wadi Rum for at least one night",
-      desc: "A day trip to Wadi Rum misses the desert's essential quality: silence, darkness, and the billion-star sky. Budget camps (JOD 25–35 all-inclusive) deliver the same stars as luxury camps. Book accommodation at https://www.booking.com/region/jo/wadi-rum.html?aid=" + process.env.NEXT_PUBLIC_BOOKING_AID,
+      desc: "A day trip to Wadi Rum misses the desert's essential quality: silence, darkness, and the billion-star sky. Budget camps (JOD 25–35 all-inclusive) deliver the same stars as luxury camps. Book accommodation at https://www.booking.com/region/jo/wadi-rum.html?aid=2820480",
       color: "bg-amber-50 border-amber-200",
     },
     {

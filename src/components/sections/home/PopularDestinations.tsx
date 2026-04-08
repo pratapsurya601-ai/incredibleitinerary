@@ -7,16 +7,16 @@ import { blogPosts } from "@/data/blog";
 // ── Full pool — 24 destinations ─────────────────────────────────────────────
 const ALL_DESTINATIONS = [
   // India
-  { name: "Kashmir", duration: "6 Days", budget: "From ₹18k", tag: "🇮🇳 Most Popular", img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=75", href: "/blog/kashmir-6-days" },
-  { name: "Rajasthan", duration: "7 Days", budget: "From ₹15k", tag: "🇮🇳 Heritage", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=75", href: "/blog/rajasthan-7-days" },
-  { name: "Goa", duration: "3 Days", budget: "From ₹8k", tag: "🇮🇳 Beach", img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=600&q=75", href: "/blog/goa-3-days" },
-  { name: "Kerala", duration: "5 Days", budget: "From ₹15k", tag: "🇮🇳 Nature", img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=75", href: "/blog/kerala-5-days" },
-  { name: "Leh Ladakh", duration: "7 Days", budget: "From ₹25k", tag: "🇮🇳 Adventure", img: "https://images.unsplash.com/photo-1600438831035-48f5f196d3bf?w=600&q=75", href: "/blog/leh-ladakh-7-days" },
-  { name: "Andaman", duration: "5 Days", budget: "From ₹20k", tag: "🇮🇳 Island", img: "https://images.unsplash.com/photo-1586359716568-3e1907e4cf9f?w=600&q=75", href: "/blog/andaman-5-days" },
-  { name: "Manali", duration: "5 Days", budget: "From ₹12k", tag: "🇮🇳 Mountains", img: "https://images.unsplash.com/photo-1677821374212-8c3e88292b1b?w=600&q=75", href: "/blog/manali-5-days" },
-  { name: "Meghalaya", duration: "5 Days", budget: "From ₹14k", tag: "🇮🇳 Northeast", img: "https://images.unsplash.com/photo-1698429358246-807d8972da9a?w=600&q=75", href: "/blog/meghalaya-5-days" },
-  { name: "Varanasi", duration: "3 Days", budget: "From ₹7k", tag: "🇮🇳 Spiritual", img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?w=600&q=75", href: "/blog/varanasi-3-days" },
-  { name: "Spiti Valley", duration: "7 Days", budget: "From ₹18k", tag: "🇮🇳 Offbeat", img: "https://images.unsplash.com/photo-1673246239376-f3c01a13bab0?w=600&q=75", href: "/blog/spiti-valley-7-days" },
+  { name: "Kashmir", duration: "6 Days", budget: "From ₹18,000", tag: "🇮🇳 Most Popular", img: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&q=75", href: "/blog/kashmir-6-days" },
+  { name: "Rajasthan", duration: "7 Days", budget: "From ₹15,000", tag: "🇮🇳 Heritage", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=75", href: "/blog/rajasthan-7-days" },
+  { name: "Goa", duration: "3 Days", budget: "From ₹8,000", tag: "🇮🇳 Beach", img: "https://images.unsplash.com/photo-1587922546307-776227941871?w=600&q=75", href: "/blog/goa-3-days" },
+  { name: "Kerala", duration: "5 Days", budget: "From ₹15,000", tag: "🇮🇳 Nature", img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=75", href: "/blog/kerala-5-days" },
+  { name: "Leh Ladakh", duration: "7 Days", budget: "From ₹25,000", tag: "🇮🇳 Adventure", img: "https://images.unsplash.com/photo-1600438831035-48f5f196d3bf?w=600&q=75", href: "/blog/leh-ladakh-7-days" },
+  { name: "Andaman", duration: "5 Days", budget: "From ₹20,000", tag: "🇮🇳 Island", img: "https://images.unsplash.com/photo-1586359716568-3e1907e4cf9f?w=600&q=75", href: "/blog/andaman-5-days" },
+  { name: "Manali", duration: "5 Days", budget: "From ₹12,000", tag: "🇮🇳 Mountains", img: "https://images.unsplash.com/photo-1677821374212-8c3e88292b1b?w=600&q=75", href: "/blog/manali-5-days" },
+  { name: "Meghalaya", duration: "5 Days", budget: "From ₹14,000", tag: "🇮🇳 Northeast", img: "https://images.unsplash.com/photo-1698429358246-807d8972da9a?w=600&q=75", href: "/blog/meghalaya-5-days" },
+  { name: "Varanasi", duration: "3 Days", budget: "From ₹7,000", tag: "🇮🇳 Spiritual", img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?w=600&q=75", href: "/blog/varanasi-3-days" },
+  { name: "Spiti Valley", duration: "7 Days", budget: "From ₹18,000", tag: "🇮🇳 Offbeat", img: "https://images.unsplash.com/photo-1673246239376-f3c01a13bab0?w=600&q=75", href: "/blog/spiti-valley-7-days" },
   // International
   { name: "Bangkok", duration: "4 Days", budget: "From $22/day", tag: "🇹🇭 Thailand", img: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=600&q=75", href: "/blog/bangkok-4-days" },
   { name: "Tokyo", duration: "5 Days", budget: "From $53/day", tag: "🇯🇵 Japan", img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=75", href: "/blog/tokyo-5-days" },
@@ -53,9 +53,9 @@ const BEST_INDIA_SLUGS = [
 // Build the static display list from ALL_DESTINATIONS where possible,
 // falling back to a minimal stub for slugs not in the pool (hampi, wayanad, coorg).
 const SLUG_FALLBACKS: Record<string, { name: string; duration: string; budget: string; tag: string; img: string }> = {
-  "/blog/hampi-3-days":   { name: "Hampi",   duration: "3 Days", budget: "From ₹6k",  tag: "🇮🇳 Heritage",  img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=75" },
-  "/blog/wayanad-3-days": { name: "Wayanad", duration: "3 Days", budget: "From ₹8k",  tag: "🇮🇳 Nature",    img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=75" },
-  "/blog/coorg-3-days":   { name: "Coorg",   duration: "3 Days", budget: "From ₹7k",  tag: "🇮🇳 Hills",     img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=75" },
+  "/blog/hampi-3-days":   { name: "Hampi",   duration: "3 Days", budget: "From ₹6,000",  tag: "🇮🇳 Heritage",  img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=75" },
+  "/blog/wayanad-3-days": { name: "Wayanad", duration: "3 Days", budget: "From ₹8,000",  tag: "🇮🇳 Nature",    img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=75" },
+  "/blog/coorg-3-days":   { name: "Coorg",   duration: "3 Days", budget: "From ₹7,000",  tag: "🇮🇳 Hills",     img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=75" },
 };
 
 const SHOWN_DESTINATIONS = BEST_INDIA_SLUGS.map((slug) => {

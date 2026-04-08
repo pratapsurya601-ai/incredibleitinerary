@@ -144,7 +144,7 @@ export default function KashmirClient() {
 
           {/* PICK PLAN */}
           <section id="plan" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">⚡ Pick Your Plan in 10 Seconds</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">Pick Your Plan in 10 Seconds</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
               {plans.map((p) => (
                 <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itinerary")?.scrollIntoView({ behavior: "smooth" }); }}
@@ -163,7 +163,7 @@ export default function KashmirClient() {
 
           {/* DESTINATIONS */}
           <section id="cities" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">📍 The 4 Destinations</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">The 4 Destinations</h2>
             <div className="space-y-3">
               {[
                 { city: "🏙️ Srinagar", days: "2–3 days", color: "border-l-4 border-blue-400 bg-blue-50", desc: "Kashmir's capital sits on the banks of Dal Lake — the most beautiful lake in India. The old city has Mughal gardens, centuries-old mosques, and the famous shikara boats. The 7km Boulevard along the lake is where most hotels are. Dal Lake changes completely — at dawn it's misty and silent, by afternoon it's a floating market.", must: ["Dal Lake shikara at dawn", "Nishat Bagh + Shalimar Bagh Mughal gardens", "Old city Jama Masjid + Hazratbal Shrine", "Shankaracharya Temple (city views)", "Floating vegetable market (5am)"] },
@@ -185,7 +185,7 @@ export default function KashmirClient() {
 
           {/* BEST TIME */}
           <section id="season" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🌡️ Best Time to Visit</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">Best Time to Visit</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 { season: "April–June", icon: "🌸", title: "Spring & Early Summer", desc: "Tulip gardens in bloom (March–April), apple orchards flowering, temperatures 15–25°C. Best for first-timers. Srinagar Tulip Garden is Asia's largest — 1.5 million tulips.", best: "Best overall for sightseeing", color: "bg-pink-50 border-pink-200" },
@@ -203,7 +203,7 @@ export default function KashmirClient() {
 
           {/* ITINERARIES */}
           <section id="itinerary" className="mb-14 scroll-mt-24">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">📅 The Itineraries</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">The Itineraries</h2>
             <div className="flex gap-2 flex-wrap mb-8 p-1 bg-parchment rounded-xl">
               {plans.map((p) => (
                 <button key={p.id} onClick={() => setActiveTab(p.id)}
@@ -218,49 +218,49 @@ export default function KashmirClient() {
               <div>
                 <div className="flex items-center gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl mb-6">
                   <span className="text-2xl">💰</span>
-                  <div><p className="text-sm font-medium text-amber-800">Budget Plan — Rs.18,000–Rs.28,000 per person for 6 days</p><p className="text-xs text-amber-600 font-light">Budget houseboat · Shared taxis · Local food</p></div>
+                  <div><p className="text-sm font-medium text-amber-800">Budget Plan — ₹18,000–₹28,000 per person for 6 days</p><p className="text-xs text-amber-600 font-light">Budget houseboat · Shared taxis · Local food</p></div>
                 </div>
                 <DayCard day="Day 1" title="Arrive Srinagar + Dal Lake"
                   items={[
-                    "Fly into Srinagar (SXR). Pre-paid taxi from airport to Dal Lake — Rs.400–Rs.600. Never negotiate with random touts at the airport.",
-                    "Check in to a budget houseboat on Dal Lake — Rs.1,500–Rs.2,500/night including breakfast. WHY houseboat: waking up on the lake as mist lifts over the Zabarwan mountains is worth every rupee over a regular hotel.",
-                    "Evening: shikara ride on Dal Lake — negotiate Rs.300–Rs.500/hour for the boat, not per person. The lake at dusk with the mountains behind is unforgettable.",
-                    "Dinner on your houseboat or at a local wazwan restaurant nearby — try roghan josh and rice for Rs.200–Rs.300.",
-                  ]} cost="Rs.1,000–Rs.1,800 excluding houseboat" />
+                    "Fly into Srinagar (SXR). Pre-paid taxi from airport to Dal Lake — ₹400–₹600. Never negotiate with random touts at the airport.",
+                    "Check in to a budget houseboat on Dal Lake — ₹1,500–₹2,500/night including breakfast. WHY houseboat: waking up on the lake as mist lifts over the Zabarwan mountains is worth every rupee over a regular hotel.",
+                    "Evening: shikara ride on Dal Lake — negotiate ₹300–₹500/hour for the boat, not per person. The lake at dusk with the mountains behind is unforgettable.",
+                    "Dinner on your houseboat or at a local wazwan restaurant nearby — try roghan josh and rice for ₹200–₹300.",
+                  ]} cost="₹1,000–₹1,800 excluding houseboat" />
                 <DayCard day="Day 2" title="Srinagar — Gardens + Old City"
                   items={[
                     "6am: floating vegetable market on Dal Lake — farmers bring vegetables by shikara to sell from boat to boat. Free to watch, extraordinary sight.",
-                    "Morning: Nishat Bagh and Shalimar Bagh — Mughal terraced gardens built by Emperor Jahangir in the 17th century. Entry Rs.24 each. Both take 45 minutes.",
+                    "Morning: Nishat Bagh and Shalimar Bagh — Mughal terraced gardens built by Emperor Jahangir in the 17th century. Entry ₹24 each. Both take 45 minutes.",
                     "Afternoon: Old City walk — Jama Masjid (largest mosque in Kashmir, free), Hazratbal Shrine (holds a relic of Prophet Muhammad), Nowhatta Chowk for street food.",
                     "5pm: Shankaracharya Temple (free) — hilltop Hindu temple with panoramic views over Srinagar and Dal Lake.",
                     "WHY both old and new: Srinagar is two cities — the Mughal garden city and the ancient Kashmiri city. Missing either means missing half.",
-                  ]} cost="Rs.500–Rs.900" />
+                  ]} cost="₹500–₹900" />
                 <DayCard day="Day 3" title="Gulmarg — Asia's Highest Gondola"
                   items={[
-                    "Shared taxi Srinagar → Gulmarg (52km, 1.5hrs) — Rs.250–Rs.400/seat. Leave by 8am.",
-                    "Gondola Phase 1 to Kongdori (2,650m → 3,080m): Rs.840 return. Book at the ticket office — long queues after 10am.",
-                    "Gondola Phase 2 to Apharwat (3,080m → 3,980m): Rs.920 additional. Only open in good weather — check conditions. The view from the top across the Himalayan range is extraordinary.",
-                    "Horse ride across Gulmarg meadow in summer (Rs.600–Rs.1,000) or snowboard/ski rental in winter (Rs.1,500–Rs.2,500/day).",
-                    "Return to Srinagar by 5pm — shared taxi back Rs.250–Rs.400.",
-                  ]} cost="Rs.2,500–Rs.4,500 total (gondola + activities + transport)" />
+                    "Shared taxi Srinagar → Gulmarg (52km, 1.5hrs) — ₹250–₹400/seat. Leave by 8am.",
+                    "Gondola Phase 1 to Kongdori (2,650m → 3,080m): ₹840 return. Book at the ticket office — long queues after 10am.",
+                    "Gondola Phase 2 to Apharwat (3,080m → 3,980m): ₹920 additional. Only open in good weather — check conditions. The view from the top across the Himalayan range is extraordinary.",
+                    "Horse ride across Gulmarg meadow in summer (₹600–₹1,000) or snowboard/ski rental in winter (₹1,500–₹2,500/day).",
+                    "Return to Srinagar by 5pm — shared taxi back ₹250–₹400.",
+                  ]} cost="₹2,500–₹4,500 total (gondola + activities + transport)" />
                 <DayCard day="Day 4–5" title="Pahalgam — Valley of Shepherds"
                   items={[
-                    "Shared taxi Srinagar → Pahalgam (95km, 2.5hrs) — Rs.350–Rs.500/seat. Scenic drive through Anantnag.",
-                    "Stay overnight in Pahalgam — budget guesthouse Rs.800–Rs.1,500/night. The town itself is walkable.",
-                    "Day 4 afternoon: Betaab Valley — green meadow surrounded by pine forests and snow peaks. Named after the Sunny Deol film. Entry Rs.50, shared jeep Rs.150.",
-                    "Day 5: Aru Valley (15km from Pahalgam, jeep Rs.200) — quieter than Betaab, horses graze by the river, stunning Himalayan backdrop. Then Chandanwari (26km) — snow visible year-round.",
-                    "Evening: Lidder river walk through pine forests. The Baisaran meadow (2km hike or horse Rs.400) — known as mini-Switzerland, above the treeline.",
-                  ]} cost="Rs.1,500–Rs.2,500/day excluding accommodation" />
+                    "Shared taxi Srinagar → Pahalgam (95km, 2.5hrs) — ₹350–₹500/seat. Scenic drive through Anantnag.",
+                    "Stay overnight in Pahalgam — budget guesthouse ₹800–₹1,500/night. The town itself is walkable.",
+                    "Day 4 afternoon: Betaab Valley — green meadow surrounded by pine forests and snow peaks. Named after the Sunny Deol film. Entry ₹50, shared jeep ₹150.",
+                    "Day 5: Aru Valley (15km from Pahalgam, jeep ₹200) — quieter than Betaab, horses graze by the river, stunning Himalayan backdrop. Then Chandanwari (26km) — snow visible year-round.",
+                    "Evening: Lidder river walk through pine forests. The Baisaran meadow (2km hike or horse ₹400) — known as mini-Switzerland, above the treeline.",
+                  ]} cost="₹1,500–₹2,500/day excluding accommodation" />
                 <DayCard day="Day 6" title="Sonamarg + Depart"
                   items={[
-                    "Day trip Srinagar → Sonamarg (87km, 2.5hrs) — shared taxi Rs.300–Rs.450/seat or private taxi Rs.2,000–Rs.2,500.",
-                    "Thajiwas Glacier — 2km easy walk from the main town or pony ride Rs.400–Rs.600. Glacial ice visible year-round.",
+                    "Day trip Srinagar → Sonamarg (87km, 2.5hrs) — shared taxi ₹300–₹450/seat or private taxi ₹2,000–₹2,500.",
+                    "Thajiwas Glacier — 2km easy walk from the main town or pony ride ₹400–₹600. Glacial ice visible year-round.",
                     "The drive through Sindh valley to Sonamarg is one of Kashmir's most scenic — snow-capped peaks reflected in the Sindh river.",
                     "Return to Srinagar by 4pm. Evening flight or overnight stay before morning departure.",
-                  ]} cost="Rs.1,500–Rs.2,500 including transport" />
+                  ]} cost="₹1,500–₹2,500 including transport" />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center mt-2">
                   <span className="text-xs text-amber-700 uppercase tracking-wide">Total 6-Day Budget (per person) · </span>
-                  <span className="font-serif text-base text-ink font-light">Rs.18,000–Rs.28,000 including accommodation, transport + all activities</span>
+                  <span className="font-serif text-base text-ink font-light">₹18,000–₹28,000 including accommodation, transport + all activities</span>
                 </div>
               </div>
             )}
@@ -270,49 +270,49 @@ export default function KashmirClient() {
               <div>
                 <div className="flex items-center gap-3 p-4 bg-rose-50 border border-rose-200 rounded-xl mb-6">
                   <span className="text-2xl">💑</span>
-                  <div><p className="text-sm font-medium text-rose-800">Honeymoon Plan — Rs.55,000–Rs.90,000 for two</p><p className="text-xs text-rose-600 font-light">Heritage houseboat · Private car + driver · Romantic dining</p></div>
+                  <div><p className="text-sm font-medium text-rose-800">Honeymoon Plan — ₹55,000–₹90,000 for two</p><p className="text-xs text-rose-600 font-light">Heritage houseboat · Private car + driver · Romantic dining</p></div>
                 </div>
                 <DayCard day="Day 1" title="Arrive + Heritage Houseboat"
                   items={[
-                    "Private car from airport (Rs.600–Rs.900). Check in to a category A or deluxe heritage houseboat — look for ones with carved walnut wood interiors, Rs.4,000–Rs.8,000/night per couple including all meals.",
-                    "Late afternoon shikara with your own private boat (Rs.800–Rs.1,200/hour) — the boatman takes you through the lotus gardens and quiet channels away from tourist traffic.",
+                    "Private car from airport (₹600–₹900). Check in to a category A or deluxe heritage houseboat — look for ones with carved walnut wood interiors, ₹4,000–₹8,000/night per couple including all meals.",
+                    "Late afternoon shikara with your own private boat (₹800–₹1,200/hour) — the boatman takes you through the lotus gardens and quiet channels away from tourist traffic.",
                     "Sunset: float across the lake watching the Zabarwan mountains turn pink. Have your houseboat cook prepare a wazwan dinner served on the deck.",
                     "WHY Kashmir for honeymoon: Dal Lake at dawn, snow in Gulmarg, the pine forests of Pahalgam — three completely different landscapes in six days. No other honeymoon destination in India offers this range.",
-                  ]} cost="Rs.6,000–Rs.10,000 for two" />
+                  ]} cost="₹6,000–₹10,000 for two" />
                 <DayCard day="Day 2" title="Srinagar — Gardens + Floating Market"
                   items={[
                     "5:30am: floating vegetable market by shikara — arrive before 7am for the full spectacle.",
-                    "Mughal Gardens: Nishat Bagh and Shalimar Bagh with a private guide (Rs.800–Rs.1,200) — learn why Jehangir called Kashmir paradise.",
+                    "Mughal Gardens: Nishat Bagh and Shalimar Bagh with a private guide (₹800–₹1,200) — learn why Jehangir called Kashmir paradise.",
                     "Old City heritage walk with guide — Jama Masjid, Hazratbal, the old wooden mosque architecture that's found nowhere else.",
-                    "Afternoon: Cashmere shopping — Khadi Emporium or the government handicrafts stores for authentic pashmina and khatamband (Rs.3,000–Rs.20,000 for quality pashmina).",
+                    "Afternoon: Cashmere shopping — Khadi Emporium or the government handicrafts stores for authentic pashmina and khatamband (₹3,000–₹20,000 for quality pashmina).",
                     "Sunset dinner on a rooftop with Dal Lake view — Mughal Darbar restaurant.",
-                  ]} cost="Rs.5,000–Rs.9,000 for two" />
+                  ]} cost="₹5,000–₹9,000 for two" />
                 <DayCard day="Day 3" title="Gulmarg — Snow + Gondola"
                   items={[
-                    "Private car to Gulmarg (52km, 1.5hrs) — Rs.2,000–Rs.2,500 for the car.",
-                    "Book both Gondola phases in advance if possible (Rs.1,760/person total for both). Arrive at Gondola by 9am before queues build.",
-                    "Winter: book a private skiing lesson (Rs.2,500–Rs.4,000) + equipment rental. Even beginners can manage the beginner slopes with instruction.",
-                    "Summer: private horse ride across Gulmarg meadow to Khilanmarg (Rs.1,500–Rs.2,000 for two), picnic arranged by your hotel.",
-                    "Stay overnight at The Khyber Himalayan Resort (Rs.8,000–Rs.20,000/night) — ski-in ski-out, most dramatic mountain setting in India.",
-                  ]} cost="Rs.14,000–Rs.25,000 for two (Khyber + gondola + activities)" />
+                    "Private car to Gulmarg (52km, 1.5hrs) — ₹2,000–₹2,500 for the car.",
+                    "Book both Gondola phases in advance if possible (₹1,760/person total for both). Arrive at Gondola by 9am before queues build.",
+                    "Winter: book a private skiing lesson (₹2,500–₹4,000) + equipment rental. Even beginners can manage the beginner slopes with instruction.",
+                    "Summer: private horse ride across Gulmarg meadow to Khilanmarg (₹1,500–₹2,000 for two), picnic arranged by your hotel.",
+                    "Stay overnight at The Khyber Himalayan Resort (₹8,000–₹20,000/night) — ski-in ski-out, most dramatic mountain setting in India.",
+                  ]} cost="₹14,000–₹25,000 for two (Khyber + gondola + activities)" />
                 <DayCard day="Day 4–5" title="Pahalgam — Pine Forests + River"
                   items={[
-                    "Private car Gulmarg → Pahalgam (160km, 3.5hrs) — Rs.3,000–Rs.4,000.",
-                    "Stay at The LaLiT Grand Palace Srinagar equivalent in Pahalgam — Pahalgam Hotel or Mountain Retreat (Rs.6,000–Rs.12,000/night).",
+                    "Private car Gulmarg → Pahalgam (160km, 3.5hrs) — ₹3,000–₹4,000.",
+                    "Stay at The LaLiT Grand Palace Srinagar equivalent in Pahalgam — Pahalgam Hotel or Mountain Retreat (₹6,000–₹12,000/night).",
                     "Day 4: Betaab Valley and Aru Valley by private jeep. Arrange a riverside picnic lunch — your hotel can pack this.",
                     "Evening: Lidder river walk at golden hour. The combination of rushing river, pine fragrance and mountain silence is extraordinary.",
-                    "Day 5: Baisaran meadow by horse (Rs.800–Rs.1,200 for two) — above the treeline, surrounded by peaks. Chandanwari glacier visit.",
-                  ]} cost="Rs.10,000–Rs.18,000 for two per day" />
+                    "Day 5: Baisaran meadow by horse (₹800–₹1,200 for two) — above the treeline, surrounded by peaks. Chandanwari glacier visit.",
+                  ]} cost="₹10,000–₹18,000 for two per day" />
                 <DayCard day="Day 6" title="Sonamarg + Final Dal Lake Evening"
                   items={[
-                    "Morning: Sonamarg day trip by private car (Rs.3,000–Rs.4,000). Thajiwas Glacier pony ride for two.",
+                    "Morning: Sonamarg day trip by private car (₹3,000–₹4,000). Thajiwas Glacier pony ride for two.",
                     "Return to Srinagar for final night on Dal Lake houseboat.",
                     "Last evening: special dinner arranged on the houseboat deck with candles and Kashmiri wazwan — lamb dishes, nadru yakhni, dum aloo, phirni for dessert.",
                     "Night shikara under the stars — the houseboat owner can arrange a private evening boat ride.",
-                  ]} cost="Rs.6,000–Rs.10,000 for two" />
+                  ]} cost="₹6,000–₹10,000 for two" />
                 <div className="bg-rose-50 border border-rose-200 rounded-xl p-4 text-center mt-2">
                   <span className="text-xs text-rose-700 uppercase tracking-wide">Total 6-Day Honeymoon (for two) · </span>
-                  <span className="font-serif text-base text-ink font-light">Rs.55,000–Rs.90,000 including heritage houseboat, private car + all activities</span>
+                  <span className="font-serif text-base text-ink font-light">₹55,000–₹90,000 including heritage houseboat, private car + all activities</span>
                 </div>
               </div>
             )}
@@ -326,31 +326,31 @@ export default function KashmirClient() {
                 </div>
                 <DayCard day="Day 1–2" title="Srinagar Base + Acclimatise"
                   items={[
-                    "Day 1: Arrive, stay near Lal Chowk (budget Rs.800–Rs.1,500). Buy trekking supplies: Dry fruits, local energy bars, thermal layers from Polo View market.",
+                    "Day 1: Arrive, stay near Lal Chowk (budget ₹800–₹1,500). Buy trekking supplies: Dry fruits, local energy bars, thermal layers from Polo View market.",
                     "Register with District Magistrate office if planning high-altitude treks above 3,500m — required and takes 2 hours.",
                     "Day 2: Acclimatisation hike — Shankaracharya Hill (1,100 steps) and Hari Parbat Fort walk. Check weather forecast for Gulmarg.",
-                    "Meeting with licensed trek guide for Kashmir Great Lakes or Tarsar Marsar — Rs.1,500–Rs.2,500/day. Do not trek without a guide.",
-                  ]} cost="Rs.2,000–Rs.3,500" />
+                    "Meeting with licensed trek guide for Kashmir Great Lakes or Tarsar Marsar — ₹1,500–₹2,500/day. Do not trek without a guide.",
+                  ]} cost="₹2,000–₹3,500" />
                 <DayCard day="Day 3–4" title="Gulmarg — Skiing + High Altitude"
                   items={[
-                    "Gulmarg (winter): India's best skiing at Asia's highest ski resort. Beginner to advanced slopes. 3-day ski package Rs.8,000–Rs.15,000 (lessons + equipment + gondola).",
+                    "Gulmarg (winter): India's best skiing at Asia's highest ski resort. Beginner to advanced slopes. 3-day ski package ₹8,000–₹15,000 (lessons + equipment + gondola).",
                     "Gulmarg (summer): Gondola to Apharwat (3,980m), hike to Mary's Shoulder (4,200m) — requires fitness and proper gear. No guide needed but take warm layers.",
                     "Alpather Lake trek (summer only) — 13km return from Apharwat, glacial lake frozen until July. One of Kashmir's most beautiful treks.",
-                    "Night at Gulmarg — shared dormitory or budget hotel Rs.800–Rs.1,500.",
-                  ]} cost="Rs.8,000–Rs.16,000 for 2 days (skiing) or Rs.2,000–Rs.4,000 (summer trekking)" />
+                    "Night at Gulmarg — shared dormitory or budget hotel ₹800–₹1,500.",
+                  ]} cost="₹8,000–₹16,000 for 2 days (skiing) or ₹2,000–₹4,000 (summer trekking)" />
                 <DayCard day="Day 5" title="Pahalgam — River Rafting + Betaab Valley"
                   items={[
-                    "River rafting on Lidder River — Grade 1-3 rapids, Rs.500–Rs.800/person. Best May–July when river is full.",
-                    "Trek to Tulian Lake (11km one way, 3,353m) — one of Kashmir's most rewarding day treks. Start by 7am. Guide Rs.800–Rs.1,200.",
+                    "River rafting on Lidder River — Grade 1-3 rapids, ₹500–₹800/person. Best May–July when river is full.",
+                    "Trek to Tulian Lake (11km one way, 3,353m) — one of Kashmir's most rewarding day treks. Start by 7am. Guide ₹800–₹1,200.",
                     "Alternatively: Chandanwari to Sheshnag Lake (8km) — first stage of Amarnath Yatra route, spectacular high-altitude scenery.",
-                  ]} cost="Rs.2,500–Rs.5,000" />
+                  ]} cost="₹2,500–₹5,000" />
                 <DayCard day="Day 6" title="Sonamarg + Baltal Camp"
                   items={[
-                    "Sonamarg: base for Thajiwas Glacier trek (4km, 3,600m). Easy trail, no guide needed. Snow equipment available for rent Rs.200.",
-                    "Advanced option: Nichnai Pass day hike (12km, 4,100m) — requires fitness and guide (Rs.1,200).",
+                    "Sonamarg: base for Thajiwas Glacier trek (4km, 3,600m). Easy trail, no guide needed. Snow equipment available for rent ₹200.",
+                    "Advanced option: Nichnai Pass day hike (12km, 4,100m) — requires fitness and guide (₹1,200).",
                     "Zoji La viewpoint — 3km from Sonamarg, stand at the gateway to Ladakh.",
                     "Return Srinagar evening flight or next day.",
-                  ]} cost="Rs.2,000–Rs.4,000" />
+                  ]} cost="₹2,000–₹4,000" />
               </div>
             )}
 
@@ -359,38 +359,38 @@ export default function KashmirClient() {
               <div>
                 <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-xl mb-6">
                   <span className="text-2xl">👨‍👩‍👧</span>
-                  <div><p className="text-sm font-medium text-blue-800">Family Plan — Rs.50,000–Rs.80,000 for four</p><p className="text-xs text-blue-600 font-light">Private car · Family houseboat · Child-friendly activities</p></div>
+                  <div><p className="text-sm font-medium text-blue-800">Family Plan — ₹50,000–₹80,000 for four</p><p className="text-xs text-blue-600 font-light">Private car · Family houseboat · Child-friendly activities</p></div>
                 </div>
                 <DayCard day="Day 1–2" title="Srinagar — Houseboat + Gardens"
                   items={[
-                    "Family houseboat: book a 2-bedroom houseboat (Rs.4,000–Rs.7,000/night for the whole boat, sleeps 4). Children love the novelty of sleeping on water.",
+                    "Family houseboat: book a 2-bedroom houseboat (₹4,000–₹7,000/night for the whole boat, sleeps 4). Children love the novelty of sleeping on water.",
                     "Shikara ride: children can try rowing the shikara under supervision. Visit the floating gardens and vegetable market — children find this magical.",
-                    "Mughal Gardens: Nishat Bagh has wide lawns for children to run around. Entry Rs.24/person.",
+                    "Mughal Gardens: Nishat Bagh has wide lawns for children to run around. Entry ₹24/person.",
                     "Hari Parbat Fort (easy walk, good views) — children enjoy the watchtowers.",
-                  ]} cost="Rs.5,000–Rs.8,000 for family per day" />
+                  ]} cost="₹5,000–₹8,000 for family per day" />
                 <DayCard day="Day 3" title="Gulmarg — Snow for Kids"
                   items={[
-                    "Private car family Gulmarg day trip (Rs.2,500–Rs.3,500 for the car).",
-                    "Children love the snow — sledging, snowball fights, snowman building. Equipment available for hire Rs.100–Rs.200.",
+                    "Private car family Gulmarg day trip (₹2,500–₹3,500 for the car).",
+                    "Children love the snow — sledging, snowball fights, snowman building. Equipment available for hire ₹100–₹200.",
                     "Gondola Phase 1 (Kongdori) is fine for children. Phase 2 (Apharwat) — only if children are 8+ and comfortable with heights.",
-                    "Pony rides across Gulmarg meadow — children enjoy this. Rs.400–Rs.600 per horse.",
-                  ]} cost="Rs.5,000–Rs.9,000 for family" />
+                    "Pony rides across Gulmarg meadow — children enjoy this. ₹400–₹600 per horse.",
+                  ]} cost="₹5,000–₹9,000 for family" />
                 <DayCard day="Day 4–5" title="Pahalgam — Valleys + Ponies"
                   items={[
-                    "Private car to Pahalgam (Rs.3,000–Rs.4,000). Stay at a family room hotel (Rs.3,000–Rs.5,000/night).",
+                    "Private car to Pahalgam (₹3,000–₹4,000). Stay at a family room hotel (₹3,000–₹5,000/night).",
                     "Betaab Valley: flat meadow, shallow river, perfect for children to play. Very safe.",
                     "Pony rides to Baisaran (mini-Switzerland) — children's highlight of the whole trip.",
                     "Lidder river: children can paddle in the shallow sections near the town.",
-                  ]} cost="Rs.6,000–Rs.10,000 for family per day" />
+                  ]} cost="₹6,000–₹10,000 for family per day" />
                 <DayCard day="Day 6" title="Sonamarg + Glacier Experience"
                   items={[
-                    "Sonamarg day trip by private car (Rs.3,000–Rs.4,000). Children can touch the glacier — available year-round.",
-                    "Sledging on the glacier — Rs.100/person, children love this regardless of season.",
+                    "Sonamarg day trip by private car (₹3,000–₹4,000). Children can touch the glacier — available year-round.",
+                    "Sledging on the glacier — ₹100/person, children love this regardless of season.",
                     "Return Srinagar. Final evening shikara ride on Dal Lake.",
-                  ]} cost="Rs.4,000–Rs.7,000 for family" />
+                  ]} cost="₹4,000–₹7,000 for family" />
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center mt-2">
                   <span className="text-xs text-blue-700 uppercase tracking-wide">Total 6-Day Family (for four) · </span>
-                  <span className="font-serif text-base text-ink font-light">Rs.50,000–Rs.80,000 including private car, accommodation + activities</span>
+                  <span className="font-serif text-base text-ink font-light">₹50,000–₹80,000 including private car, accommodation + activities</span>
                 </div>
               </div>
             )}
@@ -398,11 +398,11 @@ export default function KashmirClient() {
 
           {/* HOUSEBOAT GUIDE */}
           <section id="houseboat" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">🛶 Dal Lake Houseboat Guide</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">Dal Lake Houseboat Guide</h2>
             <p className="text-sm text-muted font-light mb-6">The houseboat experience is what makes Kashmir unique. Here&apos;s how to do it right.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {[
-                { title: "Categories", icon: "⭐", content: "D-class (budget): Rs.1,500–Rs.2,500/night. C-class: Rs.2,500–Rs.4,000. B-class: Rs.4,000–Rs.6,000. A-class (deluxe): Rs.6,000–Rs.12,000. Prices include breakfast and usually dinner. Always inspect before paying." },
+                { title: "Categories", icon: "⭐", content: "D-class (budget): ₹1,500–₹2,500/night. C-class: ₹2,500–₹4,000. B-class: ₹4,000–₹6,000. A-class (deluxe): ₹6,000–₹12,000. Prices include breakfast and usually dinner. Always inspect before paying." },
                 { title: "What to look for", icon: "🔍", content: "Working hot water (essential in winter). Clean bedding. Working electricity. Functioning toilet. Windows that open toward the lake, not a wall. Ask to see the bedroom before booking." },
                 { title: "How to book", icon: "📱", content: "Book through your hotel or a trusted platform — Booking.com has verified houseboats. Avoid booking from men who approach you at the airport or ghat — often misleading photos and overcharging." },
                 { title: "Best location", icon: "📍", content: "Nagin Lake houseboats are quieter than Dal Lake but less central. Dal Lake Boulevard-side houseboats are convenient. Inner lake houseboats (accessible only by shikara) are the most atmospheric." },
@@ -417,7 +417,7 @@ export default function KashmirClient() {
 
           {/* BUDGET TABLE */}
           <section id="budget" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💰 Budget Breakdown</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">Budget Breakdown</h2>
             <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
               <table className="w-full text-sm">
                 <thead><tr className="bg-ink">
@@ -465,24 +465,24 @@ export default function KashmirClient() {
             title="Kashmir — Must-See Places"
             subtitle="The most beautiful destination in India — click to explore."
             spots={[
-              { name: "Dal Lake, Srinagar", query: "dal lake srinagar kashmir houseboat shikara morning", desc: "India's most beautiful lake — 18km² of water gardens, floating markets, and wooden houseboats against the Zabarwan mountains." },
-              { name: "Gulmarg Snow", query: "gulmarg kashmir snow mountains gondola winter", desc: "India's best ski resort at 2,650m — Asia's second highest gondola, 4-8 feet of snowfall in winter, green meadows in summer." },
-              { name: "Pahalgam Valley", query: "pahalgam valley kashmir betaab valley river pine", desc: "The Valley of Shepherds — pine forests, rivers and open meadows 95km from Srinagar." },
-              { name: "Sonamarg Glacier", query: "sonamarg kashmir glacier himalaya mountain", desc: "Meadow of Gold — visible glaciers, Himalayan peaks and the gateway to Ladakh." },
-              { name: "Mughal Gardens", query: "nishat bagh shalimar bagh mughal gardens kashmir", desc: "Terraced Mughal gardens built by Emperor Jahangir in the 17th century — among the finest surviving Mughal landscapes." },
+              { name: "Dal Lake, Srinagar", query: "dal lake srinagar kashmir houseboat shikara morning", fallback: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&q=80", desc: "India's most beautiful lake — 18km² of water gardens, floating markets, and wooden houseboats against the Zabarwan mountains." },
+              { name: "Gulmarg Snow", query: "gulmarg kashmir snow mountains gondola winter", fallback: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80", desc: "India's best ski resort at 2,650m — Asia's second highest gondola, 4-8 feet of snowfall in winter, green meadows in summer." },
+              { name: "Pahalgam Valley", query: "pahalgam valley kashmir betaab valley river pine", fallback: "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80", desc: "The Valley of Shepherds — pine forests, rivers and open meadows 95km from Srinagar." },
+              { name: "Sonamarg Glacier", query: "sonamarg kashmir glacier himalaya mountain", fallback: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80", desc: "Meadow of Gold — visible glaciers, Himalayan peaks and the gateway to Ladakh." },
+              { name: "Mughal Gardens", query: "nishat bagh shalimar bagh mughal gardens kashmir", fallback: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80", desc: "Terraced Mughal gardens built by Emperor Jahangir in the 17th century — among the finest surviving Mughal landscapes." },
             ]}
           />
 
           {/* MISTAKES */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">❌ Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
                 { icon: "🌧️", title: "Visiting July–August", desc: "Monsoon season — road closures, leeches on treks, frequent rain, landslides on mountain roads to Sonamarg. April–June or September–October instead.", color: "bg-white border-parchment-2" },
                 { icon: "🛶", title: "Booking a houseboat from airport touts", desc: "Men waiting at Srinagar airport with 'best houseboats' are showing you photos of deluxe properties then taking you to budget ones. Book in advance through Booking.com or your hotel.", color: "bg-white border-parchment-2" },
                 { icon: "❄️", title: "Going to Gulmarg without checking snow conditions", desc: "Gondola Phase 2 closes in bad weather and heavy snow. Check conditions the night before — call your hotel in Gulmarg. A wasted Gondola day is an expensive disappointment.", color: "bg-white border-parchment-2" },
-                { icon: "💎", title: "Buying pashmina from street vendors", desc: "Genuine Kashmiri pashmina costs Rs.3,000–Rs.20,000 minimum. Anything cheaper is either acrylic or mixed. Buy from J&K government emporiums or GI-tagged certified stores.", color: "bg-white border-parchment-2" },
-                { icon: "🏔️", title: "Trekking without a guide", desc: "Above 3,000m in Kashmir, weather changes rapidly and paths aren't always marked. Always hire a licensed guide for Tulian Lake, Alpather, Kashmir Great Lakes. Rs.1,500–Rs.2,500/day.", color: "bg-white border-parchment-2" },
+                { icon: "💎", title: "Buying pashmina from street vendors", desc: "Genuine Kashmiri pashmina costs ₹3,000–₹20,000 minimum. Anything cheaper is either acrylic or mixed. Buy from J&K government emporiums or GI-tagged certified stores.", color: "bg-white border-parchment-2" },
+                { icon: "🏔️", title: "Trekking without a guide", desc: "Above 3,000m in Kashmir, weather changes rapidly and paths aren't always marked. Always hire a licensed guide for Tulian Lake, Alpather, Kashmir Great Lakes. ₹1,500–₹2,500/day.", color: "bg-white border-parchment-2" },
               ].map((m) => (
                 <div key={m.title} className={`rounded-xl p-4 border ${m.color}`}>
                   <div className="flex items-start gap-3"><span className="text-xl flex-shrink-0">{m.icon}</span><div><p className="font-medium text-sm text-stone-900 mb-1">❌ {m.title}</p><p className="text-xs text-gray-700 font-light leading-relaxed">{m.desc}</p></div></div>
@@ -493,14 +493,14 @@ export default function KashmirClient() {
 
           {/* PRO TIPS */}
           <section id="tips" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💡 Pro Tips</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">Pro Tips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 { icon: "🌅", title: "Dal Lake at 5:30am is magical", desc: "Mist rises off the water, shikara boats emerge from the channels, the mountains glow pink. Stay on a houseboat and wake up to this. It's the single best thing about Kashmir.", color: "bg-blue-50 border-blue-200" },
-                { icon: "🍛", title: "Wazwan is Kashmir's culinary tradition", desc: "36-course feast — roghan josh, gushtaba, dum aloo, nadru yakhni. Book a full wazwan dinner at a local family home through your hotel (Rs.600–Rs.1,000/person). Better than any restaurant.", color: "bg-amber-50 border-amber-200" },
-                { icon: "🌸", title: "Tulip Garden — March–April only", desc: "Asia's largest tulip garden in Srinagar — 1.5 million tulips on terraced hillside above Dal Lake. Open for just 3-4 weeks in spring. Entry Rs.50. Extraordinary.", color: "bg-pink-50 border-pink-200" },
-                { icon: "⛷️", title: "Gulmarg skiing is genuinely world-class", desc: "Professional ski instructors, heliskiing available, powdery Himalayan snow. Rs.8,000–Rs.15,000 for a 3-day ski package including equipment and instruction. Better than anything in Manali.", color: "bg-blue-50 border-blue-200" },
-                { icon: "🧣", title: "Kashmiri kangri — the most useful purchase", desc: "A small clay pot with hot coals kept under your pheran (traditional cloak). Rs.150–Rs.300 at any market. Keeps you warm for hours. The most practical Kashmir souvenir.", color: "bg-amber-50 border-amber-200" },
+                { icon: "🍛", title: "Wazwan is Kashmir's culinary tradition", desc: "36-course feast — roghan josh, gushtaba, dum aloo, nadru yakhni. Book a full wazwan dinner at a local family home through your hotel (₹600–₹1,000/person). Better than any restaurant.", color: "bg-amber-50 border-amber-200" },
+                { icon: "🌸", title: "Tulip Garden — March–April only", desc: "Asia's largest tulip garden in Srinagar — 1.5 million tulips on terraced hillside above Dal Lake. Open for just 3-4 weeks in spring. Entry ₹50. Extraordinary.", color: "bg-pink-50 border-pink-200" },
+                { icon: "⛷️", title: "Gulmarg skiing is genuinely world-class", desc: "Professional ski instructors, heliskiing available, powdery Himalayan snow. ₹8,000–₹15,000 for a 3-day ski package including equipment and instruction. Better than anything in Manali.", color: "bg-blue-50 border-blue-200" },
+                { icon: "🧣", title: "Kashmiri kangri — the most useful purchase", desc: "A small clay pot with hot coals kept under your pheran (traditional cloak). ₹150–₹300 at any market. Keeps you warm for hours. The most practical Kashmir souvenir.", color: "bg-amber-50 border-amber-200" },
                 { icon: "📱", title: "Download maps offline — connectivity varies", desc: "Mobile signal is excellent in Srinagar and Gulmarg town. On mountain roads to Sonamarg and in Pahalgam valleys, it drops out. Download Google Maps offline before leaving your hotel.", color: "bg-green-50 border-green-200" },
               ].map((t) => (
                 <div key={t.title} className={`rounded-xl p-4 border ${t.color}`}>
@@ -523,12 +523,12 @@ export default function KashmirClient() {
 
           {/* FAQ */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">❓ FAQ</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">FAQ</h2>
             <div className="space-y-3">
               {[
                 { q: "Is Kashmir safe to visit in 2026?", a: "Yes — Kashmir has been welcoming tourists in large numbers since 2019. Over 2 crore tourists visited in 2023-24, a record high. The main tourist areas are safe and well-patrolled. Stay updated via local advisories and your hotel." },
                 { q: "What is the best time to visit Kashmir?", a: "April–June (spring, tulips, mild weather) and September–October (golden chinar trees, fewer crowds, best photography). December–February for snow and skiing. Avoid July–August (monsoon)." },
-                { q: "How much does a Dal Lake houseboat cost?", a: "Budget: Rs.1,500–Rs.2,500/night including breakfast. Mid-range: Rs.3,500–Rs.6,000/night all meals. Luxury: Rs.8,000–Rs.20,000/night. Always inspect the houseboat before paying." },
+                { q: "How much does a Dal Lake houseboat cost?", a: "Budget: ₹1,500–₹2,500/night including breakfast. Mid-range: ₹3,500–₹6,000/night all meals. Luxury: ₹8,000–₹20,000/night. Always inspect the houseboat before paying." },
                 { q: "How do I get to Kashmir?", a: "Fly to Srinagar airport (SXR) — direct flights from Delhi (1hr 15min), Mumbai (2hr 30min), Bangalore (3hrs). Book 2–3 weeks ahead during peak season." },
                 { q: "Do I need any permits for Kashmir?", a: "Indian nationals: no permits needed for the main tourist circuit (Srinagar, Gulmarg, Pahalgam, Sonamarg). High-altitude treks above 3,500m require registration with the District Magistrate. Foreign nationals: no special permit but register at the local Foreigners' Registration Office within 24 hours of arrival." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}

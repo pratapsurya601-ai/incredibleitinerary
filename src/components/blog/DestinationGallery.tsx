@@ -33,33 +33,40 @@ export default function DestinationGallery({
   useEffect(() => {
     const fetchAll = async () => {
       const results: Record<string, GalleryPhoto> = {};
-      await Promise.all(
-        spots.map(async (spot) => {
-          try {
-            const res = await fetch(
-              `/api/image?q=${encodeURIComponent(spot.query)}`
-            );
-            if (!res.ok) return;
-            const data = await res.json();
-            if (data.url) {
-              results[spot.name] = {
-                url: data.url,
-                alt: data.alt || spot.name,
-                photographer: data.photographer || "",
-                pexelsUrl: data.pexels_url || "",
-              };
-            } else if (spot.fallback) {
-              results[spot.name] = { url: spot.fallback, alt: spot.name, photographer: "", pexelsUrl: "" };
-            }
-          } catch {
+      try {
+        await Promise.all(
+          spots.map(async (spot) => {
+            // Start with fallback so we always have something to show
             if (spot.fallback) {
               results[spot.name] = { url: spot.fallback, alt: spot.name, photographer: "", pexelsUrl: "" };
             }
-          }
-        })
-      );
-      setPhotos(results);
-      setLoading(false);
+            try {
+              const controller = new AbortController();
+              const timeout = setTimeout(() => controller.abort(), 6000);
+              const res = await fetch(
+                `/api/image?q=${encodeURIComponent(spot.query)}`,
+                { signal: controller.signal }
+              );
+              clearTimeout(timeout);
+              if (!res.ok) return;
+              const data = await res.json();
+              if (data.url) {
+                results[spot.name] = {
+                  url: data.url,
+                  alt: data.alt || spot.name,
+                  photographer: data.photographer || "",
+                  pexelsUrl: data.pexels_url || "",
+                };
+              }
+            } catch {
+              // Keep fallback if set, otherwise spot stays empty
+            }
+          })
+        );
+      } finally {
+        setPhotos(results);
+        setLoading(false);
+      }
     };
     fetchAll();
   }, [spots]);
@@ -72,7 +79,7 @@ export default function DestinationGallery({
       {/* Section header */}
       <div className="mb-6">
         <h2 className="font-serif text-[1.9rem] font-light text-ink mb-1">
-          📸 {title}
+          {title}
         </h2>
         {subtitle && (
           <p className="text-sm text-muted font-light">{subtitle}</p>

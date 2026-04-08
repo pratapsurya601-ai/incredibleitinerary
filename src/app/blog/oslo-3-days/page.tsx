@@ -287,7 +287,7 @@ const data: UniversalBlogData = {
     {
       icon: "🎫",
       title: "Buy museum tickets online to skip queues",
-      desc: "The Munch Museum and Viking Ship Museum both have timed entry slots that sell out in summer. Book at least 3 days ahead online. The Oslo Pass includes entry but you still need to reserve your time slot. Visit https://www.getyourguide.com/s/?q=Oslo&partner_id=PSZA5UI for guided tour options. Book hotels at https://www.booking.com/city/no/oslo.html?aid=" + process.env.NEXT_PUBLIC_BOOKING_AID,
+      desc: "The Munch Museum and Viking Ship Museum both have timed entry slots that sell out in summer. Book at least 3 days ahead online. The Oslo Pass includes entry but you still need to reserve your time slot. Visit https://www.getyourguide.com/s/?q=Oslo&partner_id=PSZA5UI for guided tour options. Book hotels at https://www.booking.com/city/no/oslo.html?aid=2820480",
       color: "bg-teal-50 border-teal-200",
     },
   ],
