@@ -13,7 +13,7 @@ import GeneratedPostContent from "./GeneratedPostContent";
 import AdUnit from "@/components/ads/AdUnit";
 import AutoPdfCta from "@/components/blog/AutoPdfCta";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
-import AutoTableOfContents from "@/components/blog/AutoTableOfContents";
+import StickyTOCSidebar from "@/components/blog/StickyTOCSidebar";
 import AffiliateDisclosure from "@/components/blog/AffiliateDisclosure";
 import AuthorBio from "@/components/blog/AuthorBio";
 import RelatedGuides from "@/components/blog/RelatedGuides";
@@ -230,39 +230,46 @@ export default function BlogPostPage({ params }: Props) {
               </div>
             </div>
 
-            {/* ── ARTICLE BODY ── */}
-            <div className="max-w-[720px] mx-auto px-6 py-12">
-              {/* Auto TOC — sticky sidebar desktop, pill mobile */}
-              <AutoTableOfContents />
+            {/* ── ARTICLE BODY — two-column on desktop ── */}
+            <div className="max-w-[1060px] mx-auto px-6 py-12 lg:flex lg:gap-12 lg:items-start">
 
-              {/* Excerpt / intro */}
-              <p className="font-serif text-[1.15rem] text-muted font-light italic leading-[1.75] mb-8 border-l-2 border-gold/40 pl-5">
-                {post!.excerpt}
-              </p>
+              {/* Left: article content */}
+              <article className="flex-1 min-w-0 max-w-[680px]">
+                {/* Mobile: inline collapsible TOC accordion (hidden on lg+) */}
+                <StickyTOCSidebar mode="mobile" />
 
-              {/* Affiliate disclosure */}
-              <AffiliateDisclosure />
+                {/* Excerpt / intro */}
+                <p className="font-serif text-[1.15rem] text-muted font-light italic leading-[1.75] mb-8 border-l-2 border-gold/40 pl-5">
+                  {post!.excerpt}
+                </p>
 
-              {/* Auto PDF CTA — shows only if this destination has a PDF */}
-              <AutoPdfCta blogSlug={post!.slug} />
+                {/* Affiliate disclosure */}
+                <AffiliateDisclosure />
 
-              {/* Affiliate block — hotels + tours */}
-              <AffiliateBlock destination={post!.destination} />
+                {/* Auto PDF CTA — shows only if this destination has a PDF */}
+                <AutoPdfCta blogSlug={post!.slug} />
 
-              {/* Mid-article AdSense */}
-              <AdUnit slot="2847391056" format="auto" />
+                {/* Affiliate block — hotels + tours */}
+                <AffiliateBlock destination={post!.destination} />
 
-              {/* Author bio */}
-              <AuthorBio date={post!.date} readTime={post!.readTime} />
+                {/* Mid-article AdSense */}
+                <AdUnit slot="2847391056" format="auto" />
 
-              {/* Related guides */}
-              <RelatedGuides currentSlug={post!.slug} />
+                {/* Author bio */}
+                <AuthorBio date={post!.date} readTime={post!.readTime} />
 
-              <div className="mt-10 pt-6 border-t border-parchment-2">
-                <Link href="/blog" className="text-sm text-muted hover:text-gold transition-colors font-light">
-                  ← Back to all guides
-                </Link>
-              </div>
+                {/* Related guides */}
+                <RelatedGuides currentSlug={post!.slug} />
+
+                <div className="mt-10 pt-6 border-t border-parchment-2">
+                  <Link href="/blog" className="text-sm text-muted hover:text-gold transition-colors font-light">
+                    ← Back to all guides
+                  </Link>
+                </div>
+              </article>
+
+              {/* Right: sticky sidebar TOC (hidden on mobile, visible on lg+) */}
+              <StickyTOCSidebar mode="sidebar" />
             </div>
           </>
         )}

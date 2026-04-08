@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LegalWrapper from "@/components/layout/LegalWrapper";
+import { HAND_WRITTEN_COUNT } from "@/lib/siteStats";
 
 export const metadata: Metadata = {
   title: "Affiliate Disclosure — IncredibleItinerary",
@@ -20,7 +21,7 @@ const SECTIONS = [
   },
   {
     h: "How Affiliate Income Works for This Site",
-    p: "IncredibleItinerary is a bootstrapped, independent site. Affiliate commissions and ad revenue are the primary way we cover hosting, domain, and development costs so we can keep all 362+ travel guides free. Without affiliate income, the site could not exist in its current form.",
+    p: `IncredibleItinerary is a bootstrapped, independent site. Affiliate commissions and ad revenue are the primary way we cover hosting, domain, and development costs so we can keep all ${HAND_WRITTEN_COUNT}+ travel guides free. Without affiliate income, the site could not exist in its current form.`,
   },
   {
     h: "Editorial Independence",

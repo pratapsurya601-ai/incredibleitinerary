@@ -177,7 +177,14 @@ export default function KashmirClient() {
                     <span className="text-xs font-medium text-teal bg-white px-3 py-1 rounded-full border border-parchment-2">{d.days}</span>
                   </div>
                   <p className="text-xs text-gray-700 font-light leading-relaxed mb-3">{d.desc}</p>
-                  <div className="flex flex-wrap gap-2">{d.must.map((m) => <span key={m} className="text-[0.65rem] bg-white/80 text-ink px-2.5 py-1 rounded-full border border-white/60 font-light">{m}</span>)}</div>
+                  <ul className="space-y-1.5">
+                    {d.must.map((m) => (
+                      <li key={m} className="flex items-start gap-2 text-xs text-gray-700 font-light leading-relaxed">
+                        <span className="mt-[3px] flex-shrink-0 w-1 h-1 rounded-full bg-teal/70 inline-block" />
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>

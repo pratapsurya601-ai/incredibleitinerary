@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { HAND_WRITTEN_COUNT } from "@/lib/siteStats";
 
 const SUGGESTED = [
   { label: "Rajasthan 7 Days", href: "/blog/rajasthan-7-days", image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&q=70" },
@@ -84,7 +85,7 @@ export default function NotFound() {
               href="/blog"
               className="inline-flex items-center gap-2 px-7 py-3.5 border border-parchment-2 text-muted text-sm font-light rounded-[1px] hover:border-gold hover:text-gold transition-all"
             >
-              Browse all {362}+ guides
+              Browse all {HAND_WRITTEN_COUNT}+ guides
             </Link>
           </div>
         </div>
