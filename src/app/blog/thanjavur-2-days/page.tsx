@@ -4,7 +4,7 @@ import ThanjavurClient from "./ThanjavurClient";
 export const metadata: Metadata = {
   title: "Thanjavur 2-Day Itinerary 2026: Big Temple & Chola Art",
   description:
-    "Complete Thanjavur travel guide — Brihadeeswarar Temple (UNESCO), Thanjavur Palace, Saraswathi Mahal Library, Chola bronzes. Day trips to Darasuram and Gangaikonda Cholapuram.",
+    "Thanjavur in 2 days — Brihadeeswarar Big Temple (UNESCO), Chola bronzes, Saraswathi Mahal Library. Day trips to Darasuram and Gangaikonda Cholapuram.",
   keywords: [
     "thanjavur itinerary 2 days",
     "brihadeeswarar temple guide",

@@ -4,7 +4,7 @@ import TamilNadu10DaysClient from "./TamilNadu10DaysClient";
 export const metadata: Metadata = {
   title: "Tamil Nadu 10 Days: Chennai → Pondicherry → Madurai → Kodaikanal → Ooty (2026)",
   description:
-    "The complete Tamil Nadu circuit in 10 days — Marina Beach, Mahabalipuram, French Quarter Pondicherry, Brihadeeswarar Temple, Meenakshi Temple, Kodaikanal hills, Nilgiri Toy Train Ooty. Real costs, route logic, day-by-day itinerary.",
+    "Tamil Nadu in 10 days — Chennai, Pondicherry, Thanjavur, Madurai, Kodaikanal, Ooty. Beaches, temples, hill stations. Real costs and day-by-day route.",
   keywords: [
     "tamil nadu itinerary 10 days",
     "tamil nadu tour plan",

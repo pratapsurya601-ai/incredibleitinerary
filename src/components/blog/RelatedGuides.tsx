@@ -40,6 +40,7 @@ const REGIONS: Record<string, string[]> = {
     "rameswaram-2-days", "kanyakumari-2-days", "trichy-2-days", "chennai-2-days",
     "mahabalipuram-2-days", "tirupati-2-days", "kodaikanal-2-days", "coimbatore-2-days",
     "coonoor-2-days", "meenakshi-temple-2-days",
+    "tamil-nadu-10-days", "tamil-nadu-temple-circuit-7-days", "kanchipuram-2-days", "thanjavur-2-days",
   ],
   karnataka: [
     "coorg-3-days", "hampi-3-days", "gokarna-3-days", "mysore-3-days",

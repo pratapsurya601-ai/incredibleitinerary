@@ -74,7 +74,6 @@ export default function SmartImage({
           src={src}
           alt={alt}
           fill
-          unoptimized
           placeholder="blur"
           blurDataURL={BLUR_PLACEHOLDER}
           className={`${className} ${loading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}
@@ -89,7 +88,6 @@ export default function SmartImage({
           alt={alt}
           width={width || 800}
           height={height || 500}
-          unoptimized
           placeholder="blur"
           blurDataURL={BLUR_PLACEHOLDER}
           className={`${className} ${loading ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}

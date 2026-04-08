@@ -95,6 +95,11 @@ const PAIRINGS: Record<string, { slug: string; why: string; travel: string }[]> 
     { slug: "pondicherry-3-days", why: "French Quarter detour from the circuit", travel: "2.5hr from Mahabalipuram" },
     { slug: "hampi-3-days", why: "Another UNESCO temple city, continue west", travel: "8hr from Madurai" },
   ],
+  "tamil-nadu-10-days": [
+    { slug: "kerala-5-days", why: "Backwaters and Ayurveda after the Tamil Nadu circuit", travel: "4hr from Munnar to Kochi" },
+    { slug: "pondicherry-3-days", why: "French Quarter — already on the route, extend a day", travel: "On route Day 2" },
+    { slug: "tamil-nadu-temple-circuit-7-days", why: "Temple-focused version of the same region", travel: "Same geography" },
+  ],
   "northeast-india-10-days": [
     { slug: "darjeeling-4-days", why: "Tea gardens and Kanchenjunga views on the way", travel: "Via NJP/Bagdogra" },
     { slug: "sikkim-6-days", why: "Gangtok and monasteries, natural extension", travel: "5hr from Guwahati" },

@@ -4,7 +4,7 @@ import KanchipuramClient from "./KanchipuramClient";
 export const metadata: Metadata = {
   title: "Kanchipuram 2-Day Itinerary 2026: Temples & Silk Guide",
   description:
-    "Complete Kanchipuram travel guide — Kailasanathar Temple, Ekambareswarar, Kamakshi Amman, Varadaraja Perumal. Where to buy authentic Kanjivaram silk saris. Day trip from Chennai or 2-day stop.",
+    "Kanchipuram in 2 days — Kailasanathar, Ekambareswarar, Kamakshi Amman temples. Authentic Kanjivaram silk shopping guide. Day trip from Chennai.",
   keywords: [
     "kanchipuram itinerary 2 days",
     "kanchipuram temple guide 2026",

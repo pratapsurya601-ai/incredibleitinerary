@@ -25,7 +25,7 @@ export default function HeroSection({ onPlanTrip }: { onPlanTrip: () => void }) 
         <Image
           src="/images/surya/blog-gangotri-valley.jpg"
           alt="Gangotri Valley, Uttarakhand — IncredibleItinerary"
-          fill priority unoptimized
+          fill priority
           className="object-cover object-center"
           sizes="100vw"
         />
