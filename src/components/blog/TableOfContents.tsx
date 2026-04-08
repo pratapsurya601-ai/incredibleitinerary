@@ -16,15 +16,18 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  // Show TOC immediately, hide only near footer
+  // Show TOC only after hero exits viewport, hide near footer.
+  // Uses dynamic threshold: 55% of viewport height ≈ just past the 60vh hero on all screen sizes.
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const nearBottom =
         scrolled + window.innerHeight > document.body.scrollHeight - 1400;
-      setVisible(!nearBottom);
+      const pastHero = scrolled > window.innerHeight * 0.55;
+      setVisible(pastHero && !nearBottom);
     };
-    setVisible(true);
+    // Run on mount so initial state is correct (scroll=0 → hidden)
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
