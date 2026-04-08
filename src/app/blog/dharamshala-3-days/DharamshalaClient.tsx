@@ -361,8 +361,9 @@ export default function DharamshalaClient() {
                     "Dinner: Nick's Italian — surprisingly good wood-fired pizza for ₹250–₹350. Every backpacker ends up here eventually."
                   ]}
                   cost="₹800–₹1,200 (food + transport only)" />
-                <DayCard day="Day 2" title="Triund Trek — Full Day"
+                <DayCard day="Day 2" title="Triund Trek — Full Day (skip in Jul–Aug, see note)"
                   items={[
+                    "⚠️ July–August warning: Triund trail becomes dangerously slippery in monsoon. Trails are wet, views are zero, and camping is miserable. If visiting Jul–Aug, skip this entirely and do Norbulingka Institute + Dharamkot instead (see Day 3 below).",
                     "5:30am wake up. Pack: 2L water minimum, snacks, sunscreen, light jacket (it's cold at the top even in summer).",
                     "6:30am: Start from Galu Devi temple (auto from McLeodGanj ₹50). Don't start from McLeodGanj main square — it adds 3km of road walking.",
                     "First 4km: Easy forest trail through oak and rhododendron. You'll feel overconfident. That changes.",

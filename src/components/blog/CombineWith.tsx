@@ -55,6 +55,11 @@ const PAIRINGS: Record<string, { slug: string; why: string; travel: string }[]> 
     { slug: "coorg-3-days", why: "Coffee plantations, 4 hours west", travel: "4hr drive" },
     { slug: "kodaikanal-3-days", why: "Tamil Nadu's other great hill station", travel: "8hr drive" },
   ],
+  "manali-5-days": [
+    { slug: "kasol-3-days", why: "Parvati Valley backpacker scene, 76km south", travel: "2.5hr drive" },
+    { slug: "spiti-valley-7-days", why: "Continue through Atal Tunnel to the cold desert", travel: "Via Atal Tunnel" },
+    { slug: "leh-ladakh-7-days", why: "The Manali–Leh highway — one of the world's great road trips", travel: "2-day epic drive" },
+  ],
   "shimla-3-days": [
     { slug: "manali-5-days", why: "Continue north into bigger mountains", travel: "8hr drive" },
     { slug: "kasol-3-days", why: "Parvati Valley backpacker scene", travel: "7hr via Mandi" },
@@ -74,6 +79,31 @@ const PAIRINGS: Record<string, { slug: string; why: string; travel: string }[]> 
     { slug: "mussoorie-3-days", why: "Hill station 1.5 hours uphill", travel: "1.5hr drive" },
     { slug: "nainital-3-days", why: "Lake town, 6 hours east", travel: "6hr drive" },
     { slug: "auli-3-days", why: "Skiing and Nanda Devi views, 8 hours", travel: "8hr via Joshimath" },
+  ],
+  "kanchipuram-2-days": [
+    { slug: "mahabalipuram-2-days", why: "Pallava Shore Temple, 60km east on the coast", travel: "1.5hr drive" },
+    { slug: "thanjavur-2-days", why: "Continue the temple circuit south to the Big Temple", travel: "4hr drive" },
+    { slug: "pondicherry-3-days", why: "French Quarter and Auroville, 2.5 hours south", travel: "2.5hr drive" },
+  ],
+  "thanjavur-2-days": [
+    { slug: "trichy-2-days", why: "Srirangam Temple, 55km east", travel: "1hr drive" },
+    { slug: "madurai-3-days", why: "Meenakshi Temple, continue south", travel: "3.5hr drive" },
+    { slug: "kanchipuram-2-days", why: "Start the temple circuit from the north", travel: "4hr drive" },
+  ],
+  "tamil-nadu-temple-circuit-7-days": [
+    { slug: "kerala-5-days", why: "Backwaters after temples — perfect contrast", travel: "5hr from Madurai" },
+    { slug: "pondicherry-3-days", why: "French Quarter detour from the circuit", travel: "2.5hr from Mahabalipuram" },
+    { slug: "hampi-3-days", why: "Another UNESCO temple city, continue west", travel: "8hr from Madurai" },
+  ],
+  "northeast-india-10-days": [
+    { slug: "darjeeling-4-days", why: "Tea gardens and Kanchenjunga views on the way", travel: "Via NJP/Bagdogra" },
+    { slug: "sikkim-6-days", why: "Gangtok and monasteries, natural extension", travel: "5hr from Guwahati" },
+    { slug: "kolkata-3-days", why: "Gateway city — spend 2–3 days before flying northeast", travel: "2hr flight to Guwahati" },
+  ],
+  "kolkata-3-days": [
+    { slug: "darjeeling-4-days", why: "Hill station gateway, overnight train from Kolkata", travel: "10hr train to NJP + 3hr drive" },
+    { slug: "sundarbans-3-days", why: "Royal Bengal Tiger mangroves, 4 hours south", travel: "4hr drive + boat" },
+    { slug: "varanasi-3-days", why: "India's spiritual capital, overnight train", travel: "12hr train" },
   ],
   "darjeeling-4-days": [
     { slug: "sikkim-6-days", why: "Gangtok is just 4 hours away", travel: "4hr drive" },
