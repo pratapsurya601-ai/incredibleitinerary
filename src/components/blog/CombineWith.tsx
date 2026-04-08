@@ -100,6 +100,16 @@ const PAIRINGS: Record<string, { slug: string; why: string; travel: string }[]> 
     { slug: "pondicherry-3-days", why: "French Quarter — already on the route, extend a day", travel: "On route Day 2" },
     { slug: "tamil-nadu-temple-circuit-7-days", why: "Temple-focused version of the same region", travel: "Same geography" },
   ],
+  "himachal-pradesh-14-days": [
+    { slug: "rajasthan-7-days", why: "Desert palaces after mountain valleys — perfect contrast", travel: "Overnight train from Chandigarh" },
+    { slug: "kashmir-6-days", why: "Continue north into the Kashmir valley", travel: "Flight from Chandigarh to Srinagar" },
+    { slug: "delhi-3-days", why: "Gateway city — explore before or after the circuit", travel: "Overnight Volvo from Dharamshala" },
+  ],
+  "karnataka-7-days": [
+    { slug: "kerala-5-days", why: "Backwaters and beaches after the Karnataka circuit", travel: "5hr from Coorg to Kochi" },
+    { slug: "goa-3-days", why: "Extend the coast — Gokarna to Goa is a natural hop", travel: "6hr drive or bus from Gokarna" },
+    { slug: "tamil-nadu-10-days", why: "Continue south through Tamil Nadu temples and hills", travel: "3hr from Bangalore to Chennai" },
+  ],
   "northeast-india-10-days": [
     { slug: "darjeeling-4-days", why: "Tea gardens and Kanchenjunga views on the way", travel: "Via NJP/Bagdogra" },
     { slug: "sikkim-6-days", why: "Gangtok and monasteries, natural extension", travel: "5hr from Guwahati" },

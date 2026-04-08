@@ -12,7 +12,7 @@ const REGIONS: Record<string, string[]> = {
   ],
   himachal: [
     "shimla-3-days", "kasol-3-days", "dharamshala-3-days", "jibhi-tirthan-valley-3-days",
-    "manali-5-days", "spiti-valley-7-days", "bir-billing-3-days",
+    "manali-5-days", "spiti-valley-7-days", "bir-billing-3-days", "himachal-pradesh-14-days",
   ],
   uttarakhand: [
     "rishikesh-haridwar-3-days", "mussoorie-3-days", "auli-3-days", "nainital-3-days",
@@ -45,7 +45,7 @@ const REGIONS: Record<string, string[]> = {
   karnataka: [
     "coorg-3-days", "hampi-3-days", "gokarna-3-days", "mysore-3-days",
     "bangalore-3-days", "chikmagalur-3-days", "mangalore-2-days",
-    "nagarhole-3-days", "best-weekend-getaways-from-bangalore",
+    "nagarhole-3-days", "best-weekend-getaways-from-bangalore", "karnataka-7-days",
   ],
   golden: [
     "golden-triangle-7-days", "agra-2-days", "jaipur-3-days", "delhi-3-days",
