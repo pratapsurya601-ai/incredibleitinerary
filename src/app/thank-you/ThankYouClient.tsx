@@ -29,7 +29,7 @@ const GUIDE_META: Record<string, { title: string; emoji: string; pages: number; 
   "hampi-3-days":             { title: "Hampi 3 Days",             emoji: "🏛️", pages: 6,  color: "border-amber-200 bg-amber-50" },
   "ooty-3-days":              { title: "Ooty 3 Days",              emoji: "🌸", pages: 6,  color: "border-rose-200 bg-rose-50" },
   "meghalaya-5-days":         { title: "Meghalaya 5 Days",         emoji: "🌿", pages: 7,  color: "border-emerald-200 bg-emerald-50" },
-  "north-east-india-10-days": { title: "North East India 10 Days", emoji: "🌄", pages: 9,  color: "border-indigo-200 bg-indigo-50" },
+  "northeast-india-10-days": { title: "North East India 10 Days", emoji: "🌄", pages: 9,  color: "border-indigo-200 bg-indigo-50" },
   // ₹199
   "leh-ladakh-7-days":        { title: "Leh Ladakh 7 Days",        emoji: "🏔️", pages: 12, color: "border-blue-200 bg-blue-50" },
   "spiti-valley-7-days":      { title: "Spiti Valley 7 Days",      emoji: "🏔️", pages: 8,  color: "border-slate-200 bg-slate-50" },

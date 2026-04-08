@@ -261,7 +261,7 @@ const data: UniversalBlogData = {
     },
   ],
   combineWith: ["lonavala-weekend", "mahabaleshwar-2-days", "mumbai-3-days"],
-  relatedSlugs: ["mumbai-3-days", "goa-5-days", "north-east-india-10-days"],
+  relatedSlugs: ["mumbai-3-days", "goa-5-days", "northeast-india-10-days"],
   galleryQuery: "pune shaniwar wada sinhagad fort maharashtra koregaon park",
 };
 

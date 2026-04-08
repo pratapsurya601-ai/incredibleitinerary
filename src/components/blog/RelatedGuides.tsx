@@ -26,7 +26,7 @@ const REGIONS: Record<string, string[]> = {
   ],
   northeast: [
     "meghalaya-5-days", "sikkim-6-days", "shillong-3-days", "kaziranga-3-days",
-    "tawang-4-days", "majuli-3-days", "north-east-india-10-days", "gangtok-3-days",
+    "tawang-4-days", "majuli-3-days", "northeast-india-10-days", "gangtok-3-days",
     "cherrapunji-2-days", "mawlynnong-2-days", "kohima-3-days", "imphal-3-days",
     "assam-tea-garden-3-days", "dibrugarh-3-days", "guwahati-2-days",
   ],

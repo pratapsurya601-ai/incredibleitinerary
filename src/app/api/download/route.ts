@@ -18,7 +18,7 @@ const VALID_SLUGS = [
   "kashmir-6-days", "manali-5-days", "andaman-5-days",
   "jaipur-3-days", "rishikesh-3-days", "coorg-3-days",
   "darjeeling-3-days", "hampi-3-days", "ooty-3-days",
-  "meghalaya-5-days", "north-east-india-10-days",
+  "meghalaya-5-days", "northeast-india-10-days",
   // ₹199
   "leh-ladakh-7-days", "spiti-valley-7-days", "char-dham-7-days",
   "kedarnath-trek-3-days", "gujarat-7-days",

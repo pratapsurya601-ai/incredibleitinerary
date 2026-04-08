@@ -32,7 +32,7 @@ const SLUG_NAMES: Record<string, string> = {
   "hampi-3-days":            "Hampi in 3 Days",
   "ooty-3-days":             "Ooty in 3 Days",
   "meghalaya-5-days":        "Meghalaya in 5 Days",
-  "north-east-india-10-days":"North East India in 10 Days",
+  "northeast-india-10-days":"North East India in 10 Days",
   // ₹199
   "leh-ladakh-7-days":       "Leh Ladakh in 7 Days",
   "spiti-valley-7-days":     "Spiti Valley in 7 Days",

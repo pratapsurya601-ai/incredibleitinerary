@@ -16,7 +16,7 @@ const TIER_SLUGS: Record<string, string[]> = {
   "II-PDF-149":   ["rajasthan-7-days", "kerala-5-days", "kashmir-6-days", "manali-5-days", "andaman-5-days",
                    "jaipur-3-days", "rishikesh-3-days", "coorg-3-days",
                    "darjeeling-3-days", "hampi-3-days", "ooty-3-days",
-                   "meghalaya-5-days", "north-east-india-10-days"],
+                   "meghalaya-5-days", "northeast-india-10-days"],
   // ₹199 — complex India + SE Asia + budget Europe
   "II-PDF-199":   ["leh-ladakh-7-days", "bangkok-4-days", "bali-5-days", "singapore-4-days", "sri-lanka-7-days",
                    "spiti-valley-7-days", "char-dham-7-days", "kedarnath-trek-3-days", "gujarat-7-days",
@@ -37,7 +37,7 @@ const TIER_SLUGS: Record<string, string[]> = {
     "mumbai-3-days", "delhi-3-days", "agra-2-days", "jaipur-3-days",
     "rishikesh-3-days", "coorg-3-days", "darjeeling-3-days", "amritsar-2-days",
     "hampi-3-days", "mysore-2-days", "spiti-valley-7-days", "char-dham-7-days",
-    "kedarnath-trek-3-days", "meghalaya-5-days", "north-east-india-10-days",
+    "kedarnath-trek-3-days", "meghalaya-5-days", "northeast-india-10-days",
     "ooty-3-days", "hyderabad-2-days", "pune-2-days", "gujarat-7-days",
   ],
   // All Access — premium: true covers every slug
