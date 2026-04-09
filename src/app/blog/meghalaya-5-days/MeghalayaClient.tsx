@@ -316,7 +316,7 @@ export default function MeghalayaClient() {
                   "12:00pm — Arrive Shillong. Check into your hotel. Budget: homestays in Laitumkhrah (₹600-900). Comfortable: Hotel Polo Towers or similar (₹2,500-4,000). Premium: Ri Kynjai at Umiam Lake (₹8,000+).",
                   "1:30pm — Lunch at Jadoh Stall, Lewduh (Bara Bazaar) — try jadoh (rice cooked in pork blood) and tungrymbai. Sounds weird, tastes incredible. ₹80-150 per person.",
                   "3:00pm — Walk through Police Bazaar and Lewduh (Bara Bazaar). Lewduh is one of the oldest and most chaotic markets in the Northeast. Don't skip it.",
-                  "5:00pm — Ward's Lake for a quiet walk (₹20 entry), then Don Bosco Museum if it's still open (₹100 entry, closes at 5:30pm — worth seeing for the seven-sisters exhibit).",
+                  "5:00pm — Ward's Lake for a quiet walk (₹30 entry), then Don Bosco Museum if it's still open (₹100 entry, closes at 5:30pm — worth seeing for the seven-sisters exhibit).",
                   "7:30pm — Dinner. Budget: ML05 Cafe in Laitumkhrah (momo + thukpa under ₹200). Premium: Dylan's Cafe for live music and continental food (₹500-800).",
                 ]}
                 cost={activeTab === "A" ? "₹1,800–2,500" : activeTab === "B" ? "₹4,500–6,000" : "₹9,000–12,000"}
