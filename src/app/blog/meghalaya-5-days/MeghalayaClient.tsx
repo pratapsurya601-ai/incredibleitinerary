@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
@@ -533,6 +534,20 @@ export default function MeghalayaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Meghalaya — The Abode of Clouds"
+            subtitle="Crystal rivers, living root bridges, and the wettest place on earth."
+            spots={[
+              { name: "Dawki River (Umngot)", query: "dawki river umngot meghalaya crystal clear water boat india", desc: "The water is so clear the boats look like they're floating in air." },
+              { name: "Living Root Bridge, Nongriat", query: "living root bridge meghalaya cherrapunji double decker nongriat india", desc: "Grown from rubber fig tree roots over decades — exists nowhere else on earth." },
+              { name: "Nohkalikai Falls", query: "nohkalikai falls cherrapunji meghalaya tallest waterfall india turquoise", desc: "India's tallest plunge waterfall — 340m with a turquoise pool at the base." },
+              { name: "Laitlum Canyons", query: "laitlum canyons meghalaya green hills clouds viewpoint india", desc: "The end of the hills — massive green canyons dropping into cloud." },
+              { name: "Mawphlang Sacred Forest", query: "mawphlang sacred forest meghalaya ancient khasi moss trees india", desc: "An ancient forest where nothing has been removed for centuries." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

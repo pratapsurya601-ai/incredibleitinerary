@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -522,6 +523,20 @@ export default function IndoreClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Indore — Highlights"
+            subtitle="The best of Indore in photos."
+            spots={[
+              { name: "Indore Landscape", query: "indore india landscape scenic beautiful travel", desc: "The stunning landscapes of Indore." },
+              { name: "Indore Temple", query: "indore temple architecture heritage india", desc: "Historic temples and architecture in Indore." },
+              { name: "Indore Street Scene", query: "indore street market local culture india", desc: "Local life and culture in Indore." },
+              { name: "Indore Nature", query: "indore nature hills forest river india", desc: "Natural beauty around Indore." },
+              { name: "Indore Sunset", query: "indore sunset golden hour india travel", desc: "Indore at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

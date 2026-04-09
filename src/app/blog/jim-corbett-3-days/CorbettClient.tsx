@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -640,6 +641,20 @@ export default function CorbettClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Jim Corbett — Highlights"
+            subtitle="The best of Jim Corbett in photos."
+            spots={[
+              { name: "Jim Corbett Landscape", query: "jim corbett india landscape scenic beautiful travel", desc: "The stunning landscapes of Jim Corbett." },
+              { name: "Jim Corbett Temple", query: "jim corbett temple architecture heritage india", desc: "Historic temples and architecture in Jim Corbett." },
+              { name: "Jim Corbett Street Scene", query: "jim corbett street market local culture india", desc: "Local life and culture in Jim Corbett." },
+              { name: "Jim Corbett Nature", query: "jim corbett nature hills forest river india", desc: "Natural beauty around Jim Corbett." },
+              { name: "Jim Corbett Sunset", query: "jim corbett sunset golden hour india travel", desc: "Jim Corbett at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

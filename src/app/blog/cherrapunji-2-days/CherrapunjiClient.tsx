@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -519,6 +520,20 @@ export default function CherrapunjiClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Cherrapunji — Highlights"
+            subtitle="The best of Cherrapunji in photos."
+            spots={[
+              { name: "Cherrapunji Landscape", query: "cherrapunji india landscape scenic beautiful travel", desc: "The stunning landscapes of Cherrapunji." },
+              { name: "Cherrapunji Temple", query: "cherrapunji temple architecture heritage india", desc: "Historic temples and architecture in Cherrapunji." },
+              { name: "Cherrapunji Street Scene", query: "cherrapunji street market local culture india", desc: "Local life and culture in Cherrapunji." },
+              { name: "Cherrapunji Nature", query: "cherrapunji nature hills forest river india", desc: "Natural beauty around Cherrapunji." },
+              { name: "Cherrapunji Sunset", query: "cherrapunji sunset golden hour india travel", desc: "Cherrapunji at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

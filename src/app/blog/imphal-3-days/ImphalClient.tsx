@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -533,6 +534,20 @@ export default function ImphalClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Imphal — Highlights"
+            subtitle="The best of Imphal in photos."
+            spots={[
+              { name: "Imphal Landscape", query: "imphal india landscape scenic beautiful travel", desc: "The stunning landscapes of Imphal." },
+              { name: "Imphal Temple", query: "imphal temple architecture heritage india", desc: "Historic temples and architecture in Imphal." },
+              { name: "Imphal Street Scene", query: "imphal street market local culture india", desc: "Local life and culture in Imphal." },
+              { name: "Imphal Nature", query: "imphal nature hills forest river india", desc: "Natural beauty around Imphal." },
+              { name: "Imphal Sunset", query: "imphal sunset golden hour india travel", desc: "Imphal at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

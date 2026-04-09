@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -663,6 +664,20 @@ export default function SikkimClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Sikkim — Land of Kanchenjunga"
+            subtitle="Monasteries, mountain passes, and the world's third-highest peak."
+            spots={[
+              { name: "Kanchenjunga from Pelling", query: "kanchenjunga pelling sikkim sunrise snow peak himalaya india", desc: "The world's third-highest peak fills your entire horizon from Pelling." },
+              { name: "Tsomgo Lake", query: "tsomgo lake changu lake sikkim frozen turquoise mountains india", desc: "A glacial lake at 3,753m — frozen in winter, turquoise in summer." },
+              { name: "Rumtek Monastery", query: "rumtek monastery gangtok sikkim buddhist tibetan prayer flags india", desc: "Sikkim's most important Buddhist monastery." },
+              { name: "Nathula Pass", query: "nathula pass sikkim india china border snow mountains soldiers", desc: "India-China border at 4,310m — open to Indian citizens only." },
+              { name: "MG Marg, Gangtok", query: "mg marg gangtok sikkim pedestrian street clean mountain town india", desc: "India's cleanest pedestrian street — spotless, unlike any other Indian town." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

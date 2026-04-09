@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -499,6 +500,20 @@ export default function RameswaramClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Rameswaram — Highlights"
+            subtitle="The best of Rameswaram in photos."
+            spots={[
+              { name: "Rameswaram Landscape", query: "rameswaram india landscape scenic beautiful travel", desc: "The stunning landscapes of Rameswaram." },
+              { name: "Rameswaram Temple", query: "rameswaram temple architecture heritage india", desc: "Historic temples and architecture in Rameswaram." },
+              { name: "Rameswaram Street Scene", query: "rameswaram street market local culture india", desc: "Local life and culture in Rameswaram." },
+              { name: "Rameswaram Nature", query: "rameswaram nature hills forest river india", desc: "Natural beauty around Rameswaram." },
+              { name: "Rameswaram Sunset", query: "rameswaram sunset golden hour india travel", desc: "Rameswaram at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

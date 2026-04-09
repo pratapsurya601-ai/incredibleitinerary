@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -762,6 +763,20 @@ export default function FirstSoloClient() {
           </div>
 
           <RelatedGuides currentSlug="first-solo-trip-india" />
+
+          <DestinationGallery
+            title="First Solo Trip India — Highlights"
+            subtitle="The best of First Solo Trip India in photos."
+            spots={[
+              { name: "First Solo Trip India Landscape", query: "first solo trip india india landscape scenic beautiful travel", desc: "The stunning landscapes of First Solo Trip India." },
+              { name: "First Solo Trip India Temple", query: "first solo trip india temple architecture heritage india", desc: "Historic temples and architecture in First Solo Trip India." },
+              { name: "First Solo Trip India Street Scene", query: "first solo trip india street market local culture india", desc: "Local life and culture in First Solo Trip India." },
+              { name: "First Solo Trip India Nature", query: "first solo trip india nature hills forest river india", desc: "Natural beauty around First Solo Trip India." },
+              { name: "First Solo Trip India Sunset", query: "first solo trip india sunset golden hour india travel", desc: "First Solo Trip India at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
         </div>
       </main>

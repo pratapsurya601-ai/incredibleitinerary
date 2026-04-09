@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -519,6 +520,20 @@ export default function TrivandrumClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Trivandrum — Highlights"
+            subtitle="The best of Trivandrum in photos."
+            spots={[
+              { name: "Trivandrum Landscape", query: "trivandrum india landscape scenic beautiful travel", desc: "The stunning landscapes of Trivandrum." },
+              { name: "Trivandrum Temple", query: "trivandrum temple architecture heritage india", desc: "Historic temples and architecture in Trivandrum." },
+              { name: "Trivandrum Street Scene", query: "trivandrum street market local culture india", desc: "Local life and culture in Trivandrum." },
+              { name: "Trivandrum Nature", query: "trivandrum nature hills forest river india", desc: "Natural beauty around Trivandrum." },
+              { name: "Trivandrum Sunset", query: "trivandrum sunset golden hour india travel", desc: "Trivandrum at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

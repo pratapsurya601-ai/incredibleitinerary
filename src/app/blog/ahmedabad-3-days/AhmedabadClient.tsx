@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -537,6 +538,20 @@ export default function AhmedabadClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Ahmedabad — Highlights"
+            subtitle="The best of Ahmedabad in photos."
+            spots={[
+              { name: "Ahmedabad Landscape", query: "ahmedabad india landscape scenic beautiful travel", desc: "The stunning landscapes of Ahmedabad." },
+              { name: "Ahmedabad Temple", query: "ahmedabad temple architecture heritage india", desc: "Historic temples and architecture in Ahmedabad." },
+              { name: "Ahmedabad Street Scene", query: "ahmedabad street market local culture india", desc: "Local life and culture in Ahmedabad." },
+              { name: "Ahmedabad Nature", query: "ahmedabad nature hills forest river india", desc: "Natural beauty around Ahmedabad." },
+              { name: "Ahmedabad Sunset", query: "ahmedabad sunset golden hour india travel", desc: "Ahmedabad at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

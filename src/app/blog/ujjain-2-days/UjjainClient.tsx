@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -519,6 +520,20 @@ export default function UjjainClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Ujjain — Highlights"
+            subtitle="The best of Ujjain in photos."
+            spots={[
+              { name: "Ujjain Landscape", query: "ujjain india landscape scenic beautiful travel", desc: "The stunning landscapes of Ujjain." },
+              { name: "Ujjain Temple", query: "ujjain temple architecture heritage india", desc: "Historic temples and architecture in Ujjain." },
+              { name: "Ujjain Street Scene", query: "ujjain street market local culture india", desc: "Local life and culture in Ujjain." },
+              { name: "Ujjain Nature", query: "ujjain nature hills forest river india", desc: "Natural beauty around Ujjain." },
+              { name: "Ujjain Sunset", query: "ujjain sunset golden hour india travel", desc: "Ujjain at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

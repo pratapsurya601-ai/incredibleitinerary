@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -524,6 +525,20 @@ export default function MeenakshiClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Meenakshi — Highlights"
+            subtitle="The best of Meenakshi in photos."
+            spots={[
+              { name: "Meenakshi Landscape", query: "meenakshi india landscape scenic beautiful travel", desc: "The stunning landscapes of Meenakshi." },
+              { name: "Meenakshi Temple", query: "meenakshi temple architecture heritage india", desc: "Historic temples and architecture in Meenakshi." },
+              { name: "Meenakshi Street Scene", query: "meenakshi street market local culture india", desc: "Local life and culture in Meenakshi." },
+              { name: "Meenakshi Nature", query: "meenakshi nature hills forest river india", desc: "Natural beauty around Meenakshi." },
+              { name: "Meenakshi Sunset", query: "meenakshi sunset golden hour india travel", desc: "Meenakshi at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -503,6 +504,20 @@ export default function DwarkaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Dwarka — Highlights"
+            subtitle="The best of Dwarka in photos."
+            spots={[
+              { name: "Dwarka Landscape", query: "dwarka india landscape scenic beautiful travel", desc: "The stunning landscapes of Dwarka." },
+              { name: "Dwarka Temple", query: "dwarka temple architecture heritage india", desc: "Historic temples and architecture in Dwarka." },
+              { name: "Dwarka Street Scene", query: "dwarka street market local culture india", desc: "Local life and culture in Dwarka." },
+              { name: "Dwarka Nature", query: "dwarka nature hills forest river india", desc: "Natural beauty around Dwarka." },
+              { name: "Dwarka Sunset", query: "dwarka sunset golden hour india travel", desc: "Dwarka at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

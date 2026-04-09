@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -521,6 +522,20 @@ export default function ChandigarhClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Chandigarh — Highlights"
+            subtitle="The best of Chandigarh in photos."
+            spots={[
+              { name: "Chandigarh Landscape", query: "chandigarh india landscape scenic beautiful travel", desc: "The stunning landscapes of Chandigarh." },
+              { name: "Chandigarh Temple", query: "chandigarh temple architecture heritage india", desc: "Historic temples and architecture in Chandigarh." },
+              { name: "Chandigarh Street Scene", query: "chandigarh street market local culture india", desc: "Local life and culture in Chandigarh." },
+              { name: "Chandigarh Nature", query: "chandigarh nature hills forest river india", desc: "Natural beauty around Chandigarh." },
+              { name: "Chandigarh Sunset", query: "chandigarh sunset golden hour india travel", desc: "Chandigarh at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

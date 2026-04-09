@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -669,6 +670,20 @@ export default function SurfingIndiaClient() {
           </div>
 
           <RelatedGuides currentSlug="best-surfing-in-india" />
+
+          <DestinationGallery
+            title="Best Surfing In India — Highlights"
+            subtitle="The best of Best Surfing In India in photos."
+            spots={[
+              { name: "Best Surfing In India Landscape", query: "best surfing in india india landscape scenic beautiful travel", desc: "The stunning landscapes of Best Surfing In India." },
+              { name: "Best Surfing In India Temple", query: "best surfing in india temple architecture heritage india", desc: "Historic temples and architecture in Best Surfing In India." },
+              { name: "Best Surfing In India Street Scene", query: "best surfing in india street market local culture india", desc: "Local life and culture in Best Surfing In India." },
+              { name: "Best Surfing In India Nature", query: "best surfing in india nature hills forest river india", desc: "Natural beauty around Best Surfing In India." },
+              { name: "Best Surfing In India Sunset", query: "best surfing in india sunset golden hour india travel", desc: "Best Surfing In India at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
         </div>
       </main>

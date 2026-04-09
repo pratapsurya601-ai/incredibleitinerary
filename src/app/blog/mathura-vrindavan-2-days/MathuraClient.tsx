@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -521,6 +522,20 @@ export default function MathuraClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Mathura Vrindavan — Highlights"
+            subtitle="The best of Mathura Vrindavan in photos."
+            spots={[
+              { name: "Mathura Vrindavan Landscape", query: "mathura vrindavan india landscape scenic beautiful travel", desc: "The stunning landscapes of Mathura Vrindavan." },
+              { name: "Mathura Vrindavan Temple", query: "mathura vrindavan temple architecture heritage india", desc: "Historic temples and architecture in Mathura Vrindavan." },
+              { name: "Mathura Vrindavan Street Scene", query: "mathura vrindavan street market local culture india", desc: "Local life and culture in Mathura Vrindavan." },
+              { name: "Mathura Vrindavan Nature", query: "mathura vrindavan nature hills forest river india", desc: "Natural beauty around Mathura Vrindavan." },
+              { name: "Mathura Vrindavan Sunset", query: "mathura vrindavan sunset golden hour india travel", desc: "Mathura Vrindavan at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -783,6 +784,20 @@ export default function HoneymoonBudgetClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Honeymoon Under 50000 — Highlights"
+            subtitle="The best of Honeymoon Under 50000 in photos."
+            spots={[
+              { name: "Honeymoon Under 50000 Landscape", query: "honeymoon under 50000 india landscape scenic beautiful travel", desc: "The stunning landscapes of Honeymoon Under 50000." },
+              { name: "Honeymoon Under 50000 Temple", query: "honeymoon under 50000 temple architecture heritage india", desc: "Historic temples and architecture in Honeymoon Under 50000." },
+              { name: "Honeymoon Under 50000 Street Scene", query: "honeymoon under 50000 street market local culture india", desc: "Local life and culture in Honeymoon Under 50000." },
+              { name: "Honeymoon Under 50000 Nature", query: "honeymoon under 50000 nature hills forest river india", desc: "Natural beauty around Honeymoon Under 50000." },
+              { name: "Honeymoon Under 50000 Sunset", query: "honeymoon under 50000 sunset golden hour india travel", desc: "Honeymoon Under 50000 at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

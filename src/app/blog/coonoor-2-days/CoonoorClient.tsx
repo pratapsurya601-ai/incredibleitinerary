@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -522,6 +523,20 @@ export default function CoonoorClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Coonoor — Highlights"
+            subtitle="The best of Coonoor in photos."
+            spots={[
+              { name: "Coonoor Landscape", query: "coonoor india landscape scenic beautiful travel", desc: "The stunning landscapes of Coonoor." },
+              { name: "Coonoor Temple", query: "coonoor temple architecture heritage india", desc: "Historic temples and architecture in Coonoor." },
+              { name: "Coonoor Street Scene", query: "coonoor street market local culture india", desc: "Local life and culture in Coonoor." },
+              { name: "Coonoor Nature", query: "coonoor nature hills forest river india", desc: "Natural beauty around Coonoor." },
+              { name: "Coonoor Sunset", query: "coonoor sunset golden hour india travel", desc: "Coonoor at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

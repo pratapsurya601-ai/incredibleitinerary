@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -535,6 +536,20 @@ export default function BandhavgarhClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Bandhavgarh — Highlights"
+            subtitle="The best of Bandhavgarh in photos."
+            spots={[
+              { name: "Bandhavgarh Landscape", query: "bandhavgarh india landscape scenic beautiful travel", desc: "The stunning landscapes of Bandhavgarh." },
+              { name: "Bandhavgarh Temple", query: "bandhavgarh temple architecture heritage india", desc: "Historic temples and architecture in Bandhavgarh." },
+              { name: "Bandhavgarh Street Scene", query: "bandhavgarh street market local culture india", desc: "Local life and culture in Bandhavgarh." },
+              { name: "Bandhavgarh Nature", query: "bandhavgarh nature hills forest river india", desc: "Natural beauty around Bandhavgarh." },
+              { name: "Bandhavgarh Sunset", query: "bandhavgarh sunset golden hour india travel", desc: "Bandhavgarh at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -521,6 +522,20 @@ export default function LandourClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Landour — Highlights"
+            subtitle="The best of Landour in photos."
+            spots={[
+              { name: "Landour Landscape", query: "landour india landscape scenic beautiful travel", desc: "The stunning landscapes of Landour." },
+              { name: "Landour Temple", query: "landour temple architecture heritage india", desc: "Historic temples and architecture in Landour." },
+              { name: "Landour Street Scene", query: "landour street market local culture india", desc: "Local life and culture in Landour." },
+              { name: "Landour Nature", query: "landour nature hills forest river india", desc: "Natural beauty around Landour." },
+              { name: "Landour Sunset", query: "landour sunset golden hour india travel", desc: "Landour at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

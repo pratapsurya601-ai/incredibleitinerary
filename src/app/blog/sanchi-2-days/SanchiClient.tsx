@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -495,6 +496,20 @@ export default function SanchiClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Sanchi — Highlights"
+            subtitle="The best of Sanchi in photos."
+            spots={[
+              { name: "Sanchi Landscape", query: "sanchi india landscape scenic beautiful travel", desc: "The stunning landscapes of Sanchi." },
+              { name: "Sanchi Temple", query: "sanchi temple architecture heritage india", desc: "Historic temples and architecture in Sanchi." },
+              { name: "Sanchi Street Scene", query: "sanchi street market local culture india", desc: "Local life and culture in Sanchi." },
+              { name: "Sanchi Nature", query: "sanchi nature hills forest river india", desc: "Natural beauty around Sanchi." },
+              { name: "Sanchi Sunset", query: "sanchi sunset golden hour india travel", desc: "Sanchi at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

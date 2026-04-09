@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -537,6 +538,20 @@ export default function LucknowClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Lucknow — Highlights"
+            subtitle="The best of Lucknow in photos."
+            spots={[
+              { name: "Lucknow Landscape", query: "lucknow india landscape scenic beautiful travel", desc: "The stunning landscapes of Lucknow." },
+              { name: "Lucknow Temple", query: "lucknow temple architecture heritage india", desc: "Historic temples and architecture in Lucknow." },
+              { name: "Lucknow Street Scene", query: "lucknow street market local culture india", desc: "Local life and culture in Lucknow." },
+              { name: "Lucknow Nature", query: "lucknow nature hills forest river india", desc: "Natural beauty around Lucknow." },
+              { name: "Lucknow Sunset", query: "lucknow sunset golden hour india travel", desc: "Lucknow at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

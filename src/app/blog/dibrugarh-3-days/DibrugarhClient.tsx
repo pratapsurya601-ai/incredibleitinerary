@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -532,6 +533,20 @@ export default function DibrugarhClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Dibrugarh — Highlights"
+            subtitle="The best of Dibrugarh in photos."
+            spots={[
+              { name: "Dibrugarh Landscape", query: "dibrugarh india landscape scenic beautiful travel", desc: "The stunning landscapes of Dibrugarh." },
+              { name: "Dibrugarh Temple", query: "dibrugarh temple architecture heritage india", desc: "Historic temples and architecture in Dibrugarh." },
+              { name: "Dibrugarh Street Scene", query: "dibrugarh street market local culture india", desc: "Local life and culture in Dibrugarh." },
+              { name: "Dibrugarh Nature", query: "dibrugarh nature hills forest river india", desc: "Natural beauty around Dibrugarh." },
+              { name: "Dibrugarh Sunset", query: "dibrugarh sunset golden hour india travel", desc: "Dibrugarh at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -495,6 +496,20 @@ export default function BodhGayaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Bodh Gaya — Highlights"
+            subtitle="The best of Bodh Gaya in photos."
+            spots={[
+              { name: "Bodh Gaya Landscape", query: "bodh gaya india landscape scenic beautiful travel", desc: "The stunning landscapes of Bodh Gaya." },
+              { name: "Bodh Gaya Temple", query: "bodh gaya temple architecture heritage india", desc: "Historic temples and architecture in Bodh Gaya." },
+              { name: "Bodh Gaya Street Scene", query: "bodh gaya street market local culture india", desc: "Local life and culture in Bodh Gaya." },
+              { name: "Bodh Gaya Nature", query: "bodh gaya nature hills forest river india", desc: "Natural beauty around Bodh Gaya." },
+              { name: "Bodh Gaya Sunset", query: "bodh gaya sunset golden hour india travel", desc: "Bodh Gaya at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

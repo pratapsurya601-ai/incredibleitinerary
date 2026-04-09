@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -521,6 +522,20 @@ export default function MawlynnongClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Mawlynnong — Highlights"
+            subtitle="The best of Mawlynnong in photos."
+            spots={[
+              { name: "Mawlynnong Landscape", query: "mawlynnong india landscape scenic beautiful travel", desc: "The stunning landscapes of Mawlynnong." },
+              { name: "Mawlynnong Temple", query: "mawlynnong temple architecture heritage india", desc: "Historic temples and architecture in Mawlynnong." },
+              { name: "Mawlynnong Street Scene", query: "mawlynnong street market local culture india", desc: "Local life and culture in Mawlynnong." },
+              { name: "Mawlynnong Nature", query: "mawlynnong nature hills forest river india", desc: "Natural beauty around Mawlynnong." },
+              { name: "Mawlynnong Sunset", query: "mawlynnong sunset golden hour india travel", desc: "Mawlynnong at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

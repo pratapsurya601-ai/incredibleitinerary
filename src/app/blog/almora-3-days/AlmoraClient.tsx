@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -539,6 +540,20 @@ export default function AlmoraClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Almora — Highlights"
+            subtitle="The best of Almora in photos."
+            spots={[
+              { name: "Almora Landscape", query: "almora india landscape scenic beautiful travel", desc: "The stunning landscapes of Almora." },
+              { name: "Almora Temple", query: "almora temple architecture heritage india", desc: "Historic temples and architecture in Almora." },
+              { name: "Almora Street Scene", query: "almora street market local culture india", desc: "Local life and culture in Almora." },
+              { name: "Almora Nature", query: "almora nature hills forest river india", desc: "Natural beauty around Almora." },
+              { name: "Almora Sunset", query: "almora sunset golden hour india travel", desc: "Almora at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

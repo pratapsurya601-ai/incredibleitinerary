@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -664,6 +665,20 @@ export default function KazirangaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Kaziranga — Land of the One-Horned Rhino"
+            subtitle="2,600 rhinos, elephant safaris at dawn, and India's highest tiger density."
+            spots={[
+              { name: "One-Horned Rhino", query: "kaziranga national park one horned rhino grassland assam india safari", desc: "Kaziranga has 2,600 of the world's 4,000 remaining one-horned rhinos." },
+              { name: "Elephant Safari at Dawn", query: "kaziranga elephant safari sunrise mist assam india grassland", desc: "Elephant safari through tall grass — the original way to see rhinos." },
+              { name: "Wild Buffalo Herd", query: "kaziranga wild water buffalo herd assam national park india", desc: "Wild Asiatic water buffalo in their natural habitat." },
+              { name: "Tea Gardens", query: "assam tea garden plantation green rows kaziranga india", desc: "Assam's emerald tea estates surround the park." },
+              { name: "Brahmaputra River", query: "brahmaputra river assam sunset wide river india landscape", desc: "The mighty Brahmaputra — so wide it looks like an inland sea." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -530,6 +531,20 @@ export default function AssamTeaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Assam Tea Garden — Highlights"
+            subtitle="The best of Assam Tea Garden in photos."
+            spots={[
+              { name: "Assam Tea Garden Landscape", query: "assam tea garden india landscape scenic beautiful travel", desc: "The stunning landscapes of Assam Tea Garden." },
+              { name: "Assam Tea Garden Temple", query: "assam tea garden temple architecture heritage india", desc: "Historic temples and architecture in Assam Tea Garden." },
+              { name: "Assam Tea Garden Street Scene", query: "assam tea garden street market local culture india", desc: "Local life and culture in Assam Tea Garden." },
+              { name: "Assam Tea Garden Nature", query: "assam tea garden nature hills forest river india", desc: "Natural beauty around Assam Tea Garden." },
+              { name: "Assam Tea Garden Sunset", query: "assam tea garden sunset golden hour india travel", desc: "Assam Tea Garden at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

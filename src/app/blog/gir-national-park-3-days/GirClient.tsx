@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -527,6 +528,20 @@ export default function GirClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Gir National Park — Highlights"
+            subtitle="The best of Gir National Park in photos."
+            spots={[
+              { name: "Gir National Park Landscape", query: "gir national park india landscape scenic beautiful travel", desc: "The stunning landscapes of Gir National Park." },
+              { name: "Gir National Park Temple", query: "gir national park temple architecture heritage india", desc: "Historic temples and architecture in Gir National Park." },
+              { name: "Gir National Park Street Scene", query: "gir national park street market local culture india", desc: "Local life and culture in Gir National Park." },
+              { name: "Gir National Park Nature", query: "gir national park nature hills forest river india", desc: "Natural beauty around Gir National Park." },
+              { name: "Gir National Park Sunset", query: "gir national park sunset golden hour india travel", desc: "Gir National Park at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -521,6 +522,20 @@ export default function BikanerClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Bikaner — Highlights"
+            subtitle="The best of Bikaner in photos."
+            spots={[
+              { name: "Bikaner Landscape", query: "bikaner india landscape scenic beautiful travel", desc: "The stunning landscapes of Bikaner." },
+              { name: "Bikaner Temple", query: "bikaner temple architecture heritage india", desc: "Historic temples and architecture in Bikaner." },
+              { name: "Bikaner Street Scene", query: "bikaner street market local culture india", desc: "Local life and culture in Bikaner." },
+              { name: "Bikaner Nature", query: "bikaner nature hills forest river india", desc: "Natural beauty around Bikaner." },
+              { name: "Bikaner Sunset", query: "bikaner sunset golden hour india travel", desc: "Bikaner at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

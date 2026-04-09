@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -503,6 +504,20 @@ export default function KohimaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Kohima — Highlights"
+            subtitle="The best of Kohima in photos."
+            spots={[
+              { name: "Kohima Landscape", query: "kohima india landscape scenic beautiful travel", desc: "The stunning landscapes of Kohima." },
+              { name: "Kohima Temple", query: "kohima temple architecture heritage india", desc: "Historic temples and architecture in Kohima." },
+              { name: "Kohima Street Scene", query: "kohima street market local culture india", desc: "Local life and culture in Kohima." },
+              { name: "Kohima Nature", query: "kohima nature hills forest river india", desc: "Natural beauty around Kohima." },
+              { name: "Kohima Sunset", query: "kohima sunset golden hour india travel", desc: "Kohima at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

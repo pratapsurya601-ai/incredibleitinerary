@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -619,6 +620,20 @@ export default function AuliClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Auli — Highlights"
+            subtitle="The best of Auli in photos."
+            spots={[
+              { name: "Auli Landscape", query: "auli india landscape scenic beautiful travel", desc: "The stunning landscapes of Auli." },
+              { name: "Auli Temple", query: "auli temple architecture heritage india", desc: "Historic temples and architecture in Auli." },
+              { name: "Auli Street Scene", query: "auli street market local culture india", desc: "Local life and culture in Auli." },
+              { name: "Auli Nature", query: "auli nature hills forest river india", desc: "Natural beauty around Auli." },
+              { name: "Auli Sunset", query: "auli sunset golden hour india travel", desc: "Auli at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -506,6 +507,20 @@ export default function PenchClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Pench — Highlights"
+            subtitle="The best of Pench in photos."
+            spots={[
+              { name: "Pench Landscape", query: "pench india landscape scenic beautiful travel", desc: "The stunning landscapes of Pench." },
+              { name: "Pench Temple", query: "pench temple architecture heritage india", desc: "Historic temples and architecture in Pench." },
+              { name: "Pench Street Scene", query: "pench street market local culture india", desc: "Local life and culture in Pench." },
+              { name: "Pench Nature", query: "pench nature hills forest river india", desc: "Natural beauty around Pench." },
+              { name: "Pench Sunset", query: "pench sunset golden hour india travel", desc: "Pench at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

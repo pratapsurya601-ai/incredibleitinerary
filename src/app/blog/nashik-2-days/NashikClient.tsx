@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -527,6 +528,20 @@ export default function NashikClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Nashik — Highlights"
+            subtitle="The best of Nashik in photos."
+            spots={[
+              { name: "Nashik Landscape", query: "nashik india landscape scenic beautiful travel", desc: "The stunning landscapes of Nashik." },
+              { name: "Nashik Temple", query: "nashik temple architecture heritage india", desc: "Historic temples and architecture in Nashik." },
+              { name: "Nashik Street Scene", query: "nashik street market local culture india", desc: "Local life and culture in Nashik." },
+              { name: "Nashik Nature", query: "nashik nature hills forest river india", desc: "Natural beauty around Nashik." },
+              { name: "Nashik Sunset", query: "nashik sunset golden hour india travel", desc: "Nashik at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

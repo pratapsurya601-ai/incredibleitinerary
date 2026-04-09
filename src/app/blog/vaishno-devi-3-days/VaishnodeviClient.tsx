@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -537,6 +538,20 @@ export default function VaishnodeviClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Vaishno Devi — Highlights"
+            subtitle="The best of Vaishno Devi in photos."
+            spots={[
+              { name: "Vaishno Devi Landscape", query: "vaishno devi india landscape scenic beautiful travel", desc: "The stunning landscapes of Vaishno Devi." },
+              { name: "Vaishno Devi Temple", query: "vaishno devi temple architecture heritage india", desc: "Historic temples and architecture in Vaishno Devi." },
+              { name: "Vaishno Devi Street Scene", query: "vaishno devi street market local culture india", desc: "Local life and culture in Vaishno Devi." },
+              { name: "Vaishno Devi Nature", query: "vaishno devi nature hills forest river india", desc: "Natural beauty around Vaishno Devi." },
+              { name: "Vaishno Devi Sunset", query: "vaishno devi sunset golden hour india travel", desc: "Vaishno Devi at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

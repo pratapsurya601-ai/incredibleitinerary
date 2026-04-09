@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -535,6 +536,20 @@ export default function MountAbuClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Mount Abu — Highlights"
+            subtitle="The best of Mount Abu in photos."
+            spots={[
+              { name: "Mount Abu Landscape", query: "mount abu india landscape scenic beautiful travel", desc: "The stunning landscapes of Mount Abu." },
+              { name: "Mount Abu Temple", query: "mount abu temple architecture heritage india", desc: "Historic temples and architecture in Mount Abu." },
+              { name: "Mount Abu Street Scene", query: "mount abu street market local culture india", desc: "Local life and culture in Mount Abu." },
+              { name: "Mount Abu Nature", query: "mount abu nature hills forest river india", desc: "Natural beauty around Mount Abu." },
+              { name: "Mount Abu Sunset", query: "mount abu sunset golden hour india travel", desc: "Mount Abu at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

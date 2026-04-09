@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -535,6 +536,20 @@ export default function AmarnathClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Amarnath — Highlights"
+            subtitle="The best of Amarnath in photos."
+            spots={[
+              { name: "Amarnath Landscape", query: "amarnath india landscape scenic beautiful travel", desc: "The stunning landscapes of Amarnath." },
+              { name: "Amarnath Temple", query: "amarnath temple architecture heritage india", desc: "Historic temples and architecture in Amarnath." },
+              { name: "Amarnath Street Scene", query: "amarnath street market local culture india", desc: "Local life and culture in Amarnath." },
+              { name: "Amarnath Nature", query: "amarnath nature hills forest river india", desc: "Natural beauty around Amarnath." },
+              { name: "Amarnath Sunset", query: "amarnath sunset golden hour india travel", desc: "Amarnath at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

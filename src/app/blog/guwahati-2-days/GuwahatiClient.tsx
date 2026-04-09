@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -519,6 +520,20 @@ export default function GuwahatiClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Guwahati — Highlights"
+            subtitle="The best of Guwahati in photos."
+            spots={[
+              { name: "Guwahati Landscape", query: "guwahati india landscape scenic beautiful travel", desc: "The stunning landscapes of Guwahati." },
+              { name: "Guwahati Temple", query: "guwahati temple architecture heritage india", desc: "Historic temples and architecture in Guwahati." },
+              { name: "Guwahati Street Scene", query: "guwahati street market local culture india", desc: "Local life and culture in Guwahati." },
+              { name: "Guwahati Nature", query: "guwahati nature hills forest river india", desc: "Natural beauty around Guwahati." },
+              { name: "Guwahati Sunset", query: "guwahati sunset golden hour india travel", desc: "Guwahati at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

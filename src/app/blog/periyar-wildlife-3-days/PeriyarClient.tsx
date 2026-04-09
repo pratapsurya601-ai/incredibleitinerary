@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -529,6 +530,20 @@ export default function PeriyarClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Periyar Wildlife — Highlights"
+            subtitle="The best of Periyar Wildlife in photos."
+            spots={[
+              { name: "Periyar Wildlife Landscape", query: "periyar wildlife india landscape scenic beautiful travel", desc: "The stunning landscapes of Periyar Wildlife." },
+              { name: "Periyar Wildlife Temple", query: "periyar wildlife temple architecture heritage india", desc: "Historic temples and architecture in Periyar Wildlife." },
+              { name: "Periyar Wildlife Street Scene", query: "periyar wildlife street market local culture india", desc: "Local life and culture in Periyar Wildlife." },
+              { name: "Periyar Wildlife Nature", query: "periyar wildlife nature hills forest river india", desc: "Natural beauty around Periyar Wildlife." },
+              { name: "Periyar Wildlife Sunset", query: "periyar wildlife sunset golden hour india travel", desc: "Periyar Wildlife at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

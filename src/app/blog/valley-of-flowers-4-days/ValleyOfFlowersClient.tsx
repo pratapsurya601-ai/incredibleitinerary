@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -587,6 +588,20 @@ export default function ValleyOfFlowersClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Valley Of Flowers — Highlights"
+            subtitle="The best of Valley Of Flowers in photos."
+            spots={[
+              { name: "Valley Of Flowers Landscape", query: "valley of flowers india landscape scenic beautiful travel", desc: "The stunning landscapes of Valley Of Flowers." },
+              { name: "Valley Of Flowers Temple", query: "valley of flowers temple architecture heritage india", desc: "Historic temples and architecture in Valley Of Flowers." },
+              { name: "Valley Of Flowers Street Scene", query: "valley of flowers street market local culture india", desc: "Local life and culture in Valley Of Flowers." },
+              { name: "Valley Of Flowers Nature", query: "valley of flowers nature hills forest river india", desc: "Natural beauty around Valley Of Flowers." },
+              { name: "Valley Of Flowers Sunset", query: "valley of flowers sunset golden hour india travel", desc: "Valley Of Flowers at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

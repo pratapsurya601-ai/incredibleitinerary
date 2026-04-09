@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -501,6 +502,20 @@ export default function RanakpurClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Ranakpur — Highlights"
+            subtitle="The best of Ranakpur in photos."
+            spots={[
+              { name: "Ranakpur Landscape", query: "ranakpur india landscape scenic beautiful travel", desc: "The stunning landscapes of Ranakpur." },
+              { name: "Ranakpur Temple", query: "ranakpur temple architecture heritage india", desc: "Historic temples and architecture in Ranakpur." },
+              { name: "Ranakpur Street Scene", query: "ranakpur street market local culture india", desc: "Local life and culture in Ranakpur." },
+              { name: "Ranakpur Nature", query: "ranakpur nature hills forest river india", desc: "Natural beauty around Ranakpur." },
+              { name: "Ranakpur Sunset", query: "ranakpur sunset golden hour india travel", desc: "Ranakpur at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

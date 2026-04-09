@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -536,6 +537,20 @@ export default function KochiClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Kochi — Highlights"
+            subtitle="The best of Kochi in photos."
+            spots={[
+              { name: "Kochi Landscape", query: "kochi india landscape scenic beautiful travel", desc: "The stunning landscapes of Kochi." },
+              { name: "Kochi Temple", query: "kochi temple architecture heritage india", desc: "Historic temples and architecture in Kochi." },
+              { name: "Kochi Street Scene", query: "kochi street market local culture india", desc: "Local life and culture in Kochi." },
+              { name: "Kochi Nature", query: "kochi nature hills forest river india", desc: "Natural beauty around Kochi." },
+              { name: "Kochi Sunset", query: "kochi sunset golden hour india travel", desc: "Kochi at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

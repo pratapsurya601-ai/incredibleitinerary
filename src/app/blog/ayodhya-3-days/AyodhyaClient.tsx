@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -533,6 +534,20 @@ export default function AyodhyaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Ayodhya — Highlights"
+            subtitle="The best of Ayodhya in photos."
+            spots={[
+              { name: "Ayodhya Landscape", query: "ayodhya india landscape scenic beautiful travel", desc: "The stunning landscapes of Ayodhya." },
+              { name: "Ayodhya Temple", query: "ayodhya temple architecture heritage india", desc: "Historic temples and architecture in Ayodhya." },
+              { name: "Ayodhya Street Scene", query: "ayodhya street market local culture india", desc: "Local life and culture in Ayodhya." },
+              { name: "Ayodhya Nature", query: "ayodhya nature hills forest river india", desc: "Natural beauty around Ayodhya." },
+              { name: "Ayodhya Sunset", query: "ayodhya sunset golden hour india travel", desc: "Ayodhya at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

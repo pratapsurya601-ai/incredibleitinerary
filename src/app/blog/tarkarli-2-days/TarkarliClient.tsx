@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -520,6 +521,20 @@ export default function TarkarliClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Tarkarli — Highlights"
+            subtitle="The best of Tarkarli in photos."
+            spots={[
+              { name: "Tarkarli Landscape", query: "tarkarli india landscape scenic beautiful travel", desc: "The stunning landscapes of Tarkarli." },
+              { name: "Tarkarli Temple", query: "tarkarli temple architecture heritage india", desc: "Historic temples and architecture in Tarkarli." },
+              { name: "Tarkarli Street Scene", query: "tarkarli street market local culture india", desc: "Local life and culture in Tarkarli." },
+              { name: "Tarkarli Nature", query: "tarkarli nature hills forest river india", desc: "Natural beauty around Tarkarli." },
+              { name: "Tarkarli Sunset", query: "tarkarli sunset golden hour india travel", desc: "Tarkarli at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

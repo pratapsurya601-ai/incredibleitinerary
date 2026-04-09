@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -518,6 +519,20 @@ export default function KonarkClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Konark — Highlights"
+            subtitle="The best of Konark in photos."
+            spots={[
+              { name: "Konark Landscape", query: "konark india landscape scenic beautiful travel", desc: "The stunning landscapes of Konark." },
+              { name: "Konark Temple", query: "konark temple architecture heritage india", desc: "Historic temples and architecture in Konark." },
+              { name: "Konark Street Scene", query: "konark street market local culture india", desc: "Local life and culture in Konark." },
+              { name: "Konark Nature", query: "konark nature hills forest river india", desc: "Natural beauty around Konark." },
+              { name: "Konark Sunset", query: "konark sunset golden hour india travel", desc: "Konark at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

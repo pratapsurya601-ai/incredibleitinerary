@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -535,6 +536,20 @@ export default function PushkarClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Pushkar — Highlights"
+            subtitle="The best of Pushkar in photos."
+            spots={[
+              { name: "Pushkar Landscape", query: "pushkar india landscape scenic beautiful travel", desc: "The stunning landscapes of Pushkar." },
+              { name: "Pushkar Temple", query: "pushkar temple architecture heritage india", desc: "Historic temples and architecture in Pushkar." },
+              { name: "Pushkar Street Scene", query: "pushkar street market local culture india", desc: "Local life and culture in Pushkar." },
+              { name: "Pushkar Nature", query: "pushkar nature hills forest river india", desc: "Natural beauty around Pushkar." },
+              { name: "Pushkar Sunset", query: "pushkar sunset golden hour india travel", desc: "Pushkar at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

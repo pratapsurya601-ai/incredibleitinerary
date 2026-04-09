@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -523,6 +524,20 @@ export default function AlibaugClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Alibaug — Highlights"
+            subtitle="The best of Alibaug in photos."
+            spots={[
+              { name: "Alibaug Landscape", query: "alibaug india landscape scenic beautiful travel", desc: "The stunning landscapes of Alibaug." },
+              { name: "Alibaug Temple", query: "alibaug temple architecture heritage india", desc: "Historic temples and architecture in Alibaug." },
+              { name: "Alibaug Street Scene", query: "alibaug street market local culture india", desc: "Local life and culture in Alibaug." },
+              { name: "Alibaug Nature", query: "alibaug nature hills forest river india", desc: "Natural beauty around Alibaug." },
+              { name: "Alibaug Sunset", query: "alibaug sunset golden hour india travel", desc: "Alibaug at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

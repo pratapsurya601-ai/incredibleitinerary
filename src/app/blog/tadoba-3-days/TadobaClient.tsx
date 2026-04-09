@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -533,6 +534,20 @@ export default function TadobaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Tadoba — Highlights"
+            subtitle="The best of Tadoba in photos."
+            spots={[
+              { name: "Tadoba Landscape", query: "tadoba india landscape scenic beautiful travel", desc: "The stunning landscapes of Tadoba." },
+              { name: "Tadoba Temple", query: "tadoba temple architecture heritage india", desc: "Historic temples and architecture in Tadoba." },
+              { name: "Tadoba Street Scene", query: "tadoba street market local culture india", desc: "Local life and culture in Tadoba." },
+              { name: "Tadoba Nature", query: "tadoba nature hills forest river india", desc: "Natural beauty around Tadoba." },
+              { name: "Tadoba Sunset", query: "tadoba sunset golden hour india travel", desc: "Tadoba at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

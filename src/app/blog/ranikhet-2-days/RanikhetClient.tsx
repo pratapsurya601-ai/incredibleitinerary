@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -522,6 +523,20 @@ export default function RanikhetClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Ranikhet — Highlights"
+            subtitle="The best of Ranikhet in photos."
+            spots={[
+              { name: "Ranikhet Landscape", query: "ranikhet india landscape scenic beautiful travel", desc: "The stunning landscapes of Ranikhet." },
+              { name: "Ranikhet Temple", query: "ranikhet temple architecture heritage india", desc: "Historic temples and architecture in Ranikhet." },
+              { name: "Ranikhet Street Scene", query: "ranikhet street market local culture india", desc: "Local life and culture in Ranikhet." },
+              { name: "Ranikhet Nature", query: "ranikhet nature hills forest river india", desc: "Natural beauty around Ranikhet." },
+              { name: "Ranikhet Sunset", query: "ranikhet sunset golden hour india travel", desc: "Ranikhet at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

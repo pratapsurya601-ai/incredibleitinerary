@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -529,6 +530,20 @@ export default function AmritsarClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Amritsar — The Golden City"
+            subtitle="The Golden Temple, Wagah Border, and Punjab's legendary food."
+            spots={[
+              { name: "Golden Temple at Night", query: "golden temple amritsar night reflection harmandir sahib sikh india", desc: "The Harmandir Sahib reflected in the sacred pool — India's most serene sight." },
+              { name: "Wagah Border Ceremony", query: "wagah border ceremony amritsar india pakistan flag lowering parade", desc: "The daily flag-lowering ceremony at the India-Pakistan border." },
+              { name: "Jallianwala Bagh", query: "jallianwala bagh amritsar memorial garden bullet marks india history", desc: "The memorial garden marking the 1919 massacre — bullet marks still visible on the walls." },
+              { name: "Langar at Golden Temple", query: "golden temple langar amritsar community kitchen sikh food seva india", desc: "The world's largest free kitchen — feeding 100,000 people daily." },
+              { name: "Amritsar Street Food", query: "amritsar street food kulcha chole lassi punjab india", desc: "Kulcha, chole, lassi — Amritsar has the best Punjabi street food in India." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

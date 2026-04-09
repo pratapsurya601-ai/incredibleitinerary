@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -538,6 +539,20 @@ export default function KanhaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Kanha National Park — Highlights"
+            subtitle="The best of Kanha National Park in photos."
+            spots={[
+              { name: "Kanha National Park Landscape", query: "kanha national park india landscape scenic beautiful travel", desc: "The stunning landscapes of Kanha National Park." },
+              { name: "Kanha National Park Temple", query: "kanha national park temple architecture heritage india", desc: "Historic temples and architecture in Kanha National Park." },
+              { name: "Kanha National Park Street Scene", query: "kanha national park street market local culture india", desc: "Local life and culture in Kanha National Park." },
+              { name: "Kanha National Park Nature", query: "kanha national park nature hills forest river india", desc: "Natural beauty around Kanha National Park." },
+              { name: "Kanha National Park Sunset", query: "kanha national park sunset golden hour india travel", desc: "Kanha National Park at golden hour." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
@@ -638,6 +639,20 @@ export default function DharamshalaClient() {
           </section>
 
           {/* ── COMMENTS ── */}
+
+          <DestinationGallery
+            title="Dharamshala — Little Lhasa in the Himalayas"
+            subtitle="Tibetan monasteries, mountain views, and India's rock music capital."
+            spots={[
+              { name: "Tsuglagkhang Complex", query: "dalai lama temple dharamshala mcleodganj tibetan monastery india", desc: "The Dalai Lama's temple — the heart of India's Tibetan exile community." },
+              { name: "Bhagsu Waterfall", query: "bhagsu waterfall dharamshala mcleodganj monsoon himachal pradesh india", desc: "A thundering waterfall at full force during monsoon — 2km walk from McLeodGanj." },
+              { name: "Dhauladhar Range", query: "dhauladhar range dharamshala snow peaks himalaya mountains india", desc: "Snow-capped Himalayan peaks visible from every rooftop in McLeodGanj." },
+              { name: "Norbulingka Institute", query: "norbulingka institute dharamshala tibetan art thangka painting garden", desc: "Traditional Tibetan arts — thangka painting, wood carving, in a garden setting." },
+              { name: "Triund Trek View", query: "triund trek dharamshala himachal pradesh mountain camping sunset india", desc: "The classic Dharamshala trek — panoramic Dhauladhar views from the ridge." },
+            ]}
+          />
+
+         
           <Comments />
 
           {/* ── INTERNAL LINKS ── */}
