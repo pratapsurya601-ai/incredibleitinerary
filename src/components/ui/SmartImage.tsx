@@ -43,7 +43,7 @@ export default function SmartImage({
   sizes,
 }: SmartImageProps) {
   const [src, setSrc] = useState<string>(fallback);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [photographer, setPhotographer] = useState<string>("");
 
   useEffect(() => {
@@ -53,7 +53,11 @@ export default function SmartImage({
     if (imageKey) params.set("key", imageKey);
     else if (query) params.set("q", query);
 
-    fetch(`/api/image?${params.toString()}`)
+    // Don't block rendering — fetch in background, swap when ready
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000); // 5s max wait
+
+    fetch(`/api/image?${params.toString()}`, { signal: controller.signal })
       .then((res) => res.json())
       .then((data) => {
         if (data.url) {
@@ -62,9 +66,11 @@ export default function SmartImage({
         }
       })
       .catch(() => {
-        // Silently fall back to fallback image
+        // Silently keep fallback image — already showing
       })
-      .finally(() => setLoading(false));
+      .finally(() => clearTimeout(timeout));
+
+    return () => { controller.abort(); clearTimeout(timeout); };
   }, [imageKey, query]);
 
   return (
