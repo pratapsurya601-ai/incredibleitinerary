@@ -340,7 +340,7 @@ export default function RajasthanBlogClient() {
             <p className="text-sm text-muted font-light mb-6">Rajasthan is NOT a scooter destination. Cities are 250–380km apart. Here&apos;s what actually works.</p>
             <div className="space-y-3">
               {[
-                { icon: "🚗", title: "Private car + driver for 7 days (recommended)", desc: "₹12,000–₹18,000 total for the car. Driver handles routes, waits at sights. Ask your hotel to arrange — avoid touts at bus stands. Split cost between 2+ people.", color: "bg-green-50 border-green-200" },
+                { icon: "🚗", title: "Private car + driver for 7 days (recommended)", desc: "₹18,000–₹25,000 for the car + ₹8,000–₹12,000 fuel (~1,400km). Total ₹26,000–₹37,000 for the vehicle. Split between 2–3 people: ₹9,000–₹18,000 per person. Driver handles routes, waits at sights. Ask your hotel to arrange — avoid touts at bus stands.", color: "bg-green-50 border-green-200" },
                 { icon: "🚂", title: "Trains between cities + autos locally", desc: "Jaipur→Jodhpur: 5hrs (₹600–₹900 in 2AC). Jodhpur→Jaisalmer: 5–6hrs (₹300–₹500). Jaisalmer→Udaipur: No direct train — private car only (10–12hrs, ₹3,500–₹5,000).", color: "bg-blue-50 border-blue-200" },
                 { icon: "✈️", title: "Fly into Jaipur, out of Udaipur", desc: "Both have airports. IndiGo Delhi→Jaipur from ₹1,500–₹3,000. Saves 3hrs vs train. Works well combined with either option above.", color: "bg-parchment border-parchment-2" },
                 { icon: "🚌", title: "State buses — avoid", desc: "Overcrowded, slow, add 3–4hrs to every journey. Only if absolutely necessary on a shoestring budget.", color: "bg-red-50 border-red-200" },
@@ -694,7 +694,7 @@ export default function RajasthanBlogClient() {
                 { q: "What is the best time to visit Rajasthan?", a: "October–March. Oct–Nov for best value, Dec–Jan for peak season, Feb–Mar for the sweet spot. Avoid April–September — temperatures reach 45–48°C." },
                 { q: "How much does a 7-day Rajasthan trip cost?", a: "Budget solo: ₹20,000–₹30,000. Couple mid-range: ₹60,000–₹90,000 for two. Family of four: ₹45,000–₹70,000. Palace hotel luxury: ₹3,00,000+ for two." },
                 { q: "What is the best route for Rajasthan in 7 days?", a: "Jaipur → Jodhpur → Jaisalmer → Udaipur. Never reverse it — the reverse adds 4–5 hours of unnecessary backtracking. Total ~1,430km, best with a private car and driver." },
-                { q: "Should I hire a private car or take trains?", a: "Budget: trains between cities (2AC or 3AC) + autos locally. Couples/families: private car + driver for all 7 days (₹12,000–₹18,000 total). The Jaisalmer→Udaipur leg has no direct train so a car is necessary regardless." },
+                { q: "Should I hire a private car or take trains?", a: "Budget: trains between cities (2AC or 3AC) + autos locally. Couples/families: private car + driver for all 7 days (₹18,000–₹25,000 + fuel ₹8,000–₹12,000). Split between 2–3 people it's competitive with trains. The Jaisalmer→Udaipur leg has no direct train so a car is necessary regardless." },
                 { q: "Is Rajasthan safe for solo female travellers?", a: "Generally yes — it's one of India's most-visited states with well-developed tourist infrastructure. Book accommodation in advance, dress modestly at religious sites, use pre-booked transport, and avoid isolated areas at night." },
               ].map((item, i) => <FaqItem key={i} {...item} />)}
             </div>

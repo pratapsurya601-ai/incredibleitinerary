@@ -407,7 +407,7 @@ export default function MeghalayaClient() {
                 <tbody className="divide-y divide-parchment-2">
                   {[
                     ["Accommodation (4 nights)", "₹2,400–3,600", "₹12,000–20,000", "₹28,000–40,000"],
-                    ["Transport (Guwahati-Shillong + local)", "₹2,500–3,500", "₹6,000–8,000", "₹10,000–14,000"],
+                    ["Transport (all 5 days)", "₹2,500–₹3,500", "₹8,000–₹14,000", "₹12,000–₹18,000"],
                     ["Food (5 days)", "₹2,000–3,000", "₹4,000–6,000", "₹7,000–10,000"],
                     ["Activities & Entry Fees", "₹800–1,200", "₹1,500–2,500", "₹3,000–5,000"],
                     ["Misc (tips, snacks, chai)", "₹500–800", "₹1,000–1,500", "₹2,000–3,000"],
@@ -422,7 +422,7 @@ export default function MeghalayaClient() {
                   <tr className="bg-parchment font-medium">
                     <td className="px-4 py-3 text-ink">TOTAL (5 days)</td>
                     <td className="px-4 py-3 text-center text-amber-700">₹8,200–12,100</td>
-                    <td className="px-4 py-3 text-center text-teal">₹24,500–38,000</td>
+                    <td className="px-4 py-3 text-center text-teal">₹26,500–₹44,000</td>
                     <td className="px-4 py-3 text-center text-purple-700">₹50,000–72,000</td>
                   </tr>
                 </tbody>

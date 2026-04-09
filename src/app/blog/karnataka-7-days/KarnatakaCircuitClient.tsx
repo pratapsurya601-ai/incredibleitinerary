@@ -301,10 +301,10 @@ export default function KarnatakaCircuitClient() {
                   {[
                     ["🏨 Accommodation (7N)", "₹3,500–₹7,000", "₹10,500–₹21,000", "₹28,000–₹56,000"],
                     ["🍽 Food & Coffee", "₹2,800–₹4,200", "₹5,600–₹10,500", "₹10,500–₹21,000"],
-                    ["🚗 Transport", "₹3,500–₹5,600", "₹15,000–₹22,000", "₹25,000–₹40,000"],
+                    ["🚗 Transport (car+fuel)", "₹3,500–₹5,600", "₹23,000–₹34,000", "₹33,000–₹52,000"],
                     ["🎫 Entry fees & activities", "₹500–₹1,200", "₹1,500–₹3,000", "₹5,000–₹10,000"],
                     ["🛍 Shopping (optional)", "₹500–₹2,000", "₹2,000–₹8,000", "₹8,000–₹25,000"],
-                    ["TOTAL (excl. shopping)", "₹15,000–₹22,000", "₹35,000–₹55,000", "₹80,000–₹1,40,000"],
+                    ["TOTAL (excl. shopping)", "₹15,000–₹22,000", "₹42,000–₹68,000", "₹80,000–₹1,40,000"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
