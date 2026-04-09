@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -519,6 +520,20 @@ export default function ThekkadyClient() {
               ))}
             </div>
           </section>
+
+          <DestinationGallery
+            title="Thekkady — Periyar & the Spice Hills"
+            subtitle="Tiger reserve, spice plantations, and Kerala's wild interior."
+            spots={[
+              { name: "Periyar Lake", query: "periyar lake thekkady kerala boat safari elephants hills india", desc: "Boating on Periyar Lake with elephants and gaur on the shore." },
+              { name: "Spice Plantation", query: "thekkady spice plantation kerala cardamom pepper cinnamon india", desc: "Cardamom, pepper, cinnamon — Thekkady is the spice capital of Kerala." },
+              { name: "Periyar Tiger Reserve", query: "periyar tiger reserve thekkady kerala forest wildlife india", desc: "One of India's finest wildlife reserves — tigers, elephants, and giant squirrels." },
+              { name: "Kumily Town", query: "kumily town thekkady kerala spice market tea shop india", desc: "The gateway town to Periyar — spice markets and tea shops." },
+              { name: "Bamboo Rafting", query: "bamboo rafting periyar thekkady kerala river forest adventure india", desc: "Bamboo rafting through the Periyar Tiger Reserve — unique Kerala experience." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="thekkady-3-days" />
         </div>

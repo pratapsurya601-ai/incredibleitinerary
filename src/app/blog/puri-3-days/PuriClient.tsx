@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -526,6 +527,20 @@ export default function PuriClient() {
               ))}
             </div>
           </section>
+
+          <DestinationGallery
+            title="Puri — Sacred Dham & Golden Beach"
+            subtitle="Jagannath Temple, Konark Sun Temple, and the Bay of Bengal."
+            spots={[
+              { name: "Jagannath Temple", query: "jagannath temple puri odisha sacred hindu india gopuram", desc: "One of India's four sacred Char Dhams — the Jagannath Temple with its 65m shikhara." },
+              { name: "Puri Beach Sunrise", query: "puri beach sunrise bay bengal odisha india fishing boats", desc: "The Bay of Bengal at dawn — fishing boats returning with the sunrise." },
+              { name: "Konark Sun Temple", query: "konark sun temple odisha chariot wheels stone carving india unesco", desc: "The 13th-century stone chariot with 24 elaborately carved wheels — UNESCO World Heritage." },
+              { name: "Chilika Lake", query: "chilika lake odisha india lagoon birds flamingo boat", desc: "India's largest brackish water lagoon — Irrawaddy dolphins and migratory birds." },
+              { name: "Rath Yatra Festival", query: "rath yatra puri jagannath chariot festival odisha india crowd", desc: "The annual chariot festival — one of India's oldest and largest religious processions." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="puri-3-days" />
         </div>

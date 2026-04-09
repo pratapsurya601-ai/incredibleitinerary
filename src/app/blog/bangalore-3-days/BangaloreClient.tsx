@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -521,6 +522,20 @@ export default function BangaloreClient() {
               ))}
             </div>
           </section>
+
+          <DestinationGallery
+            title="Bangalore — Garden City & Startup Capital"
+            subtitle="Colonial gardens, craft beer, and India's most cosmopolitan city."
+            spots={[
+              { name: "Lalbagh Botanical Garden", query: "lalbagh botanical garden bangalore karnataka india greenery glasshouse", desc: "196-acre botanical garden with a 19th-century glasshouse — Bangalore's green heart." },
+              { name: "Cubbon Park", query: "cubbon park bangalore karnataka green trees heritage buildings india", desc: "300 acres of green in the centre of India's tech capital." },
+              { name: "Bangalore Palace", query: "bangalore palace tudor architecture karnataka india royal heritage", desc: "Tudor-style palace inspired by Windsor Castle — unexpected in the middle of Bangalore." },
+              { name: "Brigade Road & MG Road", query: "mg road brigade road bangalore night lights shopping karnataka india", desc: "Bangalore's iconic shopping and nightlife strip." },
+              { name: "Nandi Hills Sunrise", query: "nandi hills sunrise bangalore karnataka fog viewpoint india", desc: "Sunrise above the clouds — 60km from Bangalore, a favourite weekend escape." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="bangalore-3-days" />
         </div>

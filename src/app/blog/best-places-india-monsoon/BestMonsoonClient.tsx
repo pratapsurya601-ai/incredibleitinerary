@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "@/app/blog/[slug]/BlogSlugNav";
 import TableOfContents from "@/components/blog/TableOfContents";
 import InlineSignup from "@/components/email/InlineSignup";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 
 const tocItems = [
@@ -428,6 +429,20 @@ export default function BestMonsoonClient() {
               Get My Free Itinerary →
             </Link>
           </div>
+
+          <DestinationGallery
+            title="India in monsoon — Highlights"
+            subtitle="The best of India in monsoon in photos."
+            spots={[
+              { name: "India in monsoon Landscape", query: "india in monsoon india landscape scenic beautiful travel", desc: "The stunning landscapes of India in monsoon." },
+              { name: "India in monsoon Heritage", query: "india in monsoon temple architecture heritage india", desc: "Historic heritage and architecture in India in monsoon." },
+              { name: "India in monsoon Culture", query: "india in monsoon street market local culture india", desc: "Local life and culture in India in monsoon." },
+              { name: "India in monsoon Nature", query: "india in monsoon nature hills forest river india", desc: "Natural beauty around India in monsoon." },
+              { name: "India in monsoon Sunset", query: "india in monsoon sunset golden hour india travel", desc: "India in monsoon at golden hour." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="best-places-india-monsoon" />
         </div>

@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -848,6 +849,20 @@ export default function YamunotriClient({ faqData }: Props) {
             </Link>
           </div>
         </div>
+
+          <DestinationGallery
+            title="Yamunotri — Highlights"
+            subtitle="The best of Yamunotri in photos."
+            spots={[
+              { name: "Yamunotri Landscape", query: "yamunotri india landscape scenic beautiful travel", desc: "The stunning landscapes of Yamunotri." },
+              { name: "Yamunotri Heritage", query: "yamunotri temple architecture heritage india", desc: "Historic heritage and architecture in Yamunotri." },
+              { name: "Yamunotri Culture", query: "yamunotri street market local culture india", desc: "Local life and culture in Yamunotri." },
+              { name: "Yamunotri Nature", query: "yamunotri nature hills forest river india", desc: "Natural beauty around Yamunotri." },
+              { name: "Yamunotri Sunset", query: "yamunotri sunset golden hour india travel", desc: "Yamunotri at golden hour." },
+            ]}
+          />
+
+         
       </main>
 
       <Footer />

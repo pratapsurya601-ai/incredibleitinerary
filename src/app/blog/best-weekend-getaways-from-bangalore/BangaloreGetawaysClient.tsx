@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "@/app/blog/[slug]/BlogSlugNav";
 import TableOfContents from "@/components/blog/TableOfContents";
 import InlineSignup from "@/components/email/InlineSignup";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 
 const tocItems = [
@@ -422,6 +423,20 @@ export default function BangaloreGetawaysClient() {
               Get My Free Itinerary →
             </Link>
           </div>
+
+          <DestinationGallery
+            title="Weekend Getaways from bangalore — Highlights"
+            subtitle="The best of Weekend Getaways from bangalore in photos."
+            spots={[
+              { name: "Weekend Getaways from bangalore Landscape", query: "weekend getaways from bangalore india landscape scenic beautiful travel", desc: "The stunning landscapes of Weekend Getaways from bangalore." },
+              { name: "Weekend Getaways from bangalore Heritage", query: "weekend getaways from bangalore temple architecture heritage india", desc: "Historic heritage and architecture in Weekend Getaways from bangalore." },
+              { name: "Weekend Getaways from bangalore Culture", query: "weekend getaways from bangalore street market local culture india", desc: "Local life and culture in Weekend Getaways from bangalore." },
+              { name: "Weekend Getaways from bangalore Nature", query: "weekend getaways from bangalore nature hills forest river india", desc: "Natural beauty around Weekend Getaways from bangalore." },
+              { name: "Weekend Getaways from bangalore Sunset", query: "weekend getaways from bangalore sunset golden hour india travel", desc: "Weekend Getaways from bangalore at golden hour." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="best-weekend-getaways-from-bangalore" />
         </div>

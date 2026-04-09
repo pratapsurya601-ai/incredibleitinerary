@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "@/app/blog/[slug]/BlogSlugNav";
 import TableOfContents from "@/components/blog/TableOfContents";
 import InlineSignup from "@/components/email/InlineSignup";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 
 const tocItems = [
@@ -371,6 +372,20 @@ export default function DelhiGetawaysClient() {
               Get My Free Itinerary →
             </Link>
           </div>
+
+          <DestinationGallery
+            title="Weekend Getaways from delhi — Highlights"
+            subtitle="The best of Weekend Getaways from delhi in photos."
+            spots={[
+              { name: "Weekend Getaways from delhi Landscape", query: "weekend getaways from delhi india landscape scenic beautiful travel", desc: "The stunning landscapes of Weekend Getaways from delhi." },
+              { name: "Weekend Getaways from delhi Heritage", query: "weekend getaways from delhi temple architecture heritage india", desc: "Historic heritage and architecture in Weekend Getaways from delhi." },
+              { name: "Weekend Getaways from delhi Culture", query: "weekend getaways from delhi street market local culture india", desc: "Local life and culture in Weekend Getaways from delhi." },
+              { name: "Weekend Getaways from delhi Nature", query: "weekend getaways from delhi nature hills forest river india", desc: "Natural beauty around Weekend Getaways from delhi." },
+              { name: "Weekend Getaways from delhi Sunset", query: "weekend getaways from delhi sunset golden hour india travel", desc: "Weekend Getaways from delhi at golden hour." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="best-weekend-getaways-from-delhi" />
         </div>

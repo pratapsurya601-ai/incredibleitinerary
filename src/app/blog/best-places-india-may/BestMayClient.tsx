@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "@/app/blog/[slug]/BlogSlugNav";
 import TableOfContents from "@/components/blog/TableOfContents";
 import InlineSignup from "@/components/email/InlineSignup";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 
 const tocItems = [
@@ -407,6 +408,20 @@ export default function BestMayClient() {
               Get My Free Itinerary →
             </Link>
           </div>
+
+          <DestinationGallery
+            title="India in may — Highlights"
+            subtitle="The best of India in may in photos."
+            spots={[
+              { name: "India in may Landscape", query: "india in may india landscape scenic beautiful travel", desc: "The stunning landscapes of India in may." },
+              { name: "India in may Heritage", query: "india in may temple architecture heritage india", desc: "Historic heritage and architecture in India in may." },
+              { name: "India in may Culture", query: "india in may street market local culture india", desc: "Local life and culture in India in may." },
+              { name: "India in may Nature", query: "india in may nature hills forest river india", desc: "Natural beauty around India in may." },
+              { name: "India in may Sunset", query: "india in may sunset golden hour india travel", desc: "India in may at golden hour." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="best-places-india-may" />
         </div>

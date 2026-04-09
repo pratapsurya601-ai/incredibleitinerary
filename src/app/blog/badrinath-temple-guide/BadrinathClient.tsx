@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
@@ -902,6 +903,20 @@ export default function BadrinathClient({ faqData }: Props) {
       </main>
 
                 <div className="max-w-[760px] mx-auto px-5 pb-4">
+
+          <DestinationGallery
+            title="Badrinath — Gateway to the Gods"
+            subtitle="One of India's holiest Char Dham sites in the high Himalayas."
+            spots={[
+              { name: "Badrinath Temple", query: "badrinath temple uttarakhand char dham himalaya snow mountains india", desc: "The sacred Badrinath Temple at 3,133m — one of the four Char Dham pilgrimage sites." },
+              { name: "Neelkanth Peak", query: "neelkanth peak badrinath himalaya snow peak uttarakhand india", desc: "The towering Neelkanth Peak (6,509m) behind Badrinath Temple." },
+              { name: "Mana Village", query: "mana village last village india border tibet badrinath uttarakhand", desc: "The last Indian village before the Tibet border — Vyasa's cave and Saraswati River." },
+              { name: "Tapt Kund Hot Spring", query: "tapt kund hot spring badrinath sacred bathing uttarakhand india", desc: "Natural hot springs at Badrinath — pilgrims bathe before temple darshan." },
+              { name: "Alaknanda River Valley", query: "alaknanda river valley badrinath uttarakhand himalaya green india", desc: "The Alaknanda River flowing through the dramatic Badrinath valley." },
+            ]}
+          />
+
+         
 
 
                   <RelatedGuides currentSlug="badrinath-temple-guide" />

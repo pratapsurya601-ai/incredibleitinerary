@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
@@ -1071,6 +1072,20 @@ export default function MaldivesCoupleClient() {
           </section>
 
         </div>
+
+          <DestinationGallery
+            title="Maldives — Paradise on Earth"
+            subtitle="Overwater villas, crystal lagoons, and the ultimate honeymoon."
+            spots={[
+              { name: "Overwater Villa", query: "maldives overwater villa bungalow crystal blue lagoon luxury resort", desc: "The iconic Maldives overwater villa — glass floors, turquoise water below." },
+              { name: "Underwater World", query: "maldives snorkeling coral reef tropical fish clear water indian ocean", desc: "Some of the best snorkeling on earth — coral reefs at your doorstep." },
+              { name: "Maldives Sandbank", query: "maldives sandbank white sand turquoise water private island couple", desc: "A private sandbank in the middle of the Indian Ocean." },
+              { name: "Sunset Dolphin Cruise", query: "maldives dolphin cruise sunset indian ocean boat couple romantic", desc: "Dolphins leaping at sunset — the classic Maldives evening experience." },
+              { name: "Maldives Beach Dinner", query: "maldives beach dinner romantic candles sunset couple honeymoon", desc: "Private beach dinner under the stars — the Maldives honeymoon moment." },
+            ]}
+          />
+
+         
       </main>
 
       <Footer />

@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import BlogSlugNav from "@/app/blog/[slug]/BlogSlugNav";
 import TableOfContents from "@/components/blog/TableOfContents";
 import InlineSignup from "@/components/email/InlineSignup";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 
 const tocItems = [
@@ -364,6 +365,20 @@ export default function VisaFreeClient() {
               </Link>
             </div>
           </div>
+
+          <DestinationGallery
+            title="Visa Free Countries — Highlights"
+            subtitle="The best of Visa Free Countries in photos."
+            spots={[
+              { name: "Visa Free Countries Landscape", query: "visa free countries india landscape scenic beautiful travel", desc: "The stunning landscapes of Visa Free Countries." },
+              { name: "Visa Free Countries Heritage", query: "visa free countries temple architecture heritage india", desc: "Historic heritage and architecture in Visa Free Countries." },
+              { name: "Visa Free Countries Culture", query: "visa free countries street market local culture india", desc: "Local life and culture in Visa Free Countries." },
+              { name: "Visa Free Countries Nature", query: "visa free countries nature hills forest river india", desc: "Natural beauty around Visa Free Countries." },
+              { name: "Visa Free Countries Sunset", query: "visa free countries sunset golden hour india travel", desc: "Visa Free Countries at golden hour." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="visa-free-countries-indian-passport" />
         </div>

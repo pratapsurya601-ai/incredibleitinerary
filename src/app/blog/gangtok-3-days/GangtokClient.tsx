@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -522,6 +523,20 @@ export default function GangtokClient() {
               ))}
             </div>
           </section>
+
+          <DestinationGallery
+            title="Gangtok — Gateway to Kanchenjunga"
+            subtitle="India's cleanest hill town with monasteries and mountain views."
+            spots={[
+              { name: "MG Marg", query: "mg marg gangtok sikkim pedestrian street clean mountain town india", desc: "India's cleanest pedestrian street — spotless, unlike any other Indian town." },
+              { name: "Rumtek Monastery", query: "rumtek monastery gangtok sikkim buddhist tibetan prayer flags india", desc: "Sikkim's most important Buddhist monastery." },
+              { name: "Tsomgo Lake", query: "tsomgo lake changu lake sikkim frozen turquoise mountains india", desc: "A glacial lake at 3,753m — frozen in winter, turquoise in summer." },
+              { name: "Kanchenjunga View", query: "kanchenjunga gangtok sikkim sunrise snow peak himalaya india", desc: "The world's third-highest peak visible from Gangtok on clear mornings." },
+              { name: "Hanuman Tok", query: "hanuman tok gangtok sikkim viewpoint prayer flags mountains india", desc: "Hilltop temple with panoramic views of Gangtok and the Himalayan range." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="gangtok-3-days" />
         </div>

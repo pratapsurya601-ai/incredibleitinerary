@@ -7,6 +7,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
+import DestinationGallery from "@/components/blog/DestinationGallery";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 
@@ -511,6 +512,20 @@ export default function KutchClient() {
               ))}
             </div>
           </section>
+
+          <DestinationGallery
+            title="Kutch — The White Desert"
+            subtitle="The Rann, Dholavira ruins, and India's most surreal landscape."
+            spots={[
+              { name: "White Rann of Kutch", query: "rann of kutch white desert salt flat gujarat india full moon", desc: "An endless white salt desert stretching to the horizon — India's most surreal landscape." },
+              { name: "Rann Utsav Festival", query: "rann utsav kutch festival tents night gujarat india cultural", desc: "The annual festival celebrating Kutch's culture on the white desert." },
+              { name: "Dholavira Ruins", query: "dholavira ruins kutch gujarat harappan indus valley civilization india", desc: "5,000-year-old Harappan ruins — a UNESCO World Heritage Site." },
+              { name: "Mandvi Beach", query: "mandvi beach kutch gujarat india windmill sunset arabian sea", desc: "A quiet beach with the Vijay Vilas Palace in the background." },
+              { name: "Kutch Handicrafts", query: "kutch handicraft embroidery mirror work textile gujarat india", desc: "Kutch's legendary embroidery and mirror work — centuries of craft tradition." },
+            ]}
+          />
+
+         
 
           <RelatedGuides currentSlug="kutch-3-days" />
         </div>
