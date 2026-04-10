@@ -164,7 +164,7 @@ export default function ShopSuccessClient() {
           <div className="text-center">
             <div className="animate-spin w-12 h-12 border-2 border-gold border-t-transparent rounded-full mx-auto mb-5" />
             <p className="text-muted text-sm font-light">Verifying your payment…</p>
-            <p className="text-muted/60 text-xs font-light mt-1">This only takes a second</p>
+            <p className="text-muted/80 text-xs font-light mt-1">This only takes a second</p>
           </div>
         </main>
         <Footer />

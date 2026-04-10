@@ -141,7 +141,7 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   autoFocus
-                  className="w-full rounded-lg border border-parchment-2 bg-parchment px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-gold/40 transition"
+                  className="w-full rounded-lg border border-parchment-2 bg-parchment px-4 py-3 text-sm text-ink placeholder:text-muted/80 focus:outline-none focus:ring-2 focus:ring-gold/40 transition"
                 />
 
                 {error && (
@@ -156,7 +156,7 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
                 </button>
               </form>
 
-              <p className="text-muted/60 text-[0.7rem] mt-3">
+              <p className="text-muted/80 text-[0.7rem] mt-3">
                 🔒 No spam · Unsubscribe anytime · 2 free guides per email
               </p>
             </div>
@@ -189,7 +189,7 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
               </button>
               <button
                 onClick={onClose}
-                className="text-muted/60 hover:text-muted text-xs underline underline-offset-2 transition-colors"
+                className="text-muted/80 hover:text-muted text-xs underline underline-offset-2 transition-colors"
               >
                 Close
               </button>
@@ -288,7 +288,7 @@ export default function DownloadModal({ slug, title, onClose }: DownloadModalPro
 
               <button
                 onClick={onClose}
-                className="text-muted/60 hover:text-muted text-xs underline underline-offset-2 transition-colors"
+                className="text-muted/80 hover:text-muted text-xs underline underline-offset-2 transition-colors"
               >
                 Maybe later
               </button>

@@ -471,11 +471,11 @@ export default function LehLadakhClient() {
                 <div key={p.area} className="bg-white rounded-xl border border-parchment-2 p-4">
                   <p className="font-medium text-sm text-ink mb-3">{p.area}</p>
                   <div className="space-y-1.5 text-xs text-muted font-light">
-                    <div className="flex gap-2"><span className="text-muted/60 w-14 flex-shrink-0">Type</span><span>{p.type}</span></div>
-                    <div className="flex gap-2"><span className="text-muted/60 w-14 flex-shrink-0">Cost</span><span className="text-teal font-medium">{p.cost}</span></div>
-                    <div className="flex gap-2"><span className="text-muted/60 w-14 flex-shrink-0">Where</span><span>{p.where}</span></div>
-                    <div className="flex gap-2"><span className="text-muted/60 w-14 flex-shrink-0">Time</span><span>{p.time}</span></div>
-                    <div className="flex gap-2"><span className="text-muted/60 w-14 flex-shrink-0">Note</span><span className="text-amber-700">{p.note}</span></div>
+                    <div className="flex gap-2"><span className="text-muted/80 w-14 flex-shrink-0">Type</span><span>{p.type}</span></div>
+                    <div className="flex gap-2"><span className="text-muted/80 w-14 flex-shrink-0">Cost</span><span className="text-teal font-medium">{p.cost}</span></div>
+                    <div className="flex gap-2"><span className="text-muted/80 w-14 flex-shrink-0">Where</span><span>{p.where}</span></div>
+                    <div className="flex gap-2"><span className="text-muted/80 w-14 flex-shrink-0">Time</span><span>{p.time}</span></div>
+                    <div className="flex gap-2"><span className="text-muted/80 w-14 flex-shrink-0">Note</span><span className="text-amber-700">{p.note}</span></div>
                   </div>
                 </div>
               ))}

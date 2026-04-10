@@ -309,7 +309,7 @@ export default function CurrencyConverterClient() {
                         {numericAmount > 0 ? formatAmount(c.converted, c.code) : "—"}
                       </span>
                     </div>
-                    <p className="text-xs text-muted/60 mt-1">
+                    <p className="text-xs text-muted/80 mt-1">
                       1 {fromCode} = {formatAmount(convert(1, fromCode, c.code), c.code)} {c.code}
                     </p>
                   </button>
@@ -317,7 +317,7 @@ export default function CurrencyConverterClient() {
               })}
             </div>
 
-            <p className="text-[0.68rem] text-muted/60 text-center mt-5 leading-relaxed">
+            <p className="text-[0.68rem] text-muted/80 text-center mt-5 leading-relaxed">
               Click any currency card to set it as your &ldquo;To&rdquo; currency.
               Rates are approximate — always verify with your bank or card provider before traveling.
             </p>

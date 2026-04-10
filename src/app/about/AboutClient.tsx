@@ -194,7 +194,7 @@ export default function AboutClient() {
                   className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-parchment-2 rounded-full text-xs text-muted font-light hover:border-gold transition-colors">
                   <span>{t.emoji}</span>
                   <span className="font-medium text-ink">{t.place}</span>
-                  <span className="text-muted/60">{t.year}</span>
+                  <span className="text-muted/80">{t.year}</span>
                 </span>
               ))}
               <span className="flex items-center gap-1.5 px-3 py-1.5 bg-gold/10 border border-gold/40 rounded-full text-xs font-medium text-amber-700 hover:border-gold transition-colors">

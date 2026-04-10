@@ -718,7 +718,7 @@ export default function RajasthanBlogClient() {
                 title="Rajasthan 7-Day Itinerary"
                 variant="primary"
               />
-              <p className="text-muted/60 text-xs">Free · 2 guides per email · No credit card</p>
+              <p className="text-muted/80 text-xs">Free · 2 guides per email · No credit card</p>
             </div>
           </div>
 

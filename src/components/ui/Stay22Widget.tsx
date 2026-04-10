@@ -35,7 +35,7 @@ export default function Stay22Widget({ destination, label }: Stay22WidgetProps) 
         >
           Search Hotels in {label || destination} →
         </a>
-        <p className="text-xs text-muted/60 font-light">
+        <p className="text-xs text-muted/80 font-light">
           Opens Booking.com · Free cancellation options available
         </p>
       </div>

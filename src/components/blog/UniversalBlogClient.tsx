@@ -8,6 +8,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
+import { usePageUrl } from "@/lib/hooks";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -114,9 +115,10 @@ function ReadingProgress() {
 
 /* ── Share bar ─────────────────────────────────────────────────────────── */
 function ShareBar({ title }: { title: string }) {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(pageUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -124,9 +126,9 @@ function ShareBar({ title }: { title: string }) {
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       {[
-        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=${encodeURIComponent(title)}&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "Twitter", color: "bg-[#1a6fb5] text-white", href: `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&url=${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "WhatsApp", color: "bg-[#25D366] text-white", href: `https://wa.me/?text=${encodeURIComponent(title + " — " + (typeof window !== "undefined" ? window.location.href : ""))}` },
+        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=${encodeURIComponent(title)}&body=Check this out: ${pageUrl}` },
+        { label: "Twitter", color: "bg-[#1a6fb5] text-white", href: `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&url=${pageUrl}` },
+        { label: "WhatsApp", color: "bg-[#25D366] text-white", href: `https://wa.me/?text=${encodeURIComponent(title + " — " + pageUrl)}` },
       ].map((s) => (
         <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
           className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>

@@ -84,7 +84,7 @@ export default function PdfShowcaseSection() {
                   {g.title}
                 </p>
                 <p className="text-muted text-xs mb-3">{g.sub}</p>
-                <p className="text-muted/60 text-[0.65rem] mb-4">📄 {g.pages} · Print-ready A4</p>
+                <p className="text-muted/80 text-[0.65rem] mb-4">📄 {g.pages} · Print-ready A4</p>
 
                 {g.available ? (
                   <DownloadButton

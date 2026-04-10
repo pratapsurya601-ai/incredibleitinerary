@@ -334,7 +334,7 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
           <strong className="text-ink font-medium">{DESTINATIONS_DISPLAY} destinations</strong>{" "}
           — scored to your exact preferences.
         </p>
-        <p className="text-xs text-muted/60 font-light mb-8">
+        <p className="text-xs text-muted/80 font-light mb-8">
           {DESTINATIONS_DISPLAY} destinations &middot; Personalized match scores &middot; No signup required &middot; Free forever
         </p>
 
@@ -343,7 +343,7 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
             ([val, lbl]) => (
               <div key={lbl} className="text-center">
                 <p className="font-serif text-xl font-light text-ink">{val}</p>
-                <p className="text-[0.56rem] tracking-[0.1em] uppercase text-muted/60 mt-0.5 leading-tight">
+                <p className="text-[0.56rem] tracking-[0.1em] uppercase text-muted/80 mt-0.5 leading-tight">
                   {lbl}
                 </p>
               </div>
@@ -491,7 +491,7 @@ function FilterChips({
 
   return (
     <div className="flex flex-wrap gap-2 mb-6 items-center">
-      <span className="text-[0.66rem] text-muted/60 uppercase tracking-[0.1em] mr-1">Filters:</span>
+      <span className="text-[0.66rem] text-muted/80 uppercase tracking-[0.1em] mr-1">Filters:</span>
       {chips.map(c => (
         <button
           key={c.key as string}
@@ -991,7 +991,7 @@ export default function QuizClient() {
             {step === 5 ? "Find My Matches →" : "Continue →"}
           </button>
           {step === 1 && prefs.experiences.length === 0 && (
-            <p className="text-center text-[0.7rem] text-muted/60 mt-3">
+            <p className="text-center text-[0.7rem] text-muted/80 mt-3">
               Select at least 1 experience to continue
             </p>
           )}

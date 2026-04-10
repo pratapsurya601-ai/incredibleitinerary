@@ -27,7 +27,7 @@ export default function Error({
             homepage.
           </p>
           {error?.digest && (
-            <p className="text-xs text-muted/60 mb-6 font-mono">
+            <p className="text-xs text-muted/80 mb-6 font-mono">
               Error ID: {error.digest}
             </p>
           )}

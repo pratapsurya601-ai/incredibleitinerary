@@ -15,7 +15,7 @@ export function PhotoCredit({ name, instagram, source, photographerUrl }: PhotoC
   );
 
   return (
-    <div className="flex items-center justify-end gap-1 text-[11px] text-muted/60 font-light mt-1 mb-3 pr-0.5">
+    <div className="flex items-center justify-end gap-1 text-[11px] text-muted/80 font-light mt-1 mb-3 pr-0.5">
       <span>📸</span>
       {source === "contributor" && (
         <span>

@@ -1201,7 +1201,7 @@ export default function PackingListClient() {
                               htmlFor={`item-${item.id}`}
                               className={`flex-1 text-sm cursor-pointer leading-snug transition-all duration-150 ${
                                 item.checked
-                                  ? "line-through text-muted/60"
+                                  ? "line-through text-muted/80"
                                   : "text-ink"
                               }`}
                             >

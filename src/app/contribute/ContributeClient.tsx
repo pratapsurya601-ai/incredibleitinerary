@@ -190,7 +190,7 @@ export default function ContributeClient() {
                 placeholder="you@email.com"
                 className="w-full border border-parchment-2 rounded-xl px-4 py-3 text-sm text-ink bg-white focus:outline-none focus:border-gold transition-colors placeholder:text-muted/40"
               />
-              <p className="text-[11px] text-muted/60 mt-1 font-light">
+              <p className="text-[11px] text-muted/80 mt-1 font-light">
                 We&apos;ll only use this to notify you if your photo is featured. No marketing emails.
               </p>
             </div>
@@ -243,7 +243,7 @@ export default function ContributeClient() {
                 placeholder="Paste your Google Drive / Dropbox / WeTransfer / iCloud link here. Make sure sharing is set to 'Anyone with the link'."
                 className="w-full border border-parchment-2 rounded-xl px-4 py-3 text-sm text-ink bg-white focus:outline-none focus:border-gold transition-colors resize-none placeholder:text-muted/40"
               />
-              <p className="text-[11px] text-muted/60 mt-1 font-light">
+              <p className="text-[11px] text-muted/80 mt-1 font-light">
                 Upload your best shots to Google Drive or Dropbox and paste the share link here. Full-resolution photos preferred (minimum 1080px wide).
               </p>
             </div>

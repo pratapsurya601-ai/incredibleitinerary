@@ -166,16 +166,17 @@ export default function RelatedGuides({ currentSlug }: RelatedGuidesProps) {
     }
   };
 
-  // Shuffle within pools for variety
-  const shuffle = <T,>(arr: T[]): T[] => arr.sort(() => Math.random() - 0.5);
+  // Deterministic pick from each pool (sorted by slug for SSR consistency)
+  const bySlug = <T extends { slug: string }>(arr: T[]): T[] =>
+    [...arr].sort((a, b) => a.slug.localeCompare(b.slug));
 
-  addPick(shuffle([...sameRegion]));
-  addPick(shuffle([...sameCategory]));
-  addPick(shuffle([...popular]));
+  addPick(bySlug(sameRegion));
+  addPick(bySlug(sameCategory));
+  addPick(bySlug(popular));
 
   // Fill remaining slots from all others
   while (picks.length < 3) {
-    addPick(shuffle([...others]));
+    addPick(bySlug(others));
     if (picks.length >= others.length) break;
   }
 

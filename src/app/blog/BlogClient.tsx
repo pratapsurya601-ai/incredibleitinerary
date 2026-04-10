@@ -456,7 +456,7 @@ export default function BlogClient() {
                   >
                     {chip.label}
                     {chip.sublabel && (
-                      <span className={`text-[0.6rem] ${durFilter === chip.id ? "text-ink/70" : "text-muted/60"}`}>
+                      <span className={`text-[0.6rem] ${durFilter === chip.id ? "text-ink/70" : "text-muted/80"}`}>
                         {chip.sublabel}
                       </span>
                     )}
@@ -572,7 +572,7 @@ export default function BlogClient() {
                 </div>
               )}
               {!hasMore && rest.length > PAGE_SIZE && (
-                <p className="mt-12 text-center text-xs text-muted/60">
+                <p className="mt-12 text-center text-xs text-muted/80">
                   You&apos;ve seen all {rest.length} guides ✦
                 </p>
               )}
@@ -707,7 +707,7 @@ function BlogCard({ post, isNew }: { post: ListingPost; isNew?: boolean }) {
             Free PDF
           </Link>
         ) : (
-          <span className="text-[0.65rem] text-muted/60 font-light">Share this guide</span>
+          <span className="text-[0.65rem] text-muted/80 font-light">Share this guide</span>
         )}
         <ShareButton title={post.title} slug={post.slug} />
       </div>
