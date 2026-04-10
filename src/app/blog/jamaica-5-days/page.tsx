@@ -80,7 +80,6 @@ const jsonLd = {
   ],
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _legacyData = {
   destination: "Jamaica",
   country: "Jamaica",
