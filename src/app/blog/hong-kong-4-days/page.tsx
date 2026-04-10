@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import HongKongClient from "./HongKongClient";
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
@@ -84,8 +84,8 @@ const jsonLd = {
   ],
 };
 
-/* ── Page data ──────────────────────────────────────────────────────────── */
-const data: UniversalBlogData = {
+/* ── Page data (retained for reference only — rendering handled by HongKongClient) ── */
+const _data_unused = {
   destination: "Hong Kong",
   country: "Hong Kong SAR",
   countryFlag: "🇭🇰",
@@ -448,7 +448,7 @@ export default function HongKongPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <HongKongClient />
     </>
   );
 }

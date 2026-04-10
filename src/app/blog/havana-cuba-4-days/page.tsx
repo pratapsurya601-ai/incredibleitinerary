@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import HavanaCubaClient from "./HavanaCubaClient";
 
-const data: UniversalBlogData = {
+const _data = {
   destination: "Havana, Cuba",
   country: "Cuba",
   countryFlag: "🇨🇺",
@@ -424,7 +424,7 @@ export default function HavanaCubaPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <HavanaCubaClient />
     </>
   );
 }

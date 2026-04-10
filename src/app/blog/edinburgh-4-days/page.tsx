@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import EdinburghClient from "./EdinburghClient";
 
 const data: UniversalBlogData = {
   destination: "Edinburgh",
@@ -360,7 +360,7 @@ export default function EdinburghPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <UniversalBlogClient data={data} />
+      <EdinburghClient />
     </>
   );
 }

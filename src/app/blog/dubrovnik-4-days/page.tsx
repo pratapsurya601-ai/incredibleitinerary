@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import DubrovnikClient from "./DubrovnikClient";
 
-const data: UniversalBlogData = {
+const _data = {
   destination: "Dubrovnik",
   country: "Croatia",
   countryFlag: "🇭🇷",
@@ -437,7 +437,7 @@ export default function DubrovnikPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <DubrovnikClient />
     </>
   );
 }

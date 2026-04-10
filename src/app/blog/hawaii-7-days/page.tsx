@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import HawaiiClient from "./HawaiiClient";
 
-const data: UniversalBlogData = {
+// Data previously used by UniversalBlogClient — retained for reference only
+const _unused = {
   destination: "Hawaii",
   country: "USA",
   countryFlag: "🇺🇸",
@@ -615,7 +616,7 @@ export default function HawaiiPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <HawaiiClient />
     </>
   );
 }

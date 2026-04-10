@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import BotswanaOkavangoClient from "./BotswanaOkavangoClient";
 
 /* ── JSON-LD ────────────────────────────────────────────────────────────── */
 const jsonLd = {
@@ -47,8 +47,8 @@ const jsonLd = {
   ],
 };
 
-/* ── Page data ──────────────────────────────────────────────────────────── */
-const data: UniversalBlogData = {
+/* ── Page data (retained for reference — rendered by BotswanaOkavangoClient) ── */
+const _data = {
   destination: "Okavango Delta",
   country: "Botswana",
   countryFlag: "🇧🇼",
@@ -534,7 +534,7 @@ export default function BotswanaOkavangoPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <BotswanaOkavangoClient />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import BusanClient from "./BusanClient";
+
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
@@ -497,7 +498,7 @@ export default function BusanPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <BusanClient />
     </>
   );
 }

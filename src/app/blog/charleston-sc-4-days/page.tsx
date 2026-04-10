@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import CharlestonScClient from "./CharlestonScClient";
 
-const data: UniversalBlogData = {
+const data = {
   destination: "Charleston, SC",
   country: "USA",
   countryFlag: "🇺🇸",
@@ -425,7 +425,7 @@ export default function CharlestonPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <CharlestonScClient />
     </>
   );
 }

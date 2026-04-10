@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import HoiAnClient from "./HoiAnClient";
 
-const data: UniversalBlogData = {
+const _data = {
   destination: "Hoi An",
   country: "Vietnam",
   countryFlag: "🇻🇳",
@@ -251,7 +251,7 @@ export default function HoiAnPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <UniversalBlogClient data={data} />
+      <HoiAnClient />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import BelfastClient from "./BelfastClient";
 
-const data: UniversalBlogData = {
+const data = {
   destination: "Belfast",
   country: "Northern Ireland",
   countryFlag: "🇬🇧",
@@ -423,7 +423,7 @@ export default function BelfastPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <BelfastClient />
     </>
   );
 }

@@ -24,16 +24,38 @@ function DefaultVariant() {
     e.preventDefault();
     setLoading(true);
     setError('');
+    const normalizedEmail = email.toLowerCase().trim();
     try {
-      const res = await fetch('/api/subscribe', {
+      // Download the free Rajasthan guide as lead magnet + enroll in drip
+      const res = await fetch('/api/download', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, firstName, source: 'blog-inline' }),
+        body: JSON.stringify({ email: normalizedEmail, slug: 'rajasthan-7-days' }),
       });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.message ?? 'Something went wrong. Please try again.');
+      const data = await res.json();
+
+      if (!res.ok && res.status !== 402) {
+        throw new Error(data?.error ?? 'Something went wrong. Please try again.');
       }
+
+      // Also sync name to Mailchimp via subscribe endpoint
+      if (firstName.trim()) {
+        fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: normalizedEmail, firstName: firstName.trim(), source: 'blog-inline' }),
+        }).catch(() => {});
+      }
+
+      // Mark subscribed in localStorage
+      try { localStorage.setItem('ii_subscribed', 'true'); } catch { /* ignore */ }
+
+      // Open PDF if token was returned (free guide)
+      if (data.token) {
+        const url = `/api/serve-pdf?slug=rajasthan-7-days&token=${encodeURIComponent(data.token)}`;
+        window.open(url, '_blank', 'noopener');
+      }
+
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
@@ -46,9 +68,9 @@ function DefaultVariant() {
     return (
       <div className="bg-ink rounded-2xl p-7 my-12 text-center">
         <p className="text-3xl mb-3">🎉</p>
-        <p className="font-serif text-xl font-light text-gold mb-2">You&apos;re in!</p>
+        <p className="font-serif text-xl font-light text-gold mb-2">Your guide is open!</p>
         <p className="text-sm text-white/60 font-light">
-          Check your inbox — your free guides are on their way.
+          Check the new tab for your Rajasthan 7-Day Guide. We&apos;ll also send weekly travel tips to your inbox.
         </p>
       </div>
     );
@@ -66,20 +88,20 @@ function DefaultVariant() {
         {/* Badge */}
         <div className="flex items-center gap-2 mb-4">
           <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-            📬 Free Guides In Your Inbox
+            🏰 Free Rajasthan 7-Day Guide
           </span>
         </div>
 
         {/* Headline */}
         <h3 className="font-serif text-2xl md:text-[1.8rem] font-light text-white mb-3 leading-tight">
-          Get free India travel guides<br />
-          <em className="italic text-gold">straight to your inbox</em>
+          Get the free travel guide<br />
+          <em className="italic text-gold">+ weekly destination tips</em>
         </h3>
 
         {/* Body */}
         <p className="text-sm text-white/55 font-light mb-6 leading-relaxed max-w-lg">
-          Join 2,400+ travellers. Weekly destination deep-dives, real costs, and local secrets —
-          plus an instant welcome email with our 10 most popular guides.
+          Download the Rajasthan 7-Day Guide instantly — day-by-day itinerary, real budgets,
+          local food spots & packing list. Plus weekly guides from 2,400+ travellers&apos; favourite destinations.
         </p>
 
         {/* Form */}
@@ -110,10 +132,10 @@ function DefaultVariant() {
             {loading ? (
               <>
                 <Spinner />
-                Subscribing…
+                Opening guide…
               </>
             ) : (
-              'Subscribe Free →'
+              'Get Free Guide →'
             )}
           </button>
         </form>

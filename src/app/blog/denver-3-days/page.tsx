@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import DenverClient from "./DenverClient";
 
-const data: UniversalBlogData = {
+// Legacy data preserved for reference — content is now rendered by DenverClient
+const _data = {
   destination: "Denver",
   country: "USA",
   countryFlag: "🇺🇸",
@@ -396,7 +397,7 @@ export default function DenverPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <DenverClient />
     </>
   );
 }

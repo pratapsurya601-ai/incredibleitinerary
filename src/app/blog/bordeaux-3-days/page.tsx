@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import BordeauxClient from "./BordeauxClient";
 
-const data: UniversalBlogData = {
+// Legacy data object kept for reference — content is now in BordeauxClient.tsx
+const _data = {
   destination: "Bordeaux",
   country: "France",
   countryFlag: "🇫🇷",
@@ -427,7 +428,7 @@ export default function BordeauxPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <BordeauxClient />
     </>
   );
 }

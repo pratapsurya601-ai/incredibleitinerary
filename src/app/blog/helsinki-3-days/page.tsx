@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import HelsinkiClient from "./HelsinkiClient";
 
 /* ── JSON-LD ─────────────────────────────────────────────────────────────── */
 const jsonLd = [
@@ -424,7 +424,7 @@ export default function HelsinkiPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <HelsinkiClient />
     </>
   );
 }

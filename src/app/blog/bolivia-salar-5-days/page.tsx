@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import BoliviaClient from "./BoliviaClient";
 
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
@@ -101,8 +101,9 @@ const jsonLd = [
   },
 ];
 
-/* ── Page data ────────────────────────────────────────────────────────────── */
-const data: UniversalBlogData = {
+/* ── Page component ───────────────────────────────────────────────────────── */
+// Data below retained for archival reference only — all content is rendered by BoliviaClient
+const _archived = {
   destination: "Salar de Uyuni",
   country: "Bolivia",
   countryFlag: "🇧🇴",
@@ -526,7 +527,7 @@ export default function BoliviaSalarPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <BoliviaClient />
     </>
   );
 }

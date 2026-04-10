@@ -1,12 +1,6 @@
 "use client";
-import ExitIntentPopup from "@/components/email/ExitIntentPopup";
-import WelcomePopup from "@/components/email/WelcomePopup";
+import LeadMagnetPopup from "@/components/email/LeadMagnetPopup";
 
 export default function EmailCaptureWrapper() {
-  return (
-    <>
-      <WelcomePopup />
-      <ExitIntentPopup />
-    </>
-  );
+  return <LeadMagnetPopup />;
 }

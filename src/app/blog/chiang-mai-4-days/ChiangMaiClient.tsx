@@ -13,18 +13,27 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 import InlineCTA from "@/components/blog/InlineCTA";
+import PhotoCta from "@/components/blog/PhotoCta";
+import AuthorByline from "@/components/blog/AuthorByline";
+import InlineSignup from "@/components/email/InlineSignup";
+import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
 
+// ── Table of Contents ─────────────────────────────────────────────────────────
 const CHIANGMAI_TOC = [
-  { id: "plans",      emoji: "⚡", label: "Which Plan Are You?" },
-  { id: "visa",       emoji: "\uD83D\uDCCB", label: "Visa & Entry" },
-  { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
-  { id: "budget",     emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-  { id: "mistakes",   emoji: "❌", label: "Mistakes to Avoid" },
-  { id: "tips",       emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",        emoji: "❓", label: "FAQ" },
+  { id: "honest",      emoji: "⚡",  label: "What Chiang Mai Actually Is" },
+  { id: "season",      emoji: "🌡️", label: "Best Time to Visit" },
+  { id: "howtoreach",  emoji: "✈️",  label: "Getting There" },
+  { id: "itinerary",   emoji: "📅",  label: "4-Day Itinerary" },
+  { id: "temples",     emoji: "🛕",  label: "Temple & Landmark Guide" },
+  { id: "budget",      emoji: "💰",  label: "Budget Breakdown" },
+  { id: "stay",        emoji: "🏨",  label: "Where to Stay" },
+  { id: "eat",         emoji: "🍽️", label: "Where to Eat" },
+  { id: "mistakes",    emoji: "❌",  label: "Mistakes to Avoid" },
+  { id: "tips",        emoji: "💡",  label: "Pro Tips" },
+  { id: "faq",         emoji: "❓",  label: "FAQ" },
 ];
 
-/* ── Reading-progress bar ─────────────────────────────────────────────── */
+// ── Reading Progress Bar ──────────────────────────────────────────────────────
 function ReadingProgress() {
   const [progress, setProgress] = useState(0);
   useEffect(() => {
@@ -38,36 +47,63 @@ function ReadingProgress() {
   }, []);
   return (
     <div className="fixed top-0 left-0 right-0 z-[300] h-1 bg-parchment-2">
-      <div className="h-full bg-gold transition-all duration-100" style={{ width: `${progress}%` }} />
+      <div
+        className="h-full bg-amber-600 transition-all duration-100"
+        style={{ width: `${progress}%` }}
+      />
     </div>
   );
 }
 
-/* ── Share bar ─────────────────────────────────────────────────────────── */
+// ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
   const [copied, setCopied] = useState(false);
-  const copy = () => { navigator.clipboard.writeText(window.location.href); setCopied(true); setTimeout(() => setCopied(false), 2000); };
+  const copy = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       {[
-        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Chiang Mai 4-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://x.com/intent/tweet?text=Chiang Mai in 4 Days guide&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+        {
+          label: "Email",
+          color: "bg-ink text-white",
+          href: `mailto:?subject=Chiang Mai 4-Day Guide&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+        },
+        {
+          label: "Twitter",
+          color: "bg-[#1DA1F2] text-white",
+          href: `https://x.com/intent/tweet?text=Chiang Mai in 4 Days — temples, elephants and the complete itinerary&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+        },
       ].map((s) => (
-        <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-          className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>
+        <a
+          key={s.label}
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}
+        >
           {s.label}
         </a>
       ))}
-      <button onClick={copy}
-        className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
+      <button
+        onClick={copy}
+        className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted"
+      >
         {copied ? "✓ Copied" : "Copy Link"}
       </button>
+      <PinterestSaveButton
+        pageUrl="https://www.incredibleitinerary.com/blog/chiang-mai-4-days"
+        imageUrl="https://images.unsplash.com/photo-1512553219517-ff47b6a5e6ff?w=1200&q=80"
+        description="Chiang Mai in 4 Days: Doi Suthep, Old City temples, ethical elephant sanctuary, cooking class, night markets — complete travel guide with budget breakdown in THB & USD."
+      />
     </div>
   );
 }
 
-/* ── Stat card ─────────────────────────────────────────────────────────── */
+// ── Stat Card ─────────────────────────────────────────────────────────────────
 function StatCard({ icon, label, value }: { icon: string; label: string; value: string }) {
   return (
     <div className="bg-white rounded-xl border border-parchment-2 p-4 text-center">
@@ -78,31 +114,43 @@ function StatCard({ icon, label, value }: { icon: string; label: string; value: 
   );
 }
 
-/* ── Day card ──────────────────────────────────────────────────────────── */
-function DayCard({ day, title, items, cost }: { day: string; title: string; items: string[]; cost: string }) {
+// ── Day Card ──────────────────────────────────────────────────────────────────
+function DayCard({
+  day,
+  title,
+  items,
+  cost,
+}: {
+  day: string;
+  title: string;
+  items: string[];
+  cost: string;
+}) {
   const [open, setOpen] = useState(true);
   return (
     <div className="bg-white rounded-xl border border-parchment-2 overflow-hidden">
-      <button onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-4 bg-parchment hover:bg-parchment-2 transition-colors">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-4 bg-parchment hover:bg-parchment-2 transition-colors"
+      >
         <div className="flex items-center gap-3 text-left">
           <span className="font-serif text-xl text-amber-900 font-light">{day}</span>
           <span className="text-sm text-ink font-medium">{title}</span>
         </div>
-        <span className="text-muted text-lg">{open ? "\u2212" : "+"}</span>
+        <span className="text-muted text-lg">{open ? "−" : "+"}</span>
       </button>
       {open && (
         <div className="p-5">
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">{"●"}</span>
+                <span className="text-amber-500 mt-1 flex-shrink-0 text-xs">●</span>
                 {item}
               </li>
             ))}
           </ul>
           <div className="pt-3 border-t border-parchment-2 flex items-center gap-2">
-            <span className="text-lg">{"\uD83D\uDCB0"}</span>
+            <span className="text-lg">💰</span>
             <span className="text-xs text-muted font-light">Est. cost: </span>
             <span className="text-xs font-medium text-ink">{cost}</span>
           </div>
@@ -112,8 +160,18 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
   );
 }
 
-/* ── Tip card ──────────────────────────────────────────────────────────── */
-function TipCard({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
+// ── Tip Card ──────────────────────────────────────────────────────────────────
+function TipCard({
+  icon,
+  title,
+  desc,
+  color,
+}: {
+  icon: string;
+  title: string;
+  desc: string;
+  color: string;
+}) {
   return (
     <div className={`rounded-xl p-5 border ${color}`}>
       <div className="flex items-start gap-3">
@@ -127,15 +185,19 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
   );
 }
 
-/* ── FAQ accordion ─────────────────────────────────────────────────────── */
+// ── FAQ Accordion ─────────────────────────────────────────────────────────────
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border border-parchment-2 rounded-xl overflow-hidden bg-white">
-      <button onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-parchment transition-colors">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-parchment transition-colors"
+      >
         <span className="font-medium text-sm text-ink pr-4">{q}</span>
-        <span className={`text-amber-800 text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
+        <span className={`text-amber-600 text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
+          +
+        </span>
       </button>
       {open && (
         <div className="px-5 pb-5 pt-1 border-t border-parchment-2">
@@ -146,18 +208,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════════════
-   MAIN COMPONENT
-   ══════════════════════════════════════════════════════════════════════════ */
+// ── MAIN COMPONENT ────────────────────────────────────────────────────────────
 export default function ChiangMaiClient() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<"A" | "B" | "C">("B");
-
-  const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget",    sub: "\u0E3F600–1,200/day", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "✨",        label: "Mid-Range", sub: "\u0E3F1,500–3,000/day", color: "border-blue-300 bg-blue-50 text-blue-800" },
-    { id: "C" as const, emoji: "\uD83D\uDC8E",  label: "Luxury",   sub: "\u0E3F5,000+/day",           color: "border-purple-300 bg-purple-50 text-purple-800" },
-  ];
 
   return (
     <>
@@ -171,12 +224,14 @@ export default function ChiangMaiClient() {
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
           <SmartImage
-            query="chiang mai doi suthep temple golden thailand"
-            alt="Chiang Mai Doi Suthep golden temple on the mountainside"
+            query="chiang mai doi suthep temple golden thailand mountain"
+            fallback="https://images.unsplash.com/photo-1512553219517-ff47b6a5e6ff?w=1600&q=80"
+            alt="Wat Phra That Doi Suthep golden temple on the mountainside above Chiang Mai"
             fill className="object-cover" priority sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/50 to-ink/30" />
 
+          {/* Breadcrumb */}
           <div className="absolute top-24 left-0 right-0 px-6 md:px-14">
             <div className="max-w-[860px] mx-auto flex items-center gap-2 text-white/50 text-xs">
               <Link href="/" className="hover:text-gold transition-colors">Home</Link>
@@ -190,474 +245,774 @@ export default function ChiangMaiClient() {
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
             <div className="max-w-[860px] mx-auto">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="bg-gold text-ink text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">
+                <span className="bg-amber-700 text-white text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">
                   Temples &amp; Culture
                 </span>
-                <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">{"·"}</span>
-                <span className="text-white/60 text-xs">15 min read</span>
-                <span className="text-white/50">{"·"}</span>
-                <span className="text-white/60 text-xs">IncredibleItinerary</span>
+                <span className="text-white/60 text-xs">April 2026</span>
+                <span className="text-white/50">·</span>
+                <span className="text-white/60 text-xs">16 min read</span>
+                <span className="text-white/50">·</span>
+                <span className="text-white/60 text-xs">Surya Pratap</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
-                Chiang Mai in 4 Days: Temples, Mountains &amp; Markets
-                <em className="italic text-gold-light"> (Budget to Luxury, 2026)</em>
+                Chiang Mai in 4 Days:
+                <em className="italic text-amber-300"> Temples, Mountains &amp; the Real Northern Thailand</em>
               </h1>
               <p className="text-white/65 text-sm font-light max-w-[560px] leading-relaxed">
-                3 complete plans with real timings, costs in Thai Baht, ethical elephant experiences &mdash; and why this might be Thailand&apos;s best-kept secret.
+                Doi Suthep at dawn, the Sunday Night Market food crawl, ethical elephant sanctuaries, Lanna temples inside the moat, and khao soi that costs ฿40. The complete guide with real timings, costs in THB &amp; USD, and the mistakes that ruin most Chiang Mai trips.
               </p>
             </div>
           </div>
         </div>
 
-        {/* ── ARTICLE BODY ── */}
+        {/* ── ARTICLE ── */}
         <div className="max-w-[860px] mx-auto px-6 md:px-8 pt-10 pb-20">
 
+          {/* Author + Share row */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <AuthorByline date="April 2026" readTime="16 min" />
+          </div>
+
+          {/* Share + stats row */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-8 border-b border-parchment-2">
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
-              <span>{"\uD83C\uDDF9\uD83C\uDDED"} Thailand</span>
-              <span>{"·"}</span>
-              <span>{"\uD83D\uDDD3"} 4 Days</span>
-              <span>{"·"}</span>
-              <span>{"\uD83D\uDCB0"} From \u0E3F600/day</span>
+              <span>🇹🇭 Thailand</span>
+              <span>·</span>
+              <span>🗓 4 Days</span>
+              <span>·</span>
+              <span>💰 From ฿600/day</span>
             </div>
           </div>
 
-          <blockquote className="border-l-4 border-gold pl-6 mb-10 bg-parchment/60 rounded-r-xl py-4 pr-4">
+          {/* Opening blockquote */}
+          <blockquote className="border-l-4 border-amber-500 pl-6 mb-10 bg-amber-50/60 rounded-r-xl py-4 pr-4">
             <p className="font-serif text-[1.1rem] italic text-ink-mid leading-relaxed">
-              The Sunday Night Market food crawl is a mile long and you&apos;ll want to eat at every stall. Budget \u0E3F500 and pace yourself. Chiang Mai is the kind of place that makes you extend your trip and come back every year.
+              The Sunday Night Market food crawl is a mile long and you&apos;ll want to eat at every stall. Budget ฿500 and pace yourself. Chiang Mai is the kind of place that makes you extend your trip and come back every year. This guide tells you exactly when to show up at every stop.
             </p>
           </blockquote>
 
-          {/* ── STAT CARDS ── */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
-            <StatCard icon={"\uD83D\uDDD3"} label="Duration" value="4 Days" />
-            <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value="\u0E3F600/day" />
-            <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Months" value="Nov – Feb" />
-            <StatCard icon={"\u2708\uFE0F"} label="Airport" value="CNX" />
-          </div>
+          {/* ── WHAT CHIANG MAI ACTUALLY IS ── */}
+          <section id="honest" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-4">⚡ What Chiang Mai Actually Is</h2>
+            <p className="text-sm text-muted font-light leading-relaxed mb-4">
+              Chiang Mai is the cultural capital of northern Thailand, a 700-year-old walled city surrounded by a moat, sitting in a river valley ringed by mountains. It was the seat of the Lanna Kingdom, which had its own language, script, architecture, and cuisine distinct from Bangkok and the south. Over 300 temples sit inside and around the Old City, most of them still active Buddhist monasteries where monks chant at dawn.
+            </p>
+            <p className="text-sm text-muted font-light leading-relaxed mb-4">
+              The tourism reality: the Old City (inside the moat) and Nimmanhaemin Road are the main tourist areas but remain walkable, affordable, and genuinely charming. Unlike Phuket or Pattaya, Chiang Mai has not been overdeveloped. Street food is ฿30-60 per dish, a temple entry is ฿20-40, and a Grab across town is ฿60-100. The cafe culture rivals Melbourne, the night markets are the best in Thailand, and ethical elephant sanctuaries in the surrounding hills offer some of the most meaningful wildlife experiences in Southeast Asia.
+            </p>
+            <p className="text-sm text-muted font-light leading-relaxed mb-6">
+              Four days is ideal for the essentials: Old City temples, Doi Suthep, an elephant sanctuary, a cooking class, and the night markets. If you have a week, add Doi Inthanon (Thailand&apos;s highest peak), a Chiang Rai day trip for the White Temple, or a trek into the hill-tribe villages.
+            </p>
 
-          {/* ── VISA & ENTRY ── */}
-          <section id="visa" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\uD83D\uDCCB"} Visa &amp; Entry Info</h2>
-            <p className="text-sm text-muted font-light mb-6 leading-relaxed">Same rules as all Thailand entry points. Chiang Mai International Airport (CNX) has VOA counters.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-xl border p-5 bg-amber-50 border-amber-200">
-                <h3 className="font-serif text-lg font-normal mb-3 flex items-center gap-2 text-amber-800">
-                  <span>{"\uD83C\uDDEE\uD83C\uDDF3"}</span> Indian Passport Holders
-                </h3>
-                <div className="space-y-2">
-                  {[
-                    ["eVisa", "Apply online at thaievisa.go.th — 5–7 business days. Single entry, up to 60 days."],
-                    ["VOA", "15-day stay, \u0E3F2,000 fee. CNX airport VOA queue is usually shorter than Bangkok."],
-                    ["Tourist Visa", "Apply at Thai embassy. 60-day stay, extendable 30 more at Chiang Mai immigration (\u0E3F1,900)."],
-                    ["Tip", "Many travellers fly Bangkok → Chiang Mai domestically. Visa is checked at your international arrival point, not CNX."],
-                  ].map(([k, v]) => (
-                    <div key={k} className="flex gap-2 text-xs">
-                      <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
-                      <span className="text-muted font-light">{v}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="rounded-xl border p-5 bg-teal-50 border-teal-200">
-                <h3 className="font-serif text-lg font-normal mb-3 flex items-center gap-2 text-teal-800">
-                  <span>{"\uD83C\uDF0D"}</span> Most Western Passports
-                </h3>
-                <div className="space-y-2">
-                  {[
-                    ["Visa-Free", "30–60 days depending on nationality. USA, UK, EU, Australia, Canada all get 60 days."],
-                    ["Extension", "Extend 30 more days at Chiang Mai Promenada immigration for \u0E3F1,900. Arrive early, bring passport photos."],
-                    ["Domestic", "If flying from Bangkok, no additional visa needed. Your Thailand entry stamp covers the whole country."],
-                    ["Health", "No mandatory vaccinations. Mosquito repellent recommended especially Nov–Feb (cooler but mosquitoes still active)."],
-                  ].map(([k, v]) => (
-                    <div key={k} className="flex gap-2 text-xs">
-                      <span className="font-medium text-ink/80 w-24 flex-shrink-0">{k}</span>
-                      <span className="text-muted font-light">{v}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* Stat cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <StatCard icon="✈️" label="Airport" value="CNX" />
+              <StatCard icon="🌡️" label="Best Season" value="Nov–Feb" />
+              <StatCard icon="🛕" label="Temples" value="300+" />
+              <StatCard icon="💰" label="Budget From" value="฿600/day" />
             </div>
           </section>
 
-          {/* ── WHICH PLAN ── */}
-          <section id="plans" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"⚡"} Which Plan Are You?</h2>
-            <p className="text-sm text-muted font-light mb-6">Pick your budget level &mdash; jump straight to your itinerary.</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {plans.map((p) => (
-                <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itineraries")?.scrollIntoView({ behavior: "smooth" }); }}
-                  className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-gold hover:shadow-md transition-all duration-200 text-center group">
-                  <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
-                  <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">View Plan {"→"}</p>
-                </button>
+          {/* ── BEST TIME TO VISIT ── */}
+          <section id="season" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🌡️ Best Time to Visit Chiang Mai</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {[
+                {
+                  s: "Nov–Feb",
+                  i: "☀️",
+                  t: "Cool Season — Best Overall",
+                  d: "15–28°C with low humidity, clear skies, and comfortable temperatures even at midday. December and January nights can drop to 12–15°C, especially at Doi Suthep and Doi Inthanon. This is peak tourist season but Chiang Mai handles it well. The best weather of the year for temple visits, trekking, and the night markets.",
+                  b: "Recommended",
+                  c: "bg-green-50 border-green-200",
+                },
+                {
+                  s: "Mar–Apr",
+                  i: "💨",
+                  t: "Burning Season — Avoid",
+                  d: "30–40°C with hazardous air quality. Farmers burn crop residue across northern Thailand and the smoke settles in the Chiang Mai valley. AQI regularly exceeds 200, sometimes 400+. Visibility drops to a few hundred metres, temples disappear in haze, and outdoor activities become genuinely unhealthy. Avoid these months completely if possible.",
+                  b: "Avoid — air quality hazard",
+                  c: "bg-red-50 border-red-200",
+                },
+                {
+                  s: "May–Oct",
+                  i: "🌧️",
+                  t: "Rainy Season — Good Value",
+                  d: "25–33°C with afternoon showers, usually 1–2 hours. Mornings are often clear and perfect for temple visits. The landscape is at its most lush and green. Prices drop 20–40% across the board. Waterfalls are at full power. Fewer tourists at every site. Pack a light rain jacket and adjust your timing to mornings.",
+                  b: "Best value",
+                  c: "bg-teal-50 border-teal-200",
+                },
+                {
+                  s: "Songkran (Apr 13–15)",
+                  i: "💦",
+                  t: "Thai New Year — Water Festival",
+                  d: "The entire city becomes a water fight for three days. Despite the burning season air quality, Songkran in Chiang Mai is the biggest and most famous celebration in all of Thailand. If you can handle the heat and haze, it is an extraordinary cultural experience. Book accommodation months ahead and waterproof your electronics.",
+                  b: "Cultural event",
+                  c: "bg-blue-50 border-blue-200",
+                },
+              ].map((s) => (
+                <div key={s.s} className={`rounded-xl p-4 border ${s.c}`}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">{s.i}</span>
+                    <div>
+                      <p className="font-medium text-sm text-stone-900">{s.s} — {s.t}</p>
+                      <p className="text-[0.65rem] font-medium text-teal">{s.b}</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{s.d}</p>
+                </div>
               ))}
             </div>
           </section>
 
-          {/* ── ITINERARIES ── */}
-          <section id="itineraries" className="mb-14 scroll-mt-24">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\uD83D\uDCC5"} The Itineraries</h2>
-            <p className="text-sm text-muted font-light mb-6">Click a plan &mdash; days are expandable/collapsible.</p>
-
-            <div className="flex gap-2 flex-wrap mb-8 p-1 bg-parchment rounded-xl">
-              {plans.map((p) => (
-                <button key={p.id} onClick={() => setActiveTab(p.id)}
-                  className={`flex-1 px-3 py-2.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-200 ${
-                    activeTab === p.id ? "bg-white shadow text-ink border border-parchment-2" : "text-muted hover:text-ink"
-                  }`}>
-                  {p.emoji} {p.label}
-                </button>
-              ))}
-            </div>
-
-            {/* ── BUDGET PLAN ── */}
-            {activeTab === "A" && (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl mb-6">
-                  <span className="text-2xl">{"\uD83D\uDCB0"}</span>
-                  <div>
-                    <p className="text-sm font-medium text-amber-800">Budget Plan &mdash; Old City Base</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Hostels / guesthouses {"·"} \u0E3F200–\u0E3F600/night {"·"} Transport: Songthaews + bicycle</p>
-                  </div>
-                </div>
-                <DayCard day="Day 1" title="Old City Temples Walk, Sunday Night Market"
-                  items={[
-                    "Arrive CNX — shared songthaew to Old City \u0E3F40–60/person. Red trucks (songthaews) are Chiang Mai’s public transport — wave one down, tell them your destination, pay when you exit.",
-                    "Check in, rent a bicycle for the day (\u0E3F50–80/day). The Old City is perfectly sized for cycling — everything within the moat is walkable or bikeable.",
-                    "2pm: Temple walk — Wat Chedi Luang (14th-century partially ruined chedi, free), Wat Phra Singh (Chiang Mai’s most important temple, \u0E3F40), Wat Chiang Man (oldest temple in the city, free). Budget 2.5 hours for all three.",
-                    "5pm: Tha Phae Gate — the iconic old city entrance. Best photos at golden hour.",
-                    "If Sunday: Sunday Night Market (Walking Street) starts at 4pm on Ratchadamnoen Road. The Sunday Night Market food crawl is a mile long and you’ll want to eat at every stall. Budget \u0E3F500 and pace yourself.",
-                    "If not Sunday: Night Bazaar (daily) on Chang Khlan Road — less authentic but still fun. Khao soi at Cowboy Hat Lady stall \u0E3F40.",
-                  ]}
-                  cost="\u0E3F400–800 (~$11–23) excl. accommodation" />
-                <DayCard day="Day 2" title="Doi Suthep Temple, Nimmanhaemin Road Cafes"
-                  items={[
-                    "8am: Songthaew from Old City to Doi Suthep — \u0E3F60/person from Tha Phae Gate area. Or share a red truck from Chiang Mai University main gate (\u0E3F40).",
-                    "Wat Phra That Doi Suthep — 306 steps up the Naga staircase (or take the cable car \u0E3F50). Entry \u0E3F30 (~$1). Golden chedi, panoramic views of the entire city. Best in morning before clouds roll in.",
-                    "10:30am: Back down the mountain. Grab lunch at Khao Soi Khun Yai — famous for Chiang Mai’s signature dish. \u0E3F50 for a bowl that will change your life.",
-                    "1pm: Nimmanhaemin Road (Nimman) — Chiang Mai’s hip neighbourhood. CAMP cafe (free co-working with coffee purchase), Ristr8to (award-winning latte art, \u0E3F80–120).",
-                    "Walk the sois (side streets) of Nimman — boutique shops, art galleries, and more cafes per square metre than anywhere in Thailand.",
-                    "Evening: Nimman night market or Soi 9 for dinner. Pad kra pao \u0E3F45, mango sticky rice \u0E3F40.",
-                  ]}
-                  cost="\u0E3F400–700 (~$11–20) excl. accommodation" />
-                <DayCard day="Day 3" title="Ethical Elephant Sanctuary, Thai Cooking Class"
-                  items={[
-                    "Full day: Ethical elephant sanctuary — budget options from \u0E3F1,500–2,000/person (half-day) or \u0E3F2,500–3,000 (full day, includes lunch and transport).",
-                    "Elephant riding is cruel — ethical sanctuaries let you feed, bathe, and walk WITH them. The experience is better AND ethical. Look for Elephant Jungle Sanctuary or similar certified operations.",
-                    "Activities: Feed elephants sugar cane and bananas, walk alongside them through jungle trails, mud bath and river bathing with the elephants. No riding, no chains, no bullhooks.",
-                    "Back by 2–3pm. Rest and freshen up.",
-                    "4pm: Half-day Thai cooking class — \u0E3F800–1,200/person. Mama Noi or Thai Farm Cooking School. Market visit + 5 dishes. You eat everything you cook.",
-                    "Evening: you’re full from cooking class. Night cap at a rooftop bar on Nimman.",
-                  ]}
-                  cost="\u0E3F2,300–3,200 (~$65–90) all-inclusive" />
-                <DayCard day="Day 4" title="Sticky Waterfall OR White Temple Day Trip"
-                  items={[
-                    "OPTION A — Sticky Waterfall (Bua Tong): 60km north of Chiang Mai. Songthaew tour \u0E3F300–500/person or Grab \u0E3F600–800 each way (split with travellers). The limestone surface is naturally sticky so you can walk UP the waterfall barefoot. Free entry. Truly unique.",
-                    "OPTION B — White Temple (Wat Rong Khun): 200km in Chiang Rai. Budget bus \u0E3F130–200 one way (3 hours) or day trip tour \u0E3F800–1,200/person all-inclusive. Surreal white temple covered in mirrors — Instagram gold. Entry \u0E3F100.",
-                    "If doing White Temple: combine with Blue Temple (Wat Rong Suea Ten, free) and Black House (Baan Dam Museum, \u0E3F80) — all in Chiang Rai province.",
-                    "Back by late afternoon. Final evening: Huen Phen restaurant (Old City) for authentic Northern Thai dinner. Khantoke set meal \u0E3F200 — the traditional Lanna feast.",
-                    "Last market run: pick up Thai handicrafts, hill tribe textiles, and handmade soap as souvenirs. Much cheaper than Bangkok prices.",
-                  ]}
-                  cost="\u0E3F500–1,400 (~$14–40) excl. accommodation" />
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 4-Day Cost (solo) {"·"} </span>
-                  <span className="font-serif text-base text-ink font-light">\u0E3F2,400–\u0E3F4,800 (~$68–$135) including accommodation</span>
-                </div>
-              </div>
-            )}
-
-            {/* ── MID-RANGE PLAN ── */}
-            {activeTab === "B" && (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-xl mb-6">
-                  <span className="text-2xl">{"✨"}</span>
-                  <div>
-                    <p className="text-sm font-medium text-blue-800">Mid-Range Plan &mdash; Nimman / Old City Boutique</p>
-                    <p className="text-xs text-blue-600 font-light">Stay: Boutique hotel {"·"} \u0E3F800–\u0E3F2,000/night {"·"} Transport: Grab + tours</p>
-                  </div>
-                </div>
-                <DayCard day="Day 1" title="Old City Temple Circuit, Sunday Walking Street"
-                  items={[
-                    "Arrive CNX — Grab to hotel \u0E3F150–250. Check in, settle.",
-                    "2pm: Guided Old City temple tour — \u0E3F500–800/person for a 3-hour walking tour covering 5–7 temples with a local guide who explains the Lanna history.",
-                    "Must-see temples: Wat Chedi Luang (massive 14th-century chedi), Wat Phra Singh (gold-topped and housing Chiang Mai’s most revered Buddha image), Wat Chiang Man (the city’s oldest, from 1296).",
-                    "5pm: Tha Phae Gate area for photos and coffee.",
-                    "Sunday: Sunday Walking Street market — the best night market in Thailand. A full kilometre of food, crafts, and live music. Budget \u0E3F500–800 for food and souvenirs.",
-                    "Not Sunday: Saturday Night Market on Wualai Road (slightly less crowded, equally good) or Night Bazaar (daily).",
-                  ]}
-                  cost="\u0E3F1,000–1,800 (~$28–50) excl. accommodation" />
-                <DayCard day="Day 2" title="Doi Suthep, Nimman Cafe Crawl, Sunset Dinner"
-                  items={[
-                    "7:30am: Private Grab to Doi Suthep — \u0E3F300–400. Beat the tour groups.",
-                    "Wat Phra That Doi Suthep — climb the 306-step Naga staircase for the full experience. Golden chedi, monks chanting, panoramic city views. \u0E3F30 entry.",
-                    "9:30am: Side trip to Doi Suthep–Pui National Park — Hmong hill tribe village (15 min further up the mountain). Small market with handmade textiles.",
-                    "11am: Back to city. Brunch at Graph Cafe (Nimman) — specialty coffee + eggs benedict \u0E3F200–350.",
-                    "Afternoon: Nimman cafe crawl — Ristr8to (competition latte art), CAMP at Maya Mall (workspace vibes), Rustic & Blue (garden setting). Chiang Mai has the best cafe scene in Southeast Asia.",
-                    "7pm: Dinner at Dash! Restaurant — upscale Northern Thai in a beautiful colonial house. Mains \u0E3F250–450. Reservation recommended.",
-                  ]}
-                  cost="\u0E3F1,200–2,000 (~$34–56) excl. accommodation" />
-                <DayCard day="Day 3" title="Ethical Elephant Sanctuary, Evening Cooking Class"
-                  items={[
-                    "Full day at an ethical elephant sanctuary — \u0E3F2,500–3,500/person for premium operators like Elephant Nature Park or Patara Elephant Farm. Includes hotel pickup, lunch, and full-day programme.",
-                    "Elephant Nature Park is the gold standard — rescue and rehabilitation centre where elephants roam freely. You feed them, walk with them, and help with bathing. No riding.",
-                    "The experience: prepare food baskets for the elephants, walk alongside them through meadows and river areas, learn each elephant’s rescue story from the guides. Emotional and unforgettable.",
-                    "Back by 3pm. Rest and shower.",
-                    "5pm: Evening Thai cooking class at Pantawan Cooking School — \u0E3F1,200–1,500/person. Flower market visit + 5 dishes including khao soi. More intimate than morning classes.",
-                    "You eat everything you cook. No need for dinner reservations.",
-                  ]}
-                  cost="\u0E3F3,700–5,000 (~$104–$140) all-inclusive" />
-                <DayCard day="Day 4" title="Sticky Waterfall OR White Temple, Farewell"
-                  items={[
-                    "OPTION A — Sticky Waterfall (Bua Tong): Half-day tour \u0E3F800–1,200/person with hotel transfer. Walk up the mineral-coated limestone waterfall barefoot. Completely surreal. Combine with Mae Sa Waterfall and orchid farm.",
-                    "OPTION B — White Temple Day Trip: Full-day tour to Chiang Rai \u0E3F1,500–2,500/person. Covers Wat Rong Khun (White Temple), Blue Temple, Black House Museum, and Golden Clock Tower. Lunch included.",
-                    "If staying in town: Royal Park Rajapruek (botanical garden, \u0E3F200 entry), then Thai massage at Fah Lanna Spa (\u0E3F600–900 for 2-hour treatment).",
-                    "4pm: Last cafe stop at Akha Ama Coffee (Old City) — ethically sourced Akha hill tribe coffee. \u0E3F80–120. The story behind the brand is worth asking about.",
-                    "Final dinner: SP Chicken (Soi 1, Nimman) — famous rotisserie chicken. Half chicken + sticky rice \u0E3F150. Queue expected, worth it.",
-                  ]}
-                  cost="\u0E3F1,200–2,800 (~$34–79) excl. accommodation" />
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-blue-700 uppercase tracking-wide">Total 4-Day Cost (per person) {"·"} </span>
-                  <span className="font-serif text-base text-ink font-light">\u0E3F6,000–\u0E3F12,000 (~$170–$340) including accommodation</span>
-                </div>
-              </div>
-            )}
-
-            {/* ── LUXURY PLAN ── */}
-            {activeTab === "C" && (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-purple-50 border border-purple-200 rounded-xl mb-6">
-                  <span className="text-2xl">{"\uD83D\uDC8E"}</span>
-                  <div>
-                    <p className="text-sm font-medium text-purple-800">Luxury Plan &mdash; Four Seasons / Dhara Dhevi Base</p>
-                    <p className="text-xs text-purple-600 font-light">Stay: 5-star resort {"·"} \u0E3F5,000–\u0E3F20,000/night {"·"} Transport: Hotel car + private tours</p>
-                  </div>
-                </div>
-                <DayCard day="Day 1" title="Private Temple Tour, Lanna Immersion, Fine Dining"
-                  items={[
-                    "Airport: hotel limousine. Check into your resort — Four Seasons Chiang Mai (rice paddy setting), Dhara Dhevi (Lanna palace recreation), or Anantara.",
-                    "2pm: Private guided temple tour with art historian — \u0E3F3,000–5,000/person. Deep dive into Lanna architecture, symbolism, and Buddhist art across 5–7 temples.",
-                    "Hidden gems your guide will show: Wat Umong (underground tunnel temple), Wat Lok Molee (lantern-draped and usually empty).",
-                    "5pm: Traditional Lanna Khantoke dinner experience at Old Chiang Mai Cultural Centre — \u0E3F1,200/person. Traditional dance performance + Northern Thai feast.",
-                    "Or dinner at David’s Kitchen — French-Thai fine dining. Tasting menu from \u0E3F2,500. Chiang Mai’s most acclaimed restaurant.",
-                  ]}
-                  cost="\u0E3F5,000–10,000 (~$140–$280) excl. accommodation" />
-                <DayCard day="Day 2" title="Doi Suthep Private Tour, Royal Project, Spa"
-                  items={[
-                    "7am: Private car to Doi Suthep before crowds. Your guide explains the Naga legend as you climb the 306 steps.",
-                    "9am: Continue to Doi Pui Hmong village — private tour of the hill tribe community with cultural context your guide provides.",
-                    "10:30am: Royal Project at Doi Suthep — the King’s agricultural programme. Beautiful gardens, organic produce, incredible views.",
-                    "12pm: Lunch at Meena Rice Based Cuisine — organic Northern Thai in a teak house surrounded by rice paddies. Mains \u0E3F200–400.",
-                    "2pm: Full afternoon spa at your resort. Four Seasons Lanna Spa treatments from \u0E3F4,500. Dhara Dhevi’s colonial spa complex is otherworldly.",
-                    "7pm: Private dinner at Blackitch Artisan Kitchen — 10-seat chef’s counter, seasonal tasting menu \u0E3F2,800. Book 2 weeks ahead.",
-                  ]}
-                  cost="\u0E3F8,000–15,000 (~$225–$420) excl. accommodation" />
-                <DayCard day="Day 3" title="Exclusive Elephant Experience, Cooking Masterclass"
-                  items={[
-                    "Full day: Patara Elephant Farm — \u0E3F5,800/person. The most exclusive elephant experience in Chiang Mai. One elephant assigned per visitor. You become the elephant’s caretaker for the day.",
-                    "Activities: health check the elephant, prepare food, walk through the jungle, river bathing. No riding. Full veterinary education component.",
-                    "Gourmet lunch included in jungle setting.",
-                    "3pm: Private cooking masterclass with a chef — \u0E3F3,000–5,000/person at Dhara Dhevi Cooking Academy or Pantawan VIP class. Market tour in a tuk-tuk, 6–7 dishes, wine pairing.",
-                    "You eat everything you cook. The recipes alone are worth the price.",
-                  ]}
-                  cost="\u0E3F8,800–10,800 (~$248–$304) all-inclusive" />
-                <DayCard day="Day 4" title="Day Trip, Artisan Experience, Farewell Feast"
-                  items={[
-                    "OPTION A — Doi Inthanon (Thailand’s highest peak): Private tour \u0E3F4,000–6,000/person. Twin pagodas, Karen hill tribe village, cloud forest trail. Stunning in cool season.",
-                    "OPTION B — White Temple private day trip: Chiang Rai in a luxury van with guide. \u0E3F5,000–8,000/person all-inclusive.",
-                    "If staying local: Baan Tawai handicraft village (master wood carvers), then private silk-weaving workshop at a local artisan’s home.",
-                    "3pm: Traditional Thai massage at Oasis Spa Lanna — 2-hour signature treatment \u0E3F2,500. Beautiful Lanna garden setting.",
-                    "Farewell dinner: The Dining Room at 137 Pillars House — colonial Chiang Mai fine dining. Tasting menu from \u0E3F3,500. The building alone is worth visiting.",
-                  ]}
-                  cost="\u0E3F6,000–12,000 (~$170–$340) excl. accommodation" />
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-purple-700 uppercase tracking-wide">Total 4-Day Cost (per person) {"·"} </span>
-                  <span className="font-serif text-base text-ink font-light">\u0E3F20,000+ (~$565+) including accommodation</span>
-                </div>
-              </div>
-            )}
-          </section>
-
-          {/* ── INLINE CTA ── */}
-          <InlineCTA destination="Chiang Mai" onPlanTrip={() => setModalOpen(true)} />
-
-          {/* ── GALLERY ── */}
-          <DestinationGallery
-            title="Chiang Mai &mdash; Must-See Places"
-            subtitle="Click each thumbnail to explore Chiang Mai&apos;s most iconic temples, mountains and cultural experiences."
-            spots={[
-              { name: "Doi Suthep",          query: "doi suthep chiang mai golden chedi temple mountain stairs",          desc: "The golden temple on the mountain. 306 steps up the Naga staircase for panoramic city views. Best visited before 9am." },
-              { name: "Old City Temples",     query: "chiang mai old city wat chedi luang ancient brick temple",           desc: "Over 30 temples within the moat walls. Wat Chedi Luang, Wat Phra Singh, and Wat Chiang Man are the essential three." },
-              { name: "Sunday Night Market",  query: "chiang mai sunday walking street night market lanterns crafts",      desc: "A full kilometre of food stalls, handmade crafts, and live music every Sunday on Ratchadamnoen Road." },
-              { name: "Elephant Sanctuary",   query: "thailand elephant sanctuary jungle river bathing ethical nature",     desc: "Ethical sanctuaries where elephants roam freely. Feed, bathe, and walk with them — no riding, no chains." },
-              { name: "Sticky Waterfall",     query: "bua tong sticky waterfall chiang mai limestone cascade jungle",      desc: "A limestone waterfall you can walk up barefoot. The mineral surface is naturally adhesive. Truly unique experience." },
-            ]}
-          />
-
-          {/* ── MID-ARTICLE IMAGE ── */}
-          <div className="mb-14 rounded-2xl overflow-hidden shadow-md">
-            <SmartImage
-              query="chiang mai sunday night market lanterns street food stalls overhead"
-              alt="Chiang Mai Sunday Night Market with lanterns and street food"
-              width={860} height={440}
-              className="w-full object-cover h-72 md:h-[380px]"
-            />
-            <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
-              <p className="text-xs text-muted font-light italic text-center">
-                The Sunday Night Market food crawl stretches a full mile. Khao soi \u0E3F40, sai ua (Northern sausage) \u0E3F30, mango sticky rice \u0E3F40. Pace yourself.
+          {/* ── GETTING THERE ── */}
+          <section id="howtoreach" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">✈️ Getting to Chiang Mai</h2>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+              <p className="text-sm text-amber-800 font-light">
+                <strong className="font-medium">Key detail:</strong> Chiang Mai International Airport (CNX) is just 10 minutes from the Old City by Grab. <strong className="font-medium">Indian passport holders need an eVisa, VOA (฿2,000, 15 days), or tourist visa from the Thai embassy.</strong> Most Western passports get 30–60 days visa-free.
               </p>
             </div>
-          </div>
+            <div className="space-y-3">
+              {[
+                {
+                  i: "✈️",
+                  t: "Flights to Chiang Mai",
+                  d: "No direct international flights from India — connect through Bangkok (1 hr domestic, ฿1,200–3,000 one way on AirAsia, Thai Lion, Nok Air). From Bangkok airports (BKK/DMK), 15+ daily flights to CNX. From Southeast Asia: direct flights from Singapore (3.5 hrs), KL (3 hrs), and Hong Kong (3 hrs) on AirAsia and Thai Smile.",
+                  b: "Most common route",
+                  c: "bg-green-50 border-green-200",
+                },
+                {
+                  i: "🚂",
+                  t: "Train from Bangkok",
+                  d: "The overnight sleeper from Bangkok Hua Lamphong to Chiang Mai is a classic backpacker experience. 12–14 hours, departing 6–8pm. Second-class sleeper: ฿800–1,000 (~$23–28). First-class: ฿1,400–1,800 (~$40–51). Book at least 3 days ahead on 12go.asia or at the station. The scenery through the mountains at dawn is spectacular.",
+                  b: "Classic experience",
+                  c: "bg-teal-50 border-teal-200",
+                },
+                {
+                  i: "🚐",
+                  t: "Songthaew system in Chiang Mai",
+                  d: "Red trucks (songthaews) are Chiang Mai's shared public transport. Wave one down, tell the driver your destination, and pay ฿20–60/person when you exit. They run fixed-ish routes around the Old City, Nimman, and the university area. For Doi Suthep, shared songthaews leave from near Chiang Mai Zoo (฿40–60/person up, ฿40 down). Grab works perfectly for everything else.",
+                  b: "Local transport",
+                  c: "bg-amber-50 border-amber-200",
+                },
+                {
+                  i: "🚗",
+                  t: "Airport to Old City",
+                  d: "Grab from CNX airport to Old City: ฿100–150 (~$3–4), 10 minutes. The airport taxi counter charges ฿150–200. Do not negotiate with touts inside arrivals — walk to the pickup area and use the Grab app. Some guesthouses offer free airport pickup if you book directly.",
+                  b: "10 min ride",
+                  c: "bg-parchment border-parchment-2",
+                },
+              ].map((t) => (
+                <div key={t.t} className={`rounded-xl p-4 border ${t.c}`}>
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">{t.i}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <p className="font-semibold text-sm text-ink">{t.t}</p>
+                        <span className="text-xs bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.b}</span>
+                      </div>
+                      <p className="text-xs text-gray-700 font-light leading-relaxed">{t.d}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
 
-          {/* ── AFFILIATE BLOCK ── */}
-          <AffiliateBlock
-            destination="Chiang Mai"
-            hotels={[
-              { name: "Stamps Hostel", type: "Budget Hostel · Old City", price: "From \u0E3F250/night (~$7)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/th/stamps-hostel.html?aid=2820480" },
-              { name: "Ping Nakara", type: "Boutique Heritage · Old City", price: "From \u0E3F2,500/night (~$70)", rating: "5", badge: "Mid-range pick", url: "https://www.booking.com/hotel/th/ping-nakara.html?aid=2820480" },
-              { name: "Four Seasons Chiang Mai", type: "Luxury Resort · Mae Rim", price: "From \u0E3F12,000/night (~$340)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/th/four-seasons-resort-chiang-mai.html?aid=2820480" },
+          {/* ── 4-DAY ITINERARY ── */}
+          <section id="itinerary" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">📅 4-Day Chiang Mai Itinerary</h2>
+            <p className="text-sm text-muted font-light mb-6 leading-relaxed">
+              This itinerary covers mid-range spending (฿1,500–3,000/day, ~$42–85). Each day card is expandable. Base yourself in the Old City or Nimman area. Budget and luxury alternatives are noted in the cost estimates.
+            </p>
+            <div className="space-y-4">
+              <DayCard
+                day="Day 1"
+                title="Old City Temples, Tha Phae Gate & Night Market"
+                cost="฿800–1,500 (~$23–42) excluding accommodation"
+                items={[
+                  "Arrive CNX — Grab to Old City ฿100–150 (~$3–4). Check into your hotel or guesthouse. The Old City is perfectly sized for walking — everything within the moat is reachable on foot.",
+                  "2pm: Temple walk — Wat Chedi Luang (massive 14th-century partially ruined chedi, free), Wat Phra Singh (Chiang Mai's most revered temple with gold-topped chedi and Lanna murals, ฿40/~$1), Wat Chiang Man (oldest temple in the city from 1296, free). Budget 2.5–3 hours for all three.",
+                  "5pm: Tha Phae Gate — the iconic old city entrance and best golden-hour photo spot. Street performers and pigeon-feeding happen here every evening.",
+                  "If Sunday: Sunday Night Market (Walking Street) starts at 4pm on Ratchadamnoen Road. The best market experience in Thailand — a full kilometre of food, handmade crafts, and live music. Budget ฿500–800 (~$14–23) for food and souvenirs.",
+                  "If not Sunday: Night Bazaar (daily) on Chang Khlan Road for shopping and food stalls. Saturday Night Market on Wualai Road (slightly less crowded, equally good food). Khao soi at Cowboy Hat Lady stall ฿40 (~$1).",
+                  "Evening dinner (if not market): Chang Phuak Gate night food stalls — legendary among locals. Cowboy Hat Lady's pork leg rice ฿40.",
+                ]}
+              />
+              <DayCard
+                day="Day 2"
+                title="Doi Suthep Temple, Nimman Cafe Crawl & Sunset"
+                cost="฿1,000–1,800 (~$28–51) excluding accommodation"
+                items={[
+                  "7:30am: Grab or songthaew to Doi Suthep — ฿300–400 by Grab, or ฿40–60/person by shared songthaew from near Chiang Mai Zoo. Beat the tour groups by arriving before 9am.",
+                  "Wat Phra That Doi Suthep — climb the 306-step Naga staircase (or cable car ฿50/~$1.40) to the golden chedi. Entry ฿30 (~$1). Panoramic views of the entire city. Morning light through the golden chedi is extraordinary. Monks chanting if you arrive early enough.",
+                  "9:30am: Side trip to Doi Suthep–Pui National Park — Hmong hill tribe village 15 min further up the mountain. Small market with handmade textiles and silver jewellery.",
+                  "11am: Back to city. Lunch at Khao Soi Khun Yai — famous for Chiang Mai's signature dish. ฿50 (~$1.40) for a bowl that will change your khao soi standards forever.",
+                  "1pm: Nimmanhaemin Road (Nimman) — Chiang Mai's hip neighbourhood. Cafe crawl: Ristr8to (award-winning latte art, ฿80–120), CAMP at Maya Mall (co-working with coffee purchase), Graph Cafe (specialty coffee + brunch ฿200–350). Walk the sois (side streets) for boutique shops and art galleries.",
+                  "6pm: Sunset dinner at a Nimman rooftop or Ping River restaurant. Pad kra pao ฿45 (~$1.30), mango sticky rice ฿40 (~$1.10). Nimman Soi 9 has the best cluster of evening restaurants.",
+                ]}
+              />
+              <DayCard
+                day="Day 3"
+                title="Ethical Elephant Sanctuary & Thai Cooking Class"
+                cost="฿3,500–5,000 (~$99–141) all-inclusive"
+                items={[
+                  "Full day: Ethical elephant sanctuary — ฿2,500–3,500/person for full-day programmes at Elephant Nature Park (the gold standard) or Elephant Jungle Sanctuary. Includes hotel pickup, lunch, and full programme.",
+                  "Elephant riding is cruel and causes spinal damage. Ethical sanctuaries let you feed, bathe, and walk WITH elephants freely. No riding, no chains, no bullhooks. The experience is genuinely better AND ethical.",
+                  "Activities: prepare food baskets, feed elephants sugar cane and bananas, walk alongside them through jungle trails, mud bath and river bathing with the elephants. Learn each elephant's rescue story from the guides. Emotional and unforgettable.",
+                  "Back by 2–3pm. Rest and freshen up at your hotel.",
+                  "4–5pm: Half-day Thai cooking class — ฿800–1,500/person (~$23–42). Mama Noi, Thai Farm Cooking School, or Pantawan Cooking School. Flower market visit + 5 dishes including khao soi and pad thai. You eat everything you cook.",
+                  "Evening: you are full from cooking class. Night cap at a rooftop bar on Nimman or a riverside spot along the Ping River.",
+                ]}
+              />
+              <DayCard
+                day="Day 4"
+                title="Sticky Waterfall OR White Temple Day Trip & Farewell"
+                cost="฿1,000–2,500 (~$28–70) excluding accommodation"
+                items={[
+                  "OPTION A — Sticky Waterfall (Bua Tong): 60km north. Half-day tour ฿800–1,200/person with hotel transfer, or Grab ฿600–800 each way (split with fellow travellers). The limestone surface is naturally adhesive so you can walk UP the waterfall barefoot. Free entry. Truly unique. Combine with Mae Sa Waterfall.",
+                  "OPTION B — White Temple (Wat Rong Khun) day trip to Chiang Rai: 200km, 3 hours. Full-day tour ฿1,500–2,500/person all-inclusive, or budget bus ฿130–200 one way. Surreal white temple covered in mirrors. Entry ฿100 (~$3). Combine with Blue Temple (free) and Black House Museum (฿80/~$2).",
+                  "If staying in town: Royal Park Rajapruek botanical garden (฿200 entry), then a 2-hour Thai massage at Fah Lanna Spa (฿600–900/~$17–25).",
+                  "4pm: Last cafe stop at Akha Ama Coffee (Old City) — ethically sourced Akha hill tribe coffee. ฿80–120. The brand's story of bringing specialty coffee revenue back to hill tribe communities is worth asking about.",
+                  "Final dinner: Huen Phen restaurant (Old City) for authentic Northern Thai — khantoke set meal ฿200 (~$6). The traditional Lanna feast served on a round tray. Or SP Chicken (Nimman Soi 1) — famous rotisserie half chicken + sticky rice ฿150.",
+                  "Last market run: pick up Thai handicrafts, hill tribe textiles, and handmade soap as souvenirs. Much cheaper than Bangkok prices.",
+                ]}
+              />
+            </div>
+          </section>
+
+          {/* Inline CTA */}
+          <InlineCTA destination="Chiang Mai" onPlanTrip={() => setModalOpen(true)} />
+
+          {/* ── TEMPLE & LANDMARK GUIDE ── */}
+          <section id="temples" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🛕 Temple &amp; Landmark Guide</h2>
+            <p className="text-sm text-muted font-light mb-5 leading-relaxed">
+              The most important temples and landmarks in order of priority. Modest dress is required at all temples — cover shoulders and knees. Entry fees are as of early 2026.
+            </p>
+            <div className="space-y-3">
+              {[
+                {
+                  n: "Wat Phra That Doi Suthep",
+                  e: "฿30 (~$1)",
+                  d: "The golden temple on the mountain, visible from anywhere in the city. 306 steps up the Naga staircase (or cable car ฿50) to a shimmering golden chedi, panoramic city views, and monks chanting at dawn. Chiang Mai's most important religious site and the one thing everyone must see. Visit before 9am to beat tour groups.",
+                  t: "Must see · Morning · 2 hrs",
+                },
+                {
+                  n: "Wat Chedi Luang",
+                  e: "Free",
+                  d: "Massive 14th-century brick chedi in the heart of Old City. Originally 82 metres tall (now about 60m after a 16th-century earthquake), it once housed the Emerald Buddha now in Bangkok. The scale of the ruined chedi is extraordinary — it remains one of the most imposing structures in northern Thailand. Monk chats available daily.",
+                  t: "Must see · Old City · 1 hr",
+                },
+                {
+                  n: "Wat Phra Singh",
+                  e: "฿40 (~$1)",
+                  d: "Chiang Mai's most revered temple, housing the city's most important Buddha image. Gold-topped chedi, beautiful Lanna murals in the Lai Kham chapel, and an active monastery. The architecture is a masterclass in Lanna design. Best visited in the late afternoon when the light hits the gold.",
+                  t: "Must see · Old City · 1 hr",
+                },
+                {
+                  n: "Wat Umong",
+                  e: "Free",
+                  d: "Underground tunnel temple in a forested setting outside the Old City. Built in the 14th century, the tunnels were designed for monk meditation. Atmospheric, quiet, and completely unlike any other Chiang Mai temple. A deer park and lake add to the peaceful atmosphere. Best visited weekday mornings.",
+                  t: "Hidden gem · 1.5 hrs",
+                },
+                {
+                  n: "Wat Chiang Man",
+                  e: "Free",
+                  d: "The oldest temple in Chiang Mai, founded by King Mengrai in 1296 when he established the city. Houses two important Buddha images including a tiny crystal Buddha. The elephant-buttressed chedi is the most photographed element. Less crowded than Wat Phra Singh but equally significant.",
+                  t: "Historic · Old City · 45 min",
+                },
+                {
+                  n: "Sticky Waterfall (Bua Tong)",
+                  e: "Free",
+                  d: "A limestone waterfall 60km north of the city where the mineral surface is naturally adhesive — you can walk up the cascading water barefoot without slipping. Unlike anything else in Thailand. Best combined with a half-day trip to the area. Wear clothes you do not mind getting wet.",
+                  t: "Unique · Half day · 60km",
+                },
+              ].map((place) => (
+                <div key={place.n} className="bg-white rounded-xl border border-parchment-2 p-4">
+                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                    <p className="font-medium text-sm text-stone-900">{place.n}</p>
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="text-xs text-teal font-medium bg-teal/10 px-2 py-0.5 rounded-full">{place.e}</span>
+                      <span className="text-xs bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full border border-amber-200">{place.t}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{place.d}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Gallery */}
+          <DestinationGallery
+            title="Chiang Mai — Temples, Mountains &amp; Markets"
+            subtitle="The 700-year-old Lanna capital and one of the most culturally rich cities in Southeast Asia."
+            spots={[
+              {
+                name: "Doi Suthep Golden Chedi",
+                query: "doi suthep chiang mai golden chedi temple mountain stairs naga",
+                desc: "The golden temple on the mountain — 306 steps up the Naga staircase for panoramic city views and shimmering Buddhist architecture.",
+              },
+              {
+                name: "Old City Temples",
+                query: "chiang mai old city wat chedi luang ancient brick temple ruins",
+                desc: "Over 300 temples within and around the moat walls. Wat Chedi Luang, Wat Phra Singh, and Wat Chiang Man are the essential three.",
+              },
+              {
+                name: "Sunday Night Market",
+                query: "chiang mai sunday walking street night market lanterns crafts food",
+                desc: "A full kilometre of food stalls, handmade crafts, and live music every Sunday on Ratchadamnoen Road — the best market in Thailand.",
+              },
+              {
+                name: "Elephant Sanctuary",
+                query: "thailand elephant sanctuary jungle river bathing ethical nature",
+                desc: "Ethical sanctuaries where rescued elephants roam freely. Feed, bathe, and walk with them — no riding, no chains.",
+              },
+              {
+                name: "Sticky Waterfall (Bua Tong)",
+                query: "bua tong sticky waterfall chiang mai limestone cascade jungle green",
+                desc: "A limestone waterfall you can walk up barefoot. The mineral surface is naturally adhesive — truly a one-of-a-kind experience.",
+              },
             ]}
-            activities={[
-              { name: "Ethical Elephant Sanctuary Half Day", duration: "Half day", price: "From \u0E3F1,500/person (~$42)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=chiang-mai&partner_id=PSZA5UI" },
-              { name: "Thai Cooking Class with Market Tour", duration: "Half day", price: "From \u0E3F800/person (~$23)", badge: "Popular", url: "https://www.getyourguide.com/s/?q=chiang-mai&partner_id=PSZA5UI" },
-              { name: "Doi Suthep & Doi Pui Temple Tour", duration: "Half day", price: "From \u0E3F500/person (~$14)", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=chiang-mai&partner_id=PSZA5UI" },
-              { name: "White Temple Chiang Rai Day Trip", duration: "Full day", price: "From \u0E3F800/person (~$23)", url: "https://www.getyourguide.com/s/?q=chiang-mai&partner_id=PSZA5UI" },
-            ]}
-            pdfProductId="chiang-mai-4-days-pdf"
           />
 
-          {/* ── BUDGET TABLE ── */}
+          {/* ── BUDGET BREAKDOWN ── */}
           <section id="budget" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCB0"} Budget Breakdown</h2>
-            <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💰 Budget Breakdown</h2>
+            <p className="text-sm text-muted font-light mb-5 leading-relaxed">
+              Chiang Mai is one of the cheapest destinations in Southeast Asia at every price level. Budget travellers can live well on $17–38/day, mid-range on $42–85/day, and luxury on $140+/day. All prices in Thai Baht (THB) and USD at ~฿35.5 = $1.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm mb-6">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-ink">
-                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
-                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">{"\uD83D\uDCB0"} Budget</th>
-                    <th className="p-3.5 text-xs font-medium text-blue-300 text-center">{"✨"} Mid-Range</th>
-                    <th className="p-3.5 text-xs font-medium text-purple-300 text-center">{"\uD83D\uDC8E"} Luxury</th>
+                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category (4 days)</th>
+                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">💰 Budget</th>
+                    <th className="p-3.5 text-xs font-medium text-blue-300 text-center">✨ Mid-Range</th>
+                    <th className="p-3.5 text-xs font-medium text-purple-300 text-center">💎 Luxury</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (4N)", "\u0E3F800–2,400",   "\u0E3F3,200–8,000",   "\u0E3F20,000–80,000"],
-                    ["\uD83C\uDF5C Food & Drinks",       "\u0E3F600–1,200",   "\u0E3F2,000–4,000",   "\u0E3F8,000–20,000"],
-                    ["\uD83D\uDE8C Transport",            "\u0E3F300–600",     "\u0E3F800–1,600",     "\u0E3F3,000–8,000"],
-                    ["\uD83C\uDFAF Tours & Activities",   "\u0E3F2,500–4,500", "\u0E3F5,000–10,000",  "\u0E3F20,000–40,000"],
-                    ["\uD83D\uDED2 Shopping & Extras",    "\u0E3F0–500",       "\u0E3F1,000–3,000",   "\u0E3F3,000–10,000"],
+                    ["🏨 Accommodation (4N)", "฿800–2,400 ($23–68)", "฿3,200–8,000 ($90–225)", "฿20,000–80,000 ($563–2,254)"],
+                    ["🍜 Food & Drinks", "฿600–1,200 ($17–34)", "฿2,000–4,000 ($56–113)", "฿8,000–20,000 ($225–563)"],
+                    ["🚌 Transport", "฿300–600 ($8–17)", "฿800–1,600 ($23–45)", "฿3,000–8,000 ($85–225)"],
+                    ["🎯 Tours & Activities", "฿2,500–4,500 ($70–127)", "฿5,000–10,000 ($141–282)", "฿20,000–40,000 ($563–1,127)"],
+                    ["🛒 Shopping & Extras", "฿0–500 ($0–14)", "฿1,000–3,000 ($28–85)", "฿3,000–10,000 ($85–282)"],
+                    ["TOTAL (per person)", "฿2,400–4,800 ($68–135)", "฿6,000–12,000 ($170–340)", "฿20,000+ ($565+)"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
-                      {vals.map((v, i) => <td key={i} className="p-3.5 text-xs text-muted font-light text-center">{v}</td>)}
+                      {vals.map((v, i) => (
+                        <td key={i} className="p-3.5 text-xs text-muted font-light text-center">{v}</td>
+                      ))}
                     </tr>
                   ))}
-                  <tr className="bg-ink">
-                    <td className="p-3.5 text-xs text-white font-semibold">Total (per person, 4 days)</td>
-                    {["\u0E3F2,400–4,800 (~$68–135)", "\u0E3F6,000–12,000 (~$170–340)", "\u0E3F20,000+ (~$565+)"].map((v, i) => (
-                      <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
-                    ))}
-                  </tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-muted font-light mt-3 italic">
-              All prices Thai Baht (\u0E3F) 2026. USD conversions approximate at \u0E3F35.5 = $1. International/domestic flights not included. Chiang Mai is one of the cheapest destinations in Southeast Asia.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                <p className="font-medium text-sm text-green-800 mb-1">💚 Budget (฿600–1,200/day)</p>
+                <p className="text-xs text-green-700 font-light leading-relaxed">Stay in hostels and guesthouses (฿200–600/night), eat at market stalls and local restaurants (฿30–60/meal), take songthaews and rent bicycles in the Old City. Chiang Mai is one of the cheapest cities in Asia at this level.</p>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="font-medium text-sm text-blue-800 mb-1">✨ Mid-Range (฿1,500–3,000/day)</p>
+                <p className="text-xs text-blue-700 font-light leading-relaxed">Boutique hotels with pool (฿800–2,000/night), a mix of street food and restaurant dining, Grab for transport, and premium tours like Elephant Nature Park. The sweet spot for comfort and value.</p>
+              </div>
+              <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
+                <p className="font-medium text-sm text-purple-800 mb-1">💎 Luxury (฿5,000+/day)</p>
+                <p className="text-xs text-purple-700 font-light leading-relaxed">5-star resorts like Four Seasons or Dhara Dhevi (฿5,000–20,000/night), private tours with expert guides, spa days, and fine dining. Chiang Mai luxury costs a fraction of what you would pay in Europe or Japan for equivalent quality.</p>
+              </div>
+            </div>
           </section>
 
-          {/* ── MISTAKES ── */}
-          <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❌"} Mistakes to Avoid</h2>
+          {/* InlineSignup */}
+          <InlineSignup />
+
+          {/* ── WHERE TO STAY ── */}
+          <section id="stay" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🏨 Where to Stay in Chiang Mai</h2>
+            <p className="text-sm text-muted font-light mb-5 leading-relaxed">
+              The key decision is which area to base yourself. Old City (inside the moat) is best for first-timers — walkable, temple access, night markets. Nimman is the hip neighbourhood with cafes and boutiques. Riverside along the Ping River has quiet boutique options. For 4 days, Old City is our recommendation.
+            </p>
             <div className="space-y-3">
               {[
-                { title: "Visiting in March–April (burning season)", desc: "Farmers burn crop residue and the air quality becomes hazardous. AQI regularly exceeds 200. Visibility drops, temples disappear in haze. Avoid these months completely if possible.", icon: "\uD83D\uDCA8" },
-                { title: "Riding elephants", desc: "Elephant riding causes spinal damage to the animals. Ethical sanctuaries offer feeding, bathing, and walking WITH elephants — the experience is genuinely better and doesn’t cause harm. Ask if they use chains or bullhooks.", icon: "\uD83D\uDC18" },
-                { title: "Only eating on Nimman Road", desc: "Nimman has great cafes but tourist-priced food. Walk 10 minutes to the local markets near Chiang Mai University for khao soi at \u0E3F40 instead of \u0E3F150. Chang Phuak Gate night stalls are legendary.", icon: "\uD83C\uDF5C" },
-                { title: "Taking tuk-tuks without negotiating", desc: "Chiang Mai tuk-tuks and red trucks are not metered. Agree on the price BEFORE getting in. Short rides within Old City should be \u0E3F40–60/person. Use Grab for fixed prices.", icon: "\uD83D\uDE95" },
-                { title: "Visiting Doi Suthep after 10am", desc: "Tour buses arrive at 10am and the temple gets crowded. Go at 7:30–8am for peaceful photos and monk chanting. The morning light through the golden chedi is spectacular.", icon: "\u26EA" },
-                { title: "Missing the Sunday Walking Street", desc: "Plan your trip to include a Sunday if at all possible. The Sunday Night Market on Ratchadamnoen Road is the best market experience in Thailand — better than any Bangkok market.", icon: "\uD83C\uDF1F" },
+                {
+                  name: "Stamps Hostel",
+                  type: "Budget Hostel · Old City",
+                  price: "From ฿250/night (~$7)",
+                  badge: "Budget pick",
+                  desc: "Clean, social hostel inside the Old City moat with excellent common areas, a small pool, and walking distance to every major temple. Dorm beds from ฿250, private rooms from ฿600. The staff help with tour bookings and transport. The rooftop is a great spot for meeting fellow travellers.",
+                  color: "border-parchment-2 bg-white",
+                },
+                {
+                  name: "Ping Nakara Boutique Hotel",
+                  type: "Boutique Heritage · Old City",
+                  price: "From ฿2,500/night (~$70)",
+                  badge: "Mid-range pick",
+                  desc: "Beautifully restored colonial-era mansion with Lanna design touches, a garden pool, and an excellent breakfast spread. Walking distance to Wat Chedi Luang and the Sunday Night Market route. The architecture alone is worth the stay — intricate woodwork, period furniture, and a sense of old-world Chiang Mai that most modern hotels lack.",
+                  color: "border-blue-200 bg-blue-50",
+                },
+                {
+                  name: "Four Seasons Chiang Mai",
+                  type: "Luxury Resort · Mae Rim",
+                  price: "From ฿12,000/night (~$340)",
+                  badge: "Luxury pick",
+                  desc: "Pavilion-style resort set among working rice paddies in the Mae Rim valley, 20 minutes from the city. Private balconies overlooking the paddies, a world-class spa, and a cooking school on-site. The buffalo in the paddies at sunrise and the mountain backdrop make this one of the most beautiful resort settings in Southeast Asia.",
+                  color: "border-amber-200 bg-amber-50",
+                },
+                {
+                  name: "BED Nimman Hotel",
+                  type: "Modern Boutique · Nimman",
+                  price: "From ฿1,200/night (~$34)",
+                  badge: "Best for cafes",
+                  desc: "Stylish, modern hotel in the heart of the Nimman cafe district. Clean rooms with good design, rooftop pool, and you can walk to Ristr8to, CAMP, and dozens of other cafes within minutes. Not as historic as Old City options but ideal if the cafe and nightlife scene is your priority.",
+                  color: "border-teal-200 bg-teal-50",
+                },
+                {
+                  name: "Riverside guesthouses",
+                  type: "Budget–Mid · Ping River",
+                  price: "From ฿400–1,500/night (~$11–42)",
+                  badge: "Quiet base",
+                  desc: "The streets along the Ping River east of the Old City have dozens of family-run guesthouses and small boutique hotels. Quieter than Old City, with river views and a 10-minute walk or short Grab to the main temples. Look on Booking.com for options rated 8+ — many excellent places that do not appear on the first page of results.",
+                  color: "border-purple-200 bg-purple-50",
+                },
+              ].map((stay) => (
+                <div key={stay.name} className={`rounded-xl p-4 border ${stay.color}`}>
+                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                    <div>
+                      <p className="font-medium text-sm text-stone-900">{stay.name}</p>
+                      <p className="text-xs text-muted font-light">{stay.type}</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <span className="text-xs bg-white/80 text-ink px-2.5 py-1 rounded-full border border-white/60">{stay.price}</span>
+                      <span className="text-xs bg-gold/15 text-gold-dark px-2 py-0.5 rounded-full font-medium">{stay.badge}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{stay.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── WHERE TO EAT ── */}
+          <section id="eat" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🍽️ Where to Eat in Chiang Mai</h2>
+            <p className="text-sm text-muted font-light mb-5 leading-relaxed">
+              Chiang Mai has the best food scene in northern Thailand and arguably the best street food value in the country. The signature dish is khao soi (coconut curry noodles with crispy noodle topping) and you should eat it at least three times from three different places. Here are the spots worth seeking out.
+            </p>
+            <div className="space-y-3">
+              {[
+                {
+                  n: "Khao Soi Khun Yai",
+                  t: "Khao Soi Specialist · Old City area",
+                  d: "The most famous khao soi in Chiang Mai and arguably in all of Thailand. A simple shop with plastic chairs and one dish done to perfection: rich coconut curry broth, fresh egg noodles, crispy noodle topping, pickled mustard greens, and shallots. ฿50 per bowl (~$1.40). Opens at 9am, closes when the pot runs out (usually by 1pm). No visit to Chiang Mai is complete without eating here.",
+                  b: "Must visit",
+                  c: "bg-amber-50 border-amber-200",
+                },
+                {
+                  n: "Huen Phen",
+                  t: "Traditional Northern Thai · Old City",
+                  d: "The best place to try authentic Northern Thai cuisine in a traditional teak house setting. Daytime is a simple shopfront serving excellent khao soi and kaeng hang lay (Burmese-style pork curry). Evening transforms into a lantern-lit antique-filled dining room with a full Northern Thai menu. Khantoke set meal ฿200 (~$6). Mains ฿60–180.",
+                  b: "Best Northern Thai",
+                  c: "bg-teal-50 border-teal-200",
+                },
+                {
+                  n: "Chang Phuak Gate Night Stalls",
+                  t: "Street Food · North Old City",
+                  d: "The legendary night food stalls outside Chang Phuak Gate, operating every evening from 5pm. The Cowboy Hat Lady (Khao Kha Moo — braised pork leg on rice, ฿40/~$1) has been a Chiang Mai institution for decades. Sai ua (northern Thai sausage) ฿30, pad thai ฿40. Budget ฿100–200 for a full dinner crawl.",
+                  b: "Best street food",
+                  c: "bg-green-50 border-green-200",
+                },
+                {
+                  n: "SP Chicken",
+                  t: "Rotisserie Chicken · Nimman Soi 1",
+                  d: "Famous rotisserie chicken place with a perpetual queue. Half chicken plus sticky rice ฿150 (~$4). The chicken is marinated in herbs and slow-roasted to crispy-skinned perfection. Worth the 15–20 minute wait. Open 10am–6pm or until sold out. A Chiang Mai institution.",
+                  b: "Local favourite",
+                  c: "bg-orange-50 border-orange-200",
+                },
+                {
+                  n: "Sunday Night Market Food",
+                  t: "Market Stalls · Ratchadamnoen Road",
+                  d: "The Sunday Walking Street market has the highest concentration of excellent street food in Chiang Mai. Sai ua ฿30, khao soi ฿40–60, mango sticky rice ฿40, rotee (Thai crepe) ฿30, grilled skewers ฿20–30. The crawl stretches a full kilometre. Pace yourself and bring cash — no card payments at stalls.",
+                  b: "Sunday only",
+                  c: "bg-parchment border-parchment-2",
+                },
+              ].map((r) => (
+                <div key={r.n} className={`rounded-xl p-4 border ${r.c}`}>
+                  <div className="flex items-center justify-between mb-1.5 flex-wrap gap-2">
+                    <div>
+                      <p className="font-medium text-sm text-stone-900">{r.n}</p>
+                      <p className="text-xs text-muted font-light">{r.t}</p>
+                    </div>
+                    <span className="text-xs bg-white/80 text-amber-700 px-2.5 py-1 rounded-full border border-amber-200 font-medium">{r.b}</span>
+                  </div>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{r.d}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Affiliate Block */}
+          <AffiliateBlock
+            destination="Chiang Mai"
+            hotels={[
+              {
+                name: "Stamps Hostel",
+                type: "Budget Hostel · Old City",
+                price: "From ฿250/night (~$7)",
+                rating: "4",
+                badge: "Budget pick",
+                url: "https://www.booking.com/hotel/th/stamps-hostel.html?aid=2820480",
+              },
+              {
+                name: "Ping Nakara Boutique Hotel",
+                type: "Boutique Heritage · Old City",
+                price: "From ฿2,500/night (~$70)",
+                rating: "5",
+                badge: "Mid-range pick",
+                url: "https://www.booking.com/hotel/th/ping-nakara.html?aid=2820480",
+              },
+              {
+                name: "Four Seasons Chiang Mai",
+                type: "Luxury Resort · Mae Rim",
+                price: "From ฿12,000/night (~$340)",
+                rating: "5",
+                badge: "Luxury pick",
+                url: "https://www.booking.com/hotel/th/four-seasons-resort-chiang-mai.html?aid=2820480",
+              },
+            ]}
+            activities={[
+              {
+                name: "Ethical Elephant Sanctuary Half Day",
+                duration: "Half day",
+                price: "From ฿1,500/person (~$42)",
+                badge: "Must do",
+                url: "https://www.getyourguide.com/s/?q=chiang-mai+elephant+sanctuary&partner_id=PSZA5UI",
+              },
+              {
+                name: "Thai Cooking Class with Market Tour",
+                duration: "Half day",
+                price: "From ฿800/person (~$23)",
+                badge: "Popular",
+                url: "https://www.getyourguide.com/s/?q=chiang-mai+cooking+class&partner_id=PSZA5UI",
+              },
+              {
+                name: "Doi Suthep & Doi Pui Temple Tour",
+                duration: "Half day",
+                price: "From ฿500/person (~$14)",
+                badge: "Cultural",
+                url: "https://www.getyourguide.com/s/?q=chiang-mai+doi+suthep+tour&partner_id=PSZA5UI",
+              },
+              {
+                name: "White Temple Chiang Rai Day Trip",
+                duration: "Full day",
+                price: "From ฿800/person (~$23)",
+                url: "https://www.getyourguide.com/s/?q=chiang-rai+white+temple+day+trip&partner_id=PSZA5UI",
+              },
+            ]}
+            pdfProductId="chiang-mai-4-days-pdf"
+          />
+
+          {/* ── MISTAKES TO AVOID ── */}
+          <section id="mistakes" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">❌ Mistakes to Avoid</h2>
+            <div className="space-y-3">
+              {[
+                {
+                  icon: "💨",
+                  title: "Visiting in March–April (burning season)",
+                  desc: "Farmers burn crop residue and the air quality becomes hazardous. AQI regularly exceeds 200, sometimes 400+. Visibility drops, temples disappear in haze, and outdoor activities become genuinely unhealthy. Avoid these months completely if possible — check real-time AQI at iqair.com before booking.",
+                },
+                {
+                  icon: "🐘",
+                  title: "Riding elephants",
+                  desc: "Elephant riding causes spinal damage to the animals. Ethical sanctuaries offer feeding, bathing, and walking WITH elephants — the experience is genuinely better and does not cause harm. Ask any sanctuary if they use chains or bullhooks. If yes, walk away.",
+                },
+                {
+                  icon: "🍜",
+                  title: "Only eating on Nimman Road",
+                  desc: "Nimman has great cafes but tourist-priced food. Walk 10 minutes to the local markets near Chiang Mai University or Chang Phuak Gate for khao soi at ฿40 instead of ฿150. Ask your guesthouse staff where they eat — that is where the real food is.",
+                },
+                {
+                  icon: "🚕",
+                  title: "Taking tuk-tuks without negotiating",
+                  desc: "Chiang Mai tuk-tuks and red trucks are not metered. Agree on the price BEFORE getting in. Short rides within Old City should be ฿40–60/person. Use Grab for fixed prices and AC — it works perfectly in Chiang Mai unlike some other Thai cities.",
+                },
+                {
+                  icon: "⛪",
+                  title: "Visiting Doi Suthep after 10am",
+                  desc: "Tour buses arrive at 10am and the temple gets crowded and hot. Go at 7:30–8am for peaceful photos, monk chanting, and the best morning light through the golden chedi. The difference between 8am and 11am is the difference between a spiritual experience and a tourist queue.",
+                },
+                {
+                  icon: "🌟",
+                  title: "Missing the Sunday Walking Street",
+                  desc: "Plan your trip to include a Sunday if at all possible. The Sunday Night Market on Ratchadamnoen Road is the best market experience in Thailand — better than any Bangkok market. The food alone is worth rearranging your dates.",
+                },
               ].map((m) => (
-                <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
-                  color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
+                <TipCard
+                  key={m.title}
+                  icon={m.icon}
+                  title={m.title}
+                  desc={m.desc}
+                  color="bg-white border-parchment-2"
+                />
               ))}
             </div>
           </section>
 
           {/* ── PRO TIPS ── */}
           <section id="tips" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💡 Pro Tips for Chiang Mai</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { icon: "\uD83C\uDF5C", title: "Khao Soi Is Life", desc: "Chiang Mai’s signature dish: coconut curry noodles with crispy noodle topping. Best bowls: Khao Soi Khun Yai (\u0E3F50), Khao Soi Mae Sai (\u0E3F45), Khao Soi Lam Duan (\u0E3F55). Try all three — you’ll have a favourite.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\u2615", title: "Cafe Capital of Thailand", desc: "Chiang Mai has more specialty coffee shops per square km than Bangkok. Akha Ama (hill tribe coffee), Ristr8to (latte art champion), and Graph Cafe are essential stops.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83D\uDEB2", title: "Rent a Bicycle in Old City", desc: "The Old City (inside the moat) is perfectly flat and everything is within 1km. Bicycle rental \u0E3F50–80/day. Better than Grab for short hops and you can stop anywhere.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83D\uDCF1", title: "Grab Works Perfectly Here", desc: "Unlike Phuket, Grab works really well in Chiang Mai. Fixed prices, no negotiating, AC. Use for anything outside the Old City. Songthaews (red trucks) for ultra-budget.", color: "bg-teal-50 border-teal-200" },
-                { icon: "\uD83C\uDFB6", title: "Zoe in Yellow for Nightlife", desc: "The intersection around Zoe in Yellow bar on the east side of Old City is Chiang Mai’s nightlife hub. Open-air bars, live music, backpacker crowd. Not wild like Bangkok — more chill and friendly.", color: "bg-blue-50 border-blue-200" },
-                { icon: "\uD83E\uDDE5", title: "Bring Layers for Cool Season", desc: "November–February nights can drop to 12–18°C, especially at Doi Suthep and Doi Inthanon. Bring a jacket. Most tourists pack only for tropical heat and freeze at temples.", color: "bg-blue-50 border-blue-200" },
-              ].map((t) => <TipCard key={t.title} {...t} />)}
-            </div>
-          </section>
-
-          {/* ── INLINE CTA (dark) ── */}
-          <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
-            <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
-            <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
-              Want This Planned for You?
-            </h2>
-            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
-              Tell us your dates, group and budget &mdash; we&apos;ll send a personalised Chiang Mai itinerary within 24 hours. Free.
-            </p>
-            <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Chiang Mai Trip {"→"}
-              </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip {"→"}</a>
-            </div>
-          </div>
-
-          {/* ── FAQ ── */}
-          <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"❓"} Frequently Asked Questions</h2>
-            <div className="space-y-3">
-              {[
-                { q: "How many days are enough for Chiang Mai?", a: "4 days is ideal for Old City temples, Doi Suthep, elephant sanctuary, cooking class, and markets. 3 days works if you skip a day trip. 5–7 days lets you add Doi Inthanon, Pai, or a multi-day trek." },
-                { q: "What is the best time to visit Chiang Mai?", a: "November–February: cool season (15–28°C), clear skies, perfect weather. March–April: AVOID — burning season, hazardous air quality. May–October: rainy season with lush greenery and lower prices." },
-                { q: "How much does a 4-day Chiang Mai trip cost?", a: "Budget: \u0E3F2,400–4,800 ($68–135) total. Mid-range: \u0E3F6,000–12,000 ($170–340). Luxury: \u0E3F20,000+ ($565+). All include accommodation, food, transport and activities. One of the cheapest destinations in Southeast Asia." },
-                { q: "Do I need a visa for Chiang Mai?", a: "Indian passports: eVisa (online, 60 days), VOA at CNX (\u0E3F2,000, 15 days), or Tourist Visa from embassy (60 days). Most Western passports: 30–60 days visa-free. If flying from Bangkok, no additional visa needed." },
-                { q: "Are elephant sanctuaries ethical?", a: "Not all. Avoid any offering rides, using chains, or bullhooks. Ethical ones let you feed, bathe, and walk with elephants freely. Elephant Nature Park is the gold standard. The experience is genuinely better and doesn’t cause harm." },
-                { q: "What is the best area to stay?", a: "Old City (inside the moat): walkable, temple access, best for first-timers. Nimman Road: cafes, boutiques, modern vibe. Riverside: quiet, boutique. Old City is our recommendation for 4 days." },
-              ].map((item, i) => <FaqItem key={i} {...item} />)}
-            </div>
-          </section>
-
-          {/* ── COMMENTS ── */}
-          <Comments />
-
-          {/* ── INTERNAL LINKS ── */}
-          <section>
-            <h3 className="font-serif text-lg font-light text-ink mb-4">Planning a Longer Thailand Trip?</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[
-                { label: "Bangkok — 4 Day Temple & Food Guide", href: "/blog/bangkok-4-days", soon: false },
-                { label: "Phuket — 5 Day Island Guide", href: "/blog/phuket-5-days", soon: false },
-                { label: "Browse All Packages", href: "/#packages", soon: false },
-              ].map((link) => (
-                <Link key={link.label} href={link.href}
-                  className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
-                  <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">View {"→"}</span>
-                </Link>
+                {
+                  icon: "🍜",
+                  title: "Khao Soi Is Life",
+                  desc: "Chiang Mai's signature dish: coconut curry noodles with crispy noodle topping. Best bowls: Khao Soi Khun Yai (฿50), Khao Soi Mae Sai (฿45), Khao Soi Lam Duan (฿55). Try all three — you will have a favourite by the end of the trip.",
+                  color: "bg-amber-50 border-amber-200",
+                },
+                {
+                  icon: "☕",
+                  title: "Cafe Capital of Thailand",
+                  desc: "Chiang Mai has more specialty coffee shops per square km than Bangkok. Akha Ama (hill tribe coffee), Ristr8to (latte art world champion), Graph Cafe, and Rustic & Blue are essential stops. Budget ฿80–150 per coffee.",
+                  color: "bg-amber-50 border-amber-200",
+                },
+                {
+                  icon: "🚲",
+                  title: "Rent a Bicycle in Old City",
+                  desc: "The Old City (inside the moat) is perfectly flat and everything is within 1km. Bicycle rental ฿50–80/day (~$1.40–2.25). Better than Grab for short hops and you can stop anywhere. Most guesthouses rent them.",
+                  color: "bg-teal-50 border-teal-200",
+                },
+                {
+                  icon: "📱",
+                  title: "Grab Works Perfectly Here",
+                  desc: "Unlike Phuket, Grab works really well in Chiang Mai. Fixed prices, no negotiating, AC. Use for anything outside the Old City. Songthaews (red trucks) for ultra-budget local transport at ฿20–60/person.",
+                  color: "bg-teal-50 border-teal-200",
+                },
+                {
+                  icon: "🎶",
+                  title: "Zoe in Yellow for Nightlife",
+                  desc: "The intersection around Zoe in Yellow bar on the east side of Old City is Chiang Mai's nightlife hub. Open-air bars, live music, backpacker crowd. Not wild like Bangkok — more chill and friendly. Thursday and Saturday are the busiest nights.",
+                  color: "bg-blue-50 border-blue-200",
+                },
+                {
+                  icon: "🧥",
+                  title: "Bring Layers for Cool Season",
+                  desc: "November–February nights can drop to 12–18°C, especially at Doi Suthep and Doi Inthanon. Most tourists pack only for tropical heat and freeze at mountain temples. A light jacket or hoodie is essential.",
+                  color: "bg-blue-50 border-blue-200",
+                },
+                {
+                  icon: "💱",
+                  title: "Cash is king at markets",
+                  desc: "Night markets, songthaews, and most street food stalls are cash only. ATMs charge ฿220 per withdrawal. Get a travel card with no foreign transaction fees, or exchange cash at SuperRich (orange) in the city for the best rates.",
+                  color: "bg-rose-50 border-rose-200",
+                },
+                {
+                  icon: "🙏",
+                  title: "Monk Chat programme",
+                  desc: "Several temples (Wat Chedi Luang, Wat Suan Dok) run Monk Chat sessions where you can sit and talk with English-speaking monks. Free. It is one of the most unique cultural experiences in Thailand — they want to practise English and share Buddhist perspectives. Check schedules at the temple.",
+                  color: "bg-rose-50 border-rose-200",
+                },
+              ].map((t) => (
+                <TipCard key={t.title} {...t} />
               ))}
             </div>
           </section>
 
+          {/* Photo CTA */}
+          <PhotoCta destination="Chiang Mai" />
+
+          {/* Combine With */}
           <CombineWith currentSlug="chiang-mai-4-days" />
+
+          {/* ── FAQ ── */}
+          <section id="faq" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">❓ Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              {[
+                {
+                  q: "How many days are enough for Chiang Mai?",
+                  a: "4 days is ideal for Old City temples, Doi Suthep, an elephant sanctuary, a cooking class, and the night markets. 3 days works if you skip a day trip. 5–7 days lets you add Doi Inthanon, Pai, a Chiang Rai day trip, or a multi-day hill tribe trek.",
+                },
+                {
+                  q: "How much does a 4-day Chiang Mai trip cost?",
+                  a: "Budget solo: ฿2,400–4,800 ($68–135) total including accommodation, food, transport and activities. Mid-range: ฿6,000–12,000 ($170–340). Luxury: ฿20,000+ ($565+). Chiang Mai is one of the cheapest quality destinations in Southeast Asia — mid-range comfort here rivals luxury in many countries.",
+                },
+                {
+                  q: "What is the best time to visit Chiang Mai?",
+                  a: "November–February: cool season (15–28°C), clear skies, perfect weather — the best time. March–April: AVOID — burning season with hazardous air quality. May–October: rainy season with lush greenery, lower prices, and afternoon showers that rarely last more than 1–2 hours.",
+                },
+                {
+                  q: "Do I need a visa for Thailand?",
+                  a: "Indian passport holders: eVisa online (60 days), VOA at CNX airport (฿2,000, 15 days), or Tourist Visa from the Thai embassy (60 days + 30-day extension). Most Western passports (USA, UK, EU, Australia, Canada): 30–60 days visa-free. If flying from Bangkok to Chiang Mai, no additional visa is needed.",
+                },
+                {
+                  q: "Are elephant sanctuaries in Chiang Mai ethical?",
+                  a: "Not all of them. Avoid any offering rides, using chains, or bullhooks. Ethical sanctuaries let you feed, bathe, and walk with elephants freely — no riding. Elephant Nature Park is the gold standard for rescue and rehabilitation. The experience is better when the elephants are treated well.",
+                },
+                {
+                  q: "What is the best area to stay in Chiang Mai?",
+                  a: "Old City (inside the moat): walkable to temples, night markets, and restaurants — best for first-timers and our top recommendation for 4 days. Nimman Road: cafes, boutiques, modern vibe, better nightlife. Riverside (Ping River): quiet, romantic, boutique hotels. Mae Rim (20 min out): luxury resorts in rice-paddy settings.",
+                },
+              ].map((item, i) => (
+                <FaqItem key={i} {...item} />
+              ))}
+            </div>
+          </section>
+
+          {/* Comments */}
+          <Comments />
+
+          {/* ── MORE RESOURCES ── */}
+          <div className="max-w-[860px] mx-auto px-6 md:px-8 mb-12">
+            <h2 className="font-serif text-xl font-light text-ink mb-4">Plan your Chiang Mai trip</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { href: "/blog/best-time-to-visit-chiang-mai", label: "Best time to visit", icon: "🗓️" },
+                { href: "/blog/chiang-mai-trip-cost", label: "Trip cost breakdown", icon: "💰" },
+                { href: "/blog/how-to-reach-chiang-mai", label: "How to get there", icon: "✈️" },
+                { href: "/blog/chiang-mai-travel-tips", label: "Travel tips", icon: "📋" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href}
+                  className="flex flex-col items-center gap-2 p-4 bg-parchment border border-parchment-2 rounded-xl hover:border-gold hover:shadow-sm transition-all text-center">
+                  <span className="text-2xl">{item.icon}</span>
+                  <span className="text-xs font-medium text-ink leading-tight">{item.label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Related Guides */}
           <RelatedGuides currentSlug="chiang-mai-4-days" />
+
+          {/* Internal links */}
+          <section className="mt-14">
+            <h3 className="font-serif text-lg font-light text-ink mb-4">More Thailand &amp; Southeast Asia Guides</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { label: "Bangkok &mdash; 4 Day Temple & Food Guide", href: "/blog/bangkok-4-days" },
+                { label: "Phuket &mdash; 5 Day Island Guide", href: "/blog/phuket-5-days" },
+                { label: "Bali &mdash; 5 Day Guide", href: "/blog/bali-5-days" },
+                { label: "Vietnam &mdash; 10 Day Itinerary", href: "/blog/vietnam-10-days" },
+              ].map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group"
+                >
+                  <span
+                    className="text-sm text-ink font-light group-hover:text-teal transition-colors"
+                    dangerouslySetInnerHTML={{ __html: link.label }}
+                  />
+                  <span className="text-xs text-muted">Read →</span>
+                </Link>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
 

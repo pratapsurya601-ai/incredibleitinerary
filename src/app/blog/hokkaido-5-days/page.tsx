@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import HokkaidoClient from "./HokkaidoClient";
 
-const data: UniversalBlogData = {
+const _data = {
   destination: "Hokkaido",
   country: "Japan",
   countryFlag: "🇯🇵",
@@ -457,7 +457,7 @@ export default function HokkaidoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <UniversalBlogClient data={data} />
+      <HokkaidoClient />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import DelhiClient from "./DelhiClient";
 
-const data: UniversalBlogData = {
+const _data = {
   destination: "Delhi",
   country: "India",
   countryFlag: "🇮🇳",
@@ -261,7 +261,7 @@ export default function DelhiPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <UniversalBlogClient data={data} />
+      <DelhiClient />
     </>
   );
 }

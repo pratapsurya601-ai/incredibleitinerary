@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import JamaicaClient from "./JamaicaClient";
 
 export const metadata: Metadata = {
   title: "Jamaica 5-Day Itinerary 2026: Trip Planner",
@@ -80,7 +80,8 @@ const jsonLd = {
   ],
 };
 
-const data: UniversalBlogData = {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const _legacyData = {
   destination: "Jamaica",
   country: "Jamaica",
   countryFlag: "🇯🇲",
@@ -483,7 +484,7 @@ export default function JamaicaPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <JamaicaClient />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import PeruClient from "./PeruClient";
 
-const data: UniversalBlogData = {
+const _legacyData = {
   destination: "Peru",
   country: "Peru",
   countryFlag: "🇵🇪",
@@ -548,7 +548,7 @@ export default function PeruMachuPicchuPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <PeruClient />
     </>
   );
 }

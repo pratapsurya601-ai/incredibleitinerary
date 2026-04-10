@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import HamburgClient from "./HamburgClient";
 
-const data: UniversalBlogData = {
+const _data = {
   destination: "Hamburg",
   country: "Germany",
   countryFlag: "🇩🇪",
@@ -393,7 +393,7 @@ export default function HamburgPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UniversalBlogClient data={data} />
+      <HamburgClient />
     </>
   );
 }

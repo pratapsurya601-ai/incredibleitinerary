@@ -12,15 +12,25 @@ import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import InlineCTA from "@/components/blog/InlineCTA";
+import PhotoCta from "@/components/blog/PhotoCta";
+import AuthorByline from "@/components/blog/AuthorByline";
+import InlineSignup from "@/components/email/InlineSignup";
+import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
 
+// ── Table of Contents ─────────────────────────────────────────────────────────
 const KYOTO_TOC = [
-  { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
-  { id: "timing",      emoji: "\u23F0", label: "Temple Timing Strategy" },
-  { id: "itineraries", emoji: "\uD83D\uDCC5", label: "The Itineraries" },
-  { id: "budget",      emoji: "\uD83D\uDCB0", label: "Budget Breakdown" },
-  { id: "mistakes",    emoji: "❌", label: "Mistakes to Avoid" },
-  { id: "tips",        emoji: "\uD83D\uDCA1", label: "Pro Tips" },
-  { id: "faq",         emoji: "❓", label: "FAQ" },
+  { id: "honest",      emoji: "⚡",  label: "What Kyoto Actually Is" },
+  { id: "season",      emoji: "🌡️", label: "Best Time to Visit" },
+  { id: "howtoreach",  emoji: "🚅",  label: "Getting There" },
+  { id: "itinerary",   emoji: "📅",  label: "4-Day Itinerary" },
+  { id: "temples",     emoji: "⛩️",  label: "Temple & Cultural Guide" },
+  { id: "budget",      emoji: "💰",  label: "Budget Breakdown" },
+  { id: "stay",        emoji: "🏨",  label: "Where to Stay" },
+  { id: "eat",         emoji: "🍽️", label: "Where to Eat" },
+  { id: "mistakes",    emoji: "❌",  label: "Mistakes to Avoid" },
+  { id: "tips",        emoji: "💡",  label: "Pro Tips" },
+  { id: "faq",         emoji: "❓",  label: "FAQ" },
 ];
 
 // ── Reading Progress Bar ──────────────────────────────────────────────────────
@@ -38,14 +48,14 @@ function ReadingProgress() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[300] h-1 bg-parchment-2">
       <div
-        className="h-full bg-gold transition-all duration-100"
+        className="h-full bg-amber-600 transition-all duration-100"
         style={{ width: `${progress}%` }}
       />
     </div>
   );
 }
 
-// ── Share Button ──────────────────────────────────────────────────────────────
+// ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
   const [copied, setCopied] = useState(false);
   const copy = () => {
@@ -57,18 +67,38 @@ function ShareBar() {
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       {[
-        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Kyoto 4-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://x.com/intent/tweet?text=Kyoto in 4 Days guide&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+        {
+          label: "Email",
+          color: "bg-ink text-white",
+          href: `mailto:?subject=Kyoto 4-Day Guide&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+        },
+        {
+          label: "Twitter",
+          color: "bg-[#1DA1F2] text-white",
+          href: `https://x.com/intent/tweet?text=Kyoto in 4 Days — temples, bamboo groves and the complete itinerary&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+        },
       ].map((s) => (
-        <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-          className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>
+        <a
+          key={s.label}
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}
+        >
           {s.label}
         </a>
       ))}
-      <button onClick={copy}
-        className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
-        {copied ? "✓ Copied" : "Copy Link"}
+      <button
+        onClick={copy}
+        className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted"
+      >
+        {copied ? "\u2713 Copied" : "Copy Link"}
       </button>
+      <PinterestSaveButton
+        pageUrl="https://www.incredibleitinerary.com/blog/kyoto-4-days"
+        imageUrl="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80"
+        description="Kyoto in 4 Days: Fushimi Inari, Arashiyama Bamboo, Kinkaku-ji, Gion geisha district, Nishiki Market — complete travel guide with budget breakdown in JPY & USD."
+      />
     </div>
   );
 }
@@ -85,7 +115,17 @@ function StatCard({ icon, label, value }: { icon: string; label: string; value: 
 }
 
 // ── Day Card ──────────────────────────────────────────────────────────────────
-function DayCard({ day, title, items, cost }: { day: string; title: string; items: string[]; cost: string }) {
+function DayCard({
+  day,
+  title,
+  items,
+  cost,
+}: {
+  day: string;
+  title: string;
+  items: string[];
+  cost: string;
+}) {
   const [open, setOpen] = useState(true);
   return (
     <div className="bg-white rounded-xl border border-parchment-2 overflow-hidden">
@@ -104,13 +144,13 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
           <ul className="space-y-2.5 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted font-light leading-relaxed">
-                <span className="text-amber-800 mt-1 flex-shrink-0 text-xs">●</span>
+                <span className="text-amber-500 mt-1 flex-shrink-0 text-xs">{"\u25CF"}</span>
                 {item}
               </li>
             ))}
           </ul>
           <div className="pt-3 border-t border-parchment-2 flex items-center gap-2">
-            <span className="text-lg">\uD83D\uDCB0</span>
+            <span className="text-lg">{"\uD83D\uDCB0"}</span>
             <span className="text-xs text-muted font-light">Est. cost: </span>
             <span className="text-xs font-medium text-ink">{cost}</span>
           </div>
@@ -121,7 +161,17 @@ function DayCard({ day, title, items, cost }: { day: string; title: string; item
 }
 
 // ── Tip Card ──────────────────────────────────────────────────────────────────
-function TipCard({ icon, title, desc, color }: { icon: string; title: string; desc: string; color: string }) {
+function TipCard({
+  icon,
+  title,
+  desc,
+  color,
+}: {
+  icon: string;
+  title: string;
+  desc: string;
+  color: string;
+}) {
   return (
     <div className={`rounded-xl p-5 border ${color}`}>
       <div className="flex items-start gap-3">
@@ -135,7 +185,7 @@ function TipCard({ icon, title, desc, color }: { icon: string; title: string; de
   );
 }
 
-// ── FAQ Item ──────────────────────────────────────────────────────────────────
+// ── FAQ Accordion ─────────────────────────────────────────────────────────────
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
@@ -145,7 +195,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-parchment transition-colors"
       >
         <span className="font-medium text-sm text-ink pr-4">{q}</span>
-        <span className={`text-amber-800 text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
+        <span className={`text-amber-600 text-lg flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
           +
         </span>
       </button>
@@ -161,13 +211,6 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 // ── MAIN COMPONENT ────────────────────────────────────────────────────────────
 export default function KyotoClient() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<"A" | "B" | "C">("B");
-
-  const plans = [
-    { id: "A" as const, emoji: "\uD83D\uDCB0", label: "Budget", sub: "\u00A57,000–10,000/day ($47–67)", color: "border-amber-300 bg-amber-50 text-amber-800" },
-    { id: "B" as const, emoji: "✨", label: "Mid-Range", sub: "\u00A512,000–20,000/day ($80–133)", color: "border-emerald-300 bg-emerald-50 text-emerald-800" },
-    { id: "C" as const, emoji: "\uD83D\uDC8E", label: "Luxury", sub: "\u00A535,000+/day ($233+)", color: "border-purple-300 bg-purple-50 text-purple-800" },
-  ];
 
   return (
     <>
@@ -182,10 +225,11 @@ export default function KyotoClient() {
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
           <SmartImage
             query="kyoto fushimi inari torii gates shrine japan"
-            alt="Fushimi Inari torii gates shrine in Kyoto Japan"
+            fallback="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&q=80"
+            alt="Fushimi Inari torii gates winding up the forested hillside in Kyoto Japan"
             fill className="object-cover" priority sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/50 to-ink/30" />
 
           {/* Breadcrumb */}
           <div className="absolute top-24 left-0 right-0 px-6 md:px-14">
@@ -201,21 +245,21 @@ export default function KyotoClient() {
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
             <div className="max-w-[860px] mx-auto">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="bg-gold text-ink text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">
-                  Temples & Heritage
+                <span className="bg-amber-700 text-white text-xs tracking-[0.12em] uppercase font-medium px-3 py-1.5 rounded-full">
+                  Temples &amp; Heritage
                 </span>
-                <span className="text-white/60 text-xs">April 4, 2026</span>
-                <span className="text-white/50">·</span>
-                <span className="text-white/60 text-xs">15 min read</span>
-                <span className="text-white/50">·</span>
-                <span className="text-white/60 text-xs">IncredibleItinerary</span>
+                <span className="text-white/60 text-xs">April 2026</span>
+                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/60 text-xs">18 min read</span>
+                <span className="text-white/50">{"\u00B7"}</span>
+                <span className="text-white/60 text-xs">Surya Pratap</span>
               </div>
               <h1 className="font-serif text-[clamp(1.9rem,4.5vw,3.2rem)] font-light text-white leading-[1.08] mb-4">
-                Kyoto in 4 Days: The Only Guide You Need
-                <em className="italic text-gold-light"> (Budget to Luxury, 2026)</em>
+                Kyoto in 4 Days:
+                <em className="italic text-amber-300"> Temples, Bamboo &amp; the Ancient Capital</em>
               </h1>
               <p className="text-white/65 text-sm font-light max-w-[560px] leading-relaxed">
-                3 complete plans with real timings, costs in yen, temple strategies &mdash; and the timing tricks that separate great Kyoto trips from mediocre ones.
+                Fushimi Inari at dawn, Arashiyama&apos;s bamboo groves, the Golden Pavilion, Gion&apos;s geisha district and Nishiki Market. The complete guide with real timings, costs in JPY &amp; USD, and the mistakes that ruin most Kyoto trips.
               </p>
             </div>
           </div>
@@ -224,452 +268,765 @@ export default function KyotoClient() {
         {/* ── ARTICLE ── */}
         <div className="max-w-[860px] mx-auto px-6 md:px-8 pt-10 pb-20">
 
+          {/* Author + Share row */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <AuthorByline date="April 2026" readTime="18 min" />
+          </div>
+
           {/* Share + stats row */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-8 border-b border-parchment-2">
             <ShareBar />
             <div className="flex items-center gap-4 text-xs text-muted">
-              <span>\uD83C\uDDEF\uD83C\uDDF5 Japan</span>
-              <span>·</span>
-              <span>\uD83D\uDDD3 4 Days</span>
-              <span>·</span>
-              <span>\uD83D\uDCB0 From \u00A57,000/day ($47)</span>
+              <span>{"\uD83C\uDDEF\uD83C\uDDF5"} Japan</span>
+              <span>{"\u00B7"}</span>
+              <span>{"\uD83D\uDDD3"} 4 Days</span>
+              <span>{"\u00B7"}</span>
+              <span>{"\uD83D\uDCB0 From \u00A57,000/day"}</span>
             </div>
           </div>
 
-          {/* Honest intro */}
-          <blockquote className="border-l-4 border-gold pl-6 mb-10 bg-parchment/60 rounded-r-xl py-4 pr-4">
+          {/* Opening blockquote */}
+          <blockquote className="border-l-4 border-amber-500 pl-6 mb-10 bg-amber-50/60 rounded-r-xl py-4 pr-4">
             <p className="font-serif text-[1.1rem] italic text-ink-mid leading-relaxed">
               Fushimi Inari at 6am is a completely different temple than Fushimi Inari at 10am. At 6am it&apos;s just you, 10,000 orange torii gates, and absolute silence. At 10am it&apos;s a selfie queue. Everything about Kyoto comes down to timing &mdash; this guide gets yours right.
             </p>
           </blockquote>
 
-          {/* ── QUICK DECISION ── */}
-          <section id="decision" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">⚡ Which Plan Are You?</h2>
-            <p className="text-sm text-muted font-light mb-6">Pick your budget &mdash; jump straight to your itinerary.</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {plans.map((p) => (
-                <button key={p.id} onClick={() => { setActiveTab(p.id); document.getElementById("itineraries")?.scrollIntoView({ behavior: "smooth" }); }}
-                  className="p-4 rounded-xl border-2 border-parchment-2 bg-white hover:border-gold hover:shadow-md transition-all duration-200 text-center group">
-                  <div className="text-2xl mb-2">{p.emoji}</div>
-                  <p className="font-medium text-sm text-stone-900">{p.label}</p>
-                  <p className="text-[0.68rem] text-muted mt-0.5">{p.sub}</p>
-                  <p className="text-[0.65rem] text-gold-dark mt-2 font-medium group-hover:text-teal transition-colors">Plan {p.id} →</p>
-                </button>
-              ))}
-            </div>
-          </section>
-
-          {/* ── TEMPLE TIMING STRATEGY ── */}
-          <section id="timing" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">\u23F0 Temple Timing Strategy</h2>
-            <p className="text-sm text-muted font-light mb-6 leading-relaxed">
-              Kyoto has 2,000+ temples. You cannot see them all. The secret is not which temples you visit &mdash; it&apos;s what time you arrive.
+          {/* ── WHAT KYOTO ACTUALLY IS ── */}
+          <section id="honest" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-4">{"\u26A1"} What Kyoto Actually Is</h2>
+            <p className="text-sm text-muted font-light leading-relaxed mb-4">
+              Kyoto served as Japan&apos;s imperial capital for over a thousand years, from 794 to 1868. It survived World War II largely unbombed &mdash; one of the few major Japanese cities that did &mdash; which means its 2,000+ temples, 400+ Shinto shrines, imperial palaces, and traditional wooden machiya townhouses are originals, not reconstructions. The cultural density is staggering: there are 17 UNESCO World Heritage sites within the city boundaries alone.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+            <p className="text-sm text-muted font-light leading-relaxed mb-4">
+              The tourism reality: Kyoto receives over 50 million visitors annually and the most famous spots &mdash; Fushimi Inari, Kinkaku-ji, Arashiyama Bamboo &mdash; are genuinely crowded between 10am and 4pm. The real Kyoto, the one with silent temple gardens, mist rising through torii gates, and geiko gliding through lantern-lit alleys, still exists. You just have to arrive at the right time. The single most important variable in any Kyoto trip is not which temples you visit but what time you arrive at each one.
+            </p>
+            <p className="text-sm text-muted font-light leading-relaxed mb-6">
+              Four days is the sweet spot. You can cover Fushimi Inari, Arashiyama, the Golden Route temples, Gion, Nishiki Market, and a day trip to Nara. If you have five or six days, add the Fushimi sake district, hidden temples like Daigo-ji, and slow down at the gardens you rushed past on day one.
+            </p>
+
+            {/* Stat cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <StatCard icon={"\u2708\uFE0F"} label="Nearest Station" value="Kyoto Station" />
+              <StatCard icon={"\uD83C\uDF21\uFE0F"} label="Best Season" value="Mar\u2013Apr, Oct\u2013Nov" />
+              <StatCard icon={"\u26E9\uFE0F"} label="Temples" value="2,000+" />
+              <StatCard icon={"\uD83D\uDCB0"} label="Budget From" value={"\u00A57,000/day"} />
+            </div>
+          </section>
+
+          {/* ── BEST TIME TO VISIT ── */}
+          <section id="season" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83C\uDF21\uFE0F"} Best Time to Visit Kyoto</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { title: "Go Early (Before 8am)", emoji: "\uD83C\uDF05", bg: "bg-amber-50 border-amber-200", th: "text-amber-800",
-                  rows: [["Fushimi Inari","6am — open 24/7, free, empty at dawn"],["Arashiyama Bamboo","7am — by 9am it’s shoulder-to-shoulder"],["Kiyomizu-dera","6am opening — the terrace view is unreal at sunrise"],["Kinkaku-ji","9am opening — arrive at 8:50, be first in line"]],
-                  note: "Rent a bicycle. Kyoto is flat. This single decision will triple the number of temples you see." },
-                { title: "Go Late (After 4pm)", emoji: "\uD83C\uDF05", bg: "bg-purple-50 border-purple-200", th: "text-purple-800",
-                  rows: [["Gion district","5pm–8pm — best chance of spotting geiko/maiko"],["Nishiki Market","4pm — vendors start discounting"],["Philosopher’s Path","4:30pm — golden hour light through cherry trees"],["Pontocho Alley","6pm onwards — lanterns lit along the canal"]],
-                  note: "Most temples close at 5pm. Plan afternoon for markets, walks, and the Gion district." },
-              ].map((area) => (
-                <div key={area.title} className={`rounded-xl border p-5 ${area.bg}`}>
-                  <h3 className={`font-serif text-lg font-normal mb-4 flex items-center gap-2 ${area.th}`}>
-                    <span>{area.emoji}</span>{area.title}
-                  </h3>
-                  <div className="space-y-2 mb-4">
-                    {area.rows.map(([k, v]) => (
-                      <div key={k} className="flex gap-2 text-xs">
-                        <span className="font-medium text-ink/80 w-28 flex-shrink-0">{k}</span>
-                        <span className="text-muted font-light">{v}</span>
+                {
+                  s: "Late Mar\u2013Apr",
+                  i: "\uD83C\uDF38",
+                  t: "Cherry Blossom Season \u2014 Most Popular",
+                  d: "10\u201320\u00B0C. Cherry blossoms peak late March to mid-April. Philosopher\u2019s Path, Maruyama Park, and Keage Incline turn pink. This is peak tourist season \u2014 accommodation prices double, temples are packed by 9am, and advance booking is essential. The beauty is real but so are the crowds. Check japan-guide.com/sakura for live bloom reports.",
+                  b: "Iconic but crowded",
+                  c: "bg-pink-50 border-pink-200",
+                },
+                {
+                  s: "May\u2013Aug",
+                  i: "\u2600\uFE0F",
+                  t: "Summer \u2014 Warm & Green",
+                  d: "20\u201335\u00B0C. June\u2013July is rainy season (tsuyu) with high humidity. August is hot and humid but the bamboo groves and moss gardens are at their most vivid green. Fewer tourists than spring or autumn. Summer festivals include the Gion Matsuri (July), one of Japan\u2019s three great festivals. Budget-friendly accommodation is easier to find.",
+                  b: "Fewer tourists, hot",
+                  c: "bg-green-50 border-green-200",
+                },
+                {
+                  s: "Oct\u2013Early Dec",
+                  i: "\uD83C\uDF41",
+                  t: "Autumn Foliage \u2014 Best Overall",
+                  d: "10\u201322\u00B0C. Peak autumn colours mid-November to early December. Tofuku-ji, Eikan-do, and Kiyomizu-dera explode in red and gold. Evening illuminations at Kodai-ji and Kitano Tenmangu are spectacular. October offers pleasant weather before the foliage rush. This is arguably the most beautiful time in Kyoto.",
+                  b: "Recommended",
+                  c: "bg-amber-50 border-amber-200",
+                },
+                {
+                  s: "Dec\u2013Feb",
+                  i: "\u2744\uFE0F",
+                  t: "Winter \u2014 Quiet & Atmospheric",
+                  d: "1\u201310\u00B0C. Snow-dusted temples are some of the most striking images you will ever see of Kyoto. Kinkaku-ji covered in snow is extraordinary. Tourists drop dramatically and prices fall 20\u201340%. The cold is manageable with layers. Hot matcha in a silent garden with fresh snow is an experience the crowds never see.",
+                  b: "Best value, fewest crowds",
+                  c: "bg-blue-50 border-blue-200",
+                },
+              ].map((s) => (
+                <div key={s.s} className={`rounded-xl p-4 border ${s.c}`}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">{s.i}</span>
+                    <div>
+                      <p className="font-medium text-sm text-stone-900">{s.s} &mdash; {s.t}</p>
+                      <p className="text-[0.65rem] font-medium text-teal">{s.b}</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{s.d}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── GETTING THERE ── */}
+          <section id="howtoreach" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDE85"} Getting to Kyoto</h2>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+              <p className="text-sm text-amber-800 font-light">
+                <strong className="font-medium">Key detail:</strong> Kyoto has no airport. The nearest airports are Osaka&apos;s Kansai International (KIX, 75 min by Haruka Express) and Itami (ITM, 55 min by bus). Most visitors arrive by shinkansen bullet train from Tokyo. <strong className="font-medium">A 7-day JR Pass ({"\u00A550,000/$333"}) pays for itself if you&apos;re also visiting Tokyo and Hiroshima.</strong>
+              </p>
+            </div>
+            <div className="space-y-3">
+              {[
+                {
+                  i: "\uD83D\uDE85",
+                  t: "Shinkansen from Tokyo",
+                  d: "Tokaido Shinkansen Nozomi: 2 hours 15 minutes, \u00A513,320 ($89) one way. Hikari (covered by JR Pass): 2 hours 40 minutes. Trains run every 10\u201315 minutes. The journey passes Mount Fuji on clear days (sit on the right side heading west). No reservation needed on unreserved cars, but reserved seats are recommended during peak seasons.",
+                  b: "2hr 15min",
+                  c: "bg-green-50 border-green-200",
+                },
+                {
+                  i: "\uD83D\uDE84",
+                  t: "From Osaka",
+                  d: "JR Special Rapid train: 30 minutes from Osaka Station to Kyoto Station, \u00A5580 ($4). Covered by JR Pass. Hankyu Railway from Umeda to Kawaramachi (Gion area): 45 minutes, \u00A5410 ($3). Keihan Railway from Yodoyabashi to Gion-Shijo: 50 minutes, \u00A5420 ($3). Many travellers base themselves in Osaka and day-trip to Kyoto.",
+                  b: "30 min, \u00A5580",
+                  c: "bg-teal-50 border-teal-200",
+                },
+                {
+                  i: "\uD83C\uDFAB",
+                  t: "JR Pass consideration",
+                  d: "A 7-day JR Pass costs \u00A550,000 ($333). A Tokyo\u2013Kyoto return alone is \u00A526,640. Add a Nara day trip (\u00A51,440 return) and the pass nearly pays for itself. If visiting Hiroshima (\u00A511,000+ one way), the pass is a clear win. Buy online before arriving in Japan. The pass covers the Haruka Express from Kansai Airport to Kyoto as well.",
+                  b: "Best for multi-city",
+                  c: "bg-amber-50 border-amber-200",
+                },
+                {
+                  i: "\u2708\uFE0F",
+                  t: "From Kansai Airport (KIX)",
+                  d: "JR Haruka Express: 75 minutes direct to Kyoto Station, \u00A53,640 ($24) reserved seat. Covered by JR Pass. Airport limousine bus: 88 minutes, \u00A52,600 ($17). Taxi is \u00A530,000+ ($200) and not recommended. If arriving late at night, book a hotel near KIX and take the first Haruka in the morning.",
+                  b: "75 min by train",
+                  c: "bg-parchment border-parchment-2",
+                },
+              ].map((t) => (
+                <div key={t.t} className={`rounded-xl p-4 border ${t.c}`}>
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">{t.i}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <p className="font-semibold text-sm text-ink">{t.t}</p>
+                        <span className="text-xs bg-white/70 text-muted px-2.5 py-1 rounded-full border border-white/50">{t.b}</span>
                       </div>
-                    ))}
+                      <p className="text-xs text-gray-700 font-light leading-relaxed">{t.d}</p>
+                    </div>
                   </div>
-                  <p className="text-xs text-muted font-light italic border-t border-current/10 pt-3">\uD83D\uDCA1 {area.note}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* ── STAT CARDS ── */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
-            <StatCard icon="\uD83D\uDDD3" label="Duration" value="4 Days" />
-            <StatCard icon="\uD83D\uDCB0" label="Budget From" value="\u00A57,000/day" />
-            <StatCard icon="\uD83C\uDF41" label="Best Months" value="Mar–Apr, Oct–Nov" />
-            <StatCard icon="\uD83D\uDE85" label="From Tokyo" value="2hr 15min" />
-          </div>
-
-          {/* ── ITINERARIES ── */}
-          <section id="itineraries" className="mb-14 scroll-mt-24">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">\uD83D\uDCC5 The Itineraries</h2>
-            <p className="text-sm text-muted font-light mb-6">Click a plan &mdash; days are expandable/collapsible.</p>
-
-            {/* Tab switcher */}
-            <div className="flex gap-2 flex-wrap mb-8 p-1 bg-parchment rounded-xl">
-              {plans.map((p) => (
-                <button key={p.id} onClick={() => setActiveTab(p.id)}
-                  className={`flex-1 px-3 py-2.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-200 ${
-                    activeTab === p.id ? "bg-white shadow text-ink border border-parchment-2" : "text-muted hover:text-ink"
-                  }`}>
-                  {p.emoji} {p.label}
-                </button>
-              ))}
+          {/* ── 4-DAY ITINERARY ── */}
+          <section id="itinerary" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">{"\uD83D\uDCC5"} 4-Day Kyoto Itinerary</h2>
+            <p className="text-sm text-muted font-light mb-6 leading-relaxed">
+              This itinerary covers mid-range spending ({"\u00A512,000\u201320,000/day, ~$80\u2013133"}). Each day card is expandable. Budget alternatives are noted in the cost estimates. The route prioritises early-morning temple visits when the atmosphere is at its most magical and crowds are minimal.
+            </p>
+            <div className="space-y-4">
+              <DayCard
+                day="Day 1"
+                title="Fushimi Inari (6AM!), Kiyomizu-dera, Gion Evening"
+                cost={"\u00A513,000\u201318,000 (~$87\u2013120) excluding accommodation"}
+                items={[
+                  "6am: Fushimi Inari Taisha \u2014 free, open 24/7. The 10,000 vermillion torii gates are nearly empty at dawn. Full hike to the summit takes 2 hours through increasingly quiet forest trails. Half-loop: 45 min. Pack a convenience store breakfast.",
+                  "9:30am: Tofuku-ji Temple \u2014 \u00A5500 ($3). One stop south of Fushimi Inari on the JR line. The Tsutenkyo Bridge view in autumn is Kyoto\u2019s best-kept secret. Incredible zen gardens year-round.",
+                  "11am: Kiyomizu-dera \u2014 \u00A5400 ($3). The iconic wooden terrace cantilevered over the hillside without a single nail. The panoramic view of Kyoto from the stage is the city\u2019s most photographed image.",
+                  "Walk down through Ninenzaka and Sannenzaka \u2014 the most photographed traditional lanes in Kyoto. Free, beautiful, lined with tea houses and ceramic shops.",
+                  "1pm: Lunch at Omen Kodaiji for handmade udon \u2014 \u00A51,500\u20132,200 ($10\u201315). Budget alternative: Yoshinoya near Gion for \u00A5500\u2013800.",
+                  "2pm: Kodai-ji Temple \u2014 \u00A5600 ($4). Less crowded than Kiyomizu, with a stunning bamboo grove and zen gardens.",
+                  "5pm: Gion district walk. Hanami-koji street for tea houses. The best time to spot geiko and maiko heading to evening appointments is 6pm\u20138pm.",
+                  "Dinner: Gion Nanba for tempura kaiseki \u2014 \u00A54,000\u20136,000 ($27\u201340). Budget alternative: udon or ramen near Gion for \u00A5800\u20131,000."
+                ]}
+              />
+              <DayCard
+                day="Day 2"
+                title="Arashiyama: Bamboo, Temples & River"
+                cost={"\u00A514,000\u201319,000 (~$93\u2013127) excluding accommodation"}
+                items={[
+                  "7am: Arashiyama Bamboo Grove \u2014 free. At 7am the towering bamboo pathway is nearly empty. By 9am it\u2019s shoulder-to-shoulder. The early morning light filtering through the canopy and the rustling sound is genuinely magical.",
+                  "8:30am: Tenryu-ji Temple \u2014 \u00A5500 ($3). One of Kyoto\u2019s five great zen temples. Enter from the north gate to walk through the garden directly into the bamboo grove.",
+                  "10am: Iwatayama Monkey Park \u2014 \u00A5550 ($4). Climb 20 minutes to the hilltop where wild macaques roam free. The panoramic view of Kyoto from the top is the real reason to go.",
+                  "11:30am: Sagano Scenic Railway (Romantic Train) \u2014 \u00A5880 ($6) one way. 25 min through the Hozu River gorge. Pre-book seats in peak season.",
+                  "1pm: Lunch at Arashiyama \u2014 yudofu (simmered tofu) is the local speciality. Shoraian riverside terrace for \u00A52,500 ($17). Budget: noodle shop from \u00A5900.",
+                  "3pm: Rent a bicycle (\u00A5800\u20131,000/day) and ride to Daikaku-ji Temple (\u00A5500) \u2014 10 min north, almost no tourists, beautiful lake.",
+                  "3:30pm: Togetsukyo Bridge \u2014 iconic arched bridge. Walk across, free. Rent a rowing boat for \u00A51,500 ($10).",
+                  "Evening: Ride back to central Kyoto. Pontocho Alley for dinner \u2014 narrow lantern-lit alley along the Kamo River. Riverside seating (kawadoko) May\u2013Sep. \u00A53,000\u20135,000."
+                ]}
+              />
+              <DayCard
+                day="Day 3"
+                title="Golden Route: Kinkaku-ji, Ryoan-ji, Philosopher's Path"
+                cost={"\u00A513,000\u201318,000 (~$87\u2013120) excluding accommodation"}
+                items={[
+                  "9am: Kinkaku-ji (Golden Pavilion) \u2014 \u00A5500 ($3). Arrive at opening to see the gold-leafed pavilion reflecting in the mirror pond without crowds. The reflection on a still morning is even more stunning in person. 30\u201345 min.",
+                  "10:30am: Walk to Ryoan-ji \u2014 \u00A5500 ($3). Japan\u2019s most famous zen rock garden. Sit on the wooden platform and stare at the 15 stones \u2014 you can only see 14 from any single angle. Intentional incompleteness. Give it 30 minutes minimum.",
+                  "12pm: Ginkaku-ji (Silver Pavilion) \u2014 \u00A5500 ($3). Less flashy than Kinkaku-ji but more refined. The moss garden is extraordinary.",
+                  "1pm: Walk the Philosopher\u2019s Path south to Nanzen-ji \u2014 free, 2km canal-side walk lined with cherry trees and small temples. Best in late afternoon light or during cherry blossom season.",
+                  "2:30pm: Nanzen-ji Temple \u2014 free grounds, \u00A5600 for Sanmon gate (climb for panoramic views). The brick aqueduct running through the temple grounds is strikingly photogenic.",
+                  "4pm: Nishiki Market deep dive \u2014 2 hours of food stalls stretching five blocks. Try yuba (tofu skin), Kyoto pickles, A5 wagyu skewer (\u00A52,000/$13), dashi stock, and matcha everything.",
+                  "Dinner: Nishiki Warai for Kyoto-style okonomiyaki \u2014 \u00A51,800\u20132,500 ($12\u201317). Budget: conveyor belt sushi at Musashi Sushi near Sanjo \u2014 \u00A51,200\u20131,800."
+                ]}
+              />
+              <DayCard
+                day="Day 4"
+                title="Nara Day Trip \u2014 Deer, Giant Buddha & Ancient Shrines"
+                cost={"\u00A512,000\u201317,000 (~$80\u2013113) excluding accommodation"}
+                items={[
+                  "8am: Train from Kyoto to Nara \u2014 45 minutes on the JR Nara Line, \u00A5720 ($5) each way. Covered by JR Pass.",
+                  "9am: Todai-ji Temple \u2014 \u00A5600 ($4). Houses the largest bronze Buddha in the world at 15 metres tall. The wooden hall containing it is the world\u2019s largest wooden structure. The scale of both is genuinely awe-inspiring.",
+                  "10:30am: Nara Park \u2014 free. 1,200+ wild sika deer roam freely through the park. Buy deer crackers (\u00A5200) and bow to them \u2014 they bow back. The deer have lived here for over a thousand years and are considered sacred messengers of the gods.",
+                  "12pm: Lunch \u2014 kakinoha-zushi (persimmon leaf sushi) is Nara\u2019s signature dish, \u00A51,500\u20132,200 ($10\u201315).",
+                  "1:30pm: Kasuga Taisha Shrine \u2014 \u00A5500 ($3). 3,000 stone and bronze lanterns line the pathways through an ancient forest. The atmosphere is extraordinary, especially in the afternoon light.",
+                  "3pm: Walk through Naramachi old town \u2014 free. Traditional merchant houses, small museums, and craft shops in narrow lanes.",
+                  "5pm: Return to Kyoto. Final evening walk through Gion. Return to any temple you rushed through earlier in the trip.",
+                  "Farewell dinner: kaiseki restaurant \u2014 \u00A58,000\u201312,000 ($53\u201380) for a multi-course traditional Kyoto meal. Budget: Fushimi sake district \u2014 Gekkeikan Okura Museum \u00A5400 includes tastings."
+                ]}
+              />
             </div>
-
-            {/* ── PLAN A: BUDGET ── */}
-            {activeTab === "A" && (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-amber-50 border border-amber-200 rounded-xl mb-6">
-                  <span className="text-2xl">\uD83D\uDCB0</span>
-                  <div>
-                    <p className="text-sm font-medium text-amber-800">Budget Plan &mdash; \u00A57,000–10,000/day ($47–67)</p>
-                    <p className="text-xs text-amber-600 font-light">Stay: Guesthouse or hostel near Kyoto Station &middot; \u00A53,000–4,500/night ($20–30)</p>
-                  </div>
-                </div>
-                <DayCard day="Day 1" title="Fushimi Inari (6AM!), Kiyomizu-dera, Gion Evening"
-                  items={[
-                    "6am: Fushimi Inari Taisha — free, open 24/7. The 10,000 vermillion torii gates are nearly empty at dawn. Full hike to summit: 2 hours. Half-loop: 45 min.",
-                    "9am: Walk to Tofuku-ji Temple if energy permits (\u00A5500/$3) — one stop south on the JR line. Incredible zen gardens.",
-                    "11am: Kiyomizu-dera Temple — \u00A5400 ($3). The wooden terrace overlooking Kyoto is the city’s most iconic view.",
-                    "Walk down through Ninenzaka and Sannenzaka — the most photographed lanes in Kyoto. Free, beautiful, touristy by noon.",
-                    "Lunch: Nishiki Market — grilled mochi \u00A5200, takoyaki \u00A5400, matcha soft serve \u00A5350. Graze your way through for \u00A51,000–1,500.",
-                    "5pm: Walk through Gion district — free. Hanami-koji street for tea houses. Stay until dusk for the best atmosphere.",
-                    "Dinner: Yoshinoya or a local udon shop near Gion — \u00A5500–800 ($3–5)."
-                  ]}
-                  cost="\u00A57,000–9,500 ($47–63) including transport" />
-                <DayCard day="Day 2" title="Arashiyama Bamboo Grove (Early), Monkey Park, Tenryu-ji"
-                  items={[
-                    "7am: Arashiyama Bamboo Grove — free. By 9am the pathway is packed. At 7am it’s just you and towering bamboo in every direction.",
-                    "8:30am: Tenryu-ji Temple — \u00A5500 ($3). One of Kyoto’s five great zen temples. The garden alone is worth the entry.",
-                    "10am: Iwatayama Monkey Park — \u00A5550 ($4). Climb 20 minutes to the hilltop where wild monkeys roam free. Panoramic city views.",
-                    "12pm: Lunch at Arashiyama — yudofu (simmered tofu) is the local speciality. Budget spots from \u00A5900 ($6).",
-                    "2pm: Togetsukyo Bridge — iconic arched bridge. Walk across, free. Rent a rowing boat for \u00A51,500 ($10) if you want.",
-                    "3:30pm: Rent a bicycle (\u00A5800–1,000/day) and ride back to central Kyoto along the Katsura River. 30 min, flat, beautiful.",
-                    "Evening: Pontocho Alley — narrow lantern-lit alley along the Kamo River. Window shop, then eat at a cheap izakaya."
-                  ]}
-                  cost="\u00A57,500–10,000 ($50–67) including transport" />
-                <DayCard day="Day 3" title="Kinkaku-ji, Ryoan-ji, Nishiki Market"
-                  items={[
-                    "9am: Kinkaku-ji (Golden Pavilion) — \u00A5500 ($3). Arrive at opening to see the reflection on the mirror pond without crowds. 30–45 min.",
-                    "10:30am: Walk to Ryoan-ji — \u00A5500 ($3). The rock garden is Japan’s most famous zen garden. Sit and stare. 30 min minimum.",
-                    "12pm: Ninna-ji Temple — \u00A5800 ($5). Less famous, less crowded, equally stunning. Five-storey pagoda and cherry tree garden.",
-                    "Lunch: Ramen near Kitaoji Station — \u00A5800–1,000 ($5–7). Kyoto-style ramen is lighter, chicken-based.",
-                    "2:30pm: Nishiki Market deep dive — 2 hours of food stalls. Try yuba (tofu skin), Kyoto pickles, and dashi stock.",
-                    "5pm: Philosopher’s Path — 2km canal-side walk between Ginkaku-ji and Nanzen-ji. Free. Best in late afternoon light.",
-                    "Dinner: Conveyor belt sushi at Musashi Sushi near Sanjo — \u00A51,200–1,800 ($8–12)."
-                  ]}
-                  cost="\u00A57,000–9,000 ($47–60) including transport" />
-                <DayCard day="Day 4" title="Nara Day Trip OR Tea Ceremony Experience"
-                  items={[
-                    "Option A — Nara (45 min from Kyoto by train, \u00A5720/$5 each way):",
-                    "Todai-ji Temple — \u00A5600 ($4). Houses the largest bronze Buddha in the world. The building itself is the world’s largest wooden structure.",
-                    "Nara Park — free. 1,200+ wild deer roam freely. Buy deer crackers \u00A5200 and bow to them (they bow back).",
-                    "Kasuga Taisha Shrine — \u00A5500 ($3). 3,000 stone and bronze lanterns. Incredible atmosphere.",
-                    "Option B — Stay in Kyoto: Book a tea ceremony (\u00A52,000–4,000/$13–27) in Gion. Visit Toji Temple flea market (21st of each month, free).",
-                    "Afternoon: Return to any temple you rushed through, or explore the Fushimi sake district — Gekkeikan Okura Museum \u00A5400 includes tastings."
-                  ]}
-                  cost="\u00A56,000–9,000 ($40–60) including transport" />
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-amber-700 uppercase tracking-wide">Total 4-Day Cost &middot; </span>
-                  <span className="font-serif text-base text-ink font-light">\u00A528,000–40,000 ($187–267) including accommodation</span>
-                </div>
-              </div>
-            )}
-
-            {/* ── PLAN B: MID-RANGE ── */}
-            {activeTab === "B" && (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-emerald-50 border border-emerald-200 rounded-xl mb-6">
-                  <span className="text-2xl">✨</span>
-                  <div>
-                    <p className="text-sm font-medium text-emerald-800">Mid-Range Plan &mdash; \u00A512,000–20,000/day ($80–133)</p>
-                    <p className="text-xs text-emerald-600 font-light">Stay: Machiya guesthouse or boutique hotel &middot; \u00A58,000–15,000/night ($53–100)</p>
-                  </div>
-                </div>
-                <DayCard day="Day 1" title="Fushimi Inari (6AM!), Kiyomizu-dera, Gion Evening"
-                  items={[
-                    "6am: Fushimi Inari — full hike to the summit. The views from the top are worth the climb. Pack a convenience store breakfast.",
-                    "9:30am: Tofuku-ji Temple — \u00A5500. The Tsutenkyo Bridge view in autumn is Kyoto’s best-kept secret.",
-                    "11am: Kiyomizu-dera — \u00A5400. Walk the full hillside path through Ninenzaka and Sannenzaka lanes.",
-                    "Lunch: Omen Kodaiji for handmade udon — \u00A51,500–2,200 ($10–15). Beautiful setting, excellent quality.",
-                    "2pm: Kodai-ji Temple — \u00A5600 ($4). Less crowded than Kiyomizu, stunning bamboo grove and zen gardens.",
-                    "5pm: Gion district walk. Book a Gion evening walking tour with an English-speaking guide — \u00A54,000–6,000 ($27–40).",
-                    "Dinner: Gion Nanba for tempura kaiseki — \u00A54,000–6,000 ($27–40). Reserve ahead."
-                  ]}
-                  cost="\u00A513,000–18,000 ($87–120) including transport" />
-                <DayCard day="Day 2" title="Arashiyama: Bamboo, Temples, River"
-                  items={[
-                    "7am: Bamboo Grove — the early morning light filtering through is genuinely magical. Photos here sell the trip.",
-                    "8:30am: Tenryu-ji Temple and garden — \u00A5500. Enter from the north gate to walk through the garden to the bamboo.",
-                    "10am: Monkey Park — \u00A5550. The hilltop view of Kyoto is the real reason to go. Monkeys are a bonus.",
-                    "11:30am: Sagano scenic railway (Romantic Train) — \u00A5880 ($6) one way. 25 min along the Hozu River gorge. Pre-book seats.",
-                    "1pm: Lunch at Arashiyama — yudofu set at Shoraian (\u00A52,500/$17, riverside terrace, stunning).",
-                    "3pm: Rent a bicycle and ride to Daikaku-ji Temple (\u00A5500) — 10 min north, almost no tourists, beautiful lake.",
-                    "Evening: Ride back to central Kyoto. Pontocho Alley for dinner — riverside seating (kawadoko) May–Sep. \u00A53,000–5,000."
-                  ]}
-                  cost="\u00A514,000–19,000 ($93–127) including transport" />
-                <DayCard day="Day 3" title="Golden Route: Kinkaku-ji, Ryoan-ji, Nishiki, Philosopher’s Path"
-                  items={[
-                    "9am: Kinkaku-ji — \u00A5500. The gold-leafed pavilion reflecting in the pond is even more stunning in person.",
-                    "10:30am: Ryoan-ji — \u00A5500. Sit on the wooden platform facing the rock garden. The longer you stare, the more you see.",
-                    "12pm: Taxi or bus to Ginkaku-ji (Silver Pavilion) — \u00A5500. Less flashy than Kinkaku-ji but more refined. Moss garden is incredible.",
-                    "1pm: Walk the Philosopher’s Path south to Nanzen-ji — free, 2km, lined with cherry trees and small temples.",
-                    "2:30pm: Nanzen-ji Temple — free grounds, \u00A5600 for Sanmon gate (climb for panoramic views). The aqueduct is photogenic.",
-                    "4pm: Nishiki Market — 2hr food crawl. Splurge on A5 wagyu skewer (\u00A52,000/$13) and matcha everything.",
-                    "Dinner: Nishiki Warai for Kyoto-style okonomiyaki — \u00A51,800–2,500 ($12–17)."
-                  ]}
-                  cost="\u00A513,000–18,000 ($87–120) including transport" />
-                <DayCard day="Day 4" title="Nara Day Trip OR Tea Ceremony + Hidden Temples"
-                  items={[
-                    "Nara option: Todai-ji + Nara Park + Kasuga Taisha + Naramachi old town. Full day, back by 5pm.",
-                    "Mid-range Nara lunch: Kakinoha-zushi (persimmon leaf sushi) — \u00A51,500–2,200 ($10–15). Nara’s signature dish.",
-                    "Kyoto option: Morning tea ceremony in a Gion machiya — \u00A54,000–6,000 ($27–40). Learn to whisk matcha properly.",
-                    "11am: Shimogamo Shrine — free. Set in an ancient forest, one of Kyoto’s oldest shrines. Almost no tourists.",
-                    "2pm: Fushimi sake brewery district — Gekkeikan Museum \u00A5400 (includes tastings). Walk the canal with sake warehouses.",
-                    "Final evening: Splurge dinner at a kaiseki restaurant — \u00A58,000–12,000 ($53–80) for a multi-course traditional meal."
-                  ]}
-                  cost="\u00A514,000–22,000 ($93–147) including transport" />
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-emerald-700 uppercase tracking-wide">Total 4-Day Cost &middot; </span>
-                  <span className="font-serif text-base text-ink font-light">\u00A548,000–80,000 ($320–533) including accommodation</span>
-                </div>
-              </div>
-            )}
-
-            {/* ── PLAN C: LUXURY ── */}
-            {activeTab === "C" && (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-purple-50 border border-purple-200 rounded-xl mb-6">
-                  <span className="text-2xl">\uD83D\uDC8E</span>
-                  <div>
-                    <p className="text-sm font-medium text-purple-800">Luxury Plan &mdash; \u00A535,000+/day ($233+)</p>
-                    <p className="text-xs text-purple-600 font-light">Stay: Ryokan with private onsen or Aman Kyoto &middot; \u00A540,000–120,000/night ($267–800)</p>
-                  </div>
-                </div>
-                <DayCard day="Day 1" title="Private Fushimi Inari, Kiyomizu-dera, Gion Dinner"
-                  items={[
-                    "6am: Fushimi Inari with a private guide — \u00A515,000–20,000 ($100–133). Guide explains the symbolism and takes you to hidden sub-shrines.",
-                    "10am: Kiyomizu-dera — private tour focusing on the engineering of the wooden stage (no nails in the entire structure).",
-                    "12pm: Lunch at Kikunoi Roan — Michelin-starred kaiseki lunch \u00A58,000–12,000 ($53–80). Book 1 month ahead.",
-                    "3pm: Private kimono fitting and photoshoot in Higashiyama — \u00A515,000–25,000 ($100–167). Professional quality.",
-                    "5pm: Exclusive Gion walk with a retired geiko (geisha) guide — \u00A530,000–50,000 ($200–333). Rarely available, book through hotel.",
-                    "Dinner: Hyotei — 400-year-old kaiseki restaurant. \u00A520,000–35,000 ($133–233). One of Japan’s most renowned dining experiences."
-                  ]}
-                  cost="\u00A590,000–140,000 ($600–933) including transport" />
-                <DayCard day="Day 2" title="Arashiyama: Private Bamboo, Temple Gardens"
-                  items={[
-                    "7am: Private early-access bamboo grove experience (some luxury ryokans arrange this). Otherwise, just be there at opening.",
-                    "9am: Tenryu-ji Temple with garden meditation session — \u00A55,000 ($33) for private meditation. Book through temple office.",
-                    "11am: Okochi Sanso Garden — \u00A51,000 ($7) includes matcha. One of Kyoto’s most beautiful private gardens. Panoramic mountain views.",
-                    "1pm: Lunch at Unagi no Hirokawa — grilled freshwater eel, Arashiyama’s finest. \u00A54,000–6,000 ($27–40).",
-                    "3pm: Private boat ride on Hozu River — \u00A520,000–30,000 ($133–200) for a chartered boat through the gorge.",
-                    "Evening: Return to ryokan for kaiseki dinner and private onsen. Most luxury ryokans include dinner (\u00A520,000–40,000)."
-                  ]}
-                  cost="\u00A555,000–85,000 ($367–567) including transport" />
-                <DayCard day="Day 3" title="Golden Temples, Zen Gardens, Nishiki"
-                  items={[
-                    "9am: Kinkaku-ji with a private cultural guide — \u00A515,000 ($100). Understanding the three architectural styles changes everything.",
-                    "10:30am: Ryoan-ji — the guide explains the 15 stones (you can only see 14 from any angle). Intentional incompleteness.",
-                    "12pm: Private Zen meditation session at Shunko-in Temple — \u00A55,000 ($33). English-speaking monk. Deeply worthwhile.",
-                    "1:30pm: Luxury kaiseki lunch at Kitcho Arashiyama — \u00A530,000–50,000 ($200–333). Book 2 months ahead.",
-                    "4pm: Nishiki Market with a food guide — \u00A510,000–15,000 ($67–100). Tastings at stalls tourists walk past.",
-                    "Evening: Private dinner at a machiya townhouse — \u00A525,000–40,000 ($167–267) through hotel concierge."
-                  ]}
-                  cost="\u00A5100,000–145,000 ($667–967) including transport" />
-                <DayCard day="Day 4" title="Nara Private Tour OR Exclusive Tea Ceremony"
-                  items={[
-                    "Nara option: Private car and guide for Todai-ji, Kasuga Taisha, and lunch at a traditional restaurant. \u00A550,000–70,000 all-in.",
-                    "Tea option: Urasenke school private tea ceremony — \u00A520,000–30,000 ($133–200). The most authentic tea experience in Japan.",
-                    "11am: Daigo-ji Temple — \u00A51,500 ($10). UNESCO site, almost tourist-free, gardens rival any in Kyoto.",
-                    "2pm: Incense ceremony (kodo) at Shoyeido — \u00A55,000 ($33). One of Japan’s rarest traditional arts.",
-                    "Final afternoon: Return to ryokan for onsen and a quiet evening.",
-                    "Farewell dinner: Gion Maruyama — sukiyaki with A5 Omi beef. \u00A515,000–25,000 ($100–167)."
-                  ]}
-                  cost="\u00A590,000–130,000 ($600–867) including transport" />
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center">
-                  <span className="text-xs text-purple-700 uppercase tracking-wide">Total 4-Day Cost &middot; </span>
-                  <span className="font-serif text-base text-ink font-light">\u00A5500,000–900,000 ($3,333–6,000) including accommodation</span>
-                </div>
-              </div>
-            )}
           </section>
 
-          {/* ── BUDGET TABLE ── */}
+          {/* Inline CTA */}
+          <InlineCTA destination="Kyoto" onPlanTrip={() => setModalOpen(true)} />
+
+          {/* ── TEMPLE & CULTURAL GUIDE ── */}
+          <section id="temples" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u26E9\uFE0F"} Temple &amp; Cultural Guide</h2>
+            <p className="text-sm text-muted font-light mb-5 leading-relaxed">
+              The most important temples and cultural sites in order of priority. Many temples require shoe removal at entry &mdash; wear easy slip-on shoes and bring socks. Entry fees are as of early 2026.
+            </p>
+            <div className="space-y-3">
+              {[
+                {
+                  n: "Fushimi Inari Taisha",
+                  e: "Free",
+                  d: "10,000 vermillion torii gates winding up Mount Inari, open 24/7. The most visited shrine in Japan and utterly magical at dawn when it is nearly empty. The full hike to the summit takes 2 hours through increasingly forested and quiet trails with sub-shrines and fox statues. The half-loop (Yotsutsuji intersection) takes 45 minutes and gives you the iconic tunnel photos plus a panoramic view of Kyoto.",
+                  t: "Must see \u00B7 Dawn \u00B7 45min\u20132hrs",
+                },
+                {
+                  n: "Kinkaku-ji (Golden Pavilion)",
+                  e: "\u00A5500 (~$3)",
+                  d: "A three-storey pavilion covered in gold leaf, reflecting in a mirror pond. Originally built in 1397 as a retirement villa for Shogun Ashikaga Yoshimitsu. The current structure is a 1955 reconstruction after the original was destroyed by arson. Each floor represents a different architectural style. Arrive at 9am opening to see the reflection without crowds.",
+                  t: "Must see \u00B7 Morning \u00B7 45min",
+                },
+                {
+                  n: "Arashiyama Bamboo Grove",
+                  e: "Free",
+                  d: "A towering bamboo forest on Kyoto\u2019s western edge. The sound of wind through the bamboo canopy is designated by the Japanese government as one of the 100 Soundscapes of Japan. Visit before 8am \u2014 by mid-morning the pathway becomes a slow-moving crowd. Combine with Tenryu-ji temple garden which connects directly to the grove.",
+                  t: "Must see \u00B7 Dawn \u00B7 30min",
+                },
+                {
+                  n: "Kiyomizu-dera",
+                  e: "\u00A5400 (~$3)",
+                  d: "A wooden terrace cantilevered 13 metres over the hillside, built without a single nail. Founded in 778 and one of the oldest temples in Kyoto. The view from the stage across the city is breathtaking, especially during cherry blossom and autumn foliage seasons. The surrounding Higashiyama district has the most atmospheric traditional lanes in Kyoto.",
+                  t: "Must see \u00B7 Morning \u00B7 1.5hrs",
+                },
+                {
+                  n: "Ryoan-ji",
+                  e: "\u00A5500 (~$3)",
+                  d: "Japan\u2019s most famous zen rock garden. Fifteen stones arranged on raked white gravel so that only 14 are visible from any single vantage point \u2014 a meditation on the incompleteness of perception. Sit on the wooden platform and let it work on you. The longer you stare, the more you see. The surrounding garden with its mirror pond is equally beautiful.",
+                  t: "Must see \u00B7 Contemplative \u00B7 45min",
+                },
+                {
+                  n: "Todai-ji (Nara)",
+                  e: "\u00A5600 (~$4)",
+                  d: "Houses the world\u2019s largest bronze Buddha (15m tall, 500 tonnes) inside the world\u2019s largest wooden building. Both statistics undersell the experience \u2014 the scale when you step inside is genuinely overwhelming. A 45-minute train ride from Kyoto. Combine with Nara Park\u2019s sacred deer and Kasuga Taisha\u2019s 3,000 lanterns for a full day trip.",
+                  t: "Must see \u00B7 Day trip \u00B7 Half day",
+                },
+              ].map((place) => (
+                <div key={place.n} className="bg-white rounded-xl border border-parchment-2 p-4">
+                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                    <p className="font-medium text-sm text-stone-900">{place.n}</p>
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="text-xs text-teal font-medium bg-teal/10 px-2 py-0.5 rounded-full">{place.e}</span>
+                      <span className="text-xs bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full border border-amber-200">{place.t}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{place.d}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Gallery */}
+          <DestinationGallery
+            title="Kyoto &mdash; Temples, Bamboo &amp; Tradition"
+            subtitle="The ancient capital of Japan with 2,000 temples and 17 UNESCO World Heritage sites."
+            spots={[
+              {
+                name: "Fushimi Inari Torii Gates",
+                query: "fushimi inari shrine torii gates tunnel orange kyoto japan dawn",
+                desc: "10,000 vermillion torii gates winding up Mount Inari. Free, open 24/7. Go at 6am for near-empty photos that will define your trip.",
+              },
+              {
+                name: "Arashiyama Bamboo Grove",
+                query: "arashiyama bamboo grove path kyoto japan green tall morning light",
+                desc: "Towering bamboo forest on Kyoto\u2019s western edge. The rustling sound alone is worth the early wake-up. Best before 8am.",
+              },
+              {
+                name: "Kinkaku-ji Golden Pavilion",
+                query: "kinkaku-ji golden pavilion kyoto japan pond reflection",
+                desc: "The Gold Pavilion reflecting in its mirror pond. One of Japan\u2019s most photographed buildings. Entry \u00A5500.",
+              },
+              {
+                name: "Gion District",
+                query: "gion kyoto traditional street wooden buildings lanterns evening",
+                desc: "Kyoto\u2019s geisha district. Walk Hanami-koji in the early evening for a chance to spot geiko and maiko in traditional dress.",
+              },
+              {
+                name: "Nishiki Market",
+                query: "nishiki market kyoto japan food stalls narrow covered street",
+                desc: "Kyoto\u2019s kitchen \u2014 five blocks of food stalls selling pickles, mochi, wagyu skewers, and matcha everything.",
+              },
+            ]}
+          />
+
+          {/* ── BUDGET BREAKDOWN ── */}
           <section id="budget" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">\uD83D\uDCB0 Budget Breakdown</h2>
-            <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCB0"} Budget Breakdown</h2>
+            <p className="text-sm text-muted font-light mb-5 leading-relaxed">
+              Kyoto is mid-range by Japanese standards. Budget travellers can visit comfortably for {"\u00A57,000\u201310,000/day ($47\u201367)"}, mid-range for {"\u00A512,000\u201320,000/day ($80\u2013133)"}, and luxury for {"\u00A535,000+/day ($233+)"}. All prices in Japanese Yen and USD at ~{"\u00A5150/$1"}.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm mb-6">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-ink">
-                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
-                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">\uD83D\uDCB0 Budget</th>
-                    <th className="p-3.5 text-xs font-medium text-emerald-700 text-center">✨ Mid-Range</th>
-                    <th className="p-3.5 text-xs font-medium text-purple-300 text-center">\uD83D\uDC8E Luxury</th>
+                    <th className="text-left p-3.5 text-xs font-medium text-white/70">Category (4 days)</th>
+                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">{"\uD83D\uDCB0"} Budget</th>
+                    <th className="p-3.5 text-xs font-medium text-blue-300 text-center">{"\u2728"} Mid-Range</th>
+                    <th className="p-3.5 text-xs font-medium text-purple-300 text-center">{"\uD83D\uDC8E"} Luxury</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["\uD83C\uDFE8 Accommodation (4N)", "\u00A512,000–18,000 ($80–120)", "\u00A532,000–60,000 ($213–400)", "\u00A5160,000–480,000 ($1,067–3,200)"],
-                    ["\uD83C\uDF5C Food & Drinks", "\u00A58,000–12,000 ($53–80)", "\u00A520,000–32,000 ($133–213)", "\u00A580,000–160,000 ($533–1,067)"],
-                    ["\uD83D\uDE8C Transport", "\u00A53,000–5,000 ($20–33)", "\u00A55,000–8,000 ($33–53)", "\u00A515,000–30,000 ($100–200)"],
-                    ["\u26E9\uFE0F Temples & Activities", "\u00A54,000–6,000 ($27–40)", "\u00A510,000–18,000 ($67–120)", "\u00A580,000–150,000 ($533–1,000)"],
-                    ["\uD83C\uDF75 Extras", "\u00A51,000–2,000 ($7–13)", "\u00A53,000–5,000 ($20–33)", "\u00A510,000–30,000 ($67–200)"],
+                    ["\uD83C\uDFE8 Accommodation (4N)", "\u00A512,000\u201318,000 ($80\u2013120)", "\u00A532,000\u201360,000 ($213\u2013400)", "\u00A5160,000\u2013480,000 ($1,067\u20133,200)"],
+                    ["\uD83C\uDF5C Food & Drinks", "\u00A58,000\u201312,000 ($53\u201380)", "\u00A520,000\u201332,000 ($133\u2013213)", "\u00A580,000\u2013160,000 ($533\u20131,067)"],
+                    ["\uD83D\uDE8C Transport", "\u00A53,000\u20135,000 ($20\u201333)", "\u00A55,000\u20138,000 ($33\u201353)", "\u00A515,000\u201330,000 ($100\u2013200)"],
+                    ["\u26E9\uFE0F Temples & Activities", "\u00A54,000\u20136,000 ($27\u201340)", "\u00A510,000\u201318,000 ($67\u2013120)", "\u00A580,000\u2013150,000 ($533\u20131,000)"],
+                    ["\uD83C\uDF75 Extras", "\u00A51,000\u20132,000 ($7\u201313)", "\u00A53,000\u20135,000 ($20\u201333)", "\u00A510,000\u201330,000 ($67\u2013200)"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
-                      {vals.map((v, i) => <td key={i} className="p-3.5 text-xs text-muted font-light text-center">{v}</td>)}
+                      {vals.map((v, i) => (
+                        <td key={i} className="p-3.5 text-xs text-muted font-light text-center">{v}</td>
+                      ))}
                     </tr>
                   ))}
                   <tr className="bg-ink">
                     <td className="p-3.5 text-xs text-white font-semibold">Total (4 days)</td>
-                    {["\u00A528,000–40,000 ($187–267)","\u00A548,000–80,000 ($320–533)","\u00A5500,000–900,000 ($3,333–6,000)"].map((v, i) => (
+                    {["\u00A528,000\u201340,000 ($187\u2013267)", "\u00A548,000\u201380,000 ($320\u2013533)", "\u00A5500,000\u2013900,000 ($3,333\u20136,000)"].map((v, i) => (
                       <td key={i} className="p-3.5 text-xs text-gold font-semibold text-center">{v}</td>
                     ))}
                   </tr>
                 </tbody>
               </table>
             </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                <p className="font-medium text-sm text-green-800 mb-1">{"\uD83D\uDCB0 Budget (\u00A57,000\u201310,000/day)"}</p>
+                <p className="text-xs text-green-700 font-light leading-relaxed">{"Stay in guesthouses or hostels near Kyoto Station (\u00A53,000\u20134,500/night), eat at udon shops and convenience stores (\u00A5500\u20131,000/meal), rent a bicycle, and use the \u00A5700 bus day pass. Kyoto is surprisingly affordable at this level."}</p>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="font-medium text-sm text-blue-800 mb-1">{"\u2728 Mid-Range (\u00A512,000\u201320,000/day)"}</p>
+                <p className="text-xs text-blue-700 font-light leading-relaxed">{"Boutique hotels or machiya guesthouses (\u00A58,000\u201315,000/night), mix of casual and sit-down dining, guided temple tours, and tea ceremony experiences. The sweet spot for experiencing Kyoto properly without the luxury price tag."}</p>
+              </div>
+              <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
+                <p className="font-medium text-sm text-purple-800 mb-1">{"\uD83D\uDC8E Luxury (\u00A535,000+/day)"}</p>
+                <p className="text-xs text-purple-700 font-light leading-relaxed">{"Traditional ryokan with private onsen and kaiseki dinner (\u00A540,000\u2013120,000/night), private temple guides, exclusive tea ceremonies, Michelin-starred dining, and chauffeur-driven temple tours. Japanese luxury is refined, subtle, and extraordinary."}</p>
+              </div>
+            </div>
             <p className="text-xs text-muted font-light mt-3 italic">
-              All prices in \u00A5 (Japanese Yen), 2026. USD equivalent at ~\u00A5150/$1. Excludes travel to Kyoto from other cities.
+              {"All prices in \u00A5 (Japanese Yen), 2026. USD equivalent at ~\u00A5150/$1. Excludes travel to Kyoto from other cities."}
             </p>
           </section>
 
-          {/* ── AFFILIATE BLOCK ── */}
+          {/* InlineSignup */}
+          <InlineSignup />
+
+          {/* ── WHERE TO STAY ── */}
+          <section id="stay" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83C\uDFE8"} Where to Stay in Kyoto</h2>
+            <p className="text-sm text-muted font-light mb-5 leading-relaxed">
+              The key decision is which area to base yourself. Near Kyoto Station for transport convenience. Gion for atmosphere and evening walks. Higashiyama for temple proximity. A traditional machiya (wooden townhouse) stay is one of the most memorable accommodation experiences in Japan.
+            </p>
+            <div className="space-y-3">
+              {[
+                {
+                  name: "Near Kyoto Station",
+                  type: "Transport hub \u00B7 Best for convenience",
+                  price: "From \u00A53,500/night ($23)",
+                  badge: "Best budget area",
+                  desc: "Walking distance to shinkansen, JR lines to Nara, buses to all temples, and the Haruka Express to the airport. The area around the station is modern and practical rather than atmospheric. Piece Hostel Sanjo, Noku Kyoto, and the many business hotels here offer the best value-for-money in the city. Ideal if you want to maximise temple time and minimise commuting.",
+                  color: "border-parchment-2 bg-white",
+                },
+                {
+                  name: "Gion District",
+                  type: "Geisha district \u00B7 Best for atmosphere",
+                  price: "From \u00A58,000/night ($53)",
+                  badge: "Most atmospheric",
+                  desc: "Traditional wooden machiya houses, lantern-lit streets, and the chance to spot geiko heading to appointments in the evening. Staying in Gion puts you within walking distance of Kiyomizu-dera, Kodai-ji, and the Higashiyama lanes. The area is quieter than you would expect at night. A machiya guesthouse in Gion is one of the most authentic accommodation experiences in Japan.",
+                  color: "border-amber-200 bg-amber-50",
+                },
+                {
+                  name: "Higashiyama",
+                  type: "Temple district \u00B7 Best for walking",
+                  price: "From \u00A56,000/night ($40)",
+                  badge: "Temple proximity",
+                  desc: "The eastern mountain district between Gion and Kiyomizu-dera. Staying here means morning walks through Ninenzaka and Sannenzaka before the crowds arrive. The traditional lanes, small ryokans, and proximity to the Philosopher\u2019s Path make this the most walkable base for temple visits. Less nightlife than Gion but more peaceful.",
+                  color: "border-teal-200 bg-teal-50",
+                },
+                {
+                  name: "Traditional Machiya Stay",
+                  type: "Townhouse rental \u00B7 Unique experience",
+                  price: "From \u00A512,000/night ($80)",
+                  badge: "Must-try experience",
+                  desc: "Kyoto\u2019s traditional wooden townhouses have been converted into private accommodation. Tatami rooms, sliding paper doors, small private gardens, and futon bedding on straw mats. Companies like Machiya Residence Inn and Nazuna offer beautifully restored houses. For couples or small groups, this is an unforgettable way to stay \u2014 your own piece of old Kyoto.",
+                  color: "border-blue-200 bg-blue-50",
+                },
+                {
+                  name: "Luxury Ryokan",
+                  type: "Traditional inn \u00B7 Full experience",
+                  price: "From \u00A540,000/night ($267)",
+                  badge: "Luxury pick",
+                  desc: "A traditional ryokan with tatami rooms, private onsen bath, and multi-course kaiseki dinner included in the rate. Aman Kyoto (mountain retreat), Hoshinoya Kyoto (river access by boat only), and Tawaraya (operating since 1709) represent the pinnacle of Japanese hospitality. Dinner and breakfast are included and are culinary events in themselves.",
+                  color: "border-purple-200 bg-purple-50",
+                },
+              ].map((stay) => (
+                <div key={stay.name} className={`rounded-xl p-4 border ${stay.color}`}>
+                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                    <div>
+                      <p className="font-medium text-sm text-stone-900">{stay.name}</p>
+                      <p className="text-xs text-muted font-light">{stay.type}</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <span className="text-xs bg-white/80 text-ink px-2.5 py-1 rounded-full border border-white/60">{stay.price}</span>
+                      <span className="text-xs bg-gold/15 text-gold-dark px-2 py-0.5 rounded-full font-medium">{stay.badge}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{stay.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── WHERE TO EAT ── */}
+          <section id="eat" className="mb-14">
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83C\uDF5C"} Where to Eat in Kyoto</h2>
+            <p className="text-sm text-muted font-light mb-5 leading-relaxed">
+              Kyoto is the birthplace of kaiseki (multi-course traditional dining), home to Japan&apos;s finest tofu cuisine, and the undisputed capital of matcha. The city has more Michelin stars per capita than almost anywhere in the world. But some of the best meals cost under {"\u00A51,000"}.
+            </p>
+            <div className="space-y-3">
+              {[
+                {
+                  n: "Kaiseki Dining",
+                  t: "Multi-course traditional \u00B7 Kyoto\u2019s signature",
+                  d: "Kaiseki is Kyoto\u2019s greatest culinary art \u2014 a multi-course meal that follows the seasons, using local ingredients presented like edible art. A lunch kaiseki at Kikunoi Roan starts at \u00A58,000 ($53) and is a Michelin-starred experience. Budget kaiseki sets at smaller restaurants run \u00A54,000\u20136,000 ($27\u201340). Hyotei, operating for over 400 years, is one of Japan\u2019s most celebrated restaurants. Reserve well ahead for dinner.",
+                  b: "Must experience",
+                  c: "bg-amber-50 border-amber-200",
+                },
+                {
+                  n: "Kyoto-Style Ramen",
+                  t: "Lighter chicken-based broth \u00B7 Budget friendly",
+                  d: "Kyoto ramen differs from Tokyo\u2019s rich pork tonkotsu \u2014 the broth here is often chicken-based, lighter, and clearer. Honke Daiichiasahi near Kyoto Station has had queues since 1947. Expect \u00A5800\u20131,200 ($5\u20138) for a full bowl. Ramen Ogawa in Gion serves a refined version. For budget meals, ramen shops near train stations are consistently excellent and fast.",
+                  b: "Best budget meal",
+                  c: "bg-green-50 border-green-200",
+                },
+                {
+                  n: "Nishiki Market Grazing",
+                  t: "Five blocks of food stalls \u00B7 Central",
+                  d: "Kyoto\u2019s kitchen stretches five blocks with stalls selling grilled mochi (\u00A5200), takoyaki (\u00A5400), matcha soft serve (\u00A5350), A5 wagyu skewer (\u00A52,000), pickles, yuba, and dashi stock. A full graze-through lunch costs \u00A51,000\u20132,500 ($7\u201317). Vendors begin discounting after 4pm. Best visited on a weekday to avoid the worst crowds.",
+                  b: "Must visit",
+                  c: "bg-teal-50 border-teal-200",
+                },
+                {
+                  n: "Tofu Cuisine (Yudofu)",
+                  t: "Kyoto speciality \u00B7 Temple food origin",
+                  d: "Kyoto\u2019s soft water produces Japan\u2019s best tofu, and yudofu (gently simmered tofu) originated in the temples here. Shoraian in Arashiyama serves it on a riverside terrace (\u00A52,500/$17). Okutan near Nanzen-ji has been serving yudofu since 1635 in a garden setting. Even if you think you don\u2019t like tofu, Kyoto tofu is a different experience entirely.",
+                  b: "Unique to Kyoto",
+                  c: "bg-parchment border-parchment-2",
+                },
+                {
+                  n: "Matcha & Tea Culture",
+                  t: "Kyoto is Japan\u2019s tea capital",
+                  d: "Ippodo Tea has operated in central Kyoto since 1717. A proper ceremony-grade matcha bowl costs \u00A5600\u20131,000 ($4\u20137). Nakamura Tokichi in Uji (30 min south) is the most famous tea house in the region. Matcha parfaits, matcha soba noodles, and matcha soft serve are everywhere. A formal tea ceremony in Gion costs \u00A54,000\u20136,000 ($27\u201340) and teaches you to whisk matcha properly.",
+                  b: "Cultural must-do",
+                  c: "bg-orange-50 border-orange-200",
+                },
+              ].map((r) => (
+                <div key={r.n} className={`rounded-xl p-4 border ${r.c}`}>
+                  <div className="flex items-center justify-between mb-1.5 flex-wrap gap-2">
+                    <div>
+                      <p className="font-medium text-sm text-stone-900">{r.n}</p>
+                      <p className="text-xs text-muted font-light">{r.t}</p>
+                    </div>
+                    <span className="text-xs bg-white/80 text-amber-700 px-2.5 py-1 rounded-full border border-amber-200 font-medium">{r.b}</span>
+                  </div>
+                  <p className="text-xs text-gray-700 font-light leading-relaxed">{r.d}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Affiliate Block */}
           <AffiliateBlock
             destination="Kyoto"
             hotels={[
-              { name: "Piece Hostel Sanjo", type: "Design Hostel · Central", price: "From \u00A53,500/night ($23)", rating: "4", badge: "Budget pick", url: "https://www.booking.com/hotel/jp/piece-hostel-sanjo.html?aid=2820480" },
-              { name: "Noku Kyoto", type: "Boutique · Gion area", price: "From \u00A512,000/night ($80)", rating: "4", badge: "Mid-range pick", url: "https://www.booking.com/hotel/jp/noku-kyoto.html?aid=2820480" },
-              { name: "Aman Kyoto", type: "Luxury Resort · Mountains", price: "From \u00A5100,000/night ($667)", rating: "5", badge: "Luxury", url: "https://www.booking.com/hotel/jp/aman-kyoto.html?aid=2820480" },
+              {
+                name: "Piece Hostel Sanjo",
+                type: "Design Hostel \u00B7 Central",
+                price: "From \u00A53,500/night ($23)",
+                rating: "4",
+                badge: "Budget pick",
+                url: "https://www.booking.com/hotel/jp/piece-hostel-sanjo.html?aid=2820480",
+              },
+              {
+                name: "Noku Kyoto",
+                type: "Boutique \u00B7 Gion area",
+                price: "From \u00A512,000/night ($80)",
+                rating: "4",
+                badge: "Mid-range pick",
+                url: "https://www.booking.com/hotel/jp/noku-kyoto.html?aid=2820480",
+              },
+              {
+                name: "Aman Kyoto",
+                type: "Luxury Resort \u00B7 Mountains",
+                price: "From \u00A5100,000/night ($667)",
+                rating: "5",
+                badge: "Luxury",
+                url: "https://www.booking.com/hotel/jp/aman-kyoto.html?aid=2820480",
+              },
             ]}
             activities={[
-              { name: "Fushimi Inari Early Morning Tour", duration: "3 hours", price: "From \u00A56,000 ($40)", badge: "Must do", url: "https://www.getyourguide.com/s/?q=kyoto&partner_id=PSZA5UI" },
-              { name: "Traditional Tea Ceremony in Gion", duration: "1.5 hours", price: "From \u00A54,000 ($27)", badge: "Cultural", url: "https://www.getyourguide.com/s/?q=kyoto&partner_id=PSZA5UI" },
-              { name: "Arashiyama Bamboo & Monkey Park", duration: "4 hours", price: "From \u00A55,000 ($33)", url: "https://www.getyourguide.com/s/?q=kyoto&partner_id=PSZA5UI" },
-              { name: "Nara Day Trip with Guide", duration: "Full day", price: "From \u00A58,000 ($53)", url: "https://www.getyourguide.com/s/?q=kyoto&partner_id=PSZA5UI" },
+              {
+                name: "Fushimi Inari Early Morning Tour",
+                duration: "3 hours",
+                price: "From \u00A56,000 ($40)",
+                badge: "Must do",
+                url: "https://www.getyourguide.com/s/?q=kyoto&partner_id=PSZA5UI",
+              },
+              {
+                name: "Traditional Tea Ceremony in Gion",
+                duration: "1.5 hours",
+                price: "From \u00A54,000 ($27)",
+                badge: "Cultural",
+                url: "https://www.getyourguide.com/s/?q=kyoto&partner_id=PSZA5UI",
+              },
+              {
+                name: "Arashiyama Bamboo & Monkey Park",
+                duration: "4 hours",
+                price: "From \u00A55,000 ($33)",
+                url: "https://www.getyourguide.com/s/?q=kyoto&partner_id=PSZA5UI",
+              },
+              {
+                name: "Nara Day Trip with Guide",
+                duration: "Full day",
+                price: "From \u00A58,000 ($53)",
+                url: "https://www.getyourguide.com/s/?q=kyoto&partner_id=PSZA5UI",
+              },
             ]}
             pdfProductId="kyoto-4-days-pdf"
           />
 
-          {/* ── DESTINATION GALLERY ── */}
-          <DestinationGallery
-            title="Kyoto — Must-See Places"
-            subtitle="Click each thumbnail to explore Kyoto’s most iconic temples and streets."
-            spots={[
-              { name: "Fushimi Inari",       query: "fushimi inari shrine torii gates tunnel orange kyoto japan",     desc: "10,000 vermillion torii gates winding up Mount Inari. Free, open 24/7. Go at 6am for near-empty photos that will define your trip." },
-              { name: "Arashiyama Bamboo",    query: "arashiyama bamboo grove path kyoto japan green tall",            desc: "Towering bamboo forest on Kyoto’s western edge. The rustling sound alone is worth the early wake-up. Best before 8am." },
-              { name: "Kinkaku-ji",           query: "kinkaku-ji golden pavilion kyoto japan pond reflection",         desc: "The Gold Pavilion reflecting in its mirror pond. One of Japan’s most photographed buildings. Entry \u00A5500." },
-              { name: "Gion District",        query: "gion kyoto traditional street wooden buildings lanterns evening", desc: "Kyoto’s geisha district. Walk Hanami-koji in the early evening for a chance to spot geiko and maiko in traditional dress." },
-              { name: "Nishiki Market",       query: "nishiki market kyoto japan food stalls narrow covered street",    desc: "Kyoto’s kitchen — five blocks of food stalls selling pickles, mochi, wagyu skewers, and matcha everything." },
-            ]}
-          />
-
-          {/* ── MID-ARTICLE IMAGE ── */}
-          <div className="mb-14 rounded-2xl overflow-hidden shadow-md">
-            <SmartImage
-              query="arashiyama bamboo grove path kyoto japan morning light"
-              alt="Arashiyama Bamboo Grove path in Kyoto Japan"
-              width={860} height={440}
-              className="w-full object-cover h-72 md:h-[380px]"
-            />
-            <div className="bg-parchment px-5 py-3 border-t border-parchment-2">
-              <p className="text-xs text-muted font-light italic text-center">
-                Arashiyama Bamboo Grove at 7am &mdash; by 9am this path is shoulder-to-shoulder. The early alarm is non-negotiable.
-              </p>
-            </div>
-          </div>
-
-          {/* ── MISTAKES ── */}
+          {/* ── MISTAKES TO AVOID ── */}
           <section id="mistakes" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">❌ Mistakes to Avoid</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u274C"} Mistakes to Avoid</h2>
             <div className="space-y-3">
               {[
-                { title: "Visiting Fushimi Inari after 9am", desc: "At 6am: silence, empty torii tunnels, magical photos. At 10am: wall-to-wall crowds and a 20-minute wait for a clear shot. The shrine is open 24/7 and free. Go early.", icon: "\u26E9\uFE0F" },
-                { title: "Trying to see too many temples", desc: "Kyoto has 2,000+ temples. Seeing 3–4 per day with proper time at each beats rushing through 8. Quality over quantity. Sit in the gardens.", icon: "\uD83D\uDE35" },
-                { title: "Taking buses for everything", desc: "Kyoto buses are slow and packed with tourists. Rent a bicycle (\u00A5800–1,000/day/$5–7) — the city is flat and compact. You’ll see 3x more.", icon: "\uD83D\uDE8C" },
-                { title: "Skipping Nara", desc: "Only 45 minutes from Kyoto. Wild deer that bow, the world’s largest wooden building, and far fewer tourists than Kyoto. Don’t skip it.", icon: "\uD83E\uDD8C" },
-                { title: "Wearing shoes in the wrong places", desc: "Many temples require shoe removal. Wear easy slip-on shoes. Bring socks. Nothing ruins a zen moment like fumbling with laces at every entrance.", icon: "\uD83D\uDC5E" },
-                { title: "Not carrying cash", desc: "Temple entry fees, small restaurants, market stalls, and bicycle rentals are cash-only. Withdraw \u00A520,000–30,000 ($133–200) from a 7-Eleven ATM.", icon: "\uD83D\uDCB4" },
+                {
+                  icon: "\u26E9\uFE0F",
+                  title: "Visiting Fushimi Inari after 9am",
+                  desc: "At 6am: silence, empty torii tunnels, magical photos. At 10am: wall-to-wall crowds and a 20-minute wait for a clear shot. The shrine is open 24/7 and free. Go early.",
+                },
+                {
+                  icon: "\uD83D\uDE35",
+                  title: "Trying to see too many temples",
+                  desc: "Kyoto has 2,000+ temples. Seeing 3\u20134 per day with proper time at each beats rushing through 8. Quality over quantity. Sit in the gardens. Let the zen work.",
+                },
+                {
+                  icon: "\uD83D\uDE8C",
+                  title: "Taking buses for everything",
+                  desc: "Kyoto buses are slow and packed with tourists. Rent a bicycle (\u00A5800\u20131,000/day/$5\u20137) \u2014 the city is flat and compact. You\u2019ll see 3x more temples and enjoy the ride between them.",
+                },
+                {
+                  icon: "\uD83E\uDD8C",
+                  title: "Skipping Nara",
+                  desc: "Only 45 minutes from Kyoto. Wild deer that bow, the world\u2019s largest wooden building, and far fewer tourists than Kyoto. Don\u2019t skip it.",
+                },
+                {
+                  icon: "\uD83D\uDC5E",
+                  title: "Wearing complicated shoes",
+                  desc: "Many temples require shoe removal. Wear easy slip-on shoes. Bring socks. Nothing ruins a zen moment like fumbling with laces at every entrance.",
+                },
+                {
+                  icon: "\uD83D\uDCB4",
+                  title: "Not carrying cash",
+                  desc: "Temple entry fees, small restaurants, market stalls, and bicycle rentals are cash-only. Withdraw \u00A520,000\u201330,000 ($133\u2013200) from a 7-Eleven ATM \u2014 they accept all international cards with no conversion markup.",
+                },
               ].map((m) => (
-                <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc}
-                  color="bg-white border-parchment-2 hover:border-rust/30 transition-colors" />
+                <TipCard
+                  key={m.title}
+                  icon={m.icon}
+                  title={m.title}
+                  desc={m.desc}
+                  color="bg-white border-parchment-2"
+                />
               ))}
             </div>
           </section>
 
           {/* ── PRO TIPS ── */}
           <section id="tips" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">\uD83D\uDCA1 Pro Tips</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\uD83D\uDCA1"} Pro Tips for Kyoto</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { icon: "\uD83D\uDEB2", title: "Rent a Bicycle", desc: "Kyoto is flat. This single decision will triple the number of temples you see. Most guesthouses offer rental or can point you to nearby shops. \u00A5800–1,000/day ($5–7).", color: "bg-emerald-50 border-emerald-200" },
-                { icon: "\uD83C\uDF38", title: "Cherry Blossom Strategy", desc: "Late March to mid-April. Best spots: Philosopher’s Path, Maruyama Park, Keage Incline. Check japan-guide.com/sakura for real-time bloom reports.", color: "bg-emerald-50 border-emerald-200" },
-                { icon: "\uD83C\uDF41", title: "Autumn Colours Strategy", desc: "Mid-November to early December. Tofuku-ji, Eikan-do, and Kiyomizu-dera are the top three. Evening illuminations at Kodai-ji are spectacular.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83C\uDF75", title: "Matcha Everything", desc: "Kyoto is the capital of Japanese tea culture. Try matcha at Ippodo Tea (since 1717) in central Kyoto. \u00A5600–1,000 ($4–7) for a proper ceremony-grade bowl.", color: "bg-amber-50 border-amber-200" },
-                { icon: "\uD83D\uDCF1", title: "Kyoto Bus Day Pass", desc: "Only \u00A5700 ($5) for unlimited city bus rides. Worth it if you’re not cycling. Buy at Kyoto Station bus terminal. Covers 90% of tourist routes.", color: "bg-purple-50 border-purple-200" },
-                { icon: "\uD83C\uDF19", title: "Gion After Dark", desc: "The best time to walk Gion is 6pm–8pm when the lanterns are lit and geiko head to appointments. Hanami-koji and Shirakawa areas. Be respectful — no chasing for photos.", color: "bg-purple-50 border-purple-200" },
-              ].map((t) => <TipCard key={t.title} {...t} />)}
+                {
+                  icon: "\uD83D\uDEB2",
+                  title: "Rent a Bicycle",
+                  desc: "Kyoto is flat. This single decision will triple the number of temples you see and transform your experience. Most guesthouses offer rental or can point you to nearby shops. \u00A5800\u20131,000/day ($5\u20137).",
+                  color: "bg-emerald-50 border-emerald-200",
+                },
+                {
+                  icon: "\uD83C\uDF38",
+                  title: "Cherry Blossom Strategy",
+                  desc: "Late March to mid-April. Best spots: Philosopher\u2019s Path, Maruyama Park, Keage Incline. Peak bloom lasts only 7\u201310 days. Check japan-guide.com/sakura for real-time bloom reports before booking flights.",
+                  color: "bg-pink-50 border-pink-200",
+                },
+                {
+                  icon: "\uD83C\uDF41",
+                  title: "Autumn Colours Strategy",
+                  desc: "Mid-November to early December. Tofuku-ji, Eikan-do, and Kiyomizu-dera are the top three spots. Evening illuminations at Kodai-ji and Kitano Tenmangu are spectacular and less crowded than daytime visits.",
+                  color: "bg-amber-50 border-amber-200",
+                },
+                {
+                  icon: "\uD83C\uDF75",
+                  title: "Matcha Everything",
+                  desc: "Kyoto is the capital of Japanese tea culture. Try matcha at Ippodo Tea (since 1717) in central Kyoto. \u00A5600\u20131,000 ($4\u20137) for a proper ceremony-grade bowl. Matcha parfaits at Nakamura Tokichi in Uji are legendary.",
+                  color: "bg-emerald-50 border-emerald-200",
+                },
+                {
+                  icon: "\uD83D\uDCF1",
+                  title: "Kyoto Bus Day Pass",
+                  desc: "Only \u00A5700 ($5) for unlimited city bus rides. Worth it if you\u2019re not cycling. Buy at Kyoto Station bus terminal. Covers 90% of tourist routes. The IC card (Suica/Pasmo) works on all buses and trains too.",
+                  color: "bg-purple-50 border-purple-200",
+                },
+                {
+                  icon: "\uD83C\uDF19",
+                  title: "Gion After Dark",
+                  desc: "The best time to walk Gion is 6pm\u20138pm when the lanterns are lit and geiko head to appointments. Hanami-koji and Shirakawa areas. Be respectful \u2014 no chasing for photos. The quiet beauty of these streets at dusk is extraordinary.",
+                  color: "bg-purple-50 border-purple-200",
+                },
+                {
+                  icon: "\uD83C\uDFAB",
+                  title: "JR Pass Timing",
+                  desc: "If visiting Tokyo + Kyoto + Nara (or Hiroshima), a 7-day JR Pass (\u00A550,000/$333) saves significant money. Activate it on the day you take your first long-distance train, not the day you arrive. Buy online before entering Japan.",
+                  color: "bg-teal-50 border-teal-200",
+                },
+                {
+                  icon: "\uD83D\uDE87",
+                  title: "Convenience Store Breakfasts",
+                  desc: "Japanese konbini (7-Eleven, Lawson, FamilyMart) have exceptional food. Onigiri (\u00A5120\u2013180), egg sandwiches, and fresh coffee for under \u00A5500 total. Saves time and money versus hotel breakfast. Quality is genuinely impressive.",
+                  color: "bg-teal-50 border-teal-200",
+                },
+              ].map((t) => (
+                <TipCard key={t.title} {...t} />
+              ))}
             </div>
           </section>
 
-          {/* ── INLINE CTA ── */}
-          <div className="mb-14 bg-ink rounded-2xl p-8 md:p-10 text-center">
-            <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold block mb-3">Free Service</span>
-            <h2 className="font-serif text-[1.9rem] font-light text-white mb-3">
-              Want This Planned for You?
-            </h2>
-            <p className="text-sm text-white/80 font-light mb-7 max-w-[380px] mx-auto leading-relaxed">
-              Tell us your dates, group and budget &mdash; we&apos;ll send a personalised Kyoto itinerary within 24 hours. Free.
-            </p>
-            <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => setModalOpen(true)} className="btn-gold">
-                Plan My Kyoto Trip →
-              </button>
-              <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-[1px] hover:bg-teal/80 transition-colors">Plan My Trip →</a>
-            </div>
-          </div>
+          {/* Photo CTA */}
+          <PhotoCta destination="Kyoto" />
+
+          {/* Combine With */}
+          <CombineWith currentSlug="kyoto-4-days" />
 
           {/* ── FAQ ── */}
           <section id="faq" className="mb-14">
-            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">❓ Frequently Asked Questions</h2>
+            <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">{"\u2753"} Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
-                { q: "How many days do you need in Kyoto?", a: "4 days is ideal to cover the major temples, Arashiyama, and a day trip to Nara without rushing. 2–3 days works if you’re selective. 5–6 days lets you explore hidden temples and take things slow." },
-                { q: "What is the best time to visit Kyoto?", a: "Late March to mid-April for cherry blossoms, or mid-November for peak autumn colours. May and October offer pleasant weather with fewer tourists. Avoid Golden Week (late April to early May)." },
-                { q: "How much does a 4-day Kyoto trip cost?", a: "Budget: \u00A528,000–40,000 ($187–267). Mid-range: \u00A548,000–80,000 ($320–533). Luxury: \u00A5500,000+ ($3,333+). All figures exclude travel to Kyoto and include accommodation, food, transport and activities." },
-                { q: "Should I rent a bicycle in Kyoto?", a: "Absolutely. Kyoto is flat and compact. A bicycle (\u00A5800–1,000/day) will let you see 3x more temples than buses. Most guesthouses have rental or can direct you to nearby shops." },
-                { q: "How do I get from Tokyo to Kyoto?", a: "Shinkansen bullet train: 2 hours 15 minutes, \u00A513,320 ($89) one way. If buying a JR Pass for wider Japan travel, this route alone nearly justifies the cost. Budget option: highway bus for \u00A53,000–5,000 ($20–33), takes 7–8 hours." },
-                { q: "What time should I arrive at Fushimi Inari?", a: "6am. The shrine is open 24/7 and free. At 6am the iconic torii gate tunnel is nearly empty. By 10am it’s a crowded queue. The full hike takes about 2 hours." },
-              ].map((item, i) => <FaqItem key={i} {...item} />)}
+                {
+                  q: "How many days do you need in Kyoto?",
+                  a: "4 days is ideal to cover the major temples, Arashiyama, and a day trip to Nara without rushing. 2\u20133 days works if you\u2019re selective. 5\u20136 days lets you explore hidden temples, the Fushimi sake district, and take things slow.",
+                },
+                {
+                  q: "What is the best time to visit Kyoto?",
+                  a: "Late March to mid-April for cherry blossoms, or mid-November for peak autumn colours. May and October offer pleasant weather with fewer tourists. Avoid Golden Week (late April to early May) when domestic tourism spikes and prices soar.",
+                },
+                {
+                  q: "How much does a 4-day Kyoto trip cost?",
+                  a: "Budget: \u00A528,000\u201340,000 ($187\u2013267). Mid-range: \u00A548,000\u201380,000 ($320\u2013533). Luxury: \u00A5500,000+ ($3,333+). All figures exclude travel to Kyoto and include accommodation, food, transport and activities.",
+                },
+                {
+                  q: "Should I rent a bicycle in Kyoto?",
+                  a: "Absolutely. Kyoto is flat and compact. A bicycle (\u00A5800\u20131,000/day) will let you see 3x more temples than buses. Most guesthouses have rental or can direct you to nearby shops.",
+                },
+                {
+                  q: "How do I get from Tokyo to Kyoto?",
+                  a: "Shinkansen bullet train: 2 hours 15 minutes, \u00A513,320 ($89) one way. If buying a JR Pass for wider Japan travel, this route alone nearly justifies the cost. Budget option: highway bus for \u00A53,000\u20135,000 ($20\u201333), takes 7\u20138 hours.",
+                },
+                {
+                  q: "What time should I arrive at Fushimi Inari?",
+                  a: "6am. The shrine is open 24/7 and free. At 6am the iconic torii gate tunnel is nearly empty. By 10am it\u2019s a crowded queue. The full hike takes about 2 hours, the half-loop about 45 minutes.",
+                },
+              ].map((item, i) => (
+                <FaqItem key={i} {...item} />
+              ))}
             </div>
           </section>
 
           {/* ── COMMENTS ── */}
           <Comments />
 
-          {/* ── INTERNAL LINKS ── */}
-          <section>
+          {/* ── MORE RESOURCES ── */}
+          <div className="max-w-[860px] mx-auto px-6 md:px-8 mb-12">
+            <h2 className="font-serif text-xl font-light text-ink mb-4">Plan your Kyoto trip</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { href: "/blog/best-time-to-visit-kyoto", label: "Best time to visit", icon: "\uD83D\uDDD3\uFE0F" },
+                { href: "/blog/kyoto-trip-cost", label: "Trip cost breakdown", icon: "\uD83D\uDCB0" },
+                { href: "/blog/how-to-reach-kyoto", label: "How to get there", icon: "\uD83D\uDE85" },
+                { href: "/blog/kyoto-travel-tips", label: "Travel tips", icon: "\uD83D\uDCCB" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href}
+                  className="flex flex-col items-center gap-2 p-4 bg-parchment border border-parchment-2 rounded-xl hover:border-gold hover:shadow-sm transition-all text-center">
+                  <span className="text-2xl">{item.icon}</span>
+                  <span className="text-xs font-medium text-ink leading-tight">{item.label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Related Guides */}
+          <RelatedGuides currentSlug="kyoto-4-days" />
+
+          {/* Internal links */}
+          <section className="mt-14">
             <h3 className="font-serif text-lg font-light text-ink mb-4">Planning a Longer Japan Trip?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Tokyo — 5 Day City Guide", href: "/blog/tokyo-5-days", soon: false },
-                { label: "Osaka — 3 Day Food & Fun Guide", href: "/blog/osaka-3-days", soon: false },
-                { label: "Goa — 3 Day Beach Guide", href: "/blog/goa-3-days", soon: false },
-                { label: "Browse All Packages", href: "/#packages", soon: false },
+                { label: "Tokyo &mdash; 5 Day City Guide", href: "/blog/tokyo-5-days" },
+                { label: "Osaka &mdash; 3 Day Food & Fun Guide", href: "/blog/osaka-3-days" },
+                { label: "Goa &mdash; 3 Day Beach Guide", href: "/blog/goa-3-days" },
+                { label: "Browse All Packages", href: "/#packages" },
               ].map((link) => (
-                <Link key={link.label} href={link.href}
-                  className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group">
-                  <span className="text-sm text-ink font-light group-hover:text-teal transition-colors">{link.label}</span>
-                  <span className="text-xs text-muted">{link.soon ? "Coming Soon →" : "View →"}</span>
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="flex items-center justify-between p-4 bg-white rounded-lg border border-parchment-2 hover:border-gold hover:shadow-sm transition-all duration-200 group"
+                >
+                  <span
+                    className="text-sm text-ink font-light group-hover:text-teal transition-colors"
+                    dangerouslySetInnerHTML={{ __html: link.label }}
+                  />
+                  <span className="text-xs text-muted">Read {"\u2192"}</span>
                 </Link>
               ))}
             </div>
           </section>
-
-          <CombineWith currentSlug="kyoto-4-days" />
-          <RelatedGuides currentSlug="kyoto-4-days" />
         </div>
       </main>
 
