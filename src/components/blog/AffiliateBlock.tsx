@@ -90,7 +90,7 @@ export default function AffiliateBlock({
             ))}
           </div>
           <div className="bg-white px-5 py-2 border-t border-parchment-2">
-            <p className="text-xs text-muted/80 font-light">
+            <p className="text-xs text-muted font-light">
               Affiliate links — we earn a small commission at no extra cost to you. Helps keep our guides free.
             </p>
           </div>
@@ -148,7 +148,7 @@ export default function AffiliateBlock({
             ))}
           </div>
           <div className="bg-white px-5 py-2 border-t border-parchment-2">
-            <p className="text-xs text-muted/80 font-light">
+            <p className="text-xs text-muted font-light">
               Affiliate links — we earn a small commission at no extra cost to you.
             </p>
           </div>
@@ -206,7 +206,7 @@ export default function AffiliateBlock({
             </div>
           </div>
           <div className="bg-white px-5 py-2">
-            <p className="text-xs text-muted/80 font-light">
+            <p className="text-xs text-muted font-light">
               Affiliate links — we earn a small commission at no extra cost to you. Helps keep our guides free.
             </p>
           </div>
