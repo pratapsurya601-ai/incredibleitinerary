@@ -814,6 +814,23 @@ export default function TripCalculatorClient() {
                 </a>
               </div>
 
+              {/* Lead capture CTA */}
+              <div className="bg-parchment border border-parchment-2 rounded-2xl p-8 text-center mb-8">
+                <p className="text-[0.68rem] tracking-[0.2em] uppercase text-gold-dark font-medium mb-2">Want more detail?</p>
+                <h3 className="font-serif text-xl text-ink mb-2">
+                  Get a free custom itinerary for {selectedDest.name}
+                </h3>
+                <p className="text-sm text-muted font-light mb-5 max-w-[440px] mx-auto">
+                  Your dates, your budget, your style. We&apos;ll build a day-by-day plan with hotel picks, transport, and real costs — free within 24 hours.
+                </p>
+                <button
+                  onClick={() => setModalOpen(true)}
+                  className="btn-gold"
+                >
+                  Plan My {selectedDest.name} Trip &rarr;
+                </button>
+              </div>
+
               {/* Start over */}
               <div className="text-center">
                 <button

@@ -66,6 +66,13 @@ const nextConfig = {
           { key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" },
         ],
       },
+      // Cache blog pages for 1 day, revalidate in background for 7 days
+      {
+        source: "/blog/:slug",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+        ],
+      },
     ];
   },
 };

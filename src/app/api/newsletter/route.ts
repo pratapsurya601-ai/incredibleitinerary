@@ -149,6 +149,16 @@ function welcomeEmail(email: string, name: string | undefined) {
       </a>
     </div>
 
+    <!-- PDF shop upsell -->
+    <div style="background:#fff;border:1.5px solid #e8dfc8;border-radius:10px;padding:18px;margin-bottom:20px;text-align:center;">
+      <p style="margin:0 0 4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7a6a;font-weight:600;">Take it offline</p>
+      <p style="margin:0 0 6px;font-size:14px;font-weight:600;color:#161008;">PDF Travel Guides — from ₹99</p>
+      <p style="margin:0 0 12px;font-size:12px;color:#8a7a6a;line-height:1.5;">Day plans, budgets, packing lists &amp; maps — print-ready A4. Download 2 for free.</p>
+      <a href="${BASE}/shop" style="display:inline-block;background:#C9A96E;color:#161008;text-decoration:none;font-size:12px;font-weight:700;padding:11px 26px;border-radius:6px;">
+        Browse PDF Guides →
+      </a>
+    </div>
+
     <!-- Plan my trip CTA -->
     <div style="border:1.5px solid #C9A96E;border-radius:10px;padding:16px 20px;margin-bottom:28px;text-align:center;">
       <p style="margin:0 0 5px;font-size:13px;font-weight:600;color:#161008;">Want a plan built just for your trip?</p>

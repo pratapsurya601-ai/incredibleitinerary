@@ -9,6 +9,7 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
 import { usePageUrl } from "@/lib/hooks";
+import { initScrollDepthTracking } from "@/lib/analytics";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -228,6 +229,12 @@ function FaqItem({ q, a }: FaqData) {
 export default function UniversalBlogClient({ data }: { data: UniversalBlogData }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<0 | 1 | 2>(1);
+
+  // Track scroll depth for analytics
+  useEffect(() => {
+    const cleanup = initScrollDepthTracking(data.slug);
+    return cleanup;
+  }, [data.slug]);
 
   const planEmojis = ["💰", "✨", "💎"];
   const planColors = [
