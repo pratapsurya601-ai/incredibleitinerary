@@ -10,11 +10,8 @@ import CookieBanner from "@/components/ui/CookieBanner";
 import { blogPosts } from "@/data/blog";
 import "./globals.css";
 
-// Count only posts whose date is today or in the past
-const _count = blogPosts.filter((p) => {
-  const d = new Date(p.date);
-  return isNaN(d.getTime()) || d <= new Date();
-}).length;
+// Use total blogPosts count — stable across server/client to avoid hydration mismatch
+const _count = blogPosts.length;
 
 // display:"optional" — browser won't block render waiting for fonts.
 // First visit: Georgia/system-ui fallback (no CLS, no render-blocking).
