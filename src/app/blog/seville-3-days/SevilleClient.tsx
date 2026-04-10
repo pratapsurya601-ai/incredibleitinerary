@@ -174,7 +174,7 @@ export default function SevilleClient() {
                   rows: [["Indian passport","Schengen visa required — apply at BLS/VFS, €80 fee, 15 working days"],["US / UK / AU / CA","Visa-free for 90 days within 180 days"],["Documents","Return flight, hotel booking, travel insurance (€30k medical minimum), bank statements"]],
                   note: "Same Schengen visa covers Spain, France, Italy, etc. One visa = 27 countries." },
                 { title: "Getting Around", emoji: "\uD83D\uDEB6", bg: "bg-amber-50 border-amber-200", th: "text-amber-800",
-                  rows: [["Walking","Seville’s old town is entirely walkable. Cathedral to Plaza de Espana = 10 min walk."],["Metro/Tram","1 metro line + 1 tram line. €1.40 single ride. Useful for airport transfer only."],["Bike","Sevici bike-share: €13.33/week, first 30 min free each ride. Seville is flat = perfect for cycling."],["Airport","SVQ bus EA to city centre: €4, 35 min. Taxi: €22–30 fixed rate."]],
+                  rows: [["Walking","Seville’s old town is entirely walkable. Cathedral to Plaza de Espana = 10 min walk."],["Metro/Tram","1 metro line + 1 tram line. €1.40 single ride. Useful for airport transfer only."],["Bike","Sevici bike-share: €13.33/week, first 30 min free each ride. Seville is flat = perfect for cycling."],["Airport","SVQ bus EA to city centre: €6, 35 min. Taxi: €22–30 fixed rate. Return ticket valid same day only."]],
                   note: "Seville is small and flat. Walking + Sevici bikes covers 95% of what you need. Save money on transport." },
               ].map((area) => (
                 <div key={area.title} className={`rounded-xl border p-5 ${area.bg}`}>
@@ -252,7 +252,7 @@ export default function SevilleClient() {
                     "12pm: Lunch at Mercado de la Feria or a Macarena tapas bar — €8–14",
                     "2pm: Last walk through the centre. Pick up Turrón (Spanish nougat) or olive oil as gifts.",
                     "Optional: Casa de Pilatos (€12) — a stunning palace that combines Gothic, Renaissance, and Mudejar styles. Often empty.",
-                    "4pm: Airport bus (€4, 35 min from Prado de San Sebastian station)",
+                    "4pm: Airport bus (€6, 35 min from Prado de San Sebastian station)",
                   ]}
                   cost="€25–45 excluding accommodation" />
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
@@ -304,7 +304,7 @@ export default function SevilleClient() {
                     "1:30pm: Farewell lunch at Contenedor (€15–25 for creative seasonal menu) or traditional at El Rinconcillo (Seville’s oldest bar, since 1670)",
                     "Optional: Archivo de Indias (free) — documents from the Spanish colonisation of the Americas, next to the Cathedral",
                     "4pm: Last orange-tree-lined walk through Santa Cruz before airport",
-                    "Airport bus (€4) or taxi (€22–30 fixed rate)",
+                    "Airport bus (€6) or taxi (€22–30 fixed rate)",
                   ]}
                   cost="€40–70 excluding accommodation" />
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">

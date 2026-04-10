@@ -11,7 +11,6 @@ import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
-import Breadcrumb from "@/components/blog/Breadcrumb";
 import InlineCTA from "@/components/blog/InlineCTA";
 import PhotoCta from "@/components/blog/PhotoCta";
 import AuthorByline from "@/components/blog/AuthorByline";
@@ -75,7 +74,7 @@ function ShareBar() {
         {
           label: "Twitter",
           color: "bg-[#1DA1F2] text-white",
-          href: `https://x.com/intent/tweet?text=Jordan in 5 Days — Petra, Wadi Rum, Dead Sea &amp; Amman guide&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `https://x.com/intent/tweet?text=Jordan in 5 Days — Petra, Wadi Rum, Dead Sea & Amman guide&url=${typeof window !== "undefined" ? window.location.href : ""}`,
         },
       ].map((s) => (
         <a
@@ -97,7 +96,7 @@ function ShareBar() {
       <PinterestSaveButton
         pageUrl="https://www.incredibleitinerary.com/blog/jordan-5-days"
         imageUrl="https://images.unsplash.com/photo-1579606032821-4e6161c81bd3?w=1200&q=80"
-        description="Jordan in 5 Days: Petra Treasury at 7am, Wadi Rum stargazing, Dead Sea float, Jerash Roman ruins — complete travel guide with JOD and USD costs."
+        description="Jordan in 5 Days: Petra Treasury at dawn, Wadi Rum stargazing, Dead Sea float, and Amman — complete travel guide with real JOD costs for every budget."
       />
     </div>
   );
@@ -217,7 +216,6 @@ export default function JordanClient() {
       <ReadingProgress />
       <TableOfContents items={JORDAN_TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
-      <Breadcrumb destination="Jordan" />
 
       <main className="bg-cream min-h-screen">
 
@@ -259,7 +257,7 @@ export default function JordanClient() {
                 <em className="italic text-amber-300"> Petra, Wadi Rum, Dead Sea &amp; Amman</em>
               </h1>
               <p className="text-white/65 text-sm font-light max-w-[560px] leading-relaxed">
-                Walking through the Siq at 7am with the Treasury emerging around the final bend is one of the most extraordinary moments in all of travel. The complete guide with real JOD and USD costs.
+                The Siq at 7am, the Monastery most people miss, Wadi Rum stargazing, and the Dead Sea float. Complete guide with real JOD costs and the Jordan Pass strategy that saves you JOD 20.
               </p>
             </div>
           </div>
@@ -296,20 +294,20 @@ export default function JordanClient() {
           <section id="honest" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-4">⚡ What Jordan Actually Is</h2>
             <p className="text-sm text-muted font-light leading-relaxed mb-4">
-              Jordan is a small, landlocked Middle Eastern kingdom that punches far above its geographic size. In five days you can walk through a 2,000-year-old Nabataean city carved from rose-red rock, sleep under the stars in a desert that looks like Mars, float effortlessly in the saltiest lake on earth, and eat mansaf — lamb cooked in fermented yogurt — with Jordanians who mean it when they say &quot;welcome.&quot;
+              Jordan is a small, stable, historically extraordinary kingdom wedged between Israel, Saudi Arabia, Iraq, and Syria. It should not be this easy to visit. It should not be this safe. It should not have this many of the world&apos;s most significant archaeological sites packed into a country the size of Indiana. And yet: Petra, Wadi Rum, the Dead Sea, Jerash, Umm Qais, Aqaba, and the Desert Castles — all within a few hours of each other.
             </p>
             <p className="text-sm text-muted font-light leading-relaxed mb-4">
-              Petra is the headline, but the honest truth is that Wadi Rum rivals it. Most travellers who spend one night in the desert and two days in Petra come back saying the desert surprised them more. The combination of these two sites, with the Dead Sea as a recovery day at the end, makes Jordan one of the most complete five-day itineraries anywhere in the world.
+              The Nabataeans built Petra between the 4th century BC and the 1st century AD — a city carved entirely from rose-red sandstone cliffs, at the crossroads of the spice and silk trade routes. At its peak it housed 30,000 people. The Romans absorbed it in 106 AD. By the 7th century it was mostly abandoned, rediscovered by European explorer Johann Ludwig Burckhardt in 1812, and it has been astonishing visitors ever since.
             </p>
             <p className="text-sm text-muted font-light leading-relaxed mb-6">
-              The country is also safer than most people expect. Jordan has maintained political stability in an otherwise volatile region and has a strong tradition of hospitality toward foreign visitors. The main practical obstacle is cost: Jordan is not a cheap destination. Budget travellers can manage on $55–80 per day, but Petra alone requires the Jordan Pass ($100+) to be cost-effective. Plan the finances carefully before you go.
+              Five days gives you Petra properly (both the Treasury circuit and the Monastery that most people skip), a night in Wadi Rum under the Milky Way, a float in the Dead Sea at -430m, and enough time in Amman to fall in love with the city&apos;s chaotic warmth — the coffee-roasting alleyways, the hummus served warm with olive oil, and the views from the Citadel at sunset. The Jordan Pass (JOD 70 online before you fly) covers the visa, Petra, Jerash, Wadi Rum entry, and 40+ other sites — buy it before you leave home.
             </p>
 
             {/* Stat cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <StatCard icon="✈️" label="Airport" value="AMM" />
+              <StatCard icon="✈️" label="Main Airport" value="AMM Amman" />
               <StatCard icon="🌡️" label="Best Season" value="Mar–May, Sep–Nov" />
-              <StatCard icon="🏛️" label="UNESCO Sites" value="3+" />
+              <StatCard icon="🏛️" label="Petra Entry" value="JOD 50/day" />
               <StatCard icon="💰" label="Budget From" value="$55/day" />
             </div>
           </section>
@@ -323,7 +321,7 @@ export default function JordanClient() {
                   s: "Mar–May",
                   i: "🌸",
                   t: "Spring — Best Season",
-                  d: "18–28°C, wildflowers in Petra, comfortable hiking in Wadi Rum. The light in spring is exceptional — soft and golden, ideal for photography at the Treasury. This is the ideal window for first-time visitors. Book accommodation early as it sells out fast.",
+                  d: "15–28°C, ideal for exploring Petra and Wadi Rum all day. Wildflowers bloom across the highlands. March 21 is Arab Independence Day — festive atmosphere in Amman. The Dead Sea is comfortable and Wadi Rum nights are mild enough for good sleeping under the stars.",
                   b: "Recommended",
                   c: "bg-green-50 border-green-200",
                 },
@@ -331,24 +329,24 @@ export default function JordanClient() {
                   s: "Sep–Nov",
                   i: "🍂",
                   t: "Autumn — Excellent",
-                  d: "20–32°C, significantly less crowded than spring. September still carries summer heat but October and November are ideal — cool enough for the Monastery climb, warm enough for Wadi Rum camping. The Dead Sea is warmest in October. A strong second choice.",
+                  d: "18–30°C, post-summer crowds drop sharply. Petra and Wadi Rum are at their most photogenic. October may be the single best month — warm days, cool desert nights, very few midweek tour groups. The Dead Sea is still warm from summer. October is the ideal time to go.",
                   b: "Highly recommended",
                   c: "bg-amber-50 border-amber-200",
                 },
                 {
-                  s: "Jul–Aug",
+                  s: "Jun–Aug",
                   i: "🔥",
-                  t: "Summer — Avoid if Possible",
-                  d: "38–43°C in Petra and Wadi Rum. The rock walls of Petra absorb heat and amplify it — the actual felt temperature in the canyon at noon is brutal. Heat exhaustion cases are evacuated from Petra daily in July and August. If you must go, enter at 6am and leave by 11am.",
-                  b: "Not recommended",
+                  t: "Summer — Hot & Crowded",
+                  d: "35–40°C in Petra, Wadi Rum afternoons can reach 45°C. The sandstone absorbs and radiates heat — it feels significantly hotter than the air. Dawn visits to Petra (enter at 6am) are still manageable and stunning. Peak tourist season despite the conditions. The Dead Sea is very warm.",
+                  b: "Dawn visits only",
                   c: "bg-orange-50 border-orange-200",
                 },
                 {
                   s: "Dec–Feb",
                   i: "❄️",
-                  t: "Winter — Cool and Quiet",
-                  d: "5–15°C in Petra, occasional snow on high ground. Wadi Rum nights drop below freezing — pack seriously warm clothing for camping. The upside: Petra is almost empty in winter and the cool air makes the long hikes to the Monastery comfortable. Budget hotels discount heavily.",
-                  b: "For cold-weather travellers",
+                  t: "Winter — Quiet & Cool",
+                  d: "5–15°C, with possibility of rain and occasional snow at Petra (which is spectacular but closes some trails). Wadi Rum nights drop near freezing — bring layers. The site is much less crowded and January is the cheapest month for hotels and flights. Good for those who dislike heat and crowds.",
+                  b: "For quiet seekers",
                   c: "bg-blue-50 border-blue-200",
                 },
               ].map((s) => (
@@ -371,37 +369,37 @@ export default function JordanClient() {
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">✈️ Getting to Jordan</h2>
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
               <p className="text-sm text-amber-800 font-light">
-                <strong className="font-medium">Key detail:</strong> All international flights arrive at <strong className="font-medium">Queen Alia International Airport (AMM)</strong>, 35km south of Amman. Buy the <strong className="font-medium">Jordan Pass online before you fly</strong> — it includes the visa fee (JD 40 / ~$56) and entry to Petra. You cannot buy it at the airport after arrival.
+                <strong className="font-medium">Jordan Pass — buy before you fly:</strong> The Jordan Pass (JOD 70 for 1-day Petra, JOD 75 for 2-day, JOD 80 for 3-day) includes the visa on arrival fee (JOD 40) AND Petra entry AND 40+ other sites including Jerash (JOD 10) and Wadi Rum entry (JOD 5). Purchase at <strong className="font-medium">jordanpass.jo</strong> before departure — it must be bought before you arrive in Jordan to waive the visa fee.
               </p>
             </div>
             <div className="space-y-3">
               {[
                 {
                   i: "✈️",
-                  t: "From India (recommended route)",
-                  d: "Direct flights operate from Delhi (DEL) and Mumbai (BOM) to Amman (AMM) on Air India, Air Arabia, and IndiGo — 5–6 hours, typically $250–$500 return if booked 6–8 weeks ahead. Indirect routing via Dubai or Abu Dhabi is often cheaper ($180–$350 return) but adds 3–4 hours travel time. Amman airport is well-organised and the Jordan Pass lane at immigration is fast.",
-                  b: "Best option",
+                  t: "By Air — Queen Alia International (AMM)",
+                  d: "Amman&apos;s Queen Alia International Airport handles all international arrivals. Royal Jordanian, Air Arabia, flydubai, and Emirates connect from major Indian, European, and North American hubs. Flight time from Mumbai or Delhi: approximately 4.5 hours. Taxi to central Amman: JOD 20–25 (~$28–35). Airport Bus (JET) to 7th Circle: JOD 3.3 (~$4.60), 40 minutes.",
+                  b: "Main entry point",
                   c: "bg-green-50 border-green-200",
                 },
                 {
-                  i: "🎫",
-                  t: "Jordan Pass — Essential for Petra visitors",
-                  d: "Buy at jordanpass.jo before departure. The Jordan Pass (JD 70–80 depending on Petra days) includes: (1) Jordanian visa on arrival — waives the JD 40 airport fee. (2) Petra entry for 1, 2, or 3 days — worth JD 50–55 separately. (3) 40+ additional sites including Jerash, Wadi Rum entry, Amman Citadel, and the Petra Night Show. Total savings: JD 20–30 minimum. Condition: you must stay 3+ nights in Jordan.",
-                  b: "Save $100+",
+                  i: "🚌",
+                  t: "Overland from Israel / Palestine",
+                  d: "The Allenby Bridge / King Hussein Bridge crossing connects the West Bank to Jordan near Amman — frequently used by travellers combining Jordan with Jerusalem. The Yitzhak Rabin / Wadi Araba crossing near Aqaba connects Eilat to Aqaba and is ideal if arriving from Israel after visiting Petra. Jordan Pass is accepted at both land crossings.",
+                  b: "Israel combo route",
+                  c: "bg-teal-50 border-teal-200",
+                },
+                {
+                  i: "⛴️",
+                  t: "By Ferry from Egypt (Aqaba)",
+                  d: "A high-speed ferry runs between Nuweiba (Egypt) and Aqaba (Jordan) — approximately 1 hour crossing. This is the standard route for travellers doing an Egypt–Jordan combination. Aqaba connects directly to the Wadi Rum and Petra region, making it a logical entry point if your itinerary runs south to north through Jordan.",
+                  b: "Egypt combo route",
                   c: "bg-amber-50 border-amber-200",
                 },
                 {
                   i: "🚗",
-                  t: "Amman city transport",
-                  d: "Uber operates in Amman and is the most reliable way to get around. Airport to Downtown or Rainbow Street: JD 12–18 (~$17–25). Taxis are available but negotiate the fare before entering. JETT public buses run between major cities (Amman–Petra: JD 5, 3 hours from Wihdat bus station). For Petra–Wadi Rum transfers, minibuses depart from Wadi Musa village.",
-                  b: "Practical info",
-                  c: "bg-teal-50 border-teal-200",
-                },
-                {
-                  i: "💱",
-                  t: "Currency and payments",
-                  d: "Jordanian Dinar (JD). 1 JD ≈ $1.41 USD. The dinar is pegged to the dollar — exchange rates are stable and predictable. ATMs in Amman and Petra dispense JD. USD is widely accepted in tourist areas at approximately $1 = JD 0.71. Credit cards accepted at hotels and larger restaurants. Carry cash for small vendors, transport, and the Petra Night Show.",
-                  b: "JOD + USD",
+                  t: "Overland from Saudi Arabia",
+                  d: "The Omari border crossing south of Amman connects to Saudi Arabia. Used mostly by long-distance overland travellers. Saudi visa requirements apply — verify current entry conditions before planning. Rarely used by leisure tourists.",
+                  b: "Overland only",
                   c: "bg-parchment border-parchment-2",
                 },
               ].map((t) => (
@@ -425,74 +423,77 @@ export default function JordanClient() {
           <section id="itinerary" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-2">📅 5-Day Jordan Itinerary</h2>
             <p className="text-sm text-muted font-light mb-6 leading-relaxed">
-              Each day card is expandable. All costs shown in JOD (Jordanian Dinar) and approximate USD. 1 JD ≈ $1.41. The Jordan Pass covers Petra entry, Wadi Rum, and 40+ sites — buy it before your flight at jordanpass.jo.
+              Each day card is expandable. The route runs Amman → Petra (2 nights) → Wadi Rum → Dead Sea → Amman departure. This is the logical geographic flow and avoids backtracking. All prices in Jordanian Dinar (JOD) unless stated.
             </p>
             <div className="space-y-4">
               <DayCard
                 day="Day 1"
-                title="Amman — Citadel, Roman Theatre &amp; Downtown"
-                cost="JD 25–40 (~$35–55)"
+                title="Amman — Citadel, Roman Theatre &amp; Hashem Restaurant"
+                cost="JOD 15–25 ($21–35) excluding accommodation"
                 items={[
-                  "Arrive Amman Queen Alia Airport. Take Uber or taxi to your hotel near Rainbow Street or Downtown (JD 12–18 / ~$17–25 from the airport). Check in and get oriented — Amman is built across 19 hills and the terrain takes a day to understand.",
-                  "10:30am — Rainbow Street (Amman&apos;s most atmospheric neighbourhood): independent cafés, bookshops, street art, and views over the city&apos;s hills. Street food here is outstanding — falafel sandwich JD 0.75 (~$1), ka&apos;ak sesame bread with za&apos;atar JD 0.50.",
-                  "12:00pm — Lunch in Downtown Amman: falafel, hummus, and fuul (fava bean stew) at any Downtown restaurant. A full meal with bread and drinks: JD 2–4 (~$3–6). Jordanian hummus bears almost no resemblance to the supermarket version.",
-                  "1:30pm — Amman Citadel (Jabal al-Qala&apos;a, JD 3.5 / ~$5 entry, or free with Jordan Pass): the Roman Temple of Hercules (2nd century AD, enormous column drums remain), the Umayyad Palace (8th-century Islamic palace complex, remarkably preserved), and the small but excellent Archaeological Museum. Allow 1.5–2 hours.",
-                  "3:30pm — Roman Theatre (JD 3.5 or combined ticket): the 2nd-century AD amphitheatre seats 6,000. Walk to the top tier for views over Amman. The Folklore Museum and Popular Life Museum inside are free with the theatre ticket.",
-                  "5:00pm — Downtown Amman souq: the Gold Souk, spice market, and fabric merchants around King Hussein Street. Free to wander.",
-                  "7:30pm — Dinner: mansaf (Jordan&apos;s national dish — lamb in fermented yogurt sauce with rice and pine nuts, JD 4–8 / ~$6–11) at Hashem Restaurant (Downtown, cash only, legendary institution beloved by the king himself).",
+                  "Arrive at Queen Alia International Airport. Take a taxi or Uber to your hotel near Rainbow Street or Downtown Amman (JOD 20–25, approximately 30 minutes). If you have the Jordan Pass, present it at immigration — the visa fee is waived.",
+                  "10:30am — Rainbow Street: Amman's most atmospheric neighbourhood. Independent cafés, bookshops, street art, and views across the city's 19 hills. Street food: falafel sandwich JOD 0.75 (~$1), ka'ak (sesame bread ring with za'atar) JOD 0.50.",
+                  "12:00pm — Lunch: falafel, hummus, and fuul (fava bean stew) at any Downtown diner. Full meal with bread and drinks: JOD 2–4. Jordanian hummus — warm, drenched in olive oil, topped with pine nuts — is among the finest in the Middle East.",
+                  "1:30pm — Amman Citadel (Jabal al-Qala'a, JOD 3.5 or included in Jordan Pass): the Roman Temple of Hercules (2nd century AD, enormous column drums remain), the Umayyad Palace (8th-century Islamic palace, remarkably intact), and the Archaeological Museum housing artefacts from Bronze Age Jordan. Allow 1.5–2 hours.",
+                  "3:30pm — Roman Theatre (JOD 3 or Jordan Pass): the 2nd-century AD amphitheatre seats 6,000. Walk to the top tier for views over central Amman. The Folklore Museum and Popular Life Museum inside are free with the ticket and genuinely worthwhile.",
+                  "5:00pm — Downtown Amman souq: the Gold Souk, spice market, and fabric merchants in the alleyways around King Hussein Street. Free to browse.",
+                  "7:30pm — Dinner at Hashem Restaurant (Downtown Amman, cash only, open 24 hours, beloved by Jordanians of every background): hummus, fuul, falafel, and warm flatbread. A full dinner for two: JOD 5–7. One of the great cheap meals in the Middle East.",
                 ]}
               />
               <DayCard
                 day="Day 2"
-                title="Jerash Roman Ruins &amp; Petra Overnight"
-                cost="JD 20–35 (~$28–50)"
+                title="Petra — The Siq, Treasury &amp; Royal Tombs"
+                cost="JOD 10–20 ($14–28), Jordan Pass covers Petra entry"
                 items={[
-                  "7:00am — Minibus or shared taxi from Amman North Bus Station to Jerash (1 hour, JD 1.50 / ~$2). Jerash is the best-preserved Roman city outside Italy — better preserved than Pompeii in many respects.",
-                  "8:30am — Jerash: Enter through Hadrian&apos;s Arch (built 129 AD to honour Emperor Hadrian&apos;s visit). The Oval Plaza with its 56 Ionic columns is the centrepiece — the ancient paving stones still have the chariot wheel ruts. The Temple of Artemis, the South Theatre (seats 3,000, acoustics still perfect), and the Cardo Maximus colonnaded street are the highlights. Budget 2.5–3 hours.",
-                  "11:30am — Return to Amman and continue to Petra via public bus from Wihdat station (JD 5 / ~$7, 3 hours). Or book an afternoon transfer direct from Jerash to Petra (private taxi JD 60–80 / ~$85–113, 2.5 hours).",
-                  "Check in to your Wadi Musa hotel (the village that borders Petra). Even budget guesthouses in Wadi Musa include breakfast — confirm when booking.",
-                  "Evening — Wadi Musa village: walk the main street, eat dinner at a local restaurant (JD 5–12 / ~$7–17), and set your alarm for 6am. The Jordan Pass is essential for tomorrow — you cannot buy it at the gate.",
+                  "5:30am — Public bus from Amman's Wihdat bus station to Petra / Wadi Musa (3 hours, JOD 5 = ~$7). Alternatively hire a private taxi the night before (JOD 50–70 one way, 2.5 hours). The bus is comfortable — the road is well maintained.",
+                  "8:30am — Arrive Wadi Musa. Check in to your guesthouse, walk to the Petra visitors' centre. Present your Jordan Pass or buy a ticket (JOD 50 for 1-day, JOD 55 for 2-day — buy the Jordan Pass instead, it costs less and includes everything).",
+                  "9:00am — Walk the Bab as-Siq passage before the Siq begins: the Djinn Blocks (three enormous rectangular monuments), the Obelisk Tomb, and the Bab as-Siq Triclinium. These are frequently rushed past — spend time here.",
+                  "9:30am — The Siq: 1.2km of narrow sandstone canyon. The walls reach 80m high and narrow to 2m at the tightest point. The Nabataean water channel cut into the cliff face is visible the entire length. Walk slowly. The light changes every ten minutes.",
+                  "10:00am — Al-Khazneh (The Treasury): the 40m facade carved from rose-red sandstone — one of the most recognisable structures on earth. Morning light from 9:30–11am hits the facade at the best angle. The interior is a single empty chamber; the facade is entirely the point. Spend 30–45 minutes here before the tour groups arrive.",
+                  "11:30am — The Street of Facades (40 Nabataean rock tombs), the Colonnaded Street (Roman-era city plan), the Nymphaeum, and the Temenos Gateway leading to the Great Temple complex.",
+                  "1:30pm — Lunch at the Basin Restaurant inside Petra (JOD 10–15 buffet, decent quality, well located deep in the site) or bring food from Wadi Musa.",
+                  "3:00pm — Royal Tombs: the Urn Tomb (its interior was converted to a Byzantine church in 446 AD), the Silk Tomb, the Corinthian Tomb, and the Palace Tomb. Four grand facades carved into the same cliff face. The afternoon light from 3–5pm on the tombs is spectacular.",
+                  "5:30pm — Exit via the Siq heading out. The Treasury in evening light looks completely different from the morning. Return to Wadi Musa for dinner (JOD 5–12 at most local restaurants).",
                 ]}
               />
               <DayCard
                 day="Day 3"
-                title="Petra — The Siq, Treasury &amp; Monastery"
-                cost="JD 15–25 (~$21–35) with Jordan Pass"
+                title="Petra — The Monastery at Dawn &amp; High Place of Sacrifice"
+                cost="JOD 5–15 ($7–21), Jordan Pass covers re-entry"
                 items={[
-                  "6:00am — Enter Petra at opening. Walk the Bab as-Siq passage (1km, djinn blocks and obelisk tomb) before the Siq itself begins.",
-                  "6:30am — The Siq (1.2km canyon): the narrow gorge reaches 80m height with 2m width at the tightest point. The Nabataean water channel carved into the rock 2,000 years ago is still visible. Walk slowly — the light changes every 10 minutes.",
-                  "7:00am — Al-Khazneh (The Treasury): the iconic 40m facade carved from rose-red sandstone. The morning light from 7:30–10am is the best photography window. The interior is a single undecorated chamber — the facade is entirely the point. By 10am the first tour groups arrive.",
-                  "10:00am — The Street of Facades (40 Nabataean rock tombs), the Colonnaded Street (Roman-era city plan), the Nymphaeum (2nd century AD), and the Great Temple complex. The scale of Petra only becomes clear as you walk the full 1.5km from the Treasury to the basin.",
-                  "12:00pm — Lunch at the Basin Restaurant inside Petra (JD 10–15 / ~$14–21 buffet) or bring food from Wadi Musa.",
-                  "1:30pm — The Monastery (Ad Deir): turn left past the Basin and follow the signs up the 850 carved steps. The Monastery is Petra&apos;s largest monument (50m wide, 45m tall) and most impressive facade — larger than the Treasury, better preserved, and far less crowded after noon. The 45-minute climb is worth every step.",
-                  "4:00pm — Royal Tombs (Urn Tomb, Silk Tomb, Corinthian Tomb, Palace Tomb): the cliff face carved with four grand facades. The Urn Tomb interior was converted to a Byzantine church in 446 AD — the inscriptions in Greek still survive.",
-                  "Optional evening — Petra Night Show (Tue/Wed/Thu, JD 14 / ~$20 or included in Jordan Pass): 800 candles light the Siq and Treasury as a Bedouin storyteller narrates Nabataean history. Genuinely atmospheric.",
+                  "6:00am — Reenter Petra at opening. Walk the Siq quickly — you know the route. Turn left past the Treasury and follow the signs to Ad Deir (The Monastery). The path climbs 850 steps carved into the rock. Bring 1.5 litres of water.",
+                  "7:30am — Ad Deir (The Monastery): Petra's largest monument — 50m wide and 45m tall, larger than the Treasury. At 6–7am you will be almost entirely alone. By 11am it is crowded. The view from the ridge behind the Monastery extends across Wadi Araba and, on clear days, to Israel. This is the best thing in Petra that most visitors miss entirely.",
+                  "10:00am — High Place of Sacrifice: the 2,000-year-old ritual altar on Petra's highest accessible point. The path climbs past the Obelisks — two freestanding 7m rock needles carved in place from the living rock. The circular altar with drainage channels for ritual sacrifice is preserved almost perfectly.",
+                  "12:00pm — Descend via the Wadi Farasa route past the Garden Triclinium, Soldier's Tomb, and the Renaissance Tomb. Different rock colours and textures from the main route. Very few other visitors use this descent path.",
+                  "2:00pm — Rest and lunch in Wadi Musa. Optional evening: Petra Night Show (Tuesday, Wednesday, Thursday evenings only; JOD 14 entry): 800 candles light the Siq and Treasury as a Bedouin musician and storyteller perform. Genuinely atmospheric — well worth attending if you are there on the right night.",
+                  "Pack for Wadi Rum. Most Wadi Musa guesthouses can arrange a shared minibus to Wadi Rum village (JOD 5–8) departing the following morning.",
                 ]}
               />
               <DayCard
                 day="Day 4"
-                title="Wadi Rum — Jeep Tour &amp; Bedouin Camp"
-                cost="JD 45–75 (~$63–106)"
+                title="Wadi Rum — Jeep Tour, Bedouin Camp &amp; Milky Way"
+                cost="JOD 55–90 ($77–126), transport + jeep tour + overnight camp"
                 items={[
-                  "8:00am — Minibus or shared taxi from Wadi Musa to Wadi Rum village (1.5 hours, JD 5–8 / ~$7–11 per person). Or arrange a private transfer through your guesthouse.",
-                  "10:00am — Wadi Rum protected area entry (JD 5 / ~$7, waived with Jordan Pass). Wadi Rum is 74,000 hectares of desert, sandstone mountains, and Martian-red dunes. Lawrence of Arabia camped here in 1917. The Martian (2015), Rogue One (2016), and Dune (2021) were all filmed here.",
-                  "10:30am — 4WD jeep tour (JD 35–60 / ~$50–85 per person for a 4-hour tour): Lawrence&apos;s Spring (a rock-carved Nabataean water system), the Khazali Canyon inscriptions (Thamudic rock art 2,000+ years old), the Red Sand Dunes, the Mushroom Rock, and Um Fruth Rock Bridge.",
-                  "2:00pm — Lunch at your Bedouin camp: traditional zarb — meat and vegetables cooked underground over coals. Most camps include lunch in the overnight price.",
-                  "5:00pm — Sunset from the dunes: the light turns Wadi Rum from red to deep purple to black over 45 minutes. The &apos;Martian light&apos; — the same desert atmosphere that drew multiple sci-fi film productions — is extraordinary in person.",
-                  "8:00pm — Bedouin overnight camp (JD 40–70 / ~$56–99 per person including dinner and breakfast, in traditional Bedouin tents or under open stars). The stargazing at Wadi Rum — zero light pollution, 300+ clear nights per year — is among the best on earth. The Milky Way is bright and visible to the naked eye.",
+                  "8:00am — Shared minibus from Wadi Musa to Wadi Rum village (1.5 hours, JOD 5–8). Or arrange a private transfer through your guesthouse (JOD 30–45).",
+                  "10:00am — Wadi Rum protected area entry (JOD 5, waived with Jordan Pass). Wadi Rum is 74,000 hectares of sandstone desert — red dunes, towering rock formations, and absolute silence. Lawrence of Arabia camped here in 1917. The Martian (2015), Rogue One (2016), and Dune Part One (2021) were all filmed in this landscape.",
+                  "10:30am — 4WD jeep tour (JOD 35/person for a 4-hour shared tour; JOD 50–60 for a private half-day): Lawrence's Spring (a Nabataean rock-carved water system), the Khazali Canyon inscriptions (Thamudic rock art 2,000+ years old), the Red Sand Dunes, Mushroom Rock, and Um Fruth Rock Bridge.",
+                  "2:00pm — Traditional zarb lunch at your Bedouin camp: meat and vegetables slow-cooked underground over hot coals, served with rice, flatbread, and salad. Most overnight camps include lunch in the rate.",
+                  "5:30pm — Sunset from the highest accessible dune. The Wadi Rum light transitions from red to orange to purple to deep violet in the 45 minutes after sunset. The silence combined with this colour is difficult to describe and impossible to replicate elsewhere.",
+                  "8:00pm — Bedouin overnight camp (JOD 40–70/person all-inclusive with dinner and breakfast, in traditional Bedouin tents or open-air sleeping platforms). The stargazing — zero light pollution, 300+ clear nights per year — is extraordinary. The Milky Way is bright and unmistakable to the naked eye by 9pm.",
                 ]}
               />
               <DayCard
                 day="Day 5"
-                title="Dead Sea Float, Aqaba Snorkel &amp; Farewell"
-                cost="JD 30–55 (~$42–78)"
+                title="Dead Sea Float &amp; Amman Farewell Dinner"
+                cost="JOD 30–50 ($42–70), Dead Sea entry + transport + dinner"
                 items={[
-                  "7:00am — Breakfast at the Bedouin camp. Choose your Day 5: (A) Dead Sea float + return to Amman for departure, or (B) Aqaba Red Sea snorkel + evening flight.",
-                  "Option A — Dead Sea: Minibus from Wadi Rum toward Amman highway (JD 10–15 / ~$14–21, 3 hours). Dead Sea is 1 hour south of Amman. Amman Beach public resort (JD 20 / ~$28 entry including sunbed and shower) or Suweimeh resorts (JD 25–35 / ~$35–50).",
-                  "Dead Sea float: the buoyancy is genuinely disorienting — you cannot sink even if you try. Salt concentration 33%, -430m below sea level. Cover any cuts with petroleum jelly before entering. Do not splash your eyes under any circumstances — the salt is intensely painful and requires immediate fresh water flushing.",
-                  "Dead Sea mud is free at the shore — coat yourself and let it dry. The minerals leave skin notably soft. Shower facilities are at the resort entrance.",
-                  "Option B — Aqaba Red Sea: Aqaba is 1 hour from Wadi Rum (JD 5–8 / ~$7–11 shared taxi). The Red Sea at Aqaba has some of the best accessible reef snorkelling in the world — South Beach and the Japanese Garden coral reef are reachable by free shuttle or short taxi. Snorkel rental JD 3–5 / ~$4–7.",
-                  "Afternoon — Return to Amman: final kunafeh (sweet cheese pastry in sugar syrup, JD 1–2 / ~$1.50–3) at Habibah Restaurant, Downtown Amman. Farewell dinner: Fakhr El-Din restaurant (Rainbow Street, JD 15–25 / ~$21–35 per person) for the best mezze spread in Amman.",
+                  "7:00am — Breakfast at the Bedouin camp. Arrange transfer from Wadi Rum to the Dead Sea (3 hours via the Aqaba–Amman desert highway). Shared minibus JOD 10–15; private taxi JOD 60–80.",
+                  "11:00am — Dead Sea: the lowest point on Earth at -430m below sea level, salt concentration 33% (approximately 9x saltier than the ocean). The buoyancy is genuinely disorienting — you physically cannot sink. Float on your back for the obligatory photograph. Important: cover any cuts with petroleum jelly before entering. Do not splash water in your eyes under any circumstances — 33% salt is intensely painful.",
+                  "12:00pm — Amman Beach public resort (JOD 20 entry including sunbed and shower). The shoreline mud is free — coat yourself, let it dry, rinse off in the freshwater shower. Rich in magnesium, calcium, and potassium salts.",
+                  "2:00pm — Lunch at the resort restaurant (JOD 8–15) or at a roadside restaurant on the Dead Sea Highway.",
+                  "4:00pm — Drive to Amman (1 hour along the Dead Sea Highway). Optional final stop: Darat al Funun contemporary art gallery in a terraced garden above the Citadel (free entry), or a final round of Amman hummus and knafeh (warm sweet cheese pastry, JOD 1–2) at Hababah on Mango Street.",
+                  "7:30pm — Farewell dinner at Fakhr El-Din restaurant (Rainbow Street, Amman; JOD 15–25/person, reservation recommended): musakhan (sumac-roasted chicken over flatbread), maklouba (upside-down rice with lamb), and the most generous mezze spread in Amman. One of the genuinely great restaurants in the Middle East.",
+                  "Head to Queen Alia International Airport: taxi or Uber from central Amman takes 35–45 minutes (JOD 18–25).",
                 ]}
               />
             </div>
@@ -505,33 +506,51 @@ export default function JordanClient() {
           <section id="landmarks" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🏛️ Jordan Landmark Guide</h2>
             <p className="text-sm text-muted font-light mb-5 leading-relaxed">
-              The four essential sites in order of priority. Entry fees as of early 2026 — most are included in the Jordan Pass (JD 70–80 / ~$99–113).
+              The key sites in priority order. Entry fees as of early 2026. The Jordan Pass (JOD 70–80 online) covers the visa, Petra, and all sites marked &quot;Jordan Pass&quot; below — it saves a minimum of JOD 15–20 over buying separately.
             </p>
             <div className="space-y-3">
               {[
                 {
-                  n: "Petra — The Rose City",
-                  e: "JD 50 (2-day) / ~$70 — or included in Jordan Pass",
-                  d: "The Nabataean city carved from rose-red sandstone between the 4th century BC and 2nd century AD. The Treasury (Al-Khazneh) is the iconic facade, but the Monastery (Ad Deir) is larger and less crowded. The site covers 264 km² — most visitors see only 20% of it. Budget 2 full days minimum. Enter at 6am opening.",
-                  t: "2 days minimum · Must visit",
+                  n: "Petra — Al-Khazneh (The Treasury)",
+                  e: "JOD 50/day · Jordan Pass",
+                  d: "The 40m facade carved from rose-red sandstone — the defining image of Jordan. Best light: 9:30–11am. By 10am the first tour groups arrive. The interior is a single empty chamber; the entire point is the facade. Allow a full morning minimum. Two-day ticket (JOD 55 separately, or Jordan Pass) strongly recommended.",
+                  t: "Must see · Full day",
                 },
                 {
-                  n: "Jerash — Pompeii of the Middle East",
-                  e: "JD 10 / ~$14 — or included in Jordan Pass",
-                  d: "The best-preserved Roman provincial city in the world outside Italy. The Oval Plaza with 56 Ionic columns, the Temple of Artemis, the South Theatre with its perfect acoustics, and the 1km colonnaded Cardo are all extraordinarily intact. 45km north of Amman, easily combined with arrival day or departure.",
-                  t: "Half day · Unmissable",
+                  n: "Petra — Ad Deir (The Monastery)",
+                  e: "Included in Petra ticket",
+                  d: "Petra&apos;s largest monument (50m wide × 45m tall), reached via 850 rock-carved steps. Go at 6am for solitude and dawn light. The view from the ridge behind extends to Israel on clear days. The most missed major site in Jordan — do not skip it. The 45-minute climb is entirely manageable with proper shoes and water.",
+                  t: "Dawn essential · 2–3 hrs",
                 },
                 {
-                  n: "Wadi Rum — The Martian Desert",
-                  e: "JD 5 / ~$7 — or included in Jordan Pass",
-                  d: "74,000 hectares of sandstone mountains, red dunes, and silence. The reason to visit is the overnight — the stargazing at Wadi Rum (zero light pollution, 300+ clear nights per year) is among the best on earth. Day trips are worthwhile but miss the entire point. Book a Bedouin camp and stay the night.",
-                  t: "1 night minimum · Transformative",
+                  n: "Wadi Rum Protected Area",
+                  e: "JOD 5 · Jordan Pass",
+                  d: "74,000 hectares of sandstone desert. The overnight stay is the point — the day-trip misses the stargazing entirely. A 4-hour shared jeep tour costs JOD 35/person. Filming location for The Martian, Dune, and Rogue One. One of the most otherworldly landscapes on earth.",
+                  t: "Overnight recommended · 1–2 days",
                 },
                 {
-                  n: "Dead Sea — Lowest Point on Earth",
-                  e: "JD 20–35 / ~$28–50 (resort day-use fee)",
-                  d: "The Dead Sea sits at 430m below sea level — the lowest point on the planet&apos;s surface. Salt concentration of 33% makes it physically impossible to sink. The mineral-rich mud is free at the shore. The Dead Sea is shrinking (its level drops about 1m per year) — visit while the shoreline is still accessible. 1 hour from Amman by road.",
-                  t: "Half day · Unique experience",
+                  n: "Dead Sea",
+                  e: "JOD 20 (public beach resort)",
+                  d: "Lowest point on Earth at -430m below sea level. 33% salt concentration makes floating involuntary. The shoreline mineral mud is free. Visit on a weekday — tour buses arrive from 11am on weekends. 1 hour from Amman. The Kempinski Ishtar or Mövenpick offer luxury day access (JOD 50–80 including beach and pool).",
+                  t: "Must do · Half day",
+                },
+                {
+                  n: "Jerash — Roman Ruins",
+                  e: "JOD 10 · Jordan Pass",
+                  d: "One of the best-preserved Roman provincial cities in the world — more complete than many sites in Italy. The Oval Plaza, Cardo Maximus (main colonnaded street), Temple of Artemis, South Theatre, and Hippodrome are all largely intact. 45 minutes north of Amman. Allow 3 hours. Significantly underrated and undervisited.",
+                  t: "Day trip from Amman · 3 hrs",
+                },
+                {
+                  n: "Amman Citadel (Jabal al-Qala&apos;a)",
+                  e: "JOD 3.5 · Jordan Pass",
+                  d: "The Roman Temple of Hercules (2nd century AD), the 8th-century Umayyad Palace, and the Archaeological Museum. The Citadel hilltop at sunset — 360° views over Amman as the call to prayer echoes from 19 mosques — is one of the great city moments in the Middle East. Free after hours if you want just the view.",
+                  t: "Must see · 1.5–2 hrs",
+                },
+                {
+                  n: "Amman Roman Theatre",
+                  e: "JOD 3 · Jordan Pass",
+                  d: "A 6,000-seat 2nd-century AD amphitheatre in the middle of Downtown Amman. Still remarkably intact — the top tier gives excellent views across the city. The Folklore Museum and Popular Life Museum (free with ticket) house traditional Jordanian costumes, instruments, and domestic objects.",
+                  t: "1 hr · Downtown Amman",
                 },
               ].map((place) => (
                 <div key={place.n} className="bg-white rounded-xl border border-parchment-2 p-4">
@@ -551,32 +570,32 @@ export default function JordanClient() {
           {/* Gallery */}
           <DestinationGallery
             title="Jordan — Petra, Wadi Rum &amp; the Dead Sea"
-            subtitle="Rose-red rock cities, Martian deserts, and the world&apos;s saltiest lake."
+            subtitle="The rose city, the Martian desert, and the lowest point on earth."
             spots={[
               {
-                name: "Petra Treasury at Dawn",
-                query: "petra treasury al khazneh rose red rock jordan nabataean dawn",
-                desc: "The Treasury (Al-Khazneh) at 7am — the iconic 40m rose-red facade at its best before the tour groups arrive.",
+                name: "Petra Treasury (Al-Khazneh)",
+                query: "petra jordan treasury al-khazneh rose red sandstone nabataean ancient ruins",
+                desc: "The 40m Treasury facade carved from rose-red sandstone — the defining image of Jordan and one of the great man-made wonders of the world.",
               },
               {
-                name: "Wadi Rum Desert",
-                query: "wadi rum desert sandstone mountains jordan martian red dunes",
-                desc: "Wadi Rum&apos;s Martian landscape — 74,000 hectares of red sandstone mountains and dunes that have served as the backdrop for multiple space films.",
+                name: "Wadi Rum Desert Landscape",
+                query: "wadi rum desert jordan red dunes sandstone mountains martian landscape",
+                desc: "Wadi Rum&apos;s Martian landscape — red dunes, sandstone mountains, and 74,000 hectares of silence under some of the darkest skies on earth.",
               },
               {
-                name: "Dead Sea Float",
-                query: "dead sea jordan floating salt water lowest point earth",
-                desc: "The Dead Sea at 430m below sea level — 33% salt concentration makes it physically impossible to sink.",
+                name: "Dead Sea Jordan Float",
+                query: "dead sea jordan float buoyancy salt water lowest point earth",
+                desc: "Floating in the Dead Sea at -430m below sea level — the 33% salt concentration makes sinking physically impossible.",
               },
               {
-                name: "Jerash Roman Columns",
-                query: "jerash jordan roman ruins oval plaza ionic columns ancient",
-                desc: "The Oval Plaza at Jerash — 56 Ionic columns from the 1st century AD, the finest preserved Roman city in the Middle East.",
+                name: "Petra Monastery (Ad Deir)",
+                query: "petra monastery ad deir jordan dawn rock carved nabataean",
+                desc: "The Monastery at dawn — 50m wide, 850 steps above the main route, and almost entirely missed by the tour groups below.",
               },
               {
-                name: "Wadi Rum Stargazing",
-                query: "wadi rum night sky milky way stars desert jordan bedouin camp",
-                desc: "The Milky Way over Wadi Rum — zero light pollution and 300+ clear nights per year make this one of the world&apos;s great stargazing destinations.",
+                name: "Amman Citadel Sunset",
+                query: "amman citadel jordan roman temple hercules umayyad palace sunset city view",
+                desc: "The Amman Citadel at sunset — Roman, Umayyad, and Byzantine layers visible as the call to prayer echoes across 19 mosques.",
               },
             ]}
           />
@@ -585,28 +604,27 @@ export default function JordanClient() {
           <section id="budget" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">💰 Budget Breakdown</h2>
             <p className="text-sm text-muted font-light mb-5 leading-relaxed">
-              Jordan is a mid-range destination — significantly more expensive than Southeast Asia but cheaper than Western Europe. The Jordan Pass (JD 70–80 / ~$99–113) is the biggest single saving: it covers the visa fee plus Petra and 40+ sites, saving JD 20–30 over paying separately.
+              Jordan is mid-range to expensive by regional standards. The Jordanian Dinar (JOD) is pegged to the US dollar at 1 JOD = ~$1.41. The Jordan Pass (JOD 70–80) is the single most impactful budget decision — buy it before you fly.
             </p>
             <div className="overflow-x-auto rounded-xl border border-parchment-2 shadow-sm mb-6">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-ink">
                     <th className="text-left p-3.5 text-xs font-medium text-white/70">Category</th>
-                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">Budget (JOD / USD)</th>
-                    <th className="p-3.5 text-xs font-medium text-rose-300 text-center">Mid-Range (JOD / USD)</th>
-                    <th className="p-3.5 text-xs font-medium text-violet-300 text-center">Luxury (JOD / USD)</th>
+                    <th className="p-3.5 text-xs font-medium text-amber-300 text-center">Budget</th>
+                    <th className="p-3.5 text-xs font-medium text-rose-300 text-center">Mid-Range</th>
+                    <th className="p-3.5 text-xs font-medium text-purple-300 text-center">Luxury</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-parchment-2">
                   {[
-                    ["✈️ Flights (return, from India)", "JD 130–230 / $180–325", "JD 130–230 / $180–325", "JD 400–700 / $565–990"],
-                    ["🎫 Jordan Pass (incl. visa + Petra)", "JD 75 / $106", "JD 75 / $106", "JD 80 / $113"],
-                    ["🏨 Accommodation (5 nights)", "JD 30–60 / $42–85", "JD 120–250 / $170–353", "JD 500–1,400 / $705–1,975"],
-                    ["🚌 Transport in Jordan", "JD 20–40 / $28–56", "JD 60–120 / $85–170", "JD 150–300 / $212–423"],
-                    ["🏜️ Wadi Rum camp (1 night, incl. meals)", "JD 40–50 / $56–71", "JD 80–120 / $113–170", "JD 150–250 / $212–353"],
-                    ["🌊 Dead Sea resort entry", "JD 20 / $28", "JD 30–50 / $42–71", "JD 60–120 / $85–170"],
-                    ["🍽️ Food (5 days)", "JD 30–60 / $42–85", "JD 80–150 / $113–212", "JD 200–400 / $282–565"],
-                    ["TOTAL (per person, 5 days)", "JD 345–535 / $487–755", "JD 575–995 / $811–1,404", "JD 1,540–3,250 / $2,172–4,583"],
+                    ["🏨 Accommodation (5 nights)", "$75–150", "$350–650", "$1,400–2,800"],
+                    ["🎫 Jordan Pass (visa + sites)", "$99 (JOD 75)", "$99 (JOD 75)", "$99 (JOD 75)"],
+                    ["🚌 Internal transport (5 days)", "$25–40", "$60–100", "$200–350"],
+                    ["🍽️ Food (5 days)", "$50–100", "$125–250", "$350–750"],
+                    ["🏜️ Wadi Rum jeep + camp", "$55–70", "$120–200", "$300–500"],
+                    ["🌊 Dead Sea entry + transport", "$35–50", "$60–100", "$130–250"],
+                    ["TOTAL (per person, 5 days)", "$340–510", "$815–1,375", "$2,579–4,725"],
                   ].map(([cat, ...vals]) => (
                     <tr key={cat} className="bg-white hover:bg-parchment/40 transition-colors">
                       <td className="p-3.5 text-xs text-ink font-medium">{cat}</td>
@@ -620,16 +638,16 @@ export default function JordanClient() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-                <p className="font-medium text-sm text-green-800 mb-1">💚 Budget ($55–80/day)</p>
-                <p className="text-xs text-green-700 font-light leading-relaxed">Stay in hostels and guesthouses (JD 8–15/night), eat at local restaurants and street stalls, use public buses and minibuses between cities. The Jordan Pass is non-negotiable even at budget level.</p>
+                <p className="font-medium text-sm text-green-800 mb-1">💚 Budget ($55–90/day)</p>
+                <p className="text-xs text-green-700 font-light leading-relaxed">Hostels or budget guesthouses in Amman (JOD 10–20/night), cheap guesthouses in Wadi Musa (JOD 20–30), basic Bedouin camp in Wadi Rum (JOD 40 all-inclusive), public beach at the Dead Sea (JOD 20). Buy the Jordan Pass. Eat at Hashem and local dhabas.</p>
               </div>
               <div className="bg-rose-50 border border-rose-200 rounded-xl p-4">
                 <p className="font-medium text-sm text-rose-800 mb-1">🌟 Mid-Range ($130–220/day)</p>
-                <p className="text-xs text-rose-700 font-light leading-relaxed">3-4 star hotels (JD 50–90/night), private transfers between sites, guided tours of Petra, mid-range Wadi Rum camp with private tents. The sweet spot for comfort without overpaying.</p>
+                <p className="text-xs text-rose-700 font-light leading-relaxed">3–4 star hotels in Amman (JOD 50–90/night), mid-range guesthouses near Petra, private taxi transfers, upgraded Bedouin camp (JOD 60–80), Mövenpick Dead Sea day access. Private licensed guide for half a day at Petra (JOD 50–80). Excellent value at this tier in Jordan.</p>
               </div>
-              <div className="bg-violet-50 border border-violet-200 rounded-xl p-4">
-                <p className="font-medium text-sm text-violet-800 mb-1">💎 Luxury ($400–900+/day)</p>
-                <p className="text-xs text-violet-700 font-light leading-relaxed">Mövenpick Resort Petra, luxury bubble-tent camps in Wadi Rum, private guides for Petra and Jerash, private transfers throughout. Jordan&apos;s top-end properties are genuinely world-class.</p>
+              <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
+                <p className="font-medium text-sm text-purple-800 mb-1">💎 Luxury ($400+/day)</p>
+                <p className="text-xs text-purple-700 font-light leading-relaxed">Mövenpick Resort Petra (JOD 120+/night, adjacent to the gate) or Kempinski Ishtar Dead Sea (JOD 180+/night), luxury bubble-dome camp in Wadi Rum, private guides throughout, hot air balloon over Wadi Rum (JOD 150–200). Jordan delivers exceptional luxury at this tier.</p>
               </div>
             </div>
           </section>
@@ -641,41 +659,41 @@ export default function JordanClient() {
           <section id="stay" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🏨 Where to Stay in Jordan</h2>
             <p className="text-sm text-muted font-light mb-5 leading-relaxed">
-              The key accommodation decision is where to base yourself for Petra: in Wadi Musa (the adjacent village) you can walk to the Petra gate, which is critical for the 6am opening strategy. Amman is the logical first and last night.
+              Jordan has three main accommodation bases for a 5-day itinerary: Amman (gateway and cultural hub), Wadi Musa (the village adjacent to Petra), and Wadi Rum (desert camps). The Dead Sea resorts are a category unto themselves.
             </p>
             <div className="space-y-3">
               {[
                 {
-                  name: "Amman — Rainbow Street hotels",
-                  type: "Urban base · First Circle / Jabal Amman",
-                  price: "JD 15–90 / ~$21–127/night",
-                  badge: "Best Amman location",
-                  desc: "Rainbow Street is Amman&apos;s most atmospheric neighbourhood — independent cafés, traditional restaurants, boutique guesthouses, and easy walking distance to the Citadel. Budget hostels (JD 10–20 dorm) and mid-range boutique hotels (JD 50–90) are clustered here. Avoid staying in the newer West Amman hotel district — it&apos;s sterile and far from anything interesting.",
+                  name: "Kempinski Hotel Ishtar Dead Sea",
+                  type: "Luxury resort · Dead Sea, Sweimeh",
+                  price: "From JOD 180/night (~$253)",
+                  badge: "Dead Sea pinnacle",
+                  desc: "The benchmark luxury property on the Dead Sea — infinity pools overlooking the water, private beach, spa with Dead Sea mineral treatments, and views across to the hills of the West Bank. The gold-standard for the Dead Sea experience. Book well in advance for spring (March–May) and autumn (September–November).",
                   color: "border-amber-200 bg-amber-50",
                 },
                 {
-                  name: "Petra — Wadi Musa guesthouses",
-                  type: "Petra base · Walking distance to gate",
-                  price: "JD 15–80 / ~$21–113/night",
-                  badge: "Essential for early entry",
-                  desc: "Staying in Wadi Musa (the village at the Petra entrance) is essential if you want to enter at 6am. The gate is a 10-minute walk from most hotels. Rocky Mountain Hotel and Petra Guest House are long-running reliable options. The Mövenpick Resort Petra is directly adjacent to the gate and is the best located luxury property in all of Jordan.",
+                  name: "Mövenpick Resort Petra",
+                  type: "Luxury hotel · Adjacent to Petra gate",
+                  price: "From JOD 120/night (~$169)",
+                  badge: "Best Petra location",
+                  desc: "The closest luxury property to Petra&apos;s main entrance — 5 minutes&apos; walk to the visitors&apos; centre. The location means you can enter at 6am opening without a taxi, return for a midday rest, and go back in for the evening light. The concierge can arrange early site access and Petra Night Show front-row seating.",
                   color: "border-teal-200 bg-teal-50",
                 },
                 {
-                  name: "Wadi Rum — Bedouin camps",
-                  type: "Desert camp · All-inclusive",
-                  price: "JD 40–200 / ~$56–282/night incl. meals",
-                  badge: "Unique experience",
-                  desc: "Bedouin camps range from basic (mattresses in a Bedouin tent, JD 40–50 all-inclusive) to luxury bubble tents with transparent domed ceilings for stargazing from bed (JD 150–250). All camps include dinner (zarb — underground slow-cooked meat), breakfast, and usually the jeep tour. The key upgrade is not the tent itself but the camp location — ask how far it is from the main village road.",
-                  color: "border-parchment-2 bg-white",
+                  name: "Wadi Rum Luxury Camp",
+                  type: "Luxury Bedouin camp · Wadi Rum desert",
+                  price: "From JOD 80/night all-inclusive (~$113)",
+                  badge: "Best desert stay",
+                  desc: "Bubble-dome tents with transparent ceilings for in-bed stargazing, or elevated Bedouin tents with private bathrooms. All-inclusive: jeep sunset tour, zarb dinner cooked underground, and breakfast. The Milky Way from these camps — zero light pollution — is extraordinary.",
+                  color: "border-purple-200 bg-purple-50",
                 },
                 {
-                  name: "Aqaba — Red Sea beachfront",
-                  type: "Beach hotel · Red Sea coast",
-                  price: "JD 40–150 / ~$56–212/night",
-                  badge: "If adding a beach day",
-                  desc: "If you choose the Aqaba option on Day 5 instead of the Dead Sea, Kempinski Hotel Aqaba and Movenpick Resort Aqaba are the best-located properties with direct Red Sea beach access. From the terrace you can see Israel, Egypt, and Saudi Arabia across the Gulf of Aqaba simultaneously.",
-                  color: "border-blue-200 bg-blue-50",
+                  name: "Budget Guesthouses — Wadi Musa",
+                  type: "Budget-mid · Wadi Musa village",
+                  price: "JOD 20–40/night (~$28–56)",
+                  badge: "Best value",
+                  desc: "Dozens of clean, functional guesthouses in Wadi Musa. Rocky Mountain Hotel, Petra Moon Hotel, and Cleopetra Hotel are consistently good at the budget-mid tier. Most include breakfast. Book early for the spring high season (March–May) — rooms fill quickly.",
+                  color: "border-parchment-2 bg-white",
                 },
               ].map((stay) => (
                 <div key={stay.name} className={`rounded-xl p-4 border ${stay.color}`}>
@@ -699,37 +717,44 @@ export default function JordanClient() {
           <section id="eat" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">🍽️ Where to Eat in Jordan</h2>
             <p className="text-sm text-muted font-light mb-5 leading-relaxed">
-              Jordanian food is one of the great revelations of Middle Eastern travel. The hummus, mansaf, and mezze spread here bear no resemblance to their exported supermarket versions. Eat at the local institutions — they are cheap, extraordinary, and where Jordanians actually go.
+              Jordanian food is outstanding — the mezze culture, mansaf (the national dish: lamb in fermented yogurt sauce over rice), warm hummus, and the knafeh (sweet cheese pastry). Eating well here does not require spending much. Some of the best meals cost JOD 2–4.
             </p>
             <div className="space-y-3">
               {[
                 {
                   n: "Hashem Restaurant",
-                  t: "Downtown Amman · Cash only · Legendary",
-                  d: "Jordan&apos;s most famous restaurant — a cash-only Downtown institution that has fed kings and backpackers equally since 1952. Falafel, hummus, fuul (fava bean stew), and ful medames. A full meal for two with bread and tea: JD 6–10 (~$8–14). Open from early morning until late night. No reservations, no menu — just point at what everyone else is eating.",
-                  b: "Must visit",
+                  t: "Legendary cheap eats · Downtown Amman",
+                  d: "One of the most famous restaurants in the Arab world — open 24 hours, cash only, loved by Jordanians of every background including reportedly the royal family. Hummus, fuul, falafel, and warm flatbread. Full meal for two: JOD 5–7. The hummus is warm, silky, and drenched in olive oil. Non-negotiable stop.",
+                  b: "Non-negotiable",
                   c: "bg-amber-50 border-amber-200",
                 },
                 {
-                  n: "Habibah Sweets",
-                  t: "Downtown Amman · Kunafeh specialist",
-                  d: "The best kunafeh in Jordan — sweet cheese pastry soaked in sugar syrup and topped with crushed pistachios, served hot from a large round tray. JD 1–2 (~$1.50–3) per portion. The queue at Habibah moves fast. There are branches across Amman but the original Downtown location is the pilgrimage. This is the thing to eat before your flight home.",
-                  b: "Best kunafeh",
+                  n: "Fakhr El-Din",
+                  t: "Upscale Jordanian · Rainbow Street, Amman",
+                  d: "Jordan&apos;s most celebrated traditional restaurant, in a beautiful 1950s villa on Rainbow Street. Musakhan (sumac-roasted chicken over flatbread), maklouba (upside-down rice with lamb or chicken), and a mezze spread that takes 20 minutes to set down fully. JOD 15–25/person. Reserve for dinner.",
+                  b: "Farewell dinner",
                   c: "bg-orange-50 border-orange-200",
                 },
                 {
                   n: "Sufra Restaurant",
-                  t: "Rainbow Street, Amman · Traditional Jordanian",
-                  d: "The best sit-down traditional Jordanian meal in Amman — a restored 1950s villa on Rainbow Street serving musakhan (sumac roast chicken on flatbread), maklouba (upside-down rice with vegetables), mansaf, and outstanding mezze. JD 15–25 (~$21–35) per person. Reserve for dinner. The courtyard setting is beautiful in the evening.",
-                  b: "Best sit-down meal",
+                  t: "Traditional Jordanian · Rainbow Street, Amman",
+                  d: "Traditional Jordanian home cooking in a restored 1950s villa on Rainbow Street. The mansaf here — lamb cooked in jameed (fermented dried yogurt sauce) over rice with pine nuts — is excellent. Good for lunch, quieter than Fakhr El-Din. JOD 12–20/person.",
+                  b: "Best for lunch",
                   c: "bg-green-50 border-green-200",
                 },
                 {
-                  n: "Wadi Musa restaurants (Petra village)",
-                  t: "Petra village · Budget-mid",
-                  d: "The restaurants on Wadi Musa&apos;s main street serve decent Jordanian food at tourist prices — JD 8–15 (~$11–21) for a main course. Al-Aqaba and Al-Wadi are reliable. Avoid eating inside Petra itself (the Basin Restaurant is expensive for what it is) unless you&apos;re too deep in the site to leave for lunch.",
-                  b: "Practical",
-                  c: "bg-parchment border-parchment-2",
+                  n: "Al-Qantarah (Wadi Musa)",
+                  t: "Jordanian · Wadi Musa village near Petra",
+                  d: "The best sit-down restaurant in Wadi Musa. Proper Jordanian food — musakhan, mansaf, mezze — rather than the tourist-menu pasta that fills the cheaper restaurants. JOD 8–18/person. Open for dinner only. Book a table for the night of the Petra Night Show.",
+                  b: "Best near Petra",
+                  c: "bg-teal-50 border-teal-200",
+                },
+                {
+                  n: "Bedouin Camp Zarb Dinner",
+                  t: "Traditional Bedouin · Wadi Rum camp",
+                  d: "The zarb — a traditional Bedouin method of slow-cooking meat and vegetables underground in a sealed vessel over hot coals — is served at all Wadi Rum overnight camps as part of the package. Chicken, lamb, or goat with root vegetables, rice, and salad. Eating dinner in the desert under the Milky Way is excellent at any budget level.",
+                  b: "Desert essential",
+                  c: "bg-purple-50 border-purple-200",
                 },
               ].map((r) => (
                 <div key={r.n} className={`rounded-xl p-4 border ${r.c}`}>
@@ -751,65 +776,65 @@ export default function JordanClient() {
             destination="Jordan"
             hotels={[
               {
-                name: "Mövenpick Resort Petra",
-                type: "Luxury · Adjacent to Petra gate",
-                price: "From JD 200 / ~$282/night",
+                name: "Kempinski Hotel Ishtar Dead Sea",
+                type: "Luxury resort · Dead Sea",
+                price: "From JOD 180/night",
                 rating: "5",
-                badge: "Best location",
-                url: "https://www.booking.com/hotel/jo/mövenpick-resort-petra.html?aid=2820480",
+                badge: "Dead Sea pinnacle",
+                url: "https://www.booking.com/hotel/jo/kempinski-hotel-ishtar-dead-sea.html?aid=2820480",
               },
               {
-                name: "Petra Guest House Hotel",
-                type: "Mid-range · Wadi Musa, Petra",
-                price: "From JD 55 / ~$78/night",
-                rating: "4",
-                badge: "Best value Petra",
-                url: "https://www.booking.com/hotel/jo/petra-guest-house.html?aid=2820480",
+                name: "Mövenpick Resort Petra",
+                type: "Luxury hotel · Adjacent to Petra gate",
+                price: "From JOD 120/night",
+                rating: "5",
+                badge: "Best Petra location",
+                url: "https://www.booking.com/hotel/jo/movenpick-nabatean-castle.html?aid=2820480",
               },
               {
                 name: "Wadi Rum Night Luxury Camp",
-                type: "Luxury camp · Wadi Rum desert",
-                price: "From JD 120 / ~$170/night incl. meals",
+                type: "Luxury Bedouin camp · Wadi Rum",
+                price: "From JOD 80/night",
                 rating: "5",
-                badge: "Best Wadi Rum camp",
+                badge: "Best desert camp",
                 url: "https://www.booking.com/hotel/jo/wadi-rum-night-luxury-camp.html?aid=2820480",
               },
               {
-                name: "The House Boutique Suites",
-                type: "Boutique · Rainbow Street, Amman",
-                price: "From JD 60 / ~$85/night",
-                rating: "4",
-                badge: "Best Amman boutique",
-                url: "https://www.booking.com/hotel/jo/the-house-boutique-suites-amman.html?aid=2820480",
+                name: "Rocky Mountain Hotel Petra",
+                type: "Budget-mid · Wadi Musa village",
+                price: "From JOD 25/night",
+                rating: "3",
+                badge: "Best budget near Petra",
+                url: "https://www.booking.com/hotel/jo/rocky-mountain-hotel-wadi-musa.html?aid=2820480",
               },
             ]}
             activities={[
               {
-                name: "Petra Full Day Private Tour",
+                name: "Petra Full Day Guided Tour",
                 duration: "8 hrs",
-                price: "From JD 55 / ~$78/person",
-                badge: "Highly rated",
-                url: "https://www.getyourguide.com/s/?q=petra+private+guided+tour&partner_id=PSZA5UI",
+                price: "From JOD 50/person",
+                badge: "Must do",
+                url: "https://www.getyourguide.com/s/?q=petra+jordan+guided+tour&partner_id=PSZA5UI",
               },
               {
-                name: "Wadi Rum Jeep + Overnight Camp",
+                name: "Wadi Rum Jeep &amp; Overnight Camp",
                 duration: "24 hrs",
-                price: "From JD 60 / ~$85/person",
-                badge: "Must do",
+                price: "From JOD 55/person",
+                badge: "Top rated",
                 url: "https://www.getyourguide.com/s/?q=wadi+rum+overnight+camp&partner_id=PSZA5UI",
               },
               {
                 name: "Dead Sea Day Trip from Amman",
-                duration: "6 hrs",
-                price: "From JD 30 / ~$42/person",
-                badge: "Popular",
-                url: "https://www.getyourguide.com/s/?q=dead+sea+amman+day+trip&partner_id=PSZA5UI",
+                duration: "Full day",
+                price: "From JOD 25/person",
+                badge: "Iconic",
+                url: "https://www.getyourguide.com/s/?q=dead+sea+jordan+day+trip&partner_id=PSZA5UI",
               },
               {
                 name: "Jerash Roman Ruins Tour",
-                duration: "4 hrs",
-                price: "From JD 25 / ~$35/person",
-                url: "https://www.getyourguide.com/s/?q=jerash+guided+tour+jordan&partner_id=PSZA5UI",
+                duration: "5 hrs",
+                price: "From JOD 20/person",
+                url: "https://www.getyourguide.com/s/?q=jerash+jordan+tour&partner_id=PSZA5UI",
               },
             ]}
           />
@@ -817,34 +842,34 @@ export default function JordanClient() {
           {/* ── MISTAKES TO AVOID ── */}
           <section id="mistakes" className="mb-14">
             <h2 className="font-serif text-[1.9rem] font-light text-ink mb-6">❌ Mistakes to Avoid in Jordan</h2>
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 {
                   icon: "🎫",
-                  title: "Not Buying the Jordan Pass Before Arrival",
-                  desc: "The Jordan Pass (jordanpass.jo) must be purchased online before you arrive in Jordan — you cannot buy it at the airport after landing. It includes the visa fee (JD 40 / ~$56 value), 2-day Petra entry (JD 55 / ~$78 value), and 40+ sites. Total savings versus paying separately: JD 20–30 / ~$28–42. If you&apos;re visiting Petra and staying 3+ nights, it is always worth it. The one condition to trigger the visa waiver is 3 nights minimum in Jordan.",
+                  title: "Not Buying the Jordan Pass Before You Fly",
+                  desc: "The Jordan Pass (JOD 70–80) covers your visa on arrival (JOD 40 value), Petra entry (JOD 50–55 for 2 days if bought separately), Wadi Rum entry (JOD 5), Jerash (JOD 10), and 37 additional sites. If you buy at the airport or at individual sites you pay full price for everything. Buy at jordanpass.jo before departure — it must be purchased before you arrive in Jordan to waive the visa fee.",
                   color: "bg-red-50 border-red-200",
                 },
                 {
                   icon: "⛰️",
-                  title: "Only Spending One Day at Petra",
-                  desc: "The Treasury and the main Siq are remarkable, but 70% of Petra&apos;s area — including the Monastery (Petra&apos;s largest monument), the High Place of Sacrifice, the Royal Tombs, the Colonnaded Street, and Little Petra — is missed by visitors who only come for one day. Two full days is the minimum. The Monastery alone takes 45 minutes to reach from the Treasury, plus time at the top. Budget for the 2-day Jordan Pass option (JD 75 / ~$106), not the 1-day.",
+                  title: "Skipping the Monastery Because of the Steps",
+                  desc: "The Ad Deir Monastery is 850 steps above the main Petra circuit. Most tourists see the Treasury and turn back. The Monastery is larger than the Treasury, more impressive up close, and far less crowded. Go at 6am — you will be almost alone in the most extraordinary carved space in Petra. The climb takes 45 minutes at a walking pace. Wear proper shoes and carry 1.5 litres of water.",
                   color: "bg-orange-50 border-orange-200",
-                },
-                {
-                  icon: "🌞",
-                  title: "Arriving at Petra After 9am",
-                  desc: "Petra opens at 6am. The Treasury at 7am with empty sandstone walls and soft pink light, versus the Treasury at 10am with tour groups photographing it every 30 seconds, are completely different experiences. Enter at 6am. Walk the Siq in the quiet. Arrive at the Treasury at 7am. By 10am, when the coaches from Amman arrive, you&apos;ll already be at the Monastery. The alarm at 5:30am is worth it.",
-                  color: "bg-yellow-50 border-yellow-200",
                 },
                 {
                   icon: "🌌",
                   title: "Visiting Wadi Rum as a Day Trip",
-                  desc: "Wadi Rum as a half-day trip is completely missing the point. The landscape is beautiful in daylight, but the reason Wadi Rum is one of the great travel experiences on earth is the night — zero light pollution, the Milky Way bright enough to read by, the silence of the desert after 10pm. Bedouin budget camps (JD 40–50 / ~$56–71 all-inclusive) are simple but genuinely atmospheric. Do not leave before sunrise.",
+                  desc: "The entire point of Wadi Rum is the night sky — zero light pollution, 300+ clear nights per year, the Milky Way visible and brilliant to the naked eye. Day visitors miss this entirely. Budget camps (JOD 40–50 all-inclusive with dinner and breakfast) are simple but comfortable. The overnight experience is one of the genuinely transformative things you can do in travel.",
                   color: "bg-pink-50 border-pink-200",
                 },
-              ].map((m) => (
-                <TipCard key={m.title} icon={m.icon} title={m.title} desc={m.desc} color={m.color} />
+                {
+                  icon: "☀️",
+                  title: "Entering Petra at 10am in Summer",
+                  desc: "Petra in summer (June–August) midday reaches 43°C. The sandstone absorbs and radiates heat — it feels significantly hotter than the air temperature. Heat exhaustion cases are evacuated from the site daily in peak summer. Enter at 6am opening, cover the Treasury and main circuit by noon, rest in Wadi Musa through the afternoon, and return for the Royal Tombs at 4–6pm when temperatures drop and the light is spectacular.",
+                  color: "bg-yellow-50 border-yellow-200",
+                },
+              ].map((t) => (
+                <TipCard key={t.title} {...t} />
               ))}
             </div>
           </section>
@@ -856,39 +881,39 @@ export default function JordanClient() {
               {[
                 {
                   icon: "🌅",
-                  title: "Petra at 6am: The Treasury with Nobody in It",
-                  desc: "Petra opens at 6am. Walk through the Siq at 6:30am and arrive at the Treasury with a handful of other early risers. The morning light hits the facade beautifully from 7:30–10am. By 10am the first tour groups arrive. By noon the heat is intense. The difference between 7am Petra and 11am Petra is the difference between a pilgrimage and a queue.",
+                  title: "Petra at 7am: Treasury with Nobody in It",
+                  desc: "Petra opens at 6am. Walk through the Siq at 6:30–7am and you arrive at the Treasury with a handful of other early risers. Morning light hits the facade best from 8–10am. By 10am the first tour groups are arriving. By 11am it is crowded. By noon the heat is intense. The difference between 7am Petra and 11am Petra is the difference between a pilgrimage and a queue. Set your alarm.",
                   color: "bg-amber-50 border-amber-200",
                 },
                 {
                   icon: "🏛️",
-                  title: "The Monastery at 7am: The Best Dawn in Jordan",
-                  desc: "If you&apos;re staying in Wadi Musa, enter Petra at 6am and walk directly to the Monastery route (left past the Treasury, follow the signs to Ad Deir). Climb the 850 steps as the sun rises. At 7am with no other visitors, the Monastery in pink-gold dawn light is one of the most extraordinary sights in the entire Middle East. Bring water and proper shoes.",
+                  title: "The Monastery at 6am: Best Dawn in Jordan",
+                  desc: "Enter Petra at 6am opening and walk directly to the Monastery route — turn left past the Treasury and follow the Ad Deir signs. Climb the 850 steps as the sun rises behind the rock. The Monastery at 7am, lit in pink-gold dawn light with no other visitors, is one of the most extraordinary sights in the entire Middle East. Carry water, wear proper shoes.",
                   color: "bg-teal-50 border-teal-200",
                 },
                 {
                   icon: "🏜️",
                   title: "Wadi Rum Sunset from the Dunes",
-                  desc: "Ask your Bedouin guide to position the jeep on the highest accessible dune for sunset (5:30–6pm depending on season). The light in Wadi Rum transitions from red to orange to purple to deep violet in the 45 minutes after sunset — the &apos;Martian light&apos; that drew multiple film productions. The silence combined with this light is difficult to describe and impossible to replicate.",
+                  desc: "Ask your Bedouin guide to position the jeep on the highest accessible dune for sunset (around 5:30–6pm depending on season). The light in Wadi Rum transitions from red to orange to purple to deep violet in the 45 minutes after sunset. The silence combined with this light — the Martian light that made this a filming location for multiple space-set films — is impossible to replicate elsewhere.",
                   color: "bg-blue-50 border-blue-200",
                 },
                 {
                   icon: "🌊",
-                  title: "Dead Sea Early Morning: Before the Buses",
-                  desc: "The public Dead Sea beaches fill with tour buses from 11am onward. Arrive before 9am for a peaceful float. Do not shave the day before. Do not splash water in your eyes — the 33% salt concentration makes eye contact intensely painful and requires immediate fresh water. Petroleum jelly on any cuts or nicks is mandatory.",
+                  title: "Dead Sea: Arrive Before 9am",
+                  desc: "Public Dead Sea beaches fill with tour buses from 11am onward. Arrive before 9am for a peaceful float. Water temperature is warm year-round (28–32°C). Do not shave the day before. Do not splash water in your eyes — 33% salt concentration is intensely painful and requires immediate fresh-water flushing. Petroleum jelly on cuts before entering is essential.",
                   color: "bg-green-50 border-green-200",
                 },
                 {
-                  icon: "🍽️",
-                  title: "Eat at Hashem Restaurant, Downtown Amman",
-                  desc: "Hashem is the most famous restaurant in Jordan — a Downtown institution open since 1952 that serves the best falafel and hummus in Amman for JD 1–3 per dish. It is cash only, has no menu, and is where the king has been photographed eating. Go for breakfast or late dinner when the seating is easier to find. It is completely unremarkable in appearance and absolutely extraordinary in quality.",
-                  color: "bg-orange-50 border-orange-200",
+                  icon: "🗺️",
+                  title: "Add Jerash as a Day Trip from Amman",
+                  desc: "Jerash (45 minutes north of Amman by taxi or bus, JOD 10 or Jordan Pass) is one of the best-preserved Roman provincial cities in the world — more complete than many sites in Italy. The Oval Plaza, Cardo Maximus, and Temple of Artemis are remarkable. Most Jordan travellers skip it. If you have a free morning in Amman, Jerash is the best use of it.",
+                  color: "bg-purple-50 border-purple-200",
                 },
                 {
-                  icon: "💬",
-                  title: "Learn Three Words of Arabic",
-                  desc: "&quot;Shukran&quot; (thank you), &quot;marhaba&quot; (hello), and &quot;yislamu&quot; (cheers / thank you for the food) will generate genuine warmth from every Jordanian you meet. Jordan has a remarkably strong hospitality culture — small gestures of respect are returned tenfold. When a Bedouin invites you for tea in Wadi Rum, accept. It is almost always genuinely given.",
-                  color: "bg-purple-50 border-purple-200",
+                  icon: "💳",
+                  title: "The Jordanian Dinar Is Fixed — Use ATMs",
+                  desc: "The Jordanian Dinar (JOD) is pegged to the US Dollar at 1 JOD = ~$1.41. ATM exchange rates are reliable and consistent — draw JOD from any Amman ATM rather than changing cash at exchange booths. US dollars are widely accepted in tourist areas at roughly $1 = JOD 0.71. Airport money exchange rates are significantly worse than city ATMs.",
+                  color: "bg-rose-50 border-rose-200",
                 },
               ].map((t) => (
                 <TipCard key={t.title} {...t} />
@@ -908,28 +933,28 @@ export default function JordanClient() {
             <div className="space-y-3">
               {[
                 {
-                  q: "Is the Jordan Pass worth it for Indian travellers?",
-                  a: "Yes, emphatically. The Jordan Pass (jordanpass.jo) costs JD 70–80 (~$99–113) and includes: (1) the Jordanian visa fee — worth JD 40 (~$56) on its own, (2) Petra entry for 1–3 days — worth JD 50–55 for 2 days paid separately, (3) Wadi Rum entry, (4) Jerash, (5) 40+ additional sites. For any Indian traveller visiting Petra and staying 3+ nights in Jordan, the Jordan Pass saves a minimum of JD 15–25. It must be purchased online at jordanpass.jo before you arrive — you cannot buy it at the airport.",
+                  q: "Is the Jordan Pass worth it for Indian and Western travellers?",
+                  a: "Yes, emphatically. The Jordan Pass (JOD 70 for 1-day Petra, JOD 75 for 2-day, JOD 80 for 3-day) includes the Jordanian visa on arrival (JOD 40 value), Petra entry (JOD 50 for 2 days if bought separately), Wadi Rum entry (JOD 5), Jerash (JOD 10), and 37 additional sites. For any traveller staying 3+ nights and visiting Petra, the Jordan Pass saves a minimum of JOD 15–20 and eliminates the visa queue at the airport. Buy at jordanpass.jo before departure — it must be purchased before you arrive in Jordan.",
                 },
                 {
-                  q: "How many days do you actually need in Petra?",
-                  a: "Two days minimum. Day 1: the Siq, Treasury, Colonnaded Street, Great Temple, and Royal Tombs — this covers the main circuit and takes a full day if done at a reasonable pace. Day 2: the Monastery (Ad Deir) early morning, the High Place of Sacrifice, and the Wadi Farasa descent — another full day. Little Petra (Siq al-Barid, 7km away, free) is a bonus third-day option. The Jordan Pass offers 1-day, 2-day, and 3-day Petra options — choose the 2-day minimum.",
+                  q: "Is Jordan safe to visit?",
+                  a: "Jordan is one of the safest countries in the Middle East for tourists. It has maintained political stability for decades and has a strong tradition of hospitality toward visitors. Crime against tourists is rare. The main practical concerns are heat (dress modestly, carry water), vendor solicitation in Petra (firm but polite refusal works consistently), and driving on desert roads at night (avoid if possible). The US State Department, UK Foreign Office, and Australian DFAT generally rate Jordan as safe for standard tourist activities.",
                 },
                 {
-                  q: "Is Jordan safe to visit in 2026?",
-                  a: "Jordan is one of the safest countries in the Middle East for tourists. It has maintained political stability through decades of regional volatility and has a deeply ingrained hospitality culture. Crime against tourists is very rare. The main practical safety concerns are: heat in summer (carry water, avoid midday exertion at Petra), aggressive but harmless vendor solicitation inside Petra (firm &apos;no thank you&apos; works), and driving at night on desert roads between cities (use buses or book daytime transfers).",
+                  q: "How many days do you need in Petra?",
+                  a: "Two days minimum. Day 1: the Siq, Treasury, Colonnaded Street, Great Temple, and Royal Tombs — a full day. Day 2: the Monastery (Ad Deir) at dawn, the High Place of Sacrifice, and the Wadi Farasa descent — another full day. Three days allows you to slow down, visit Little Petra (Siq al-Barid, 7km away, free entry), and revisit the Treasury at different times of day. The Jordan Pass offers 1, 2, and 3-day Petra options.",
                 },
                 {
                   q: "How do I get from Petra to Wadi Rum?",
-                  a: "Public minibus from Wadi Musa (the village next to Petra) to Wadi Rum village: JD 5–8 (~$7–11) per person, departures in the morning. The journey takes 1.5 hours. Alternatively, arrange a private transfer through your Wadi Musa guesthouse (JD 30–50 / ~$42–71 for a private car). Your Wadi Rum camp will often arrange a return transfer back to Aqaba or Amman the following morning — ask when you book.",
+                  a: "Shared minibus from Wadi Musa (the town next to Petra) to Wadi Rum village: approximately 1.5 hours, JOD 5–8/person. Most Wadi Musa guesthouses can arrange this the night before. A private taxi costs JOD 30–45. If on a budget, ask your guesthouse to find other travellers heading the same way and split the cost.",
                 },
                 {
-                  q: "Can I visit Jordan from India without a visa in advance?",
-                  a: "Indian passport holders receive a visa on arrival at Queen Alia International Airport, Amman. Cost: JD 40 (~$56), single entry, 30 days. However, if you purchase the Jordan Pass online before arrival, the visa fee is automatically waived at the airport immigration desk. The Jordan Pass is always better value than paying the visa separately. You must stay a minimum of 3 nights in Jordan to use the Jordan Pass visa waiver.",
+                  q: "Can I cross from Jordan to Israel?",
+                  a: "Yes. Jordan and Israel have had a formal peace treaty since 1994 and open border crossings. The two main crossings for tourists: (1) Allenby Bridge / King Hussein Bridge near Amman — connects to the West Bank and Jerusalem, open Sunday–Thursday. (2) Yitzhak Rabin / Wadi Araba crossing near Aqaba — connects to Eilat, open 7 days a week, most convenient from the Petra/Wadi Rum area. Note: ask Israeli border officers to stamp a separate paper rather than your passport if you are concerned about travel to other Arab countries.",
                 },
                 {
-                  q: "What is the best currency to carry in Jordan?",
-                  a: "Jordanian Dinar (JD). 1 JD ≈ $1.41 USD — the dinar is pegged to the US dollar and the exchange rate is stable. ATMs in Amman and Wadi Musa (Petra) dispense JD. US dollars are widely accepted in tourist areas at roughly $1 = JD 0.71. Euro and British pounds can be exchanged at banks and exchange offices in Amman. Carry some JD cash for small vendors, transport, and the Petra Night Show — credit cards are not accepted everywhere.",
+                  q: "What is the dress code at Petra and in Jordan?",
+                  a: "Jordan is a moderate Muslim country — dress conservatively in towns and mosques. For men: long trousers and covered shoulders are appropriate in cities. For women: loose clothing covering shoulders and knees is respectful and practical (it also reduces sun exposure in the desert). At the Dead Sea, swimwear is fine at resort beaches. In Amman and Petra there is no enforcement, but modest dress is appreciated and significantly more comfortable in the desert heat.",
                 },
               ].map((item, i) => (
                 <FaqItem key={i} {...item} />
@@ -941,14 +966,14 @@ export default function JordanClient() {
           <Comments />
 
           {/* ── MORE RESOURCES ── */}
-          <div className="mb-12">
+          <div className="max-w-[860px] mx-auto px-6 md:px-8 mb-12">
             <h2 className="font-serif text-xl font-light text-ink mb-4">Plan your Jordan trip</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
                 { href: "/blog/petra-travel-guide", label: "Petra complete guide", icon: "🏛️" },
-                { href: "/blog/jordan-pass-worth-it", label: "Jordan Pass guide", icon: "🎫" },
-                { href: "/blog/wadi-rum-overnight", label: "Wadi Rum overnight", icon: "🏜️" },
-                { href: "/blog/dead-sea-tips", label: "Dead Sea tips", icon: "🌊" },
+                { href: "/blog/jordan-pass-guide", label: "Jordan Pass explained", icon: "🎫" },
+                { href: "/blog/wadi-rum-overnight", label: "Wadi Rum overnight", icon: "🌌" },
+                { href: "/blog/dead-sea-guide", label: "Dead Sea tips", icon: "🌊" },
               ].map((item) => (
                 <Link key={item.href} href={item.href}
                   className="flex flex-col items-center gap-2 p-4 bg-parchment border border-parchment-2 rounded-xl hover:border-gold hover:shadow-sm transition-all text-center">
@@ -964,13 +989,13 @@ export default function JordanClient() {
 
           {/* Internal links */}
           <section className="mt-14">
-            <h3 className="font-serif text-lg font-light text-ink mb-4">More Middle East &amp; International Guides</h3>
+            <h3 className="font-serif text-lg font-light text-ink mb-4">More Middle East &amp; Beyond</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { label: "Dubai in 4 Days — Desert &amp; Skyline", href: "/blog/dubai-4-days" },
-                { label: "Egypt in 5 Days — Pyramids &amp; Nile", href: "/blog/egypt-5-days" },
-                { label: "Istanbul in 4 Days — Bosphorus &amp; Bazaars", href: "/blog/istanbul-4-days" },
-                { label: "Greece in 7 Days — Islands &amp; Ancient Ruins", href: "/blog/greece-7-days" },
+                { label: "Dubai in 4 Days — City of the Future", href: "/blog/dubai-4-days" },
+                { label: "Istanbul in 5 Days — Two Continents", href: "/blog/istanbul-5-days" },
+                { label: "Egypt in 7 Days — Pyramids &amp; Nile", href: "/blog/egypt-7-days" },
+                { label: "Doha in 3 Days — Pearl of the Gulf", href: "/blog/doha-3-days" },
               ].map((link) => (
                 <Link
                   key={link.label}

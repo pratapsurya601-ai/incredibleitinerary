@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import JordanClient from "./JordanClient";
 
-const data: UniversalBlogData = {
+// Legacy data retained for reference — no longer used by the page
+const _unusedData = {
   destination: "Jordan",
   country: "Jordan",
   countryFlag: "🇯🇴",
@@ -401,7 +402,7 @@ export default function JordanPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <UniversalBlogClient data={data} />
+      <JordanClient />
     </>
   );
 }

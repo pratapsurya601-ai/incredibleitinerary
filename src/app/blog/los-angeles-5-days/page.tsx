@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import UniversalBlogClient, { type UniversalBlogData } from "@/components/blog/UniversalBlogClient";
+import LosAngelesClient from "./LosAngelesClient";
 
-const data: UniversalBlogData = {
+// Legacy data object retained below for reference only — rendering is handled by LosAngelesClient
+const _data = {
   destination: "Los Angeles",
   country: "USA",
   countryFlag: "🇺🇸",
@@ -331,7 +332,7 @@ export default function LosAngelesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <UniversalBlogClient data={data} />
+      <LosAngelesClient />
     </>
   );
 }
