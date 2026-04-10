@@ -1,21 +1,24 @@
 "use client";
 
 interface PinterestSaveButtonProps {
-  pageUrl: string;       // full page URL to attribute the pin to
+  url?: string;          // full page URL to attribute the pin to
+  pageUrl?: string;      // alias for url (legacy)
   imageUrl: string;      // image to pin
   description: string;   // pin description
   className?: string;
 }
 
 export default function PinterestSaveButton({
+  url,
   pageUrl,
   imageUrl,
   description,
   className = "",
 }: PinterestSaveButtonProps) {
+  const resolvedUrl = url ?? pageUrl ?? "";
   const pinterestHref =
     `https://pinterest.com/pin/create/button/` +
-    `?url=${encodeURIComponent(pageUrl)}` +
+    `?url=${encodeURIComponent(resolvedUrl)}` +
     `&media=${encodeURIComponent(imageUrl)}` +
     `&description=${encodeURIComponent(description)}`;
 
