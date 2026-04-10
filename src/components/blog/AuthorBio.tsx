@@ -22,7 +22,7 @@ export default function AuthorBio({ date, readTime }: AuthorBioProps) {
             <Image
               src="/images/surya/surya-author-primary.jpg"
               alt="Surya Pratap — Founder of IncredibleItinerary"
-              fill
+              fill unoptimized
               className="object-cover object-top"
               sizes="64px"
             />

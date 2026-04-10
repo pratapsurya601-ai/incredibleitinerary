@@ -38,7 +38,7 @@ export default function AboutClient() {
           <Image
             src="/images/surya/surya-kedarnath-valley.jpg"
             alt="Kedarnath valley trek — photographed by Surya Pratap"
-            fill
+            fill unoptimized
             className="object-cover"
             priority
             sizes="100vw"
@@ -86,7 +86,7 @@ export default function AboutClient() {
                 <Image
                   src="/images/surya/surya-author-primary.jpg"
                   alt="Surya Pratap — Founder of IncredibleItinerary"
-                  fill
+                  fill unoptimized
                   className="object-cover object-top"
                         sizes="(max-width: 1024px) 90vw, 420px"
                 />
@@ -159,7 +159,7 @@ export default function AboutClient() {
                 <Image
                   src="/images/surya/surya-kedarnath-ridge.jpg"
                   alt="Surya at Kedarnath ridge, October 2022"
-                  fill className="object-cover hover:scale-105 transition-transform duration-500"
+                  fill unoptimized className="object-cover hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
@@ -169,7 +169,7 @@ export default function AboutClient() {
                 <Image
                   src="/images/surya/surya-gangotri-national-park.jpg"
                   alt="Surya at Gangotri National Park entrance, June 2023"
-                  fill className="object-cover hover:scale-105 transition-transform duration-500"
+                  fill unoptimized className="object-cover hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
@@ -179,7 +179,7 @@ export default function AboutClient() {
                 <Image
                   src="/images/surya/surya-manali-snowsuit.jpg"
                   alt="Surya in Manali, December 2023"
-                  fill className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                  fill unoptimized className="object-cover object-top hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
@@ -239,7 +239,7 @@ export default function AboutClient() {
                   <Image
                     src="/images/surya/surya-author-primary.jpg"
                     alt="Surya Pratap"
-                    fill className="object-cover object-top"
+                    fill unoptimized className="object-cover object-top"
                     sizes="64px"
                   />
                 </div>

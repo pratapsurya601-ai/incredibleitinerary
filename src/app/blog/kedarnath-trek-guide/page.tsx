@@ -38,7 +38,7 @@ export default function KedarnathTrekPage() {
           <Image
             src="/images/surya/blog-kedarnath-temple.jpg"
             alt="Kedarnath temple decorated with marigolds, snow Himalayan peaks behind"
-            fill className="object-cover" priority sizes="100vw"
+            fill unoptimized className="object-cover" priority sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
@@ -159,7 +159,7 @@ export default function KedarnathTrekPage() {
             <Image
               src="/images/surya/surya-kedarnath-ridge.jpg"
               alt="Surya Pratap sitting at Kedarnath ridge with snow peaks behind, Oct 2022"
-              fill className="object-cover object-top"
+              fill unoptimized className="object-cover object-top"
               sizes="(max-width: 860px) 100vw, 860px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />

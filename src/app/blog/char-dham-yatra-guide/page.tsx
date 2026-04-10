@@ -85,7 +85,7 @@ export default function CharDhamYatraPage() {
           <Image
             src="/images/surya/blog-kedarnath-temple.jpg"
             alt="Kedarnath temple — one of the four Char Dhams"
-            fill className="object-cover" priority sizes="100vw"
+            fill unoptimized className="object-cover" priority sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
@@ -246,7 +246,7 @@ export default function CharDhamYatraPage() {
             <Image
               src="/images/surya/blog-badrinath-night.jpg"
               alt="Badrinath temple lit up at night — personal photo Oct 2022"
-              fill className="object-cover"
+              fill unoptimized className="object-cover"
               sizes="(max-width: 860px) 100vw, 860px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />

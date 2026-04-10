@@ -38,7 +38,7 @@ export default function GangotriGlacierTrekPage() {
           <Image
             src="/images/surya/blog-gangotri-valley.jpg"
             alt="Bhagirathi river valley Gangotri Uttarakhand — personal photo June 2023"
-            fill className="object-cover" priority sizes="100vw"
+            fill unoptimized className="object-cover" priority sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-14 pb-10">
@@ -132,7 +132,7 @@ export default function GangotriGlacierTrekPage() {
             <Image
               src="/images/surya/surya-gangotri-glacier.jpg"
               alt="Surya Pratap at Gaumukh glacier snout, June 2023"
-              fill className="object-cover object-center"
+              fill unoptimized className="object-cover object-center"
               sizes="(max-width: 860px) 100vw, 860px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />

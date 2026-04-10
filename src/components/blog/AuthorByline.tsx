@@ -15,7 +15,7 @@ export default function AuthorByline({ date, readTime, compact = false }: Author
           <Image
             src="/images/surya/surya-author-primary.jpg"
             alt="Surya Pratap"
-            fill
+            fill unoptimized
             className="object-cover object-top"
             sizes="24px"
           />
@@ -36,7 +36,7 @@ export default function AuthorByline({ date, readTime, compact = false }: Author
           <Image
             src="/images/surya/surya-author-primary.jpg"
             alt="Surya Pratap — Founder IncredibleItinerary"
-            fill
+            fill unoptimized
             className="object-cover object-top"
             sizes="44px"
           />

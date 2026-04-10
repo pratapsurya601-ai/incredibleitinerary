@@ -64,7 +64,7 @@ export default function HomeClient() {
               <Image
                 src="/images/surya/surya-author-primary.jpg"
                 alt="Surya Pratap — Founder of IncredibleItinerary"
-                fill className="object-cover object-top"
+                fill unoptimized className="object-cover object-top"
                 sizes="80px"
               />
             </div>
@@ -95,7 +95,7 @@ export default function HomeClient() {
         {/* ── EXPLORE BY REGION ── */}
         <div className="bg-cream py-12 px-6 md:px-12 border-b border-parchment-2">
           <div className="max-w-[1180px] mx-auto">
-            <p className="text-[0.65rem] tracking-[0.22em] uppercase text-gold font-medium text-center mb-3">
+            <p className="text-[0.65rem] tracking-[0.22em] uppercase text-gold-dark font-medium text-center mb-3">
               Explore by Region
             </p>
             <div className="flex flex-wrap justify-center gap-2.5">

@@ -31,7 +31,7 @@ export default function Footer() {
               {SOCIAL_LINKS.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                   className="w-11 h-11 rounded-full border border-white/12 flex items-center justify-center text-sm text-white/60 hover:border-gold hover:text-gold transition-all duration-200">
-                  {s.icon}
+                  <span aria-hidden="true">{s.icon}</span>
                 </a>
               ))}
             </div>

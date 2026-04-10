@@ -293,7 +293,7 @@ export default function BlogClient() {
           <Image
             src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&q=80"
             alt="Travel guides — India and worldwide destinations"
-            fill
+            fill unoptimized
             className="object-cover"
             priority
           />
