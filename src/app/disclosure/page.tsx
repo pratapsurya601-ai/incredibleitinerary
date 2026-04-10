@@ -77,7 +77,7 @@ export default function DisclosurePage() {
 
           <div className="mt-10 pt-8 border-t border-parchment-2">
             <p className="text-xs text-muted font-light">
-              Related: <Link href="/privacy" className="text-gold hover:underline">Privacy Policy</Link> · <Link href="/terms" className="text-gold hover:underline">Terms of Use</Link>
+              Related: <Link href="/privacy" className="text-gold underline underline-offset-2">Privacy Policy</Link> · <Link href="/terms" className="text-gold underline underline-offset-2">Terms of Use</Link>
             </p>
           </div>
         </div>

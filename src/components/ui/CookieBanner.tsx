@@ -3,6 +3,17 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const STORAGE_KEY = "cookie_consent";
+const ADSENSE_SRC =
+  "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8778466914590495";
+
+function loadAdSense() {
+  if (document.querySelector(`script[src^="${ADSENSE_SRC.split("?")[0]}"]`)) return;
+  const s = document.createElement("script");
+  s.src = ADSENSE_SRC;
+  s.async = true;
+  s.crossOrigin = "anonymous";
+  document.head.appendChild(s);
+}
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -10,7 +21,12 @@ export default function CookieBanner() {
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      if (!stored) setVisible(true);
+      if (stored === "accepted") {
+        // Returning visitor who already consented — load AdSense immediately
+        loadAdSense();
+      } else if (!stored) {
+        setVisible(true);
+      }
     } catch {
       // localStorage blocked (private browsing, etc.) — don't show banner
     }
@@ -19,6 +35,7 @@ export default function CookieBanner() {
   const accept = () => {
     try { localStorage.setItem(STORAGE_KEY, "accepted"); } catch { /* noop */ }
     setVisible(false);
+    loadAdSense();
   };
 
   const decline = () => {
@@ -38,8 +55,8 @@ export default function CookieBanner() {
       <div className="max-w-[1180px] mx-auto px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
         <p className="text-xs text-white/60 font-light leading-relaxed flex-1">
           This site uses analytics cookies to understand how visitors use the site.{" "}
-          <Link href="/privacy" className="text-gold hover:underline">
-            Learn more
+          <Link href="/privacy" className="text-gold underline underline-offset-2">
+            Learn more about cookies
           </Link>
         </p>
         <div className="flex items-center gap-2 flex-shrink-0">

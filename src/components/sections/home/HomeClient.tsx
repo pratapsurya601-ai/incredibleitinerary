@@ -77,7 +77,7 @@ export default function HomeClient() {
                 outdated, or written by someone who&apos;d clearly never been there.
               </p>
               <div className="flex items-center gap-4 mt-3">
-                <a href="/about" className="text-xs text-gold font-medium hover:underline tracking-wide">
+                <a href="/about" className="text-xs text-gold-dark font-medium hover:underline tracking-wide">
                   More about me →
                 </a>
                 <a href="https://www.linkedin.com/in/surya-pratap-601" target="_blank" rel="noopener noreferrer" className="text-xs text-muted hover:text-ink transition-colors flex items-center gap-1">

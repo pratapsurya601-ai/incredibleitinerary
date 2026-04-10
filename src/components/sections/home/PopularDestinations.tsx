@@ -1,8 +1,16 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import type { ImageLoaderProps } from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
 import { blogPosts } from "@/data/blog";
+
+// Serve Unsplash images directly from their CDN — bypasses Next.js image
+// optimization so the /_next/image proxy (which hits Vercel quota) is skipped.
+function unsplashLoader({ src, width, quality }: ImageLoaderProps) {
+  const base = src.split("?")[0];
+  return `${base}?w=${width}&q=${quality ?? 75}&auto=format&fit=crop`;
+}
 
 // ── Full pool — 24 destinations ─────────────────────────────────────────────
 const ALL_DESTINATIONS = [
@@ -95,6 +103,7 @@ export default function PopularDestinations() {
                     src={d.img}
                     alt={d.name}
                     fill
+                    loader={unsplashLoader}
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 50vw, 25vw"
                     loading={i < 4 ? "eager" : "lazy"}

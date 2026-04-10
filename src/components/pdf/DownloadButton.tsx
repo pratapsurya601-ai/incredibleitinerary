@@ -31,7 +31,7 @@ export default function DownloadButton({
       <button
         onClick={() => setOpen(true)}
         className={`${baseClasses[variant]} ${className}`}
-        aria-label={`Download ${title} PDF guide`}
+        aria-label={`Download Free PDF — ${title}`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

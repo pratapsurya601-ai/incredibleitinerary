@@ -48,7 +48,7 @@ export default function PdfShowcaseSection() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-gold text-xs tracking-[0.2em] uppercase font-medium mb-3">
+          <span className="inline-block text-gold-dark text-xs tracking-[0.2em] uppercase font-medium mb-3">
             Free PDF Guides
           </span>
           <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] font-light text-ink leading-tight mb-3">
