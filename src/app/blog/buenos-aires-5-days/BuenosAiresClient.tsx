@@ -498,10 +498,8 @@ export default function BuenosAiresClient() {
 
           {/* ── INLINE CTA ── */}
           <InlineCTA
-            title="Planning a Buenos Aires Trip?"
-            description="Get personalised advice on tango shows, steak restaurants, and the best neighbourhoods to stay in Buenos Aires."
-            buttonText="Get Trip Advice"
-            onClick={() => setModalOpen(true)}
+            destination="Buenos Aires"
+            onPlanTrip={() => setModalOpen(true)}
           />
 
           {/* ── LANDMARK GUIDE ── */}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import EdinburghClient from "./EdinburghClient";
 
-const data: UniversalBlogData = {
+const data = {
   destination: "Edinburgh",
   country: "UK",
   countryFlag: "🇬🇧",

@@ -83,7 +83,7 @@ export const metadata: Metadata = {
 };
 
 /* ── Page data ───────────────────────────────────────────────────────────── */
-const data: UniversalBlogData = {
+const data = {
   destination: "Helsinki",
   country: "Finland",
   countryFlag: "🇫🇮",

@@ -101,7 +101,7 @@ const jsonLd = {
 };
 
 /* ── Page data ────────────────────────────────────────────────────────────── */
-const data: UniversalBlogData = {
+const data = {
   destination: "Busan",
   country: "South Korea",
   countryFlag: "🇰🇷",
