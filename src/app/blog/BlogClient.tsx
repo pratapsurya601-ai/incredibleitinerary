@@ -287,7 +287,7 @@ export default function BlogClient() {
   return (
     <>
       <Navbar onPlanTrip={() => setModalOpen(true)} />
-      <main className="min-h-screen bg-cream pt-[72px]">
+      <main id="main-content" className="min-h-screen bg-cream pt-[72px]">
         {/* ── HERO ── */}
         <div className="relative h-[44vh] min-h-[280px] overflow-hidden">
           <Image

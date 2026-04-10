@@ -17,6 +17,7 @@ import PhotoCta from "@/components/blog/PhotoCta";
 import AuthorByline from "@/components/blog/AuthorByline";
 import InlineSignup from "@/components/email/InlineSignup";
 import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
+import { usePageUrl } from "@/lib/hooks";
 
 // ── Table of Contents ─────────────────────────────────────────────────────────
 const LYON_TOC = [
@@ -56,6 +57,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -69,12 +71,12 @@ function ShareBar() {
         {
           label: "Email",
           color: "bg-ink text-white",
-          href: `mailto:?subject=Lyon 3-Day Guide&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `mailto:?subject=Lyon 3-Day Guide&body=Check this out: ${pageUrl}`,
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
-          href: `https://x.com/intent/tweet?text=Lyon in 3 Days — bouchons, traboules and why it beats Paris&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          color: "bg-[#1a6fb5] text-white",
+          href: `https://x.com/intent/tweet?text=Lyon in 3 Days — bouchons, traboules and why it beats Paris&url=${pageUrl}`,
         },
       ].map((s) => (
         <a
@@ -218,7 +220,7 @@ export default function LyonClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Lyon" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

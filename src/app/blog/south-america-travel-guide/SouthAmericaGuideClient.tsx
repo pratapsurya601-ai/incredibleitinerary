@@ -12,6 +12,7 @@ import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 const TOC = [
   { id: "why", emoji: "⚡", label: "Why South America" },
@@ -34,12 +35,13 @@ function ReadingProgress() {
 }
 
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
-      <a href={`mailto:?subject=South America Travel Guide — IncredibleItinerary&body=${typeof window !== "undefined" ? window.location.href : ""}`} className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
-      <a href={`https://x.com/intent/tweet?text=South%20America%20Travel%20Guide&url=${typeof window !== "undefined" ? window.location.href : ""}`} target="_blank" rel="noopener noreferrer" className="bg-[#1DA1F2] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
+      <a href={`mailto:?subject=South America Travel Guide — IncredibleItinerary&body=${pageUrl}`} className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
+      <a href={`https://x.com/intent/tweet?text=South%20America%20Travel%20Guide&url=${pageUrl}`} target="_blank" rel="noopener noreferrer" className="bg-[#1a6fb5] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
       <button onClick={() => { navigator.clipboard.writeText(window.location.href); setCopied(true); setTimeout(() => setCopied(false), 2000); }} className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">{copied ? "✓ Copied" : "Copy Link"}</button>
     </div>
   );
@@ -83,7 +85,7 @@ export default function SouthAmericaGuideClient() {
       <TableOfContents items={TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="South America" />
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* HERO */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

@@ -17,6 +17,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import InquiryModal from "@/components/ui/InquiryModal";
+import { usePageUrl } from "@/lib/hooks";
 
 // ── Table of Contents ─────────────────────────────────────────────────────────
 const GERMANY_TOC = [
@@ -57,6 +58,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -70,12 +72,12 @@ function ShareBar() {
         {
           label: "Email",
           color: "bg-ink text-white",
-          href: `mailto:?subject=Germany 7-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `mailto:?subject=Germany 7-Day Itinerary&body=Check this out: ${pageUrl}`,
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
-          href: `https://x.com/intent/tweet?text=Germany in 7 Days — Munich, Neuschwanstein, Rothenburg, Frankfurt & Berlin&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          color: "bg-[#1a6fb5] text-white",
+          href: `https://x.com/intent/tweet?text=Germany in 7 Days — Munich, Neuschwanstein, Rothenburg, Frankfurt & Berlin&url=${pageUrl}`,
         },
       ].map((s) => (
         <a
@@ -219,7 +221,7 @@ export default function GermanyClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Germany" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

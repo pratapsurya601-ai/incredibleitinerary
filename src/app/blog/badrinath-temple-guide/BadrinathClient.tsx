@@ -10,6 +10,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 const BADRINATH_TOC = [
   { id: "intro",          emoji: "🛕", label: "Why Badrinath?" },
@@ -48,6 +49,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -61,12 +63,12 @@ function ShareBar() {
         {
           label: "Email",
           color: "bg-ink text-white",
-          href: `mailto:?subject=Badrinath Temple Guide 2026&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `mailto:?subject=Badrinath Temple Guide 2026&body=Check this out: ${pageUrl}`,
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
-          href: `https://x.com/intent/tweet?text=Badrinath Temple Guide 2026&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          color: "bg-[#1a6fb5] text-white",
+          href: `https://x.com/intent/tweet?text=Badrinath Temple Guide 2026&url=${pageUrl}`,
         },
       ].map((s) => (
         <a
@@ -156,7 +158,7 @@ export default function BadrinathClient({ faqData }: Props) {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Badrinath" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

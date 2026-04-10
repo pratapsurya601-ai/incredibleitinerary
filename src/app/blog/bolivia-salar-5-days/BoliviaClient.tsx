@@ -17,6 +17,7 @@ import PhotoCta from "@/components/blog/PhotoCta";
 import AuthorByline from "@/components/blog/AuthorByline";
 import InlineSignup from "@/components/email/InlineSignup";
 import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
+import { usePageUrl } from "@/lib/hooks";
 
 // ── Table of Contents ─────────────────────────────────────────────────────────
 const BOLIVIA_TOC = [
@@ -56,6 +57,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -69,12 +71,12 @@ function ShareBar() {
         {
           label: "Email",
           color: "bg-ink text-white",
-          href: `mailto:?subject=Salar de Uyuni 5-Day Guide&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `mailto:?subject=Salar de Uyuni 5-Day Guide&body=Check this out: ${pageUrl}`,
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
-          href: `https://x.com/intent/tweet?text=Salar de Uyuni in 5 Days — salt flats, mirror effect and flamingo lagoons&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          color: "bg-[#1a6fb5] text-white",
+          href: `https://x.com/intent/tweet?text=Salar de Uyuni in 5 Days — salt flats, mirror effect and flamingo lagoons&url=${pageUrl}`,
         },
       ].map((s) => (
         <a
@@ -218,7 +220,7 @@ export default function BoliviaClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Salar de Uyuni" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

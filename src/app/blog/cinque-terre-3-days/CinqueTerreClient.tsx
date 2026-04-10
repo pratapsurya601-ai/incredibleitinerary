@@ -17,6 +17,7 @@ import SmartImage from "@/components/SmartImage";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InquiryModal from "@/components/InquiryModal";
+import { usePageUrl } from "@/lib/hooks";
 
 // ── Table of Contents ─────────────────────────────────────────────────────────
 const CINQUE_TERRE_TOC = [
@@ -57,6 +58,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -70,12 +72,12 @@ function ShareBar() {
         {
           label: "Email",
           color: "bg-ink text-white",
-          href: `mailto:?subject=Cinque Terre 3-Day Guide&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `mailto:?subject=Cinque Terre 3-Day Guide&body=Check this out: ${pageUrl}`,
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
-          href: `https://x.com/intent/tweet?text=Cinque Terre in 3 Days — cliff villages, coastal trails and pesto pasta&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          color: "bg-[#1a6fb5] text-white",
+          href: `https://x.com/intent/tweet?text=Cinque Terre in 3 Days — cliff villages, coastal trails and pesto pasta&url=${pageUrl}`,
         },
       ].map((s) => (
         <a
@@ -219,7 +221,7 @@ export default function CinqueTerreClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Cinque Terre" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

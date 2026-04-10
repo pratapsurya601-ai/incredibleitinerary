@@ -9,6 +9,7 @@ import InquiryModal from "@/components/ui/InquiryModal";
 import SmartImage from "@/components/ui/SmartImage";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 import InlineCTA from "@/components/blog/InlineCTA";
+import { usePageUrl } from "@/lib/hooks";
 
 const MALDIVES_TOC = [
   { id: "costs-overview",   emoji: "💰", label: "Cost Overview" },
@@ -42,6 +43,7 @@ function ReadingProgress() {
 }
 
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -52,15 +54,15 @@ function ShareBar() {
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       <a
-        href={`mailto:?subject=Maldives Trip Cost for Couples from India&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`}
+        href={`mailto:?subject=Maldives Trip Cost for Couples from India&body=Check this out: ${pageUrl}`}
         className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
       >
         Email
       </a>
       <a
-        href={`https://x.com/intent/tweet?text=Maldives%20Trip%20Cost%20for%20Couples%20from%20India&url=${typeof window !== "undefined" ? window.location.href : ""}`}
+        href={`https://x.com/intent/tweet?text=Maldives%20Trip%20Cost%20for%20Couples%20from%20India&url=${pageUrl}`}
         target="_blank" rel="noopener noreferrer"
-        className="bg-[#1DA1F2] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
+        className="bg-[#1a6fb5] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
       >
         Twitter
       </a>
@@ -161,7 +163,7 @@ export default function MaldivesCoupleClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Maldives" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* HERO */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

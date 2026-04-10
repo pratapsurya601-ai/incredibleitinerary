@@ -1,5 +1,11 @@
 "use client";
-import { useEffect, useRef, RefObject } from "react";
+import { useEffect, useRef, useState, RefObject } from "react";
+
+export function usePageUrl() {
+  const [url, setUrl] = useState("");
+  useEffect(() => { setUrl(window.location.href); }, []);
+  return url;
+}
 
 export function useScrollReveal<T extends HTMLElement>(): RefObject<T> {
   const ref = useRef<T>(null);

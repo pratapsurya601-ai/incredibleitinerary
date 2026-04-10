@@ -125,7 +125,7 @@ function ShareBar({ title }: { title: string }) {
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       {[
         { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=${encodeURIComponent(title)}&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+        { label: "Twitter", color: "bg-[#1a6fb5] text-white", href: `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&url=${typeof window !== "undefined" ? window.location.href : ""}` },
         { label: "WhatsApp", color: "bg-[#25D366] text-white", href: `https://wa.me/?text=${encodeURIComponent(title + " — " + (typeof window !== "undefined" ? window.location.href : ""))}` },
       ].map((s) => (
         <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"

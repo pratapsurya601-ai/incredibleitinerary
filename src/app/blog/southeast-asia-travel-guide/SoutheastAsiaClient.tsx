@@ -12,6 +12,7 @@ import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 /* ── TOC ─────────────────────────────────────────────────────────────── */
 const TOC = [
@@ -37,12 +38,13 @@ function ReadingProgress() {
 
 /* ── Share bar ────────────────────────────────────────────────────────── */
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
-      <a href={`mailto:?subject=Southeast Asia Travel Guide&body=${typeof window !== "undefined" ? window.location.href : ""}`} className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
-      <a href={`https://x.com/intent/tweet?text=Southeast%20Asia%20Travel%20Guide&url=${typeof window !== "undefined" ? window.location.href : ""}`} target="_blank" rel="noopener noreferrer" className="bg-[#1DA1F2] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
+      <a href={`mailto:?subject=Southeast Asia Travel Guide&body=${pageUrl}`} className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
+      <a href={`https://x.com/intent/tweet?text=Southeast%20Asia%20Travel%20Guide&url=${pageUrl}`} target="_blank" rel="noopener noreferrer" className="bg-[#1a6fb5] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
       <button onClick={() => { navigator.clipboard.writeText(window.location.href); setCopied(true); setTimeout(() => setCopied(false), 2000); }} className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">{copied ? "✓ Copied" : "Copy Link"}</button>
     </div>
   );
@@ -75,7 +77,7 @@ export default function SoutheastAsiaClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Southeast Asia" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

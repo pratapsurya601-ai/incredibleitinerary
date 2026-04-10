@@ -13,6 +13,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 const TOC = [
   { id: "honest",       emoji: "⚡", label: "The honest truth about Ladakh" },
@@ -39,12 +40,13 @@ function ReadingProgress() {
 }
 
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
-      <a href={`mailto:?subject=Leh Ladakh 7-Day Guide&body=${typeof window !== "undefined" ? window.location.href : ""}`} className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
-      <a href={`https://x.com/intent/tweet?text=Leh%20Ladakh%207-Day%20Guide&url=${typeof window !== "undefined" ? window.location.href : ""}`} target="_blank" rel="noopener noreferrer" className="bg-[#1DA1F2] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
+      <a href={`mailto:?subject=Leh Ladakh 7-Day Guide&body=${pageUrl}`} className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
+      <a href={`https://x.com/intent/tweet?text=Leh%20Ladakh%207-Day%20Guide&url=${pageUrl}`} target="_blank" rel="noopener noreferrer" className="bg-[#1a6fb5] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
       <button onClick={() => { navigator.clipboard.writeText(window.location.href); setCopied(true); setTimeout(() => setCopied(false), 2000); }} className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">{copied ? "✓ Copied" : "Copy Link"}</button>
     </div>
   );
@@ -106,7 +108,7 @@ export default function LehLadakhClient() {
       <TableOfContents items={TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Leh Ladakh" />
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* HERO */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
@@ -351,7 +353,7 @@ export default function LehLadakhClient() {
               <div>
                 <div className="flex items-center gap-3 p-4 bg-rose-50 border border-rose-200 rounded-xl mb-6">
                   <span className="text-2xl">💑</span>
-                  <div><p className="text-sm font-medium text-rose-800">Couple Plan — Rs.50,000–Rs.80,000 for two</p><p className="text-xs text-rose-600 font-light">Private car + driver · Boutique camps · Romantic Pangong sunrise</p></div>
+                  <div><p className="text-sm font-medium text-rose-800">Couple Plan — Rs.50,000–Rs.80,000 for two</p><p className="text-xs text-rose-700 font-light">Private car + driver · Boutique camps · Romantic Pangong sunrise</p></div>
                 </div>
                 <DayCard day="Day 1–2" title="Arrive + Leh Heritage"
                   items={[

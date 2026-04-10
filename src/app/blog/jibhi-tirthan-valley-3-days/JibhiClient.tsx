@@ -11,6 +11,7 @@ import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 // ── Table of Contents ─────────────────────────────────────────────────────────
 const JIBHI_TOC = [
@@ -48,6 +49,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -62,14 +64,14 @@ function ShareBar() {
           label: "Email",
           color: "bg-ink text-white",
           href: `mailto:?subject=Jibhi Tirthan Valley 3-Day Guide&body=Check this out: ${
-            typeof window !== "undefined" ? window.location.href : ""
+            pageUrl
           }`,
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
+          color: "bg-[#1a6fb5] text-white",
           href: `https://x.com/intent/tweet?text=Jibhi+%26+Tirthan+Valley+in+3+Days&url=${
-            typeof window !== "undefined" ? window.location.href : ""
+            pageUrl
           }`,
         },
       ].map((s) => (
@@ -278,7 +280,7 @@ export default function JibhiClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Jibhi & Tirthan Valley" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

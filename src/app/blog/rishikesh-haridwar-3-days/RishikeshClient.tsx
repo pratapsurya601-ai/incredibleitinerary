@@ -36,7 +36,7 @@ export default function RishikeshClient(){
   return<>
     <RP/><TableOfContents items={TOC}/><Navbar onPlanTrip={()=>setM(true)}/>
     <Breadcrumb destination="Rishikesh & Haridwar" />
-    <main className="bg-cream min-h-screen">
+    <main id="main-content" className="bg-cream min-h-screen">
       <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
         <SmartImage imageKey="rishikeshHero" fallback="https://images.unsplash.com/photo-1609766934887-3b4e0a8a62a0?w=1600&q=85" alt="Rishikesh Ganga river ghats Haridwar" fill className="object-cover" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/50 to-ink/30"/>

@@ -11,6 +11,7 @@ import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 const CHENNAI_TOC = [
   { id: "decision",   emoji: "⚡",  label: "1 Day vs 2 Days vs Day Trip?" },
@@ -47,6 +48,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -60,12 +62,12 @@ function ShareBar() {
         {
           label: "Email",
           color: "bg-ink text-white",
-          href: `mailto:?subject=Chennai 2-Day Travel Guide&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `mailto:?subject=Chennai 2-Day Travel Guide&body=Check this out: ${pageUrl}`,
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
-          href: `https://x.com/intent/tweet?text=Chennai in 2 Days guide&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          color: "bg-[#1a6fb5] text-white",
+          href: `https://x.com/intent/tweet?text=Chennai in 2 Days guide&url=${pageUrl}`,
         },
       ].map((s) => (
         <a
@@ -248,7 +250,7 @@ export default function ChennaiClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Chennai" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

@@ -12,6 +12,7 @@ import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 const MANALI_TOC = [
   { id: "decision",   emoji: "⚡",  label: "Which Traveller Are You?" },
@@ -45,6 +46,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -55,8 +57,8 @@ function ShareBar() {
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       {[
-        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Manali 5-Day Guide&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://x.com/intent/tweet?text=Manali in 5 Days — Solang, Rohtang %26 Old Manali&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Manali 5-Day Guide&body=Check this out: ${pageUrl}` },
+        { label: "Twitter", color: "bg-[#1a6fb5] text-white", href: `https://x.com/intent/tweet?text=Manali in 5 Days — Solang, Rohtang %26 Old Manali&url=${pageUrl}` },
       ].map((s) => (
         <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
           className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>
@@ -191,7 +193,7 @@ export default function ManaliClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Manali" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

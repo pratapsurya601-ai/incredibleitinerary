@@ -12,6 +12,7 @@ import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 const SEVILLE_TOC = [
   { id: "plans",       emoji: "⚡", label: "Which Plan Are You?" },
@@ -34,14 +35,15 @@ function ReadingProgress() {
 }
 
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => { navigator.clipboard.writeText(window.location.href); setCopied(true); setTimeout(() => setCopied(false), 2000); };
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       {[
-        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Seville 3-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://x.com/intent/tweet?text=Seville in 3 Days guide&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Seville 3-Day Itinerary&body=Check this out: ${pageUrl}` },
+        { label: "Twitter", color: "bg-[#1a6fb5] text-white", href: `https://x.com/intent/tweet?text=Seville in 3 Days guide&url=${pageUrl}` },
       ].map((s) => (<a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>{s.label}</a>))}
       <button onClick={copy} className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">{copied ? "✓ Copied" : "Copy Link"}</button>
     </div>
@@ -98,7 +100,7 @@ export default function SevilleClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Seville" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
           <SmartImage
             query="seville plaza de espana architecture sunset"

@@ -16,6 +16,7 @@ import PhotoCta from "@/components/blog/PhotoCta";
 import AuthorByline from "@/components/blog/AuthorByline";
 import InlineSignup from "@/components/email/InlineSignup";
 import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
+import { usePageUrl } from "@/lib/hooks";
 
 // ── Table of Contents ─────────────────────────────────────────────────────────
 const ATHENS_TOC = [
@@ -55,6 +56,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -68,12 +70,12 @@ function ShareBar() {
         {
           label: "Email",
           color: "bg-ink text-white",
-          href: `mailto:?subject=Athens 3-Day Guide&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`,
+          href: `mailto:?subject=Athens 3-Day Guide&body=Check this out: ${pageUrl}`,
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
-          href: `https://x.com/intent/tweet?text=Athens in 3 Days — Acropolis, Plaka and rooftop bars with Parthenon views&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+          color: "bg-[#1a6fb5] text-white",
+          href: `https://x.com/intent/tweet?text=Athens in 3 Days — Acropolis, Plaka and rooftop bars with Parthenon views&url=${pageUrl}`,
         },
       ].map((s) => (
         <a
@@ -216,7 +218,7 @@ export default function AthensClient() {
       <TableOfContents items={ATHENS_TOC} />
       <Navbar onPlanTrip={() => setModalOpen(true)} />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

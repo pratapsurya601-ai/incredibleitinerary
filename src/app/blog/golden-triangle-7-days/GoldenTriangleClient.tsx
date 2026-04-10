@@ -12,6 +12,7 @@ import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 const GT_TOC = [
   { id: "decision",    emoji: "⚡", label: "Which Plan Are You?" },
@@ -44,16 +45,17 @@ function ReadingProgress() {
 }
 
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => { navigator.clipboard.writeText(window.location.href); setCopied(true); setTimeout(() => setCopied(false), 2000); };
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
-      <a href={`mailto:?subject=Golden Triangle 7-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`}
+      <a href={`mailto:?subject=Golden Triangle 7-Day Itinerary&body=Check this out: ${pageUrl}`}
         className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
-      <a href={`https://x.com/intent/tweet?text=Golden%20Triangle%207-Day%20Guide&url=${typeof window !== "undefined" ? window.location.href : ""}`}
+      <a href={`https://x.com/intent/tweet?text=Golden%20Triangle%207-Day%20Guide&url=${pageUrl}`}
         target="_blank" rel="noopener noreferrer"
-        className="bg-[#1DA1F2] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
+        className="bg-[#1a6fb5] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
       <button onClick={copy} className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">
         {copied ? "✓ Copied" : "Copy Link"}
       </button>
@@ -180,7 +182,7 @@ export default function GoldenTriangleClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Golden Triangle" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* HERO */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
@@ -410,7 +412,7 @@ export default function GoldenTriangleClient() {
                   <span className="text-2xl">💑</span>
                   <div>
                     <p className="text-sm font-medium text-rose-800">Couple Plan — Rs.55,000–Rs.85,000 for two</p>
-                    <p className="text-xs text-rose-600 font-light">Private car for full circuit · Heritage boutique hotels · Private guides</p>
+                    <p className="text-xs text-rose-700 font-light">Private car for full circuit · Heritage boutique hotels · Private guides</p>
                   </div>
                 </div>
 

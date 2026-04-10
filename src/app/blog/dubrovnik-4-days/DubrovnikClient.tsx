@@ -8,6 +8,7 @@ import SmartImage from "@/components/ui/SmartImage";
 import TableOfContents from "@/components/blog/TableOfContents";
 import Comments from "@/components/blog/Comments";
 import DestinationGallery from "@/components/blog/DestinationGallery";
+import { usePageUrl } from "@/lib/hooks";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import CombineWith from "@/components/blog/CombineWith";
@@ -57,6 +58,7 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -74,7 +76,7 @@ function ShareBar() {
         },
         {
           label: "Twitter",
-          color: "bg-[#1DA1F2] text-white",
+          color: "bg-[#1a6fb5] text-white",
           href: `https://x.com/intent/tweet?text=Dubrovnik in 4 Days — City Walls, Game of Thrones and the Elaphiti Islands&url=https://www.incredibleitinerary.com/blog/dubrovnik-4-days`,
         },
       ].map((s) => (
@@ -219,7 +221,7 @@ export default function DubrovnikClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Dubrovnik" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">

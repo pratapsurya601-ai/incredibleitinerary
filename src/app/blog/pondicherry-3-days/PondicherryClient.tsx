@@ -11,6 +11,7 @@ import DestinationGallery from "@/components/blog/DestinationGallery";
 import AffiliateBlock from "@/components/blog/AffiliateBlock";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
+import { usePageUrl } from "@/lib/hooks";
 
 
 const PONDY_TOC = [
@@ -48,6 +49,7 @@ function ReadingProgress() {
 
 // ── Share Button ──────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -58,8 +60,8 @@ function ShareBar() {
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
       {[
-        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Pondicherry 3-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}` },
-        { label: "Twitter", color: "bg-[#1DA1F2] text-white", href: `https://x.com/intent/tweet?text=Pondicherry in 3 Days guide&url=${typeof window !== "undefined" ? window.location.href : ""}` },
+        { label: "Email", color: "bg-ink text-white", href: `mailto:?subject=Pondicherry 3-Day Itinerary&body=Check this out: ${pageUrl}` },
+        { label: "Twitter", color: "bg-[#1a6fb5] text-white", href: `https://x.com/intent/tweet?text=Pondicherry in 3 Days guide&url=${pageUrl}` },
       ].map((s) => (
         <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
           className={`${s.color} text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full transition-opacity hover:opacity-80`}>
@@ -177,7 +179,7 @@ export default function PondicherryClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Pondicherry" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
@@ -390,7 +392,7 @@ export default function PondicherryClient() {
                   <span className="text-2xl">💑</span>
                   <div>
                     <p className="text-sm font-medium text-rose-800">Couple Plan — White Town Heritage Stay</p>
-                    <p className="text-xs text-rose-600 font-light">Stay: Boutique guesthouse in French Quarter · ₹2,000–₹5,000/night</p>
+                    <p className="text-xs text-rose-700 font-light">Stay: Boutique guesthouse in French Quarter · ₹2,000–₹5,000/night</p>
                   </div>
                 </div>
                 <DayCard day="Day 1" title="French Quarter Deep Dive + Sunset"

@@ -13,6 +13,7 @@ import Stay22Widget from "@/components/ui/Stay22Widget";
 import RelatedGuides from "@/components/blog/RelatedGuides";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 import DownloadButton from "@/components/pdf/DownloadButton";
+import { usePageUrl } from "@/lib/hooks";
 
 
 const RAJASTHAN_TOC = [
@@ -47,13 +48,14 @@ function ReadingProgress() {
 
 // ── Share Bar ─────────────────────────────────────────────────────────────────
 function ShareBar() {
+  const pageUrl = usePageUrl();
   const [copied, setCopied] = useState(false);
   const copy = () => { navigator.clipboard.writeText(window.location.href); setCopied(true); setTimeout(() => setCopied(false), 2000); };
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-muted uppercase tracking-widest mr-1">Share</span>
-      <a href={`mailto:?subject=Rajasthan 7-Day Itinerary&body=Check this out: ${typeof window !== "undefined" ? window.location.href : ""}`} className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
-      <a href={`https://x.com/intent/tweet?text=Rajasthan%207%20Days%20guide&url=${typeof window !== "undefined" ? window.location.href : ""}`} target="_blank" rel="noopener noreferrer" className="bg-[#1DA1F2] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
+      <a href={`mailto:?subject=Rajasthan 7-Day Itinerary&body=Check this out: ${pageUrl}`} className="bg-ink text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Email</a>
+      <a href={`https://x.com/intent/tweet?text=Rajasthan%207%20Days%20guide&url=${pageUrl}`} target="_blank" rel="noopener noreferrer" className="bg-[#1a6fb5] text-white text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity">Twitter</a>
       <button onClick={copy} className="bg-parchment border border-parchment-2 text-[0.65rem] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full hover:border-gold transition-colors text-muted">{copied ? "✓ Copied" : "Copy Link"}</button>
     </div>
   );
@@ -179,7 +181,7 @@ export default function RajasthanBlogClient() {
       <Navbar onPlanTrip={() => setModalOpen(true)} />
       <Breadcrumb destination="Rajasthan" />
 
-      <main className="bg-cream min-h-screen">
+      <main id="main-content" className="bg-cream min-h-screen">
 
         {/* ── HERO ── */}
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
@@ -404,7 +406,7 @@ export default function RajasthanBlogClient() {
                   <span className="text-2xl">💑</span>
                   <div>
                     <p className="text-sm font-medium text-rose-800">Couple Plan — Heritage Havelis + Private Car</p>
-                    <p className="text-xs text-rose-600 font-light">Stay: Boutique havelis ₹3,500–₹8,000/night · Private car+driver for the full circuit</p>
+                    <p className="text-xs text-rose-700 font-light">Stay: Boutique havelis ₹3,500–₹8,000/night · Private car+driver for the full circuit</p>
                   </div>
                 </div>
                 <DayCard day="Day 1–2" title="Jaipur — Pink City"
