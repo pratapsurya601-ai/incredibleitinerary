@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KodaikanalClient from "./KodaikanalClient";
 
 export const metadata: Metadata = {
-  title: "Kodaikanal 3-Day Itinerary 2026: Trip Planner",
+  title: "Kodaikanal 3 Day Itinerary (2026): How to Reach, Flight & Off Season",
   description:
-    "3 complete Kodaikanal plans — Budget, Couple, Premium — with real timings, costs, Google Maps routes and the insider tips most guides miss.",
+    "Complete Kodaikanal 3 day itinerary — how to reach Kodaikanal (Kodaikanal flight, train, bus), Kodaikanal off season tips, Kodai Lake, real timings and Google Maps routes.",
   keywords: [
     "kodaikanal itinerary 3 days",
     "kodaikanal travel guide 2026",
@@ -14,11 +14,15 @@ export const metadata: Metadata = {
     "kodaikanal hill station",
     "kodaikanal packages india",
     "kodaikanal trip planner",
+    "kodaikanal 3 day itinerary",
+    "how to reach kodaikanal",
+    "kodaikanal flight",
+    "kodaikanal off season",
   ],
   openGraph: {
-    title: "Kodaikanal 3-Day Itinerary 2026: Trip Planner",
+    title: "Kodaikanal 3 Day Itinerary (2026): How to Reach, Flight & Off Season",
     description:
-      "Real timings, actual budgets, Google Maps routes. 3 complete plans for every type of traveller.",
+      "How to reach Kodaikanal, Kodaikanal off season tips, real timings, actual budgets, Google Maps routes. 3 complete plans for every traveller.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80",

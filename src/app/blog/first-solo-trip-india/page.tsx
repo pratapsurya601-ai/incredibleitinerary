@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     "safe places solo travel India",
     "solo trip India tips",
     "India solo travel guide 2026",
+    "solo travel india",
+    "travel india solo",
+    "solo trip india",
+    "solo backpacking india",
+    "first solo trip",
   ],
   openGraph: {
     title: "First Solo Trip in India: The Honest Beginner's Guide (2026)",

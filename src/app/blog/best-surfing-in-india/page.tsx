@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     "Mulki surfing",
     "Covelong surf school",
     "India surf guide 2026",
+    "indian surfing",
+    "surfing schools in india",
+    "surf schools india",
   ],
   openGraph: {
     title: "Best Surfing in India 2026: Top Spots, Surf Schools & When to Go",

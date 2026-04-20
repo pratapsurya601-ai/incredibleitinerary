@@ -41,11 +41,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.incredibleitinerary.com"),
   verification: {
     google: "BmoxUjBfGA7mVKr8qayc8cxC7_ND1hdJOEb6zaxloSA",
     other: { "msvalidate.01": ["32471722DA608250B1B461D6531492B0"] },
   },
-  title: `IncredibleItinerary — ${_count} Free Travel Guides Worldwide`,
+  title: {
+    default: `IncredibleItinerary — ${_count} Free Travel Guides Worldwide`,
+    template: `%s | IncredibleItinerary`,
+  },
   description:
     `Free, detailed travel guides for India, Thailand, Japan, Italy, Vietnam, Greece, Turkey, Portugal, Malaysia & more. ${_count} destination itineraries with real prices, local tips, and day-by-day plans. Skip the tourist traps.`,
   keywords: [

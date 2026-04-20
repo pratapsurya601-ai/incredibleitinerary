@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import GokarnaBlogClient from "./GokarnaClient";
 
 export const metadata: Metadata = {
-  title: "Gokarna 3-Day Itinerary 2026: Trip Planner",
+  title: "Gokarna Itinerary 3 Days (2026): How to Reach, Trip Cost & Beaches",
   description:
-    "3 complete Gokarna plans — Budget, Backpacker, Comfortable — with real timings, costs, beach trek routes and the spots most tourists never find.",
+    "Complete Gokarna 3-day itinerary — how to reach Gokarna (flight, train, bus), Gokarna trip cost, beach trek routes, Om Beach, Kudle & Half Moon. Budget to comfortable plans.",
   keywords: [
     "gokarna itinerary 3 days",
     "gokarna travel guide 2026",
@@ -14,11 +14,14 @@ export const metadata: Metadata = {
     "half moon beach gokarna",
     "gokarna beach trek",
     "gokarna trip planner",
+    "gokarna trip cost",
+    "gokarna flight",
+    "gokarna how to reach",
   ],
   openGraph: {
-    title: "Gokarna 3-Day Itinerary 2026: Trip Planner",
+    title: "Gokarna Itinerary 3 Days (2026): How to Reach, Trip Cost & Beaches",
     description:
-      "Real timings, actual budgets, trek routes. 3 complete plans for every type of traveller.",
+      "How to reach Gokarna, real trip cost, beach trek routes, Om Beach & Kudle. 3 complete Gokarna plans for every type of traveller.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&q=80",

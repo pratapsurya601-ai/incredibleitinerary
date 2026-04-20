@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ChennaiClient from "./ChennaiClient";
 
 export const metadata: Metadata = {
-  title: "Chennai 2 Days: The Real City Guide (Temples, Marina Beach & Food)",
+  title: "Chennai Itinerary: 2 Days in Chennai (What to Do, Temples & Food)",
   description:
-    "Complete 2-day Chennai itinerary — Kapaleeshwarar Temple, Marina Beach, Mahabalipuram day trip, Egmore Museum, best South Indian food, budget from ₹2,500/day.",
+    "Complete Chennai itinerary — what to do in Chennai in 2 days (or 3 days): Marina Beach, Kapaleeshwarar Temple, Mahabalipuram, best South Indian food, all Chennai highlights.",
   keywords: [
     "Chennai travel guide",
     "Chennai itinerary 2 days",
@@ -13,11 +13,15 @@ export const metadata: Metadata = {
     "Mahabalipuram day trip from Chennai",
     "Chennai food guide",
     "South India travel",
+    "chennai itinerary",
+    "chennai what to do",
+    "all chennai",
+    "3 days in chennai",
   ],
   openGraph: {
-    title: "Chennai 2 Days: The Real City Guide (Temples, Marina Beach & Food)",
+    title: "Chennai Itinerary: 2 Days in Chennai (What to Do, Temples & Food)",
     description:
-      "Marina Beach at sunrise, Kapaleeshwarar Temple, Mylapore streets, Chola bronzes, and South India's best filter coffee. Complete 2-day Chennai guide with real costs.",
+      "What to do in Chennai: Marina Beach at sunrise, Kapaleeshwarar Temple, Mylapore, Chola bronzes, filter coffee. Complete 2-day (and 3-day) Chennai itinerary with real costs.",
     images: [
       {
         url: "https://www.incredibleitinerary.com/images/blog/chennai-marina-beach.jpg",

@@ -2,14 +2,18 @@ import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: "/api/",
-    },
-    sitemap: [
-      "https://www.incredibleitinerary.com/sitemap.xml",
-      "https://www.incredibleitinerary.com/sitemap-images.xml",
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: "/api/",
+      },
+      // Block AI training crawlers
+      {
+        userAgent: ["GPTBot", "CCBot", "anthropic-ai", "Claude-Web", "Google-Extended"],
+        disallow: "/",
+      },
     ],
+    sitemap: "https://www.incredibleitinerary.com/sitemap.xml",
   };
 }

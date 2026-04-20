@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import AlgarveClient from "./AlgarveClient";
 
 export const metadata: Metadata = {
-  title: "Algarve in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
-  description: "3 complete Algarve plans — Budget, Mid-Range, Luxury — covering Ponta da Piedade sea caves, Benagil Cave, Sagres, and the golden cliff beaches. Real costs in euros.",
+  title: "Best Time to Visit Algarve: 4-Day Itinerary Guide (2026)",
+  description: "Algarve best time to visit plus complete 4-day itinerary — Ponta da Piedade sea caves, Benagil Cave, Sagres, and golden cliff beaches. Real euro costs, Budget to Luxury.",
   keywords: [
     "algarve itinerary 4 days",
     "algarve travel guide 2026",
@@ -13,10 +13,11 @@ export const metadata: Metadata = {
     "algarve beaches",
     "portugal coast guide",
     "algarve budget travel",
+    "best time to visit algarve",
   ],
   openGraph: {
-    title: "Algarve in 4 Days: Budget to Luxury Itinerary 2026",
-    description: "Ponta da Piedade caves, Benagil Cave, Sagres sunset — 3 complete Algarve plans with real euro costs.",
+    title: "Best Time to Visit Algarve: 4-Day Itinerary Guide (2026)",
+    description: "Algarve best time to visit, Ponta da Piedade caves, Benagil Cave, Sagres sunset — 3 complete Algarve plans with real euro costs.",
     images: [{ url: "https://images.unsplash.com/photo-1548625361-58a9d86b2c46?w=1200&q=80", width: 1200, height: 630, alt: "Algarve golden cliffs rock arches Ponta da Piedade Portugal coast" }],
     type: "article",
     publishedTime: "2026-04-04T00:00:00Z",

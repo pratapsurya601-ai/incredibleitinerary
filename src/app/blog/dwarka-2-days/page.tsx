@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import DwarkaClient from "./DwarkaClient";
 
 export const metadata: Metadata = {
-  title: "Dwarka 2-Day Itinerary 2026: Trip Planner",
+  title: "Best Time to Visit Dwarka: 2-Day Itinerary & Trip Planner (2026)",
   description:
-    "Plan your Dwarka trip in 2 days. Budget and Pilgrimage — with real timings, costs, Google Maps routes and the spots most tourists miss at Krishna's.",
+    "Dwarka best time to visit plus complete 2-day Dwarka itinerary — Dwarkadhish Temple, Nageshwar Jyotirlinga, Bet Dwarka, Gomti Ghat. Real timings, costs, and Google Maps routes.",
   keywords: [
     "dwarka itinerary 2 days",
     "dwarka travel guide 2026",
@@ -14,11 +14,13 @@ export const metadata: Metadata = {
     "gomti ghat dwarka",
     "dwarka budget travel",
     "dwarka trip planner",
+    "best time to visit dwarka",
+    "dwarka best time",
   ],
   openGraph: {
-    title: "Dwarka 2-Day Itinerary 2026: Trip Planner",
+    title: "Best Time to Visit Dwarka: 2-Day Itinerary & Trip Planner (2026)",
     description:
-      "Real timings, actual budgets, Google Maps routes. 2 complete plans for every type of traveller.",
+      "Dwarka best time to visit, real timings, actual budgets, Google Maps routes. 2 complete plans for every type of traveller.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1609947017136-9daf32a15c38?w=1200&q=80",

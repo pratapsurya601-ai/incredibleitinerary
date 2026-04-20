@@ -327,7 +327,7 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
 
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-10 max-w-[560px] mx-auto w-full text-center">
         <h1 className="font-serif text-[clamp(2rem,5vw,3.2rem)] font-light text-ink leading-tight mb-4">
-          Find Your Perfect Trip
+          Trip Finder Quiz — Find Your Perfect Destination in 60 Seconds
         </h1>
         <p className="text-base text-muted font-light leading-relaxed mb-3 max-w-md">
           Answer 5 questions. We&apos;ll match you with the best guides from{" "}

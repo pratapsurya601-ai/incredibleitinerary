@@ -366,9 +366,9 @@ const data: UniversalBlogData = {
 };
 
 export const metadata: Metadata = {
-  title: "Queenstown in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+  title: "Queenstown Itinerary 4 Days: Complete Travel Guide 2026",
   description:
-    "Plan your perfect 4-day Queenstown itinerary. Bungee jumping, Shotover Jet, Milford Sound, Central Otago wine, and the best lamb rack of your life — all budgets covered.",
+    "Queenstown itinerary 4 days — bungee jumping, Shotover Jet, Milford Sound, Central Otago wine, and the best lamb rack of your life. Budget to luxury, all covered.",
   keywords: [
     "Queenstown travel guide",
     "Queenstown 4 days itinerary",
@@ -380,11 +380,12 @@ export const metadata: Metadata = {
     "NZeTA Indian passport",
     "The Remarkables skiing",
     "Queenstown things to do",
+    "queenstown itinerary 4 days",
   ],
   openGraph: {
-    title: "Queenstown in 4 Days: The Complete Travel Guide (Budget to Luxury, 2026)",
+    title: "Queenstown Itinerary 4 Days: Complete Travel Guide 2026",
     description:
-      "The adventure capital of the world — bungee jumping, jet boating, paragliding, world-class wine, and extraordinary scenery. Your complete 4-day guide.",
+      "Queenstown itinerary 4 days — bungee jumping, jet boating, paragliding, Milford Sound, Central Otago wine. The adventure capital of the world.",
     type: "article",
     url: "https://incredibleitinerary.com/blog/queenstown-4-days",
     images: [

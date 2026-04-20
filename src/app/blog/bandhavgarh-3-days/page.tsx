@@ -2,20 +2,22 @@ import type { Metadata } from "next";
 import BandhavgarhClient from "./BandhavgarhClient";
 
 export const metadata: Metadata = {
-  title: "Bandhavgarh in 3 Days: India's Best Tiger Reserve Safari Guide (2026)",
+  title: "Bandhavgarh Tiger Reserve 3 Days: Core Zone Safari Guide (2026)",
   description:
-    "Complete Bandhavgarh tiger reserve guide — zones, safari booking, highest tiger density in India, jeep safari tips, where to stay, how to reach for 2026.",
+    "Complete Bandhavgarh Tiger Reserve guide — Bandhavgarh core zone safari booking, highest tiger density in India, jeep safari tips, where to stay, how to reach for 2026.",
   keywords: [
     "bandhavgarh tiger reserve safari",
     "bandhavgarh itinerary",
     "bandhavgarh national park booking",
     "best tiger safari india",
     "bandhavgarh travel guide 2026",
+    "bandhavgarh core zone",
+    "bandhavgarh tiger reserve",
   ],
   openGraph: {
-    title: "Bandhavgarh in 3 Days: India's Best Tiger Reserve Safari Guide (2026)",
+    title: "Bandhavgarh Tiger Reserve 3 Days: Core Zone Safari Guide (2026)",
     description:
-      "Complete Bandhavgarh tiger reserve guide — zones, safari booking, highest tiger density in India, jeep safari tips, where to stay, how to reach for 2026.",
+      "Bandhavgarh Tiger Reserve guide — core zone safari booking, highest tiger density in India, jeep safari tips, where to stay, how to reach for 2026.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=1200&q=80",

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import BaliClient from "./BaliClient";
 
 export const metadata: Metadata = {
-  title: "Bali 5-Day Itinerary 2026: Trip Planner",
+  title: "Bali 5 Days 4 Nights Itinerary (2026): Trip Planner",
   description:
-    "Plan your Bali trip in 5 days. Budget, Mid-Range, Luxury — with real timings, costs in IDR & USD, temple routes, rice terrace timings and the mistakes.",
+    "Bali 5 days itinerary — complete Bali 5 days 4 nights plan with Budget, Mid-Range, Luxury options, real timings, IDR & USD costs, temple routes and rice terrace timings.",
   keywords: [
     "bali itinerary 5 days",
     "bali travel guide 2026",
@@ -14,11 +14,13 @@ export const metadata: Metadata = {
     "nusa penida day trip",
     "bali trip planner",
     "seminyak canggu guide",
+    "bali 5 days 4 nights itinerary",
+    "bali 5 days itinerary",
   ],
   openGraph: {
-    title: "Bali 5-Day Itinerary 2026: Trip Planner",
+    title: "Bali 5 Days 4 Nights Itinerary (2026): Trip Planner",
     description:
-      "Real timings, actual budgets in IDR & USD, temple routes. 3 complete plans for every type of traveller.",
+      "Bali 5 days itinerary — real timings, actual budgets in IDR & USD, temple routes. 3 complete plans for every type of traveller.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80",

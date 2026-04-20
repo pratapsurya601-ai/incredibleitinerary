@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KyotoClient from "./KyotoClient";
 
 export const metadata: Metadata = {
-  title: "Kyoto 4-Day Itinerary 2026: Trip Planner",
+  title: "4 Days in Kyoto: Kyoto 4 Day Itinerary (2026 Trip Planner)",
   description:
-    "3 complete Kyoto plans — Budget, Mid-Range, Luxury — with real timings, costs in yen, temple strategies and the mistakes every first-timer makes.",
+    "4 days itinerary Kyoto — complete Kyoto 4 day itinerary with Budget, Mid-Range, Luxury plans, real timings, yen costs, temple strategies and first-timer tips.",
   keywords: [
     "kyoto itinerary 4 days",
     "kyoto travel guide 2026",
@@ -14,11 +14,14 @@ export const metadata: Metadata = {
     "kyoto temples guide",
     "japan travel guide",
     "kyoto trip planner",
+    "4 days in kyoto",
+    "kyoto 4 day itinerary",
+    "4 days itinerary kyoto",
   ],
   openGraph: {
-    title: "Kyoto 4-Day Itinerary 2026: Trip Planner",
+    title: "4 Days in Kyoto: Kyoto 4 Day Itinerary (2026 Trip Planner)",
     description:
-      "Real timings, actual budgets, temple strategies. 3 complete plans for every type of traveller.",
+      "Kyoto 4 day itinerary — real timings, actual budgets, temple strategies. 3 complete plans for every type of traveller.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=1200&q=80",

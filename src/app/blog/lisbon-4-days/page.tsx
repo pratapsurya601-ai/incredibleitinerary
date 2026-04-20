@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import LisbonClient from "./LisbonClient";
 
 export const metadata: Metadata = {
-  title: "Lisbon in 4 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
-  description: "3 complete Lisbon plans — Budget, Mid-Range, Luxury — with Sintra day trip, Tram 28 secrets, Pastéis de Belém tips, and the mistakes every first-timer makes.",
+  title: "When to Go to Lisbon: 4-Day Itinerary (Winter, Summer, Spring, Autumn 2026)",
+  description: "When to go to Lisbon — Lisbon in winter, summer, spring, autumn. Complete 4-day itinerary with Sintra day trip, Tram 28 secrets, Pastéis de Belém tips, real euro costs.",
   keywords: [
     "lisbon itinerary 4 days",
     "lisbon travel guide 2026",
@@ -13,10 +13,12 @@ export const metadata: Metadata = {
     "pasteis de belem",
     "lisbon trip planner",
     "portugal travel guide",
+    "when to go to lisbon",
+    "lisbon winter summer spring autumn",
   ],
   openGraph: {
-    title: "Lisbon in 4 Days: Budget to Luxury Itinerary 2026",
-    description: "Sintra day trip, Tram 28 secrets, Pastéis de Belém — 3 complete Lisbon plans with real costs in euros.",
+    title: "When to Go to Lisbon: 4-Day Itinerary (Winter, Summer, Spring, Autumn 2026)",
+    description: "When to go to Lisbon across winter, summer, spring and autumn — Sintra day trip, Tram 28 secrets, Pastéis de Belém. Full 4-day itinerary.",
     images: [{ url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80", width: 1200, height: 630, alt: "Lisbon Alfama trams colorful buildings Portugal" }],
     type: "article",
     publishedTime: "2026-04-04T00:00:00Z",

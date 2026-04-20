@@ -362,9 +362,9 @@ const _data = {
 };
 
 export const metadata: Metadata = {
-  title: "Dubrovnik in 4 Days: City Walls, Game of Thrones, Elaphiti Islands & Nishta (2026)",
+  title: "Dubrovnik Itinerary 4 Days: 4 Days in Dubrovnik (2026)",
   description:
-    "Complete 4-day Dubrovnik guide covering City Walls at sunrise, Game of Thrones filming locations, Lokrum island, Elaphiti Islands boat day, Nishta restaurant, cable car to Srd Hill, and the Stradun by night — real euro costs for every budget.",
+    "Dubrovnik itinerary 4 days — complete 4 days in Dubrovnik plan covering City Walls at sunrise, Game of Thrones locations, Lokrum, Elaphiti Islands, Nishta & Srd Hill cable car.",
   keywords: [
     "dubrovnik itinerary 4 days",
     "dubrovnik travel guide 2026",
@@ -374,11 +374,12 @@ export const metadata: Metadata = {
     "nishta restaurant dubrovnik",
     "lokrum island dubrovnik",
     "dubrovnik visa indian passport",
+    "4 days in dubrovnik",
   ],
   openGraph: {
-    title: "Dubrovnik in 4 Days: City Walls, Game of Thrones & Islands (2026)",
+    title: "Dubrovnik Itinerary 4 Days: 4 Days in Dubrovnik (2026)",
     description:
-      "City Walls at dawn, GoT filming locations, Lokrum, Elaphiti Islands by boat, Nishta, and Srd Hill cable car — real euro costs for every budget.",
+      "4 days in Dubrovnik — City Walls at dawn, GoT filming locations, Lokrum, Elaphiti Islands by boat, Nishta, and Srd Hill cable car. Real euro costs.",
     type: "article",
     url: "https://www.incredibleitinerary.com/blog/dubrovnik-4-days",
   },

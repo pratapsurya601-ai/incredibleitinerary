@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import TokyoClient from "./TokyoClient";
 
 export const metadata: Metadata = {
-  title: "Tokyo 5-Day Itinerary 2026: Trip Planner",
+  title: "Tokyo 5 Days: 5 Days in Tokyo (Tokyo Five Day Itinerary 2026)",
   description:
-    "3 complete Tokyo plans — Budget, Mid-Range, Luxury — with real timings, costs in yen and the mistakes every first-timer makes.",
+    "Tokyo 5 days itinerary — complete 5 days in Tokyo plan (Tokyo five day itinerary) with Budget, Mid-Range, Luxury plans, real timings, yen costs and transit tips.",
   keywords: [
     "tokyo itinerary 5 days",
     "tokyo travel guide 2026",
@@ -14,11 +14,14 @@ export const metadata: Metadata = {
     "tokyo things to do",
     "japan travel guide",
     "tokyo trip planner",
+    "tokyo 5 days",
+    "tokyo five day itinerary",
+    "5 days in tokyo",
   ],
   openGraph: {
-    title: "Tokyo 5-Day Itinerary 2026: Trip Planner",
+    title: "Tokyo 5 Days: 5 Days in Tokyo (Tokyo Five Day Itinerary 2026)",
     description:
-      "Real timings, actual budgets, transit tips. 3 complete plans for every type of traveller.",
+      "5 days in Tokyo — real timings, actual budgets, transit tips. 3 complete Tokyo five day itinerary plans for every traveller.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80",

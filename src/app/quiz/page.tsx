@@ -2,29 +2,43 @@ import type { Metadata } from "next";
 import QuizClient from "./QuizClient";
 
 export const metadata: Metadata = {
-  title: "Destination Matcher — Find Your Perfect Trip",
+  title: "Trip Finder Quiz: Find Your Perfect Travel Destination | IncredibleItinerary",
   description:
-    "Answer 5 questions and get matched with the perfect travel destination from 300+ guides. Personalized match scores, real budgets, free itineraries.",
+    "Take our free trip finder quiz to discover your ideal travel destination. 60-second quiz matches you to the perfect itinerary from 375+ travel guides.",
   keywords: [
-    "travel destination quiz",
+    "trip finder quiz",
+    "travel quiz",
+    "destination quiz",
     "where should i travel",
+    "find my trip",
+    "travel destination finder",
+    "what trip is right for me",
+    "travel destination quiz",
     "travel planner quiz",
     "best destination for me",
-    "trip finder quiz",
     "india travel quiz",
     "where to go on holiday 2026",
     "travel recommendation engine",
   ],
   openGraph: {
-    title: "Find Your Perfect Trip — Destination Matcher",
+    title: "Trip Finder Quiz: Find Your Perfect Travel Destination",
     description:
-      "5 questions → 300+ destinations scored to your exact preferences. Free, instant, no signup required.",
+      "Take our free trip finder quiz to discover your ideal travel destination. 60-second quiz matches you to the perfect itinerary from 375+ travel guides.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80",
         width: 1200,
         height: 630,
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trip Finder Quiz: Find Your Perfect Travel Destination",
+    description:
+      "Take our free trip finder quiz to discover your ideal travel destination. 60-second quiz matches you to the perfect itinerary from 375+ travel guides.",
+    images: [
+      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80",
     ],
   },
   alternates: { canonical: "https://www.incredibleitinerary.com/quiz" },
@@ -36,26 +50,42 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How does the trip matcher work?",
+      name: "What is the trip finder quiz?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You answer 5 questions about your preferences — experience type, region, trip duration, budget, and travel style. Our scoring engine rates all 300+ destination guides against your answers and ranks them by match percentage. Everything runs in your browser — no data is sent to a server.",
+        text: "The trip finder quiz is a free 60-second travel destination finder that matches you to your perfect itinerary. Answer 5 quick questions about your style, region, budget, and duration, and we score all 375+ guides to rank the best destinations for you.",
       },
     },
     {
       "@type": "Question",
-      name: "Is the quiz free?",
+      name: "How long does the trip finder quiz take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, completely free with no signup required. All 300+ travel guides on IncredibleItinerary are free to read.",
+        text: "60 seconds or less. Most people finish the trip finder quiz in under a minute — it is just 5 tap-to-select questions with no typing or signup required.",
       },
     },
     {
       "@type": "Question",
-      name: "How many destinations does it match against?",
+      name: "Is the trip finder quiz free?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The quiz scores all 300+ destination guides on IncredibleItinerary, covering India, Southeast Asia, Japan, Europe, Middle East, Americas, and Africa.",
+        text: "Yes, completely free with no signup, email, or payment required. Every travel guide the quiz recommends is also free to read in full.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does the trip finder quiz work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You answer 5 questions about your preferences — experience type, region, trip duration, budget, and travel style. Our scoring engine rates all 375+ destination guides against your answers and ranks them by match percentage. Everything runs in your browser — no data is sent to a server.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How many destinations does the travel quiz match against?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The quiz scores all 375+ destination guides on IncredibleItinerary, covering India, Southeast Asia, Japan, Europe, Middle East, Americas, and Africa.",
       },
     },
     {

@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     "landour mussoorie",
     "mussoorie hill station",
     "mussoorie trip planner",
+    "mussoorie trip cost for couple",
+    "mussoorie cost",
   ],
   openGraph: {
     title: "Mussoorie 3-Day Itinerary 2026: Trip Planner",

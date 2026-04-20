@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KazirangaClient from "./KazirangaClient";
 
 export const metadata: Metadata = {
-  title: "Kaziranga 3-Day Itinerary 2026: Trip Planner",
+  title: "Kaziranga 3 Days: Rhino & Elephant Safari (Family-Friendly 2026)",
   description:
-    "Plan your Kaziranga trip in 3 days. Budget, Safari-Focused, Premium Lodge — with safari booking tips, rhino sighting strategy, range-by-range breakdown.",
+    "Family-friendly Kaziranga 3-day plan — Kaziranga rhino safari & Kaziranga elephant safari booking tips, range-by-range breakdown, real costs, budget to premium lodge.",
   keywords: [
     "kaziranga national park itinerary",
     "kaziranga safari booking 2026",
@@ -14,11 +14,12 @@ export const metadata: Metadata = {
     "kaziranga elephant safari",
     "kaziranga jeep safari",
     "assam wildlife tourism",
+    "family-friendly kaziranga",
   ],
   openGraph: {
-    title: "Kaziranga 3-Day Itinerary 2026: Trip Planner",
+    title: "Kaziranga 3 Days: Rhino & Elephant Safari (Family-Friendly 2026)",
     description:
-      "Range-by-range breakdown, safari booking strategy, real costs. 3 complete plans from budget to premium lodge.",
+      "Kaziranga rhino safari & elephant safari booking, range-by-range breakdown, real costs. Family-friendly plans from budget to premium lodge.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1585063560582-52e578c02953?w=1200&q=80",

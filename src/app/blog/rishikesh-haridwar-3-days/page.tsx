@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import RishikeshClient from "./RishikeshClient";
 
 export const metadata: Metadata = {
-  title: "Rishikesh & Haridwar 3-Day Itinerary 2026: Trip Planner",
+  title: "Best Time to Visit Rishikesh Haridwar: 3-Day Itinerary (2026)",
   description:
-    "Plan your Rishikesh & Haridwar trip in 3 days. Complete Rishikesh and Haridwar itinerary — white water rafting, Beatles Ashram, Ganga Aarti at Har Ki.",
+    "Best time to visit Rishikesh Haridwar plus complete 3-day itinerary — white water rafting, Beatles Ashram, Ganga Aarti at Har Ki Pauri, real costs from Delhi.",
   keywords: [
     "rishikesh itinerary 3 days",
     "haridwar travel guide",
@@ -13,11 +13,12 @@ export const metadata: Metadata = {
     "beatles ashram rishikesh",
     "rishikesh yoga",
     "rishikesh from delhi",
+    "best time to visit rishikesh haridwar",
   ],
   openGraph: {
-    title: "Rishikesh & Haridwar 3-Day Itinerary 2026: Trip Planner",
+    title: "Best Time to Visit Rishikesh Haridwar: 3-Day Itinerary (2026)",
     description:
-      "Rafting · Ganga Aarti · Beatles Ashram — real costs from Delhi, 4 complete plans.",
+      "Best time to visit Rishikesh Haridwar — rafting, Ganga Aarti, Beatles Ashram. Real costs from Delhi, 4 complete plans.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1593765390540-1c3d1e0a8c3a?w=1200&q=80",

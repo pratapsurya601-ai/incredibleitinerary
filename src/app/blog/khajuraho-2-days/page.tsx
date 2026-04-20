@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KhajurahoClient from "./KhajurahoClient";
 
 export const metadata: Metadata = {
-  title: "Khajuraho 2-Day Itinerary 2026: Trip Planner",
+  title: "Best Time to Visit Khajuraho: 2-Day Itinerary & Trip Planner (2026)",
   description:
-    "Plan your Khajuraho trip in 2 days. Complete Khajuraho guide — Western, Eastern & Southern temple groups, Raneh Falls canyon, Panna National Park, Sound &.",
+    "Khajuraho best time to visit plus complete 2-day Khajuraho itinerary — Western, Eastern & Southern temple groups, Raneh Falls canyon, Panna National Park, Sound & Light show.",
   keywords: [
     "khajuraho itinerary 2 days",
     "khajuraho travel guide 2026",
@@ -14,11 +14,13 @@ export const metadata: Metadata = {
     "panna national park safari",
     "khajuraho sound light show",
     "khajuraho madhya pradesh",
+    "best time to visit khajuraho",
+    "khajuraho best time",
   ],
   openGraph: {
-    title: "Khajuraho 2-Day Itinerary 2026: Trip Planner",
+    title: "Best Time to Visit Khajuraho: 2-Day Itinerary & Trip Planner (2026)",
     description:
-      "Western Group at sunrise, Raneh Falls canyon, Panna safari — real costs, 2 complete plans.",
+      "Khajuraho best time to visit, Western Group at sunrise, Raneh Falls canyon, Panna safari — real costs, 2 complete plans.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1592639296346-560c37a0f711?w=1200&q=80",

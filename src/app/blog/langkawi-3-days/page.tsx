@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import LangkawiClient from "./LangkawiClient";
 
 export const metadata: Metadata = {
-  title: "Langkawi in 3 Days: Complete Itinerary Guide (Budget to Luxury, 2026)",
-  description: "3 complete Langkawi plans — Budget, Mid-Range, Luxury — covering the cable car, mangrove eagle tours, Pantai Cenang beach, duty-free shopping, and the ferry to Koh Lipe.",
+  title: "What to Do in Langkawi for 3 Days: Best Time to Visit & Itinerary (2026)",
+  description: "Langkawi best time to visit & complete 3-day plan — what to do in Langkawi for 3 days, when to go, cable car, mangrove eagle tours, Pantai Cenang, duty-free, Koh Lipe ferry.",
   keywords: [
     "langkawi itinerary 3 days",
     "langkawi travel guide 2026",
@@ -13,10 +13,13 @@ export const metadata: Metadata = {
     "pantai cenang beach",
     "langkawi mangrove tour",
     "malaysia island holiday",
+    "langkawi best time to visit",
+    "langkawi when to go",
+    "what to do in langkawi for 3 days",
   ],
   openGraph: {
-    title: "Langkawi in 3 Days: Budget to Luxury Itinerary 2026",
-    description: "Cable car, mangrove eagle tours, Pantai Cenang beach, duty-free rum — 3 complete Langkawi plans with real RM costs.",
+    title: "What to Do in Langkawi for 3 Days: Best Time to Visit & Itinerary (2026)",
+    description: "Langkawi best time to visit and what to do in Langkawi for 3 days — cable car, mangrove eagles, Pantai Cenang, duty-free. Real RM costs.",
     images: [{ url: "https://images.unsplash.com/photo-1559628233-2b8ac8f3658f?w=1200&q=80", width: 1200, height: 630, alt: "Langkawi tropical beach turquoise water Malaysia island" }],
     type: "article",
     publishedTime: "2026-04-04T00:00:00Z",

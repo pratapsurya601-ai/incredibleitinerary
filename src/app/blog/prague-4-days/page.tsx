@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import PragueClient from "./PragueClient";
 
 export const metadata: Metadata = {
-  title: "Prague in 4 Days: Castle, Charles Bridge, Old Town & the Best Beer in Europe (2026)",
-  description: "4 complete Prague itineraries — Budget (€40/day) to Luxury — with Prague Castle strategy, the Kutná Hora Bone Church, Charles Bridge at dawn, and where to drink €2 Pilsner away from the tourist traps.",
-  keywords: ["prague itinerary 4 days", "prague travel guide 2026", "prague budget travel", "charles bridge guide", "kutna hora bone church", "prague castle tickets", "czech republic travel"],
+  title: "4 Days in Prague: Prague 4 Days & 4 Nights Itinerary (2026)",
+  description: "4 days in Prague (4 nights in Prague) — complete Prague 4 days itinerary from Budget (€40/day) to Luxury, with Castle strategy, Kutná Hora Bone Church, Charles Bridge & €2 Pilsner spots.",
+  keywords: ["prague itinerary 4 days", "prague travel guide 2026", "prague budget travel", "charles bridge guide", "kutna hora bone church", "prague castle tickets", "czech republic travel", "4 days in prague", "4 nights in prague", "prague 4 days"],
   openGraph: {
-    title: "Prague in 4 Days: Castle, Charles Bridge & Czech Beer (2026)",
-    description: "Prague Castle strategy, the Kutná Hora Bone Church, Charles Bridge at 5:30am, and where to drink €2 Pilsner away from the tourist traps.",
+    title: "4 Days in Prague: Prague 4 Days & 4 Nights Itinerary (2026)",
+    description: "Prague 4 days — Castle strategy, Kutná Hora Bone Church, Charles Bridge at 5:30am, and where to drink €2 Pilsner. Full 4 nights in Prague itinerary.",
     images: [{ url: "https://images.unsplash.com/photo-1541849546-216549ae216d?w=1200&q=80", width: 1200, height: 630, alt: "Prague Castle and Charles Bridge at dawn Czech Republic" }],
     type: "article",
   },

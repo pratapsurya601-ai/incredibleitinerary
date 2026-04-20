@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import AmsterdamClient from "./AmsterdamClient";
 
 export const metadata: Metadata = {
-  title: "Amsterdam in 4 Days: Anne Frank, Rijksmuseum, Tulips & Canal Life (2026)",
-  description: "4 complete Amsterdam itineraries from budget to luxury: Anne Frank House booking secrets, Rijksmuseum Night Watch strategy, Keukenhof tulips, canal boat tours, and cycling tips with real euro costs.",
-  keywords: ["amsterdam itinerary 4 days", "amsterdam travel guide 2026", "anne frank house tickets", "keukenhof tulips", "amsterdam things to do", "netherlands travel guide", "rijksmuseum night watch"],
+  title: "4 Days in Amsterdam: Amsterdam 4 Days Itinerary (2026)",
+  description: "4 days in Amsterdam — complete 4 day Amsterdam itinerary with Anne Frank House booking secrets, Rijksmuseum strategy, Keukenhof tulips, canal tours and real euro costs.",
+  keywords: ["amsterdam itinerary 4 days", "amsterdam travel guide 2026", "anne frank house tickets", "keukenhof tulips", "amsterdam things to do", "netherlands travel guide", "rijksmuseum night watch", "4 days in amsterdam", "amsterdam 4 days itinerary", "4 day amsterdam itinerary"],
   openGraph: {
-    title: "Amsterdam in 4 Days: Budget to Luxury 2026 Itinerary",
-    description: "Anne Frank House booking secrets, Rijksmuseum strategy, Keukenhof tulips, and real euro costs for every budget.",
+    title: "4 Days in Amsterdam: Amsterdam 4 Days Itinerary (2026)",
+    description: "4 day Amsterdam itinerary — Anne Frank House booking secrets, Rijksmuseum strategy, Keukenhof tulips, and real euro costs for every budget.",
     images: [{ url: "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=1200&q=80", width: 1200, height: 630, alt: "Amsterdam canal houses bicycles Netherlands" }],
     type: "article",
   },
