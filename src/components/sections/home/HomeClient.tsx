@@ -90,6 +90,45 @@ export default function HomeClient() {
         </div>
 
         <TrustStripSection />
+
+        {/* ── TRENDING GUIDES (internal linking for ranking pages) ── */}
+        <div className="bg-white py-10 px-6 md:px-12 border-b border-parchment-2">
+          <div className="max-w-[1180px] mx-auto">
+            <p className="text-[0.65rem] tracking-[0.22em] uppercase text-gold-dark font-medium text-center mb-2">
+              Most Searched Right Now
+            </p>
+            <h2 className="font-serif text-[1.4rem] md:text-[1.7rem] font-light text-ink text-center mb-6">
+              Trending 2026 travel guides
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                { label: "Yamunotri 2026: Palki/Doli/Pony Rates", href: "/blog/yamunotri-temple-guide" },
+                { label: "Meghalaya 5-Day Itinerary", href: "/blog/meghalaya-5-days" },
+                { label: "Lonavala 2 Days Under ₹4,000", href: "/blog/lonavala-2-days" },
+                { label: "Meenakshi Temple Madurai Guide", href: "/blog/meenakshi-temple-2-days" },
+                { label: "Karnataka 7-Day Circuit", href: "/blog/karnataka-7-days" },
+                { label: "Pachmarhi 3 Days + Satpura Safari", href: "/blog/pachmarhi-3-days" },
+                { label: "Pushkar 2 Days + Camel Fair", href: "/blog/pushkar-2-days" },
+                { label: "Coonoor 2 Days Tea Estates", href: "/blog/coonoor-2-days" },
+                { label: "Kochi 3 Days + Backwaters", href: "/blog/kochi-3-days" },
+                { label: "India Budget Guide ₹3,000/day", href: "/blog/india-budget-guide" },
+                { label: "San Francisco 4 Days", href: "/blog/san-francisco-4-days" },
+                { label: "Panama City 3 Days", href: "/blog/panama-city-3-days" },
+                { label: "Jamaica 5 Days + Blue Mountains", href: "/blog/jamaica-5-days" },
+                { label: "Trip Finder Quiz", href: "/quiz" },
+              ].map((g) => (
+                <Link
+                  key={g.href}
+                  href={g.href}
+                  className="inline-flex items-center px-4 py-2 rounded-full text-xs font-light tracking-wide border border-parchment-2 bg-cream text-muted hover:border-gold hover:text-gold-dark hover:bg-white hover:shadow-sm transition-all duration-200"
+                >
+                  {g.label} →
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <PopularDestinations />
 
         {/* ── EXPLORE BY REGION ── */}

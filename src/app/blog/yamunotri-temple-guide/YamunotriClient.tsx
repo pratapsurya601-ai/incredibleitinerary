@@ -419,6 +419,80 @@ export default function YamunotriClient({ faqData }: Props) {
                 </ul>
               </div>
             </div>
+
+            {/* Palki / Doli / Pony Weight Limits & 2026 Rates */}
+            <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-6">
+              <h3 className="font-medium text-base text-amber-900 mb-3">
+                ⚖️ Palki, Doli, Kandi & Pony — Weight Limits &amp; 2026 Official Rates
+              </h3>
+              <p className="text-sm text-amber-900/80 font-light leading-relaxed mb-4">
+                All Char Dham Yatra transport is regulated by the Uttarakhand government. The Yamunotri
+                porter stand at Janki Chatti publishes fixed rates each season. Weight limits are strict
+                — porters reserve the right to refuse if pilgrims exceed the maximum. Rates below are the
+                official 2026 Janki Chatti → Yamunotri tariff (one way, subject to 5–10% annual revision).
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs text-left border-collapse">
+                  <thead>
+                    <tr className="bg-amber-100 text-amber-900">
+                      <th className="border border-amber-200 px-3 py-2 font-medium">Transport</th>
+                      <th className="border border-amber-200 px-3 py-2 font-medium">Weight Limit</th>
+                      <th className="border border-amber-200 px-3 py-2 font-medium">2026 Rate (one way)</th>
+                      <th className="border border-amber-200 px-3 py-2 font-medium">Porters / Operator</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-amber-900/90">
+                    <tr>
+                      <td className="border border-amber-200 px-3 py-2 font-medium">🐴 Pony (Ghoda)</td>
+                      <td className="border border-amber-200 px-3 py-2">Up to 85 kg rider</td>
+                      <td className="border border-amber-200 px-3 py-2">₹700–900</td>
+                      <td className="border border-amber-200 px-3 py-2">1 pony owner + pony</td>
+                    </tr>
+                    <tr className="bg-amber-50/50">
+                      <td className="border border-amber-200 px-3 py-2 font-medium">🧺 Kandi (back basket)</td>
+                      <td className="border border-amber-200 px-3 py-2">Up to 40 kg (children only)</td>
+                      <td className="border border-amber-200 px-3 py-2">₹2,000–2,500</td>
+                      <td className="border border-amber-200 px-3 py-2">1 porter (carried on back)</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-amber-200 px-3 py-2 font-medium">🪑 Doli (chair palanquin)</td>
+                      <td className="border border-amber-200 px-3 py-2">Up to 90 kg</td>
+                      <td className="border border-amber-200 px-3 py-2">₹2,500–3,500</td>
+                      <td className="border border-amber-200 px-3 py-2">4 porters</td>
+                    </tr>
+                    <tr className="bg-amber-50/50">
+                      <td className="border border-amber-200 px-3 py-2 font-medium">👑 Palki (full palanquin)</td>
+                      <td className="border border-amber-200 px-3 py-2">Up to 100 kg</td>
+                      <td className="border border-amber-200 px-3 py-2">₹4,500–6,000</td>
+                      <td className="border border-amber-200 px-3 py-2">4–6 porters</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-4 text-xs text-amber-900/80 font-light space-y-2">
+                <p>
+                  <strong className="text-amber-900">Overweight surcharge:</strong> if you exceed the
+                  weight limit (usually 85 kg for pony, 90 kg for doli, 100 kg for palki), porters
+                  charge an additional 20–30% of the base fare. A second pony is sometimes required
+                  for baggage — budget ₹500 extra if carrying heavy luggage.
+                </p>
+                <p>
+                  <strong className="text-amber-900">Round-trip pricing:</strong> multiply by roughly
+                  1.8× (not 2×) if booking both ways together at Janki Chatti — porters usually
+                  negotiate a combined rate.
+                </p>
+                <p>
+                  <strong className="text-amber-900">Registration required:</strong> all pony and doli
+                  operators must be registered with the Uttarakhand Tourism Board. Ask for the operator
+                  ID badge. This protects you in case of injury or dispute. 2026 Char Dham registration
+                  is mandatory for pilgrims at registrationandtouristcare.uk.gov.in before the yatra.
+                </p>
+                <p>
+                  <strong className="text-amber-900">Tipping:</strong> ₹50–100 per porter at the top
+                  is customary if they carried you well. The final 1 km is genuinely gruelling for them.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* ── AT THE TEMPLE ── */}

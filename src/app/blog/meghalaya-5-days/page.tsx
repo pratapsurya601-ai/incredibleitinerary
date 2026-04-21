@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import MeghalayaClient from "./MeghalayaClient";
 
 export const metadata: Metadata = {
-  title: "Meghalaya Trip Planner 2026: 5-Day Itinerary + Real Costs",
+  title: "Meghalaya 5-Day Itinerary (2026): Shillong → Cherrapunji → Dawki Route + Costs",
   description:
-    "Plan your Meghalaya trip right. 5-day route: Shillong → Cherrapunji → Dawki → Living Root Bridges. Real budgets from ₹8,000. Honest tips, no fluff.",
+    "Complete 5-day Meghalaya plan — Shillong, Cherrapunji's root bridges, Dawki river, Mawlynnong. Real budgets from ₹8,000/person, Guwahati route, October best time. No fluff.",
   keywords: [
     "planning meghalaya trip",
     "meghalaya itinerary 5 days",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "meghalaya travel guide 2026",
   ],
   openGraph: {
-    title: "Meghalaya Trip Planner 2026: 5-Day Itinerary + Real Costs",
+    title: "Meghalaya 5-Day Itinerary (2026): Shillong → Cherrapunji → Dawki Route + Costs",
     description:
-      "Plan your Meghalaya trip right. 5-day route: Shillong → Cherrapunji → Dawki → Living Root Bridges. Real budgets from ₹8,000. Honest tips, no fluff.",
+      "Complete 5-day route: Shillong → Cherrapunji (root bridges) → Dawki → Mawlynnong. Real budgets from ₹8,000. Guwahati route, October best time.",
     images: [
       {
         url: "https://images.pexels.com/photos/2104882/pexels-photo-2104882.jpeg?auto=compress&w=1200&q=80",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meghalaya Trip Planner 2026: 5-Day Itinerary + Real Costs",
+    title: "Meghalaya 5 Days (2026): Shillong → Cherrapunji → Dawki",
     description:
-      "5-day route: Shillong → Cherrapunji → Dawki → Living Root Bridges. Real budgets from ₹8,000. No fluff.",
+      "Root bridges, Dawki river, Mawlynnong. Real ₹ costs from ₹8,000/person. No fluff.",
     images: ["https://images.pexels.com/photos/2104882/pexels-photo-2104882.jpeg?auto=compress&w=1200&q=80"],
   },
   alternates: {

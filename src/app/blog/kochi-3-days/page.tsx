@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KochiClient from "./KochiClient";
 
 export const metadata: Metadata = {
-  title: "Kochi in 3 Days: Fort Kochi, Chinese Fishing Nets & Kerala's Cosmopolitan Port (2026)",
+  title: "Kochi 3-Day Itinerary (2026): Fort Kochi, Chinese Nets + Backwater Day Trip",
   description:
-    "3-day Kochi itinerary — Fort Kochi heritage walk, Chinese fishing nets at sunset, Mattancherry Palace, Jew Town, Kathakali performance, backwater day trip and best hotels for 2026.",
+    "3-day Kochi guide — Fort Kochi heritage walk, Chinese fishing nets at sunset, Mattancherry Palace, Jew Town, Kathakali show, Alleppey backwater day trip. Budget from ₹2,500/day.",
   keywords: [
     "kochi travel guide",
     "fort kochi itinerary",
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     "kerala backwaters from kochi 2026",
   ],
   openGraph: {
-    title: "Kochi in 3 Days: Fort Kochi, Chinese Fishing Nets & Kerala's Cosmopolitan Port (2026)",
+    title: "Kochi 3-Day Itinerary (2026): Fort Kochi + Backwater Day Trip",
     description:
-      "3-day Kochi itinerary — Fort Kochi heritage walk, Chinese fishing nets at sunset, Mattancherry Palace, Jew Town, Kathakali performance, backwater day trip and best hotels for 2026.",
+      "Fort Kochi heritage walk, Chinese fishing nets sunset, Mattancherry Palace, Jew Town, Kathakali show, Alleppey day trip. From ₹2,500/day.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1200&q=80",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kochi in 3 Days: Fort Kochi, Chinese Fishing Nets & Kerala's Cosmopolitan Port (2026)",
+    title: "Kochi 3-Day Itinerary (2026): Fort Kochi + Backwaters",
     description:
-      "3-day Kochi guide — Fort Kochi, Kathakali show, Mattancherry, Jew Town, Alleppey day trip.",
+      "Fort Kochi, Chinese nets sunset, Kathakali, Alleppey day trip. From ₹2,500/day.",
     images: ["https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1200&q=80"],
   },
   alternates: {

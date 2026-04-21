@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import CoonoorClient from "./CoonoorClient";
 
 export const metadata: Metadata = {
-  title: "Coonoor in 2 Days: Nilgiris Tea Estates & Toy Train Guide (2026)",
+  title: "Coonoor 2-Day Itinerary (2026): UNESCO Toy Train + Nilgiris Tea Estates",
   description:
-    "2-day Coonoor travel guide — Nilgiri Mountain Railway UNESCO toy train, Sim's Park botanical garden, Dolphin's Nose viewpoint, Nilgiris tea tasting, best hotels near Ooty for 2026.",
+    "2-day Coonoor guide — Nilgiri Mountain Railway (UNESCO toy train), Sim's Park, Dolphin's Nose, Highfield tea estate tour, best stays. The calmer alternative to Ooty. Budget from ₹2,000/day.",
   keywords: [
     "coonoor travel guide",
     "coonoor nilgiris itinerary",
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     "nilgiris hill station 2026",
   ],
   openGraph: {
-    title: "Coonoor in 2 Days: Nilgiris Tea Estates & Toy Train Guide (2026)",
+    title: "Coonoor 2-Day Itinerary (2026): UNESCO Toy Train + Tea Estates",
     description:
-      "2-day Coonoor travel guide — Nilgiri Mountain Railway UNESCO toy train, Sim's Park botanical garden, Dolphin's Nose viewpoint, Nilgiris tea tasting, best hotels near Ooty for 2026.",
+      "Nilgiri Mountain Railway, Sim's Park, Dolphin's Nose, Highfield tea estate. The calmer alternative to Ooty. From ₹2,000/day.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1544948503-7ad532b5cc6c?w=1200&q=80",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Coonoor in 2 Days: Nilgiris Tea Estates & Toy Train Guide (2026)",
-    description: "2-day Coonoor guide: UNESCO toy train, tea estates, Dolphin's Nose and Sim's Park.",
+    title: "Coonoor 2-Day Itinerary (2026): Toy Train + Tea Estates",
+    description: "UNESCO toy train, tea estates, Dolphin's Nose. Calmer than Ooty, from ₹2,000/day.",
     images: ["https://images.unsplash.com/photo-1544948503-7ad532b5cc6c?w=1200&q=80"],
   },
   alternates: {

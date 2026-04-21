@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PushkarClient from "./PushkarClient";
 
 export const metadata: Metadata = {
-  title: "Pushkar 2-Day Itinerary 2026: Trip Planner",
+  title: "Pushkar 2-Day Itinerary (2026): Brahma Temple, Ghats + Camel Fair Dates",
   description:
-    "Plan your Pushkar trip in 2 days. Budget and Comfortable — with real timings for Brahma Temple, Savitri Temple trek, Pushkar Lake, Camel Fair, and a day.",
+    "2-day Pushkar guide — Brahma Temple (India's only one), Savitri Temple trek at sunrise, Pushkar Lake ghat aarti, Camel Fair November dates, Ajmer dargah day trip. Budget from ₹2,500/day.",
   keywords: [
     "pushkar itinerary 2 days",
     "pushkar travel guide 2026",
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     "pushkar rose garden",
   ],
   openGraph: {
-    title: "Pushkar 2-Day Itinerary 2026: Trip Planner",
+    title: "Pushkar 2-Day Itinerary (2026): Brahma Temple + Camel Fair",
     description:
-      "Real timings, actual budgets, honest cafe reviews. 2 complete plans for every type of traveller.",
+      "Brahma Temple, Savitri sunrise trek, ghat aarti, Camel Fair dates, Ajmer day trip. Real budgets from ₹2,500/day.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pushkar 2-Day Itinerary 2026: Trip Planner",
-    description: "2 plans, real timings, honest food tips, actual costs.",
+    title: "Pushkar 2-Day Itinerary (2026): Brahma Temple + Camel Fair",
+    description: "Brahma Temple, ghat aarti, Camel Fair dates, Ajmer dargah. From ₹2,500/day.",
     images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"],
   },
   alternates: {

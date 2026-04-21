@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import MeenakshiClient from "./MeenakshiClient";
 
 export const metadata: Metadata = {
-  title: "Meenakshi Temple Madurai in 2 Days: South India's Greatest Temple (2026)",
+  title: "Meenakshi Temple Madurai 2-Day Guide (2026): Darshan Timings + 14 Gopurams",
   description:
-    "2-day Meenakshi Temple Madurai guide — 14 gopurams, Hall of a Thousand Pillars, evening ceremony, Thirumalai Nayakkar Palace, Madurai street food and best hotels for 2026.",
+    "Meenakshi Amman Temple 2-day guide — exact darshan timings, 14 gopurams, Hall of 1000 Pillars, 9 PM bedchamber ceremony, Chithirai Festival dates, street food & hotels near temple.",
   keywords: [
     "meenakshi temple madurai guide",
     "meenakshi amman temple itinerary",
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     "meenakshi temple timings 2026",
   ],
   openGraph: {
-    title: "Meenakshi Temple Madurai in 2 Days: South India's Greatest Temple (2026)",
+    title: "Meenakshi Temple Madurai 2-Day Guide (2026): Darshan Timings + 14 Gopurams",
     description:
-      "14 gopurams, Hall of a Thousand Pillars, the 9 PM bedchamber ceremony, and Madurai street food. 2 complete plans for 2026.",
+      "Exact darshan timings, 14 gopurams, Hall of 1000 Pillars, 9 PM bedchamber ceremony, Chithirai Festival, street food. Complete 2-day Madurai plan.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meenakshi Temple Madurai in 2 Days: South India's Greatest Temple (2026)",
-    description: "14 gopurams, Hall of 1000 Pillars, 9 PM ceremony, Madurai food. 2 plans.",
+    title: "Meenakshi Temple 2-Day Guide (2026): Timings + Gopurams",
+    description: "Darshan timings, 14 gopurams, 9 PM ceremony, Chithirai dates, hotels.",
     images: ["https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80"],
   },
   alternates: {

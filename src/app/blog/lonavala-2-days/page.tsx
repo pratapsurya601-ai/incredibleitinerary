@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import LonavalaClient from "./LonavalaClient";
 
 export const metadata: Metadata = {
-  title: "Lonavala 2-Day Itinerary 2026: Trip Planner",
+  title: "Lonavala in 2 Days (2026): Monsoon Plan + Real Costs Under ₹4,000",
   description:
-    "2 complete Lonavala plans — Budget and Weekend Getaway — with real timings, costs, monsoon tips, trek routes, and the spots most tourists miss.",
+    "Lonavala 2-day itinerary 2026 — Bhushi Dam, Rajmachi Fort trek, Karla Caves, Tiger's Leap. Monsoon vs winter timing, real budgets from ₹3,500, trains from Mumbai & Pune, and spots most tourists miss.",
   keywords: [
     "lonavala itinerary 2 days",
     "lonavala travel guide 2026",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     "lonavala monsoon trip",
   ],
   openGraph: {
-    title: "Lonavala 2-Day Itinerary 2026: Trip Planner",
+    title: "Lonavala in 2 Days (2026): Monsoon Plan + Real Costs Under ₹4,000",
     description:
-      "Real timings, actual budgets, monsoon tips. 2 complete plans for every type of traveller.",
+      "Bhushi Dam, Rajmachi trek, Karla Caves, Tiger's Leap. Monsoon vs winter timing, real budgets, the spots most tourists miss.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1600011247426-3bca6e68e678?w=1200&q=80",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lonavala 2-Day Itinerary 2026: Trip Planner",
-    description: "2 plans, real timings, actual costs, monsoon tips.",
+    title: "Lonavala in 2 Days (2026): Monsoon Plan Under ₹4,000",
+    description: "Bhushi Dam, Rajmachi trek, Karla Caves, real budgets, monsoon tips.",
     images: ["https://images.unsplash.com/photo-1600011247426-3bca6e68e678?w=1200&q=80"],
   },
   alternates: {

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import JamaicaClient from "./JamaicaClient";
 
 export const metadata: Metadata = {
-  title: "Jamaica 5-Day Itinerary 2026: Trip Planner",
+  title: "Jamaica 5-Day Itinerary (2026): Negril, Rick's Café + Blue Mountains",
   description:
-    "Plan your Jamaica trip in 5 days. The ultimate Jamaica travel guide — Seven Mile Beach, Rick's Café cliff diving, Blue Mountains coffee, Dunn's River.",
+    "5-day Jamaica trip plan — Seven Mile Beach Negril, Rick's Café sunset cliff dive, Blue Mountains coffee tour, Dunn's River Falls, Bob Marley Museum. Budget from $95/day, Indian visa info included.",
   keywords: [
     "Jamaica travel guide",
     "Jamaica itinerary 5 days",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     "Rastafarian culture Jamaica",
   ],
   openGraph: {
-    title: "Jamaica 5-Day Itinerary 2026: Trip Planner",
+    title: "Jamaica 5-Day Itinerary (2026): Negril, Rick's Café + Blue Mountains",
     description:
-      "The island that invented cool — cliff diving at Rick's Café, Blue Mountains coffee, jerk chicken that ruins all other jerk chicken, and reggae at noon. Your complete Jamaica itinerary.",
+      "Seven Mile Beach, Rick's Café cliff dive, Blue Mountains coffee, Dunn's River, Bob Marley Museum. From $95/day. The island that invented cool.",
     type: "article",
     url: "https://www.incredibleitinerary.com/blog/jamaica-5-days",
     images: [

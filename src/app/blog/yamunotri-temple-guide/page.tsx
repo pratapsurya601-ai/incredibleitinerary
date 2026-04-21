@@ -2,14 +2,20 @@ import type { Metadata } from "next";
 import YamunotriClient from "./YamunotriClient";
 
 export const metadata: Metadata = {
-  title: "Yamunotri Temple Guide 2026: Trek, Route & Tips",
+  title: "Yamunotri Temple Guide (2026): Trek, Palki/Doli/Pony Rates + Weight Limits",
   description:
-    "Complete Yamunotri Dham guide. 6km trek from Janki Chatti, best time, registration, hot springs, prasad. First stop of Char Dham Yatra.",
+    "Complete 2026 Yamunotri Dham guide — 6km trek from Janki Chatti, Surya Kund hot spring, official palki/doli/pony rates with weight limits (up to 100 kg), Char Dham registration, helicopter costs.",
   keywords: [
     "yamunotri temple guide",
     "yamunotri trek",
     "janki chatti to yamunotri",
     "char dham yatra yamunotri",
+    "yamunotri palki doli weight limit 2026",
+    "yamunotri palki rates 2026",
+    "yamunotri doli charges",
+    "yamunotri pony rates",
+    "yamunotri kandi rates",
+    "yamunotri janki chatti pony dandi kandi rates 2026",
     "yamunotri hot springs",
     "surya kund yamunotri",
     "yamunotri registration 2026",
@@ -19,9 +25,9 @@ export const metadata: Metadata = {
     "yamunotri dham uttarakhand",
   ],
   openGraph: {
-    title: "Yamunotri Temple Guide 2026: Trek, Route & Tips",
+    title: "Yamunotri Temple Guide (2026): Palki/Doli/Pony Rates + Weight Limits",
     description:
-      "Complete Yamunotri Dham guide. 6km trek from Janki Chatti, best time, registration, hot springs, prasad. First stop of Char Dham Yatra.",
+      "6km trek from Janki Chatti, Surya Kund hot spring, official palki/doli/pony rates, weight limits up to 100 kg, Char Dham 2026 registration, helicopter.",
     images: [
       {
         url: "https://images.pexels.com/photos/1659437/pexels-photo-1659437.jpeg?auto=compress&w=1200&q=80",
@@ -37,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yamunotri Temple Guide 2026: Trek, Route & Tips",
+    title: "Yamunotri Guide (2026): Palki/Doli/Pony Rates + Weight Limits",
     description:
-      "6km trek from Janki Chatti, Surya Kund hot spring, Divya Shila ritual, and prasad cooking. First stop of Char Dham Yatra.",
+      "6km trek, Surya Kund hot spring, official 2026 palki/doli/pony rates & weight limits, Char Dham registration.",
     images: [
       "https://images.pexels.com/photos/1659437/pexels-photo-1659437.jpeg?auto=compress&w=1200&q=80",
     ],
@@ -157,6 +163,22 @@ const faqLd = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The 6km trek from Janki Chatti to Yamunotri temple is moderate — suitable for most people if you go at a steady pace. The altitude ranges from 2,650m to 3,293m. Ponies (₹700-900 one way) and dolis (palanquins, ₹2,500-3,500) are available for those unable to walk. Acclimatise in Rishikesh or Uttarkashi for a day before the trek.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What is the weight limit for Yamunotri palki, doli, pony and kandi in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2026 weight limits for Yamunotri Char Dham transport: Pony (ghoda) up to 85 kg rider weight at ₹700–900 one way. Kandi (back basket, for children only) up to 40 kg at ₹2,000–2,500. Doli (chair palanquin, 4 porters) up to 90 kg at ₹2,500–3,500. Palki (full palanquin, 4–6 porters) up to 100 kg at ₹4,500–6,000. Exceeding the weight limit adds a 20–30% surcharge. All operators must be registered with Uttarakhand Tourism.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 2026 palki doli pony rates from Janki Chatti to Yamunotri?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Official 2026 Janki Chatti to Yamunotri one-way rates: Pony ₹700–900, Kandi (for children) ₹2,000–2,500, Doli ₹2,500–3,500, Palki ₹4,500–6,000. Round-trip roughly 1.8× when booked together. Overweight surcharge 20–30%. Tipping ₹50–100 per porter is customary. Registration at registrationandtouristcare.uk.gov.in is mandatory for all Char Dham pilgrims.",
       },
     },
     {

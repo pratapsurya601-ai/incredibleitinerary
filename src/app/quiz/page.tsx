@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import QuizClient from "./QuizClient";
 
 export const metadata: Metadata = {
-  title: "Trip Finder Quiz: Find Your Perfect Travel Destination | IncredibleItinerary",
+  title: "Trip Finder Quiz (2026): Where Should I Travel Next? 60-Second Test",
   description:
-    "Take our free trip finder quiz to discover your ideal travel destination. 60-second quiz matches you to the perfect itinerary from 375+ travel guides.",
+    "Free 60-second trip finder quiz — 5 tap-to-select questions match you to your perfect destination from 377+ guides. No signup, no email. India, SE Asia, Europe, Japan, more.",
   keywords: [
     "trip finder quiz",
     "travel quiz",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     "travel recommendation engine",
   ],
   openGraph: {
-    title: "Trip Finder Quiz: Find Your Perfect Travel Destination",
+    title: "Trip Finder Quiz (2026): Where Should I Travel Next?",
     description:
-      "Take our free trip finder quiz to discover your ideal travel destination. 60-second quiz matches you to the perfect itinerary from 375+ travel guides.",
+      "Free 60-second quiz — 5 questions match you to your perfect destination from 377+ guides. No signup.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trip Finder Quiz: Find Your Perfect Travel Destination",
+    title: "Trip Finder Quiz (2026): Where Should I Travel Next?",
     description:
-      "Take our free trip finder quiz to discover your ideal travel destination. 60-second quiz matches you to the perfect itinerary from 375+ travel guides.",
+      "Free 60-second travel destination quiz — 5 questions, 377+ guides. No signup.",
     images: [
       "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80",
     ],

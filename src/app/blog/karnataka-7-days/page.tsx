@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KarnatakaCircuitClient from "./KarnatakaCircuitClient";
 
 export const metadata: Metadata = {
-  title: "Karnataka 7 Days: Mysore to Hampi — Palaces, Coffee & Ruins (2026)",
+  title: "Karnataka 7-Day Itinerary (2026): Mysore → Coorg → Gokarna → Hampi Route",
   description:
-    "Complete Karnataka circuit — Bangalore, Mysore, Coorg, Gokarna, Hampi. 7 days, real costs, route logic, budget breakdown.",
+    "Complete 7-day Karnataka circuit — Bangalore, Mysore Palace, Coorg coffee estates, Gokarna beaches, Hampi ruins. Real costs from ₹12,000, route map, when to visit each stop.",
   keywords: [
     "karnataka 7 days itinerary",
     "mysore to hampi road trip",
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     "south india road trip",
   ],
   openGraph: {
-    title: "Karnataka 7 Days: Mysore to Hampi — Palaces, Coffee & Ruins (2026)",
-    description: "Palaces, coffee estates, beaches & ancient ruins — the complete Karnataka circuit in 7 days.",
+    title: "Karnataka 7-Day Itinerary (2026): Mysore → Coorg → Gokarna → Hampi",
+    description: "Bangalore → Mysore → Coorg → Gokarna → Hampi. Real costs from ₹12,000, route map, when to visit each.",
     images: [{ url: "https://images.unsplash.com/photo-1600112356600-6e7faf5f5e76?w=1200&q=80", width: 1200, height: 630, alt: "Mysore Palace illuminated at night Karnataka India" }],
     type: "article",
     publishedTime: "2026-04-09T00:00:00Z",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karnataka 7 Days: Mysore to Hampi — Palaces, Coffee & Ruins (2026)",
-    description: "Bangalore → Mysore → Coorg → Gokarna → Hampi → Bangalore. The complete Karnataka circuit.",
+    title: "Karnataka 7-Day Itinerary (2026): Mysore → Hampi",
+    description: "Full circuit — palaces, coffee estates, beaches, Hampi ruins. From ₹12,000.",
     images: ["https://images.unsplash.com/photo-1600112356600-6e7faf5f5e76?w=1200&q=80"],
   },
   alternates: { canonical: "https://www.incredibleitinerary.com/blog/karnataka-7-days" },

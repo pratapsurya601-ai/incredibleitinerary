@@ -305,8 +305,8 @@ const data: UniversalBlogData = {
 };
 
 export const metadata: Metadata = {
-  title: "San Francisco in 4 Days: Golden Gate, Alcatraz, Wine Country & Burritos (2026)",
-  description: "Complete 4-day San Francisco travel guide: Golden Gate sunrise spots, Alcatraz booking secrets, Napa vs Sonoma, real USD costs from $85/day, and B-2 visa info for Indians.",
+  title: "San Francisco 4-Day Itinerary (2026): Golden Gate, Alcatraz + Napa Day Trip",
+  description: "Complete 4-day San Francisco guide — Alcatraz booking secrets, Golden Gate sunrise spot most tourists miss, Napa vs Sonoma, Mission burritos. From $85/day, B-2 visa info for Indians.",
   keywords: [
     "san francisco itinerary 4 days",
     "san francisco travel guide 2026",
@@ -316,8 +316,8 @@ export const metadata: Metadata = {
     "san francisco budget travel",
   ],
   openGraph: {
-    title: "San Francisco in 4 Days: Golden Gate, Alcatraz & Wine Country (2026)",
-    description: "Alcatraz booking secrets, Golden Gate sunrise spots, Karl the Fog explained, and real USD costs — complete SF travel guide.",
+    title: "San Francisco 4-Day Itinerary (2026): Golden Gate, Alcatraz + Napa",
+    description: "Alcatraz booking secrets, Golden Gate sunrise spot most tourists miss, Napa vs Sonoma, Mission burritos. From $85/day.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1200&q=80",
@@ -330,8 +330,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "San Francisco 4 Days (2026)",
-    description: "Golden Gate sunrise, Alcatraz secrets, Wine Country — complete SF guide.",
+    title: "San Francisco 4-Day Itinerary (2026)",
+    description: "Alcatraz booking secrets, Golden Gate sunrise, Napa vs Sonoma, $85/day.",
   },
   alternates: { canonical: "https://www.incredibleitinerary.com/blog/san-francisco-4-days" },
 };

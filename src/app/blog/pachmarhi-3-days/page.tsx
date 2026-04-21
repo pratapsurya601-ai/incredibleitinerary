@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PachmarhiClient from "./PachmarhiClient";
 
 export const metadata: Metadata = {
-  title: "Pachmarhi 3 Days: Madhya Pradesh's Only Hill Station (Complete Guide)",
+  title: "Pachmarhi 3-Day Itinerary (2026): Bee Falls, Dhupgarh Sunrise + Satpura Safari",
   description:
-    "Complete 3-day Pachmarhi itinerary — Bee Falls, Pandava Caves, Dhupgarh sunrise, Satpura tiger reserve safari, British colonial heritage. MP Tourism accommodation guide. Budget from ₹1,700/day.",
+    "3-day Pachmarhi guide — Bee Falls swimming, Pandava Caves, Dhupgarh sunrise (MP's highest point), Satpura tiger safari, MP Tourism bungalows. Budget from ₹1,700/day. MP's only hill station.",
   keywords: [
     "pachmarhi 3 days itinerary",
     "pachmarhi travel guide 2026",
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     "pachmarhi colonial history",
   ],
   openGraph: {
-    title: "Pachmarhi 3 Days: Madhya Pradesh's Only Hill Station (Complete Guide)",
+    title: "Pachmarhi 3-Day Itinerary (2026): Bee Falls, Dhupgarh Sunrise + Satpura Safari",
     description:
-      "Bee Falls swimming, Pandava Caves, Dhupgarh MP highest point sunrise, Satpura safari. Churchill's viewpoint, colonial bungalows. Budget from ₹1,700/day.",
+      "Bee Falls swimming, Pandava Caves, Dhupgarh sunrise (MP's highest point), Satpura safari, MP Tourism bungalows. Budget from ₹1,700/day.",
     images: [
       {
         url: "/images/blog/pachmarhi-bee-falls.jpg",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pachmarhi 3 Days: Madhya Pradesh's Only Hill Station (Complete Guide)",
-    description: "Bee Falls, Pandava Caves, Dhupgarh sunrise, Satpura safari. MP's only hill station guide.",
+    title: "Pachmarhi 3 Days (2026): Bee Falls + Satpura Safari",
+    description: "Bee Falls, Dhupgarh sunrise, Satpura tiger safari. Budget from ₹1,700/day.",
     images: ["/images/blog/pachmarhi-bee-falls.jpg"],
   },
   alternates: {
