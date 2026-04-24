@@ -157,13 +157,13 @@ export default function AboutClient() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                 <Image
-                  src="/images/surya/surya-kedarnath-ridge.jpg"
-                  alt="Surya at Kedarnath ridge, October 2022"
-                  fill unoptimized className="object-cover hover:scale-105 transition-transform duration-500"
+                  src="/images/surya/surya-author-delhi-fullbody.jpg"
+                  alt="Surya in Delhi, 2023"
+                  fill unoptimized className="object-cover object-top hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-                <p className="absolute bottom-4 left-4 text-white font-serif text-base font-light">Kedarnath, 2022</p>
+                <p className="absolute bottom-4 left-4 text-white font-serif text-base font-light">Delhi, 2023</p>
               </div>
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                 <Image
