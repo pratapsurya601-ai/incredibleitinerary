@@ -36,8 +36,8 @@ export default function AboutClient() {
         {/* ── HERO ── */}
         <div className="relative h-[55vh] min-h-[400px] overflow-hidden">
           <Image
-            src="/images/surya/surya-kedarnath-valley.jpg"
-            alt="Kedarnath valley trek — photographed by Surya Pratap"
+            src="/images/surya/surya-gangotri-glacier.jpg"
+            alt="Gangotri glacier trek — photographed by Surya Pratap"
             fill unoptimized
             className="object-cover"
             priority
@@ -54,7 +54,7 @@ export default function AboutClient() {
             </h1>
           </div>
           <span className="absolute bottom-2 right-3 text-[10px] text-white/30 font-light">
-            📸 Kedarnath Valley, Oct 2022 — my own photo
+            📸 Gangotri Glacier, June 2023 — my own photo
           </span>
         </div>
 
