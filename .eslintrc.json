@@ -1,5 +1,6 @@
 {
   "extends": "next/core-web-vitals",
+  "ignorePatterns": [".cloudflare/**", ".vinext/**", "dist/**"],
   "rules": {
     "react/no-unescaped-entities": "warn"
   }
