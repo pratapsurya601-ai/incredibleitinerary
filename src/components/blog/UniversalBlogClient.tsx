@@ -20,6 +20,7 @@ import PhotoCta from "@/components/blog/PhotoCta";
 import AuthorByline from "@/components/blog/AuthorByline";
 import PinterestSaveButton from "@/components/ui/PinterestSaveButton";
 import { AFFILIATE } from "@/lib/config";
+import { getPostBySlug } from "@/data/blog";
 
 /* ── Types ─────────────────────────────────────────────────────────────── */
 export interface DayData {
@@ -229,6 +230,10 @@ function FaqItem({ q, a }: FaqData) {
 export default function UniversalBlogClient({ data }: { data: UniversalBlogData }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<0 | 1 | 2>(1);
+  // Cloudflare can serve curated Unsplash images without a paid or secret API key.
+  // Pexels is an optional enhancement; use this guide's own image when it is unavailable.
+  const destinationImage = getPostBySlug(data.slug)?.image
+    || "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80";
 
   // Track scroll depth for analytics
   useEffect(() => {
@@ -256,6 +261,7 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
         <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
           <SmartImage
             query={data.heroQuery}
+            fallback={destinationImage}
             alt={data.heroAlt}
             fill className="object-cover" priority sizes="100vw"
           />
@@ -478,11 +484,11 @@ export default function UniversalBlogClient({ data }: { data: UniversalBlogData 
             title={`${data.destination} — Must-See Places`}
             subtitle={data.intro ? data.intro.split('.')[0] + '.' : `Explore the best of ${data.destination}, ${data.country}`}
             spots={[
-              { name: `${data.destination} Highlights`, query: data.galleryQuery || data.heroQuery, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The iconic sights and unmissable experiences of ${data.destination}.` },
-              { name: `${data.destination} Landscapes`, query: `${data.heroQuery} scenic landscape nature`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The natural scenery that makes ${data.destination} unforgettable.` },
-              { name: `${data.destination} Architecture`, query: `${data.destination} ${data.country} architecture historic landmark`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `Historic landmarks and architectural wonders of ${data.destination}.` },
-              { name: `${data.destination} Food & Culture`, query: `${data.destination} ${data.country} local food culture market`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `Local cuisine, markets, and cultural life in ${data.destination}.` },
-              { name: `${data.destination} Streets & Life`, query: `${data.destination} ${data.country} street life people vibrant`, fallback: `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80`, desc: `The everyday atmosphere and street character of ${data.destination}.` },
+              { name: `${data.destination} Highlights`, query: data.galleryQuery || data.heroQuery, fallback: destinationImage, desc: `The iconic sights and unmissable experiences of ${data.destination}.` },
+              { name: `${data.destination} Landscapes`, query: `${data.heroQuery} scenic landscape nature`, fallback: destinationImage, desc: `The natural scenery that makes ${data.destination} unforgettable.` },
+              { name: `${data.destination} Architecture`, query: `${data.destination} ${data.country} architecture historic landmark`, fallback: destinationImage, desc: `Historic landmarks and architectural wonders of ${data.destination}.` },
+              { name: `${data.destination} Food & Culture`, query: `${data.destination} ${data.country} local food culture market`, fallback: destinationImage, desc: `Local cuisine, markets, and cultural life in ${data.destination}.` },
+              { name: `${data.destination} Streets & Life`, query: `${data.destination} ${data.country} street life people vibrant`, fallback: destinationImage, desc: `The everyday atmosphere and street character of ${data.destination}.` },
             ]}
           />
           <AffiliateBlock

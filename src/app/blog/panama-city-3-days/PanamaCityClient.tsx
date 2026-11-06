@@ -72,7 +72,7 @@ export default function PanamaCityClient() {
 
       <main className="min-h-screen bg-parchment">
         <section className="relative overflow-hidden bg-[#123c45] text-white">
-          <div className="absolute inset-0 opacity-35" style={{ backgroundImage: "linear-gradient(110deg, #09252b 0%, transparent 75%), url(https://images.unsplash.com/photo-1533681717801-1bbd2ec8d269?w=1800&q=85)", backgroundPosition: "center", backgroundSize: "cover" }} />
+          <div className="absolute inset-0 opacity-35" style={{ backgroundImage: "linear-gradient(110deg, #09252b 0%, transparent 75%), url(https://images.unsplash.com/photo-1675090696282-b97a00d22f07?auto=format&fit=crop&w=1800&q=85)", backgroundPosition: "center", backgroundSize: "cover" }} />
           <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-amber-200">Panama · Central America · 3 days</p>
             <h1 className="max-w-3xl font-serif text-4xl font-light leading-tight sm:text-6xl">Panama City in 3 Days</h1>
